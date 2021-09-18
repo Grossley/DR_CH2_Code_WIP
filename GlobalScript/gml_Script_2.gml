@@ -1,1 +1,1 @@
-// WARNING: Popz'd an empty stack.
+__global_object_depths()

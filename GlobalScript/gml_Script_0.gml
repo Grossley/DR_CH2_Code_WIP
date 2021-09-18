@@ -1,1 +1,1 @@
-// WARNING: Popz'd an empty stack.
+__init_d3d()
