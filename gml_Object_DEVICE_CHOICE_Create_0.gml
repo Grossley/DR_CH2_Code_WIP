@@ -65,7 +65,7 @@ if (TYPE == 2)
     xoff = -20
 }
 if (TYPE == 3)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_84_name_input_setup()
 HEARTX = NAMEX[0][0]
 HEARTY = NAMEY[0][0]
 if (TYPE == 0)
