@@ -31,5 +31,6 @@ if (global.inv < 0 && debug_inv == 0)
     var _temp_local_var_3 = global.charinstance[target]
     hurt = true
     hurttimer = 0
+	// A lot of stuff is missing
 }
 return;
