@@ -1,2 +1,0 @@
-argument0
-return;

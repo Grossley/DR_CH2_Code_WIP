@@ -1,4 +1,0 @@
-global.Pal_Layer_Map
-global.Pal_Layer_Priority
-global.Pal_Layer_Temp_Priority
-return;

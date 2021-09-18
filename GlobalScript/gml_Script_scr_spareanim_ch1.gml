@@ -1,7 +1,0 @@
-spareanim = gml_Script_instance_create_ch1(x, y, 1623)
-spareanim.sprite_index = sprite_index
-spareanim.sprite_index = sparedsprite
-spareanim.image_index = 0
-spareanim.image_xscale = image_xscale
-spareanim.image_yscale = image_yscale
-return;
