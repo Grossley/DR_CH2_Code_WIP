@@ -1,3 +1,3 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 myString = "A"
 jaString = "-"

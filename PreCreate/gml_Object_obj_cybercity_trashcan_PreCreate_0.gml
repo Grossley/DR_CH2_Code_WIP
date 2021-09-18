@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 money_amount = 0
 item_id = 0
 flag = 0

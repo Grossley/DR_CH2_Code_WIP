@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 collisionObject = 80
 targetObject = 80
 hasTargetObject = 1

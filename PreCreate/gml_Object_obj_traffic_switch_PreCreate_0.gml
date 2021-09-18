@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 group = 0
 count = 0
 swapgroup = 0

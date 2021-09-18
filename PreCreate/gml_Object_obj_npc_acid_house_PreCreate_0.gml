@@ -1,3 +1,3 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 house_x = 1085
 house_y = 250

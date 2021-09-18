@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 mode = 1
 riseSpeed = 6
 riseSpeedInitial = 2

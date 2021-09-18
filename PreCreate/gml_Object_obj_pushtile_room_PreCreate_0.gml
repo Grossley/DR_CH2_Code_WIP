@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 bossObject = 347
 pushVariableName = "switch1con"
 pushVariableDown = 1

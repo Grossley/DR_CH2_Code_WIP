@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 hsprite = 2380
 vsprite = 2382
 xspeed = -2

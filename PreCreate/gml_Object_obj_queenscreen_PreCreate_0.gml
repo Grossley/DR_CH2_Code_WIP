@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 align_x = 0
 align_y = 0
 align_distance = 1

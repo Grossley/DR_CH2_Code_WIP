@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 doorRoom = room
 doorEntrance = -1
 doorFadeMusic = -1
