@@ -1,0 +1,15 @@
+var _temp_local_var_1;
+dustparticle = gml_Script_instance_create_ch1(((x + random((sprite_width - 10))) + 10), ((y + 20) + random((sprite_height - 20))), 1402)
+var _temp_local_var_1 = dustparticle
+sprite_index = spr_rabbick_dustorb_ch1
+speed = 6
+image_index = 1
+direction = (10 + random(70))
+image_speed = 0.5
+image_xscale = 2
+image_yscale = 2
+gravity_direction = 0
+gravity = 0.7
+friction = 0.4
+image_alpha = 0.5
+depth = 15

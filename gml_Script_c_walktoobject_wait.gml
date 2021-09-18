@@ -1,0 +1,8 @@
+c_walktoobject = method(-1, gml_Script_c_walktoobject)
+method(-1, gml_Script_c_walktoobject)
+c_delaywalktoobject = method(-1, gml_Script_c_delaywalktoobject)
+method(-1, gml_Script_c_delaywalktoobject)
+c_walktoobject_wait = method(-1, gml_Script_c_walktoobject_wait)
+method(-1, gml_Script_c_walktoobject_wait)
+c_delaywalktoobject_wait = method(-1, gml_Script_c_delaywalktoobject_wait)
+method(-1, gml_Script_c_delaywalktoobject_wait)

@@ -1,0 +1,2 @@
+with (stacktop)
+    5

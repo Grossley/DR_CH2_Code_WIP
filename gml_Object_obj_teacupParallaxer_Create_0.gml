@@ -1,0 +1,15 @@
+sy = 0
+depth = 1000020
+auto = 0
+autoamount = 0
+squarecount = (room_height * 2)
+big = 2627
+mid = 2628
+smol = 2629
+modifier = 0
+myy = 0
+init = 0
+remcameray = 
+bigheight = big
+midheight = mid
+smallheight = smol

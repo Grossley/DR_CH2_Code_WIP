@@ -1,0 +1,1 @@
+initpitch = sndtarget

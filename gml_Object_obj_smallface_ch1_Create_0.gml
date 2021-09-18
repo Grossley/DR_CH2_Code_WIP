@@ -1,0 +1,14 @@
+stringpos = 0
+mystring = " "
+part = 1
+partstring = " "
+type = 0
+rate = 1
+active = false
+finished = 0
+mycolor = c_purple
+alarm[0] = 1
+getrid = 0
+writergod = 1327
+nowdir = 90
+facealpha = 0

@@ -1,0 +1,2 @@
+argument0
+return;

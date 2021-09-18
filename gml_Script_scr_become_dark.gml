@@ -1,0 +1,2 @@
+global.darkzone = true
+return;

@@ -1,0 +1,2 @@
+if screenshot
+    screenshot

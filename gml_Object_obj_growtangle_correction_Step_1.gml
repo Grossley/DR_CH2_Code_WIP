@@ -1,0 +1,18 @@
+if 869
+{
+    if (global.turntimer < 0 || spawntimer < 15)
+    {
+        spawntimer++
+        if (spawntimer == 15)
+        {
+            obj_heart.x += (x - xhome)
+            obj_heart.y += (y - yhome)
+            x = xhome
+            y = yhome
+        }
+        obj_growtangle.x = gml_Script_scr_movetowards(obj_growtangle.x, x, 5)
+        obj_growtangle.y = gml_Script_scr_movetowards(obj_growtangle.y, y, 5)
+    }
+}
+else
+    // WARNING: Popz'd an empty stack.

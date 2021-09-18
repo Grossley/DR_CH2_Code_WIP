@@ -1,0 +1,9 @@
+destroyoffscreen = 1
+tolerance = 32
+growamt = 0
+fadespeed = 0
+active = true
+target = 3
+damage = 12
+hit = 0
+depth = 80

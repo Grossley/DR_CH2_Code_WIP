@@ -1,0 +1,12 @@
+sprite_index = choose(2073, 2074)
+image_speed = (0.4 + random(-0.1))
+image_xscale = (random_range(0.9, 1) * choose(-1, 1))
+image_yscale = (image_xscale * choose(-1, 1))
+direction = (90 + random_range(-45, 15))
+speed = random_range(0.1, 1.5)
+image_angle = 360
+image_alpha = (0.9 + 0.1)
+scalerX = (0.03 * image_xscale)
+scalerY = (0.03 * image_yscale)
+depth = -1000
+image_index = 1

@@ -1,0 +1,17 @@
+tsiner = 0
+global.tensionselect = 0
+apparent = global.tension
+current = global.tension
+change = 0
+changetimer = 15
+red = 0
+redtimer = 0
+xx = gml_Script___view_get(0, 0)
+yy = gml_Script___view_get(1, 0)
+y = (yy + 40)
+x = (xx - 40)
+hspeed = 13
+friction = 1
+flashsiner = 0
+maxed = 0
+healthbar_surf = surface_create(96, 250)
