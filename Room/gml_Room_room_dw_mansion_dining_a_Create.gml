@@ -7,4 +7,10 @@ if (global.flag[356] == 1)
     plate.sprite_index = spr_plate
     with (plate)
         gml_Script_scr_depth()
+    interactablelancer = gml_Script_instance_create(1036, 258, obj_npc_room)
+    interactablelancer.sprite_index = spr_cutscene_20_lancer_stone_bib
+    interactablelancer.image_speed = 0
+    interactablelancer.image_index = 0
+    interactablelancer.image_xscale = 2
+    interactablelancer.image_yscale = 2
 }

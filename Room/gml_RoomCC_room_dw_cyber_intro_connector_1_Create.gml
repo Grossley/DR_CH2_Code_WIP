@@ -10,4 +10,5 @@ else
     plugboy_npc.sprite_index = spr_npc_plugboy
     with (plugboy_npc)
         gml_Script_scr_depth()
+    instance_destroy()
 }
