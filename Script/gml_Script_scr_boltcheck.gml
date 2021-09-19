@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 pressbuffer[global.char[argument0]] = 5
 qualifybolt = -1
 close = 99
@@ -25,8 +24,8 @@ if (qualifybolt != -1)
     if (p == 0)
     {
         points[argument0] += 150
-        var _temp_local_var_5 = burstbolt
-        image_blend = c_yellow
+        with (burstbolt)
+			image_blend = c_yellow
     }
     if (p == 1)
         points[argument0] += 120

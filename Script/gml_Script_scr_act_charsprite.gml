@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 _charactor = argument0
 _charinstance = obj_herokris
 if (_charactor == "noelle")
@@ -24,9 +23,11 @@ if (_charactor == "kris")
 __returnvalue = _charactsprite[_charnum]
 if gml_Script_i_ex(_charinstance)
 {
-    var _temp_local_var_1 = _charinstance
-    image_alpha = 0
-    state = 0
-    global.faceaction[myself] = 0
+    with (_charinstance)
+	{
+		image_alpha = 0
+		state = 0
+		global.faceaction[myself] = 0
+	}
 }
 return __returnvalue;

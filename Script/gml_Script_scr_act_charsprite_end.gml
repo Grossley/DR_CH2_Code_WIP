@@ -1,9 +1,8 @@
-var _temp_local_var_1;
 i = 0
 while (i < 10)
 {
-    var _temp_local_var_1 = _charactsprite[i]
-    instance_destroy()
+    with (_charactsprite[i])
+		instance_destroy()
 }
 with (obj_heroparent)
 {
