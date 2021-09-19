@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 spell = argument0
 caster = argument1
 star = global.chartarget[argument1]
@@ -142,13 +141,15 @@ switch spell
                 {
                     spec_shard = 1
                     shardtest[_en] = 3
-                    var _temp_local_var_3 = global.monsterinstance[_en]
-                    battlecancel = 1
-                    if (manual == 0)
-                    {
-                        manual = 1
-                        gml_Script_scr_mercyadd(myself, 50)
-                    }
+                    with (global.monsterinstance[_en])
+					{
+						battlecancel = 1
+						if (manual == 0)
+						{
+							manual = 1
+							gml_Script_scr_mercyadd(myself, 50)
+						}
+					}
                 }
             }
         }

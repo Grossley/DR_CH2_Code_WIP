@@ -50,21 +50,23 @@ for (__ii = 0; __ii < 2; __ii++)
     if (gml_Script_i_ex(global.cinstance[__ii]) && __marker[(__ii + 1)] != self)
     {
         global.cinstance[__ii].__marker = __marker[(__ii + 1)]
-        var _temp_local_var_12 = global.cinstance[__ii]
-        fun = true
-        follow = 0
-        goaly = __marker.goal_y_pos
-        if (name == "susie")
-        {
-            if (global.darkzone == true)
-                goaly -= 16
-            if (global.darkzone == false)
-                goaly -= 6
-        }
-        else
-            goaly -= 12
-        __mover = gml_Script_scr_move_to_point_over_time(__marker.x, goaly, argument2)
-        __mover.charmarker = 2
+        with (global.cinstance[__ii])
+		{
+			fun = true
+			follow = 0
+			goaly = __marker.goal_y_pos
+			if (name == "susie")
+			{
+				if (global.darkzone == true)
+					goaly -= 16
+				if (global.darkzone == false)
+					goaly -= 6
+			}
+			else
+				goaly -= 12
+			__mover = gml_Script_scr_move_to_point_over_time(__marker.x, goaly, argument2)
+			__mover.charmarker = 2
+		}
     }
 }
 return;

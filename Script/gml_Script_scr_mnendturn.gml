@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.char[0] == 2)
     sus = 0
 if (global.char[1] == 2)
@@ -29,8 +28,8 @@ if (techwon == false)
     while (i < 3)
     {
         global.hittarget[i] = 0
-        var _temp_local_var_1 = global.charinstance[i]
-        tu = 0
+        with (global.charinstance[i])
+			tu = 0
     }
     if (global.charmove[0] == false || global.charauto[global.char[0]] == 1)
         global.charturn = 1

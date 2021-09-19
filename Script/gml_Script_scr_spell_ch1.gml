@@ -30,9 +30,11 @@ switch spell
         ha = gml_Script_instance_create_ch1(x, y, 1618)
         ha.target = id
         dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
-        var _temp_local_var_3 = dmgwr
-        delay = 8
-        type = 3
+		with (dmgwr)
+		{
+			delay = 8
+			type = 3
+		}
     case 3:
         if (global.monster[star] == false)
             gml_Script_scr_retarget_spell_ch1()
@@ -40,18 +42,20 @@ switch spell
         {
             if (global.monsterstatus[star] == true)
             {
-                var _temp_local_var_5 = global.monsterinstance[star]
-                if (global.monstertype[myself] != 19 && global.monstertype[myself] != 3)
-                {
-                    global.flag[(51 + myself)] = 3
-                    event_user(10)
-                    gml_Script_scr_monsterdefeat_ch1()
-                }
-                else
-                {
-                    pacifycon = 1
-                    global.spelldelay = 999
-                }
+				with (global.monsterinstance[star])
+				{
+					if (global.monstertype[myself] != 19 && global.monstertype[myself] != 3)
+					{
+						global.flag[(51 + myself)] = 3
+						event_user(10)
+						gml_Script_scr_monsterdefeat_ch1()
+					}
+					else
+					{
+						pacifycon = 1
+						global.spelldelay = 999
+					}
+				}
             }
             else
             {
@@ -106,13 +110,17 @@ switch spell
         {
             gml_Script_scr_heal_ch1(i, healnum)
             global.charinstance[i].healnum = healnum
-            var _temp_local_var_8 = global.charinstance[i]
-            ha = gml_Script_instance_create_ch1(x, y, 1618)
-            ha.target = id
-            dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
-            var _temp_local_var_9 = dmgwr
-            delay = 8
-            type = 3
+			with (global.charinstance[i])
+			{
+				ha = gml_Script_instance_create_ch1(x, y, 1618)
+				ha.target = id
+			}
+			dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
+			with (dmgwr)
+			{
+				delay = 8
+				type = 3
+			}
         }
         global.spelldelay = 15
         break
@@ -125,15 +133,17 @@ switch spell
             {
                 if (global.monstertype[star] != 3)
                 {
-                    var _temp_local_var_11 = global.monsterinstance[star]
-                    global.flag[(51 + myself)] = 2
-                    event_user(10)
-                    gml_Script_scr_monsterdefeat_ch1()
+                    with (global.monsterinstance[star])
+					{
+						global.flag[(51 + myself)] = 2
+						event_user(10)
+						gml_Script_scr_monsterdefeat_ch1()
+					}
                 }
                 else
                 {
-                    _temp_local_var_11 = global.monsterinstance[star]
-                    sparecon = 1
+                    with (global.monsterinstance[star])
+						sparecon = 1
                 }
             }
             else

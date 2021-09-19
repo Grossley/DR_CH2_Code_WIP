@@ -18,8 +18,8 @@ for (__jj = 0; __jj < array_length_1d(global.cinstance); __jj++)
             gml_Script_scr_actor_setup(su, su_actor, "susie")
             su_actor.sprite_index = global.cinstance[__jj].sprite_index
             su_actor.depth = global.cinstance[__jj].depth
-            var _temp_local_var_1 = global.cinstance[__jj]
-            visible = false
+            with (global.cinstance[__jj])
+				visible = false
         }
         if (global.cinstance[__jj].name == "ralsei")
         {
@@ -29,8 +29,8 @@ for (__jj = 0; __jj < array_length_1d(global.cinstance); __jj++)
             gml_Script_scr_actor_setup(ra, ra_actor, "ralsei")
             ra_actor.sprite_index = global.cinstance[__jj].sprite_index
             ra_actor.depth = global.cinstance[__jj].depth
-            var _temp_local_var_2 = global.cinstance[__jj]
-            visible = false
+            with (global.cinstance[__jj])
+				visible = false
         }
         if (global.cinstance[__jj].name == "noelle")
         {
@@ -40,8 +40,8 @@ for (__jj = 0; __jj < array_length_1d(global.cinstance); __jj++)
             gml_Script_scr_actor_setup(no, no_actor, "noelle")
             no_actor.sprite_index = global.cinstance[__jj].sprite_index
             no_actor.depth = global.cinstance[__jj].depth
-            var _temp_local_var_3 = global.cinstance[__jj]
-            visible = false
+            with (global.cinstance[__jj])
+				visible = false
         }
     }
 }

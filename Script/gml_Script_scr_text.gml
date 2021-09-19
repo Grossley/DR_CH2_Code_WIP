@@ -100,8 +100,8 @@ switch argument0
             gml_Script_scr_itemget(3)
             with (obj_readable_room1)
             {
-                var _temp_local_var_2 = shine
-                instance_destroy()
+                with (shine)
+					instance_destroy()
             }
         }
         else
@@ -144,8 +144,8 @@ switch argument0
         else
         {
             global.flag[203] = 1
-            var _temp_local_var_3 = obj_darkcastle_event
-            con = 30
+            with (obj_darkcastle_event)
+				con = 30
         }
         break
     case obj_savepoint:
@@ -246,8 +246,8 @@ switch argument0
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* OK^1!&* Get ready, Kris!/%", "scr_text_slash_scr_text_gml_303_0")
-            var _temp_local_var_4 = obj_tutorialbattleevent
-            con = 20
+            with (obj_tutorialbattleevent)
+				con = 20
         }
         else
         {
@@ -1434,18 +1434,18 @@ switch argument0
     case obj_berdly_wire:
         if (global.choice == 0)
         {
-            var _temp_local_var_5 = obj_suitspuzz
-            event_user(2)
+            with (obj_suitspuzz)
+				event_user(2)
         }
         if (global.choice == 1)
         {
-            var _temp_local_var_6 = obj_suitspuzz
-            event_user(3)
+            with (obj_suitspuzz)
+				event_user(3)
         }
         if (global.choice == 2)
         {
-            var _temp_local_var_7 = obj_suitspuzz
-            event_user(4)
+            with (obj_suitspuzz)
+				event_user(4)
         }
         global.msg[0] = gml_Script_stringsetloc(" %%", "scr_text_slash_scr_text_gml_1682_0")
         break
@@ -1694,8 +1694,8 @@ switch argument0
                     global.msg[4] = gml_Script_stringsetloc("\\E2* For getting CHEATED by us!!/", "scr_text_slash_scr_text_gml_1973_0")
                     gml_Script_scr_lanface(5, 1)
                     global.msg[6] = gml_Script_stringsetloc("* Now we may fund our illicit plans!!/%", "scr_text_slash_scr_text_gml_1975_0")
-                    var _temp_local_var_12 = obj_lancerbakesale_event
-                    con = 10
+                    with (obj_lancerbakesale_event)
+						con = 10
                 }
                 else
                 {
@@ -1715,8 +1715,8 @@ switch argument0
                     global.msg[9] = gml_Script_stringsetloc("* ... to getting SWINDLED by us!/", "scr_text_slash_scr_text_gml_1994_0")
                     gml_Script_scr_lanface(10, 2)
                     global.msg[11] = gml_Script_stringsetloc("* Now we can fund our illicit plans!!!/%", "scr_text_slash_scr_text_gml_1996_0")
-                    _temp_local_var_12 = obj_lancerbakesale_event
-                    con = 10
+                    with (obj_lancerbakesale_event)
+						con = 10
                 }
             }
             else
@@ -2517,19 +2517,21 @@ switch argument0
         {
             if (global.flag[239] != 0)
             {
-                var _temp_local_var_14 = obj_elevatorcontroller
-                if (global.flag[239] == 1)
-                {
-                    dir = -1
-                    newcno = 0
-                    con = 100
-                }
-                else
-                {
-                    dir = 1
-                    newcno = 0
-                    con = 100
-                }
+                with (obj_elevatorcontroller)
+				{
+					if (global.flag[239] == 1)
+					{
+						dir = -1
+						newcno = 0
+						con = 100
+					}
+					else
+					{
+						dir = 1
+						newcno = 0
+						con = 100
+					}
+				}
             }
             else
                 global.msg[0] = gml_Script_stringsetloc("* (You're there.)/%", "scr_text_slash_scr_text_gml_2893_0")
@@ -2538,10 +2540,12 @@ switch argument0
         {
             if (global.flag[239] != 1)
             {
-                var _temp_local_var_15 = obj_elevatorcontroller
-                dir = 1
-                newcno = 1
-                con = 100
+                with (obj_elevatorcontroller)
+				{
+					dir = 1
+					newcno = 1
+					con = 100
+				}
             }
             else
                 global.msg[0] = gml_Script_stringsetloc("* (You're there.)/%", "scr_text_slash_scr_text_gml_2909_0")
@@ -2550,10 +2554,12 @@ switch argument0
         {
             if (global.flag[239] != 3)
             {
-                var _temp_local_var_16 = obj_elevatorcontroller
-                dir = -1
-                newcno = 3
-                con = 100
+                with (obj_elevatorcontroller)
+				{
+					dir = -1
+					newcno = 3
+					con = 100
+				}
             }
             else
                 global.msg[0] = gml_Script_stringsetloc("* (You're there.)/%", "scr_text_slash_scr_text_gml_2925_0")
@@ -2571,19 +2577,21 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("%%", "scr_text_slash_scr_text_gml_2945_0")
         if (global.choice == 0)
         {
-            var _temp_local_var_17 = obj_elevatorcontroller
-            if (global.flag[239] == 1)
-            {
-                dir = 1
-                newcno = 2
-                con = 100
-            }
-            else
-            {
-                dir = -1
-                newcno = 1
-                con = 100
-            }
+            with (obj_elevatorcontroller)
+			{
+				if (global.flag[239] == 1)
+				{
+					dir = 1
+					newcno = 2
+					con = 100
+				}
+				else
+				{
+					dir = -1
+					newcno = 1
+					con = 100
+				}
+			}
         }
         break
     case obj_swatchling_bulletcontroller:
@@ -4324,8 +4332,8 @@ switch argument0
             var _temp_local_var_56 = 0
         if (null.room == room_dw_castle_cafe)
         {
-            var _temp_local_var_44 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 3
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+				type = 3
         }
         if (global.choice == 1)
             _temp_local_var_44 = gml_Script_instance_create(0, 0, obj_fusionmenu).room == room_dw_castle_cafe
@@ -4415,8 +4423,8 @@ switch argument0
     case obj_beatbulletroomexample:
         if (global.choice == 0)
         {
-            var _temp_local_var_57 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 1
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+				type = 1
         }
         if (global.choice == 1)
         {
@@ -4602,8 +4610,8 @@ switch argument0
     case obj_shapepuzzlebutton:
         if (global.choice == 0)
         {
-            var _temp_local_var_60 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 2
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+				type = 2
         }
         if (global.choice == 1)
         {
@@ -4992,8 +5000,8 @@ switch argument0
     case obj_overworldc:
         if (global.choice == 0)
         {
-            var _temp_local_var_65 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 3
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+				type = 3
         }
         if (global.choice == 1)
         {

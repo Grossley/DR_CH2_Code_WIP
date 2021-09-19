@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 switch argument0
 {
     case 0:
@@ -96,8 +95,8 @@ switch argument0
             gml_Script_scr_itemget_ch1(3)
             with (obj_readable_room1_ch1)
             {
-                var _temp_local_var_2 = shine
-                instance_destroy()
+                with (shine)
+					instance_destroy()
             }
         }
         else
