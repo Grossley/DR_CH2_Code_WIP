@@ -46,13 +46,7 @@ else
         global.disable_border = 1
 }
 gml_Script_draw_enable_alphablend(0)
-xx.application_surface
-var _temp_local_var_4 = yy
-var _temp_local_var_5 = global.window_scale
-var _temp_local_var_6 = global.window_scale
-var _temp_local_var_7 = 0
-var _temp_local_var_8 = 16777215
-var _temp_local_var_9 = 1
+draw_surface_ext(application_surface, xx, yy, window_scale, window_scale, 0, 16777215, 1)
 if instance_exists(obj_time)
 {
     var is_paused = 0
