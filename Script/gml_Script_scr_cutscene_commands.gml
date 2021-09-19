@@ -19,9 +19,8 @@ if (_c == "delaycmd")
     {
         alarm[0] = delaycmd
         delaycmd.instant = 1
-        var _temp_local_var_7 = delaycmd
-        var _temp_local_var_8 = obj_sneo_friedpipis
-        event_user(0)
+        with (delaycmd)
+			event_user(0)
     }
 }
 if (_c == "walk")
@@ -33,8 +32,8 @@ if (_c == "walk")
         actor_move.direction_word = command_arg1[i]
         actor_move.speed = command_arg2[i]
         actor_move.time = command_arg3[i]
-        var _temp_local_var_9 = actor_move
-        event_user(8)
+		with (actor_move)
+			event_user(8)
     }
     else
     {
@@ -110,13 +109,13 @@ if (_c == "emote")
         command_actor[i].__arg2 = command_arg3[i]
         if (command_arg3[i] == obj_sneo_friedpipis)
         {
-            var _temp_local_var_10 = command_actor[i]
-            gml_Script_scr_emote(__arg0, __arg1)
+			with (command_actor[i])
+				gml_Script_scr_emote(__arg0, __arg1)
         }
         else
         {
-            _temp_local_var_10 = command_actor[i]
-            gml_Script_scr_emote(__arg0, __arg1, __arg2)
+			with (command_actor[i])
+				gml_Script_scr_emote(__arg0, __arg1, __arg2)
         }
     }
 }
@@ -192,46 +191,46 @@ if (_c == "script")
         {
             if (__sarg_counted == 0)
             {
-                var _temp_local_var_11 = command_arg1[i]
-                script_execute(__sarg1)
+                with (command_arg1[i])
+					script_execute(__sarg1)
             }
             if (__sarg_counted == 1)
             {
-                var _temp_local_var_12 = command_arg1[i]
-                script_execute(__sarg1, __sarg3)
+                with (command_arg1[i])
+					script_execute(__sarg1, __sarg3)
             }
             if (__sarg_counted == 2)
             {
-                var _temp_local_var_13 = command_arg1[i]
-                script_execute(__sarg1, __sarg3, __sarg4)
+                with (command_arg1[i])
+					script_execute(__sarg1, __sarg3, __sarg4)
             }
             if (__sarg_counted == 3)
             {
-                var _temp_local_var_14 = command_arg1[i]
-                script_execute(__sarg1, __sarg3, __sarg4, __sarg5)
+                with (command_arg1[i])
+					script_execute(__sarg1, __sarg3, __sarg4, __sarg5)
             }
         }
         else
         {
             if (__sarg_counted == 0)
             {
-                _temp_local_var_11 = command_arg1[i]
-                gml_Script_scr_script_repeat(__sarg1, -1, __sarg2)
+                with (command_arg1[i])
+					gml_Script_scr_script_repeat(__sarg1, -1, __sarg2)
             }
             if (__sarg_counted == 1)
             {
-                _temp_local_var_12 = command_arg1[i]
-                gml_Script_scr_script_repeat(__sarg1, -1, __sarg2, __sarg3)
+                with (command_arg1[i])
+					gml_Script_scr_script_repeat(__sarg1, -1, __sarg2, __sarg3)
             }
             if (__sarg_counted == 2)
             {
-                _temp_local_var_13 = command_arg1[i]
-                gml_Script_scr_script_repeat(__sarg1, -1, __sarg2, __sarg3, __sarg4)
+                with (command_arg1[i])
+					gml_Script_scr_script_repeat(__sarg1, -1, __sarg2, __sarg3, __sarg4)
             }
             if (__sarg_counted == 3)
             {
-                _temp_local_var_14 = command_arg1[i]
-                gml_Script_scr_script_repeat(__sarg1, -1, __sarg2, __sarg3, __sarg4, __sarg5)
+                with (command_arg1[i])
+					gml_Script_scr_script_repeat(__sarg1, -1, __sarg2, __sarg3, __sarg4, __sarg5)
             }
         }
     }
@@ -268,8 +267,8 @@ if (_c == "depthobject")
 if (_c == "flip")
 {
     command_actor[i].__flipvalue = command_arg1[i]
-    var _temp_local_var_15 = command_actor[i]
-    gml_Script_scr_flip(__flipvalue)
+    with (command_actor[i])
+		gml_Script_scr_flip(__flipvalue)
 }
 if (_c == "facing")
 {
@@ -278,14 +277,14 @@ if (_c == "facing")
     else
     {
         command_actor[i]._setfacing = command_arg1[i]
-        var _temp_local_var_43 = command_actor[i]
-        gml_Script_scr_set_facing_sprites(_setfacing)
+        with (command_actor[i])
+			gml_Script_scr_set_facing_sprites(_setfacing)
     }
 }
 if (_c == "halt")
 {
-    var _temp_local_var_17 = command_actor[i]
-    gml_Script_scr_halt()
+    with (command_actor[i])
+		gml_Script_scr_halt()
 }
 if (_c == "spin")
 {
@@ -298,13 +297,13 @@ if (_c == "stick")
     {
         var _stickobj = command_arg2[i]
         var _stickdepth = command_arg3[i]
-        var _temp_local_var_18 = command_actor[i]
-        gml_Script_scr_stickto(_stickobj, _stickdepth)
+        with (command_actor[i])
+			gml_Script_scr_stickto(_stickobj, _stickdepth)
     }
     else
     {
-        _temp_local_var_18 = command_actor[i]
-        gml_Script_scr_stickto_stop()
+        with (command_actor[i])
+			gml_Script_scr_stickto_stop()
     }
 }
 if (_c == "sprite")
@@ -328,8 +327,8 @@ if (_c == "animate")
         command_actor[i].__arg0 = command_arg1[i]
         command_actor[i].__arg1 = command_arg2[i]
         command_actor[i].__arg2 = command_arg3[i]
-        var _temp_local_var_21 = command_actor[i]
-        gml_Script_scr_animate(__arg0, __arg1, __arg2)
+        with (command_actor[i])
+			gml_Script_scr_animate(__arg0, __arg1, __arg2)
     }
 }
 if (_c == "soundplay")
@@ -457,8 +456,8 @@ if (_c == "shakeobj")
 {
     if (!instant)
     {
-        var _temp_local_var_23 = command_actor[i]
-        gml_Script_scr_shakeobj()
+        with (command_actor[i])
+			gml_Script_scr_shakeobj()
     }
 }
 if (_c == "jump")
@@ -471,8 +470,8 @@ if (_c == "jump")
         command_actor[i].__arg3 = command_arg4[i]
         if (!instant)
         {
-            var _temp_local_var_24 = command_actor[i]
-            gml_Script_scr_jump_to_point(__arg0, __arg1, __arg2, __arg3)
+            with (command_actor[i])
+				gml_Script_scr_jump_to_point(__arg0, __arg1, __arg2, __arg3)
         }
         else
         {
@@ -489,8 +488,8 @@ if (_c == "jumpinplace")
         command_actor[i].__arg1 = command_arg2[i]
         if (!instant)
         {
-            var _temp_local_var_25 = command_actor[i]
-            gml_Script_scr_jump_in_place(__arg0, __arg1)
+            with (command_actor[i])
+				gml_Script_scr_jump_in_place(__arg0, __arg1)
         }
     }
 }
@@ -506,8 +505,8 @@ if (_c == "jumpsprite")
         command_actor[i].__arg5 = command_arg6[i]
         if (!instant)
         {
-            var _temp_local_var_26 = command_actor[i]
-            gml_Script_scr_jump_to_point_sprite(__arg0, __arg1, __arg2, __arg3, __arg4, __arg5)
+            with (command_actor[i])
+				gml_Script_scr_jump_to_point_sprite(__arg0, __arg1, __arg2, __arg3, __arg4, __arg5)
         }
         else
         {
@@ -613,8 +612,8 @@ if (_c == "select")
 }
 if (_c == "waitcustom")
 {
-    var _temp_local_var_39 = master_object
-    customcon = 1
+    with (master_object)
+		customcon = 1
 }
 if (_c == "waitdialoguer")
 {

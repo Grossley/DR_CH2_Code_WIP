@@ -14,17 +14,23 @@ if (target < 3)
     {
         gml_Script_scr_randomtarget_old()
         target = mytarget
-        var _temp_local_var_1 = global.charinstance[target]
-        image_blend = c_white
-        darkify = false
+		with (global.charinstance[target])
+		{
+			image_blend = c_white
+			darkify = false
+		}
     }
 }
 gml_Script_scr_heal(target, argument0)
-var _temp_local_var_2 = global.charinstance[target]
-ha = gml_Script_instance_create(x, y, obj_healanim)
-ha.target = id
+with (global.charinstance[target])
+{
+	ha = gml_Script_instance_create(x, y, obj_healanim)
+	ha.target = id
+}
 dmgwr = gml_Script_scr_dmgwriter_selfchar()
-var _temp_local_var_3 = dmgwr
-delay = 8
-type = 3
-damage = argument0
+with (dmgwr)
+{
+	delay = 8
+	type = 3
+	damage = argument0
+}
