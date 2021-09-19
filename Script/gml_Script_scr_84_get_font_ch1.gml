@@ -1,4 +1,4 @@
-if (!"chemg_last_get_font")
+if (!variable_global_exists("chemg_last_get_font"))
     global.chemg_last_get_font = ""
 if (argument0 != global.chemg_last_get_font)
     global.chemg_last_get_font = argument0

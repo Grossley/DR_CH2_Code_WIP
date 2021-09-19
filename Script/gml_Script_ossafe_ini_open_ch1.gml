@@ -1,14 +1,14 @@
 if (!global.is_console)
-    argument0
+    ini_open(argument0)
 else
 {
-    var name = argument0
+    var name = string_lower(argument0)
     global.current_ini = name
     var file = ds_map_find_value(global.savedata, name)
-    if file
+    if is_undefined(file)
         var data = ""
     else
         data = file
-    data
+    ini_open_from_string(data)
 }
 return;

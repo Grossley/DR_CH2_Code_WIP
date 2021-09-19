@@ -1,2 +1,2 @@
-// WARNING: Popz'd an empty stack.
+audio_stop_all()
 return;

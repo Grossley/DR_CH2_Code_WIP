@@ -1,4 +1,0 @@
-// WARNING: Popz'd an empty stack.
-image_speed = 0.25
-desAlpha = 1
-siner = 1

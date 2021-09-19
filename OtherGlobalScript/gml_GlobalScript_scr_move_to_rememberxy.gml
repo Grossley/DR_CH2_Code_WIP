@@ -1,0 +1,2 @@
+gml_Script_scr_move_to_point_over_time(___myrememberx, ___myremembery, argument0)
+return;

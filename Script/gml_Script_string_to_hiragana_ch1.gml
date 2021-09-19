@@ -3,13 +3,13 @@ var result = ""
 var lastch = ""
 for (var i = 1; i <= string_length(str); i++)
 {
-    var ch = string_char_at(str, i)
+    var ch = ord(string_char_at(str, i))
     if (ch >= 12449 && ch <= 12534)
         ch -= 96
     else if (ch >= 65377 && ch <= 65439)
     {
         var halfkata = "。「」、・をぁぃぅぇぉャュョッーあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわん゛゜"
-        ch = string_char_at(halfkata, (ch - 65376))
+        ch = ord(string_char_at(halfkata, (ch - 65376)))
         if (lastch != "")
         {
             if (ch == 12443)
@@ -18,7 +18,7 @@ for (var i = 1; i <= string_length(str); i++)
                 var daku_to = "がぎぐげござじずぜぞだぢづでどばびぶべぼ"
                 var pos = string_pos(lastch, daku_from)
                 if (pos != 0)
-                    ch = string_char_at(daku_to, pos)
+                    ch = ord(string_char_at(daku_to, pos))
             }
             else if (ch == 12444)
             {
@@ -26,11 +26,11 @@ for (var i = 1; i <= string_length(str); i++)
                 var handaku_to = "ぱぴぷぺぽ"
                 pos = string_pos(lastch, handaku_from)
                 if (pos != 0)
-                    ch = string_char_at(handaku_to, pos)
+                    ch = ord(string_char_at(handaku_to, pos))
             }
         }
     }
-    lastch = ch
+    lastch = chr(ch)
     result += lastch
 }
 return result;

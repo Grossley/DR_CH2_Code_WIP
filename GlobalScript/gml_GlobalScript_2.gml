@@ -1,1 +1,1 @@
-__global_object_depths()
+gml_Script___global_object_depths()

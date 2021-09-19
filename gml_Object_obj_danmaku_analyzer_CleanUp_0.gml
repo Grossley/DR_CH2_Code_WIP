@@ -1,2 +1,0 @@
-if mysurface
-    mysurface

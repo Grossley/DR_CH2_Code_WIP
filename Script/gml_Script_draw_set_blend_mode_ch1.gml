@@ -1,2 +1,2 @@
-argument0
+gpu_set_blendmode(argument0)
 return;

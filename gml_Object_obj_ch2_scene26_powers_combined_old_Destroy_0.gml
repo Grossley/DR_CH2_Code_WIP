@@ -1,2 +1,0 @@
-recruit_sprite_map
-recruit_dialog_map

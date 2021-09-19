@@ -1,5 +1,5 @@
 if (!global.is_console)
-    return argument0;
+    return file_text_read_real(argument0);
 else
 {
     var handle = argument0
@@ -10,5 +10,5 @@ else
         return 0;
     ds_map_set(handle, "line_read", 1)
     text = ds_map_find_value(handle, "text")
-    return text[line];
+    return real(text[line]);
 }

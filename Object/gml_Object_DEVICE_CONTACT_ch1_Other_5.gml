@@ -1,0 +1,2 @@
+gml_Script_snd_stop_all_ch1()
+gml_Script_snd_free_all_ch1()

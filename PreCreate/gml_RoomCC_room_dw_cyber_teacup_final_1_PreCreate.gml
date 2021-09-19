@@ -1,5 +1,5 @@
 uniqueRideExperience = 2
-endY = 2305.[unknown]self.y
+endY = 2305.y
 jumpToRide = 102305
 riseSpeed = 5
 spinSpeed = 7

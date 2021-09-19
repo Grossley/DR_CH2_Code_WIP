@@ -1,6 +1,0 @@
-mysprite[0]
-mysprite[1]
-mysprite[2]
-mysprite[0] = sprite[0]
-mysprite[1] = sprite[1]
-mysprite[2] = sprite[2]

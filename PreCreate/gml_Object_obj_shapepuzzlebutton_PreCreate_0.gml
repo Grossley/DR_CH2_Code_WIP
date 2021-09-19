@@ -1,2 +1,2 @@
 event_inherited()
-puzzle_icon = 2411
+puzzle_icon = 2412

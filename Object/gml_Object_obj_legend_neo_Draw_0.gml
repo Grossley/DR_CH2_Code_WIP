@@ -1,0 +1,255 @@
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9, _temp_local_var_10, _temp_local_var_12, _temp_local_var_14, _temp_local_var_16;
+if keyboard_check_pressed(vk_backspace)
+{
+    gml_Script_snd_free_all()
+    room_restart()
+}
+if (drawpic == 1)
+{
+    draw_sprite_ext(pic, 0, picx, picy, 1, 1, 0, c_white, (ceil((con_alph * 4)) / 4))
+    draw_sprite_ext(picb, 0, picxb, picyb, 1, 1, 0, c_white, (ceil((con_alphb * 4)) / 4))
+}
+if (con == 3)
+{
+    pic = 2460
+    picb = 314
+    picyb = -50
+    con = 3.1
+    con_alphb = 0
+    contimer = -100
+    chunkfade = 0
+    drawpic = 1
+    flamecon = 0
+    flamesiner = 0
+    flamealph = 1
+    flamey = 0
+    global.typer = 41
+}
+if (con == 3.1)
+{
+    if (con_alph < 1 && contimer < 200)
+        con_alph += 0.01
+    flamesiner++
+    contimer++
+    if (contimer == 20)
+    {
+        gml_Script_msgsetloc(0, "When the LIGHT is&subsumed by SHADOW", "obj_legend_neo_slash_Draw_0_gml_38_0")
+        wx = 88
+        if jp
+            wx = 62
+        w = gml_Script_instance_create(wx, 185, obj_writer)
+    }
+    if (contimer == 200)
+    {
+        var _temp_local_var_2 = w
+        instance_destroy()
+    }
+    if (contimer >= 200 && contimer <= 300)
+    {
+        if (con_alphb < 1)
+            con_alphb += 0.02
+        if (picyb < 0)
+            picyb += 0.5
+        if (picy < 80)
+            picy += 0.5
+    }
+    if (contimer == 400)
+    {
+        flamecon = 1
+        flamealph = 0.7
+        wave_siner = 0
+        flameya = (w.room_height - 30)
+        flameyb = room_height
+        wave_maxa = sprite_get_height(spr_cutscene_27_3_fire_1)
+        wave_maxb = sprite_get_height(spr_cutscene_27_3_fire_2)
+        _temp_local_var_2 = w
+        instance_destroy()
+    }
+    if (contimer == 600)
+    {
+        var _temp_local_var_4 = w
+        instance_destroy()
+    }
+    if (contimer >= 600 && contimer <= 680)
+    {
+        if (con_alphb < 1)
+            con_alphb += 0.01
+    }
+    if (contimer == 800)
+    {
+        pic = picb
+        picy = picyb
+        pic = picb
+        con_alphb = 0
+        picb = 316
+        var _temp_local_var_6 = w
+        instance_destroy()
+    }
+    if (contimer >= 800 && contimer <= 980)
+    {
+        if (con_alphb < 1)
+            con_alphb += 0.01
+    }
+    if (contimer >= 1030 && contimer <= 1130)
+    {
+        var _temp_local_var_9 = w
+        instance_destroy()
+    }
+    if (contimer == 1160)
+    {
+        contimer = 0
+        con = 4
+    }
+    if (flamecon == 1)
+    {
+        if (w > (flameya.room_height - wave_maxa))
+            flameya -= 1.5
+        if (w > (flameyb.room_height - wave_maxb))
+            flameyb--
+        thickness = 2
+        wave_siner++
+        flamesiner++
+        draw_set_alpha(flamealph)
+        for (i = 0; i < wave_maxa; i += thickness)
+            draw_sprite_part(spr_cutscene_27_3_fire_1, 0, 0, (i * thickness), 400, (thickness + 2), (-10 + (sin(((wave_siner + (i * 8)) / 30)) * 12)), (((i * thickness) + flameya) + (sin((flamesiner / 16)) * 3)))
+        draw_set_alpha(1)
+    }
+}
+if (con == 4)
+{
+    con = 5
+    contimer = 0
+    pic = 319
+    picb = 320
+    con_alph = 0
+    con_alphb = 0
+    picx = 48
+    picy = 60
+    picxb = 48
+    picyb = 60
+    global.typer = 41
+}
+if (con == 5)
+{
+    contimer++
+    if (contimer == 30)
+    {
+        gml_Script_msgsetloc(0, "The surviving Darkners,&crushed by the darkness", "obj_legend_neo_slash_Draw_0_gml_167_0")
+        wx = 69
+        if jp
+            wx = 58
+        w = gml_Script_instance_create(wx, 185, obj_writer)
+    }
+    if (contimer <= 100)
+    {
+        if (con_alph <= 1)
+            con_alph += 0.01
+    }
+    if (contimer == 240)
+    {
+        var _temp_local_var_10 = w
+        instance_destroy()
+    }
+    if (contimer >= 240 && contimer <= 360)
+    {
+        if (con_alphb <= 1)
+            con_alphb += 0.01
+    }
+    if (contimer == 420)
+    {
+        pic = picb
+        picb = 321
+        con_alphb = 0
+        var _temp_local_var_12 = w
+        instance_destroy()
+    }
+    if (contimer >= 420 && contimer <= 520)
+    {
+        if (con_alphb <= 1)
+            con_alphb += 0.01
+    }
+    if (contimer == 600)
+    {
+        pic = picb
+        picb = 322
+        con_alphb = 0
+        var _temp_local_var_14 = w
+        instance_destroy()
+    }
+    if (contimer >= 600 && contimer <= 700)
+    {
+        if (con_alphb <= 1)
+            con_alphb += 0.01
+    }
+    if (contimer == 840)
+    {
+        pic = picb
+        con_alphb = 0
+        var _temp_local_var_16 = w
+        instance_destroy()
+    }
+    if (contimer >= 840)
+        con_alph -= 0.01
+    if (contimer == 1080)
+        gml_Script_instance_create(0, 0, obj_fadeout)
+    if (contimer == 1100 && skipped == 0)
+    {
+        gml_Script_snd_free_all()
+        global.flag[6] = 0
+        gml_Script_instance_create(0, 0, obj_persistentfadein)
+        if (gml_Script_scr_sideb_get_phase() < 2)
+            room_goto(room_dw_mansion_top_post)
+        else
+            room_goto(room_dw_mansion_top)
+    }
+}
+if (border == 1)
+{
+    draw_set_color(c_black)
+    draw_rectangle(-10, -10, 330, 27, false)
+    draw_rectangle(-10, -10, 59, 300, false)
+    draw_rectangle(400, -10, 260, 300, false)
+    draw_rectangle(-10, 400, 330, 138, false)
+}
+if (border == 2)
+{
+    draw_set_color(c_black)
+    draw_rectangle(-10, 180, 999, 482, false)
+}
+if (chunkfade == 0 && chunkamt > 0)
+    chunkamt -= fadespeed
+if (chunkfade == 1 && chunkamt < 1)
+    chunkamt += fadespeed
+draw_set_color(fadecolor)
+alph = 0
+if (chunkamt >= 0.25)
+    alph = 0.25
+if (chunkamt >= 0.5)
+    alph = 0.5
+if (chunkamt >= 0.75)
+    alph = 0.75
+if (chunkamt >= 1)
+    alph = 1
+draw_set_alpha(alph)
+draw_rectangle(-10, -10, 330, 330, false)
+draw_set_alpha(1)
+if (ingame == 0)
+{
+    if (gml_Script_button1_p() && skipped == 0)
+    {
+        skipped = 1
+        skiptimer = 0
+        f = gml_Script_instance_create(0, 0, obj_fadeout)
+        f.fadespeed = 0.08
+        gml_Script_mus_volume(global.currentsong[1], 0, 15)
+    }
+    if (skipped == 1)
+        skiptimer += 1
+    if (skiptimer == 19)
+    {
+        gml_Script_snd_free(global.currentsong[0])
+        global.flag[6] = 0
+    }
+    if (skiptimer == 20)
+        room_goto(PLACE_LOGO)
+}

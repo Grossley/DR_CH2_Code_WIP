@@ -64,11 +64,11 @@ else if (LANGSUBTYPE == 3)
     menu[6] = "> <> <> <"
     menu[7] = ">> <>> <<"
 }
-YMAX = (menu - 1)
+YMAX = (array_length_1d(menu) - 1)
 for (j = 0; j <= YMAX; j += 1)
 {
     var str = menu[j]
-    XMAX = (str - 1)
+    XMAX = (string_length(str) - 1)
     for (i = 0; i <= XMAX; i += 1)
     {
         NAME[i][j] = string_char_at(str, (i + 1))

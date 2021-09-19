@@ -1,1 +1,0 @@
-global.currentsong[0]

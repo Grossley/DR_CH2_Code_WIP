@@ -1,0 +1,229 @@
+var _temp_local_var_1, _temp_local_var_11;
+if (EVENT == 1)
+{
+    gml_Script_snd_free_all()
+    if (global.chapter == 1)
+    {
+        global.currentsong[0] = gml_Script_snd_init("AUDIO_DRONE.ogg")
+        global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
+        global.typer = 667
+        global.fc = 0
+        global.msg[0] = gml_Script_stringsetloc("\\M0 IT APPEARS YOU& HAVE REACHED^6& &    AN END./%", "DEVICE_FAILURE_slash_Step_0_gml_10_0")
+        EVENT = 2
+        W = gml_Script_instance_create(70, 80, obj_writer)
+        if (global.tempflag[3] >= 1)
+        {
+            with (obj_writer)
+                instance_destroy()
+        }
+    }
+    else if (text_timer > 0)
+        text_timer--
+    else
+    {
+        EVENT = 3
+        alarm[4] = 30
+        global.currentsong[0] = gml_Script_snd_init("AUDIO_DEFEAT.ogg")
+        global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
+        var voice = choose(0, 1)
+        if (!gml_Script_scr_havechar(2))
+            voice = 1
+        else if (!gml_Script_scr_havechar(3))
+            voice = 0
+        if (gml_Script_scr_havechar(2) || gml_Script_scr_havechar(3))
+        {
+            if (voice == 0)
+            {
+                gml_Script_scr_speaker("no_name")
+                gml_Script_msgsetloc(0, "  Come on^1,&  that all you got!?/", "DEVICE_FAILURE_slash_Step_0_gml_39_0")
+                gml_Script_msgnextloc("  Kris^1,&  get up...!/%", "DEVICE_FAILURE_slash_Step_0_gml_40_0")
+                global.typer = 61
+                global.fc = 0
+            }
+            else
+            {
+                gml_Script_scr_speaker("no_name")
+                gml_Script_msgsetloc(0, "  This is not&  your fate...!/", "DEVICE_FAILURE_slash_Step_0_gml_47_0")
+                gml_Script_msgnextloc("  Please^1,&  don't give up!/%", "DEVICE_FAILURE_slash_Step_0_gml_48_0")
+                global.typer = 60
+                global.fc = 0
+            }
+            var xx = 50
+            if (global.lang == "ja")
+                xx = 44
+            W = gml_Script_instance_create(50, 150, obj_writer)
+        }
+    }
+}
+if (EVENT == 0)
+    EVENT = 1
+if (EVENT == 2 && (!instance_exists(obj_writer)))
+{
+    EVENT = 3
+    alarm[4] = 30
+    global.msg[0] = gml_Script_stringsetloc("\\M0 WILL YOU TRY AGAIN?", "DEVICE_FAILURE_slash_Step_0_gml_28_0")
+    if (global.tempflag[3] >= 1)
+        global.msg[0] = gml_Script_stringsetloc("\\M0 WILL YOU PERSIST?", "DEVICE_FAILURE_slash_Step_0_gml_32_0")
+    if (global.tempflag[3] >= 1)
+        alarm[4] = 15
+    W = gml_Script_instance_create(gml_Script_langopt(40, 84), 80, obj_writer)
+}
+if (EVENT == 4 && (!instance_exists(obj_writer)))
+{
+    if (global.chapter == 1)
+    {
+        choice = gml_Script_instance_create(100, 120, DEVICE_CHOICE)
+        EVENT = 5
+    }
+    else if (!instance_exists(obj_writer))
+    {
+        choice = gml_Script_instance_create(100, 120, DEVICE_CHOICE)
+        if (global.chapter > 1)
+        {
+            var _temp_local_var_11 = choice
+            NAME[0][0] = gml_Script_stringsetloc("CONTINUE", "DEVICE_FAILURE_slash_Step_0_gml_103_0_b")
+            NAME[1][0] = gml_Script_stringsetloc("GIVE UP", "DEVICE_FAILURE_slash_Step_0_gml_104_0")
+            NAMEX[0][0] = 80
+            NAMEX[1][0] = 190
+            NAMEY[0][0] = 180
+            NAMEY[1][0] = 180
+            XMAX = 1
+            CURX = -1
+            IDEALX = 190
+            IDEALY = 180
+        }
+        EVENT = 5
+    }
+}
+if (EVENT == 5)
+{
+    if (global.choice == 0)
+    {
+        with (obj_writer)
+            instance_destroy()
+        EVENT = 6
+    }
+    if (global.choice == 1)
+    {
+        with (obj_writer)
+            instance_destroy()
+        EVENT = 26
+    }
+}
+if (EVENT == 6)
+{
+    gml_Script_snd_free_all()
+    EVENT = 7
+    alarm[4] = 30
+    if (global.chapter == 1)
+    {
+        global.flag[6] = 1
+        global.msg[0] = gml_Script_stringsetloc(" THEN, THE FUTURE& IS IN YOUR HANDS.", "DEVICE_FAILURE_slash_Step_0_gml_68_0")
+        W = gml_Script_instance_create(50, 80, obj_writer)
+        if (global.tempflag[3] >= 1)
+        {
+            with (obj_writer)
+                instance_destroy()
+            alarm[4] = 1
+        }
+    }
+}
+if (EVENT == 8)
+{
+    WHITEFADE = 1
+    FADEUP = 0.01
+    EVENT = 9
+    alarm[4] = 120
+    if (global.tempflag[3] >= 1)
+    {
+        FADEUP = 0.03
+        alarm[4] = 45
+    }
+    else
+        gml_Script_snd_play(245)
+    global.tempflag[3] += 1
+}
+if (EVENT == 10)
+{
+    gml_Script_scr_windowcaption(gml_Script_stringsetloc("THE DARK", "DEVICE_FAILURE_slash_Step_0_gml_172_0"))
+    gml_Script_scr_tempload()
+    EVENT = 11
+}
+if (EVENT == 26)
+{
+    gml_Script_snd_free_all()
+    if (global.chapter > 1)
+    {
+        if gml_Script_i_ex(1310)
+            instance_destroy(obj_gameoverbg)
+    }
+    global.typer = 667
+    global.msg[0] = gml_Script_stringsetloc("\\M0 THEN THE WORLD^5 & WAS COVERED^5 & IN DARKNESS./%", "DEVICE_FAILURE_slash_Step_0_gml_103_0")
+    EVENT = 27
+    W = gml_Script_instance_create(60, 80, obj_writer)
+}
+if (EVENT == 27 && (!instance_exists(obj_writer)))
+{
+    global.currentsong[0] = gml_Script_snd_init("AUDIO_DARKNESS.ogg")
+    global.currentsong[1] = gml_Script_mus_play(global.currentsong[0])
+    EVENT = 28
+    DARK_WAIT = 0
+}
+if (EVENT == 28)
+{
+    DARK_WAIT += 1
+    if (DARK_WAIT >= 2040)
+        gml_Script_ossafe_game_end()
+    if (!gml_Script_snd_is_playing(global.currentsong[1]))
+        gml_Script_ossafe_game_end()
+    if global.is_console
+    {
+        if (DARK_WAIT >= 90 && (!restart))
+        {
+            var i = 0
+            while (i < array_length_1d(gamepad_controls))
+            {
+                if gamepad_button_check_pressed(obj_gamecontroller.gamepad_id, gamepad_controls[i])
+                {
+                    if (gamepad_controls[i] == global.button0 || gamepad_controls[i] == global.button1 || gamepad_controls[i] == global.button2 || gamepad_controls[i] == 32775)
+                    {
+                        gml_Script_mus_volume(global.currentsong[1], 0, 80)
+                        restart = 1
+                        break
+                    }
+                    else
+                    {
+                        i++
+                        continue
+                    }
+                }
+                else
+                {
+                    i++
+                    continue
+                }
+            }
+        }
+        if restart
+        {
+            restart_timer++
+            if (restart_timer >= 100)
+                gml_Script_ossafe_game_end()
+        }
+    }
+}
+if (EVENT >= 0 && EVENT <= 4)
+{
+    if gml_Script_button2_h()
+    {
+        with (obj_writer)
+        {
+            if (pos < (length - 3))
+                pos += 2
+            if (specfade <= 0.9)
+                specfade -= 0.1
+            if (rate <= 1)
+                rate = 1
+        }
+    }
+}

@@ -1,1 +1,0 @@
-global.firework_sprite_pixel_data
