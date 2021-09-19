@@ -1,8 +1,7 @@
-var a;
 if (global.turntimer < 1)
 {
     instance_destroy()
-    exit;
+    return;
 }
 siner++
 image_yscale = (1 - (abs(sin((siner / 5))) * 0.1))
@@ -20,27 +19,22 @@ if (makebullet > 0)
         bullet.damage = damage
         bullet.target = target
         if (irandom(100) < 50)
-        {
             bullet.y += 70
-        }
     }
     if (makebullet == 2)
     {
         if (segmentcountmax == 0)
         {
             bullet = gml_Script_instance_create(x, ((y - sprite_height) + 90), obj_musical_note_bullet)
-            if (instance_exists(obj_growtangle))
+            if instance_exists(obj_growtangle)
             {
                 if (lightningvary == 0)
-                {
                     bullet.y = (obj_growtangle.y + random_range(((-obj_growtangle.sprite_height) / 2), 0))
-                }
+                if (lightningvary == 1)
+                    bullet.y = (obj_growtangle.y + random_range(0, (obj_growtangle.sprite_height / 2)))
             }
-            if (lightningvary == 1)
-            {
-                bullet.y = (obj_growtangle.y + random_range(0, (obj_growtangle.sprite_height / 2)))
-            }
-            gml_Script_scr_afterimage_grow()
+            with (bullet)
+                gml_Script_scr_afterimage_grow()
             bullet.image_yscale = 1
             bullet.image_xscale = 0.4
             bullet.speed = image_xscale
@@ -56,18 +50,12 @@ if (makebullet > 0)
             bullet.damage = damage
             bullet.target = target
             if (lightningvary == 0)
-            {
                 lightningvary = 1
-            }
             else
-            {
                 lightningvary = 0
-            }
         }
         else
-        {
             makelong = 1
-        }
     }
     if (makebullet == 3)
     {
@@ -101,9 +89,7 @@ if (makebullet > 0)
             }
             type++
             if (type > 2)
-            {
                 type = 0
-            }
         }
         else
         {
@@ -124,7 +110,7 @@ if (makelong == 1)
     if (makelongtimer >= 4)
     {
         var a = 0
-        repeat (obj_afterimage_anim)
+        repeat (4)
         {
             bullet = gml_Script_instance_create(x, ((y - sprite_height) + 90), obj_musical_note_bullet_segment)
             if instance_exists(obj_growtangle)
@@ -132,7 +118,7 @@ if (makelong == 1)
             bullet.image_yscale = 0.75
             bullet.image_xscale = 0.2
             bullet.speed = image_xscale
-            bullet.x = (bullet.x - (image_xscale * 13))
+            bullet.x -= (image_xscale * 13)
             bullet.friction = -0.2
             bullet.speed = 0.37
             bullet.y = (y - 45)
