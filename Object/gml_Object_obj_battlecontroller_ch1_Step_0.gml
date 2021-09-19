@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_13, _temp_local_var_14, _temp_local_var_16, _temp_local_var_17, _temp_local_var_32, _temp_local_var_53, _temp_local_var_54, _temp_local_var_55, _temp_local_var_56, _temp_local_var_57, _temp_local_var_58, _temp_local_var_59, _temp_local_var_60, _temp_local_var_61, _temp_local_var_62, _temp_local_var_70, _temp_local_var_144, _temp_local_var_146;
 if (victory == true && victoried == 0)
 {
     global.faceaction[0] = 0
@@ -7,8 +6,8 @@ if (victory == true && victoried == 0)
     global.battleend = true
     global.mnfight = -1
     global.myfight = 7
-    var _temp_local_var_2 = battlewriter
-    instance_destroy()
+    with (battlewriter)
+		instance_destroy()
 }
 if (victoried == 1)
 {
@@ -35,7 +34,7 @@ if (global.myfight == 0)
             if (global.bmenucoord[0][global.charturn] == 0)
                 global.bmenucoord[0][global.charturn] = 4
             else
-                var _temp_local_var_146 = global.charturn
+                global.bmenucoord[0][global.charturn] -= 1
             movenoise = true
             rbuffer = 1
         }
@@ -44,7 +43,7 @@ if (global.myfight == 0)
             if (global.bmenucoord[0][global.charturn] == 4)
                 global.bmenucoord[0][global.charturn] = 0
             else
-                var _temp_local_var_144 = global.charturn
+                global.bmenucoord[0][global.charturn] += 1
             movenoise = true
             lbuffer = 1
         }
@@ -72,7 +71,7 @@ if (global.myfight == 0)
                 for (i = 0; i < 12; i += 1)
                 {
                     if (tempitem[global.bmenucoord[4][global.charturn]][global.charturn] == 0 && global.bmenucoord[4][global.charturn] > 0)
-                        var _temp_local_var_13 = global.charturn
+                        global.bmenucoord[4][global.charturn] -= 1
                 }
             }
             if (global.bmenucoord[0][global.charturn] == 3)
@@ -94,18 +93,18 @@ if (global.myfight == 0)
             movenoise = true
             gml_Script_scr_prevhero_ch1()
         }
-        var _temp_local_var_16 = battlewriter
-        depth = 3
+        with (battlewriter)
+			depth = 3
     }
     if (global.bmenuno == 2)
     {
-        var _temp_local_var_17 = battlewriter
-        skipme = true
+        with (battlewriter)
+			skipme = true
     }
     if (global.bmenuno == 4)
     {
-        var _temp_local_var_32 = battlewriter
-        skipme = true
+        with (battlewriter)
+			skipme = true
     }
     if (global.bmenuno == 9)
     {
@@ -121,28 +120,24 @@ if (global.myfight == 0)
                     cango = false
                     if ((actcoord % 2) == 1 && actcoord > 0)
                     {
-                        var _temp_local_var_53 = 
-                        var _temp_local_var_54 = global.bmenucoord[9][global.charturn]
+                        global.bmenucoord[9][global.charturn] -= 1
                     }
                 }
             }
             else
             {
                 cango = false
-                _temp_local_var_53 = 
-                _temp_local_var_54 = global.bmenucoord[9][global.charturn]
+                global.bmenucoord[9][global.charturn] -= 1
             }
             if (cango == true)
             {
                 if ((actcoord % 2) == 0)
                 {
-                    var _temp_local_var_55 = 
-                    var _temp_local_var_56 = global.bmenucoord[9][global.charturn]
+                    global.bmenucoord[9][global.charturn] += 1
                 }
                 else
                 {
-                    _temp_local_var_55 = 
-                    _temp_local_var_56 = global.bmenucoord[9][global.charturn]
+                    global.bmenucoord[9][global.charturn] -= 1
                 }
             }
         }
@@ -154,14 +149,12 @@ if (global.myfight == 0)
             {
                 if (global.canact[thisenemy][(actcoord + 1)] != false)
                 {
-                    var _temp_local_var_57 = _temp_local_var_53
-                    var _temp_local_var_58 = global.bmenucoord[9][global.charturn]
+                    global.bmenucoord[9][global.charturn] += 1
                 }
             }
             else
             {
-                _temp_local_var_57 = _temp_local_var_53
-                _temp_local_var_58 = global.bmenucoord[9][global.charturn]
+                global.bmenucoord[9][global.charturn] -= 1
             }
         }
         if gml_Script_down_p_ch1()
@@ -176,8 +169,7 @@ if (global.myfight == 0)
             {
                 if (cango == true)
                 {
-                    var _temp_local_var_59 = _temp_local_var_55
-                    var _temp_local_var_60 = global.bmenucoord[9][global.charturn]
+                    global.bmenucoord[9][global.charturn] += 2
                 }
             }
         }
@@ -189,8 +181,7 @@ if (global.myfight == 0)
                 cango = false
             if (cango == true)
             {
-                var _temp_local_var_61 = _temp_local_var_53
-                var _temp_local_var_62 = global.bmenucoord[9][global.charturn]
+                global.bmenucoord[9][global.charturn] -= 2
             }
         }
         global.tensionselect = global.actcost[thisenemy][global.bmenucoord[9][global.charturn]]
@@ -247,8 +238,8 @@ if (global.myfight == 0)
     }
     if (global.bmenuno == 7 || global.bmenuno == 1 || global.bmenuno == 8 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12)
     {
-        var _temp_local_var_70 = battlewriter
-        skipme = true
+        with (battlewriter)
+			skipme = true
     }
 }
 if (movenoise == true)

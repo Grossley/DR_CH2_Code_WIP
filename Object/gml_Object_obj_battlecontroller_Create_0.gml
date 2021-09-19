@@ -165,5 +165,5 @@ havechar[3] = false
 global.charinstance[0] = 12129292
 global.charinstance[1] = 12129292
 global.charinstance[2] = 12129292
-var _temp_local_var_1 = global.charinstance[0]
-myself = 0
+with (global.charinstance[0])
+	myself = 0
