@@ -1,7 +1,6 @@
-var _temp_local_var_1;
 if (myinteract == 3)
 {
-    if (mydialoguer == 0)
+    if (gml_Script_i_ex(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0
@@ -9,16 +8,14 @@ if (myinteract == 3)
             onebuffer = 5
     }
 }
-if (con == 1)
+if (con == 1 && (!gml_Script_d_ex()))
 {
+    global.interact = 1
+    fade = gml_Script_scr_fadeout(15)
+    gml_Script_snd_play(218)
+    timer = 0
+    con++
 }
-else
-    var _temp_local_var_1 = 0
-global.interact = 1
-fade = 15
-218
-timer = 0
-con++
 if (con == 2)
 {
     timer++
@@ -27,7 +24,7 @@ if (con == 2)
         with (obj_doorAny)
         {
             if x.room_width
-                9
+                event_user(9)
         }
     }
 }

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 destroyable = 1
 size = 3
 breaking = 0

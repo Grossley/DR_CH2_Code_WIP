@@ -11,7 +11,7 @@ if (global.chapter != 2 || global.plot >= 105)
     }
     if (global.plot >= 120)
     {
-        if 1107
+        if gml_Script_i_ex(1107)
         {
             with (obj_shapepuzzle)
                 x = 120
@@ -27,13 +27,13 @@ if (global.chapter != 2 || global.plot >= 105)
         puzzle_c.image_yscale = 2
         puzzle_c.depth = 100000
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 else
 {
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
     leftcollider = gml_Script_instance_create(0, 240, obj_soliddark)
     leftcollider.image_xscale = 2
     leftcollider.image_yscale = 2

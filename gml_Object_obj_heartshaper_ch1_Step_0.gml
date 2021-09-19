@@ -59,7 +59,7 @@ if (actual == true)
     tcount = 0
     for (t = 0; t < 16; t += 1)
     {
-        if bul[t]
+        if instance_exists(bul[t])
         {
             tcount += 1
             if (radcon == 0)
@@ -85,5 +85,5 @@ if (actual == true)
         }
     }
     if (tcount == 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

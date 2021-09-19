@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 fleetsize = 3
 fleetspeed = 1
 caralert = 0
@@ -15,7 +15,7 @@ targetB = 0
 grazepoints = 4
 boys[0] = gml_Script_scr_childbullet(x, y, 420)
 boys[0].image_alpha = 0
-shottimer = (30 + 20)
+shottimer = (irandom(30) + 20)
 shotqueue[0] = 0
 shotqueue[1] = 1
 shotqueue[2] = 2

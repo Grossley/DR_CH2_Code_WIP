@@ -2,23 +2,23 @@ if (hp < 1)
 {
     if (active == true)
     {
-        170
+        gml_Script_snd_play(170)
         gml_Script_snd_pitch(170, 2)
     }
     active = false
     image_alpha -= 0.05
     if (image_alpha < 0.01)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     return;
 }
-if (!628)
+if (!instance_exists(obj_heart))
     visible = false
-if 628
+if instance_exists(obj_heart)
 {
     depth = (obj_heart.depth - 1)
     x = (obj_heart.x + 10)
     y = (obj_heart.y + 9)
-    if 638
+    if instance_exists(obj_sneo_fakeheart)
     {
         x = -9999
         y = -9999

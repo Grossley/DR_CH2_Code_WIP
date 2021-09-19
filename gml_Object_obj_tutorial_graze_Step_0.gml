@@ -1,6 +1,6 @@
 var _temp_local_var_2;
-xx = 
-yy = 
+xx = gml_Script_camerax()
+yy = gml_Script_cameray()
 if (con == 0)
 {
     growtangle = gml_Script_instance_create((xx + 320), ((yy + 240) - 80), obj_growtangle)
@@ -33,5 +33,8 @@ if (con == 1)
         timer = 0
     }
 }
-var _temp_local_var_2 = puzboy
-fade = 1
+if (!gml_Script_d_ex())
+{
+    var _temp_local_var_2 = puzboy
+    fade = 1
+}

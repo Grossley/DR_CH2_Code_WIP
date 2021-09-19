@@ -2,7 +2,7 @@ if (global.interact == 0)
 {
     global.specialbattle = 0
     global.flag[9] = 1
-    global.batmusic[0] = "battle.ogg"
+    global.batmusic[0] = gml_Script_snd_init_ch1("battle.ogg")
     alarm[5] = -300
     vspeed = 0
     global.interact = 1

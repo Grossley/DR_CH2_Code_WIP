@@ -1,1 +1,1 @@
-// WARNING: Popz'd an empty stack.
+window_center()

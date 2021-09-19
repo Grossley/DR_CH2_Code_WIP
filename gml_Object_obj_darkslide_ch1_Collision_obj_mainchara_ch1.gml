@@ -9,8 +9,8 @@ if (cancollide == true)
         if (obj_mainchara_ch1.y < y)
         {
             abovey = 1
-            381
-            slide_noise = 484
+            gml_Script_snd_play_ch1(381)
+            slide_noise = gml_Script_snd_loop_ch1(484)
             with (obj_mainchara_ch1)
             {
                 fun = true

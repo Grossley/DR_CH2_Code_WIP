@@ -4,7 +4,7 @@ if (myinteract == 3)
 }
 if (myinteract == 3 && con == 0)
 {
-    if (mydialoguer == 0)
+    if (instance_exists(mydialoguer) == 0)
     {
         sprite_index = spr_hammerguy_ch1
         image_speed = 0.1
@@ -18,20 +18,23 @@ if (con >= 5)
 {
     if (con == 10 || con == 30 || con == 50)
     {
-        global.currentsong[1]
-        sprite_index = spr_hammerguy_powerup_ch1
-        image_index = 0
-        image_speed = 0.5
-        381
-        con += 1
-        alarm[4] = 30
-        charcycle = 0
-        charamt = 0
-        if (global.char[1] > 0)
-            charamt = 1
-        if (global.char[2] > 0)
-            charamt = 2
-        charcycle = charamt
+        if (!gml_Script_d_ex_ch1())
+        {
+            gml_Script_snd_pause_ch1(global.currentsong[1])
+            sprite_index = spr_hammerguy_powerup_ch1
+            image_index = 0
+            image_speed = 0.5
+            gml_Script_snd_play_ch1(381)
+            con += 1
+            alarm[4] = 30
+            charcycle = 0
+            charamt = 0
+            if (global.char[1] > 0)
+                charamt = 1
+            if (global.char[2] > 0)
+                charamt = 2
+            charcycle = charamt
+        }
     }
     if (con == 12 || con == 32 || con == 52)
     {
@@ -42,7 +45,10 @@ if (con >= 5)
         con += 1
     }
     if (con == 15)
+    {
         var _temp_local_var_4 = char
+        instance_destroy()
+    }
     if (con == 13)
     {
         chartype = global.char[charcycle]
@@ -50,7 +56,7 @@ if (con >= 5)
         {
             with (obj_mainchara_ch1)
                 visible = false
-            char = gml_Script_scr_dark_marker_ch1(390, 125, 4194)
+            char = gml_Script_scr_dark_marker_ch1(390, 125, 4195)
             var _temp_local_var_7 = char
             depth = 400000
         }
@@ -104,7 +110,7 @@ if (con >= 5)
     }
     if (con == 33)
     {
-        char = gml_Script_scr_dark_marker_ch1(385, 160, 3699)
+        char = gml_Script_scr_dark_marker_ch1(385, 160, 3700)
         var _temp_local_var_14 = char
         depth = 400000
     }
@@ -127,7 +133,7 @@ if (con >= 5)
     }
     if (con == 53)
     {
-        char = gml_Script_scr_dark_marker_ch1(390, 170, 3700)
+        char = gml_Script_scr_dark_marker_ch1(390, 170, 3701)
         var _temp_local_var_16 = char
         depth = 400000
     }

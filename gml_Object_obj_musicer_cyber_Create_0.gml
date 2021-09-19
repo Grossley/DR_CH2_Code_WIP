@@ -7,7 +7,7 @@ if (global.plot >= 55)
             door = gml_Script_instance_create(x, y, obj_doorA)
             door.image_yscale = image_xscale
             door.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
 }
@@ -20,12 +20,12 @@ if (global.plot >= 60)
             door = gml_Script_instance_create(x, y, obj_doorA)
             door.image_yscale = image_xscale
             door.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
 }
-if (!global.currentsong[1])
+if (!gml_Script_snd_is_playing(global.currentsong[1]))
 {
-    global.currentsong[0] = "cyber.ogg"
+    global.currentsong[0] = gml_Script_snd_init("cyber.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 1)
 }

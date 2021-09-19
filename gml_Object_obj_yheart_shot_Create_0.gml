@@ -6,7 +6,7 @@ damage = 1
 sucked = 0
 trail = 0
 trail_timer = 0
-if (694 && obj_spamton_neo_enemy.upgrade > 0)
+if (instance_exists(obj_spamton_neo_enemy) && obj_spamton_neo_enemy.upgrade > 0)
 {
     big = 1
     sprite_index = spr_yheart_bigshot
@@ -17,6 +17,6 @@ if (694 && obj_spamton_neo_enemy.upgrade > 0)
     image_yscale = 2
     image_index = 0
     damage = 4
-    if (global.chapter == 2 && 694)
+    if (global.chapter == 2 && instance_exists(obj_spamton_neo_enemy))
         obj_spamton_neo_enemy.bigshotused = 1
 }

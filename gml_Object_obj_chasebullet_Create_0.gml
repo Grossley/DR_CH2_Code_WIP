@@ -1,7 +1,7 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 active = false
 image_alpha = 0
-if 628
+if instance_exists(obj_heart)
     futuredir = point_direction(x, y, (obj_heart.x + 8), (obj_heart.y + 8))
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

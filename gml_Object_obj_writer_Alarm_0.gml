@@ -4,7 +4,7 @@ else
 {
     sound_timer--
     if (first_alarm == 1 && pos >= 2 && sound_timer <= 0)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_textsound()
 }
 if (pos <= length)
     alarm[0] = rate

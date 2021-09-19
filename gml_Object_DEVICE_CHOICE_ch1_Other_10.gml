@@ -1,2 +1,2 @@
 TYPE = 3
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_84_name_input_setup_ch1()

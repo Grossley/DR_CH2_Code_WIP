@@ -1,5 +1,5 @@
-// WARNING: Popz'd an empty stack.
-if (2 && (!573))
+gml_Script_scr_enemy_object_init()
+if (gml_Script_scr_sideb_get_phase() < 2 && (!instance_exists(obj_berdlyplug_enemy)))
     gml_Script_instance_create((x + 42), (y - 84), obj_berdlyplug_enemy)
 with (obj_berdlyplug_enemy)
     depth = (obj_queen_enemy.depth + 1)

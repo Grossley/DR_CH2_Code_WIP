@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 draw_sprite_ext(spr_darkbulb_icon_back, 0, (x - 1), (y - 45), 2, 2, 0, c_white, 1)
-1
+gpu_set_blendmode(bm_add)
 for (i = 0; i <= active; i++)
     draw_sprite_ext(puzzle_icon, 0, (x - 1), (y - 45), 2, 2, 0, icon_color, (1 + (i * 0.2)))
 var _xx = (320 + (((x + 20) - 320) * 1.25))
@@ -19,11 +19,11 @@ var glowBrightness = (myPiece.active ? gml_Script_scr_wave(0, 0.2, 1, 0) : obj_s
 draw_sprite_ext(spr_darkbulb_spotlight, 3, _xx, 26, 1, 1, _spotlightRotation, _spotlight_color, 1)
 if (glowBrightness > 0)
     draw_sprite_ext(spr_darkbulb_spotlight, 3, _xx, 26, 1, 1, _spotlightRotation, c_white, glowBrightness)
-0
+gpu_set_blendmode(bm_normal)
 draw_sprite_ext(spr_darkbulb_spotlight, 0, _xx, 26, 1, 1, _spotlightRotation, c_white, 1)
-1
+gpu_set_blendmode(bm_add)
 draw_sprite_ext(spr_darkbulb_spotlight, 1, _xx, 26, 1, 1, _spotlightRotation, _spotlight_color, 1)
 if (glowBrightness > 0)
     draw_sprite_ext(spr_darkbulb_spotlight, 1, _xx, 26, 1, 1, _spotlightRotation, c_white, glowBrightness)
-0
+gpu_set_blendmode(bm_normal)
 draw_sprite_ext(spr_darkbulb_spotlight, 2, _xx, 26, 1, 1, 0, c_white, 1)

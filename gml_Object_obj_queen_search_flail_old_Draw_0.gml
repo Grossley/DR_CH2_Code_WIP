@@ -5,7 +5,7 @@ if (loading > 0)
         image_index = 0
     else if ((loading % 3) == 0)
         image_index++
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     return;
 }
 if (broken == 0)
@@ -17,13 +17,13 @@ if (broken == 0)
         draw_sprite(sprite_index, 1, xx, yy)
     }
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (bufferstate == 0)
 {
-    var _af = obj_buffer_afterimage
+    var _af = gml_Script_scr_custom_afterimage(545)
     _af.image_alpha = 0.5
 }
-16776960
-("swing time = " + string(timer))
+draw_set_color(c_aqua)
+gml_Script_scr_debug_print_persistent(("swing time = " + string(timer)))
 if (bufferstate == 1)
     draw_sprite(spr_queen_buffering, (obj_queen_buffercontroller.bufferbar % 8), x, y)

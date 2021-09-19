@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 recruitcount = 5
 talkmax = 90
 image_speed = 0.16666666666666666

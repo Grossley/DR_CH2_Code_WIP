@@ -13,17 +13,17 @@ if (state == 1)
         battlemode = 1
         drawbattlemode = 0
     }
-    var _camXto = 
-    var _camYto = 
+    var _camXto = gml_Script_camerax()
+    var _camYto = gml_Script_cameray()
     if centerX
     {
-        var _camW = 
+        var _camW = gml_Script_camerawidth()
         _camXto = clamp((x - (_camW / 2)), 0, (room_width - _camW))
     }
     if centerY
     {
         _camYto = (y - camTargetHeight)
-        _camYto
+        show_debug_message(_camYto)
     }
     var _panMax = 8
     if rideToRide
@@ -34,18 +34,18 @@ if (state == 1)
     {
     }
     partySize = 1
-    if global.cinstance[0]
+    if gml_Script_i_ex(global.cinstance[0])
         partySize++
-    if global.cinstance[1]
+    if gml_Script_i_ex(global.cinstance[1])
         partySize++
-    159
+    gml_Script_snd_play(159)
     var i = 0
     while (i < partySize)
     {
         var _character = (i == 0 ? 80 : global.cinstance[(i - 1)])
         var _cup = cup_char[i]
         var _jumpInDuration = jumpInDuration
-        var _rollSprites = [544, 544, 542, 3337]
+        var _rollSprites = [544, 544, 542, 3338]
         var _rideToRide = rideToRide
         _rideToRide = 1
         var _temp_local_var_4 = _character

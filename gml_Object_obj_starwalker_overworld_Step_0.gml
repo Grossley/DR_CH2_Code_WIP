@@ -1,5 +1,5 @@
 var _temp_local_var_1, _temp_local_var_4, _temp_local_var_9, _temp_local_var_12;
-if 80
+if instance_exists(obj_mainchara)
 {
     if (loc_check == 0)
     {
@@ -24,7 +24,7 @@ if 80
         xcheck_average = 0
     ycheck_average = ((((obj_mainchara.y - char_ycheck[1]) + (obj_mainchara.y - char_ycheck[2])) + (obj_mainchara.y - char_ycheck[3])) / 3)
 }
-if (8 && beatcon == 89898)
+if (keyboard_check_pressed(vk_backspace) && beatcon == 89898)
 {
     visible = false
     beatcon = 1

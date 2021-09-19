@@ -1,5 +1,5 @@
-if (!source)
-    // WARNING: Popz'd an empty stack.
+if (!gml_Script_i_ex(source))
+    instance_destroy()
 else
 {
     x = source.x

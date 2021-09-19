@@ -2,7 +2,7 @@ followindex++
 if (followindex > followindexmax)
     followindex = 0
 var timer2 = followindexmax
-if 758
+if instance_exists(obj_mauswheel_enemy)
     timer2 = 35
 timer++
 if (timer <= timer2)

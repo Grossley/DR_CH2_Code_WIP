@@ -1,4 +1,4 @@
-185
+gml_Script_snd_play(185)
 hspeed = -24
 mode = 0
 con = 0

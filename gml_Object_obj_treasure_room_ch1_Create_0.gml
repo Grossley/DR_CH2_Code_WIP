@@ -63,9 +63,9 @@ if (room == room_forest_area4_ch1)
 if (room == room_cc_prison_prejoker_ch1)
 {
     if (global.flag[112] == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (global.flag[242] == 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     else
     {
         if (global.flag[242] == 1)
@@ -109,4 +109,4 @@ if (global.darkzone == true)
 }
 if (global.flag[itemflag] == 1)
     image_index = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()

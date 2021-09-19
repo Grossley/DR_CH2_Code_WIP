@@ -1,4 +1,4 @@
-if 628
+if instance_exists(obj_heart)
 {
     sizexoff = 0
     sizeyoff = 0
@@ -6,4 +6,4 @@ if 628
     y = ((obj_heart.y + 10) + sizeyoff)
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

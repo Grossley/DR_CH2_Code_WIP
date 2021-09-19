@@ -10,17 +10,17 @@ if (global.monster[myself] == true)
         ralsei_lecture = 99
     if (global.mnfight == 1 && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!1522)
+        gml_Script_scr_randomtarget_ch1()
+        if (!instance_exists(obj_darkener_ch1))
             gml_Script_instance_create_ch1(0, 0, 1522)
         milkmax = 1000
         if (milk_counter > 0)
             milkmax = 600
         if (global.monsterhp[myself] > milkmax)
         {
-            if ((!1536) && (!1630))
-                // WARNING: Popz'd an empty stack.
-            if (!1628)
+            if ((!instance_exists(obj_moveheart_ch1)) && (!instance_exists(obj_heart_ch1)))
+                gml_Script_scr_moveheart_ch1()
+            if (!instance_exists(obj_growtangle_ch1))
                 gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
         }
         global.mnfight = 2
@@ -48,7 +48,7 @@ if (global.monster[myself] == true)
             }
             else
             {
-                if (!1583)
+                if (!instance_exists(obj_checkers_leap_ch1))
                 {
                     if (attacktype == 0)
                         rr = 0
@@ -74,14 +74,14 @@ if (global.monster[myself] == true)
             attacked = true
             global.typer = 6
             global.fc = 0
-            rr = 0
-            global.battlemsg[0] = "obj_checkers_enemy_slash_Step_0_gml_77_0"
+            rr = choose(0)
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_77_0")
             if (global.monsterstatus[myself] == true)
-                global.battlemsg[0] = "obj_checkers_enemy_slash_Step_0_gml_79_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_79_0")
             if (global.monsterhp[myself] <= (global.monstermaxhp[myself] / 3))
-                global.battlemsg[0] = "obj_checkers_enemy_slash_Step_0_gml_80_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_80_0")
             if (crown > 0)
-                global.battlemsg[0] = gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_82_0"), crown)
+                global.battlemsg[0] = gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_82_0"), string(crown))
         }
         else
             global.turntimer = 120
@@ -109,21 +109,21 @@ if (scon == 1)
     else
     {
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
-        global.msg[0] = "obj_checkers_enemy_slash_Step_0_gml_119_0"
-        // WARNING: Popz'd an empty stack.
+            instance_destroy()
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_119_0")
+        gml_Script_scr_battletext_default_ch1()
         scon = 1.5
     }
 }
-if (scon == 1.5 && (!1327))
+if (scon == 1.5 && (!instance_exists(obj_writer_ch1)))
 {
-    413
+    gml_Script_snd_play_ch1(413)
     with (obj_writer_ch1)
-        // WARNING: Popz'd an empty stack.
-    global.msg[0] = "obj_checkers_enemy_slash_Step_0_gml_129_0"
+        instance_destroy()
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_129_0")
     global.turntimer = 999
-    // WARNING: Popz'd an empty stack.
-    milk = gml_Script_scr_dark_marker_ch1((x - 100), (y + 60), 3901)
+    gml_Script_scr_battletext_default_ch1()
+    milk = gml_Script_scr_dark_marker_ch1((x - 100), (y + 60), 3902)
     var _temp_local_var_5 = milk
     image_speed = 0
     image_xscale = 4
@@ -235,7 +235,7 @@ if (global.myfight == 3)
             visible = false
         global.faceaction[0] = 0
         global.charaction[0] = 0
-        bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3810)
+        bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3811)
         var _temp_local_var_13 = bowkris
         gml_Script_scr_oflash_ch1()
         a = gml_Script_scr_afterimage_ch1()
@@ -245,7 +245,7 @@ if (global.myfight == 3)
     if (actcon == 20 && (!instance_exists(obj_writer_ch1)))
     {
         visible = false
-        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, 3913)
+        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, 3914)
         var _temp_local_var_15 = bowcheck
         image_speed = 0.334
     }
@@ -268,7 +268,7 @@ if (global.myfight == 3)
             global.charaction[0] = 0
             global.faceaction[1] = 0
             global.charaction[1] = 0
-            bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3810)
+            bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3811)
             var _temp_local_var_22 = bowkris
             gml_Script_scr_oflash_ch1()
             a = gml_Script_scr_afterimage_ch1()
@@ -279,7 +279,7 @@ if (global.myfight == 3)
     if (actcon == 30 && (!instance_exists(obj_writer_ch1)))
     {
         visible = false
-        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, 3913)
+        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, 3914)
         var _temp_local_var_25 = bowcheck
         image_speed = 0.5
     }
@@ -377,7 +377,7 @@ if (global.myfight == 3)
         with (obj_heroralsei_ch1)
             visible = false
         thrown = 1
-        trsus = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 3844)
+        trsus = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 3845)
         gml_Script_snd_play_ch1(377)
     }
     if (actcon == 12)

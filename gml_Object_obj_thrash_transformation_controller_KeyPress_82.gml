@@ -1,1 +1,1 @@
-// WARNING: Popz'd an empty stack.
+room_restart()

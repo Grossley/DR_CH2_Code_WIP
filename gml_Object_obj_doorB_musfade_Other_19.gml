@@ -5,6 +5,6 @@ if (touched == 0)
 {
     alarm[3] = 14
     alarm[2] = 15
-    8
+    event_user(8)
     touched = 1
 }

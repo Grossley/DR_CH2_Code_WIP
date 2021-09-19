@@ -1,4 +1,4 @@
 i = 0
-if command_actor[0]
-    // WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+if gml_Script_i_ex(command_actor[0])
+    gml_Script_scr_cutscene_commands()
+instance_destroy()

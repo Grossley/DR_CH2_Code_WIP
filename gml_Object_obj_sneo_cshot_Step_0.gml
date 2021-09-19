@@ -8,7 +8,7 @@ if (!init)
     {
         opening = 0
         openingLerp = 0
-        lastOpening = (3 * 90)
+        lastOpening = (irandom(3) * 90)
         if (difficulty == 1)
             lastOpening += 45
         target_speed *= 1
@@ -16,7 +16,7 @@ if (!init)
     init = 1
 }
 if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if hitfreeze
 {
     hitfreeze = 0

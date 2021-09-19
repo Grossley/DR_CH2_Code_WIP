@@ -11,14 +11,17 @@ if (throwcon == 1)
     }
     else
     {
-        if (angle < 42)
+        if (gml_Script_up_h() && angle < 42)
             angle += 2
-        if (angle > -2)
+        if (gml_Script_down_h() && angle > -2)
             angle -= 2
     }
-    activatethrow = true
-    with (obj_writer)
-        // WARNING: Popz'd an empty stack.
+    if gml_Script_button3_p()
+    {
+        activatethrow = true
+        with (obj_writer)
+            instance_destroy()
+    }
     if (activatethrow == true)
     {
         throwready = 1
@@ -28,7 +31,7 @@ if (throwcon == 1)
         sprite_index = spr_susieb_attack_unarmed
         angledraw = 0
         throwcon = 2
-        157
+        gml_Script_snd_play(157)
         if (throwXcon != 3)
         {
             kris = gml_Script_instance_create(kx, ky, obj_queen_kristhrown)
@@ -60,26 +63,26 @@ if (throwcon == 2)
     if (image_index >= 5)
         image_speed = 0
 }
-if (throwXcon == 3 && (!566))
+if (throwXcon == 3 && (!instance_exists(obj_queen_throwtarget)))
 {
     with (obj_herokris)
         visible = true
     with (obj_herosusie)
         visible = true
     with (obj_queen_throwkris)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_queen_kristhrown)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_queen_ralseithrown)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_queen_throwtarget)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     throwXcon = 5
 }
-if (throwXcon == 5 && (!62))
+if (throwXcon == 5 && (!instance_exists(obj_writer)))
 {
     obj_queen_enemy.actcon = 35
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (angledraw == 1)
 {

@@ -13,7 +13,7 @@ pacecon2 = 0
 pacetimer = 0
 targetx = 0
 targety = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 radius = 200
 moveradius = 160
 pacespeed = 1
@@ -35,7 +35,7 @@ if (room == room_field2_ch1)
 {
     myencounter = 5
     if (global.flag[501] > 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_field_puzzle1_ch1)
 {
@@ -59,7 +59,7 @@ if (room == room_field_secret1_ch1)
     touchsprite = spr_jigsawry_idle_ch1
     myencounter = 23
     if (global.plot < 130)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_forest_area0_ch1)
 {

@@ -2,10 +2,10 @@ if (becomeflash == false)
     flash = false
 becomeflash = false
 fsiner++
-if (494 && (!485) && state != 3)
+if (instance_exists(o_coaster_berdly) && (!instance_exists(obj_berdlyb_spearblaster)) && state != 3)
     return;
 if (state == 3)
 {
-    0.5
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemyhurt_tired_after_damage(0.5)
+    gml_Script_scr_enemy_drawhurt_generic()
 }

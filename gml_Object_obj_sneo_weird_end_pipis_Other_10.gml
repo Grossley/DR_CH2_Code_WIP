@@ -1,4 +1,4 @@
-var initangle = 80
+var initangle = random(80)
 var initspeed = 4
 var bulcount = 9
 repeat (2)
@@ -31,4 +31,4 @@ repeat (2)
     initspeed += 4
     initangle = random(50)
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

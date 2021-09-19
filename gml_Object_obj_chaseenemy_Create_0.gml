@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 test_release_bullet = 0
 test_release_bullet_timer = 0
 init = 0
@@ -15,7 +15,7 @@ pacecon2 = 0
 pacetimer = 0
 targetx = 0
 targety = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 frozen = false
 hadfrozen = false
 remspeed = 0
@@ -144,8 +144,8 @@ if (room == room_dw_cyber_maze_virokun)
         distance = 120
         spd = 2
         rotation = 180
-        var _c = rotation
-        var _s = rotation
+        var _c = dcos(rotation)
+        var _s = dsin(rotation)
         x = ((xx + (_c * distance)) + (_s * distance))
         y = ((yy + ((-_s) * distance)) + (_c * distance))
     }
@@ -219,7 +219,7 @@ if (room == room_dw_city_big_1)
 }
 if (room == room_dw_city_big_2)
 {
-    if 4
+    if gml_Script_scr_havechar(4)
     {
         if (y < 300)
         {
@@ -255,7 +255,7 @@ if (room == room_dw_city_big_2)
         }
     }
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_city_big_3)
 {
@@ -319,7 +319,7 @@ if (room == room_dw_mansion_bridges)
     distance = 50
     spd = 4
     if (global.flag[389] == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_mansion_east_4f_b)
 {
@@ -421,7 +421,7 @@ if (room == room_dw_mansion_east_2f_d)
     sprite_index = spr_npc_tasquemanager
     touchsprite = spr_npc_tasquemanager_flipped
     if (global.flag[encounterflag] != 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_mansion_east_3f_projection)
 {
@@ -588,7 +588,7 @@ if (room == room_dw_mansion_east_2f_transformed_new)
 {
     encounterflag = 543
     if (global.flag[encounterflag] != 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_mansion_dining3)
     encounterflag = 557

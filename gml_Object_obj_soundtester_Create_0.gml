@@ -1,9 +1,9 @@
 firstsound = 19
 lastsound = 296
 soundtotal = (lastsound - firstsound)
-for (var i = 0; i < soundtotal; i++)
+for (var i = snd_mercyadd; i < soundtotal; i++)
 {
-    soundName[i] = i
+    soundName[i] = audio_get_name(i)
     soundNo[i] = (i + firstsound)
 }
 current = 1

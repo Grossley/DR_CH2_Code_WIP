@@ -19,7 +19,7 @@ if (con == 1)
     gml_Script_scr_smallface(0, "ralsei", 1, "mid", "bottom", gml_Script_stringsetloc("Aww, cute!", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_24_0"))
     gml_Script_scr_smallface(1, "susie", 17, "right", "bottom", gml_Script_stringsetloc("WE'RE DONE#TALKING TO YOU!", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_25_0"))
     global.fe = 5
-    "king"
+    gml_Script_scr_speaker("king")
     gml_Script_msgsetloc(0, "\\E5* .../", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_28_0")
     gml_Script_msgnextloc("\\M1* By the way.../", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_29_0")
     gml_Script_msgnextloc("\\E6\\E3* Is my son..^1. happy...?/", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_30_0")
@@ -32,13 +32,16 @@ if (con == 1)
     gml_Script_msgnextloc("\\E0* Bounce./", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_37_0")
     gml_Script_msgnextloc("* My son..^1. is.../", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_38_0")
     gml_Script_msgnextloc("\\E8\\M0* A bouncy little pumpkin.\\f0\\f1 /%", "obj_ch2_room_dungeon_2f_slash_Step_0_gml_39_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
 }
 if (con == 3)
 {
-    with (obj_caterpillarchara)
-        fun = false
-    global.interact = 0
-    con = -1
-    // WARNING: Popz'd an empty stack.
+    if (!gml_Script_d_ex())
+    {
+        with (obj_caterpillarchara)
+            fun = false
+        global.interact = 0
+        con = -1
+        instance_destroy()
+    }
 }

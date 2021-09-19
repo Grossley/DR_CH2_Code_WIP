@@ -5,7 +5,7 @@ if (y <= (gml_Script___view_get(1, 0) - 45))
 {
     image_angle = 0
     y += 480
-    dog = (timer >= 900 && (!dog) && 1 >= 0.99)
+    dog = (timer >= 900 && (!dog) && random(1) >= 0.99)
     if dog
     {
         sprite_index = spr_dog_walk

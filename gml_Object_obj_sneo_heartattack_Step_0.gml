@@ -75,29 +75,29 @@ if (con == 2)
         }
         else
         {
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
             with (obj_sneo_heartattack_intro)
             {
                 timer = 0
                 con = 1
             }
             with (obj_sneo_biglaser)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             with (obj_rouxls_power_up_orb)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
 }
 if (con == 3)
 {
     with (obj_sneo_guymaker)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_sneo_lilguy)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_sneo_heatattack_bullet)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_spamtonshot)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     defeatedtimer++
     image_index = 0
     if (defeatedtimer == 1)
@@ -120,7 +120,7 @@ if (con == 3)
         image_alpha -= 0.1
         if (image_alpha < 0)
         {
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
             with (obj_sneo_heartattack_intro)
             {
                 timer = 0
@@ -177,7 +177,7 @@ if (shootcon == 1)
         shootcon = 0
         con = 2
         shoottimer = 0
-        rand_angle = 40
+        rand_angle = random(40)
     }
 }
 if (heart_health < 1)

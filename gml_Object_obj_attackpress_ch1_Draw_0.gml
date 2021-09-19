@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_2, _temp_local_var_8, _temp_local_var_19;
 maxdelaytimer += 1
 if (spelluse == 1)
 {
-    if 0
+    if (gml_Script_scr_monsterpop_ch1() > 0)
     {
         for (xyz = 0; xyz < 3; xyz += 1)
         {
@@ -28,7 +28,7 @@ if (active == true)
 {
     for (i = 0; i < 3; i += 1)
     {
-        bcolor
+        draw_set_color(bcolor)
         if (i == 1 || i == 2)
             draw_rectangle(x, (y + (38 * i)), (x + 300), ((y + (38 * i)) + 2), false)
         if (global.char[i] != 0 && global.charauto[global.char[i]] == 0 && havechar[i] == true)
@@ -37,21 +37,21 @@ if (active == true)
             fullbox = 0
             if (j == 1)
             {
-                16711680
+                draw_set_color(c_blue)
                 if (pressbuffer[1] > 0)
-                    merge_color(c_blue, c_white, (pressbuffer[1] / 5))
+                    draw_set_color(merge_color(c_blue, c_white, (pressbuffer[1] / 5)))
             }
             if (j == 2)
             {
-                8388736
+                draw_set_color(c_purple)
                 if (pressbuffer[2] > 0)
-                    merge_color(c_purple, c_white, (pressbuffer[2] / 5))
+                    draw_set_color(merge_color(c_purple, c_white, (pressbuffer[2] / 5)))
             }
             if (j == 3)
             {
-                32768
+                draw_set_color(c_green)
                 if (pressbuffer[3] > 0)
-                    merge_color(c_green, c_white, (pressbuffer[3] / 5))
+                    draw_set_color(merge_color(c_green, c_white, (pressbuffer[3] / 5)))
             }
             draw_rectangle((x + 78), (y + (38 * i)), ((x + 80) + (15 * boltspeed)), ((y + (38 * i)) + 36), true)
             draw_rectangle((x + 79), ((y + (38 * i)) + 1), (((x + 80) + (15 * boltspeed)) - 1), ((y + (38 * i)) + 35), true)
@@ -95,23 +95,23 @@ if (active == true)
             {
                 attacked[i] = true
                 target = i
-                1
+                event_user(1)
             }
         }
     }
-    if 0
+    if (gml_Script_scr_monsterpop_ch1() > 0)
     {
         if (global.flag[13] == 1)
         {
-            if (havechar[0] == true)
-                0
-            if (havechar[1] == true)
-                1
-            if (havechar[2] == true)
-                2
+            if (gml_Script_button1_p_ch1() && havechar[0] == true)
+                gml_Script_scr_boltcheck_ch1(0)
+            if (gml_Script_button2_p_ch1() && havechar[1] == true)
+                gml_Script_scr_boltcheck_ch1(1)
+            if (gml_Script_button3_p_ch1() && havechar[2] == true)
+                gml_Script_scr_boltcheck_ch1(2)
         }
-        else
-            0
+        else if gml_Script_button1_p_ch1()
+            gml_Script_scr_boltcheck_onebutton_ch1(0)
     }
     else
     {
@@ -135,12 +135,12 @@ if (active == true)
                 goahead = true
         }
     }
-    if 0
+    if (gml_Script_scr_monsterpop_ch1() == 0)
         goahead = true
     if (goahead == true)
     {
         posttimer += 1
-        if (posttimer > (timermax - 35) ? (haveauto == true ? (autoed == false ? 0 : 0) : 0) : 0)
+        if (posttimer > (timermax - 35) && haveauto == true && autoed == false && gml_Script_scr_monsterpop_ch1() > 0)
         {
             global.charinstance[sus].points = 160
             if (global.automiss[global.chartarget[sus]] == true)
@@ -161,7 +161,7 @@ if (active == true)
                 itemed = false
             }
             techwon = false
-            if (global.charinstance[sus] == 0)
+            if (gml_Script_scr_monsterpop_ch1() == 0)
                 techwon = true
             if (techwon == false)
             {
@@ -169,20 +169,20 @@ if (active == true)
                 global.myfight = -1
             }
             else
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_wincombat_ch1()
         }
     }
     if (fade == 1 || fakefade == 1)
     {
         fadeamt += 0.08
-        0
-        fadeamt
+        draw_set_color(c_black)
+        draw_set_alpha(fadeamt)
         draw_rectangle((x - 1), (y - 1), (x + 640), (y + 300), false)
-        1
+        draw_set_alpha(1)
         if (fade == 1)
         {
             if (fadeamt > 1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
 }

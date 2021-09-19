@@ -1,5 +1,5 @@
-// WARNING: Popz'd an empty stack.
-if (speed > 1 ? ((y - 40) ? 1 : (y + 40)) : 0)
+event_inherited()
+if (speed > 1 && (y < (gml_Script_gt_miny() - 40) || y > (gml_Script_gt_maxy() + 40)))
     image_alpha -= 0.1
 if (image_alpha <= 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -1,23 +1,24 @@
-var _temp_local_var_2;
+var _temp_local_var_1, _temp_local_var_2;
 if (fightcon == 1)
 {
     if (global.flag[9] == 1)
-        global.currentsong[1]
+        gml_Script_snd_pause_ch1(global.currentsong[1])
     counttimer += 1
     if (counttimer < 10)
     {
         i = 0
         while (i < (count + 1))
         {
-            af = c[i]
+            var _temp_local_var_1 = c[i]
+            af = gml_Script_scr_afterimage_ch1()
             af.image_alpha = 0.5
         }
     }
     if (counttimer >= 10)
     {
-        wp = 378
+        wp = gml_Script_snd_play_ch1(378)
         gml_Script_snd_volume_ch1(wp, 0.7, 0)
-        wp2 = 406
+        wp2 = gml_Script_snd_play_ch1(406)
         gml_Script_snd_volume_ch1(wp2, 0.8, 0)
         for (i = 0; i < (count + 1); i += 1)
         {
@@ -48,8 +49,11 @@ if (fightcon == 2)
         fightcon = 3
         i = 0
         while (i < (count + 1))
+        {
             var _temp_local_var_2 = c[i]
+            instance_destroy()
+        }
         gml_Script_instance_create_ch1(0, 0, 1513)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

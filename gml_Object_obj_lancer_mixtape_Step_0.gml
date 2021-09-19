@@ -4,7 +4,7 @@ if (global.menuno != 1)
 if (timer <= 0)
 {
     timer = 60
-    global.currentsong[1]
-    1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_resume(global.currentsong[1])
+    gml_Script_snd_stop(1)
+    instance_destroy()
 }

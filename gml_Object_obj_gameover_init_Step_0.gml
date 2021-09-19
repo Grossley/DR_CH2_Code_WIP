@@ -1,20 +1,23 @@
 var _temp_local_var_1, _temp_local_var_2;
 timer += 1
 if (timer == 1)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
 if (timer == 30)
+{
     var _temp_local_var_1 = bg
+    instance_destroy()
+}
 if (timer == 31)
-    global.screenshot
+    sprite_delete(global.screenshot)
 if (timer == 50)
 {
-    164
+    gml_Script_snd_play(164)
     sprite_index = spr_heartbreak
     x -= 2
 }
 if (timer == 90)
 {
-    165
+    gml_Script_snd_play(165)
     visible = false
     sh[0] = gml_Script_instance_create((x - 2), y, obj_marker)
     sh[1] = gml_Script_instance_create(x, (y + 3), obj_marker)
@@ -40,9 +43,10 @@ if (timer == 140)
     gml_Script_instance_create(0, 0, obj_fadeout)
 if (timer >= 80 && timer < 150)
 {
-    Z_COUNT += 1
+    if gml_Script_button1_p()
+        Z_COUNT += 1
     if (Z_COUNT >= 4)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_tempload()
 }
 if (timer == 150)
-    241
+    room_goto(PLACE_FAILURE)

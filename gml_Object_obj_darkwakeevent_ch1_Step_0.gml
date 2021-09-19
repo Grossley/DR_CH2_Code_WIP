@@ -11,10 +11,14 @@ if (con == 1)
         canclick = true
     if (canclick == true)
     {
-        waketimer += 2
-        waketimer += 2
-        waketimer += 2
-        waketimer += 2
+        if gml_Script_left_p_ch1()
+            waketimer += 2
+        if gml_Script_right_p_ch1()
+            waketimer += 2
+        if gml_Script_down_p_ch1()
+            waketimer += 2
+        if gml_Script_up_p_ch1()
+            waketimer += 2
     }
     if (waketimer == 60 || waketimer == 62)
     {

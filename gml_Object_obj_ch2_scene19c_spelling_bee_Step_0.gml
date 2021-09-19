@@ -11,7 +11,7 @@ if (sb_con == 1)
         }
         else
             sb_word_current = gml_Script_stringsetloc("DECEMBER", "obj_ch2_scene19c_spelling_bee_slash_Step_0_gml_21_0")
-        wb_word_length = (sb_word_current + 1)
+        wb_word_length = (string_length(sb_word_current) + 1)
         sb_noelle = ""
         sb_berdly = ""
         noelle_index = 0
@@ -50,7 +50,7 @@ if (sb_con == 1)
         {
             berdly_finish = 0
             sb_con = 99
-            if 959
+            if gml_Script_i_ex(959)
             {
                 with (obj_ch2_scene19c)
                     con = 25
@@ -68,7 +68,7 @@ if berdly_smart
             berdly_word_current = sb_word[random_range(0, 5)]
         berdly_word_count++
         var x_pos = ((berdly_word_count % 2) == 1 ? 180 : 400)
-        var word = (((obj_ch2_scene19c_berdly_smart_word + 150) + choose(20, 60, 80, 100)) + x_pos)
+        var word = gml_Script_instance_create((gml_Script_camerax() + x_pos), ((gml_Script_cameray() + 150) + choose(20, 60, 80, 100)), obj_ch2_scene19c_berdly_smart_word)
         word.berdly_word = berdly_word_current
         alarm[3] = 15
     }

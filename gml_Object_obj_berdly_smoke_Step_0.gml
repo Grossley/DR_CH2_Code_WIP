@@ -6,6 +6,6 @@ if (image_alpha <= 0.8)
     h_speed = gml_Script_lerp_ease_in(0, -8, _ilerp, 1)
 }
 if (image_alpha < 0)
-    // WARNING: Popz'd an empty stack.
-if ((!494) && obj_ch2_scene11a.coaster_berdly && 949)
+    instance_destroy()
+if ((!instance_exists(o_coaster_berdly)) && instance_exists(obj_ch2_scene11a.coaster_berdly) && instance_exists(obj_ch2_scene11a))
     depth = (obj_ch2_scene11a.coaster_berdly.depth + 1)

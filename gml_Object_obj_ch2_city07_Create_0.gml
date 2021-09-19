@@ -7,7 +7,7 @@ berdlygift = 0
 explore = 0
 wrongexit = 0
 havewalker = global.flag[254] == 1
-tentback = gml_Script_scr_dark_marker(1312, -161, 2998)
+tentback = gml_Script_scr_dark_marker(1312, -161, 2999)
 tentback.depth = 100000
 tent = gml_Script_scr_dark_marker(1312, 32, 155)
 tent.depth = 97800
@@ -25,17 +25,17 @@ susie_right = 0
 present_transform = 0
 present_timer = 0
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.plot >= 95)
 {
     if (global.plot < 99)
     {
-        // WARNING: Popz'd an empty stack.
-        if 274
-            274
-        2
-        3
-        4
+        gml_Script_scr_losechar()
+        if instance_exists(obj_caterpillarchara)
+            instance_destroy(obj_caterpillarchara)
+        gml_Script_scr_getchar(2)
+        gml_Script_scr_getchar(3)
+        gml_Script_scr_getchar(4)
         gml_Script_scr_makecaterpillar((obj_mainchara.x + 60), obj_mainchara.y, 2, 0)
         gml_Script_scr_makecaterpillar((obj_mainchara.x + 100), obj_mainchara.y, 4, 1)
         gml_Script_scr_makecaterpillar((obj_mainchara.x + 140), obj_mainchara.y, 3, 2)

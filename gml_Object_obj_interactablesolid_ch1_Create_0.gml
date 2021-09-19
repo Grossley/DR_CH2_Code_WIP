@@ -1,3 +1,3 @@
 myinteract = 0
 image_speed = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()

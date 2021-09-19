@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 image_speed = 0
-image_index = 3
+image_index = irandom(3)
 flashsiner = 0

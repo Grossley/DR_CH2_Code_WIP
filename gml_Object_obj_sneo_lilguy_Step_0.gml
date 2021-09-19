@@ -1,7 +1,7 @@
 if (cutscene == false)
 {
-    if ((x + 1000) ? 1 : ((x - 200) ? 1 : ((y + 600) ? 1 : (y - 200))))
-        // WARNING: Popz'd an empty stack.
+    if (x >= (gml_Script_camerax() + 1000) || x <= (gml_Script_camerax() - 200) || y >= (gml_Script_cameray() + 600) || y <= (gml_Script_cameray() - 200))
+        instance_destroy()
 }
 direction += angle_speed
 if (angleadjust == 1)
@@ -23,5 +23,5 @@ if (bighitbox == 1)
 {
     hitshot = collision_rectangle(x, y, (x + sprite_width), (y + sprite_height), obj_yheart_shot, 1, 0)
     if (hitshot != -4)
-        0
+        event_user(0)
 }

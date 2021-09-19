@@ -1,21 +1,21 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_14, _temp_local_var_16, _temp_local_var_19, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_24, _temp_local_var_27, _temp_local_var_28, _temp_local_var_30, _temp_local_var_31, _temp_local_var_33, _temp_local_var_34, _temp_local_var_36, _temp_local_var_37, _temp_local_var_40, _temp_local_var_41, _temp_local_var_43, _temp_local_var_45, _temp_local_var_46, _temp_local_var_48, _temp_local_var_49, _temp_local_var_51, _temp_local_var_53, _temp_local_var_55, _temp_local_var_56, _temp_local_var_58, _temp_local_var_59, _temp_local_var_61, _temp_local_var_62, _temp_local_var_64, _temp_local_var_65, _temp_local_var_67, _temp_local_var_69, _temp_local_var_72, _temp_local_var_75, _temp_local_var_77, _temp_local_var_78, _temp_local_var_80, _temp_local_var_81, _temp_local_var_83, _temp_local_var_85, _temp_local_var_86, _temp_local_var_90, _temp_local_var_93, _temp_local_var_95, _temp_local_var_97, _temp_local_var_132, _temp_local_var_134, _temp_local_var_135;
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_12, _temp_local_var_13, _temp_local_var_14, _temp_local_var_16, _temp_local_var_18, _temp_local_var_21, _temp_local_var_23, _temp_local_var_24, _temp_local_var_25, _temp_local_var_26, _temp_local_var_29, _temp_local_var_30, _temp_local_var_32, _temp_local_var_33, _temp_local_var_35, _temp_local_var_36, _temp_local_var_38, _temp_local_var_39, _temp_local_var_42, _temp_local_var_43, _temp_local_var_45, _temp_local_var_47, _temp_local_var_48, _temp_local_var_50, _temp_local_var_51, _temp_local_var_53, _temp_local_var_55, _temp_local_var_57, _temp_local_var_58, _temp_local_var_60, _temp_local_var_61, _temp_local_var_63, _temp_local_var_64, _temp_local_var_66, _temp_local_var_67, _temp_local_var_69, _temp_local_var_71, _temp_local_var_74, _temp_local_var_77, _temp_local_var_79, _temp_local_var_80, _temp_local_var_82, _temp_local_var_83, _temp_local_var_85, _temp_local_var_87, _temp_local_var_88, _temp_local_var_92, _temp_local_var_95, _temp_local_var_97, _temp_local_var_99, _temp_local_var_134;
 if (mcon == 3)
 {
-    global.currentsong[0] = "basement.ogg"
-    global.currentsong[1] = global.currentsong[0]
+    global.currentsong[0] = gml_Script_snd_init_ch1("basement.ogg")
+    global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
     mcon = 4
 }
 if (mcon == 2)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all_ch1()
     mcon = 3
 }
 if (mcon == 1)
     mcon = 2
 if (con == 1)
 {
-    diamond = gml_Script_scr_dark_marker_ch1((x + 80), (y - 47), 3984)
-    puzzwall = gml_Script_scr_dark_marker_ch1(1000, 0, 3590)
+    diamond = gml_Script_scr_dark_marker_ch1((x + 80), (y - 47), 3985)
+    puzzwall = gml_Script_scr_dark_marker_ch1(1000, 0, 3591)
     gml_Script___view_set(0, 0, 200)
     global.interact = 1
     image_speed = 0
@@ -24,9 +24,10 @@ if (con == 1)
     with (obj_mainchara_ch1)
         cutscene = true
     global.encounterno = 20
-    global.encounterno
-    s = gml_Script_scr_dark_marker_ch1(500, (gml_Script___view_get(1, 0) - 20), 3549)
+    gml_Script_scr_encountersetup_ch1(global.encounterno)
+    s = gml_Script_scr_dark_marker_ch1(500, (gml_Script___view_get(1, 0) - 20), 3550)
     var _temp_local_var_1 = s
+    gml_Script_scr_depth_ch1()
     vspeed = 5
     image_speed = 0.25
 }
@@ -36,6 +37,7 @@ if (con == 2)
     if (s.y >= (global.heromakey[0] - 4))
     {
         var _temp_local_var_2 = s
+        gml_Script_scr_halt_ch1()
         y = global.heromakey[0]
     }
 }
@@ -45,7 +47,7 @@ if (con == 4)
     global.typer = 30
     global.fe = 0
     global.msc = 310
-    global.msc
+    gml_Script_scr_text_ch1(global.msc)
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 150
 }
@@ -57,29 +59,21 @@ if (con == 150)
         sprite_index = spr_susieu_dark_ch1
     }
 }
-if (con == 150)
-    _temp_local_var_3 = (!s)
-else
-    var _temp_local_var_135 = 0
-if (!s)
+if (con == 150 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_4 = s
+    var _temp_local_var_5 = s
     sprite_index = spr_susiel_dark_unhappy_ch1
 }
-if (con == 151)
-    _temp_local_var_4 = (!s)
-else
-    var _temp_local_var_134 = 0
-if (!s)
+if (con == 151 && (!gml_Script_d_ex_ch1()))
 {
     gml_Script_scr_pan_ch1(-5, 0, 30)
-    var _temp_local_var_5 = s
+    var _temp_local_var_7 = s
     hspeed = -5
     image_speed = 0.25
 }
 if (con == 153)
 {
-    var _temp_local_var_6 = s
+    var _temp_local_var_8 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 155)
@@ -91,7 +85,7 @@ if (con == 155)
 }
 if (con == 160 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_8 = s
+    var _temp_local_var_10 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 162)
@@ -109,7 +103,7 @@ if (con == 163)
     else
     {
         con = 164
-        var _temp_local_var_132 = exc
+        var _temp_local_var_134 = exc
         instance_destroy()
     }
 }
@@ -124,24 +118,24 @@ if (con == 164)
 if (con == 165 && (!gml_Script_d_ex_ch1()))
 {
     gml_Script_scr_pan_ch1(10, 0, 50)
-    var _temp_local_var_10 = s
+    var _temp_local_var_12 = s
     sprite_index = spr_susier_dark_unhappy_ch1
     image_speed = 0.25
     hspeed = 10
 }
 if (con == 167)
 {
-    var _temp_local_var_11 = s
+    var _temp_local_var_13 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 169)
 {
-    var _temp_local_var_12 = s
+    var _temp_local_var_14 = s
     sprite_index = spr_susieu_dark_ch1
 }
 if (con == 170 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_14 = s
+    var _temp_local_var_16 = s
     sprite_index = spr_susiel_dark_unhappy_ch1
 }
 if (con == 172)
@@ -155,7 +149,7 @@ if (con == 174 && (!gml_Script_d_ex_ch1()))
 {
     global.typer = 32
     global.fc = 0
-    var _temp_local_var_16 = s
+    var _temp_local_var_18 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 175 && (!gml_Script_d_ex_ch1()))
@@ -173,7 +167,7 @@ if (con == 176 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 178)
 {
-    var _temp_local_var_19 = s
+    var _temp_local_var_21 = s
     sprite_index = spr_susieu_dark_ch1
 }
 if (con == 180)
@@ -190,19 +184,19 @@ if (con == 181 && (!gml_Script_d_ex_ch1()))
 if (con == 183)
 {
     gml_Script_snd_play_ch1(381)
-    var _temp_local_var_21 = puzz1
+    var _temp_local_var_23 = puzz1
     event_user(2)
 }
 if (con == 185)
 {
     gml_Script_snd_play_ch1(381)
-    var _temp_local_var_22 = puzz1
+    var _temp_local_var_24 = puzz1
     event_user(3)
 }
 if (con == 187)
 {
     gml_Script_snd_play_ch1(381)
-    var _temp_local_var_23 = puzz1
+    var _temp_local_var_25 = puzz1
     event_user(2)
 }
 if (con == 189)
@@ -210,17 +204,17 @@ if (con == 189)
     gml_Script_snd_free_all_ch1()
     gml_Script_instance_create_ch1(0, 0, 1464)
     gml_Script_snd_play_ch1(376)
-    var _temp_local_var_24 = puzzwall
+    var _temp_local_var_26 = puzzwall
     instance_destroy()
 }
 if (con == 5 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_27 = s
+    var _temp_local_var_29 = s
     sprite_index = spr_susier_dark_ch1
 }
 if (con == 7)
 {
-    var _temp_local_var_28 = exc
+    var _temp_local_var_30 = exc
     instance_destroy()
 }
 if (con == 8)
@@ -231,36 +225,36 @@ if (con == 8)
     {
         x = global.monstermakex[0]
         con = 11
-        var _temp_local_var_30 = s
+        var _temp_local_var_32 = s
         gml_Script_scr_halt_ch1()
     }
 }
 if (con == 11)
 {
-    var _temp_local_var_31 = s
+    var _temp_local_var_33 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 12 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_33 = diamond
+    var _temp_local_var_35 = diamond
     hspeed = 8
 }
 if (con == 14)
 {
-    var _temp_local_var_34 = exc
+    var _temp_local_var_36 = exc
     instance_destroy()
 }
 if (con == 15 && (!gml_Script_d_ex_ch1()))
 {
     sprite_index = spr_lancer_battle_ch1
-    var _temp_local_var_36 = s
+    var _temp_local_var_38 = s
     sprite_index = spr_susier_dark_unhappy_ch1
     hspeed = 4
     image_speed = 0.25
 }
 if (con == 17)
 {
-    var _temp_local_var_37 = s
+    var _temp_local_var_39 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 19)
@@ -294,13 +288,13 @@ if (con == 22)
 }
 if (con == 23 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_40 = s
+    var _temp_local_var_42 = s
     hspeed = 4
     image_speed = 0.25
 }
 if (con == 25)
 {
-    var _temp_local_var_41 = s
+    var _temp_local_var_43 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 27)
@@ -320,7 +314,7 @@ if (con == 27)
 }
 if (con == 28 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_43 = s
+    var _temp_local_var_45 = s
     sprite_index = spr_susiel_dark_unhappy_ch1
 }
 if (con == 30)
@@ -340,14 +334,14 @@ if (con == 30)
 }
 if (con == 31 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_45 = s
+    var _temp_local_var_47 = s
     hspeed = -2
     image_speed = 0.2
     sprite_index = spr_susiel_dark_unhappy_ch1
 }
 if (con == 31.5)
 {
-    var _temp_local_var_46 = s
+    var _temp_local_var_48 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 33)
@@ -361,23 +355,23 @@ if (con == 33)
 if (con == 33.1 && (!gml_Script_d_ex_ch1()))
 {
     sprite_index = spr_lancer_battle_hurt_ch1
-    var _temp_local_var_48 = s
+    var _temp_local_var_50 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 33.2)
 {
     sprite_index = spr_lancer_battle_ch1
-    var _temp_local_var_49 = exc
+    var _temp_local_var_51 = exc
     instance_destroy()
 }
 if (con == 33.3 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_51 = s
+    var _temp_local_var_53 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 33.4)
 {
-    var _temp_local_var_53 = s
+    var _temp_local_var_55 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 33.5)
@@ -392,12 +386,12 @@ if (con == 33.5)
 }
 if (con == 34 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_55 = s
+    var _temp_local_var_57 = s
     image_index = 1
 }
 if (con == 36)
 {
-    var _temp_local_var_56 = s
+    var _temp_local_var_58 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 38)
@@ -416,19 +410,19 @@ if (con == 38)
 }
 if (con == 39 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_58 = s
+    var _temp_local_var_60 = s
     sprite_index = spr_susier_dark_laugh_ch1
     image_speed = 0.25
 }
 if (con == 41)
 {
-    var _temp_local_var_59 = s
+    var _temp_local_var_61 = s
     gml_Script_scr_halt_ch1()
     sprite_index = spr_susier_dark_ch1
 }
 if (con == 42 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_61 = s
+    var _temp_local_var_63 = s
     sprite_index = spr_susiel_dark_ch1
     hspeed = -3
     image_speed = 0.2
@@ -437,7 +431,7 @@ if (con == 43)
 {
     if (s.x <= (global.heromakex[0] + 2))
     {
-        var _temp_local_var_62 = s
+        var _temp_local_var_64 = s
         gml_Script_scr_halt_ch1()
     }
 }
@@ -451,14 +445,14 @@ if (con == 45)
 if (con == 46 && (!gml_Script_d_ex_ch1()))
 {
     gml_Script_snd_free_all_ch1()
-    var _temp_local_var_64 = s
+    var _temp_local_var_66 = s
     image_index = 0
     image_speed = 0.5
     sprite_index = spr_susieb_attack_ch1
 }
 if (con == 48)
 {
-    var _temp_local_var_65 = s
+    var _temp_local_var_67 = s
     image_speed = 0
 }
 if (con == 49.1)
@@ -472,13 +466,13 @@ if (con == 49.1)
 if (con == 50 && (!gml_Script_d_ex_ch1()))
 {
     global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.9, 1)
-    var _temp_local_var_67 = s
+    var _temp_local_var_69 = s
     instance_destroy()
 }
 if (con == 53)
 {
-    s = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 3839)
-    var _temp_local_var_69 = s
+    s = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 3840)
+    var _temp_local_var_71 = s
     gml_Script_scr_depth_ch1()
     image_index = 5
 }
@@ -496,7 +490,7 @@ if (con == 55)
 }
 if (con == 56 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_72 = s
+    var _temp_local_var_74 = s
     sprite_index = spr_susieb_defeat_ch1
 }
 if (con == 58)
@@ -524,7 +518,7 @@ if (con == 59 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 60 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_75 = s
+    var _temp_local_var_77 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 62)
@@ -541,14 +535,14 @@ if (con == 62)
 }
 if (con == 63 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_77 = s
+    var _temp_local_var_79 = s
     sprite_index = spr_susiel_dark_unhappy_ch1
     image_speed = 0.2
     hspeed = -2
 }
 if (con == 65)
 {
-    var _temp_local_var_78 = s
+    var _temp_local_var_80 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 67)
@@ -564,14 +558,14 @@ if (con == 67)
 }
 if (con == 68 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_80 = s
+    var _temp_local_var_82 = s
     hspeed = 6
     sprite_index = spr_susier_dark_ch1
     image_speed = 0.25
 }
 if (con == 70)
 {
-    var _temp_local_var_81 = s
+    var _temp_local_var_83 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 72)
@@ -585,20 +579,20 @@ if (con == 72)
 }
 if (con == 73 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_83 = s
+    var _temp_local_var_85 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 74 && (!gml_Script_d_ex_ch1()))
 {
     image_index = 0
-    var _temp_local_var_85 = s
+    var _temp_local_var_87 = s
     sprite_index = spr_susier_dark_ch1
     hspeed = 12
     image_speed = 0.334
 }
 if (con == 76)
 {
-    var _temp_local_var_86 = s
+    var _temp_local_var_88 = s
     gml_Script_scr_halt_ch1()
 }
 if (con == 78)
@@ -659,7 +653,7 @@ if (con == 87.1)
 }
 if (con == 88 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_90 = s
+    var _temp_local_var_92 = s
     sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 90)
@@ -692,7 +686,7 @@ if (con == 93)
 }
 if (con == 94 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_93 = s
+    var _temp_local_var_95 = s
     sprite_index = spr_susier_dark_ch1
 }
 if (con == 95 && (!gml_Script_d_ex_ch1()))
@@ -703,12 +697,12 @@ if (con == 95 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 97)
 {
-    var _temp_local_var_95 = s
+    var _temp_local_var_97 = s
     sprite_index = spr_susied_dark_unhappy_ch1
 }
 if (con == 98 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_97 = s
+    var _temp_local_var_99 = s
     sprite_index = spr_susier_dark_ch1
     hspeed = 10
     image_speed = 0.334

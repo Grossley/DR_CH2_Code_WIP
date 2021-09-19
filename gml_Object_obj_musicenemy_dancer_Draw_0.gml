@@ -1,5 +1,5 @@
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 draw_sprite_ext(sprite_index, 1, x, y, (image_xscale * bodyflip), image_yscale, 0, c_white, image_alpha)
 draw_sprite_ext(sprite_index, (headimage + headframe), (x + (sin((siner / 3)) * 2)), y, image_xscale, image_yscale, 0, c_white, image_alpha)
 siner++
@@ -34,12 +34,12 @@ if (active == true)
         bul.vspeed = -3
         bul.hspeed = random_range(-4, 4)
         bul.bultype = bultype
-        if 356
+        if instance_exists(obj_battlesolid)
         {
             if (x < obj_battlesolid.x)
-                bul.hspeed = 4
+                bul.hspeed = random(4)
             else
-                bul.hspeed = (-4)
+                bul.hspeed = (-random(4))
         }
         if (bultype == 1)
             bul.hspeed = choose(-4, 4)

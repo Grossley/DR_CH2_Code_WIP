@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 talkmax = 90
 image_speed = 0.16666666666666666
 idlesprite = spr_poppup_idle
@@ -12,6 +12,7 @@ staticOwner = 0
 staticPoppup = 0
 animspeed = 0.16666666666666666
 clonedirection = 210
+blockbuffer = 0
 for (var i = 0; i < 3; i++)
 {
     for (var j = 0; j < 6; j++)

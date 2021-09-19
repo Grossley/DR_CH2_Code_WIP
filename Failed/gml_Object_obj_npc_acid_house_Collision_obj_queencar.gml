@@ -1,11 +1,17 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1563
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1;
+if (!bumped)
+{
+    bumped = 1
+    gml_Script_snd_play(39)
+    house_sprite.image_index = 1
+    obj_tm_quizletter.flag[global.flag[obj_tm_quizletter]] = (global.flag[obj_tm_quizletter] + 1)
+    global
+    gml_Script_debug_message((("global.flag[458]:" + string(global.flag[458])) + "/7"))
+    var _temp_local_var_1 = house_sprite
+    var housecolor = 16777215
+    if (image_index == 0)
+        housecolor = 255
+    if (image_index == 1)
+        housecolor = 16711680
+    gml_Script_scr_fx_housesquare((x + (sprite_width / 2)), (y + (sprite_height / 2)), housecolor)
+}

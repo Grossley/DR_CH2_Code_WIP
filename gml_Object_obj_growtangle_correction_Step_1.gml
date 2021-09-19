@@ -1,4 +1,4 @@
-if 869
+if instance_exists(obj_growtangle)
 {
     if (global.turntimer < 0 || spawntimer < 15)
     {
@@ -15,4 +15,4 @@ if 869
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -9,7 +9,7 @@ if (global.plot >= 50)
     {
         image_index = 2
         with (obj_pushableblock_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 else

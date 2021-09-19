@@ -5,8 +5,8 @@ talkbuffer = 0
 menu = 0
 submenu = 0
 global.typer = 6
-16777215
-"mainbig"
+draw_set_color(c_white)
+gml_Script_scr_84_set_draw_font_ch1("mainbig")
 talktimer = 0
 cur_jewel = 0
 shopcharx = 0
@@ -26,7 +26,7 @@ _up_pressed = 0
 _down_pressed = 0
 murder = 0
 moff = 415
-global.currentsong[0] = "hip_shop.ogg"
+global.currentsong[0] = gml_Script_snd_init_ch1("hip_shop.ogg")
 global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 1, 1)
 menu = 0
 menuc[0] = 0
@@ -34,10 +34,10 @@ menuc[1] = 0
 menuc[2] = 0
 menuc[3] = 0
 menuc[4] = 0
-item0pic = 4275
-item1pic = 4275
-item2pic = 4275
-item3pic = 4275
+item0pic = 4276
+item1pic = 4276
+item2pic = 4276
+item3pic = 4276
 itemtotal = 4
 item[0] = 15
 item[1] = 6
@@ -53,10 +53,10 @@ itemtype[3] = "armor"
 itemtype[4] = "item"
 itemtype[5] = "item"
 itemtype[6] = "item"
-shopdesc[0] = "obj_shop2_slash_Create_0_gml_73_0"
-shopdesc[1] = "obj_shop2_slash_Create_0_gml_74_0"
-shopdesc[2] = "obj_shop2_slash_Create_0_gml_75_0"
-shopdesc[3] = "obj_shop2_slash_Create_0_gml_76_0"
+shopdesc[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop2_slash_Create_0_gml_73_0")
+shopdesc[1] = gml_Script_scr_84_get_lang_string_ch1("obj_shop2_slash_Create_0_gml_74_0")
+shopdesc[2] = gml_Script_scr_84_get_lang_string_ch1("obj_shop2_slash_Create_0_gml_75_0")
+shopdesc[3] = gml_Script_scr_84_get_lang_string_ch1("obj_shop2_slash_Create_0_gml_76_0")
 for (i = 0; i < itemtotal; i += 1)
 {
     itematk[i] = 0
@@ -67,13 +67,13 @@ for (i = 0; i < itemtotal; i += 1)
     canequip[i][3] = false
     if (itemtype[i] == "item")
     {
-        item[i]
+        gml_Script_scr_iteminfo_ch1(item[i])
         shopitemname[i] = itemnameb
         buyvalue[i] = value
     }
     if (itemtype[i] == "armor")
     {
-        item[i]
+        gml_Script_scr_armorinfo_ch1(item[i])
         shopitemname[i] = armornametemp
         buyvalue[i] = value
         itemdef[i] = armordftemp
@@ -83,7 +83,7 @@ for (i = 0; i < itemtotal; i += 1)
     }
     if (itemtype[i] == "weapon")
     {
-        item[i]
+        gml_Script_scr_weaponinfo_ch1(item[i])
         itematk[i] = weaponattemp
         itemmagic[i] = weaponmagtemp
         shopitemname[i] = weaponnametemp
@@ -98,7 +98,7 @@ bought = 0
 mainmessage = 0
 minimenuy = 220
 global.typer = 23
-"mainbig"
+gml_Script_scr_84_set_draw_font_ch1("mainbig")
 sidemessage = 0
 selling = 0
 global.msc = 0
@@ -115,7 +115,7 @@ if (global.plot >= 175)
 worm_max = 4
 for (i = 0; i < worm_max; i += 1)
 {
-    worm_siner[i] = 999
-    worm_image[i] = 4
+    worm_siner[i] = random(999)
+    worm_image[i] = floor(random(4))
     worm_y[i] = (-4 + random(8))
 }

@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_2;
 if (con == 0)
 {
     with (obj_camera_area)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_camera_advanced)
     {
         targetYRelative[1] = -180
@@ -12,8 +12,11 @@ if (con == 0)
     }
     with (obj_saucer)
     {
-        if collider
+        if gml_Script_i_ex(collider)
+        {
             var _temp_local_var_1 = collider
+            instance_destroy()
+        }
     }
     with (obj_caterpillarchara)
         visible = false
@@ -46,8 +49,8 @@ if (con == 2)
     with (obj_mainchara)
         visible = false
     global.interact = 1
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
     with (obj_dogtable_controlled)
         drawtype = 1
     dog = remdog
@@ -63,88 +66,89 @@ if (con == 3)
     gml_Script_c_soundplay(61)
     gml_Script_c_var_instance(dog, "x", memx)
     gml_Script_c_var_instance(dog, "y", memy)
+    gml_Script_c_shake()
     gml_Script_c_var_instance(dog, "depth", 890000)
-    kr
+    gml_Script_c_sel(kr)
     gml_Script_c_setxy((dog.x - 21), (dog.y - 60))
-    ra
+    gml_Script_c_sel(ra)
     gml_Script_c_setxy((dog.x - 60), (dog.y - 76))
-    su
+    gml_Script_c_sel(su)
     gml_Script_c_setxy((dog.x + 12), (dog.y - 82))
-    kr
-    0
-    0.25
-    545
+    gml_Script_c_sel(kr)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_sprite(545)
     gml_Script_c_jump(300, 230, 20, 30)
-    ra
-    0
-    0.25
-    781
-    1
+    gml_Script_c_sel(ra)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_sprite(782)
+    gml_Script_c_imagespeed(1)
     gml_Script_c_jump(254, 190, 20, 30)
-    su
-    0
-    0.25
-    543
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_sprite(543)
     gml_Script_c_jump(338, 186, 20, 30)
-    15
-    15
-    kr
-    0.25
-    540
-    ra
-    0.25
-    0
-    2557
-    su
-    0
-    0.25
-    548
+    gml_Script_c_wait(15)
+    gml_Script_c_wait(15)
+    gml_Script_c_sel(kr)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_sprite(540)
+    gml_Script_c_sel(ra)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_imageindex(0)
+    gml_Script_c_sprite(2558)
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_sprite(548)
     gml_Script_c_var_lerp_instance(dog, "x", memx, 704, 16)
-    6
+    gml_Script_c_wait(6)
     gml_Script_c_var_instance(id, "tablespawn", 1)
-    6
-    ra
-    "r"
-    1
-    kr
-    "u"
-    1
-    su
-    "d"
-    1
-    15
-    su
-    1
-    "d"
-    ra
-    "r"
-    su
-    10
-    831
-    "susie"
+    gml_Script_c_wait(6)
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("r")
+    gml_Script_c_autowalk(1)
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("u")
+    gml_Script_c_autowalk(1)
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("d")
+    gml_Script_c_autowalk(1)
+    gml_Script_c_wait(15)
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(1)
+    gml_Script_c_facing("d")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("r")
+    gml_Script_c_sel(su)
+    gml_Script_c_wait(10)
+    gml_Script_c_sprite(832)
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\E9* Hahah^1, was that awesome or what?!/", "obj_controller_dininghall_slash_Step_0_gml_146_0")
     gml_Script_c_facenext("ralsei", "K")
     gml_Script_c_msgnextloc("\\EK* Umm^1, maybe minus the blatant destruction.../%", "obj_controller_dininghall_slash_Step_0_gml_149_0")
-    // WARNING: Popz'd an empty stack.
-    ra
-    "d"
-    su
-    "d"
-    6
-    "ralsei"
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("d")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("d")
+    gml_Script_c_wait(6)
+    gml_Script_c_speaker("ralsei")
     gml_Script_c_msgsetloc(0, "\\E2* Let's go^1, Kris^1! We're almost at the third floor!/%", "obj_controller_dininghall_slash_Step_0_gml_160_0")
-    // WARNING: Popz'd an empty stack.
-    kr
-    "d"
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("d")
+    gml_Script_c_actortokris()
+    gml_Script_c_actortocaterpillar()
     gml_Script_c_var_instance(id, "con", 4)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_terminatekillactors()
 }
 if (con == 4)
 {
     with (obj_dogtable_controlled)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_mainchara)
         visible = true
     with (obj_caterpillarchara)

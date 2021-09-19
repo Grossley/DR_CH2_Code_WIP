@@ -1,6 +1,6 @@
 image_index = 1
 image_speed = 0
-siner = 20
+siner = random(20)
 timer = 0
 image_angle = 270
 image_xscale = 2
@@ -10,4 +10,4 @@ lastType = -1
 damage = 10
 con = 0
 movetimer = 0
-x = 100
+x = ((gml_Script_camerax() + gml_Script_camerawidth()) + 100)

@@ -10,5 +10,5 @@ if (con == 1)
     image_angle -= (10 / timer)
     image_alpha += 0.04
     if (x > xstart)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

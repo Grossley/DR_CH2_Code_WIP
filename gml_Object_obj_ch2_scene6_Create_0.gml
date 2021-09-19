@@ -18,5 +18,5 @@ if (global.chapter == 2)
     if (global.plot == 10)
         con = 50
     if (global.plot >= 16)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

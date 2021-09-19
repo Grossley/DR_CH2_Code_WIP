@@ -13,7 +13,7 @@ if (global.plot < 2)
     alarm[5] = 2
     with (obj_mainchara_ch1)
         visible = false
-    t = gml_Script_scr_marker_ch1(460, 360, 3455)
+    t = gml_Script_scr_marker_ch1(460, 360, 3456)
     var _temp_local_var_1 = t
     vspeed = -2
     image_speed = 0.2
@@ -28,13 +28,13 @@ if (global.plot == 3)
         x = obj_markerB_ch1.x
         y = obj_markerB_ch1.y
     }
-    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4204)
+    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4205)
     var _temp_local_var_2 = k
     gml_Script_scr_depth_ch1()
 }
 if (global.plot >= 250)
 {
-    sunset = gml_Script_scr_marker_ch1(0, 0, 3466)
+    sunset = gml_Script_scr_marker_ch1(0, 0, 3467)
     var _temp_local_var_4 = sunset
     image_alpha = 0.4
     depth = 2000

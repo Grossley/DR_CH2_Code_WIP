@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 element = 6
 type = 0
 timer = 0
@@ -8,7 +8,7 @@ image_speed = 0
 image_index = 0
 image_alpha = 0
 broken = 0
-id
+gml_Script_scr_darksize(id)
 blend = merge_color(c_green, c_lime, 0.5)
 invincibilitytimer = 0
 hurtflashtimer = 0

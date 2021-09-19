@@ -1,15 +1,15 @@
 if (active == false)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (active == true)
 {
-    if target
+    if instance_exists(target)
     {
         shakeamt -= shakereduct
         on *= -1
         target.x = (nowx + (shakeamt * on))
         if (shakeamt <= 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

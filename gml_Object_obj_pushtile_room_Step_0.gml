@@ -16,7 +16,7 @@ if (pushchanged == 0)
     variable_instance_set(instance_find(bossObject, 0), pushVariableName, pushVariableUp)
 if (pushchanged == 1)
 {
-    pushSound
+    gml_Script_snd_play(pushSound)
     variable_instance_set(instance_find(bossObject, 0), pushVariableName, pushVariableDown)
 }
 if (pushType == 1)

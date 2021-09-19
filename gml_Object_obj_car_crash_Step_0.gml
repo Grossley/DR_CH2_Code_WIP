@@ -1,4 +1,4 @@
-if (x - 200)
+if (x <= (gml_Script_camerax() - 200))
     cleanup = 1
 if crash
 {
@@ -12,7 +12,7 @@ if crash
 if cleanup
 {
     cleanup = 0
-    if (explosion != -1)
-        explosion
-    // WARNING: Popz'd an empty stack.
+    if (explosion != self)
+        instance_destroy(explosion)
+    instance_destroy()
 }

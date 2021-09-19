@@ -9,7 +9,7 @@ if (dont == 0)
         {
             state = 1
             mybul = gml_Script_scr_bullet_create(x, y, 448)
-            mybul
+            gml_Script_i_ex(mybul)
             mybul.element = 6
             mybul.sprite_index = spr_yarnbullet
             mybul.direction = direction
@@ -21,7 +21,7 @@ if (dont == 0)
         }
     }
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else
     dont = 0

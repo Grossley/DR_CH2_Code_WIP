@@ -105,7 +105,7 @@ if (lancer_side >= 0)
 if (susie_side >= 0)
 {
     lancercon = 1
-    susie = gml_Script_scr_dark_marker_ch1(160, 245, 3547)
+    susie = gml_Script_scr_dark_marker_ch1(160, 245, 3548)
     susie.depth = depth
     if (susie_side == 0)
         susie.x = 160

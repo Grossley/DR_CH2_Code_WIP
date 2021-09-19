@@ -24,8 +24,8 @@ if doorFadeMusic
 if (doorDelay > 0)
     alarm[2] = doorDelay
 if (doorSound != -1)
-    doorSound
-if 188
+    gml_Script_snd_play(doorSound)
+if gml_Script_i_ex(188)
 {
     if (alarm[2] > 0)
         obj_fadeout.fadespeed = (1 / alarm[2])

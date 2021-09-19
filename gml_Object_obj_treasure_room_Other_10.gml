@@ -13,10 +13,10 @@ if (global.flag[itemflag] == 1)
     global.msg[0] = gml_Script_stringsetloc("* (The chest is empty.)/%", "obj_treasure_room_slash_Other_10_gml_18_0")
 else
 {
-    59
+    gml_Script_snd_play(59)
     var itemgetstring = gml_Script_scr_itemget_anytype_text(itemidchest, itemtype)
     gml_Script_msgsetsubloc(0, "* (You opened the treasure chest.^1)&* (Inside was \\cY~1\\cW.)/", itemname, "obj_treasure_room_slash_Other_10_gml_65_0")
-    itemgetstring
+    gml_Script_msgnext(itemgetstring)
     if (noroom == false)
         global.flag[itemflag] = 1
     else

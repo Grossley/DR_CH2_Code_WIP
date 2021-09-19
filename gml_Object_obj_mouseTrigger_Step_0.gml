@@ -1,7 +1,7 @@
 timer++
 if (timer == 30 && letgo == 1)
 {
-    if 1164
+    if instance_exists(obj_holemouse_generator)
     {
         with (obj_holemouse_generator)
             mousecreate = 0
@@ -15,7 +15,7 @@ if (timer == 60 && letgo == 1)
 }
 if (myinteract == 3)
 {
-    if (mydialoguer == 0)
+    if (gml_Script_i_ex(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0

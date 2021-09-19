@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (heartwagon == 1)
 {
     draw_sprite(spr_wheelbarrow_parts_ch1, 4, (wagon.x + 5), (wagon.y + 1))

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 followindex = 0
 memory = -4
 damage = 6

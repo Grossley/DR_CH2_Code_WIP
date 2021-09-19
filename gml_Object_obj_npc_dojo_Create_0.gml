@@ -9,7 +9,7 @@ dojoFlag = 0
 mode = 0
 con = 0
 noroom = false
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 fsiner = 0
 dojoPrizeValue = 1
 dojoPrizeType = "money"

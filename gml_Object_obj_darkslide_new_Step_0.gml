@@ -9,6 +9,6 @@ if (((collidetimer < 0 && sliding == 1) || instant_end_sliding) && global.intera
         fun = false
         sprite_index = spr_krisd_slide
     }
-    slide_noise
+    gml_Script_snd_stop(slide_noise)
     instant_end_sliding = 0
 }

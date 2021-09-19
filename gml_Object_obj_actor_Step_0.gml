@@ -46,9 +46,9 @@ if (auto_facing == 1)
         sprite_index = dsprite
     if (v_vspeed < -0.05)
         sprite_index = usprite
-    if (v_hspeed > abs(v_vspeed) && v_hspeed > 0.05)
+    if (abs(v_hspeed) > abs(v_vspeed) && v_hspeed > 0.05)
         sprite_index = rsprite
-    if (v_hspeed > abs(v_vspeed) && v_hspeed < -0.05)
+    if (abs(v_hspeed) > abs(v_vspeed) && v_hspeed < -0.05)
         sprite_index = lsprite
 }
 if (spinspeed != 0)
@@ -93,11 +93,11 @@ if (debug_killtimer > 0)
 {
     debug_killtimer--
     if (debug_killtimer <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (auto_depth == 1)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()
     depth += depthbonus
 }
 sinerx = 0
@@ -106,9 +106,9 @@ if (siner_add0 != 0)
 {
     siner0 += siner_add0
     if (siner_type0 == "sin")
-        sinmove = (siner0 * siner_amplitude0)
+        sinmove = (sin(siner0) * siner_amplitude0)
     else
-        sinmove = (siner0 * siner_amplitude0)
+        sinmove = (cos(siner0) * siner_amplitude0)
     if (siner_visual0 == 1)
     {
         sinerx += lengthdir_x(sinmove, siner_direction0)
@@ -124,9 +124,9 @@ if (siner_add1 != 0)
 {
     siner1 += siner_add1
     if (siner_type1 == "sin")
-        sinmove = (siner1 * siner_amplitude1)
+        sinmove = (sin(siner1) * siner_amplitude1)
     else
-        sinmove = (siner1 * siner_amplitude1)
+        sinmove = (cos(siner1) * siner_amplitude1)
     if (siner_visual1 == 1)
     {
         sinerx += lengthdir_x(sinmove, siner_direction1)
@@ -157,12 +157,12 @@ if (stepsound == 1)
 {
     if (stepsound_count == 0)
     {
-        190
+        gml_Script_snd_play(190)
         stepsound_count = 1
     }
     else if (stepsound_count == 1)
     {
-        191
+        gml_Script_snd_play(191)
         stepsound_count = 0
     }
     stepsound = 0

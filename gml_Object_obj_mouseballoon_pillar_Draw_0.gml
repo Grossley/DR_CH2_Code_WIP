@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (completed == 0)
     lettercolor = c_red
 else

@@ -19,7 +19,7 @@ if (outrotimer >= 0)
     y = lerp(ystart, outroy, (outrotimer / 10))
     if (outrotimer == 10)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         with (obj_ch2_scene25)
         {
             berdly_wire.visible = true

@@ -1,5 +1,5 @@
 if (firstnoise == false)
 {
     firstnoise = true
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_textsound_ch1()
 }

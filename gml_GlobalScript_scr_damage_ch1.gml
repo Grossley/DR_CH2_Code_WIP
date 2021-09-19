@@ -1,6 +1,6 @@
 var _temp_local_var_2, _temp_local_var_3;
 var debug_inv = 0
-if "chemg_god_mode"
+if variable_global_exists("chemg_god_mode")
     debug_inv = global.chemg_god_mode
 if (global.inv < 0 && debug_inv == 0)
 {
@@ -8,7 +8,7 @@ if (global.inv < 0 && debug_inv == 0)
     {
         if (global.hp[global.char[target]] <= 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_randomtarget_ch1()
             target = mytarget
             var _temp_local_var_2 = global.charinstance[target]
             image_blend = c_white
@@ -31,6 +31,5 @@ if (global.inv < 0 && debug_inv == 0)
     var _temp_local_var_3 = global.charinstance[target]
     hurt = true
     hurttimer = 0
-	// A lot of stuff is missing
 }
 return;

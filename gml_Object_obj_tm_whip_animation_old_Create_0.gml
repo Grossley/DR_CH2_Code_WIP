@@ -6,16 +6,16 @@ timer = (animConst * 2)
 attacktimer = 0
 truetimer = 0
 animSpeed = 1
-sprite[0] = 1690
-sprite[1] = 1682
-sprite[2] = 1680
-sprite[3] = 1695
-sprite[4] = 1688
-sprite[5] = 1692
+sprite[0] = spr_tm_head
+sprite[1] = spr_tm_body
+sprite[2] = spr_tm_tail
+sprite[3] = spr_tm_hand_l_attack
+sprite[4] = spr_tm_hand_r
+sprite[5] = spr_tm_legs
 for (i = 0; i < 6; i += 1)
 {
-    xOffset[i] = (sprite[i] * 2)
-    yOffset[i] = (sprite[i] * 2)
+    xOffset[i] = (sprite_get_xoffset(sprite[i]) * 2)
+    yOffset[i] = (sprite_get_yoffset(sprite[i]) * 2)
 }
 targetx = obj_heart.x
 targety = obj_heart.y

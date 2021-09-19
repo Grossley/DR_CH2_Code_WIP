@@ -5,7 +5,7 @@ fan_b = -1
 gavepresent = (global.flag[307] == 1 || global.flag[307] == 2)
 lancer_stone = 0
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.plot >= 120)
 {
     if (global.flag[356] == 0)
@@ -14,9 +14,9 @@ else if (global.plot >= 120)
 else
 {
     con = -1
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
     susienpc = gml_Script_scr_dark_marker(1184, 231, 174)
     susienpc.image_speed = 0
     lancer_stone = 0

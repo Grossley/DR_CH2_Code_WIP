@@ -1,10 +1,10 @@
-lastSprite = 3225
-myLastSprite = 3225
+lastSprite = 3226
+myLastSprite = 3226
 siner = 0
-for (i = 0; i < lastSprite; i++)
+for (i = IMAGE_LOGO; i < lastSprite; i++)
 {
-    spriteName[i] = i
-    spriteHeight[i] = i
+    spriteName[i] = sprite_get_name(i)
+    spriteHeight[i] = sprite_get_height(i)
     mySprite[i] = i
     mySpriteName[i] = spriteName[i]
     mySpriteHeight[i] = spriteHeight[i]

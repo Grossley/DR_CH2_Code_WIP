@@ -15,8 +15,8 @@ image_xscale = (2 + (sin((siner / 6)) * 0.5))
 image_yscale = (2 + (sin((siner / 6)) * 0.5))
 if (siner == 96)
 {
-    220
-    var a = 44
+    gml_Script_snd_play(220)
+    var a = random(44)
     var _temp_local_var_2 = 8
     if (8 <= 0)
     {
@@ -31,5 +31,5 @@ if (siner == 96)
         }
         gml_Script_scr_bullet_init()
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

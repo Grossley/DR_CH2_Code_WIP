@@ -6,7 +6,7 @@ if (global.monster[myself] == true)
     if (timer == 15 && attacked == false)
     {
         global.turntimer = 180
-        if ((!myspawner) && 628)
+        if ((!gml_Script_i_ex(myspawner)) && instance_exists(obj_heart))
         {
             global.monsterattackname[myself] = ("ThisAttack" + string(spawntype))
             myspawner = gml_Script_scr_bulletspawner(x, y, 388)
@@ -22,7 +22,7 @@ else
     image_alpha = 0.5
     image_speed = 0
 }
-if (!"bullets")
+if (!gml_Script_scr_isphase("bullets"))
 {
     timer = 0
     attacked = false

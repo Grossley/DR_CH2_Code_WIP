@@ -1,4 +1,4 @@
-"main"
+gml_Script_scr_84_set_draw_font("main")
 xfade = ((10 - fadebuffer) / 10)
 if (xfade > 1)
     xfade = 1
@@ -6,52 +6,52 @@ if (TYPE <= 2)
 {
     if (DRAWHEART == 1)
         draw_sprite_ext(IMAGE_SOUL_BLUR, 0, (HEARTX + xoff), (HEARTY + yoff), 1, 1, 0, c_white, (0.6 * xfade))
-    xfade
+    draw_set_alpha(xfade)
     if (TYPE < 2)
     {
         for (i = 0; i <= XMAX; i += 1)
         {
-            16777215
+            draw_set_color(c_white)
             if (CURX == i)
-                65535
-            draw_text(NAMEX[i][0], NAMEY[i][0], NAME[i][0])
+                draw_set_color(c_yellow)
+            draw_text(NAMEX[i][0], NAMEY[i][0], string_hash_to_newline(NAME[i][0]))
         }
     }
     if (TYPE == 2)
     {
         for (i = 0; i <= YMAX; i += 1)
         {
-            16777215
+            draw_set_color(c_white)
             if (CURY == i)
-                65535
-            draw_text(NAMEX[0][i], NAMEY[0][i], NAME[0][i])
+                draw_set_color(c_yellow)
+            draw_text(NAMEX[0][i], NAMEY[0][i], string_hash_to_newline(NAME[0][i]))
         }
     }
-    1
+    draw_set_alpha(1)
 }
 if (TYPE == 3)
 {
     if (DRAWHEART == 1)
         draw_sprite_ext(IMAGE_SOUL_BLUR, 0, HEARTX, HEARTY, 1, 1, 0, c_white, (0.5 * xfade))
-    xfade
+    draw_set_alpha(xfade)
     for (j = 0; j <= YMAX; j += 1)
     {
         for (i = 0; i <= XMAX; i += 1)
         {
-            16777215
+            draw_set_color(c_white)
             if (CURX == i && CURY == j)
-                65535
-            var str = NAME[i][j]
-            if (string_char_at(str, 1) == "(" && str > 3)
-                str = string_copy(str, 4, (str - 3))
+                draw_set_color(c_yellow)
+            var str = string_hash_to_newline(NAME[i][j])
+            if (string_char_at(str, 1) == "(" && string_length(str) > 3)
+                str = string_copy(str, 4, (string_length(str) - 3))
             if (str != "<" && str != ">")
                 draw_text(NAMEX[i][j], NAMEY[i][j], str)
         }
     }
-    16777215
-    if (NAMESTRING == STRINGMAX)
-        65535
-    var width = NAMESTRING
-    draw_text(((320 - width) / 2), PLAYERNAMEY, NAMESTRING)
-    1
+    draw_set_color(c_white)
+    if (string_length(NAMESTRING) == STRINGMAX)
+        draw_set_color(c_yellow)
+    var width = string_width(NAMESTRING)
+    draw_text(((320 - width) / 2), PLAYERNAMEY, string_hash_to_newline(NAMESTRING))
+    draw_set_alpha(1)
 }

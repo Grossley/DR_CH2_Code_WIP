@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (con == 3)
     return;
 shakex = 6
@@ -7,14 +8,6 @@ if (other.damage > 2)
     global.turntimer -= obj_spamton_neo_enemy.heart_hurt_timer_reduction_bigshot
 else
     global.turntimer -= obj_spamton_neo_enemy.heart_hurt_timer_reduction
-166
-with (stacktop)
-    0
-if (heart_health < 1)
-{
-    con = 3
-    shootcon = 0
-    speed = 0
-    if (global.turntimer > 2)
-        global.turntimer = 37
-}
+gml_Script_snd_play(166)
+var _temp_local_var_1 = other
+event_user(0)

@@ -47,13 +47,13 @@ if (con == 3)
     circle1alpha += 0.2
     circle2alpha -= 0.2
     if (timer == 5)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-circle1alpha
-circle1color
+draw_set_alpha(circle1alpha)
+draw_set_color(circle1color)
 draw_sprite(spr_hatguy_head, 0, x, y)
 gml_Script_scr_draw_circle_width_qb(x, y, circle1radius, circle1width, 24)
-circle2alpha
-16777215
+draw_set_alpha(circle2alpha)
+draw_set_color(c_white)
 gml_Script_scr_draw_circle_width_qb(x, y, circle2radius, circle2width, 24)
-1
+draw_set_alpha(1)

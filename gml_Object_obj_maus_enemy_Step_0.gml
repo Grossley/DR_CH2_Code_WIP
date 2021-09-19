@@ -1,10 +1,10 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_5, _temp_local_var_8, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_21, _temp_local_var_27, _temp_local_var_28, _temp_local_var_47, _temp_local_var_51, _temp_local_var_52;
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_5, _temp_local_var_8, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_21, _temp_local_var_27, _temp_local_var_28, _temp_local_var_47, _temp_local_var_51;
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         rr = choose(0, 1, 2, 3)
@@ -43,28 +43,28 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 16)
         {
-            if 1
+            if (gml_Script_scr_monsterpop() == 1)
                 rr = 0
-            else if object_index
+            else if (gml_Script_scr_monsterpop() == instance_number(object_index))
             {
-                if ((myself - 1) && (!gml_Script_scr_attackprepcheck(myself, "MausTrail")))
+                if (myself == (gml_Script_scr_monsterpop() - 1) && (!gml_Script_scr_attackprepcheck(myself, "MausTrail")))
                     rr = 1
                 else if (myself == 0 || (!gml_Script_scr_attackprepcheck(myself, "MausTrail")))
                     rr = choose(0, 1)
@@ -85,7 +85,7 @@ if (global.monster[myself] == true)
                 dc = gml_Script_scr_bulletspawner(x, y, 388)
                 dc.type = 19
             }
-            140
+            gml_Script_scr_turntimer(140)
             turns += 1
             global.typer = 6
             global.fc = 0
@@ -93,7 +93,7 @@ if (global.monster[myself] == true)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Maus's clicking sounds more like splat noises.", "obj_maus_enemy_slash_Step_0_gml_114_0")
             else if (global.mercymod[myself] >= global.mercymax[myself])
                 global.battlemsg[0] = gml_Script_stringsetloc("* Maus is squeaking cheerfully.", "obj_maus_enemy_slash_Step_0_gml_117_0")
-            else if (100 >= 98)
+            else if (random(100) >= 98)
             {
                 if (choose(0, 1) == 0)
                     global.battlemsg[0] = gml_Script_stringsetloc("* Maus would like to go to its favorite bistro in this marvelous city.", "obj_maus_enemy_slash_Step_0_gml_124_0")
@@ -115,35 +115,35 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
 {
-    xx = 
-    yy = 
+    xx = gml_Script_camerax()
+    yy = gml_Script_cameray()
     if (acting == 1 && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* MAUS - It's just a little mouse living in a little house./%", "obj_maus_enemy_slash_Step_0_gml_159_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
         trappingX = 0
         gml_Script_msgsetsubloc(0, "* Press ~1 To Trap!!!", gml_Script_scr_get_input_name(6), "obj_maus_enemy_slash_Step_0_gml_166_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 9
         alarm[4] = 10
     }
     if (acting == 3 && actcon == 0)
     {
-        if (!4)
+        if (!gml_Script_scr_havechar(4))
         {
-            "susie"
+            gml_Script_scr_speaker("susie")
             gml_Script_msgsetloc(0, "\\E5* There's only one solution for a mouse!!/", "obj_maus_enemy_slash_Step_0_gml_177_0")
             gml_Script_msgnextloc("\\EH* Here^1, kitty kitty!!/%", "obj_maus_enemy_slash_Step_0_gml_178_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext()
             actcon = 30
         }
         else
@@ -156,15 +156,15 @@ if (global.myfight == 3)
             }
             else
             {
-                var _temp_local_var_52 = object_index
+                _temp_local_var_51 = object_index
                 fearact = 1
             }
             actcon = 1
         }
     }
-    if (actcon == 30 && (!62))
+    if (actcon == 30 && (!instance_exists(obj_writer)))
     {
-        tasquemarker = gml_Script_scr_dark_marker((gml_Script_camerax() + 800), y, 1663)
+        tasquemarker = gml_Script_scr_dark_marker((gml_Script_camerax() + 800), y, 1664)
         tasquemarker.image_speed = 0.16666666666666666
         tasquemarker.depth = depth
         var currentX = (x - 80)
@@ -180,17 +180,18 @@ if (global.myfight == 3)
         gml_Script_msgsetloc(0, "\\EK* ...don't we just have to fight the cat now?/", "obj_maus_enemy_slash_Step_0_gml_251_0")
         gml_Script_scr_anyface_next("susie", "K")
         gml_Script_msgnextloc("\\EK* Huh?/%", "obj_maus_enemy_slash_Step_0_gml_253_0")
+        gml_Script_scr_battletext()
         remove = 1
         actcon = 33
         alarm[4] = 30
     }
-    if (actcon == 34 && (!62))
+    if (actcon == 34 && (!instance_exists(obj_writer)))
         actcon = 1
     if (acting == 4 && actcon == 0)
     {
         trappingX = 1
         gml_Script_msgsetsubloc(0, "* Press ~1 to trap all the enemies!", gml_Script_scr_get_input_name(6), "obj_maus_enemy_slash_Step_0_gml_269_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 9
         alarm[4] = 10
     }
@@ -273,7 +274,7 @@ if (global.myfight == 3)
         basket = gml_Script_instance_create((obj_herosusie.x - 5), (gml_Script_cameray() - 100), obj_maus_basket_susie)
         with (obj_herosusie)
             visible = false
-        nise_susie = gml_Script_scr_dark_marker((obj_herosusie.x + 16), (obj_herosusie.y - 1), 995)
+        nise_susie = gml_Script_scr_dark_marker((obj_herosusie.x + 16), (obj_herosusie.y - 1), 996)
         nise_susie.depth = obj_herosusie.depth
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Susie was captured!!/%", "obj_maus_enemy_slash_Step_0_gml_422_0")

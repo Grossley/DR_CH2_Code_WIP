@@ -1,5 +1,5 @@
 with (obj_writer)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 global.typer = 50
 if (obj_sweet_enemy.hurtstate2 == 1)
 {

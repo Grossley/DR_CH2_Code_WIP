@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 timer = 0
 rotateposition = 0
 lengthtimer = 0

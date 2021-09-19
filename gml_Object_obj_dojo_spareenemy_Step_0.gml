@@ -1,12 +1,12 @@
 var _cut, _temp_local_var_1, _temp_local_var_12;
 if (ambushed == false)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_ambush()
     ambushed = true
 }
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
         global.typer = 50
         if (checkreact == 1)
@@ -44,7 +44,7 @@ if (global.monster[myself] == true)
                 gml_Script_scr_mercyadd(myself, (-global.mercymod[myself]))
                 shaved = 0
                 gml_Script_msgsetloc(0, "\\M1* Jigsaw Joe's stubble regrew!/%", "obj_dojo_spareenemy_slash_Step_0_gml_51_0")
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_battletext_default()
                 sparecon = -1
             }
             else
@@ -81,7 +81,7 @@ if (global.monster[myself] == true)
                 global.monsterstatus[myself] = false
                 image_speed *= 2
                 gml_Script_msgsetloc(0, "* Jigsaw Joe drank coffee^1! Jigsaw Joe stopped being TIRED!/%", "obj_dojo_spareenemy_slash_Step_0_gml_82_0")
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_battletext_default()
             }
             else
             {
@@ -102,19 +102,19 @@ if (global.monster[myself] == true)
             talked = 1
         talktimer = 0
     }
-    if (talked == -1 && "enemytalk")
+    if (talked == -1 && gml_Script_scr_isphase("enemytalk"))
     {
         if (talktimer < 15)
             talktimer++
-        else if (!62)
+        else if (!instance_exists(obj_writer))
             talked = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         if (talktimer < 15)
             talktimer++
-        if ((!62) && talktimer >= 15)
+        if ((!instance_exists(obj_writer)) && talktimer >= 15)
         {
             global.flag[20] = 0
             if (sparecon == -1)
@@ -125,7 +125,7 @@ if (global.monster[myself] == true)
             if (sparecon == 1)
             {
                 sparecon = 0
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_fakespare()
                 battlestate = 2
                 fakespare = 1
                 alarm[0] = 90
@@ -135,11 +135,11 @@ if (global.monster[myself] == true)
             }
             else if (pacifycon == 1)
             {
-                // WARNING: Popz'd an empty stack.
-                // WARNING: Popz'd an empty stack.
-                // WARNING: Popz'd an empty stack.
-                // WARNING: Popz'd an empty stack.
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_spareanim()
+                gml_Script_scr_recruit()
+                gml_Script_scr_monsterdefeat()
+                instance_destroy()
+                gml_Script_scr_mnendturn()
                 with (obj_darkener)
                     darken = false
             }
@@ -147,7 +147,7 @@ if (global.monster[myself] == true)
             {
                 with (obj_darkener)
                     darken = false
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_mnendturn()
             }
         }
     }
@@ -163,39 +163,39 @@ if (global.myfight == 3)
         actcon = 1
         gml_Script_msgsetloc(0, "* JIGSAW JOE - Beat him up to earn his life savings!/%", "obj_dojo_spareenemy_slash_Step_0_gml_177_0")
         checkreact = 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0 && battlestate < 2)
     {
-        shavesprite = gml_Script_scr_act_charsprite("kris", 1412, 0, 0)
+        shavesprite = gml_Script_scr_act_charsprite("kris", 1413, 0, 0)
         gml_Script_msgsetloc(0, "* (You shaved Jigsaw Joe's stubble!)/%", "obj_dojo_spareenemy_slash_Step_0_gml_187_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 2
     }
     if (acting == 2 && actcon == 0 && battlestate >= 2)
     {
         gml_Script_msgsetloc(0, "* Susie told the enemy a bedtime story about beating them up!^1&* The enemy became TIRED!/%", "obj_dojo_spareenemy_slash_Step_0_gml_195_0")
         image_speed /= 2
-        104
-        // WARNING: Popz'd an empty stack.
+        gml_Script_snd_play(104)
+        gml_Script_scr_battletext_default()
         actcon = 1
-        myself
+        gml_Script_scr_monster_make_tired(myself)
     }
     if (acting == 1 && actconsus == 1)
     {
         gml_Script_msgsetloc(0, "* Susie acted!/%", "obj_dojograzeenemy_slash_Step_0_gml_97_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
         actconsus = 0
     }
     if (acting == 1 && actconral == 1)
     {
         gml_Script_msgsetloc(0, "* Ralsei acted!/%", "obj_dojograzeenemy_slash_Step_0_gml_106_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
         actconral = 0
     }
-    if (actcon == 2 && (!62))
+    if (actcon == 2 && (!instance_exists(obj_writer)))
     {
         actcon = 3
         var _temp_local_var_12 = shavesprite
@@ -203,6 +203,5 @@ if (global.myfight == 3)
         gml_Script_scr_animate(0, 0, 1)
     }
     if (actcon == 1 && (!instance_exists(obj_writer)))
-    {
-    }
+        gml_Script_scr_nextact()
 }

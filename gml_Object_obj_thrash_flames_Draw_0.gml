@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (image_xscale < 1)
 {
     image_xscale += 0.2

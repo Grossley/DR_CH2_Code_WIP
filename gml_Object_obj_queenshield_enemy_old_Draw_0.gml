@@ -1,10 +1,10 @@
 shieldsiner++
 if (shieldhurt != 2)
     shieldalpha = (0.7 + (sin((shieldsiner / 7)) * 0.05))
-(shieldalpha * 0.8)
+draw_set_alpha((shieldalpha * 0.8))
 if (image_yscale >= 0.1)
 {
-    65280
+    draw_set_color(c_lime)
     if (appearcon == 2 && sprite_index == spr_queenshield_center_origin)
     {
         draw_triangle(queenhandx, queenhandy, (x + 46), ((y + 3) - (shieldheight * (image_yscale / 4))), (x + 45), ((y - 3) + (shieldheight * (image_yscale / 3))), 1)
@@ -25,7 +25,7 @@ if (image_yscale >= 0.1)
         draw_triangle(queenhandx, queenhandy, (x + 79), (y + 49), (x + 79), ((y - 3) + (shieldheight * image_yscale)), 1)
         draw_triangle_colour(queenhandx, queenhandy, (x + 79), (y + 49), (x + 79), ((y - 3) + (shieldheight * image_yscale)), 0, 65280, 65280, 0)
     }
-    1
+    draw_set_alpha(1)
 }
 y += (sin((shieldsiner / 6)) * 0.5)
 var shieldindex = 0
@@ -133,15 +133,15 @@ if (shaketimer > 0)
 if (shieldhurt == 1)
 {
     shieldindex = 2
-    shieldx = ((shieldhurttimer - random(shieldhurttimer)) * 2)
+    shieldx = ((random(shieldhurttimer) - random(shieldhurttimer)) * 2)
     shieldhurttimer--
     if (shieldhurttimer <= 0)
         shieldhurt = 0
 }
 if (shieldhurt == 2)
 {
-    1
-    // WARNING: Popz'd an empty stack.
+    event_user(1)
+    instance_destroy()
 }
 if (appearcon != 0)
     draw_sprite_ext(sprite_index, 1, (x + 7), (y + 3), image_xscale, image_yscale, 0, c_white, shieldalpha)

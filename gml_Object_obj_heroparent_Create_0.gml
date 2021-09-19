@@ -76,7 +76,7 @@ if (object_index == obj_herokris)
     defendframes = 5
     spellframes = 10
     attackspeed = 0.5
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     mywidth = 68
     myheight = 74
 }
@@ -109,7 +109,7 @@ if (object_index == obj_herosusie)
     spellsprite = spr_susieb_spell
     defeatsprite = spr_susieb_defeat
     victorysprite = spr_susieb_victory
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     mywidth = 70
     myheight = 82
 }
@@ -135,7 +135,7 @@ if (object_index == obj_heroralsei)
     victorysprite = spr_ralsei_victory
     actreadysprite = spr_ralsei_actready
     actsprite = spr_ralsei_act
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     mywidth = 52
     myheight = 86
 }
@@ -166,9 +166,9 @@ if (object_index == obj_heronoelle)
     victorysprite = spr_noelleb_victory
     actreadysprite = spr_noelleb_actready
     actsprite = spr_noelleb_act
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     _sideb = 0
-    if 2
+    if (gml_Script_scr_sideb_get_phase() >= 2)
         _sideb = 1
     if (_sideb == 1)
     {

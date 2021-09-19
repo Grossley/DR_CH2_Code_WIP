@@ -17,7 +17,7 @@ FADEUP = 0
 OB_DEPTH = 0
 obacktimer = 0
 OBM = 0.5
-global.currentsong[0] = "AUDIO_DRONE.ogg"
-global.currentsong[0]
+global.currentsong[0] = gml_Script_snd_init("AUDIO_DRONE.ogg")
+gml_Script_mus_loop(global.currentsong[0])
 WHITEFADE = 0
-"CONTACT"
+gml_Script_scr_windowcaption("CONTACT")

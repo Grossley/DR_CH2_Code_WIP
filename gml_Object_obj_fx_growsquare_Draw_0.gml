@@ -2,10 +2,10 @@ if (active == true)
 {
     alpha -= fadespeed
     growth += growspeed
-    alpha
-    color
+    draw_set_alpha(alpha)
+    draw_set_color(color)
     draw_rectangle(((x - growth) - 2), ((y - growth) - 2), ((x + growth) + 2), ((y + growth) + 2), true)
-    1
+    draw_set_alpha(1)
     if (alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

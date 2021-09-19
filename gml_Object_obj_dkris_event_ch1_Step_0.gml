@@ -49,11 +49,11 @@ if (con == 12)
 {
     x = (remx + 10)
     y = (remy + 20)
-    underbed = gml_Script_scr_marker_ch1(remx, remy, 4245)
+    underbed = gml_Script_scr_marker_ch1(remx, remy, 4246)
     underbed.depth = 100000
     sprite_index = spr_dkris_ground_ch1
     image_index = 2
-    424
+    gml_Script_snd_play_ch1(424)
     image_speed = 0
     hspeed = -6
     friction = 0.3
@@ -72,7 +72,7 @@ if (con == 16)
     friction = 0.4
     vspeed = 0
     image_index = 0
-    378
+    gml_Script_snd_play_ch1(378)
     gml_Script_instance_create_ch1(0, 0, 1464)
     con = 17
     alarm[4] = 90
@@ -85,15 +85,15 @@ if (con == 18)
     y = 119
     con = 19
     alarm[4] = 90
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_minishakeobj_ch1()
 }
 if (con == 20)
 {
-    381
+    gml_Script_snd_play_ch1(381)
     sprite_index = spr_dkris_dl_ch1
     x += 5
     y -= 12
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_minishakeobj_ch1()
     image_index = 0
     con = 21
     alarm[4] = 60
@@ -113,9 +113,9 @@ if (con == 24)
 {
     x += stepx
     y += stepy
-    457
+    gml_Script_snd_play_ch1(457)
     image_index = 1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_minishakeobj_ch1()
     con = 25
     alarm[4] = 15
 }
@@ -138,9 +138,9 @@ if (con == 28)
 {
     x = 158
     y = 125
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_minishakeobj_ch1()
     sprite_index = spr_dkris_dr_ch1
-    457
+    gml_Script_snd_play_ch1(457)
     con = 29
     alarm[4] = 60
 }
@@ -175,20 +175,20 @@ if (con == 33.1)
 {
     animtimer += 1
     if (animtimer == 13)
-        424
+        gml_Script_snd_play_ch1(424)
     if (animtimer == 14)
     {
-        377
-        438
+        gml_Script_snd_play_ch1(377)
+        gml_Script_snd_play_ch1(438)
         gml_Script_instance_create_ch1(0, 0, 1464)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_minishakeobj_ch1()
     }
 }
 if (con == 34.1)
 {
     image_speed = 0.4
     sprite_index = spr_dkris_grabscream_ch1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_minishakeobj_ch1()
     alarm[4] = 60
     con = 35
     shakeamt = 0
@@ -197,7 +197,7 @@ if (con == 35)
 {
     htimer += 1
     if (htimer == 1)
-        438
+        gml_Script_snd_play_ch1(438)
     if (htimer >= 8)
         htimer = 0
     x = ((remx + random(0.8)) - random(0.8))
@@ -220,8 +220,8 @@ if (con == 37)
     {
         burst = gml_Script_instance_create_ch1((x + 2), (y + 10), 1526)
         gnoise = true
-        377
-        433
+        gml_Script_snd_play_ch1(377)
+        gml_Script_snd_play_ch1(433)
     }
 }
 if (con == 38)
@@ -236,7 +236,7 @@ if (con == 38.1)
     con = 37.2
     image_index = 0
     image_speed = 0.2
-    433
+    gml_Script_snd_play_ch1(433)
     alarm[4] = 30
 }
 if (con == 38.2)
@@ -263,7 +263,7 @@ if (con == 41)
 {
     samt += 1
     if (samt == 10)
-        457
+        gml_Script_snd_play_ch1(457)
     if (samt == 20)
         samt = 0
     steps += 1
@@ -353,7 +353,7 @@ if (con == 63)
 }
 if (con == 65)
 {
-    eyeflash = gml_Script_scr_marker_ch1((x + 15), (y + 9), 4244)
+    eyeflash = gml_Script_scr_marker_ch1((x + 15), (y + 9), 4245)
     eyeflash.image_blend = c_red
     var _temp_local_var_3 = eyeflash
     image_speed = 0.2
@@ -365,7 +365,7 @@ if (con == 67)
 }
 if (con == 69)
 {
-    pix = gml_Script_scr_marker_ch1(-10, -10, 4276)
+    pix = gml_Script_scr_marker_ch1(-10, -10, 4277)
     var _temp_local_var_5 = pix
     image_blend = c_black
     image_xscale = 700

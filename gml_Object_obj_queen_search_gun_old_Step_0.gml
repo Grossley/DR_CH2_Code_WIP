@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_10;
 if (loading > 0)
     return;
 if smashed
@@ -16,17 +15,20 @@ if smashed
         d.speed = 12
         obj_queen_search_flail.broken = 1
         d.direction = (image_angle + (flip ? 0 : 180))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
     return;
 }
-if (bufferstate == 0)
+if (bufferstate == 0 && gml_Script_scr_queen_buffercheck())
 {
+    image_blend = c_gray
+    bufferstate = 1
 }
-else
-    var _temp_local_var_10 = 0
-image_blend = c_gray
-bufferstate = 1
+else if (bufferstate == 1 && (!gml_Script_scr_queen_buffercheck()))
+{
+    image_blend = c_white
+    bufferstate = 2
+}
 if (bufferstate == 1)
     return;
 if (timer < targetTime)
@@ -45,6 +47,6 @@ if (timer < targetTime)
         d.direction = (image_angle + (flip ? 0 : 180))
         state = 3
         timer = -15
-        0
+        event_user(0)
     }
 }

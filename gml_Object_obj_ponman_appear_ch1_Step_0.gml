@@ -53,7 +53,7 @@ if (con == 7)
             speed = remspeed
             stopped = 0
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_depth_ch1()
         if (eye_radius < 8)
             eye_radius += 2
         eye_angle = point_direction((x + 32), (y + 28), (obj_mainchara_ch1.x + 20), (obj_mainchara_ch1.y + 20))
@@ -86,6 +86,7 @@ if (con == 7)
             newme.image_speed = 0
             var _temp_local_var_2 = newme
             event_user(0)
+            gml_Script_scr_depth_ch1()
         }
     }
     if (global.interact != 0)
@@ -98,8 +99,8 @@ if (con == 7)
 }
 if (fadecon == 1)
 {
-    if 1513
-        // WARNING: Popz'd an empty stack.
+    if instance_exists(obj_battlecontroller_ch1)
+        instance_destroy()
 }
 eyex = lengthdir_x(eye_radius, eye_angle)
 eyey = lengthdir_y(eye_radius, eye_angle)

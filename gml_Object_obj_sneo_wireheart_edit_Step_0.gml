@@ -10,7 +10,7 @@ if (init == 0)
     shottimer = 0
     init = 1
     con = 1
-    if boss
+    if gml_Script_i_ex(boss)
     {
         rembossx = boss.x
         rembossy = boss.y
@@ -47,35 +47,35 @@ if (con == 1)
 {
     if (bighearttype == 1)
         moveframes = 16
-    targetx = (300 + random(70))
-    targety = (145 + random_range(-70, 70))
+    targetx = ((gml_Script_camerax() + 300) + random(70))
+    targety = ((gml_Script_cameray() + 145) + random_range(-70, 70))
     if (type == 3)
     {
         if (altbiter > 0 && altbiter < 3)
         {
-            targetx = 150
+            targetx = (gml_Script_camerax() + 150)
             if (altbiter == 1)
-                targety = 240
+                targety = (gml_Script_cameray() + 240)
             else
-                targety = 75
+                targety = (gml_Script_cameray() + 75)
         }
         else
         {
-            targetx = (170 + random(70))
-            targety = (145 + random_range(-60, 60))
+            targetx = ((gml_Script_camerax() + 170) + random(70))
+            targety = ((gml_Script_cameray() + 145) + random_range(-60, 60))
         }
         if (altbiter == 3)
         {
-            targetx = 350
-            targety = (130 + random_range(-45, 0))
+            targetx = (gml_Script_camerax() + 350)
+            targety = ((gml_Script_cameray() + 130) + random_range(-45, 0))
         }
         if (altbiter == 4)
         {
-            targetx = 350
-            targety = (160 + random_range(45, 0))
+            targetx = (gml_Script_camerax() + 350)
+            targety = ((gml_Script_cameray() + 160) + random_range(45, 0))
         }
     }
-    if (628 && obj_sneo_bulletcontroller.hearttargettimer < 1 && type != 3)
+    if (gml_Script_i_ex(628) && obj_sneo_bulletcontroller.hearttargettimer < 1 && type != 3)
     {
         if (choose(0, 1, 2) == 0)
         {

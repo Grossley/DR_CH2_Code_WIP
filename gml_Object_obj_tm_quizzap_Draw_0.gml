@@ -1,5 +1,5 @@
 draw_sprite_ext(spr_tm_zapbox, 0, x, y, 1, 1, (image_angle + 45), c_white, 1)
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (letter == 0 || letter == 3)
     yy = (y + (letter == 0 ? -50 : 50))
 else

@@ -11,5 +11,5 @@ ourcase = 0
 eggmake = 0
 egcon = 0
 egtimer = 0
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_npcdir_ch1()
+gml_Script_scr_depth_ch1()

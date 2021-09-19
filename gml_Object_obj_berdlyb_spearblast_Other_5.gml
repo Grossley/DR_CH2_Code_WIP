@@ -1,1 +1,1 @@
-mypath
+path_delete(mypath)

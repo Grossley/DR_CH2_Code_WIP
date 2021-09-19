@@ -1,5 +1,5 @@
 if (destroyable == 1)
 {
     playerhit = 1
-    0
+    event_user(0)
 }

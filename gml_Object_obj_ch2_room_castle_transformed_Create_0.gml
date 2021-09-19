@@ -5,3 +5,4 @@ book_pillar.sprite_index = spr_castle_book_pillar
 var _temp_local_var_1 = book_pillar
 image_xscale = 2
 image_yscale = 2
+gml_Script_scr_depth()

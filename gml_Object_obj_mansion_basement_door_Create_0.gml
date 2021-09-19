@@ -13,4 +13,4 @@ if closed_door
     interactable.image_yscale = 2
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

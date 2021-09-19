@@ -7,9 +7,9 @@ if (global.flag[335] == 1)
     sprite_index = spr_dw_mansion_door_open
     image_xscale = 2
     image_yscale = 2
-    var pile = gml_Script_scr_dark_marker((x - 10), (y + 85), 2847)
+    var pile = gml_Script_scr_dark_marker((x - 10), (y + 85), 2848)
     pile.depth = 98000
-    var pile_dark = gml_Script_scr_dark_marker(x, y, 2860)
+    var pile_dark = gml_Script_scr_dark_marker(x, y, 2861)
     pile_dark.depth = 99000
     var pile_collider = gml_Script_instance_create(pile.x, (pile.y + 10), obj_soliddark)
     pile_collider.image_xscale = 3

@@ -10,4 +10,4 @@ if (timer <= 0)
     zcounter++
 }
 if (zcounter >= 9)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

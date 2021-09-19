@@ -1,11 +1,17 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.FunctionCall.DoTypePropagation(DecompileContext context, AssetIDType suggestedType) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1279
-   at UndertaleModLib.Decompiler.Decompiler.DoTypePropagation(DecompileContext context, Dictionary`2 blocks) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3152
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3133
-   at Submission#0.DumpCode()
-*/
+siner++
+orb_sin = (sin(siner) * 2)
+var _duration = 75
+if (siner <= _duration)
+{
+    beam_size = lerp(2, 20, gml_Script_scr_ease_out((siner / _duration), 5))
+    beam_speed = lerp(0, 550, gml_Script_scr_ease_out((siner / _duration), 4))
+    orb_size = lerp(0, 60, gml_Script_scr_ease_out((siner / _duration), 5))
+}
+else
+    orb_size += 0.5
+for (i = 0; i < 4; i++)
+{
+    var _beam_final_dir = (beam_dir[i] + (beam_rot[i] * beam_speed))
+    gml_Script_scr_draw_beam(x, y, 600, beam_size, _beam_final_dir, 16777215, 1, 0)
+}
+draw_circle(x, y, (orb_size + orb_sin), 0)

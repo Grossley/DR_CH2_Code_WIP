@@ -1,6 +1,6 @@
 active = true
 timer = 0
-bdir = 360
+bdir = random(360)
 inv = 60
 timepoints = 0
 grazepoints = 3

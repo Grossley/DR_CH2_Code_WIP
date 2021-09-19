@@ -30,9 +30,9 @@ for (i = 0; i < 4; i += 1)
         global.spell[i][j] = 0
 }
 global.charname[0] = " "
-global.charname[1] = "obj_initializer_slash_Create_0_gml_48_0"
-global.charname[2] = "obj_initializer_slash_Create_0_gml_49_0"
-global.charname[3] = "obj_initializer_slash_Create_0_gml_50_0"
+global.charname[1] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_48_0")
+global.charname[2] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_49_0")
+global.charname[3] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_50_0")
 global.hp[0] = 0
 global.maxhp[0] = 0
 global.hp[1] = 90
@@ -48,7 +48,7 @@ global.at[3] = 8
 global.mag[3] = 12
 global.spell[2][0] = 4
 global.spell[3][0] = 2
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellinfo_all_ch1()
 global.item[0] = 1
 global.item[1] = 1
 global.item[2] = 1
@@ -62,7 +62,7 @@ global.item[9] = 1
 global.item[10] = 1
 global.item[11] = 1
 global.item[12] = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_iteminfo_all_ch1()
 global.l_item[0] = 1
 global.l_item[1] = 1
 global.l_item[2] = 2
@@ -83,7 +83,7 @@ global.grazeturn = 0
 for (i = 0; i < 3; i += 1)
 {
     global.monster[i] = true
-    global.monstername[i] = "obj_initializer_slash_Create_0_gml_114_0"
+    global.monstername[i] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_114_0")
     global.monstertype[i] = 1
     global.monsterat[i] = 3
     global.monsterdf[i] = 2
@@ -98,7 +98,7 @@ for (i = 0; i < 20; i += 1)
 }
 global.myfight = 0
 global.mnfight = 0
-16777215
+draw_set_color(c_white)
 global.fc = 2
 global.fe = 0
 global.typer = 3
@@ -116,7 +116,7 @@ for (i = 0; i < 10; i += 1)
     global.smxx[i] = 100
     global.smyy[i] = 110
     global.smcolor[i] = c_purple
-    global.smstring[i] = "obj_initializer_slash_Create_0_gml_158_0"
+    global.smstring[i] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_158_0")
 }
 global.smalarm[1] = 15
 global.smyy[1] = 70
@@ -126,11 +126,11 @@ global.smspeed[1] = 40
 global.smtype[1] = 3
 global.smsprite[1] = spr_smallface_a2_ch1
 global.smcolor[1] = c_white
-global.smstring[1] = "obj_initializer_slash_Create_0_gml_169_0"
+global.smstring[1] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_169_0")
 for (i = 0; i < 100; i += 1)
     global.msg[i] = "%%"
-global.msg[0] = "obj_initializer_slash_Create_0_gml_176_0"
-global.msg[1] = "obj_initializer_slash_Create_0_gml_179_0"
+global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_176_0")
+global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_179_0")
 global.msg[2] = "%%"
-global.msg[3] = "obj_initializer_slash_Create_0_gml_182_0"
-global.msg[4] = "obj_initializer_slash_Create_0_gml_183_0"
+global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_182_0")
+global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_initializer_slash_Create_0_gml_183_0")

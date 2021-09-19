@@ -16,8 +16,7 @@ if (con == 0 && global.interact == 0 && susiestart == 1)
         }
     }
     if (susid == noone)
-    {
-    }
+        instance_destroy()
     else
         con = 1
 }
@@ -25,9 +24,10 @@ if (con == 1)
 {
     if (global.interact == 0)
     {
-        if 1254
+        if instance_exists(obj_queenvase)
         {
             var _temp_local_var_3 = susid
+            gml_Script_scr_depth()
             nearestpot = instance_nearest((x + (sprite_width / 2)), ((y + sprite_height) - 2), obj_queenvase)
             if (collision_line((x + (sprite_width / 2)), ((y + sprite_height) - 2), (nearestpot.x + 20), (nearestpot.y + 52), obj_solidblock, true, false) == -4)
             {
@@ -51,7 +51,7 @@ if (con == 1)
 }
 if (con == 1.1)
 {
-    if (!kick)
+    if (!gml_Script_i_ex(kick))
     {
         kick = gml_Script_instance_create(susid.x, susid.y, obj_marker)
         kick.sprite_index = spr_susie_right_diagonal_kick_dw
@@ -62,6 +62,7 @@ if (con == 1.1)
         kick.image_yscale = 2
         kick.image_speed = 0.25
         var _temp_local_var_4 = kick
+        gml_Script_scr_depth()
     }
     if (kick.image_index == 2)
         susid.active = true
@@ -70,6 +71,7 @@ if (con == 1.1)
         susid.active = false
         susid.visible = true
         var _temp_local_var_5 = kick
+        instance_destroy()
     }
 }
 if (con == 2)

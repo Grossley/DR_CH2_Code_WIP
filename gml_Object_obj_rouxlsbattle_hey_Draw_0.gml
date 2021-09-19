@@ -1,4 +1,4 @@
-trackpos = global.batmusic[1]
+trackpos = audio_sound_get_track_position(global.batmusic[1])
 if (global.myfight == 0)
 {
     if (trackpos >= 58.335 && trackpos <= 58.375)
@@ -6,7 +6,7 @@ if (global.myfight == 0)
         if (con == 0)
         {
             timer = 0
-            "hey"
+            gml_Script_debug_message("hey")
             con = 1
         }
     }
@@ -18,10 +18,10 @@ if (con == 1)
     if (timer == 12)
         con = 0
 }
-if 80
+if keyboard_check_pressed(ord("P"))
     audio_sound_set_track_position(global.batmusic[1], 57)
 if (global.flag[54] == 0)
 {
-    "battle ended"
-    // WARNING: Popz'd an empty stack.
+    gml_Script_debug_message("battle ended")
+    instance_destroy()
 }

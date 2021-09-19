@@ -1,10 +1,10 @@
 var dialogue = 0
-if 72
+if gml_Script_i_ex(72)
     dialogue = 1
 if (completed == 1)
     dialogue = 3
 myinteract = 3
-"no_name"
+gml_Script_scr_speaker("no_name")
 if (dialogue == 1)
 {
     gml_Script_msgsetloc(0, "* (You put the bucket in the hole.)/%", "obj_mouseballoon_pillar_bucket_slash_Other_10_gml_15_0")

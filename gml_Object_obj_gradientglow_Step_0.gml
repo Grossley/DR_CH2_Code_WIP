@@ -1,2 +1,2 @@
 timer++
-image_yscale = (((timer / 10) * 0.5) + 1.5)
+image_yscale = ((sin((timer / 10)) * 0.5) + 1.5)

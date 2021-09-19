@@ -22,7 +22,7 @@ if (con == 10)
         if (collided == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* Missed!/%", "obj_sneo_kristhrown_slash_Step_0_gml_23_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         with (obj_herokris)
             visible = true
@@ -30,16 +30,16 @@ if (con == 10)
             visible = true
         visible = false
         with (obj_sneo_throwtarget)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_sneo_throwkris)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         con = 11
     }
 }
-if (con == 11 && (!62))
+if (con == 11 && (!instance_exists(obj_writer)))
 {
     obj_spamton_neo_enemy.actcon = 15
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (con == 2)
 {

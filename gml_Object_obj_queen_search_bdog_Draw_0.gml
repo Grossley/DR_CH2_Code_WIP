@@ -1,6 +1,6 @@
 if (animtimer >= 8)
     animtimer = 0
-image_index = (animtimer / 4)
+image_index = floor((animtimer / 4))
 if (timer > 80)
     animtimer += 2
 else
@@ -31,19 +31,19 @@ var headx1 = (x + gml_Script_scr_orbitx(0, 0, -18, -6, image_angle))
 var heady1 = (y + gml_Script_scr_orbity(0, 0, -18, -6, image_angle))
 var headx2 = (x + gml_Script_scr_orbitx(0, 0, 2, -10, image_angle))
 var heady2 = (y + gml_Script_scr_orbity(0, 0, 2, -10, image_angle))
-16777215
+draw_set_color(c_white)
 draw_line(hatx1, haty1, headx1, heady1)
 draw_line(hatx2, haty2, headx2, heady2)
-// WARNING: Popz'd an empty stack.
+draw_self()
 draw_sprite_ext(sprite_index, 3, hatx, haty, 1, 1, hatangle, c_white, 1)
 lastx = x
 lasty = y
 lastangle = image_angle
 if (bufferstate == 0 && loading == 0)
 {
-    var _af = obj_buffer_afterimage
+    var _af = gml_Script_scr_custom_afterimage(545)
     _af.image_alpha = 0.5
-    _af = obj_buffer_afterimage
+    _af = gml_Script_scr_custom_afterimage(545)
     _af.image_alpha = 0.5
     _af.image_index = 3
     _af.x = hatx

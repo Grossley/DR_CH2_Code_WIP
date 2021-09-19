@@ -27,12 +27,12 @@ if (room == room_dw_cyber_post_music_boss_slide)
 }
 if makelines
 {
-    if (!204)
+    if (!instance_exists(obj_background_cyberlines))
         gml_Script_instance_create(0, 0, obj_background_cyberlines)
 }
 with (obj_mainchara)
     bg = 1
-var layersprites = [3132, 3133, 3135, 3136]
+var layersprites = [3133, 3134, 3136, 3137]
 for (var i = 0; i < array_length_1d(layersprites); i++)
 {
     if (i == 2)

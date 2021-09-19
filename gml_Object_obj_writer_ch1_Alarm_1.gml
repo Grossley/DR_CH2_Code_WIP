@@ -1,2 +1,2 @@
 if (pos < (length + 2))
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_textsound_ch1()

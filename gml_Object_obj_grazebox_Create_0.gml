@@ -14,7 +14,7 @@ if (grazesizefactor > 3)
     grazesizefactor = 3
 image_xscale = grazesizefactor
 image_yscale = grazesizefactor
-if 628
+if instance_exists(obj_heart)
 {
     sizexoff = 0
     sizeyoff = 0

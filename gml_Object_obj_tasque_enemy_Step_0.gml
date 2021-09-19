@@ -1,9 +1,9 @@
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         rr = choose(0, 1, 2, 3)
@@ -24,19 +24,19 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         if (rtimer == 0)
             rr = choose(0, 1)
@@ -59,7 +59,7 @@ if (global.monster[myself] == true)
                 if (rr == 2)
                     dc.difficulty = 1
             }
-            140
+            gml_Script_scr_turntimer(140)
             turns += 1
             global.typer = 6
             global.fc = 0
@@ -87,7 +87,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -98,7 +98,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* TASQUE - This stray cat is in need of some management./%", "obj_tasque_enemy_slash_Step_0_gml_126_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -107,19 +107,19 @@ if (global.myfight == 3)
         gml_Script_msgset(0, simultext)
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 100)
-        "kris"
+        gml_Script_scr_simultext("kris")
         actcon = (simulorderkri == 0 ? 20 : -1)
     }
     if (acting == 3 && actcon == 0)
     {
-        if (!4)
+        if (!gml_Script_scr_havechar(4))
         {
             sact_count++
             if (sact_count == 1)
                 gml_Script_scr_smallface(0, "ralsei", 20, "right", "middle", gml_Script_stringsetloc("It's just a cat...", "obj_tasque_enemy_slash_Step_0_gml_150_0"))
             var sentenceEnd = (sact_count == 1 ? "/" : "/%")
             gml_Script_msgsetsubloc(0, "* Susie roared!! The enemies became TIRED.~1", sentenceEnd, "obj_tasque_enemy_slash_Step_0_gml_155_0")
-            66
+            gml_Script_snd_play(66)
             if (sact_count == 1)
             {
                 gml_Script_scr_anyface_next("susie", 2)
@@ -128,9 +128,9 @@ if (global.myfight == 3)
             with (obj_monsterparent)
             {
                 if (global.monsterstatus[myself] != true)
-                    myself
+                    gml_Script_scr_monster_make_tired(myself)
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actcon = 1
         }
         else
@@ -148,7 +148,7 @@ if (global.myfight == 3)
                 if (global.mercymod[myself] < global.mercymax[myself])
                     gml_Script_scr_mercyadd(myself, 100)
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actcon = 1
         }
     }
@@ -176,7 +176,7 @@ if (global.myfight == 3)
                     gml_Script_scr_mercyadd(myself, 50)
             }
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (actingsus == 1 && actconsus == 1)
@@ -185,7 +185,7 @@ if (global.myfight == 3)
         gml_Script_msgset(0, simultext)
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 50)
-        "susie"
+        gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
     if (actingral == 1 && actconral == 1)
@@ -194,7 +194,7 @@ if (global.myfight == 3)
         gml_Script_msgset(0, simultext)
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 50)
-        "ralsei"
+        gml_Script_scr_simultext("ralsei")
         actconral = (simulorderral == 0 ? 20 : 0)
     }
     if (actingnoe == 1 && actconnoe == 1)
@@ -203,16 +203,19 @@ if (global.myfight == 3)
         gml_Script_msgset(0, nact_text)
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 50)
-        "noelle"
+        gml_Script_scr_simultext("noelle")
         actconnoe = (simulordernoe == 0 ? 20 : 0)
     }
-    if (actcon == 1 && (!62))
-        // WARNING: Popz'd an empty stack.
+    if (actcon == 1 && (!instance_exists(obj_writer)))
+        gml_Script_scr_nextact()
     if (actcon == 20 || actconsus == 20 || actconral == 20 || actconnoe == 20)
     {
-        actconsus = -1
-        actconral = -1
-        actconnoe = -1
-        actcon = 1
+        if gml_Script_scr_terminate_writer()
+        {
+            actconsus = -1
+            actconral = -1
+            actconnoe = -1
+            actcon = 1
+        }
     }
 }

@@ -1,14 +1,14 @@
-if (HeroID == 0 && 370)
+if (HeroID == 0 && instance_exists(obj_herokris))
 {
     depth = 80
     obj_herokris.depth = (depth + 1)
 }
-if (HeroID == 1 && 371)
+if (HeroID == 1 && instance_exists(obj_herosusie))
 {
     depth = 75
     obj_herosusie.depth = (depth + 1)
 }
-if (HeroID == 2 && 372)
+if (HeroID == 2 && instance_exists(obj_heroralsei))
 {
     depth = 70
     obj_heroralsei.depth = (depth + 1)
@@ -206,9 +206,9 @@ if (HeroID == 0)
         userealsprite = 0
     }
     else
-        obj_herokris.x = 300
+        obj_herokris.x = (gml_Script_camerax() - 300)
 }
-if (HeroID == 1 && 371)
+if (HeroID == 1 && instance_exists(obj_herosusie))
 {
     if (sprite_index == spr_susie_hurt)
     {
@@ -252,7 +252,7 @@ if (HeroID == 1 && 371)
         userealsprite = 1
         obj_herosusie.depth = (depth + 1)
     }
-    else if 857
+    else if instance_exists(obj_rudebuster_anim)
     {
         obj_rudebuster_anim.x = ((x + 20) + xx)
         obj_rudebuster_anim.y = (((y - (sprite_get_height(sprite_index) * a)) + yy) + 64)
@@ -316,9 +316,9 @@ if (HeroID == 1 && 371)
         userealsprite = 0
     }
     else
-        obj_herosusie.x = 300
+        obj_herosusie.x = (gml_Script_camerax() - 300)
 }
-if (HeroID == 2 && 372)
+if (HeroID == 2 && instance_exists(obj_heroralsei))
 {
     if (sprite_index == spr_ralsei_idle && dontshowherosprite < 1)
     {
@@ -375,7 +375,7 @@ if (HeroID == 2 && 372)
         userealsprite = 0
     }
     else
-        obj_heroralsei.x = 300
+        obj_heroralsei.x = (gml_Script_camerax() - 300)
     if (obj_heroralsei.sprite_index == spr_ralsei_idle && sprite_index == spr_ralsei_spell)
     {
         obj_heroralsei.x = ((x + 20) + xx)

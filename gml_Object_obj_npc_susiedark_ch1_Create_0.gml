@@ -9,9 +9,9 @@ image_speed = 0
 talked = 0
 image_xscale = 2
 image_yscale = 2
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 if (global.plot >= 30)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     s = gml_Script_instance_create_ch1(450, 950, 1656)

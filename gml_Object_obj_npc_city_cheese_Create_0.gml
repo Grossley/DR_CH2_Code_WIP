@@ -7,7 +7,7 @@ if global.flag[310]
         var ypos = ((i % 2) == 0 ? 190 : 240)
         gml_Script_instance_create(xpos, ypos, obj_mazecheese)
     }
-    if 4
+    if gml_Script_scr_havechar(4)
     {
         global.interact = 1
         alarm[0] = 30

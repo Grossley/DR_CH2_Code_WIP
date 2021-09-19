@@ -1,2 +1,2 @@
 reset = false
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_mnendturn_ch1()

@@ -18,7 +18,7 @@ addString = ""
 letterCount = 0
 lastPressedTile = -100
 firstTileX = 0
-victorySprite = 2393
+victorySprite = spr_keyboard_puzzle_apple
 imageTimer = 0
 krisStartX = 80
 krisStartY = 220
@@ -31,10 +31,10 @@ if (room == room_dw_cyber_keyboard_puzzle_2)
 {
     krisStartX = 134
     krisStartY = 210
-    victorySprite = 2394
+    victorySprite = spr_keyboard_puzzle_agree2all
 }
 if (room == room_dw_cyber_keyboard_puzzle_3)
-    victorySprite = 2396
+    victorySprite = spr_keyboard_puzzle_icee
 autoGenerate = puzzle_id == 2
 autoWidth = 8
 autoString = gml_Script_stringsetloc("GIAEEFSBISSFLBALAELRHEIGSFFEBRSI", "obj_ch2_keyboardpuzzle_controller_slash_Create_0_gml_38_0")
@@ -54,11 +54,11 @@ if (autoGenerate == 1)
         idealString = gml_Script_stringsetloc("SUFUGIOROTENIPEKENAMO", "obj_ch2_keyboardpuzzle_controller_slash_Create_0_gml_59_0")
         layer_set_visible("JA_TILES", 1)
         with (obj_solidblocksized_alt)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     else
         layer_set_visible("JA_TILES", 0)
-    var len = autoString
+    var len = string_length(autoString)
     for (i = 0; i < len; i++)
     {
         keytile[i] = gml_Script_instance_create((autoX + (currentW * 40)), (autoY + (currentH * 40)), obj_ch2_keyboardpuzzle_tile)
@@ -75,7 +75,7 @@ if (puzzle_id == 2)
 {
     monitorx = 40
     monitory = -20
-    victorySprite = 0
+    victorySprite = IMAGE_LOGO
     if use_ja
     {
         monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, 527)
@@ -83,7 +83,7 @@ if (puzzle_id == 2)
     }
     else
     {
-        monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, 3216)
+        monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, 3217)
         monitorx += 390
     }
     monitor.image_speed = 0.0625
@@ -100,7 +100,7 @@ else
         monitorx = 40
         monitory = 0
     }
-    monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 950000, 3215)
+    monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 950000, 3216)
     monitor.image_speed = 0.0625
     monitorx += 330
 }
@@ -111,11 +111,11 @@ if (room == room_dw_cyber_keyboard_puzzle_2 && global.flag[333] == 1)
     won = 1
 if (room == room_dw_cyber_keyboard_puzzle_3 && global.flag[420] == 1)
 {
-    victorySprite = 2397
+    victorySprite = spr_keyboard_puzzle_bluecheck
     won = 1
 }
 if won
 {
     currentString = idealString
-    imageTimer = (victorySprite - 0.5)
+    imageTimer = (sprite_get_number(victorySprite) - 0.5)
 }

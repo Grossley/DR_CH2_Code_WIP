@@ -1,4 +1,4 @@
-xrelative = (x - obj_growtangle.x)
+xrelative = abs((x - obj_growtangle.x))
 if (shotready && ((!caralert) || (xrelative >= 12 && xrelative <= 23)))
 {
     if (flashtimer < 8)

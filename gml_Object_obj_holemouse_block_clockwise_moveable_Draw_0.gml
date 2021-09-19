@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (flash == true)
 {
     if (flashtimer == 0)

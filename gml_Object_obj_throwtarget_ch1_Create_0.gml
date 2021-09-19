@@ -4,7 +4,7 @@ image_yscale = 2
 image_speed = 0.2
 good = 1
 offing = 0
-if (object_index == obj_pipis_bullet_cone)
+if (instance_number(object_index) == 1)
 {
     tt = gml_Script_instance_create_ch1(x, y, 1580)
     tt.depth = (depth + 1)

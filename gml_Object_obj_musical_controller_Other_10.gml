@@ -17,7 +17,7 @@ if (b == 0)
 if (b == 1)
 {
     global.typer = 50
-    if (707 && obj_sweet_enemy.dancing == 1 && obj_sweet_enemy.danceCounter == 1)
+    if (instance_exists(obj_sweet_enemy) && obj_sweet_enemy.dancing == 1 && obj_sweet_enemy.danceCounter == 1)
     {
         if (happyfeetscene == 1)
         {
@@ -37,7 +37,7 @@ if (b == 1)
             }
         }
     }
-    if (709 && obj_hatguy_enemy.dancing == 1 && obj_hatguy_enemy.danceCounter == 1)
+    if (instance_exists(obj_hatguy_enemy) && obj_hatguy_enemy.dancing == 1 && obj_hatguy_enemy.danceCounter == 1)
     {
         if (happyfeetscene == 1)
         {
@@ -57,7 +57,7 @@ if (b == 1)
             }
         }
     }
-    if (711 && obj_kk_enemy.dancing == 1 && obj_kk_enemy.danceCounter == 1)
+    if (instance_exists(obj_kk_enemy) && obj_kk_enemy.dancing == 1 && obj_kk_enemy.danceCounter == 1)
     {
         if (happyfeetscene == 1)
         {
@@ -107,6 +107,6 @@ if (b == 1)
     if (obj_musical_controller.ralseiportrait == 0)
     {
         with (obj_kk_enemy)
-            1
+            event_user(1)
     }
 }

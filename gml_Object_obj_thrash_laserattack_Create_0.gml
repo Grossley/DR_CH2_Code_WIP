@@ -1,6 +1,6 @@
 thrash = obj_rouxls_enemy.thrash
 thrash.headangle = 0
-lastattack = 2
+lastattack = irandom(2)
 attackangle = ((lastattack * 90) + 90)
 headangle = 180
 lastangle = 180

@@ -1,10 +1,10 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 touchflag = 0
 touchsprite = spr_diamondm_hurt
 eraser = false
 touchflag = 0
 ignoresolid = false
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 image_xscale = 2
 image_yscale = 2
 hitresult = 1

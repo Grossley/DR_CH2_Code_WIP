@@ -49,7 +49,7 @@ global.at[3] = 8
 global.mag[3] = 12
 global.spell[2][0] = 4
 global.spell[3][0] = 2
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellinfo_all()
 global.item[0] = 1
 global.item[1] = 1
 global.item[2] = 1
@@ -63,7 +63,7 @@ global.item[9] = 1
 global.item[10] = 1
 global.item[11] = 1
 global.item[12] = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_iteminfo_all()
 global.l_item[0] = 1
 global.l_item[1] = 1
 global.l_item[2] = 2
@@ -99,7 +99,7 @@ for (i = 0; i < 20; i += 1)
 }
 global.myfight = 0
 global.mnfight = 0
-16777215
+draw_set_color(c_white)
 global.fc = 2
 global.fe = 0
 global.typer = 3

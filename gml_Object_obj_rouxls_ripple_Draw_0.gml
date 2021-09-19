@@ -1,6 +1,6 @@
 timer += 0.1
 if (timer > 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 scale = (gml_Script_scr_ease_out(timer, 3) * maxsize)
 if (timer < 0.25)
     alpha = (timer * 4)

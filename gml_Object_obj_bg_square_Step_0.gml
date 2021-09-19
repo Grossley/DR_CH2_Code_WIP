@@ -4,4 +4,4 @@ if (slow_down == 0)
     siner += 1
 y = (ystart + (((siner * siner) * siner) / 2048))
 if (y >= 640)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

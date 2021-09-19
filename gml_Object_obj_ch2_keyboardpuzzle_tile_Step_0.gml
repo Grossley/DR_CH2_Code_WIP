@@ -4,14 +4,14 @@ if (init == 0)
         myString = jaString
     if (myString == "!")
         textImage = 36
-    else if (myString <= 57)
-        textImage = (myString - 22)
+    else if (ord(myString) <= 57)
+        textImage = (ord(myString) - 22)
     else
-        textImage = (myString - 65)
+        textImage = (ord(string_upper(myString)) - 65)
     init = 1
 }
 var checkPress = 0
-if (80 && pressable && global.interact == 0)
+if (gml_Script_i_ex(80) && pressable && global.interact == 0)
 {
     if place_meeting(x, y, obj_mainchara)
         checkPress = 1
@@ -24,16 +24,16 @@ if checkPress
         pressed = 1
         with (obj_ch2_keyboardpuzzle_speaker)
             image_timer = 7
-        if (myString == "A" && 99 == 0)
-            21
+        if (myString == "A" && irandom(99) == 0)
+            gml_Script_snd_play(21)
         else if (myString == "!")
-            8
+            gml_Script_snd_play(8)
         else
-            ("snd_speak_and_spell_" + myString)
+            gml_Script_snd_play(asset_get_index(("snd_speak_and_spell_" + myString)))
         obj_ch2_keyboardpuzzle_controller.addString = myString
         obj_ch2_keyboardpuzzle_controller.lastPressedTile = id
         with (obj_ch2_keyboardpuzzle_controller)
-            0
+            event_user(0)
     }
 }
 else if (pressable && global.interact == 0)

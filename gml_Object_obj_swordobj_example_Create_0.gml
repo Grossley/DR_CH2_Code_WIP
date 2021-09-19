@@ -1,3 +1,3 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 exploded = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

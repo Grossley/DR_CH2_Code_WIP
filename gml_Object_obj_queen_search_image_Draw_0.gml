@@ -1,9 +1,8 @@
-var _temp_local_var_1;
 if (loading > 0)
 {
     if (loading == 9)
     {
-        loopindex = (sprite_index - 3)
+        loopindex = sprite_get_number((sprite_index - 3))
         image_index = 2
         loopindex = 2
     }
@@ -13,16 +12,11 @@ if (loading > 0)
     else if ((loading % 3) == 0)
         image_index++
 }
-else
+else if (loopindex > 1 && (!gml_Script_scr_queen_buffercheck()))
 {
-    if (loopindex > 1)
-    {
-    }
-    else
-        var _temp_local_var_1 = 0
     animtimer++
     if (animtimer >= (loopindex * 4))
         animtimer = 0
-    image_index = (animtimer / 4)
+    image_index = floor((animtimer / 4))
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

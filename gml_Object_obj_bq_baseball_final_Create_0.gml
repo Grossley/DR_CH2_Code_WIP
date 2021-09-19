@@ -4,7 +4,7 @@ else
     arcade = 0
 f = 2
 depth = (o_boxingqueen.depth - 1)
-image_angle = 359
+image_angle = irandom(359)
 vspeed = 0
 image_xscale = 0.1
 image_yscale = 0.1

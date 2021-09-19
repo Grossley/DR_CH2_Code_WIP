@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
-if (!628)
-    // WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
+if (!instance_exists(obj_heart))
+    instance_destroy()
 timer = 0
 con = 0
 siner = 0
@@ -16,8 +16,8 @@ howlong = 20
 howfar = 0
 flipSpeed = 4
 flipTimer = 0
-if 571
+if instance_exists(obj_queen_enemy)
     damage = (global.monsterat[obj_queen_enemy.myself] * 5)
-if 572
+if instance_exists(obj_queen_bulletcontroller)
     target = obj_queen_bulletcontroller.target
 grazepoints = 3

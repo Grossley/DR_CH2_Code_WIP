@@ -32,5 +32,5 @@ if (winetimer == 23)
     shield.appearcon = 1
     wine = gml_Script_instance_create(x, y, obj_queen_battlesolid_wine)
     wine.alpha2 = 0
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

@@ -1,5 +1,6 @@
+var _temp_local_var_1;
 hp--
-if (x + 480)
+if (x <= (gml_Script_camerax() + 480))
 {
     friction = 0.5
     if (other.big == 1)
@@ -15,8 +16,8 @@ if (x + 480)
             hspeed += 4
     }
 }
-166
-if (x + 480)
-    x = 480
-with (stacktop)
-    0
+gml_Script_snd_play(166)
+if (x >= (gml_Script_camerax() + 480))
+    x = (gml_Script_camerax() + 480)
+var _temp_local_var_1 = other
+event_user(0)

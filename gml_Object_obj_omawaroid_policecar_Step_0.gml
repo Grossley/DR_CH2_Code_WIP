@@ -1,21 +1,21 @@
 if (wall_destroy == 1)
 {
     if (x < (gml_Script___view_get(0, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (x > (gml_Script___view_get(0, 0) + 760))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y > (gml_Script___view_get(1, 0) + 580))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (!init)
 {
-    var laneOffset = (x > obj_growtangle.x ? 0 : obj_growtangle.x)
+    var laneOffset = (x > obj_growtangle.x ? 0 : (gml_Script_gt_maxx() - obj_growtangle.x))
     inst = collision_rectangle((obj_growtangle.x - laneOffset), gml_Script_gt_miny(), (gml_Script_gt_maxx() - laneOffset), gml_Script_gt_maxy(), obj_omawaroid_policecar, 0, 1)
     if (inst != noone)
     {
-        var finishtime = ((inst.y - 20) / inst.speed)
+        var finishtime = ((inst.y - (gml_Script_gt_miny() - 20)) / inst.speed)
         var catchuptime = 0
         if (inst.speed < speed)
         {
@@ -61,7 +61,7 @@ else if (state == 1)
 else if turnSignal
 {
     bottomScan = (y - 20)
-    var laneCheck = (x - obj_growtangle.x)
+    var laneCheck = sign((x - obj_growtangle.x))
     inst = collision_rectangle((obj_growtangle.x + (laneCheck * 3)), ((y - 15) - (speed * 7)), (obj_growtangle.x + (laneCheck * 30)), bottomScan, obj_omawaroid_policecar, 0, 1)
     if (inst != -4)
     {

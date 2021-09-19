@@ -2,9 +2,9 @@ if (active == true)
 {
     spawning = 0
     if (target != 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage()
     if (target == 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage_all()
     image_speed = 1
     speed = 0
     spawnVirus = 0

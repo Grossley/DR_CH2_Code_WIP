@@ -9,7 +9,7 @@ global.fc = 0
 xx = gml_Script___view_get(0, view_current)
 yy = gml_Script___view_get(1, view_current)
 d = -1
-if 1326
+if instance_exists(obj_dialoguer_ch1)
     d = obj_dialoguer_ch1.side
 d_add = 0
 if (d == -1)

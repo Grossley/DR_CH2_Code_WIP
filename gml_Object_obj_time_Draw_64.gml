@@ -1,10 +1,13 @@
-if (quicksaved != 2)
-    0
-if gif_recording
+if gml_Script_scr_debug()
 {
-    255
-    3
-    draw_text(0, 440, ("GIF FRAME:" + string(gif_timer)))
+    if (quicksaved != 2)
+        gml_Script_scr_84_debug(0)
+    if gif_recording
+    {
+        draw_set_color(c_red)
+        draw_set_font(fnt_main)
+        draw_text(0, 440, ("GIF FRAME:" + string(gif_timer)))
+    }
 }
 if (quit_timer >= 1)
     draw_sprite_ext(gml_Script_scr_84_get_sprite("spr_quitmessage"), (quit_timer / 7), 4, 4, 2, 2, 0, c_white, (quit_timer / 15))

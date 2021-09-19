@@ -3,8 +3,8 @@ if (con == 0)
 {
     if (sndcon == 0)
     {
-        422
-        422
+        gml_Script_snd_stop_ch1(422)
+        gml_Script_snd_play_ch1(422)
         sndcon = 1
     }
     image_index = 0
@@ -24,7 +24,7 @@ if (con == 1)
     {
         if (sndcon == 1 && type < 3)
         {
-            466
+            gml_Script_snd_play_ch1(466)
             sndcon = 2
         }
         image_index = 1
@@ -35,7 +35,7 @@ if (con == 1)
             bullet = gml_Script_instance_create_ch1(x, y, 1518)
             bullet.sprite_index = spr_diamondbullet_ch1
             bullet.active = true
-            bullet
+            gml_Script_scr_bullet_inherit_ch1(bullet)
             var _temp_local_var_2 = bullet
             move_towards_point((obj_heart_ch1.x + 10), (obj_heart_ch1.y + 10), 8)
             image_angle = direction
@@ -88,5 +88,6 @@ if (con == 4)
     {
         image_xscale = 0
         con = 0
+        instance_destroy()
     }
 }

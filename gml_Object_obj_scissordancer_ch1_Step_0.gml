@@ -49,7 +49,7 @@ if (sndcon >= 1 && sndcon <= 5)
     if (sndtimer <= 0)
     {
         p = (0.5 + random(0.7))
-        b = 369
+        b = gml_Script_snd_play_ch1(369)
         gml_Script_snd_pitch_ch1(b, p)
         sndcon += 1
         sndtimer = 3
@@ -65,8 +65,8 @@ if (sndcon == 6)
         sndtimer = 0
     }
 }
-// WARNING: Popz'd an empty stack.
-if bullet
+gml_Script_scr_depth_ch1()
+if instance_exists(bullet)
 {
     bullet.x = (x + hspeed)
     bullet.y = (y + vspeed)

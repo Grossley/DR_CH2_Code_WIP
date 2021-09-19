@@ -11,7 +11,7 @@ if (global.interact == 5)
         moveyy += 135
     if (global.menuno != 4)
     {
-        16777215
+        draw_set_color(c_white)
         draw_rectangle((16 + xx), (16 + moveyy), (86 + xx), (70 + moveyy), false)
         draw_rectangle((16 + xx), (74 + yy), (86 + xx), (147 + yy), false)
         if (global.menuno == 1 || global.menuno == 5 || global.menuno == 6)
@@ -22,7 +22,7 @@ if (global.interact == 5)
             draw_rectangle((94 + xx), (16 + yy), (266 + xx), (150 + yy), false)
         if (global.menuno == 7)
             draw_rectangle((94 + xx), (16 + yy), (266 + xx), (216 + yy), false)
-        0
+        draw_set_color(c_black)
         draw_rectangle((19 + xx), (19 + moveyy), (83 + xx), (67 + moveyy), false)
         draw_rectangle((19 + xx), (77 + yy), (83 + xx), (144 + yy), false)
         if (global.menuno == 1 || global.menuno == 5 || global.menuno == 6)
@@ -33,66 +33,66 @@ if (global.interact == 5)
             draw_rectangle((97 + xx), (19 + yy), (263 + xx), (147 + yy), false)
         if (global.menuno == 7)
             draw_rectangle((97 + xx), (19 + yy), (263 + xx), (213 + yy), false)
-        16777215
-        5
-        draw_text((23 + xx), (49 + moveyy), ((("obj_overworldc_slash_Draw_0_gml_36_0" + string(global.lhp)) + "/") + string(global.lmaxhp)))
-        draw_text((23 + xx), (40 + moveyy), ("obj_overworldc_slash_Draw_0_gml_37_0" + string(global.llv)))
-        draw_text((23 + xx), (58 + moveyy), ("obj_overworldc_slash_Draw_0_gml_39_0" + string(global.lgold)))
-        "main"
-        var _itemTextColor = (hasitems ? 16777215 : 8421504)
+        draw_set_color(c_white)
+        draw_set_font(fnt_small)
+        draw_text((23 + xx), (49 + moveyy), string_hash_to_newline((((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_36_0") + string(global.lhp)) + "/") + string(global.lmaxhp))))
+        draw_text((23 + xx), (40 + moveyy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_37_0") + string(global.llv))))
+        draw_text((23 + xx), (58 + moveyy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_39_0") + string(global.lgold))))
+        gml_Script_scr_84_set_draw_font_ch1("main")
+        var _itemTextColor = (hasitems ? c_white : c_gray)
         if (global.lang == "ja")
         {
-            draw_text((20 + xx), (20 + moveyy), global.lcharname)
-            _itemTextColor
-            draw_text((40 + xx), (84 + yy), "obj_overworldc_slash_Draw_0_gml_42_0")
+            draw_text((20 + xx), (20 + moveyy), string_hash_to_newline(global.lcharname))
+            draw_set_color(_itemTextColor)
+            draw_text((40 + xx), (84 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_42_0")))
         }
         else
         {
-            draw_text((23 + xx), (20 + moveyy), global.lcharname)
-            _itemTextColor
-            draw_text((42 + xx), (84 + yy), "obj_overworldc_slash_Draw_0_gml_42_0")
+            draw_text((23 + xx), (20 + moveyy), string_hash_to_newline(global.lcharname))
+            draw_set_color(_itemTextColor)
+            draw_text((42 + xx), (84 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_42_0")))
         }
-        16777215
-        draw_text((42 + xx), (102 + yy), "obj_overworldc_slash_Draw_0_gml_43_0")
-        draw_text((42 + xx), (120 + yy), "obj_overworldc_slash_Draw_0_gml_44_0")
+        draw_set_color(c_white)
+        draw_text((42 + xx), (102 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_43_0")))
+        draw_text((42 + xx), (120 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_44_0")))
         if (global.menuno == 1 || global.menuno == 5)
         {
             for (i = 0; i < 8; i += 1)
-                draw_text((116 + xx), ((30 + yy) + (i * 16)), global.litemname[i])
-            draw_text((116 + xx), (170 + yy), "obj_overworldc_slash_Draw_0_gml_52_0")
-            draw_text(((116 + xx) + 48), (170 + yy), "obj_overworldc_slash_Draw_0_gml_53_0")
-            draw_text(((116 + xx) + 105), (170 + yy), "obj_overworldc_slash_Draw_0_gml_54_0")
+                draw_text((116 + xx), ((30 + yy) + (i * 16)), string_hash_to_newline(global.litemname[i]))
+            draw_text((116 + xx), (170 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_52_0")))
+            draw_text(((116 + xx) + 48), (170 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_53_0")))
+            draw_text(((116 + xx) + 105), (170 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_54_0")))
         }
     }
     if (global.menuno == 3)
     {
         for (i = 0; i < 7; i += 1)
-            draw_text((116 + xx), ((30 + yy) + (i * 16)), global.phonename[i])
+            draw_text((116 + xx), ((30 + yy) + (i * 16)), string_hash_to_newline(global.phonename[i]))
     }
     if (global.menuno == 2)
     {
-        draw_text((108 + xx), (32 + yy), gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_66_0"), global.lcharname))
-        draw_text((108 + xx), (62 + yy), ("obj_overworldc_slash_Draw_0_gml_67_0" + string(global.llv)))
-        draw_text((108 + xx), (78 + yy), (gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_68_0"), global.lhp) + string(global.lmaxhp)))
-        draw_text((108 + xx), (110 + yy), ((gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_70_0"), global.lat) + string(global.lwstrength)) + ")"))
-        draw_text((108 + xx), (126 + yy), ((gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_71_0"), global.ldf) + string(global.ladef)) + ")"))
-        weaponname = "obj_overworldc_slash_Draw_0_gml_72_0"
-        armorname = "obj_overworldc_slash_Draw_0_gml_73_0"
+        draw_text((108 + xx), (32 + yy), string_hash_to_newline(gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_66_0"), global.lcharname)))
+        draw_text((108 + xx), (62 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_67_0") + string(global.llv))))
+        draw_text((108 + xx), (78 + yy), string_hash_to_newline((gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_68_0"), string(global.lhp)) + string(global.lmaxhp))))
+        draw_text((108 + xx), (110 + yy), string_hash_to_newline(((gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_70_0"), string(global.lat)) + string(global.lwstrength)) + ")")))
+        draw_text((108 + xx), (126 + yy), string_hash_to_newline(((gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_71_0"), string(global.ldf)) + string(global.ladef)) + ")")))
+        weaponname = gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_72_0")
+        armorname = gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_73_0")
         if (global.lweapon == 2)
-            weaponname = "obj_overworldc_slash_Draw_0_gml_74_0"
+            weaponname = gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_74_0")
         if (global.lweapon == 6)
-            weaponname = "obj_overworldc_slash_Draw_0_gml_75_0"
+            weaponname = gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_75_0")
         if (global.lweapon == 7)
-            weaponname = "obj_overworldc_slash_Draw_0_gml_76_0"
+            weaponname = gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_76_0")
         if (global.larmor == 3)
-            armorname = "obj_overworldc_slash_Draw_0_gml_77_0"
-        draw_text((108 + xx), (156 + yy), ("obj_overworldc_slash_Draw_0_gml_80_0" + weaponname))
-        draw_text((108 + xx), (172 + yy), ("obj_overworldc_slash_Draw_0_gml_81_0" + armorname))
-        draw_text((108 + xx), (192 + yy), ("obj_overworldc_slash_Draw_0_gml_82_0" + string(global.lgold)))
-        if (global.lcharname >= 7)
-            draw_text((192 + xx), (32 + yy), "obj_overworldc_slash_Draw_0_gml_88_0")
+            armorname = gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_77_0")
+        draw_text((108 + xx), (156 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_80_0") + weaponname)))
+        draw_text((108 + xx), (172 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_81_0") + armorname)))
+        draw_text((108 + xx), (192 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_82_0") + string(global.lgold))))
+        if (string_length(global.lcharname) >= 7)
+            draw_text((192 + xx), (32 + yy), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_88_0")))
         nextlevel = 0
-        draw_text((192 + xx), (110 + yy), ("obj_overworldc_slash_Draw_0_gml_91_0" + string(global.lxp)))
+        draw_text((192 + xx), (110 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_91_0") + string(global.lxp))))
         if (global.llv == 1)
             nextlevel = (10 - global.lxp)
         if (global.llv == 2)
@@ -133,7 +133,7 @@ if (global.interact == 5)
             nextlevel = (99999 - global.lxp)
         if (global.llv >= 20)
             nextlevel = 0
-        draw_text((192 + xx), (126 + yy), ("obj_overworldc_slash_Draw_0_gml_112_0" + string(nextlevel)))
+        draw_text((192 + xx), (126 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_overworldc_slash_Draw_0_gml_112_0") + string(nextlevel))))
     }
     if (global.menuno == 444)
     {

@@ -7,4 +7,4 @@ if (big == 1)
         image_yscale -= (0.1 * f)
 }
 if (x.room_width + 80)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

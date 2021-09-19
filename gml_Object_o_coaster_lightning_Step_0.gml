@@ -38,5 +38,5 @@ if (con == 0 && y >= (ystart - vspeed))
 if (con == 1)
 {
     if (image_index >= 3)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

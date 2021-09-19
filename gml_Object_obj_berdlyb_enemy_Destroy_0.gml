@@ -1,9 +1,9 @@
 with (o_coaster_berdly)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 with (o_coaster_hero)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 with (o_coaster_controller)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 with (obj_herokris)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 gml_Script_instance_create(x, y, o_berdly_coaster_end_fix)

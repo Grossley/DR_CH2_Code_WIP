@@ -58,4 +58,4 @@ else
         }
     }
 }
-roomchoice
+room_goto(roomchoice)

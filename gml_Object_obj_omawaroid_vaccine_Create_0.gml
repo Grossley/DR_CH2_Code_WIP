@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 image_alpha = 0
-if (!628)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_heart))
+    instance_destroy()
 wall_destroy = 1
 topspeed = 0

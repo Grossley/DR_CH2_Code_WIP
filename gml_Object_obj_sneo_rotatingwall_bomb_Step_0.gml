@@ -1,13 +1,13 @@
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
-if (timer == 0 && 50)
+    instance_destroy()
+if (timer == 0 && gml_Script_i_ex(50))
     x += obj_sneo_wall_controller_new.wallspeed[wallnumber]
 if (timer > 0)
     timer++
 if (timer == 6)
 {
-    141
-    bomsfallsfx
+    gml_Script_snd_play(141)
+    gml_Script_snd_stop(bomsfallsfx)
     sprite_index = spr_mettaton_bomb2
     image_index = 0
     gml_Script_instance_create(x, y, obj_shake)
@@ -19,4 +19,4 @@ if (timer == 6)
     hitbox2.image_yscale = 500
 }
 if (timer == 12)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

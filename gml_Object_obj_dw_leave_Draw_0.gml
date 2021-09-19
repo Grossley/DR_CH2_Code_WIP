@@ -1,6 +1,6 @@
 pillarsiner++
 dist = 0
-if 80
+if instance_exists(obj_mainchara)
     dist = (point_distance(x, y, (obj_mainchara.x + 20), (obj_mainchara.y + 30)) - 30)
 if (dist < 0)
     dist = 0
@@ -9,13 +9,13 @@ if (alphadist >= 0.3)
     alphadist = 0.3
 for (i = 0; i < 3; i++)
 {
-    sinoff = ((i / 4) + (pillarsiner / 10))
+    sinoff = sin(((i / 4) + (pillarsiner / 10)))
     if (bottom == 1)
         draw_sprite_ext(sprite_index, 0, x, y, ((image_xscale - (0.3 * i)) + (sin(sinoff) * 0.1)), image_yscale, 0, c_white, ((((0.7 - alphadist) + (sin(sinoff) * 0.01)) + pillaralpha) / 2))
     if (top == 1)
         draw_sprite_ext(sprite_index, 1, x, y, ((pillarscale - (0.3 * i)) + (sin(sinoff) * 0.1)), image_yscale, 0, c_white, ((((0.4 - alphadist) + (sin(sinoff) * 0.01)) + pillaralpha) / 3))
 }
-0
+gml_Script_draw_set_blend_mode(0)
 if (top == 1)
 {
     particletimer++
@@ -26,7 +26,7 @@ if (top == 1)
     }
     if (con == 1)
     {
-        245
+        gml_Script_snd_play(245)
         with (obj_dw_leave)
         {
             if (bottom == 1)
@@ -43,20 +43,20 @@ if (top == 1)
     {
         alphab += 0.001
         fake_v += (0.5 + (alphab * 20))
-        1
+        gml_Script_draw_set_blend_mode(1)
         draw_sprite_ext(sprite_index, 1, x, y, 99, 99, 0, c_white, (fake_v / 80))
-        0
+        gml_Script_draw_set_blend_mode(0)
         if ((fake_v / 80) >= 1.2)
         {
             pers = gml_Script_instance_create(0, 0, obj_persistentfadein)
             pers.image_blend = c_white
             global.interact = 3
             global.entrance = 24
-            global.currentsong[0]
-            // WARNING: Popz'd an empty stack.
+            gml_Script_snd_free(global.currentsong[0])
+            gml_Script_scr_become_light()
             if (global.plot == 16 && global.chapter == 2)
-                // WARNING: Popz'd an empty stack.
-            nextroom
+                gml_Script_scr_losechar()
+            room_goto(nextroom)
         }
     }
 }

@@ -1,7 +1,7 @@
 timer -= 1
 if (timer <= 0)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     if (kick == 1 && o_boxingcontroller.wireframe_boxing == 1 && has_tutorial_kick_hit_player == 0 && o_boxingcontroller.succeeded_kick_tutorial == 0)
     {
         o_boxingcontroller.failed_kick_tutorial_counter = 1

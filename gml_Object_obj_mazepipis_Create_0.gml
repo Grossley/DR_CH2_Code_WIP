@@ -8,5 +8,5 @@ read = 0
 x += choose(-2, 0, 0, 0, -2)
 y += choose(-2, 0, 0, 0, -2)
 if place_meeting(x, y, obj_mazepipis)
-    // WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+    instance_destroy()
+gml_Script_scr_depth()

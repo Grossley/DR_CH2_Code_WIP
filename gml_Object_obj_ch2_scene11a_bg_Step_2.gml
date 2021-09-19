@@ -1,4 +1,4 @@
-var drawx = 10
+var drawx = (gml_Script_camerax() - (gml_Script_cameray() / 10))
 if parallax
 {
     cityscape_bg_1.x_pos = drawx
@@ -13,4 +13,4 @@ if looping
         coaster_track[i].x_speed = -15
 }
 if fountain_active
-    fountain.x = 25
+    fountain.x = (gml_Script_camerax() + 25)

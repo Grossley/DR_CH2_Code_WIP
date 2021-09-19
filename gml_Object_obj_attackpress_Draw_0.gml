@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_2, _temp_local_var_10, _temp_local_var_21
 maxdelaytimer += 1
 if (spelluse == 1)
 {
-    if 0
+    if (gml_Script_scr_monsterpop() > 0)
     {
         for (xyz = 0; xyz < 3; xyz += 1)
         {
@@ -30,38 +30,38 @@ if (active == true)
     {
         if (havechar[0] == true || havechar[1] == true || havechar[2] == true)
         {
-            bcolor
+            draw_set_color(bcolor)
             if (i == 1 || i == 2)
                 draw_rectangle((x + 77), (y + (38 * i)), (x + 300), ((y + (38 * i)) + 1), false)
         }
         if (global.char[i] != 0 && global.charauto[global.char[i]] == 0 && havechar[i] == true)
         {
-            bcolor
+            draw_set_color(bcolor)
             j = global.char[i]
             fullbox = 0
             if (j == 1)
             {
-                16711680
+                draw_set_color(c_blue)
                 if (pressbuffer[1] > 0)
-                    merge_color(c_blue, c_white, (pressbuffer[1] / 5))
+                    draw_set_color(merge_color(c_blue, c_white, (pressbuffer[1] / 5)))
             }
             if (j == 2)
             {
-                8388736
+                draw_set_color(c_purple)
                 if (pressbuffer[2] > 0)
-                    merge_color(c_purple, c_white, (pressbuffer[2] / 5))
+                    draw_set_color(merge_color(c_purple, c_white, (pressbuffer[2] / 5)))
             }
             if (j == 3)
             {
-                32768
+                draw_set_color(c_green)
                 if (pressbuffer[3] > 0)
-                    merge_color(c_green, c_white, (pressbuffer[3] / 5))
+                    draw_set_color(merge_color(c_green, c_white, (pressbuffer[3] / 5)))
             }
             if (j == 4)
             {
-                65535
+                draw_set_color(c_yellow)
                 if (pressbuffer[2] > 0)
-                    merge_color(c_yellow, c_white, (pressbuffer[2] / 5))
+                    draw_set_color(merge_color(c_yellow, c_white, (pressbuffer[2] / 5)))
             }
             draw_rectangle((x + 78), ((y + (38 * i)) + 1), ((x + 80) + (15 * boltspeed)), ((y + (38 * i)) + 36), true)
             draw_rectangle((x + 79), ((y + (38 * i)) + 2), (((x + 80) + (15 * boltspeed)) - 1), ((y + (38 * i)) + 35), true)
@@ -105,23 +105,23 @@ if (active == true)
             {
                 attacked[i] = true
                 target = i
-                1
+                event_user(1)
             }
         }
     }
-    if 0
+    if (gml_Script_scr_monsterpop() > 0)
     {
         if (global.flag[13] == 1)
         {
-            if (havechar[0] == true)
-                0
-            if (havechar[1] == true)
-                1
-            if (havechar[2] == true)
-                2
+            if (gml_Script_button1_p() && havechar[0] == true)
+                gml_Script_scr_boltcheck(0)
+            if (gml_Script_button2_p() && havechar[1] == true)
+                gml_Script_scr_boltcheck(1)
+            if (gml_Script_button3_p() && havechar[2] == true)
+                gml_Script_scr_boltcheck(2)
         }
-        else
-            // WARNING: Popz'd an empty stack.
+        else if gml_Script_button1_p()
+            gml_Script_scr_boltcheck_onebutton()
     }
     else
     {
@@ -145,12 +145,12 @@ if (active == true)
                 goahead = true
         }
     }
-    if 0
+    if (gml_Script_scr_monsterpop() == 0)
         goahead = true
     if (goahead == true)
     {
         posttimer += 1
-        if (posttimer > (timermax - 35) ? (haveauto == true ? (autoed == false ? 0 : 0) : 0) : 0)
+        if (posttimer > (timermax - 35) && haveauto == true && autoed == false && gml_Script_scr_monsterpop() > 0)
         {
             global.charinstance[sus].points = 160
             if (global.automiss[global.chartarget[sus]] == true)
@@ -171,10 +171,10 @@ if (active == true)
                 itemed = false
             }
             techwon = false
-            if (global.charinstance[sus] == 0)
+            if (gml_Script_scr_monsterpop() == 0)
                 techwon = true
             if (techwon == true)
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_wincombat()
             if (techwon == false)
             {
                 global.mnfight = 1
@@ -185,14 +185,14 @@ if (active == true)
     if (fade == 1 || fakefade == 1)
     {
         fadeamt += 0.08
-        0
-        fadeamt
+        draw_set_color(c_black)
+        draw_set_alpha(fadeamt)
         draw_rectangle((x - 1), y, (x + 640), (y + 300), false)
-        1
+        draw_set_alpha(1)
         if (fade == 1)
         {
             if (fadeamt > 1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
 }

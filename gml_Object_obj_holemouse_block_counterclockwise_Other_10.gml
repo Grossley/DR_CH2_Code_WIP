@@ -34,7 +34,7 @@ if (visible == true && pushable == 1)
             confirm = 0
         if collision_rectangle(ix, iy, (ix + 15), (iy + 15), obj_solidenemy, 0, 1)
             confirm = 0
-        64
+        gml_Script_snd_play(64)
         if (confirm == 1)
         {
             global.interact = 1

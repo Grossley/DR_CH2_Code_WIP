@@ -1,6 +1,6 @@
 global.interact = 1
 image_speed_fake = 0.2
-"noone"
+gml_Script_scr_speaker("noone")
 myid = global.flag[(800 + seat)]
 seat0 = global.flag[800]
 seat1 = global.flag[801]
@@ -30,7 +30,7 @@ if (myid == 30 && aite == 35)
 if (myid == 32 && aite == 34)
 {
     _dialogue[0] = gml_Script_stringsetloc("* [Miaouw]/%", "obj_npc_cafe_slash_Other_10_gml_72_0")
-    if 114
+    if gml_Script_i_ex(114)
     {
         with (obj_npc_castle_cafe)
             t_con = 1

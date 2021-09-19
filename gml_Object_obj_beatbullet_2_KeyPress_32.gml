@@ -1,1 +1,2 @@
-inSync = 0
+if gml_Script_scr_debug()
+    inSync = 0

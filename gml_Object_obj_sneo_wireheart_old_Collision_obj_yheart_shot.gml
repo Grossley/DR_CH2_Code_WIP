@@ -1,8 +1,8 @@
+var _temp_local_var_2, _temp_local_var_4;
 if (invincibility_timer > 0 && other.big == 0)
 {
-    with (stacktop)
-        // WARNING: Popz'd an empty stack.
-    return;
+    var _temp_local_var_2 = other
+    instance_destroy()
 }
 invincibility_timer = 10
 if (global.turntimer < 150)
@@ -39,12 +39,11 @@ else
         hp -= 5
     else
         hp--
-    type
-    hp
+    if gml_Script_scr_debug()
+    {
+        show_debug_message(type)
+        show_debug_message(hp)
+    }
 }
-with (stacktop)
-    // WARNING: Popz'd an empty stack.
-damagetimer = 5
-166
-if (hp <= 0)
-    destroyed = 1
+var _temp_local_var_4 = other
+instance_destroy()

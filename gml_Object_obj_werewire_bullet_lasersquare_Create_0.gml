@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 destroyonhit = 0
 grazepoints = 2
 init_con = 0

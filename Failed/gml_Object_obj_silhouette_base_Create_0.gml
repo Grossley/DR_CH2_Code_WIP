@@ -1,11 +1,9 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+outline = 1
+var d = gml_Script_instance_create(x, (gml_Script_cameray() - 100), obj_following_silhouette)
+d.target_char = 80
+with (obj_caterpillarchara)
+{
+    d = gml_Script_instance_create(x, (gml_Script_cameray() - 100), obj_following_silhouette)
+    d.target_char = self
+}
+depth = 200

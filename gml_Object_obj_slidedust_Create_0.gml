@@ -7,5 +7,5 @@ if (room == room_dw_mansion_dining3 || room == room_dw_mansion_dininghall)
     sprite_index = spr_dustcloud
     image_xscale = choose(2, -2)
     image_yscale = choose(2, -2)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()
 }

@@ -1,9 +1,9 @@
 if (!shotfired)
     siner += ((1 - abs(cos(((btimer / 14) * pi)))) * initialspeed)
 siner++
-attackangle = (((siner / 8) * 28) * flip)
+attackangle = ((sin((siner / 8)) * 28) * flip)
 thrash.headangle = attackangle
-if (btimer >= 14 && attackangle < 26)
+if (btimer >= 14 && abs(attackangle) < 26)
 {
     xx = (thrash.headx + gml_Script_scr_orbitx(0, 0, -40, -4, attackangle))
     yy = (thrash.heady + gml_Script_scr_orbity(0, 0, -40, -4, attackangle))

@@ -1,10 +1,5 @@
-var _temp_local_var_1;
-// WARNING: Popz'd an empty stack.
+draw_self()
 if afterimage
-    545
-if 559
-{
-}
-else
-    var _temp_local_var_1 = 0
-draw_sprite(spr_queen_buffering, (obj_queen_buffercontroller.bufferbar % 8), x, y)
+    gml_Script_scr_custom_afterimage(545)
+if (instance_exists(obj_queen_buffercontroller) && gml_Script_scr_queen_buffercheck())
+    draw_sprite(spr_queen_buffering, (obj_queen_buffercontroller.bufferbar % 8), x, y)

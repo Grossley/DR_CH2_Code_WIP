@@ -51,10 +51,10 @@ if (con == 9)
     {
         if (timer < 40)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_snd_free_all()
             if (skiprunback == 0)
             {
-                59
+                gml_Script_snd_play(59)
                 doorblack = 1
             }
             sus_v = 6
@@ -69,10 +69,10 @@ if (con == 9)
         sus_index += 0.2
     if (timer == 30)
     {
-        // WARNING: Popz'd an empty stack.
-        59
+        gml_Script_snd_free_all()
+        gml_Script_snd_play(59)
         with (obj_darkdoor)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         doorblack = 1
         sus_index = 0
         sus_v = 0
@@ -105,7 +105,7 @@ if (con == 9)
     }
     if (doorblack == 1)
     {
-        0
+        draw_set_color(c_black)
         draw_rectangle((rx1 + gml_Script_camerax()), (ry1 + gml_Script_cameray()), (rx2 + gml_Script_camerax()), (ry2 + gml_Script_cameray()), false)
     }
 }
@@ -136,8 +136,8 @@ if (con == 16)
     if (soundtimer >= soundthreshold && rectsound < rect_amount)
     {
         soundtimer = 0
-        243
-        243
+        gml_Script_snd_stop(243)
+        gml_Script_snd_play(243)
         gml_Script_snd_volume(243, 0.5, 0)
         rectsound++
     }
@@ -173,7 +173,7 @@ if (con == 17)
 }
 if (soundcon == 1)
 {
-    dronesfx = 244
+    dronesfx = gml_Script_snd_loop(244)
     gml_Script_snd_volume(dronesfx, 0, 0)
     gml_Script_snd_volume(dronesfx, 0.5, 60)
     gml_Script_snd_pitch(dronesfx, 0.1)
@@ -236,11 +236,11 @@ if (con == 30)
     {
         con = 31
         timer = 0
-        sus_width = 534
-        sus_height = 534
+        sus_width = sprite_get_width(spr_susie_dw_fall_d)
+        sus_height = sprite_get_height(spr_susie_dw_fall_d)
         sus_top = sus_height
-        kris_width = 536
-        kris_height = 536
+        kris_width = sprite_get_width(spr_kris_fall_d_dw)
+        kris_height = sprite_get_height(spr_kris_fall_d_dw)
         kris_top = kris_height
     }
 }
@@ -259,24 +259,24 @@ if (con == 31)
             breakcon = 1
         if (room == room_library)
         {
-            231
+            gml_Script_snd_play(231)
             for (i = 0; i < 1; i++)
             {
-                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), 2470)
+                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), 2471)
                 sparkle[i].image_speed = 0.5
                 sparkle[i].hspeed = random_range(-3, 3)
                 sparkle[i].friction = 0.05
                 sparkle[i].gravity = -0.1
             }
-            9
+            gml_Script_scr_keyitemremove(9)
         }
         if (global.plot >= 200 && global.flag[387] == 0)
         {
-            231
-            var total_recruits = (2 + 1)
+            gml_Script_snd_play(231)
+            var total_recruits = (gml_Script_scr_get_total_recruits(2) + 1)
             for (i = 0; i < total_recruits; i++)
             {
-                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), 2470)
+                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), 2471)
                 sparkle[i].image_speed = 0.5
                 sparkle[i].hspeed = random_range(-3, 3)
                 sparkle[i].friction = 0.05
@@ -320,10 +320,10 @@ if (con == 31)
     {
         if (quick_mode == 1)
             linecon = 0
-        sus_y = sus_y
-        sus_x = sus_x
-        kris_y = kris_y
-        kris_x = kris_x
+        sus_y = round(sus_y)
+        sus_x = round(sus_x)
+        kris_y = round(kris_y)
+        kris_x = round(kris_x)
         timer = 0
         sus_v = -0.2
         sus_f = 0.01
@@ -444,12 +444,13 @@ if (con == 34)
         sus_y = remsusy
         if (global.flag[302] == 1)
             global.flag[302] = 2
+        gml_Script_scr_become_dark()
         dz = (global.darkzone + 1)
-        nextroom
+        room_goto(nextroom)
     }
     if (timer == 27)
     {
-        240
+        gml_Script_snd_play(240)
         with (obj_mainchara)
         {
             x = -999
@@ -467,7 +468,7 @@ if (con == 34)
             {
                 obj_mainchara.y = kris_y
                 kris_y += 200
-                400
+                gml_Script_cameray_set((gml_Script_cameray() + 400))
             }
         }
     }

@@ -4,7 +4,7 @@ if (hurtstate2 == 1)
     return;
 }
 if (state == 3)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemy_drawhurt_generic()
 if (state == 0)
 {
     if dancing
@@ -17,13 +17,13 @@ if (state == 0)
         }
         if (flash == true)
             fsiner++
-        gml_Script_draw_monster_body_part_ext(1771, (8 - dance_index), ((x + (sin((siner / 4)) * 3)) + 2), y, 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, (3 - dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, 4, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, 1, ((x + (sin((siner / 2)) * 6)) - 4), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, (5 + dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, (8 - dance_index), ((x + (sin((siner / 4)) * 3)) + 2), y, 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, (3 - dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, 4, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, 1, ((x + (sin((siner / 2)) * 6)) - 4), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, (5 + dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
         dancetimer++
-        if ((siner / 4) > 0)
+        if (sin((siner / 4)) > 0)
             dance_index = 1
         else
             dance_index = 0
@@ -42,12 +42,12 @@ if (state == 0)
         }
     }
     else
-        0.16666666666666666
+        gml_Script_scr_enemy_drawidle_generic(0.16666666666666666)
 }
 if (becomeflash == false)
     flash = false
 becomeflash = false
-16777215
+draw_set_color(c_white)
 if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13)
 {
     siner2++
@@ -60,7 +60,7 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
     }
     if (global.myfight == 0)
     {
-        "mainbig"
+        gml_Script_scr_84_set_draw_font("mainbig")
         if (danceCounter == 1)
         {
             draw_text_ext_transformed(((gml_Script___view_get(0, 0) + 258) + xoffset), (((gml_Script___view_get(1, 0) + 369) + yoffset) + 0), gml_Script_stringsetloc("Dancing!", "obj_sweet_enemy_slash_Draw_0_gml_81_0"), 9999, 9999, 0.7, 1, 0)

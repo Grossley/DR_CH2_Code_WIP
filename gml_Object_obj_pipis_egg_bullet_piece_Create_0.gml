@@ -1,11 +1,11 @@
 timer = 0
 con = 0
 grav = 0
-image_angle = 360
-direction = 360
+image_angle = random(360)
+direction = random(360)
 speed = (3 + random(7))
 image_alpha = 2.9
-if 628
+if instance_exists(obj_heart)
     depth = (obj_heart.depth - 100)
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

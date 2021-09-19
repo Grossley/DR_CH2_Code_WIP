@@ -1,5 +1,5 @@
 if (global.flag[382] == 1 && 216)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 dir = 0
 init = 0
 image_yscale = 2
@@ -9,7 +9,7 @@ distance = 999
 distancechecker = 400
 image_index = 0
 image_speed = 0.25
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_alt()
 con = 0
 verticalDirection = 0
 horizontalDirection = 0

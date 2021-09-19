@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (blend_timer < 1)
     blend_timer += 0.25
 if (blend_timer > 0)

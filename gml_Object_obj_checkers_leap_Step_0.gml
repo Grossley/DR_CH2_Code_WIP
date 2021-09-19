@@ -7,7 +7,7 @@ if (leapmode == 0)
         {
             if (y >= ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - sprite_height))
             {
-                61
+                gml_Script_snd_play(61)
                 gml_Script_instance_create(0, 0, obj_shake)
                 y = ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - sprite_height)
                 jumptimer = 0
@@ -25,7 +25,7 @@ if (leapmode == 0)
         {
             if (y >= (floory - 2))
             {
-                61
+                gml_Script_snd_play(61)
                 gml_Script_instance_create(0, 0, obj_shake)
                 y = floory
                 x = xstart
@@ -46,7 +46,7 @@ if (leapmode == 0)
             jumpmax = 10
         if (jumptimer >= jumpmax)
         {
-            159
+            gml_Script_snd_play(159)
             floory = y
             jumptimer = 0
             jumpcon = 1
@@ -76,7 +76,7 @@ if (leapmode == 0)
             global.turntimer = -1
             with (obj_checkers_enemy)
                 visible = true
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
 }
@@ -98,7 +98,7 @@ if (leapmode == 1)
             global.turntimer = -1
             with (obj_checkers_enemy)
                 visible = true
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     if (jumpcon == 6)
@@ -127,7 +127,7 @@ if (leapmode == 1)
             targetx = ((obj_heart.x + 8) - (sprite_width / 2))
             hspeed = ((targetx - x) / 17)
             vspeed = -17
-            159
+            gml_Script_snd_play(159)
             gravity = 1
             amt += 1
             if (amt >= 3)
@@ -148,7 +148,7 @@ if (leapmode == 1)
             vspeed = 0
             hspeed = 0
             jumpcon = 2
-            150
+            gml_Script_snd_play(150)
         }
     }
     if (jumpcon == 2)
@@ -157,7 +157,7 @@ if (leapmode == 1)
         jumptimer += 1
         if (jumptimer >= 15)
         {
-            157
+            gml_Script_snd_play(157)
             image_speed = 0
             image_index = 0
             vspeed = 32
@@ -167,12 +167,12 @@ if (leapmode == 1)
     }
     if (jumpcon == 3)
     {
-        a = 
+        a = gml_Script_scr_afterimage()
         a.image_alpha = 0.7
         if (y >= ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - sprite_height))
         {
             shrapmax = 6
-            61
+            gml_Script_snd_play(61)
             gml_Script_instance_create(0, 0, obj_shake)
             for (i = 0; i < shrapmax; i += 1)
             {
@@ -207,7 +207,7 @@ if (leapmode == 2)
     if (jumpcon == 1)
     {
         if (image_index == 2)
-            157
+            gml_Script_snd_play(157)
         if (image_index >= 4)
         {
             image_index = 4
@@ -224,7 +224,7 @@ if (leapmode == 2)
         y += (sin((siner / 3)) * 4)
         s_timer += 1
         if (s_timer == 20)
-            145
+            gml_Script_snd_play(145)
         if (s_timer >= 24)
         {
             bul = gml_Script_instance_create((x + random((sprite_width / 2))), ((y + sprite_height) - 50), obj_regularbullet)
@@ -293,6 +293,7 @@ if (leapmode == 2)
         if (jumptimer >= 30)
         {
             global.turntimer = -1
+            instance_destroy()
             with (obj_checkers_enemy)
                 visible = true
         }
@@ -316,8 +317,8 @@ if (leapmode == 3)
     {
         if (image_index == 3)
         {
-            154
-            145
+            gml_Script_snd_play(154)
+            gml_Script_snd_play(145)
             for (i = 0; i < 4; i += 1)
             {
                 bul = gml_Script_instance_create((x - 40), (y + 100), obj_regularbullet)
@@ -369,7 +370,7 @@ if (leapmode == 3)
         if (jumptimer >= 30)
         {
             global.turntimer = -1
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
             with (obj_checkers_enemy)
                 visible = true
         }
@@ -436,7 +437,7 @@ if (leapmode == 4)
             global.turntimer = -1
             with (obj_checkers_enemy)
                 visible = true
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
 }

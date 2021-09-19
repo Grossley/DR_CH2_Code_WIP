@@ -32,6 +32,6 @@ autocomplete = 0
 graceperiod = 0
 if (room == room_dw_city_mice)
 {
-    if 1159
+    if instance_exists(obj_controller_dw_city_mice)
         obj_controller_dw_city_mice.noelleScared = 1
 }

@@ -1,5 +1,5 @@
 with (obj_sneo_sine_hand_controller)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 with (obj_sneo_sine_hand)
     con = 1
 obj_spamton_neo_enemy.partmode = 1

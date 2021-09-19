@@ -1,6 +1,6 @@
-var mercyset = bardlymercy
+var mercyset = ceil(bardlymercy)
 if ((mercyset + obj_queen_enemy.bardlymercy) > 100)
-    mercyset = (100 - obj_queen_enemy.bardlymercy)
+    mercyset = ceil((100 - obj_queen_enemy.bardlymercy))
 if (mercyset != 0)
 {
     __mercydmgwriter = gml_Script_instance_create((obj_berdlyplug_enemy.x + 20), ((obj_berdlyplug_enemy.y + 20) - (global.hittarget[0] * 20)), obj_dmgwriter)

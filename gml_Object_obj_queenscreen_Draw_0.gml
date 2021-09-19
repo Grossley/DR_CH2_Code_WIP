@@ -1,14 +1,14 @@
 if (brokenscreen == 0)
 {
-    16777215
-    // WARNING: Popz'd an empty stack.
+    draw_set_color(c_white)
+    draw_self()
     siner++
     y += (sin((siner / 16)) / 4)
     if (tasquecon == 0 && global.flag[8] == 0)
     {
-        1
+        gml_Script_draw_set_blend_mode(1)
         gml_Script_draw_sprite_ext_flash(sprite_index, image_index, x, y, (image_xscale + 0.01), (image_yscale + 0.01), image_angle, image_blend, (0.1 + (sin((siner / 5)) * 0.1)))
-        0
+        gml_Script_draw_set_blend_mode(0)
     }
 }
 if (brokenscreen == 1)
@@ -26,8 +26,8 @@ if (brokenscreen == 1)
     draw_sprite_ext(spr_queenscreen, drawindex, x, y, image_xscale, image_yscale, image_angle, c_white, 1)
     for (var i = 0; i < 9; i++)
     {
-        linecolor
-        brokeAlpha
+        draw_set_color(linecolor)
+        draw_set_alpha(brokeAlpha)
         draw_line_width((x + xx[i]), (y + yy[i]), (x + xx[(i + 1)]), (y + yy[(i + 1)]), 2)
     }
     timer2++
@@ -49,9 +49,9 @@ if (brokenscreen == 1)
         brokeAlpha *= 1.5
         if (global.flag[8] == 0)
         {
-            1
+            gml_Script_draw_set_blend_mode(1)
             gml_Script_draw_sprite_ext_flash(sprite_index, image_index, x, y, (image_xscale + 0.01), (image_yscale + 0.01), image_angle, image_blend, (0.1 + (sin((siner / 5)) * 0.1)))
-            0
+            gml_Script_draw_set_blend_mode(0)
         }
     }
 }

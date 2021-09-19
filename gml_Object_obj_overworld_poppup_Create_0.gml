@@ -1,4 +1,4 @@
-if 2
+if (gml_Script_scr_sideb_get_phase() == 2)
     weird = 1
 else
     weird = 0
@@ -8,7 +8,7 @@ frozensprite = 0
 speedboost = 0
 encountertype = 0
 noellepresent = 0
-if 274
+if instance_exists(obj_caterpillarchara)
 {
     with (obj_caterpillarchara)
     {
@@ -35,13 +35,13 @@ if (room == room_dw_city_roadblock)
         speedboost = 1
     sprite_index = spr_poppup_peeking
     if (noellepresent == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_city_poppup)
 {
     if (x > 700)
     {
-        topsprite = 3062
+        topsprite = 3063
         encountertype = 2
         encounterflag = 538
     }
@@ -49,8 +49,8 @@ if (room == room_dw_city_poppup)
     {
         topsprite = 85
         encounterflag = 567
-        if 2
-            // WARNING: Popz'd an empty stack.
+        if (gml_Script_scr_sideb_get_phase() != 2)
+            instance_destroy()
     }
 }
 if (room == room_dw_city_split)
@@ -61,14 +61,14 @@ if (room == room_dw_city_split)
         topsprite = 85
         encounterflag = 559
         if (global.flag[916] != 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         if (noellepresent == 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     else
     {
         sprite_index = spr_poppup_peeking
-        topsprite = 2674
+        topsprite = 2675
         encounterflag = 572
         encountertype = 2
     }

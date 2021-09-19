@@ -1,3 +1,4 @@
+var _temp_local_var_3;
 draw_sprite_ext(sprite_index, image_index, (x - 2), (y + 135), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 introtimer++
 if (introtimer == 15)
@@ -5,7 +6,7 @@ if (introtimer == 15)
 if (image_index >= 2)
 {
     if (openmisslechambertimer == 0)
-        60
+        gml_Script_snd_play(60)
     if (openmisslechambertimer < 5)
     {
         openmisslechambertimer += 1
@@ -62,21 +63,22 @@ if (!oldmode)
             var _y = 0
             if (volleycount >= 3)
                 _y += 20
-            220
-            220
+            gml_Script_snd_stop(220)
+            gml_Script_snd_play(220)
             d = gml_Script_instance_create((x + missilex[volleycount]), ((y + 16) + _y), obj_bqueen_missle_homing)
             d.vspeed = -6
             d.hspeed = choose(2, -2, 4, -4)
             d.damage = damage
             d.target = target
             d.depth = bulletdepth
+            var _temp_local_var_3 = d
             image_angle = (direction - 90)
-            var cloud = d
+            var cloud = gml_Script_scr_afterimage_grow()
             cloud.sprite_index = spr_cakesmoke_white
         }
     }
     if (global.turntimer < 3)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else if oldmode
 {
@@ -106,5 +108,5 @@ else if oldmode
         }
     }
     if (global.turntimer < 3)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

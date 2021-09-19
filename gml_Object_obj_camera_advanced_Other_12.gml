@@ -1,4 +1,4 @@
-if targetObject[cV]
+if gml_Script_i_ex(targetObject[cV])
 {
     if specialCamera[cV]
     {
@@ -21,7 +21,7 @@ if targetObject[cV]
             idealRelY = 0
             relXLerpAmt = 0.1
             relYLerpAmt = 0.1
-            if (movedX > (8 / (global.darkzone + 1)))
+            if (abs(movedX) > (8 / (global.darkzone + 1)))
             {
                 pullXTimer++
                 if (pullXTimer > 30)
@@ -32,17 +32,17 @@ if targetObject[cV]
             }
             else
                 pullXTimer = 0
-            if (movedY > (8 / (global.darkzone + 1)))
+            if (abs(movedY) > (8 / (global.darkzone + 1)))
             {
                 pullYTimer++
                 if (pullYTimer > 30)
-                    idealRelY = clamp((movedY * 16), (-round((specialCameraBorderMax[cV] * 0.7))), (specialCameraBorderMax[cV] * 0.7))
+                    idealRelY = clamp((movedY * 16), (-round((specialCameraBorderMax[cV] * 0.7))), round((specialCameraBorderMax[cV] * 0.7)))
             }
             else
                 pullYTimer = 0
-            if (idealRelX < 2)
+            if (abs(idealRelX) < 2)
                 idealRelX = 0
-            if (idealRelY < 2)
+            if (abs(idealRelY) < 2)
                 idealRelY = 0
             targetXRelative[cV] = lerp(targetXRelative[cV], idealRelX, relXLerpAmt)
             targetYRelative[cV] = lerp(targetYRelative[cV], idealRelY, relYLerpAmt)
@@ -50,8 +50,8 @@ if targetObject[cV]
             remObjectY = targetObject[cV].y
         }
     }
-    finalX = ((targetObject[cV].x + targetXRelative[cV]) / 2)
-    finalY = ((targetObject[cV].y + targetYRelative[cV]) / 2)
+    finalX = ((targetObject[cV].x + targetXRelative[cV]) - (gml_Script_camerawidth() / 2))
+    finalY = ((targetObject[cV].y + targetYRelative[cV]) - (gml_Script_cameraheight() / 2))
     if (targetObjectCenter[cV] == 1)
     {
         finalX += (targetObject[cV].sprite_width / 2)

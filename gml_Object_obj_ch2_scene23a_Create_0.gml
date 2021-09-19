@@ -9,14 +9,15 @@ if (global.flag[40] == 0)
         var trashy_npc = gml_Script_instance_create(1210, 310, obj_npc_room_animated)
         var _temp_local_var_1 = trashy_npc
         sprite_index = spr_npc_trashy
+        gml_Script_scr_depth()
     }
 }
 if (global.chapter != 2 || global.flag[319] > 0 || global.plot >= 160)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     global.interact = 0
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2528)
+    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

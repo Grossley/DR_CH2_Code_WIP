@@ -3,7 +3,7 @@ con = -1
 customcon = 0
 exitcollider = self
 if (global.chapter != 2 || global.plot >= 115)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     nisesusie = gml_Script_instance_create(35, 200, obj_npc_sign)
@@ -17,7 +17,7 @@ else
     exitcollider = gml_Script_instance_create(575, 240, obj_soliddark)
     exitcollider.image_xscale = 2
     exitcollider.image_yscale = 2
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2528)
+    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
@@ -35,10 +35,10 @@ else
     noelleoutline.image_speed = 0
     noelleoutline.image_index = 0
     noelle_lose = 0
-    sb_controller = 960
+    sb_controller = gml_Script_instance_create(gml_Script_camerax(), gml_Script_cameray(), obj_ch2_scene19c_spelling_bee)
     sb_crowd_show = 0
     sb_crowd_hide = 0
-    sb_crowd_siner = 400
+    sb_crowd_siner = random(400)
     sb_crowd = gml_Script_scr_dark_marker(0, 0, 182)
     var _temp_local_var_2 = sb_crowd
     image_alpha = 0

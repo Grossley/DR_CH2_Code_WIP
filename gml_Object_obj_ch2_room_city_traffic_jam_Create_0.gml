@@ -9,7 +9,7 @@ hor_jam_y = 180
 release_hor_jam = 0
 release_hor_x = 4000
 release_speed = 12
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 if (global.plot >= 90)
 {
     vertical_dismiss = 1

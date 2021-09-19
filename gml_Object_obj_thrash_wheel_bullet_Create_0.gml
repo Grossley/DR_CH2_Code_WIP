@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 bounce = 0
 last_hspeed = 0
 last_vspeed = 0

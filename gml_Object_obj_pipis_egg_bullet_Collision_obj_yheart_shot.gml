@@ -1,12 +1,13 @@
+var _temp_local_var_1;
 shake = 8
 hp -= other.damage
 if (image_index < 3)
     image_index += 1
-166
+gml_Script_snd_play(166)
 if (other.big == 0)
 {
-    with (stacktop)
-        0
+    var _temp_local_var_1 = other
+    event_user(0)
 }
 if (hp < 1)
 {
@@ -19,16 +20,16 @@ if (hp < 1)
         fx.image_xscale = 2
         fx.image_yscale = 2
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     if (obj_spamton_neo_enemy.difficulty == 1)
-        2
+        gml_Script_scr_tensionheal(2)
     else
-        3
+        gml_Script_scr_tensionheal(3)
 }
 else
 {
     fx = gml_Script_instance_create(x, y, obj_pipis_egg_bullet_piece)
     fx.image_index = image_index
-    if (x + 500)
+    if (x < (gml_Script_camerax() + 500))
         hspeed /= 1.05
 }

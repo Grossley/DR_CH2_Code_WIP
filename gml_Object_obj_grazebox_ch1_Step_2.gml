@@ -1,7 +1,7 @@
-if 1630
+if instance_exists(obj_heart_ch1)
 {
     x = (obj_heart_ch1.x + 10)
     y = (obj_heart_ch1.y + 10)
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

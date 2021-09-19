@@ -1,19 +1,19 @@
 timer++
 if (dir == 1)
 {
-    1
-    255
+    draw_set_alpha(1)
+    draw_set_color(c_red)
     if (flash == true)
-        16777215
+        draw_set_color(c_white)
     draw_rectangle(x, y, (x + 460), (y + 60), true)
     draw_rectangle((x + 1), (y + 1), (x + 461), (y + 61), true)
 }
 if (dir == -1)
 {
-    1
-    255
+    draw_set_alpha(1)
+    draw_set_color(c_red)
     if (flash == true)
-        16777215
+        draw_set_color(c_white)
     draw_rectangle(x, y, (x - 460), (y + 60), true)
     draw_rectangle((x + 1), (y + 1), (x - 461), (y + 61), true)
 }
@@ -39,5 +39,5 @@ if (timer == 6)
         image_speed = 0
     }
 }
-if (timer > 6 && (!782))
-    // WARNING: Popz'd an empty stack.
+if (timer > 6 && (!instance_exists(obj_bq_laser_exclamation_point)))
+    instance_destroy()

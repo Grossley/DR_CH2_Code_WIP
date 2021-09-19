@@ -67,7 +67,7 @@ if (tile_fade == true && boss == true)
 {
     alpha_changed = false
     tile_fade = true
-    tilearray = tile_layer_choice
+    tilearray = gml_Script_tile_get_ids_at_depth_ch1(tile_layer_choice)
     for (var i = 0; i < array_length_1d(tilearray); i++)
         gml_Script_tile_set_alpha_ch1(tilearray[i], 0)
 }

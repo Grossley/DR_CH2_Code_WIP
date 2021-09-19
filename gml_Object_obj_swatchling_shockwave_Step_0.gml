@@ -1,13 +1,13 @@
 if (wall_destroy == 1)
 {
     if (x < (gml_Script___view_get(0, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (x > (gml_Script___view_get(0, 0) + 760))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y > (gml_Script___view_get(1, 0) + 580))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 at = (duration / 2)
 sizeScale = 0
@@ -34,4 +34,4 @@ image_yscale = (sizeScale * sizemultiplier)
 image_blend = merge_color(startColor, c_white, sizeScale)
 timer++
 if (timer == 40)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -7,7 +7,7 @@ xx = x
 increment = 2
 amplitude = 360
 type = 0
-if 2
+if (gml_Script_scr_sideb_get_phase() > 2)
     type = 1
 con = 0
 timer = 0
@@ -41,4 +41,7 @@ tellspeed = 0
 startX = x
 active = true
 if (global.flag[544] != 0 && type == 0)
+{
     var _temp_local_var_3 = mySwatch
+    instance_destroy()
+}

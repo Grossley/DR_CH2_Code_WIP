@@ -12,5 +12,5 @@ init = 0
 frametype = 0
 x = -9999
 y = -9999
-if (681 == 2)
-    // WARNING: Popz'd an empty stack.
+if (instance_number(obj_sneo_tiny_susie) == 2)
+    instance_destroy()

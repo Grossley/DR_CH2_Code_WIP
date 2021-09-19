@@ -2,8 +2,8 @@ if (global.monster[myself] == true)
 {
     if (global.mnfight == 1 && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         rr = choose(0, 1, 2, 3)
@@ -33,12 +33,12 @@ if (global.monster[myself] == true)
     if (talked == 1 && global.mnfight == 1)
     {
         rtimer = 0
-        15
+        gml_Script_scr_blconskip(15)
         if (global.mnfight == 2)
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
@@ -47,7 +47,7 @@ if (global.monster[myself] == true)
         rtimer += 1
         if (rtimer == 12)
         {
-            rr = object_index
+            rr = instance_number(object_index)
             if (rr == 99)
             {
                 dc = gml_Script_instance_create(x, y, obj_dbulletcontroller)
@@ -123,7 +123,7 @@ if (con == 3)
     gml_Script_scr_enemyblcon((x - 160), y, 3)
     con = 4
 }
-if (con == 4 && (!62))
+if (con == 4 && (!instance_exists(obj_writer)))
 {
     hspeed = 15
     con = 5
@@ -135,8 +135,8 @@ if (con == 6)
 {
     with (obj_battlecontroller)
         noreturn = false
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_monsterdefeat()
+    instance_destroy()
     con = 7
 }
 if (global.myfight == 3)
@@ -147,7 +147,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* RUDINN RANGER - AT 8 DF 0&* Ideally multicolored, but they all wanted to be red./%", "obj_rudinnranger_slash_Step_0_gml_158_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -156,7 +156,7 @@ if (global.myfight == 3)
         global.monstercomment[myself] = "(Tired)"
         global.monsterstatus[myself] = true
         gml_Script_scr_mercyadd(myself, 50)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (acting == 3 && actcon == 0)
@@ -191,35 +191,35 @@ if (global.myfight == 3)
             global.msg[2] = gml_Script_stringsetloc("* Look^1, it's just gonna be weird if I keep going./%", "obj_rudinnranger_slash_Step_0_gml_207_0")
             complimented = 2
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
         if (complimented == 0)
             complimented = 1
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         if (acting == 3)
             gml_Script_scr_mercyadd(myself, 100)
         actcon = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase()
     }
-    if (actcon == 10 && 62 == 0)
+    if (actcon == 10 && instance_exists(obj_writer) == 0)
     {
         global.typer = 50
         global.msg[0] = gml_Script_stringsetloc("You kidding?&I can't quit.&Stopping you&is my job!/%", "obj_rudinnranger_slash_Step_0_gml_235_0")
         gml_Script_scr_enemyblcon((x - 160), y, 3)
         actcon = 11
     }
-    if (actcon == 11 && 62 == 0)
+    if (actcon == 11 && instance_exists(obj_writer) == 0)
     {
         global.typer = 45
         global.fc = 2
         global.fe = 8
         global.msg[0] = gml_Script_stringsetloc("* Really^1?&* What do you spend your money on?/%", "obj_rudinnranger_slash_Step_0_gml_245_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         actcon = 12
     }
-    if (actcon == 12 && 62 == 0)
+    if (actcon == 12 && instance_exists(obj_writer) == 0)
     {
         global.typer = 50
         global.msg[0] = gml_Script_stringsetloc("I'm a normal&person./", "obj_rudinnranger_slash_Step_0_gml_253_0")
@@ -227,13 +227,13 @@ if (global.myfight == 3)
         gml_Script_scr_enemyblcon((x - 160), y, 3)
         actcon = 14
     }
-    if (actcon == 14 && 62 == 0)
+    if (actcon == 14 && instance_exists(obj_writer) == 0)
     {
         global.typer = 45
         global.fc = 2
         global.fe = 3
         global.msg[0] = gml_Script_stringsetloc("* (Kris^1, let's try CONVINCING them again...)/%", "obj_rudinnranger_slash_Step_0_gml_264_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         nexttry = true
         actcon = 1
     }

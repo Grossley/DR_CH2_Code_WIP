@@ -23,7 +23,7 @@ if (lerpstate == 0)
         x = lerp(ralseicoaster_x, 1710, (lerptimer / 10))
         y = lerp(ralseicoaster_y, 260, (lerptimer / 10))
     }
-    if (lerptimer > 9 && 370)
+    if (lerptimer > 9 && instance_exists(obj_herokris))
     {
         lerptimer = 0
         lerpstate = 1
@@ -31,11 +31,11 @@ if (lerpstate == 0)
 }
 if (lerpstate == 1)
 {
-    if (HeroID == 0 && 370)
+    if (HeroID == 0 && instance_exists(obj_herokris))
         x = (obj_herokris.x - 15)
-    else if (HeroID == 1 && 371)
+    else if (HeroID == 1 && instance_exists(obj_herosusie))
         x = (obj_herosusie.x - 5)
-    else if (HeroID == 2 && 372)
+    else if (HeroID == 2 && instance_exists(obj_heroralsei))
         x = (obj_heroralsei.x - 10)
 }
 if (lerpstate == 2)
@@ -45,23 +45,23 @@ if (lerpstate == 2)
     {
         x = lerp(1705, kriscoaster_x, (lerptimer / 5))
         y = lerp(101, kriscoaster_y, (lerptimer / 5))
-        if 370
+        if instance_exists(obj_herokris)
             obj_herokris.x = lerp(1710, (((obj_ch2_sceneex2.coaster_kris.x + obj_ch2_sceneex2.coaster_kris.sinerx) + obj_ch2_sceneex2.coaster_kris.character_offset_x) + obj_ch2_sceneex2.coaster_kris.target_x_end), (lerptimer / 5))
     }
     if (HeroID == 1)
     {
         x = lerp(1715, susiecoaster_x, (lerptimer / 5))
         y = lerp(182, susiecoaster_y, (lerptimer / 5))
-        if 371
+        if instance_exists(obj_herosusie)
             obj_herosusie.x = lerp(1717, (((obj_ch2_sceneex2.coaster_susie.x + obj_ch2_sceneex2.coaster_susie.sinerx) + obj_ch2_sceneex2.coaster_susie.character_offset_x) + obj_ch2_sceneex2.coaster_susie.target_x_end), (lerptimer / 5))
     }
     if (HeroID == 2)
     {
         x = lerp(1710, ralseicoaster_x, (lerptimer / 5))
         y = lerp(260, ralseicoaster_y, (lerptimer / 5))
-        if 372
+        if instance_exists(obj_heroralsei)
             obj_heroralsei.x = lerp(1712, (((obj_ch2_sceneex2.coaster_ralsei.x + obj_ch2_sceneex2.coaster_ralsei.sinerx) + obj_ch2_sceneex2.coaster_ralsei.character_offset_x) + obj_ch2_sceneex2.coaster_ralsei.target_x_end), (lerptimer / 5))
-        if 372
+        if instance_exists(obj_heroralsei)
             obj_heroralsei.y += 0.5
     }
     if (lerptimer == 4)
@@ -74,13 +74,13 @@ if (lerpstate == 2)
         with (obj_coaster)
             visible = true
         with (obj_heroparent)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (o_coaster_hero_sneo)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (o_coaster_hero_back_sneo)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (o_coaster_controller_sneo)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         return;
     }
 }

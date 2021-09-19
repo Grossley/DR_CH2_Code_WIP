@@ -3,7 +3,7 @@ canchoose = false
 dar = (global.darkzone + 1)
 global.flag[33] = 0
 fighting = false
-if (global.fighting == true && 355)
+if (global.fighting == true && instance_exists(obj_battlecontroller))
     fighting = true
 image_xscale = dar
 image_yscale = dar
@@ -12,7 +12,7 @@ global.fc = 0
 xx = gml_Script___view_get(0, view_current)
 yy = gml_Script___view_get(1, view_current)
 d = -1
-if 61
+if instance_exists(obj_dialoguer)
     d = obj_dialoguer.side
 if (fighting == true)
     d = 1

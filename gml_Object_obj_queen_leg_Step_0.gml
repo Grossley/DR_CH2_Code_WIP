@@ -4,12 +4,12 @@ if (stompspeed > 0 && stomplerp >= 1)
 {
     stomplerp = 1
     stompspeed = 0
-    d = (191 ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
-    d.shakex = 2
-    d.shakey = 2
-    178
+    d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
+    d.shakex = ceil(2)
+    d.shakey = ceil(2)
+    gml_Script_snd_play(178)
     if (shootbullets == 1)
-        0
+        event_user(0)
 }
 else if (stompspeed == 0 && stomphold >= 0)
 {
@@ -22,7 +22,7 @@ else if (stompspeed == 0 && stomphold >= 0)
         stompspeed = 0
 }
 else if (stompspeed < 0 && stomplerp <= 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (hurttimer == 0 && hittimer == 0)
     stomplerp += stompspeed
 if (special == 3 && stomplerp >= 0.5)

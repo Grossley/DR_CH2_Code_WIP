@@ -1,13 +1,13 @@
 if (con == 0)
 {
-    if 1195
+    if instance_exists(obj_dogtable_controlled)
     {
-        if (!obj_dogtable_controlled.vspeed)
+        if (!is_undefined(obj_dogtable_controlled.vspeed))
         {
             verticalDirection = obj_dogtable_controlled.vspeed
-            spd = obj_dogtable_controlled.vspeed
+            spd = abs(obj_dogtable_controlled.vspeed)
         }
-        if (!obj_dogtable_controlled.hspeed)
+        if (!is_undefined(obj_dogtable_controlled.hspeed))
         {
             horizontalDirection = obj_dogtable_controlled.hspeed
             hsp = obj_dogtable_controlled.hspeed
@@ -31,6 +31,6 @@ if (con == 1)
     if (timer > 15)
         image_alpha *= 0.7
     if (image_alpha < 0.01)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_alt()

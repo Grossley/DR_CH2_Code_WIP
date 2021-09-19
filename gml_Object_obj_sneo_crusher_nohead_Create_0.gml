@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 hp = 3
 vspeed = 0
 haccel = 0.4

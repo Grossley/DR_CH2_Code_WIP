@@ -1,7 +1,7 @@
 con = 0
 realral = 0
 realsus = 0
-if 274
+if instance_exists(obj_caterpillarchara)
 {
     with (obj_caterpillarchara)
     {
@@ -12,6 +12,6 @@ if 274
     }
 }
 if (global.flag[390] == 1 || realral == 0 || realsus == 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 npcral = 0
 npcsus = 0

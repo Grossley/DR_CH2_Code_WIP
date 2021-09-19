@@ -86,9 +86,9 @@ if (sprite_index == spr_ralsei_hurt_fixed)
     hurt = true
 if (HeroID == 0 && obj_herokris.hurt > false)
     hurt = true
-if (HeroID == 1 && 371 && obj_herosusie.hurt > false)
+if (HeroID == 1 && instance_exists(obj_herosusie) && obj_herosusie.hurt > false)
     hurt = true
-if (HeroID == 2 && 372 && obj_heroralsei.hurt > false)
+if (HeroID == 2 && instance_exists(obj_heroralsei) && obj_heroralsei.hurt > false)
     hurt = true
 back.x = x
 back.y = (y + 8)

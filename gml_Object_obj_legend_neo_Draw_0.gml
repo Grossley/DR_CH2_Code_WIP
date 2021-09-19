@@ -1,17 +1,17 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_10, _temp_local_var_11, _temp_local_var_13, _temp_local_var_15, _temp_local_var_17;
-if 8
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9, _temp_local_var_10, _temp_local_var_12, _temp_local_var_14, _temp_local_var_16;
+if keyboard_check_pressed(vk_backspace)
 {
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
+    room_restart()
 }
 if (drawpic == 1)
 {
-    draw_sprite_ext(pic, 0, picx, picy, 1, 1, 0, c_white, ((con_alph * 4) / 4))
-    draw_sprite_ext(picb, 0, picxb, picyb, 1, 1, 0, c_white, ((con_alphb * 4) / 4))
+    draw_sprite_ext(pic, 0, picx, picy, 1, 1, 0, c_white, (ceil((con_alph * 4)) / 4))
+    draw_sprite_ext(picb, 0, picxb, picyb, 1, 1, 0, c_white, (ceil((con_alphb * 4)) / 4))
 }
 if (con == 3)
 {
-    pic = 2459
+    pic = 2460
     picb = 314
     picyb = -50
     con = 3.1
@@ -40,7 +40,10 @@ if (con == 3.1)
         w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer == 200)
+    {
         var _temp_local_var_2 = w
+        instance_destroy()
+    }
     if (contimer >= 200 && contimer <= 300)
     {
         if (con_alphb < 1)
@@ -55,14 +58,18 @@ if (con == 3.1)
         flamecon = 1
         flamealph = 0.7
         wave_siner = 0
-        flameya = (room_height - 30)
+        flameya = (w.room_height - 30)
         flameyb = room_height
-        wave_maxa = 317
-        wave_maxb = 318
-        var _temp_local_var_4 = w
+        wave_maxa = sprite_get_height(spr_cutscene_27_3_fire_1)
+        wave_maxb = sprite_get_height(spr_cutscene_27_3_fire_2)
+        _temp_local_var_2 = w
+        instance_destroy()
     }
     if (contimer == 600)
-        var _temp_local_var_5 = w
+    {
+        var _temp_local_var_4 = w
+        instance_destroy()
+    }
     if (contimer >= 600 && contimer <= 680)
     {
         if (con_alphb < 1)
@@ -75,7 +82,8 @@ if (con == 3.1)
         pic = picb
         con_alphb = 0
         picb = 316
-        var _temp_local_var_7 = w
+        var _temp_local_var_6 = w
+        instance_destroy()
     }
     if (contimer >= 800 && contimer <= 980)
     {
@@ -83,7 +91,10 @@ if (con == 3.1)
             con_alphb += 0.01
     }
     if (contimer >= 1030 && contimer <= 1130)
-        var _temp_local_var_10 = w
+    {
+        var _temp_local_var_9 = w
+        instance_destroy()
+    }
     if (contimer == 1160)
     {
         contimer = 0
@@ -91,17 +102,17 @@ if (con == 3.1)
     }
     if (flamecon == 1)
     {
-        if (flameya.room_height - wave_maxa)
+        if (w > (flameya.room_height - wave_maxa))
             flameya -= 1.5
-        if (flameyb.room_height - wave_maxb)
+        if (w > (flameyb.room_height - wave_maxb))
             flameyb--
         thickness = 2
         wave_siner++
         flamesiner++
-        flamealph
+        draw_set_alpha(flamealph)
         for (i = 0; i < wave_maxa; i += thickness)
             draw_sprite_part(spr_cutscene_27_3_fire_1, 0, 0, (i * thickness), 400, (thickness + 2), (-10 + (sin(((wave_siner + (i * 8)) / 30)) * 12)), (((i * thickness) + flameya) + (sin((flamesiner / 16)) * 3)))
-        1
+        draw_set_alpha(1)
     }
 }
 if (con == 4)
@@ -135,7 +146,10 @@ if (con == 5)
             con_alph += 0.01
     }
     if (contimer == 240)
-        var _temp_local_var_11 = w
+    {
+        var _temp_local_var_10 = w
+        instance_destroy()
+    }
     if (contimer >= 240 && contimer <= 360)
     {
         if (con_alphb <= 1)
@@ -146,7 +160,8 @@ if (con == 5)
         pic = picb
         picb = 321
         con_alphb = 0
-        var _temp_local_var_13 = w
+        var _temp_local_var_12 = w
+        instance_destroy()
     }
     if (contimer >= 420 && contimer <= 520)
     {
@@ -158,7 +173,8 @@ if (con == 5)
         pic = picb
         picb = 322
         con_alphb = 0
-        var _temp_local_var_15 = w
+        var _temp_local_var_14 = w
+        instance_destroy()
     }
     if (contimer >= 600 && contimer <= 700)
     {
@@ -169,7 +185,8 @@ if (con == 5)
     {
         pic = picb
         con_alphb = 0
-        var _temp_local_var_17 = w
+        var _temp_local_var_16 = w
+        instance_destroy()
     }
     if (contimer >= 840)
         con_alph -= 0.01
@@ -177,18 +194,18 @@ if (con == 5)
         gml_Script_instance_create(0, 0, obj_fadeout)
     if (contimer == 1100 && skipped == 0)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_snd_free_all()
         global.flag[6] = 0
         gml_Script_instance_create(0, 0, obj_persistentfadein)
-        if 2
-            207
+        if (gml_Script_scr_sideb_get_phase() < 2)
+            room_goto(room_dw_mansion_top_post)
         else
-            206
+            room_goto(room_dw_mansion_top)
     }
 }
 if (border == 1)
 {
-    0
+    draw_set_color(c_black)
     draw_rectangle(-10, -10, 330, 27, false)
     draw_rectangle(-10, -10, 59, 300, false)
     draw_rectangle(400, -10, 260, 300, false)
@@ -196,14 +213,14 @@ if (border == 1)
 }
 if (border == 2)
 {
-    0
+    draw_set_color(c_black)
     draw_rectangle(-10, 180, 999, 482, false)
 }
 if (chunkfade == 0 && chunkamt > 0)
     chunkamt -= fadespeed
 if (chunkfade == 1 && chunkamt < 1)
     chunkamt += fadespeed
-fadecolor
+draw_set_color(fadecolor)
 alph = 0
 if (chunkamt >= 0.25)
     alph = 0.25
@@ -213,12 +230,12 @@ if (chunkamt >= 0.75)
     alph = 0.75
 if (chunkamt >= 1)
     alph = 1
-alph
+draw_set_alpha(alph)
 draw_rectangle(-10, -10, 330, 330, false)
-1
+draw_set_alpha(1)
 if (ingame == 0)
 {
-    if (skipped == 0)
+    if (gml_Script_button1_p() && skipped == 0)
     {
         skipped = 1
         skiptimer = 0
@@ -230,9 +247,9 @@ if (ingame == 0)
         skiptimer += 1
     if (skiptimer == 19)
     {
-        global.currentsong[0]
+        gml_Script_snd_free(global.currentsong[0])
         global.flag[6] = 0
     }
     if (skiptimer == 20)
-        240
+        room_goto(PLACE_LOGO)
 }

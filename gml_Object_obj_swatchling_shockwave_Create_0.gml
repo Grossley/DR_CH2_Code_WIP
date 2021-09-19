@@ -1,7 +1,7 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 image_blend = c_red
-if (!628)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_heart))
+    instance_destroy()
 wall_destroy = 1
 scale = 0
 image_xscale = 0

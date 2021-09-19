@@ -2,88 +2,88 @@ timer++
 if (timer == 30)
     gml_Script_scr_battle(74, 0, marker1, marker2, marker3)
 if (timer == 60)
-    // WARNING: Popz'd an empty stack.
+    audio_stop_all()
 if (timer > 60)
 {
-    if 49
+    if keyboard_check_pressed(ord("1"))
     {
-        867
-        62
+        gml_Script_safe_delete(867)
+        gml_Script_safe_delete(62)
         global.typer = 50
-        "ballooner.txt"
+        ini_open("ballooner.txt")
         text = ini_read_string("ballooner", "text", text)
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         gml_Script_msgset(0, text)
-        "kr"
+        gml_Script_scr_heroblcon("kr")
     }
-    if 50
+    if keyboard_check_pressed(ord("2"))
     {
-        867
-        62
+        gml_Script_safe_delete(867)
+        gml_Script_safe_delete(62)
         global.typer = 50
-        "ballooner.txt"
+        ini_open("ballooner.txt")
         text = ini_read_string("ballooner", "text", text)
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         gml_Script_msgset(0, text)
-        "su"
+        gml_Script_scr_heroblcon("su")
     }
-    if 51
+    if keyboard_check_pressed(ord("3"))
     {
-        867
-        62
+        gml_Script_safe_delete(867)
+        gml_Script_safe_delete(62)
         global.typer = 50
-        "ballooner.txt"
+        ini_open("ballooner.txt")
         text = ini_read_string("ballooner", "text", text)
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         gml_Script_msgset(0, text)
-        "ra"
+        gml_Script_scr_heroblcon("ra")
     }
-    if 52
+    if keyboard_check_pressed(ord("4"))
     {
-        867
-        62
+        gml_Script_safe_delete(867)
+        gml_Script_safe_delete(62)
         global.typer = 50
-        "ballooner.txt"
+        ini_open("ballooner.txt")
         text = ini_read_string("ballooner", "text", text)
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         gml_Script_msgset(0, text)
         gml_Script_scr_enemyblcon((global.monsterx[0] + xmod), (global.monstery[0] + ymod), 10)
     }
-    if 53
+    if keyboard_check_pressed(ord("5"))
     {
-        867
-        62
+        gml_Script_safe_delete(867)
+        gml_Script_safe_delete(62)
         global.typer = 50
-        "ballooner.txt"
+        ini_open("ballooner.txt")
         text = ini_read_string("ballooner", "text", text)
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         gml_Script_msgset(0, text)
         gml_Script_scr_enemyblcon((global.monsterx[1] + xmod), (global.monstery[1] + ymod), 10)
     }
-    if 54
+    if keyboard_check_pressed(ord("6"))
     {
-        867
-        62
+        gml_Script_safe_delete(867)
+        gml_Script_safe_delete(62)
         global.typer = 50
-        "ballooner.txt"
+        ini_open("ballooner.txt")
         text = ini_read_string("ballooner", "text", text)
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         gml_Script_msgset(0, text)
         gml_Script_scr_enemyblcon((global.monsterx[2] + xmod), (global.monstery[2] + ymod), 10)
     }
 }
-if 84
+if keyboard_check_pressed(ord("T"))
 {
-    "ballooner.txt"
+    ini_open("ballooner.txt")
     text = ini_read_string("ballooner", "text", text)
-    // WARNING: Popz'd an empty stack.
+    ini_close()
 }
-16777215
-3
+draw_set_color(c_white)
+draw_set_font(fnt_main)
 draw_rectangle(0, 292, 640, 300, false)
-0
+draw_set_color(c_black)
 draw_rectangle(0, 296, 640, 480, false)
-16777215
+draw_set_color(c_white)
 draw_text(10, 300, "[1] kris balloon")
 draw_text(10, 320, "[2] ralsei balloon")
 draw_text(10, 340, "[3] susie balloon")
@@ -92,51 +92,55 @@ draw_text(150, 320, "[5] enemy 2 balloon")
 draw_text(150, 340, "[6] enemy 3 balloon")
 draw_text(10, 360, "[P] Take Screenshot")
 draw_text(150, 360, "[C] Switch Language")
-4235519
+draw_set_color(c_orange)
 draw_text(300, 360, ("global.lang=" + global.lang))
-16777215
-1
+draw_set_color(c_white)
+draw_set_halign(fa_center)
 draw_text(320, 390, "Current Text String Loaded (Press T to Reload from ballooner.txt)")
-65535
+draw_set_color(c_yellow)
 if (global.lang == "en")
-    2
+    draw_set_font(fnt_mainbig)
 else
-    8
+    draw_set_font(fnt_ja_mainbig)
 draw_text(320, 410, text)
-16777215
-3
-0
+draw_set_color(c_white)
+draw_set_font(fnt_main)
+draw_set_halign(fa_left)
 draw_text(300, 310, "[  LEFT  /  RIGHT]    Balloon X Modifier:")
 draw_text(300, 330, "[   UP   /      DOWN ]    Balloon Y Modifier:")
-2
-65535
-draw_text(570, 310, xmod)
-draw_text(570, 330, ymod)
-16777215
-0
+draw_set_halign(fa_right)
+draw_set_color(c_yellow)
+draw_text(570, 310, string(xmod))
+draw_text(570, 330, string(ymod))
+draw_set_color(c_white)
+draw_set_halign(fa_left)
 if ((timer % 2) == 0)
 {
-    xmod--
-    xmod++
-    ymod--
-    ymod++
+    if gml_Script_left_h()
+        xmod--
+    if gml_Script_right_h()
+        xmod++
+    if gml_Script_up_h()
+        ymod--
+    if gml_Script_down_h()
+        ymod++
 }
-if 67
+if keyboard_check_pressed(ord("C"))
 {
-    0.9
-    0
+    draw_set_alpha(0.9)
+    draw_set_color(c_black)
     draw_rectangle(0, 0, 640, 480, false)
-    1
-    16777215
-    1
-    2
+    draw_set_alpha(1)
+    draw_set_color(c_white)
+    draw_set_halign(fa_center)
+    draw_set_font(fnt_mainbig)
     draw_text(320, 200, "PLEASE WAIT WHILE WE LOAD THE TEXT")
     draw_text(320, 240, "THE ROOM WILL BE RELOADED")
     alarm[0] = 1
 }
-if 80
+if keyboard_check_pressed(ord("P"))
 {
-    203
-    var date = (((("_" + "_") + "_") + "_") + "_")
-    (("Ballooner_Screenshot_" + date) + ".png")
+    gml_Script_snd_play(203)
+    var date = ((((((((((string(date_get_year(date_current_datetime())) + "_") + string(date_get_month(date_current_datetime()))) + "_") + string(date_get_day(date_current_datetime()))) + "_") + string(date_get_hour(date_current_datetime()))) + "_") + string(date_get_minute(date_current_datetime()))) + "_") + string(date_get_second(date_current_datetime())))
+    screen_save((("Ballooner_Screenshot_" + date) + ".png"))
 }

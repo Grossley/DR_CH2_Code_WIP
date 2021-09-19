@@ -6,10 +6,10 @@ if (init == 0)
 }
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0 && bumpwait == 0 && endcon == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && bumpwait == 0 && endcon == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         if (nitro > 0)
             nitro -= 1
@@ -80,10 +80,10 @@ if (global.monster[myself] == true)
     if (talked == 0.5)
     {
         talktimer++
-        if (talktimer > 15 || (!62))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             if (ballooncon == 1)
                 gml_Script_msgsetloc(0, "I'll show you&\"bumper cars\" is a&game of INTELLECT,&not skill!/%", "obj_berdlyb_enemy_slash_Step_0_gml_80_0")
             if (ballooncon == 2)
@@ -108,37 +108,37 @@ if (global.monster[myself] == true)
     if (talked == 0.7)
     {
         talktimer++
-        if (talktimer > 15 || (!62))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
         {
             talked = 0
             forcedefaultballoon = 1
         }
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
-        if (talktimer > 15 || (!62))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             talkedcon = 1
         }
         if (talkedcon == 1)
         {
             rtimer = 0
-            -1
-            if "bullets"
+            gml_Script_scr_blconskip(-1)
+            if gml_Script_scr_isphase("bullets")
             {
-                if ((!377) && (!628))
-                    // WARNING: Popz'd an empty stack.
-                if (!869)
+                if ((!instance_exists(obj_moveheart)) && (!instance_exists(obj_heart)))
+                    gml_Script_scr_moveheart()
+                if (!instance_exists(obj_growtangle))
                     gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
                 if (difficulty == 1 && rr == 0)
                     obj_growtangle.target_angle += 45
             }
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 16)
@@ -149,7 +149,7 @@ if (global.monster[myself] == true)
                 dc = gml_Script_scr_bulletspawner(x, y, 388)
                 dc.type = 8
                 dc.difficulty = 0
-                210
+                gml_Script_scr_turntimer(210)
             }
             else if (rr == 1)
             {
@@ -157,7 +157,7 @@ if (global.monster[myself] == true)
                 dc = gml_Script_scr_bulletspawner(x, y, 388)
                 dc.type = 9
                 dc.difficulty = 1
-                200
+                gml_Script_scr_turntimer(200)
             }
             else
             {
@@ -165,7 +165,7 @@ if (global.monster[myself] == true)
                 dc = gml_Script_scr_bulletspawner(x, y, 388)
                 dc.type = 10
                 dc.difficulty = 2
-                180
+                gml_Script_scr_turntimer(180)
             }
             turns += 1
             global.typer = 6
@@ -190,7 +190,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -201,7 +201,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* BERDLY - Go! Use your roller coaster cars to play \"bump of chicken\"!/%", "obj_berdlyb_enemy_slash_Step_0_gml_123_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -210,17 +210,17 @@ if (global.myfight == 3)
         else if (actingsus == 1 && actingral != 1)
         {
             gml_Script_msgsetloc(0, "* You and Susie will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_130_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         else if (actingsus != 1 && actingral == 1)
         {
             gml_Script_msgsetloc(0, "* You and Ralsei will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_131_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         else
         {
             gml_Script_msgsetloc(0, "* You will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_132_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         kriscoaster = 1
         acting = 0
@@ -266,12 +266,12 @@ if (global.myfight == 3)
             if (actingral != 1 && rideactgo == 0)
             {
                 gml_Script_msgsetloc(0, "* Susie will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_186_0")
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_battletext_default()
             }
             if (actingral == 1 && rideactgo == 0)
             {
                 gml_Script_msgsetloc(0, "* Susie and Ralsei will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_187_0")
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_battletext_default()
             }
             acting = 0
             actcon = 1
@@ -298,7 +298,7 @@ if (global.myfight == 3)
             if (actingsus != 1 && rideactgo == 0)
             {
                 gml_Script_msgsetloc(0, "* Ralsei will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_221_0")
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_battletext_default()
             }
             acting = 0
             actcon = 1
@@ -327,10 +327,10 @@ if (global.myfight == 3)
         if (dialoguecon == 5)
         {
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         dialoguecon = 0
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         if (global.mercymod[myself] > 99)
         {
@@ -392,10 +392,10 @@ if (global.myfight == 3)
             ralcoaster = 0
         }
         else
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_nextact()
     }
 }
-if 494
+if gml_Script_i_ex(494)
     sactionboxx = ((o_coaster_berdly.x - o_coaster_berdly.xstart) - 60)
 if (endcon == 1)
 {
@@ -411,35 +411,38 @@ if (endcon == 1)
     }
     if (endtime == 30)
     {
-        global.batmusic[0]
+        gml_Script_snd_free(global.batmusic[0])
         o_coaster_berdly.xshake = 10
         o_coaster_berdly.sprite_index = spr_cutscene_17_berdly_shocked
-        if 949
+        if instance_exists(obj_ch2_scene11a)
         {
-            obj_ch2_scene11a.coaster_berdly.character_sprite = 1848
+            obj_ch2_scene11a.coaster_berdly.character_sprite = 1849
             obj_ch2_scene11a.coaster_berdly.character_offset_x = -10
             obj_ch2_scene11a.coaster_berdly.character_offset_y = -5
         }
-        141
+        gml_Script_snd_play(141)
     }
     if (endtime == 90)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_act_charsprite_end()
         gml_Script_msgsetloc(0, "W-what...?&My coaster, it's...!/%", "obj_berdlyb_enemy_slash_Step_0_gml_450_0")
         global.typer = 69
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
     }
-    if (endtime >= 90 && (!62))
+    if (endtime >= 90 && (!gml_Script_i_ex(62)))
     {
         endcon = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_wincombat()
     }
 }
-if 66
+if gml_Script_scr_debug()
 {
-    difficulty = (1 - difficulty)
-    if (difficulty == 1)
-        "berdly is PISS"
-    else
-        "berdly is not piss"
+    if keyboard_check_pressed(ord("B"))
+    {
+        difficulty = (1 - difficulty)
+        if (difficulty == 1)
+            gml_Script_scr_debug_print("berdly is PISS")
+        else
+            gml_Script_scr_debug_print("berdly is not piss")
+    }
 }

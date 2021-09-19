@@ -10,7 +10,7 @@ if (global.flag[255] == 0)
 else
 {
     gml_Script_instance_create(x, y, obj_npc_room)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 interact = 0
 myinteract = 0

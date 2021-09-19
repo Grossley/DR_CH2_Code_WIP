@@ -1,7 +1,7 @@
 if (state == 0 || state == 4)
 {
     headtop.image_alpha = 0
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 }
 else if (state == 1 || state == 3)
 {

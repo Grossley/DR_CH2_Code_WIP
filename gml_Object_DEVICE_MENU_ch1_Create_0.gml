@@ -1,22 +1,22 @@
 TYPE = 0
-if "filech1_3"
+if gml_Script_ossafe_file_exists_ch1("filech1_3")
     TYPE = 1
-if "filech1_4"
+if gml_Script_ossafe_file_exists_ch1("filech1_4")
     TYPE = 1
-if "filech1_5"
+if gml_Script_ossafe_file_exists_ch1("filech1_5")
     TYPE = 1
 if (TYPE == 0)
 {
-    "DEVICE_MENU_slash_Create_0_gml_8_0"
-    global.currentsong[0] = "AUDIO_DRONE.ogg"
-    global.currentsong[1] = global.currentsong[0]
+    gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Create_0_gml_8_0"))
+    global.currentsong[0] = gml_Script_snd_init_ch1("AUDIO_DRONE.ogg")
+    global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
 }
 if (TYPE == 1)
 {
     gml_Script_instance_create_ch1(0, 0, 1461)
     global.tempflag[10] = 1
-    "DEVICE_MENU_slash_Create_0_gml_17_0"
-    global.currentsong[0] = "AUDIO_STORY.ogg"
+    gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Create_0_gml_17_0"))
+    global.currentsong[0] = gml_Script_snd_init_ch1("AUDIO_STORY.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 1, 0.95)
 }
 BGMADE = 0
@@ -70,4 +70,4 @@ if (os_type == os_switch)
     version_text = "1.03a "
 if (os_type == os_ps4)
     version_text = "1.02 "
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_84_load_ini_ch1()

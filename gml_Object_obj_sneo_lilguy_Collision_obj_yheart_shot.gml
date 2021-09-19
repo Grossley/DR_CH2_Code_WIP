@@ -1,6 +1,6 @@
-hitshot = 
-0
+hitshot = other
+event_user(0)
 if (obj_spamton_neo_enemy.difficulty == 3)
-    1
+    gml_Script_scr_tensionheal(1)
 else
-    1.3
+    gml_Script_scr_tensionheal(1.3)

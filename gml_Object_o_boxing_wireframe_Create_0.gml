@@ -36,7 +36,7 @@ hidebg = 0
 if (disable_surface == 1)
     return;
 surface = surface_create(320, 240)
-surface
-// WARNING: Popz'd an empty stack.
+surface_set_target(surface)
+surface_reset_target()
 draw_surface(surface, 160, 120)
 depth = -1000

@@ -1,9 +1,13 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (init == 0)
+    event_user(0)
+if (movecount >= movemax || (!gml_Script_i_ex(target)))
+    instance_destroy()
+else if (moved == 0)
+{
+    target.x += (xx[movecount] * xOrientation)
+    target.y += (yy[movecount] * yOrientation)
+    if (image[movecount] != -1 && o_boxingcontroller.wireframe_boxing == 0)
+        target.image_index = image[movecount]
+    movecount++
+}
+moved = 0

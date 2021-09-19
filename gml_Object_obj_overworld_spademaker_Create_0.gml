@@ -15,7 +15,7 @@ if (room == 9999999999)
     alpha_changed = false
     tile_fade = true
     tile_layer_choice = 99999
-    tilearray = tile_layer_choice
+    tilearray = gml_Script_tile_get_ids_at_depth(tile_layer_choice)
     for (var i = 0; i < array_length_1d(tilearray); i++)
         gml_Script_tile_set_alpha(tilearray[i], 0)
 }

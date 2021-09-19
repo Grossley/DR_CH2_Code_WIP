@@ -1,9 +1,10 @@
+var _temp_local_var_1;
 if (other.active == false)
     return;
 if (other.destroyable == 1)
 {
-    // WARNING: Popz'd an empty stack.
-    166
-    with (stacktop)
-        // WARNING: Popz'd an empty stack.
+    instance_destroy()
+    gml_Script_snd_play(166)
+    var _temp_local_var_1 = other
+    instance_destroy()
 }

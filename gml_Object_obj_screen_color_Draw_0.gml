@@ -1,8 +1,8 @@
-image_blend
-image_alpha
+draw_set_color(image_blend)
+draw_set_alpha(image_alpha)
 if (blend_mode != 0)
-    blend_mode
-((0 + 480) + 640)
+    gml_Script_draw_set_blend_mode(blend_mode)
+draw_rectangle(gml_Script_camerax(), gml_Script_cameray(), (gml_Script_camerax() + 640), (gml_Script_cameray() + 480), false)
 if (blend_mode != 0)
-    0
-1
+    gml_Script_draw_set_blend_mode(0)
+draw_set_alpha(1)

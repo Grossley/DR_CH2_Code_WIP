@@ -6,7 +6,7 @@ hspace = 8
 vspace = 18
 rate = 1
 mycolor = c_white
-myfont = "main"
+myfont = gml_Script_scr_84_get_font_ch1("main")
 shake = 0
 special = 0
 skippable = true
@@ -16,7 +16,7 @@ if (global.flag[6] == 1)
 f = 1
 if (global.darkzone == true)
     f = 2
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_texttype_ch1()
 autoaster = true
 pos = 2
 lineno = 0
@@ -49,9 +49,9 @@ for (i = 0; i < 7; i += 1)
 mystring = global.msg[0]
 for (j = 0; j < 100; j += 1)
     nstring[j] = global.msg[j]
-length = mystring
+length = string_length(mystring)
 alarm[0] = rate
 if (rate < 3)
     alarm[2] = 1
 else
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_textsound_ch1()

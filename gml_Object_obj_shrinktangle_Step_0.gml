@@ -8,7 +8,7 @@ if (init == 0)
     obj_battlesolid.image_yscale = 3
     init = 1
 }
-if (global.turntimer <= 30 && (global.turntimer % 2) >= 1 && 672)
+if (global.turntimer <= 30 && (global.turntimer % 2) >= 1 && instance_exists(obj_sneo_splitbouncer))
 {
     destroytimer--
     if (destroytimer <= 0)
@@ -19,7 +19,7 @@ if (global.turntimer <= 30 && (global.turntimer % 2) >= 1 && 672)
         d.image_xscale = spouncer.size
         d.image_yscale = spouncer.size
         destroytimer = spouncer.size
-        spouncer
+        instance_destroy(spouncer)
     }
 }
 if (sizeup > 0)
@@ -66,14 +66,14 @@ if ((bottom - top) < 10 || (right - left) < 10)
         dm.image_yscale = (d.size / 3)
     }
     if (target != 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage()
     else if (target == 3)
     {
-        damage /= 3
-        // WARNING: Popz'd an empty stack.
+        damage = ceil((damage / 3))
+        gml_Script_scr_damage_all()
     }
-    188
-    672
+    gml_Script_snd_play(188)
+    instance_destroy(obj_sneo_splitbouncer)
     if (global.turntimer > 30)
         global.turntimer = 30
 }

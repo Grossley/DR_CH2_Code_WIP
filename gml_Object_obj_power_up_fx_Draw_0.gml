@@ -20,7 +20,7 @@ timer++
 effecttimer++
 var __alpha = clamp((timer / poweruptime), 0, 1)
 gml_Script_scr_draw_outline(2, image_blend, (__alpha * 2))
-// WARNING: Popz'd an empty stack.
+draw_self()
 gml_Script_d3d_set_fog(true, image_blend, 0, 1)
 flashtimer++
 if (flashtimer >= flashspeed)
@@ -29,7 +29,7 @@ if (flashtimer >= flashspeed)
     flashspeed = max(4, ((flashspeed * 2) / 3))
 }
 var __flash = (__alpha + (sin(((flashtimer / flashspeed) * pi)) / 4))
-1
+gml_Script_draw_set_blend_mode(1)
 if (ring_timer > 0)
     ring_timer--
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, __flash)
@@ -40,7 +40,7 @@ if (effecttimer >= effectPause)
 {
     if ((timer + 15) >= poweruptime)
     {
-        d = obj_power_up_afterimage
+        d = gml_Script_scr_custom_afterimage(203)
         d.depth = (depth + 1)
         d.image_alpha = max(0.1, __alpha)
         d.reverse = 1
@@ -48,7 +48,7 @@ if (effecttimer >= effectPause)
         d.pivotx = pivotx
         d.pivoty = pivoty
         d.use_pivot = use_pivot
-        d = obj_power_up_afterimage
+        d = gml_Script_scr_custom_afterimage(203)
         d.image_alpha = max(0.1, __alpha)
         d.fade = 0.1
         d.image_blend = image_blend
@@ -56,14 +56,14 @@ if (effecttimer >= effectPause)
         d.pivotx = pivotx
         d.pivoty = pivoty
     }
-    0
+    gml_Script_draw_set_blend_mode(0)
     if (intensity >= 2 && timer < (poweruptime - 15))
     {
-        var _thinindex = 5
+        var _thinindex = irandom(5)
         for (i = 0; i < 6; i++)
         {
             d = gml_Script_instance_create(centerX, centerY, obj_rouxls_power_up_orb)
-            d.direction = (60 + (i * 60))
+            d.direction = (irandom(60) + (i * 60))
             d.lifetime = (effectPause * 2)
             d.depth = (depth + 1)
             d.image_blend = image_blend
@@ -75,7 +75,7 @@ if (effecttimer >= effectPause)
         effectPause--
     effecttimer = 0
 }
-0
+gml_Script_draw_set_blend_mode(0)
 if (intensity == 1)
 {
 }
@@ -83,13 +83,13 @@ if (intensity == 2)
 {
     if ((timer + 15) >= poweruptime && (timer + 15) <= (poweruptime + 30))
     {
-        image_blend
+        draw_set_color(image_blend)
         var _progress = (((timer + 15) - poweruptime) / 30)
         var _circlesize = (lerp(0.75, 1, gml_Script_scr_ease_out(_progress, 5)) * 80)
         var _circlewidth = (gml_Script_scr_ease_out(_progress, 5) * 78)
-        (1 - gml_Script_scr_ease_in(_progress, 4))
+        draw_set_alpha((1 - gml_Script_scr_ease_in(_progress, 4)))
         gml_Script_scr_draw_circle_width_radius(centerX, centerY, _circlesize, _circlewidth, 36)
-        1
+        draw_set_alpha(1)
         if (_progress <= 0)
             draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_black, 0.5)
     }

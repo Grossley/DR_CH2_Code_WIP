@@ -12,7 +12,7 @@ if (con > 0 && con < 50)
     if (con == 2.1)
     {
         global.facing = 2
-        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4206)
+        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4207)
         var _temp_local_var_2 = k
         vspeed = -1
         image_speed = 0.1

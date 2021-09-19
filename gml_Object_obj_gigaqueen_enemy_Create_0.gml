@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 gml_Script_instance_create(-1000, -1000, obj_boxingqueen_black_bg)
 gml_Script_instance_create(x, y, obj_3d_bg_effect)
 gml_Script_instance_create(x, y, o_boxingcontroller)
@@ -8,7 +8,7 @@ with (obj_battleback)
 init = 0
 turn = 0
 battlemsgtimer = 0
-if 355
+if gml_Script_i_ex(355)
 {
     obj_battlecontroller.cantspare[0] = 1
     cantspareinit = 1

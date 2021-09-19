@@ -3,7 +3,7 @@ if (active == true && pressbuffer < 0)
     timer = 0
 if (global.facing != 0 && active == false && pressbuffer <= 0)
 {
-    64
+    gml_Script_snd_play(64)
     timer = (default_time * timefactor)
     pressbuffer = 2
     active = true
@@ -11,10 +11,10 @@ if (global.facing != 0 && active == false && pressbuffer <= 0)
     {
         with (obj_traffic_car)
         {
-            if (place_meeting(x, y, obj_carKiller) && (!id))
+            if (place_meeting(x, y, obj_carKiller) && (!gml_Script_scr_onscreen(id)))
             {
-                // WARNING: Popz'd an empty stack.
-                (id + " obliterated by obj_carKiller")
+                instance_destroy()
+                gml_Script_debug_message((string(id) + " obliterated by obj_carKiller"))
             }
         }
     }
@@ -30,11 +30,11 @@ if (global.facing != 0 && active == false && pressbuffer <= 0)
             active = false
         }
     }
-    if 1112
+    if instance_exists(obj_traffic_car)
         obj_traffic_car.groupcheck = group
-    if 1114
+    if instance_exists(obj_traffic_car_generator)
         obj_traffic_car_generator.groupcheck = group
-    if 309
+    if instance_exists(obj_cybercity_bg_trafficlight_shine)
     {
         var group_check = group
         with (obj_cybercity_bg_trafficlight_shine)

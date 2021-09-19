@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
-with (stacktop)
-    // WARNING: Popz'd an empty stack.
-166
+var _temp_local_var_1;
+instance_destroy()
+var _temp_local_var_1 = other
+instance_destroy()

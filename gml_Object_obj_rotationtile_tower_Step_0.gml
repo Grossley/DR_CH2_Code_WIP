@@ -44,7 +44,7 @@ if (init == 0)
         staticTile[4] = gml_Script_instance_create((x + 80), (y + 160), obj_holemouse_invis_clockwise)
         hole = gml_Script_instance_create((x + 40), (y + 0), obj_holemouse_generator)
         patidealy = (220 + (40 * choose(0, 1, 2)))
-        if 1180
+        if instance_exists(obj_masterPlatformController)
         {
             var _temp_local_var_1 = obj_masterPlatformController.noelle
             idealy = other.patidealy

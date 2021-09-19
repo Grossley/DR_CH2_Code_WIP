@@ -1,14 +1,14 @@
 if (o_coaster_controller_sneo.actcon == 1 && o_coaster_controller_sneo.timer < o_coaster_controller_sneo.timermax)
 {
-    if ((HeroID == 0 && gooffscreen == 0) || (HeroID == 1 && gooffscreen == 0) || (HeroID == 2 && gooffscreen == 0))
+    if ((gml_Script_button1_p() && HeroID == 0 && gooffscreen == 0) || (gml_Script_button2_p() && HeroID == 1 && gooffscreen == 0) || (gml_Script_button3_p() && HeroID == 2 && gooffscreen == 0))
     {
         if (visible == true)
         {
-            if (HeroID == 0)
+            if (gml_Script_button1_p() && HeroID == 0)
                 draw_button_press = 0
-            if (HeroID == 1)
+            if (gml_Script_button2_p() && HeroID == 1)
                 draw_button_press = 0
-            if (HeroID == 2)
+            if (gml_Script_button3_p() && HeroID == 2)
                 draw_button_press = 0
             mykeybuffer = 3
             o_coaster_controller_sneo.playerinput = 1
@@ -17,7 +17,7 @@ if (o_coaster_controller_sneo.actcon == 1 && o_coaster_controller_sneo.timer < o
 }
 if (o_coaster_controller_sneo.actcon != 0)
     actoncondelay = 1
-if 867
+if instance_exists(obj_battleblcon)
     actoncondelay = 0
 if (disabled == 1)
 {
@@ -59,7 +59,7 @@ if (con == 1)
         smoke = gml_Script_instance_create(((x + hspeed) + 8), (y - 10), o_coastersmoke)
         smoketimer = 0
     }
-    if (x + 200)
+    if (x >= (gml_Script_camerax() + 200))
         con = 2
     if (damaged == 1)
     {
@@ -78,7 +78,7 @@ if (con == 2)
     if (nitro == 1)
     {
         hspeed -= 1
-        if ((x + 400) && hspeed > 0)
+        if (x >= (gml_Script_camerax() + 400) && hspeed > 0)
             hspeed = -2
     }
     if (x <= (xstart + 10))

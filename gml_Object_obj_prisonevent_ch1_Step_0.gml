@@ -90,7 +90,7 @@ if (con == 16)
 }
 if (con == 16 && (!gml_Script_d_ex_ch1()))
 {
-    r = gml_Script_scr_dark_marker_ch1(rnpc.x, rnpc.y, 3860)
+    r = gml_Script_scr_dark_marker_ch1(rnpc.x, rnpc.y, 3861)
     var _temp_local_var_22 = r
     gml_Script_scr_depth_ch1()
 }
@@ -101,7 +101,7 @@ if (con == 18)
 }
 if (con == 19 && (!gml_Script_d_ex_ch1()))
 {
-    irondoor2 = gml_Script_scr_dark_marker_ch1(200, 520, 3592)
+    irondoor2 = gml_Script_scr_dark_marker_ch1(200, 520, 3593)
     var _temp_local_var_27 = irondoor2
     gml_Script_scr_depth_ch1()
 }
@@ -281,9 +281,9 @@ if (con == 300)
     }
     obj_mainchara_ch1.x = 680
     obj_mainchara_ch1.y = 160
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4194)
-    r = gml_Script_scr_dark_marker_ch1(640, 150, 3569)
-    s = gml_Script_scr_dark_marker_ch1(660, 500, 3550)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4195)
+    r = gml_Script_scr_dark_marker_ch1(640, 150, 3570)
+    s = gml_Script_scr_dark_marker_ch1(660, 500, 3551)
     var _temp_local_var_50 = r
     image_index = 2
 }

@@ -5,19 +5,19 @@ if (global.monstercomment[myself] == gml_Script_stringsetloc("(Tired)", "obj_kk_
 }
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         postattackscene = 0
         heal = 0
         groove = 0
         global.typer = 50
         var a = 0
-        if (707 && global.monsterhp[obj_sweet_enemy.myself] < global.monstermaxhp[obj_sweet_enemy.myself])
+        if (instance_exists(obj_sweet_enemy) && global.monsterhp[obj_sweet_enemy.myself] < global.monstermaxhp[obj_sweet_enemy.myself])
             a = 1
-        if (709 && global.monsterhp[obj_hatguy_enemy.myself] < global.monstermaxhp[obj_hatguy_enemy.myself])
+        if (instance_exists(obj_hatguy_enemy) && global.monsterhp[obj_hatguy_enemy.myself] < global.monstermaxhp[obj_hatguy_enemy.myself])
             a = 1
         rr = choose(0, 1, 2, 3)
         if (dancing == 1)
@@ -39,13 +39,13 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if ((707 && global.monsterhp[obj_sweet_enemy.myself] <= 2) || (711 && global.monsterhp[obj_kk_enemy.myself] <= 2) || (709 && global.monsterhp[obj_hatguy_enemy.myself] <= 2))
+            if ((instance_exists(obj_sweet_enemy) && global.monsterhp[obj_sweet_enemy.myself] <= 2) || (instance_exists(obj_kk_enemy) && global.monsterhp[obj_kk_enemy.myself] <= 2) || (instance_exists(obj_hatguy_enemy) && global.monsterhp[obj_hatguy_enemy.myself] <= 2))
             {
                 if (obj_musical_controller.scon == 0)
                     obj_musical_controller.scon = 1
@@ -58,14 +58,14 @@ if (global.monster[myself] == true)
             }
             else
             {
-                if (!869)
+                if (!instance_exists(obj_growtangle))
                     gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 206), obj_growtangle)
-                if (!377)
-                    // WARNING: Popz'd an empty stack.
+                if (!instance_exists(obj_moveheart))
+                    gml_Script_scr_moveheart()
             }
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 12)
@@ -79,7 +79,7 @@ if (global.monster[myself] == true)
             else if (!dancing)
             {
                 global.monsterattackname[myself] = "musical bullets"
-                if (!716)
+                if (!instance_exists(obj_musicalbullet_controller))
                 {
                     dc = gml_Script_instance_create(x, y, obj_musicalbullet_controller)
                     dc.damage = (global.monsterat[myself] * 5)
@@ -104,22 +104,22 @@ if (global.monster[myself] == true)
                 else
                     obj_musicalbullet_controller.enemy_count += 1
             }
-            235
+            gml_Script_scr_turntimer(235)
             turns += 1
             global.typer = 6
             global.fc = 0
-            1
+            event_user(1)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
-    if ((!707) && global.mnfight == 2 && global.turntimer <= 1 && postattackscene == 0)
+    if ((!instance_exists(obj_sweet_enemy)) && global.mnfight == 2 && global.turntimer <= 1 && postattackscene == 0)
     {
         with (obj_battlecontroller)
             noreturn = true
         with (obj_musical_controller)
-            0
+            event_user(0)
         postattackscene = 1
     }
 }
@@ -131,22 +131,22 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* K_K - The silly one. Looks up to the other two./%", "obj_kk_enemy_slash_Step_0_gml_151_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
-        if 707
+        if instance_exists(obj_sweet_enemy)
         {
             with (obj_sweet_enemy)
                 actCounter++
         }
         danceCounter = 1
-        gml_Script_scr_act_charsprite("kris", 860, 0.16, 1)
+        gml_Script_scr_act_charsprite("kris", 861, 0.16, 1)
         if (simultotal == 1 || (global.lang == "ja" && obj_sweet_enemy.simultotal_funny == 1))
         {
             gml_Script_msgsetloc(0, "* You danced!/", "obj_kk_enemy_slash_Step_0_gml_172_0")
             gml_Script_msgnextloc("* K_K got lost in the groove!/%", "obj_kk_enemy_slash_Step_0_gml_173_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actcon = 4
             alarm[4] = 10
         }
@@ -168,12 +168,12 @@ if (global.myfight == 3)
                 gml_Script_msgsetloc(0, "* You danced with K_K!/%", "obj_kk_enemy_slash_Step_0_gml_190_0")
             if (global.lang == "ja")
             {
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_battletext_default()
                 actcon = 20
             }
             else
             {
-                "kris"
+                gml_Script_scr_simultext("kris")
                 if (simulorderkri == 0)
                     actcon = 20
                 else
@@ -183,17 +183,17 @@ if (global.myfight == 3)
     }
     if (acting == 3 && actcon == 0)
     {
-        if 707
+        if instance_exists(obj_sweet_enemy)
         {
             with (obj_sweet_enemy)
                 actCounter++
         }
         danceCounter = 2
-        gml_Script_scr_act_charsprite("kris", 860, 0.16, 1)
-        gml_Script_scr_act_charsprite("ralsei", 776, 0.16, 1)
-        gml_Script_scr_act_charsprite("susie", 816, 0.16, 1)
+        gml_Script_scr_act_charsprite("kris", 861, 0.16, 1)
+        gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
+        gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
         gml_Script_msgsetloc(0, "* Everyone danced with K_K! They're totally lost in the groove!/%", "obj_kk_enemy_slash_Step_0_gml_221_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 4
         alarm[4] = 10
     }
@@ -206,7 +206,7 @@ if (global.myfight == 3)
     {
         dancing = 1
         danceCounter = 1
-        gml_Script_scr_act_charsprite("susie", 816, 0.16, 1)
+        gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
         if (groove == 0)
         {
             if (global.lang == "ja")
@@ -222,12 +222,12 @@ if (global.myfight == 3)
             gml_Script_msgsetloc(0, "* Susie danced with K_K!/%", "obj_kk_enemy_slash_Step_0_gml_254_0")
         if (global.lang == "ja")
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actconsus = 20
         }
         else
         {
-            "susie"
+            gml_Script_scr_simultext("susie")
             if (simulordersus == 0)
                 actconsus = 20
             else
@@ -238,7 +238,7 @@ if (global.myfight == 3)
     {
         dancing = 1
         danceCounter = 1
-        gml_Script_scr_act_charsprite("ralsei", 776, 0.16, 1)
+        gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
         if (groove == 0)
         {
             if (global.lang == "ja")
@@ -254,19 +254,19 @@ if (global.myfight == 3)
             gml_Script_msgsetloc(0, "* Ralsei danced with K_K!/%", "obj_kk_enemy_slash_Step_0_gml_293_0")
         if (global.lang == "ja")
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actconral = 20
         }
         else
         {
-            "ralsei"
+            gml_Script_scr_simultext("ralsei")
             if (simulorderral == 0)
                 actconral = 20
             else
                 actconral = 0
         }
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         if (obj_sweet_enemy.dancing == 1 && obj_kk_enemy.dancing == 1 && obj_hatguy_enemy.dancing == 1 && obj_sweet_enemy.endcon == 0)
             obj_sweet_enemy.endcon = 1
@@ -278,7 +278,7 @@ if (global.myfight == 3)
             {
                 if (sprite_index == spr_kris_dance || sprite_index == spr_susie_dance || sprite_index == spr_ralsei_dance)
                 {
-                    // WARNING: Popz'd an empty stack.
+                    instance_destroy()
                     with (obj_heroparent)
                     {
                         if (image_alpha == 0)
@@ -291,35 +291,38 @@ if (global.myfight == 3)
                     }
                 }
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_nextact()
         }
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20)
     {
-        if (obj_sweet_enemy.dancing == 1 && obj_kk_enemy.dancing == 1 && obj_hatguy_enemy.dancing == 1 && obj_sweet_enemy.endcon == 0)
-            obj_sweet_enemy.endcon = 1
-        else if (obj_sweet_enemy.endcon == 0)
+        if gml_Script_scr_terminate_writer()
         {
-            with (obj_marker)
+            if (obj_sweet_enemy.dancing == 1 && obj_kk_enemy.dancing == 1 && obj_hatguy_enemy.dancing == 1 && obj_sweet_enemy.endcon == 0)
+                obj_sweet_enemy.endcon = 1
+            else if (obj_sweet_enemy.endcon == 0)
             {
-                if (sprite_index == spr_kris_dance || sprite_index == spr_susie_dance || sprite_index == spr_ralsei_dance)
+                with (obj_marker)
                 {
-                    // WARNING: Popz'd an empty stack.
-                    with (obj_heroparent)
+                    if (sprite_index == spr_kris_dance || sprite_index == spr_susie_dance || sprite_index == spr_ralsei_dance)
                     {
-                        if (image_alpha == 0)
+                        instance_destroy()
+                        with (obj_heroparent)
                         {
-                            image_alpha = 1
-                            acttimer = 0
-                            state = 0
-                            global.faceaction[myself] = 0
+                            if (image_alpha == 0)
+                            {
+                                image_alpha = 1
+                                acttimer = 0
+                                state = 0
+                                global.faceaction[myself] = 0
+                            }
                         }
                     }
                 }
+                actconsus = -1
+                actconral = -1
+                actcon = 1
             }
-            actconsus = -1
-            actconral = -1
-            actcon = 1
         }
     }
 }

@@ -21,8 +21,8 @@ if (con == 10)
     {
         if (collided == 0)
         {
-            global.msg[0] = "obj_ralseithrown_slash_Step_0_gml_23_0"
-            // WARNING: Popz'd an empty stack.
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseithrown_slash_Step_0_gml_23_0")
+            gml_Script_scr_battletext_default_ch1()
         }
         with (obj_heroralsei_ch1)
             visible = true
@@ -34,10 +34,10 @@ if (con == 10)
             visible = true
         }
         with (obj_throwtarget_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_throwralsei_ch1)
-            // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+            instance_destroy()
+        instance_destroy()
     }
 }
 if (con == 2)

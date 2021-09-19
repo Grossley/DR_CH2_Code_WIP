@@ -40,7 +40,7 @@ if (con == 0)
 if (shotmouthopen == 1)
 {
     shotmouthopentimer++
-    mouthtopy = ((-(shotmouthopentimer / 3)) * 30)
+    mouthtopy = ((-sin((shotmouthopentimer / 3))) * 30)
     mouthbottomy = (-mouthtopy)
     mouthangle = mouthtopy
     if (mouthbottomy < 0)

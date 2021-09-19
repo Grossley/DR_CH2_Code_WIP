@@ -1,4 +1,4 @@
-"main"
+gml_Script_scr_84_set_draw_font("main")
 if (TYPE == 1 && SUBTYPE == 0)
 {
     draw_sprite_ext(spr_giantdarkdoor, 1, 43, 48, 2, 2, 0, c_white, (0.03 + (sin((BG_SINER / 20)) * 0.04)))
@@ -29,7 +29,7 @@ if (BGMADE == 1 && SUBTYPE == 1)
         gml_Script_draw_background_part_ext(IMAGE_MENU, 0, i, __WAVEWIDTH, 1, (sin(((i / 8) + (BG_SINER / 30))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
         gml_Script_draw_background_part_ext(IMAGE_MENU, 0, i, __WAVEWIDTH, 1, ((-sin(((i / 8) + (BG_SINER / 30)))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
     }
-    T_SINER_ADD = (((ANIM_SINER_B / 10) * 0.6) - 0.25)
+    T_SINER_ADD = ((sin((ANIM_SINER_B / 10)) * 0.6) - 0.25)
     if (T_SINER_ADD >= 0)
         TRUE_ANIM_SINER += T_SINER_ADD
     draw_sprite_ext(IMAGE_MENU_ANIMATION, (ANIM_SINER / 12), 0, (((10 - (BG_ALPHA * 20)) + __WAVEHEIGHT) - 70), 1, 1, 0, image_blend, (BG_ALPHA * 0.46))
@@ -66,23 +66,23 @@ if (MENU_NO >= 0)
         BOX_Y1 = (55 + ((YL + YS) * i))
         BOX_X2 = (55 + XL)
         BOX_Y2 = ((55 + ((YL + YS) * i)) + YL)
-        0.5
-        0
+        draw_set_alpha(0.5)
+        draw_set_color(c_black)
         draw_rectangle(BOX_X1, BOX_Y1, BOX_X2, BOX_Y2, false)
-        1
-        COL_A
+        draw_set_alpha(1)
+        draw_set_color(COL_A)
         if (MENU_NO >= 0)
         {
             if (MENUCOORD[PREV_MENU] == i)
-                COL_B
+                draw_set_color(COL_B)
         }
         if (MENU_NO == 3 || MENU_NO == 4)
         {
             if (MENUCOORD[2] == i)
-                COL_PLUS
+                draw_set_color(COL_PLUS)
         }
         if (MENU_NO == 7 && MENUCOORD[5] == i)
-            255
+            draw_set_color(c_red)
         draw_rectangle(BOX_X1, BOX_Y1, BOX_X2, BOX_Y2, true)
         if (TYPE == 1)
         {
@@ -115,18 +115,18 @@ if (MENU_NO >= 0)
             }
             if (global.lang == "en")
             {
-                if NOWNAME
-                    10
+                if gml_Script_scr_kana_check(NOWNAME)
+                    draw_set_font(fnt_ja_main)
                 else
-                    3
+                    draw_set_font(fnt_main)
             }
             else
-                10
+                draw_set_font(fnt_ja_main)
             gml_Script_draw_text_shadow((BOX_X1 + 25), (BOX_Y1 + 5), NOWNAME)
-            "main"
-            2
+            gml_Script_scr_84_set_draw_font("main")
+            draw_set_halign(fa_right)
             gml_Script_draw_text_shadow((BOX_X1 + 180), (BOX_Y1 + 5), NOWTIME)
-            0
+            draw_set_halign(fa_left)
         }
         if (CONT_THIS >= 1)
         {
@@ -200,22 +200,22 @@ if (MENU_NO >= 0)
                     SELTEXT_C = gml_Script_stringsetloc(" ", "DEVICE_MENU_slash_Draw_0_gml_166_0")
                 }
             }
-            COL_B
+            draw_set_color(COL_B)
             if (MENU_NO == 7)
-                255
+                draw_set_color(c_red)
             gml_Script_draw_text_shadow((BOX_X1 + 25), (BOX_Y1 + 5), SELTEXT_C)
-            COL_A
+            draw_set_color(COL_A)
             if (MENUCOORD[MENU_NO] == 0)
             {
-                COL_B
+                draw_set_color(COL_B)
                 HEARTX = 75
                 HEARTY = (81 + ((YL + YS) * MENUCOORD[PREV_MENU]))
             }
             gml_Script_draw_text_shadow((BOX_X1 + 35), (BOX_Y1 + 22), SELTEXT_A)
-            COL_A
+            draw_set_color(COL_A)
             if (MENUCOORD[MENU_NO] == 1)
             {
-                COL_B
+                draw_set_color(COL_B)
                 HEARTX = 165
                 HEARTY = (81 + ((YL + YS) * MENUCOORD[PREV_MENU]))
             }
@@ -284,11 +284,11 @@ if (MENU_NO >= 0)
             CANCELTEXT = gml_Script_stringsetloc("Cancel", "DEVICE_MENU_slash_Draw_0_gml_190_0")
         if (MENU_NO == 10 || MENU_NO == 11)
             CANCELTEXT = gml_Script_stringsetloc("Don't Use Chapter 1 FILE", "DEVICE_MENU_slash_Draw_0_gml_242_0")
-        COL_A
+        draw_set_color(COL_A)
         if (MENU_NO < 20)
         {
             if (MENUCOORD[PREV_MENU] == 3)
-                COL_B
+                draw_set_color(COL_B)
         }
         gml_Script_draw_text_shadow(55, 190, CANCELTEXT)
     }
@@ -302,61 +302,61 @@ if (MENU_NO >= 0)
         CH1TEXT = gml_Script_stringsetloc("Ch 1 Files", "DEVICE_MENU_slash_Draw_0_gml_253_0")
         CHSELECTTEXT = gml_Script_stringsetloc("Chapter Select", "DEVICE_MENU_slash_Draw_0_gml_284_0")
         QUITTEXT = gml_Script_stringsetloc("End Program", "DEVICE_MENU_slash_Draw_0_gml_285_0")
-        LANGUAGETEXT = (global.lang == "en" ? "日本語" : "English")
+        LANGUAGETEXT = (global.lang == "en" ? gml_Script_stringset("日本語") : gml_Script_stringset("English"))
         if (TYPE == 1)
         {
             COPYTEXT = gml_Script_stringsetloc("Copy", "DEVICE_MENU_slash_Draw_0_gml_201_0")
             ERASETEXT = gml_Script_stringsetloc("Erase", "DEVICE_MENU_slash_Draw_0_gml_201_1")
         }
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 3)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow((54 - jamod), 190, COPYTEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 4)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow(140, 190, ERASETEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 5)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow((54 - jamod), 210, CH1TEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 7)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow(204, 190, CHSELECTTEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 8)
-            COL_B
+            draw_set_color(COL_B)
         if CANQUIT
             gml_Script_draw_text_shadow(204, 210, QUITTEXT)
         if (global.lang == "en")
-            10
+            draw_set_font(fnt_ja_main)
         else
-            3
-        COL_A
+            draw_set_font(fnt_main)
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 6)
-            COL_B
+            draw_set_color(COL_B)
         var languagex = 140
         if (global.lang == "en")
             languagex = 136
         gml_Script_draw_text_shadow(languagex, 210, LANGUAGETEXT)
-        "main"
+        gml_Script_scr_84_set_draw_font("main")
     }
-    3
+    draw_set_font(fnt_main)
     if (TYPE == 1)
     {
-        0.4
-        16777215
+        draw_set_alpha(0.4)
+        draw_set_color(c_white)
         draw_text_transformed(195, 230, (("DELTARUNE " + version_text) + " (C) Toby Fox 2018-2021 "), 0.5, 0.5, 0)
     }
     else
     {
-        COL_A
+        draw_set_color(COL_A)
         draw_text_transformed(248, 230, version_text, 0.5, 0.5, 0)
-        16777215
+        draw_set_color(c_white)
     }
-    "main"
-    1
+    gml_Script_scr_84_set_draw_font("main")
+    draw_set_alpha(1)
     if (MESSAGETIMER <= 0)
     {
         if (TYPE == 0)
@@ -390,19 +390,19 @@ if (MENU_NO >= 0)
                 TEMPCOMMENT = gml_Script_stringsetsubloc("This will start Chapter 2 in FILE Slot ~1.", (MENUCOORD[10] + 1), "DEVICE_MENU_slash_Draw_0_gml_292_0")
         }
     }
-    COL_B
+    draw_set_color(COL_B)
     gml_Script_draw_text_shadow(40, 30, TEMPCOMMENT)
     MESSAGETIMER -= 1
 }
-if ((HEARTX - HEARTXCUR) <= 2)
+if (abs((HEARTX - HEARTXCUR)) <= 2)
     HEARTXCUR = HEARTX
-if ((HEARTY - HEARTYCUR) <= 2)
+if (abs((HEARTY - HEARTYCUR)) <= 2)
     HEARTYCUR = HEARTY
 HEARTXCUR += ((HEARTX - HEARTXCUR) / 2)
 HEARTYCUR += ((HEARTY - HEARTYCUR) / 2)
 if (MENU_NO >= 0)
     draw_sprite(spr_heartsmall, 0, HEARTXCUR, HEARTYCUR)
-3
-16777215
-((("CHAPTER " + string(global.chapter)) + 4) + 8)
-"main"
+draw_set_font(fnt_main)
+draw_set_color(c_white)
+gml_Script_draw_text_shadow((gml_Script_camerax() + 8), (gml_Script_cameray() + 4), ("CHAPTER " + string(global.chapter)))
+gml_Script_scr_84_set_draw_font("main")

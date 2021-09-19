@@ -13,5 +13,5 @@ if (con == 2)
     timer++
     y = lerp((ystart + 140), ystart, (timer / 7))
     if (timer == 7)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

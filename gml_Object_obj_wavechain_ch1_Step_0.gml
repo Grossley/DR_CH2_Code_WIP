@@ -3,15 +3,15 @@ if (chaincon == 0)
     if (chain_noise == 0)
     {
         chain_noise = 1
-        chainsnd = 401
+        chainsnd = gml_Script_snd_loop_ch1(401)
     }
     sons += 1
     son[sons] = gml_Script_instance_create_ch1(x, y, 1566)
     if (x <= obj_nonsolid_growtangle_ch1.x)
     {
-        chainsnd
-        376
-        446
+        gml_Script_snd_stop_ch1(chainsnd)
+        gml_Script_snd_play_ch1(376)
+        gml_Script_snd_play_ch1(446)
         speed = 0
         chaincon = 1
         shakeamt = 12
@@ -30,7 +30,7 @@ if (chaincon == 2.1)
     obj_heart_ch1.y = remy
     obj_nonsolid_growtangle_ch1.x = remx_box
     obj_nonsolid_growtangle_ch1.y = remy_box
-    shakedir = 360
+    shakedir = random(360)
     xshake = lengthdir_x(shakeamt, shakedir)
     yshake = lengthdir_y(shakeamt, shakedir)
     obj_heart_ch1.x += xshake
@@ -46,7 +46,7 @@ if (chaincon == 3)
     if (chain_noise == 1)
     {
         chain_noise = 2
-        wavenoise = 400
+        wavenoise = gml_Script_snd_loop_ch1(400)
     }
     if (type == 0)
     {
@@ -58,7 +58,7 @@ if (chaincon == 3)
             regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
-            regbul
+            gml_Script_scr_bullet_inherit_ch1(regbul)
             btimer = 0
         }
         if (chain_noise == 2)
@@ -74,7 +74,7 @@ if (chaincon == 3)
             regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
-            regbul
+            gml_Script_scr_bullet_inherit_ch1(regbul)
             btimer = 0
         }
         if (chain_noise == 2)
@@ -90,7 +90,7 @@ if (chaincon == 3)
             regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
-            regbul
+            gml_Script_scr_bullet_inherit_ch1(regbul)
             btimer = 0
         }
         if (chain_noise == 2)
@@ -106,14 +106,14 @@ if (chaincon == 3)
             regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
-            regbul
+            gml_Script_scr_bullet_inherit_ch1(regbul)
             btimer = 0
         }
         if (chain_noise == 2)
             gml_Script_snd_pitch_ch1(wavenoise, (1 - (sin((siner / 7)) / 2)))
     }
 }
-if 1565
+if instance_exists(obj_chainking_ch1)
 {
     kingx[0] = (obj_chainking_ch1.x - initkingx)
     kingy[0] = (obj_chainking_ch1.y - initkingy)
@@ -152,14 +152,14 @@ if (t >= tmax)
     if (chain_noise == 2)
     {
         chain_noise = 3
-        wavenoise
+        gml_Script_snd_stop_ch1(wavenoise)
     }
     global.turntimer = 3
     with (obj_regularbullet_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_chainking_ch1)
         sprite_index = spr_chainking_receive_ch1
     with (obj_chainking_ch1)
-        // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+        instance_destroy()
+    instance_destroy()
 }

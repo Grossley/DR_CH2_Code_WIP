@@ -6,6 +6,7 @@ if (global.chapter == 2 && global.plot >= 9)
     coody.sprite_index = spr_npc_coody
     coody.image_xscale = -2
     var _temp_local_var_2 = coody
+    gml_Script_scr_depth()
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

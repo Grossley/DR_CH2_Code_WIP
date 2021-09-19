@@ -1,4 +1,4 @@
-if (482 && obj_berdlyb_enemy.nitro > 0)
+if (instance_exists(obj_berdlyb_enemy) && obj_berdlyb_enemy.nitro > 0)
     nitro = 1
 else
     nitro = 0
@@ -37,7 +37,7 @@ if (o_coaster_controller.actcon == 1 && o_coaster_controller.timer < o_coaster_c
 }
 if (o_coaster_controller.actcon != 0)
     actoncondelay = 1
-if 867
+if instance_exists(obj_battleblcon)
     actoncondelay = 0
 if (o_coaster_controller.actcon == 0 && actoncondelay == 0 && endscene == 0)
 {
@@ -46,12 +46,12 @@ if (o_coaster_controller.actcon == 0 && actoncondelay == 0 && endscene == 0)
         sprite_index = obj_herokris.sprite_index
         image_index = (obj_herokris.image_index - 1)
     }
-    if (HeroID == 1 && forceact == 0 && 371)
+    if (HeroID == 1 && forceact == 0 && instance_exists(obj_herosusie))
     {
         sprite_index = obj_herosusie.sprite_index
         image_index = (obj_herosusie.image_index - 1)
     }
-    if (HeroID == 2 && forceact == 0 && 372)
+    if (HeroID == 2 && forceact == 0 && instance_exists(obj_heroralsei))
     {
         sprite_index = obj_heroralsei.sprite_index
         image_index = (obj_heroralsei.image_index - 1)
@@ -214,7 +214,7 @@ if (sprite_index == spr_susie_attack)
     a = 1.5
 if (sprite_index == spr_susie_defend)
     a = 1.5
-if (endscene == 1 && 949)
+if (endscene == 1 && instance_exists(obj_ch2_scene11a))
 {
     if (HeroID == 0)
     {
@@ -283,7 +283,7 @@ if (con == 1)
     smoketimer += 2
     if (smoketimer >= 3)
         smoketimer = 0
-    if (x + 200)
+    if (x >= (gml_Script_camerax() + 200))
         con = 2
     if (damaged == 1)
     {
@@ -302,7 +302,7 @@ if (con == 2)
     if (nitro == 1)
     {
         hspeed -= 1
-        if ((x + 400) && hspeed > 0)
+        if (x >= (gml_Script_camerax() + 400) && hspeed > 0)
             hspeed = -2
     }
     if (x <= (xstart + 10))

@@ -6,18 +6,18 @@ if (encountered == 0)
         global.flag[touchflag] = 1
     if (global.ambush == 1)
     {
-        170
+        gml_Script_snd_play(170)
         with (obj_mainchara)
         {
             fun = true
-            if (!274)
-                // WARNING: Popz'd an empty stack.
+            if (!instance_exists(obj_caterpillarchara))
+                gml_Script_scr_shakeobj()
             sprite_index = spr_krisb_hurt
         }
         with (obj_caterpillarchara)
         {
             fun = true
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_shakeobj()
             if (name == "susie")
                 sprite_index = spr_susie_shock_r
             if (name == "ralsei")

@@ -16,7 +16,7 @@ chasecon = 1
 chasetimer = 0
 centerx = 320
 centery = 120
-if 1514
+if instance_exists(obj_battlesolid_ch1)
 {
     centerx = obj_battlesolid_ch1.x
     centery = obj_battlesolid_ch1.y
@@ -24,7 +24,7 @@ if 1514
 radius = 150
 sine = 0
 sinespeed = 1.4
-dir = 70
+dir = random(70)
 dirspeed = (1.5 * choose(1, -1))
 un = 0
 scythetimer = -5
@@ -32,7 +32,7 @@ scythesidex = 1
 swingnoise = 0
 noisebuffer = 0
 type = 0
-if 1558
+if instance_exists(obj_dbulletcontroller_ch1)
 {
     if (obj_dbulletcontroller_ch1.type == 76)
         type = 1
@@ -46,7 +46,7 @@ if (type == 1)
     sinespeed = 1.3
     scythesidex = choose(1, -1)
 }
-if (1589 == 1)
+if (instance_number(obj_centerscythe_ch1) == 1)
 {
     king = 1
     x = (centerx - radius)

@@ -8,5 +8,5 @@ if (init == 0)
 }
 hspeed *= 1.1
 vspeed *= 1.1
-if (((x + 640) + (sprite_width * 2)) ? 1 : ((x - (sprite_width * 2)) ? 1 : (((y + 480) + (sprite_height * 2)) ? 1 : (y - (sprite_height * 2)))))
-    // WARNING: Popz'd an empty stack.
+if (x > ((gml_Script_camerax() + 640) + (sprite_width * 2)) || x < (gml_Script_camerax() - (sprite_width * 2)) || y > ((gml_Script_cameray() + 480) + (sprite_height * 2)) || y < (gml_Script_cameray() - (sprite_height * 2)))
+    instance_destroy()

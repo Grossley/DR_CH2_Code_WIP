@@ -7,4 +7,4 @@ if spawning
     image_speed = 0
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

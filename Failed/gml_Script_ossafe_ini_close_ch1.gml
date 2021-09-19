@@ -1,11 +1,8 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1618
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (!global.is_console)
+    return ini_close();
+else if (!is_undefined(global.current_ini))
+{
+    ds_map_set(global.savedata, global.current_ini, ini_close())
+    global.current_ini = undefined
+}
+return;

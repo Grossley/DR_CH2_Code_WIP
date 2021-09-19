@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 if (destroyable == 1)
 {
     hp--
@@ -13,7 +14,7 @@ if (destroyable == 1)
     flash = true
     if (other.big == 0)
     {
-        with (stacktop)
-            0
+        var _temp_local_var_2 = other
+        event_user(0)
     }
 }

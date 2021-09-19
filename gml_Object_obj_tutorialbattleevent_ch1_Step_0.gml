@@ -1,4 +1,4 @@
-var _temp_local_var_3, _temp_local_var_7;
+var _temp_local_var_3;
 if (con < 400)
 {
     if (con == 1 && gml_Script___view_get(0, 0) >= (xx - 13) && gml_Script___view_get(0, 0) <= (xx + 20) && global.interact == 0)
@@ -7,25 +7,25 @@ if (con < 400)
         global.interact = 1
         con = 40
         global.msc = 135
-        global.msc
+        gml_Script_scr_text_ch1(global.msc)
         global.fe = 3
         global.typer = 31
         global.fc = 2
         gml_Script_instance_create_ch1(0, 0, 1326)
     }
-    if (con == 20 ? 0 : 0)
+    if (con == 20 && gml_Script_d_ex_ch1() == 0)
     {
         global.encounterno = 3
         global.specialbattle = 3
         global.flag[9] = 1
-        global.batmusic[0] = "battle.ogg"
+        global.batmusic[0] = gml_Script_snd_init_ch1("battle.ogg")
         gml_Script_instance_create_ch1(0, 0, 1488)
         con = 21
         alarm[4] = 10
     }
     if (con == 22)
     {
-        if 1513
+        if instance_exists(obj_battlecontroller_ch1)
         {
             var _temp_local_var_3 = dummy
             visible = false
@@ -71,25 +71,21 @@ if (con < 400)
         gml_Script_scr_itemget_ch1(4)
         con = 28
     }
-    if (con == 28)
-        _temp_local_var_3 = dummy == 0
-    else
-        var _temp_local_var_7 = 0
-    if (dummy == 0)
+    if (con == 28 && gml_Script_d_ex_ch1() == 0)
     {
         global.interact = 0
         if (global.plot < 31)
             global.plot = 31
         con = 29
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
-    if (con == 40 ? 0 : 0)
+    if (con == 40 && gml_Script_d_ex_ch1() == 0)
     {
-        4
+        gml_Script_scr_itemget_ch1(4)
         con = 41
         if (global.plot < 31)
             global.plot = 31
         global.interact = 0
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

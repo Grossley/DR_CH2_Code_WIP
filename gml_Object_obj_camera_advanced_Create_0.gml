@@ -47,9 +47,9 @@ for (i = 0; i < maxViews; i++)
     panDecelBool[i] = 1
     panStyle[i] = 0
     panLimitLeft[i] = 0
-    panLimitRight[i] = room_width
+    panLimitRight[i] = (room_width - gml_Script_camerawidth())
     panLimitTop[i] = 0
-    panLimitBottom[i] = room_height
+    panLimitBottom[i] = (room_height - gml_Script_cameraheight())
     ignoreFreezeArea[i] = -2
 }
 targetObject[0] = 80

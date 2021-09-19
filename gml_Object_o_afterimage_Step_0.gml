@@ -1,6 +1,6 @@
 image_alpha -= rate
 if (image_alpha <= 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (hasboss == 1)
 {
     x = boss.x

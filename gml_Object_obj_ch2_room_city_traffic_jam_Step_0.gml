@@ -3,12 +3,12 @@ if dismiss
     global.interact = 1
     vertical_jam_y += 12
     hor_jam_x += 12
-    if (vertical_jam_y + (view_hport[0] + 24))
+    if (vertical_jam_y > (gml_Script_cameray() + (view_hport[0] + 24)))
     {
         dismiss = 0
         vertical_dismiss = 1
         horizontal_dismiss = 1
-        if 1012
+        if gml_Script_i_ex(1012)
         {
             with (obj_ch2_city_car_b)
                 con = 0

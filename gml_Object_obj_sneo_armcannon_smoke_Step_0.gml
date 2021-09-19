@@ -1,5 +1,5 @@
 image_alpha -= 0.05
 if (image_alpha < 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

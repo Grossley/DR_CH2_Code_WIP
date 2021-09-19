@@ -1,2 +1,2 @@
 o_boxing_wireframe.text = o_boxingcontroller.default_string
-96
+gml_Script_snd_play(96)

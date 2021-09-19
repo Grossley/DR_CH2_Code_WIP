@@ -8,7 +8,7 @@ if (room == room_dw_mansion_acid_tunnel_exit)
     ypos = 260
 if (room == room_dw_city_traffic_4)
     xpos = x
-var layersprites = 3140
+var layersprites = [3141]
 for (var i = 0; i < array_length_1d(layersprites); i++)
 {
     var bglayer = gml_Script_instance_create(xpos, ypos, obj_parallaxer_layer)

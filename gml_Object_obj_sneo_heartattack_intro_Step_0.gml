@@ -7,8 +7,8 @@ if (con == 0)
     if (timer == 40)
     {
         with (obj_sneo_heartattack_chest_shake)
-            // WARNING: Popz'd an empty stack.
-        obj_spamton_neo_enemy.partsprite[4] = 1983
+            instance_destroy()
+        obj_spamton_neo_enemy.partsprite[4] = 1984
         obj_spamton_neo_enemy.partx[4] = chestoriginx
         obj_spamton_neo_enemy.party[4] = chestoriginy
         gml_Script_instance_create((obj_spamton_neo_enemy.x + 40), (obj_spamton_neo_enemy.y + 80), obj_sneo_heartattack)
@@ -41,12 +41,12 @@ if (con == 1)
         with (obj_sneo_sine_hand)
             con = 1
         with (obj_sneo_sine_hand_controller)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (timer == 60)
     {
-        obj_spamton_neo_enemy.partsprite[4] = 1975
-        obj_spamton_neo_enemy.partsprite[5] = 3318
-        // WARNING: Popz'd an empty stack.
+        obj_spamton_neo_enemy.partsprite[4] = 1976
+        obj_spamton_neo_enemy.partsprite[5] = 3319
+        instance_destroy()
     }
 }

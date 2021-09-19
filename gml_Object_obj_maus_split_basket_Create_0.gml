@@ -1,11 +1,11 @@
 con = 0
 notime = 0
-xx = 
-yy = 
+xx = gml_Script_camerax()
+yy = gml_Script_cameray()
 draw_in = 0
 draw_in_timer = 0
 caught = 0
 extra_mode = 1
 noisevol = 1
-if 758
+if instance_exists(obj_mauswheel_enemy)
     extra_mode = obj_mauswheel_enemy.basket_size

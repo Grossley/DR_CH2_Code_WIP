@@ -1,4 +1,4 @@
-if (274 && obj_caterpillarchara.name == "noelle")
+if (instance_exists(obj_caterpillarchara) && obj_caterpillarchara.name == "noelle")
 {
     if (global.interact == 0)
     {
@@ -11,15 +11,15 @@ if (274 && obj_caterpillarchara.name == "noelle")
 }
 if (fakeNoelleActive == 1)
 {
-    if (274 && obj_caterpillarchara.name == "noelle")
+    if (instance_exists(obj_caterpillarchara) && obj_caterpillarchara.name == "noelle")
     {
         with (obj_caterpillarchara)
             visible = false
-        if 1277
+        if instance_exists(obj_noelle_city_traffic_2)
             fakeNoelle = instance_find(obj_noelle_city_traffic_2, 0)
         else
             fakeNoelle = noone
-        if (!fakeNoelle)
+        if (!gml_Script_i_ex(fakeNoelle))
         {
             fakeNoelle = gml_Script_instance_create(obj_caterpillarchara.x, obj_caterpillarchara.y, obj_noelle_city_traffic_2)
             fakeNoelle.image_xscale = 2
@@ -31,6 +31,6 @@ if (fakeNoelleActive == 1)
 }
 if (fakeNoelleActive == 0)
 {
-    if (274 && obj_caterpillarchara.name == "noelle")
+    if (instance_exists(obj_caterpillarchara) && obj_caterpillarchara.name == "noelle")
         obj_caterpillarchara.visible = true
 }

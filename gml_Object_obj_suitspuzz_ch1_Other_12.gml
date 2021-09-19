@@ -4,5 +4,5 @@ if (cur_s < max_suit)
     cur_s += 1
 }
 else
-    0
+    event_user(0)
 spade += 1

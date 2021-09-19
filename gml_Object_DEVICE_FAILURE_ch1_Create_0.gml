@@ -6,7 +6,7 @@ OBMADE = 0
 global.flag[20] = 0
 global.flag[6] = 1
 global.typer = 667
-"DEVICE_FAILURE_slash_Create_0_gml_10_0"
+gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Create_0_gml_10_0"))
 FADEFACTOR = 0
 WHITEFADE = 0
 FADEUP = 0

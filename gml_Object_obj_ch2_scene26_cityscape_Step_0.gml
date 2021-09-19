@@ -14,13 +14,13 @@ if fade_away
 if show_lightners
 {
     show_lightners = 0
-    kris_screen = ((obj_queenscreen + 80) + screen_offset)
+    kris_screen = gml_Script_instance_create((gml_Script_camerax() + screen_offset), (gml_Script_cameray() + 80), obj_queenscreen)
     kris_screen.image_index = 38
     kris_screen.aligned = 1
-    sus_screen = ((obj_queenscreen + 80) + (screen_offset * 2))
+    sus_screen = gml_Script_instance_create((gml_Script_camerax() + (screen_offset * 2)), (gml_Script_cameray() + 80), obj_queenscreen)
     sus_screen.image_index = 39
     sus_screen.aligned = 1
-    no_screen = ((obj_queenscreen + 80) + (screen_offset * 3))
+    no_screen = gml_Script_instance_create((gml_Script_camerax() + (screen_offset * 3)), (gml_Script_cameray() + 80), obj_queenscreen)
     no_screen.image_index = 7
     no_screen.aligned = 1
 }

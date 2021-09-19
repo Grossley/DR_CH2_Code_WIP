@@ -3,10 +3,10 @@ if (fade == 1)
     image_alpha -= 0.1
     speed = 0
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-// WARNING: Popz'd an empty stack.
-if (!635)
+event_inherited()
+if (!instance_exists(obj_sneo_final_forme))
     return;
 if (x > ((obj_sneo_final_forme.x + obj_sneo_final_forme.mouthx) - 50))
     y += clamp(((obj_sneo_final_forme.y + obj_sneo_final_forme.mouthy) - y), -5, 5)
@@ -21,6 +21,6 @@ image_xscale = _scalesize
 image_yscale = _scalesize
 if (x > ((obj_sneo_final_forme.x + obj_sneo_final_forme.mouthx) + 50))
 {
-    // WARNING: Popz'd an empty stack.
-    179
+    instance_destroy()
+    gml_Script_snd_play(179)
 }

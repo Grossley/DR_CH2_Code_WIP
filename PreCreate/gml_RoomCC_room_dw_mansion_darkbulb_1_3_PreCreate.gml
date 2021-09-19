@@ -1,1 +1,1 @@
-puzzle_icon = 2401
+puzzle_icon = 2402

@@ -2,7 +2,7 @@ global.interact = 1
 image_xscale = 3
 image_yscale = 3
 image_alpha = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 con = 0
 color_lerp = 0
 glow_lerp = 0
@@ -29,7 +29,7 @@ recruit_color[6] = 14438399
 recruit_color[7] = 2366701
 recruit_color[8] = 14867541
 recruit_color[9] = 62207
-recruit_sprite_map = 
+recruit_sprite_map = ds_map_create()
 ds_map_set(recruit_sprite_map, 500, 296)
 ds_map_set(recruit_sprite_map, 630, 285)
 ds_map_set(recruit_sprite_map, 631, 286)
@@ -40,7 +40,7 @@ ds_map_set(recruit_sprite_map, 635, 288)
 ds_map_set(recruit_sprite_map, 636, 291)
 ds_map_set(recruit_sprite_map, 642, 292)
 ds_map_set(recruit_sprite_map, 900, 293)
-recruit_dialog_map = 
+recruit_dialog_map = ds_map_create()
 ds_map_set(recruit_dialog_map, 500, gml_Script_stringsetloc("* My strongest JPEGs!/%", "obj_ch2_scene26_powers_combined_slash_Create_0_gml_43_0"))
 ds_map_set(recruit_dialog_map, 630, gml_Script_stringsetloc("* Flashing lights!/%", "obj_ch2_scene26_powers_combined_slash_Create_0_gml_44_0"))
 ds_map_set(recruit_dialog_map, 631, gml_Script_stringsetloc("* HAPPI... BRAVARY.../%", "obj_ch2_scene26_powers_combined_slash_Create_0_gml_45_0"))
@@ -68,7 +68,7 @@ for (var i = 0; i < array_length_1d(recruit_ids); i++)
     if (global.flag[recruit_ids[i]] == 1)
     {
         var recruit_id = recruit_ids[i]
-        if (!ds_map_find_value(recruit_sprite_map, recruit_id))
+        if (!is_undefined(ds_map_find_value(recruit_sprite_map, recruit_id)))
         {
             if (current_index == -1)
                 current_index = 0

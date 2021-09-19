@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (destroyable == 1)
 {
     if (other.big == 0)
@@ -12,15 +13,15 @@ if (destroyable == 1)
     }
     if (hp <= 0)
     {
-        0
-        188
+        event_user(0)
+        gml_Script_snd_play(188)
         speed = 0
     }
     else
     {
         timer = -1
-        166
+        gml_Script_snd_play(166)
     }
 }
-with (stacktop)
-    0
+var _temp_local_var_1 = other
+event_user(0)

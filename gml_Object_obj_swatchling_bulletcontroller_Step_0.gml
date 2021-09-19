@@ -3,12 +3,12 @@ if (type == 5 && sameattacker < 2 && obj_swatchling_battle_controller.red_count 
     var swatch_bc = obj_swatchling_battle_controller
     if (init == 1)
     {
-        if (sameattacker == 1 ? sameattack : 0)
+        if (sameattacker == 1 && sameattack == gml_Script_scr_monsterpop())
             btimer = -20
         init = 2
-        if (1 ? sameattack : 0)
-            side = 20
-        difficulty = (1 ? 1.5 : 1)
+        if (gml_Script_scr_monsterpop() != 1 && sameattack != gml_Script_scr_monsterpop())
+            side = irandom(20)
+        difficulty = (gml_Script_scr_monsterpop() == 1 ? 1.5 : 1)
         var _platecarry = swatch_bc.yellow_count > swatch_bc.blue_count
         if _platecarry
             difficulty = (sameattacker == 1 ? 0.35 : 0.75)
@@ -26,10 +26,10 @@ if (type == 5 && sameattacker < 2 && obj_swatchling_battle_controller.red_count 
                 swatch_bc.shockwave_x_1 = ((((maxx + 140) - side) + 98) + 40)
         }
         else
-            side = 20
+            side = irandom(20)
         init++
     }
-    if (btimer == sameattack ? 4 : 6)
+    if (btimer > (gml_Script_scr_monsterpop() == sameattack ? 4 : 6))
     {
         flip = (sameattacker == 1 || (swatch_bc.blue_count == swatch_bc.yellow_count && swatch_bc.blue_count > 0))
         reverse = (swatch_bc.blue_count == swatch_bc.yellow_count && swatch_bc.blue_count > 0)
@@ -60,7 +60,7 @@ else if (type == 6 && sameattacker < 2 && obj_swatchling_battle_controller.yello
     {
         ratio = min(ratio, 1.6)
         init = 2
-        side = (6 + sameattack)
+        side = irandom((6 - (gml_Script_scr_monsterpop() + sameattack)))
         if (obj_swatchling_battle_controller.red_count > obj_swatchling_battle_controller.blue_count)
         {
             if (sameattack >= 2)
@@ -87,7 +87,7 @@ else if (type == 6 && sameattacker < 2 && obj_swatchling_battle_controller.yello
         d.direction = (((sameattacker == 0 || _bounce) && (!_shockwave)) ? 180 : 0)
         d.grazepoints = 4
         if special
-            d.hasCandy = 6 == 6
+            d.hasCandy = irandom(6) == 6
         else if (made == side)
             d.hasCandy = 1
         d.timer = (-1 - irandom(19))

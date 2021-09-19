@@ -3,7 +3,7 @@ if (global.flag[379] == 0 || global.plot < 78)
 {
     drawshine = 0
     shineindex = 0
-    if 2
+    if (gml_Script_scr_sideb_get_phase() == 2)
         weird = 1
     else
         weird = 0
@@ -39,14 +39,14 @@ if (global.flag[379] == 0 || global.plot < 78)
 }
 if (global.flag[379] == 1)
 {
-    if 2
+    if (gml_Script_scr_sideb_get_phase() == 2)
     {
-        if 103
+        if instance_exists(obj_npc_sign)
         {
             with (obj_npc_sign)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         with (obj_mouseTowerTrigger)
-            1
+            gml_Script_scr_createFrozen(1)
     }
 }

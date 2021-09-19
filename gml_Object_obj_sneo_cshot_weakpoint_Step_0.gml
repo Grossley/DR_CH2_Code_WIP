@@ -1,6 +1,6 @@
 var _temp_local_var_2;
 if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 x = barrier.x
 y = barrier.y
 image_angle += angle_speed

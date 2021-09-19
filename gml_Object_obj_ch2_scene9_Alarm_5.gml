@@ -9,7 +9,7 @@ if (screencount < screenmax)
             x_offset += 18
     }
     screen[screencount] = gml_Script_instance_create((((screenx[screencount] * 2) + gml_Script_camerax()) + x_offset), ((screeny[screencount] * 2) + gml_Script_cameray()), obj_queenscreen)
-    screen[screencount].sprite_index = "spr_queenscreen"
+    screen[screencount].sprite_index = gml_Script_scr_84_get_sprite("spr_queenscreen")
     screen[screencount].image_index = screenimage[screencount]
     screencount++
 }

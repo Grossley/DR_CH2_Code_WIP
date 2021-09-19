@@ -46,7 +46,7 @@ else
     yy = (y - (pivoty * ((image_yscale - 2) / 2)))
 }
 if (image_alpha < 0 || image_alpha > 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 gml_Script_d3d_set_fog(true, image_blend, 0, 1)
 draw_sprite_ext(sprite_index, image_index, xx, yy, image_xscale, image_yscale, 0, image_blend, (image_alpha * maxalpha))
 gml_Script_d3d_set_fog(false, c_black, 0, 0)

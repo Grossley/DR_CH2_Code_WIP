@@ -1,32 +1,35 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8, _temp_local_var_10, _temp_local_var_11, _temp_local_var_13, _temp_local_var_14, _temp_local_var_15, _temp_local_var_18, _temp_local_var_20, _temp_local_var_21, _temp_local_var_23, _temp_local_var_24, _temp_local_var_26, _temp_local_var_28, _temp_local_var_30, _temp_local_var_34, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_39, _temp_local_var_43, _temp_local_var_44, _temp_local_var_46, _temp_local_var_48, _temp_local_var_49, _temp_local_var_51, _temp_local_var_52, _temp_local_var_53, _temp_local_var_54, _temp_local_var_56;
-if 50
+if gml_Script_scr_debug_ch1()
 {
-    if (mergecon == 0 && cno < cmax)
+    if keyboard_check_pressed(ord("2"))
     {
-        mergecon = 1
-        newcno = (cno + 1)
+        if (mergecon == 0 && cno < cmax)
+        {
+            mergecon = 1
+            newcno = (cno + 1)
+        }
     }
-}
-if 48
-{
-    if (global.interact == 0)
+    if keyboard_check_pressed(ord("0"))
     {
-        global.interact = 1
+        if (global.interact == 0)
+        {
+            global.interact = 1
+            if (movecon == 0)
+                movecon = 1
+            if (mergecon == 0 && cno > 0)
+                newcno = (cno - 1)
+        }
+    }
+    if keyboard_check_pressed(ord("1"))
+    {
+        if (movecon == 4)
+            movecon = 2
         if (movecon == 0)
-            movecon = 1
-        if (mergecon == 0 && cno > 0)
-            newcno = (cno - 1)
-    }
-}
-if 49
-{
-    if (movecon == 4)
-        movecon = 2
-    if (movecon == 0)
-    {
-        movecon = 3
-        if (cno > 0)
-            newcno = (cno - 1)
+        {
+            movecon = 3
+            if (cno > 0)
+                newcno = (cno - 1)
+        }
     }
 }
 if (movecon == 1)
@@ -109,12 +112,12 @@ if (shakecon == 1)
 }
 if (shakecon == 2)
 {
-    if (gml_Script___view_get(1, 0) < 4)
+    if (abs(gml_Script___view_get(1, 0)) < 4)
         gml_Script___view_set(1, 0, (gml_Script___view_get(1, 0) - (dir * 0.5)))
 }
 if (shakecon == 3)
 {
-    446
+    gml_Script_snd_play_ch1(446)
     shakeamt = 4
     shakecon = 4
 }
@@ -203,12 +206,12 @@ if (charadjustcon == 1)
     exist[1] = 0
     charremy[0] = 0
     charremy[1] = 0
-    if global.cinstance[0]
+    if instance_exists(global.cinstance[0])
     {
         exist[0] = 1
         charremy[0] = global.cinstance[0].y
     }
-    if global.cinstance[1]
+    if instance_exists(global.cinstance[1])
     {
         exist[1] = 1
         charremy[1] = global.cinstance[1].y
@@ -254,13 +257,13 @@ if (con >= 1)
     if (con == 1)
     {
         with (obj_caterpillarchara_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_mainchara_ch1)
             visible = false
         global.interact = 1
-        k = gml_Script_scr_dark_marker_ch1(300, 420, 4197)
-        s = gml_Script_scr_dark_marker_ch1(300, 460, 3550)
-        r = gml_Script_scr_dark_marker_ch1(300, 500, 3566)
+        k = gml_Script_scr_dark_marker_ch1(300, 420, 4198)
+        s = gml_Script_scr_dark_marker_ch1(300, 460, 3551)
+        r = gml_Script_scr_dark_marker_ch1(300, 500, 3567)
         cc[0] = k
         cc[1] = s
         cc[2] = r
@@ -268,6 +271,7 @@ if (con >= 1)
         while (i < 3)
         {
             var _temp_local_var_7 = cc[i]
+            gml_Script_scr_depth_ch1()
             vspeed = -4
             image_speed = 0.25
         }
@@ -279,11 +283,13 @@ if (con >= 1)
         if (k.y <= 200)
         {
             var _temp_local_var_8 = k
+            gml_Script_scr_halt_ch1()
             sprite_index = spr_krisd_dark_ch1
         }
         if (s.y <= 200 && s.x == s.xstart)
         {
             var _temp_local_var_10 = s
+            gml_Script_scr_halt_ch1()
             x -= 1
             hspeed = -4
             image_speed = 0.25
@@ -292,6 +298,7 @@ if (con >= 1)
         if (s.x <= 240)
         {
             var _temp_local_var_11 = s
+            gml_Script_scr_halt_ch1()
             x = 240
             sprite_index = spr_susier_dark_ch1
         }

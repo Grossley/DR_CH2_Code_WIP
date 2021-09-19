@@ -1,4 +1,4 @@
 if (!other.active)
     return;
-// WARNING: Popz'd an empty stack.
-170
+instance_destroy()
+gml_Script_snd_play(170)

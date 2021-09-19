@@ -6,7 +6,7 @@ image_speed = 0
 image_index = 3
 targetx = 0
 targety = 0
-0
+event_user(0)
 loading = 9
 parentwindow = -4
 bufferstate = 0

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 wall_destroy = 1
 image_alpha = 1
 sprite_index = spr_hitbox_10px

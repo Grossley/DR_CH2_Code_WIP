@@ -32,7 +32,7 @@ if (breaking > 0)
         if (size == 3)
         {
             d = gml_Script_instance_create(x, y, obj_sneo_splitbouncer)
-            var dir1 = 3
+            var dir1 = irandom(3)
             d.direction = ((dir1 * 90) + 45)
             d.size = 2
             d = gml_Script_instance_create(x, y, obj_sneo_splitbouncer)
@@ -42,7 +42,7 @@ if (breaking > 0)
         else if (size == 2)
         {
             d = gml_Script_instance_create(x, y, obj_sneo_splitbouncer)
-            dir1 = 3
+            dir1 = irandom(3)
             d.direction = ((dir1 * 90) + 45)
             d.size = 1
             d = gml_Script_instance_create(x, y, obj_sneo_splitbouncer)
@@ -52,26 +52,26 @@ if (breaking > 0)
             d.direction = ((((dir1 + 2) % 4) * 90) + 45)
             d.size = 1
         }
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
     return;
 }
-if (y < (obj_shrinktangle.top + 6) && angle_difference(direction, 90) < 90)
+if (y < (obj_shrinktangle.top + 6) && abs(angle_difference(direction, 90)) < 90)
 {
     vspeed *= -1
     obj_shrinktangle.top += shrinksize
 }
-else if (x < (obj_shrinktangle.left + 6) && angle_difference(direction, 180) < 90)
+else if (x < (obj_shrinktangle.left + 6) && abs(angle_difference(direction, 180)) < 90)
 {
     hspeed *= -1
     obj_shrinktangle.left += shrinksize
 }
-else if (y > (obj_shrinktangle.bottom - 6) && angle_difference(direction, 270) < 90)
+else if (y > (obj_shrinktangle.bottom - 6) && abs(angle_difference(direction, 270)) < 90)
 {
     vspeed *= -1
     obj_shrinktangle.bottom -= shrinksize
 }
-else if (x > (obj_shrinktangle.right - 6) && angle_difference(direction, 0) < 90)
+else if (x > (obj_shrinktangle.right - 6) && abs(angle_difference(direction, 0)) < 90)
 {
     hspeed *= -1
     obj_shrinktangle.right -= shrinksize

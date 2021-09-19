@@ -1,5 +1,5 @@
 if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 direction += angle_speed
 if (angleadjust == 1)
     image_angle = direction
@@ -20,5 +20,5 @@ if (bighitbox == 1)
 {
     hitshot = collision_rectangle(x, y, (x + sprite_width), (y + sprite_height), obj_yheart_shot, 1, 0)
     if (hitshot != -4)
-        0
+        event_user(0)
 }

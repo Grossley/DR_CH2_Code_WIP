@@ -1,8 +1,8 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 image_speed = 0
-if 1296
+if gml_Script_i_ex(1296)
     depth = 86200
 else if (room == room_dw_mansion_east_2f_d)
     depth = 1000000
 else
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()

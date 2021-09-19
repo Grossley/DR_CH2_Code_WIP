@@ -44,8 +44,7 @@ if (t >= 5 && t <= 30)
         image_angle += 10
         image_alpha -= 0.1
         if (image_alpha <= 0)
-        {
-        }
+            instance_destroy()
     }
 }
 if (t >= 5 && t < 10)
@@ -57,8 +56,11 @@ if (t >= 9)
     {
         i = 0
         while (i < starcount)
+        {
             var _temp_local_var_7 = star[i]
-        // WARNING: Popz'd an empty stack.
+            instance_destroy()
+        }
+        instance_destroy()
     }
 }
 t += 1

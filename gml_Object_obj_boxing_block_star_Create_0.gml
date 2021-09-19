@@ -2,7 +2,7 @@ image_xscale = 2
 image_yscale = 2
 speed = 6
 timer = 0
-if 786
+if instance_exists(o_boxingqueen)
 {
     depth = (o_boxingqueen.depth - 2)
     if (o_boxingqueen.drawflip == 0)

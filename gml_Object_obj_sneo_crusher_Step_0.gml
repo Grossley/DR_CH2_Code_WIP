@@ -36,18 +36,18 @@ if (new_movement == 1)
         if (y > bottomy)
         {
             y = (bottomy - 1)
-            vspeed = (-vspeed)
+            vspeed = (-abs(vspeed))
         }
         if (y < topy)
         {
             y = (topy + 1)
-            vspeed = vspeed
+            vspeed = abs(vspeed)
         }
     }
 }
 if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     if (creatednewalls == 1)
         creatednewalls = 0
 }
@@ -82,7 +82,7 @@ if destroying
     {
         if (creatednewalls == 1)
             creatednewalls = 0
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
     return;
 }
@@ -95,7 +95,7 @@ if (crushedObj == 2 && offset <= offsetCap)
     {
         active = false
         destroying = 15
-        1
+        event_user(1)
     }
 }
 if (offset <= offsetCap && new_movement == 0)
@@ -118,7 +118,7 @@ if (offset <= offsetCap && new_movement == 0)
         y = (obj_growtangle.y + (sin((siner / 6)) * 50))
     }
 }
-if (628 && (x - 30) < obj_heart.x)
+if (instance_exists(obj_heart) && (x - 30) < obj_heart.x)
     return;
 if (destroying < 1)
 {

@@ -18,7 +18,7 @@ topy = 100
 bottomy = 300
 susiex = (x - 100)
 susiey = (y - 180)
-if 1606
+if instance_exists(obj_susieenemy_ch1)
 {
     susiex = obj_susieenemy_ch1.x
     susiey = obj_susieenemy_ch1.y

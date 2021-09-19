@@ -17,7 +17,7 @@ if (active == true && decorative == 0)
         timer += 1
         if (obj_mainchara.x != obj_mainchara.xprevious)
             timer += 1
-        if (timer >= chargetime ? (x ? ((x + 640) - sprite_width) : 0) : 0)
+        if (timer >= chargetime && x >= gml_Script_camerax() && x <= ((gml_Script_camerax() + 640) - sprite_width))
         {
             con = 1
             image_speed = 0.25
@@ -32,16 +32,16 @@ if (active == true && decorative == 0)
             timerbtarget = 8
         if (timerb == timerbtarget)
         {
-            if (!46)
+            if (!gml_Script_snd_is_playing(46))
             {
-                spawn = 46
+                spawn = gml_Script_snd_play(46)
                 gml_Script_snd_volume(spawn, 0.6, 0)
             }
             image_index = 0
             image_speed = 0
             timerb = 0
             con = 0
-            timer = ((chargetime / 2) - 30)
+            timer = (random((chargetime / 2)) - 30)
             spark = gml_Script_instance_create((basex + 22), (basey + 190), obj_hangplug_spark)
             spark.depth = (depth - 1)
         }

@@ -1,9 +1,9 @@
-if 80
+if instance_exists(obj_mainchara)
     checkX = (obj_mainchara.x + 20)
 timer += 2
 c_rainbow = make_color_hsv((timer % 255), 255, 255)
 curColor = merge_color(merge_color(c_white, c_rainbow, 0.5), c_black, 0.2)
-curColor
+draw_set_color(curColor)
 if (createAndStay == 0)
 {
     draw_rectangle(594, 110, 664, 220, false)
@@ -127,4 +127,4 @@ if (createAndStay == 1)
             global.plot = 67
     }
 }
-16777215
+draw_set_color(c_white)

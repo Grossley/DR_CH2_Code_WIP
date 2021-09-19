@@ -21,10 +21,10 @@ if (state == 0 && y > 310)
     vspeed = 0
     state = 1
     image_index = 1
-    d = (191 ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
-    d.shakex = 2
-    d.shakey = 2
-    235
+    d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
+    d.shakex = ceil(2)
+    d.shakey = ceil(2)
+    gml_Script_snd_play(235)
 }
 if (state == 1)
 {
@@ -55,7 +55,7 @@ if (state == 1)
         if (y >= (basey - 35))
         {
             y = lerp(y, (basey - 35), 0.5)
-            if (((y - basey) - 35) <= 2)
+            if (abs(((y - basey) - 35)) <= 2)
                 y = (basey - 35)
         }
         else
@@ -66,7 +66,7 @@ if (state == 1)
         if (x >= (basex - 70))
         {
             x = lerp(x, (basex - 70), 0.5)
-            if (((x - basex) - 70) <= 2)
+            if (abs(((x - basex) - 70)) <= 2)
                 x = (basex - 70)
         }
     }
@@ -74,9 +74,9 @@ if (state == 1)
     {
         obj_3d_bg_effect.slow_down = 0
         with (obj_bqueen_intro)
-            // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
-        global.batmusic[0] = "boxing_boss.ogg"
+            instance_destroy()
+        instance_destroy()
+        global.batmusic[0] = gml_Script_snd_init("boxing_boss.ogg")
         gml_Script_mus_loop_ext(global.batmusic[0], 1, 1)
     }
 }

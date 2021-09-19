@@ -1,6 +1,6 @@
 if (turnsleft < 1)
-    // WARNING: Popz'd an empty stack.
-if 628
+    instance_destroy()
+if instance_exists(obj_heart)
 {
     if (init == 0)
     {
@@ -11,7 +11,7 @@ if 628
     depth = (obj_heart.depth + 1)
     x = (obj_heart.x + 10)
     y = (obj_heart.y + 10)
-    if 638
+    if instance_exists(obj_sneo_fakeheart)
     {
         x = -9999
         y = -9999
@@ -23,9 +23,9 @@ if (axe_timer > 8 && visible == true)
     axe_timer = 0
     gml_Script_instance_create(x, y, obj_sneo_tiny_susie_axe)
 }
-if (!628)
+if (!instance_exists(obj_heart))
     visible = false
-if 628
+if instance_exists(obj_heart)
 {
     if (alarm[0] == 9)
         visible = false

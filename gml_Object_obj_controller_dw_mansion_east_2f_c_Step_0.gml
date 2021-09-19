@@ -1,4 +1,4 @@
-if 238
+if instance_exists(obj_chaseenemy)
 {
     with (obj_chaseenemy)
     {

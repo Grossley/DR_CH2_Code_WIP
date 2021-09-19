@@ -3,7 +3,7 @@ lightsoff = 0
 if (global.plot >= 250)
 {
     con = 99
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 else
 {

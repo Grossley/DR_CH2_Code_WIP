@@ -1,1 +1,1 @@
-__init_global()
+gml_Script___init_global()

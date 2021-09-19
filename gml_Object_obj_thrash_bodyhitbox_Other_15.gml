@@ -1,5 +1,5 @@
 var _temp_local_var_2;
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (active && obj_thrashmachine.duckmode)
 {
     explosion_marker = gml_Script_instance_create((x + 10), (y + 20), obj_animation_dx)

@@ -2,8 +2,8 @@ var _temp_local_var_4;
 siner++
 bluesiner++
 image_blend = merge_color(0xE8A200, c_aqua, (0.25 + (sin((bluesiner / 3)) * 0.25)))
-if (x + 480)
-    x = 480
+if (x >= (gml_Script_camerax() + 480))
+    x = (gml_Script_camerax() + 480)
 if (grazed == 1)
 {
     grazetimer += 1
@@ -13,7 +13,7 @@ if (grazed == 1)
         grazed = 0
     }
 }
-if 628
+if instance_exists(obj_heart)
 {
     if (obj_heart.x > (obj_sneo_phonehand_master.x - 36))
         obj_heart.x = (obj_sneo_phonehand_master.x - 36)
@@ -33,7 +33,7 @@ if (difficulty == 0)
     y = (ystart + (sin((siner / 8)) * 40))
 if (difficulty == 1 || difficulty == 2)
     y = (ystart + (sin((siner / 10)) * 60))
-if phonehand_top
+if gml_Script_i_ex(phonehand_top)
 {
     if (difficulty < 2)
         x = lerp(x, (phonehand_top.x + xdist), 0.2)

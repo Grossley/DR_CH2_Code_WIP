@@ -4,13 +4,13 @@ if (hurtstate2 == 1)
     return;
 }
 if (state == 3)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemy_drawhurt_generic()
 if (state == 0)
 {
     if dancing
     {
         siner += 0.16666666666666666
-        gml_Script_draw_monster_body_part(1751, siner, x, y)
+        gml_Script_draw_monster_body_part(1752, siner, x, y)
         musicalnotetimer++
         if (musicalnotetimer == 14)
         {
@@ -26,12 +26,12 @@ if (state == 0)
         }
     }
     else
-        0.16666666666666666
+        gml_Script_scr_enemy_drawidle_generic(0.16666666666666666)
 }
 if (becomeflash == false)
     flash = false
 becomeflash = false
-16777215
+draw_set_color(c_white)
 if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13)
 {
     siner2++
@@ -44,7 +44,7 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
     }
     if (global.myfight == 0)
     {
-        "mainbig"
+        gml_Script_scr_84_set_draw_font("mainbig")
         if (danceCounter == 1)
         {
             draw_text_ext_transformed(((gml_Script___view_get(0, 0) + 258) + xoffset), (((gml_Script___view_get(1, 0) + 369) + 60) + yoffset), gml_Script_stringsetloc("Dancing!", "obj_hatguy_enemy_slash_Draw_0_gml_60_0"), 9999, 9999, 0.7, 1, 0)

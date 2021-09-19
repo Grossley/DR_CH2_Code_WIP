@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (truegravity == 0)
 {
     destroyonhit = 0
@@ -6,7 +6,7 @@ if (truegravity == 0)
 }
 if (init == 0)
 {
-    flip = gravity
+    flip = sign(gravity)
     if (gravity < 0)
         image_yscale = -1
     if jumper

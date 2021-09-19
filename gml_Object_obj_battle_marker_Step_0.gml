@@ -1,2 +1,2 @@
-if ((!destroyoncomplete) && (!"enemytalk"))
-    // WARNING: Popz'd an empty stack.
+if ((!destroyoncomplete) && (!gml_Script_scr_isphase("enemytalk")))
+    instance_destroy()

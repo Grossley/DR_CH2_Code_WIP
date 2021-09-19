@@ -10,12 +10,12 @@ if (vbounce == 1)
     if (y > bottomy)
     {
         y = (bottomy - 1)
-        vspeed = (-vspeed)
+        vspeed = (-abs(vspeed))
     }
     if (y < topy)
     {
         y = (topy + 1)
-        vspeed = vspeed
+        vspeed = abs(vspeed)
     }
 }
 siner += 0.4

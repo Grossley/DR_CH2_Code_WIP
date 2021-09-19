@@ -1,14 +1,14 @@
 if (flip == 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 if (flip == 1)
 {
     con = 0
     global.interact = 1
     if (flipcon == 0)
     {
-        0.2
+        draw_set_alpha(0.2)
         draw_rectangle((x - 38), (y + 2), (x + 38), ((y + 120) - 2), false)
-        1
+        draw_set_alpha(1)
         if (flipped == 0)
         {
             draw_sprite_ext(spriteindex2, image_index, (x + 2), y, image_xscale, image_yscale, image_angle, c_gray, image_alpha)
@@ -55,10 +55,10 @@ if (flip == 1)
     }
     if (flipcon == 2)
     {
-        0.2
+        draw_set_alpha(0.2)
         draw_rectangle((x - 38), (y + 2), (x + 38), ((y + 120) - 2), false)
-        1
-        // WARNING: Popz'd an empty stack.
+        draw_set_alpha(1)
+        draw_self()
         if (image_xscale < 1.99)
         {
             image_xscale *= (1 / flipfactor)
@@ -82,14 +82,14 @@ if (decorative == 1 && flip == 0)
     shadow.image_index = image_index
     shadow.depth = depth
     shadow.image_speed = image_speed
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (isswitch && dontshine == 0)
 {
     if (!shine_init)
     {
         shine_init = 1
-        shine = gml_Script_scr_dark_marker((x - 8), (y + 84), 2435)
+        shine = gml_Script_scr_dark_marker((x - 8), (y + 84), 2436)
         shine.depth = (depth - 10)
         shine.image_speed = 0.1
     }

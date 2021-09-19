@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 f = 2
 destroyable = 0
 angle_speed = 0

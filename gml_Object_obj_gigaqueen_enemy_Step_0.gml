@@ -4,12 +4,12 @@ if (init == 0)
         visible = false
     init = 1
 }
-if 786
+if gml_Script_i_ex(786)
 {
     x = o_boxingqueen.x
     y = (o_boxingqueen.y - 80)
 }
-if 839
+if instance_exists(o_boxinghud)
 {
     global.monsterhp[myself] = (o_boxingqueen.health_count + (o_boxinghud.sub_healthbar_count * 1500))
     if (global.monsterhp[myself] < 1)
@@ -17,9 +17,9 @@ if 839
 }
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
         turn++
-    if ("enemytalk" && talked == 0 && turn > 18 && o_boxingqueen.phase_transition < 1)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && turn > 18 && o_boxingqueen.phase_transition < 1)
     {
         if (global.monsterdf[myself] > -25)
         {
@@ -27,7 +27,7 @@ if (global.monster[myself] == true)
             o_boxingqueen.damagetakenincrease += 0.166666
         }
     }
-    if ("enemytalk" && talked == 0 && o_boxingqueen.phase_transition < 1)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && o_boxingqueen.phase_transition < 1)
     {
         global.typer = 70
         ballooncon = 0
@@ -160,10 +160,10 @@ if (global.monster[myself] == true)
     if (talked == 0.6)
     {
         talktimer++
-        if (talktimer > 15 || (!62))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             if (ballooncon == 1)
             {
                 gml_Script_msgsetloc(0, "Now Is The&Time To Fight&(Only)/%", "obj_gigaqueen_enemy_slash_Step_0_gml_106_0")
@@ -284,24 +284,24 @@ if (global.monster[myself] == true)
             alarm[6] = 1
         }
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
-        if (talktimer > 15 || (!62))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             talkedcon = 1
         }
         if (talkedcon == 1)
         {
             rtimer = 0
-            -1
+            gml_Script_scr_blconskip(-1)
             if ((missleattack == 1 && attacked == false) || (breathattack == 1 && attacked == false))
             {
-                if (!361)
+                if (!instance_exists(obj_darkener))
                     gml_Script_instance_create(0, 0, obj_darkener)
-                if (!869)
+                if (!instance_exists(obj_growtangle))
                 {
                     gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 250), obj_growtangle)
                     if (missleattack == 1)
@@ -315,12 +315,12 @@ if (global.monster[myself] == true)
                         obj_growtangle.maxyscale = 2
                     }
                 }
-                if ((!377) && (!628))
-                    // WARNING: Popz'd an empty stack.
+                if ((!instance_exists(obj_moveheart)) && (!instance_exists(obj_heart)))
+                    gml_Script_scr_moveheart()
             }
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 1)
@@ -331,7 +331,7 @@ if (global.monster[myself] == true)
                 dc = gml_Script_scr_bulletspawner(x, y, 388)
                 dc.type = 46
                 dc.target = mytarget
-                208
+                gml_Script_scr_turntimer(208)
             }
             else if (breathattack == 1)
             {
@@ -339,13 +339,13 @@ if (global.monster[myself] == true)
                 dc = gml_Script_scr_bulletspawner(x, y, 388)
                 dc.type = 47
                 dc.target = mytarget
-                200
+                gml_Script_scr_turntimer(200)
             }
             else
             {
                 with (o_boxingcontroller)
                 {
-                    0
+                    event_user(0)
                     attackintrocon = 2
                 }
                 with (obj_battlecontroller)
@@ -353,7 +353,7 @@ if (global.monster[myself] == true)
                     gigaqueencon = 1
                     gigaqueentimer = 0
                 }
-                999999
+                gml_Script_scr_turntimer(999999)
             }
             missleattack = 0
             breathattack = 0
@@ -371,7 +371,7 @@ if (global.monster[myself] == true)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Susie mashes the controls trying to punch more.", "obj_gigaqueen_enemy_slash_Step_0_gml_216_0")
             if (rr == 3)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Ralsei advises you to \"dodge, then counter punch.\"", "obj_gigaqueen_enemy_slash_Step_0_gml_217_0")
-            if (100 < 5)
+            if (irandom(100) < 5)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Smells like gigantic batteries.", "obj_gigaqueen_enemy_slash_Step_0_gml_218_0")
             if (haventusedspell == 1 && global.tension >= 150)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Your machine is charged up for special moves!", "obj_gigaqueen_enemy_slash_Step_0_gml_219_0")
@@ -380,7 +380,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -400,9 +400,9 @@ if (global.myfight == 3)
         acting = 1.5
         haventusedspell = 0
         gml_Script_msgset(0, actpunchtext)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (acting == 1.5 && (!62))
+    if (acting == 1.5 && (!gml_Script_i_ex(62)))
     {
         extradamage = 0
         if (o_boxingcontroller.headsprite == spr_bhero_head_a)
@@ -422,15 +422,15 @@ if (global.myfight == 3)
             o_boxingcontroller.specialcon = 4
             extradamage = -30
         }
-        153
+        gml_Script_snd_play(153)
         acting = 4
         alarm[5] = 30
     }
-    if (acting == 5 && o_boxingcontroller.specialcon == 0 && (!62))
+    if (acting == 5 && o_boxingcontroller.specialcon == 0 && (!gml_Script_i_ex(62)))
     {
         acting = 7
         o_boxingcontroller.punchcon = 1
-        o_boxingcontroller.damageoverride = (((global.battleat[0] * 300) / 20) + extradamage)
+        o_boxingcontroller.damageoverride = (round(((global.battleat[0] * 300) / 20)) + extradamage)
         if (o_boxingcontroller.headsprite == spr_bhero_head_d)
             o_boxingcontroller.healoverride = 35
     }
@@ -442,9 +442,9 @@ if (global.myfight == 3)
     if (acting == 2)
     {
         o_boxingcontroller.specialcon = 5
-        153
+        gml_Script_snd_play(153)
         gml_Script_msgsetloc(0, "* TURBODODGE engaged!&* A dodge-enhancing aura fired up...!/%", "obj_gigaqueen_enemy_slash_Step_0_gml_309_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         haventusedspell = 0
         acting = 0
         actcon = 1
@@ -452,12 +452,12 @@ if (global.myfight == 3)
     if (acting == 3)
     {
         o_boxingcontroller.specialcon = 6
-        153
+        gml_Script_snd_play(153)
         if (healcount > 2)
             gml_Script_msgsetloc(0, "* SELF-FIX engaged!&* A healing aura fired up...!/%", "obj_gigaqueen_enemy_slash_Step_0_gml_320_0")
         else
             gml_Script_msgsetloc(0, "* SELF-FIX engaged!&* A healing aura fired up...!&* (But, the TP cost increased!)/%", "obj_gigaqueen_enemy_slash_Step_0_gml_321_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         haventusedspell = 0
         healcount++
         if (healcount == 1)
@@ -466,14 +466,14 @@ if (global.myfight == 3)
             global.actcost[myself][2] = 100
         if (healcount == 3)
             global.actcost[myself][2] = 125
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_spellmenu_setup()
         acting = 0
         actcon = 1
     }
-    if (actcon == 1 && acting == 0 && (!62))
+    if (actcon == 1 && acting == 0 && (!instance_exists(obj_writer)))
     {
         actcon = 0
         o_boxingcontroller.acttoenemytalktransition = 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_nextact()
     }
 }

@@ -1,5 +1,5 @@
 if (init == 0)
-    0
+    event_user(0)
 if (init == 1 && ignorebuffer <= 0)
-    1
+    event_user(1)
 ignorebuffer--

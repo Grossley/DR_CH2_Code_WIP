@@ -15,6 +15,7 @@ switch spell
         break
     case 3:
         global.msg[0] = gml_Script_stringsetsubloc("* ~1 cast PACIFY!/%", global.charname[global.char[caster]], "scr_spelltext_slash_scr_spelltext_gml_23_0")
+        gml_Script_scr_retarget_spell()
         if (global.monster[star] == true)
         {
             if (global.monsterstatus[star] == true)
@@ -52,6 +53,7 @@ switch spell
     case 100:
         cancelattack = false
         global.msg[0] = gml_Script_stringsetsubloc("* ~1 spared ~2!/%", global.charname[global.char[caster]], global.monstername[star], "scr_spelltext_slash_scr_spelltext_gml_58_0")
+        gml_Script_scr_retarget_spell()
         if (global.mercymod[star] >= 100)
             global.msg[0] = gml_Script_stringsetsubloc("* ~1 spared ~2!/%", global.charname[global.char[caster]], global.monstername[star], "scr_spelltext_slash_scr_spelltext_gml_62_0")
         else
@@ -59,12 +61,12 @@ switch spell
             global.msg[0] = gml_Script_stringsetsubloc("* ~1 spared ~2^2!&* But its name wasn't \\cYYELLOW\\cW.../%", global.charname[global.char[caster]], global.monstername[star], "scr_spelltext_slash_scr_spelltext_gml_66_0")
             if (global.monsterstatus[star] == true)
             {
-                if 3
+                if gml_Script_scr_havechar(3)
                 {
                     global.msg[0] = gml_Script_stringsetsubloc("* ~1 spared ~2^2!&* But its name wasn't \\cYYELLOW\\cW.../", global.charname[global.char[caster]], global.monstername[star], "scr_spelltext_slash_scr_spelltext_gml_69_0")
                     global.msg[1] = gml_Script_stringsetloc("* (Try using Ralsei's \\cBPACIFY\\cW!)/%", "scr_spelltext_slash_scr_spelltext_gml_70_0")
                 }
-                else if 4
+                else if gml_Script_scr_havechar(4)
                 {
                     gml_Script_msgsetsubloc(0, "* ~1 spared ~2^2!&* But its name wasn't \\cYYELLOW\\cW.../", global.charname[global.char[caster]], global.monstername[star], "scr_spelltext_slash_scr_spelltext_gml_94_0")
                     gml_Script_msgnextloc("* (Try using Noelle's \\cBSLEEPMIST\\cW!)/%", "scr_spelltext_slash_scr_spelltext_gml_95_0")

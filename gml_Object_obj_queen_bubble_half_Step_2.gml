@@ -1,6 +1,6 @@
-if (!parent)
+if (!gml_Script_i_ex(parent))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 image_xscale = parent.image_xscale

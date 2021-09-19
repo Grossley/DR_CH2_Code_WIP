@@ -1,10 +1,10 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (init == 0)
 {
     rawspeed = speed
     init = 1
 }
-if (x >= (mouthx - 16) && creator)
+if (x >= (mouthx - 16) && gml_Script_i_ex(creator))
     offset = (((creator.y + creator.mouthy) - 4) - ystart)
 else if (x < (mouthx - 16))
     offset = gml_Script_scr_movetowards(offset, 0, 3)
@@ -15,7 +15,7 @@ if (type == 1 && x < mouthx)
     {
         var __targetdir = point_direction(x, truey, targetx, targety)
         var __diff = angle_difference(fauxdirection, __targetdir)
-        if (__diff > 10)
+        if (abs(__diff) > 10)
             fauxdirection -= (sign(__diff) * 10)
         else
         {

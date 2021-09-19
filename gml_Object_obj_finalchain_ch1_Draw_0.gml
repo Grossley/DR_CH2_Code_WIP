@@ -1,11 +1,11 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (chaincon >= 9999 && type >= 1)
 {
-    if spike
+    if instance_exists(spike)
     {
         w = spike.sprite_width
         h = spike.sprite_height
-        spikecount = (w / 11)
+        spikecount = floor((w / 11))
         spx = spike.x
         spy = spike.y
         balpha = spike.basealpha

@@ -7,9 +7,9 @@ if (shadoweffect == 1)
     draw_sprite_tiled_ext(sprite_index, image_index, x, (y + 8), 1, 1, c_gray, 1)
     if (sprite_index == spr_bg_cyber_parallax_buildings)
     {
-        1
+        gml_Script_draw_set_blend_mode(1)
         draw_sprite_tiled_ext(spr_bg_cyber_parallax_buildings_lights, image_index, x, (y + 8), 1, 1, c_white, (0.5 + (sin((siner / 12)) * 0.1)))
-        0
+        gml_Script_draw_set_blend_mode(0)
     }
 }
 if (shadoweffect == 2)

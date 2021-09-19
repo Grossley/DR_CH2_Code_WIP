@@ -1,7 +1,7 @@
 var _temp_local_var_2;
 if (con == 0)
 {
-    throwernumber = object_index
+    throwernumber = instance_number(object_index)
     con = 12
     movecon = 4
     timer = 0
@@ -40,7 +40,7 @@ if (con == 11)
     {
         swordbullet = gml_Script_instance_create_ch1((x + 6), (y + 34), 1520)
         swordbullet.siner = movesiner
-        swordbullet
+        gml_Script_scr_bullet_inherit_ch1(swordbullet)
         swordbullet.throwernumber = throwernumber
         var _temp_local_var_2 = swordbullet
         active = true

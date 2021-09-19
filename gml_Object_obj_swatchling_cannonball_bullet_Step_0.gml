@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (colortimer <= 1)
 {
     image_blend = merge_color(c_blue, c_white, colortimer)
@@ -8,6 +8,6 @@ if (x < (minx - 20) || x > (maxx + 20) || y < (miny - 20) || y > (maxy + 20))
 {
     image_alpha -= 0.05
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 image_angle += spin

@@ -1,7 +1,7 @@
 var _temp_local_var_1;
 if (con == 0)
 {
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     if (fallnow == 1)
         con = -5
 }
@@ -16,7 +16,7 @@ if (con == -5)
 }
 if (con == -4)
 {
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     timer++
     if (timer >= 30)
     {
@@ -27,14 +27,14 @@ if (con == -4)
 if (con == -3)
 {
     timer++
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 }
 if (con == 1)
 {
-    201
+    gml_Script_snd_play(201)
     image_index = 0
     image_speed = 0.2
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     timer = 0
     shaketimer = 0
     con = 4
@@ -43,10 +43,10 @@ if (con == 1)
     remy = y
 }
 if (con == 3)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 if (con == 4)
 {
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     if (image_index >= 8)
     {
         image_speed = 0
@@ -56,7 +56,7 @@ if (con == 4)
 }
 if (con == 2)
 {
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     if (image_index >= 8)
     {
         image_speed = 0
@@ -67,7 +67,7 @@ if (con == 2)
         {
             if (bumped == 0)
             {
-                110
+                gml_Script_snd_play(110)
                 bumped = 1
             }
             gravity = 0
@@ -79,7 +79,7 @@ if (con == 2)
         {
             if (bumped == 1)
             {
-                93
+                gml_Script_snd_play(93)
                 bumped = 2
             }
             image_angle += (abs((image_angle / 3)) + 2)
@@ -87,7 +87,7 @@ if (con == 2)
             {
                 if (bumped == 2)
                 {
-                    110
+                    gml_Script_snd_play(110)
                     bumped = 3
                 }
                 image_angle = 90

@@ -1,11 +1,5 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+draw_self()
+if (rouxls == 1)
+    draw_sprite_ext(spr_rurus_idle, 0, (maxx + 70), (maxy - 50), 2, 2, 0, c_white, 1)
+if (starwalker == 1)
+    draw_sprite(spr_npc_originalstarwalker, 0, gml_Script_camerax(), gml_Script_cameray())

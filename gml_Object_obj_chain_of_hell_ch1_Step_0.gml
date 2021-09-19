@@ -50,7 +50,7 @@ if (chaincon == 2.1)
     obj_heart_ch1.y = remy
     obj_growtangle_ch1.x = remx_box
     obj_growtangle_ch1.y = remy_box
-    shakedir = 360
+    shakedir = random(360)
     xshake = lengthdir_x(shakeamt, shakedir)
     yshake = lengthdir_y(shakeamt, shakedir)
     obj_heart_ch1.x += xshake
@@ -76,7 +76,7 @@ if (chaincon == 5)
 if (chaincon == 6)
 {
     path_start(mypath2, (maxspeed / factor), path_action_stop, 0)
-    if 1628
+    if instance_exists(obj_growtangle_ch1)
     {
         obj_growtangle_ch1.maxspeed = maxspeed
         obj_growtangle_ch1.mypath2 = mypath2
@@ -88,7 +88,10 @@ if (chaincon == 6)
     chain_max -= 1
     framerule = 0
     if (chainrate == 1)
+    {
         var _temp_local_var_2 = chain[chain_number]
+        instance_destroy()
+    }
     chaincon = 10
 }
 if (chaincon == 10)
@@ -103,7 +106,10 @@ if (chaincon == 10)
     {
         chaintimer = (chainrate * factor)
         if (chain_number >= 0)
+        {
             var _temp_local_var_3 = chain[chain_number]
+            instance_destroy()
+        }
     }
     if (path_position >= 1)
         chaincon = 11
@@ -125,7 +131,7 @@ if (smashtime == 1)
                 regbul.gravity = 0.2
                 regbul.sprite_index = spr_spadebullet_ch1
                 regbul.image_angle = 270
-                regbul
+                gml_Script_scr_bullet_inherit_ch1(regbul)
             }
         }
         if (btimer >= 20)
@@ -138,7 +144,7 @@ if (smashtime == 1)
                 regbul.gravity = 0.2
                 regbul.sprite_index = spr_spadebullet_ch1
                 regbul.image_angle = 270
-                regbul
+                gml_Script_scr_bullet_inherit_ch1(regbul)
             }
         }
     }

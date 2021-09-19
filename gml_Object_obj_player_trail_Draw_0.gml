@@ -11,7 +11,7 @@ if (type == 0)
 }
 if (type == 1)
 {
-    8421504
+    draw_set_color(c_gray)
     for (i = 0; i < 26; i += 1)
         draw_line_width((obj_maus_cursor_follow.heartposx[i] + 10), (obj_maus_cursor_follow.heartposy[i] + 10), ((obj_maus_cursor_follow.heartposx[i] + 1) + 10), ((obj_maus_cursor_follow.heartposy[i] + 1) + 10), 4)
 }

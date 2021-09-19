@@ -1,4 +1,4 @@
-if target
+if gml_Script_i_ex(target)
 {
     if (con == 0)
     {
@@ -20,8 +20,8 @@ if target
         fake_image_index += fake_image_speed
         target.image_index = fake_image_index
         if (fake_image_index >= fake_image_index_max)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

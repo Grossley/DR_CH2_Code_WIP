@@ -10,9 +10,9 @@ else
         con = 1
         global.facing = 0
         with (obj_doorparent)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_npc_sign)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_schoollobby && global.plot == 5)
     {
@@ -33,10 +33,11 @@ else
     {
         global.flag[20] = 0
         con = 50
-        alphys = gml_Script_scr_marker(469, 222, 921)
-        toriel = gml_Script_scr_marker(551, 201, 896)
+        alphys = gml_Script_scr_marker(469, 222, 922)
+        toriel = gml_Script_scr_marker(551, 201, 897)
         var _temp_local_var_6 = alphys
+        gml_Script_scr_depth()
     }
 }
 if (destroyme == 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

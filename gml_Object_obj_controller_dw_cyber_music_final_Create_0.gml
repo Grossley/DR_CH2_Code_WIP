@@ -1,5 +1,5 @@
 if (global.plot >= 60)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 image_xscale = 2
 image_yscale = 2
 state = 0

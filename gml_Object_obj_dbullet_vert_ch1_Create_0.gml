@@ -14,6 +14,6 @@ inv = 120
 damage = 124
 active = false
 image_alpha = 0
-if (!1630)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_heart_ch1))
+    instance_destroy()
 type = 0

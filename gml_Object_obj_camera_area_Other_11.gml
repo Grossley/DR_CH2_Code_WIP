@@ -1,4 +1,4 @@
-if collisionObject
+if gml_Script_i_ex(collisionObject)
 {
     ox = ((collisionObject.bbox_left + collisionObject.bbox_right) / 2)
     oy = collisionObject.bbox_bottom

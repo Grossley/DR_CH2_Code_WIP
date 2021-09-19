@@ -3,13 +3,13 @@ timer += 1
 if (timer <= 15)
 {
     flashtimer += 1
-    image_alpha = (flashtimer / 2)
+    image_alpha = abs(cos((flashtimer / 2)))
 }
 if (timer == 15)
 {
     image_alpha = 1
     vspeed = 0.1
-    if (!157)
+    if (!gml_Script_snd_is_playing(157))
     {
         spawn = gml_Script_snd_play_pitch(157, 2)
         gml_Script_snd_volume(spawn, 0.6, 0)

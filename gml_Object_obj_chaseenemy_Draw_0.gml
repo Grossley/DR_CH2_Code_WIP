@@ -40,7 +40,7 @@ if dodraw
         if (facing == 0)
             sprite_index = spr_tasque_idle
     }
-    1
+    gpu_set_blendmode(bm_add)
     for (i = 0; i < 5; i++)
     {
         var aura = ((i * 9) + ((drawsiner * 3) % 9))
@@ -49,7 +49,7 @@ if dodraw
         var aurayscale = min((80 / sprite_height), 1)
         draw_sprite_ext(sprite_index, walk_index, (x - (((aurax / 180) * drawscale) * sprite_width)), (y - (((auray / 82) * sprite_height) * aurayscale)), ((image_xscale + (aurax / 36)) * drawscale), (image_yscale + ((auray / 36) * aurayscale)), image_angle, c_red, ((image_alpha * (1 - (auray / 45))) * 0.5))
     }
-    0
+    gpu_set_blendmode(bm_normal)
     var xmult = min(((70 / sprite_width) * 4), 4)
     var ymult = min(((80 / sprite_height) * 5), 5)
     var ysmult = min(((80 / sprite_height) * 0.2), 0.2)

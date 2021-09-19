@@ -1,3 +1,3 @@
 image_alpha -= 0.178
 if (image_alpha < 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

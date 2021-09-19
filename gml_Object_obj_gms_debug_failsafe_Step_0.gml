@@ -1,5 +1,5 @@
 if ((!debug_mode) || ++x > (xstart + 3))
 {
-    // WARNING: Popz'd an empty stack.
-    278
+    instance_destroy()
+    room_goto(PLACE_CHAPTER_SELECT_2x)
 }

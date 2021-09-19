@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (rotate == 1)
 {
     image_index = 0

@@ -9,14 +9,14 @@ global.fe = 0
 global.interact = 1
 if (image_index == 0)
 {
-    59
+    gml_Script_snd_play(59)
     if (room != room_dw_city_postbaseball_1)
     {
         for (var i = 0; i < 5; i++)
         {
             bug[i] = gml_Script_instance_create((x + 20), (y + 20), obj_tinybug)
-            bug[i].direction = 180
-            bug[i].speed = (2 + 4)
+            bug[i].direction = random(180)
+            bug[i].speed = (random(2) + 4)
             bug[i].sprite_index = spr_tinybug
             bug[i].depth = (depth - 1)
         }

@@ -1,10 +1,10 @@
-var _temp_local_var_1, _temp_local_var_10, _temp_local_var_13, _temp_local_var_19;
+var _temp_local_var_1, _temp_local_var_11, _temp_local_var_14;
 if (init == 0)
 {
     if firsttime
         targetTime *= 2
     init = 1
-    0
+    event_user(0)
 }
 if (loading > 0)
     return;
@@ -23,17 +23,20 @@ if smashed
         d.speed = 12
         obj_queen_search_flail.broken = 1
         d.direction = (image_angle + (flip ? 0 : 180))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
     return;
 }
-if (bufferstate == 0)
+if (bufferstate == 0 && gml_Script_scr_queen_buffercheck())
 {
+    image_blend = c_gray
+    bufferstate = 1
 }
-else
-    var _temp_local_var_19 = 0
-image_blend = c_gray
-bufferstate = 1
+else if (bufferstate == 1 && (!gml_Script_scr_queen_buffercheck()))
+{
+    image_blend = c_white
+    bufferstate = 2
+}
 if (bufferstate == 1)
     return;
 if (timer < targetTime && shootcon == 0 && shootmode == 0)
@@ -98,7 +101,7 @@ if (shootcon == 2)
             var laser_angle = (direction + random_range(-2, 2))
             lasercircle.my_angle = ((laser_angle - 5) + (5 * i))
             lasercircle.my_angle_change = (((-1 + i) * 0.8) * m)
-            var _temp_local_var_10 = lasercircle
+            var _temp_local_var_11 = lasercircle
             my_speed = 4
             my_accel = 0.2
             my_length = 4
@@ -159,7 +162,7 @@ if (shootcon == 4)
             i = 0
             while (i < 5)
             {
-                var _temp_local_var_13 = bullet[i]
+                var _temp_local_var_14 = bullet[i]
                 if (speed <= 0)
                     speed = 0.2
                 friction = -0.25
@@ -178,6 +181,6 @@ if (shootcon == 5)
     if (shoottimer <= 0)
     {
         parentwindow.state = 5
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

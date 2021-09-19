@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 element = 6
 destroyonhit = 0
 f = 2
@@ -20,7 +20,7 @@ yy = y
 grazepoints = 4
 timer2 = 0
 explodesfx = 0
-if 694
-    damage = ((global.monsterat[obj_spamton_neo_enemy.myself] * 5) / 3)
-if 695
+if instance_exists(obj_spamton_neo_enemy)
+    damage = floor(((global.monsterat[obj_spamton_neo_enemy.myself] * 5) / 3))
+if instance_exists(obj_sneo_bulletcontroller)
     target = obj_sneo_bulletcontroller.target

@@ -1,18 +1,18 @@
 TYPE = 1
 SUBTYPE = 0
-CH = global.chapter
-if (("filech" + CH) + "_3")
+CH = string(global.chapter)
+if gml_Script_ossafe_file_exists((("filech" + CH) + "_3"))
     SUBTYPE = 1
-if (("filech" + CH) + "_4")
+if gml_Script_ossafe_file_exists((("filech" + CH) + "_4"))
     SUBTYPE = 1
-if (("filech" + CH) + "_5")
+if gml_Script_ossafe_file_exists((("filech" + CH) + "_5"))
     SUBTYPE = 1
-COMPLETEFILE_PREV[0] = (("filech" + string((global.chapter - 1))) + "_3")
-COMPLETEFILE_PREV[1] = (("filech" + string((global.chapter - 1))) + "_4")
-COMPLETEFILE_PREV[2] = (("filech" + string((global.chapter - 1))) + "_5")
-INCOMPLETEFILE_PREV[0] = (("filech" + string((global.chapter - 1))) + "_0")
-INCOMPLETEFILE_PREV[1] = (("filech" + string((global.chapter - 1))) + "_1")
-INCOMPLETEFILE_PREV[2] = (("filech" + string((global.chapter - 1))) + "_2")
+COMPLETEFILE_PREV[0] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_3"))
+COMPLETEFILE_PREV[1] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_4"))
+COMPLETEFILE_PREV[2] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_5"))
+INCOMPLETEFILE_PREV[0] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_0"))
+INCOMPLETEFILE_PREV[1] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_1"))
+INCOMPLETEFILE_PREV[2] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_2"))
 INCOMPLETE_LOAD = 0
 if global.is_console
 {
@@ -27,19 +27,19 @@ if global.is_console
 }
 if (TYPE == 0)
 {
-    gml_Script_stringsetloc("CONTACT", "DEVICE_MENU_slash_Create_0_gml_8_0")
-    global.currentsong[0] = "AUDIO_DRONE.ogg"
-    global.currentsong[1] = global.currentsong[0]
+    gml_Script_scr_windowcaption(gml_Script_stringsetloc("CONTACT", "DEVICE_MENU_slash_Create_0_gml_8_0"))
+    global.currentsong[0] = gml_Script_snd_init("AUDIO_DRONE.ogg")
+    global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
 }
 if (TYPE == 1)
 {
     gml_Script_instance_create(0, 0, obj_fadein)
     global.tempflag[10] = 1
-    gml_Script_stringsetloc("DELTARUNE", "DEVICE_MENU_slash_Create_0_gml_17_0")
+    gml_Script_scr_windowcaption(gml_Script_stringsetloc("DELTARUNE", "DEVICE_MENU_slash_Create_0_gml_17_0"))
     if (SUBTYPE == 0)
-        global.currentsong[0] = "menu.ogg"
+        global.currentsong[0] = gml_Script_snd_init("menu.ogg")
     if (SUBTYPE == 1)
-        global.currentsong[0] = "AUDIO_STORY.ogg"
+        global.currentsong[0] = gml_Script_snd_init("AUDIO_STORY.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 0.95)
 }
 BGMADE = 0
@@ -114,42 +114,42 @@ for (i = 0; i < 3; i += 1)
     TIME_STRING[i] = "--:--"
     INITLANG[i] = 0
 }
-if (("filech" + CH) + "_0")
+if gml_Script_ossafe_file_exists((("filech" + CH) + "_0"))
 {
     FILE[0] = 1
     NAME[0] = "FILE0"
 }
-if (("filech" + CH) + "_1")
+if gml_Script_ossafe_file_exists((("filech" + CH) + "_1"))
 {
     FILE[1] = 1
     NAME[1] = "FILE1"
 }
-if (("filech" + CH) + "_2")
+if gml_Script_ossafe_file_exists((("filech" + CH) + "_2"))
 {
     FILE[2] = 1
     NAME[2] = "FILE2"
 }
-if "dr.ini"
+if gml_Script_ossafe_file_exists("dr.ini")
 {
-    "dr.ini"
+    gml_Script_ossafe_ini_open("dr.ini")
     for (i = 0; i < 3; i += 1)
     {
         if (FILE[i] == 1)
         {
-            PLACE[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Room", 0)
+            PLACE[i] = gml_Script_scr_roomname(ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Room", 0))
             TIME[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Time", 0)
             NAME[i] = ini_read_string(gml_Script_scr_ini_chapter(global.chapter, i), "Name", "------")
             LEVEL[i] = 1
             INITLANG[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "InitLang", 0)
-            TIME_SECONDS_TOTAL[i] = (TIME[i] / 30)
-            TIME_MINUTES[i] = (TIME_SECONDS_TOTAL[i] / 60)
+            TIME_SECONDS_TOTAL[i] = floor((TIME[i] / 30))
+            TIME_MINUTES[i] = floor((TIME_SECONDS_TOTAL[i] / 60))
             TIME_SECONDS[i] = (TIME_SECONDS_TOTAL[i] - (TIME_MINUTES[i] * 60))
-            TIME_SECONDS_STRING[i] = TIME_SECONDS[i]
+            TIME_SECONDS_STRING[i] = string(TIME_SECONDS[i])
             if (TIME_SECONDS[i] == 0)
                 TIME_SECONDS_STRING[i] = "00"
             if (TIME_SECONDS[i] < 10 && TIME_SECONDS[i] >= 1)
                 TIME_SECONDS_STRING[i] = ("0" + string(TIME_SECONDS[i]))
-            TIME_STRING[i] = ((TIME_MINUTES[i] + ":") + TIME_SECONDS_STRING[i])
+            TIME_STRING[i] = ((string(TIME_MINUTES[i]) + ":") + TIME_SECONDS_STRING[i])
         }
     }
     var cadd = 3
@@ -173,15 +173,15 @@ if "dr.ini"
             COMPLETEFILE_PREV_NAME[i] = ini_read_string(gml_Script_scr_ini_chapter((global.chapter - 1), (i + cadd)), "Name", "------")
             COMPLETEFILE_PREV_TIME[i] = ini_read_real(gml_Script_scr_ini_chapter((global.chapter - 1), (i + cadd)), "Time", 0)
             COMPLETEFILE_PREV_PLACE[i] = gml_Script_stringsetloc("CHAPTER 1", "DEVICE_MENU_slash_Create_0_gml_237_0")
-            COMPLETETIME_SECONDS_TOTAL[i] = (COMPLETEFILE_PREV_TIME[i] / 30)
-            COMPLETETIME_MINUTES[i] = (COMPLETETIME_SECONDS_TOTAL[i] / 60)
+            COMPLETETIME_SECONDS_TOTAL[i] = floor((COMPLETEFILE_PREV_TIME[i] / 30))
+            COMPLETETIME_MINUTES[i] = floor((COMPLETETIME_SECONDS_TOTAL[i] / 60))
             COMPLETETIME_SECONDS[i] = (COMPLETETIME_SECONDS_TOTAL[i] - (COMPLETETIME_MINUTES[i] * 60))
-            COMPLETETIME_SECONDS_STRING[i] = COMPLETETIME_SECONDS[i]
+            COMPLETETIME_SECONDS_STRING[i] = string(COMPLETETIME_SECONDS[i])
             if (COMPLETETIME_SECONDS[i] == 0)
                 COMPLETETIME_SECONDS_STRING[i] = "00"
             if (COMPLETETIME_SECONDS[i] < 10 && COMPLETETIME_SECONDS[i] >= 1)
                 COMPLETETIME_SECONDS_STRING[i] = ("0" + string(COMPLETETIME_SECONDS[i]))
-            COMPLETETIME_STRING[i] = ((COMPLETETIME_MINUTES[i] + ":") + COMPLETETIME_SECONDS_STRING[i])
+            COMPLETETIME_STRING[i] = ((string(COMPLETETIME_MINUTES[i]) + ":") + COMPLETETIME_SECONDS_STRING[i])
         }
         if INCOMPLETEFILE_PREV[i]
         {
@@ -190,11 +190,11 @@ if "dr.ini"
             INCOMPLETEFILE_PREV_TIME[i] = ini_read_real(gml_Script_scr_ini_chapter((global.chapter - 1), i), "Time", 0)
         }
     }
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_ossafe_ini_close()
+    gml_Script_ossafe_savedata_save()
 }
 var INITMENU = 0
-if "dr.ini"
+if gml_Script_ossafe_file_exists("dr.ini")
 {
     if (FILE[0] == 0 && FILE[1] == 0 && FILE[2] == 0)
     {

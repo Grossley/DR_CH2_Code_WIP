@@ -2,7 +2,7 @@ con = -1
 customcon = 0
 exitcollider = self
 if (global.chapter != 2 || global.plot >= 110)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     nisesusie = gml_Script_instance_create(258, 166, obj_npc_sign)

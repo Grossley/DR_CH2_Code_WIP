@@ -7,7 +7,7 @@ OBMADE = 0
 global.flag[20] = 0
 global.flag[6] = 1
 global.typer = 667
-gml_Script_stringsetloc("THE DEATH", "DEVICE_FAILURE_slash_Create_0_gml_12_0")
+gml_Script_scr_windowcaption(gml_Script_stringsetloc("THE DEATH", "DEVICE_FAILURE_slash_Create_0_gml_12_0"))
 FADEFACTOR = 0
 WHITEFADE = 0
 FADEUP = 0
@@ -20,4 +20,5 @@ if (global.chapter > 1)
 {
     var gameover_bg = gml_Script_instance_create(0, 20, obj_gameoverbg)
     var _temp_local_var_1 = gameover_bg
+    gml_Script_scr_depth()
 }

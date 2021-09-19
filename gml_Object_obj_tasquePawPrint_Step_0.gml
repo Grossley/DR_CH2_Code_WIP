@@ -14,5 +14,5 @@ if (con == 1)
 {
     image_alpha = lerp(image_alpha, 0, 0.125)
     if (image_alpha == 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

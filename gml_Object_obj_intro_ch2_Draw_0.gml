@@ -52,15 +52,15 @@ else
                 draw_sprite_ext(IMAGE_LOGO_CENTER_SEPARATE, i, 160, 100, 1, 1, 0, c_white, 1)
         }
         if (logotimer == 120)
-            6
+            gml_Script_snd_play(6)
         if (logotimer >= 120)
         {
-            2
-            16777215
+            draw_set_font(fnt_mainbig)
+            draw_set_color(c_white)
             draw_text_ext(105, 120, "CHAPTER 2", 10, 900)
-            "mainbig"
+            gml_Script_scr_84_set_draw_font("mainbig")
         }
         if (logotimer >= 240)
-            243
+            room_goto(PLACE_MENU)
     }
 }

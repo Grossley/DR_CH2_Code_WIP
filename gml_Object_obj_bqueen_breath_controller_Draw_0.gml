@@ -39,11 +39,12 @@ if (timer > 9)
     }
     else
     {
-        220
+        gml_Script_snd_stop(220)
         gml_Script_snd_volume(220, 1, 0)
         gml_Script_snd_play_pitch(220, (0.5 + random(1)))
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
         var _temp_local_var_6 = d
+        gml_Script_scr_afterimage_grow()
     }
 }
 if (timer2 > 9 && difficulty == 1)
@@ -60,12 +61,13 @@ if (timer2 > 9 && difficulty == 1)
     }
     else
     {
-        220
+        gml_Script_snd_stop(220)
         gml_Script_snd_volume(220, 1, 0)
         gml_Script_snd_play_pitch(220, (0.5 + random(1)))
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
         var _temp_local_var_4 = d
+        gml_Script_scr_afterimage_grow()
     }
 }
 if (global.turntimer < 3)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

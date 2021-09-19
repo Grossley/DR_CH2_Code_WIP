@@ -8,7 +8,7 @@ if (x >= 320)
     grav = 0
     if (state == 0)
     {
-        235
+        gml_Script_snd_play(235)
         state = 1
         repeat (24)
         {

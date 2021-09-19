@@ -7,5 +7,5 @@ if place_meeting(x, y, obj_mouseKiller)
     else
         fall = gml_Script_instance_create((x + 2), (y + 10), obj_holemouse_descend)
     fall.target = target
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

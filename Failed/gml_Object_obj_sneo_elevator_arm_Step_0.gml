@@ -1,9 +1,46 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (!instance_exists(obj_sneo_bulletcontroller))
+{
+    instance_destroy()
+    return;
+}
+siner++
+image_angle = (270 + (sin((siner / 6)) * 8))
+var xx = (gml_Script_camerax() + gml_Script_camerawidth())
+if (con == 0)
+{
+    movetimer++
+    x = lerp((xx + 100), (xx + 10), (movetimer / 10))
+    if (movetimer == 10)
+    {
+        movetimer = 0
+        con = 1
+    }
+}
+if (con == 1)
+    x = (xx + 10)
+if (con == 2)
+{
+    movetimer++
+    x = lerp((xx + 10), (xx + 100), (movetimer / 10))
+    if (movetimer == 10)
+        instance_destroy()
+}
+timer++
+if ((timer == 20 && obj_sneo_bulletcontroller.difficulty == 0) || (timer == 6 && obj_sneo_bulletcontroller.difficulty != 0))
+{
+    d = gml_Script_instance_create((x - 90), y, obj_sneo_biglaser_elevator)
+    d.direction = -180
+    d.image_angle = -180
+    d.depth -= 1
+    d.parent = id
+}
+if ((timer == 39 && obj_sneo_bulletcontroller.difficulty == 0) || (timer == 25 && obj_sneo_bulletcontroller.difficulty != 0))
+{
+    con = 2
+    if (lastType == -1)
+        obj_sneo_bulletcontroller.arm1 = -1
+    if (lastType == 0)
+        obj_sneo_bulletcontroller.arm2 = -1
+    if (lastType == 1)
+        obj_sneo_bulletcontroller.arm3 = -1
+}

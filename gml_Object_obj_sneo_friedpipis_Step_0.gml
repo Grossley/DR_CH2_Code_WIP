@@ -1,7 +1,7 @@
 timer++
 image_speed = 0
 if (timer == 1)
-    181
+    gml_Script_snd_play(181)
 if (timer > 0 && timer < 21)
 {
     image_xscale = lerp(0, 2, (timer / 20))
@@ -20,6 +20,6 @@ if (timer > 35)
 if (timer == 45)
 {
     star = 0
-    120
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_healitemspell(120)
+    instance_destroy()
 }

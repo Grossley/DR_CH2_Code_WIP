@@ -1,6 +1,6 @@
 if (inert == 0)
 {
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     with (obj_lottery_holemouse_generator)
     {
         if (gentimer > 0)
@@ -24,6 +24,6 @@ if (inert == 0)
 if (inert == 1)
 {
     image_index = 1
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     draw_sprite_ext(spr_lotteryMouseTrigger_down, 0, (x + 6), (y + 16), 2, 2, 0, c_white, 1)
 }

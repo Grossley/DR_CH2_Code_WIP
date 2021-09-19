@@ -9,7 +9,7 @@ if (init == 0 && image_alpha < 1)
 }
 if (tracking == 1)
 {
-    if 1630
+    if instance_exists(obj_heart_ch1)
     {
         if (side == 1 || side == 3)
         {
@@ -53,5 +53,5 @@ if (locked == true)
         active = false
     }
     if (ltimer >= 17)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

@@ -1,4 +1,4 @@
-soundTimeStep = global.batmusic[1]
+soundTimeStep = audio_sound_get_track_position(global.batmusic[1])
 var _prevBeats = beats
 beats = (soundTimeStep / spb)
 if (beats < _prevBeats)
@@ -13,7 +13,7 @@ if (varianty > 0)
 y = lerp(yTarget, (ystart - varianty), _percent)
 if (init == 1)
 {
-    if ((remFramesAway - framesAway) >= 4 && y >= 60)
+    if (abs((remFramesAway - framesAway)) >= 4 && y >= 60)
     {
         active = false
         failed = 1
@@ -29,12 +29,12 @@ if (failed == 1)
 {
     image_alpha -= 0.1
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (_percent == 0 && failed == 0)
 {
     instance_create_depth(x, y, (depth + 1), obj_musicalbattlenote)
-    instrument
-    instrument
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_stop(instrument)
+    gml_Script_snd_play(instrument)
+    instance_destroy()
 }

@@ -12,17 +12,17 @@ keyYPos = 0
 make_forcefield = 0
 forcefield = -4
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     if (global.flag[344] == 1)
     {
-        dooropen = gml_Script_scr_dark_marker(180, 40, 2859)
+        dooropen = gml_Script_scr_dark_marker(180, 40, 2860)
         dooropen.depth = 899999
     }
     else
     {
-        doorlocked = gml_Script_scr_marker(180, 40, 2861)
+        doorlocked = gml_Script_scr_marker(180, 40, 2862)
         doorlocked.depth = 899999
         monty = gml_Script_instance_create(170, 240, obj_saucer_monty)
         exitcollider = gml_Script_instance_create(180, 80, obj_solidblock)
@@ -37,17 +37,19 @@ else
         var _temp_local_var_1 = table[i]
         mode = 1
         if (i == 0)
-            contentsprite = 2308
+            contentsprite = 2309
         if (i == 1)
-            contentsprite = 1798
+            contentsprite = 1799
         if (i == 2)
         {
             if (global.flag[357] == 1)
-                contentsprite = 2485
+                contentsprite = 2486
             else
-                contentsprite = 1796
+                contentsprite = 1797
         }
+        gml_Script_scr_depth()
     }
     swatch_npc = gml_Script_instance_create(1760, 135, obj_npc_butler)
     var _temp_local_var_2 = swatch_npc
+    gml_Script_scr_depth()
 }

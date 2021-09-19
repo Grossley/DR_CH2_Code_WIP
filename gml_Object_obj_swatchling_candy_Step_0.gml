@@ -1,6 +1,6 @@
-if (!sourcePlatter)
+if (!gml_Script_i_ex(sourcePlatter))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 y = sourcePlatter.y

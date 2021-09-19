@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 flag = 0
 timer = 0
 opened = global.flag[407]

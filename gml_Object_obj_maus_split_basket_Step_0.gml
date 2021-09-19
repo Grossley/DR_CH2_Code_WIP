@@ -18,15 +18,18 @@ if (con == 1)
 {
     siner++
     x = (xstart + (sin((siner / 6)) * 120))
-    con = 2
-    vspeed = 20
-    friction = 0.5
-    with (obj_maus_liddle)
+    if gml_Script_button3_p()
     {
-        con = 5
-        timer = 0
+        con = 2
+        vspeed = 20
+        friction = 0.5
+        with (obj_maus_liddle)
+        {
+            con = 5
+            timer = 0
+        }
+        gml_Script_snd_play(91)
     }
-    91
 }
 if (con == 2)
 {
@@ -40,11 +43,11 @@ if (con == 2)
             if (captured == 0)
                 con = 2
         }
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (con == 10)
 {
     if (y <= (yy - 100))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

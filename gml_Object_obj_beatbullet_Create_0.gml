@@ -8,6 +8,6 @@ target = 3
 damage = 10
 beats = 0
 beatsPrev = 0
-lanesEndY = 150
+lanesEndY = (gml_Script_cameray() + 150)
 follow = -4
 playSound = 1

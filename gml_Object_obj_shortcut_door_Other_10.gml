@@ -6,7 +6,7 @@ global.interact = 1
 global.msc = 460
 if (global.chapter == 2)
     global.msc = 1200
-global.msc
+gml_Script_scr_text(global.msc)
 if (on == 0)
     global.msg[0] = gml_Script_stringsetloc("* (It's a lone doorframe.^1)&* (But for some reason^1, you can't see through it...)/%", "obj_shortcut_door_slash_Other_10_gml_13_0")
 myinteract = 3

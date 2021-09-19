@@ -1,5 +1,5 @@
-if 1347
-    distance = 1347
+if instance_exists(obj_mainchara_ch1)
+    distance = distance_to_object(obj_mainchara_ch1)
 else
     distance = 999
 if (holecon == 0)

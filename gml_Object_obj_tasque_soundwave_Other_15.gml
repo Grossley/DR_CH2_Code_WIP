@@ -1,11 +1,11 @@
 if (active == true)
 {
-    if (global.inv < 0 && 459)
+    if (global.inv < 0 && instance_exists(obj_tm_quizzler))
         obj_tasque_manager_enemy.hitbysimonsaysattackcount++
     if (target != 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage()
     if (target == 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage_all()
     if (destroyonhit == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

@@ -21,7 +21,7 @@ for (i = 0; i < 16; i += 1)
 {
     draw_sprite_part_ext(spr_carouselbg_ch1, 0, curl, 0, curw, 300, curx, ((-i) + gml_Script___view_get(1, 0)), curscale, 1, dkblue3, bgalpha)
     tempscale = (1 + (0.5 * i))
-    curscale = tempscale
+    curscale = floor(tempscale)
     curl += 5
     if (curl >= 640)
         curl -= 640
@@ -34,7 +34,7 @@ for (i = 16; i > 0; i -= 1)
     tempscale = (1 + (0.5 * i))
     if (tempscale < 1)
         tempscale = 1
-    curscale = tempscale
+    curscale = ceil(tempscale)
     curl += 5
     if (curl >= 640)
         curl -= 640
@@ -43,12 +43,12 @@ for (i = 16; i > 0; i -= 1)
 }
 for (i = 0; i < trimax; i += 1)
 {
-    0
+    event_user(0)
     draw_triangle(xcen, ycen, (xcen + newx1), (ycen + newy1), (xcen + newx2), (ycen + newy2), 0)
 }
 for (i = 0; i < 8; i += 1)
 {
-    0
+    event_user(0)
     ng = 0
     if (newy1 > 0 || newy2 > 0)
     {
@@ -58,13 +58,13 @@ for (i = 0; i < 8; i += 1)
 }
 for (i = 8; i >= 0; i -= 1)
 {
-    0
+    event_user(0)
     if (newy1 > 0 || newy2 > 0)
         draw_triangle(xcen, (ycen - 80), (xcen + (newx1 / 4)), ((ycen + newy1) - 380), (xcen + (newx2 / 4)), ((ycen + newy2) - 380), 0)
 }
 for (i = 0; i < trimax; i += 1)
 {
-    0
+    event_user(0)
     draw_triangle(xcen, (ycen - 320), (xcen + newx1), ((ycen + newy1) - 320), (xcen + newx2), ((ycen + newy2) - 320), 0)
 }
 siner += 2

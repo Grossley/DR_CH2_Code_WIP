@@ -2,26 +2,26 @@ var _temp_local_var_5;
 if (facealpha < 1)
     facealpha += 0.2
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, facealpha)
-facealpha
+draw_set_alpha(facealpha)
 if (type == 0 || type == 3)
 {
-    "main"
-    mycolor
-    draw_text((x + 70), (y + 10), mystring)
+    gml_Script_scr_84_set_draw_font_ch1("main")
+    draw_set_color(mycolor)
+    draw_text((x + 70), (y + 10), string_hash_to_newline(mystring))
 }
 if (type == 1 && active == true && getrid == 0)
 {
-    "main"
-    mycolor
-    draw_text((x + 70), (y + 15), mystring)
+    gml_Script_scr_84_set_draw_font_ch1("main")
+    draw_set_color(mycolor)
+    draw_text((x + 70), (y + 15), string_hash_to_newline(mystring))
     finished = 1
 }
 if (type == 2 || type == 4)
 {
     if (active == true)
     {
-        "main"
-        mycolor
+        gml_Script_scr_84_set_draw_font_ch1("main")
+        draw_set_color(mycolor)
         if (finished == 0)
         {
             partstring += string_char_at(mystring, part)
@@ -29,10 +29,10 @@ if (type == 2 || type == 4)
             if (part >= (string_length(mystring) + 1))
                 finished = 1
         }
-        draw_text(((x + 70) + random(1)), ((y + 15) + random(1)), partstring)
+        draw_text(((x + 70) + random(1)), ((y + 15) + random(1)), string_hash_to_newline(partstring))
     }
 }
-if writergod
+if instance_exists(writergod)
 {
     if (finished == 1 && getrid == 0)
     {
@@ -42,13 +42,12 @@ if writergod
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (getrid == 1)
 {
     direction = (-nowdir)
     speed += 2
     if (type == 3 || type == 4)
-    {
-    }
+        instance_destroy()
 }
-1
+draw_set_alpha(1)

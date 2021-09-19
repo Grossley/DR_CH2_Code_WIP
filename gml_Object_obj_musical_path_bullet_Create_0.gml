@@ -1,9 +1,9 @@
 var _temp_local_var_1;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 timer = 0
 con = 0
 headalpha = 0
-path = 
+path = path_add()
 path_set_kind(path, 1)
 path_set_closed(path, 0)
 path_add_point(path, x, y, 100)

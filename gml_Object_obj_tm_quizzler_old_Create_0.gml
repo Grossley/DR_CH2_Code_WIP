@@ -17,7 +17,7 @@ creator = obj_sneo_friedpipis
 damage = -1
 target = -1
 animator = noone
-if 454
+if instance_exists(obj_tm_whip_animation)
     animator = 454
 else
 {

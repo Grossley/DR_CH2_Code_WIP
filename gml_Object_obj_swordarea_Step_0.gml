@@ -1,8 +1,8 @@
 image_alpha = 0.05
-if (80 && ignorebuffer < 0)
+if (instance_exists(obj_mainchara) && ignorebuffer < 0)
 {
     obj_mainchara.swordmode = 0
-    if 234
+    if instance_exists(obj_swordobjparent)
     {
         if (obj_mainchara.bbox_right >= x && obj_mainchara.bbox_left <= (x + sprite_width))
         {

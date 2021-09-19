@@ -11,7 +11,7 @@ smalltext = "Example Dialogue."
 maintext = "* Example text. 0 /%"
 haswritten = 0
 fileExists = 0
-if "smallface.txt"
+if file_exists("smallface.txt")
     fileExists = 1
 if (global.darkzone == true)
     global.typer = 4

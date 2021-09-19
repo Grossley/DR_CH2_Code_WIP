@@ -1,7 +1,7 @@
 var _temp_local_var_1;
 if (!obj_shapepuzzle.goalHit)
 {
-    64
+    gml_Script_snd_play(64)
     global.interact = 1
     global.facing = 2
     active = true

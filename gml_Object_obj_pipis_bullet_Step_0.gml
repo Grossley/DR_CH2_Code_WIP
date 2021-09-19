@@ -1,6 +1,6 @@
-if (!parent)
+if (!gml_Script_i_ex(parent))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 if (length < 36)
@@ -8,4 +8,4 @@ if (length < 36)
 x = (parent.x + lengthdir_x(length, place))
 y = (parent.y + lengthdir_y(length, place))
 if (hp == 0)
-    1
+    event_user(1)

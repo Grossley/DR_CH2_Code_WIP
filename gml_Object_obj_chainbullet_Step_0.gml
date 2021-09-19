@@ -1,5 +1,5 @@
-if (!628)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_heart))
+    instance_destroy()
 if (init == 1)
 {
     timer++
@@ -8,7 +8,7 @@ if (init == 1)
         timer = 0
         bulletsSpawned++
         d = gml_Script_scr_childbullet(x, y, childBullet)
-        if d
+        if gml_Script_i_ex(d)
         {
             d.sprite_index = sprite_index
             d.direction = direction
@@ -18,7 +18,7 @@ if (init == 1)
             d.image_angle = direction
         }
         if (bulletsSpawned >= totalBullets)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 init = 1

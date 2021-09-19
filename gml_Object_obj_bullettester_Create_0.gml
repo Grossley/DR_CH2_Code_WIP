@@ -1,11 +1,11 @@
 spawntype = 0
 global.encounterno = 777
-777
+gml_Script_scr_encountersetup(777)
 global.interact = 1
 with (obj_mainchara)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 with (obj_darkcontroller)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 gml_Script_instance_create(0, 0, obj_battlecontroller)
 global.myfight = -1
 global.mnfight = 2

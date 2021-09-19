@@ -1,1 +1,1 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_snd_free_all()

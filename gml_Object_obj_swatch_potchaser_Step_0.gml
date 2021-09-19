@@ -33,8 +33,8 @@ if (dir == "right")
         y = (target.y - 156)
     }
 }
-if (target.tellspeed < 3)
-    image_speed = (target.tellspeed / 15)
+if (abs(target.tellspeed) < 3)
+    image_speed = (abs(target.tellspeed) / 15)
 else
     image_speed = 0.25
 if (sprite_index == spr_npc_swatchling_scared && image_xscale == 2)
@@ -57,11 +57,11 @@ if (sprite_index == spr_npc_butler && image_xscale == -2)
     colX = -101
     colY = 122
 }
-if (point_in_rectangle(gml_Script_charaX(), gml_Script_charaY(), (x + colX), (y + colY), ((x + colX) + 40), ((y + colY) + 34)) || (274 && point_in_rectangle((obj_caterpillarchara.x + (obj_caterpillarchara.sprite_width / 2)), ((obj_caterpillarchara.y + obj_caterpillarchara.sprite_height) - 8), (x + colX), (y + colY), ((x + colX) + 40), ((y + colY) + 34))))
+if (point_in_rectangle(gml_Script_charaX(), gml_Script_charaY(), (x + colX), (y + colY), ((x + colX) + 40), ((y + colY) + 34)) || (instance_exists(obj_caterpillarchara) && point_in_rectangle((obj_caterpillarchara.x + (obj_caterpillarchara.sprite_width / 2)), ((obj_caterpillarchara.y + obj_caterpillarchara.sprite_height) - 8), (x + colX), (y + colY), ((x + colX) + 40), ((y + colY) + 34))))
 {
     if (room == room_dw_mansion_east_2f_c)
     {
-        if 1293
+        if instance_exists(obj_swatch_potchaser)
         {
             with (obj_swatch_potchaser)
             {
@@ -99,8 +99,9 @@ if (point_in_rectangle(gml_Script_charaX(), gml_Script_charaY(), (x + colX), (y 
                 eraser = true
                 facing = 1
             }
+            instance_destroy()
         }
-        if 1258
+        if instance_exists(obj_controller_dw_mansion_potBalance)
             obj_controller_dw_mansion_potBalance.triggered = 1
     }
 }

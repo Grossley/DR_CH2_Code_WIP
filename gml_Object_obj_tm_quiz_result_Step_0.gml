@@ -5,4 +5,4 @@ if (timer <= 2)
     image_yscale = lerp(3, 2, (timer / 2))
 }
 if (timer >= max_time)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

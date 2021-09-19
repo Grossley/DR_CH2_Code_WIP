@@ -1,7 +1,7 @@
 if (is_active || inactive_cleanup)
 {
-    0
-    frontshadOpacity
+    draw_set_color(c_black)
+    draw_set_alpha(frontshadOpacity)
     if (room == room_dw_cyber_maze_fireworks)
         draw_rectangle(160, 280, 480, 480, false)
     if (room == room_dw_cyber_post_music_boss_slide)
@@ -21,30 +21,30 @@ if (is_active || inactive_cleanup)
         }
         draw_rectangle(520, 2600, 2720, 2640, false)
     }
-    16777215
-    1
-    0
+    draw_set_color(c_white)
+    draw_set_alpha(1)
+    gpu_set_blendenable(0)
     gpu_set_colorwriteenable(0, 0, 0, 1)
-    0
+    draw_set_alpha(0)
     if (room == room_dw_cyber_maze_fireworks)
     {
-        gml_Script_scr_draw_sprite_tiled_area(2290, 0, 160, 360, 160, 360, 280, 480, 1, 1, 16777215, 0)
-        gml_Script_scr_draw_sprite_tiled_area(2290, 0, 360, 360, 360, 360, 480, 480, 1, 1, 16777215, 0)
-        gml_Script_scr_draw_sprite_tiled_area(2290, 0, 160, 280, 160, 280, 480, 360, 1, 1, 16777215, frontshadOpacity)
-        gml_Script_scr_draw_sprite_tiled_area(2290, 0, 280, 360, 280, 360, 358, 480, 1, 1, 16777215, frontshadOpacity)
+        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 160, 360, 160, 360, 280, 480, 1, 1, 16777215, 0)
+        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 360, 360, 360, 360, 480, 480, 1, 1, 16777215, 0)
+        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 160, 280, 160, 280, 480, 360, 1, 1, 16777215, frontshadOpacity)
+        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 280, 360, 280, 360, 358, 480, 1, 1, 16777215, frontshadOpacity)
     }
     if (room == room_dw_cyber_post_music_boss_slide)
     {
-        gml_Script_scr_draw_sprite_tiled_area(2290, 0, 520, 2640, 520, 2640, 2720, 2800, 1, 1, 16777215, 0)
-        gml_Script_scr_draw_sprite_tiled_area(2290, 0, 520, 2600, 520, 2600, 2720, 2640, 1, 1, 16777215, frontshadOpacity)
+        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 520, 2640, 520, 2640, 2720, 2800, 1, 1, 16777215, 0)
+        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 520, 2600, 520, 2600, 2720, 2640, 1, 1, 16777215, frontshadOpacity)
     }
-    1
-    1
+    draw_set_alpha(1)
+    gpu_set_blendenable(1)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
-    1
+    gpu_set_alphatestenable(1)
     draw_sprite_ext(obj_mainchara.sprite_index, obj_mainchara.image_index, obj_mainchara.x, ((obj_mainchara.y + (obj_mainchara.sprite_height * obj_mainchara.image_yscale)) - 4), 2, -2, 0, frontShadowColor, frontshadOpacity)
-    if 274
+    if gml_Script_i_ex(274)
     {
         with (obj_caterpillarchara)
         {
@@ -70,7 +70,7 @@ if (is_active || inactive_cleanup)
         if (ral_x != 0)
             draw_sprite_ext(ral_sprite, ral_index, ral_x, ((ral_y + (ral_height * 2)) - 4), 2, -2, 0, frontShadowColor, frontshadOpacity)
     }
-    if 67
+    if gml_Script_i_ex(67)
     {
         with (obj_interactablesolid)
         {
@@ -82,6 +82,6 @@ if (is_active || inactive_cleanup)
         }
         draw_sprite_ext(hacker_sprite, hacker_index, hacker_x, ((hacker_y + (hacker_height * 2)) - 4), 2, -2, 0, frontShadowColor, 1)
     }
-    0
-    0
+    gpu_set_alphatestenable(0)
+    gpu_set_blendmode(bm_normal)
 }

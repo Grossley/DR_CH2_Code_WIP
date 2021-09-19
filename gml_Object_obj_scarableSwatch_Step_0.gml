@@ -10,7 +10,7 @@ if (init == 0)
 }
 if (con == 0)
 {
-    if 1195
+    if instance_exists(obj_dogtable_controlled)
         distance = distance_to_point(obj_dogtable_controlled.x, obj_dogtable_controlled.y)
     if (distance <= distancechecker)
         con = 1
@@ -42,7 +42,7 @@ if (con == 2)
         image_speed = 0
         image_alpha *= 0.6
         if (image_alpha < 0.01)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (dir == "right" && x >= 640)
     {
@@ -52,7 +52,7 @@ if (con == 2)
         image_speed = 0
         image_alpha *= 0.6
         if (image_alpha < 0.01)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (con == 69)
@@ -76,6 +76,6 @@ if (con == 70)
     if (timer > 30)
         image_alpha *= 0.9
     if (image_alpha < 0.1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_alt()

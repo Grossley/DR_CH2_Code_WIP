@@ -1,4 +1,4 @@
-sprite_index = "spr_queenscreen"
+sprite_index = gml_Script_scr_84_get_sprite("spr_queenscreen")
 extflag = 0
 image_speed = 0
 siner = 0
@@ -52,16 +52,16 @@ if (extflag == 4)
     if (room == room_dw_cyber_maze_tasque)
     {
         if (global.flag[367] == 1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_cyber_keyboard_puzzle_3)
     {
         if (global.flag[420] == 1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_cyber_battle_maze_2)
     {
         if (global.flag[407] == 1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

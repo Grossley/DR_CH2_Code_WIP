@@ -135,7 +135,7 @@ if (room == room_town_north)
     utsprite = spr_noelle_walk_up_lw
     rtsprite = spr_noelle_walk_right_lw
     if (global.flag[255] < 1 || global.chapter == 2)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_castle_area_2)
 {
@@ -146,7 +146,7 @@ if (room == room_dw_castle_area_2)
     utsprite = spr_ralsei_up
     rtsprite = spr_ralsei_right
     if (room == room_dw_castle_area_2 && global.chapter == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_cyber_queen_boxing)
 {
@@ -205,7 +205,7 @@ if (extflag == "susie_dw")
     utsprite = spr_susie_up_dw
     rtsprite = spr_susie_right_dw
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_npcdir()
 if (sprite_height_adjusted == 0)
 {
     if (global.chapter == 1)
@@ -221,5 +221,5 @@ if (sprite_height_adjusted == 0)
     sprite_height_adjusted = 1
 }
 if (depthcancel == false)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()
 depth += depthbonus

@@ -2,29 +2,42 @@ global.flag[33] += 1
 if (canchoose == true)
 {
     if (mychoice >= 0)
-        0
+    {
+        if gml_Script_button1_p_ch1()
+            event_user(0)
+    }
     if (choiced == false)
     {
-        mychoice = 0
+        if gml_Script_left_h_ch1()
+            mychoice = 0
         if (choicetotal >= 1)
-            mychoice = 1
+        {
+            if gml_Script_right_h_ch1()
+                mychoice = 1
+        }
         if (choicetotal >= 2)
-            mychoice = 2
+        {
+            if gml_Script_up_h_ch1()
+                mychoice = 2
+        }
         if (choicetotal >= 3)
-            mychoice = 3
+        {
+            if gml_Script_down_h_ch1()
+                mychoice = 3
+        }
     }
 }
 if (dar == 1)
-    "main"
+    gml_Script_scr_84_set_draw_font_ch1("main")
 else
-    "mainbig"
+    gml_Script_scr_84_set_draw_font_ch1("mainbig")
 heartposx[0] = (xx + (30 * dar))
 heartposy[0] = (yy + ((34 + d_add) * dar))
 textposx[0] = (heartposx[0] + (16 * dar))
 textposy[0] = (yy + ((13 + d_add) * dar))
 if (choicetotal >= 1)
 {
-    var str1width = global.choicemsg[1]
+    var str1width = string_width(string_hash_to_newline(global.choicemsg[1]))
     heartposx[1] = ((((xx + (320 * dar)) - (30 * dar)) - str1width) - (14 * dar))
     heartposy[1] = (yy + ((34 + d_add) * dar))
     textposx[1] = (heartposx[1] + (16 * dar))
@@ -34,10 +47,10 @@ if (choicetotal >= 2)
 {
     var msg0right = ((heartposx[0] + (16 * dar)) + string_width(string_hash_to_newline(global.choicemsg[0])))
     var msg1left = heartposx[1]
-    var msg2width = (global.choicemsg[2] + (16 * dar))
+    var msg2width = (string_width(string_hash_to_newline(global.choicemsg[2])) + (16 * dar))
     if (choicetotal == 3)
     {
-        var msg3width = (global.choicemsg[3] + (16 * dar))
+        var msg3width = (string_width(string_hash_to_newline(global.choicemsg[3])) + (16 * dar))
         if (msg3width > msg2width)
             msg2width = msg3width
     }

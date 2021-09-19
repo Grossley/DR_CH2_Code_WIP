@@ -11,7 +11,7 @@ if (con == 0)
         timer = 0
     }
 }
-if (global.turntimer <= 5 && 408 && obj_clovertail.con == 1)
+if (global.turntimer <= 5 && instance_exists(obj_clovertail) && obj_clovertail.con == 1)
     obj_clovertail.con = 2
 if (global.turntimer <= 0 && con == 1)
     con = 2
@@ -21,7 +21,7 @@ if (con == 2)
     timer++
     if (timer == 10)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         obj_clubsenemy.notail = 0
     }
 }

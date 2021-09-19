@@ -1,5 +1,5 @@
 x = distx
 y = disty
-if (!628)
+if (!gml_Script_i_ex(628))
     gml_Script_instance_create(x, y, obj_heart)
-// WARNING: Popz'd an empty stack.
+instance_destroy()

@@ -12,4 +12,4 @@ sold = 0
 black_override = 0
 stayVisible = 0
 fadeout = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

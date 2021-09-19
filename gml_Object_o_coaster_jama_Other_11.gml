@@ -11,11 +11,11 @@ if (bigcar == 1)
         gml_Script_instance_create((x + 20), (y - 40), o_coastersmoke)
         gml_Script_instance_create((x - 20), (y - 40), o_coastersmoke)
         gml_Script_instance_create((x + 60), (y - 40), o_coastersmoke)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (bigcar == 0)
 {
     gml_Script_instance_create((x + 20), (y - 40), o_coastersmoke)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

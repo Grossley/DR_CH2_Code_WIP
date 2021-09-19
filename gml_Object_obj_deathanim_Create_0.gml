@@ -3,4 +3,4 @@ image_speed = 0
 starcount = 0
 redup = 0
 bsize = 6
-209
+gml_Script_snd_play(209)

@@ -9,7 +9,7 @@ if (firecon == 0)
             for (i = 0; i < 3; i++)
             {
                 d = gml_Script_instance_create(x, y, obj_rouxls_power_up_orb)
-                d.direction = (120 + (i * 120))
+                d.direction = (irandom(120) + (i * 120))
                 d.lifetime = 16
                 d.depth = (depth + 1)
                 d.image_blend = image_blend
@@ -22,7 +22,7 @@ if (firecon == 0)
             for (i = 0; i < 6; i++)
             {
                 d = gml_Script_instance_create(x, y, obj_rouxls_power_up_orb)
-                d.direction = (60 + (i * 60))
+                d.direction = (irandom(60) + (i * 60))
                 d.lifetime = 16
                 d.depth = (depth + 1)
                 d.image_blend = image_blend
@@ -35,7 +35,7 @@ if (firecon == 0)
         orbsize -= 4
     else
         orbsize++
-    16777215
+    draw_set_color(c_white)
     draw_circle(x, y, max(2, ((orbsize / 2) + (sin((siner / 2)) * 2))), 0)
     effecttimer++
     siner++
@@ -48,13 +48,13 @@ else if (firecon == 1)
         image_yscale = gml_Script_scr_movetowards(image_yscale, 0.5, 0.1)
     else
         image_yscale -= 0.05
-    16777215
+    draw_set_color(c_white)
     draw_circle(x, y, (image_yscale * 100), 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 }
 else if (firecon == 2)
 {
-    16777215
+    draw_set_color(c_white)
     active = false
     mask_index = spr_nothing
     if (image_yscale <= 0.01)
@@ -62,7 +62,7 @@ else if (firecon == 2)
     else
         image_yscale = gml_Script_scr_movetowards(image_yscale, 0.01, 0.1)
     if (image_yscale <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     draw_circle(x, y, (image_yscale * 100), 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 }

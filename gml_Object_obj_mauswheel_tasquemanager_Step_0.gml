@@ -5,10 +5,10 @@ if (con == 0)
     y = gml_Script_lerp_ease_in(ystart, (gml_Script_cameray() + 233), (timer / 10), 0.5)
     if (timer == 10)
     {
-        y = 233
+        y = (gml_Script_cameray() + 233)
         con = 1
         timer = 0
-        61
+        gml_Script_snd_play(61)
     }
 }
 if (con == 1)
@@ -23,5 +23,5 @@ if (con == 1)
     image_xscale = gml_Script_lerp_ease_in(-2.3, -2, (timer / 10), 0.5)
     image_yscale = gml_Script_lerp_ease_in(1.7, 2, (timer / 10), 0.5)
 }
-if ((x + 80) || (!355))
-    // WARNING: Popz'd an empty stack.
+if (x > ((gml_Script_camerax() + gml_Script_camerawidth()) + 80) || (!gml_Script_i_ex(355)))
+    instance_destroy()

@@ -6,7 +6,7 @@ if (timer <= 90)
         var easespeed = gml_Script_scr_ease_inout((timer / 20), 2)
         x = lerp(xstart, maxx, gml_Script_scr_ease_in(easespeed, -1))
         y = lerp(ystart, maxy, gml_Script_scr_ease_out(easespeed, 7))
-        if 469
+        if instance_exists(obj_maus_holes)
             obj_maus_holes.dontcreatemouse = 1
     }
     else if (timer > 60)

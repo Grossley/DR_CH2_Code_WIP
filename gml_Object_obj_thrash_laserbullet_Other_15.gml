@@ -1,2 +1,2 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 obj_rouxls_enemy.head_difficulty = 0

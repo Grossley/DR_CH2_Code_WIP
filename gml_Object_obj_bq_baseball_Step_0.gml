@@ -1,6 +1,6 @@
-if ((!baseball_hitbox) || (!wheel_hitbox_graze))
+if ((!gml_Script_i_ex(baseball_hitbox)) || (!gml_Script_i_ex(wheel_hitbox_graze)))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 baseball_combo_timer--
@@ -41,7 +41,7 @@ if (hit == 1)
     if (hit_timer > (10 / f))
         vspeed = (-32 / f)
     if (y < -4 && vspeed < 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (y > 490)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

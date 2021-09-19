@@ -1,4 +1,4 @@
 shieldhurt = 1
 shieldhurttimer = 6
 shaketimer = 8
-86
+gml_Script_snd_play(86)

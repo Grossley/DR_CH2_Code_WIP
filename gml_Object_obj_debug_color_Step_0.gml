@@ -1,6 +1,6 @@
-if 434
+if instance_exists(obj_swatchling_enemy)
 {
 }
-if 416
+if instance_exists(obj_virovirokun_enemy)
 {
 }

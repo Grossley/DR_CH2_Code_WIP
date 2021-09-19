@@ -1,84 +1,84 @@
 global.entrance = 24
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-7
+event_user(7)
 if (room == room_castle_town)
-    65
+    room_goto(room_castle_tutorial)
 if (room == room_town_south)
-    51
+    room_goto(room_library)
 if (room == room_library)
-    38
+    room_goto(room_town_south)
 if (room == room_town_church)
-    48
+    room_goto(room_townhall)
 if (room == room_townhall)
-    40
+    room_goto(room_town_church)
 if (room == room_schoollobby)
-    39
+    room_goto(room_town_school)
 if (room == room_town_school)
-    59
+    room_goto(room_schoollobby)
 if (room == room_town_mid)
-    47
+    room_goto(room_diner)
 if (room == room_diner)
-    36
+    room_goto(room_town_mid)
 if (room == room_town_north)
-    49
+    room_goto(room_flowershop_1f)
 if (room == room_flowershop_1f)
-    34
+    room_goto(room_town_north)
 if (room == room_castle_tutorial)
 {
     if (global.plot < 12)
-        70
+        room_goto(room_dw_castle_area_2)
     else
-        71
+        room_goto(room_dw_castle_area_2_transformed)
 }
 if (room == room_dw_castle_area_2)
-    65
+    room_goto(room_castle_tutorial)
 if (room == room_dw_castle_area_2_transformed)
 {
     if (y < 1050)
     {
-        "in shop doors block"
-        global.entrance
+        show_debug_message("in shop doors block")
+        show_debug_message(global.entrance)
         if (x < 500)
-            75
+            room_goto(room_dw_castle_dojo)
         if (x > 800)
-            74
+            room_goto(room_dw_castle_cafe)
         if (x > 940)
-            73
+            room_goto(room_dw_castle_restaurant)
     }
     else
     {
-        "in normal doors block"
-        global.entrance
+        show_debug_message("in normal doors block")
+        show_debug_message(global.entrance)
         if (x < 500)
-            68
+            room_goto(room_dw_castle_west_cliff)
         if (x > 1320)
-            65
+            room_goto(room_castle_tutorial)
         if (y > 1400)
-            69
+            room_goto(room_dw_castle_area_1)
     }
 }
 if (room == room_dw_castle_cafe)
 {
     global.entrance = 19
-    71
+    room_goto(room_dw_castle_area_2_transformed)
 }
 if (room == room_dw_castle_restaurant)
 {
     global.entrance = 20
-    71
+    room_goto(room_dw_castle_area_2_transformed)
 }
 if (room == room_dw_castle_dojo)
 {
     global.entrance = 21
-    71
+    room_goto(room_dw_castle_area_2_transformed)
 }
 if (room == room_dw_castle_west_cliff)
 {
     global.entrance = 18
     if (global.plot < 12)
-        70
+        room_goto(room_dw_castle_area_2)
     else
-        71
+        room_goto(room_dw_castle_area_2_transformed)
 }
 if (room == room_dw_castle_east_door)
 {
@@ -87,7 +87,7 @@ if (room == room_dw_castle_area_1)
 {
     global.entrance = 23
     if (global.plot < 12)
-        70
+        room_goto(room_dw_castle_area_2)
     else
-        71
+        room_goto(room_dw_castle_area_2_transformed)
 }

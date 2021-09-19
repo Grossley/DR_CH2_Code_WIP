@@ -1,6 +1,6 @@
 var border_id = global.screen_border_id
 var return_title = 0
-if "chapter_return"
+if variable_global_exists("chapter_return")
 {
     if (global.chapter_return > 0)
         return_title = 1
@@ -15,7 +15,7 @@ if (!return_title)
             loaded = 1
         }
         border_fade_value = 0.025
-        if (!"currentroom")
+        if (!variable_global_exists("currentroom"))
             global.currentroom = room
         var room_id = room
         _border_image = (global.darkzone ? border_dw_castletown : border_lw_town)
@@ -42,7 +42,7 @@ if (!return_title)
             border_fade_out = border_alpha > 0
         else if (room_id == room_town_krisyard || room_id == room_castle_town || room_id == room_town_school)
             border_fade_in = border_alpha < 1
-        else if 125
+        else if instance_exists(obj_savepoint)
         {
             if (global.chapter == 2)
             {
@@ -62,7 +62,7 @@ if (!return_title)
         {
             if (room_id == room_school_unusedroom)
             {
-                if 70
+                if instance_exists(obj_unusedclassevent)
                 {
                     if (obj_unusedclassevent.lightsoff == 0)
                         border_fade_in = border_alpha < 1
@@ -72,7 +72,7 @@ if (!return_title)
             }
             if (room_id == room_krisroom)
             {
-                if 83
+                if instance_exists(obj_krisroom)
                 {
                     if (obj_krisroom.con >= 50)
                         border_fade_out = border_alpha > 0
@@ -85,7 +85,7 @@ if (!return_title)
         {
             if (room_id == room_krisroom)
             {
-                if 83
+                if gml_Script_i_ex(83)
                 {
                     if obj_krisroom.show_border
                         border_alpha = 1
@@ -93,7 +93,7 @@ if (!return_title)
             }
             if (room_id == room_schooldoor)
             {
-                if 941
+                if gml_Script_i_ex(941)
                 {
                     border_fade_in = 0
                     border_fade_out = border_alpha > 0
@@ -106,7 +106,7 @@ if (!return_title)
             }
             if (room_id == room_dw_castle_area_1)
             {
-                if 940
+                if gml_Script_i_ex(940)
                 {
                     if (obj_dw_leave.con >= 10)
                     {
@@ -114,7 +114,7 @@ if (!return_title)
                         border_fade_out = border_alpha > 0
                     }
                 }
-                if 941
+                if gml_Script_i_ex(941)
                 {
                     if (obj_dw_transition.timer >= 30)
                     {
@@ -129,7 +129,7 @@ if (!return_title)
             {
                 if (global.plot <= 10)
                 {
-                    if 928
+                    if gml_Script_i_ex(928)
                     {
                         if (obj_ch2_scene6.con >= 50)
                             border_fade_in = border_alpha < 1
@@ -140,12 +140,12 @@ if (!return_title)
             }
             if (room_id == room_library)
             {
-                if 941
+                if gml_Script_i_ex(941)
                     border_fade_out = border_alpha > 0
             }
             if (room_id == room_dw_cyber_rollercoaster)
             {
-                if 949
+                if gml_Script_i_ex(949)
                 {
                     if (obj_ch2_scene11a.hide_border == 1)
                         border_fade_out = border_alpha > 0
@@ -164,7 +164,7 @@ if (!return_title)
                 border_alpha = 1
             if (room_id == room_dw_city_mansion_front)
             {
-                if 1009
+                if gml_Script_i_ex(1009)
                 {
                     if (obj_ch2_city08.circle_zoom_timer >= 50)
                     {
@@ -203,7 +203,7 @@ if (!return_title)
                 border_fade_out = border_alpha > 0
             if (room_id == room_dw_mansion_top_post)
             {
-                if 986
+                if gml_Script_i_ex(986)
                 {
                     if obj_ch2_scene27.hide_border
                     {
@@ -219,7 +219,7 @@ if (!return_title)
             }
             if (room_id == room_lw_computer_lab)
             {
-                if 989
+                if gml_Script_i_ex(989)
                 {
                     if obj_ch2_scene28b.show_border
                         border_fade_in = border_alpha < 1
@@ -227,7 +227,7 @@ if (!return_title)
             }
             if (room_id == room_torhouse)
             {
-                if 994
+                if gml_Script_i_ex(994)
                 {
                     if obj_ch2_scene32.hide_border
                     {
@@ -239,9 +239,9 @@ if (!return_title)
         }
         if (room_id == PLACE_FAILURE)
         {
-            if 881
+            if gml_Script_i_ex(881)
             {
-                if (DEVICE_FAILURE.EVENT >= 27 && (!62))
+                if (DEVICE_FAILURE.EVENT >= 27 && (!instance_exists(obj_writer)))
                     border_alpha = 0
             }
         }
@@ -255,11 +255,11 @@ if (!return_title)
     else if (border_id == "Simple" || border_id == "シンプル")
     {
         room_id = global.currentroom
-        if 125
+        if instance_exists(obj_savepoint)
             border_alpha = 1
         if (room_id == room_ed)
         {
-            if 887
+            if instance_exists(obj_credits)
             {
                 if (obj_credits.timer >= 1560)
                 {

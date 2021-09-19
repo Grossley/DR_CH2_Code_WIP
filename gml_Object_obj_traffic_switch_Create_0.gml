@@ -1,6 +1,6 @@
 myinteract = 0
 image_speed = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 fadeout = 0
 fadein = 0
 con = 0

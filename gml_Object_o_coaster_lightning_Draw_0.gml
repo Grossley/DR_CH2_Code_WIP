@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (con == -2)
 {
     waitpeak = (waittime / 2)

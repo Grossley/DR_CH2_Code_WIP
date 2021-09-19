@@ -4,23 +4,24 @@ if (global.monster[myself] == true)
     if (global.mnfight == 1 && talked == 0)
     {
         if (global.mercymod[myself] < 100)
-            // WARNING: Popz'd an empty stack.
-        if (!1522)
+            gml_Script_scr_randomtarget_ch1()
+        if (!instance_exists(obj_darkener_ch1))
             gml_Script_instance_create_ch1(0, 0, 1522)
         global.typer = 50
         global.msg[0] = " "
         g = gml_Script_scr_enemyblcon_ch1((x - 160), y, 3)
         var _temp_local_var_2 = g.mywriter
+        instance_destroy()
     }
     if (talked == 1 && global.mnfight == 1)
     {
         rtimer = 0
-        5
+        gml_Script_scr_blconskip_ch1(5)
         if (global.mnfight == 2)
         {
-            if (!1536)
-                // WARNING: Popz'd an empty stack.
-            if (!1628)
+            if (!instance_exists(obj_moveheart_ch1))
+                gml_Script_scr_moveheart_ch1()
+            if (!instance_exists(obj_growtangle_ch1))
                 gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
         }
     }
@@ -30,7 +31,7 @@ if (global.monster[myself] == true)
         if (rtimer == 12)
         {
             global.turntimer = 150
-            pontotal = 
+            pontotal = gml_Script_scr_monsterpop_ch1()
             for (i = 0; i < 3; i += 1)
             {
                 if (global.monster[i] == true && global.mercymod[i] >= 100)
@@ -59,23 +60,23 @@ if (global.monster[myself] == true)
             global.fc = 0
             rr = choose(0, 1, 2, 3, 4)
             if (rr == 0)
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_64_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_64_0")
             if (rr == 1)
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_65_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_65_0")
             if (rr == 2)
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_66_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_66_0")
             if (rr == 3)
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_67_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_67_0")
             if (rr == 4)
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_68_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_68_0")
             if (global.monsterstatus[myself] == true)
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_69_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_69_0")
             if (global.monsterhp[myself] <= (global.monstermaxhp[myself] / 3))
-                global.battlemsg[0] = "obj_ponman_enemy_slash_Step_0_gml_70_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_70_0")
             if (global.mercymod[myself] >= global.mercymax[myself])
-                global.msg[0] = "obj_ponman_enemy_slash_Step_0_gml_71_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_71_0")
             if (global.monstercomment[myself] == gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_72_0"))
-                global.msg[0] = "obj_ponman_enemy_slash_Step_0_gml_72_1"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_72_1")
         }
         else
             global.turntimer = 120
@@ -103,36 +104,36 @@ if (global.myfight == 3)
     if (acting == 1 && actcon == 0)
     {
         actcon = 1
-        global.msg[0] = "obj_ponman_enemy_slash_Step_0_gml_106_0"
-        // WARNING: Popz'd an empty stack.
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_106_0")
+        gml_Script_scr_battletext_default_ch1()
     }
     if (acting == 2 && actcon == 0)
     {
-        global.msg[0] = "obj_ponman_enemy_slash_Step_0_gml_114_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_114_0")
         sleeping = true
         gml_Script_scr_mercyadd_ch1(myself, 100)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default_ch1()
         actcon = 1
     }
     if (acting == 3 && actcon == 0)
     {
-        global.batmusic[1]
+        gml_Script_snd_pause_ch1(global.batmusic[1])
         if (lullabied == 0)
         {
-            singy = 393
+            singy = gml_Script_snd_play_ch1(393)
             var _temp_local_var_11 = object_index
             lullabied = 1
         }
         else
         {
-            singy = 394
+            singy = gml_Script_snd_play_ch1(394)
             _temp_local_var_11 = object_index
             lullabied = 0
         }
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_134_0")
         with (obj_heroralsei_ch1)
             visible = false
-        ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3847)
+        ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3848)
         var _temp_local_var_12 = ralsing
         image_speed = 0.2
     }

@@ -2,7 +2,7 @@ burst = 0
 shift = 1
 image_alpha = 0
 flytime = 8
-if 1527
+if instance_exists(obj_heartmarker_ch1)
 {
     distx = obj_heartmarker_ch1.x
     disty = obj_heartmarker_ch1.y

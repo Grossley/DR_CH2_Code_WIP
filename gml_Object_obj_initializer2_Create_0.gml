@@ -11,32 +11,32 @@ global.savedata_error = 0
 global.savedata_debuginfo = ""
 global.game_won = 0
 global.chapter = 2
-if 1645
+if instance_exists(obj_time_ch1)
 {
     with (obj_time_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-if 1665
+if instance_exists(obj_debugcontroller_ch1)
 {
     with (obj_debugcontroller_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if global.is_console
-    // WARNING: Popz'd an empty stack.
+    gml_Script_ossafe_savedata_load()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    1
+    gml_Script_scr_84_init_localization()
+    gml_Script_pal_swap_init_system(1)
     global.damagefont = font_add_sprite_ext(spr_numbersfontbig, "0123456789", 20, 0)
     global.damagefontgold = font_add_sprite_ext(spr_numbersfontbig_gold, "0123456789+-%", 20, 0)
     global.hpfont = font_add_sprite_ext(spr_numbersfontsmall, "0123456789-+", 0, 2)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_gamestart()
     for (i = 0; i < 100; i += 1)
         global.tempflag[i] = 0
     global.heartx = 300
     global.hearty = 220
-    if (!1)
-        1
-    if (!1131)
+    if (!audio_group_is_loaded(1))
+        audio_group_load(1)
+    if (!instance_exists(obj_time))
         gml_Script_instance_create(0, 0, obj_time)
 }

@@ -5,7 +5,7 @@ if (attacked == false)
     if (attack == 1)
     {
         box = gml_Script_instance_create_ch1((xx + 320), (yy + 170), 1628)
-        mh = 
+        mh = gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, 1558)
         dd.type = 21
         dd.damage = ((global.monsterat[myself] * 5) * tempattack)
@@ -24,13 +24,14 @@ if (attacked == false)
         box = gml_Script_instance_create_ch1((xx + 200), (yy + 175), 1571)
         box.sprite_index = spr_battlebg_wavechain_ch1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_1 = hm
+        instance_destroy()
     }
     if (attack == 3)
     {
         box = gml_Script_instance_create_ch1((xx + 320), (yy + 170), 1628)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, 1558)
         dd.type = 34
         dd.damage = ((global.monsterat[myself] * 5) * tempattack)
@@ -45,8 +46,9 @@ if (attacked == false)
         box.sprite_index = spr_battlebg_2_ch1
         box.keep = 1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_2 = hm
+        instance_destroy()
     }
     if (attack == 5)
     {
@@ -61,8 +63,9 @@ if (attacked == false)
         chainking.target = 3
         global.turntimer = 999
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_3 = hm
+        instance_destroy()
     }
     if (attack == 6)
     {
@@ -81,13 +84,14 @@ if (attacked == false)
         chainking.target = mytarget
         global.turntimer = 999
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_4 = hm
+        instance_destroy()
     }
     if (attack == 7)
     {
         box = gml_Script_instance_create_ch1((xx + 320), (yy + 170), 1628)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, 1558)
         dd.type = 35
         global.turntimer = 220
@@ -102,13 +106,14 @@ if (attacked == false)
         box.sprite_index = spr_battlebg_2_ch1
         box.keep = 1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_5 = hm
+        instance_destroy()
     }
     if (attack == 9)
     {
         box = gml_Script_instance_create_ch1((xx + 320), (yy + 170), 1628)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, 1558)
         dd.type = 23
         global.turntimer = 200
@@ -127,8 +132,9 @@ if (attacked == false)
         box = gml_Script_instance_create_ch1((xx + 200), (yy + 175), 1571)
         box.sprite_index = spr_battlebg_wavechain_ch1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_6 = hm
+        instance_destroy()
     }
     if (attack == 11)
     {
@@ -144,8 +150,9 @@ if (attacked == false)
         chainking.target = 3
         global.turntimer = 999
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_moveheart_ch1()
         var _temp_local_var_7 = hm
+        instance_destroy()
     }
     tempattack = 1
     attacked = true

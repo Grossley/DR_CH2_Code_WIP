@@ -3,7 +3,7 @@ if (state == 0)
 if (fightcon == 1)
 {
     if (global.flag[9] == 1)
-        global.currentsong[1]
+        gml_Script_snd_pause(global.currentsong[1])
     counttimer += 1
     if (counttimer < 10)
     {
@@ -31,6 +31,6 @@ if (fightcon == 2)
         {
         }
         gml_Script_instance_create(0, 0, obj_battlecontroller)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

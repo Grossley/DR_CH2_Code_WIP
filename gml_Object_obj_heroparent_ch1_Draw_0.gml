@@ -38,23 +38,23 @@ if (global.hp[global.char[myself]] > 0)
         siner += 1
         if (attacked == false)
         {
-            442
+            gml_Script_snd_stop_ch1(442)
             if (object_index == obj_herokris_ch1)
-                442
+                gml_Script_snd_play_ch1(442)
             if (object_index == obj_heroralsei_ch1)
             {
-                ls = 442
+                ls = gml_Script_snd_play_ch1(442)
                 gml_Script_snd_pitch_ch1(ls, 1.15)
             }
             if (object_index == obj_herosusie_ch1)
             {
-                ls = 442
+                ls = gml_Script_snd_play_ch1(442)
                 gml_Script_snd_pitch_ch1(ls, 0.9)
             }
             if (points == 150)
             {
-                426
-                426
+                gml_Script_snd_stop_ch1(426)
+                gml_Script_snd_play_ch1(426)
                 repeat (3)
                 {
                     anim = gml_Script_instance_create_ch1(((x + mywidth) + random(50)), ((y + 30) + random(30)), 1509)
@@ -90,7 +90,7 @@ if (global.hp[global.char[myself]] > 0)
             image_index = attacktimer
         else
             image_index = spellframes
-        if 0
+        if (gml_Script_scr_monsterpop_ch1() == 0)
             attacktimer = 0
         thissprite = spellsprite
         index = image_index
@@ -108,7 +108,7 @@ if (global.hp[global.char[myself]] > 0)
             image_index = attacktimer
         else
             image_index = itemframes
-        if 0
+        if (gml_Script_scr_monsterpop_ch1() == 0)
             attacktimer = 0
         index = image_index
         thissprite = itemsprite
@@ -201,7 +201,7 @@ if (specdraw == 0)
     {
         fsiner += 1
         gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
-        draw_sprite_ext(thissprite, index, x, y, 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, index, x, y, 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
     }
 }
@@ -213,7 +213,7 @@ if (global.targeted[myself] == true)
     if (global.mnfight == 1)
         draw_sprite_ext(spr_chartarget_ch1, (siner / 10), x, y, 2, 2, 0, c_white, 1)
 }
-else if (combatdarken == true && 1522)
+else if (combatdarken == true && instance_exists(obj_darkener_ch1))
 {
     if (darkify == true)
     {

@@ -1,2 +1,2 @@
 actcon = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_act_charsprite_end()

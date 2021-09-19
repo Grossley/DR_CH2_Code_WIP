@@ -1,11 +1,12 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1;
+var _layer_index = argument0
+if (!layer_exists(_layer_index))
+    return;
+var _data = ds_list_create()
+_data
+layer_script_begin(_layer_index, gml_Script__pal_swap_layer_start)
+layer_script_end(_layer_index, gml_Script__pal_swap_layer_end)
+ds_map_add_list(global.Pal_Layer_Map, _layer_index, _data)
+ds_priority_add(global.Pal_Layer_Priority, _layer_index, layer_get_depth(_layer_index))
+return;
+var _temp_local_var_1 = undefined.undefined.undefined

@@ -1,5 +1,5 @@
 timer++
-if (timer > 5 && (!238))
+if (timer > 5 && (!instance_exists(obj_chaseenemy)))
     spawned = 1
 if (spawned == 1)
 {
@@ -7,6 +7,6 @@ if (spawned == 1)
     if (spawntimer == 60)
     {
         chest = gml_Script_instance_create(x, y, obj_treasure_room)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

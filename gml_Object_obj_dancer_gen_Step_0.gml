@@ -1,6 +1,6 @@
-if 212
+if instance_exists(obj_lightfairy)
     obj_lightfairy.factor = (battlealpha * 2)
-if 80
+if instance_exists(obj_mainchara)
 {
     obj_mainchara.battlemode = 0
     for (i = 0; i < areas; i += 1)

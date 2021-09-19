@@ -8,4 +8,4 @@ if (hitted == 1)
     }
 }
 if (y <= -100)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

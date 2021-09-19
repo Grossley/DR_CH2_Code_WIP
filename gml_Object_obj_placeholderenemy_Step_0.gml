@@ -2,8 +2,8 @@ if (global.monster[myself] == true)
 {
     if (global.mnfight == 1 && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         rr = choose(0, 1, 2, 3)
@@ -23,12 +23,12 @@ if (global.monster[myself] == true)
     if (talked == 1 && global.mnfight == 1)
     {
         rtimer = 0
-        15
+        gml_Script_scr_blconskip(15)
         if (global.mnfight == 2)
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
@@ -98,7 +98,7 @@ if (con == 3)
     gml_Script_scr_enemyblcon((x - 160), y, 3)
     con = 4
 }
-if (con == 4 && (!62))
+if (con == 4 && (!instance_exists(obj_writer)))
 {
     hspeed = 15
     con = 5
@@ -110,8 +110,8 @@ if (con == 6)
 {
     with (obj_battlecontroller)
         noreturn = false
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_monsterdefeat()
+    instance_destroy()
     con = 7
 }
 if (global.myfight == 3)
@@ -122,7 +122,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         global.msg[0] = ""
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -133,27 +133,27 @@ if (global.myfight == 3)
             global.monstercomment[myself] = ""
             global.automiss[myself] = true
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 3 && actcon == 0)
     {
         global.msg[0] = ""
         global.mercymod[myself] += 200
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (acting == 4 && actcon == 0)
     {
         global.msg[0] = ""
         battlecancel = 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (acting == 5 && actcon == 0)
     {
         global.msg[0] = ""
         battlecancel = 2
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (acting == 6 && actcon == 0)
@@ -161,13 +161,13 @@ if (global.myfight == 3)
         global.msg[0] = ""
         global.monstercomment[myself] = ""
         global.monsterstatus[myself] = true
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         actcon = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase()
     }
 }
 if (global.myfight == 7)

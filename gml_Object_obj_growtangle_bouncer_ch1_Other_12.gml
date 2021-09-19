@@ -3,4 +3,4 @@ with (obj_king_body_ch1)
 with (obj_growtangle_ch1)
     growcon = 3
 global.turntimer = 3
-// WARNING: Popz'd an empty stack.
+instance_destroy()

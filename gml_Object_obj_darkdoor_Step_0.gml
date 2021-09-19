@@ -4,7 +4,10 @@ if (con > 0 && con < 40)
     if (con == 1)
         global.interact = 1
     if (con == 2)
+    {
         var _temp_local_var_2 = k
+        gml_Script_scr_halt()
+    }
     if (con == 4)
     {
         global.typer = 10
@@ -15,17 +18,17 @@ if (con > 0 && con < 40)
         gml_Script_instance_create(0, 0, obj_dialoguer)
         con = 4.5
     }
-    if (con == 4.5 && 61 == 0)
+    if (con == 4.5 && instance_exists(obj_dialoguer) == 0)
     {
-        59
+        gml_Script_snd_play(59)
         image_index = 1
         con = 5.5
         alarm[4] = 60
     }
     if (con == 6.5)
     {
-        global.currentsong[0] = "creepydoor.ogg"
-        global.currentsong[0]
+        global.currentsong[0] = gml_Script_snd_init("creepydoor.ogg")
+        gml_Script_mus_loop(global.currentsong[0])
         open = 1
         con = 6
         alarm[4] = 60
@@ -116,7 +119,7 @@ if (con >= 40)
         global.currentsong[0] = gml_Script_snd_init("mus_birdnoise.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.6, 0.7)
         global.interact = 1
-        s = gml_Script_scr_marker(479, 92, 974)
+        s = gml_Script_scr_marker(479, 92, 975)
         var _temp_local_var_24 = s
         gml_Script_scr_depth()
     }

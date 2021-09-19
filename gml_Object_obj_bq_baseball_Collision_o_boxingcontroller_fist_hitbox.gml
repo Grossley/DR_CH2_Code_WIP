@@ -1,9 +1,9 @@
 if (hit == 0 && o_boxingcontroller.hit_baseball_check == 0 && y < c)
 {
     if arcade
-        321
+        gml_Script_snd_play(321)
     else
-        115
+        gml_Script_snd_play(115)
     hit = 1
     baseball_combo_timer = 2
     o_boxingcontroller.hit_baseball += 1
@@ -27,7 +27,7 @@ if (hit == 0 && o_boxingcontroller.hit_baseball_check == 0 && y < c)
         gml_Script_instance_create((x - 15), (y + 15), obj_octagon_triangle)
         gml_Script_instance_create(x, (y + 15), obj_octagon_triangle)
         gml_Script_instance_create((x + 15), (y + 15), obj_octagon_triangle)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         o_boxing_wireframe.text = o_boxingcontroller.default_string
     }
     with (o_boxingcontroller)
@@ -37,12 +37,12 @@ if (hit == 0 && o_boxingcontroller.hit_baseball_check == 0 && y < c)
             if (arcade == 1)
             {
                 gml_Script_snd_pitch(308, (0.75 + random(0.5)))
-                308
+                gml_Script_snd_play(308)
             }
             else
             {
                 gml_Script_snd_pitch(56, (0.75 + random(0.5)))
-                56
+                gml_Script_snd_play(56)
             }
             color_fade_alpha = 1
             global.hp[1] += 4

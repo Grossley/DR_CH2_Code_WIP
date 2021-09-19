@@ -1,6 +1,6 @@
 with (obj_overworldbulletparent)
     active = false
 global.entrance = 2
-7
+event_user(7)
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-// WARNING: Popz'd an empty stack.
+room_goto_previous()

@@ -20,11 +20,11 @@ if (path_position == 1 && con == 1)
 if (con == 2)
 {
     con = 3
-    var a = 60
+    var a = random(60)
     for (i = 0; i < 6; i += 1)
     {
         bul = gml_Script_instance_create(x, y, obj_musical_note_bullet)
-        if bul
+        if gml_Script_i_ex(bul)
         {
             bul.sprite_index = spr_musical_notes
             bul.grazepoints = 2
@@ -40,15 +40,15 @@ if (con == 3)
 {
     headalpha -= 0.1
     if (headalpha < 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-headalpha
+draw_set_alpha(headalpha)
 draw_sprite(spr_sweet_head, 0, x, y)
-1
-circle1alpha
-255
+draw_set_alpha(1)
+draw_set_alpha(circle1alpha)
+draw_set_color(c_red)
 gml_Script_scr_draw_circle_width_qb(x, y, circle1radius, circle1width, 24)
-circle2alpha
-16777215
+draw_set_alpha(circle2alpha)
+draw_set_color(c_white)
 gml_Script_scr_draw_circle_width_qb(x, y, circle2radius, circle2width, 24)
-1
+draw_set_alpha(1)

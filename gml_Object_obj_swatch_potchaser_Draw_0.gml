@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 sweattimer++
 if (sweattimer == 30)
     sweattimer = 0

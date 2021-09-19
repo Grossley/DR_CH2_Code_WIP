@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 recruitcount = 1
 recruitable = 0
 talkmax = 90

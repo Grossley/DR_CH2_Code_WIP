@@ -1,1 +1,1 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_ossafe_game_end()

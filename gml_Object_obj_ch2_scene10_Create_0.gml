@@ -14,7 +14,7 @@ su_y_save = y
 ra_x_save = x
 ra_y_save = y
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (global.chapter == 2)
 {
     pause_music = 0
@@ -37,10 +37,14 @@ if (global.chapter == 2)
             pb_marker.depth = (ar_npc.depth + 5000)
         }
         else
+        {
             var _temp_local_var_2 = pb_marker
+            gml_Script_scr_depth()
+        }
         sw_npc = gml_Script_instance_create(300, 110, obj_npc_room_animated)
         sw_npc.sprite_index = spr_npc_swatchling_sweep
         sw_npc.image_speed = 0.1
         var _temp_local_var_1 = sw_npc
+        gml_Script_scr_depth()
     }
 }

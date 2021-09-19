@@ -1,8 +1,8 @@
-"mainbig"
-65280
-image_alpha
-draw_text(x, y, gml_Script_stringsetsubloc("+~1", string(healamt), "obj_healwriter_slash_Draw_0_gml_4_0"))
-1
+gml_Script_scr_84_set_draw_font("mainbig")
+draw_set_color(c_lime)
+draw_set_alpha(image_alpha)
+draw_text(x, y, string_hash_to_newline(gml_Script_stringsetsubloc("+~1", string(healamt), "obj_healwriter_slash_Draw_0_gml_4_0")))
+draw_set_alpha(1)
 image_alpha -= 0.1
 if (image_alpha < 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -1,10 +1,10 @@
-FADEFACTOR
+draw_set_alpha(FADEFACTOR)
 if (WHITEFADE == 0)
-    0
+    draw_set_color(c_black)
 else
-    16777215
+    draw_set_color(c_white)
 draw_rectangle(-10, -10, 999, 999, false)
-1
+draw_set_alpha(1)
 if (FADEUP > 0)
 {
     if (FADEFACTOR < 1)

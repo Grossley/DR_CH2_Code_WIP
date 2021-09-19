@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_4;
 if (con == 0)
 {
-    if 890
+    if gml_Script_i_ex(890)
     {
         with (obj_actor)
         {
@@ -24,7 +24,7 @@ if (con == 0)
     }
     for (i = 0; i < 3; i++)
     {
-        fallmarker[i] = (((obj_queen_search_gun_old - 100) + 400) - (i * 100))
+        fallmarker[i] = gml_Script_scr_dark_marker(((gml_Script_camerax() + 400) - (i * 100)), (gml_Script_cameray() - 100), 536)
         fallmarker[i].vspeed = 2
         fallmarker[i].hspeed = -5
         fallmarker[i].gravity = 0.2

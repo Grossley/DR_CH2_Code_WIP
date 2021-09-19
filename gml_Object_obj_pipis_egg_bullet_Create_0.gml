@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 hp = 3
 con = 0
 timer = 0
@@ -8,7 +8,7 @@ parent = self
 image_speed = 0
 image_xscale = 2
 image_yscale = 2
-image_angle = 360
+image_angle = random(360)
 target = 0
 damage = 1
 directhit = 0

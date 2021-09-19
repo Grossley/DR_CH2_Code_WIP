@@ -4,11 +4,11 @@ if (drawdoor == 1)
     sprite_index = spr_darkdoor
     x = 138
     y = 48
-    0
+    draw_set_color(c_black)
     draw_rectangle(138, 27, 181, 74, false)
     if (darkbg == 0)
     {
-        px = (global.lang == "en" ? gml_Script_scr_marker(0, 0, 2780) : gml_Script_scr_marker(0, 0, 1601))
+        px = (global.lang == "en" ? gml_Script_scr_marker(0, 0, 2781) : gml_Script_scr_marker(0, 0, 1602))
         px.image_xscale = 1
         px.image_yscale = 1
         px.image_alpha = 0.1
@@ -22,7 +22,7 @@ if (drawdoor == 1)
         xsin = 1
     siner += 1
     image_index = 1
-    amt = ((siner / 16) * 0.1)
+    amt = (sin((siner / 16)) * 0.1)
     for (i = 1; i < 6; i += 1)
         draw_sprite_ext(sprite_index, 2, x, (y + sprite_height), 1, ((3 / i) + amt), 0, c_white, (xsin * (amt + 0.2)))
     draw_sprite_ext(spr_darkdoor_middleanchored, 2, 160, 51, (1 + (amt * 3)), (1 + (amt * 3)), 0, c_white, (xsin * (amt + 0.2)))

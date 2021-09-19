@@ -1,11 +1,11 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 direction = 270
 image_xscale = 2
 image_yscale = 2
 invulnerable = 0
 fall = 0
 gulped = 0
-176
+gml_Script_snd_play(176)
 timer = 0
 emergetimer = 0
 drawx = x
@@ -18,7 +18,7 @@ deathtimer = 0
 target = 0
 hastarget = 0
 jumppuzzle = 0
-if 1180
+if instance_exists(obj_masterPlatformController)
 {
     jumppuzzle = 1
     hastarget = 1
@@ -34,7 +34,7 @@ bounceOffDoor = 1
 bounceTargetX = 320
 bounceTargetY = 240
 bounceTargetDir = 90
-customSprite = 2683
+customSprite = 2684
 fakeY = 0
 fakeYSpeed = 0
 bouncecon = 0

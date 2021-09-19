@@ -1,7 +1,7 @@
 if (!leave)
 {
     draw_sprite_ext(kr_sprite, 0, (x + x_pos), (y + y_pos), 2, 2, 0, c_white, image_alpha)
-    if 2
+    if (gml_Script_scr_sideb_get_phase() < 2)
         draw_sprite_ext(su_sprite, su_anim_index, (x + x_pos), (y + y_pos), 2, 2, 0, c_white, image_alpha)
     if ra_shake
     {

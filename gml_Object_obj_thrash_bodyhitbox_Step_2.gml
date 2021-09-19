@@ -1,4 +1,4 @@
-if (!thrash)
+if (!gml_Script_i_ex(thrash))
     return;
 if (deathtimer > 0)
 {
@@ -8,7 +8,7 @@ if (deathtimer > 0)
         obj_rouxls_enemy.thrashcon = 7
         obj_rouxls_enemy.x = obj_rouxls_enemy.remx
         thrash.a = 0
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if duckmode
@@ -17,7 +17,7 @@ if duckmode
     if ((thrashcon == 3 || thrashcon == 5) && thrash.stomp != 0)
     {
         gml_Script_snd_pitch(56, (thrash.stomp == 1 ? 1.25 : 1))
-        56
+        gml_Script_snd_play(56)
     }
 }
 thrash.stomp = 0

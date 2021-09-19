@@ -12,9 +12,9 @@ if (collidetimer < 0 && collide == 1 && global.interact == 1)
                 fun = false
                 sprite_index = spr_krisd
             }
-            slide_noise
+            gml_Script_snd_stop(slide_noise)
         }
         gml_Script_instance_create(x, ((y + sprite_height) - 40), obj_soliddark)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

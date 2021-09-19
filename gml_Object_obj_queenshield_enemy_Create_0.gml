@@ -25,7 +25,7 @@ shieldhurttimer = 0
 shieldx = 0
 shieldy = 0
 shieldalpha = 1
-shieldheight = sprite_index
+shieldheight = sprite_get_height(sprite_index)
 shieldhpgradual = 0
 imabouttobreak = 0
 imabouttobreak_alpha = 0.4
@@ -55,7 +55,7 @@ for (i = 0; i < 14; i++)
     shieldpiece_xscale[i] = 2
     shieldpiece_yscale[i] = 2
     shieldpiece_alpha[i] = 1
-    shieldpiece_sprite_index[i] = 1890
+    shieldpiece_sprite_index[i] = 1891
     shieldpiece_image_index[i] = 0
     shieldpiece_fadetimer[i] = 0
     shieldpiece_fadecon[i] = 0
@@ -70,13 +70,13 @@ if (shieldsize == 7)
     moveorder[4] = 6
     moveorder[5] = 1
     moveorder[6] = 0
-    shieldpiece_sprite_index[7] = 3225
-    shieldpiece_sprite_index[8] = 3225
-    shieldpiece_sprite_index[9] = 3225
-    shieldpiece_sprite_index[10] = 3225
-    shieldpiece_sprite_index[11] = 3225
-    shieldpiece_sprite_index[12] = 3225
-    shieldpiece_sprite_index[13] = 3225
+    shieldpiece_sprite_index[7] = 3226
+    shieldpiece_sprite_index[8] = 3226
+    shieldpiece_sprite_index[9] = 3226
+    shieldpiece_sprite_index[10] = 3226
+    shieldpiece_sprite_index[11] = 3226
+    shieldpiece_sprite_index[12] = 3226
+    shieldpiece_sprite_index[13] = 3226
 }
 if (shieldsize == 10)
 {
@@ -90,10 +90,10 @@ if (shieldsize == 10)
     moveorder[7] = 0
     moveorder[8] = 8
     moveorder[9] = 9
-    shieldpiece_sprite_index[10] = 3225
-    shieldpiece_sprite_index[11] = 3225
-    shieldpiece_sprite_index[12] = 3225
-    shieldpiece_sprite_index[13] = 3225
+    shieldpiece_sprite_index[10] = 3226
+    shieldpiece_sprite_index[11] = 3226
+    shieldpiece_sprite_index[12] = 3226
+    shieldpiece_sprite_index[13] = 3226
 }
 if (shieldsize == 12)
 {
@@ -109,8 +109,8 @@ if (shieldsize == 12)
     moveorder[9] = 9
     moveorder[10] = 10
     moveorder[11] = 11
-    shieldpiece_sprite_index[12] = 3225
-    shieldpiece_sprite_index[13] = 3225
+    shieldpiece_sprite_index[12] = 3226
+    shieldpiece_sprite_index[13] = 3226
 }
 if (shieldsize == 7)
 {

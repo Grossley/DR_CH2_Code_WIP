@@ -2,8 +2,8 @@ timer++
 if (speed > 0)
     speed -= 0.4
 if (timer > 16)
-    // WARNING: Popz'd an empty stack.
-if 786
+    instance_destroy()
+if instance_exists(o_boxingqueen)
 {
     if (timer == 1)
     {

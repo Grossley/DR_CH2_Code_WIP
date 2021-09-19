@@ -1,9 +1,9 @@
-if (606 && obj_sneo_heartattack.heart_health < 1)
+if (instance_exists(obj_sneo_heartattack) && obj_sneo_heartattack.heart_health < 1)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 element = 6
 f = 2
 con = 0
@@ -14,9 +14,9 @@ image_xscale = 1
 image_yscale = 1
 siner = 0
 fluffyguarddestroysthis = 0
-targetx = 2
-targety = 4
-if 628
+targetx = (gml_Script_camerax() + (gml_Script_camerawidth() / 2))
+targety = (gml_Script_cameray() + (gml_Script_cameraheight() / 4))
+if instance_exists(obj_heart)
 {
     targetx = obj_heart.x
     targety = obj_heart.y
@@ -24,5 +24,5 @@ if 628
 move_towards_point(targetx, targety, 5)
 angle_speed = 0
 grazepoints = 4
-if 695
+if instance_exists(obj_sneo_bulletcontroller)
     target = obj_sneo_bulletcontroller.target

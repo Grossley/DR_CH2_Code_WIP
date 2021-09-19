@@ -1,2 +1,2 @@
 if (hp == 0)
-    1
+    event_user(1)

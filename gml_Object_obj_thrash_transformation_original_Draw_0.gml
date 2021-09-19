@@ -24,7 +24,7 @@ gml_Script_d3d_set_fog(true, c_black, 0, 0)
 if (timer <= (220 / f))
     draw_sprite_ext(spr_thrash_legs, 0, (x + 4), (y + 24), xscale2, yscale2, 0, c_white, 1)
 draw_sprite_ext(spr_thrash_head, 0, (x + 36), heady, head_xscale, head_yscale, head_angle, c_white, 1)
-// WARNING: Popz'd an empty stack.
+draw_self()
 gml_Script_d3d_set_fog(false, c_black, 0, 0)
 draw_sprite_ext(spr_whitepx, 0, 0, 0, 640, 480, 0, c_white, fade_alpha)
 heady += vspeed

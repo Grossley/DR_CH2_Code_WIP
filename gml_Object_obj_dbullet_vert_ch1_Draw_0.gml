@@ -37,8 +37,8 @@ if (dont == 0)
             speed = 8
     }
     if (y > (gml_Script___view_get(1, 0) + 500))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 20))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 dont = 0

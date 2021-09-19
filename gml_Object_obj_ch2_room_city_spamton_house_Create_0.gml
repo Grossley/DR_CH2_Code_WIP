@@ -2,8 +2,8 @@ var _temp_local_var_1;
 if (global.flag[309] == 9)
 {
     with (obj_queenscreen)
-        // WARNING: Popz'd an empty stack.
-    var addison_sprites = 6
+        instance_destroy()
+    var addison_sprites = array_create(6)
     addison_sprites[0] = spr_npc_addison_blue_up
     addison_sprites[1] = spr_npc_addison_yellow_up
     addison_sprites[2] = spr_npc_addison_pink_up
@@ -16,7 +16,8 @@ if (global.flag[309] == 9)
         var npc = gml_Script_instance_create((400 + (i * 120)), 132, obj_npc_room)
         npc.sprite_index = addison_sprites[i]
         var _temp_local_var_1 = npc
+        gml_Script_scr_depth()
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

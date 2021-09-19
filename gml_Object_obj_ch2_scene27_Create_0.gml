@@ -1,14 +1,14 @@
 con = -1
 customcon = 0
 if (global.chapter != 2 || global.plot >= 171)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
-    blackall = gml_Script_scr_marker(-10, -10, 2528)
+    gml_Script_scr_tempsave()
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
+    blackall = gml_Script_scr_marker(-10, -10, 2529)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

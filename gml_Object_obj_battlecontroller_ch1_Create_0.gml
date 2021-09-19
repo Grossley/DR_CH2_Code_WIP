@@ -24,7 +24,7 @@ global.attacking = false
 global.acting = 0
 global.tension = 0
 global.spelldelay = 10
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellinfo_all_ch1()
 global.tensionselect = 0
 for (j = 0; j < 3; j += 1)
 {

@@ -1,8 +1,7 @@
+var _temp_local_var_2;
 if (type == 1 && other.type == 0)
 {
-    with (stacktop)
-    {
-        if (con >= 1)
-            1
-    }
+    var _temp_local_var_2 = other
+    if (con >= 1)
+        event_user(1)
 }

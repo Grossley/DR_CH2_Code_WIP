@@ -1,3 +1,4 @@
+var _temp_local_var_3;
 if (lerpintimer < 16 && con == 0)
 {
     y = lerp((ystart - 200), (ystart + 160), (lerpintimer / 15))
@@ -28,7 +29,8 @@ if (con == 0)
                 target.y2 = y2[i]
                 target.vineid = i
                 target.x_offset = x_offset[i]
-                path = target
+                var _temp_local_var_3 = target
+                path = path_add()
                 path_set_kind(path, 0)
                 path_set_closed(path, 0)
                 path_add_point(path, x1, y1, 100)
@@ -49,17 +51,17 @@ if (con == 2)
         obj_berdlyplug_enemy.con = 2
     if (lerpintimer >= 15)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         obj_berdlyplug_enemy.bardlymercy = bardlymercy
         obj_berdlyplug_enemy.alarm[0] = 5
     }
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 for (i = 0; i < 6; i += 1)
 {
     x1[i] = x
     y1[i] = (y - 18)
-    var w = 1943
+    var w = sprite_get_width(spr_berdlyact_queen_wire)
     var angl = point_direction(x1[i], y1[i], x2[i], y2[i])
     var xx = lengthdir_x(w, angl)
     var yy = lengthdir_y(w, angl)

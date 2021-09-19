@@ -5,7 +5,7 @@ if (fade == 1)
     image_xscale *= 0.8
     image_yscale *= 0.8
     if (image_alpha < 0.01)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (con == 0)
 {

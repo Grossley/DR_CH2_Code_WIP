@@ -1,7 +1,8 @@
+var _temp_local_var_1;
 depth = (other.depth + 1)
 if (built == 0)
 {
-    59
+    gml_Script_snd_play(59)
     gml_Script_instance_create(x, y, obj_shakeobj)
     if (bridgetarget == "bridge1")
         image_index = 0
@@ -9,7 +10,7 @@ if (built == 0)
         image_index = 1
     with (obj_soliddark)
     {
-        if (!bridgetarget)
+        if (!is_undefined(bridgetarget))
         {
             if (bridgetarget == other.bridgetarget)
             {
@@ -25,13 +26,13 @@ if (built == 0)
                     replace2.image_blend = c_nblue
                 if (bridgetarget == "bridge1")
                     replace2.image_blend = c_nred
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
     }
     built = 1
 }
 else
-    176
-with (stacktop)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_play(176)
+var _temp_local_var_1 = other
+instance_destroy()

@@ -15,7 +15,7 @@ if (con == 1)
 }
 if (con == 2)
 {
-    darkfade = gml_Script_scr_marker_ch1(-10, -10, 4276)
+    darkfade = gml_Script_scr_marker_ch1(-10, -10, 4277)
     darkfade.image_xscale = 700
     darkfade.image_yscale = 400
     darkfade.image_alpha = 0
@@ -26,7 +26,7 @@ if (con == 2)
 }
 if (con == 3)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all_ch1()
     with (obj_caterpillarchara_ch1)
         image_index = 0
     gml_Script_scr_pan_ch1(4, 0, 40)
@@ -40,17 +40,17 @@ if (con == 3)
 }
 if (con == 5)
 {
-    global.msg[0] = "obj_rurus_checker_event_slash_Step_0_gml_45_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_45_0")
     global.typer = 42
     gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 120), 50, 1327)
     con = 6
 }
-if (con == 6 && (!1327))
+if (con == 6 && (!instance_exists(obj_writer_ch1)))
 {
     appear = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 420), (gml_Script___view_get(1, 0) + 160), 1370)
-    360
+    gml_Script_snd_play_ch1(360)
     con = 14
-    rurus = gml_Script_scr_dark_marker_ch1(appear.x, appear.y, 3681)
+    rurus = gml_Script_scr_dark_marker_ch1(appear.x, appear.y, 3682)
     rurus.visible = false
     alarm[4] = 60
 }

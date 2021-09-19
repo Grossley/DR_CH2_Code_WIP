@@ -1,4 +1,4 @@
-if 628
+if instance_exists(obj_heart)
 {
     rborder = lerp(maxx, suckx, suckpower)
     uborder = miny
@@ -10,11 +10,11 @@ if 628
         snapback = suckpower
         if (suckpower > 0.5)
         {
-            if (!191)
+            if (!instance_exists(obj_shake))
             {
                 d = gml_Script_instance_create(0, 0, obj_shake)
-                d.shakex = (suckpower * 4)
-                d.shakey = (suckpower * 4)
+                d.shakex = ceil((suckpower * 4))
+                d.shakey = ceil((suckpower * 4))
             }
         }
     }

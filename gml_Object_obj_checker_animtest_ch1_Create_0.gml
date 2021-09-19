@@ -12,7 +12,7 @@ if (room == room_field_checkersboss_ch1)
         subcon = 0
     }
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_cc_6f_ch1)
 {

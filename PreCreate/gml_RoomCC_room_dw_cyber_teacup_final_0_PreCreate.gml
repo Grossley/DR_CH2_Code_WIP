@@ -1,5 +1,5 @@
 uniqueRideExperience = 2
-endY = 2304.[unknown]self.y
+endY = 2304.y
 jumpToRide = 102304
 camFollowAfter = 0
 uniqueBulletPattern = 2

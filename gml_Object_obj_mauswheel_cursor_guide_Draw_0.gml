@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2;
 if (listlength == 0)
-    listlength = cursor.memory.xpos
-var startpoint = ((cursor.followindex / 5) * 5)
+    listlength = array_length_1d(cursor.memory.xpos)
+var startpoint = (ceil((cursor.followindex / 5)) * 5)
 i = startpoint
 while (i < min((cursor.followindex + 60), listlength))
 {

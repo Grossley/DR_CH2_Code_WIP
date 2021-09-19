@@ -1,6 +1,5 @@
-var _temp_local_var_1;
 var travellength = traillength
-var _temp_local_var_1 = ((!gml_Script_scr_queen_buffercheck) ? 8421504 : 16777215)
+draw_set_color(((!gml_Script_scr_queen_buffercheck) ? c_gray : c_white))
 var checkx = x
 var checky = y
 draw_circle(x, y, 4, 0)

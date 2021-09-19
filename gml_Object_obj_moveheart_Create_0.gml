@@ -2,12 +2,12 @@ burst = 0
 shift = 1
 image_alpha = 0
 flytime = 8
-if 366
+if instance_exists(obj_heartmarker)
 {
     distx = obj_heartmarker.x
     disty = obj_heartmarker.y
 }
-else if (!869)
+else if (!instance_exists(obj_growtangle))
 {
     distx = (gml_Script___view_get(0, 0) + 310)
     disty = (gml_Script___view_get(1, 0) + 160)

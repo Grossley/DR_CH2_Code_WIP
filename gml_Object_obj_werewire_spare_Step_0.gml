@@ -22,5 +22,5 @@ if (con == 1)
         y += 8
     }
     if (timer == 60)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

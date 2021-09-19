@@ -1,8 +1,8 @@
 if (active == false)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (active == 2)
 {
-    if target
+    if instance_exists(target)
     {
         frame += framespeed
         if (frame >= (maxframe - 1))
@@ -14,19 +14,19 @@ if (active == 2)
         target.image_index = frame
     }
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (done == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (active == true)
 {
-    if target
+    if instance_exists(target)
     {
         target.sprite_index = sprite_index
         target.image_speed = 0
         target.image_index = 0
     }
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     active = 2
 }

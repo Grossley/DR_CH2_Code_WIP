@@ -16,12 +16,12 @@ if (dothis == 1)
                 treasure = gml_Script_instance_create(x, y, obj_saucer)
                 treasure.mode = 0
                 treasure.makecontent = 1
-                treasure.contentsprite = 1025
-                // WARNING: Popz'd an empty stack.
+                treasure.contentsprite = 1026
+                instance_destroy()
             }
         }
     }
-    if 127
+    if instance_exists(obj_marker)
     {
         with (obj_marker)
         {
@@ -36,12 +36,12 @@ if (dothis == 1)
 }
 if (complete == 1)
 {
-    if 260
+    if instance_exists(obj_saucer_ufo_bullet)
     {
         with (obj_saucer_ufo_bullet)
             active = false
     }
-    if 264
+    if instance_exists(obj_saucer_ufo)
     {
         with (obj_saucer_ufo)
         {

@@ -30,4 +30,4 @@ if (nofill == 0)
     draw_sprite_ext(spr_queen_wine_fill, 0, (x + lengthdir_x((9 * image_xscale), (image_angle + 270))), (y + lengthdir_y((9 * image_yscale), (image_angle + 270))), image_xscale, (image_yscale * fill_yscale_gradual), image_angle, c_lime, alpha2)
     draw_sprite_ext(spr_queen_wine_fill, 1, (x + lengthdir_x(((wine_bottom_yoffset + 8) * image_xscale), (image_angle + 270))), (y + lengthdir_y(((wine_bottom_yoffset + 8) * image_yscale), (image_angle + 270))), wine_bottom_xscale, wine_bottom_yscale, image_angle, c_lime, alpha2)
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

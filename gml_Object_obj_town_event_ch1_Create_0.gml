@@ -17,7 +17,7 @@ if (room == room_town_mid_ch1)
 }
 if (room == room_town_south_ch1)
 {
-    policewindow = gml_Script_scr_marker_ch1(292, 57, 3669)
+    policewindow = gml_Script_scr_marker_ch1(292, 57, 3670)
     var _temp_local_var_1 = policewindow
     depth = 940000
 }

@@ -28,7 +28,7 @@ if draw_screen
     }
     if (PHASE == 1)
     {
-        // WARNING: Popz'd an empty stack.
+        draw_self()
         draw_sprite(chsprite, chnum, 160, (y + chyoffset))
         PHASETIMER += 1
         if (PHASETIMER >= 30)
@@ -36,7 +36,7 @@ if draw_screen
             siner = 0
             factor = 0
             PHASE = 2
-            "DELTARUNE"
+            gml_Script_scr_windowcaption("DELTARUNE")
             global.tempflag[10] = 1
         }
     }
@@ -75,15 +75,15 @@ if draw_screen
         if (AA <= -0.5 && skipped == 0)
         {
             if (ingame == 1)
-                244
+                room_goto(room_ed)
             else
-                243
+                room_goto(PLACE_MENU)
         }
     }
 }
 if (ingame == 0)
 {
-    if (skipped == 0)
+    if (gml_Script_button1_p() && skipped == 0)
     {
         fade = gml_Script_instance_create(0, 0, obj_fadeout)
         var _temp_local_var_3 = fade

@@ -1,6 +1,6 @@
 if (myinteract == 3)
 {
-    if (mydialoguer == 0)
+    if (instance_exists(mydialoguer) == 0)
     {
         if (egcon == 1)
             egcon = 2
@@ -12,7 +12,7 @@ if (myinteract == 3)
             if (egtimer >= 60)
             {
                 sprite_index = spr_tem_sit_ch1
-                egg = gml_Script_scr_marker_ch1((x + 29), (y + 3), 3507)
+                egg = gml_Script_scr_marker_ch1((x + 29), (y + 3), 3508)
                 egg.depth = depth
                 egcon = 3
             }
@@ -33,5 +33,5 @@ if (egcon != 2)
         facing = dfacing
         image_speed = 0
     }
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_npcdir_ch1()
 }

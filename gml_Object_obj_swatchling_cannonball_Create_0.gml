@@ -1,10 +1,10 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 phase = 0
 trackplayer = 0
 bouncepower = 1
 if (trackplayer != 0)
     bouncepower = 1.25
-jumppeak = 50
+jumppeak = (gml_Script_cameray() + 50)
 nexttarget = ((obj_growtangle.x - ((obj_growtangle.maxxscale * 75) / 2)) + random((obj_growtangle.maxxscale * 75)))
 currentrotation = 0
 animTimer = 0

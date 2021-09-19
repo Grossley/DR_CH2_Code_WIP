@@ -1,5 +1,5 @@
 var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5;
-if 1347
+if instance_exists(obj_mainchara_ch1)
 {
     if (onioncount > 0)
         onioncount -= 1

@@ -73,7 +73,7 @@ if (type == 3)
             {
                 breakspotconsecutive = (1 + irandom(4))
                 vspeed = 0
-                var a = 1
+                var a = irandom(1)
                 breakspot1 = (1 + a)
                 breakspot2 = (2 + a)
                 breakspot3 = (3 + a)

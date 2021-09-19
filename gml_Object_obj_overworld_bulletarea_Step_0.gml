@@ -1,10 +1,10 @@
-if (80 && ignorebuffer < 0)
+if (instance_exists(obj_mainchara) && ignorebuffer < 0)
 {
     obj_mainchara.battlemode = 0
     cancel = 0
-    if (onlyActiveIfBulletsExist && (!253))
+    if (onlyActiveIfBulletsExist && (!instance_exists(obj_overworldbulletparent)))
         cancel = 1
-    if (onlyActiveIfSpecialObjectExists && (!specialObject))
+    if (onlyActiveIfSpecialObjectExists && (!gml_Script_i_ex(specialObject)))
         cancel = 1
     if (cancel == 0)
     {
@@ -20,7 +20,10 @@ if (80 && ignorebuffer < 0)
             if (keepHidden == 0)
             {
                 with (obj_overworld_bulletarea)
-                    showArea = 1
+                {
+                    if gml_Script_scr_debug()
+                        showArea = 1
+                }
             }
         }
     }

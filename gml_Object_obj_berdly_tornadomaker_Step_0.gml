@@ -1,5 +1,5 @@
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (difficulty != 3 && lerpintimer < 16)
 {
     y = lerp((ystart - 200), (ystart + 20), (lerpintimer / 15))
@@ -108,8 +108,8 @@ if (con == 2)
         }
         for (i = 0; i < 3; i++)
         {
-            hvariance = (2 * choose(-1, 1))
-            timevariance = 4
+            hvariance = (random(2) * choose(-1, 1))
+            timevariance = random(4)
             tornadol = gml_Script_instance_create(x, ((y - 20) + (i * 20)), obj_berdly_tornadomaker_tornado)
             tornadol.maxhspeed = 6
             tornadol.hspeed = (-12 + hvariance)

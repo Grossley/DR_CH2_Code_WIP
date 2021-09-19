@@ -50,4 +50,4 @@ if (image_xscale > 2)
 }
 siner += 1
 if (fadeout && image_alpha == 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -1,8 +1,8 @@
 image_angle = (direction - 90)
-if 628
+if instance_exists(obj_heart)
     idealdir = point_direction(x, y, (obj_heart.x + 10), (obj_heart.y + 10))
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 vspeed += lengthdir_y(homingfactor, idealdir)
 hspeed += lengthdir_x(homingfactor, idealdir)
 if (speed > 10)
@@ -12,6 +12,6 @@ timer++
 if (timer >= 12)
     maxhomingfactor = 0.3
 if (timer >= 60)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (global.turntimer < 3)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

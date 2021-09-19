@@ -28,7 +28,7 @@ commerce_dialog_open = 0
 if (os_type == os_ps4)
 {
     shop_text = (global.lang == "en" ? "\"PlayStation Store\"" : "「PlayStation Store」")
-    // WARNING: Popz'd an empty stack.
+    psn_load_modules()
 }
 check_undertale = (global.lang == "en" ? "Check Out UNDERTALE" : "「UNDERTALE」をチェック")
 start_dr = (global.lang == "en" ? "Start DELTARUNE" : "「DELTARUNE」をプレイ")

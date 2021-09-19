@@ -1,4 +1,4 @@
 global.entrance = 2
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-7
-// WARNING: Popz'd an empty stack.
+event_user(7)
+room_goto_previous()

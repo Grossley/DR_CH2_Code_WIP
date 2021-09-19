@@ -11,7 +11,7 @@ if (room == room_dark1_ch1)
 {
     sprite_index = spr_shine_ch1
     if (global.time > 14400 || global.flag[10] == 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_town_mid_ch1)
 {
@@ -33,14 +33,14 @@ if (room == room_cc_6f_ch1)
 if (room == room_cc_throneroom_ch1)
 {
     if (global.plot < 240)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     sprite_index = spr_smallchecker_front_ch1
 }
 if (room == room_field_maze_ch1)
 {
     sprite_index = spr_jigsawry_clobbered_ch1
     if (global.plot >= 150)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_forest_savepoint_relax_ch1)
 {
@@ -48,4 +48,4 @@ if (room == room_forest_savepoint_relax_ch1)
     sprite_index = spr_diamond_fan_ch1
 }
 if (depthcancel == false)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth_ch1()

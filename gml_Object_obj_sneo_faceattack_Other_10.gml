@@ -1,7 +1,7 @@
 if (id == instance_find(obj_sneo_faceattack, 0))
 {
     boss = true
-    if 694
+    if gml_Script_i_ex(694)
     {
         eyeshp = obj_spamton_neo_enemy.eyeshp
         nosehp = obj_spamton_neo_enemy.nosehp

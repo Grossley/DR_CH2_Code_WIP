@@ -51,6 +51,6 @@ if (global.flag[343] == 1)
     bubbles2.image_yscale = 2
     bubbles2.image_speed = 0.25
     bubbles2.depth = 890100
-    1157
+    gml_Script_safe_delete(1157)
     con = 99
 }

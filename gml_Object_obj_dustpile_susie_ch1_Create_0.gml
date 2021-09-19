@@ -6,7 +6,7 @@ alarm[0] = 2
 bust = 0
 con = 1
 if (global.plot >= 14)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     partysus = gml_Script_instance_create_ch1(500, 500, 1489)

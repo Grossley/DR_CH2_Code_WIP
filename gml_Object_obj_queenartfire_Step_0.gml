@@ -4,7 +4,7 @@ image_alpha -= fadespeed
 if (image_alpha < 0.6 && fadespeed > 0)
     active = false
 if (image_alpha <= 0 && fadespeed > 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (hit == 1)
 {
     active = false

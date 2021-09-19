@@ -1,11 +1,11 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (secondnumber > 1)
 {
-    16777215
-    global.damagefontgold
-    image_alpha
+    draw_set_color(c_white)
+    draw_set_font(global.damagefontgold)
+    draw_set_alpha(image_alpha)
     draw_text((x - 70), (y + 35), firstnumber)
     draw_text((x - 30), (y + 35), secondnumber)
     draw_sprite(spr_numbersfontbig_gold, 13, (x - 50), (y + 35))
-    1
+    draw_set_alpha(1)
 }

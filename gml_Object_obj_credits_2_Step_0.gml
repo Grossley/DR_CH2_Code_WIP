@@ -1,21 +1,21 @@
-if 82
+if keyboard_check_pressed(ord("R"))
 {
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
+    room_restart()
 }
-if 80
+if keyboard_check_pressed(ord("P"))
 {
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
+    game_restart()
 }
 if (timer == 0)
 {
-    // WARNING: Popz'd an empty stack.
-    song0 = "ch2_credits.ogg"
-    song1 = song0
+    gml_Script_snd_free_all()
+    song0 = gml_Script_snd_init("ch2_credits.ogg")
+    song1 = gml_Script_mus_play(song0)
     line[0] = gml_Script_stringsetloc("DELTARUNE", "obj_credits_slash_Step_0_gml_21_0")
     line[1] = gml_Script_stringsetloc("Chapter 2", "obj_credits_slash_Step_0_gml_22_0")
-    line[2] = " "
+    line[2] = gml_Script_stringset(" ")
     line[3] = gml_Script_stringsetloc("by Toby Fox", "obj_credits_slash_Step_0_gml_24_0")
 }
 timer++
@@ -23,12 +23,12 @@ if (timer == 100)
 {
     line[0] = gml_Script_stringsetloc("-Main Artist-", "obj_credits_2_slash_Step_0_gml_27_0")
     line[1] = gml_Script_stringsetloc("-Main Animator-", "obj_credits_2_slash_Step_0_gml_28_0")
-    line[2] = "Temmie Chang"
-    line[3] = " "
-    line[4] = " "
-    line[5] = " "
-    line[6] = " "
-    line[7] = " "
+    line[2] = gml_Script_stringset("Temmie Chang")
+    line[3] = gml_Script_stringset(" ")
+    line[4] = gml_Script_stringset(" ")
+    line[5] = gml_Script_stringset(" ")
+    line[6] = gml_Script_stringset(" ")
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = menugray
     linecolor[2] = c_white
@@ -36,13 +36,13 @@ if (timer == 100)
 if (timer == 201)
 {
     line[0] = gml_Script_stringsetloc("-Main Team-", "obj_credits_2_slash_Step_0_gml_42_0")
-    line[1] = "Sarah O'Donnell"
-    line[2] = "Taxiderby"
-    line[3] = "Fred Wood"
-    line[4] = "Jean Canellas"
-    line[5] = "Xan Wetherall"
-    line[6] = " "
-    line[7] = " "
+    line[1] = gml_Script_stringset("Sarah O'Donnell")
+    line[2] = gml_Script_stringset("Taxiderby")
+    line[3] = gml_Script_stringset("Fred Wood")
+    line[4] = gml_Script_stringset("Jean Canellas")
+    line[5] = gml_Script_stringset("Xan Wetherall")
+    line[6] = gml_Script_stringset(" ")
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -57,12 +57,12 @@ if (timer == 302)
     creditalpha = 1
     line[0] = gml_Script_stringsetloc("-BG Concept Art-", "obj_credits_2_slash_Step_0_gml_68_0")
     line[1] = gml_Script_stringsetloc("(Cyber Field, City, Mansion)", "obj_credits_2_slash_Step_0_gml_69_0")
-    line[2] = "Gigi DG"
-    line[3] = " "
+    line[2] = gml_Script_stringset("Gigi DG")
+    line[3] = gml_Script_stringset(" ")
     line[4] = gml_Script_stringsetloc("-Dark World Costume Design-", "obj_credits_2_slash_Step_0_gml_72_0")
     line[5] = gml_Script_stringsetloc("Gigi DG [Kris, Susie]", "obj_credits_2_slash_Step_0_gml_73_0")
     line[6] = gml_Script_stringsetloc("Tcheska Lynn B (chess) [Berdly]", "obj_credits_2_slash_Step_0_gml_74_0")
-    line[7] = " "
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -77,10 +77,10 @@ if (timer == 403)
     line[0] = gml_Script_stringsetloc("-Guest Character Design-", "obj_credits_2_slash_Step_0_gml_88_0")
     line[1] = gml_Script_stringsetloc("(Lancer, Rudinn, Hathy)", "obj_credits_2_slash_Step_0_gml_89_0")
     line[2] = gml_Script_stringsetloc("(Clover, King, Jevil)", "obj_credits_2_slash_Step_0_gml_90_0")
-    line[3] = "Kanotynes"
+    line[3] = gml_Script_stringset("Kanotynes")
     line[4] = gml_Script_stringsetloc(" ", "obj_credits_2_slash_Step_0_gml_92_0")
     line[5] = gml_Script_stringsetloc("-Singing This Song-", "obj_credits_2_slash_Step_0_gml_93_0")
-    line[6] = "Laura Shigihara"
+    line[6] = gml_Script_stringset("Laura Shigihara")
     line[7] = gml_Script_stringsetloc(" ", "obj_credits_2_slash_Step_0_gml_95_0")
     linecolor[0] = menugray
     linecolor[1] = c_white
@@ -96,12 +96,12 @@ if (timer == 503)
     textalpha = 1
     line[0] = gml_Script_stringsetloc("-Guest Character Design-", "obj_credits_2_slash_Step_0_gml_109_0")
     line[1] = gml_Script_stringsetloc("(Poppup, Ambyu-Lance, Hacker, etc.)", "obj_credits_2_slash_Step_0_gml_110_0")
-    line[2] = "Samanthuel Gillson (splendidland)"
+    line[2] = gml_Script_stringset("Samanthuel Gillson (splendidland)")
     line[3] = gml_Script_stringsetloc(" ", "obj_credits_2_slash_Step_0_gml_112_0")
     line[4] = gml_Script_stringsetloc("-Guest Character Design-", "obj_credits_2_slash_Step_0_gml_113_0")
     line[5] = gml_Script_stringsetloc("(Sweet, Cap'n, K_K)", "obj_credits_2_slash_Step_0_gml_114_0")
     line[6] = gml_Script_stringsetloc("(Tasque Manager)", "obj_credits_2_slash_Step_0_gml_115_0")
-    line[7] = "NELNAL"
+    line[7] = gml_Script_stringset("NELNAL")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -115,13 +115,13 @@ if (timer == 604)
 {
     creditalpha = 1
     line[0] = gml_Script_stringsetloc("-Pixel Art Assistance-", "obj_credits_2_slash_Step_0_gml_131_0")
-    line[1] = "Shawn (puppiesandanime)"
-    line[2] = "Kenju"
-    line[3] = "Tcheska Lynn B (chess)"
-    line[4] = "Satoshi Maruyama"
-    line[5] = " "
+    line[1] = gml_Script_stringset("Shawn (puppiesandanime)")
+    line[2] = gml_Script_stringset("Kenju")
+    line[3] = gml_Script_stringset("Tcheska Lynn B (chess)")
+    line[4] = gml_Script_stringset("Satoshi Maruyama")
+    line[5] = gml_Script_stringset(" ")
     line[6] = gml_Script_stringsetloc("-Development Tools (Cool)-", "obj_credits_2_slash_Step_0_gml_137_0")
-    line[7] = "Juju Adams"
+    line[7] = gml_Script_stringset("Juju Adams")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -134,13 +134,13 @@ if (timer == 604)
 if (timer == 705)
 {
     line[0] = gml_Script_stringsetloc("-Programming Assistance-", "obj_credits_2_slash_Step_0_gml_151_0")
-    line[1] = "Shaun Spalding"
-    line[2] = "Lars Korendijk"
-    line[3] = " "
+    line[1] = gml_Script_stringset("Shaun Spalding")
+    line[2] = gml_Script_stringset("Lars Korendijk")
+    line[3] = gml_Script_stringset(" ")
     line[4] = gml_Script_stringsetloc("-Cutscene Assistance-", "obj_credits_2_slash_Step_0_gml_155_0")
     line[5] = gml_Script_stringsetloc("Tcheska Lynn B (chess)", "obj_credits_2_slash_Step_0_gml_156_0")
     line[6] = gml_Script_stringsetloc("Chelsea Saunders (pixelatedcrown)", "obj_credits_2_slash_Step_0_gml_157_0")
-    line[7] = " "
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -154,19 +154,19 @@ if (timer == 805)
 {
     creditalpha = 1
     line[0] = gml_Script_stringsetloc("-Music Assistance-", "obj_credits_2_slash_Step_0_gml_171_0")
-    line[1] = "Lena Raine"
-    line[2] = "Marcy Nabors"
-    line[3] = " "
+    line[1] = gml_Script_stringset("Lena Raine")
+    line[2] = gml_Script_stringset("Marcy Nabors")
+    line[3] = gml_Script_stringset(" ")
     line[4] = gml_Script_stringsetloc("-UT Character Design-", "obj_credits_2_slash_Step_0_gml_175_0")
     line[5] = gml_Script_stringsetloc("Betty Kwong (Temmie)", "obj_credits_2_slash_Step_0_gml_176_0")
     if (global.lang == "en")
     {
-        line[6] = "Magnolia Porter (Snowdrake, Monster Kid)"
-        line[7] = " "
+        line[6] = gml_Script_stringset("Magnolia Porter (Snowdrake, Monster Kid)")
+        line[7] = gml_Script_stringset(" ")
     }
     else
     {
-        line[6] = "Magnolia Porter"
+        line[6] = gml_Script_stringset("Magnolia Porter")
         line[7] = gml_Script_stringsetloc("(オワライチョウ／モンスターの子)", "obj_credits_2_slash_Step_0_gml_177_0")
     }
     linecolor[0] = menugray
@@ -182,12 +182,12 @@ if (timer == 906)
 {
     line[0] = gml_Script_stringsetloc("-Japanese Localization-", "obj_credits_2_slash_Step_0_gml_191_0")
     line[1] = gml_Script_stringsetloc("8-4 Ltd.", "obj_credits_2_slash_Step_0_gml_192_0")
-    line[2] = " "
+    line[2] = gml_Script_stringset(" ")
     line[3] = gml_Script_stringsetloc("-Translator-", "obj_credits_2_slash_Step_0_gml_194_0")
-    line[4] = "Keiko Fukuichi"
-    line[5] = " "
-    line[6] = " "
-    line[7] = " "
+    line[4] = gml_Script_stringset("Keiko Fukuichi")
+    line[5] = gml_Script_stringset(" ")
+    line[6] = gml_Script_stringset(" ")
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -200,13 +200,13 @@ if (timer == 906)
 if (timer == 1007)
 {
     line[0] = gml_Script_stringsetloc("-Localization Producers-", "obj_credits_2_slash_Step_0_gml_211_0")
-    line[1] = "Graeme Howard"
-    line[2] = "John Ricciardi"
-    line[3] = " "
+    line[1] = gml_Script_stringset("Graeme Howard")
+    line[2] = gml_Script_stringset("John Ricciardi")
+    line[3] = gml_Script_stringset(" ")
     line[4] = gml_Script_stringsetloc("-Localization Support-", "obj_credits_2_slash_Step_0_gml_215_0")
-    line[5] = "Tina Carter"
-    line[6] = "Yutaka Ohbuchi"
-    line[7] = "Sami Ragone"
+    line[5] = gml_Script_stringset("Tina Carter")
+    line[6] = gml_Script_stringset("Yutaka Ohbuchi")
+    line[7] = gml_Script_stringset("Sami Ragone")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -219,13 +219,13 @@ if (timer == 1007)
 if (timer == 1108)
 {
     line[0] = gml_Script_stringsetloc("-Platform Programming-", "obj_credits_2_slash_Step_0_gml_231_0")
-    line[1] = "Sarah O'Donnell"
-    line[2] = " "
+    line[1] = gml_Script_stringset("Sarah O'Donnell")
+    line[2] = gml_Script_stringset(" ")
     line[3] = gml_Script_stringsetloc("-Programming Support-", "obj_credits_2_slash_Step_0_gml_234_0")
-    line[4] = "Gregg Tavares"
-    line[5] = " "
+    line[4] = gml_Script_stringset("Gregg Tavares")
+    line[5] = gml_Script_stringset(" ")
     line[6] = gml_Script_stringsetloc("-Japanese Graphics-", "obj_credits_2_slash_Step_0_gml_236_0")
-    line[7] = "256graph"
+    line[7] = gml_Script_stringset("256graph")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -243,8 +243,8 @@ if (timer == 1208)
     line[3] = gml_Script_stringsetloc("Tomoyoshi Yamashita [QA Lead]", "obj_credits_2_slash_Step_0_gml_254_0")
     line[4] = gml_Script_stringsetloc("Ryohei Kishimoto [QA Assistant Lead]", "obj_credits_2_slash_Step_0_gml_255_0")
     line[5] = gml_Script_stringsetloc("Shinji Yasue [Sales Dept]", "obj_credits_2_slash_Step_0_gml_256_0")
-    line[6] = " "
-    line[7] = " "
+    line[6] = gml_Script_stringset(" ")
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -257,13 +257,13 @@ if (timer == 1208)
 if (timer == 1309)
 {
     line[0] = gml_Script_stringsetloc("-Super Testers-", "obj_credits_2_slash_Step_0_gml_271_0")
-    line[1] = "AlexMdle"
-    line[2] = "PureQuestion"
-    line[3] = " "
+    line[1] = gml_Script_stringset("AlexMdle")
+    line[2] = gml_Script_stringset("PureQuestion")
+    line[3] = gml_Script_stringset(" ")
     line[4] = gml_Script_stringsetloc("-Website-", "obj_credits_2_slash_Step_0_gml_275_0")
-    line[5] = "Brian Coia"
-    line[6] = " "
-    line[7] = " "
+    line[5] = gml_Script_stringset("Brian Coia")
+    line[6] = gml_Script_stringset(" ")
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -275,14 +275,14 @@ if (timer == 1309)
 }
 if (timer == 1410)
 {
-    line[0] = " "
-    line[1] = " "
-    line[2] = " "
-    line[3] = " "
-    line[4] = " "
-    line[5] = " "
-    line[6] = " "
-    line[7] = " "
+    line[0] = gml_Script_stringset(" ")
+    line[1] = gml_Script_stringset(" ")
+    line[2] = gml_Script_stringset(" ")
+    line[3] = gml_Script_stringset(" ")
+    line[4] = gml_Script_stringset(" ")
+    line[5] = gml_Script_stringset(" ")
+    line[6] = gml_Script_stringset(" ")
+    line[7] = gml_Script_stringset(" ")
     linecolor[0] = c_white
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -297,13 +297,13 @@ if (timer == 1511)
 {
     drawtesters = 0
     line[0] = gml_Script_stringsetloc("-Special Thanks-", "obj_credits_2_slash_Step_0_gml_314_0")
-    line[1] = "Hiroko Minamoto"
-    line[2] = "Fontworks Inc."
-    line[3] = "Yutaka Sato (Happy Ruika)"
+    line[1] = gml_Script_stringset("Hiroko Minamoto")
+    line[2] = gml_Script_stringset("Fontworks Inc.")
+    line[3] = gml_Script_stringset("Yutaka Sato (Happy Ruika)")
     line[4] = gml_Script_stringsetloc("All 8-4 & Fangamer Staff", "obj_credits_2_slash_Step_0_gml_318_0")
-    line[5] = "Claire & Andrew"
-    line[6] = "Brian Lee"
-    line[7] = "YoYo Games"
+    line[5] = gml_Script_stringset("Claire & Andrew")
+    line[6] = gml_Script_stringset("Brian Lee")
+    line[7] = gml_Script_stringset("YoYo Games")
     linecolor[0] = menugray
     linecolor[1] = c_white
     linecolor[2] = c_white
@@ -337,7 +337,7 @@ if (timer >= 1801)
 {
     creditalpha -= 0.05
     if (creditalpha < -0.1)
-        // WARNING: Popz'd an empty stack.
+        game_restart()
 }
 if (timer > 1744 && timer < 1910)
     creditalpha += 0.02
@@ -345,5 +345,5 @@ if (timer > 1910)
 {
     creditalpha -= 0.02
     if (creditalpha <= -0.5)
-        // WARNING: Popz'd an empty stack.
+        game_restart()
 }

@@ -1,6 +1,6 @@
 if (extflag == "goal")
 {
-    if (place_meeting(x, y, obj_mainchara) && 1257 && con == 0)
+    if (place_meeting(x, y, obj_mainchara) && instance_exists(obj_balancepot) && con == 0)
     {
         con = 1
         global.flag[385] = 2

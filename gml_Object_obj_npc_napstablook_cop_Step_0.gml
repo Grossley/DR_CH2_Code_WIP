@@ -1,11 +1,8 @@
-var _temp_local_var_1;
 if (con == -1)
-    // WARNING: Popz'd an empty stack.
-if (con == 0)
+    event_inherited()
+if (con == 0 && (!gml_Script_d_ex()))
 {
+    con = 50
+    with (obj_npc_police)
+        napstacon = 10
 }
-else
-    var _temp_local_var_1 = 0
-con = 50
-with (obj_npc_police)
-    napstacon = 10

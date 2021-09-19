@@ -1,1 +1,1 @@
-global.currentsong[0]
+gml_Script_snd_free(global.currentsong[0])

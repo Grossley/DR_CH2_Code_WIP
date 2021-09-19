@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (fresh == 3 && (global.flag[916] != 0 || global.flag[915] == 0))
 {
-    mysolid
-    // WARNING: Popz'd an empty stack.
+    gml_Script_safe_delete(mysolid)
+    instance_destroy()
 }

@@ -9,7 +9,7 @@ image_speed = 0.2
 if (global.darkzone == true)
     image_speed = 0.1
 global.msg[0] = gml_Script_stringsetloc("* Is that a cut on your face^1, or part of your eye?/%", "obj_npc_facing_slash_Other_10_gml_12_0")
-global.msg[0] = "* [NO TEXT] (obj_npc_facing)/%"
+global.msg[0] = gml_Script_stringset("* [NO TEXT] (obj_npc_facing)/%")
 if (room == room_alphysclass)
 {
     if (utsprite == spr_noelle_walk_up_lw)
@@ -17,7 +17,7 @@ if (room == room_alphysclass)
         global.msc = 100
         if (talked > 0)
             global.msc = 102
-        global.msc
+        gml_Script_scr_text(global.msc)
         global.fe = 0
         global.fc = 3
         global.typer = 12
@@ -153,12 +153,12 @@ if (room == room_alphysclass)
         }
         if (global.chapter == 2)
         {
-            "alphys"
+            gml_Script_scr_speaker("alphys")
             global.msg[0] = gml_Script_stringsetloc("\\E0* Kris^1, get a good sleep tonight^1, okay?/%", "obj_npc_facing_slash_Other_10_gml_208_0")
             if (talked == 0)
             {
                 global.msc = 1000
-                global.msc
+                gml_Script_scr_text(global.msc)
             }
         }
     }
@@ -205,7 +205,7 @@ if (room == room_library)
             global.msg[0] = gml_Script_stringsetloc("* Kris^1! What'sup!/", "obj_npc_facing_slash_Other_10_gml_269_0")
             global.msg[1] = gml_Script_stringsetloc("* Catti's working^1, so I'm starting^1, on our Project!/", "obj_npc_facing_slash_Other_10_gml_270_0")
             global.msg[2] = gml_Script_stringsetloc("* I've already^1, copied a bunch of pictures./", "obj_npc_facing_slash_Other_10_gml_271_0")
-            3
+            gml_Script_scr_noface(3)
             global.msg[4] = gml_Script_stringsetloc("* (It's the same picture of a soccer ball 73 times.)/%", "obj_npc_facing_slash_Other_10_gml_273_0")
             if (talked >= 1)
                 global.msg[0] = gml_Script_stringsetloc("* You could say I'm having a Ball^1!&* Hah haha!/%", "obj_npc_facing_slash_Other_10_gml_277_0")
@@ -247,7 +247,7 @@ if (room == room_alphysalley)
     global.fe = 0
     global.typer = 20
     global.msc = 285
-    global.msc
+    gml_Script_scr_text(global.msc)
 }
 if (room == room_town_south)
 {
@@ -255,7 +255,7 @@ if (room == room_town_south)
     {
         global.typer = 17
         global.msc = 335
-        global.msc
+        gml_Script_scr_text(global.msc)
     }
 }
 if (room == room_town_mid)
@@ -268,7 +268,7 @@ if (room == room_town_mid)
     global.msc = 370
     if (global.flag[273] >= 1)
         global.msc = 371
-    global.msc
+    gml_Script_scr_text(global.msc)
     with (obj_town_event)
         con = 70
 }
@@ -280,18 +280,18 @@ if (room == room_town_north)
         global.typer = 12
         global.fc = 3
         global.fe = 0
-        global.msc
+        gml_Script_scr_text(global.msc)
     }
 }
 if (room == room_dw_castle_area_2)
 {
-    "ralsei"
+    gml_Script_scr_speaker("ralsei")
     gml_Script_msgsetloc(0, "\\E2* (Kris^1, go to the old classroom and bring everything back here.)/", "obj_npc_facing_slash_Other_10_gml_376_0")
     gml_Script_msgnextloc("\\E0* (It's where you returned to the Light World last time.)/", "obj_npc_facing_slash_Other_10_gml_377_0")
     gml_Script_msgnextloc("\\E2* (Head EAST after you exit the Dark World.)/%", "obj_npc_facing_slash_Other_10_gml_378_0")
     if (global.flag[300] == 1)
     {
-        "ralsei"
+        gml_Script_scr_speaker("ralsei")
         gml_Script_msgsetloc(0, "\\E1* .../", "obj_npc_facing_slash_Other_10_gml_383_0")
         gml_Script_msgnextloc("\\EJ* Umm^1, sorry^1! Just thinking.../", "obj_npc_facing_slash_Other_10_gml_384_0")
         gml_Script_msgnextloc("\\E2* Perhaps we don't need that dummy anymore!/", "obj_npc_facing_slash_Other_10_gml_385_0")
@@ -304,14 +304,14 @@ if (room == room_dw_cyber_queen_boxing)
     {
         if (talked == 0)
         {
-            "susie"
+            gml_Script_scr_speaker("susie")
             gml_Script_msgsetloc(0, "\\E2* We got this^1, Kris. We're the good guys^1, right?/", "obj_npc_facing_slash_Other_10_gml_398_0")
             gml_Script_msgnextloc("\\E5* All we have to do is figure out some way to cheat.../%", "obj_npc_facing_slash_Other_10_gml_399_0")
         }
         else
         {
             gml_Script_scr_smallface(0, "susie", 17, "mid", "bottom", gml_Script_stringsetloc("THEN WHY DOES IT TAKE QUARTERS!?", "obj_npc_facing_slash_Other_10_gml_402_0"))
-            "susie"
+            gml_Script_scr_speaker("susie")
             gml_Script_msgsetloc(0, "\\E2* ..^1. Got it^1! While she's distracted^1,/", "obj_npc_facing_slash_Other_10_gml_405_0")
             gml_Script_msgnextloc("\\E5* I'll reach in the bottom and try to steal a free cola!/", "obj_npc_facing_slash_Other_10_gml_406_0")
             gml_Script_scr_anyface_next("queen", "1")
@@ -323,11 +323,11 @@ if (room == room_dw_cyber_queen_boxing)
         if (talked == 0)
         {
             global.msc = 1177
-            global.msc
+            gml_Script_scr_text(global.msc)
         }
         else
         {
-            "ralsei"
+            gml_Script_scr_speaker("ralsei")
             gml_Script_msgsetloc(0, "\\EH* Do your best^1, Kris^1! I'll be cheering you with magic pom-poms!/%", "obj_npc_facing_slash_Other_10_gml_420_0")
         }
     }
@@ -338,7 +338,7 @@ if (room == room_dw_cyber_queen_boxing)
             gml_Script_scr_smallface(0, "queen", 12, "left", "top", gml_Script_stringsetloc("Also, Happy Birthday Susie", "obj_npc_facing_slash_Other_10_gml_427_0"))
             gml_Script_scr_smallface(1, "ralsei", 17, 150, "mid", gml_Script_stringsetloc("Happy Birthday!", "obj_npc_facing_slash_Other_10_gml_428_0"))
             gml_Script_scr_smallface(2, "susie", 17, 250, "bottom", gml_Script_stringsetloc("IT'S NOT MY BIRTHDAY!!!", "obj_npc_facing_slash_Other_10_gml_429_0"))
-            "queen"
+            gml_Script_scr_speaker("queen")
             gml_Script_msgsetloc(0, "\\E1* Oh Kris Congratulations On: Losing Horribly/", "obj_npc_facing_slash_Other_10_gml_432_0")
             gml_Script_msgnextloc("\\ED* I Advanced My Internal Clock To When I've Already Won/", "obj_npc_facing_slash_Other_10_gml_433_0")
             gml_Script_scr_anyface_next("no_name", 0)
@@ -346,7 +346,7 @@ if (room == room_dw_cyber_queen_boxing)
         }
         else
         {
-            "queen"
+            gml_Script_scr_speaker("queen")
             gml_Script_msgsetloc(0, "\\E1* Did You Notice You Have Been Served/", "obj_npc_facing_slash_Other_10_gml_439_0")
             gml_Script_msgnextloc("\\ED* Your Giant Arcade Machine Is Going To Get Cold/%", "obj_npc_facing_slash_Other_10_gml_440_0")
         }
@@ -354,9 +354,9 @@ if (room == room_dw_cyber_queen_boxing)
 }
 if (room == room_dw_city_mice)
 {
-    if 1159
+    if instance_exists(obj_controller_dw_city_mice)
     {
-        "noelle"
+        gml_Script_scr_speaker("noelle")
         scarecount = 0
         scarecount = obj_controller_dw_city_mice.scaredAgainCount
         if (talked > 0)
@@ -379,19 +379,19 @@ if (room == room_dw_city_mice)
 }
 if (room == room_dw_city_mice2)
 {
-    if 1161
+    if instance_exists(obj_controller_city_mice2)
     {
         scarecount = 0
-        if 1161
+        if instance_exists(obj_controller_city_mice2)
             scarecount = obj_controller_city_mice2.scarecount
         if (global.flag[415] == 0)
         {
             global.msc = 1183
-            global.msc
+            gml_Script_scr_text(global.msc)
         }
         else
         {
-            "noelle"
+            gml_Script_scr_speaker("noelle")
             gml_Script_msgsetloc(0, "\\E2* (Y'know^1, I'm pretty sure I know how to solve this.)/", "obj_npc_facing_slash_Other_10_gml_489_0")
             gml_Script_msgnextloc("\\E3* (Just^1, I d-don't think I can do it myself...)/%", "obj_npc_facing_slash_Other_10_gml_490_0")
         }
@@ -401,7 +401,7 @@ if (room == room_dw_ralsei_castle_2f)
 {
     if (talked == 0)
     {
-        "queen"
+        gml_Script_scr_speaker("queen")
         gml_Script_msgsetloc(0, "\\E1* Ralsei Will Soon Setup.EXE My Room For Me Upstairs/", "obj_npc_facing_slash_Other_10_gml_500_0")
         gml_Script_msgnextloc("\\EA* Do Not Worry/", "obj_npc_facing_slash_Other_10_gml_501_0")
         gml_Script_msgnextloc("\\EP* I Have A Long Spreadsheet Of Demands Ready Ha Ha/", "obj_npc_facing_slash_Other_10_gml_502_0")
@@ -414,7 +414,7 @@ if (room == room_dw_ralsei_castle_2f)
     }
     else
     {
-        "queen"
+        gml_Script_scr_speaker("queen")
         gml_Script_msgsetloc(0, "\\E1* Kris^1, Do Give Noelle My Regards/", "obj_npc_facing_slash_Other_10_gml_512_0")
         gml_Script_msgnextloc("\\EB* Any Leftover Regards You Can Give To Berdly/%", "obj_npc_facing_slash_Other_10_gml_513_0")
     }

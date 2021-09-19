@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 alarm[0] = 30
 image_speed = 0
 image_xscale = 0.5

@@ -1,3 +1,3 @@
 global.monsterx[myself] = (x + (sprite_width / 2))
 global.monstery[myself] = (y + (sprite_height / 2))
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_monstersetup_ch1()

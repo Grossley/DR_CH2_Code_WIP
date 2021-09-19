@@ -3,7 +3,7 @@ if (bodymode == 0)
 {
     if (state == 3)
     {
-        0.5
+        gml_Script_scr_enemyhurt_tired_after_damage(0.5)
         hurttimer -= 1
         if (hurttimer < 0 && global.monster[myself] > false)
             state = 0
@@ -72,7 +72,7 @@ if (bodymode == 0)
             y = remy
         }
     }
-    0.16666666666666666
+    gml_Script_scr_enemy_drawidle_generic(0.16666666666666666)
     if (becomeflash == false)
         flash = false
     becomeflash = false
@@ -131,9 +131,9 @@ if (bodymode == 1)
         draw_sprite_ext(spr_spamton_head_grow, (bodytimer / 3), x, y, image_xscale, image_xscale, image_angle, c_white, 1)
     }
 }
-if headpiece
+if gml_Script_scr_debug()
 {
-    if 66
+    if keyboard_check_pressed(ord("B"))
     {
         if (bodymode == 0)
             bodymode = 1
@@ -142,31 +142,31 @@ if headpiece
             bodymode = 0
             headpiece.x = -999
         }
-        "Spamton body mode changed"
+        gml_Script_scr_debug_print("Spamton body mode changed")
     }
-    if 78
+    if keyboard_check_pressed(ord("N"))
     {
         bodyadvance = 1
-        "Toggled Spamton's DISGUISTING mouth"
+        gml_Script_scr_debug_print("Toggled Spamton's DISGUISTING mouth")
     }
-    if 49
+    if keyboard_check_pressed(ord("1"))
     {
         bulletoverride = 0
-        "Attack override set to 0 (1)"
+        gml_Script_scr_debug_print("Attack override set to 0 (1)")
     }
-    if 50
+    if keyboard_check_pressed(ord("2"))
     {
         bulletoverride = 1
-        "Attack override set to 1 (2)"
+        gml_Script_scr_debug_print("Attack override set to 1 (2)")
     }
-    if 51
+    if keyboard_check_pressed(ord("3"))
     {
         bulletoverride = 2
-        "Attack override set to 2 (3)"
+        gml_Script_scr_debug_print("Attack override set to 2 (3)")
     }
-    if 48
+    if keyboard_check_pressed(ord("0"))
     {
         bulletoverride = -1
-        "Attack override disabled"
+        gml_Script_scr_debug_print("Attack override disabled")
     }
 }

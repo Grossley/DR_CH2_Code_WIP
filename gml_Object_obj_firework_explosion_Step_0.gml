@@ -19,9 +19,9 @@ for (var i = 0; i < pixels; i++)
         pixelexpandprog[i] += pixelexpandspd[i]
         if (pixelexpandprog[i] >= 1)
             pixelexpandprog[i] = 1
-        var _expand = (1.5707963267948966 * pixelexpandprog[i])
+        var _expand = sin((1.5707963267948966 * pixelexpandprog[i]))
         pixelexpand_h[i] = _expand
-        pixelexpand_v[i] = (1.0995574287564276 * _expand)
+        pixelexpand_v[i] = sin((1.0995574287564276 * _expand))
     }
     else
     {

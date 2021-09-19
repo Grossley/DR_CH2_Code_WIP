@@ -1,5 +1,5 @@
 if (con == -1)
-    // WARNING: Popz'd an empty stack.
+    event_inherited()
 else
 {
     global.typer = 5
@@ -8,7 +8,7 @@ else
     global.interact = 1
     image_speed = 0.2
     global.msc = 1043
-    global.msc
+    gml_Script_scr_text(global.msc)
     remanimspeed = image_speed
     myinteract = 3
     mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)

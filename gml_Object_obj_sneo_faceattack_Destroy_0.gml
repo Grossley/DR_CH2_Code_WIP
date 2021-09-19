@@ -1,6 +1,6 @@
 if (boss == true)
 {
-    if (obj_spamton_neo_enemy.eyeshp <= 0 && obj_spamton_neo_enemy.nosehp <= 0 && obj_spamton_neo_enemy.mouthhp <= 0 && 694)
+    if (obj_spamton_neo_enemy.eyeshp <= 0 && obj_spamton_neo_enemy.nosehp <= 0 && obj_spamton_neo_enemy.mouthhp <= 0 && gml_Script_i_ex(694))
     {
         with (obj_spamton_neo_enemy)
         {
@@ -12,4 +12,4 @@ if (boss == true)
     }
 }
 with (obj_sneo_faceattack_target)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

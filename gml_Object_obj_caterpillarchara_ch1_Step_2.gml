@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 depth += 5
 nowx = x
 nowy = y
@@ -29,9 +29,9 @@ if (moved == 1)
         y = (remy[target] - 16)
     else
         y = (remy[target] - 12)
-    if ((remx[(target + 1)] - remx[target]) > 4)
+    if (abs((remx[(target + 1)] - remx[target])) > 4)
         runmove = true
-    if ((remy[(target + 1)] - remy[target]) > 4)
+    if (abs((remy[(target + 1)] - remy[target])) > 4)
         runmove = true
     dir = facing[target]
 }
@@ -85,7 +85,7 @@ if (dsprite == spr_ralseid_ch1 && global.interact == 0 && fun == false)
 {
     distfrommcx = (obj_mainchara_ch1.x - (x + 4))
     distfrommcy = (obj_mainchara_ch1.y - (y + 12))
-    if (distfrommcy <= 10 && distfrommcx <= 16)
+    if (abs(distfrommcy) <= 10 && abs(distfrommcx) <= 16)
     {
         if (distfrommcx <= 0 && global.facing == 1)
             blushtimer += 1

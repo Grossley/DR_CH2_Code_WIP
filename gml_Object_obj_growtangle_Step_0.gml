@@ -4,19 +4,19 @@ if (!init)
     {
         customBox = 1
         if ((maxxscale % 1) != 0)
-            maxxscale = ((maxxscale * 37.5) / 37.5)
+            maxxscale = (round((maxxscale * 37.5)) / 37.5)
         if ((maxyscale % 1) != 0)
-            maxyscale = ((maxyscale * 37.5) / 37.5)
+            maxyscale = (round((maxyscale * 37.5)) / 37.5)
         var _tempxscale = (maxxscale / 2)
         var _tempyscale = (maxyscale / 2)
         var surf = surface_create((75 * _tempxscale), (75 * _tempyscale))
-        surf
+        surface_set_target(surf)
         draw_clear_alpha(c_black, 0)
         draw_sprite_ext(spr_battlebg_stretch, 0, (37 * _tempxscale), (37 * _tempyscale), _tempxscale, _tempyscale, 0, c_white, 1)
-        spr_custom_box = sprite_create_from_surface(surf, 0, 0, (75 * _tempxscale), (75 * _tempyscale), false, false, round((37.5 * _tempxscale)), (37.5 * _tempyscale))
+        spr_custom_box = sprite_create_from_surface(surf, 0, 0, (75 * _tempxscale), (75 * _tempyscale), false, false, round((37.5 * _tempxscale)), round((37.5 * _tempyscale)))
         sprite_index = spr_battlebg_stretch_hitbox
-        // WARNING: Popz'd an empty stack.
-        surf
+        surface_reset_target()
+        surface_free(surf)
     }
     init = 1
 }
@@ -53,5 +53,5 @@ if (growth == 1)
         image_angle = target_angle
     }
     if (timer <= 0 && growcon == 3)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

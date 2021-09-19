@@ -1,5 +1,5 @@
 var _temp_local_var_1, _temp_local_var_10, _temp_local_var_11, _temp_local_var_13;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 if (walkdir == "down" ? (y.room_height + 30) : 0)
     endme = 1
 if (walkdir == "right" ? (x.room_width + (sprite_width * 2)) : 0)
@@ -8,7 +8,7 @@ if (walkdir == "left" && x <= (0 - (sprite_width * 2)))
     endme = 1
 if place_meeting(x, y, obj_solidenemy_2)
     endme = 1
-if ((global.interact == 0 || 895) && active == true)
+if ((global.interact == 0 || gml_Script_i_ex(895)) && active == true)
 {
     if (alwayswalking == 1)
         walking = 1
@@ -48,22 +48,22 @@ if (touchcon == 1)
             if (timefactor < 45)
                 timefactor++
         }
-        timefactor
+        gml_Script_scr_debug_print(string(timefactor))
     }
     touchtimer = 0
     spintimer = 0
     touchcon = 2
-    153
+    gml_Script_snd_play(153)
     with (obj_mainchara)
         image_alpha = 0.5
-    if (1277 && 274)
+    if (instance_exists(obj_noelle_city_traffic_2) && instance_exists(obj_caterpillarchara))
     {
         obj_caterpillarchara.x = obj_noelle_city_traffic_2.x
         obj_caterpillarchara.y = obj_noelle_city_traffic_2.y
         if (obj_caterpillarchara.name == "noelle")
             obj_caterpillarchara.sprite_index = spr_noelle_shocked_dw
         with (obj_noelle_city_traffic_2)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     with (obj_caterpillarchara)
     {
@@ -105,32 +105,35 @@ if (touchcon == 2)
     }
 }
 buffer--
-if (87 && buffer < 0)
+if gml_Script_scr_debug()
 {
-    if (walking == 1)
+    if (keyboard_check_pressed(ord("W")) && buffer < 0)
     {
-        with (obj_traffic_car)
+        if (walking == 1)
         {
-            buffer = 2
-            walking = 0
+            with (obj_traffic_car)
+            {
+                buffer = 2
+                walking = 0
+            }
+            with (obj_traffic_car_generator)
+            {
+                buffer = 2
+                walking = 0
+            }
         }
-        with (obj_traffic_car_generator)
+        else
         {
-            buffer = 2
-            walking = 0
-        }
-    }
-    else
-    {
-        with (obj_traffic_car)
-        {
-            buffer = 2
-            walking = 1
-        }
-        with (obj_traffic_car_generator)
-        {
-            buffer = 2
-            walking = 1
+            with (obj_traffic_car)
+            {
+                buffer = 2
+                walking = 1
+            }
+            with (obj_traffic_car_generator)
+            {
+                buffer = 2
+                walking = 1
+            }
         }
     }
 }
@@ -142,7 +145,10 @@ if (active == false && madeblock == 0)
     madeblock = 1
 }
 if (active == true && madeblock == 1)
+{
     var _temp_local_var_10 = myblock
+    instance_destroy()
+}
 if place_meeting(x, y, obj_carTurner)
 {
     if (turned == 0)

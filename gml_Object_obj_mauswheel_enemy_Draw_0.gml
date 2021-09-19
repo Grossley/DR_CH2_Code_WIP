@@ -1,8 +1,8 @@
-if 765
+if instance_exists(obj_maus_split)
     return;
 if (state == 3)
-    // WARNING: Popz'd an empty stack.
-image_speed
+    gml_Script_scr_enemy_drawhurt_generic()
+gml_Script_scr_enemy_drawidle_generic(image_speed)
 if (becomeflash == false)
     flash = false
 becomeflash = false

@@ -1,3 +1,3 @@
-mysprite[0]
-mysprite[1]
-mysprite[2]
+sprite_delete(mysprite[0])
+sprite_delete(mysprite[1])
+sprite_delete(mysprite[2])

@@ -11,7 +11,7 @@ if (con == 1)
     repeat (2)
         life--
     if (life <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     image_alpha = (life / lifeD)
 }
 image_angle += rot

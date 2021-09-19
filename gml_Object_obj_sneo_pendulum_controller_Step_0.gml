@@ -14,7 +14,7 @@ if (timer == 1)
     d.image_index = 1
     d.image_xscale = 2
     d.image_yscale = 2
-    d.target_x = 310
+    d.target_x = (gml_Script_camerax() + 310)
 }
 if (timer == 60)
 {

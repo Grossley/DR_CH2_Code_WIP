@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
-if (y - 40)
-    // WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
+if (y < (gml_Script_cameray() - 40))
+    instance_destroy()
 if (con == 0)
 {
     if (y < 1440)

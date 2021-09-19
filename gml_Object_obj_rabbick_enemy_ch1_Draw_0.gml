@@ -39,7 +39,7 @@ else
         {
             global.monsterstatus[myself] = true
             if (global.monstercomment[myself] == " ")
-                global.monstercomment[myself] = "obj_rabbick_enemy_slash_Draw_0_gml_45_0"
+                global.monstercomment[myself] = gml_Script_scr_84_get_lang_string_ch1("obj_rabbick_enemy_slash_Draw_0_gml_45_0")
         }
         hurttimer -= 1
         if (hurttimer < 0)
@@ -47,7 +47,7 @@ else
         else
         {
             if (global.monster[myself] == false)
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_defeatrun_ch1()
             hurtshake += 1
             if (hurtshake > 1)
             {
@@ -75,7 +75,7 @@ else
         {
             fsiner += 1
             gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
-            draw_sprite_ext(thissprite, (animsiner / 5), (x + xoff), y, image_xscale, image_yscale, 0, c_white, (((-(fsiner / 5)) * 0.4) + 0.6))
+            draw_sprite_ext(thissprite, (animsiner / 5), (x + xoff), y, image_xscale, image_yscale, 0, c_white, (((-cos((fsiner / 5))) * 0.4) + 0.6))
             gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
         }
     }

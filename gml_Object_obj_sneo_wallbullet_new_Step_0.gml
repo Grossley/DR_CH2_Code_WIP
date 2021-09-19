@@ -1,7 +1,7 @@
-var _temp_local_var_5;
+var _temp_local_var_5, _temp_local_var_6;
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
-if 50
+    instance_destroy()
+if gml_Script_i_ex(50)
     x += obj_sneo_wall_controller_new.wallspeed[wallnumber]
 if (wallcontroller > -1)
 {
@@ -32,10 +32,10 @@ if (sprite_index == spr_sneo_crew)
             if ((hitshot.y < y && instance_place(x, (y - 40), obj_sneo_wallbullet_new) && instance_nearest(x, (y - 40), obj_sneo_wallbullet_new).sprite_index == spr_sneo_mail) || (hitshot.y > y && instance_place(x, (y + 40), obj_sneo_wallbullet_new) && instance_nearest(x, (y + 40), obj_sneo_wallbullet_new).sprite_index == spr_sneo_mail))
             {
             }
-            else if ((hitshot.y - y) > 12)
+            else if (abs((hitshot.y - y)) > 12)
                 return;
         }
-        0
+        event_user(0)
         if (destroyable == 1 && active == true)
         {
             if (hitshot.big == 0)
@@ -44,10 +44,11 @@ if (sprite_index == spr_sneo_crew)
                 event_user(0)
             }
             gml_Script_snd_play_pitch(141, (1.1 + random(0.2)))
+            gml_Script_scr_afterimage_cut()
             anim = gml_Script_instance_create(x, y, obj_yshot_anim)
             anim.image_xscale = image_xscale
             anim.image_yscale = image_yscale
-            _temp_local_var_5 = anim
+            var _temp_local_var_6 = anim
             sprite_index = spr_yheart_shot_hit3
         }
     }

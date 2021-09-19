@@ -9,4 +9,4 @@ switch colorProfile
         break
 }
 
-// WARNING: Popz'd an empty stack.
+draw_self()

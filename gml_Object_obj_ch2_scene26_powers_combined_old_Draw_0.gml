@@ -1,10 +1,10 @@
 if fade_in_out
     gml_Script_draw_sprite_ext_flash(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, merge_color(start_color, end_color, color_lerp), 1)
 else
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 for (i = 0; i < orb_count; i++)
 {
-    16777215
+    draw_set_color(c_white)
     var _distance = (200 + (sin((orbsiner / 30)) * 10))
     var _rotation = orb_spin
     var _yaw = orb_yaw
@@ -21,12 +21,12 @@ for (i = 0; i < orb_count; i++)
     }
     xx = (x + (sin(((_rotation / 180) * pi)) * _distance))
     yy = (y + (cos(((_yaw / 180) * pi)) * _distance))
-    1
-    16777215
+    draw_set_alpha(1)
+    draw_set_color(c_white)
     draw_circle(xx, yy, (16 + (((i + flicker_timer) % 2) * 2)), 0)
-    15379086
+    draw_set_color(0xEAAA8E)
     draw_circle(xx, yy, (20 - (((i + flicker_timer) % 2) * 2)), 0)
-    16777215
+    draw_set_color(c_white)
 }
 orb_spin = ((orb_spin - spin_speed) % 360)
 orb_siner += spin_speed

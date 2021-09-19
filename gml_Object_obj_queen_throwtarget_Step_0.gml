@@ -8,7 +8,7 @@ if (growstate == 1)
     image_xscale -= 0.08
     image_yscale -= 0.08
     if (image_xscale < 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (stopmoving == 0)
     siner += (0.07 + n)

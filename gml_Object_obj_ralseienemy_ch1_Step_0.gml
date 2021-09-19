@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_13, _temp_local_var_18, _temp_local_var_20, _temp_local_var_21, _temp_local_var_24, _temp_local_var_26, _temp_local_var_28;
 if (ambushed == false)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_ambush_ch1()
     ambushed = true
 }
 if (global.monster[myself] == true)
@@ -11,7 +11,7 @@ if (global.monster[myself] == true)
     {
         if (attackcon == 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_moveheart_ch1()
             abletotarget = true
             if (global.charcantarget[0] == false && global.charcantarget[1] == false && global.charcantarget[2] == false)
                 abletotarget = false
@@ -30,18 +30,18 @@ if (global.monster[myself] == true)
         global.typer = 45
         global.fc = 2
         global.fe = 1
-        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_36_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_36_0")
         if (plot == 0)
         {
             global.fe = 0
             global.flag[30] = 0
-            global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_42_0"
-            global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_43_0"
-            global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_44_0"
-            global.msg[3] = "obj_ralseienemy_slash_Step_0_gml_45_0"
-            global.msg[4] = "obj_ralseienemy_slash_Step_0_gml_46_0"
-            global.msg[5] = "obj_ralseienemy_slash_Step_0_gml_47_0"
-            global.msg[6] = "obj_ralseienemy_slash_Step_0_gml_48_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_42_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_43_0")
+            global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_44_0")
+            global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_45_0")
+            global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_46_0")
+            global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_47_0")
+            global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_48_0")
         }
         if (plot >= 1)
         {
@@ -75,24 +75,24 @@ if (global.monster[myself] == true)
             if (global.charaction[0] == 10)
             {
                 global.fe = 0
-                global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_65_0"
-                global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_66_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_65_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_66_0")
                 if (defendtime == 1)
                 {
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_70_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_71_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_70_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_71_0")
                 }
                 if (defendtime == 2)
                 {
                     global.fe = 1
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_77_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_78_0"
-                    global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_79_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_77_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_78_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_79_0")
                 }
                 if (defendtime == 3)
                 {
                     global.fe = 9
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_86_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_86_0")
                 }
                 if (defendtime >= 4)
                 {
@@ -104,7 +104,7 @@ if (global.monster[myself] == true)
             if (global.charaction[0] == 4)
             {
                 global.fe = 8
-                global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_96_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_96_0")
             }
             if (dial == 1)
             {
@@ -114,73 +114,73 @@ if (global.monster[myself] == true)
                 global.fe = 3
                 if (dummyhp > (global.monsterhp[0] + 50))
                 {
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_107_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_108_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_107_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_108_0")
                 }
                 else
                 {
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_112_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_113_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_112_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_113_0")
                 }
                 if (misstime >= 6)
                 {
                     global.fe = 8
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_118_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_119_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_118_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_119_0")
                 }
-                global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_121_0"
-                global.msg[3] = "obj_ralseienemy_slash_Step_0_gml_122_0"
-                global.msg[4] = "obj_ralseienemy_slash_Step_0_gml_123_0"
-                global.battlemsg[0] = "obj_ralseienemy_slash_Step_0_gml_124_0"
+                global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_121_0")
+                global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_122_0")
+                global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_123_0")
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_124_0")
                 if (hitdum == 1)
                 {
                     global.fe = 1
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_130_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_131_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_130_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_131_0")
                 }
                 if (hitdum == 2)
                 {
                     global.fe = 1
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_137_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_138_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_137_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_138_0")
                 }
                 if (hitdum == 3)
                 {
                     global.fe = 9
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_144_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_145_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_144_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_145_0")
                 }
                 hitdum += 1
             }
             if (dial == 2)
             {
                 global.fe = 3
-                global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_154_0"
-                global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_155_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_154_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_155_0")
                 if (misstime >= 1)
                 {
                     global.fe = 8
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_159_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_159_0")
                     if (misstime == 2)
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_160_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_160_0")
                     if (misstime == 3)
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_161_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_161_0")
                     if (misstime == 4)
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_162_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_162_0")
                     if (misstime == 5)
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_163_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_163_0")
                     if (misstime == 6)
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_164_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_164_0")
                     if (misstime == 7)
                     {
                         global.fe = 9
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_168_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_168_0")
                     }
                     if (misstime == 8)
                     {
                         global.fe = 1
-                        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_173_0"
-                        global.battlemsg[0] = "obj_ralseienemy_slash_Step_0_gml_174_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_173_0")
+                        global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_174_0")
                         plot = 2
                     }
                 }
@@ -189,17 +189,17 @@ if (global.monster[myself] == true)
             if (dial == 3)
             {
                 global.fe = 9
-                global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_187_0"
-                global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_188_0"
-                global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_189_0"
-                global.msg[3] = "obj_ralseienemy_slash_Step_0_gml_190_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_187_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_188_0")
+                global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_189_0")
+                global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_190_0")
                 if (hittime >= 3)
                 {
                     global.fe = 2
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_195_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_196_0"
-                    global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_197_0"
-                    global.msg[3] = "obj_ralseienemy_slash_Step_0_gml_198_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_195_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_196_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_197_0")
+                    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_198_0")
                 }
                 won = 1
             }
@@ -208,37 +208,37 @@ if (global.monster[myself] == true)
                 global.fe = 3
                 if (hittime == 0)
                 {
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_212_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_213_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_212_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_213_0")
                     if (plot == 2)
-                        global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_218_0"
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_218_0")
                     if (plot == 1)
                     {
-                        global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_222_0"
-                        global.msg[3] = "obj_ralseienemy_slash_Step_0_gml_223_0"
-                        global.battlemsg[0] = "obj_ralseienemy_slash_Step_0_gml_224_0"
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_222_0")
+                        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_223_0")
+                        global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_224_0")
                         plot = 2
                     }
                 }
                 if (hittime == 1)
                 {
-                    global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_231_0"
-                    global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_232_0"
-                    global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_233_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_231_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_232_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_233_0")
                 }
                 hittime += 1
             }
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_ch1()
         talked = 1
         talktimer = 0
     }
     if (talked == 1 && global.mnfight == 1)
     {
-        if (1327 == 0)
+        if (instance_exists(obj_writer_ch1) == 0)
         {
             with (obj_face_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             if (attackcon == 0)
                 global.mnfight = 2
             else
@@ -248,7 +248,7 @@ if (global.monster[myself] == true)
                     global.mercymod[0] = 99999
                     global.mercymod[1] = 99999
                 }
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_mnendturn_ch1()
                 dummyhp = global.monsterhp[0]
                 myhp = global.monsterhp[1]
             }
@@ -261,11 +261,11 @@ if (global.monster[myself] == true)
         turns += 1
         global.turntimer = 999
         attacked = true
-        rr = 0
+        rr = floor(random(0))
         global.typer = 6
         global.fc = 0
         if (rr == 0)
-            global.battlemsg[0] = "obj_ralseienemy_slash_Step_0_gml_288_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_288_0")
     }
 }
 if (attackcon < 92 && attackcon > 0)
@@ -299,8 +299,8 @@ if (attackcon < 92 && attackcon > 0)
             global.fc = 2
             global.fe = 0
             global.typer = 45
-            global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_334_0"
-            // WARNING: Popz'd an empty stack.
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_334_0")
+            gml_Script_scr_battletext_ch1()
             attackcon = 90
         }
         else
@@ -308,15 +308,15 @@ if (attackcon < 92 && attackcon > 0)
             global.fc = 2
             global.fe = 3
             global.typer = 45
-            global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_343_0"
-            global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_344_0"
-            // WARNING: Popz'd an empty stack.
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_343_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_344_0")
+            gml_Script_scr_battletext_ch1()
         }
     }
-    if (attackcon == 8 && 1327 == 0)
+    if (attackcon == 8 && instance_exists(obj_writer_ch1) == 0)
     {
         with (obj_face_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         krishp = global.hp[1]
         b1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (obj_heart_ch1.y - 150), 1560)
         attackcon = 9
@@ -331,8 +331,8 @@ if (attackcon < 92 && attackcon > 0)
             global.fc = 2
             global.fe = 0
             global.typer = 45
-            global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_369_0"
-            // WARNING: Popz'd an empty stack.
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_369_0")
+            gml_Script_scr_battletext_ch1()
             attackcon = 90
         }
         else
@@ -340,11 +340,11 @@ if (attackcon < 92 && attackcon > 0)
             global.fc = 2
             global.fe = 9
             global.typer = 45
-            global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_378_0"
-            // WARNING: Popz'd an empty stack.
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_378_0")
+            gml_Script_scr_battletext_ch1()
         }
     }
-    if (attackcon == 11 && 1327 == 0)
+    if (attackcon == 11 && instance_exists(obj_writer_ch1) == 0)
     {
         b1 = gml_Script_instance_create_ch1((xx + 440), (obj_heart_ch1.y + 8), 1560)
         var _temp_local_var_13 = b1
@@ -357,31 +357,32 @@ if (attackcon < 92 && attackcon > 0)
         global.fe = 8
         global.typer = 45
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_399_0")
+        gml_Script_scr_battletext_ch1()
         attackcon = 90
     }
-    if (attackcon == 90 && 1327 == 0)
+    if (attackcon == 90 && instance_exists(obj_writer_ch1) == 0)
     {
         global.fc = 2
         global.fe = 0
         global.typer = 45
         global.charturn = 0
-        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_410_0"
-        global.msg[1] = "obj_ralseienemy_slash_Step_0_gml_411_0"
-        global.msg[2] = "obj_ralseienemy_slash_Step_0_gml_412_0"
-        global.msg[3] = "obj_ralseienemy_slash_Step_0_gml_413_0"
-        global.msg[4] = "obj_ralseienemy_slash_Step_0_gml_414_0"
-        // WARNING: Popz'd an empty stack.
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_410_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_411_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_412_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_413_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_414_0")
+        gml_Script_scr_battletext_ch1()
         attackcon = 91
     }
     if (attackcon == 91)
     {
         global.turntimer = 999
-        if (1327 == 0)
+        if (instance_exists(obj_writer_ch1) == 0)
         {
             dummyhp = global.monsterhp[0]
             myhp = global.monsterhp[1]
             global.turntimer = 0
-            global.battlemsg[0] = "obj_ralseienemy_slash_Step_0_gml_427_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_427_0")
             plot = 1
             attackcon = 92
         }
@@ -394,8 +395,8 @@ if (global.myfight == 3)
     if (acting == 1 && actcon == 0)
     {
         actcon = 1
-        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_447_0"
-        // WARNING: Popz'd an empty stack.
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_447_0")
+        gml_Script_scr_battletext_default_ch1()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -406,13 +407,13 @@ if (global.myfight == 3)
             acttimer = 0
         }
         actcon = 10
-        global.msg[0] = "obj_ralseienemy_slash_Step_0_gml_464_0"
-        // WARNING: Popz'd an empty stack.
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_464_0")
+        gml_Script_scr_battletext_default_ch1()
     }
-    if (actcon == 1 && (!1327))
+    if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
         actcon = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase_ch1()
     }
     if (actcon == 10)
     {

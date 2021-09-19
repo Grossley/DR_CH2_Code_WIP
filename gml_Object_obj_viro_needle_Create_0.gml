@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
-if (!628)
-    // WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
+if (!instance_exists(obj_heart))
+    instance_destroy()
 wall_destroy = 1
 image_alpha = 0
 updateimageangle = 1

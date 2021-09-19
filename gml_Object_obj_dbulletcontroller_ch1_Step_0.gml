@@ -1148,7 +1148,7 @@ if (joker == 1)
             made = 0
             amount = 0
             jokertimer = 0
-            darkfader = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 10), 3937)
+            darkfader = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 10), 3938)
             var _temp_local_var_66 = darkfader
             depth = 2
             image_alpha = 0

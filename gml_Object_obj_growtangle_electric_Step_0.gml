@@ -8,7 +8,7 @@ if (grazed == 1)
         grazed = 0
     }
 }
-if 869
+if instance_exists(obj_growtangle)
 {
     if (con == 0)
     {
@@ -51,7 +51,7 @@ if 869
         timer++
         shottimer++
         if (type == 0)
-            moveamount = ((timer / 20) * amplitude)
+            moveamount = (sin((timer / 20)) * amplitude)
         if (type == 1)
             moveamount = 1
         shotthreshold = 8
@@ -62,6 +62,7 @@ if 869
             shottimer = 0
             lightning = gml_Script_instance_create(-100, y, obj_growtangle_spark)
             var _temp_local_var_2 = lightning
+            gml_Script_scr_bullet_init()
             destroyonhit = 1
         }
         if (timer >= 150)
@@ -89,4 +90,4 @@ if 869
     image_angle = obj_growtangle.image_angle
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

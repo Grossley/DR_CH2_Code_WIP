@@ -1,7 +1,7 @@
-var _temp_local_var_1, _temp_local_var_2;
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5;
 timer++
 if (timer == 1)
-    251
+    gml_Script_snd_play(251)
 if (timer == 1)
     hex[0] = gml_Script_instance_create((x - 25), (y - 20), obj_icespell_hexagon)
 if (timer == 4)
@@ -27,7 +27,10 @@ if (timer == 10)
     }
 }
 if (timer == 11)
+{
     var _temp_local_var_2 = hex[0]
+    instance_destroy()
+}
 if (timer == 15)
 {
     if (global.fighting == true)
@@ -35,7 +38,7 @@ if (timer == 15)
         global.hittarget[star] = 0
         if (damage >= global.monsterhp[star])
         {
-            if global.monsterinstance[star]
+            if gml_Script_i_ex(global.monsterinstance[star])
             {
                 if (global.monsterinstance[star].freezable == 1)
                     global.flag[(51 + star)] = 6
@@ -43,17 +46,20 @@ if (timer == 15)
         }
         gml_Script_scr_damage_enemy(star, damage)
         if (global.monster[star] == true)
-            __of = target
+        {
+            var _temp_local_var_5 = target
+            __of = gml_Script_scr_oflash()
+        }
     }
 }
 if (timer >= 10 && timer <= 30)
 {
-    (2.2 - (timer / 10))
-    16777215
+    draw_set_alpha((2.2 - (timer / 10)))
+    draw_set_color(c_white)
     draw_circle(x, y, (60 - (timer * 6)), 1)
     draw_circle(x, y, (61 - (timer * 6)), 1)
     draw_circle(x, y, (62 - (timer * 6)), 1)
-    1
+    draw_set_alpha(1)
 }
 if (timer == 60)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

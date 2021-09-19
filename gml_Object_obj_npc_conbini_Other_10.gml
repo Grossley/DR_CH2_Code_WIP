@@ -4,7 +4,7 @@ global.fc = 0
 global.msc = 0
 interacting = 1
 global.msc = 1153
-global.msc
+gml_Script_scr_text(global.msc)
 talked++
 myinteract = 3
 global.interact = 1

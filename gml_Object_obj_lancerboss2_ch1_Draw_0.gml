@@ -8,7 +8,7 @@ if (state == 3)
     else
     {
         if (global.monster[myself] == false)
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_defeatrun_ch1()
         hurtshake += 1
         if (hurtshake > 1)
         {
@@ -30,7 +30,7 @@ if (state == 0)
 {
     shakesine += 1
     siner += 1
-    shx = (((shakesine / 6) * hurtlevel) / 1.5)
+    shx = random(((sin((shakesine / 6)) * hurtlevel) / 1.5))
     thissprite = idlesprite
     if (global.mercymod[myself] >= global.mercymax[myself])
         thissprite = sparedsprite
@@ -39,7 +39,7 @@ if (state == 0)
     {
         fsiner += 1
         gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
-        draw_sprite_ext(thissprite, hurtlevel, x, y, 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, hurtlevel, x, y, 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
     }
 }

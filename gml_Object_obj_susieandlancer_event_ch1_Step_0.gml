@@ -11,8 +11,8 @@ if (con == 0 && global.interact == 0)
             visible = false
         with (obj_mainchara_ch1)
             visible = false
-        r = gml_Script_scr_dark_marker_ch1(obj_caterpillarchara_ch1.x, obj_caterpillarchara_ch1.y, 3569)
-        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4196)
+        r = gml_Script_scr_dark_marker_ch1(obj_caterpillarchara_ch1.x, obj_caterpillarchara_ch1.y, 3570)
+        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4197)
         if (global.flag[250] == 0)
         {
             with (obj_marker_ch1)
@@ -87,8 +87,8 @@ if (con == 17 && (!gml_Script_d_ex_ch1()))
 {
     global.encounterno = 31
     gml_Script_scr_encountersetup_ch1(global.encounterno)
-    l = gml_Script_scr_dark_marker_ch1((global.monstermakex[1] + 200), (global.monstermakey[1] - 50), 3581)
-    s = gml_Script_scr_dark_marker_ch1((global.monstermakex[0] + 200), global.monstermakey[0], 3540)
+    l = gml_Script_scr_dark_marker_ch1((global.monstermakex[1] + 200), (global.monstermakey[1] - 50), 3582)
+    s = gml_Script_scr_dark_marker_ch1((global.monstermakex[0] + 200), global.monstermakey[0], 3541)
     var _temp_local_var_9 = l
     gml_Script_scr_depth_ch1()
     hspeed = -5

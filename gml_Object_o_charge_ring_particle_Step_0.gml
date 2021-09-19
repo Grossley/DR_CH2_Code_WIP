@@ -5,4 +5,4 @@ ys *= 0.9
 image_xscale *= 0.97
 image_yscale *= 0.97
 if ((image_xscale + image_yscale) < 0.1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

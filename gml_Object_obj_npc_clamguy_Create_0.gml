@@ -1,3 +1,3 @@
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+event_inherited()
+gml_Script_scr_depth()
 talked = 0

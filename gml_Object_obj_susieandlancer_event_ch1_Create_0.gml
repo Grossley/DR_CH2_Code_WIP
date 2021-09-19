@@ -4,7 +4,7 @@ if (global.plot >= 130)
 else
 {
     with (obj_npc_room_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 lcon = 0
 scon = 0

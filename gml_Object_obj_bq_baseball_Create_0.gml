@@ -6,7 +6,7 @@ else
 f = 2
 c = 250
 depth = (o_boxingqueen.depth - 1)
-image_angle = 359
+image_angle = irandom(359)
 vspeed = (12 / f)
 if (o_boxingcontroller.wireframe_boxing == 1)
     vspeed = (12 / f)

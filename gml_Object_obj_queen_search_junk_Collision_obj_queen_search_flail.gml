@@ -11,4 +11,4 @@ for (i = 0; i < 4; i++)
     d.speed = 10
 }
 obj_queen_search_flail.hitstun = 1
-// WARNING: Popz'd an empty stack.
+instance_destroy()

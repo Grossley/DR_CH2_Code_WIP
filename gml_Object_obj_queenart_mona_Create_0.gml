@@ -6,7 +6,7 @@ dingsfx = 0
 image_speed = 0
 image_xscale = 2
 image_yscale = 2
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 depth += 1000
 active = true
 flag = 0
@@ -22,7 +22,7 @@ init = 0
 type = 0
 movetype = 0
 flameangle = -45
-flameanglemax = flameangle
+flameanglemax = abs(flameangle)
 if (type == 4)
     con = 1
 trackpos = 0
@@ -40,9 +40,9 @@ if (room == room_dw_mansion_fire_paintings)
             treasure.flippable = 0
             treasure.extflag = "treasure"
             treasure.isswitch = 1
-            treasure.spriteindex1 = 2919
+            treasure.spriteindex1 = 2920
             treasure.flipped = 1
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     if (x == 1040 && y == 120)
@@ -53,8 +53,9 @@ if (room == room_dw_mansion_fire_paintings)
         sprite_index = spr_queenart_red
         if (global.flag[399] == 1)
         {
-            my_new = gml_Script_scr_dark_marker(x, y, 2921)
+            my_new = gml_Script_scr_dark_marker(x, y, 2922)
             var _temp_local_var_3 = my_new
+            gml_Script_scr_depth()
         }
     }
 }

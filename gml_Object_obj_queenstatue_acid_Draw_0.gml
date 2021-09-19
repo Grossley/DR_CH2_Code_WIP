@@ -1,5 +1,5 @@
 timer++
-if (x + 640)
+if (x < (gml_Script_camerax() + 640))
     sink = 1
 if (sink == 1)
 {
@@ -14,5 +14,5 @@ if (progress > 70)
     bubblealpha *= 0.8
 draw_sprite_ext(spr_mansion_hands_bubbles, bubbleindex, (x - 14), (y + 118), 2, 2, 0, c_white, bubblealpha)
 if (bubblealpha < 0.01)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 global.flag[429] = progress

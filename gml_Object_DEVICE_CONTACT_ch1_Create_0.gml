@@ -17,9 +17,9 @@ FADEUP = 0
 OB_DEPTH = 0
 obacktimer = 0
 OBM = 0.5
-global.currentsong[0] = "AUDIO_DRONE.ogg"
-global.currentsong[0]
+global.currentsong[0] = gml_Script_snd_init_ch1("AUDIO_DRONE.ogg")
+gml_Script_mus_loop_ch1(global.currentsong[0])
 WHITEFADE = 0
-"DEVICE_CONTACT_slash_Create_0_gml_23_0"
+gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Create_0_gml_23_0"))
 if (global.lang == "ja")
     global.flag[912] = 1

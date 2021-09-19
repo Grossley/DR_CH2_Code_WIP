@@ -1,2 +1,2 @@
-if 1.5
-    // WARNING: Popz'd an empty stack.
+if (gml_Script_scr_sideb_get_phase() > 1.5)
+    instance_destroy()

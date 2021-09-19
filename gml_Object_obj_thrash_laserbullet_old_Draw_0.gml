@@ -2,7 +2,7 @@ if (nextpoint > finalpoint)
 {
     laserwidth -= 2
     if (laserwidth <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 for (i = 1; i < nextpoint; i++)
     draw_line_width(points[(i - 1)][0], points[(i - 1)][1], points[i][0], points[i][1], laserwidth)

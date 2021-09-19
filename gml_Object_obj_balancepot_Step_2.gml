@@ -22,7 +22,7 @@ if (falling == -1)
         global.facing = 0
         falling = 0
         y = (obj_mainchara.y + 5)
-        172
+        gml_Script_snd_play(172)
     }
 }
 if (falling == 0 && global.interact == 0)
@@ -40,14 +40,14 @@ if (falling == 0 && global.interact == 0)
             balancespeed += ((x - nowx) / 16)
             balance += ((x - nowx) / 4)
         }
-        if (balancespeed < 3)
+        if (abs(balancespeed) < 3)
             balancespeed += (balance / 192)
         balance += ((balance / 64) * inittimer)
         balance += ((balancespeed / 2) * inittimer)
         image_angle = balance
     }
     init = 1
-    if (balance >= 90)
+    if (abs(balance) >= 90)
     {
         falling = 1
         remy = y
@@ -66,7 +66,7 @@ if (falling == 1)
         hspeed -= 1
     if (y >= (remy + 60))
     {
-        choose(164, 165)
+        gml_Script_snd_play(choose(164, 165))
         brokenpot = gml_Script_scr_dark_marker(x, y, sprite_index)
         brokenpot.image_index = 1
         brokenpot.depth = 800000
@@ -75,7 +75,7 @@ if (falling == 1)
         if (global.flag[385] == 0)
             global.flag[385] = 1
         visible = false
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (falling == 3)

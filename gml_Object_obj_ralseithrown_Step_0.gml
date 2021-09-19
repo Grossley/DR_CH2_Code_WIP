@@ -22,7 +22,7 @@ if (con == 10)
         if (collided == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* Missed!/%", "obj_ralseithrown_slash_Step_0_gml_23_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         with (obj_heroralsei)
             visible = true
@@ -34,10 +34,10 @@ if (con == 10)
             visible = true
         }
         with (obj_throwtarget)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_throwralsei)
-            // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+            instance_destroy()
+        instance_destroy()
     }
 }
 if (con == 2)

@@ -92,11 +92,11 @@ if (tobymode == 1 && made == 0)
 }
 if (tobymode == 1 && made == 1)
 {
-    if ((global.turntimer < 10 && global.turntimer > 4) || (!1104))
+    if ((global.turntimer < 10 && global.turntimer > 4) || (!gml_Script_i_ex(1104)))
     {
         con = 0
         global.turntimer = 3
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (timer == bullettimermax)
@@ -110,7 +110,7 @@ if (timer == bullettimermax)
         c = 0
         if (difficulty >= 2)
             c = (con % 2)
-        var rand = 3
+        var rand = irandom(3)
         if (rand == 0)
             var lane1 = 1
         else
@@ -129,7 +129,7 @@ if (timer == bullettimermax)
             lane4 = 0
         if (difficulty > 0)
         {
-            rand = 5
+            rand = irandom(5)
             if (rand == 0)
                 lane1 = 1
             if (rand == 1)
@@ -141,7 +141,7 @@ if (timer == bullettimermax)
         }
         if (difficulty > 1)
         {
-            rand = 5
+            rand = irandom(5)
             if (rand == 0)
                 lane1 = 2
             if (rand == 1)
@@ -157,7 +157,7 @@ if (timer == bullettimermax)
         {
             con = 0
             global.turntimer = 3
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
         con++
         timer = 0

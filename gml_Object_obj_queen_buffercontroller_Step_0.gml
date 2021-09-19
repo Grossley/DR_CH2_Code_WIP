@@ -2,7 +2,7 @@ if (buffering == 0)
 {
     bufferbar++
     if (bufferbar == (bufferdelay - 15))
-        songtime = global.batmusic[1]
+        songtime = audio_sound_get_track_position(global.batmusic[1])
     if (bufferbar == bufferdelay)
     {
         bufferbar = 0

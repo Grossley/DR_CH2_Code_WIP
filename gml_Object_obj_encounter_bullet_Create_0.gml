@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 fakespeed = 0
 fakedirection = 0
 creator = obj_sneo_friedpipis

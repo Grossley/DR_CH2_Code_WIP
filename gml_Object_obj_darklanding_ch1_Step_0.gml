@@ -11,5 +11,5 @@ if (con == 2)
     global.flag[7] = 0
     if (global.plot < 16)
         global.plot = 16
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_tempsave_ch1()
 }

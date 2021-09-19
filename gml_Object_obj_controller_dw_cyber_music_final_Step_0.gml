@@ -1,13 +1,13 @@
 var _temp_local_var_3;
 timer++
-if movingwall1
+if gml_Script_i_ex(movingwall1)
     movingwall1.x = obj_MovingPlat_dw_cyber_music_final.x
 if (state == 0 && obj_mainchara.x >= 480)
 {
     timer = 0
     with (obj_fakeWalkway_dw_cyber_music_final)
-        // WARNING: Popz'd an empty stack.
-    61
+        instance_destroy()
+    gml_Script_snd_play(61)
     gml_Script_instance_create(0, 0, obj_shake)
     movingwall1 = gml_Script_instance_create(obj_MovingPlat_dw_cyber_music_final.x, obj_MovingPlat_dw_cyber_music_final.y, obj_invisMovingWall_dw_cyber_music_final)
     movingwall1.image_xscale = 2
@@ -45,18 +45,18 @@ if (state == 2)
 if (state == 2.1)
 {
     global.interact = 1
-    cutscene_master = 
+    cutscene_master = gml_Script_scr_cutscene_make()
     state = 2.11
 }
 if (state == 2.11)
 {
     state = -999
-    1
+    gml_Script_c_pannable(1)
     gml_Script_c_panobj(80, 1)
-    1
-    0
+    gml_Script_c_wait(1)
+    gml_Script_c_pannable(0)
     gml_Script_c_var_instance(id, "state", 2.2)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_terminatekillactors()
 }
 if (state == 2.2)
 {
@@ -69,7 +69,7 @@ if (state == 3)
     {
         x = (room_width * 2)
         y = (room_height * 2)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_caterpillar_interpolate()
     }
     with (obj_parallaxer_layer)
         auto -= 1
@@ -85,14 +85,15 @@ if (state == 3)
 if (state == 4)
 {
     obj_mainchara.x += 16
-    16
+    gml_Script_camerax_set((gml_Script_camerax() + 16))
     obj_MovingPlat_dw_cyber_music_final.x += 16
     if (obj_MovingPlat_dw_cyber_music_final.x >= 1640)
     {
         obj_MovingPlat_dw_cyber_music_final.x = 1640
         timer = 0
-        61
+        gml_Script_snd_play(61)
         var _temp_local_var_3 = movingwall1
+        instance_destroy()
     }
 }
 if (state == 5)
@@ -102,30 +103,30 @@ if (state == 5)
         obj_mainchara.x = 1640
     with (obj_caterpillarchara)
         x = 0
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
     state = 6
 }
 if (state == 6)
 {
     state = -999
     gml_Script_c_panobj(kr_actor, 8)
-    su
-    0
+    gml_Script_c_sel(su)
+    gml_Script_c_visible(0)
     gml_Script_c_setxy(1710, 174)
-    ra
-    0
+    gml_Script_c_sel(ra)
+    gml_Script_c_visible(0)
     gml_Script_c_setxy(1812, 174)
     gml_Script_c_var_instance(id, "state", 7)
-    8
-    0
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_wait(8)
+    gml_Script_c_pannable(0)
+    gml_Script_c_actortokris()
+    gml_Script_c_actortocaterpillar()
+    gml_Script_c_terminatekillactors()
 }
 if (state == 7)
 {
-    if (!895)
+    if (!gml_Script_i_ex(895))
     {
         global.flag[7] = 0
         global.interact = 0

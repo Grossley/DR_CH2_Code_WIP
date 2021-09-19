@@ -75,7 +75,7 @@ if (stickToKris == 0)
 {
     if place_meeting(x, y, obj_triggervolume)
     {
-        "ahhhh"
+        gml_Script_debug_message("ahhhh")
         y -= 8
     }
     else
@@ -84,6 +84,7 @@ if (stickToKris == 0)
         x = other.x
         y = other.y
         visible = true
+        gml_Script_scr_caterpillar_interpolate()
     }
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

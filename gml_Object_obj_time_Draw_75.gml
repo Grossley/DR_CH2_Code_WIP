@@ -1,19 +1,16 @@
-var _temp_local_var_2;
 if (paused && (!pausing))
 {
     pausing = 1
-    // WARNING: Popz'd an empty stack.
-    1
+    audio_pause_all()
+    instance_deactivate_all(true)
     if global.is_console
-        1110
+        instance_activate_object(obj_border_controller)
 }
-if pausing
+if (pausing && (!os_is_paused()))
 {
+    paused = 0
+    pausing = 0
+    instance_activate_all()
+    audio_resume_all()
+    alarm[0] = 1
 }
-else
-    var _temp_local_var_2 = 0
-paused = 0
-pausing = 0
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
-alarm[0] = 1

@@ -1,2 +1,2 @@
 with (obj_rouxls_simtown)
-    0
+    event_user(0)

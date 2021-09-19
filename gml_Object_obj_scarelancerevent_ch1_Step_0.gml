@@ -7,65 +7,66 @@ if (con == 1)
         global.facing = 1
         with (obj_caterpillarchara_ch1)
             visible = false
-        s = gml_Script_scr_dark_marker_ch1(global.cinstance[1].x, global.cinstance[1].y, 3543)
-        r = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3569)
-        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4196)
+        s = gml_Script_scr_dark_marker_ch1(global.cinstance[1].x, global.cinstance[1].y, 3544)
+        r = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3570)
+        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4197)
         with (obj_mainchara_ch1)
             visible = false
         var _temp_local_var_2 = s
+        gml_Script_scr_depth_ch1()
         gml_Script_scr_move_to_point_over_time_ch1((obj_mainchara_ch1.x - 120), ((obj_mainchara_ch1.y + obj_mainchara_ch1.sprite_height) - sprite_height), 15)
     }
 }
 if (con == 3)
 {
     con = 4
-    global.currentsong[0] = "lancer.ogg"
+    global.currentsong[0] = gml_Script_snd_init_ch1("lancer.ogg")
     alarm[4] = 15
 }
 if (con == 5)
 {
-    global.currentsong[1] = global.currentsong[0]
+    global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
     global.fe = 3
     global.fc = 5
     global.typer = 32
-    global.msg[0] = "obj_scarelancerevent_slash_Step_0_gml_49_0"
-    global.msg[1] = "obj_scarelancerevent_slash_Step_0_gml_50_0"
-    global.msg[2] = "obj_scarelancerevent_slash_Step_0_gml_51_0"
-    global.msg[3] = "obj_scarelancerevent_slash_Step_0_gml_52_0"
-    global.msg[4] = "obj_scarelancerevent_slash_Step_0_gml_53_0"
-    global.msg[5] = "obj_scarelancerevent_slash_Step_0_gml_54_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_49_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_50_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_51_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_52_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_53_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_54_0")
     d = gml_Script_instance_create_ch1(0, 0, 1326)
     d.side = 0
     con = 6
 }
-if (con == 6 ? 0 : 0)
+if (con == 6 && gml_Script_d_ex_ch1() == 0)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all_ch1()
     global.fc = 1
     global.fe = 0
     global.typer = 30
-    global.msg[0] = "obj_scarelancerevent_slash_Step_0_gml_66_0"
-    global.msg[1] = "obj_scarelancerevent_slash_Step_0_gml_67_0"
-    global.msg[2] = "obj_scarelancerevent_slash_Step_0_gml_68_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_66_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_67_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_68_0")
     gml_Script_scr_lanface_ch1(3, 6)
-    global.msg[4] = "obj_scarelancerevent_slash_Step_0_gml_70_0"
-    global.msg[5] = "obj_scarelancerevent_slash_Step_0_gml_71_0"
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_70_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_71_0")
     gml_Script_scr_susface_ch1(6, 1)
-    global.msg[7] = "obj_scarelancerevent_slash_Step_0_gml_73_0"
+    global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_73_0")
     gml_Script_scr_lanface_ch1(8, 7)
-    global.msg[9] = "obj_scarelancerevent_slash_Step_0_gml_75_0"
+    global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_75_0")
     gml_Script_scr_susface_ch1(10, 2)
-    global.msg[11] = "obj_scarelancerevent_slash_Step_0_gml_77_0"
+    global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_scarelancerevent_slash_Step_0_gml_77_0")
     con = 7
     d = gml_Script_instance_create_ch1(0, 0, 1326)
     d.side = 0
 }
-if (con == 7 ? 0 : 0)
+if (con == 7 && gml_Script_d_ex_ch1() == 0)
 {
     oy = obj_mainchara_ch1.y
     obj_mainchara_ch1.cutscene = true
     gml_Script_scr_pan_ch1(2, 0, 60)
-    global.currentsong[0] = "s_neo.ogg"
+    global.currentsong[0] = gml_Script_snd_init_ch1("s_neo.ogg")
     var _temp_local_var_7 = s
     depth = 100
     image_speed = 0.2
@@ -200,7 +201,7 @@ if (con == 31.1)
     i = 0
     while (i < 3)
     {
-        cc[i] = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 700), (y - 20), 3968)
+        cc[i] = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 700), (y - 20), 3969)
         var _temp_local_var_36 = cc[i]
         gml_Script_scr_move_to_point_over_time_ch1((global.monstermakex[0] + 60), y, 30)
         depth = 50000

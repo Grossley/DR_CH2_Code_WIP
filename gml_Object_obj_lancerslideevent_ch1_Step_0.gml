@@ -3,7 +3,7 @@ if (con == 1)
 {
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_dark_marker_ch1(0, obj_mainchara_ch1.y, 4196)
+    k = gml_Script_scr_dark_marker_ch1(0, obj_mainchara_ch1.y, 4197)
     var _temp_local_var_1 = k
     hspeed = 12
     image_speed = 0.334

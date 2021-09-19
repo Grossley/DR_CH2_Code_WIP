@@ -4,7 +4,7 @@ image_speed = 0
 image_xscale = 2
 image_yscale = 2
 con = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 image_speed = 0
 type = 0
 siner = 0
@@ -33,7 +33,7 @@ if (x < 150)
     type = 3
     if (room == room_field_puzzletutorial_ch1)
     {
-        hole = gml_Script_scr_dark_marker_ch1(270, 126, 4056)
+        hole = gml_Script_scr_dark_marker_ch1(270, 126, 4057)
         hole.image_index = 1
         hole.depth = 900000
     }

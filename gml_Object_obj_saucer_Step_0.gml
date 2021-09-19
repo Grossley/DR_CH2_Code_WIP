@@ -1,10 +1,10 @@
-var _temp_local_var_1, _temp_local_var_11, _temp_local_var_16, _temp_local_var_18;
-// WARNING: Popz'd an empty stack.
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_11, _temp_local_var_15, _temp_local_var_17, _temp_local_var_22;
+gml_Script_scr_depth()
 if (mode == 0 || mode == 3)
 {
     if (con == 0 && myinteract == 1)
     {
-        51
+        gml_Script_snd_play(51)
         lid = gml_Script_instance_create(x, y, obj_marker)
         lid.depth = (depth - 100)
         lid.vspeed = (-4 * multiplier)
@@ -30,7 +30,7 @@ if (mode == 0 || mode == 3)
         }
         if (mode == 3 && contentsprite == spr_ch2_gimmick_saucer_key)
         {
-            231
+            gml_Script_snd_play(231)
             with (obj_saucer)
             {
                 if (mode == 3)
@@ -42,7 +42,7 @@ if (mode == 0 || mode == 3)
             if (room == room_dw_mansion_east_2f_a || room == room_dw_mansion_east_2f_shortcut)
             {
                 contentmarker.image_alpha = 0
-                if 1030
+                if instance_exists(obj_ch2_room_mansion_east_2f_a)
                 {
                     with (obj_ch2_room_mansion_east_2f_a)
                     {
@@ -51,7 +51,7 @@ if (mode == 0 || mode == 3)
                         con = 1
                     }
                 }
-                if 1049
+                if instance_exists(obj_ch2_room_mansion_2f_shortcut)
                 {
                     with (obj_ch2_room_mansion_2f_shortcut)
                     {
@@ -85,7 +85,7 @@ if (mode == 1)
     if (con == 0 && myinteract == 1)
     {
         if (montyboss == 0 || montyboss == 1)
-            51
+            gml_Script_snd_play(51)
         if (room == room_dw_mansion_dining3)
             global.interact = 1
         siner = 0
@@ -100,7 +100,7 @@ if (mode == 1)
         myinteract = 0
         con = 1
         makecontent = 0
-        if (content == 1 && 5 == 1)
+        if (content == 1 && floor(random(5)) == 1)
         {
             makecontent = 1
             contentmarker = gml_Script_instance_create(x, y, obj_marker)
@@ -126,14 +126,14 @@ if (mode == 1)
         done = 0
         siner += 1
         if (content == 1)
-            height = ((siner / (8 / multiplier)) * 60)
+            height = (sin((siner / (8 / multiplier))) * 60)
         else
-            height = ((siner / (15 / multiplier)) * 80)
+            height = (sin((siner / (15 / multiplier))) * 80)
         lid.y = (lid.ystart - height)
         if (siner >= 10 && height <= 0)
         {
             if (montyboss == 0 || montyboss == 1)
-                114
+                gml_Script_snd_play(114)
             height = 0
             siner = 0
             con = 0
@@ -141,12 +141,27 @@ if (mode == 1)
             lid.y = lid.ystart
             image_index = 0
             var _temp_local_var_11 = lid
+            instance_destroy()
         }
     }
 }
 if (mode == 2)
 {
-    if (con == 0 && myinteract == 1 && global.facing != 2 && room == room_dw_mansion_east_2f_c_a)
+    if (con == 0)
+    {
+        if (myinteract == 1)
+        {
+            if (global.facing != 2)
+                _temp_local_var_11 = lid.room == room_dw_mansion_east_2f_c_a
+            else
+                var _temp_local_var_22 = 0
+        }
+        else
+            var _temp_local_var_22 = 0
+    }
+    else
+        var _temp_local_var_22 = 0
+    if (lid.room == room_dw_mansion_east_2f_c_a)
         myinteract = 0
     if (con == 0 && myinteract == 1)
     {
@@ -157,7 +172,7 @@ if (mode == 2)
         con = 1
     }
     yrange = 30
-    if (con == 0 ? (activated ? ((y - yrange) ? ((y + yrange) + sprite_height) : 0) : 0) : 0)
+    if (con == 0 && activated && gml_Script_charaY() > (y - yrange) && gml_Script_charaY() < ((y + yrange) + sprite_height))
     {
         gml_Script_snd_play_pitch(104, 1.4)
         ufo = gml_Script_instance_create(x, y, obj_saucer_ufo)
@@ -196,7 +211,7 @@ if (mode == 4)
         if (timer >= 120)
         {
             if (montyboss == 1)
-                134
+                gml_Script_snd_play(134)
             midx = (x + (sprite_width / 2))
             midy = (y + (sprite_height / 2))
             explosion = gml_Script_instance_create(midx, midy, obj_textbomb_explosion)
@@ -212,10 +227,13 @@ if (mode == 4)
                 bullet.explosiontype = 1
             }
             if (makecontent == 1)
-                var _temp_local_var_16 = contentmarker
-            if collider
-                collider
-            // WARNING: Popz'd an empty stack.
+            {
+                var _temp_local_var_15 = contentmarker
+                instance_destroy()
+            }
+            if gml_Script_i_ex(collider)
+                instance_destroy(collider)
+            instance_destroy()
         }
     }
 }
@@ -245,7 +263,7 @@ if (mode == 5)
             contentmarker.image_speed = 0
             contentmarker.image_xscale = 2
             contentmarker.image_yscale = 2
-            var _temp_local_var_18 = contentmarker
+            var _temp_local_var_17 = contentmarker
             itemid = other.itemid
             itemtype = other.itemtype
             itemflag = other.itemflag

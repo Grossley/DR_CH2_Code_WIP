@@ -1,7 +1,7 @@
 timer += 1
 if (timer == 1)
 {
-    initsiner = 400
+    initsiner = random(400)
     for (i = 0; i < ringmax; i += 1)
     {
         ringsize[i] = (1 + (0.5 * i))
@@ -23,5 +23,5 @@ if (timer >= 2)
         draw_sprite_ext(spr_hypnoring, 0, (x + (sin((ringsiner[i] / 12)) * ringradius[i])), (y + (cos((ringsiner[i] / 12)) * ringradius[i])), ringsize[i], ringsize[i], 0, c_white, ringalpha[i])
     }
     if (timer >= 38)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

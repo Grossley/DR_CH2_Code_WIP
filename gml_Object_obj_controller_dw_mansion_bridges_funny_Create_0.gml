@@ -16,7 +16,7 @@ if (global.flag[376] == 0)
 {
     swatchfriend = gml_Script_instance_create(1500, 0, obj_marker)
     swatchfriend.sprite_index = spr_npc_butler
-    swatchfriend
+    gml_Script_scr_darksize(swatchfriend)
     swatchfriend.image_speed = 0
     swatchfriend.con = 0
 }
@@ -25,7 +25,7 @@ if (global.flag[376] == 1)
     friendlySwatch = gml_Script_instance_create(1280, 140, obj_npc_room)
     friendlySwatch.sprite_index = spr_npc_butler
     friendlySwatch.image_speed = 0
-    friendlySwatch
+    gml_Script_scr_darksize(friendlySwatch)
     with (obj_bridgeSwapper)
     {
         if (x > 1550)

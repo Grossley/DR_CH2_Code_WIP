@@ -1,5 +1,6 @@
+var _temp_local_var_1;
 if other.active
 {
-    with (stacktop)
-        // WARNING: Popz'd an empty stack.
+    var _temp_local_var_1 = other
+    instance_destroy()
 }

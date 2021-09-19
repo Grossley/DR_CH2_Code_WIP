@@ -13,12 +13,13 @@ if (con == 3)
     con = 4
     for (i = 0; i < 3; i += 1)
     {
-        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 320, 4187)
+        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 320, 4188)
         glass.depth = 950000
-        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, 4187)
+        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, 4188)
         glass.depth = 950000
     }
     var _temp_local_var_3 = block
+    instance_destroy()
 }
 if (con == 5)
 {

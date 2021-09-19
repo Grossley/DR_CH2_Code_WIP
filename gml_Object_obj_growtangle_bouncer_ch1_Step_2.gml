@@ -26,7 +26,7 @@ if (type == 0)
     {
         speed -= 0.2
         if (speed <= 0.1)
-            2
+            event_user(2)
     }
 }
 if (type == 1)
@@ -100,7 +100,7 @@ if (type == 1)
     {
         speed -= 0.4
         if (speed <= 0.1)
-            2
+            event_user(2)
     }
 }
 if (type == 2)
@@ -126,7 +126,7 @@ if (type == 2)
     {
         speed -= 0.5
         if (speed <= 0.1)
-            2
+            event_user(2)
     }
 }
 if (type == 3)
@@ -158,7 +158,7 @@ if (type == 3)
     {
         speed -= 0.5
         if (speed <= 0.1)
-            2
+            event_user(2)
     }
 }
 if (type == 4)
@@ -186,7 +186,7 @@ if (type == 4)
         if (speed <= 0.1)
         {
             active = false
-            2
+            event_user(2)
         }
     }
 }
@@ -218,10 +218,10 @@ if (type == 5)
     {
         speed -= 0.2
         if (speed <= 0.1)
-            2
+            event_user(2)
     }
 }
-if 1628
+if instance_exists(obj_growtangle_ch1)
 {
     obj_growtangle_ch1.x = x
     obj_growtangle_ch1.y = y
@@ -251,10 +251,10 @@ if 1628
     }
     if (bumpnoise == true)
     {
-        399
-        446
+        gml_Script_snd_play_ch1(399)
+        gml_Script_snd_play_ch1(446)
         bumpnoise = false
-        if (!1464)
+        if (!instance_exists(obj_shake_ch1))
             gml_Script_instance_create_ch1(0, 0, 1464)
     }
 }

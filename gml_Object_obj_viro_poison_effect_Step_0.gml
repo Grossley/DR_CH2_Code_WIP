@@ -19,7 +19,7 @@ if collision_circle(x, y, radius, obj_viro_needle, 0, 1)
                 spawning = 0
                 d = gml_Script_instance_create(x, y, obj_animation_dx)
                 d.sprite_index = spr_viro_poison_effect_big
-                d.image_angle = (3 * 90)
+                d.image_angle = (irandom(3) * 90)
                 d.image_blend = other.color
                 d.image_xscale = 1
                 d.image_yscale = 1
@@ -32,8 +32,8 @@ if (radius >= nextradius)
 {
     nextradius += 10
     var c = ((radius * 2) * pi)
-    var count = ((c / 60) + 1)
-    var startoffset = 360
+    var count = (floor((c / 60)) + 1)
+    var startoffset = random(360)
     for (i = 0; i <= count; i++)
     {
         var dir = ((startoffset + ((360 / count) * i)) + random_range((-180 / count), (180 / count)))
@@ -41,13 +41,13 @@ if (radius >= nextradius)
         var xx = lengthdir_x(len, dir)
         var yy = lengthdir_y(len, dir)
         d = gml_Script_instance_create((xx + x), (yy + y), obj_animation_dx)
-        d.sprite_index = choose(454, 3338)
-        d.image_angle = (3 * 90)
+        d.sprite_index = choose(454, 3339)
+        d.image_angle = (irandom(3) * 90)
         d.image_blend = color
         d.image_alpha = 0.5
         d.image_xscale = 1
         d.image_yscale = 1
     }
     if (timer >= growtime)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

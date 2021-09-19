@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 if (movecourse == 1)
 {
     if (movedir == 1)
@@ -20,7 +20,7 @@ if (movecourse == 1)
 }
 if (myinteract == 3)
 {
-    if (mydialoguer == 0)
+    if (instance_exists(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0

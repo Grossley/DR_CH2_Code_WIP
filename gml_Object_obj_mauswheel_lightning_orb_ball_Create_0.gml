@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 siner = 0
 source = -1
 image_xscale = 0.6

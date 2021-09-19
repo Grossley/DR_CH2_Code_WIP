@@ -1,5 +1,5 @@
-// WARNING: Popz'd an empty stack.
-if 80
+draw_self()
+if gml_Script_i_ex(80)
 {
     if (obj_mainchara.battlemode == 1)
     {

@@ -11,9 +11,9 @@ if (hangcon == 1)
 if (hangcon == 2)
 {
     hangy += hangvspeed
-    if (hangvspeed >= 0)
+    if (abs(hangvspeed) >= 0)
         hangvspeed *= 0.5
-    if (hangvspeed <= 1)
+    if (abs(hangvspeed) <= 1)
     {
         hangvspeed = 0
         hangcon = 3

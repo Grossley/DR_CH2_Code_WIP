@@ -1,4 +1,4 @@
-var _temp_local_var_3, _temp_local_var_5, _temp_local_var_30, _temp_local_var_31, _temp_local_var_59;
+var _temp_local_var_2, _temp_local_var_3, _temp_local_var_6, _temp_local_var_28, _temp_local_var_31, _temp_local_var_61;
 draw_timer++
 if (draw_timer < 6)
     return;
@@ -26,30 +26,30 @@ if (pacifist_state <= 0 && introcon == 1)
     pacifist_timer++
 if (pacifist_timer >= 2970 && pacifist_state <= 0)
     pacifist_state = 1
-if surface
+if surface_exists(surface)
 {
-    surface
+    surface_set_target(surface)
     if (hidebg == 0)
         gml_Script_draw_background(bg_boxing_wireframe, 0, 0)
     if (hidebg == 1)
     {
-        0
+        draw_set_color(c_black)
         draw_rectangle(-1000, -1000, 1000, 1000, false)
     }
     if (o_boxingqueen.sprite_index == spr_bqueen_hurt_effect_wireframe)
         o_boxingqueen_janky_sprite_index = spr_bqueen_hurt_effect_wireframe
     if (o_boxingqueen.sprite_index == spr_bqueen_headless_wireframe)
         o_boxingqueen_janky_sprite_index = spr_bqueen_headless_wireframe
-    if (!805)
+    if (!instance_exists(obj_vector_explosion_big))
     {
         if (o_boxingqueen.drawflip == 0 && o_boxingcontroller.dead < 2)
             draw_sprite_ext(o_boxingqueen_janky_sprite_index, o_boxingqueen_janky_image_index, (o_boxingqueen_janky_x / 2), (((o_boxingqueen_janky_y / 2) - 4) + 14), 1, 1, 0, c_white, 1)
         if (o_boxingqueen.drawflip == 1 && o_boxingcontroller.dead < 2)
             draw_sprite_ext(o_boxingqueen_janky_sprite_index, o_boxingqueen_janky_image_index, (o_boxingqueen_janky_x / 2), (((o_boxingqueen_janky_y / 2) - 4) + 14), -1, 1, 0, c_white, 1)
         gml_Script_d3d_set_fog(true, c_white, 0, 0)
-        if (o_boxingqueen.drawflip == 0 && 814)
+        if (o_boxingqueen.drawflip == 0 && instance_exists(o_afterimage))
             draw_sprite_ext(o_boxingqueen_janky_sprite_index, o_boxingqueen_janky_image_index, (o_boxingqueen_janky_x / 2), (((o_boxingqueen_janky_y / 2) - 4) + 14), (image_xscale * 1), 1, 0, c_white, 1)
-        if (o_boxingqueen.drawflip == 1 && 814)
+        if (o_boxingqueen.drawflip == 1 && instance_exists(o_afterimage))
             draw_sprite_ext(o_boxingqueen_janky_sprite_index, o_boxingqueen_janky_image_index, (o_boxingqueen_janky_x / 2), (((o_boxingqueen_janky_y / 2) - 4) + 14), (image_xscale * -1), 1, 0, c_white, 1)
         gml_Script_d3d_set_fog(false, c_white, 0, 0)
         if (o_boxingcontroller.drawflip == 0 && o_boxingcontroller.dead == 0)
@@ -77,10 +77,10 @@ if surface
             draw_sprite_ext(spr_arcade_arrow, 0, ((inst.x / 2) + 50), (inst.y / 2), -1, 1, 0, c_lime, 1)
         if (text_timer >= (24 / f))
             text_timer = 0
-        0
-        0
+        draw_set_halign(fa_left)
+        draw_set_color(c_black)
         draw_text_ext(((inst.x / 2) + 70), ((inst.y / 2) - 8), gml_Script_stringsetloc("HIT IT", "o_boxing_wireframe_slash_Draw_0_gml_85_0"), 100, 100)
-        65280
+        draw_set_color(c_lime)
         draw_text_ext(((inst.x / 2) + 70), ((inst.y / 2) - 8), gml_Script_stringsetloc("HIT IT", "o_boxing_wireframe_slash_Draw_0_gml_87_0"), 100, 100)
     }
     for (i = 0; i < instance_number(obj_octagon_triangle); i++)
@@ -88,11 +88,11 @@ if surface
         inst = instance_find(obj_octagon_triangle, i)
         draw_sprite_ext(spr_octagon_triangle, 0, (inst.x / 2), (inst.y / 2), 1, 1, inst.image_angle, c_white, 1)
     }
-    if 804
+    if instance_exists(obj_vector_explosion)
         draw_sprite_ext(obj_vector_explosion.sprite_index, obj_vector_explosion.image_index, (obj_vector_explosion.x / 2), (obj_vector_explosion.y / 2), obj_vector_explosion.image_xscale, obj_vector_explosion.image_yscale, 0, c_white, 1)
-    if 806
+    if instance_exists(obj_vector_queen_face)
         draw_sprite_ext(obj_vector_queen_face.sprite_index, obj_vector_queen_face.image_index, (obj_vector_queen_face.x / 2), (obj_vector_queen_face.y / 2), obj_vector_queen_face.image_xscale, obj_vector_queen_face.image_yscale, 0, c_white, 1)
-    1
+    draw_set_halign(fa_center)
     if ((text != o_boxingcontroller.default_string && text != "" && introcon == 1) || (down_arrow_con == 1 && introcon == 1))
     {
         text_timer++
@@ -132,25 +132,25 @@ if surface
         {
             gml_Script_msgsetsubloc(0, "Press ~1&Or ~2 If&You Dare", gml_Script_scr_get_input_name(4), gml_Script_scr_get_input_name(5), "o_boxing_wireframe_slash_Draw_0_gml_145_0")
             global.typer = 50
-            queenbubble = ((7 + 388) + 428)
+            queenbubble = gml_Script_scr_enemyblcon((gml_Script_camerax() + 428), (gml_Script_cameray() + 388), 7)
             talktimer = 0
             talking = 1
-            var _temp_local_var_59 = queenbubble
+            var _temp_local_var_61 = queenbubble
             depth = (obj_ch2_scene10.qu_actor.depth - 1)
             auto_length = 1
             side = -1
         }
     }
-    if ((o_boxingqueen_janky_sprite_index == 2143 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || (o_boxingqueen_janky_sprite_index == 2142 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || zx_timer > 0)
+    if ((o_boxingqueen_janky_sprite_index == 2144 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || (o_boxingqueen_janky_sprite_index == 2143 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || zx_timer > 0)
     {
         if (zx_state == 0)
         {
-            0
+            draw_set_color(c_black)
             if (o_boxingqueen.drawflip == 0)
                 draw_text_ext(((o_boxingqueen_janky_x / 2) + 38), ((o_boxingqueen_janky_y / 2) - 100), "X", 100, 100)
             if (o_boxingqueen.drawflip == 1)
                 draw_text_ext(((o_boxingqueen_janky_x / 2) - 39), ((o_boxingqueen_janky_y / 2) - 100), "Z", 100, 100)
-            65280
+            draw_set_color(c_lime)
             if (o_boxingqueen.drawflip == 0)
             {
                 draw_text_ext(((o_boxingqueen_janky_x / 2) + 38), ((o_boxingqueen_janky_y / 2) - 100), "X", 100, 100)
@@ -170,12 +170,12 @@ if surface
         }
         if (zx_state == 1)
         {
-            0
+            draw_set_color(c_black)
             if (o_boxingqueen.drawflip == 0)
                 draw_text_ext(((o_boxingqueen_janky_x / 2) + 38), ((o_boxingqueen_janky_y / 2) - 100), "X", 100, 100)
             if (o_boxingqueen.drawflip == 1)
                 draw_text_ext(((o_boxingqueen_janky_x / 2) - 39), ((o_boxingqueen_janky_y / 2) - 100), "Z", 100, 100)
-            16777215
+            draw_set_color(c_white)
             if (o_boxingqueen.drawflip == 0)
             {
                 draw_text_ext(((o_boxingqueen_janky_x / 2) + 38), ((o_boxingqueen_janky_y / 2) - 100), "X", 100, 100)
@@ -194,34 +194,34 @@ if surface
             }
         }
     }
-    // WARNING: Popz'd an empty stack.
+    surface_reset_target()
     draw_surface(surface, 160, 120)
 }
 else
 {
     surface = surface_create(320, 240)
-    surface
-    // WARNING: Popz'd an empty stack.
+    surface_set_target(surface)
+    surface_reset_target()
 }
 if (o_boxingcontroller.dead == 0 && o_boxinghud.sub_healthbar_count != -1 && introcon == 1)
 {
-    "mainbig"
-    65280
+    gml_Script_scr_84_set_draw_font("mainbig")
+    draw_set_color(c_lime)
     draw_text_ext_transformed(318, 112, ceil(((2970 - pacifist_timer) / 30)), 100, 100, 1, 1, 0)
-    16777215
+    draw_set_color(c_white)
     draw_sprite_ext(spr_arcade_time, 0, 280, 91, 1, 1, 0, c_white, 1)
     if (o_boxingqueen.health_count > 0)
     {
-        65280
+        draw_set_color(c_lime)
         draw_rectangle((460 - (o_boxingqueen.health_count / 10)), 130, 460, 140, false)
-        2
+        draw_set_halign(fa_right)
         draw_sprite_ext(spr_queen_hp, 0, 377, 147, 1, 1, 0, c_white, 1)
     }
     if (o_boxingcontroller.health_count > 0)
     {
-        16776960
+        draw_set_color(c_aqua)
         draw_rectangle(180, 130, (180 + (o_boxingcontroller.health_count / 5)), 140, false)
-        0
+        draw_set_halign(fa_left)
         draw_sprite_ext(spr_hero_hp, 0, 180, 147, 1, 1, 0, c_white, 1)
     }
     if (pacifist_state == 1)
@@ -243,10 +243,10 @@ if (o_boxingcontroller.dead == 3)
 if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
 {
     draw_selection_buffer_timer++
-    65280
+    draw_set_color(c_lime)
     draw_sprite_ext(spr_acrade_giveup, 0, 279, 220, 1, 1, 0, c_white, 1)
-    0
-    0
+    draw_set_halign(fa_left)
+    draw_set_valign(fa_top)
     if (o_boxingcontroller.dead == 4)
         draw_sprite_ext(spr_acrade_fightagain, 1, 190, 260, 1, 1, 0, c_white, 1)
     else
@@ -255,13 +255,13 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
         draw_sprite_ext(gml_Script_scr_84_get_sprite("spr_acrade_retire"), 1, 370, 260, 1, 1, 0, c_white, 1)
     else
         draw_sprite_ext(gml_Script_scr_84_get_sprite("spr_acrade_retire"), 0, 370, 260, 1, 1, 0, c_white, 1)
-    if (draw_selection_buffer_timer > 24)
+    if (gml_Script_right_p() && draw_selection_buffer_timer > 24)
         o_boxingcontroller.dead = 5
-    if (draw_selection_buffer_timer > 24)
+    if (gml_Script_left_p() && draw_selection_buffer_timer > 24)
         o_boxingcontroller.dead = 4
     if (o_boxingcontroller.dead == 4 && draw_selection_buffer_timer > 24)
     {
-        if 1
+        if (gml_Script_button1_p() || gml_Script_button2_p())
         {
             o_boxingcontroller.health_count = 500
             o_boxingcontroller.dead = 0
@@ -294,7 +294,7 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
             if (losscount > 1)
             {
                 with (obj_writer)
-                    // WARNING: Popz'd an empty stack.
+                    instance_destroy()
                 obj_ch2_scene10_arcade_bg.punch_r_timer = 0
                 obj_ch2_scene10_arcade_bg.dodge_l_timer = 5
                 gml_Script_msgsetloc(0, "Shut up, that was&just a warm up!", "o_boxing_wireframe_slash_Draw_0_gml_316_0")
@@ -302,16 +302,14 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
                 susieballoon1 = gml_Script_scr_enemyblcon((obj_ch2_scene10.su_actor.x + 0), (obj_ch2_scene10.su_actor.y + 20), 10)
                 talktimer = 0
                 talking = 1
-                var _temp_local_var_31 = susieballoon1
+                var _temp_local_var_28 = susieballoon1
                 depth = (obj_ch2_scene10.su_actor.depth - 1)
             }
         }
     }
     if (o_boxingcontroller.dead == 5 && (!instance_exists(obj_battleblcon)) && draw_selection_buffer_timer > 24)
     {
-        if susieballoon1
-            var _temp_local_var_30 = 1
-        if 1
+        if (gml_Script_button1_p() || gml_Script_button2_p())
         {
             alarm[0] = 1
             obj_ch2_scene10_arcade_bg.punch_r_timer = 0
@@ -321,7 +319,7 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
             susieballoon2 = gml_Script_scr_enemyblcon((obj_ch2_scene10.su_actor.x + 0), (obj_ch2_scene10.su_actor.y + 20), 10)
             talktimer = 0
             talking = 1
-            _temp_local_var_31 = susieballoon2
+            var _temp_local_var_31 = susieballoon2
             depth = (obj_ch2_scene10.su_actor.depth - 1)
         }
     }
@@ -329,7 +327,7 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
 if (pacifist_state > 0)
 {
     draw_selection_buffer_timer++
-    if ((susieballoon2 && draw_selection_buffer_timer > 24) || draw_selection_buffer_timer > 24)
+    if ((gml_Script_button1_p() && draw_selection_buffer_timer > 24) || (gml_Script_button2_p() && draw_selection_buffer_timer > 24))
     {
         o_boxingcontroller.health_count = 500
         o_boxingcontroller.dead = 0
@@ -359,7 +357,7 @@ if (pacifist_state > 0)
         }
     }
 }
-0
+draw_set_halign(fa_left)
 if (introcon == 0)
 {
     introtimer++
@@ -368,9 +366,9 @@ if (introcon == 0)
     if (introtimer >= 72 && introtimer < 102)
         draw_sprite_ext(spr_arcade_fight, 0, 266, 114, 2, 2, 0, c_white, 1)
     if (introtimer == 20)
-        16
+        gml_Script_snd_play(16)
     if (introtimer == 72)
-        12
+        gml_Script_snd_play(12)
     if (introtimer == 112)
         introcon = 1
 }

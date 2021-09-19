@@ -3,7 +3,7 @@ image_xscale = obj_queen_wineglass.image_xscale
 image_yscale = obj_queen_wineglass.image_yscale
 x = obj_queen_wineglass.x
 y = obj_queen_wineglass.y
-if 628
+if instance_exists(obj_heart)
 {
     repeat (10)
     {

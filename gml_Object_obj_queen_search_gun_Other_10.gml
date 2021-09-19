@@ -9,15 +9,15 @@ else
     targety = (obj_growtangle.y + random_range(-50, 50))
 }
 targetAngle = point_direction(x, (y - 24), targetx, targety)
-if 559
+if instance_exists(obj_queen_buffercontroller)
 {
-    targetAngle = ((targetAngle / 45) * 45)
+    targetAngle = (round((targetAngle / 45)) * 45)
     if ((targetAngle % 90) == 0)
         targetAngle += choose(-45, 45)
 }
 else if (shottype == 1)
 {
-    targetAngle = ((targetAngle / 15) * 15)
+    targetAngle = (round((targetAngle / 15)) * 15)
     if ((targetAngle % 90) == 0)
         targetAngle += choose(-15, 15)
 }

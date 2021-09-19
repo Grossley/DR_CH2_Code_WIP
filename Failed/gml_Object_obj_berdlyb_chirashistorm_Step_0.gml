@@ -1,9 +1,21 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (init == 0)
+{
+    for (iy = 0; iy < 3; iy++)
+    {
+        for (ix = 0; ix < 4; ix++)
+        {
+            d = gml_Script_scr_bullet_create(x, y, 488)
+            xx = (((originx + (ix * 40)) + (iy * 20)) + irandom(35))
+            yy = ((originy + (iy * 40)) + irandom(35))
+            d.___myrememberx = xx
+            d.___myremembery = yy
+            d.fireoffset += ((ix + (3 - iy)) * 5)
+            d.difficulty = difficulty
+            d.grazepoints = grazepoints
+            d.timer = round((angle_difference(135, point_direction(x, y, xx, yy)) / 10))
+            if (!first_set)
+                d.image_blend = c_gray
+        }
+    }
+    init = 1
+}

@@ -1,4 +1,4 @@
-if ((!238) && chestSpawned == 0)
+if ((!instance_exists(obj_chaseenemy)) && chestSpawned == 0)
     timer++
 if (timer == 60)
 {

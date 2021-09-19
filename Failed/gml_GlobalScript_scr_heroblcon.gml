@@ -1,9 +1,36 @@
-/*
-DECOMPILER FAILED!
+var heroobj = -69420
+switch argument0
+{
+    case 1:
+    case "kris":
+    case "kr":
+        heroobj = obj_herokris
+        break
+    case 2:
+    case "susie":
+    case "su":
+        heroobj = obj_herosusie
+        break
+    case 3:
+    case "ralsei":
+    case "ra":
+        heroobj = obj_heroralsei
+        break
+    case 4:
+    case "noelle":
+    case "no":
+        heroobj = obj_heronoelle
+        break
+    default:
+        heroobj = -69420
+        break
+}
 
-System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'InstanceType'.
-   at UndertaleModLib.Decompiler.Decompiler.ExpressionConstant.ToString(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 312
-   at UndertaleModLib.Decompiler.Decompiler.AssignmentStatement.ToString(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1109
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3140
-   at Submission#0.DumpCode()
-*/
+if gml_Script_i_ex(heroobj)
+{
+    var heroballoon = gml_Script_scr_enemyblcon((heroobj.x + 100), (heroobj.y + 40), 10)
+    heroballoon.side = -1
+    return heroballoon;
+}
+else
+    return 0;

@@ -41,6 +41,6 @@ if (gen == 2)
     {
         battlemode = 0
         with (obj_overworldbulletparent_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

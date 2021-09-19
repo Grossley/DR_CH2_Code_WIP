@@ -36,9 +36,9 @@ if (sprite_index == spr_ralsei_hurt_fixed)
     hurt = true
 if (HeroID == 0 && obj_herokris.hurt > false)
     hurt = true
-if (HeroID == 1 && 371 && obj_herosusie.hurt > false)
+if (HeroID == 1 && instance_exists(obj_herosusie) && obj_herosusie.hurt > false)
     hurt = true
-if (HeroID == 2 && 372 && obj_heroralsei.hurt > false)
+if (HeroID == 2 && instance_exists(obj_heroralsei) && obj_heroralsei.hurt > false)
     hurt = true
 back.x = x
 back.y = (y + 8)
@@ -56,7 +56,7 @@ if (sprite_index == spr_susieb_act)
 }
 if (userealsprite == 0)
     draw_sprite_ext(sprite_index, image_index, (((x + 20) + xx) + xx2), ((((y - (sprite_get_height(sprite_index) * a)) + yy) + yy2) + 8), image_xscale, image_yscale, 0, c_white, image_alpha)
-if 371
+if instance_exists(obj_herosusie)
 {
     if (obj_herosusie.sprite_index == spr_susier_dark)
         obj_herosusie.sprite_index = spr_susie_walk_right_dw
@@ -66,7 +66,7 @@ if 371
         obj_herosusie.y += 0
     }
 }
-if 372
+if instance_exists(obj_heroralsei)
 {
     if (obj_heroralsei.sprite_index == spr_ralsei_walk_right)
     {

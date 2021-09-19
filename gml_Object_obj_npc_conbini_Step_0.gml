@@ -1,9 +1,8 @@
-var _temp_local_var_4;
 if (con == -1 && obj_mainchara.x < 130)
     con = 0
 if (con == 0 && obj_mainchara.x > 140)
 {
-    cutscene_master = 
+    cutscene_master = gml_Script_scr_cutscene_make()
     to = 0
     to_actor = gml_Script_instance_create(365, 250, obj_actor)
     gml_Script_scr_actor_setup(to, to_actor, "toriel")
@@ -25,14 +24,14 @@ if (con == 0 && obj_mainchara.x > 140)
 if (con == 1)
 {
     con = 2
-    "bottom"
-    to
+    gml_Script_c_msgside("bottom")
+    gml_Script_c_sel(to)
     gml_Script_c_setxy(370, 145)
     gml_Script_c_walk("u", 2, 45)
-    1
+    gml_Script_c_pannable(1)
     gml_Script_c_panspeed(8, 0, 25)
-    26
-    "sans"
+    gml_Script_c_wait(26)
+    gml_Script_c_speaker("sans")
     gml_Script_c_msgsetloc(0, "\\E5* hey hey. forget something?/", "obj_npc_conbini_slash_Step_0_gml_55_0")
     gml_Script_c_facenext("toriel", 1)
     gml_Script_c_msgnextloc("\\E1* Why^1, er^1, yes. I think I left my eggs on the counter./", "obj_npc_conbini_slash_Step_0_gml_57_0")
@@ -49,21 +48,21 @@ if (con == 1)
     gml_Script_c_msgnextloc("\\E5* egg on or egg off^1, i eggspect a lot from you./", "obj_npc_conbini_slash_Step_0_gml_68_0")
     gml_Script_c_facenext("toriel", "4")
     gml_Script_c_msgnextloc("\\E4* Well^1, I am eggceptional. Hee hee.../%", "obj_npc_conbini_slash_Step_0_gml_70_0")
-    // WARNING: Popz'd an empty stack.
-    "l"
-    sa
-    1079
-    as
+    gml_Script_c_talk_wait()
+    gml_Script_c_facing("l")
+    gml_Script_c_sel(sa)
+    gml_Script_c_sprite(1080)
+    gml_Script_c_sel(as)
     gml_Script_c_walk("u", 8, 20)
-    "asgore"
+    gml_Script_c_speaker("asgore")
     gml_Script_c_msgsetloc(0, "\\E4* And don't forget me^1, your eggs-husband./%", "obj_npc_conbini_slash_Step_0_gml_82_0")
-    // WARNING: Popz'd an empty stack.
-    60
-    sa
-    1080
-    to
-    "d"
-    "toriel"
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(60)
+    gml_Script_c_sel(sa)
+    gml_Script_c_sprite(1081)
+    gml_Script_c_sel(to)
+    gml_Script_c_facing("d")
+    gml_Script_c_speaker("toriel")
     gml_Script_c_msgsetloc(0, "\\E1* Err^1, hello^1, Asgore./", "obj_npc_conbini_slash_Step_0_gml_94_0")
     gml_Script_c_facenext("asgore", "0")
     gml_Script_c_msgnextloc("\\E0* Tori^1, I didn't expect to see you here^1, but^1, I.../", "obj_npc_conbini_slash_Step_0_gml_96_0")
@@ -72,43 +71,43 @@ if (con == 1)
     gml_Script_c_msgnextloc("\\E1* Oh^1, I was just about to go^1, actually./", "obj_npc_conbini_slash_Step_0_gml_99_0")
     gml_Script_c_facenext("asgore", "5")
     gml_Script_c_msgnextloc("\\E5* Ah^1, haha^1, oh^1! Sure^1! Home is where the heart is^1! Haha!/%", "obj_npc_conbini_slash_Step_0_gml_101_0")
-    // WARNING: Popz'd an empty stack.
-    to
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(to)
     gml_Script_c_walk("d", 3, 35)
-    10
-    as
-    "r"
-    0
-    0.25
+    gml_Script_c_wait(10)
+    gml_Script_c_sel(as)
+    gml_Script_c_facing("r")
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imagespeed(0.25)
     gml_Script_c_walk_wait("l", 4, 9)
-    0
-    25
-    as
-    1
-    "d"
-    "top"
-    "asgore"
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_wait(25)
+    gml_Script_c_sel(as)
+    gml_Script_c_autowalk(1)
+    gml_Script_c_facing("d")
+    gml_Script_c_msgside("top")
+    gml_Script_c_speaker("asgore")
     gml_Script_c_msgsetloc(0, "\\E3* Umm^1, so^1, when Asriel comes home.../%", "obj_npc_conbini_slash_Step_0_gml_124_0")
-    // WARNING: Popz'd an empty stack.
-    to
-    "u"
-    "toriel"
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(to)
+    gml_Script_c_facing("u")
+    gml_Script_c_speaker("toriel")
     gml_Script_c_msgsetloc(0, "\\E1* Yes^1, we should all discuss that together soon./", "obj_npc_conbini_slash_Step_0_gml_131_0")
     gml_Script_c_facenext("asgore", "6")
     gml_Script_c_msgnextloc("\\E6* Onkey donkey^1! Say hi to Kris for me!/", "obj_npc_conbini_slash_Step_0_gml_133_0")
     gml_Script_c_facenext("toriel", "1")
     gml_Script_c_msgnextloc("\\E1* Of course. Have a nice day./%", "obj_npc_conbini_slash_Step_0_gml_135_0")
-    // WARNING: Popz'd an empty stack.
-    to
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(to)
     gml_Script_c_walk_wait("d", 4, 30)
-    sa
-    1077
-    as
+    gml_Script_c_sel(sa)
+    gml_Script_c_sprite(1078)
+    gml_Script_c_sel(as)
     gml_Script_c_walk("u", 1, 30)
     gml_Script_c_delayfacing(9, "u")
-    31
-    "bottom"
-    "asgore"
+    gml_Script_c_wait(31)
+    gml_Script_c_msgside("bottom")
+    gml_Script_c_speaker("asgore")
     gml_Script_c_msgsetloc(0, "\\E2* .../", "obj_npc_conbini_slash_Step_0_gml_153_0")
     gml_Script_c_msgnextloc("\\E2* You know what I want^1, bone man./", "obj_npc_conbini_slash_Step_0_gml_154_0")
     gml_Script_c_facenext("sans", "1")
@@ -138,24 +137,24 @@ if (con == 1)
     gml_Script_c_msgnextloc("\\E0* ..^1. well^1, have a good one./", "obj_npc_conbini_slash_Step_0_gml_179_0")
     gml_Script_c_facenext("asgore", "6")
     gml_Script_c_msgnextloc("\\E6* Haha^1! I'm trying!/%", "obj_npc_conbini_slash_Step_0_gml_181_0")
-    // WARNING: Popz'd an empty stack.
-    as
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(as)
     gml_Script_c_walk_wait("r", 4, 9)
     gml_Script_c_walk("d", 4, 50)
-    50
+    gml_Script_c_wait(50)
     gml_Script_c_panspeed(-8, 0, 25)
-    26
+    gml_Script_c_wait(26)
     if (obj_mainchara.y > 150)
-        "top"
-    "susie"
+        gml_Script_c_msgside("top")
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EK* .../", "obj_npc_conbini_slash_Step_0_gml_199_0")
     gml_Script_c_msgnextloc("\\EK* Hey^1, Kris^1, uhh.../", "obj_npc_conbini_slash_Step_0_gml_200_0")
     gml_Script_c_msgnextloc("\\EK* Uhhh...^1. nevermind./%", "obj_npc_conbini_slash_Step_0_gml_201_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
+    gml_Script_c_pannable(0)
+    gml_Script_c_terminatekillactors()
 }
-if (con == 2 && (!895))
+if (con == 2 && (!instance_exists(obj_cutscene_master)))
 {
     con = 3
     sans.visible = true
@@ -163,10 +162,8 @@ if (con == 2 && (!895))
     global.facing = 0
     global.flag[308] = 1
 }
-if interacting
+if (interacting && (!gml_Script_d_ex()))
 {
+    interacting = 0
+    global.interact = 0
 }
-else
-    var _temp_local_var_4 = 0
-interacting = 0
-global.interact = 0

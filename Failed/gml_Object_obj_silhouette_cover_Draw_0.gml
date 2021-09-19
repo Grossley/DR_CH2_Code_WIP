@@ -1,11 +1,8 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1, _temp_local_var_2;
+draw_set_color(0x663913)
+(x - 4)
+draw_set_color(c_white)
+gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, y, x, y, (x + (sprite_get_width(sprite_index) * image_xscale)), (obj_84_lang_helper).room_height, 2, 16777215, 1, (y - 4))
+draw_sprite_ext(top[top_type], 0, x, (y - (sprite_get_height(top[top_type]) * 2)), 2, 2, 0, c_white, 1)
+var _temp_local_var_1 = ((x + (sprite_get_width(sprite_index) * image_xscale)) + 5)
+var _temp_local_var_2 = (obj_sneo_friedpipis).room_height

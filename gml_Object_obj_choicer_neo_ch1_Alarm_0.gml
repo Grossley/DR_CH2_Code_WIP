@@ -1,22 +1,23 @@
 var _temp_local_var_1;
-if 1326
+if instance_exists(obj_dialoguer_ch1)
 {
     with (obj_dialoguer_ch1)
     {
-        if writer
+        if instance_exists(writer)
         {
             wwx = writer.x
             wwy = writer.y
         }
         with (obj_face_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         var _temp_local_var_1 = writer
+        instance_destroy()
     }
     with (obj_choicer_neo_ch1)
         global.fc = remfc
     global.msc += 1
-    global.msc
-    0
+    gml_Script_scr_text_ch1(global.msc)
+    event_user(0)
 }
 with (obj_choicer_neo_ch1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

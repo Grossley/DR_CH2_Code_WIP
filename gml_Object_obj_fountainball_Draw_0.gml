@@ -16,6 +16,6 @@ if (init == 0 && back == 0)
 size += 0.5
 image_xscale += 0.01
 image_yscale += 0.01
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (y <= (-20 - size))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

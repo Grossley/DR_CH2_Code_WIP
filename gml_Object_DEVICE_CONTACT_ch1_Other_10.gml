@@ -1,5 +1,5 @@
 if (global.lang == "ja")
-    FN = FN
+    FN = gml_Script_string_to_hiragana_ch1(FN)
 if (FN == gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Other_10_gml_1_0"))
     FOUND = 2
 if (FN == gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Other_10_gml_2_0"))
@@ -38,7 +38,7 @@ if (FN == gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Other_10_g
     FOUND = 1
 if (global.lang == "ja")
 {
-    FN = FN
+    FN = gml_Script_string_to_ascii_from_full_width_ch1(FN)
     if (FN == gml_Script_scr_84_get_lang_string_ch1("special_name_check_01"))
         FOUND = 2
     if (FN == gml_Script_scr_84_get_lang_string_ch1("special_name_check_02"))

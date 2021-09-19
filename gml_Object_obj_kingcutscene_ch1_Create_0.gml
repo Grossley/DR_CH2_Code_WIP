@@ -20,9 +20,9 @@ king = 2382938928392
 fountain_index = 0
 if (global.plot >= 240)
 {
-    if (!global.currentsong[1])
+    if (!gml_Script_snd_is_playing_ch1(global.currentsong[1]))
     {
-        global.currentsong[0] = "friendship.ogg"
+        global.currentsong[0] = gml_Script_snd_init_ch1("friendship.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.8, 0.95)
     }
     con = 700
@@ -32,7 +32,7 @@ else
     global.interact = 1
     gml_Script___view_set(0, 0, 0)
     with (obj_npc_facing_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_npc_room_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

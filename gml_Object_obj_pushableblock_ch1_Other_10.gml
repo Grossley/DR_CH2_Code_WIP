@@ -33,7 +33,7 @@ if (global.interact == 0 && event == 0)
         confirm = 0
     if collision_rectangle(ix, iy, (ix + 15), (iy + 15), obj_solidenemy_ch1, 0, 1)
         confirm = 0
-    381
+    gml_Script_snd_play_ch1(381)
     if (confirm == 1)
     {
         sprite_index = spr_npc_block_ch1
@@ -52,18 +52,18 @@ if (event == 1)
     global.interact = 1
     sd = 0
     if (global.flag[212] == 0)
-        global.msg[0] = "obj_pushableblock_slash_Other_10_gml_61_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_pushableblock_slash_Other_10_gml_61_0")
     if (global.plot >= 50)
-        global.msg[0] = "obj_pushableblock_slash_Other_10_gml_66_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_pushableblock_slash_Other_10_gml_66_0")
     if (global.flag[212] == 2 && global.plot < 50)
     {
         global.typer = 30
         global.fc = 1
         global.fe = 9
-        global.msg[0] = "obj_pushableblock_slash_Other_10_gml_74_0"
-        global.msg[1] = "obj_pushableblock_slash_Other_10_gml_75_0"
-        global.msg[2] = "obj_pushableblock_slash_Other_10_gml_76_0"
-        global.msg[3] = "obj_pushableblock_slash_Other_10_gml_77_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_pushableblock_slash_Other_10_gml_74_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_pushableblock_slash_Other_10_gml_75_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_pushableblock_slash_Other_10_gml_76_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_pushableblock_slash_Other_10_gml_77_0")
         sd = 1
         myinteract = 0
         with (obj_boxpuzzle_event_ch1)

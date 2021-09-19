@@ -7,4 +7,4 @@ if (h < 1)
     h = 1
 image_speed = 0
 if (depth != 5000)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()

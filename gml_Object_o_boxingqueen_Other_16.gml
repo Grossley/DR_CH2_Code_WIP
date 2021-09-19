@@ -54,7 +54,7 @@ if (attackpattern == 21)
 }
 if (attackpattern == 20)
 {
-    rand = 30
+    rand = irandom(30)
     if (rand < 10)
         gml_Script_scr_qb(1, 3, 0, 0)
     if (rand >= 10 && rand < 20)
@@ -413,7 +413,7 @@ if (o_boxingcontroller.wireframe_boxing == 0)
             if (attackpattern == 21)
             {
                 attackpattern = 18
-                if (!826)
+                if (!instance_exists(obj_boxingqueen_aura))
                     gml_Script_instance_create(x, y, obj_boxingqueen_aura)
             }
             else if (attackpattern == 18)

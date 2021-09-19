@@ -9,7 +9,7 @@ if (loading > 0)
         image_index = 0
     else if ((loading % 3) == 0)
         image_index++
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     return;
 }
 if (broken == 0)
@@ -22,10 +22,10 @@ if (broken == 0)
         draw_sprite_ext(sprite_index, 1, xx, yy, 1, 1, 0, 0x89D931, _alpha)
     }
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (bufferstate == 0)
 {
-    var _af = obj_buffer_afterimage
+    var _af = gml_Script_scr_custom_afterimage(545)
     _af.image_alpha = 0.5
     _af.image_index = 5
     _af.image_blend = 0x89D931

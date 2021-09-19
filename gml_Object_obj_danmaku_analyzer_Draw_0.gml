@@ -1,8 +1,8 @@
-if (!mysurface)
+if (!surface_exists(mysurface))
     mysurface = surface_create(640, 480)
-mysurface
-0.5
-16776960
+surface_set_target(mysurface)
+draw_set_alpha(0.5)
+draw_set_color(c_aqua)
 with (obj_collidebullet)
 {
     if (mask_index > IMAGE_LOGO_CENTER)
@@ -10,7 +10,7 @@ with (obj_collidebullet)
     else
         draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false)
 }
-1
-// WARNING: Popz'd an empty stack.
-mysurface
+draw_set_alpha(1)
+surface_reset_target()
+draw_surface(mysurface, gml_Script_camerax(), gml_Script_cameray())
 global.hp[1] = 999

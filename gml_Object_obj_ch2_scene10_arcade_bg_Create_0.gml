@@ -1,9 +1,9 @@
 timer = 0
 con = 0
-x1 = 322
-y1 = 68
-x2 = 322
-y2 = 68
+x1 = (gml_Script_camerax() + 322)
+y1 = (gml_Script_cameray() + 68)
+x2 = (gml_Script_camerax() + 322)
+y2 = (gml_Script_cameray() + 68)
 depth = (obj_ch2_scene10.kr_actor.depth + 2)
 kr_x_save = obj_ch2_scene10.kr_actor.x
 kr_y_save = obj_ch2_scene10.kr_actor.y

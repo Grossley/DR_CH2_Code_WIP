@@ -7,8 +7,8 @@ if (explode == 0)
 }
 if ((y.room_height - 100) && explode == 0)
 {
-    461
-    461
+    audio_stop_sound(snd_scytheburst_ch1)
+    gml_Script_snd_play_ch1(461)
     remx = x
     remy = y
     explode = 1
@@ -41,7 +41,7 @@ if (explode == 2)
         active = false
     }
     if (image_xscale <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (grazed == 1)
 {

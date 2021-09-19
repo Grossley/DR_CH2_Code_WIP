@@ -9,7 +9,7 @@ if (image_xscale > 1.25)
 {
     image_xscale = 1.25
     image_yscale = 1.25
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     ball = gml_Script_instance_create(x, y, obj_sneo_elevator_electric_ball)
     ball.type = type
     ball.siner = siner

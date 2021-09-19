@@ -15,12 +15,12 @@ if (con == 10)
 {
     con = 99
     alarm[0] = 10
-    64
-    global.currentsong[0]
+    gml_Script_snd_play(64)
+    gml_Script_snd_free(global.currentsong[0])
 }
 if (con == 100)
 {
     con = 111
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    audio_stop_all()
+    gml_Script_snd_free_all()
 }

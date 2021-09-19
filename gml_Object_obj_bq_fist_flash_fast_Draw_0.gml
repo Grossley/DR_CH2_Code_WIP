@@ -19,11 +19,10 @@ repeat (2)
         y2 += 0.5
         image_alpha -= 0.14
         if (image_alpha < 0)
-        {
-        }
+            instance_destroy()
     }
-    16777215
-    image_alpha
+    draw_set_color(c_white)
+    draw_set_alpha(image_alpha)
     draw_rectangle(x1, y1, x2, y2, false)
-    1
+    draw_set_alpha(1)
 }

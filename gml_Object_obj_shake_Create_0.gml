@@ -7,8 +7,8 @@ siner = 0
 active = false
 permashake = false
 beenset = 0
-if (object_index >= obj_84_lang_helper)
+if (instance_number(object_index) >= 2)
 {
     active = -1
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

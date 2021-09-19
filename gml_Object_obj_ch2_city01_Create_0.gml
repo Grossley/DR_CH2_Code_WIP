@@ -6,18 +6,19 @@ leavecon = 0
 leaveleftattempt = 0
 leaverightattempt = 0
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.plot < 70)
 {
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
-    alleyoverlay = gml_Script_scr_marker(320, 40, 2528)
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
+    alleyoverlay = gml_Script_scr_marker(320, 40, 2529)
     alleyoverlay.image_xscale = 30
     alleyoverlay.image_yscale = 50
     alleyoverlay.image_blend = c_black
     alleyoverlay.image_alpha = 0.5
     var _temp_local_var_1 = alleyoverlay
+    gml_Script_scr_depth()
 }
 else
 {

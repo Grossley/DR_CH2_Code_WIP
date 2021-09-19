@@ -7,7 +7,7 @@ xxx = gml_Script___view_get(0, 0)
 yyy = gml_Script___view_get(1, 0)
 writer = 432432
 side = 1
-if 1347
+if instance_exists(obj_mainchara_ch1)
 {
     if (global.darkzone == false)
     {

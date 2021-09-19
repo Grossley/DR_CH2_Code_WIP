@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 destroyonhit = 1
 image_xscale = 0.25
 image_yscale = 0.5
@@ -14,9 +14,9 @@ length = 2
 type = 1
 myspeed = 6
 afterimagetimer = 0
-if 798
+if instance_exists(obj_bqueen_breath_controller)
     damage = obj_bqueen_breath_controller.damage
-if 798
+if instance_exists(obj_bqueen_breath_controller)
     target = obj_bqueen_breath_controller.target
 grazepoints = 3
 siner = 0

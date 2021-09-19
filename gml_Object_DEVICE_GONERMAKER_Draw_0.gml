@@ -10,9 +10,9 @@ for (k = 0; k < STEP; k += 1)
         img = IMAGE_GONERLEGS
     if (LOCK[k] == true)
     {
-        s_size = ((siner / 16) / 2)
+        s_size = abs((sin((siner / 16)) / 2))
         draw_sprite_ext(img, PART[k], (x - ((s_size * sprite_width) / 2)), ((y + sy[k]) - ((s_size * sprite_height) / 2)), (2 + s_size), (2 + s_size), 0, c_white, (0.4 * FA))
-        s_size = ((siner / 21) / 2)
+        s_size = abs((sin((siner / 21)) / 2))
         draw_sprite_ext(img, PART[k], (x - ((s_size * sprite_width) / 2)), ((y + sy[k]) - ((s_size * sprite_height) / 2)), (2 + s_size), (2 + s_size), 0, c_white, (0.4 * FA))
     }
 }

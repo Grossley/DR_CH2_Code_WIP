@@ -13,15 +13,15 @@ if image_play
             image_play = 0
     }
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (image_alpha < 1)
     return;
-af = 
+af = gml_Script_scr_afterimage()
 af.fadeSpeed = 0.25
 if ((image_index - frame_offset) >= 0)
 {
     draw_sprite_ext(headsprite, (image_index - frame_offset), x, y, image_xscale, image_yscale, 0, c_black, 1)
-    af = 
+    af = gml_Script_scr_afterimage()
     af.image_index = (image_index - frame_offset)
     af.sprite_index = headsprite
     af.fadeSpeed = 0.25

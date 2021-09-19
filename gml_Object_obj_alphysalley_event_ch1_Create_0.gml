@@ -4,5 +4,5 @@ if (global.flag[269] == 0)
 else
 {
     con = 999
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

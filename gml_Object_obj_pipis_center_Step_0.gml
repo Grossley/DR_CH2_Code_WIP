@@ -1,6 +1,6 @@
-if (!628)
+if (!instance_exists(obj_heart))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 if (init == 0)
@@ -50,8 +50,8 @@ if (con == 1 || (con > 1 && con < 6))
 {
     move_towards_point(obj_heart.x, obj_heart.y, 13)
     con++
-    if (628 < 30)
+    if (distance_to_object(obj_heart) < 30)
         con = 6
 }
-if (x - 50)
-    // WARNING: Popz'd an empty stack.
+if (x < (gml_Script_camerax() - 50))
+    instance_destroy()

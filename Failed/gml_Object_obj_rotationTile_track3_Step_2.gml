@@ -1,9 +1,33 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (init == 1)
+{
+    for (i = 0; i <= tilemax; i++)
+    {
+        tile[i].x += (x - xprevious)
+        tile[i].y += (y - yprevious)
+        tile[i].image_alpha = image_alpha
+        tile[i].image_blend = image_blend
+    }
+}
+if (init == 1)
+{
+    for (i = 0; i <= 20; i++)
+    {
+        if gml_Script_i_ex(staticTile[i])
+            staticTile[i].x += (x - xprevious)
+        if gml_Script_i_ex(staticTile[i])
+            staticTile[i].y += (y - yprevious)
+        if gml_Script_i_ex(staticTile[i])
+            staticTile[i].image_alpha = image_alpha
+        if gml_Script_i_ex(staticTile[i])
+            staticTile[i].image_blend = image_blend
+    }
+}
+if (init == 1)
+{
+    hole.x += (x - xprevious)
+    hole.y += (y - yprevious)
+    hole.image_alpha = image_alpha
+    hole.image_blend = image_blend
+}
+remx = xprevious
+remy = yprevious

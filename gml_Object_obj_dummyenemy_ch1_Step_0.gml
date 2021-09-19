@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_17, _temp_local_var_22, _temp_local_var_24, _temp_local_var_25, _temp_local_var_28, _temp_local_var_30, _temp_local_var_32, _temp_local_var_34, _temp_local_var_36, _temp_local_var_37, _temp_local_var_40, _temp_local_var_42, _temp_local_var_44, _temp_local_var_47, _temp_local_var_49;
 if (ambushed == false)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_ambush_ch1()
     ambushed = true
 }
 if (plot != 3)
@@ -34,7 +34,7 @@ else
             }
             global.mnfight = 1
             global.myfight = -1
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
         global.charaction[1] = 0
         global.faceaction[1] = 0
@@ -46,23 +46,23 @@ if (global.monster[myself] == true)
     commanded = 0
     if (global.mnfight == 1 && talked == 0)
     {
-        global.writerimg[0] = "spr_btfight"
-        global.writerimg[1] = "spr_btdefend"
-        global.writerimg[2] = "spr_bttech"
-        global.writerimg[3] = "spr_btact"
-        global.writerimg[4] = "spr_btspare"
-        global.writerimg[5] = "spr_btitem"
+        global.writerimg[0] = gml_Script_scr_84_get_sprite_ch1("spr_btfight")
+        global.writerimg[1] = gml_Script_scr_84_get_sprite_ch1("spr_btdefend")
+        global.writerimg[2] = gml_Script_scr_84_get_sprite_ch1("spr_bttech")
+        global.writerimg[3] = gml_Script_scr_84_get_sprite_ch1("spr_btact")
+        global.writerimg[4] = gml_Script_scr_84_get_sprite_ch1("spr_btspare")
+        global.writerimg[5] = gml_Script_scr_84_get_sprite_ch1("spr_btitem")
         if (attackcon == 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_moveheart_ch1()
             abletotarget = true
             if (global.charcantarget[0] == false && global.charcantarget[1] == false && global.charcantarget[2] == false)
                 abletotarget = false
-            mytarget = 0
+            mytarget = choose(0)
             if (abletotarget == true)
             {
                 while (global.charcantarget[mytarget] == false)
-                    mytarget = 0
+                    mytarget = choose(0)
             }
             else
                 target = 3
@@ -74,19 +74,19 @@ if (global.monster[myself] == true)
         global.typer = 45
         global.fc = 2
         global.fe = 1
-        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_81_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_81_0")
         if (plot == 0 && attackcon == 1)
         {
             global.fe = 0
             global.flag[30] = 0
-            global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_87_0"
-            global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_88_0"
-            global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_89_0"
-            global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_90_0"
-            global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_91_0"
-            global.msg[5] = "obj_dummyenemy_slash_Step_0_gml_92_0"
-            global.msg[6] = "obj_dummyenemy_slash_Step_0_gml_93_0"
-            global.msg[7] = "obj_dummyenemy_slash_Step_0_gml_94_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_87_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_88_0")
+            global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_89_0")
+            global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_90_0")
+            global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_91_0")
+            global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_92_0")
+            global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_93_0")
+            global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_94_0")
         }
         if (plot >= 1)
         {
@@ -112,41 +112,41 @@ if (global.monster[myself] == true)
             if (global.charaction[0] == 10 && commanded == 0)
             {
                 global.fe = 0
-                global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_115_0"
-                global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_116_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_115_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_116_0")
                 if (defendtime == 1)
                 {
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_120_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_121_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_120_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_121_0")
                 }
                 if (defendtime == 2)
                 {
                     global.fe = 1
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_127_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_128_0"
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_129_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_127_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_128_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_129_0")
                 }
                 if (defendtime == 3)
                 {
                     global.fe = 9
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_136_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_136_0")
                 }
                 if (plot == 2)
                 {
-                    global.writerimg[2] = "spr_bttech"
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_142_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_143_0"
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_144_0"
-                    global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_145_0"
-                    global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_146_0"
+                    global.writerimg[2] = gml_Script_scr_84_get_sprite_ch1("spr_bttech")
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_142_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_143_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_144_0")
+                    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_145_0")
+                    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_146_0")
                     if (global.monsterhp[0] == global.monstermaxhp[0])
                     {
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_150_0"
-                        global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_151_0"
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_150_0")
+                        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_151_0")
                     }
                     global.monsterstatus[myself] = true
                     if (global.monstercomment[myself] == " ")
-                        global.monstercomment[myself] = "obj_dummyenemy_slash_Draw_0_gml_4_0"
+                        global.monstercomment[myself] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Draw_0_gml_4_0")
                     plot = 3
                     if (defendtime == 4)
                         defendtime = 3
@@ -162,29 +162,29 @@ if (global.monster[myself] == true)
             if (global.charaction[0] == 4 && commanded == 0)
             {
                 global.fe = 0
-                global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_167_0"
-                global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_168_0"
-                global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_169_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_167_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_168_0")
+                global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_169_0")
                 if (item_command == 1)
                 {
                     global.fe = 1
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_174_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_175_0"
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_176_0"
-                    global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_177_0"
-                    global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_178_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_174_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_175_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_176_0")
+                    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_177_0")
+                    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_178_0")
                 }
                 if (item_command == 2)
                 {
                     global.fe = 6
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_184_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_185_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_184_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_185_0")
                 }
                 if (item_command == 3)
                 {
                     global.fe = 0
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_191_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_192_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_191_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_192_0")
                 }
                 if (item_command >= 4)
                     dial = 3
@@ -193,30 +193,30 @@ if (global.monster[myself] == true)
             }
             if (ral_wrongcommand == 1 && commanded == 0)
             {
-                global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_206_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_206_0")
                 if (ral_wrongcommand_count == 0)
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_211_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_211_0")
                 if (ral_wrongcommand_count == 1)
                 {
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_216_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_217_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_216_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_217_0")
                 }
                 if (ral_wrongcommand_count == 2)
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_222_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_222_0")
                 if (ral_wrongcommand_count == 3)
                 {
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_227_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_228_0"
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_229_0"
-                    global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_230_0"
-                    global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_231_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_227_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_228_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_229_0")
+                    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_230_0")
+                    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_231_0")
                     if (plot == 3)
                         plot = 4
                     if (global.mercymod[myself] >= 100)
                     {
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_237_0"
-                        global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_238_0"
-                        global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_239_0"
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_237_0")
+                        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_238_0")
+                        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_239_0")
                         plot = 5
                     }
                 }
@@ -225,23 +225,23 @@ if (global.monster[myself] == true)
             }
             if (global.charaction[1] == 2 && ral_wrongcommand == 0 && commanded == 0)
             {
-                global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_252_0"
-                global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_253_0"
-                global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_254_0"
-                global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_255_0"
-                global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_256_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_252_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_253_0")
+                global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_254_0")
+                global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_255_0")
+                global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_256_0")
                 if (pacifycon == 1)
                 {
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_260_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_260_0")
                     if (global.monsterstatus[myself] == false)
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_262_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_262_0")
                 }
                 plot = 4
                 if (global.mercymod[myself] >= 100)
                 {
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_268_0"
-                    global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_269_0"
-                    global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_270_0"
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_268_0")
+                    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_269_0")
+                    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_270_0")
                     plot = 5
                 }
                 commanded = 1
@@ -252,33 +252,33 @@ if (global.monster[myself] == true)
                 {
                     global.fe = 0
                     if (spare_command == 0)
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_282_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_282_0")
                     if (spare_command == 1)
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_283_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_283_0")
                     if (spare_command >= 2)
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_284_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_284_0")
                     if (global.mercymod[myself] >= 100)
                         win_spare += 1
                     if (win_spare == 1)
                     {
                         global.fe = 6
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_289_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_290_0"
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_291_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_289_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_290_0")
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_291_0")
                     }
                     if (win_spare == 2)
                     {
                         global.fe = 6
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_296_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_297_0"
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_298_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_296_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_297_0")
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_298_0")
                         won = 1
                     }
                 }
                 if (plot == 5)
                 {
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_307_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_308_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_307_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_308_0")
                     won = 1
                 }
                 spare_used = 0
@@ -292,33 +292,33 @@ if (global.monster[myself] == true)
                     global.fe = 3
                     if (dummyhp > (global.monsterhp[0] + 50))
                     {
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_327_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_328_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_327_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_328_0")
                     }
                     else
                     {
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_332_0"
-                        global.msg[1] = (("obj_dummyenemy_slash_Step_0_gml_333_0" + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_333_1"))
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_332_0")
+                        global.msg[1] = ((gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_333_0") + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_333_1"))
                     }
                     if (misstime >= 6)
                     {
                         global.fe = 8
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_338_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_339_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_338_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_339_0")
                     }
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_341_0"
-                    global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_342_0"
-                    global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_343_0"
-                    global.msg[5] = "obj_dummyenemy_slash_Step_0_gml_344_0"
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_341_0")
+                    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_342_0")
+                    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_343_0")
+                    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_344_0")
                     plot = 2
                     if (defendtime >= 1)
                     {
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_348_0"
-                        global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_349_0"
-                        global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_350_0"
-                        global.msg[5] = "obj_dummyenemy_slash_Step_0_gml_351_0"
-                        global.msg[6] = "obj_dummyenemy_slash_Step_0_gml_352_0"
-                        global.msg[7] = "obj_dummyenemy_slash_Step_0_gml_353_0"
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_348_0")
+                        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_349_0")
+                        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_350_0")
+                        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_351_0")
+                        global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_352_0")
+                        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_353_0")
                         plot = 3
                     }
                 }
@@ -327,22 +327,22 @@ if (global.monster[myself] == true)
                     if (hitdum == 0)
                     {
                         global.fe = 1
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_364_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_365_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_364_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_365_0")
                     }
                     if (hitdum == 1)
                     {
                         global.fe = 1
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_372_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_373_0"
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_374_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_372_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_373_0")
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_374_0")
                     }
                     if (hitdum == 2)
                     {
                         global.fe = 6
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_380_0"
-                        global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_381_0"
-                        global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_382_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_380_0")
+                        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_381_0")
+                        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_382_0")
                     }
                     if (hitdum >= 3)
                         dial = 3
@@ -352,41 +352,41 @@ if (global.monster[myself] == true)
             if (dial == 2)
             {
                 global.fe = 3
-                global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_398_0"
-                global.msg[1] = (("obj_dummyenemy_slash_Step_0_gml_399_0" + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_399_1"))
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_398_0")
+                global.msg[1] = ((gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_399_0") + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_399_1"))
                 if (misstime >= 1)
                 {
                     global.fe = 8
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_403_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_403_0")
                     if (misstime == 2)
-                        global.msg[0] = (("obj_dummyenemy_slash_Step_0_gml_404_0" + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_404_1"))
+                        global.msg[0] = ((gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_404_0") + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_404_1"))
                     if (misstime == 3)
-                        global.msg[0] = (("obj_dummyenemy_slash_Step_0_gml_405_0" + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_405_1"))
+                        global.msg[0] = ((gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_405_0") + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_405_1"))
                     if (misstime == 4)
-                        global.msg[0] = (("obj_dummyenemy_slash_Step_0_gml_406_0" + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_406_1"))
+                        global.msg[0] = ((gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_406_0") + gml_Script_scr_get_input_name_ch1(4)) + gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_406_1"))
                     if (misstime == 5)
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_407_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_407_0")
                     if (misstime == 6)
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_408_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_408_0")
                     if (misstime == 7)
                     {
                         global.fe = 9
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_412_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_412_0")
                     }
                     if (misstime == 8)
                     {
                         global.fe = 1
-                        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_417_0"
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_417_0")
                         plot = 2
                         if (defendtime >= 1)
                         {
-                            global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_421_0"
-                            global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_422_0"
-                            global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_423_0"
-                            global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_424_0"
-                            global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_425_0"
-                            global.msg[5] = "obj_dummyenemy_slash_Step_0_gml_426_0"
-                            global.msg[6] = "obj_dummyenemy_slash_Step_0_gml_427_0"
+                            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_421_0")
+                            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_422_0")
+                            global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_423_0")
+                            global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_424_0")
+                            global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_425_0")
+                            global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_426_0")
+                            global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_427_0")
                             plot = 3
                         }
                     }
@@ -396,26 +396,26 @@ if (global.monster[myself] == true)
             if (dial == 3)
             {
                 global.fe = 9
-                global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_441_0"
-                global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_442_0"
-                global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_443_0"
-                global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_444_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_441_0")
+                global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_442_0")
+                global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_443_0")
+                global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_444_0")
                 if (hitdum >= 4)
                 {
-                    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_447_0"
-                    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_448_0"
-                    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_449_0"
+                    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_447_0")
+                    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_448_0")
+                    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_449_0")
                 }
                 won = 1
                 global.myfight = 999
                 global.mnfight = 999
             }
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_ch1()
         if (global.msg[0] == gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_463_0"))
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         acting = 0
         spare_used = 0
@@ -428,32 +428,32 @@ if (global.monster[myself] == true)
     {
         turns += 1
         global.turntimer = -1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_mnendturn_ch1()
         attacked = true
-        rr = 0
+        rr = floor(random(0))
         global.typer = 6
         global.fc = 0
         if (rr == 0)
-            global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_489_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_489_0")
     }
     if (talked == 1 && global.mnfight == 1)
     {
         if (won == 0)
         {
             rtimer = 0
-            -1
+            gml_Script_scr_blconskip_ch1(-1)
             if (global.mnfight == 2 && attackcon == 1)
             {
-                if ((!1536) && (!1630))
-                    // WARNING: Popz'd an empty stack.
-                if (!1628)
+                if ((!instance_exists(obj_moveheart_ch1)) && (!instance_exists(obj_heart_ch1)))
+                    gml_Script_scr_moveheart_ch1()
+                if (!instance_exists(obj_growtangle_ch1))
                     gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
             }
         }
-        else if (!1327)
+        else if (!instance_exists(obj_writer_ch1))
         {
-            // WARNING: Popz'd an empty stack.
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_monsterdefeat_ch1()
+            gml_Script_scr_mnendturn_ch1()
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -463,7 +463,7 @@ if (global.monster[myself] == true)
         rtimer += 1
         if (rtimer >= 8)
         {
-            rr = 0
+            rr = choose(0)
             if (rr == 0)
             {
                 dc = gml_Script_instance_create_ch1(x, y, 1558)
@@ -479,29 +479,30 @@ if (global.monster[myself] == true)
             {
                 global.turntimer = -100
                 var _temp_local_var_17 = dc
+                instance_destroy()
             }
             attackcon = 2
             attacked = true
             global.typer = 6
             global.fc = 0
-            global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_548_0"
-            global.writerimg[0] = "spr_btfight"
-            global.writerimg[1] = "spr_btdefend"
-            global.writerimg[2] = "spr_bttech"
-            global.writerimg[3] = "spr_btact"
-            global.writerimg[4] = "spr_btspare"
-            global.writerimg[5] = "spr_btitem"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_548_0")
+            global.writerimg[0] = gml_Script_scr_84_get_sprite_ch1("spr_btfight")
+            global.writerimg[1] = gml_Script_scr_84_get_sprite_ch1("spr_btdefend")
+            global.writerimg[2] = gml_Script_scr_84_get_sprite_ch1("spr_bttech")
+            global.writerimg[3] = gml_Script_scr_84_get_sprite_ch1("spr_btact")
+            global.writerimg[4] = gml_Script_scr_84_get_sprite_ch1("spr_btspare")
+            global.writerimg[5] = gml_Script_scr_84_get_sprite_ch1("spr_btitem")
             global.fc = 0
             if (plot == 1)
-                global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_556_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_556_0")
             if (plot == 2)
-                global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_557_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_557_0")
             if (plot == 3)
-                global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_558_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_558_0")
             if (plot == 4)
-                global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_559_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_559_0")
             if (plot == 5)
-                global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_560_0"
+                global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_560_0")
             spare_used = 0
             ral_wrongcommand = 0
         }
@@ -532,22 +533,22 @@ if (con == 3)
     global.typer = 45
     global.fc = 2
     global.fe = 0
-    global.writerimg[0] = "spr_btfight"
-    global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_598_0"
+    global.writerimg[0] = gml_Script_scr_84_get_sprite_ch1("spr_btfight")
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_598_0")
     if (kris_inithp > global.hp[1])
     {
         global.fe = 6
-        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_602_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_602_0")
     }
-    global.msg[1] = "obj_dummyenemy_slash_Step_0_gml_604_0"
-    global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_605_0"
-    global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_606_0"
-    global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_607_0"
-    global.battlemsg[0] = "obj_dummyenemy_slash_Step_0_gml_610_0"
-    // WARNING: Popz'd an empty stack.
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_604_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_605_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_606_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_607_0")
+    global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_610_0")
+    gml_Script_scr_battletext_ch1()
     con = 6
 }
-if (con == 6 && (!1327))
+if (con == 6 && (!instance_exists(obj_writer_ch1)))
 {
     with (obj_battlecontroller_ch1)
     {
@@ -566,17 +567,17 @@ if (global.myfight == 3)
     if (acting == 1 && actcon == 0)
     {
         actcon = 1
-        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_642_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_642_0")
         if (checked == false)
         {
-            global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_645_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_645_0")
             gml_Script_scr_ralface_ch1(1, 6)
-            global.msg[2] = "obj_dummyenemy_slash_Step_0_gml_647_0"
-            global.msg[3] = "obj_dummyenemy_slash_Step_0_gml_648_0"
-            global.msg[4] = "obj_dummyenemy_slash_Step_0_gml_649_0"
+            global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_647_0")
+            global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_648_0")
+            global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_649_0")
         }
         checked += 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default_ch1()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -587,17 +588,17 @@ if (global.myfight == 3)
             state = 0
             acttimer = 0
         }
-        global.msg[0] = "obj_dummyenemy_slash_Step_0_gml_666_0"
-        // WARNING: Popz'd an empty stack.
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_666_0")
+        gml_Script_scr_battletext_default_ch1()
     }
-    if (actcon == 1 && (!1327))
+    if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
         global.acting[0] = 0
         global.acting[1] = 0
         global.acting[2] = 0
         actcon = 0
         acting = -1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase_ch1()
     }
     if (actcon == 10)
     {
@@ -709,7 +710,7 @@ if (global.myfight == 3)
         maker = 1
         with (obj_heroralsei_ch1)
             visible = false
-        rb = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3568)
+        rb = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3569)
         var _temp_local_var_36 = k
         image_speed = 0.25
     }

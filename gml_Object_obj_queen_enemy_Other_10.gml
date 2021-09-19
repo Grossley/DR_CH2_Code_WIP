@@ -78,7 +78,7 @@ if ((phase == 1 && rr != 2 && rr != 1) || (phase == 2 && rr != 2 && rr != 1))
     if (phaseturn > 7)
     {
         phaseturn = 7
-        var rand = 120
+        var rand = irandom(120)
         if (rand >= 0)
         {
             rr = 7
@@ -175,7 +175,7 @@ if ((phase == 3 && rr != 2 && rr != 1) || (phase == 4 && rr != 2 && rr != 1))
     }
     if (phaseturn > 12)
     {
-        rand = 100
+        rand = irandom(100)
         if (rand >= 0)
         {
             rr = 4
@@ -203,7 +203,7 @@ if ((phase == 3 && rr != 2 && rr != 1) || (phase == 4 && rr != 2 && rr != 1))
         }
     }
 }
-if (!573)
+if (!instance_exists(obj_berdlyplug_enemy))
 {
     if (rr == 7)
         rr = 5

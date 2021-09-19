@@ -10,11 +10,11 @@ else
     {
         my_new = gml_Script_instance_create(x, y, obj_saucer)
         my_new.mode = 6
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
-    if 264
+    if instance_exists(obj_saucer_ufo)
     {
         with (obj_saucer_ufo)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

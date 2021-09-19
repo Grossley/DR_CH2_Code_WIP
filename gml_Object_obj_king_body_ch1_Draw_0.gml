@@ -1,9 +1,9 @@
-// WARNING: Popz'd an empty stack.
-32768
-draw_text(0, 0, attackno)
-if 1565
+draw_self()
+draw_set_color(c_green)
+draw_text(0, 0, string_hash_to_newline(attackno))
+if instance_exists(obj_chainking_ch1)
 {
-    65535
-    draw_text(0, 40, obj_chainking_ch1.x)
-    draw_text(0, 60, obj_chainking_ch1.y)
+    draw_set_color(c_yellow)
+    draw_text(0, 40, string_hash_to_newline(obj_chainking_ch1.x))
+    draw_text(0, 60, string_hash_to_newline(obj_chainking_ch1.y))
 }

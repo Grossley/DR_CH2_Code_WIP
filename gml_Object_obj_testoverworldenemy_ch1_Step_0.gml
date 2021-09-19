@@ -3,7 +3,7 @@ if (con == 0)
 {
     if (global.interact == 0)
         frozen = false
-    if 200
+    if gml_Script_scr_outside_camera_ch1(200)
         frozen = true
     else
         frozen = false
@@ -40,13 +40,13 @@ if (con == 0)
 if (con == 1)
 {
     sprite_index = touchsprite
-    hnka = 405
+    hnka = gml_Script_snd_play_ch1(405)
     con = 2
     alarm[4] = 8
 }
 if (con == 3)
 {
-    hnkb = 405
+    hnkb = gml_Script_snd_play_ch1(405)
     gml_Script_snd_pitch_ch1(hnkb, 1.1)
     con = 4
     alarm[4] = 12
@@ -75,7 +75,7 @@ if (con == 5)
             }
             else
             {
-                copy[cc] = gml_Script_scr_dark_marker_ch1((global.monstermakex[(cc + 1)] + 200), global.monstermakey[(cc + 1)], global.monsterinstancetype[(cc + 1)])
+                copy[cc] = gml_Script_scr_dark_marker_ch1((global.monstermakex[(cc + 1)] + 200), global.monstermakey[(cc + 1)], object_get_sprite(global.monsterinstancetype[(cc + 1)]))
                 copy[cc].cc = cc
                 copy[cc].depth = ((depth - 1) - cc)
                 var _temp_local_var_1 = copy[cc]
@@ -98,19 +98,22 @@ if (con == 7)
         }
     }
     speed = 0
-    if 1513
+    if instance_exists(obj_battlecontroller_ch1)
     {
         if (eraser == true)
         {
             with (obj_chaseenemy_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         if (copyhave > 0)
         {
             c = 0
             while (c < copyhave)
+            {
                 var _temp_local_var_3 = copy[c]
+                instance_destroy()
+            }
         }
     }
 }

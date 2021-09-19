@@ -9,7 +9,7 @@ if (direction == 0 || other.object_index == obj_omawaroid_vaccine)
     image_speed = 1
     speed = 0
 }
-else if (other.object_index != obj_virovirokun_needle || angle_difference(other.direction, direction) > 90)
+else if (other.object_index != obj_virovirokun_needle || abs(angle_difference(other.direction, direction) > 90))
 {
     if (spawning == 1)
     {
@@ -36,5 +36,5 @@ else if (other.object_index != obj_virovirokun_needle || angle_difference(other.
         targety = lerp(y, other.y, 0.5)
         poisoncolor = 16777215
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy(other)
 }

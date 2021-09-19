@@ -17,11 +17,11 @@ for (m = 0; m < menuMax; m++)
             maxj = (menuMaximumID[m] + 1)
         if (menuBoxDraw[m] == 1)
         {
-            16777215
+            draw_set_color(c_white)
             draw_rectangle((xx + menuBoxDrawX1[m]), (yy + menuBoxDrawY1[m]), (xx + menuBoxDrawX2[m]), (yy + menuBoxDrawY2[m]), false)
-            0
+            draw_set_color(c_black)
             draw_rectangle(((xx + menuBoxDrawX1[m]) + 4), ((yy + menuBoxDrawY1[m]) + 4), ((xx + menuBoxDrawX2[m]) - 4), ((yy + menuBoxDrawY2[m]) - 4), false)
-            trimove = ((((siner / 6) * 2) / 2) * 2)
+            trimove = (round(((sin((siner / 6)) * 2) / 2)) * 2)
             if (menuVEdgeBehavior[m] == 2 && menu == m)
             {
                 if (maxj < (menuMaximumID[m] + 1))
@@ -35,10 +35,10 @@ for (m = 0; m < menuMax; m++)
                 draw_sprite_ext(spr_custommenu_arrow, 0, ((xx + menuBoxDrawX2[m]) - trimove), (yy + ((menuBoxDrawY1[m] + menuBoxDrawY2[m]) / 2)), 2, -2, 270, c_white, 1)
             }
         }
-        menuTextFont[m]
+        draw_set_font(menuTextFont[m])
         for (j = 0; j < menuHeaderTextAmount[m]; j++)
         {
-            menuHeaderColor[m][j]
+            draw_set_color(menuHeaderColor[m][j])
             textxscale = 1
             textyscale = 1
             if (menuHeaderWidth[m][j] > 0)
@@ -53,38 +53,38 @@ for (m = 0; m < menuMax; m++)
         {
             if (optionTopComment[m][menuCoord[m]] != " ")
             {
-                "mainbig"
-                0
+                gml_Script_scr_84_set_draw_font("mainbig")
+                draw_set_color(c_black)
                 draw_rectangle((xx - 10), (yy - 10), (xx + 700), (yy + 120), false)
-                16777215
+                draw_set_color(c_white)
                 if display_buttons
                 {
                     draw_sprite_ext(gml_Script_scr_getbuttonsprite(global.input_g[4], 0), 0, (xx + 20), (yy + 22), 2, 2, 0, c_white, 1)
                     var button_x_offset = (global.lang == "en" ? 0 : -40)
                     draw_sprite_ext(gml_Script_scr_getbuttonsprite(global.input_g[5], 0), 0, ((xx + 190) + button_x_offset), (yy + 22), 2, 2, 0, c_white, 1)
                     var x_offset = (global.lang == "en" ? 0 : -36)
-                    draw_text(((xx + 18) + x_offset), (yy + 20), optionTopComment[m][menuCoord[m]])
+                    draw_text(((xx + 18) + x_offset), (yy + 20), string_hash_to_newline(optionTopComment[m][menuCoord[m]]))
                 }
                 else
-                    draw_text((xx + 20), (yy + 20), optionTopComment[m][menuCoord[m]])
+                    draw_text((xx + 20), (yy + 20), string_hash_to_newline(optionTopComment[m][menuCoord[m]]))
             }
         }
-        menuTextFont[m]
+        draw_set_font(menuTextFont[m])
         for (j = minj; j < maxj; j++)
         {
             if (m == menu)
             {
                 if (optionSelectable[m][j] == 0)
-                    menuTextColorUnselectable[m]
+                    draw_set_color(menuTextColorUnselectable[m])
                 else if (menuCoord[m] == j)
-                    menuTextColorHover[m]
+                    draw_set_color(menuTextColorHover[m])
                 else
-                    menuTextColor[m]
+                    draw_set_color(menuTextColor[m])
             }
             else if (optionSelected[m][j] == 1)
-                menuTextColorSelected[m]
+                draw_set_color(menuTextColorSelected[m])
             else
-                menuTextColorInactive[m]
+                draw_set_color(menuTextColorInactive[m])
             if (menuSpacingOverride[m] == 0)
             {
                 optionX[m][j] = (menuX[m] + (wrap * menuSpacingX[m]))
@@ -109,7 +109,7 @@ for (m = 0; m < menuMax; m++)
             }
             if (optionCommentA[m][j] != " ")
             {
-                optionCommentAColor[m][j]
+                draw_set_color(optionCommentAColor[m][j])
                 textxscale = 1
                 textyscale = 1
                 if (optionCommentAWidth[m][j] > 0)
@@ -122,7 +122,7 @@ for (m = 0; m < menuMax; m++)
             }
             if (optionCommentB[m][j] != " ")
             {
-                optionCommentBColor[m][j]
+                draw_set_color(optionCommentBColor[m][j])
                 textxscale = 1
                 textyscale = 1
                 if (optionCommentBWidth[m][j] > 0)
@@ -135,7 +135,7 @@ for (m = 0; m < menuMax; m++)
             }
             if (optionCommentC[m][j] != " ")
             {
-                optionCommentCColor[m][j]
+                draw_set_color(optionCommentCColor[m][j])
                 textxscale = 1
                 textyscale = 1
                 if (optionCommentCWidth[m][j] > 0)
@@ -151,17 +151,17 @@ for (m = 0; m < menuMax; m++)
 }
 idealHeartX = optionX[menu][menuCoord[menu]]
 heartX = lerp(heartX, idealHeartX, 0.5)
-if ((heartX - idealHeartX) < 2)
+if (abs((heartX - idealHeartX)) < 2)
     heartX = idealHeartX
 idealHeartY = optionY[menu][menuCoord[menu]]
 heartY = lerp(heartY, idealHeartY, 0.5)
-if ((heartY - idealHeartY) < 2)
+if (abs((heartY - idealHeartY)) < 2)
     heartY = idealHeartY
 draw_sprite(menuSprite, 0, heartX, (heartY + 8))
 if (menuCoord[menu] >= ((menuWidth[menu] * (menuHeight[menu] - 1)) + menuScrollCurrent[menu]))
-    65280
+    draw_set_color(c_lime)
 if (menuCoord[menu] < (menuWidth[menu] + menuScrollCurrent[menu]))
-    16711935
+    draw_set_color(c_fuchsia)
 if ((menuCoord[menu] % menuWidth[menu]) == (menuWidth[menu] - 1))
-    4235519
+    draw_set_color(c_orange)
 siner++

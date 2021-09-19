@@ -1,15 +1,14 @@
-var _temp_local_var_2, _temp_local_var_26;
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         if (!virokun_battle_init)
         {
             virokun_battle_init = 1
-            virokun_battle = 416
+            virokun_battle = gml_Script_i_ex(416)
         }
         global.typer = 50
         rr = choose(0, 1, 2, 3)
@@ -25,7 +24,7 @@ if (global.monster[myself] == true)
         {
             if (turns == 0)
                 gml_Script_msgsetloc(0, "Hey! Virus!&You've gotta pay!", "obj_omawaroid_enemy_slash_Step_0_gml_32_0")
-            if (!416)
+            if (!gml_Script_i_ex(416))
             {
                 rr = choose(0, 1)
                 if (rr == 0)
@@ -52,19 +51,19 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 16)
@@ -86,7 +85,7 @@ if (global.monster[myself] == true)
                 chasecheck = 0
             }
             chasecheck = 0
-            140
+            gml_Script_scr_turntimer(140)
             turns += 1
             global.typer = 6
             global.fc = 0
@@ -104,7 +103,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -115,43 +114,43 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* AMBYU-LANCE - If it doesn't find an accident, it'll make one!/%", "obj_omawaroid_enemy_slash_Step_0_gml_130_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
-        if (!4)
+        if (!gml_Script_scr_havechar(4))
         {
             actcon = 1
-            "susie"
+            gml_Script_scr_speaker("susie")
             gml_Script_msgsetloc(0, "\\E5* Ambulance? Hell no. Like doctors even GET me!/", "obj_omawaroid_enemy_slash_Step_0_gml_147_0")
             gml_Script_scr_anyface_next("no_name", 0)
             gml_Script_msgnextloc("* (Susie told you to \\cYavoid getting hit\\cW by the ambulances!)/%", "obj_omawaroid_enemy_slash_Step_0_gml_149_0")
             chasecheck = 1
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext()
         }
         else
         {
             nact_count++
             with (obj_omawaroid_enemy)
                 gml_Script_scr_mercyadd(myself, 100)
-            if 2
+            if (gml_Script_scr_sideb_get_phase() >= 2)
             {
-                "no_name"
+                gml_Script_scr_speaker("no_name")
                 gml_Script_msgsetloc(0, "* Noelle mutters to herself about saws and needles./%", "obj_omawaroid_enemy_slash_Step_0_gml_179_0")
             }
             else if (nact_count == 1)
             {
-                "no_name"
+                gml_Script_scr_speaker("no_name")
                 gml_Script_msgsetloc(0, "* Noelle acted warmly towards Ambyu-Lance!/", "obj_omawaroid_enemy_slash_Step_0_gml_169_0")
                 gml_Script_scr_anyface_next("noelle", "2")
                 gml_Script_msgnextloc("\\E2* Needles aren't scary..^1. medicine's important^1, you know?/%", "obj_omawaroid_enemy_slash_Step_0_gml_171_0")
             }
             else
             {
-                "no_name"
+                gml_Script_scr_speaker("no_name")
                 gml_Script_msgsetloc(0, "* Noelle muttered absentmindedly about hospital tools!/%", "obj_omawaroid_enemy_slash_Step_0_gml_183_0_b")
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actcon = 5
             alarm[4] = 15
         }
@@ -159,25 +158,21 @@ if (global.myfight == 3)
     else if (acting == 3 && actcon == 0)
     {
         actcon = 1
-        "ralsei"
+        gml_Script_scr_speaker("ralsei")
         gml_Script_msgsetloc(0, "\\EH* We'll use your service^1, friends!/", "obj_omawaroid_enemy_slash_Step_0_gml_199_0")
         gml_Script_scr_anyface_next("no_name", 0)
         gml_Script_msgnextloc("* (Ralsei encouraged you to \\cYget hit\\cW by the ambulances!)/%", "obj_omawaroid_enemy_slash_Step_0_gml_201_0")
         chasecheck = -1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
     }
-    if (actcon == 6)
-    {
-    }
-    else
-        var _temp_local_var_26 = 0
-    actcon = 1
+    if (actcon == 6 && (!gml_Script_d_ex()))
+        actcon = 1
     if (actingsus == 1 && actconsus == 1)
     {
         var simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Susie lies about how often she brushes and flosses!/%", "obj_omawaroid_enemy_slash_Step_0_gml_227_0") : gml_Script_stringsetloc("* Susie lies about her health!/%", "obj_omawaroid_enemy_slash_Step_0_gml_227_1"))
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 50)
-        "susie"
+        gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
     if (actingral == 1 && actconral == 1)
@@ -185,27 +180,30 @@ if (global.myfight == 3)
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Ralsei washes his hands for 60 seconds!/%", "obj_omawaroid_enemy_slash_Step_0_gml_238_0") : gml_Script_stringsetloc("* Ralsei washes his hands!/%", "obj_omawaroid_enemy_slash_Step_0_gml_238_1"))
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 50)
-        "ralsei"
+        gml_Script_scr_simultext("ralsei")
         actconral = (simulorderral == 0 ? 20 : 0)
     }
     if (actingnoe == 1 && actconnoe == 1)
     {
         gml_Script_scr_mercyadd(myself, 50)
         gml_Script_msgsetloc(0, "* Noelle takes on and off her nurse hat really fast!/%", "obj_omawaroid_enemy_slash_Step_0_gml_253_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
         actconnoe = 0
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_act_charsprite_end()
+        gml_Script_scr_nextact()
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20 || actconnoe == 20)
     {
-        actconsus = -1
-        actconral = -1
-        actconnoe = -1
-        actcon = 1
+        if gml_Script_scr_terminate_writer()
+        {
+            actconsus = -1
+            actconral = -1
+            actconnoe = -1
+            actcon = 1
+        }
     }
 }

@@ -1,7 +1,7 @@
 for (i = 0; i < 3; i++)
 {
     shot = gml_Script_instance_create(x, y, obj_regularbullet)
-    if shot
+    if gml_Script_i_ex(shot)
     {
         shot.direction = (120 + (i * 60))
         shot.speed = 2
@@ -12,6 +12,6 @@ for (i = 0; i < 3; i++)
         shot.grazepoints = 7
         shot.element = 6
     }
-    shot
+    gml_Script_scr_bullet_inherit(shot)
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

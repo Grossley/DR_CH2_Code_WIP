@@ -6,9 +6,12 @@ if (throwcon == 1)
         anglespeed = -2
     if (angle <= -2)
         anglespeed = 2
-    activatethrow = true
-    with (obj_writer)
-        // WARNING: Popz'd an empty stack.
+    if gml_Script_button3_p()
+    {
+        activatethrow = true
+        with (obj_writer)
+            instance_destroy()
+    }
     if (activatethrow == true)
     {
         throwready = 1
@@ -18,7 +21,7 @@ if (throwcon == 1)
         sprite_index = spr_susieb_attack_unarmed
         angledraw = 0
         throwcon = 2
-        157
+        gml_Script_snd_play(157)
         kris = gml_Script_instance_create(kx, ky, obj_werewire_kristhrown)
         kris.speed = mypower
         kris.mypower = mypower

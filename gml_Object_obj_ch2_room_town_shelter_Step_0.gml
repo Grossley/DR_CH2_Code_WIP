@@ -1,10 +1,16 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_9, _temp_local_var_11, _temp_local_var_15;
 if (con > -1)
 {
-    if snowy
+    if gml_Script_i_ex(snowy)
+    {
         var _temp_local_var_1 = snowy
-    if monsterkid
+        gml_Script_scr_depth()
+    }
+    if gml_Script_i_ex(monsterkid)
+    {
         var _temp_local_var_2 = monsterkid
+        gml_Script_scr_depth()
+    }
 }
 if (obj_mainchara.y >= 1130 && obj_mainchara.x > obj_mainchara && obj_mainchara.x < obj_darkfountain && con == -1)
 {
@@ -12,72 +18,72 @@ if (obj_mainchara.y >= 1130 && obj_mainchara.x > obj_mainchara && obj_mainchara.
     global.interact = 1
     snowy.visible = false
     monsterkid.visible = false
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
-    susiegox = ((obj_mainchara.x.room_width / 2) ? (obj_mainchara.x - 30) : (obj_mainchara.x + 30))
-    kr
-    var facing = ((obj_mainchara.x.room_width / 2) ? "l" : "r")
-    facing
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
+    susiegox = (monsterkid > (obj_mainchara.x.room_width / 2) ? (obj_mainchara.x - 30) : (obj_mainchara.x + 30))
+    gml_Script_c_sel(kr)
+    var facing = (snowy > (obj_mainchara.x.room_width / 2) ? "l" : "r")
+    gml_Script_c_facing(facing)
     sux = su_actor.x
     suy = su_actor.y
-    su
-    facing
+    gml_Script_c_sel(su)
+    gml_Script_c_facing(facing)
     sn = 2
     sn_actor = gml_Script_instance_create(135, 1130, obj_actor)
     gml_Script_scr_actor_setup(sn, sn_actor, "snowy")
     sn_actor.sprite_index = spr_snowy_ut
-    sn
-    0
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_sel(sn)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_halt()
     mk = 3
     mk_actor = gml_Script_instance_create(170, 1130, obj_actor)
     gml_Script_scr_actor_setup(mk, mk_actor, "monster_kid")
     mk_actor.sprite_index = spr_mkid_ut
-    mk
-    0
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_sel(mk)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_halt()
 }
 if (con == 1)
 {
     con = 2
-    mk
-    0.25
-    "no_name"
+    gml_Script_c_sel(mk)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* You think it's true? You really think there's..../%", "obj_ch2_room_town_shelter_slash_Step_0_gml_61_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    sn
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(sn)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* What^1, you chicken? Haha^1, you gotta beak and wings? Like a chicken?/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_68_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    mk
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(mk)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* ..^1. no..^1. just.../%", "obj_ch2_room_town_shelter_slash_Step_0_gml_75_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    sn
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(sn)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* I ain't afraid^1! Only kids believe that stuff!/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_82_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    mk
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(mk)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* ..^1. b-but Kris.../%", "obj_ch2_room_town_shelter_slash_Step_0_gml_89_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    sn
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(sn)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* You gonna be a weenie like Kris!?/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_96_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    su
-    "susieunhappy"
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("susieunhappy")
     if (sux < 160)
     {
         if (sux > 50 && suy < 1116)
@@ -95,73 +101,73 @@ if (con == 1)
         gml_Script_c_walkdirect_wait(sux, 1152, 16)
     gml_Script_c_walkdirect_wait(152, 1152, 45)
     gml_Script_c_walkdirect_wait(152, 1148, 25)
-    "u"
-    30
-    "susie"
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(30)
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EV* You wanna say that again?/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_109_0")
-    // WARNING: Popz'd an empty stack.
-    sn
-    952
-    // WARNING: Popz'd an empty stack.
-    mk
-    957
-    // WARNING: Popz'd an empty stack.
-    60
-    sn
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(sn)
+    gml_Script_c_sprite(953)
+    gml_Script_c_shakeobj()
+    gml_Script_c_sel(mk)
+    gml_Script_c_sprite(958)
+    gml_Script_c_shakeobj()
+    gml_Script_c_wait(60)
+    gml_Script_c_sel(sn)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* Susie. Didn't see ya there./%", "obj_ch2_room_town_shelter_slash_Step_0_gml_126_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    su
-    0
-    1
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imageindex(1)
     gml_Script_c_walk_wait("u", 0.25, 25)
-    0
-    "susie"
+    gml_Script_c_imageindex(0)
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EW* Wow^1, really something SCARY in there^1, huh?/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_138_0")
-    // WARNING: Popz'd an empty stack.
-    sn
-    0.25
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(sn)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* Uhh--/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_145_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    su
-    0
-    3
+    gml_Script_c_talk_wait()
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imageindex(3)
     gml_Script_c_walk_wait("u", 0.25, 25)
-    2
-    "susie"
+    gml_Script_c_imageindex(2)
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EW* Sounds to me like you'd better worry.../%", "obj_ch2_room_town_shelter_slash_Step_0_gml_157_0")
-    // WARNING: Popz'd an empty stack.
-    0
-    1
+    gml_Script_c_talk_wait()
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imageindex(1)
     gml_Script_c_walk_wait("u", 0.25, 25)
-    0
-    sn
-    0
+    gml_Script_c_imageindex(0)
+    gml_Script_c_sel(sn)
+    gml_Script_c_autowalk(0)
     gml_Script_c_walk("l", 6, 6)
-    mk
-    0
+    gml_Script_c_sel(mk)
+    gml_Script_c_autowalk(0)
     gml_Script_c_walk("r", 4, 6)
-    su
-    0
-    854
-    0.3
-    10
-    59
-    // WARNING: Popz'd an empty stack.
-    5
-    4
-    0
-    "susie"
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(855)
+    gml_Script_c_imagespeed(0.3)
+    gml_Script_c_wait(10)
+    gml_Script_c_soundplay(59)
+    gml_Script_c_shake()
+    gml_Script_c_wait(5)
+    gml_Script_c_imageindex(4)
+    gml_Script_c_imagespeed(0)
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EX* About what's OUT HERE^1, first./%", "obj_ch2_room_town_shelter_slash_Step_0_gml_188_0")
-    // WARNING: Popz'd an empty stack.
-    "no_name"
+    gml_Script_c_talk_wait()
+    gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* AHHHHHHHHHHH!!!!!!!!/%", "obj_ch2_room_town_shelter_slash_Step_0_gml_192_0")
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk()
+    gml_Script_c_waitcustom()
 }
 if (con == 2 && customcon == 1)
 {

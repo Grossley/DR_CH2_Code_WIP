@@ -2,7 +2,7 @@ con = -1
 visible = true
 exitcollider = obj_sneo_friedpipis
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.flag[340] == 1)
     layer_set_visible("TILES_Secret", 0)
 else

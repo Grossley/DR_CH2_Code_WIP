@@ -51,6 +51,6 @@ if ((place_meeting(x, y, obj_mainchara) && customhitbox == 0) || (customhitbox =
     {
         if (encounterflag > 0)
             global.flag[54] = encounterflag
-        0
+        event_user(0)
     }
 }

@@ -1,8 +1,8 @@
-if (1078 || 1077)
+if (instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
-if 795
+if instance_exists(obj_bqueen_missle_controller)
     return;
-if 798
+if instance_exists(obj_bqueen_breath_controller)
     return;
 if (nextdrawflip >= 0)
 {
@@ -91,9 +91,9 @@ if (global.bmenuno == 12 && global.bmenucoord[0][global.charturn] == 3)
     fsiner++
     gml_Script_d3d_set_fog(true, c_white, 0, 0)
     if (drawflip == 0)
-        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, (((-cos((fsiner / 5))) * 0.4) + 0.6))
     if (drawflip == 1)
-        draw_sprite_ext(sprite_index, image_index, x, y, -2, image_yscale, 0, c_white, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(sprite_index, image_index, x, y, -2, image_yscale, 0, c_white, (((-cos((fsiner / 5))) * 0.4) + 0.6))
     gml_Script_d3d_set_fog(false, c_white, 0, 0)
 }
-0
+draw_set_halign(fa_left)

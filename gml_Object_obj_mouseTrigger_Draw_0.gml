@@ -1,6 +1,6 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 image_index = 1
-if (obj_controller_mansion_traffic.victory && 1112)
+if (obj_controller_mansion_traffic.victory && instance_exists(obj_traffic_car))
     image_index = 0
 else
     image_index = 1

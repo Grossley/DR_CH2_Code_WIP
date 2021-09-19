@@ -1,11 +1,11 @@
 var _temp_local_var_3;
 if (wobbled == 0)
 {
-    if (1347 && global.interact == 0)
+    if (instance_exists(obj_mainchara_ch1) && global.interact == 0)
     {
         if (obj_mainchara_ch1.x > (x - 20) && obj_mainchara_ch1.x < (x + 50))
         {
-            if (!1493)
+            if (!instance_exists(obj_battlealphaer_ch1))
             {
                 d = gml_Script_instance_create_ch1(0, 0, 1493)
                 d.depth = 800000
@@ -15,9 +15,9 @@ if (wobbled == 0)
                 battlemode = 1
                 threebuffer = 2
             }
-            s = 459
+            s = gml_Script_snd_play_ch1(459)
             gml_Script_snd_pitch_ch1(s, (0.5 + random(0.2)))
-            s2 = 459
+            s2 = gml_Script_snd_play_ch1(459)
             gml_Script_snd_pitch_ch1(s2, (0.9 + random(0.2)))
             image_speed = 0.2
             wobbled = 1

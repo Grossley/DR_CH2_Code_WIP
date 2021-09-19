@@ -1,7 +1,7 @@
 depth = 500000
-if 941
+if instance_exists(obj_dw_transition)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 image_xscale = 2
@@ -16,7 +16,7 @@ kris_y = (y - 80)
 sus_x = (x - 60)
 sus_y = (y - 94)
 nextroom = 61
-if 2
+if gml_Script_scr_havechar(2)
 {
     kris_only = 0
     kris_x = (x + 12)
@@ -31,7 +31,7 @@ pillarscale = 2
 particletimer = 0
 top = 0
 bottom = 1
-if (940 == 1)
+if (instance_number(obj_dw_leave) == 1)
 {
     toppart = gml_Script_instance_create(x, y, obj_dw_leave)
     toppart.top = 1

@@ -1,16 +1,17 @@
+var _temp_local_var_1, _temp_local_var_6;
 if destroying
     return;
 if (offset > offsetCap)
 {
-    if ((y - other.y) < offset)
+    if (abs((y - other.y)) < offset)
         return;
     else
     {
-        with (stacktop)
-            0
+        var _temp_local_var_1 = other
+        event_user(0)
     }
 }
-else if (((y - 8) - other.y) <= (24 * image_xscale) && destroyable == 1)
+else if (abs(((y - 8) - other.y)) <= (24 * image_xscale) && destroyable == 1)
 {
     flash = true
     hp -= other.damage
@@ -19,8 +20,8 @@ else if (((y - 8) - other.y) <= (24 * image_xscale) && destroyable == 1)
     }
     else
     {
-        with (stacktop)
-            0
+        var _temp_local_var_6 = other
+        event_user(0)
     }
     if (new_movement == 0)
     {
@@ -62,10 +63,10 @@ else if (((y - 8) - other.y) <= (24 * image_xscale) && destroyable == 1)
         var d = gml_Script_instance_create((x + random_range(-10, 10)), y, obj_animation_dx)
         d.sprite_index = spr_thrash_missile_explosion
         d.depth = (depth - 1)
-        5
+        gml_Script_scr_tensionheal(5)
         if (difficulty == 3 || difficulty == 5)
-            0
+            event_user(0)
         if (crushedObj == 2)
-            1
+            event_user(1)
     }
 }

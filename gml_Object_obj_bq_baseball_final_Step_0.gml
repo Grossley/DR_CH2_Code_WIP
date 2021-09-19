@@ -29,7 +29,7 @@ if (hit == -1)
 image_angle += spin_speed
 if (hit == 1)
 {
-    10
+    gml_Script_snd_stop(10)
     hit_timer += 1
     if (hit_timer == 1)
     {
@@ -50,17 +50,17 @@ if (hit == 1)
     }
     if (hit_timer == (90 / f))
     {
-        51
+        gml_Script_snd_play(51)
         gml_Script_snd_pitch(51, 0.7)
     }
     if (hit_timer == (160 / f))
     {
-        51
+        gml_Script_snd_play(51)
         gml_Script_snd_pitch(51, 1)
     }
     if (hit_timer == (220 / f))
     {
-        51
+        gml_Script_snd_play(51)
         gml_Script_snd_pitch(51, 1.3)
     }
     if (hit_timer > 0 && hit_timer < (40 / f))
@@ -88,12 +88,12 @@ if (hit == 1)
     {
         gml_Script_instance_create(x, (y + 91), o_bq_screen_flash)
         with (obj_fx_speedlines)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         var speedlines = gml_Script_instance_create(x, (o_boxingcontroller.y - 120), obj_fx_speedlines)
         speedlines.offsety = 1
         speedlines.flashframe = 1
         speedlines.depth = (o_bq_screen_flash.depth - 1)
-        215
+        gml_Script_snd_play(215)
     }
     if (hit_timer > (220 / f))
     {
@@ -104,10 +104,10 @@ if (hit == 1)
         spin_speed = gml_Script_scr_movetowards(spin_speed, 0, 1)
     if (y < -850)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         gml_Script_instance_create(x, y, obj_bq_baseball_final_hits_boss)
-        286
+        gml_Script_snd_play(286)
     }
 }
-if (y > 20 && (!820) && hit != 1)
+if (y > 20 && (!instance_exists(o_bq_whitefade)) && hit != 1)
     gml_Script_instance_create(x, y, o_bq_whitefade)

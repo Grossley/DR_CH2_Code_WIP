@@ -4,14 +4,14 @@ if (puzzle_id == 2 && use_ja)
     _xx -= 22
 if (room == room_dw_cyber_keyboard_puzzle_2)
     _xx += 40
-2
-16777215
+draw_set_font(fnt_mainbig)
+draw_set_color(c_white)
 draw_text(_xx, _yy, idealString)
-65280
+draw_set_color(c_lime)
 if lost
-    255
+    draw_set_color(c_red)
 if won
-    65535
+    draw_set_color(c_yellow)
 draw_text(_xx, (_yy + 28), currentString)
 if won
 {
@@ -26,10 +26,10 @@ if won
         draw_sprite_ext(victorySprite, imageTimer, monitorx, monitory, 2, 2, 0, wincolor, 1)
     if (room == room_dw_cyber_keyboard_puzzle_1)
     {
-        if 285
+        if instance_exists(obj_forcefield)
         {
             with (obj_forcefield)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         global.flag[390] = 1
     }

@@ -9,8 +9,8 @@ if (global.plot < 5)
     con = 1
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_marker_ch1(290, 198, 4206)
-    s = gml_Script_scr_marker_ch1(310, 190, 3536)
+    k = gml_Script_scr_marker_ch1(290, 198, 4207)
+    s = gml_Script_scr_marker_ch1(310, 190, 3537)
     global.interact = 1
     var _temp_local_var_1 = s
     vspeed = -1
@@ -20,7 +20,7 @@ else
 {
     block = gml_Script_instance_create_ch1(280, 100, 1334)
     block.image_xscale = 4
-    sunset = gml_Script_scr_marker_ch1(0, 0, 3467)
+    sunset = gml_Script_scr_marker_ch1(0, 0, 3468)
     var _temp_local_var_3 = sunset
     image_alpha = 0.4
     depth = 2000

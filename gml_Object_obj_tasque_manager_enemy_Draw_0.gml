@@ -1,7 +1,7 @@
-if (454 && obj_tm_whip_animation.visible == true)
+if (instance_exists(obj_tm_whip_animation) && obj_tm_whip_animation.visible == true)
     return;
 if (state == 3)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemy_drawhurt_generic()
 if (state == 0)
 {
     if (flash == true)

@@ -1,7 +1,10 @@
-16777215
-draw_text(10, 10, 1099)
-if global.currentsong[1]
+if gml_Script_scr_debug()
 {
-    var _beats = (global.currentsong[1] / spb)
-    draw_text(10, 40, _beats)
+    draw_set_color(c_white)
+    draw_text(10, 10, instance_number(obj_beatbullet))
+    if gml_Script_snd_is_playing(global.currentsong[1])
+    {
+        var _beats = (audio_sound_get_track_position(global.currentsong[1]) / spb)
+        draw_text(10, 40, _beats)
+    }
 }

@@ -1,5 +1,3 @@
-with (stacktop)
-    // WARNING: Popz'd an empty stack.
-hp -= 10
-alarm[0] = 10
-170
+var _temp_local_var_1;
+var _temp_local_var_1 = other
+instance_destroy()

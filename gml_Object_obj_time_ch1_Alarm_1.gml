@@ -1,2 +1,2 @@
-// WARNING: Popz'd an empty stack.
-1
+audio_pause_all()
+instance_deactivate_all(true)

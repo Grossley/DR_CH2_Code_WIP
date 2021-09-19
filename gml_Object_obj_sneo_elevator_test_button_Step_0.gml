@@ -1,5 +1,5 @@
-if (!597)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_sneo_elevator_test))
+    instance_destroy()
 else
 {
     y = obj_sneo_elevator_test.y

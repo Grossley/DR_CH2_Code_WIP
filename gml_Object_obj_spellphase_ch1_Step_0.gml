@@ -2,14 +2,15 @@ var _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9;
 if (active == true)
 {
     spelltimer += 1
-    if (spelltimer >= global.spelldelay && spellwriter == 0)
+    if (spelltimer >= global.spelldelay && instance_exists(spellwriter) == 0)
     {
         if (char >= 3 || spelltotal == 1)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_attackphase_ch1()
             var _temp_local_var_3 = spellwriter
+            instance_destroy()
         }
-        else if 0
+        else if (gml_Script_scr_monsterpop_ch1() > 0)
         {
             if (gotitem[char] == 1)
             {
@@ -40,8 +41,9 @@ if (active == true)
         }
         else
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_attackphase_ch1()
             var _temp_local_var_9 = spellwriter
+            instance_destroy()
         }
     }
 }

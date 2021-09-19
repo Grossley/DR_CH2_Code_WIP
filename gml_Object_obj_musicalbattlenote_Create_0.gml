@@ -1,4 +1,4 @@
-image_blend = c_gray
+image_blend = choose(8421504)
 gravity = 0.2
 vspeed = (-random_range(1, 2))
 hspeed = (random_range(0.5, 1.5) * choose(1, -1))

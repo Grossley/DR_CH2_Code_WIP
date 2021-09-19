@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 image_speed = 0
 walk = true
 auto_walk = 1

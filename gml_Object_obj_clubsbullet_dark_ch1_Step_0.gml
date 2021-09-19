@@ -5,7 +5,7 @@ if (type == 0)
     {
         move_towards_point((obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8), 0.1)
         bul = gml_Script_instance_create_ch1(x, y, 1520)
-        if bul
+        if instance_exists(bul)
         {
             bul.sprite_index = spr_clubsball_b_ch1
             bul.direction = direction
@@ -17,7 +17,7 @@ if (type == 0)
             bul.timepoints = 1
         }
         bul = gml_Script_instance_create_ch1(x, y, 1520)
-        if bul
+        if instance_exists(bul)
         {
             bul.sprite_index = spr_clubsball_c_ch1
             bul.direction = (direction - 17)
@@ -29,7 +29,7 @@ if (type == 0)
             bul.timepoints = 1
         }
         bul = gml_Script_instance_create_ch1(x, y, 1520)
-        if bul
+        if instance_exists(bul)
         {
             bul.sprite_index = spr_clubsball_a_ch1
             bul.direction = (direction + 17)
@@ -46,7 +46,7 @@ if (type == 0)
         a = gml_Script_instance_create_ch1(x, y, 1509)
         a.sprite_index = sprite_index
         a.image_angle = image_angle
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (type == 2)
@@ -55,7 +55,7 @@ if (type == 2)
     {
         move_towards_point((obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8), 0.1)
         bul = gml_Script_instance_create_ch1(x, y, 1520)
-        if bul
+        if instance_exists(bul)
         {
             bul.sprite_index = spr_clubsball_b_ch1
             bul.direction = ((direction - 2) + initangle)
@@ -63,10 +63,10 @@ if (type == 2)
             if (type == 2)
                 bul.speed = 5
             bul.image_angle = direction
-            bul
+            gml_Script_scr_bullet_inherit_ch1(bul)
         }
         bul = gml_Script_instance_create_ch1(x, y, 1520)
-        if bul
+        if instance_exists(bul)
         {
             bul.sprite_index = spr_clubsball_c_ch1
             bul.direction = (((direction - 19) - 2) + initangle)
@@ -74,10 +74,10 @@ if (type == 2)
             if (type == 2)
                 bul.speed = 5
             bul.image_angle = direction
-            bul
+            gml_Script_scr_bullet_inherit_ch1(bul)
         }
         bul = gml_Script_instance_create_ch1(x, y, 1520)
-        if bul
+        if instance_exists(bul)
         {
             bul.sprite_index = spr_clubsball_a_ch1
             bul.direction = (((direction + 19) - 2) + initangle)
@@ -85,7 +85,7 @@ if (type == 2)
             if (type == 2)
                 bul.speed = 5
             bul.image_angle = direction
-            bul
+            gml_Script_scr_bullet_inherit_ch1(bul)
         }
         initangle += 2
     }
@@ -94,6 +94,6 @@ if (type == 2)
         a = gml_Script_instance_create_ch1(x, y, 1509)
         a.sprite_index = sprite_index
         a.image_angle = image_angle
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

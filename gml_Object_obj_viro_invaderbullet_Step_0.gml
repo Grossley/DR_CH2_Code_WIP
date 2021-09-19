@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (active && y > ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - 16))
 {
     speed = 0
@@ -13,6 +13,6 @@ if (_inst != noone)
     d = gml_Script_instance_create(other.x, other.y, obj_omawaroid_explosion)
     d.direction = 90
     d.speed = _inst.speed
-    _inst
-    // WARNING: Popz'd an empty stack.
+    instance_destroy(_inst)
+    instance_destroy()
 }

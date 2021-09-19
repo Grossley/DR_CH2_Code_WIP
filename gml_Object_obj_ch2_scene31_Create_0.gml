@@ -5,15 +5,15 @@ keytimer = 0
 shakebuffer = 0
 maxshaketime = 120
 if (global.chapter != 2 || global.plot >= 211 || global.plot < 205)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    if (!global.currentsong[1])
+    gml_Script_scr_losechar()
+    if (!audio_is_playing(global.currentsong[1]))
     {
-        global.currentsong[0] = "home.ogg"
-        global.currentsong[1] = global.currentsong[0]
+        global.currentsong[0] = gml_Script_snd_init("home.ogg")
+        global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
     }
     audio_sound_gain(global.currentsong[1], 0.5, 0)
-    142
+    instance_deactivate_object(obj_doorB)
 }

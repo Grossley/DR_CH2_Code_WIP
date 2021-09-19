@@ -1,7 +1,7 @@
 if (float == 1)
 {
     floatsiner++
-    floaty = ((floatsiner / 12) * 4)
+    floaty = (sin((floatsiner / 12)) * 4)
 }
 if (shadow == 1)
 {

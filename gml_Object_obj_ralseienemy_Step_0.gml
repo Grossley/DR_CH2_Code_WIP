@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_13, _temp_local_var_18, _temp_local_var_20, _temp_local_var_21, _temp_local_var_24, _temp_local_var_26, _temp_local_var_28;
 if (ambushed == false)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_ambush()
     ambushed = true
 }
 if (global.monster[myself] == true)
@@ -11,7 +11,7 @@ if (global.monster[myself] == true)
     {
         if (attackcon == 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_moveheart()
             abletotarget = true
             if (global.charcantarget[0] == false && global.charcantarget[1] == false && global.charcantarget[2] == false)
                 abletotarget = false
@@ -229,16 +229,16 @@ if (global.monster[myself] == true)
                 hittime += 1
             }
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         talked = 1
         talktimer = 0
     }
     if (talked == 1 && global.mnfight == 1)
     {
-        if (62 == 0)
+        if (instance_exists(obj_writer) == 0)
         {
             with (obj_face)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             if (attackcon == 0)
                 global.mnfight = 2
             else
@@ -248,7 +248,7 @@ if (global.monster[myself] == true)
                     global.mercymod[0] = 99999
                     global.mercymod[1] = 99999
                 }
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_mnendturn()
                 dummyhp = global.monsterhp[0]
                 myhp = global.monsterhp[1]
             }
@@ -261,7 +261,7 @@ if (global.monster[myself] == true)
         turns += 1
         global.turntimer = 999
         attacked = true
-        rr = 0
+        rr = floor(random(0))
         global.typer = 6
         global.fc = 0
         if (rr == 0)
@@ -300,7 +300,7 @@ if (attackcon < 92 && attackcon > 0)
             global.fe = 0
             global.typer = 45
             global.msg[0] = gml_Script_stringsetloc("* Yipee^1!&* You did it^1, Kris!/%", "obj_ralseienemy_slash_Step_0_gml_334_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext()
             attackcon = 90
         }
         else
@@ -310,13 +310,13 @@ if (attackcon < 92 && attackcon > 0)
             global.typer = 45
             global.msg[0] = gml_Script_stringsetloc("* O-oopsie..^2.&* Was that too many?/", "obj_ralseienemy_slash_Step_0_gml_343_0")
             global.msg[1] = gml_Script_stringsetloc("\\E8* Here^1, let's try just one!/%", "obj_ralseienemy_slash_Step_0_gml_344_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext()
         }
     }
-    if (attackcon == 8 && 62 == 0)
+    if (attackcon == 8 && instance_exists(obj_writer) == 0)
     {
         with (obj_face)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         krishp = global.hp[1]
         b1 = gml_Script_instance_create((obj_heart.x + 8), (obj_heart.y - 150), obj_ralseibullet)
         attackcon = 9
@@ -332,7 +332,7 @@ if (attackcon < 92 && attackcon > 0)
             global.fe = 0
             global.typer = 45
             global.msg[0] = gml_Script_stringsetloc("* Yipee^1!&* You did it^1, Kris!/%", "obj_ralseienemy_slash_Step_0_gml_369_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext()
             attackcon = 90
         }
         else
@@ -341,10 +341,10 @@ if (attackcon < 92 && attackcon > 0)
             global.fe = 9
             global.typer = 45
             global.msg[0] = gml_Script_stringsetloc("* .../%", "obj_ralseienemy_slash_Step_0_gml_378_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext()
         }
     }
-    if (attackcon == 11 && 62 == 0)
+    if (attackcon == 11 && instance_exists(obj_writer) == 0)
     {
         b1 = gml_Script_instance_create((xx + 440), (obj_heart.y + 8), obj_ralseibullet)
         var _temp_local_var_13 = b1
@@ -357,9 +357,10 @@ if (attackcon < 92 && attackcon > 0)
         global.fe = 8
         global.typer = 45
         global.msg[0] = gml_Script_stringsetloc("\\E8* L-look^1, Kris^1!&* You dodged one!/%", "obj_ralseienemy_slash_Step_0_gml_399_0")
+        gml_Script_scr_battletext()
         attackcon = 90
     }
-    if (attackcon == 90 && 62 == 0)
+    if (attackcon == 90 && instance_exists(obj_writer) == 0)
     {
         global.fc = 2
         global.fe = 0
@@ -370,13 +371,13 @@ if (attackcon < 92 && attackcon > 0)
         global.msg[2] = gml_Script_stringsetloc("\\E0* The first ICON^1, THE SWORD^1, is the ATTACK COMMAND./", "obj_ralseienemy_slash_Step_0_gml_412_0")
         global.msg[3] = gml_Script_stringsetloc("\\E1* Using it lets you^1, um..^1.&* Hurt people.../", "obj_ralseienemy_slash_Step_0_gml_413_0")
         global.msg[4] = gml_Script_stringsetloc("\\E8* ... w-well^1, I guess we have to defend ourselves sometimes^1, right?/%", "obj_ralseienemy_slash_Step_0_gml_414_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         attackcon = 91
     }
     if (attackcon == 91)
     {
         global.turntimer = 999
-        if (62 == 0)
+        if (instance_exists(obj_writer) == 0)
         {
             dummyhp = global.monsterhp[0]
             myhp = global.monsterhp[1]
@@ -395,7 +396,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* RALSEI - AT 8 DF 12&* The fluffy prince.../%", "obj_ralseienemy_slash_Step_0_gml_447_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -407,12 +408,12 @@ if (global.myfight == 3)
         }
         actcon = 10
         global.msg[0] = gml_Script_stringsetloc("* You hug RALSEI./%", "obj_ralseienemy_slash_Step_0_gml_464_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         actcon = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase()
     }
     if (actcon == 10)
     {

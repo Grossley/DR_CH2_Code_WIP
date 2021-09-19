@@ -1,9 +1,31 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (zurasu == 1 && zurasucon > 0)
+{
+    if (zurasucon == 1)
+    {
+        if gml_Script_i_ex(writer)
+        {
+            remwriterx = (writer.writingx - gml_Script_camerax())
+            remwritery = (writer.writingy - gml_Script_cameray())
+        }
+        if (global.fc != 0)
+        {
+            remfacex = (obj_face.x - gml_Script_camerax())
+            remfacey = (obj_face.y - gml_Script_cameray())
+        }
+        zurasucon = 2
+    }
+    if (zurasucon == 2)
+    {
+        if gml_Script_i_ex(writer)
+        {
+            writer.writingx = (remwriterx + gml_Script_camerax())
+            writer.writingy = (remwritery + gml_Script_cameray())
+            if (global.fc != 0)
+            {
+                obj_face.x = (remfacex + gml_Script_camerax())
+                obj_face.y = (remfacey + gml_Script_cameray())
+                writer.writingx += (58 * f)
+            }
+        }
+    }
+}

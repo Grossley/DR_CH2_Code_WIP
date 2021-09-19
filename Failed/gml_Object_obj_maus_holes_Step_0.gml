@@ -1,9 +1,57 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_3;
+if (preptimer > 0)
+    return;
+if (preptimer == 0)
+{
+    depth -= 11
+    preptimer = -1
+}
+if (timer <= 0 && mausqueue > 0)
+{
+    mausqueue--
+    var nexthole = irandom(7)
+    var safety = 0
+    while (maushole[nexthole] > 0 && (maushole[nexthole] - 50) < global.turntimer)
+    {
+        nexthole = irandom(7)
+        safety++
+        if (safety > 8)
+            return;
+    }
+    maushole[nexthole] = global.turntimer
+    timer += 10
+    var xx = x
+    var yy = y
+    var side = gml_Script_randomsign()
+    if (nexthole < 4)
+    {
+        xx = (((x - sideoffset) + 46) + (holeoffset * nexthole))
+        yy = (y + (sideoffset * side))
+    }
+    else
+    {
+        xx = (x + (sideoffset * side))
+        yy = (((y - sideoffset) + 46) + (holeoffset * (nexthole - 4)))
+    }
+    if (dontcreatemouse == 0)
+    {
+        d = gml_Script_scr_childbullet(xx, yy, 470)
+        if (nexthole < 4)
+            d.direction += (90 * side)
+        else if (side > 0)
+            d.direction = 180
+        d.speed = 6
+        d.image_angle = d.direction
+        d.grazepoints = grazepoints
+        if bigmaus
+        {
+            d.big = 1
+            d.sprite_index = spr_maus_critter_stuck
+            alarm[0] = d
+            bigmaus--
+            var _temp_local_var_3 = 22
+        }
+    }
+}
+else if (timer > 0)
+    timer--

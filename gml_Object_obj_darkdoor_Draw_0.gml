@@ -5,7 +5,7 @@ if (open == 1)
         xsin = 1
     siner += 1
     image_index = 1
-    amt = ((siner / 16) * 0.1)
+    amt = (sin((siner / 16)) * 0.1)
     gml_Script_draw_background_ext(bg_darkdoor_open, 0, 0, 1, 1, 0, c_white, (xsin + amt))
     for (i = 1; i < 6; i += 1)
         draw_sprite_ext(sprite_index, 2, x, (y + sprite_height), 1, ((3 / i) + amt), 0, c_white, (xsin * (amt + 0.2)))
@@ -16,4 +16,4 @@ if (open == 1)
     wt = ((amt * sprite_width) * 2)
     draw_sprite_ext(sprite_index, 2, (x - (wt / 2)), (y - ht), (1 + (amt * 2)), (1 + (amt * 2)), 0, c_white, (xsin * (amt + 0.2)))
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

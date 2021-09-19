@@ -1,11 +1,12 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1, _temp_local_var_2;
+draw_set_color(c_black)
+draw_set_alpha(0.75)
+-10
+draw_set_color(c_white)
+draw_set_alpha(1)
+siner++
+desAlpha = (0.85 + (sin((siner / 4)) * 0.05))
+draw_sprite_ext(spr_projector_footage, image_index, x, y, 2, 2, 0, c_white, desAlpha)
+draw_sprite_ext(spr_projectorBeam, 0, x, (y - 240), 2, 2, 0, c_white, (desAlpha * 0.25))
+var _temp_local_var_1 = -10
+var _temp_local_var_2 = (((obj_sneo_friedpipis).room_height + 10).room_width + 10)

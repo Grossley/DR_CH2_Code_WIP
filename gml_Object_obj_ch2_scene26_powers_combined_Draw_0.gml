@@ -1,6 +1,6 @@
 if (glow_in_out != 0)
 {
-    glow_lerp = ((lerp(glow_lerp, 1, 0.35) * 100) / 100)
+    glow_lerp = (round((lerp(glow_lerp, 1, 0.35) * 100)) / 100)
     if (glow_in_out == 1)
         gml_Script_scr_draw_outline(2, recruit_col, glow_lerp)
     else
@@ -24,15 +24,15 @@ if fade_in_out
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 if (con == 4)
 {
-    if big_square
-        big_square.image_alpha = (shine_timer / 20)
+    if instance_exists(big_square)
+        big_square.image_alpha = gml_Script_clamp01((shine_timer / 20))
     else
     {
-        16777215
-        ((0 + 480) + 640)
+        draw_set_color(c_white)
+        draw_rectangle(gml_Script_camerax(), gml_Script_cameray(), (gml_Script_camerax() + 640), (gml_Script_cameray() + 480), false)
     }
     shine_timer++
     if (shine_timer == 30)
@@ -40,41 +40,41 @@ if (con == 4)
 }
 if (con >= 5)
 {
-    16777215
-    ((0 + 480) + 640)
+    draw_set_color(c_white)
+    draw_rectangle(gml_Script_camerax(), gml_Script_cameray(), (gml_Script_camerax() + 640), (gml_Script_cameray() + 480), false)
     if (shine_timer == (4 / f))
     {
-        line = ((((obj_anime_bg_line + 652) + irandom(32)) + 20) + irandom(120))
+        line = gml_Script_instance_create(((gml_Script_camerax() + 20) + irandom(120)), ((gml_Script_cameray() + 652) + irandom(32)), obj_anime_bg_line)
         line.image_blend = 0xEAAA8E
         line.depth = (depth - 1)
     }
     if (shine_timer == (24 / f))
     {
-        line = ((((obj_anime_bg_line + 652) + irandom(32)) + 20) + irandom(120))
+        line = gml_Script_instance_create(((gml_Script_camerax() + 20) + irandom(120)), ((gml_Script_cameray() + 652) + irandom(32)), obj_anime_bg_line)
         line.image_blend = 0xEAAA8E
         line.depth = (depth - 1)
     }
     if (shine_timer == (44 / f))
     {
-        line = ((((obj_anime_bg_line + 652) + irandom(32)) + 20) + irandom(120))
+        line = gml_Script_instance_create(((gml_Script_camerax() + 20) + irandom(120)), ((gml_Script_cameray() + 652) + irandom(32)), obj_anime_bg_line)
         line.image_blend = 0xEAAA8E
         line.depth = (depth - 1)
     }
     if (shine_timer == (14 / f))
     {
-        line = ((((obj_anime_bg_line + 652) + irandom(32)) + 620) - irandom(120))
+        line = gml_Script_instance_create(((gml_Script_camerax() + 620) - irandom(120)), ((gml_Script_cameray() + 652) + irandom(32)), obj_anime_bg_line)
         line.image_blend = 0xEAAA8E
         line.depth = (depth - 1)
     }
     if (shine_timer == (34 / f))
     {
-        line = ((((obj_anime_bg_line + 652) + irandom(32)) + 620) - irandom(120))
+        line = gml_Script_instance_create(((gml_Script_camerax() + 620) - irandom(120)), ((gml_Script_cameray() + 652) + irandom(32)), obj_anime_bg_line)
         line.image_blend = 0xEAAA8E
         line.depth = (depth - 1)
     }
     if (shine_timer == (44 / f))
     {
-        line = ((((obj_anime_bg_line + 652) + irandom(32)) + 620) - irandom(120))
+        line = gml_Script_instance_create(((gml_Script_camerax() + 620) - irandom(120)), ((gml_Script_cameray() + 652) + irandom(32)), obj_anime_bg_line)
         line.image_blend = 0xEAAA8E
         line.depth = (depth - 1)
     }

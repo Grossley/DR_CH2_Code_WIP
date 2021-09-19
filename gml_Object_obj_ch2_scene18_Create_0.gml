@@ -15,13 +15,14 @@ berdly_door_close = 0
 if (global.chapter != 2)
 {
     con = -1
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 else if (global.plot >= 120)
 {
     var swatchling_npc_a = gml_Script_instance_create(1335, 165, obj_npc_butler)
     var _temp_local_var_2 = swatchling_npc_a
+    gml_Script_scr_depth()
     current_pal = yellow
 }
 else if (global.plot >= 101)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

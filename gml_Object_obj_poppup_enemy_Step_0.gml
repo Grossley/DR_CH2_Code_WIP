@@ -1,16 +1,18 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_15, _temp_local_var_17, _temp_local_var_46;
+var _temp_local_var_1, _temp_local_var_4, _temp_local_var_16, _temp_local_var_18, _temp_local_var_48;
+if (blockbuffer > 0)
+    blockbuffer--
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         with (obj_poppup_ad)
             state = 2
         global.typer = 50
         var dialogText = gml_Script_stringsetloc("", "obj_poppup_enemy_slash_Step_0_gml_18_0")
-        if (100 >= 99)
+        if (random(100) >= 99)
             dialogText = gml_Script_stringsetloc("GOKARMASHI&O INARY....?", "obj_poppup_enemy_slash_Step_0_gml_22_0")
         else
         {
@@ -43,24 +45,24 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 12)
         {
-            if (0 || (myself != 0 && gml_Script_scr_attackprepcheck(myself, "Popups") > (myself - 1)) || allblocked)
+            if (gml_Script_scr_monsterpop() == 0 || (myself != 0 && gml_Script_scr_attackprepcheck(myself, "Popups") > (myself - 1)) || allblocked)
                 rr = 0
             else
                 rr = choose(0, 1)
@@ -80,7 +82,7 @@ if (global.monster[myself] == true)
                 if avoiding
                     dc.special = 1
             }
-            140
+            gml_Script_scr_turntimer(140)
             turns += 1
             global.typer = 6
             global.fc = 0
@@ -120,7 +122,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -131,7 +133,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* POPPUP - A rubbery mascot starved for attention. Click it and...?/%", "obj_poppup_enemy_slash_Step_0_gml_176_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -140,7 +142,7 @@ if (global.myfight == 3)
             avoiding = 0
             idlesprite = spr_poppup_idle
         }
-        if 3
+        if (gml_Script_scr_monsterpop() == 3)
         {
             staticOwner = 1
             actcon = 10
@@ -157,16 +159,16 @@ if (global.myfight == 3)
             if (rr == 2)
                 gml_Script_msgsetloc(0, "* You unconsciously clicked on a popup about demon summoning classes for teens./%", "obj_poppup_enemy_slash_Step_0_gml_200_0")
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (actcon == 10 && (!62))
+    if (actcon == 10 && (!instance_exists(obj_writer)))
     {
         if (staticPoppup < 21)
         {
             staticPoppup++
             cloning = 1
-            194
-            194
+            gml_Script_snd_stop(194)
+            gml_Script_snd_play(194)
             overload = gml_Script_instance_create(x, y, obj_poppup_overload)
             overload.image_index = siner
             if (staticPoppup == 1)
@@ -209,16 +211,16 @@ if (global.myfight == 3)
         else
             actcon = 5
     }
-    if (actcon == 5 && (!62))
+    if (actcon == 5 && (!instance_exists(obj_writer)))
     {
         actcon = 1
         if (staticPoppup > 20)
         {
             with (obj_poppup_overload)
                 speed = 0
-            194
+            gml_Script_snd_stop(194)
             gml_Script_msgsetloc(0, "* The Poppups crashed!/%", "obj_poppup_enemy_slash_Step_0_gml_239_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actcon = 5.1
             with (obj_poppup_overload)
                 image_speed = 0
@@ -228,13 +230,13 @@ if (global.myfight == 3)
         else
         {
             cloning = 1
-            194
+            gml_Script_snd_play(194)
             newpopupid = gml_Script_scr_monster_add(31, 424)
             global.monsterinstance[newpopupid].cloning = 1
             global.monsterinstance[newpopupid].x = x
             global.monsterinstance[newpopupid].y = y
             global.monsterinstance[newpopupid].siner = siner
-            var _temp_local_var_46 = global.monsterinstance[newpopupid]
+            var _temp_local_var_48 = global.monsterinstance[newpopupid]
             gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
         }
     }
@@ -246,28 +248,28 @@ if (global.myfight == 3)
             siner2 -= 1
         }
     }
-    if (actcon == 5.1 && (!62))
+    if (actcon == 5.1 && (!instance_exists(obj_writer)))
     {
         actcon = 5.2
         with (obj_poppup_overload)
             con = 1
     }
-    if (actcon == 5.2 && (!433))
+    if (actcon == 5.2 && (!instance_exists(obj_poppup_overload)))
     {
         with (obj_poppup_enemy)
         {
             gml_Script_scr_mercyadd(myself, 100)
-            myself
+            gml_Script_scr_spare(myself)
         }
         actcon = 1
     }
-    if (actcon == 7 && (!62))
+    if (actcon == 7 && (!instance_exists(obj_writer)))
     {
         cloning = 0
         global.monsterinstance[newpopupid].cloning = 0
         actcon = 1
         gml_Script_msgsetloc(0, "* Huh...!? That made another one!?/%", "obj_poppup_enemy_slash_Step_0_gml_298_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 3 && actcon == 0)
     {
@@ -276,39 +278,43 @@ if (global.myfight == 3)
         blockTimer = 0
         popupscreated = 0
         gml_Script_msgsetsubloc(0, "* Press ~1 repeatedly to block the ads!!/%", gml_Script_scr_get_input_name(6), "obj_poppup_enemy_slash_Step_0_gml_309_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 20.5
-        var randomX = (380 + 260)
-        var randomY = (230 + 170)
+        var randomX = random_range((gml_Script_camerax() + 260), (gml_Script_camerax() + 380))
+        var randomY = random_range((gml_Script_cameray() + 170), (gml_Script_cameray() + 230))
         ads[popupscreated] = gml_Script_instance_create(randomX, randomY, obj_poppup_ad)
         popupscreated++
     }
-    if (actcon == 20.5 && (!62))
+    if (actcon == 20.5 && (!instance_exists(obj_writer)))
     {
         if (poppupwait == 1)
             poppupwait = 0
         else if (blockTimer == 1 && popupscreated < 10)
         {
-            randomX = (450 + 190)
-            randomY = (230 + 70)
+            randomX = random_range((gml_Script_camerax() + 190), (gml_Script_camerax() + 450))
+            randomY = random_range((gml_Script_cameray() + 70), (gml_Script_cameray() + 230))
             ads[popupscreated] = gml_Script_instance_create(randomX, randomY, obj_poppup_ad)
             popupscreated++
             poppupwait = 1
         }
-        if (blockTimer == 0)
+        if (gml_Script_button3_p() && blockbuffer == 0)
         {
-            blockTimer = 1
-            alarm[4] = 75
+            blockbuffer = 2
+            if (blockTimer == 0)
+            {
+                blockTimer = 1
+                alarm[4] = 75
+            }
+            if (blockAds >= 0)
+            {
+                with (obj_poppup_enemy)
+                    mercytotal += 10
+                var _temp_local_var_16 = ads[blocked]
+                blockstate = 1
+            }
+            if (blocked == 10)
+                actcon = 21.5
         }
-        if (blockAds >= 0)
-        {
-            with (obj_poppup_enemy)
-                mercytotal += 10
-            var _temp_local_var_15 = ads[blocked]
-            blockstate = 1
-        }
-        if (blocked == 10)
-            actcon = 21.5
     }
     if (actcon == 21.5)
     {
@@ -329,7 +335,7 @@ if (global.myfight == 3)
         var i = 0
         while (i < array_length_1d(ads))
         {
-            var _temp_local_var_17 = ads[i]
+            var _temp_local_var_18 = ads[i]
             instance_destroy()
         }
         if (!instance_exists(obj_blocked_total_fx))
@@ -345,18 +351,17 @@ if (global.myfight == 3)
         if instance_exists(obj_writer)
         {
             with (obj_writer)
-            {
-            }
+                instance_destroy()
         }
     }
     if (acting == 4 && actcon == 0)
     {
         actcon = 30
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Noelle got nervous and looked at the ground!/%", "obj_poppup_enemy_slash_Step_0_gml_415_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (actcon == 30 && (!62))
+    if (actcon == 30 && (!instance_exists(obj_writer)))
     {
         if (!avoiding)
         {
@@ -369,16 +374,16 @@ if (global.myfight == 3)
         with (obj_monsterparent)
         {
             if (global.monsterstatus[myself] != true)
-                myself
+                gml_Script_scr_monster_make_tired(myself)
         }
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* The enemies got shrivelled and TIRED from lack of attention!/%", "obj_poppup_enemy_slash_Step_0_gml_438_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (actingsus == 1 && actconsus == 1)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         var a = choose(0, 1, 2)
         if (a == 0)
             gml_Script_msgsetloc(0, "* Susie accidentally clicked on an ad featuring a flaming eggplant holding a chainsaw!!/%", "obj_poppup_enemy_slash_Step_0_gml_449_0")
@@ -392,23 +397,23 @@ if (global.myfight == 3)
             gml_Script_msgsetloc(0, "* Susie missed clicking on an ad and ended up clicking on the word processor./", "obj_poppup_enemy_slash_Step_0_gml_458_0")
             gml_Script_msgnextloc("* It got a virus somehow./%", "obj_poppup_enemy_slash_Step_0_gml_459_0")
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actconsus = 1.1
     }
-    if (actconsus == 1.1 && (!62))
+    if (actconsus == 1.1 && (!instance_exists(obj_writer)))
     {
-        gml_Script_scr_act_charsprite("susie", 995, 0, 0)
-        "susie"
+        gml_Script_scr_act_charsprite("susie", 996, 0, 0)
+        gml_Script_scr_speaker("susie")
         gml_Script_msgsetloc(0, "\\E5* D..^1. Damn!^1! They knew what I'd fall for!!/%", "obj_poppup_enemy_slash_Step_0_gml_470_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 50)
         actconsus = 0
         actcon = 1
     }
-    if (actingral == 1 && actconral == 1 && (!62))
+    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(62)))
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         a = choose(0, 1, 2)
         if (a == 0)
         {
@@ -426,15 +431,15 @@ if (global.myfight == 3)
             gml_Script_msgnextloc("* He deleted the browser shortcut on the desktop entirely.../", "obj_poppup_enemy_slash_Step_0_gml_495_0")
             gml_Script_msgnextloc("* ...but immediately felt guilty because he thought he had \"deleted the entire internet\"./%", "obj_poppup_enemy_slash_Step_0_gml_496_0")
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actconral = 1.1
     }
-    if (actconral == 1.1 && (!62))
+    if (actconral == 1.1 && (!instance_exists(obj_writer)))
     {
-        gml_Script_scr_act_charsprite("ralsei", 1507, 0, 0)
-        "ralsei"
+        gml_Script_scr_act_charsprite("ralsei", 1508, 0, 0)
+        gml_Script_scr_speaker("ralsei")
         gml_Script_msgsetloc(0, "\\EU* I... I didn't mean to do it... I... I'm sorry!!^1! I repent!!!/%", "obj_poppup_enemy_slash_Step_0_gml_507_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 50)
         actconral = 0
@@ -451,23 +456,26 @@ if (global.myfight == 3)
             line = gml_Script_stringsetloc("* Noelle clicked on a link for creepy game glitch compilations!/", "obj_poppup_enemy_slash_Step_0_gml_527_0")
         else if (random_line == 2)
             line = gml_Script_stringsetloc("* Noelle clicked on a link for Hot Female Santas In Your Area!/", "obj_poppup_enemy_slash_Step_0_gml_530_0")
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgset(0, line)
         gml_Script_scr_anyface_next("noelle", "8")
         gml_Script_msgnextloc("\\E8* Wh-what!? What did I do wrong??/%", "obj_poppup_enemy_slash_Step_0_gml_536_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         actconnoe = (simulordernoe == 0 ? 20 : 0)
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_act_charsprite_end()
+        gml_Script_scr_nextact()
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20 || actconnoe == 20)
     {
-        actconsus = -1
-        actconral = -1
-        actconnoe = -1
-        actcon = 1
+        if gml_Script_scr_terminate_writer()
+        {
+            actconsus = -1
+            actconral = -1
+            actconnoe = -1
+            actcon = 1
+        }
     }
 }

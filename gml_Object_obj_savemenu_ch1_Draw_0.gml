@@ -1,98 +1,98 @@
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
-"main"
+gml_Script_scr_84_set_draw_font_ch1("main")
 if (d == 2)
-    "mainbig"
+    gml_Script_scr_84_set_draw_font_ch1("mainbig")
 if (global.lang == "ja")
 {
     if (d == 1)
     {
-        16777215
+        draw_set_color(c_white)
         draw_rectangle((54 + xx), (49 + yy), (265 + xx), (157 + yy), false)
-        0
+        draw_set_color(c_black)
         draw_rectangle(((57 * d) + xx), ((52 * d) + yy), ((262 * d) + xx), ((154 * d) + yy), false)
     }
     else
     {
         gml_Script_scr_darkbox_ch1(((54 * d) + xx), ((49 * d) + yy), ((265 * d) + xx), ((157 * d) + yy))
-        0
+        draw_set_color(c_black)
         draw_rectangle(((64 * d) + xx), ((59 * d) + yy), ((255 * d) + xx), ((147 * d) + yy), false)
     }
-    16777215
+    draw_set_color(c_white)
     if (coord == 2)
-        65535
-    1
-    draw_text(((160 * d) + xx), ((60 * d) + yy), name)
-    0
+        draw_set_color(c_yellow)
+    draw_set_halign(fa_center)
+    draw_text(((160 * d) + xx), ((60 * d) + yy), string_hash_to_newline(name))
+    draw_set_halign(fa_left)
     if (d == 1)
-        draw_text((76 + xx), (80 + yy), ("obj_savemenu_slash_Draw_0_gml_29_0" + string(love)))
+        draw_text((76 + xx), (80 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_29_0") + string(love))))
     if (d == 2)
-        draw_text(((78 * d) + xx), ((80 * d) + yy), ("obj_savemenu_slash_Draw_0_gml_33_0" + string(level)))
-    draw_text(((210 * d) + xx), ((80 * d) + yy), ((minutes + ":") + string(seconds)))
-    1
-    draw_text(((160 * d) + xx), ((100 * d) + yy), roomname)
-    0
+        draw_text(((78 * d) + xx), ((80 * d) + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_33_0") + string(level))))
+    draw_text(((210 * d) + xx), ((80 * d) + yy), string_hash_to_newline(((string(minutes) + ":") + string(seconds))))
+    draw_set_halign(fa_center)
+    draw_text(((160 * d) + xx), ((100 * d) + yy), string_hash_to_newline(roomname))
+    draw_set_halign(fa_left)
     if (coord == 0)
         draw_sprite(heartsprite, 0, (xx + (83 * d)), (yy + (135 * d)))
     if (coord == 1)
         draw_sprite(heartsprite, 0, (xx + (173 * d)), (yy + (135 * d)))
     if (coord < 2)
     {
-        draw_text((xx + (95 * d)), (yy + (130 * d)), "obj_savemenu_slash_Draw_0_gml_47_0")
-        draw_text((xx + (185 * d)), (yy + (130 * d)), "obj_savemenu_slash_Draw_0_gml_48_0")
+        draw_text((xx + (95 * d)), (yy + (130 * d)), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_47_0")))
+        draw_text((xx + (185 * d)), (yy + (130 * d)), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_48_0")))
     }
     else
     {
-        1
-        draw_text((xx + (160 * d)), (yy + (130 * d)), "obj_savemenu_slash_Draw_0_gml_52_0")
-        0
+        draw_set_halign(fa_center)
+        draw_text((xx + (160 * d)), (yy + (130 * d)), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_52_0")))
+        draw_set_halign(fa_left)
     }
 }
 else
 {
     if (d == 1)
     {
-        16777215
+        draw_set_color(c_white)
         draw_rectangle((54 + xx), (49 + yy), (265 + xx), (135 + yy), false)
-        0
+        draw_set_color(c_black)
         draw_rectangle(((57 * d) + xx), ((52 * d) + yy), ((262 * d) + xx), ((132 * d) + yy), false)
     }
     else
     {
         gml_Script_scr_darkbox_ch1(((54 * d) + xx), ((49 * d) + yy), ((265 * d) + xx), ((135 * d) + yy))
-        0
+        draw_set_color(c_black)
         draw_rectangle(((64 * d) + xx), ((59 * d) + yy), ((255 * d) + xx), ((125 * d) + yy), false)
     }
-    16777215
+    draw_set_color(c_white)
     if (coord == 2)
-        65535
+        draw_set_color(c_yellow)
     if (global.flag[912] == 0)
-        draw_text(((70 * d) + xx), ((60 * d) + yy), name)
+        draw_text(((70 * d) + xx), ((60 * d) + yy), string_hash_to_newline(name))
     else
     {
-        10
+        draw_set_font(fnt_ja_main)
         if (d == 2)
-            8
-        draw_text(((70 * d) + xx), ((60 * d) + yy), name)
-        "main"
+            draw_set_font(fnt_ja_mainbig)
+        draw_text(((70 * d) + xx), ((60 * d) + yy), string_hash_to_newline(name))
+        gml_Script_scr_84_set_draw_font_ch1("main")
         if (d == 2)
-            "mainbig"
+            gml_Script_scr_84_set_draw_font_ch1("mainbig")
     }
     if (d == 1)
-        draw_text((140 + xx), (60 + yy), ("obj_savemenu_slash_Draw_0_gml_29_0" + string(love)))
+        draw_text((140 + xx), (60 + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_29_0") + string(love))))
     if (d == 2)
-        draw_text(((175 * d) + xx), ((60 * d) + yy), ("obj_savemenu_slash_Draw_0_gml_33_0" + string(level)))
-    draw_text(((210 * d) + xx), ((60 * d) + yy), ((minutes + ":") + string(seconds)))
-    draw_text(((70 * d) + xx), ((80 * d) + yy), roomname)
+        draw_text(((175 * d) + xx), ((60 * d) + yy), string_hash_to_newline((gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_33_0") + string(level))))
+    draw_text(((210 * d) + xx), ((60 * d) + yy), string_hash_to_newline(((string(minutes) + ":") + string(seconds))))
+    draw_text(((70 * d) + xx), ((80 * d) + yy), string_hash_to_newline(roomname))
     if (coord == 0)
         draw_sprite(heartsprite, 0, (xx + (71 * d)), (yy + (113 * d)))
     if (coord == 1)
         draw_sprite(heartsprite, 0, (xx + (161 * d)), (yy + (113 * d)))
     if (coord < 2)
     {
-        draw_text((xx + (85 * d)), (yy + (110 * d)), "obj_savemenu_slash_Draw_0_gml_47_0")
-        draw_text((xx + (175 * d)), (yy + (110 * d)), "obj_savemenu_slash_Draw_0_gml_48_0")
+        draw_text((xx + (85 * d)), (yy + (110 * d)), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_47_0")))
+        draw_text((xx + (175 * d)), (yy + (110 * d)), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_48_0")))
     }
     else
-        draw_text((xx + (85 * d)), (yy + (110 * d)), "obj_savemenu_slash_Draw_0_gml_52_0")
+        draw_text((xx + (85 * d)), (yy + (110 * d)), string_hash_to_newline(gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Draw_0_gml_52_0")))
 }

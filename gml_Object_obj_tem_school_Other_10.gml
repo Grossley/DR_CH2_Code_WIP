@@ -43,23 +43,23 @@ if (global.chapter == 1)
 }
 if (global.chapter == 2)
 {
-    if (global.facing == 3 && 8 && talked >= 1)
+    if (global.facing == 3 && gml_Script_scr_litemcheck(8) && talked >= 1)
     {
         image_speed = 0
         facing = 0
         dfacing = 0
         var egg_amount = (global.flag[911] + global.flag[918])
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetsubloc(0, "* (The eggs you have collected so far. There's ~1.)/%", egg_amount, "obj_tem_school_slash_Other_10_gml_66_0")
     }
     else
     {
-        if 8
+        if gml_Script_scr_litemcheck(8)
         {
             if (egcon == 0)
                 egcon = 1
         }
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* tem still study..^1. study harb!!!/", "obj_tem_school_slash_Other_10_gml_59_0")
         gml_Script_msgnextloc("* tem get a SMART^1! go to COLLEG!^1! achieve DREAM!!/", "obj_tem_school_slash_Other_10_gml_60_0")
         gml_Script_msgnextloc("* then tem become..^1. TEM BECOME....!!/", "obj_tem_school_slash_Other_10_gml_61_0")

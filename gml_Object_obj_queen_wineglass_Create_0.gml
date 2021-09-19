@@ -15,7 +15,7 @@ depth = (obj_growtangle.depth - 1)
 image_xscale = 2
 image_yscale = 2
 acidColor = c_white
-if (!obj_queen_enemy.whiteAcid)
+if (gml_Script_scr_debug() && (!obj_queen_enemy.whiteAcid))
     acidColor = 1959605
 hurtbox = gml_Script_instance_create((x - 100), 400, obj_queen_wine_attack_bottom_hurtbox)
 gml_Script_instance_create(x, y, obj_queen_wineflass_pushin)

@@ -13,9 +13,9 @@ if (global.bmenuno == 9 || global.bmenuno == 9)
         _flash = 1
     if (global.bmenucoord[9][global.charturn] != 4 && global.bmenucoord[9][global.charturn] != 5 && shieldhp <= 0)
         _flash = 1
-    if ((!574) && global.bmenucoord[9][global.charturn] == 3)
+    if ((!instance_exists(obj_queenshield_enemy)) && global.bmenucoord[9][global.charturn] == 3)
         _flash = 0
-    if ((global.bmenucoord[9][global.charturn] == 4 && (!574)) || (global.bmenucoord[9][global.charturn] == 3 && 574))
+    if ((global.bmenucoord[9][global.charturn] == 4 && (!instance_exists(obj_queenshield_enemy))) || (global.bmenucoord[9][global.charturn] == 3 && instance_exists(obj_queenshield_enemy)))
     {
         with (obj_herokris)
             flash = true
@@ -36,7 +36,7 @@ if (global.charturn == 2 && global.bmenuno == 13 && global.bmenucoord[2][global.
     _flash = 1
 if (_flash == 1)
 {
-    if 573
+    if instance_exists(obj_berdlyplug_enemy)
         obj_berdlyplug_enemy.flash = true
     flash = false
 }
@@ -49,15 +49,17 @@ if (sprite_index == spr_queen_drunk || sprite_index == spr_queen_throw_wineglass
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
     fsiner++
     if (flash == true)
-        gml_Script_draw_sprite_ext_flash(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        gml_Script_draw_sprite_ext_flash(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
     if (endcon > 0 && sprite_index == spr_queen_throw_wineglass)
         draw_sprite_ext(spr_queen_wine_box1, 0, (x + 29), (y + 10), 0.4, 0.6, 0, c_white, 1)
 }
-else
+else if gml_Script_scr_queen_buffercheck()
 {
     draw_sprite_ext(thissprite, siner, x, y, image_xscale, image_yscale, image_angle, c_gray, image_alpha)
     draw_sprite(spr_queen_buffering, (obj_queen_buffercontroller.bufferbar % 8), (x + 66), (y + 76))
 }
+else
+    gml_Script_scr_enemy_drawidle_generic(0.16666666666666666)
 if (becomeflash == false)
     flash = false
 becomeflash = false

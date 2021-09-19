@@ -1,5 +1,5 @@
-if (object_index > obj_pipis_bullet_cone)
-    // WARNING: Popz'd an empty stack.
+if (instance_number(object_index) > 1)
+    instance_destroy()
 selected_object = -4
 mouse_held = 0
 mouse_held_r = 0
@@ -20,7 +20,7 @@ copybuffer = 0
 totalstring = " "
 actor_selected_before = 0
 actor_previously_selected = -1
-panremx = 
-panremy = 
+panremx = gml_Script_camerax()
+panremy = gml_Script_cameray()
 enable_mouse_wheel = 0
 old_right_click = 0

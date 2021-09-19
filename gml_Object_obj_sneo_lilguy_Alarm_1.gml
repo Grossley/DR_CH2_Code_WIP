@@ -1,5 +1,5 @@
 var _temp_local_var_1;
-if 628
+if instance_exists(obj_heart)
 {
     bullet = gml_Script_instance_create(x, (y + 12), obj_sneo_lilguy_bullet)
     bullet.bulletspeed = bulletspeed

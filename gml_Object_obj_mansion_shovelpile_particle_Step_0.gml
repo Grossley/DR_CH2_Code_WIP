@@ -8,4 +8,4 @@ if (image_alpha > 0)
         rotate_timer = rotate_time
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

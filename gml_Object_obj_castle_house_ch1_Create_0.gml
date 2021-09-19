@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 if (y >= 560)
     image_index += 2
 if (x.room_width / 2)

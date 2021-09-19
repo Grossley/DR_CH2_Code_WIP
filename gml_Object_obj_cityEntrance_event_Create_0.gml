@@ -1,5 +1,5 @@
 if (global.plot >= 67)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 triggerPoint = 420
 spawned = 0
 ralsei = 0

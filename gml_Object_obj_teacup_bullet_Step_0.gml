@@ -41,6 +41,7 @@ if (cutOff > sprite_height)
         _temp_local_var_1 = master
         wooshnoise = 1
     }
+    instance_destroy()
 }
 if (hitType == 3)
 {

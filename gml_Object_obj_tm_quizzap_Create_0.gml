@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 destroyonhit = 0
 letter = -1
 xx = x

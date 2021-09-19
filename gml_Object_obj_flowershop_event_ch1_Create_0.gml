@@ -1,13 +1,14 @@
 var _temp_local_var_1;
 tcon = 0
 image_speed = 0.05
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 if (room == room_flowershop_1f_ch1)
 {
-    counter = gml_Script_scr_marker_ch1(20, 103, 3628)
+    counter = gml_Script_scr_marker_ch1(20, 103, 3629)
     var _temp_local_var_1 = counter
+    gml_Script_scr_depth_ch1()
 }
-if (room == room_flowershop_1f_ch1)
+if (null.room == room_flowershop_1f_ch1)
 {
     if (global.entrance == 2)
     {
@@ -17,7 +18,7 @@ if (room == room_flowershop_1f_ch1)
             x = global.flag[264]
     }
 }
-if (room == room_flowershop_2f_ch1)
+if (null.room == room_flowershop_2f_ch1)
 {
     visible = false
     if (global.entrance == 1)

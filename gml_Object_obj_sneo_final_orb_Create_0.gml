@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 destroyable = 1
 destroyonhit = 0
 image_xscale = 4

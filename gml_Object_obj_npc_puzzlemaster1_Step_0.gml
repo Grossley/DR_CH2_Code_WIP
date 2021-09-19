@@ -1,4 +1,4 @@
-var _temp_local_var_1, _temp_local_var_6;
+var _temp_local_var_2;
 if (myinteract == 3)
 {
     if (global.flag[20] == 0)
@@ -17,9 +17,65 @@ if (myinteract == 3)
         image_speed = 0.334
     }
 }
-if (con == 5)
+if (con == 5 && (!gml_Script_d_ex()))
 {
+    var _temp_local_var_2 = pwall
+    instance_destroy()
 }
-else
-    var _temp_local_var_6 = 0
-var _temp_local_var_1 = pwall
+if (con == 7)
+{
+    global.facing = 0
+    global.interact = 0
+    con = 8
+    global.flag[215] = 1
+    instance_destroy()
+}
+if (myinteract == 3 && con == 0)
+{
+    if (gml_Script_i_ex(mydialoguer) == 0)
+    {
+        global.interact = 0
+        myinteract = 0
+        with (obj_mainchara)
+            onebuffer = 5
+    }
+}
+if (lecturecon == 0)
+{
+    if instance_exists(obj_mainchara)
+    {
+        if (obj_mainchara.y <= 270 && global.interact == 0)
+        {
+            global.interact = 1
+            lecturecon = 1
+            global.fc = 2
+            global.fe = 1
+            global.typer = 31
+            global.msg[0] = gml_Script_stringsetloc("* Um^1, Susie^1, I suppose you missed what I said earlier.../", "obj_npc_puzzlemaster1_slash_Step_0_gml_60_0")
+            global.msg[1] = gml_Script_stringsetloc("\\E0* As heroes^1, we have the power to make a peaceful future./", "obj_npc_puzzlemaster1_slash_Step_0_gml_61_0")
+            global.msg[2] = gml_Script_stringsetloc("\\E8* So^1, from now on^1, let's try to avoid FIGHTing^1, OK?/", "obj_npc_puzzlemaster1_slash_Step_0_gml_62_0")
+            gml_Script_scr_susface(3, 0)
+            global.msg[4] = gml_Script_stringsetloc("* .../", "obj_npc_puzzlemaster1_slash_Step_0_gml_64_0")
+            gml_Script_scr_ralface(5, 6)
+            global.msg[6] = gml_Script_stringsetloc("* Umm^1, what if you just took it easy on them...?/", "obj_npc_puzzlemaster1_slash_Step_0_gml_66_0")
+            global.msg[7] = gml_Script_stringsetloc("\\E1* If you weaken an enemy^1, I can use my PACIFY spell./", "obj_npc_puzzlemaster1_slash_Step_0_gml_67_0")
+            global.msg[8] = gml_Script_stringsetloc("\\E8* Which^1, can put exhausted people to sleep!/", "obj_npc_puzzlemaster1_slash_Step_0_gml_68_0")
+            gml_Script_scr_susface(9, 2)
+            global.msg[10] = gml_Script_stringsetloc("* Yawn..^1. yeah^1, you talking is already doing that./", "obj_npc_puzzlemaster1_slash_Step_0_gml_70_0")
+            gml_Script_scr_ralface(11, 8)
+            global.msg[12] = gml_Script_stringsetloc("* Well^1, um^1, just think about it!/", "obj_npc_puzzlemaster1_slash_Step_0_gml_72_0")
+            global.msg[13] = gml_Script_stringsetloc("\\E1* (We might have to WARN enemies about her^1, Kris...)/%", "obj_npc_puzzlemaster1_slash_Step_0_gml_73_0")
+            gml_Script_d_make()
+        }
+    }
+}
+if (lecturecon == 1)
+{
+    if (!gml_Script_d_ex())
+    {
+        lecturecon = 10
+        global.interact = 0
+        if (global.plot < 42)
+            global.plot = 42
+    }
+}

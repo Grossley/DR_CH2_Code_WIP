@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 timer = 0
 fallspeed = 0
 initialgravity = 0

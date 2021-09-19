@@ -48,26 +48,26 @@ if (global.chapter == 2)
 }
 global.currentroom = room
 global.interact = 1
-if "dr.ini"
+if gml_Script_ossafe_file_exists("dr.ini")
 {
     ini_ex = 1
-    iniread = "dr.ini"
+    iniread = gml_Script_ossafe_ini_open("dr.ini")
     name = ini_read_string(gml_Script_scr_ini_chapter(global.chapter, global.filechoice), "Name", "Kris")
     level = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, global.filechoice), "Level", 1)
     love = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, global.filechoice), "Love", 1)
     time = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, global.filechoice), "Time", 0)
     roome = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, global.filechoice), "Room", 0)
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_ossafe_ini_close()
+    gml_Script_ossafe_savedata_save()
 }
 d = (global.darkzone + 1)
-minutes = (time / 1800)
-seconds = (((time / 1800) - minutes) * 60)
+minutes = floor((time / 1800))
+seconds = round((((time / 1800) - minutes) * 60))
 if (seconds == 60)
     seconds = 59
 if (seconds < 10)
     seconds = ("0" + string(seconds))
-roome
+gml_Script_scr_roomname(roome)
 if (d == 2)
     heartsprite = spr_heart
 if (d == 1)
@@ -78,7 +78,7 @@ if (type == 1)
 {
     name_current = global.truename
     love_current = global.llv
-    room_current = room
+    room_current = gml_Script_scr_roomname(room)
     level_current = global.lv
     time_current = global.time
     for (i = 0; i < 3; i++)
@@ -88,17 +88,17 @@ if (type == 1)
         love_file[i] = 1
         time_file[i] = 0
         roome_file[i] = 0
-        if "dr.ini"
+        if gml_Script_ossafe_file_exists("dr.ini")
         {
             ini_ex_file[i] = 1
-            iniread_file[i] = "dr.ini"
+            iniread_file[i] = gml_Script_ossafe_ini_open("dr.ini")
             name_file[i] = ini_read_string(gml_Script_scr_ini_chapter(global.chapter, i), "Name", "Kris")
             level_file[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Level", 0)
             love_file[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Love", 1)
             time_file[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Time", 0)
             roome_file[i] = ini_read_real(gml_Script_scr_ini_chapter(global.chapter, i), "Room", 0)
-            // WARNING: Popz'd an empty stack.
-            // WARNING: Popz'd an empty stack.
+            gml_Script_ossafe_ini_close()
+            gml_Script_ossafe_savedata_save()
         }
     }
 }

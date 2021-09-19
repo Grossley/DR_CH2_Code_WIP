@@ -6,4 +6,4 @@ spareanim.sprite_index = sprite_index
 spareanim.image_index = image_index
 spareanim.image_xscale = image_xscale
 spareanim.image_yscale = image_yscale
-// WARNING: Popz'd an empty stack.
+instance_destroy()

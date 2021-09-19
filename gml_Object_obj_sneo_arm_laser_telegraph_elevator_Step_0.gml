@@ -1,6 +1,6 @@
-if (!target)
-    // WARNING: Popz'd an empty stack.
-if 662
+if (!gml_Script_i_ex(target))
+    instance_destroy()
+if instance_exists(obj_sneo_biglaser_elevator)
     depth = (obj_sneo_biglaser_elevator.depth + 1)
-if 628
+if instance_exists(obj_heart)
     depth = (obj_heart.depth + 1)

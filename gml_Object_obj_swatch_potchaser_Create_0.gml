@@ -10,4 +10,4 @@ going = dir
 colX = 0
 colY = 0
 sweattimer = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

@@ -11,9 +11,9 @@ if (con == 0)
         son[sons].speed = (speed / 2.5)
         son[sons].active = true
         son[sons].damage = 10
-        son[sons]
+        gml_Script_scr_bullet_inherit_ch1(son[sons])
         timer = 0
     }
 }
 if (sons >= 30)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

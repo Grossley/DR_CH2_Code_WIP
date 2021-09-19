@@ -1,4 +1,4 @@
 if global.is_console
-    // WARNING: Popz'd an empty stack.
+    gml_Script_ossafe_game_end()
 else
-    // WARNING: Popz'd an empty stack.
+    gml_Script_game_restart_true()

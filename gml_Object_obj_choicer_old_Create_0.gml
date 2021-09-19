@@ -7,7 +7,7 @@ add = gml_Script___view_get(0, view_current)
 x = ((89 * dar) + add)
 y = gml_Script___view_get(1, (obj_castle_house * dar).view_current)
 d = -1
-if 61
+if instance_exists(obj_dialoguer)
     d = obj_dialoguer.side
 if (d == -1)
 {

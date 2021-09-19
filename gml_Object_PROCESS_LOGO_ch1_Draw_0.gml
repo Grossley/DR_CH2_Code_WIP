@@ -25,14 +25,14 @@ if draw_screen
     }
     if (PHASE == 1)
     {
-        // WARNING: Popz'd an empty stack.
+        draw_self()
         PHASETIMER += 1
         if (PHASETIMER >= 30)
         {
             siner = 0
             factor = 0
             PHASE = 2
-            "PROCESS_LOGO_slash_Draw_0_gml_37_0"
+            gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("PROCESS_LOGO_slash_Draw_0_gml_37_0"))
             global.tempflag[10] = 1
         }
     }
@@ -66,15 +66,15 @@ if draw_screen
         if (AA <= -0.5 && skipped == 0)
         {
             if (ingame == 1)
-                420
+                room_goto(room_ed_ch1)
             else
-                419
+                room_goto(PLACE_MENU_ch1)
         }
     }
 }
 if (ingame == 0)
 {
-    if (skipped == 0)
+    if (gml_Script_button1_p_ch1() && skipped == 0)
     {
         fade = gml_Script_instance_create_ch1(0, 0, 1460)
         var _temp_local_var_3 = fade

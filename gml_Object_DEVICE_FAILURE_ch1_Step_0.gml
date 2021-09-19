@@ -1,31 +1,31 @@
 if (EVENT == 1)
 {
-    // WARNING: Popz'd an empty stack.
-    global.currentsong[0] = "AUDIO_DRONE.ogg"
-    global.currentsong[1] = global.currentsong[0]
+    gml_Script_snd_free_all_ch1()
+    global.currentsong[0] = gml_Script_snd_init_ch1("AUDIO_DRONE.ogg")
+    global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
     global.typer = 667
     global.fc = 0
-    global.msg[0] = "DEVICE_FAILURE_slash_Step_0_gml_10_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_10_0")
     EVENT = 2
     W = gml_Script_instance_create_ch1(70, 80, 1327)
     if (global.tempflag[3] >= 1)
     {
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (EVENT == 0)
     EVENT = 1
-if (EVENT == 2 && (!1327))
+if (EVENT == 2 && (!instance_exists(obj_writer_ch1)))
 {
     JA_XOFF = 0
     if (global.lang == "ja")
         JA_XOFF = 44
-    global.msg[0] = "DEVICE_FAILURE_slash_Step_0_gml_28_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_28_0")
     if (global.tempflag[3] >= 1)
     {
         JA_XOFF = 0
-        global.msg[0] = "DEVICE_FAILURE_slash_Step_0_gml_32_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_32_0")
     }
     EVENT = 3
     alarm[4] = 30
@@ -43,28 +43,28 @@ if (EVENT == 5)
     if (global.choice == 0)
     {
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         EVENT = 6
     }
     if (global.choice == 1)
     {
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         EVENT = 26
     }
 }
 if (EVENT == 6)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all_ch1()
     global.flag[6] = 1
-    global.msg[0] = "DEVICE_FAILURE_slash_Step_0_gml_68_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_68_0")
     W = gml_Script_instance_create_ch1(50, 80, 1327)
     EVENT = 7
     alarm[4] = 30
     if (global.tempflag[3] >= 1)
     {
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         alarm[4] = 1
     }
 }
@@ -83,21 +83,21 @@ if (EVENT == 8)
 }
 if (EVENT == 10)
 {
-    "DEVICE_FAILURE_slash_Step_0_gml_95_0"
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_95_0"))
+    gml_Script_scr_tempload_ch1()
     EVENT = 11
 }
 if (EVENT == 26)
 {
-    // WARNING: Popz'd an empty stack.
-    global.msg[0] = "DEVICE_FAILURE_slash_Step_0_gml_103_0"
+    gml_Script_snd_free_all_ch1()
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_103_0")
     EVENT = 27
     W = gml_Script_instance_create_ch1(60, 80, 1327)
 }
-if (EVENT == 27 && (!1327))
+if (EVENT == 27 && (!instance_exists(obj_writer_ch1)))
 {
-    global.currentsong[0] = "AUDIO_DARKNESS.ogg"
-    global.currentsong[1] = global.currentsong[0]
+    global.currentsong[0] = gml_Script_snd_init_ch1("AUDIO_DARKNESS.ogg")
+    global.currentsong[1] = gml_Script_mus_play_ch1(global.currentsong[0])
     EVENT = 28
     DARK_WAIT = 0
 }
@@ -105,9 +105,9 @@ if (EVENT == 28)
 {
     DARK_WAIT += 1
     if (DARK_WAIT >= 2040)
-        // WARNING: Popz'd an empty stack.
-    if (!global.currentsong[1])
-        // WARNING: Popz'd an empty stack.
+        gml_Script_ossafe_game_end_ch1()
+    if (!gml_Script_snd_is_playing_ch1(global.currentsong[1]))
+        gml_Script_ossafe_game_end_ch1()
     if (os_type == os_ps4 || os_type == os_switch)
     {
         if (DARK_WAIT >= 90 && (!restart))
@@ -140,19 +140,22 @@ if (EVENT == 28)
         {
             restart_timer++
             if (restart_timer >= 100)
-                // WARNING: Popz'd an empty stack.
+                gml_Script_ossafe_game_end_ch1()
         }
     }
 }
 if (EVENT >= 0 && EVENT <= 4)
 {
-    with (obj_writer_ch1)
+    if gml_Script_button2_h_ch1()
     {
-        if (pos < (length - 3))
-            pos += 2
-        if (specfade <= 0.9)
-            specfade -= 0.1
-        if (rate <= 1)
-            rate = 1
+        with (obj_writer_ch1)
+        {
+            if (pos < (length - 3))
+                pos += 2
+            if (specfade <= 0.9)
+                specfade -= 0.1
+            if (rate <= 1)
+                rate = 1
+        }
     }
 }

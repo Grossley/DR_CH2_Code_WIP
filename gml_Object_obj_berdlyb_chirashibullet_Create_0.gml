@@ -1,15 +1,15 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 active = false
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_rememberxy()
 startx = x
 starty = y
 phase = 0
 lerpPoint = 0
-rotationSpeed = (25 + 5)
+rotationSpeed = (irandom(25) + 5)
 rotationDir = 1
-if (1 == 0)
+if (irandom(1) == 0)
     rotationDir = -1
-fireoffset = 5
+fireoffset = irandom(5)
 targetAngle = 0
 timer = 0
 delay = 0

@@ -1,6 +1,6 @@
 var _temp_local_var_1, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_11;
 var redscreen = 26
-if (id && 64 && active == true && other.aligned == 1 && other.image_index != redscreen && other.image_index != 9 && other.sprite_index != spr_queenscreen_red)
+if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) && active == true && other.aligned == 1 && other.image_index != redscreen && other.image_index != 9 && other.sprite_index != spr_queenscreen_red)
 {
     make_simple_bullet = 0
     simple_bullet_index = 0
@@ -36,17 +36,17 @@ if (id && 64 && active == true && other.aligned == 1 && other.image_index != red
             con = 99
         with (obj_virospear)
             exploded = 1
-        285
-        266
+        gml_Script_safe_delete(285)
+        gml_Script_safe_delete(266)
         obj_mainchara.battlemode = 0
-        // WARNING: Popz'd an empty stack.
-        57
+        gml_Script_scr_shakescreen()
+        gml_Script_snd_play(57)
         global.flag[352] = 1
     }
     if (other.extflag == 10)
     {
         global.flag[427] = 1
-        plat = gml_Script_scr_dark_marker(758, 1150, 2626)
+        plat = gml_Script_scr_dark_marker(758, 1150, 2627)
         plat.depth = 998000
         leftlight = gml_Script_instance_create(760, 1200, obj_cyber_wall_lights_left)
         leftlight.image_xscale = 1
@@ -59,13 +59,13 @@ if (id && 64 && active == true && other.aligned == 1 && other.image_index != red
         rightlight.depth = (plat.depth - 12)
         chest = gml_Script_instance_create(844, 1144, obj_treasure_room)
         shake = gml_Script_instance_create(x, y, obj_shake)
-        61
+        gml_Script_snd_play(61)
         with (obj_ow_viroring)
         {
             if (trigNum == 3)
                 con = 99
         }
-        if 266
+        if instance_exists(obj_overworld_bulletarea)
             obj_overworld_bulletarea.image_yscale = 22
     }
     if (make_simple_bullet == 1)

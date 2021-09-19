@@ -1,11 +1,45 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+transformstate++
+if (transformstate == 1)
+{
+    var _sparkdir = 255
+    repeat (5)
+    {
+        var _sparks = gml_Script_instance_create(x, y, obj_thrash_spark)
+        _sparks.direction = (_sparkdir + random_range(-15, 15))
+    }
+    _sparkdir = 315
+    repeat (5)
+    {
+        _sparks = gml_Script_instance_create(x, y, obj_thrash_spark)
+        _sparks.direction = (_sparkdir + random_range(-15, 15))
+    }
+}
+else if (transformstate == 2)
+{
+    _sparkdir = 10
+    repeat (5)
+    {
+        _sparks = gml_Script_instance_create(x, y, obj_thrash_spark)
+        _sparks.direction = (_sparkdir + random_range(-15, 15))
+    }
+    _sparkdir = 170
+    repeat (5)
+    {
+        _sparks = gml_Script_instance_create(x, y, obj_thrash_spark)
+        _sparks.direction = (_sparkdir + random_range(-15, 15))
+    }
+}
+else if (transformstate == 3)
+{
+    _sparkdir = 170
+    repeat (10)
+    {
+        _sparks = gml_Script_instance_create(x, y, obj_thrash_spark)
+        _sparks.direction = (_sparkdir + random_range(-20, 20))
+    }
+}
+else if (transformstate == 4)
+    gml_Script_scr_move_to_point_over_time(x, (y + 30), 20)
+else if (transformstate == 5)
+    gml_Script_scr_move_to_point_over_time(x, (gml_Script_cameray() - 40), 20)
+image_index++

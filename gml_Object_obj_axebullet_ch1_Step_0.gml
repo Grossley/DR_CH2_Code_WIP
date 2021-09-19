@@ -10,4 +10,4 @@ if (seizure == 0)
 if (seizure == 1)
     image_angle += 10
 if (x >= (gml_Script___view_get(0, 0) + 700))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

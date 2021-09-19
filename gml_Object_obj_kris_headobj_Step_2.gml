@@ -1,4 +1,4 @@
-if 80
+if instance_exists(obj_mainchara)
 {
     if (follow == 1 && obj_mainchara.visible == true)
     {
@@ -8,4 +8,4 @@ if 80
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -5,25 +5,25 @@ if (animate == 0)
     siner = 0
     wsiner = 0
 }
-walkc = (wsiner / 3)
+walkc = cos((wsiner / 3))
 for (loop = false; loop < 2; loop += 1)
 {
     if (loop == false)
     {
-        0
+        gml_Script_draw_set_blend_mode_ch1(0)
         color[0] = basecolor
         color[1] = basecolor
         color[2] = basecolor
     }
     if (loop == true)
     {
-        1
+        gml_Script_draw_set_blend_mode_ch1(1)
         color[0] = dcolor[0]
         color[1] = dcolor[1]
         color[2] = dcolor[2]
     }
-    walka = (-(wsiner / 6))
-    walkb = (-(wsiner / 6))
+    walka = (-sin((wsiner / 6)))
+    walkb = (-cos((wsiner / 6)))
     if (bad == 0)
     {
         if (part[2] == 0)
@@ -49,14 +49,14 @@ if (part[0] >= 0)
     {
         if (loop == false)
         {
-            0
+            gml_Script_draw_set_blend_mode_ch1(0)
             color[0] = basecolor
             color[1] = basecolor
             color[2] = basecolor
         }
         if (loop == true)
         {
-            1
+            gml_Script_draw_set_blend_mode_ch1(1)
             color[0] = dcolor[0]
             color[1] = dcolor[1]
             color[2] = dcolor[2]
@@ -71,14 +71,14 @@ for (loop = false; loop < 2; loop += 1)
 {
     if (loop == false)
     {
-        0
+        gml_Script_draw_set_blend_mode_ch1(0)
         color[0] = basecolor
         color[1] = basecolor
         color[2] = basecolor
     }
     if (loop == true)
     {
-        1
+        gml_Script_draw_set_blend_mode_ch1(1)
         color[0] = dcolor[0]
         color[1] = dcolor[1]
         color[2] = dcolor[2]
@@ -110,20 +110,20 @@ for (loop = false; loop < 2; loop += 1)
 {
     if (loop == false)
     {
-        0
+        gml_Script_draw_set_blend_mode_ch1(0)
         color[0] = basecolor
         color[1] = basecolor
         color[2] = basecolor
     }
     if (loop == true)
     {
-        1
+        gml_Script_draw_set_blend_mode_ch1(1)
         color[0] = dcolor[0]
         color[1] = dcolor[1]
         color[2] = dcolor[2]
     }
-    walka = (wsiner / 6)
-    walkb = (wsiner / 6)
+    walka = sin((wsiner / 6))
+    walkb = cos((wsiner / 6))
     if (bad == 0)
     {
         if (part[2] == 0)
@@ -134,8 +134,8 @@ for (loop = false; loop < 2; loop += 1)
             draw_sprite_ext(spr_thrashfoot_ch1, 2, (xx - (15 * s)), (yy + (18 * s)), s, s, 0, color[2], a)
         if (part[2] == 3)
         {
-            walka = (wsiner / 6)
-            walkb = (wsiner / 6)
+            walka = sin((wsiner / 6))
+            walkb = cos((wsiner / 6))
             draw_sprite_ext(spr_thrashfoot_ch1, 3, (xx + ((s * walka) * 2)), ((yy + (22 * s)) + ((s * walkb) * 1)), s, s, 0, color[2], a)
         }
     }
@@ -149,40 +149,40 @@ for (loop = false; loop < 2; loop += 1)
             draw_sprite_ext(gml_Script_scr_84_get_sprite_ch1("spr_thrashfoot_b"), 2, (xx - (15 * s)), (yy + (18 * s)), (s / 2), (s / 2), 0, color[2], a)
         if (part[2] == 3)
         {
-            walka = (wsiner / 6)
-            walkb = (wsiner / 6)
+            walka = sin((wsiner / 6))
+            walkb = cos((wsiner / 6))
             draw_sprite_ext(spr_thrashfoot_ch1, 3, (xx + ((s * walka) * 2)), ((yy + (22 * s)) + ((s * walkb) * 1)), s, s, 0, color[2], a)
         }
     }
 }
-0
+gml_Script_draw_set_blend_mode_ch1(0)
 if (dbselect == 1)
 {
-    if 39
+    if keyboard_check_pressed(vk_right)
     {
         part[0] += 1
         if (part[0] >= 4)
             part[0] = 0
     }
-    if 38
+    if keyboard_check_pressed(vk_up)
     {
         part[1] += 1
         if (part[1] >= 4)
             part[1] = 0
     }
-    if 16
+    if keyboard_check_pressed(vk_shift)
     {
         part[2] += 1
         if (part[2] >= 4)
             part[2] = 0
     }
-    if 32
+    if keyboard_check(vk_space)
     {
         dcolor[0] = make_color_hsv((wsiner * 2), 255, 255)
         dcolor[1] = make_color_hsv(wsiner, 255, 255)
         dcolor[2] = make_color_hsv((wsiner / 2), 255, 255)
     }
-    if 13
+    if keyboard_check_pressed(vk_return)
     {
         s += 1
         if (s >= 5)

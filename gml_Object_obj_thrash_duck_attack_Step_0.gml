@@ -8,5 +8,5 @@ if (btimer == 20)
     d.direction = 180
     d.sprite_index = spr_thrash_duckshot
     d.grazepoints = grazepoints
-    177
+    gml_Script_snd_play(177)
 }

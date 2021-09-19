@@ -1,9 +1,122 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10;
+if (init == 0)
+{
+    if (pivotx == -999)
+        pivotx = ((sprite_width / 2) - (sprite_get_xoffset(sprite_index) * image_xscale))
+    if (pivoty == -999)
+        pivoty = ((sprite_height / 2) - (sprite_get_yoffset(sprite_index) * image_yscale))
+    init = 1
+}
+timer++
+effecttimer++
+var __alpha = clamp((timer / poweruptime), 0, 1)
+gml_Script_scr_draw_outline(2, image_blend, (__alpha * 2))
+draw_self()
+gml_Script_d3d_set_fog(true, image_blend, 0, 1)
+flashtimer++
+if (ripple_effect == 0 && flashtimer >= (flashspeed / 2))
+{
+    ripple_effect = 1
+    var _temp_local_var_2 = obj_ch2_scene21_loop.puddle
+    var ripple = gml_Script_scr_custom_afterimage(203)
+    ripple.sprite_index = spr_rouxls_ripple
+    ripple.image_blend = 0x67FFE3
+    _temp_local_var_2.yrate = (ripple.yrate * 5)
+    ripple.use_pivot = 1
+    ripple.maxsize = clamp((1 - ((y - 90) / 45)), 0.1, 2)
+    ripple.image_speed = 0
+    var _temp_local_var_3 = obj_ch2_scene21_loop.thrash
+    var _temp_local_var_4 = -9
+    var _temp_local_var_5 = ripple
+    ripple.image_index = part[0] == 2
+    ripple.depth = (depth - 1)
+}
+if (flashtimer >= flashspeed)
+{
+    ripple_effect = 0
+    flashtimer = 0
+    flashspeed = max(4, ((flashspeed * 2) / 3))
+}
+var __flash = (__alpha + sin(((flashtimer / flashspeed) * pi)))
+if ((timer + 15) >= poweruptime)
+    __flash = (sin((((timer % 3) / 3) * pi)) / 4)
+gml_Script_draw_set_blend_mode(1)
+__alpha *= 0.8
+draw_sprite_ext(spr_rurus_aura, 0, x, y, image_xscale, image_yscale, image_angle, image_blend, (__flash / 2))
+if (ring_timer > 0)
+    ring_timer--
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, __alpha)
+gml_Script_d3d_set_fog(false, c_black, 0, 0)
+if instance_exists(obj_thrashmachine)
+{
+    obj_thrashmachine.rim_flash = ((__flash / 2) + (__alpha / 2))
+    obj_thrashmachine.glow = (__alpha / 4)
+}
+var centerX = (x + pivotx)
+var centerY = (y + pivoty)
+if (effecttimer >= effectPause)
+{
+    if ((timer + 15) >= poweruptime)
+    {
+        d = gml_Script_scr_custom_afterimage(203)
+        d.depth = (depth + 2)
+        d.image_alpha = max(0.1, __alpha)
+        d.reverse = 1
+        d.fade = 0.1
+        d.pivotx = pivotx
+        d.pivoty = pivoty
+        d = gml_Script_scr_custom_afterimage(203)
+        d.image_alpha = max(0.1, __alpha)
+        d.fade = 0.1
+        _temp_local_var_3.depth = (d.depth + 2)
+        d.image_blend = image_blend
+        d.pivotx = pivotx
+        d.pivoty = pivoty
+        var _temp_local_var_7 = -9
+        var _temp_local_var_8 = ripple
+        var _temp_local_var_9 = -9
+        var _temp_local_var_10 = d
+    }
+    if (intensity >= 2 && timer < (poweruptime - 15))
+    {
+        var _thinindex = irandom(5)
+        for (i = 0; i < 6; i++)
+        {
+            d = gml_Script_instance_create(centerX, centerY, obj_rouxls_power_up_orb)
+            d.direction = (irandom(60) + (i * 60))
+            d.lifetime = (effectPause * 2)
+            d.depth = (depth + 1)
+            d.image_blend = image_blend
+            if (i == _thinindex)
+                d.thin = 1
+        }
+    }
+    if (effectPause > 5)
+        effectPause--
+    effecttimer = 0
+}
+gml_Script_draw_set_blend_mode(0)
+if (intensity == 1)
+{
+}
+if (intensity == 2)
+{
+    if ((timer + 15) >= poweruptime && (timer + 15) <= (poweruptime + 30))
+    {
+        draw_set_color(image_blend)
+        var _progress = (((timer + 15) - poweruptime) / 30)
+        var _circlesize = (lerp(0.75, 1, gml_Script_scr_ease_out(_progress, 5)) * 80)
+        var _circlewidth = (gml_Script_scr_ease_out(_progress, 5) * 78)
+        draw_set_alpha((1 - gml_Script_scr_ease_in(_progress, 4)))
+        gml_Script_scr_draw_circle_width_radius(centerX, centerY, _circlesize, _circlewidth, 36)
+        draw_set_alpha(1)
+        if (_progress <= 0)
+            draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_black, 0.5)
+    }
+}
+else if (intensity == 3)
+{
+    if (timer > (poweruptime + 15))
+    {
+    }
+}

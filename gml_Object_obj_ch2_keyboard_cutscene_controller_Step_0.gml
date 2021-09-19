@@ -1,7 +1,7 @@
 var ballY, ballX, _temp_local_var_2, _temp_local_var_4;
 if (init == 0)
 {
-    idealLength = idealString
+    idealLength = string_length(idealString)
     for (i = 0; i < idealLength; i++)
         idealLetter[i] = string_char_at(idealString, (1 + i))
     init = 1
@@ -18,7 +18,7 @@ if (con == 11)
 {
     timer++
     if (timer == 30)
-        151
+        gml_Script_snd_play(151)
     if (timer == 60)
     {
         var _temp_local_var_2 = lastPressedTile

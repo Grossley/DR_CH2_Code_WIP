@@ -7,7 +7,7 @@ inv = 120
 damage = 60
 active = false
 image_alpha = 0
-if 1630
+if instance_exists(obj_heart_ch1)
     futuredir = point_direction(x, y, (obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8))
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

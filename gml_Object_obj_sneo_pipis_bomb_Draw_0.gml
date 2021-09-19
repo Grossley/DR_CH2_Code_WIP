@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (sprite_index == spr_mettaton_bomb2)
 {
     for (var i = 1; i < 24; i++)

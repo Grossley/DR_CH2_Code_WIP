@@ -21,7 +21,7 @@ if (type == 0)
             y2 += 4
     }
     if (timer == 60)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (type == 1)
 {
@@ -39,21 +39,21 @@ if (type == 1)
     {
     }
     if (timer == 60 || alpha < 0.1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-if ((y1 - y2) < 16 || y2 > y1)
+if (abs((y1 - y2)) < 16 || y2 > y1)
     bottomlinevisible = 0
-alpha
-4235519
+draw_set_alpha(alpha)
+draw_set_color(c_orange)
 if ((timer >= 11 && type == 0 && hide == 0) || (type == 1 && hide == 0))
     draw_line_width(x3, y3, x4, y4, 2)
 if (bottomlinevisible == 1 && hide == 0)
     draw_line_width((x1 + shakeamount2), (y1 + shakeamount2), (x2 + shakeamount2), (y2 + shakeamount2), 2)
 if (timer < 11 && hide == 0)
 {
-    16777215
-    (11 - (timer / 10))
+    draw_set_color(c_white)
+    draw_set_alpha((11 - (timer / 10)))
     draw_line_width(x1, y1, x2, y2, 2)
-    1
+    draw_set_alpha(1)
 }
-1
+draw_set_alpha(1)

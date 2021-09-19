@@ -7,7 +7,7 @@ if (suppress == 1)
             active = false
     }
 }
-if (con == 0 ? 460 : 0)
+if (con == 0 && gml_Script_charaX() >= 460)
     con++
 if (con == 1)
 {
@@ -17,33 +17,33 @@ if (con == 1)
 }
 if (con == 2)
 {
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
     con = 2.1
 }
 if (con == 2.1)
 {
     con = 3
-    "queen"
+    gml_Script_c_speaker("queen")
     gml_Script_c_msgsetloc(0, "\\E1* I See You Have: Escaped From Your Room Units/%", "obj_controller_dw_mansion_fire_paintings_slash_Step_0_gml_29_0")
-    // WARNING: Popz'd an empty stack.
-    1
-    kr
+    gml_Script_c_talk_wait()
+    gml_Script_c_pannable(1)
+    gml_Script_c_sel(kr)
     gml_Script_c_walkdirect(464, 230, 12)
-    su
+    gml_Script_c_sel(su)
     gml_Script_c_walkdirect(492, 234, 12)
-    ra
+    gml_Script_c_sel(ra)
     gml_Script_c_walkdirect(428, 240, 12)
-    12
+    gml_Script_c_wait(12)
     gml_Script_c_panobj(kr_actor, 4)
-    kr
-    "u"
-    su
-    "u"
-    ra
-    "u"
-    5
-    "queen"
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("queen")
     gml_Script_c_msgsetloc(0, "\\EC* Who Can Blame You For Wanting To See My Glorious Mansion/", "obj_controller_dw_mansion_fire_paintings_slash_Step_0_gml_50_0_b")
     gml_Script_c_msgnextloc("\\ED* You Won't Want To Take Your Eyes Off This Beautiful Art/", "obj_controller_dw_mansion_fire_paintings_slash_Step_0_gml_51_0")
     gml_Script_c_facenext("susie", 5)
@@ -51,34 +51,39 @@ if (con == 2.1)
     gml_Script_c_facenext("queen", 13)
     gml_Script_c_msgnextloc("\\ED* Oh It Was Not A Recommendation/", "obj_controller_dw_mansion_fire_paintings_slash_Step_0_gml_55_0")
     gml_Script_c_msgnextloc("\\EN* I Was Just Warning You LMAO/%", "obj_controller_dw_mansion_fire_paintings_slash_Step_0_gml_56_0")
-    // WARNING: Popz'd an empty stack.
-    3
-    su
-    0
-    43
-    0
-    0.15
-    // WARNING: Popz'd an empty stack.
-    6
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
-    0
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk()
+    gml_Script_c_wait_box(3)
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(43)
+    gml_Script_c_imageindex(0)
+    gml_Script_c_imagespeed(0.15)
+    gml_Script_c_shakeobj()
+    gml_Script_c_wait_box(6)
+    gml_Script_c_halt()
+    gml_Script_c_wait_talk()
+    gml_Script_c_pannable(0)
+    gml_Script_c_actortokris()
+    gml_Script_c_actortocaterpillar()
+    gml_Script_c_terminatekillactors()
 }
-if (con == 3 && (!895))
+if (con == 3 && (!gml_Script_i_ex(895)))
 {
     queen_monitor.turnoff = 1
     con++
 }
 if (con == 4 && queen_monitor.turnoff == 0 && queen_monitor.con == 0)
+{
     var _temp_local_var_4 = queen_monitor
+    instance_destroy()
+}
 if (con == 5)
 {
     var _temp_local_var_6 = queen_wall
     if (image_xscale > 0.1)
         image_xscale *= 0.8
+    else
+        instance_destroy()
 }
 if (con == 5.5)
 {

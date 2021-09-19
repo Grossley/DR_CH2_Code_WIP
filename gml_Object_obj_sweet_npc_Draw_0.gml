@@ -10,13 +10,13 @@ if (state == 0)
         }
         if (flash == true)
             fsiner++
-        gml_Script_draw_monster_body_part_ext(1771, (8 - dance_index), ((x + (sin((siner / 4)) * 3)) + 2), y, 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, (3 - dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, 4, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, 1, ((x + (sin((siner / 2)) * 6)) - 4), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1771, (5 + dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, (8 - dance_index), ((x + (sin((siner / 4)) * 3)) + 2), y, 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, (3 - dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, 4, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, 1, ((x + (sin((siner / 2)) * 6)) - 4), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(1772, (5 + dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
         dancetimer++
-        if ((siner / 4) > 0)
+        if (sin((siner / 4)) > 0)
             dance_index = 1
         else
             dance_index = 0

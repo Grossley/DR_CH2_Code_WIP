@@ -24,6 +24,6 @@ if (timer >= 9)
         letterspeed2 = 0
 }
 if (timer == 39)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 for (i = 0; i < 5; i += 1)
     draw_sprite_ext(sprite_index, i, (x + xoffset[i]), y, image_xscale, image_yscale, 0, c_white, image_alpha)

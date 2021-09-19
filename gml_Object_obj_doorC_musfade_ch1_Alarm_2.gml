@@ -1,3 +1,3 @@
 global.entrance = 4
 gml_Script_instance_create_ch1(0, 0, 1462)
-room
+room_goto(room_next(room_next(room)))

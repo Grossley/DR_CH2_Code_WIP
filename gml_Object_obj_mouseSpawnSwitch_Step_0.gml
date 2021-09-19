@@ -2,10 +2,10 @@ var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, 
 if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot < 72)
 {
     pressed = 1
-    64
+    gml_Script_snd_play(64)
     if (attempt >= 1)
     {
-        if 1164
+        if instance_exists(obj_holemouse_generator)
         {
             obj_holemouse_generator.mousecreate = 1
             obj_holemouse_generator.gentimer = 15
@@ -18,18 +18,18 @@ if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot < 72)
 if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot >= 72)
 {
     pressed = 1
-    64
+    gml_Script_snd_play(64)
 }
-if (place_meeting(x, y, obj_caterpillarchara) && pressed == 0 && (!133) && (!1166) && obj_controller_dw_city_mice.con > 0)
+if (place_meeting(x, y, obj_caterpillarchara) && pressed == 0 && (!instance_exists(obj_npc_facing)) && (!instance_exists(obj_noelle_scared)) && obj_controller_dw_city_mice.con > 0)
 {
     pressed = 1
-    64
+    gml_Script_snd_play(64)
 }
 if (place_meeting(x, y, obj_actor) && pressed == 0 && global.plot < 72)
 {
     pressed = 1
-    64
-    if 1164
+    gml_Script_snd_play(64)
+    if instance_exists(obj_holemouse_generator)
     {
         obj_holemouse_generator.mousecreate = 1
         obj_holemouse_generator.gentimer = 15
@@ -42,7 +42,7 @@ if (pressed == 1)
 if ((!place_meeting(x, y, obj_mainchara)) && (!place_meeting(x, y, obj_caterpillarchara)) && (!place_meeting(x, y, obj_actor)) && pressed == 1)
     pressed = 0
 image_index = pressed
-if (room == room_dw_city_mice && attempt == 1 && 1159 && obj_controller_dw_city_mice.victory == false)
+if (room == room_dw_city_mice && attempt == 1 && instance_exists(obj_controller_dw_city_mice) && obj_controller_dw_city_mice.victory == false)
 {
     tIntroCon = 1
     global.interact = 1
@@ -55,12 +55,12 @@ if (introCon == 0 || introCon == 1 || introCon == 2 || introCon == 3 || introCon
 }
 if (tIntroCon == 1)
 {
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
     tIntroCon = 2
-    fakemouse = gml_Script_scr_dark_marker(220, 180, 2686)
+    fakemouse = gml_Script_scr_dark_marker(220, 180, 2687)
     fakemouse.visible = false
-    fakedoor = gml_Script_scr_dark_marker(obj_holemouse_generator.x, obj_holemouse_generator.y, 2680)
+    fakedoor = gml_Script_scr_dark_marker(obj_holemouse_generator.x, obj_holemouse_generator.y, 2681)
     fakedoor.image_index = 5
     realdoor = instance_find(obj_holemouse_generator, 0)
     save_object[0] = cutscene_master
@@ -196,7 +196,7 @@ if (introCon == 1)
 }
 if (introCon == 2)
 {
-    fakenoelle = gml_Script_scr_dark_marker(obj_noelle_scared.x, obj_noelle_scared.y, 2718)
+    fakenoelle = gml_Script_scr_dark_marker(obj_noelle_scared.x, obj_noelle_scared.y, 2719)
     with (obj_noelle_scared)
         instance_destroy()
     noelleWaitTimer = 0
@@ -386,7 +386,7 @@ if (introCon == 132)
     gml_Script_c_facing("d")
     gml_Script_c_wait(15)
     gml_Script_c_wait(30)
-    gml_Script_c_sprite(1539)
+    gml_Script_c_sprite(1540)
     gml_Script_c_setxy(483, 256)
     gml_Script_c_halt()
     gml_Script_c_wait(15)

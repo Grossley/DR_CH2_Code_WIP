@@ -25,10 +25,11 @@ if (global.darkzone == false)
     }
     if (room == room_graveyard)
     {
-        fence = gml_Script_scr_marker(81, 122, 1090)
+        fence = gml_Script_scr_marker(81, 122, 1091)
         var _temp_local_var_1 = fence
+        gml_Script_scr_depth()
     }
-    if (room == room_hospital_lobby)
+    if (fence.room == room_hospital_lobby)
         sprite_index = spr_npc_nurse
     if (room == room_hospital_rudy)
     {
@@ -142,14 +143,14 @@ if (global.darkzone == false)
             if (global.chapter == 1)
                 sprite_index = spr_mkid_dt
             else
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         if (x >= 1900 && x < 1920)
         {
             if (global.chapter == 1)
                 sprite_index = spr_snowy_dt
             else
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
     if (room == room_town_north)
@@ -166,7 +167,7 @@ if (global.darkzone == false)
         if (global.chapter == 2)
         {
             if (x < 1000)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
     if (room == room_beach)
@@ -179,7 +180,7 @@ if (global.darkzone == false)
                 sprite_index = spr_npc_rgdragon
         }
         if (global.chapter == 2)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (room == room_flowershop_1f)
@@ -187,7 +188,7 @@ if (room == room_flowershop_1f)
     if (global.chapter == 2)
         sprite_index = spr_asgored
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_lw_police)
 {
@@ -238,7 +239,7 @@ if (global.darkzone == true)
     {
         if (x >= 250 && y >= 430)
         {
-            if (global.plot >= 200 && 2 >= 9)
+            if (global.plot >= 200 && gml_Script_scr_get_total_recruits(2) >= 9)
                 sprite_index = spr_npc_ballperson_wig
             else
                 sprite_index = spr_ballperson
@@ -251,14 +252,14 @@ if (global.darkzone == true)
         }
         if (x >= 350 && y >= 430)
         {
-            if (global.plot >= 200 && 2 >= 9)
+            if (global.plot >= 200 && gml_Script_scr_get_total_recruits(2) >= 9)
             {
                 sprite_index = spr_npc_nubert
                 image_xscale = -2
                 x = 410
             }
             else
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
     if (room == room_dw_castle_area_2)
@@ -282,12 +283,13 @@ if (global.darkzone == true)
                 rabbicksweep.sprite_index = spr_npc_rabbick_sweep
                 rabbicksweep.image_speed = 0.1
                 var _temp_local_var_36 = rabbicksweep
+                gml_Script_scr_depth()
             }
         }
         if (global.flag[636] == 1)
         {
             var swatchling_sweep = 0
-            if 108
+            if gml_Script_i_ex(108)
             {
                 with (obj_npc_room_animated)
                 {
@@ -301,6 +303,7 @@ if (global.darkzone == true)
                 swatchsweep.sprite_index = spr_npc_swatchling_sweep
                 swatchsweep.image_speed = 0.1
                 var _temp_local_var_20 = swatchsweep
+                gml_Script_scr_depth()
             }
         }
         if (x > 250 && x < 280 && y > 550 && y < 650)
@@ -328,7 +331,7 @@ if (global.darkzone == true)
             if (global.flag[635] == 1)
             {
                 var viro_exists = 0
-                if 108
+                if gml_Script_i_ex(108)
                 {
                     with (obj_npc_room_animated)
                     {
@@ -341,8 +344,9 @@ if (global.darkzone == true)
                     viro = gml_Script_instance_create(x, (y - 20), obj_npc_room_animated)
                     viro.sprite_index = spr_virovirokun_idle
                     var _temp_local_var_24 = viro
+                    gml_Script_scr_depth()
                 }
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
             else
                 sprite_index = spr_daimond_knight_idle
@@ -358,17 +362,17 @@ if (global.darkzone == true)
             else if (global.flag[633] == 1)
                 sprite_index = spr_npc_plugboy_static_outline
             else
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
-    if (room == room_cc_lancer)
+    if (viro.room == room_cc_lancer)
     {
-        if (global.plot >= 200 && 2 >= 9)
-            // WARNING: Popz'd an empty stack.
+        if (global.plot >= 200 && gml_Script_scr_get_total_recruits(2) >= 9)
+            instance_destroy()
         else
             sprite_index = spr_lancer_dt
     }
-    if (room == room_dw_castle_dungeon)
+    if (swatchsweep.room == room_dw_castle_dungeon)
     {
         sprite_index = spr_king_left
         depthcancel = true
@@ -378,14 +382,14 @@ if (global.darkzone == true)
         if (global.plot < 51)
             sprite_index = spr_plugboy_cower
         else
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_city_big_1)
     {
         if (y < 270)
         {
             if (global.flag[309] == 9)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             else
                 sprite_index = spr_npc_addison_blue
         }
@@ -403,14 +407,14 @@ if (global.darkzone == true)
     if (room == room_dw_city_big_2)
     {
         if (global.flag[309] == 9)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_city_big_3)
     {
         if (x < 600)
         {
             if (global.flag[309] == 9)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             else
                 sprite_index = spr_npc_addison_blue
         }
@@ -420,7 +424,7 @@ if (global.darkzone == true)
             {
                 var viro_npc = gml_Script_instance_create(x, y, obj_npc_room_animated)
                 viro_npc.sprite_index = spr_virovirokun_idle
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
             else
                 sprite_index = spr_npc_addison_orange
@@ -435,26 +439,26 @@ if (global.darkzone == true)
                 if (global.flag[314] == 0 && global.plot < 200)
                     sprite_index = spr_npc_mrsociety
                 else
-                    // WARNING: Popz'd an empty stack.
+                    instance_destroy()
             }
             else if (global.flag[357] == 1)
                 sprite_index = spr_npc_cursor_walk_right
             else
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         else
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_cyber_keyboard_puzzle_1)
     {
         sprite_index = spr_npc_nubert
         image_xscale = -2
         if (global.plot >= 70)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_bridges_funny)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_depth()
         sprite_index = spr_npc_butler
         image_xscale = 2
         x = 1280
@@ -487,4 +491,4 @@ if (global.darkzone == true)
     }
 }
 if (depthcancel == false)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()

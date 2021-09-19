@@ -1,4 +1,4 @@
-mypath = 
+mypath = path_add()
 init = 0
 damage = 10
 target = 0
@@ -13,4 +13,4 @@ special = 0
 grazepoints = 4
 childgraze = 4
 aim_at_player = 0
-46
+gml_Script_snd_play(46)

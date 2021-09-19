@@ -7,6 +7,7 @@ if (hacker != noone)
         hacker.path_speed = 0
         hacker.image_speed = 0
         var _temp_local_var_2 = hacker
+        path_end()
     }
     if (hacker_init_path && hacker_can_pause)
     {

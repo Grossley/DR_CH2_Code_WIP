@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 sactionboxx = -60
 talkmax = 90
 image_speed = 0.16666666666666666
@@ -17,14 +17,14 @@ bumpactstarted = 0
 init = 0
 attackorder = 0
 with (obj_battleback)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 recruitable = 0
 with (obj_herokris)
-    x = 200
+    x = (gml_Script_camerax() - 200)
 with (obj_herosusie)
-    x = 200
+    x = (gml_Script_camerax() - 200)
 with (obj_heroralsei)
-    x = 200
+    x = (gml_Script_camerax() - 200)
 tornadocount = 0
 spearblastcount = 0
 chirchicount = 0

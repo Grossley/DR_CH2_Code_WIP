@@ -16,7 +16,7 @@ if (btimer <= (difficulty ? 8 : 15))
 if (btimer >= (difficulty ? 13 : 25))
 {
     btimer = 0
-    var nextattack = 1
+    var nextattack = irandom(1)
     if (nextattack == lastattack)
         nextattack = 2
     lastangle = attackangle

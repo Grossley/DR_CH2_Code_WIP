@@ -7,30 +7,30 @@ c3 = "maybe"
 c4 = "so"
 promptcount = 4
 fileExists = 0
-if "choicer.txt"
+if file_exists("choicer.txt")
     fileExists = 1
 if (fileExists == 0)
 {
-    "choicer.txt"
+    ini_open("choicer.txt")
     ini_write_real("choicer", "promptcount", promptcount)
     ini_write_string("choicer", "c4", c4)
     ini_write_string("choicer", "c3", c3)
     ini_write_string("choicer", "c2", c2)
     ini_write_string("choicer", "c1", c1)
     ini_write_string("choicer", "question", q)
-    // WARNING: Popz'd an empty stack.
+    ini_close()
     fileExists = 1
 }
 else
 {
-    "choicer.txt"
+    ini_open("choicer.txt")
     q = ini_read_string("choicer", "question", q)
     c1 = ini_read_string("choicer", "c1", c1)
     c2 = ini_read_string("choicer", "c2", c2)
     c3 = ini_read_string("choicer", "c3", c3)
     c4 = ini_read_string("choicer", "c4", c4)
     promptcount = ini_read_real("choicer", "promptcount", promptcount)
-    // WARNING: Popz'd an empty stack.
+    ini_close()
     fileExists = 1
 }
 haswritten = 0

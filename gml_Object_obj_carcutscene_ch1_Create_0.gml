@@ -18,18 +18,18 @@ vx = 0
 vy = 0
 myd = 23827382
 if (global.plot > 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     global.facing = 0
     with (obj_npc_sign_ch1)
-        // WARNING: Popz'd an empty stack.
-    global.currentsong[0] = "mus_introcar.ogg"
+        instance_destroy()
+    global.currentsong[0] = gml_Script_snd_init_ch1("mus_introcar.ogg")
     con = 1
     alarm[4] = 30
     global.interact = 1
     k = 1347
-    t = gml_Script_scr_marker_ch1(195, 240, 3464)
+    t = gml_Script_scr_marker_ch1(195, 240, 3465)
     var _temp_local_var_1 = t
     depth = 400000
 }

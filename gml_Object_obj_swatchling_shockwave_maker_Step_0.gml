@@ -22,4 +22,4 @@ if (btimer > 6)
     made++
 }
 if (made >= amount)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

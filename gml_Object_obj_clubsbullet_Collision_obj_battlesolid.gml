@@ -1,5 +1,5 @@
 bul = gml_Script_instance_create(x, y, obj_regularbullet)
-if bul
+if gml_Script_i_ex(bul)
 {
     bul.sprite_index = spr_clubsball_b
     bul.direction = direction
@@ -11,7 +11,7 @@ if bul
     bul.timepoints = 2
 }
 bul = gml_Script_instance_create(x, y, obj_regularbullet)
-if bul
+if gml_Script_i_ex(bul)
 {
     bul.sprite_index = spr_clubsball_c
     bul.direction = (direction - 25)
@@ -23,7 +23,7 @@ if bul
     bul.timepoints = 2
 }
 bul = gml_Script_instance_create(x, y, obj_regularbullet)
-if bul
+if gml_Script_i_ex(bul)
 {
     bul.sprite_index = spr_clubsball_a
     bul.direction = (direction + 25)
@@ -34,4 +34,4 @@ if bul
     bul.grazepoints = 3
     bul.timepoints = 2
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

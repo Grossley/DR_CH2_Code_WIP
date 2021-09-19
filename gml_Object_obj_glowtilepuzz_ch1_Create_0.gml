@@ -26,7 +26,7 @@ if (room == room_field_puzzle1_ch1)
     {
         block[i] = gml_Script_instance_create_ch1((1280 + (i * 40)), 280, 1656)
         block[i].image_yscale = 2
-        spike1[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 280, 3606)
+        spike1[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 280, 3607)
         var _temp_local_var_1 = spike1[i]
         depth = 900000
     }

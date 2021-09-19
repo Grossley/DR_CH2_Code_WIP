@@ -1,4 +1,4 @@
-"main"
+gml_Script_scr_84_set_draw_font_ch1("main")
 if (BGMADE == 1)
 {
     ANIM_SINER += 1
@@ -17,10 +17,10 @@ if (BGMADE == 1)
             __WAVEMAG = 0
         else
             __WAVEMAG = (BGMAGNITUDE - __WAVEMINUS)
-        gml_Script_draw_background_part_ext_ch1(4375, 0, i, __WAVEWIDTH, 1, (sin(((i / 8) + (BG_SINER / 30))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
-        gml_Script_draw_background_part_ext_ch1(4375, 0, i, __WAVEWIDTH, 1, ((-sin(((i / 8) + (BG_SINER / 30)))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
+        gml_Script_draw_background_part_ext_ch1(4376, 0, i, __WAVEWIDTH, 1, (sin(((i / 8) + (BG_SINER / 30))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
+        gml_Script_draw_background_part_ext_ch1(4376, 0, i, __WAVEWIDTH, 1, ((-sin(((i / 8) + (BG_SINER / 30)))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
     }
-    T_SINER_ADD = (((ANIM_SINER_B / 10) * 0.6) - 0.25)
+    T_SINER_ADD = ((sin((ANIM_SINER_B / 10)) * 0.6) - 0.25)
     if (T_SINER_ADD >= 0)
         TRUE_ANIM_SINER += T_SINER_ADD
     draw_sprite_ext(IMAGE_MENU_ANIMATION_ch1, (ANIM_SINER / 12), 0, (((10 - (BG_ALPHA * 20)) + __WAVEHEIGHT) - 70), 1, 1, 0, image_blend, (BG_ALPHA * 0.46))
@@ -51,20 +51,20 @@ for (i = 0; i < 3; i += 1)
     BOX_Y1 = (55 + ((YL + YS) * i))
     BOX_X2 = (55 + XL)
     BOX_Y2 = ((55 + ((YL + YS) * i)) + YL)
-    0.5
-    0
+    draw_set_alpha(0.5)
+    draw_set_color(c_black)
     draw_rectangle(BOX_X1, BOX_Y1, BOX_X2, BOX_Y2, false)
-    1
-    COL_A
+    draw_set_alpha(1)
+    draw_set_color(COL_A)
     if (MENUCOORD[PREV_MENU] == i)
-        COL_B
+        draw_set_color(COL_B)
     if (MENU_NO == 3 || MENU_NO == 4)
     {
         if (MENUCOORD[2] == i)
-            COL_PLUS
+            draw_set_color(COL_PLUS)
     }
     if (MENU_NO == 7 && MENUCOORD[5] == i)
-        255
+        draw_set_color(c_red)
     draw_rectangle(BOX_X1, BOX_Y1, BOX_X2, BOX_Y2, true)
     if (TYPE == 1)
     {
@@ -74,16 +74,16 @@ for (i = 0; i < 3; i += 1)
     if (CONT_THIS < 4)
     {
         if (FILE[i] == 0)
-            "main"
+            gml_Script_scr_84_set_draw_font_ch1("main")
         else if (INITLANG[i] == 0)
-            3
+            draw_set_font(fnt_main)
         else if (INITLANG[i] == 1)
-            10
+            draw_set_font(fnt_ja_main)
         gml_Script_draw_text_shadow_ch1((BOX_X1 + 25), (BOX_Y1 + 5), NAME[i])
-        "main"
-        2
+        gml_Script_scr_84_set_draw_font_ch1("main")
+        draw_set_halign(fa_right)
         gml_Script_draw_text_shadow_ch1((BOX_X1 + 180), (BOX_Y1 + 5), TIME_STRING[i])
-        0
+        draw_set_halign(fa_left)
     }
     if (CONT_THIS >= 1)
     {
@@ -92,31 +92,31 @@ for (i = 0; i < 3; i += 1)
             if (MENU_NO == 1)
             {
                 SELTEXT_C = " "
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_116_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_116_1"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_116_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_116_1")
                 if (FILE[MENUCOORD[0]] == 0)
                 {
-                    SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_117_0"
-                    SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_117_1"
+                    SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_117_0")
+                    SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_117_1")
                 }
             }
             if (MENU_NO == 4)
             {
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_119_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_119_1"
-                SELTEXT_C = "DEVICE_MENU_slash_Draw_0_gml_119_2"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_119_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_119_1")
+                SELTEXT_C = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_119_2")
             }
             if (MENU_NO == 6)
             {
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_120_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_120_1"
-                SELTEXT_C = "DEVICE_MENU_slash_Draw_0_gml_120_2"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_120_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_120_1")
+                SELTEXT_C = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_120_2")
             }
             if (MENU_NO == 7)
             {
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_121_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_121_1"
-                SELTEXT_C = "DEVICE_MENU_slash_Draw_0_gml_121_2"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_121_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_121_1")
+                SELTEXT_C = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_121_2")
             }
         }
         else
@@ -124,49 +124,49 @@ for (i = 0; i < 3; i += 1)
             if (MENU_NO == 1)
             {
                 SELTEXT_C = " "
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_128_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_128_1"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_128_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_128_1")
                 if (FILE[MENUCOORD[0]] == 0)
                 {
-                    SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_129_0"
-                    SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_129_1"
+                    SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_129_0")
+                    SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_129_1")
                 }
             }
             if (MENU_NO == 4)
             {
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_131_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_131_1"
-                SELTEXT_C = "DEVICE_MENU_slash_Draw_0_gml_131_2"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_131_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_131_1")
+                SELTEXT_C = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_131_2")
             }
             if (MENU_NO == 6)
             {
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_132_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_132_1"
-                SELTEXT_C = "DEVICE_MENU_slash_Draw_0_gml_132_2"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_132_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_132_1")
+                SELTEXT_C = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_132_2")
             }
             if (MENU_NO == 7)
             {
-                SELTEXT_A = "DEVICE_MENU_slash_Draw_0_gml_133_0"
-                SELTEXT_B = "DEVICE_MENU_slash_Draw_0_gml_133_1"
-                SELTEXT_C = "DEVICE_MENU_slash_Draw_0_gml_133_2"
+                SELTEXT_A = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_133_0")
+                SELTEXT_B = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_133_1")
+                SELTEXT_C = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_133_2")
             }
         }
-        COL_B
+        draw_set_color(COL_B)
         if (MENU_NO == 7)
-            255
+            draw_set_color(c_red)
         gml_Script_draw_text_shadow_ch1((BOX_X1 + 25), (BOX_Y1 + 5), SELTEXT_C)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[MENU_NO] == 0)
         {
-            COL_B
+            draw_set_color(COL_B)
             HEARTX = 75
             HEARTY = (81 + ((YL + YS) * MENUCOORD[PREV_MENU]))
         }
         gml_Script_draw_text_shadow_ch1((BOX_X1 + 35), (BOX_Y1 + 22), SELTEXT_A)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[MENU_NO] == 1)
         {
-            COL_B
+            draw_set_color(COL_B)
             HEARTX = 165
             HEARTY = (81 + ((YL + YS) * MENUCOORD[PREV_MENU]))
         }
@@ -207,18 +207,18 @@ if (MENU_NO >= 0)
     }
     if (MENU_NO >= 2)
     {
-        CANCELTEXT = "DEVICE_MENU_slash_Draw_0_gml_189_0"
+        CANCELTEXT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_189_0")
         if (TYPE == 1)
-            CANCELTEXT = "DEVICE_MENU_slash_Draw_0_gml_190_0"
-        COL_A
+            CANCELTEXT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_190_0")
+        draw_set_color(COL_A)
         if (MENUCOORD[PREV_MENU] == 3)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow_ch1(80, 190, CANCELTEXT)
     }
     if (MENU_NO == 0 || MENU_NO == 1)
     {
-        COPYTEXT = "DEVICE_MENU_slash_Draw_0_gml_199_0"
-        ERASETEXT = "DEVICE_MENU_slash_Draw_0_gml_200_0"
+        COPYTEXT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_199_0")
+        ERASETEXT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_200_0")
         CHSELECTTEXT = (TYPE == 1 ? "Chapter Select" : "CHAPTER SELECT")
         if (global.lang == "ja")
         {
@@ -235,50 +235,50 @@ if (MENU_NO >= 0)
         }
         if (TYPE == 1)
         {
-            COPYTEXT = "DEVICE_MENU_slash_Draw_0_gml_201_0"
-            ERASETEXT = "DEVICE_MENU_slash_Draw_0_gml_201_1"
+            COPYTEXT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_201_0")
+            ERASETEXT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_201_1")
         }
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 3)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow_ch1(54, 190, COPYTEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 4)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow_ch1(140, 190, ERASETEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 5)
-            COL_B
+            draw_set_color(COL_B)
         gml_Script_draw_text_shadow_ch1(204, 190, CHSELECTTEXT)
-        COL_A
+        draw_set_color(COL_A)
         if (MENUCOORD[0] == 6)
-            COL_B
+            draw_set_color(COL_B)
         var lang_offset = 0
         if (global.lang == "en")
         {
             lang_offset -= 2
-            10
+            draw_set_font(fnt_ja_main)
         }
         else
-            3
+            draw_set_font(fnt_main)
         gml_Script_draw_text_shadow_ch1((140 + lang_offset), 210, LANGUAGETEXT)
-        "main"
+        gml_Script_scr_84_set_draw_font_ch1("main")
     }
-    3
+    draw_set_font(fnt_main)
     if (TYPE == 1)
     {
-        0.4
-        16777215
+        draw_set_alpha(0.4)
+        draw_set_color(c_white)
         draw_text_transformed(195, 230, (("DELTARUNE " + version_text) + "(C) Toby Fox 2018-2021 "), 0.5, 0.5, 0)
     }
     else
     {
-        COL_A
+        draw_set_color(COL_A)
         draw_text_transformed(248, 230, version_text, 0.5, 0.5, 0)
-        16777215
+        draw_set_color(c_white)
     }
-    "main"
-    1
+    gml_Script_scr_84_set_draw_font_ch1("main")
+    draw_set_alpha(1)
     if (MESSAGETIMER <= 0)
     {
         if (TYPE == 0)
@@ -286,44 +286,44 @@ if (MENU_NO >= 0)
             if (MENU_NO == 0 || MENU_NO == 1)
                 TEMPCOMMENT = " "
             if (MENU_NO == 2)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_216_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_216_0")
             if (MENU_NO == 3)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_217_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_217_0")
             if (MENU_NO == 4)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_218_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_218_0")
             if (MENU_NO == 5 || MENU_NO == 6 || MENU_NO == 7)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_219_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_219_0")
         }
         if (TYPE == 1)
         {
             if (MENU_NO == 0 || MENU_NO == 1)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_223_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_223_0")
             if (MENU_NO == 2)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_224_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_224_0")
             if (MENU_NO == 3)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_225_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_225_0")
             if (MENU_NO == 4)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_226_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_226_0")
             if (MENU_NO == 5 || MENU_NO == 6 || MENU_NO == 7)
-                TEMPCOMMENT = "DEVICE_MENU_slash_Draw_0_gml_227_0"
+                TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Draw_0_gml_227_0")
         }
     }
-    COL_B
+    draw_set_color(COL_B)
     gml_Script_draw_text_shadow_ch1(40, 30, TEMPCOMMENT)
     MESSAGETIMER -= 1
 }
-if ((HEARTX - HEARTXCUR) <= 2)
+if (abs((HEARTX - HEARTXCUR)) <= 2)
     HEARTXCUR = HEARTX
-if ((HEARTY - HEARTYCUR) <= 2)
+if (abs((HEARTY - HEARTYCUR)) <= 2)
     HEARTYCUR = HEARTY
 HEARTXCUR += ((HEARTX - HEARTXCUR) / 2)
 HEARTYCUR += ((HEARTY - HEARTYCUR) / 2)
 draw_sprite(spr_heartsmall_ch1, 0, HEARTXCUR, HEARTYCUR)
 if (TYPE == 1)
-    16777215
+    draw_set_color(c_white)
 else
-    COL_A
-3
+    draw_set_color(COL_A)
+draw_set_font(fnt_main)
 gml_Script_draw_text_shadow_ch1((gml_Script___view_get(0, 0) + 8), (gml_Script___view_get(1, 0) + 4), "CHAPTER 1")
-16777215
-"main"
+draw_set_color(c_white)
+gml_Script_scr_84_set_draw_font_ch1("main")

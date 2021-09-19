@@ -2,7 +2,7 @@ if (!(room == room_dw_city_poppup && global.flag[915] == 6 && global.flag[916] =
 {
     defaultsong = "cybercity.ogg"
     altsong = "cybercity_alt.ogg"
-    if 2
+    if (gml_Script_scr_sideb_get_phase() == 2)
     {
         mysong = altsong
         songspeed = 1.2
@@ -12,9 +12,9 @@ if (!(room == room_dw_city_poppup && global.flag[915] == 6 && global.flag[916] =
         mysong = defaultsong
         songspeed = 0.97
     }
-    if (!global.currentsong[1])
+    if (!gml_Script_snd_is_playing(global.currentsong[1]))
     {
-        global.currentsong[0] = mysong
+        global.currentsong[0] = gml_Script_snd_init(mysong)
         global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.8, songspeed)
     }
 }
@@ -23,6 +23,6 @@ updatesong = 0
 timer = 0
 if (global.flag[915] == 3 && global.flag[916] == 0)
 {
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
+    instance_destroy()
 }

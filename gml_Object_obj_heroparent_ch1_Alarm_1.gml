@@ -1,14 +1,14 @@
 var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6;
 global.faceaction[myself] = 0
-myself
+gml_Script_scr_retarget_ch1(myself)
 if (cancelattack == false)
 {
     dm = gml_Script_instance_create_ch1(global.monsterx[global.chartarget[myself]], ((global.monstery[global.chartarget[myself]] - (global.hittarget[global.chartarget[myself]] * 20)) + 20), 1629)
     dm.type = (char - 1)
     dm.delay = 8
-    damage = (((global.battleat[myself] * points) / 20) - (global.monsterdf[global.chartarget[myself]] * 3))
+    damage = round((((global.battleat[myself] * points) / 20) - (global.monsterdf[global.chartarget[myself]] * 3)))
     if (global.monstertype[global.chartarget[myself]] == 19)
-        damage *= 0.3
+        damage = ceil((damage * 0.3))
     if (damage < 0)
         damage = 0
     if (damage == 0)

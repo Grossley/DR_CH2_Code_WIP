@@ -1,2 +1,2 @@
 if (type != 2 && type != 3)
-    0
+    event_user(0)

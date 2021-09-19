@@ -10,13 +10,14 @@ if (active == true)
         {
             if (place_meeting(x, y, obj_caterpillarchara) || place_meeting(x, y, obj_mainchara) || place_meeting(x, y, obj_actor))
             {
-                if 1256
+                if instance_exists(obj_controller_dw_mansion_east_1f_a)
                     obj_controller_dw_mansion_east_1f_a.triggered = 1
                 image_index = 1
-                choose(164, 165)
+                gml_Script_snd_play(choose(164, 165))
                 brokenpot = gml_Script_scr_dark_marker(x, y, sprite_index)
                 brokenpot.image_index = 1
                 var _temp_local_var_2 = brokenpot
+                gml_Script_scr_depth_alt()
             }
         }
         if (type == 1)
@@ -42,9 +43,9 @@ if (x < xprevious)
 tellspeed = (x - xprevious)
 if (con == 1)
 {
-    pipismarker = gml_Script_scr_dark_marker(x, (y - (sprite_height / 2)), 1999)
-    wheel1 = gml_Script_scr_marker((x - 8), ((y - 8) + (active * 8)), 2068)
-    wheel2 = gml_Script_scr_marker((x + 8), ((y - 8) + (active * 8)), 2068)
+    pipismarker = gml_Script_scr_dark_marker(x, (y - (sprite_height / 2)), 2000)
+    wheel1 = gml_Script_scr_marker((x - 8), ((y - 8) + (active * 8)), 2069)
+    wheel2 = gml_Script_scr_marker((x + 8), ((y - 8) + (active * 8)), 2069)
     wheel1.hspeed = 16
     wheel2.hspeed = -16
     wheel1.friction = 0.5
@@ -53,7 +54,7 @@ if (con == 1)
     wheel2.depth = (depth - 10)
     gml_Script_scr_doom(wheel1, 30)
     gml_Script_scr_doom(wheel2, 30)
-    pipismarker
+    gml_Script_scr_darksize(pipismarker)
     visible = false
     myinteract = 0
     gml_Script_snd_play_pitch(297, 1.4)
@@ -72,4 +73,4 @@ if (con == 2)
     }
 }
 if (con == 3)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

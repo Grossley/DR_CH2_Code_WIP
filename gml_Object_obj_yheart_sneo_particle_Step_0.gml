@@ -2,4 +2,4 @@ timer++
 image_xscale = lerp(image_xscale, 0, (timer / 20))
 image_yscale = lerp(image_yscale, 0, (timer / 20))
 if (timer == 20)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

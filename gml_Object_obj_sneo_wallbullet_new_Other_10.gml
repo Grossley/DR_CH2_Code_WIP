@@ -15,17 +15,17 @@ if (destroyable == 1)
             if (wallnumber == other.wallnumber)
             {
                 gml_Script_snd_play_pitch(141, (1.1 + random(0.2)))
-                var _cut = hitshot
+                var _cut = gml_Script_scr_afterimage_cut()
                 _cut.flash = true
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
         with (obj_sneo_rotatingwall_pipis)
         {
             if (wallnumber == other.wallnumber)
             {
-                0
-                // WARNING: Popz'd an empty stack.
+                event_user(0)
+                instance_destroy()
             }
         }
     }

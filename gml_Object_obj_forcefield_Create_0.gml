@@ -19,7 +19,7 @@ if (disableflag > 0)
 {
     if (global.flag[disableflag] == 1)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         return;
     }
 }
@@ -27,7 +27,7 @@ if (disableplot > 0)
 {
     if (global.plot >= disableplot)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         return;
     }
 }
@@ -43,7 +43,7 @@ if (global.chapter == 2)
         stayVisible = 1
         depth = 5000
         if (global.flag[368] == 1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_b_central)
         stayVisible = 1

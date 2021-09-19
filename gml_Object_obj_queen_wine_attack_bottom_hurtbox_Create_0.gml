@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 wall_destroy = 1
 image_alpha = 1
 sprite_index = spr_hitbox_10px
@@ -7,8 +7,8 @@ image_yscale = 20
 visible = false
 destroyonhit = 0
 grazed = 0
-if 571
+if instance_exists(obj_queen_enemy)
     damage = (global.monsterat[obj_queen_enemy.myself] * 5)
-if 572
+if instance_exists(obj_queen_bulletcontroller)
     target = obj_queen_bulletcontroller.target
 grazepoints = 4

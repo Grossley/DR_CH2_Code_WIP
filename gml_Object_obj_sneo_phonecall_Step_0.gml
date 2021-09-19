@@ -17,15 +17,15 @@ if talking
     var aa = 0
     if (obj_spamton_neo_enemy.difficulty == 3 && state >= 5)
         aa = 1
-    if (talktimer > 5 && aa == 0)
+    if (gml_Script_button1_p() && talktimer > 5 && aa == 0)
         talktimer = talkmax
-    if (talktimer > 1 && aa == 0)
+    if (gml_Script_button3_h() && talktimer > 1 && aa == 0)
         talktimer = talkmax
     if (talktimer >= talkmax)
     {
         sneo.talktimer = sneo.talkmax
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         talking = 0
         talktimer = -10
         state++
@@ -34,7 +34,7 @@ if talking
 }
 if (state == 6)
 {
-    if ("bullets" || isattack)
+    if (gml_Script_scr_isphase("bullets") || isattack)
     {
         if (!secondtime)
         {
@@ -49,7 +49,7 @@ if (state == 6)
             else
             {
                 with (obj_sneo_bulletcontroller)
-                    // WARNING: Popz'd an empty stack.
+                    instance_destroy()
                 var _temp_local_var_9 = sneo
                 var _temp_local_var_10 = (secondtime ? 30 : 70)
                 var xx = (sneo + partxoff[1])
@@ -77,7 +77,7 @@ else if (state == 0)
     {
     }
     ringtimer = 12
-    sndphone = 53
+    sndphone = gml_Script_snd_play(53)
     gml_Script_snd_volume(sndphone, 0.7, 0)
     talktimer = -10
     state++
@@ -116,7 +116,7 @@ else if (state == 4)
     state = 5
 else if (state == 5)
 {
-    if ("bullets" && skipintro == 0)
+    if (gml_Script_scr_isphase("bullets") && skipintro == 0)
     {
         textboxoffsetx = 10
         textboxoffsety = 20

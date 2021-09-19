@@ -44,7 +44,7 @@ if (room == room_dw_ralsei_castle_front)
             y = 240
         }
         else
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (room == room_dw_city_roadblock)
@@ -54,10 +54,10 @@ if (room == room_dw_city_roadblock)
 }
 if (room == room_dw_mansion_b_east_b)
 {
-    if (10 == 0)
+    if (gml_Script_scr_keyitemcheck(10) == 0)
         sprite_index = spr_shine
-    if (10 == 1 || global.flag[309] >= 7)
-        // WARNING: Popz'd an empty stack.
+    if (gml_Script_scr_keyitemcheck(10) == 1 || global.flag[309] >= 7)
+        instance_destroy()
 }
 if (room == room_town_church)
     sprite_index = spr_npc_rainykid
@@ -67,4 +67,4 @@ if (room == room_dw_cyber_musical_door)
         sprite_index = spr_npc_rainykid
 }
 if (depthcancel == false)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()

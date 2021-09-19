@@ -1,7 +1,7 @@
 con = 0
 timer = 0
-y = 480
-x = 140
+y = (gml_Script_cameray() + 480)
+x = (gml_Script_camerax() - 140)
 for (i = 0; i < 20; i++)
 {
     coasterSiner[i] = (i * 2)
@@ -114,7 +114,7 @@ for (i = 0; i < 20; i++)
     dx[i] = (65 - sprite_get_width(coasterSprite[i]))
     if (coasterXscale[i] != 2)
         dx[i] = (65 + sprite_get_width(coasterSprite[i]))
-    dy[i] = (((-coasterSprite[i]) * 2) + 44)
+    dy[i] = (((-sprite_get_height(coasterSprite[i])) * 2) + 44)
     if (coasterSprite[i] == spr_whitepixel)
         coasterVisible[i] = 0
     if (coasterRecruitID[i] > 0)

@@ -1,13 +1,13 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 element = 6
 destroyable = 1
 red = 0
 bighitbox = 1
 image_speed = 0
 image_blend = merge_color(0xE8A200, c_aqua, (0.25 + (sin(0) * 0.25)))
-if 694
+if instance_exists(obj_spamton_neo_enemy)
     damage = (global.monsterat[obj_spamton_neo_enemy.myself] * 5)
-if 695
+if instance_exists(obj_sneo_bulletcontroller)
     target = obj_sneo_bulletcontroller.target
 grazepoints = 2
 wallcontroller = -1

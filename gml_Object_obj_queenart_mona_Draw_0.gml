@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (image_index >= 2)
     image_index -= 2
 if (global.flag[8] == 0)

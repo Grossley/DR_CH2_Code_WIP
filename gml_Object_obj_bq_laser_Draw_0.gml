@@ -100,8 +100,9 @@ if (state == 1)
         timer -= 60
     else
     {
+        instance_destroy()
         with (obj_bq_laser_circle)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (horizontal == 0)
@@ -120,3 +121,4 @@ draw_primitive_begin(4)
 draw_vertex(x, y)
 draw_vertex(xx1, yy1)
 draw_vertex(xx2, yy2)
+draw_primitive_end()

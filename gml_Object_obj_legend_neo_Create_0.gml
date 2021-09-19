@@ -1,7 +1,7 @@
-// WARNING: Popz'd an empty stack.
-global.currentsong[0] = "the_dark_truth.ogg"
+gml_Script_snd_free_all()
+global.currentsong[0] = gml_Script_snd_init("the_dark_truth.ogg")
 gml_Script_snd_pitch(global.currentsong[0], 0.95)
-global.currentsong[1] = global.currentsong[0]
+global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
 contimer = 0
 ytimer = 0
 xtimer = 0
@@ -13,7 +13,7 @@ fadecolor = c_black
 chunkfade = 0
 chunkamt = 1
 border = 2
-pic = 2459
+pic = 2460
 picb = 314
 fadespeed = 0.02
 global.flag[6] = 1

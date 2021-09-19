@@ -1,9 +1,9 @@
 if (offsetx || offsety)
 {
     if offsetx
-        xoff = x
+        xoff = (x - gml_Script_camerax())
     if offsety
-        yoff = y
+        yoff = (y - gml_Script_cameray())
     offsetx = 0
     offsety = 0
 }
@@ -19,4 +19,4 @@ else
     image_angle += 90
 }
 if flashframe
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

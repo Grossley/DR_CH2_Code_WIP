@@ -9,11 +9,11 @@ if (blockstate == 1)
     timer++
     if (timer < 3)
         gpu_set_fog(true, c_white, 0, 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     if (timer < 3)
         gpu_set_fog(false, c_white, 0, 0)
     if (timer == 1)
-        156
+        gml_Script_snd_play(156)
     if (timer < 9)
     {
         x = ((xstart - (8 - timer)) + random(((8 - timer) * 2)))
@@ -24,17 +24,17 @@ if (blockstate == 1)
     if (timer > 6)
         image_alpha -= 0.4
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     return;
 }
 if (state == 1)
 {
-    0.5
-    0
+    draw_set_alpha(0.5)
+    draw_set_color(c_black)
     draw_rectangle(((x - (sprite_width / 2)) + 2), ((y - (sprite_height / 2)) + 2), ((x + (sprite_width / 2)) + 2), ((y + (sprite_height / 2)) + 2), false)
-    1
-    16777215
-    // WARNING: Popz'd an empty stack.
+    draw_set_alpha(1)
+    draw_set_color(c_white)
+    draw_self()
 }
 else if (state < 3)
 {
@@ -56,13 +56,13 @@ else if (state < 3)
     {
         scale -= (0.25 * scalespeed)
         if (scale <= 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
-    0.5
-    0
+    draw_set_alpha(0.5)
+    draw_set_color(c_black)
     draw_rectangle(((x - ((sprite_width * scale) / 2)) + 2), ((y - ((sprite_height * scale) / 2)) + 2), ((x + ((sprite_width * scale) / 2)) + 2), ((y + ((sprite_height * scale) / 2)) + 2), false)
-    1
-    16777215
+    draw_set_alpha(1)
+    draw_set_color(c_white)
     draw_sprite_ext(sprite_index, image_index, x, y, scale, scale, 0, c_white, 1)
 }
 if (mock == 1)

@@ -8,4 +8,4 @@ if (room == room_dw_castle_area_2)
 image_xscale = 2
 image_yscale = 2
 image_speed = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

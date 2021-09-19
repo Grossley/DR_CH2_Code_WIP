@@ -1,5 +1,5 @@
 if (global.flag[382] == 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 mode = 1
 content = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

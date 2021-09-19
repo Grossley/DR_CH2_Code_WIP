@@ -1,10 +1,5 @@
-var _temp_local_var_1, _temp_local_var_2;
-if (room == room_dw_mansion_acid_tunnel_loop_rouxls)
-    var _temp_local_var_1 = x
-base_xpos = x
-if (room == room_dw_mansion_acid_tunnel_loop_rouxls)
-    var _temp_local_var_2 = y
-base_ypos = y
+base_xpos = (room == room_dw_mansion_acid_tunnel_loop_rouxls ? x : gml_Script_camerax())
+base_ypos = (room == room_dw_mansion_acid_tunnel_loop_rouxls ? y : gml_Script_cameray())
 maker = 0
 if (room != room_dw_mansion_acid_tunnel_loop_rouxls)
     depth = (obj_rouxls_enemy.depth + 9997)
@@ -43,11 +38,11 @@ GameOver = 0
 MyTurn = -1
 TurnCon = 0
 StatusMessage = "* Build a house!"
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_simtown_canbuild_check()
+gml_Script_scr_simtown_reset_cursor()
 siner = 0
 actresult = "tie"
-specialCursor = gml_Script_scr_dark_marker(-100, -100, 2072)
+specialCursor = gml_Script_scr_dark_marker(-100, -100, 2073)
 specialCursor.depth = -100
 specialCursor.image_speed = 0.2
 flyaway = 0

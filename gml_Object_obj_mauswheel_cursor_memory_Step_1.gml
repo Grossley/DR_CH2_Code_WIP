@@ -1,2 +1,2 @@
-if (!758)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_mauswheel_enemy))
+    instance_destroy()

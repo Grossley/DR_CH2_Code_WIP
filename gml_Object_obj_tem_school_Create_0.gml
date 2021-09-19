@@ -1,5 +1,5 @@
 if (global.chapter == 2 && global.plot >= 3 && global.plot < 200)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     dtsprite = spr_tem_sit
@@ -15,6 +15,6 @@ else
     eggmake = 0
     egcon = 0
     egtimer = 0
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_npcdir()
+    gml_Script_scr_depth()
 }

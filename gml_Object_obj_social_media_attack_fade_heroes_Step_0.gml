@@ -16,5 +16,5 @@ if (con == 2)
     with (obj_queen_enemy)
         image_alpha += 0.1
     if (obj_heroparent.image_alpha > 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

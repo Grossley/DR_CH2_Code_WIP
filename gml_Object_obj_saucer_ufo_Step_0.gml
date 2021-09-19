@@ -1,6 +1,6 @@
 if (global.interact == 0)
 {
-    centerx = (320 - (sprite_width / 2))
+    centerx = ((gml_Script_camerax() + 320) - (sprite_width / 2))
     if (con == 0)
     {
         vspeed = -8
@@ -45,7 +45,7 @@ if (global.interact == 0)
             hspeed = 1
         hspeed *= 1.2
         hspeed = clamp(hspeed, 0, 30)
-        if ((x + 640) + (sprite_width * 2))
-            // WARNING: Popz'd an empty stack.
+        if (x > ((gml_Script_camerax() + 640) + (sprite_width * 2)))
+            instance_destroy()
     }
 }

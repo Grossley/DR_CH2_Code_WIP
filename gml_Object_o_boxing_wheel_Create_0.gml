@@ -1,12 +1,12 @@
 var _temp_local_var_2;
-if ((!325) && o_boxingcontroller.wireframe_boxing == 1)
+if ((!audio_is_playing(snd_chain_extend_bc)) && o_boxingcontroller.wireframe_boxing == 1)
 {
-    325
+    gml_Script_snd_loop(325)
     gml_Script_snd_volume(325, 0.37, 0)
 }
-else if ((!112) && o_boxingcontroller.wireframe_boxing == 0)
+else if ((!audio_is_playing(snd_chain_extend)) && o_boxingcontroller.wireframe_boxing == 0)
 {
-    112
+    gml_Script_snd_loop(112)
     gml_Script_snd_volume(112, 0.42, 0)
 }
 f = 2

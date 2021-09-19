@@ -1,12 +1,12 @@
-if doorEntrance
+if is_real(doorEntrance)
 {
     if (doorEntrance != -1)
         global.entrance = doorEntrance
 }
-else if doorEntrance
-    global.entrance = ((doorEntrance - 65) + 1)
+else if is_string(doorEntrance)
+    global.entrance = ((ord(string_upper(doorEntrance)) - 65) + 1)
 if (doorSound2 != -1)
-    doorSound2
+    gml_Script_snd_play(doorSound2)
 if (doorFacing != -1)
     global.facing = doorFacing
 if (doorPostDelay > 1)

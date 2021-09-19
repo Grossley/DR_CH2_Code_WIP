@@ -1,6 +1,6 @@
 if (timer == target)
 {
-    var _sparkle = 231
+    var _sparkle = gml_Script_snd_play(231)
     gml_Script_snd_pitch(_sparkle, (1.1 + (target * 0.2)))
 }
 timer++
@@ -16,11 +16,11 @@ if (timer >= 24)
         d.image_xscale = 2
     }
     if (!healer)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     else if (timer == 48)
-        heal_state
+        gml_Script_scr_spamton_heal(heal_state)
     else if (timer >= 63)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else if (timer >= 0 && timer <= 24)
 {

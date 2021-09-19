@@ -5,7 +5,7 @@ if (init == 0)
     for (i = 0; i < 3; i++)
     {
         mymonster[i] = obj_sneo_friedpipis
-        if (global.monsterinstance[i] && global.monster[i] == true)
+        if (gml_Script_i_ex(global.monsterinstance[i]) && global.monster[i] == true)
         {
             mymonster[i] = global.monsterinstance[i]
             if cancatch[i]
@@ -25,13 +25,13 @@ if (init == 0)
         image_xscale = 1
     if (image_yscale <= 1)
         image_yscale = 1
-    siner = 100
-    y = sprite_height
-    x = (2 - (sprite_width / 2))
+    siner = random(100)
+    y = (gml_Script_cameray() - sprite_height)
+    x = ((gml_Script_camerax() + (gml_Script_camerawidth() / 2)) - (sprite_width / 2))
     basketx = x
     x += (sin((siner / 5)) * 120)
     magnitude = 50
-    var yy = 
+    var yy = gml_Script_cameray()
     gml_Script_scr_move_to_point_over_time(x, (yy + 10), 15)
     for (i = 0; i < 3; i++)
     {
@@ -39,24 +39,26 @@ if (init == 0)
         {
             monstersiner[i] = (i * 4)
             monsterhit[i] = 0
-            mymonster[i].__baskety = (100 + (70 * i))
-            if 1
-                mymonster[i].__baskety = 240
+            mymonster[i].__baskety = ((gml_Script_cameray() + 100) + (70 * i))
+            if (gml_Script_scr_monsterpop() == 1)
+                mymonster[i].__baskety = (gml_Script_cameray() + 240)
             if cancatch[i]
             {
-                monsterx[i] = (2 + (sprite_width / 2))
+                monsterx[i] = ((gml_Script_camerax() + (gml_Script_camerawidth() / 2)) + (sprite_width / 2))
                 mymonster[i].__monsterx = (monsterx[i] - (sin((monstersiner[i] / 7)) * magnitude))
                 var _temp_local_var_3 = mymonster[i]
-                if 758
+                gml_Script_scr_rememberxy()
+                if instance_exists(obj_mauswheel_enemy)
                     gml_Script_scr_move_to_point_over_time(__monsterx, y, 15)
                 else
                     gml_Script_scr_move_to_point_over_time(__monsterx, __baskety, 15)
             }
             if (cancatch[i] == 0)
             {
-                monsterx[i] = 200
+                monsterx[i] = ((gml_Script_camerax() + gml_Script_camerawidth()) + 200)
                 var _temp_local_var_4 = mymonster[i]
-                var xx = sprite_width
+                gml_Script_scr_rememberxy()
+                var xx = ((gml_Script_camerax() + gml_Script_camerawidth()) + sprite_width)
                 gml_Script_scr_move_to_point_over_time(xx, y, 15)
             }
             monsterhitbox[i] = gml_Script_instance_create(((mymonster[i].x + (sprite_width / 2)) - 20), (mymonster[i].y + sprite_height), obj_act_hitbox)
@@ -94,10 +96,13 @@ if (init == 1)
         {
             siner += sineradd
             x = (basketx + (sin((siner / 5)) * 120))
-            dropped = 1
-            vspeed = 16
-            gravity = 1
-            91
+            if gml_Script_button3_p()
+            {
+                dropped = 1
+                vspeed = 16
+                gravity = 1
+                gml_Script_snd_play(91)
+            }
         }
         if (magnitude < 100)
             magnitude += 5
@@ -129,7 +134,7 @@ if (init == 1)
         }
         if (dropped == 1)
         {
-            if ((y + 300) - sprite_height)
+            if (y >= ((gml_Script_cameray() + 300) - sprite_height))
             {
                 gravity = 0
                 vspeed = 0

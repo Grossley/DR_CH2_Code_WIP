@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_2;
 con = -1
 hacker = noone
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.flag[339] == 1)
 {
     if (global.flag[357] == 1)
@@ -10,6 +10,7 @@ else if (global.flag[339] == 1)
         hacker_npc = gml_Script_instance_create(1650, 215, obj_npc_room)
         hacker_npc.sprite_index = spr_npc_cursor_walk_left
         var _temp_local_var_1 = hacker_npc
+        gml_Script_scr_depth()
     }
     layer_set_visible("TILES_Secret", 0)
     layer_set_visible("TILES_Secret_BG", 0)
@@ -27,5 +28,6 @@ else
         hacker.image_xscale = 2
         hacker.image_yscale = 2
         var _temp_local_var_2 = hacker
+        gml_Script_scr_depth()
     }
 }

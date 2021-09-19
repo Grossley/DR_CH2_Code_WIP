@@ -9,7 +9,7 @@ if (con == 0 && obj_mainchara.x >= x && global.interact == 0)
 if (con == 1)
 {
     con = 2
-    cutscene_master = 
+    cutscene_master = gml_Script_scr_cutscene_make()
     kr = 0
     kr_actor = gml_Script_instance_create(obj_mainchara.x, obj_mainchara.y, obj_actor)
     gml_Script_scr_actor_setup(kr, kr_actor, "kris")

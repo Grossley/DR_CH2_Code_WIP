@@ -1,14 +1,14 @@
 var _temp_local_var_2;
-if (y + 290)
+if (y < (gml_Script_cameray() + 290))
     depth = (obj_heart.depth - 2)
-if (y + 290)
+if (y > (gml_Script_cameray() + 290))
     depth = (obj_heart.depth + 100)
 if isqueen
 {
     if (queencon == 0)
     {
         sprite_index = spr_q_socialface_queen
-        x = 640
+        x = (gml_Script_camerax() + 640)
         hspeed = -4
         queencon = 1
     }
@@ -33,8 +33,8 @@ if isqueen
             }
             vspeed = 0
             hspeed = 0
-            292
-            331
+            gml_Script_snd_play(292)
+            gml_Script_snd_stop(331)
             redword = gml_Script_instance_create((x - 40), (y - 10), obj_wordbullet)
             redword.queenword = 1
             redword.wordchoice = gml_Script_stringsetloc("DRAMA", "obj_socialmedia_avatar_slash_Step_0_gml_36_0")
@@ -47,8 +47,8 @@ if isqueen
     {
         sprite_index = spr_q_socialface_queen_laugh
         image_speed = 0.25
-        331
-        331
+        gml_Script_snd_play(331)
+        gml_Script_snd_loop(331)
         gml_Script_snd_pitch(331, 1)
     }
     angrycon = -1
@@ -65,19 +65,19 @@ if (angrycon == 0)
             times = 0
         else
         {
-            side = (obj_growtangle.x - x)
+            side = sign((obj_growtangle.x - x))
             word = gml_Script_instance_create((x - (20 * side)), (y - 10), obj_wordbullet)
             word.vspeed = vspeed
-            if 869
+            if instance_exists(obj_growtangle)
                 word.hspeed = (myhspeed * side)
         }
         timer = 0
     }
-    if (y + 310)
+    if (y > (gml_Script_cameray() + 310))
     {
         image_alpha -= 0.1
         if (image_alpha <= 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (angrycon == 2)
@@ -85,7 +85,7 @@ if (angrycon == 2)
     sprite_index = spr_queen_pfps_mad
     image_speed = 0.25
     image_blend = c_red
-    timer = 30
+    timer = random(30)
     angrycon = 3
 }
 if (angrycon == 3)

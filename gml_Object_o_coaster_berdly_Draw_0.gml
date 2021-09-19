@@ -1,4 +1,4 @@
-if (482 && sprite_index != spr_berdlyb_shocked_battle)
+if (instance_exists(obj_berdlyb_enemy) && sprite_index != spr_berdlyb_shocked_battle)
 {
     sprite_index = obj_berdlyb_enemy.sprite_index
     image_index = (obj_berdlyb_enemy.image_index - 1)
@@ -16,11 +16,11 @@ else
 if (queenmode == 0)
 {
     draw_sprite_ext(spr_coaster_berdly_back, 0, (x + xshake), ((y + yshake) + 16), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-    if ((!485) && obj_berdlyb_enemy.state != 3)
+    if ((!instance_exists(obj_berdlyb_spearblaster)) && obj_berdlyb_enemy.state != 3)
     {
         draw_sprite_ext(sprite_index, image_index, ((x + xshake) + xx), (((((y + yshake) - (sprite_get_height(sprite_index) * 2)) - 11) + 20) + yy), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
         if (obj_berdlyb_enemy.flash == true)
-            gml_Script_draw_sprite_ext_flash(sprite_index, image_index, ((x + xshake) + xx), ((((y + yshake) - (sprite_get_height(sprite_index) * 2)) - 11) + 20), image_xscale, image_yscale, image_angle, image_blend, (((-(obj_berdlyb_enemy.fsiner / 5)) * 0.4) + 0.6))
+            gml_Script_draw_sprite_ext_flash(sprite_index, image_index, ((x + xshake) + xx), ((((y + yshake) - (sprite_get_height(sprite_index) * 2)) - 11) + 20), image_xscale, image_yscale, image_angle, image_blend, (((-cos((obj_berdlyb_enemy.fsiner / 5))) * 0.4) + 0.6))
     }
     if (xshake == 0)
         draw_sprite_ext(spr_coaster_berdly, 0, (x + xshake), ((y + yshake) + 16), image_xscale, image_yscale, image_angle, image_blend, image_alpha)

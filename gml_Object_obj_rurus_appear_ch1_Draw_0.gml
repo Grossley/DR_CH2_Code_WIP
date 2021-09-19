@@ -4,16 +4,16 @@ if (timer >= 0)
         sprite_index = spr_checkers_idle_white_ch1
     timer += 1
     xc = (x + (sprite_width / 2))
-    16777215
+    draw_set_color(c_white)
     if (rect_width > 1)
     {
         for (i = 3; i >= 1; i -= 1)
         {
-            (((1.25 - (i / 4)) * rect_width) / 50)
+            draw_set_alpha((((1.25 - (i / 4)) * rect_width) / 50))
             draw_rectangle((xc - (rect_width * (1 + (i / 4)))), -200, (xc + (rect_width * (1 + (i / 4)))), (y + sprite_height), false)
         }
     }
-    1
+    draw_set_alpha(1)
     if (timer <= 15)
     {
         if (rect_width <= 50)

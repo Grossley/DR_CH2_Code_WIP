@@ -6,7 +6,7 @@ global.fc = 0
 global.fe = 0
 global.interact = 1
 global.msg[0] = gml_Script_stringsetloc("* The pain itself is reason why./%", "obj_npc_room_animated_slash_Other_10_gml_8_0")
-global.msg[0] = "* [NO TEXT] (obj_npc_room_animated)/%"
+global.msg[0] = gml_Script_stringset("* [NO TEXT] (obj_npc_room_animated)/%")
 if (room == room_town_mid)
 {
     if (sprite_index == spr_npc_icemascot2)
@@ -53,7 +53,7 @@ if (room == room_diner)
     {
         if (sprite_index == spr_npc_catti_mom_no1)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* WOO!!^1! Catti!^1! You go^1, girl!!!/", "obj_npc_room_animated_slash_Other_10_gml_70_0")
             gml_Script_msgnextloc("* Show those customers who's boss^1, little lady!!/", "obj_npc_room_animated_slash_Other_10_gml_71_0")
             gml_Script_msgnextloc("* Kick their toosh!^1! Woo!!^1! Beat them down!^1! You got this!!/%", "obj_npc_room_animated_slash_Other_10_gml_72_0")
@@ -61,7 +61,7 @@ if (room == room_diner)
         if (sprite_index == spr_npc_catty_ukelele)
         {
             global.msc = 1039
-            global.msc
+            gml_Script_scr_text(global.msc)
         }
     }
 }
@@ -71,7 +71,7 @@ if (room == room_dw_ralsei_castle_front)
 {
     if (sprite_index == spr_npc_trashy)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Oh boy^1, oh boy!^1! I'm Trashy!^1! Haha!!/", "obj_npc_room_animated_slash_Other_10_gml_94_0_b")
         gml_Script_msgnextloc("* I bet I'm gonna make a lot of new friends!!/%", "obj_npc_room_animated_slash_Other_10_gml_95_0")
     }
@@ -80,7 +80,7 @@ if (room == room_dw_ralsei_castle_1f)
 {
     if (global.flag[304] == 0)
     {
-        "ralsei"
+        gml_Script_scr_speaker("ralsei")
         gml_Script_msgsetloc(0, "\\E2* Oh!^1! I nearly forgot!^1! This is where I cook!!/", "obj_npc_room_animated_slash_Other_10_gml_94_0")
         gml_Script_scr_anyface_next("susie", "K")
         gml_Script_msgnextloc("\\EK* You cook everything in a giant witch's pot...?/", "obj_npc_room_animated_slash_Other_10_gml_96_0")
@@ -89,13 +89,13 @@ if (room == room_dw_ralsei_castle_1f)
     }
     else
     {
-        "susie"
+        gml_Script_scr_speaker("susie")
         gml_Script_msgsetloc(0, "\\E7* Okay^1, now make a chocolate one!/", "obj_npc_room_animated_slash_Other_10_gml_104_0")
         gml_Script_scr_anyface_next("ralsei", 26)
         gml_Script_msgnextloc("\\EQ* Why don't we go upstairs first?/%", "obj_npc_room_animated_slash_Other_10_gml_106_0")
         if (global.plot >= 15)
         {
-            "susie"
+            gml_Script_scr_speaker("susie")
             gml_Script_msgsetloc(0, "\\E7* How 'bout a strawberry cake as a room-warming gift?/", "obj_npc_room_animated_slash_Other_10_gml_112_0")
             gml_Script_scr_anyface_next("ralsei", 26)
             gml_Script_msgnextloc("\\EQ* There's a slice of cake in your fridge^1, Susie!/", "obj_npc_room_animated_slash_Other_10_gml_114_0")
@@ -112,7 +112,7 @@ if (room == room_town_south)
         {
             if (talked == 0)
             {
-                "undyne"
+                gml_Script_scr_speaker("undyne")
                 gml_Script_msgsetloc(0, "\\E1* Damn^1, I was just directing traffic as normal.../", "obj_npc_room_animated_slash_Other_10_gml_130_0")
                 gml_Script_msgnextloc("\\E2* When a little dog drove one of those toy cars.../", "obj_npc_room_animated_slash_Other_10_gml_131_0")
                 gml_Script_msgnextloc("\\E1* Into the middle of the street and started doing donuts!/", "obj_npc_room_animated_slash_Other_10_gml_132_0")
@@ -123,7 +123,7 @@ if (room == room_town_south)
             }
             else
             {
-                "undyne"
+                gml_Script_scr_speaker("undyne")
                 gml_Script_msgsetloc(0, "\\E5* Don't interrupt me when I'm lifting!!!/%", "obj_npc_room_animated_slash_Other_10_gml_139_0")
             }
         }
@@ -133,7 +133,7 @@ if (room == room_lw_icee_pizza)
 {
     if (sprite_index == spr_npc_warrior)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* THE PIZZA'S SAUCE IS BOILING RED./", "obj_npc_room_animated_slash_Other_10_gml_150_0")
         gml_Script_msgnextloc("* BURBLING^1, BURNING LIKE MY BLOOD YEARNS FOR BATTLE!!!/", "obj_npc_room_animated_slash_Other_10_gml_151_0")
         gml_Script_msgnextloc("* HAAAAAAAAAAAAAAAHHHHH!!!!!/", "obj_npc_room_animated_slash_Other_10_gml_152_0")
@@ -157,31 +157,31 @@ if (room == room_dw_mansion_krisroom)
 {
     if (sprite_index == spr_dw_mansion_room_kris_book_juggling)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's Jongler's Book on Jongleing And Other Tricks)/", "obj_npc_room_animated_slash_Other_10_gml_180_0")
         gml_Script_msgnextloc("* (From search query: how to use magic)/%", "obj_npc_room_animated_slash_Other_10_gml_181_0")
     }
     if (sprite_index == spr_dw_mansion_room_kris_toriel_piano)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's two pixellized Toriels playing the piano.)/", "obj_npc_room_animated_slash_Other_10_gml_187_0")
         gml_Script_msgnextloc("* (From search query: video game piano tutoriel)/%", "obj_npc_room_animated_slash_Other_10_gml_188_0")
     }
     if (sprite_index == spr_dw_mansion_room_kris_casette_floating)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's a VHS explaining how to install video game piano.)/", "obj_npc_room_animated_slash_Other_10_gml_194_0")
         gml_Script_msgnextloc("* (From search query: video game piano tutorial)/%", "obj_npc_room_animated_slash_Other_10_gml_195_0")
     }
     if (sprite_index == spr_dw_mansion_room_kris_knife_jello)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's a jelly in the shape of various knives.)/", "obj_npc_room_animated_slash_Other_10_gml_201_0")
         gml_Script_msgnextloc("* (From search query: sharpest kitchen knife jello)/%", "obj_npc_room_animated_slash_Other_10_gml_202_0")
     }
     if (sprite_index == spr_dw_mansion_room_kris_calendar)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's a calendar with college vacation circled.)/", "obj_npc_room_animated_slash_Other_10_gml_208_0")
         gml_Script_msgnextloc("* (From search query: summer vacation college when.)/%", "obj_npc_room_animated_slash_Other_10_gml_209_0")
     }
@@ -190,25 +190,25 @@ if (room == room_dw_mansion_susieroom)
 {
     if (sprite_index == spr_dw_mansion_room_susie_video_game)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's a copy of an online skateboarding game.)/", "obj_npc_room_animated_slash_Other_10_gml_218_0")
         gml_Script_msgnextloc("* (From search query: cool skatebord game online)/%", "obj_npc_room_animated_slash_Other_10_gml_219_0")
     }
     if (sprite_index == spr_dw_mansion_room_susie_video_game_broken)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's a skateboarding game but the AI is cheating. It's impossible to win.)/", "obj_npc_room_animated_slash_Other_10_gml_225_0")
         gml_Script_msgnextloc("* (From search query: cool skateboard game online CHEAT)/%", "obj_npc_room_animated_slash_Other_10_gml_226_0")
     }
     if (sprite_index == spr_dw_mansion_room_susie_book_vacuum)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (It's a vacuum-powered book.)/", "obj_npc_room_animated_slash_Other_10_gml_232_0")
         gml_Script_msgnextloc("* (From search query: LOSERS!!!^1! THIS LIBRARBY SUCKS!!!!)/%", "obj_npc_room_animated_slash_Other_10_gml_233_0")
     }
     if (sprite_index == spr_dw_mansion_room_susie_glitch)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (Seems to be a somewhat glitched out hologram.)/", "obj_npc_room_animated_slash_Other_10_gml_239_0")
         gml_Script_msgnextloc("* (From search query: FJFIrejirioEUEUROEI4378789)/%", "obj_npc_room_animated_slash_Other_10_gml_240_0")
     }
@@ -217,13 +217,13 @@ if (room == room_dw_city_roadblock)
 {
     if (extflag == "left")
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* What are we cleaning up for, you ask?/", "obj_npc_room_animated_slash_Other_10_gml_257_0")
         gml_Script_msgnextloc("* We don't know. A parade, perhaps?/%", "obj_npc_room_animated_slash_Other_10_gml_258_0")
     }
     if (extflag == "right")
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* A large event is going to happen in the streets later./", "obj_npc_room_animated_slash_Other_10_gml_249_0")
         gml_Script_msgnextloc("* We were told to make room for something BIG.../%", "obj_npc_room_animated_slash_Other_10_gml_251_0")
     }
@@ -234,7 +234,7 @@ if (room == room_dw_city_savepoint)
     {
         if (talked == 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_miniface_init_sweet()
             gml_Script_msgsetloc(0, "\\m1		*Yo^1! How's it hangin'?/", "obj_npc_room_animated_slash_Other_10_gml_270_0")
             gml_Script_msgnextloc("\\m1		*We're making some extra& money by selling in the city!/", "obj_npc_room_animated_slash_Other_10_gml_271_0")
             gml_Script_msgnextloc("\\m3		*We gotta make those& bucks somehow!^1! Heheh!!/", "obj_npc_room_animated_slash_Other_10_gml_272_0")
@@ -243,14 +243,14 @@ if (room == room_dw_city_savepoint)
         }
         else
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_miniface_init_sweet()
             gml_Script_msgsetloc(0, "\\m1		*K_K's always got it right^2!&\\m3	That's why he's& second-in-command^2!/", "obj_npc_room_animated_slash_Other_10_gml_278_0")
             gml_Script_msgnextloc("\\m1		*..^1. who's first^2?&\\m3	Huh? I'm not the leader^2?&\\m2	Can I be third^2?/%", "obj_npc_room_animated_slash_Other_10_gml_279_0")
         }
     }
     if (sprite_index == spr_npc_kk || sprite_index == spr_npc_kk_music)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_miniface_init_sweet()
         gml_Script_msgsetloc(0, "\\m2		*Did you like the big statue^2?&\\m3	Building it sucked^2!&\\m1	Took a lot of scrap^2./", "obj_npc_room_animated_slash_Other_10_gml_286_0")
         gml_Script_msgnextloc("\\m1		*The other job we did was&	way better^2!&\\m2	It was big^2./", "obj_npc_room_animated_slash_Other_10_gml_287_0")
         gml_Script_msgnextloc("\\m3		*It's gonna blow your mind^2!&\\m2	It was big^2./%", "obj_npc_room_animated_slash_Other_10_gml_288_0")
@@ -258,27 +258,27 @@ if (room == room_dw_city_savepoint)
     if (sprite_index == spr_npc_hatguy)
     {
         global.msc = 1071
-        global.msc
+        gml_Script_scr_text(global.msc)
     }
 }
 if (room == room_dw_castle_area_2_transformed)
 {
     if (sprite_index == spr_npc_swatchling_sweep)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Young masters^1! Thank you for such a wide space to clean!/", "obj_npc_room_animated_slash_Other_10_gml_303_0")
         gml_Script_msgnextloc("* The people here have such clean hearts as well./", "obj_npc_room_animated_slash_Other_10_gml_304_0")
         gml_Script_msgnextloc("* (Sukkiri.)/%", "obj_npc_room_animated_slash_Other_10_gml_305_0")
     }
     if (sprite_index == spr_npc_rabbick_sweep)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* It's nice to make friends that like good clean fun!/", "obj_npc_room_animated_slash_Other_10_gml_311_0")
         gml_Script_msgnextloc("* (Sukkiri.)/%", "obj_npc_room_animated_slash_Other_10_gml_312_0")
     }
     if (sprite_index == spr_virovirokun_idle)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Uh-huh^1, uh-huh^1! I wonder if she'll be back.../", "obj_npc_room_animated_slash_Other_10_gml_318_0")
         gml_Script_msgnextloc("* 'ey boss^1! We're just reminiscing about fighting you!/%", "obj_npc_room_animated_slash_Other_10_gml_319_0")
     }
@@ -288,14 +288,14 @@ if (room == room_dw_cyber_musical_door)
     if (sprite_index == spr_npc_hatguy)
     {
         global.msc = 1145
-        global.msc
+        gml_Script_scr_text(global.msc)
     }
     if (sprite_index == spr_npc_kk)
     {
         if (global.flag[354] >= 6)
         {
             var sold_out_talk = talked
-            if 120
+            if gml_Script_i_ex(120)
             {
                 with (obj_npc_musical_door)
                 {
@@ -308,22 +308,22 @@ if (room == room_dw_cyber_musical_door)
             }
             if (sold_out_talk == 0)
             {
-                // WARNING: Popz'd an empty stack.
-                "kk"
+                gml_Script_scr_miniface_init_sweet()
+                gml_Script_scr_speaker("kk")
                 gml_Script_msgsetloc(0, "\\m2		*Sorry^1, I'm out of bagels.&\\m3	Don't you have 400!?&\\m2	I had 406./", "obj_npc_room_animated_slash_Other_10_gml_352_0")
                 gml_Script_msgnextloc("\\m3		*Then why can't you sell&	anymore?!/", "obj_npc_room_animated_slash_Other_10_gml_353_0")
                 gml_Script_msgnextloc("\\m2		*What if someone asked for&	400 bagels?/%", "obj_npc_room_animated_slash_Other_10_gml_354_0")
             }
             else
             {
-                "kk"
+                gml_Script_scr_speaker("kk")
                 gml_Script_msgsetloc(0, "\\m2		*Sorry^1, I'm out of bagels./%", "obj_npc_room_animated_slash_Other_10_gml_358_0")
             }
         }
         else
         {
             global.msc = 1147
-            global.msc
+            gml_Script_scr_text(global.msc)
         }
     }
 }
@@ -331,13 +331,13 @@ if (room == room_town_church)
 {
     if (talked == 0)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Having a wide-open space is great for us kids./", "obj_npc_room_animated_slash_Other_10_gml_374_0")
         gml_Script_msgnextloc("* Sometimes it's good to get your freak out./%", "obj_npc_room_animated_slash_Other_10_gml_375_0")
     }
     else
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* And sometimes..^1. It's bad to get your freak out./%", "obj_npc_room_animated_slash_Other_10_gml_379_0")
     }
 }
@@ -347,13 +347,13 @@ if (room == room_dw_mansion_kitchen)
     {
         if (global.flag[362] == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* M-m-mouse!!/", "obj_npc_room_animated_slash_Other_10_gml_391_0")
             gml_Script_msgnextloc("* And it's n-not wearing a wig!!/%", "obj_npc_room_animated_slash_Other_10_gml_392_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Thanks for the help^1. We'll open up the \\cYEAST\\cW dining hall now./%", "obj_npc_room_animated_slash_Other_10_gml_405_0")
         }
     }
@@ -361,14 +361,14 @@ if (room == room_dw_mansion_kitchen)
     {
         if (global.flag[362] == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* (Ouch^1, ouch)/", "obj_npc_room_animated_slash_Other_10_gml_408_0")
             gml_Script_msgnextloc("* The mouse can't get me up here!!/", "obj_npc_room_animated_slash_Other_10_gml_409_0")
             gml_Script_msgnextloc("* Even if the (ouch^1, ouch) stove is burning my feet!/%", "obj_npc_room_animated_slash_Other_10_gml_410_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* (Ouch^1, ouch)/", "obj_npc_room_animated_slash_Other_10_gml_414_0")
             gml_Script_msgnextloc("* How do I get down from here?/%", "obj_npc_room_animated_slash_Other_10_gml_415_0")
         }
@@ -377,13 +377,13 @@ if (room == room_dw_mansion_kitchen)
     {
         if (global.flag[362] == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Oh me^1, oh my^1! The kitchen is infested with..^1. vermin!!!/", "obj_npc_room_animated_slash_Other_10_gml_425_0")
             gml_Script_msgnextloc("* I knew we should have properly finished dumping all the cheese in that alleyway!/%", "obj_npc_room_animated_slash_Other_10_gml_426_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Queen's making us prepare a massive feast for her upcoming guests./", "obj_npc_room_animated_slash_Other_10_gml_430_0")
             gml_Script_msgnextloc("* ..^1. I wonder if people can really eat platters^1, though./%", "obj_npc_room_animated_slash_Other_10_gml_431_0")
         }
@@ -395,13 +395,13 @@ if (room == room_dw_city_queen_drunk)
     {
         if (talked == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Queen told us to take out the garbage./", "obj_npc_room_animated_slash_Other_10_gml_455_0")
             gml_Script_msgnextloc("* I'd never seen a garbage that big before./%", "obj_npc_room_animated_slash_Other_10_gml_456_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Except for the dancing garbage that lives in the trash heap./%", "obj_npc_room_animated_slash_Other_10_gml_460_0")
         }
     }
@@ -409,21 +409,21 @@ if (room == room_dw_city_queen_drunk)
     {
         if (talked == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* It was a horrible statue^1, but the execution was very good./", "obj_npc_room_animated_slash_Other_10_gml_469_0")
             gml_Script_msgnextloc("* I would give it 2 stars.../", "obj_npc_room_animated_slash_Other_10_gml_470_0")
             gml_Script_msgnextloc("* One to cover each of the nipples./%", "obj_npc_room_animated_slash_Other_10_gml_471_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* It's in a better place now./%", "obj_npc_room_animated_slash_Other_10_gml_475_0")
         }
     }
 }
 if (room == room_dw_city_intro)
 {
-    if (2 && 3 && global.plot < 100)
+    if (gml_Script_scr_havechar(2) && gml_Script_scr_havechar(3) && global.plot < 100)
     {
         if (talked == 0)
         {
@@ -431,7 +431,7 @@ if (room == room_dw_city_intro)
             var sentenceEnd = (nubert_check ? "/" : "/%")
             if nubert_check
                 gml_Script_scr_smallface(0, "ralsei", 19, "right", "bottom", gml_Script_stringsetloc("Really, where!?", "obj_npc_room_animated_slash_Other_10_gml_489_0"))
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Oh boy^1, oh boy^1! I'm \\cBTrashy\\cW!/", "obj_npc_room_animated_slash_Other_10_gml_492_0")
             gml_Script_msgnextloc("* Did you know about adjusting your INVENTORY?/", "obj_npc_room_animated_slash_Other_10_gml_493_0")
             gml_Script_msgnextloc("* Trashcans like me can HOLD all sorts of things./", "obj_npc_room_animated_slash_Other_10_gml_494_0")
@@ -450,13 +450,13 @@ if (room == room_dw_city_intro)
         }
         else
         {
-            "susie"
+            gml_Script_scr_speaker("susie")
             gml_Script_msgsetloc(0, "* No time for this guy./%", "obj_npc_room_animated_slash_Other_10_gml_511_0")
         }
     }
     else if (talked == 0)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* You can hold a lot more in your STORAGE^1, you know./", "obj_npc_room_animated_slash_Other_10_gml_518_0")
         gml_Script_msgnextloc("* But^1, you won't be able to use it during BATTLE./", "obj_npc_room_animated_slash_Other_10_gml_519_0")
         gml_Script_msgnextloc("* Check it and make sure you have what you need!/", "obj_npc_room_animated_slash_Other_10_gml_520_0")
@@ -474,7 +474,7 @@ if (room == room_dw_city_intro)
     }
     else
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* I'm Trashy.../%", "obj_npc_room_animated_slash_Other_10_gml_525_0")
     }
 }
@@ -484,23 +484,23 @@ if (room == room_dw_cyber_queen_boxing)
     {
         if (talked == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* I can't tell you how many of these I've cleaned up./%", "obj_npc_room_animated_slash_Other_10_gml_537_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* It's not so bad^1, I like cleaning./%", "obj_npc_room_animated_slash_Other_10_gml_541_0")
         }
     }
     else if (talked == 0)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* I wish there was someone that liked cleaning as much as me./%", "obj_npc_room_animated_slash_Other_10_gml_548_0")
     }
     else
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (Sukkiri...)/%", "obj_npc_room_animated_slash_Other_10_gml_552_0")
     }
 }
@@ -508,13 +508,13 @@ if (room == room_dw_city_big_3)
 {
     if (talked == 0)
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* All the shopkeepers went to the trash dump./", "obj_npc_room_animated_slash_Other_10_gml_562_0")
         gml_Script_msgnextloc("* So I thought I might steal something^1, but these items are pretty bad.../%", "obj_npc_room_animated_slash_Other_10_gml_563_0")
     }
     else
     {
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Feels like I'll get ripped off even if I don't pay.../%", "obj_npc_room_animated_slash_Other_10_gml_567_0")
     }
 }
@@ -524,12 +524,12 @@ if (room == room_dw_cyber_intro_connector)
     {
         if (talked == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* The wires..^1. the wires.../%", "obj_npc_room_animated_slash_Other_10_gml_578_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* .../%", "obj_npc_room_animated_slash_Other_10_gml_583_0")
         }
     }
@@ -537,30 +537,30 @@ if (room == room_dw_cyber_intro_connector)
     {
         if (talked == 0)
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Everyone was.../%", "obj_npc_room_animated_slash_Other_10_gml_592_0")
         }
         else
         {
-            "no_name"
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* .../%", "obj_npc_room_animated_slash_Other_10_gml_597_0")
         }
     }
 }
 if (room == room_dw_ralsei_castle_2f)
 {
-    "no_name"
+    gml_Script_scr_speaker("no_name")
     gml_Script_msgsetloc(0, "* I keep ending up in this situation.../", "obj_npc_room_animated_slash_Other_10_gml_605_0")
     gml_Script_msgnextloc("* Can't say I'm a fan...^1. Or can I?/%", "obj_npc_room_animated_slash_Other_10_gml_606_0")
 }
 if (room == room_dw_mansion_acid_tunnel_loop_rouxls)
 {
-    "no_name"
+    gml_Script_scr_speaker("no_name")
     gml_Script_msgsetloc(0, "* (Looks like it's completed its migration.)/%", "obj_npc_room_animated_slash_Other_10_gml_612_0")
 }
 if (room == room_dw_mansion_acid_tunnel_exit)
 {
-    "no_name"
+    gml_Script_scr_speaker("no_name")
     if (talked == 0)
     {
         gml_Script_msgsetloc(0, "* Oh boy^1, oh boy^1! Looks like you're almost at the END.../", "obj_npc_room_animated_slash_Other_10_gml_631_0")
@@ -573,8 +573,8 @@ if (room == room_castle_tutorial)
 {
     if (sprite_index == spr_npc_sweet)
     {
-        // WARNING: Popz'd an empty stack.
-        "no_name"
+        gml_Script_scr_miniface_init_sweet()
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "\\m1		*This town's great!/", "obj_npc_room_animated_slash_Other_10_gml_611_0")
         gml_Script_msgnextloc("\\m1		*Just^1, wish everyone else was&	here^1, too.../%", "obj_npc_room_animated_slash_Other_10_gml_612_0_b")
     }
@@ -582,23 +582,23 @@ if (room == room_castle_tutorial)
     {
         if (talked == 0)
         {
-            // WARNING: Popz'd an empty stack.
-            "no_name"
+            gml_Script_scr_miniface_init_sweet()
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "\\m3		*Yo^1, chief. If you \\cYrecruit\\cW&	enough fans for us^1,/", "obj_npc_room_animated_slash_Other_10_gml_622_0")
             gml_Script_msgnextloc("\\m3		*We might be able to make our&	music shop again.../", "obj_npc_room_animated_slash_Other_10_gml_623_0")
             gml_Script_msgnextloc("\\m3		*Hey^1, we might even give you a&	\\cYdiscount\\cW!/%", "obj_npc_room_animated_slash_Other_10_gml_624_0")
         }
         else
         {
-            // WARNING: Popz'd an empty stack.
-            "no_name"
+            gml_Script_scr_miniface_init_sweet()
+            gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "\\m3		*Ya hear that^1, chief? Keep up&	the recruiting.../%", "obj_npc_room_animated_slash_Other_10_gml_630_0")
         }
     }
     if (sprite_index == spr_npc_kk)
     {
-        // WARNING: Popz'd an empty stack.
-        "no_name"
+        gml_Script_scr_miniface_init_sweet()
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "\\m2		*I got to keep my box./%", "obj_npc_room_animated_slash_Other_10_gml_639_0")
     }
 }

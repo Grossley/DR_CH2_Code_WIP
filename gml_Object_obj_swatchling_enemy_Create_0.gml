@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 talkmax = 300
 image_speed = 0.16666666666666666
 idlesprite = spr_swatchling_body
@@ -13,7 +13,7 @@ red = 5
 currentcolor = red
 previouscolor = red
 current_pal = red
-sprite_palette = 1812
+sprite_palette = 1813
 color_init = 0
 new_color = 0
 loaded_color = 0
@@ -24,7 +24,7 @@ becameAlone = 0
 base_colors[0] = red
 base_colors[1] = blue
 base_colors[2] = yellow
-("global.flag[426]=" + string(global.flag[426]))
+show_debug_message(("global.flag[426]=" + string(global.flag[426])))
 switch global.flag[426]
 {
     case -1:

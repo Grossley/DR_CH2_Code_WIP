@@ -7,7 +7,7 @@ if (dontdraw == 0)
         for (i = 0; i < count; i++)
         {
             myx = (((timer * 4) + (i * 50)) % 152)
-            myy = ((-(myx / 36)) * 10)
+            myy = ((-sin((myx / 36))) * 10)
             draw_sprite_ext(spr_traffic_car_side_legs_small, (timer / 4), (x + myx), (y + myy), 2, 2, 0, c_white, 1)
         }
     }
@@ -23,7 +23,7 @@ if (dontdraw == 0)
         {
             image = IMAGE_LOGO
             btimer++
-            timeradd = (((btimer / 3) * 1.2) + 0.8)
+            timeradd = ((sin((btimer / 3)) * 1.2) + 0.8)
             if (timeradd > -0.6)
                 timer += timeradd
             if (timeradd < 0.4)
@@ -35,7 +35,7 @@ if (dontdraw == 0)
         for (i = 0; i < count; i++)
         {
             myx = (((timer * 4) + (i * 60)) % 236)
-            myy = (((-(myx / 60)) * 10) + 10)
+            myy = (((-sin((myx / 60))) * 10) + 10)
             if (orientation == "r")
                 draw_sprite_ext(spr_traffic_car_side_legs_small, image, ((x + myx) - 40), (y + myy), 2, 2, 0, c_white, 1)
             if (orientation == "l")

@@ -40,11 +40,11 @@ premy = y
 ycount = 0
 for (i = 0; i < 12; i++)
     nexty[i] = -1
-pick = 6
+pick = floor(random(6))
 for (i = 0; i < 2; i++)
 {
     while (nexty[pick] != -1)
-        pick = 6
+        pick = floor(random(6))
     nexty[pick] = i
 }
 for (j = 0; j < 6; j++)
@@ -52,11 +52,11 @@ for (j = 0; j < 6; j++)
     if (nexty[j] == -1)
         nexty[j] = choose(0, 1, 2)
 }
-pick = (6 + 6)
+pick = floor((random(6) + 6))
 for (i = 0; i < 2; i++)
 {
     while (nexty[pick] != -1)
-        pick = (6 + 6)
+        pick = floor((random(6) + 6))
     nexty[pick] = i
 }
 for (j = 6; j < 12; j++)

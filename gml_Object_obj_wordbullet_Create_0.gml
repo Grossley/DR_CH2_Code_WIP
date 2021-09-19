@@ -1,7 +1,7 @@
-// WARNING: Popz'd an empty stack.
-if 571
+gml_Script_scr_bullet_init()
+if instance_exists(obj_queen_enemy)
     damage = (global.monsterat[obj_queen_enemy.myself] * 5)
-if 572
+if instance_exists(obj_queen_bulletcontroller)
     target = obj_queen_bulletcontroller.target
 grazepoints = 4
 destroyonhit = 1
@@ -30,13 +30,13 @@ word[21] = gml_Script_stringsetloc("RATE", "obj_wordbullet_slash_Create_0_gml_30
 wordchoice = word[floor(random(21))]
 active = true
 timer = 0
-"main"
-stringlength = wordchoice
-stringheight = wordchoice
+gml_Script_scr_84_set_draw_font("main")
+stringlength = string_width(wordchoice)
+stringheight = string_height(wordchoice)
 if (global.lang == "ja")
 {
-    jpstringlength = wordchoice
-    jpstringwidth = wordchoice
+    jpstringlength = string_length(wordchoice)
+    jpstringwidth = string_width(wordchoice)
 }
 idealxscale = (sprite_width / stringlength)
 idealyscale = (sprite_height / stringheight)
@@ -47,7 +47,7 @@ gray = 0
 angry = 0
 dramatimer_x = 0
 dramatimer_y = 0
-if (y + 290)
+if (y < (gml_Script_cameray() + 290))
     depth = (obj_heart.depth - 1)
-if (y + 290)
+if (y > (gml_Script_cameray() + 290))
     depth = (obj_heart.depth + 100.5)

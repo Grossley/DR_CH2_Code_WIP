@@ -1,4 +1,4 @@
 hurtsfxcon = 1
 shieldhurt = 1
 shieldhurttimer = 6
-179
+gml_Script_snd_play(179)

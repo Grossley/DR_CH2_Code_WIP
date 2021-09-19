@@ -6,17 +6,17 @@ if (con == 1)
 }
 if (con == 2.5)
 {
-    global.currentsong[0] = "mus_school.ogg"
+    global.currentsong[0] = gml_Script_snd_init_ch1("mus_school.ogg")
     global.fe = 0
     global.fc = 11
     global.typer = 20
-    global.msg[0] = "obj_classscene_slash_Step_0_gml_14_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_14_0")
     d = gml_Script_instance_create_ch1(0, 0, 1326)
     con = 3
 }
-if (con == 3 && 1326 == 0)
+if (con == 3 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    380
+    gml_Script_snd_play_ch1(380)
     var _temp_local_var_2 = door
     image_index = 1
 }
@@ -99,7 +99,7 @@ if (con == 25)
 {
     gml_Script_snd_play_ch1(378)
     alphys2 = alphys
-    alphys = gml_Script_scr_marker_ch1(alphys.x, alphys.y, 3483)
+    alphys = gml_Script_scr_marker_ch1(alphys.x, alphys.y, 3484)
     var _temp_local_var_14 = alphys
     gml_Script_scr_depth_ch1()
 }

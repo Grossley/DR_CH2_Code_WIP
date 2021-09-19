@@ -12,10 +12,10 @@ if (timer == 2)
     image_angle = direction
 }
 if (x >= (gml_Script___view_get(0, 0) + 800))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (x <= (gml_Script___view_get(0, 0) - 200))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (y > (gml_Script___view_get(1, 0) + 600))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (y < (gml_Script___view_get(1, 0) - 600))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

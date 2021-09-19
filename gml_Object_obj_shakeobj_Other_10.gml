@@ -1,8 +1,8 @@
-if target
+if gml_Script_i_ex(target)
 {
     active = true
     nowx = target.x
     nowy = target.y
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

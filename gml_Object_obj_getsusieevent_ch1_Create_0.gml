@@ -2,7 +2,7 @@ rcon = 0
 block = noone
 if (global.plot >= 38)
 {
-    doormarker = gml_Script_scr_dark_marker_ch1(400, 40, 3598)
+    doormarker = gml_Script_scr_dark_marker_ch1(400, 40, 3599)
     doormarker.depth = 600000
     doormarker.image_index = 1
     gml_Script_instance_create_ch1(380, 120, 1656)
@@ -22,7 +22,7 @@ if (global.plot >= 38)
 }
 else
 {
-    doormarker = gml_Script_scr_dark_marker_ch1(400, 40, 3598)
+    doormarker = gml_Script_scr_dark_marker_ch1(400, 40, 3599)
     doormarker.depth = 600000
     block = gml_Script_instance_create_ch1(400, 120, 1656)
     block.image_xscale = 3

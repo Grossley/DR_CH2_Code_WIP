@@ -1,5 +1,4 @@
-var _temp_local_var_3;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 if (myinteract == 3)
 {
     if (global.flag[20] == 0)
@@ -17,7 +16,7 @@ if (myinteract == 3)
         sprite_index = spr_npc_puzzlepiece_shock2
         image_speed = 0.334
     }
-    if (mydialoguer == 0)
+    if (gml_Script_i_ex(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0
@@ -37,7 +36,7 @@ if (con == 12 && global.fighting == false)
 }
 if (con == 14)
 {
-    "noone"
+    gml_Script_scr_speaker("noone")
     if (global.flag[36] == 0)
     {
         if (global.flag[dojoFlag] == 0)
@@ -99,22 +98,20 @@ if (con == 14)
         if (dojoFlag == 814 || dojoFlag == 811 || dojoFlag == 813)
             gml_Script_msgsetloc(0, "* You beefed it! Better luck next time^1, boss!/%", "obj_npc_dojo_slash_Step_0_gml_61_0")
     }
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
     con = 15
 }
-if (con == 15)
+if (con == 15 && (!gml_Script_d_ex()))
 {
+    gml_Script_scr_healall(999)
+    global.flag[35] = 0
+    global.flag[36] = 0
+    global.flag[37] = 0
+    global.flag[38] = 0
+    global.flag[39] = 0
+    global.flag[60] = 0
+    global.flag[61] = 0
+    con = 0
+    global.interact = 0
+    global.facing = 0
 }
-else
-    var _temp_local_var_3 = 0
-999
-global.flag[35] = 0
-global.flag[36] = 0
-global.flag[37] = 0
-global.flag[38] = 0
-global.flag[39] = 0
-global.flag[60] = 0
-global.flag[61] = 0
-con = 0
-global.interact = 0
-global.facing = 0

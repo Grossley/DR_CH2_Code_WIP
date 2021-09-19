@@ -1,9 +1,9 @@
 sprite[0] = 650
 sprite[1] = 547
 sprite[2] = 547
-mysprite[0] = sprite[0]
-mysprite[1] = sprite[1]
-mysprite[2] = sprite[2]
+mysprite[0] = sprite_duplicate(sprite[0])
+mysprite[1] = sprite_duplicate(sprite[1])
+mysprite[2] = sprite_duplicate(sprite[2])
 image_xscale = 2
 image_yscale = 2
 image_speed = 0

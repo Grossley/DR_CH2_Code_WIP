@@ -5,11 +5,11 @@ if (obj_mainchara.battlemode == 1)
 }
 else if (battlealpha > 0)
     battlealpha -= 0.04
-battlealpha
-0
+draw_set_alpha(battlealpha)
+draw_set_color(c_black)
 draw_rectangle((gml_Script___view_get(0, 0) - 100), (gml_Script___view_get(1, 0) - 100), (gml_Script___view_get(0, 0) + 740), (gml_Script___view_get(1, 0) + 540), false)
-1
-if 274
+draw_set_alpha(1)
+if instance_exists(obj_caterpillarchara)
 {
     obj_caterpillarchara.image_blend = merge_color(c_white, c_black, (battlealpha / 2))
     if (battlealpha <= 0)
@@ -20,18 +20,18 @@ if (whitecon == 1)
     with (obj_mainchara)
         battlemode = 0
     whitetimer += 1
-    (whitetimer / 15)
-    16777215
+    draw_set_alpha((whitetimer / 15))
+    draw_set_color(c_white)
     draw_rectangle(-100, -100, (gml_Script___view_get(0, 0) + 740), (gml_Script___view_get(1, 0) + 540), false)
-    1
+    draw_set_alpha(1)
 }
 if (whitecon == 2)
 {
     whitetimer -= 1
-    (whitetimer / 15)
-    16777215
+    draw_set_alpha((whitetimer / 15))
+    draw_set_color(c_white)
     draw_rectangle(-100, -100, (gml_Script___view_get(0, 0) + 740), (gml_Script___view_get(1, 0) + 540), false)
-    1
+    draw_set_alpha(1)
     if (whitetimer <= 0)
     {
         global.interact = 0

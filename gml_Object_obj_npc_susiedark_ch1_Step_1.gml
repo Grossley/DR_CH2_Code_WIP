@@ -1,4 +1,4 @@
 if (myinteract == 0)
     facing = dfacing
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_npcdir_ch1()
 image_index = 0

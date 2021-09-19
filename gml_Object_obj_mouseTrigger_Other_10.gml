@@ -2,12 +2,12 @@ if (room == room_dw_mansion_traffic)
 {
     if (con == 0)
     {
-        64
+        gml_Script_snd_play(64)
         obj_controller_mansion_traffic.victory = true
-        if 285
+        if instance_exists(obj_forcefield)
         {
             with (obj_forcefield)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         con++
     }

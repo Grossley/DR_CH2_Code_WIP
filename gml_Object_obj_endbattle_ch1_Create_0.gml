@@ -6,13 +6,13 @@ count = 0
 global.tension = 0
 if (global.specialbattle == 0 || global.specialbattle == 3)
 {
-    c[0] = gml_Script_scr_dark_marker_ch1(global.heromakex[0], global.heromakey[0], 4196)
-    if global.cinstance[0]
+    c[0] = gml_Script_scr_dark_marker_ch1(global.heromakex[0], global.heromakey[0], 4197)
+    if instance_exists(global.cinstance[0])
     {
         count += 1
         c[1] = gml_Script_scr_dark_marker_ch1(global.heromakex[1], global.heromakey[1], global.cinstance[0].rsprite)
     }
-    if global.cinstance[1]
+    if instance_exists(global.cinstance[1])
     {
         count += 1
         c[2] = gml_Script_scr_dark_marker_ch1(global.heromakex[2], global.heromakey[2], global.cinstance[1].rsprite)

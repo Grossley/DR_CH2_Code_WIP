@@ -7,4 +7,4 @@ replace2.image_xscale = image_xscale
 replace2.image_yscale = image_yscale
 replace2.image_index = image_index
 replace2.bridgetarget = bridgetarget
-// WARNING: Popz'd an empty stack.
+instance_destroy()

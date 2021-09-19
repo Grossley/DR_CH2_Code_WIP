@@ -1,4 +1,4 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_14, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_21, _temp_local_var_24, _temp_local_var_27, _temp_local_var_29, _temp_local_var_33, _temp_local_var_34, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_38, _temp_local_var_39, _temp_local_var_40, _temp_local_var_41, _temp_local_var_43, _temp_local_var_45, _temp_local_var_48, _temp_local_var_68, _temp_local_var_69;
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_8, _temp_local_var_9, _temp_local_var_16, _temp_local_var_19, _temp_local_var_20, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_26, _temp_local_var_29, _temp_local_var_31, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_38, _temp_local_var_39, _temp_local_var_40, _temp_local_var_41, _temp_local_var_42, _temp_local_var_43, _temp_local_var_45, _temp_local_var_47, _temp_local_var_50;
 if (init == 0)
 {
     init = 1
@@ -17,7 +17,7 @@ if (con == 0)
         if place_meeting(x, y, obj_trigger_area)
         {
             with (obj_trigger_area)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             gml_Script_mus_volume(global.currentsong[1], 0, 16)
             other.con++
         }
@@ -28,32 +28,32 @@ if (weird == 1)
     if (con == 1)
     {
         global.interact = 1
-        cutscene_master = 
-        // WARNING: Popz'd an empty stack.
+        cutscene_master = gml_Script_scr_cutscene_make()
+        gml_Script_scr_maincharacters_actors()
         con = 2
     }
     if (con == 2)
     {
         con = -1
-        kr
+        gml_Script_c_sel(kr)
         gml_Script_c_walkdirect(164, 70, 28)
-        no
+        gml_Script_c_sel(no)
         gml_Script_c_walkdirect(178, 24, 28)
-        30
-        "noelle"
+        gml_Script_c_wait(30)
+        gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\E2* I'll..^1. go ahead and do the puzzle!/%", "obj_controller_city_mice3_slash_Step_0_gml_53_0")
-        // WARNING: Popz'd an empty stack.
-        15
+        gml_Script_c_talk_wait()
+        gml_Script_c_wait(15)
         gml_Script_c_walkdirect_wait(38, 32, 22)
         gml_Script_c_walkdirect_wait(38, 264, 40)
         gml_Script_c_walkdirect_wait(198, 254, 32)
         gml_Script_c_walkdirect_wait(198, 246, 16)
-        728
-        15
-        15
-        30
+        gml_Script_c_sprite(728)
+        gml_Script_c_wait(15)
+        gml_Script_c_fadeout(15)
+        gml_Script_c_wait(30)
         gml_Script_c_var_instance(id, "noface", 1)
-        "noelle"
+        gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "* Isn't it a good thing?/", "obj_controller_city_mice3_slash_Step_0_gml_74_0_b")
         gml_Script_c_msgnextloc("* I'm solving things by myself. Taking new things for myself. Defeating enemies by myself./", "obj_controller_city_mice3_slash_Step_0_gml_75_0_b")
         gml_Script_c_msgnextloc("* And every time I do it.../", "obj_controller_city_mice3_slash_Step_0_gml_76_0_b")
@@ -68,38 +68,38 @@ if (weird == 1)
         gml_Script_c_msgnextloc("* .../", "obj_controller_city_mice3_slash_Step_0_gml_85_0")
         gml_Script_c_msgnextloc("* As long as I..^1. just do what they say./", "obj_controller_city_mice3_slash_Step_0_gml_86_0")
         gml_Script_c_msgnextloc("* As long as I.../%", "obj_controller_city_mice3_slash_Step_0_gml_87_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_c_talk_wait()
         gml_Script_c_var_instance(id, "noface", 0)
-        15
-        251
+        gml_Script_c_wait(15)
+        gml_Script_c_soundplay(251)
         gml_Script_c_var_instance(id, "solve", 1)
-        60
+        gml_Script_c_wait(60)
         gml_Script_c_setxy(108, 26)
-        "r"
-        15
-        30
-        "noelle"
+        gml_Script_c_facing("r")
+        gml_Script_c_fadein(15)
+        gml_Script_c_wait(30)
+        gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\E4* All finished^1, Kris^1. Should we find some more enemies?/%", "obj_controller_city_mice3_slash_Step_0_gml_88_0")
-        // WARNING: Popz'd an empty stack.
-        196
+        gml_Script_c_talk_wait()
+        gml_Script_c_soundplay(196)
         gml_Script_c_var_instance(id, "con", 3)
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_c_actortocaterpillar()
+        gml_Script_c_actortokris()
+        gml_Script_c_terminatekillactors()
     }
     if (con == 3)
     {
         global.facing = 0
         with (obj_caterpillarchara)
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_caterpillar_interpolate()
         global.flag[7] = 0
         global.interact = 0
         global.flag[379] = 1
         global.plot = 78
         con++
         obj_musicer_city.update = 1
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_snd_free_all()
+        gml_Script_scr_tempsave()
     }
     if (noface == 1)
         global.fc = 0
@@ -108,6 +108,7 @@ if (weird == 1)
         layer_set_visible(layer_get_id("BG_Tiles_HiddenPath"), 1)
         layer_set_visible(layer_get_id("BG_Tiles_HiddenPath_Sidewalk"), 1)
         var _temp_local_var_1 = fakeWall
+        instance_destroy()
     }
 }
 if (weird == 0)
@@ -118,54 +119,54 @@ if (weird == 0)
         noExit.image_xscale = 2
         noExit.image_yscale = 0.6
         global.interact = 1
-        cutscene_master = 
-        // WARNING: Popz'd an empty stack.
+        cutscene_master = gml_Script_scr_cutscene_make()
+        gml_Script_scr_maincharacters_actors()
         con = 2
     }
     if (con == 2)
     {
         con = -999
         global.flag[7] = 1
-        kr
+        gml_Script_c_sel(kr)
         gml_Script_c_walkdirect(164, 70, 28)
-        no
+        gml_Script_c_sel(no)
         gml_Script_c_walkdirect(178, 24, 28)
-        30
-        "noelle"
+        gml_Script_c_wait(30)
+        gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\E1* It's a dead end...?/%", "obj_controller_city_mice3_slash_Step_0_gml_49_0")
-        // WARNING: Popz'd an empty stack.
-        15
-        no
+        gml_Script_c_talk_wait()
+        gml_Script_c_wait(15)
+        gml_Script_c_sel(no)
         gml_Script_c_walkdirect(38, 32, 22)
-        15
-        kr
+        gml_Script_c_wait(15)
+        gml_Script_c_sel(kr)
         gml_Script_c_walkdirect(40, 70, 20)
-        6
-        no
+        gml_Script_c_wait(6)
+        gml_Script_c_sel(no)
         gml_Script_c_walkdirect(38, 264, 40)
-        16
-        kr
+        gml_Script_c_wait(16)
+        gml_Script_c_sel(kr)
         gml_Script_c_walkdirect(40, 220, 30)
-        25
-        no
+        gml_Script_c_wait(25)
+        gml_Script_c_sel(no)
         gml_Script_c_walkdirect(278, 254, 32)
-        8
-        kr
-        "r"
-        24
-        3
-        no
-        1290
+        gml_Script_c_wait(8)
+        gml_Script_c_sel(kr)
+        gml_Script_c_facing("r")
+        gml_Script_c_wait(24)
+        gml_Script_c_wait(3)
+        gml_Script_c_sel(no)
+        gml_Script_c_actortoobject(1290)
         gml_Script_c_var_instance(id, "con", 6)
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_c_actortocaterpillar()
+        gml_Script_c_actortokris()
+        gml_Script_c_terminatekillactors()
         con = 5.5
     }
     if (con == 6)
     {
         obj_caterpillarchara.visible = false
-        if 1290
+        if instance_exists(obj_trigger_area)
         {
             with (obj_trigger_area)
             {
@@ -177,27 +178,29 @@ if (weird == 0)
                 other.noelle.image_xscale = 2
                 other.noelle.image_yscale = 2
                 other.con = 7
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
     }
     if (con == 7)
-        var _temp_local_var_3 = noelle
-    if (con == 8)
     {
+        var _temp_local_var_3 = noelle
+        gml_Script_scr_depth()
     }
-    else
-        var _temp_local_var_69 = 0
-    leaveBlock = gml_Script_instance_create(40, 180, obj_solidblocksized)
-    con++
+    if (con == 8 && (!gml_Script_d_ex()))
+    {
+        leaveBlock = gml_Script_instance_create(40, 180, obj_solidblocksized)
+        con++
+    }
     if (con == 9)
     {
         timer++
         if (timer == 5)
         {
-            61
+            gml_Script_snd_play(61)
             gml_Script_instance_create(0, 0, obj_shake)
-            var _temp_local_var_4 = bridge
+            var _temp_local_var_5 = bridge
+            instance_destroy()
         }
     }
     if (con == 10)
@@ -205,7 +208,7 @@ if (weird == 0)
         timer++
         if (timer > 24)
         {
-            var _temp_local_var_5 = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
+            var _temp_local_var_6 = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
             x = (lx + random_range(-2, 2))
         }
         if (timer == 25)
@@ -218,32 +221,30 @@ if (weird == 0)
             global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 1)
             gml_Script_scr_speaker("noelle")
             gml_Script_msgsetloc(0, "\\EE* Kris!^1! The platform's falling!^1! H-help me!!/%", "obj_controller_city_mice3_slash_Step_0_gml_168_0")
-            d = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
+            d = gml_Script_d_make()
             d.side = 0
             con++
         }
     }
     if (con == 11)
     {
-        if 317
+        if (gml_Script_i_ex(317) && (!gml_Script_d_ex()))
         {
-        }
-        else
-            var _temp_local_var_68 = 0
-        with (obj_cybercity_mousesign)
-        {
-            if (!fade_in)
+            with (obj_cybercity_mousesign)
             {
-                start = 1
-                fade_in = 1
+                if (!fade_in)
+                {
+                    start = 1
+                    fade_in = 1
+                }
             }
         }
-        var _temp_local_var_6 = obj_masterPlatformController.plat[0]
+        var _temp_local_var_8 = obj_masterPlatformController.plat[0]
         x = (lx + random_range(-2, 2))
     }
     if (con == 12)
     {
-        var _temp_local_var_7 = obj_masterPlatformController.plat[0]
+        var _temp_local_var_9 = obj_masterPlatformController.plat[0]
         if (phase == 3)
             x = (lx + random_range(-2, 2))
     }
@@ -370,7 +371,7 @@ if (weird == 0)
             freeze = 0
         if (timer == 40)
         {
-            var _temp_local_var_14 = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
+            var _temp_local_var_16 = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
             gml_Script_scr_shakeobj()
         }
     }
@@ -404,12 +405,12 @@ if (weird == 0)
         berdly.image_yscale = 2
         berdly.image_speed = 0.25
         berdly.sprite_index = spr_berdly_walk_down_dw
-        var _temp_local_var_17 = berdly
+        var _temp_local_var_19 = berdly
         gml_Script_scr_move_to_point_over_time(40, 163, 48)
     }
     if (con == 22)
     {
-        var _temp_local_var_18 = berdly
+        var _temp_local_var_20 = berdly
         gml_Script_scr_depth()
     }
     if gml_Script_i_ex(berdly)
@@ -425,13 +426,13 @@ if (weird == 0)
             obj_mouseTowerTrigger.rotate = 0
             if gml_Script_i_ex(monologue)
             {
-                var _temp_local_var_19 = monologue
+                var _temp_local_var_21 = monologue
                 instance_destroy()
             }
             obj_dw_city_mice3Fence.image_index = 1
             layer_set_visible(layer_get_id("BG_Tiles_HiddenPath"), 1)
             layer_set_visible(layer_get_id("BG_Tiles_HiddenPath_Sidewalk"), 1)
-            var _temp_local_var_20 = fakeWall
+            var _temp_local_var_22 = fakeWall
             instance_destroy()
         }
     }
@@ -443,7 +444,7 @@ if (weird == 0)
             berdly.x = 38
             berdly.sprite_index = spr_berdly_walk_up_dw
             image_speed = 0.25
-            var _temp_local_var_21 = berdly
+            var _temp_local_var_23 = berdly
             gml_Script_scr_move_to_point_over_time(38, 38, 16)
         }
     }
@@ -468,7 +469,7 @@ if (weird == 0)
     }
     if (con == 24.2 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_24 = berdly
+        var _temp_local_var_26 = berdly
         gml_Script_scr_depth()
     }
     if (con == 25 && (!gml_Script_d_ex()))
@@ -488,7 +489,7 @@ if (weird == 0)
         timer++
         if (timer == 1)
         {
-            var _temp_local_var_27 = berdly
+            var _temp_local_var_29 = berdly
             gml_Script_instance_create((x + (sprite_width / 2)), (y - 20), obj_excblcon)
         }
         if (timer == 35)
@@ -507,7 +508,7 @@ if (weird == 0)
         if (timer == 0)
         {
             berdly.sprite_index = spr_berdly_walk_right_dw
-            var _temp_local_var_29 = berdly
+            var _temp_local_var_31 = berdly
             gml_Script_scr_move_to_point_over_time((x + 255), y, 30)
         }
         timer++
@@ -578,7 +579,7 @@ if (weird == 0)
             freeze = 1
         if gml_Script_i_ex(noelle)
         {
-            var _temp_local_var_33 = noelle
+            var _temp_local_var_35 = noelle
             instance_destroy()
         }
         noelle = gml_Script_instance_create(obj_noelle_scared.x, obj_noelle_scared.y, obj_marker)
@@ -586,7 +587,7 @@ if (weird == 0)
         noelle.image_xscale = 2
         noelle.image_yscale = 2
         noelle.image_speed = 0
-        var _temp_local_var_34 = noelle
+        var _temp_local_var_36 = noelle
         gml_Script_scr_depth()
     }
     if (con == 32.5)
@@ -607,7 +608,7 @@ if (weird == 0)
         disttopt = floor((abs((noelle.y - 256)) / 2))
         disttopt = clamp(disttopt, 1, 8)
         show_debug_message(("disttopt=" + string(disttopt)))
-        var _temp_local_var_35 = noelle
+        var _temp_local_var_37 = noelle
         gml_Script_scr_move_to_point_over_time(x, 256, other.disttopt)
     }
     if (con == 34)
@@ -616,7 +617,7 @@ if (weird == 0)
         if (timer == disttopt)
         {
             noelle.sprite_index = spr_noelle_walk_left_dw
-            var _temp_local_var_36 = noelle
+            var _temp_local_var_38 = noelle
             gml_Script_scr_move_to_point_over_time(36, y, 64)
         }
     }
@@ -625,11 +626,11 @@ if (weird == 0)
         timer++
         if (noelle.x < 100)
         {
-            _temp_local_var_36.image_alpha = (bridge.image_alpha * 0.8)
-            var _temp_local_var_37 = noelle
-            var _temp_local_var_38 = noelle
-            var _temp_local_var_39 = -9
-            var _temp_local_var_40 = bridge
+            _temp_local_var_38.image_alpha = (bridge.image_alpha * 0.8)
+            var _temp_local_var_39 = noelle
+            var _temp_local_var_40 = noelle
+            var _temp_local_var_41 = -9
+            var _temp_local_var_42 = bridge
         }
         if (timer == 52)
         {
@@ -650,7 +651,7 @@ if (weird == 0)
             d.side = 0
             global.facing = 0
             timer = 0
-            var _temp_local_var_41 = bridge
+            var _temp_local_var_43 = bridge
             instance_destroy()
         }
     }
@@ -658,14 +659,14 @@ if (weird == 0)
     {
         noelle.sprite_index = spr_noelle_walk_up_dw
         noelle.image_speed = 0.25
-        var _temp_local_var_43 = noelle
+        var _temp_local_var_45 = noelle
         gml_Script_scr_move_to_point_over_time(obj_caterpillarchara.x, obj_caterpillarchara.y, 12)
     }
     if (con == 37)
     {
         if (noelle.x == obj_caterpillarchara.x && noelle.y == obj_caterpillarchara.y)
         {
-            var _temp_local_var_45 = leaveBlock
+            var _temp_local_var_47 = leaveBlock
             instance_destroy()
         }
     }
@@ -680,7 +681,7 @@ if (weird == 0)
         global.interact = 0
         global.flag[379] = 1
         global.plot = 78
-        var _temp_local_var_48 = noExit
+        var _temp_local_var_50 = noExit
         instance_destroy()
     }
 }

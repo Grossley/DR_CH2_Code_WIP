@@ -8,4 +8,4 @@ myballoon = 999
 fakeballoony = 0
 krismade = 0
 depth = 900000
-id
+gml_Script_scr_darksize(id)

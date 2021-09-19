@@ -13,4 +13,4 @@ global.actactor[myself][2] = 0
 global.actname[myself][2] = ""
 global.actdesc[myself][2] = ""
 global.actcost[myself][2] = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellmenu_setup()

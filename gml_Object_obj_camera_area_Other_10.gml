@@ -1,4 +1,4 @@
-if 1155
+if instance_exists(obj_camera_advanced)
 {
     if overrideDefaultValues
     {

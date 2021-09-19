@@ -7,4 +7,4 @@ with (obj_cutscene_master)
     }
     cs_wait_delay = 0
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

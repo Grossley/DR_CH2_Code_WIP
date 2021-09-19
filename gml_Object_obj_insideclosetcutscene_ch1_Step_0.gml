@@ -17,8 +17,8 @@ if (papefall == 1)
     {
         if (papei < papeno)
         {
-            486
-            486
+            gml_Script_snd_stop_ch1(486)
+            gml_Script_snd_play_ch1(486)
             var _temp_local_var_1 = pape[papei]
             sprite_index = spr_paperfly_ch1
             vspeed = 1
@@ -71,6 +71,7 @@ if (con == 3)
         hspeed = 3
     if (x >= 310)
     {
+        gml_Script_scr_halt_ch1()
         sprite_index = spr_susieu_ch1
         con = 4
     }
@@ -82,12 +83,12 @@ if (con == 4 && obj_mainchara_ch1.x >= 270 && global.interact == 0)
     global.fe = 0
     global.fc = 1
     global.typer = 10
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_97_0"
-    global.msg[1] = "obj_insideclosetcutscene_slash_Step_0_gml_98_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_97_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_98_0")
     con = 5
     gml_Script_instance_create_ch1(0, 0, 1326)
 }
-if (con == 5 && 1326 == 0)
+if (con == 5 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     sprite_index = spr_susier_ch1
     image_speed = 0.2
@@ -103,7 +104,7 @@ if (con == 6)
         hspeed = 3
     if (x >= 490)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_halt_ch1()
         sprite_index = spr_susier_ch1
         con = 7
     }
@@ -115,13 +116,13 @@ if (con == 7 && obj_mainchara_ch1.x >= 450 && global.interact == 0)
     global.fe = 0
     global.fc = 1
     global.typer = 10
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_134_0"
-    global.msg[1] = "obj_insideclosetcutscene_slash_Step_0_gml_135_0"
-    global.msg[2] = "obj_insideclosetcutscene_slash_Step_0_gml_136_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_134_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_135_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_136_0")
     con = 8
     gml_Script_instance_create_ch1(0, 0, 1326)
 }
-if (con == 8 && 1326 == 0)
+if (con == 8 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     sprite_index = spr_susier_ch1
     image_speed = 0.2
@@ -137,7 +138,7 @@ if (con == 9)
         hspeed = 3
     if (x >= 670)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_halt_ch1()
         sprite_index = spr_susier_ch1
         con = 10
     }
@@ -149,18 +150,18 @@ if (con == 10 && obj_mainchara_ch1.x >= 630 && global.interact == 0)
     global.fe = 0
     global.fc = 1
     global.typer = 10
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_180_0"
-    global.msg[1] = "obj_insideclosetcutscene_slash_Step_0_gml_181_0"
-    global.msg[2] = "obj_insideclosetcutscene_slash_Step_0_gml_182_0"
-    global.msg[3] = "obj_insideclosetcutscene_slash_Step_0_gml_183_0"
-    global.msg[4] = "obj_insideclosetcutscene_slash_Step_0_gml_184_0"
-    global.msg[5] = "obj_insideclosetcutscene_slash_Step_0_gml_185_0"
-    global.msg[6] = "obj_insideclosetcutscene_slash_Step_0_gml_186_0"
-    global.msg[7] = "obj_insideclosetcutscene_slash_Step_0_gml_187_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_180_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_181_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_182_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_183_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_184_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_185_0")
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_186_0")
+    global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_187_0")
     con = 15
     gml_Script_instance_create_ch1(0, 0, 1326)
 }
-if (con == 15 && 1326 == 0)
+if (con == 15 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     with (obj_mainchara_ch1)
     {
@@ -179,27 +180,27 @@ if (con == 15 && 1326 == 0)
 }
 if (con == 17)
 {
-    " "
+    gml_Script_scr_windowcaption_ch1(" ")
     sprite_index = spr_susiel_plain_ch1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_halt_ch1()
     with (obj_mainchara_ch1)
-        // WARNING: Popz'd an empty stack.
-    1000000
-    // WARNING: Popz'd an empty stack.
+        gml_Script_scr_halt_ch1()
+    gml_Script_tile_layer_hide_ch1(1000000)
+    gml_Script_snd_free_all_ch1()
     with (obj_fallpaper_ch1)
         image_blend = c_gray
-    376
+    gml_Script_snd_play_ch1(376)
     con = 18
     alarm[4] = 60
 }
 if (con == 19)
 {
     global.fe = 0
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_237_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_237_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 51
 }
-if (con == 51 ? 0 : 0)
+if (con == 51 && gml_Script_d_ex_ch1() == 0)
 {
     remxx = x
     hspeed = -5
@@ -209,7 +210,7 @@ if (con == 51 ? 0 : 0)
 }
 if (con == 53)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_halt_ch1()
     remsx = x
     remsy = y
     with (obj_mainchara_ch1)
@@ -218,14 +219,14 @@ if (con == 53)
         remsy = y
     }
     global.fe = 9
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_266_0"
-    global.msg[1] = "obj_insideclosetcutscene_slash_Step_0_gml_267_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_266_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_267_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 54
 }
-if (con == 54 ? 0 : 0)
+if (con == 54 && gml_Script_d_ex_ch1() == 0)
 {
-    pape_sfx = 485
+    pape_sfx = gml_Script_snd_loop_ch1(485)
     papeshake = 1
     con = 55
     alarm[4] = 30
@@ -233,11 +234,11 @@ if (con == 54 ? 0 : 0)
 if (con == 56)
 {
     global.fe = 0
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_284_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_284_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 57
 }
-if (con == 57 ? 0 : 0)
+if (con == 57 && gml_Script_d_ex_ch1() == 0)
 {
     image_speed = 0.2
     alarm[4] = 30
@@ -247,20 +248,20 @@ if (con == 58)
     x += 1
 if (con == 59)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_halt_ch1()
     con = 60
     alarm[4] = 30
 }
 if (con == 61)
 {
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_312_0"
-    global.msg[0] = "obj_insideclosetcutscene_slash_Step_0_gml_313_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_312_0")
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_313_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 62
 }
-if (con == 62 ? 0 : 0)
+if (con == 62 && gml_Script_d_ex_ch1() == 0)
 {
-    pape_sfx
+    gml_Script_snd_stop_ch1(pape_sfx)
     papefall = 1
     con = 69
     with (obj_mainchara_ch1)
@@ -273,13 +274,13 @@ if (con == 62 ? 0 : 0)
     image_speed = 0.1
     alarm[4] = 80
 }
-if (1326 == 0 && con == 70)
+if (instance_exists(obj_dialoguer_ch1) == 0 && con == 70)
 {
     hspeed = 0
     gml_Script___view_set(9, 0, -4)
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4205)
+    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4206)
     var _temp_local_var_16 = k
     vspeed = 1
     gravity = 0.5
@@ -311,10 +312,11 @@ if (con == 26)
 if (con == 31)
 {
     global.plot = 10
-    314
+    gml_Script_scr_become_dark_ch1()
+    room_goto(room_dark1_ch1)
 }
 if (con == 30)
 {
-    global.currentsong[0]
+    gml_Script_snd_free_ch1(global.currentsong[0])
     con = 31
 }

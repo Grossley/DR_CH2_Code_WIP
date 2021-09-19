@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (image_xscale < 26)
     image_xscale += 2
 if (image_yscale < 12)

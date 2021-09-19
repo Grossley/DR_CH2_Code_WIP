@@ -1,7 +1,7 @@
 if ((x - sprite_xoffset) < mouthx)
 {
-    0
-    "main"
+    draw_set_color(c_black)
+    gml_Script_scr_84_set_draw_font("main")
     if (scale < 3)
         scale += 0.025
     image_xscale = (scale * 0.5)
@@ -12,6 +12,6 @@ if ((x - sprite_xoffset) < mouthx)
     draw_text_transformed(xx, (yy + scale), bulletletter, scale, scale, 0)
     draw_text_transformed((xx - scale), yy, bulletletter, scale, scale, 0)
     draw_text_transformed(xx, (yy - scale), bulletletter, scale, scale, 0)
-    16777215
+    draw_set_color(c_white)
     draw_text_transformed(xx, yy, bulletletter, scale, scale, 0)
 }

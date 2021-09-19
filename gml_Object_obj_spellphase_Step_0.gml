@@ -4,14 +4,15 @@ if (global.encounterno == 92)
 if (active == true)
 {
     spelltimer += 1
-    if (spelltimer >= global.spelldelay && spellwriter == 0)
+    if (spelltimer >= global.spelldelay && gml_Script_i_ex(spellwriter) == 0)
     {
         if (char >= 3 || spelltotal == 1)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_attackphase()
             var _temp_local_var_3 = spellwriter
+            instance_destroy()
         }
-        else if 0
+        else if (gml_Script_scr_monsterpop() > 0)
         {
             if (gotitem[char] == 1)
             {
@@ -42,8 +43,9 @@ if (active == true)
         }
         else
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_attackphase()
             var _temp_local_var_9 = spellwriter
+            instance_destroy()
         }
     }
 }

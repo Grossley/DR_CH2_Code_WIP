@@ -1,5 +1,5 @@
-frameIndex = image_index
-// WARNING: Popz'd an empty stack.
+frameIndex = floor(image_index)
+draw_self()
 if (topsprite != IMAGE_LOGO)
 {
     if (frameIndex == 0 || frameIndex == 1)

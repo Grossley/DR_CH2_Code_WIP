@@ -9,39 +9,39 @@ if (global.plot < 140)
         global.interact = 1
         swanboat.pause_x_move = 1
         swanboat.sprite_index = spr_swanboat_squish
-        56
+        gml_Script_snd_play(56)
         swanboat.con = 99
         swanboat.active = false
-        cutscene_master = 
-        // WARNING: Popz'd an empty stack.
+        cutscene_master = gml_Script_scr_cutscene_make()
+        gml_Script_scr_maincharacters_actors()
     }
     if (con == 1)
     {
         con = 2
-        60
-        kr
-        "l"
-        "ralsei"
+        gml_Script_c_wait(60)
+        gml_Script_c_sel(kr)
+        gml_Script_c_facing("l")
+        gml_Script_c_speaker("ralsei")
         gml_Script_c_msgsetloc(0, "\\EL* H-huh? There's something blocking the way.../%", "obj_ch2_scene21_puzzle_entrance_slash_Step_0_gml_33_0")
-        // WARNING: Popz'd an empty stack.
-        kr
+        gml_Script_c_talk_wait()
+        gml_Script_c_sel(kr)
         gml_Script_c_walk("u", 4, 16)
         gml_Script_c_delayfacing(17, "r")
-        8
-        ra
+        gml_Script_c_wait(8)
+        gml_Script_c_sel(ra)
         gml_Script_c_walk_wait("r", 4, 8)
         gml_Script_c_walk_wait("u", 4, 6)
-        "r"
-        5
-        "ralsei"
+        gml_Script_c_facing("r")
+        gml_Script_c_wait(5)
+        gml_Script_c_speaker("ralsei")
         gml_Script_c_msgsetloc(0, "\\EJ* Maybe we can find some way to get rid of this...?/%", "obj_ch2_scene21_puzzle_entrance_slash_Step_0_gml_50_0")
-        // WARNING: Popz'd an empty stack.
-        15
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_c_talk_wait()
+        gml_Script_c_wait(15)
+        gml_Script_c_actortokris()
+        gml_Script_c_actortocaterpillar()
+        gml_Script_c_terminatekillactors()
     }
-    if (con == 2 && (!895))
+    if (con == 2 && (!gml_Script_i_ex(895)))
     {
         con = 99
         with (obj_mainchara)
@@ -67,4 +67,5 @@ else if remove_collider
     global.facing = 1
     remove_collider = 0
     var _temp_local_var_7 = left_collider
+    instance_destroy()
 }

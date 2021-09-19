@@ -1,10 +1,10 @@
 if (!ds_map_exists(global.firework_sprite_pixel_data, sprite_index))
 {
-    (("[WARNING] obj_fireworks_manager hasn't cached " + sprite_get_name(sprite_index)) + " in its create event. It will be added now, game may stutter.")
+    show_debug_message((("[WARNING] obj_fireworks_manager hasn't cached " + sprite_get_name(sprite_index)) + " in its create event. It will be added now, game may stutter."))
     with (obj_fireworks_manager)
     {
         current_sprites[0] = other.sprite_index
-        0
+        event_user(0)
     }
 }
 var _data = ds_map_find_value(global.firework_sprite_pixel_data, sprite_index)
@@ -25,7 +25,7 @@ for (var i = 0; i < pixels; i++)
     pixelexpand_v[i] = 0
     pixelexpand_h[i] = 0
     pixelvsp[i] = -0.8
-    pixelgravoffset[i] = 0.02
+    pixelgravoffset[i] = random(0.02)
     pixelvspmaxoffset[i] = (1 + random(1))
     pixelscale[i] = 1
     pixelspritechangealarm[i] = (20 + random(20))

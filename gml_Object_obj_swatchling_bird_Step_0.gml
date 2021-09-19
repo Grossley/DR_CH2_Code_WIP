@@ -28,7 +28,7 @@ if (init == 0)
     {
         type = 2
         direction = (point_direction(xstart, ystart, (obj_heart.x + 10), (obj_heart.y + 10)) + random_range(-5, 5))
-        direction
+        gml_Script_debug_message(string(direction))
     }
 }
 if (speed < target_speed)

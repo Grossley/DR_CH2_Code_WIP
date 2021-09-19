@@ -55,6 +55,6 @@ if (con == 0)
         timer = 0
     }
     timer_end_attack++
-    if (timer_end_attack >= end_timer && (!778))
-        // WARNING: Popz'd an empty stack.
+    if (timer_end_attack >= end_timer && (!instance_exists(obj_bgattack_piece)))
+        instance_destroy()
 }

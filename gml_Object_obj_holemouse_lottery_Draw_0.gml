@@ -4,7 +4,7 @@ if (direction == 0 && currentdir > 260)
 if (direction == 270 && currentdir < 45)
     currentdir = 360
 prevdir = currentdir
-if ((currentdir - direction) <= 90)
+if (abs((currentdir - direction)) <= 90)
 {
     if ((currentdir - direction) > 0)
         currentdir -= 45
@@ -22,7 +22,7 @@ if (con == 0)
     draw_sprite_ext(spr_holemouse_emerge, 0, (x + 20), (y + 20), 2, 2, 0, c_white, image_alpha)
 if (con == 1)
 {
-    16777215
+    draw_set_color(c_white)
     draw_sprite_ext(spr_holemouse_tail, (timer / 2), (x + 20), (y + 20), 2, 2, prevdir, c_white, image_alpha)
     draw_sprite_ext(spr_holemouse, 0, (x + 20), (y + 20), 2, 2, currentdir, c_white, image_alpha)
 }
@@ -30,7 +30,7 @@ if (con == 2)
     draw_sprite_ext(spr_holemouse_exit, 0, (x + 20), (y + 20), 2, 2, 0, c_white, image_alpha)
 if (con >= 5)
 {
-    0
+    draw_set_color(c_black)
     draw_ellipse(((x + 20) - 10), ((y + 20) + 15), ((x + 20) + 10), ((y + 20) + 20), 0)
     if (customSprite == spr_holemouse)
     {

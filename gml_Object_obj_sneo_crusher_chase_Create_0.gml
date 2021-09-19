@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 hp = 3
 offset = 200
 subindex = 0
@@ -8,7 +8,7 @@ flash = false
 image_yscale = 10
 image_xscale = 2
 difficulty = 1
-slidedir = random_range(2, 6)
+slidedir = (gml_Script_randomsign() * random_range(2, 6))
 destroying = 0
 shoottimer = 29
 vspeed = choose(4, -4)

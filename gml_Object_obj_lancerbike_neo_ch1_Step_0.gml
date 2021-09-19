@@ -10,7 +10,7 @@ if (racecon == 0)
     with (obj_susieenemy_ch1)
         visible = false
     s = gml_Script_instance_create_ch1(susiex, susiey, 1521)
-    s
+    gml_Script_scr_bullet_inherit_ch1(s)
     s.wall_destroy = 0
     s.sprite_index = spr_susiel_dark_ch1
     s.image_xscale = 2
@@ -21,7 +21,7 @@ if (racecon == 0)
     s.image_index = 1
     s.lx = x
     s.ly = (y - 108)
-    427
+    gml_Script_snd_play_ch1(427)
     var _temp_local_var_1 = s
     hspeed = -2
     vspeed -= 7

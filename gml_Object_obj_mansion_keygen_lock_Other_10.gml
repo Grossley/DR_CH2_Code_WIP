@@ -1,12 +1,12 @@
 if (unlocked == 0)
 {
-    "no_name"
-    if (12 == 0)
+    gml_Script_scr_speaker("no_name")
+    if (gml_Script_scr_keyitemcheck(12) == 0)
         gml_Script_msgsetloc(0, "* It has a lock that seems impossible to open./%", "obj_mansion_keygen_lock_slash_Other_10_gml_5_0")
-    if (12 == 1)
+    if (gml_Script_scr_keyitemcheck(12) == 1)
     {
         unlocked = 1
-        12
+        gml_Script_scr_keyitemremove(12)
         gml_Script_msgsetloc(0, "* (Kris used the KEYGEN.)/%", "obj_mansion_keygen_lock_slash_Other_10_gml_9_0")
         global.flag[309] = 4
         con = 1

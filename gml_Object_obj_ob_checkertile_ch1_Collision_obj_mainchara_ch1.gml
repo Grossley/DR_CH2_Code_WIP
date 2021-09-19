@@ -1,2 +1,2 @@
 if (active == true && global.interact == 0)
-    5
+    event_user(5)

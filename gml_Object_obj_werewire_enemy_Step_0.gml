@@ -2,27 +2,27 @@ var _temp_local_var_1, _temp_local_var_7, _temp_local_var_12, _temp_local_var_15
 if (global.monster[myself] == true)
 {
     if (global.monsterstatus[myself] == false)
-        myself
-    if ("enemytalk" && talked == 0 && talkwait != 1)
+        gml_Script_scr_monster_make_tired(myself)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && talkwait != 1)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         gml_Script_instance_create((x - 102), (y + 18), obj_werewire_zzt_balloon)
-        219
+        gml_Script_snd_play(219)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        if ((!talkwait) && (!478) && (!62) && global.mnfight == 1)
+        if ((!talkwait) && (!instance_exists(obj_werewire_zzt_balloon)) && (!instance_exists(obj_writer)) && global.mnfight == 1)
             global.mnfight = 2
-        if "bullets"
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!869)
+            if (!instance_exists(obj_growtangle))
             {
-                if 1
+                if (gml_Script_scr_monsterpop() > 1)
                     gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
                 else
                 {
@@ -30,20 +30,20 @@ if (global.monster[myself] == true)
                     battlebox.maxyscale = 1.33
                 }
             }
-            if (!377)
-                // WARNING: Popz'd an empty stack.
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 15)
         {
-            rr = (1 ? choose(0, 1) : 3)
+            rr = (gml_Script_scr_monsterpop() > 1 ? choose(0, 1) : 3)
             if (rr == 0 || rr == 1)
             {
-                if (!483)
-                    210
+                if (!instance_exists(obj_berdlyb2_enemy))
+                    gml_Script_scr_turntimer(210)
                 shootcon = 0
                 shootmode = 1
                 shoottimer = 0
@@ -98,11 +98,11 @@ if (global.monster[myself] == true)
                         misscheck++
                 }
             }
-            if misscheck
+            if (misscheck == gml_Script_scr_monsterpop())
                 global.battlemsg[0] = gml_Script_stringsetsubloc("* Try timing your attacks by pressing ~1!", gml_Script_scr_get_input_name(4), "obj_werewire_enemy_slash_Step_0_gml_122_0")
         }
-        else if (!483)
-            60
+        else if (!instance_exists(obj_berdlyb2_enemy))
+            gml_Script_scr_turntimer(60)
     }
     if (shootcon == 0 && shootmode == 1)
     {
@@ -117,7 +117,7 @@ if (global.monster[myself] == true)
                 shootwait = (((werewire_count * 5) + random(7)) * werewire_count)
             if (werewerewire == 1)
                 shootwait = 0
-            if ("Chirashi" > 0)
+            if (gml_Script_scr_monsterattacknamecount("Chirashi") > 0)
                 shootwait += (10 * werewire_count)
             shootcon = 1
             shoottimer = 0
@@ -127,7 +127,7 @@ if (global.monster[myself] == true)
     }
     if (shootcon == 1)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_randomtarget()
         damage = global.monsterat[myself]
         shootcon = choose(2, 20)
         sprite_index = spr_werewire_attack_2
@@ -168,7 +168,7 @@ if (global.monster[myself] == true)
                 lasercircle.damage = (global.monsterat[myself] * 5)
                 lasercircle.target = mytarget
                 lasercircle.grazepoints = 1
-                if 628
+                if gml_Script_i_ex(628)
                     laser_angle = ((point_direction(lasercircle.x, lasercircle.y, (obj_heart.x + 8), (obj_heart.y + 8)) - 2) + random(4))
                 else
                     laser_angle += (-2 + random(4))
@@ -219,7 +219,7 @@ if (global.monster[myself] == true)
         by1[2] = 6
         by1[3] = 46
         by1[4] = 72
-        if 628
+        if gml_Script_i_ex(628)
             bullet_angle = ((point_direction((x + bx1[2]), (y + by1[2]), (obj_heart.x + 8), (obj_heart.y + 8)) - 10) + random(20))
         else
             bullet_angle += (-10 + random(20))
@@ -276,7 +276,7 @@ if (global.monster[myself] == true)
     }
     if (hangcon == 1)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_randomtarget()
         hangvspeed -= (1 * m)
         hangy += hangvspeed
         if ((y + hangy) <= (gml_Script___view_get(1, 0) + 60))
@@ -288,9 +288,9 @@ if (global.monster[myself] == true)
     if (hangcon == 2)
     {
         hangy += hangvspeed
-        if (hangvspeed >= 0)
+        if (abs(hangvspeed) >= 0)
             hangvspeed *= 0.5
-        if (hangvspeed <= 1)
+        if (abs(hangvspeed) <= 1)
         {
             hangvspeed = 0
             hangcon = 3
@@ -365,15 +365,15 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* WEREWIRE - Controlled by the Queen's wire, it's sleepwalking through a nightmare!/%", "obj_werewire_enemy_slash_Step_0_gml_393_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
         var simultext = (simultotal == 1 ? gml_Script_stringsetloc("* You jiggled your body. The wire loosened in turn!/%", "obj_werewire_enemy_slash_Step_0_gml_399_0") : gml_Script_stringsetloc("* You jiggled your body!/%", "obj_werewire_enemy_slash_Step_0_gml_399_1"))
-        gml_Script_scr_act_charsprite("kris", 1427, 0.25, 1)
+        gml_Script_scr_act_charsprite("kris", 1428, 0.25, 1)
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 50)
-        "kris"
+        gml_Script_scr_simultext("kris")
         actcon = (simulorderkri == 0 ? 20 : -1)
     }
     if (acting == 3 && actcon == 0)
@@ -382,9 +382,9 @@ if (global.myfight == 3)
         alarm[4] = 15
         with (obj_monsterparent)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_rememberxy()
             if (global.monstertype[myself] == 33)
-                (((15 + 206) + 640) - (initid * 100))
+                gml_Script_scr_move_to_point_over_time(((gml_Script_camerax() + 640) - (initid * 100)), (gml_Script_cameray() + 206), 15)
             else
                 gml_Script_scr_move_to_point_over_time(740, y, 15)
         }
@@ -402,13 +402,13 @@ if (global.myfight == 3)
         with (obj_herosusie)
             visible = false
         throwsus = gml_Script_instance_create(obj_herosusie.x, obj_herosusie.y, obj_werewire_throwkris)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 14
     }
     if (actcon == 15)
     {
         with (obj_monsterparent)
-            15
+            gml_Script_scr_move_to_rememberxy(15)
         actcon = 16
         alarm[4] = 15
     }
@@ -426,7 +426,7 @@ if (global.myfight == 3)
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Susie yanked on the wire! It loosened a little bit./%", "obj_werewire_enemy_slash_Step_0_gml_457_0") : gml_Script_stringsetloc("* Susie yanked the wire!/%", "obj_werewire_enemy_slash_Step_0_gml_457_1"))
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 25)
-        "susie"
+        gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
     if (actingral == 1 && actconral == 1)
@@ -434,7 +434,7 @@ if (global.myfight == 3)
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Ralsei sang a snake-charming song to the wire! It loosened a little bit./%", "obj_werewire_enemy_slash_Step_0_gml_469_0") : gml_Script_stringsetloc("* Ralsei charmed the wire!/%", "obj_werewire_enemy_slash_Step_0_gml_469_1"))
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 25)
-        "ralsei"
+        gml_Script_scr_simultext("ralsei")
         actconral = (simulorderral == 0 ? 20 : 0)
     }
     if (actingnoe == 1 && actconnoe == 1)
@@ -442,22 +442,25 @@ if (global.myfight == 3)
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Noelle pulled out the plug like a fairy light!/%", "obj_werewire_enemy_slash_Step_0_gml_481_0") : gml_Script_stringsetloc("* Noelle pulled on the plug!/%", "obj_werewire_enemy_slash_Step_0_gml_481_1"))
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 50)
-        "noelle"
+        gml_Script_scr_simultext("noelle")
         actconnoe = (simulordernoe == 0 ? 20 : 0)
     }
-    if (actcon == 10 && (!62))
+    if (actcon == 10 && (!instance_exists(obj_writer)))
     {
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_act_charsprite_end()
+        gml_Script_scr_nextact()
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20 || actconnoe == 20)
     {
-        actconsus = -1
-        actconral = -1
-        actconnoe = -1
-        actcon = 1
+        if gml_Script_scr_terminate_writer()
+        {
+            actconsus = -1
+            actconral = -1
+            actconnoe = -1
+            actcon = 1
+        }
     }
 }

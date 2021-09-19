@@ -1,4 +1,4 @@
-if 266
+if instance_exists(obj_overworld_bulletarea)
 {
     obj_overworld_bulletarea.x = room_width
     obj_overworld_bulletarea.y = room_height
@@ -15,4 +15,4 @@ engage.pacetype = 9
 engage.chasetype = 3
 engage.alertskip = 1
 engage.ignoresolid = false
-// WARNING: Popz'd an empty stack.
+instance_destroy()

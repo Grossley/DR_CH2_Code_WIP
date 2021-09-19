@@ -1,8 +1,8 @@
-if target
+if gml_Script_i_ex(target)
 {
     if (init == 0)
     {
-        if pointa
+        if is_string(pointa)
             pointa = variable_instance_get(target, varname)
         init = 1
     }
@@ -19,7 +19,7 @@ if target
             variable_instance_set(target, varname, gml_Script_lerp_ease_inout(pointa, pointb, (time / maxtime), easetype))
     }
     if (time >= maxtime)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

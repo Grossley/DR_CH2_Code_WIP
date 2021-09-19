@@ -1,12 +1,12 @@
-if (fakeballoony == 0)
+if (abs(fakeballoony) == 0)
 {
     var dialogue = 0
     krismade = 1
-    if myballoon
+    if gml_Script_i_ex(myballoon)
         dialogue = 1
     if (obj_kris_headobj.miceheld != 0)
         dialogue = 1
-    "no_name"
+    gml_Script_scr_speaker("no_name")
     if (dialogue == 0)
     {
         gml_Script_msgsetloc(0, "* (Suddenly a maus came out of the hole!)/%", "obj_mouseballoon_pillar_release_slash_Other_10_gml_15_0")

@@ -1,4 +1,4 @@
-if 1347
+if instance_exists(obj_mainchara_ch1)
 {
     if (obj_mainchara_ch1.runmove == true)
         runamt += 1
@@ -15,11 +15,11 @@ if 1347
         global.fe = 0
         global.fc = 2
         global.msc = 130
-        global.msc
+        gml_Script_scr_text_ch1(global.msc)
         gml_Script_instance_create_ch1(0, 0, 1326)
         con = 2
     }
-    if (con == 2 ? 0 : 0)
+    if (con == 2 && gml_Script_d_ex_ch1() == 0)
     {
         global.interact = 0
         con = 99

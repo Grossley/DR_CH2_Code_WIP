@@ -2,8 +2,8 @@ var oob = 0
 if (y < (boxTop + 18) || y > (boxBottom - 18))
 {
     oob = 1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_draw_in_box_begin()
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if oob
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_draw_in_box_end()

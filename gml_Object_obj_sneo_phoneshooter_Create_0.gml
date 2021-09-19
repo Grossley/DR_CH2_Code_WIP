@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 y = -30
 ydrop = 0
 image_blend = 0xE8A200

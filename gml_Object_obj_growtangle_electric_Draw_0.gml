@@ -1,4 +1,4 @@
-if 869
+if instance_exists(obj_growtangle)
 {
     plugangle = 0
     wy = 0
@@ -13,4 +13,4 @@ if 869
         draw_sprite_ext(spr_growtangle_electric_plug, 0, (((x + xx) - wx) - plugx), ((y + xx) - wy), 2, 2, plugangle, c_white, plugalpha)
     draw_sprite_ext(spr_growtangle_electric_plug, 0, (((x + xx) + wx) + plugx), ((y + xx) + wy), 2, 2, (plugangle + 180), c_white, plugalpha)
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

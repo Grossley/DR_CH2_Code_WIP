@@ -1,18 +1,18 @@
 if (dar == 1)
-    "main"
+    gml_Script_scr_84_set_draw_font_ch1("main")
 else
-    "mainbig"
+    gml_Script_scr_84_set_draw_font_ch1("mainbig")
 textx = xx
 texty = yy
 for (i = 0; i < (choicetotal + 1); i += 1)
 {
-    16777215
+    draw_set_color(c_white)
     if (mychoice == i)
-        65535
+        draw_set_color(c_yellow)
     textx = textposx[i]
     texty = textposy[i]
     if (candraw == true)
-        draw_text(textx, texty, global.choicemsg[i])
+        draw_text(textx, texty, string_hash_to_newline(global.choicemsg[i]))
 }
 if (global.lang == "ja")
 {

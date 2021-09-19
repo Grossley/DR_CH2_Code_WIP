@@ -5,7 +5,7 @@ if (state == 3)
         state = 0
     else
     {
-        if (global.monster[myself] == false && (!62))
+        if (global.monster[myself] == false && (!gml_Script_i_ex(62)))
         {
             hurtsprite = spr_berdly_hurt_kneel_battle
             if (endbattle == 0)
@@ -14,9 +14,9 @@ if (state == 3)
                 if (global.flag[915] == 5 && global.flag[916] == 0)
                 {
                     gml_Script_instance_create(obj_heronoelle.x, obj_heronoelle.y, obj_berdlyb2_postBattle_noelle)
-                    // WARNING: Popz'd an empty stack.
+                    gml_Script_scr_sideb_fail()
                 }
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_wincombat()
             }
         }
         hurtshake += 1
@@ -32,7 +32,7 @@ if (state == 3)
         draw_sprite_ext(hurtsprite, 0, ((x + shakex) + hurtspriteoffx), (y + hurtspriteoffy), 2, 2, 0, image_blend, 1)
     }
 }
-0.16666666666666666
+gml_Script_scr_enemy_drawidle_generic(0.16666666666666666)
 if (becomeflash == false)
     flash = false
 becomeflash = false

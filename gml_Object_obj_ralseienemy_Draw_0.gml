@@ -26,7 +26,7 @@ if (state == 0)
     {
         fsiner += 1
         gml_Script_d3d_set_fog(true, c_white, 0, 1)
-        draw_sprite_ext(thissprite, (siner / 5), x, y, 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, (siner / 5), x, y, 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         gml_Script_d3d_set_fog(false, c_black, 0, 0)
     }
 }

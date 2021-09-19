@@ -1,6 +1,6 @@
-if (!target)
+if (!gml_Script_i_ex(target))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 if (laserflash == 0)

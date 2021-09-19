@@ -23,11 +23,11 @@ if (con == 0)
 if (con == 3)
 {
     if (image_alpha <= 0.2)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     active = false
     image_alpha -= 0.2
 }
-if 1514
+if instance_exists(obj_battlesolid_ch1)
 {
     lx = ((obj_battlesolid_ch1.x - (obj_battlesolid_ch1.sprite_width / 2)) + 8)
     x = (lx + (xpos * sprite_width))

@@ -9,9 +9,9 @@ if (timer >= 2)
 if (room == room_dark_chase2_ch1)
 {
     if (x > 680)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (x < -40)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else
 {
@@ -23,7 +23,7 @@ else
             x += 900
     }
     if (y > (gml_Script___view_get(1, 0) + 600))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 800))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

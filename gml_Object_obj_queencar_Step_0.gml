@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_12;
 if (con == 1)
 {
     global.interact = 1
@@ -39,9 +38,9 @@ if (con == 1.5)
         if (swantimer >= 15)
         {
             con = 1.6
-            "ralsei"
+            gml_Script_scr_speaker("ralsei")
             gml_Script_msgsetloc(0, "\\EJ* Let's go^1, Kris!/%", "obj_queencar_slash_Step_0_gml_36_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_d_make()
         }
     }
     else
@@ -55,17 +54,15 @@ if (con == 1.5)
         }
     }
 }
-if (con == 1.6)
+if (con == 1.6 && (!gml_Script_d_ex()))
 {
-}
-else
-    var _temp_local_var_12 = 0
-swantimer++
-if (swantimer >= 15)
-{
-    swantimer = 0
-    con = 2
-    active = true
+    swantimer++
+    if (swantimer >= 15)
+    {
+        swantimer = 0
+        con = 2
+        active = true
+    }
 }
 if (active == true)
 {
@@ -73,12 +70,17 @@ if (active == true)
     if (room >= room_dw_mansion_acid_tunnel)
         wx = 2
     wy = 0
-    wy = -2
-    wy = 2
-    if (backwardstalkcon == 0)
+    if gml_Script_up_h()
+        wy = -2
+    if gml_Script_down_h()
+        wy = 2
+    if gml_Script_left_p()
     {
-        backwardstalkcon = 1
-        dobackwardstalk = 1
+        if (backwardstalkcon == 0)
+        {
+            backwardstalkcon = 1
+            dobackwardstalk = 1
+        }
     }
     movex = 0
     movey = 0
@@ -107,19 +109,19 @@ if (active == true)
     {
         obj_mainchara.x = (x + swanmaincharax)
         obj_mainchara.y = (y + swanmaincharay)
-        if 274
+        if instance_exists(obj_caterpillarchara)
         {
             obj_caterpillarchara.x = ((x + swanmaincharax) - 50)
             obj_caterpillarchara.y = ((y + swanmaincharay) - 12)
         }
     }
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()
 }
 if (con == 2)
 {
     if (!pause_auto_talk)
     {
-        if 62
+        if instance_exists(obj_writer)
         {
             if (obj_writer.halt != 0)
             {
@@ -141,7 +143,7 @@ if (con == 2)
             {
                 if (talkcon == 1)
                 {
-                    "ralsei"
+                    gml_Script_scr_speaker("ralsei")
                     global.fe = 0
                     gml_Script_msgsetloc(0, "\\EM* Now, we have to think of some way to distract Queen.../%", "obj_queencar_slash_Step_0_gml_147_0")
                     with (obj_ch2_scene21)
@@ -149,7 +151,7 @@ if (con == 2)
                 }
                 if (talkcon == 2)
                 {
-                    "ralsei"
+                    gml_Script_scr_speaker("ralsei")
                     global.fe = 0
                     gml_Script_msgsetloc(0, "\\EM* What are these..^1. Little houses?/%", "obj_queencar_slash_Step_0_gml_155_0")
                     with (obj_ch2_scene21)
@@ -163,7 +165,7 @@ if (con == 2)
             }
             if (global.msg[0] != "* .../%")
             {
-                d = 
+                d = gml_Script_d_make()
                 d.side = 0
                 d.zurasu = 1
             }

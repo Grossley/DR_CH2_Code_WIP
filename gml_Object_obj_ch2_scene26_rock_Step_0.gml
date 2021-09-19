@@ -4,7 +4,7 @@ if (timer >= 30)
     if (con == 1)
     {
         con = 2
-        y = (view_hport[0] + 100)
+        y = ((gml_Script_cameray() + view_hport[0]) + 100)
         var dog = random_range(0, 1)
         if (dog >= 0.99)
         {

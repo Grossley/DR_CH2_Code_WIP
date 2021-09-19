@@ -6,4 +6,4 @@ if (image_xscale <= 1)
     if (image_xscale >= 1)
         active = true
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_destroyoutside_ch1()

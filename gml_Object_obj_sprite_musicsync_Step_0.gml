@@ -1,9 +1,9 @@
 var _bpf = ((bpm / 60) / game_get_speed(gamespeed_fps))
 var _spb = (1 / (bpm / 60))
-if (global.currentsong[1] && inSync == 1)
+if (gml_Script_snd_is_playing(global.currentsong[1]) && inSync == 1)
 {
-    beat = (global.currentsong[1] / _spb)
-    beat = beat
+    beat = (audio_sound_get_track_position(global.currentsong[1]) / _spb)
+    beat = frac(beat)
 }
 else
 {

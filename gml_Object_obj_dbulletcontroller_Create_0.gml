@@ -10,9 +10,9 @@ grazetimer = -1
 element = "none"
 target = -1
 ratio = 1
-if 2
+if (gml_Script_scr_monsterpop() == 2)
     ratio = 1.6
-if 3
+if (gml_Script_scr_monsterpop() == 3)
     ratio = 2.3
 side = 1
 difficulty = 0

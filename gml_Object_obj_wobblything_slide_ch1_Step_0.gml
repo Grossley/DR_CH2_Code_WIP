@@ -1,6 +1,6 @@
 if (wobbled == 0)
 {
-    if 1347
+    if instance_exists(obj_mainchara_ch1)
     {
         if (obj_mainchara_ch1.y > (y - 10) && obj_mainchara_ch1.y < (y + 50))
         {

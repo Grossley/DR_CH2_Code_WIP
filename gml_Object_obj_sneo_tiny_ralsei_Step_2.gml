@@ -1,14 +1,14 @@
 if (hp < 1)
 {
     if (active == true)
-        239
+        gml_Script_snd_play(239)
     active = false
     image_alpha -= 0.05
     if (image_alpha < 0.01)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     return;
 }
-if 628
+if instance_exists(obj_heart)
 {
     rotator_target = obj_heart
     depth = (obj_heart.depth - 1)
@@ -20,9 +20,9 @@ if 628
     y = (rotator_target.y + lengthdir_y(length, place))
     place += myspeed
 }
-if (!628)
+if (!instance_exists(obj_heart))
     visible = false
-if 628
+if instance_exists(obj_heart)
 {
     if (alarm[0] == 9)
         visible = false

@@ -1,15 +1,15 @@
 con = 0
 if (global.plot < 11)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_losechar_ch1()
     with (obj_caterpillarchara_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     con = 1
     global.interact = 1
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4132)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4133)
     waketimer = -50
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

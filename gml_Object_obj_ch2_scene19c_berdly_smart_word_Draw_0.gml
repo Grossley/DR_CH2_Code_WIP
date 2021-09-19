@@ -1,6 +1,6 @@
-text_alpha
-16764466
-"main"
-0
+draw_set_alpha(text_alpha)
+draw_set_color(0xFFCE32)
+gml_Script_scr_84_set_draw_font("main")
+draw_set_halign(fa_left)
 draw_text(x, y, berdly_word)
-1
+draw_set_alpha(1)

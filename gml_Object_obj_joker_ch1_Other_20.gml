@@ -20,18 +20,18 @@ if (global.monsterhp[myself] > 0)
     {
         x += 20
         y += 18
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_spareanim_ch1()
         x -= 20
         y -= 18
     }
 }
 with (obj_battlecontroller_ch1)
     skipvictory = true
-// WARNING: Popz'd an empty stack.
+gml_Script_snd_free_all_ch1()
 body.dancelv = 4
 body.condition = 0
 with (obj_jokerbg_triangle_real_ch1)
     on = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_monsterdefeat_ch1()
 global.invc = reminvc
-// WARNING: Popz'd an empty stack.
+instance_destroy()

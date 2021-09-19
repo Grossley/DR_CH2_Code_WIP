@@ -8,11 +8,11 @@ if (newy2 <= 0)
     newy2 *= 0.6
 if (blackon == 0)
 {
-    dkblue
+    draw_set_color(dkblue)
     blackon = 1
 }
 else
 {
     blackon = 0
-    dkblue2
+    draw_set_color(dkblue2)
 }

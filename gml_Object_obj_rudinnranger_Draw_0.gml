@@ -1,6 +1,6 @@
 if (state == 3)
 {
-    0.5
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemyhurt_tired_after_damage(0.5)
+    gml_Script_scr_enemy_drawhurt_generic()
 }
-0.16666666666666666
+gml_Script_scr_enemy_drawidle_generic(0.16666666666666666)

@@ -11,12 +11,12 @@ if (swapped == 0)
             replace.image_index = image_index
             replace.bridgetarget = bridgetarget
             replace.image_blend = other.c_nred
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     with (obj_soliddark)
     {
-        if (!bridgetarget)
+        if (!is_undefined(bridgetarget))
         {
             if (bridgetarget == other.bridgetarget2)
             {
@@ -27,14 +27,14 @@ if (swapped == 0)
                 replace2.image_index = image_index
                 replace2.bridgetarget = other.bridgetarget2
                 replace2.image_blend = other.c_nred
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
     }
     if (extflag == "swatchlingRescue")
     {
         extflag = "triggered"
-        if 1209
+        if instance_exists(obj_controller_dw_mansion_bridges_funny)
             obj_controller_dw_mansion_bridges_funny.saved = 1
     }
     swapped = 1
@@ -52,12 +52,12 @@ else
             replace.image_yscale = image_yscale
             replace.bridgetarget = bridgetarget
             replace.image_blend = other.c_nblue
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     with (obj_soliddark)
     {
-        if (!bridgetarget)
+        if (!is_undefined(bridgetarget))
         {
             if (bridgetarget == other.bridgetarget)
             {
@@ -68,7 +68,7 @@ else
                 replace2.image_yscale = image_yscale
                 replace2.bridgetarget = other.bridgetarget
                 replace2.image_blend = other.c_nblue
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
     }

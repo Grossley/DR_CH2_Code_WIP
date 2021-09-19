@@ -16,12 +16,12 @@ if (dont == 0)
     }
     draw_sprite_ext(sprite_index, 0, x, y, (2 - image_alpha), (2 - image_alpha), futuredir, c_white, image_alpha)
     if (x < (gml_Script___view_get(0, 0) - 40))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (x > (gml_Script___view_get(0, 0) + 680))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 40))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y > (gml_Script___view_get(1, 0) + 520))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 dont = 0

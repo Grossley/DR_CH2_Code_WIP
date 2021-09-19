@@ -3,7 +3,7 @@ leavecon = 0
 leavetimer = 0
 noellemarker = obj_sneo_friedpipis
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     if (room == room_dw_city_traffic_1)
@@ -22,8 +22,11 @@ else
             noellemarker.image_speed = 0
         }
         else
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
-if noellemarker
+if gml_Script_i_ex(noellemarker)
+{
     var _temp_local_var_1 = noellemarker
+    gml_Script_scr_depth()
+}

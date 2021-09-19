@@ -16,7 +16,7 @@ if (frametimer >= frametimerthreshold)
     {
         image_xscale = lerp(image_xscale, 2, 0.5)
         image_yscale = image_xscale
-        if ((image_xscale - 2) <= 0.05)
+        if ((abs(image_xscale) - 2) <= 0.05)
         {
             image_xscale = 2
             image_yscale = 2
@@ -40,4 +40,4 @@ if (animtimer == 30)
     image_index--
     animtimer = 0
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

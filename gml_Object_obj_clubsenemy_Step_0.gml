@@ -2,8 +2,8 @@ if (global.monster[myself] == true)
 {
     if (global.mnfight == 1 && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         rr = choose(0, 1, 2)
@@ -43,12 +43,12 @@ if (global.monster[myself] == true)
     if (talked == 1 && global.mnfight == 1)
     {
         rtimer = 0
-        15
+        gml_Script_scr_blconskip(15)
         if (global.mnfight == 2)
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
@@ -127,7 +127,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* CLOVER - AT 8 DF 2&* Two heads are better than one^1!&* Three..^1. maybe not./%", "obj_clubsenemy_slash_Step_0_gml_168_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -140,29 +140,29 @@ if (global.myfight == 3)
     {
         topic_con = 2
         topic_count++
-        likes_list
-        dislikes_list
+        ds_list_shuffle(likes_list)
+        ds_list_shuffle(dislikes_list)
         var choice_amount = 3
         for (var i = 0; i < choice_amount; i++)
         {
             var prepend = ((i == 2 || i == 3) ? "" : "#")
             global.choicemsg[i] = (prepend + ds_list_find_value(dislikes_list, i))
         }
-        right_answer = choice_amount
+        right_answer = floor(random(choice_amount))
         prepend = (string_pos("#", global.choicemsg[right_answer]) != 0 ? "#" : "")
         global.choicemsg[right_answer] = (prepend + ds_list_find_value(likes_list, 0))
         gml_Script_msgsetloc(0, "* Choose a topic that Clover likes!/%", "obj_clubsenemy_slash_Step_0_gml_233_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (topic_con == 2 && (!62))
+    if (topic_con == 2 && (!gml_Script_i_ex(62)))
     {
         topic_con = 3
         gml_Script_msgset(0, "\\C3 ")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (topic_con == 3)
     {
-        if ((!62) && (!57))
+        if ((!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
             topic_con = 4
         else
         {
@@ -171,43 +171,43 @@ if (global.myfight == 3)
             {
                 topic_con = 4
                 topic_timeup = 1
-                if 62
-                    62
-                if 57
-                    57
+                if gml_Script_i_ex(62)
+                    instance_destroy(obj_writer)
+                if gml_Script_i_ex(57)
+                    instance_destroy(obj_choicer_neo)
             }
         }
     }
-    if (topic_con == 4 && (!62) && (!57))
+    if (topic_con == 4 && (!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
     {
         topic_start = 0
         topic_con = 0
         if topic_timeup
         {
             topic_timeup = 0
-            143
-            // WARNING: Popz'd an empty stack.
+            gml_Script_snd_play(143)
+            gml_Script_scr_miniface_init_clover()
             gml_Script_msgsetloc(0, "\\m1*		Time's up!&\\m2	TOO SLOW!&\\m3	(Sorry...)/%", "obj_clubsenemy_slash_Step_0_gml_286_0")
         }
         else if (global.choice == right_answer)
         {
-            57
+            gml_Script_snd_play(57)
             if (global.mercymod[myself] < global.mercymax[myself])
             {
                 var mercytotal = clamp((20 + (turns * 5)), 20, 50)
                 gml_Script_scr_mercyadd(myself, mercytotal)
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_miniface_init_clover()
             gml_Script_msgsetloc(0, "\\m1*		That's right^2!&\\m2	Not bad^2!&\\m3	(It's OK...^2)/%", "obj_clubsenemy_slash_Step_0_gml_293_0")
         }
         else
         {
-            143
-            // WARNING: Popz'd an empty stack.
+            gml_Script_snd_play(143)
+            gml_Script_scr_miniface_init_clover()
             gml_Script_msgsetloc(0, "\\m1*		No thanks!&\\m2	WRONG!&\\m3	(Is it that bad?)/%", "obj_clubsenemy_slash_Step_0_gml_296_0_b")
         }
         actcon = 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 3 && actcon == 0)
     {
@@ -216,7 +216,7 @@ if (global.myfight == 3)
         topic_timer_total = topic_timer
         actcon = 15
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         if (argue >= 3)
         {
@@ -224,27 +224,30 @@ if (global.myfight == 3)
             global.monsterstatus[myself] = true
         }
         actcon = 0
-        // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_act_charsprite_end()
+        gml_Script_scr_nextact()
     }
     if (actingsus == 1 && actconsus == 1)
     {
         gml_Script_scr_mercyadd(myself, 5)
         gml_Script_msgsetloc(0, "* Susie stood there awkwardly!/%", "obj_clubsenemy_slash_Step_0_gml_459_0")
-        "susie"
+        gml_Script_scr_simultext("susie")
         actconsus = 20
     }
     if (actingral == 1 && actconral == 1)
     {
         gml_Script_scr_mercyadd(myself, 25)
         gml_Script_msgsetloc(0, "* Ralsei stood there cutely!/%", "obj_clubsenemy_slash_Step_0_gml_469_0")
-        "ralsei"
+        gml_Script_scr_simultext("ralsei")
         actconral = 20
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20)
     {
-        actconsus = -1
-        actconral = -1
-        actcon = 1
+        if gml_Script_scr_terminate_writer()
+        {
+            actconsus = -1
+            actconral = -1
+            actcon = 1
+        }
     }
 }

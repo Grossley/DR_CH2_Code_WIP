@@ -60,4 +60,4 @@ if (global.chapter == 2)
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -1,6 +1,6 @@
 if (con == 0)
 {
-    if (80 && point_in_rectangle(obj_mainchara.x, obj_mainchara.y, 740, 280, 780, 440))
+    if (instance_exists(obj_mainchara) && point_in_rectangle(obj_mainchara.x, obj_mainchara.y, 740, 280, 780, 440))
     {
         con = 1
         x += sprite_width
@@ -20,7 +20,7 @@ if (con == 1)
         spear.direction = point_direction(spear.x, spear.y, (obj_mainchara.x + 10), (obj_mainchara.y + 20))
         spear.image_angle = spear.direction
         spear.depth = (depth - 20)
-        shotSpeed = (20 + 50)
+        shotSpeed = (random(20) + 50)
         timer = 0
     }
 }

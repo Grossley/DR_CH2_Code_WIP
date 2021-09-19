@@ -10,10 +10,10 @@ if (isswitch == 1)
             if (global.flag[395] == 0)
             {
                 global.flag[395] = 1
-                61
+                gml_Script_snd_play(61)
                 gml_Script_instance_create(x, y, obj_shake)
-                if (shine != -4)
-                    shine
+                if (shine != noone)
+                    instance_destroy(shine)
             }
             isswitch = 0
         }
@@ -22,10 +22,10 @@ if (isswitch == 1)
             if (global.flag[396] == 0)
             {
                 global.flag[396] = 1
-                61
+                gml_Script_snd_play(61)
                 gml_Script_instance_create(x, y, obj_shake)
-                if (shine != -4)
-                    shine
+                if (shine != noone)
+                    instance_destroy(shine)
             }
             isswitch = 0
         }
@@ -34,7 +34,7 @@ if (isswitch == 1)
     {
         if (extflag == "treasureswitch" && global.flag[398] == 0)
         {
-            61
+            gml_Script_snd_play(61)
             with (obj_queenart_mona)
             {
                 if (extflag == "treasure")
@@ -44,18 +44,18 @@ if (isswitch == 1)
                     treasure.extflag = "treasure"
                     treasure.isswitch = 1
                     treasure.sprite_index = spr_queenart_mona_middlepoint
-                    treasure.spriteindex2 = 2927
+                    treasure.spriteindex2 = 2928
                     treasure.flip = 1
-                    // WARNING: Popz'd an empty stack.
+                    instance_destroy()
                 }
             }
             with (obj_overworld_bulletarea)
             {
                 if (extflag == "bottom")
-                    // WARNING: Popz'd an empty stack.
+                    instance_destroy()
             }
-            if (shine != -4)
-                shine
+            if (shine != noone)
+                instance_destroy(shine)
             skip = 1
             isswitch = 0
             extflag = 0
@@ -66,20 +66,20 @@ if (isswitch == 1)
         {
             if (global.flag[138] == 0)
             {
-                61
+                gml_Script_snd_play(61)
                 itemflag = 138
                 var itemget = gml_Script_scr_itemget_anytype_text(2, "item")
-                "no_name"
+                gml_Script_scr_speaker("no_name")
                 gml_Script_msgsetloc(0, "* (You found a ReviveMint!)/", "obj_queenart_red_slash_Other_10_gml_91_0")
-                itemget
+                gml_Script_msgnext(itemget)
                 if (noroom == false)
                     global.flag[itemflag] = 1
-                if (shine != -4)
-                    shine
+                if (shine != noone)
+                    instance_destroy(shine)
             }
             else
             {
-                "no_name"
+                gml_Script_scr_speaker("no_name")
                 gml_Script_msgsetloc(0, "* (There's nothing here.)/%", "obj_queenart_red_slash_Other_10_gml_107_0")
             }
             mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)
@@ -95,6 +95,7 @@ if (isswitch == 1)
             flip = 1
             gml_Script_instance_create(x, y, obj_shake)
             var _temp_local_var_3 = shine
+            instance_destroy()
         }
     }
 }

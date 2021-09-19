@@ -1,3 +1,4 @@
+var _temp_local_var_3;
 buffer += 1
 if (buffer == 19)
 {
@@ -27,7 +28,7 @@ if (buffer >= 19)
         if (hspeed > 0)
             hspeed = (-hspeed)
     }
-    if (buffer >= 20 && con == 0 && (x - (obj_heart_ch1.x + 10)) < 30)
+    if (buffer >= 20 && con == 0 && abs((x - (obj_heart_ch1.x + 10))) < 30)
         con = 5
     if (con == 5)
     {
@@ -40,11 +41,12 @@ if (buffer >= 19)
         {
             throw_n = 1
             carrot = gml_Script_instance_create_ch1(x, y, 1518)
-            carrot
+            gml_Script_scr_bullet_inherit_ch1(carrot)
+            var _temp_local_var_3 = carrot
             speedmax = 7
-            if (carrot == 2)
+            if (gml_Script_scr_monsterpop_ch1() == 2)
                 speedmax = 6
-            if 3
+            if (gml_Script_scr_monsterpop_ch1() == 3)
                 speedmax = 5
             active = true
             image_xscale = 2
@@ -59,9 +61,9 @@ if (buffer >= 19)
             image_speed = 0
             con = 7
             alarm[4] = 15
-            if 2
+            if (gml_Script_scr_monsterpop_ch1() == 2)
                 alarm[4] = 22
-            if 3
+            if (gml_Script_scr_monsterpop_ch1() == 3)
                 alarm[4] = 30
         }
     }

@@ -1,11 +1,11 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (scale < 1)
 {
     scale += 0.1
     image_xscale = scale
     image_yscale = scale
     image_angle = (scale * 360)
-    af = 
+    af = gml_Script_scr_afterimage()
     af.image_alpha = 0.5
     if (scale == 1)
         image_speed = 0.16666666666666666
@@ -60,4 +60,4 @@ if (timer2 > 9 && difficulty == 1)
     }
 }
 if (global.turntimer < 3)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

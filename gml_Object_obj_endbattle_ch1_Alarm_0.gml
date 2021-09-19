@@ -11,15 +11,18 @@ if (global.specialbattle == 0 || global.specialbattle == 3)
 {
     i = 0
     while (i < (count + 1))
+    {
         var _temp_local_var_2 = c[i]
+        instance_destroy()
+    }
 }
 if (global.specialbattle == 0 || global.specialbattle == 2)
     global.interact = 0
 if (global.flag[9] == 1)
 {
-    global.batmusic[0]
+    gml_Script_snd_free_ch1(global.batmusic[0])
     gml_Script_snd_volume_ch1(global.currentsong[1], 0, 0)
-    global.currentsong[1]
+    gml_Script_snd_resume_ch1(global.currentsong[1])
     gml_Script_snd_volume_ch1(global.currentsong[1], 1, 20)
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

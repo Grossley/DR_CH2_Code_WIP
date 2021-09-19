@@ -1,5 +1,5 @@
 var _temp_local_var_1;
-if actor
+if gml_Script_i_ex(actor)
 {
     var _temp_local_var_1 = actor
     if visible

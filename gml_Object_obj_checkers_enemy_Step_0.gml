@@ -10,17 +10,17 @@ if (global.monster[myself] == true)
         ralsei_lecture = 99
     if (global.mnfight == 1 && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         milkmax = 1000
         if (milk_counter > 0)
             milkmax = 600
         if (global.monsterhp[myself] > milkmax)
         {
-            if ((!377) && (!628))
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if ((!instance_exists(obj_moveheart)) && (!instance_exists(obj_heart)))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
         global.mnfight = 2
@@ -48,7 +48,7 @@ if (global.monster[myself] == true)
             }
             else
             {
-                if (!402)
+                if (!instance_exists(obj_checkers_leap))
                 {
                     if (attacktype == 0)
                         rr = 0
@@ -74,7 +74,7 @@ if (global.monster[myself] == true)
             attacked = true
             global.typer = 6
             global.fc = 0
-            rr = 0
+            rr = choose(0)
             global.battlemsg[0] = gml_Script_stringsetloc("* K.Round shuffles furiously.", "obj_checkers_enemy_slash_Step_0_gml_77_0")
             if (global.monsterstatus[myself] == true)
                 global.battlemsg[0] = gml_Script_stringsetloc("* K.Round looks weak.", "obj_checkers_enemy_slash_Step_0_gml_79_0")
@@ -109,21 +109,21 @@ if (scon == 1)
     else
     {
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         global.msg[0] = gml_Script_stringsetloc("* K. ROUND felt stressed out and attacked!/%", "obj_checkers_enemy_slash_Step_0_gml_119_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         scon = 1.5
     }
 }
-if (scon == 1.5 && (!62))
+if (scon == 1.5 && (!instance_exists(obj_writer)))
 {
-    145
+    gml_Script_snd_play(145)
     with (obj_writer)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     global.msg[0] = gml_Script_stringsetloc("* K. ROUND practiced self-care!", "obj_checkers_enemy_slash_Step_0_gml_129_0")
     global.turntimer = 999
-    // WARNING: Popz'd an empty stack.
-    milk = gml_Script_scr_dark_marker((x - 100), (y + 60), 1780)
+    gml_Script_scr_battletext_default()
+    milk = gml_Script_scr_dark_marker((x - 100), (y + 60), 1781)
     var _temp_local_var_5 = milk
     image_speed = 0
     image_xscale = 4
@@ -233,7 +233,7 @@ if (global.myfight == 3)
             visible = false
         global.faceaction[0] = 0
         global.charaction[0] = 0
-        bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1408)
+        bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1409)
         var _temp_local_var_13 = bowkris
         gml_Script_scr_oflash()
         a = gml_Script_scr_afterimage()
@@ -266,7 +266,7 @@ if (global.myfight == 3)
             global.charaction[0] = 0
             global.faceaction[1] = 0
             global.charaction[1] = 0
-            bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1408)
+            bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1409)
             var _temp_local_var_22 = bowkris
             gml_Script_scr_oflash()
             a = gml_Script_scr_afterimage()
@@ -375,7 +375,7 @@ if (global.myfight == 3)
         with (obj_heroralsei)
             visible = false
         thrown = 1
-        trsus = gml_Script_scr_dark_marker(obj_herosusie.x, obj_herosusie.y, 1451)
+        trsus = gml_Script_scr_dark_marker(obj_herosusie.x, obj_herosusie.y, 1452)
         gml_Script_snd_play(60)
     }
     if (actcon == 12)

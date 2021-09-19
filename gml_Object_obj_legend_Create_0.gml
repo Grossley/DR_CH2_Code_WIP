@@ -1,6 +1,6 @@
-global.currentsong[0] = "legend.ogg"
+global.currentsong[0] = gml_Script_snd_init("legend.ogg")
 gml_Script_snd_pitch(global.currentsong[0], 0.95)
-global.currentsong[1] = global.currentsong[0]
+global.currentsong[1] = gml_Script_mus_play(global.currentsong[0])
 contimer = 0
 ytimer = 0
 xtimer = 0
@@ -11,7 +11,7 @@ fadecolor = c_black
 chunkfade = 0
 chunkamt = 1
 border = 1
-pic = 2457
+pic = 2458
 fadespeed = 0.02
 global.flag[6] = 1
 textimer = 0

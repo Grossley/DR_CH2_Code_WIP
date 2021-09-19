@@ -1,14 +1,6 @@
+var _temp_local_var_1;
 if (active == false)
     return;
-with (stacktop)
-{
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
-}
-if (alarm[0] > 0)
-    return;
-if (other.active == false)
-    return;
-hp -= 10
-alarm[0] = 10
-170
+var _temp_local_var_1 = other
+gml_Script_scr_afterimage_cut()
+instance_destroy()

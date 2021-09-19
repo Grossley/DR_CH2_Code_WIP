@@ -15,7 +15,7 @@ remwriterx = 0
 remwritery = 0
 myface = -4
 jpspecial = 0
-if 80
+if instance_exists(obj_mainchara)
 {
     if (global.darkzone == false)
     {

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 dontskip = 0
 skip = 0
 noflare = 0
@@ -14,7 +14,7 @@ swapped = 0
 c_nred = make_color_rgb(231, 84, 77)
 c_nblue = make_color_rgb(39, 167, 212)
 timer = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_alt()
 mtx = (x + 2)
 mty = (y + 2)
 rax = 0

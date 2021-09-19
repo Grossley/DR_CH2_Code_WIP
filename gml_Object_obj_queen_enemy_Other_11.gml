@@ -1,7 +1,7 @@
 var shieldbreaking = 0
-if (574 && obj_queenshield_enemy.shieldhurt == 2)
+if (instance_exists(obj_queenshield_enemy) && obj_queenshield_enemy.shieldhurt == 2)
     shieldbreaking = 1
-if ((!574) || shieldbreaking == 1)
+if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.actname[myself][0] = gml_Script_stringsetloc("Loosen", "obj_queen_enemy_slash_Other_11_gml_10_0")
     global.actsimul[myself][0] = 0
@@ -13,7 +13,7 @@ else
     global.actsimul[myself][0] = 1
     global.actname[myself][1] = gml_Script_stringsetloc("GroupToast", "obj_queen_enemy_slash_Other_11_gml_16_0")
 }
-if ((!574) || shieldbreaking == 1)
+if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Loosen", "obj_queen_enemy_slash_Other_11_gml_22_0")
     global.actsimulsus[myself][0] = 0
@@ -23,7 +23,7 @@ else
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Toast", "obj_queen_enemy_slash_Other_11_gml_26_0")
     global.actsimulsus[myself][0] = 1
 }
-if ((!574) || shieldbreaking == 1)
+if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.actnameral[myself][0] = gml_Script_stringsetloc("Loosen", "obj_queen_enemy_slash_Other_11_gml_32_0")
     global.actsimulral[myself][0] = 0
@@ -33,7 +33,7 @@ else
     global.actnameral[myself][0] = gml_Script_stringsetloc("Toast", "obj_queen_enemy_slash_Other_11_gml_36_0")
     global.actsimulral[myself][0] = 1
 }
-if ((!574) || shieldbreaking == 1)
+if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.canact[myself][2] = true
     global.actactor[myself][2] = 2
@@ -75,4 +75,4 @@ else
     global.actdesc[myself][5] = ""
     global.actcost[myself][5] = 0
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellmenu_setup()

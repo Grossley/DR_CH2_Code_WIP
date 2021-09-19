@@ -1,7 +1,7 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_8, _temp_local_var_9, _temp_local_var_20, _temp_local_var_21, _temp_local_var_22;
+var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_9, _temp_local_var_11, _temp_local_var_12;
 if (con == 0)
 {
-    " "
+    gml_Script_scr_windowcaption(" ")
     global.facing = 0
     con = 1
     alarm[4] = 90
@@ -17,67 +17,63 @@ if (con == 2)
     gml_Script_instance_create(0, 0, obj_dialoguer)
     con = 3
 }
-if (con == 3)
+if (con == 3 && (!gml_Script_d_ex()))
 {
+    gml_Script_snd_play(61)
+    con = 4
+    alarm[4] = 15
 }
-else
-    var _temp_local_var_22 = 0
-61
-con = 4
-alarm[4] = 15
 if (con == 5)
 {
-    185
+    gml_Script_snd_play(185)
     con = 6
     alarm[4] = 15
 }
 if (con == 7)
 {
-    59
+    gml_Script_snd_play(59)
     con = 8
     alarm[4] = 15
 }
 if (con == 9)
 {
-    56
+    gml_Script_snd_play(56)
     con = 10
     alarm[4] = 15
 }
 if (con == 11)
 {
-    66
+    gml_Script_snd_play(66)
     global.msg[0] = gml_Script_stringsetloc("* Hey^1, WATCH IT!/%", "obj_unusedclassevent_slash_Step_0_gml_52_0")
     gml_Script_instance_create(0, 0, obj_dialoguer)
     con = 12
     alarm[4] = 15
 }
-if (con == 13)
+if (con == 13 && (!gml_Script_d_ex()))
 {
+    gml_Script_snd_play(51)
+    con = 14
+    alarm[4] = 15
 }
-else
-    var _temp_local_var_21 = 0
-51
-con = 14
-alarm[4] = 15
 if (con == 15)
 {
-    177
+    gml_Script_snd_play(177)
     con = 16
     alarm[4] = 15
 }
 if (con == 17)
 {
-    61
+    gml_Script_snd_play(61)
     con = 18
     alarm[4] = 15
 }
 if (con == 19)
 {
-    "The Return"
-    64
+    gml_Script_scr_windowcaption("The Return")
+    gml_Script_snd_play(64)
     lightsoff = 0
-    s = gml_Script_scr_marker(146, 70, 980)
-    var _temp_local_var_1 = s
+    s = gml_Script_scr_marker(146, 70, 981)
+    var _temp_local_var_3 = s
     depth = 100000
 }
 if (con == 25)
@@ -90,24 +86,20 @@ if (con == 25)
     con = 26
     gml_Script_instance_create(0, 0, obj_dialoguer)
 }
-if (con == 26)
-    _temp_local_var_1 = (!s)
-else
-    var _temp_local_var_20 = 0
-if (!s)
+if (con == 26 && (!gml_Script_d_ex()))
 {
-    var _temp_local_var_2 = s
+    var _temp_local_var_5 = s
     image_speed = 0.1
     vspeed = 0.5
 }
 if (con == 28)
 {
-    var _temp_local_var_3 = s
+    var _temp_local_var_6 = s
     gml_Script_scr_halt()
 }
 if (con == 30)
 {
-    var _temp_local_var_4 = s
+    var _temp_local_var_7 = s
     sprite_index = spr_susier_plain
 }
 if (con == 31 && (!gml_Script_d_ex()))
@@ -117,12 +109,12 @@ if (con == 31 && (!gml_Script_d_ex()))
 }
 if (con == 33)
 {
-    var _temp_local_var_6 = s
+    var _temp_local_var_9 = s
     sprite_index = spr_susied_plain
 }
 if (con == 34 && (!gml_Script_d_ex()))
 {
-    var _temp_local_var_8 = s
+    var _temp_local_var_11 = s
     vspeed = 2
     image_speed = 0.2
 }
@@ -131,7 +123,7 @@ if (con == 35)
     if (s.y >= 140)
     {
         gml_Script_snd_play(62)
-        var _temp_local_var_9 = s
+        var _temp_local_var_12 = s
         visible = false
     }
 }

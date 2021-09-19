@@ -1,9 +1,9 @@
 var _temp_local_var_1, _temp_local_var_16;
-if (1078 || 1077)
+if (instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
 if (jumping == 1)
 {
-    0
+    draw_set_color(c_black)
     ht = ((basey - y) / 8)
     draw_ellipse(((basex - 62) - (ht * 2)), ((basey - 40) - (ht / 2)), ((basex + 38) + (ht * 2)), (basey + (ht / 2)), 0)
 }
@@ -20,11 +20,11 @@ if (drawflip == 0)
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, image_alpha)
     if (sword_slash == 0 && wireframe_boxing == 0)
     {
-        0
+        gml_Script_draw_set_blend_mode(0)
         gml_Script_draw_sprite_ext_glow(headsprite, image_index, x, y, image_xscale, image_yscale, 0, 16777215, image_alpha, 16777215)
-        1
+        gml_Script_draw_set_blend_mode(1)
         gml_Script_draw_sprite_ext_glow(headsprite, image_index, x, y, image_xscale, image_yscale, 0, headcolor, image_alpha, 16777215)
-        0
+        gml_Script_draw_set_blend_mode(0)
     }
     if (laserpunchfadetimer > 0)
     {
@@ -83,11 +83,11 @@ else
     draw_sprite_ext(sprite_index, image_index, x, y, (-image_xscale), image_yscale, 0, image_blend, image_alpha)
     if (sword_slash == 0 && wireframe_boxing == 0)
     {
-        0
+        gml_Script_draw_set_blend_mode(0)
         gml_Script_draw_sprite_ext_glow(headsprite, image_index, x, y, (-image_xscale), image_yscale, 0, 16777215, image_alpha, 16777215)
-        1
+        gml_Script_draw_set_blend_mode(1)
         gml_Script_draw_sprite_ext_glow(headsprite, image_index, x, y, (-image_xscale), image_yscale, 0, headcolor, image_alpha, 16777215)
-        0
+        gml_Script_draw_set_blend_mode(0)
     }
     if (color_fade_alpha > 0)
     {
@@ -167,7 +167,7 @@ if (specialcon == 2 && wireframe_boxing == 0)
     {
         special_punch_count = 16
         special_punch_turns = 3
-        if (!808)
+        if (!instance_exists(obj_rotating_sprites_controller))
         {
             gml_Script_instance_create(x, y, obj_rotating_sprites_controller)
             with (obj_rotating_sprite)
@@ -202,7 +202,7 @@ if (specialcon == 3 && wireframe_boxing == 0)
     {
         special_punch_count = 32
         special_punch_turns = 3
-        if (!808)
+        if (!instance_exists(obj_rotating_sprites_controller))
         {
             gml_Script_instance_create(x, y, obj_rotating_sprites_controller)
             with (obj_rotating_sprite)
@@ -235,7 +235,7 @@ if (specialcon == 4 && wireframe_boxing == 0)
     {
         special_punch_count = 16
         special_punch_turns = 3
-        if (!808)
+        if (!instance_exists(obj_rotating_sprites_controller))
         {
             gml_Script_instance_create(x, y, obj_rotating_sprites_controller)
             with (obj_rotating_sprite)

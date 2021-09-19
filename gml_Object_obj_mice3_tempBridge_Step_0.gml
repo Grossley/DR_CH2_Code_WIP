@@ -7,5 +7,5 @@ if (activeDecay == 2)
 {
     image_alpha *= 0.9
     if (image_alpha < 0.01)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

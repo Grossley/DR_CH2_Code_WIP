@@ -5,7 +5,7 @@ initdir = choose(45, 135, 225, 315)
 direction = initdir
 speed = 0.1
 active = true
-if 1628
+if instance_exists(obj_growtangle_ch1)
 {
     x = obj_growtangle_ch1.x
     y = obj_growtangle_ch1.y

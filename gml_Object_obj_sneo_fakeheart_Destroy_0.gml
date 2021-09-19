@@ -1,6 +1,6 @@
 if (global.turntimer <= 0)
     global.inv = -1
-if 628
+if instance_exists(obj_heart)
 {
     obj_heart.image_alpha = 1
     obj_heart.x = x

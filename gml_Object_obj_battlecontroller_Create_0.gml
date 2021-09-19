@@ -2,16 +2,16 @@ var _temp_local_var_1;
 if (global.flag[9] == 1)
 {
     var battlemusicvolume = 0.7
-    if 181
+    if gml_Script_i_ex(181)
     {
         if (obj_astream.mystream == global.batmusic[0])
         {
             if (obj_astream.songname != "mus/battle.ogg")
                 battlemusicvolume = 1
         }
-        obj_astream.songname
+        gml_Script_scr_debug_print(obj_astream.songname)
     }
-    battlemusicvolume
+    gml_Script_scr_debug_print(string(battlemusicvolume))
     global.batmusic[1] = gml_Script_mus_loop_ext(global.batmusic[0], battlemusicvolume, 1)
 }
 victory = false
@@ -65,7 +65,7 @@ global.acting = 0
 global.tension = 0
 global.spelldelay = 10
 global.turntimer = 120
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellinfo_all()
 global.tensionselect = 0
 for (j = 0; j < 3; j += 1)
 {
@@ -97,11 +97,11 @@ global.flag[52] = 0
 global.flag[53] = 0
 global.flag[63] = 0
 for (i = 0; i < 3; i += 1)
-    i
+    gml_Script_scr_monster_statreset(i)
 for (i = 0; i < 3; i += 1)
 {
     if (global.monstertype[i] > 0)
-        i
+        gml_Script_scr_monster_makeinstance(i)
 }
 global.monstergold[3] = 0
 global.monsterexp[3] = 0
@@ -135,7 +135,7 @@ for (i = 0; i < 3; i += 1)
         global.battlespellspecial[i][j] = 0
     }
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_spellmenu_setup()
 for (i = 0; i < 20; i += 1)
 {
     for (j = 0; j < 20; j += 1)

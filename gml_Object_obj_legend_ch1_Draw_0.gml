@@ -8,37 +8,37 @@ if draw_screen
         if (textimer == 6)
         {
             global.typer = 41
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_13_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_13_0")
             w = gml_Script_instance_create_ch1(40, 160, 1327)
             w.depth = -10
         }
         if (textimer == 220)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_21_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_21_0")
             w = gml_Script_instance_create_ch1(40, 160, 1327)
             w.depth = -10
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_24_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_24_0")
             w = gml_Script_instance_create_ch1(220, 160, 1327)
             w.depth = -10
         }
         if (textimer == 340)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_32_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_32_0")
             w = gml_Script_instance_create_ch1(40, 160, 1327)
             w.depth = -10
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_35_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_35_0")
             w = gml_Script_instance_create_ch1(220, 160, 1327)
             w.depth = -10
         }
         if (textimer == 460)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_43_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_43_0")
             w = gml_Script_instance_create_ch1(80, 160, 1327)
             w.depth = -10
         }
@@ -53,7 +53,7 @@ if draw_screen
         {
             contimer += 1
             if (contimer == 40)
-                global.currentsong[1]
+                audio_pause_sound(global.currentsong[1])
             if (contimer == 100)
             {
                 con = 2
@@ -70,20 +70,20 @@ if draw_screen
         if (contimer == 40)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
     if (con == 3)
     {
         pic = spr_introimage1_ch1
         audio_sound_set_track_position(global.currentsong[1], 19.656)
-        global.currentsong[1]
+        audio_resume_sound(global.currentsong[1])
         con = 4
         contimer = 0
         chunkfade = 0
         global.typer = 40
-        global.msg[0] = "obj_legend_slash_Draw_0_gml_98_0"
-        global.msg[1] = "obj_legend_slash_Draw_0_gml_99_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_98_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_99_0")
         w = gml_Script_instance_create_ch1(40, 160, 1327)
     }
     if (con == 4)
@@ -93,8 +93,8 @@ if draw_screen
         if (contimer == 270)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_113_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_113_0")
             w = gml_Script_instance_create_ch1(70, 160, 1327)
         }
         if (contimer >= 276)
@@ -126,8 +126,8 @@ if draw_screen
         if (contimer == 130)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_151_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_151_0")
             w = gml_Script_instance_create_ch1(40, 80, 1327)
         }
         if (contimer == 210)
@@ -144,8 +144,8 @@ if draw_screen
         if (contimer == 275)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_170_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_170_0")
             w = gml_Script_instance_create_ch1(80, 185, 1327)
             fadespeed = 0.05
             con = 6
@@ -175,22 +175,22 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_205_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_205_0")
             w = gml_Script_instance_create_ch1(80, 185, 1327)
         }
         if (contimer == 276)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_212_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_212_0")
             w = gml_Script_instance_create_ch1(60, 185, 1327)
         }
         if (contimer == 414)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_219_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_219_0")
             w = gml_Script_instance_create_ch1(80, 185, 1327)
         }
         if (contimer == 520)
@@ -202,8 +202,8 @@ if draw_screen
         if (contimer == 551)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_233_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_233_0")
             w = gml_Script_instance_create_ch1(40, 185, 1327)
             contimer = 0
             c_chunkamt = 0
@@ -219,8 +219,8 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_253_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_253_0")
             w = gml_Script_instance_create_ch1(80, 185, 1327)
         }
         con_alph = 0
@@ -245,7 +245,7 @@ if draw_screen
         if (contimer >= 277)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             contimer = 0
             c_chunkamt = 0
             chunkfade = 0
@@ -261,18 +261,18 @@ if draw_screen
         if (contimer == 4)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_301_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_301_0")
             w = gml_Script_instance_create_ch1(20, 185, 1327)
         }
         if (contimer == 69)
         {
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_309_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_309_0")
             w = gml_Script_instance_create_ch1(110, 185, 1327)
         }
         if (contimer == 138)
         {
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_317_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_317_0")
             w = gml_Script_instance_create_ch1(200, 185, 1327)
         }
         if (contimer >= 69 && contimer <= 138)
@@ -314,8 +314,8 @@ if draw_screen
         if (contimer >= 277)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_356_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_356_0")
             w = gml_Script_instance_create_ch1(40, 185, 1327)
             contimer = 0
             c_chunkamt = 0
@@ -343,22 +343,22 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_387_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_387_0")
             w = gml_Script_instance_create_ch1(40, 185, 1327)
         }
         if (contimer == 276)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_394_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_394_0")
             w = gml_Script_instance_create_ch1(80, 185, 1327)
         }
         if (contimer == 414)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_401_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_401_0")
             w = gml_Script_instance_create_ch1(80, 185, 1327)
             fadespeed = 0.04
             fadecolor = c_black
@@ -379,8 +379,8 @@ if draw_screen
             ytimer = 0
             xtimer = 0
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_426_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_426_0")
             w = gml_Script_instance_create_ch1(40, 160, 1327)
         }
     }
@@ -397,29 +397,29 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_451_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_451_0")
             w = gml_Script_instance_create_ch1(80, 160, 1327)
         }
         if (contimer == 276)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_459_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_459_0")
             w = gml_Script_instance_create_ch1(80, 160, 1327)
         }
         if (contimer == 444)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_466_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_466_0")
             w = gml_Script_instance_create_ch1(40, 160, 1327)
         }
         if (contimer == 640)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
-            global.msg[0] = "obj_legend_slash_Draw_0_gml_473_0"
+                instance_destroy()
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_473_0")
             w = gml_Script_instance_create_ch1(40, 160, 1327)
         }
         if (contimer >= 444)
@@ -438,7 +438,7 @@ if draw_screen
         }
         if (contimer == 880 && skipped == 0)
         {
-            global.currentsong[0]
+            gml_Script_snd_free_ch1(global.currentsong[0])
             global.flag[6] = 0
             f = gml_Script_instance_create_ch1(0, 0, 1460)
             f.fadespeed = 0.02
@@ -448,15 +448,15 @@ if draw_screen
             if (global.plot == 20)
             {
                 gml_Script_instance_create_ch1(0, 0, 1462)
-                326
+                room_goto(room_castle_front_ch1)
             }
             else
-                417
+                room_goto(PLACE_LOGO_ch1)
         }
     }
     if (border == 1)
     {
-        0
+        draw_set_color(c_black)
         draw_rectangle(-10, -10, 330, 27, false)
         draw_rectangle(-10, -10, 59, 300, false)
         draw_rectangle(400, -10, 260, 300, false)
@@ -466,7 +466,7 @@ if draw_screen
         chunkamt -= fadespeed
     if (chunkfade == 1 && chunkamt < 1)
         chunkamt += fadespeed
-    fadecolor
+    draw_set_color(fadecolor)
     alph = 0
     if (chunkamt >= 0.25)
         alph = 0.25
@@ -476,13 +476,13 @@ if draw_screen
         alph = 0.75
     if (chunkamt >= 1)
         alph = 1
-    alph
+    draw_set_alpha(alph)
     draw_rectangle(-10, -10, 330, 330, false)
 }
-1
+draw_set_alpha(1)
 if (ingame == 0)
 {
-    if (skipped == 0)
+    if (gml_Script_button1_p_ch1() && skipped == 0)
     {
         skipped = 1
         skiptimer = 0
@@ -494,9 +494,9 @@ if (ingame == 0)
         skiptimer += 1
     if (skiptimer == 19)
     {
-        global.currentsong[0]
+        gml_Script_snd_free_ch1(global.currentsong[0])
         global.flag[6] = 0
     }
     if (skiptimer == 20)
-        417
+        room_goto(PLACE_LOGO_ch1)
 }

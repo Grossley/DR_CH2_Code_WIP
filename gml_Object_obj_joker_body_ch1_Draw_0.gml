@@ -1,8 +1,8 @@
 floatsiner += floatsinerspeed
-fly = (((floatsiner / 8) * 3) * ((floatsinerspeed * 2) - 1))
+fly = ((sin((floatsiner / 8)) * 3) * ((floatsinerspeed * 2) - 1))
 flyx = 0
 if (dancelv >= 1)
-    flyx = (((floatsiner / 8) * 3) * ((floatsinerspeed * 2) - 1))
+    flyx = ((cos((floatsiner / 8)) * 3) * ((floatsinerspeed * 2) - 1))
 if (dancelv == 4)
 {
     flyx = 0
@@ -15,7 +15,7 @@ if (condition == 0)
     if (fade == 0)
         fade_a = 1
     if (fade == 1)
-        fade_a = (floatsiner / 13)
+        fade_a = abs(sin((floatsiner / 13)))
     if (dancelv == 0)
         draw_sprite_ext(spr_joker_main_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, c_white, fade_a)
     if (dancelv == 1)
@@ -32,7 +32,7 @@ if (condition == 0)
                 shadowx[i] += ((sin((i + (floatsiner / 5))) * 8) * sfactor[i])
                 shadowy[i] += ((cos((i + (floatsiner / 5))) * 4) * sfactor[i])
             }
-            dalpha[i] = (i + (dancesiner / 9))
+            dalpha[i] = sin((i + (dancesiner / 9)))
             if (dalpha[i] < 0 && i >= 1)
             {
                 shadowx[i] = (60 - random(120))
@@ -55,8 +55,8 @@ if (condition == 1)
     if (sinadd > 2)
         sinadd = 2
     siner += sinadd
-    sinx = ((siner / 4) * maxdist)
-    siny = ((-(siner / 4)) * (maxdist * 0.7))
+    sinx = (sin((siner / 4)) * maxdist)
+    siny = ((-abs(sin((siner / 4)))) * (maxdist * 0.7))
     ji = 0
     if (sinx > (maxdist / 2) && maxdist > 15)
         ji = 1
@@ -81,7 +81,7 @@ if (condition == 2)
         image_alpha -= 0.25
     if (sndcon == 0)
     {
-        363
+        gml_Script_snd_play_ch1(363)
         sndcon = 1
     }
     draw_sprite_ext(spr_joker_main_ch1, 0, offx, (offy + fly), size, 2, 0, c_white, 1)
@@ -101,7 +101,7 @@ if (condition == 3)
         image_alpha += 0.25
     if (sndcon == 0)
     {
-        363
+        gml_Script_snd_play_ch1(363)
         sndcon = 1
     }
     draw_sprite_ext(spr_joker_main_ch1, 0, offx, (offy + fly), size, 2, 0, c_white, 1)
@@ -136,7 +136,7 @@ if (condition == 5)
         s_y = 0
         s_vspeed = 0
         s_alpha = 1
-        "snd_joker_metamorphosis"
+        gml_Script_snd_play_ch1(gml_Script_scr_84_get_sound_ch1("snd_joker_metamorphosis"))
     }
     if (timer >= 1 && timer <= 3)
     {
@@ -151,7 +151,7 @@ if (condition == 5)
     if (timer >= 15 && timer <= 30)
     {
         spintimer += 1
-        s_xscale = ((spintimer / 3) * 2)
+        s_xscale = (sin((spintimer / 3)) * 2)
         s_sprite = spr_joker_scythebody_ch1
         s_yscale *= 0.7
         if (s_xscale >= 2)
@@ -162,14 +162,14 @@ if (condition == 5)
     if (timer >= 30 && timer < 41)
     {
         spintimer += 1
-        s_xscale = ((spintimer / 3) * 2)
+        s_xscale = (sin((spintimer / 3)) * 2)
         s_vspeed -= 3
         s_y += s_vspeed
         s_alpha -= 0.1
     }
     if (timer >= 41)
     {
-        if 1513
+        if instance_exists(obj_battlecontroller_ch1)
         {
             if (global.turntimer > 10)
             {
@@ -184,13 +184,13 @@ if (condition == 0 || condition == 1)
 {
     if (dancelv <= 2)
     {
-        0
+        draw_set_color(c_black)
         draw_rectangle(((((x + (sprite_width / 2)) - 20) - fly) + flyx), ((y + 80) - (fly / 2)), ((((x + (sprite_width / 2)) + 30) + fly) + flyx), ((y + 85) + (fly / 2)), false)
     }
 }
 if (debug == 1)
 {
-    if 40
+    if keyboard_check_pressed(vk_down)
     {
         condition += 1
         siner = 0
@@ -201,7 +201,7 @@ if (debug == 1)
         if (condition == 3)
             size = 0
     }
-    if 38
+    if keyboard_check_pressed(vk_up)
     {
         condition -= 1
         siner = 0
@@ -216,8 +216,8 @@ if (debug == 1)
         condition = 0
     if (condition > 4)
         condition = 0
-    if 32
+    if keyboard_check_pressed(vk_space)
         maxdist += 20
-    255
+    draw_set_color(c_red)
     draw_rectangle(((x + (sprite_width / 2)) - 1), ((y + (sprite_height / 2)) - 1), ((x + (sprite_width / 2)) + 1), ((y + (sprite_height / 2)) + 1), false)
 }

@@ -1,9 +1,9 @@
 w = sprite_width
 h = sprite_height
 chyoffset = 50
-chsprite = 2992
+chsprite = 2993
 chnum = global.chapter
-NOISE = 256
+NOISE = gml_Script_snd_play(256)
 siner = 0
 factor = 1
 factor2 = 0

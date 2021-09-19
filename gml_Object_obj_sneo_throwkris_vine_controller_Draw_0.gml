@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 for (i = 0; i < 6; i += 1)
 {
     x1[i] = ((((obj_spamton_neo_enemy.x + obj_spamton_neo_enemy.partx[i]) + (obj_spamton_neo_enemy.partxoff[i] / 1.2)) + (i * 5)) + (sin((obj_spamton_neo_enemy.partsiner[i] / 30)) * 2))
@@ -22,7 +23,8 @@ if (con == 0)
                 target.y1 = y1[i]
                 target.y2 = y2[i]
                 target.vineid = i
-                path = target
+                var _temp_local_var_2 = target
+                path = path_add()
                 path_set_kind(path, 0)
                 path_set_closed(path, 0)
                 path_add_point(path, x1, y1, 100)
@@ -48,7 +50,7 @@ if (con == 2)
             if (visiblevine[i] == 1)
                 obj_spamton_neo_enemy.partvisible[i] = 1
         }
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         if (obj_spamton_neo_enemy.vinebgcount > 0)
         {
             for (i = 0; i < 6; i += 1)

@@ -1,5 +1,5 @@
 if (t == 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 sweat = 0
 if (g <= 5)
     sweat = 1
@@ -15,5 +15,5 @@ if (t >= 1)
         draw_sprite_ext(sprite_index, image_index, (x + (4 * i)), y, image_xscale, image_yscale, 0, image_blend, ((alph - (t / 8)) + (i / 200)))
     }
     if (t >= 15)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

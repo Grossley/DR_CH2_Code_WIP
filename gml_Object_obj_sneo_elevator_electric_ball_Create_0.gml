@@ -1,5 +1,5 @@
 sprite_index = spr_sneo_electric_orb_idle
-// WARNING: Popz'd an empty stack.
+event_inherited()
 image_speed = 0.5
 alarm[0] = (180 + irandom(8))
 depth = (obj_growtangle.depth - 20)

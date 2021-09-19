@@ -5,7 +5,7 @@ image_xscale = 2
 image_yscale = 2
 con = 0
 if (global.flag[215] == 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     pwall = gml_Script_instance_create((x + 10), (y - 20), obj_soliddark)
@@ -14,4 +14,4 @@ else
 lecturecon = 0
 if (global.plot >= 42 || global.flag[211] == 3)
     lecturecon = 100
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

@@ -4,51 +4,51 @@ global.savedata_async_id = -1
 global.savedata_async_load = 0
 global.savedata_error = 0
 global.savedata_debuginfo = ""
-"DELTARUNE Chapter 1&2"
-if 1645
+window_set_caption("DELTARUNE Chapter 1&2")
+if instance_exists(obj_time_ch1)
 {
     with (obj_time_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-if 1131
+if instance_exists(obj_time)
 {
     with (obj_time)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-if 1665
+if instance_exists(obj_debugcontroller_ch1)
 {
     with (obj_debugcontroller_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-if "chapter_return"
+if variable_global_exists("chapter_return")
 {
     global.lang_loaded = ""
     var load_chapter = global.chapter_return
     global.chapter_return = -1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
     if (load_chapter == 1)
     {
-        280
+        room_goto(ROOM_INITIALIZE_ch1)
         return;
     }
     else if (load_chapter == 2)
     {
-        10
+        room_goto(ROOM_INITIALIZE)
         return;
     }
 }
-if (os_type == os_switch && (!"switchlogin"))
+if (os_type == os_switch && (!variable_global_exists("switchlogin")))
 {
     for (var _id = -1; _id < 0; _id = switch_accounts_select_account(1, 0, 0))
     {
     }
     global.switchlogin = _id
-    global.switchlogin
+    switch_accounts_open_user(global.switchlogin)
 }
 first_time = global.is_console
 init_loaded = 0
-display_height = 
-display_width = 
+display_height = display_get_height()
+display_width = display_get_width()
 window_size_multiplier = 1
 for (_ww = 2; _ww < 6; _ww += 1)
 {
@@ -62,8 +62,8 @@ if (window_size_multiplier > 1)
 }
 if global.is_console
 {
-    1
-    0
+    application_surface_enable(true)
+    application_surface_draw_enable(false)
 }
 global.debug = 1
 con = "init"
@@ -113,33 +113,33 @@ if global.is_console
 {
     if (os_type == os_switch)
     {
-        // WARNING: Popz'd an empty stack.
-        1
-        7
+        switch_controller_support_set_defaults()
+        switch_controller_support_set_singleplayer_only(1)
+        switch_controller_set_supported_styles(7)
     }
     if (os_type == os_ps4)
-        0
-    // WARNING: Popz'd an empty stack.
+        ps4_touchpad_mouse_enable(0)
+    gml_Script_ossafe_savedata_load()
 }
 else
 {
-    var _locale = 
+    var _locale = os_get_language()
     var _lang = (gml_Script_substr(_locale, 1, 2) != "ja" ? "en" : "ja")
     global.lang = _lang
-    if "true_config.ini"
+    if gml_Script_ossafe_file_exists("true_config.ini")
     {
-        "true_config.ini"
+        gml_Script_ossafe_ini_open("true_config.ini")
         global.lang = ini_read_string("LANG", "LANG", _lang)
         var is_fullscreen = ini_read_real("SCREEN", "FULLSCREEN", 0)
-        is_fullscreen
-        // WARNING: Popz'd an empty stack.
+        window_set_fullscreen(is_fullscreen)
+        gml_Script_ossafe_ini_close()
     }
     text_font = (global.lang == "en" ? 3 : 10)
     yes = (global.lang == "en" ? "Yes" : "はい")
     no = (global.lang == "en" ? "No" : "いいえ")
     chapname[1] = (global.lang == "en" ? "The Beginning" : "はじまり")
     chapname[2] = (global.lang == "en" ? "A Cyber's World" : "サイバーワールド")
-    // WARNING: Popz'd an empty stack.
-    1
+    gml_Script_scr_controls_default()
+    audio_group_load(1)
     init_loaded = 1
 }

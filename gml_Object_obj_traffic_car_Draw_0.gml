@@ -33,14 +33,14 @@ else
 {
     if (walklerp >= 0)
         walklerp *= 0.85
-    if (walklerp < 0.02)
+    if (abs(walklerp) < 0.02)
         walklerp = 0
-    if (walkx < 0.02)
+    if (abs(walkx) < 0.02)
         walkx = 0
-    if (walky < 0.02)
+    if (abs(walky) < 0.02)
         walky = 0
 }
-walkx = (((animsiner / 4) * walklerp) * 2)
+walkx = ((sin((animsiner / 4)) * walklerp) * 2)
 walky = lerp(0, walklerp, -26)
 if (alwayswalking == 1)
     walky = -26

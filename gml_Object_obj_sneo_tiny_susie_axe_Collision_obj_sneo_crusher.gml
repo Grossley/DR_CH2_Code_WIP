@@ -1,3 +1,3 @@
-// WARNING: Popz'd an empty stack.
+instance_destroy()
 other.hp -= 0.5
-166
+gml_Script_snd_play(166)

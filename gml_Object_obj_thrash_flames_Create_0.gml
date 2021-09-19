@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 lifetime = 60
 image_xscale = 0
 image_yscale = 0

@@ -7,7 +7,7 @@ if (update == 1)
 }
 if (update == 2)
 {
-    if 2
+    if (gml_Script_scr_sideb_get_phase() == 2)
     {
         mysong = altsong
         songspeed = 1.2
@@ -17,7 +17,7 @@ if (update == 2)
         mysong = defaultsong
         songspeed = 0.97
     }
-    global.currentsong[0] = mysong
+    global.currentsong[0] = gml_Script_snd_init(mysong)
     global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.8, songspeed)
     update = 0
     timer = 0

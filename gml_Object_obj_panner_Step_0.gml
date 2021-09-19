@@ -10,4 +10,4 @@ if (type == 1)
     gml_Script___view_set(1, 0, lerp(starty, finaly, (pantimer / panmax)))
 }
 if (pantimer >= panmax)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

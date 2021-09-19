@@ -1,5 +1,5 @@
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
+event_inherited()
 warnoffset = 0
 destroyonhit = 0
 timepoints = 0

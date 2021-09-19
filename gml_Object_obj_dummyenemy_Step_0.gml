@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_17, _temp_local_var_22, _temp_local_var_24, _temp_local_var_25, _temp_local_var_28, _temp_local_var_30, _temp_local_var_32, _temp_local_var_34, _temp_local_var_36, _temp_local_var_37, _temp_local_var_40, _temp_local_var_42, _temp_local_var_44, _temp_local_var_47, _temp_local_var_49;
 if (ambushed == false)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_ambush()
     ambushed = true
 }
 if (plot != 3)
@@ -34,7 +34,7 @@ else
             }
             global.mnfight = 1
             global.myfight = -1
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
         global.charaction[1] = 0
         global.faceaction[1] = 0
@@ -46,23 +46,23 @@ if (global.monster[myself] == true)
     commanded = 0
     if (global.mnfight == 1 && talked == 0)
     {
-        global.writerimg[0] = 2238
-        global.writerimg[1] = 2237
-        global.writerimg[2] = 2245
-        global.writerimg[3] = 2235
-        global.writerimg[4] = 2239
-        global.writerimg[5] = 2243
+        global.writerimg[0] = 2239
+        global.writerimg[1] = 2238
+        global.writerimg[2] = 2246
+        global.writerimg[3] = 2236
+        global.writerimg[4] = 2240
+        global.writerimg[5] = 2244
         if (attackcon == 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_moveheart()
             abletotarget = true
             if (global.charcantarget[0] == false && global.charcantarget[1] == false && global.charcantarget[2] == false)
                 abletotarget = false
-            mytarget = 0
+            mytarget = choose(0)
             if (abletotarget == true)
             {
                 while (global.charcantarget[mytarget] == false)
-                    mytarget = 0
+                    mytarget = choose(0)
             }
             else
                 target = 3
@@ -133,7 +133,7 @@ if (global.monster[myself] == true)
                 }
                 if (plot == 2)
                 {
-                    global.writerimg[2] = 2245
+                    global.writerimg[2] = 2246
                     global.msg[0] = gml_Script_stringsetloc("\\E8* Great job^1, Kris^1!&* Now that you've gathered TP -/", "obj_dummyenemy_slash_Step_0_gml_142_0")
                     global.msg[1] = gml_Script_stringsetloc("\\E0* How about spending that TP on one of my \\cYSPELLs\\cW?/", "obj_dummyenemy_slash_Step_0_gml_143_0")
                     global.msg[2] = gml_Script_stringsetloc("* Because you hit the enemy enough^1, it got \\cBTIRED\\cW./", "obj_dummyenemy_slash_Step_0_gml_144_0")
@@ -408,11 +408,11 @@ if (global.monster[myself] == true)
                 global.mnfight = 999
             }
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext()
         if (global.msg[0] == "* Skip/%")
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         acting = 0
         spare_used = 0
@@ -425,9 +425,9 @@ if (global.monster[myself] == true)
     {
         turns += 1
         global.turntimer = -1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_mnendturn()
         attacked = true
-        rr = 0
+        rr = floor(random(0))
         global.typer = 6
         global.fc = 0
         if (rr == 0)
@@ -438,19 +438,19 @@ if (global.monster[myself] == true)
         if (won == 0)
         {
             rtimer = 0
-            -1
+            gml_Script_scr_blconskip(-1)
             if (global.mnfight == 2 && attackcon == 1)
             {
-                if ((!377) && (!628))
-                    // WARNING: Popz'd an empty stack.
-                if (!869)
+                if ((!instance_exists(obj_moveheart)) && (!instance_exists(obj_heart)))
+                    gml_Script_scr_moveheart()
+                if (!instance_exists(obj_growtangle))
                     gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
             }
         }
-        else if (!62)
+        else if (!instance_exists(obj_writer))
         {
-            // WARNING: Popz'd an empty stack.
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_monsterdefeat()
+            gml_Script_scr_mnendturn()
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -460,7 +460,7 @@ if (global.monster[myself] == true)
         rtimer += 1
         if (rtimer >= 8)
         {
-            rr = 0
+            rr = choose(0)
             if (rr == 0)
             {
                 dc = gml_Script_instance_create(x, y, obj_dbulletcontroller)
@@ -476,18 +476,19 @@ if (global.monster[myself] == true)
             {
                 global.turntimer = -100
                 var _temp_local_var_17 = dc
+                instance_destroy()
             }
             attackcon = 2
             attacked = true
             global.typer = 6
             global.fc = 0
             global.battlemsg[0] = gml_Script_stringsetloc("* What?", "obj_dummyenemy_slash_Step_0_gml_548_0")
-            global.writerimg[0] = 2238
-            global.writerimg[1] = 2237
-            global.writerimg[2] = 2245
-            global.writerimg[3] = 2235
-            global.writerimg[4] = 2239
-            global.writerimg[5] = 2243
+            global.writerimg[0] = 2239
+            global.writerimg[1] = 2238
+            global.writerimg[2] = 2246
+            global.writerimg[3] = 2236
+            global.writerimg[4] = 2240
+            global.writerimg[5] = 2244
             global.fc = 0
             if (plot == 1)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Let's try FIGHTing!&  (\\I0    )", "obj_dummyenemy_slash_Step_0_gml_556_0")
@@ -529,7 +530,7 @@ if (con == 3)
     global.typer = 45
     global.fc = 2
     global.fe = 0
-    global.writerimg[0] = 2238
+    global.writerimg[0] = 2239
     global.msg[0] = gml_Script_stringsetloc("* Great job^1, Kris^1!&* You're a natural!/", "obj_dummyenemy_slash_Step_0_gml_598_0")
     if (kris_inithp > global.hp[1])
     {
@@ -541,10 +542,10 @@ if (con == 3)
     global.msg[3] = gml_Script_stringsetloc("\\E1* Though \\cYFIGHTing\\cW is unnecessary in this world.../", "obj_dummyenemy_slash_Step_0_gml_606_0")
     global.msg[4] = gml_Script_stringsetloc("\\E8* There's no harm in a thorough lesson!/%", "obj_dummyenemy_slash_Step_0_gml_607_0")
     global.battlemsg[0] = gml_Script_stringsetloc("* Let's try FIGHTing!&  (\\I0   )", "obj_dummyenemy_slash_Step_0_gml_610_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_battletext()
     con = 6
 }
-if (con == 6 && (!62))
+if (con == 6 && (!instance_exists(obj_writer)))
 {
     with (obj_battlecontroller)
     {
@@ -573,7 +574,7 @@ if (global.myfight == 3)
             global.msg[4] = gml_Script_stringsetloc("\\E6* Kris^1, since it's me^1, please be kind to it^1, OK?/%", "obj_dummyenemy_slash_Step_0_gml_649_0")
         }
         checked += 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -585,16 +586,16 @@ if (global.myfight == 3)
             acttimer = 0
         }
         global.msg[0] = gml_Script_stringsetloc("* You hug the DUMMY./%", "obj_dummyenemy_slash_Step_0_gml_666_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (actcon == 1 && (!62))
+    if (actcon == 1 && (!instance_exists(obj_writer)))
     {
         global.acting[0] = 0
         global.acting[1] = 0
         global.acting[2] = 0
         actcon = 0
         acting = -1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase()
     }
     if (actcon == 10)
     {
@@ -706,7 +707,7 @@ if (global.myfight == 3)
         maker = 1
         with (obj_heroralsei)
             visible = false
-        rb = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1012)
+        rb = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1013)
         var _temp_local_var_36 = k
         image_speed = 0.25
     }

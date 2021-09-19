@@ -11,9 +11,9 @@ if (type == 0)
     if (timer >= 25)
     {
         wallsize = 4
-        breakspot = wallsize
+        breakspot = floor(random(wallsize))
         wallamt = 1
-        if (6 == 0)
+        if (floor(random(6)) == 0)
             wallamt = 4
         for (j = 0; j < wallamt; j++)
         {
@@ -46,7 +46,7 @@ if (type == 1)
         wallsize = 6
         wallamt = 1
         vspeed = choose(1.2, 0, 0, -2, -1.2, 2)
-        if (6 == 0)
+        if (floor(random(6)) == 0)
         {
             wallamt = 2
             if (vspeed == 0)
@@ -86,7 +86,7 @@ if (type == 2)
         wallsize = 5
         wallamt = 1
         vspeed = choose(1.2, 0, 0, -2, -1.2, 2)
-        if (6 == 0)
+        if (floor(random(6)) == 0)
         {
             wallamt = 2
             if (vspeed == 0)
@@ -152,7 +152,7 @@ if (type == 3)
             if (breakspotpreviouscon == 1)
             {
                 vspeed = 2
-                breakspotconsecutive = 2
+                breakspotconsecutive = irandom(2)
                 breakspot1 = breakspotconsecutive
                 breakspot2 = (breakspotconsecutive + 1)
                 breakspot3 = (breakspotconsecutive + 3)
@@ -163,7 +163,7 @@ if (type == 3)
         {
             breakspotconsecutive = (1 + irandom(4))
             vspeed = 0
-            var a = 1
+            var a = irandom(1)
             breakspot1 = (1 + a)
             breakspot2 = (2 + a)
             breakspot3 = (3 + a)
@@ -180,7 +180,7 @@ if (type == 3)
         breakspotpreviouscon++
         wallsize = 7
         wallamt = 1
-        if (5 == 0)
+        if (irandom(5) == 0)
         {
             wallamt = 2
             if (vspeed == 1)
@@ -226,7 +226,7 @@ if (type == 4)
         wallsize = 5
         wallamt = 1
         vspeed = choose(1.2, 0, -2, -1.2, 2)
-        if (5 == 0)
+        if (irandom(5) == 0)
         {
             wallamt = 2
             if (vspeed == 1)

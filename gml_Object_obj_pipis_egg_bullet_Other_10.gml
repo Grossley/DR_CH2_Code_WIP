@@ -49,9 +49,11 @@ if (obj_spamton_neo_enemy.difficulty == 4)
     {
         radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
         var _temp_local_var_1 = radialshot
+        gml_Script_scr_bullet_init()
     }
     radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
     var _temp_local_var_2 = radialshot
+    gml_Script_scr_bullet_init()
 }
 repeat (3)
 {
@@ -61,4 +63,4 @@ repeat (3)
     fx.image_yscale = 2
     fx.direction = (45 + random(90))
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

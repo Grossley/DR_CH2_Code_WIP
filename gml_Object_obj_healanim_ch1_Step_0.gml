@@ -1,6 +1,6 @@
 var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_8;
 t += 1
-if target
+if instance_exists(target)
 {
     if (t == 1)
     {
@@ -24,6 +24,7 @@ if target
             sh = target.myheight
         }
         var _temp_local_var_1 = target
+        gml_Script_scr_oflash_ch1()
     }
     if (t >= 1 && t <= 5)
     {
@@ -52,17 +53,19 @@ if target
             image_angle -= 10
             image_alpha -= 0.1
             if (image_alpha <= 0)
-            {
-            }
+                instance_destroy()
         }
         if (t >= 30)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 else
 {
     i = 0
     while (i < starcount)
+    {
         var _temp_local_var_8 = star[i]
-    // WARNING: Popz'd an empty stack.
+        instance_destroy()
+    }
+    instance_destroy()
 }

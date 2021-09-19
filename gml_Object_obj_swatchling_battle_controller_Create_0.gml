@@ -11,4 +11,4 @@ shockwave_x_2 = -999
 bird_count = 0
 bird_color[0] = 255
 platter_side = choose(1, -1)
-platter_offset = 29
+platter_offset = irandom(29)

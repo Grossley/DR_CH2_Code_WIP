@@ -1,6 +1,6 @@
 if (normalanim == 1)
 {
-    if (myinteract > 0 && 1327)
+    if (myinteract > 0 && instance_exists(obj_writer_ch1))
     {
         if (obj_writer_ch1.halt > 0)
         {

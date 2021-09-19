@@ -1,9 +1,9 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 global.currentroom = room
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_initialize_charnames()
 autorun = 0
 bg = 0
-if 183
+if instance_exists(obj_backgrounderparent)
     bg = 1
 stepping = 0
 stepped = false
@@ -180,7 +180,7 @@ if (global.interact == 3)
 
         if (noentrancefound == 1)
         {
-            if 139
+            if gml_Script_i_ex(139)
             {
                 with (obj_markerAny)
                 {
@@ -194,8 +194,8 @@ if (global.interact == 3)
             else
             {
                 ((room_height / 2).room_width / 2)
-                "entrance not found, setting to center of room"
-                ("entrance requested was global.entrance=" + string(global.entrance))
+                gml_Script_debug_message("entrance not found, setting to center of room")
+                gml_Script_debug_message(("entrance requested was global.entrance=" + string(global.entrance)))
             }
         }
     }

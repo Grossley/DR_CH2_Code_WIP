@@ -1,6 +1,6 @@
 f = 2
 vspeed = 7
-image_angle = 359
+image_angle = irandom(359)
 x = (o_boxingqueen.x - 5)
 state = 0
 depth = (o_boxingqueen.depth - 2)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 global.interact = 1
 if (con == 0)
 {
@@ -30,7 +29,7 @@ if (con == 0)
         gml_Script_scr_smallface(8, "noelle", 6, 300, 44, small[5])
         gml_Script_scr_smallface(9, "noelle_cropped", 8, "right", "bottom", small[6])
     }
-    "berdly"
+    gml_Script_scr_speaker("berdly")
     gml_Script_msgsetloc(0, "\\E5* Ahh^1, Kris. Stuck on this puzzle^1, I see?/", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_21_0")
     gml_Script_msgnextloc("\\E7* I thought I heard Noelle calling for help^1, but.../", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_22_0")
     gml_Script_msgnextloc("\\EE* I get what that sound was now. Kris./", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_23_0")
@@ -55,31 +54,25 @@ if (con == 0)
     gml_Script_msgnextloc("\\E9* But still^1, I have to support her^1, Kris./", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_42_0")
     gml_Script_msgnextloc("\\E5* She's my friend.\\f8 ^1/", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_43_0")
     gml_Script_msgnextloc("\\EE* Also^1, my only worthy opponent at racing games.\\f9 ^1/%", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_44_0")
-    d = 
+    d = gml_Script_d_make()
     d.side = 0
 }
-if (con == 1)
+if (con == 1 && (!gml_Script_d_ex()))
 {
+    con = 2
+    alarm[0] = 60
 }
-else
-    var _temp_local_var_2 = 0
-con = 2
-alarm[0] = 60
 if (con == 3)
 {
     con = 99
-    "noelle"
+    gml_Script_scr_speaker("noelle")
     gml_Script_msgsetloc(0, "\\E8* (Is that really what you're gonna end it on!?)/%", "obj_event_mouse3_berdlymonologue_slash_Step_0_gml_61_0")
-    d = 
+    d = gml_Script_d_make()
     d.side = 0
 }
-if (con == 99)
-{
-}
-else
-    var _temp_local_var_1 = 0
-// WARNING: Popz'd an empty stack.
-if 62
+if (con == 99 && (!gml_Script_d_ex()))
+    instance_destroy()
+if instance_exists(obj_writer)
 {
     if (obj_writer.halt != 0)
     {

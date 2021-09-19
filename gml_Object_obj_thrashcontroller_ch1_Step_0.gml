@@ -1,4 +1,4 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_13, _temp_local_var_24;
+var _temp_local_var_1, _temp_local_var_14;
 if (con == 0)
 {
     if (logocon == 2)
@@ -32,61 +32,74 @@ if (con == 2)
     }
     if (menu == 0)
     {
-        if thrash
+        if gml_Script_left_p_ch1()
             menucoord1x = 0
-        if (menucoord1y < 3)
-            menucoord1x = 1
-        menucoord1y -= 1
-        if (menucoord1y < 0)
-            menucoord1y = 0
-        menucoord1y += 1
-        if (menucoord1y >= 3 && menucoord1x == 1)
-            menucoord1y = 2
-        if (menucoord1y >= 3)
-            menucoord1y = 3
-        if (buffer1 < 0)
-        {
-        }
-        else
-            var _temp_local_var_24 = 0
-        buffer1 = 3
-        buffer2 = 3
-        if (menucoord1x == 0)
+        if gml_Script_right_p_ch1()
         {
             if (menucoord1y < 3)
-                menu = (4 + menucoord1y)
-            if (menucoord1y == 3)
-            {
-                if (global.flag[220] >= 0 && global.flag[221] >= 0 && global.flag[222] >= 0)
-                    menu = 7
-            }
+                menucoord1x = 1
         }
-        if (menucoord1x == 1)
+        if gml_Script_up_p_ch1()
         {
-            if (global.flag[(220 + menucoord1y)] >= 0)
-                menu = (menucoord1y + 1)
+            menucoord1y -= 1
+            if (menucoord1y < 0)
+                menucoord1y = 0
+        }
+        if gml_Script_down_p_ch1()
+        {
+            menucoord1y += 1
+            if (menucoord1y >= 3 && menucoord1x == 1)
+                menucoord1y = 2
+            if (menucoord1y >= 3)
+                menucoord1y = 3
+        }
+        if (buffer1 < 0 && gml_Script_button1_p_ch1())
+        {
+            buffer1 = 3
+            buffer2 = 3
+            if (menucoord1x == 0)
+            {
+                if (menucoord1y < 3)
+                    menu = (4 + menucoord1y)
+                if (menucoord1y == 3)
+                {
+                    if (global.flag[220] >= 0 && global.flag[221] >= 0 && global.flag[222] >= 0)
+                        menu = 7
+                }
+            }
+            if (menucoord1x == 1)
+            {
+                if (global.flag[(220 + menucoord1y)] >= 0)
+                    menu = (menucoord1y + 1)
+            }
         }
     }
     if (menu >= 1 && menu <= 3)
     {
         press = 0
-        press = 1
-        if (colorbuffer == 0)
-            global.flag[(222 + menu)] += 1
-        colorbuffer += 1
-        if (colorbuffer >= 3)
+        if gml_Script_right_h_ch1()
         {
-            global.flag[(222 + menu)] += 1
-            colorbuffer = 1
+            press = 1
+            if (colorbuffer == 0)
+                global.flag[(222 + menu)] += 1
+            colorbuffer += 1
+            if (colorbuffer >= 3)
+            {
+                global.flag[(222 + menu)] += 1
+                colorbuffer = 1
+            }
         }
-        press = 1
-        if (colorbuffer == 0)
-            global.flag[(222 + menu)] -= 1
-        colorbuffer += 1
-        if (colorbuffer >= 3)
+        if gml_Script_left_h_ch1()
         {
-            global.flag[(222 + menu)] -= 1
-            colorbuffer = 1
+            press = 1
+            if (colorbuffer == 0)
+                global.flag[(222 + menu)] -= 1
+            colorbuffer += 1
+            if (colorbuffer >= 3)
+            {
+                global.flag[(222 + menu)] -= 1
+                colorbuffer = 1
+            }
         }
         if (press == 0)
             colorbuffer = 0
@@ -95,9 +108,9 @@ if (con == 2)
         if (global.flag[(222 + menu)] < 0)
             global.flag[(222 + menu)] = 31
         press = 0
-        if (buffer1 < 0)
+        if (gml_Script_button1_p_ch1() && buffer1 < 0)
             press = 1
-        if (buffer2 < 0)
+        if (gml_Script_button2_p_ch1() && buffer2 < 0)
             press = 1
         if (press == 1)
         {
@@ -110,14 +123,20 @@ if (con == 2)
     {
         tm = (menu - 4)
         global.flag[(216 + menu)] = menucoord2[tm]
-        if (menucoord2[tm] > 0)
-            menucoord2[tm] -= 1
-        if (menucoord2[tm] < 3)
-            menucoord2[tm] += 1
+        if gml_Script_up_p_ch1()
+        {
+            if (menucoord2[tm] > 0)
+                menucoord2[tm] -= 1
+        }
+        if gml_Script_down_p_ch1()
+        {
+            if (menucoord2[tm] < 3)
+                menucoord2[tm] += 1
+        }
         press = 0
-        if (buffer1 < 0)
+        if (gml_Script_button1_p_ch1() && buffer1 < 0)
             press = 1
-        if (buffer2 < 0)
+        if (gml_Script_button2_p_ch1() && buffer2 < 0)
             press = 1
         if (press == 1)
         {
@@ -128,7 +147,7 @@ if (con == 2)
     }
     if (menu == 7)
     {
-        if 1
+        if (gml_Script_right_p_ch1() || gml_Script_left_p_ch1())
         {
             if (endcoord == 0)
                 endcoord = 1
@@ -136,13 +155,13 @@ if (con == 2)
                 endcoord = 0
         }
         quit = 0
-        if (buffer1 < 0)
+        if (gml_Script_button1_p_ch1() && buffer1 < 0)
         {
             buffer1 = 3
             buffer2 = 3
             if (endcoord == 0)
             {
-                if 1365
+                if instance_exists(obj_thrashmaker_event_ch1)
                 {
                     for (i = 0; i < 6; i += 1)
                         obj_thrashmaker_event_ch1.stat[i] = stat[i]
@@ -156,7 +175,7 @@ if (con == 2)
             else
                 quit = 1
         }
-        if (buffer2 < 0)
+        if (gml_Script_button2_p_ch1() && buffer2 < 0)
         {
             buffer2 = 3
             buffer1 = 3
@@ -168,7 +187,7 @@ if (con == 2)
 }
 if (con == 5)
 {
-    var _temp_local_var_13 = thrash
+    var _temp_local_var_14 = thrash
     a -= 0.03
 }
 buffer1 -= 1

@@ -10,15 +10,15 @@ talktimer = 0
 talkinterval = 1
 talkstart = 0
 if (global.chapter != 2 || global.plot >= 100)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
-    if (8 == 0)
-        8
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2528)
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
+    if (gml_Script_scr_keyitemcheck(8) == 0)
+        gml_Script_scr_keyitemget(8)
+    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
@@ -33,6 +33,7 @@ else
     talktube.sprite_index = spr_dw_mansion_room_kris_talk_tube
     talktube.image_speed = 0
     talktube.visible = false
-    queen_monitor_frame = gml_Script_scr_dark_marker(142, 24, 2876)
+    queen_monitor_frame = gml_Script_scr_dark_marker(142, 24, 2877)
     var _temp_local_var_2 = queen_monitor_frame
+    gml_Script_scr_depth()
 }

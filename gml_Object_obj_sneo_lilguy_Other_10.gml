@@ -19,8 +19,8 @@ if (destroyable == 1)
         }
         gml_Script_snd_volume(141, 0.7, 0)
         gml_Script_snd_play_x(141, 0.7, (1.1 + random(0.2)))
-        var _cut = hitshot
+        var _cut = gml_Script_scr_afterimage_cut()
         _cut.flash = true
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

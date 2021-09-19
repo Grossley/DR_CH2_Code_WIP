@@ -1,4 +1,4 @@
-255
+draw_set_color(c_red)
 draw_text(20, 20, bullet_frame[bulletcount])
 draw_text(20, 40, bullet_pos[bulletcount])
 draw_text(20, 60, bullet_height[bulletcount])

@@ -1,11 +1,37 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1563
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+timer++
+minitimer++
+minitimerthreshold = 2
+timerthreshold = 12
+for (i = obj_sneo_friedpipis; i < l; i++)
+{
+    if (mode < 2)
+    {
+        yscale[i] = lerp(yscale[i], 0, 0.06)
+        if (yscale[i] > 0)
+            yscale[i] -= 0.02
+    }
+    if (mode == 2 && minitimer >= minitimerthreshold)
+    {
+        i.barsiner[barsiner[i]]++
+        self
+        yscale[i] = (((0.6 * h) + ((sin((barsiner[i] / 2)) * 0.3) * h)) + ((sin((barsiner[i] / 3)) * 0.1) * h))
+    }
+    if (mode == 0)
+    {
+        if (yscale[i] < (0.8 * h))
+        {
+            if (floor(random(12)) == 0)
+                yscale[i] = (1 * h)
+        }
+    }
+    if (mode == 1)
+    {
+        if (timer >= timerthreshold)
+            yscale[i] = min((yscale[i] + random((0.5 * h))), (1 * h))
+    }
+    draw_sprite_ext(sprite_index, image_index, (x + (i * 40)), y, 1, yscale[i], 0, color[i], image_alpha)
+}
+if (timer >= timerthreshold)
+    timer = 0
+if (minitimer >= minitimerthreshold)
+    minitimer = 0

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 jumpcon = 0
 jumptimer = 0
 s_timer = 0

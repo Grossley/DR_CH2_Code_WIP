@@ -1,13 +1,13 @@
 if (black_override == 1)
 {
-    0
+    draw_set_color(c_black)
     draw_rectangle(x, y, (x + sprite_width), (y + sprite_height), false)
 }
 else
 {
     if (basic == 1 && ignorealpha == 0)
     {
-        cl = (80 / f)
+        cl = (distance_to_object(obj_mainchara) / f)
         if (cl > 40)
             cl = 40
         if (cl < 10)

@@ -18,13 +18,13 @@ if (type == 1)
     if (radius <= 0)
         radius = 0
 }
-surf
-0
-3
-16777215
+surface_set_target(surf)
+draw_clear(c_black)
+gml_Script_draw_set_blend_mode(3)
+draw_set_color(c_white)
 draw_circle(x, y, radius, 0)
-// WARNING: Popz'd an empty stack.
-0
+surface_reset_target()
+gml_Script_draw_set_blend_mode(0)
 if (finish == 1)
 {
     type = 1

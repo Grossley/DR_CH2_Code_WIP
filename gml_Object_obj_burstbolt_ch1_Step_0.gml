@@ -4,4 +4,4 @@ image_yscale += mag
 x += (((1 - sprite_width) * mag) / 2.7)
 y += (((1 - sprite_height) * mag) / 2.5)
 if (image_alpha < 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

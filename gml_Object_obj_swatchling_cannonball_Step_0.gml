@@ -1,6 +1,6 @@
-if ((!heart_found) && 628)
+if ((!heart_found) && instance_exists(obj_heart))
 {
-    if 628
+    if instance_exists(obj_heart)
     {
         nexttarget = obj_heart.x
         heart_found = 1
@@ -11,7 +11,7 @@ if (phase == 0)
     active = false
     if (trackplayer == 0)
     {
-        if 628
+        if instance_exists(obj_heart)
         {
             nexttarget = obj_heart.x
             heart_found = 1
@@ -64,7 +64,7 @@ else if (phase == 2)
     {
         bouncespecial = 0
         y = bouncepoint
-        randomdirection = 45
+        randomdirection = random(45)
         if (obj_swatchling_battle_controller.yellow_count > 0)
         {
             with (obj_swatchling_platter)
@@ -86,11 +86,11 @@ else if (phase == 2)
                 randomdirection += 90
             }
         }
-        var airtime = (((2 * (y - jumppeak)) / gravity) + sqrt(((2 * (ystart - jumppeak)) / gravity)))
+        var airtime = (sqrt(((2 * (y - jumppeak)) / gravity)) + sqrt(((2 * (ystart - jumppeak)) / gravity)))
         if ((airtime + 20) > global.turntimer)
         {
             phase++
-            vspeed = (-((gravity * 2) * (y - jumppeak)))
+            vspeed = (-sqrt(((gravity * 2) * (y - jumppeak))))
             hspeed = ((xstart - x) / airtime)
             currentrotation = (image_angle % 360)
             nexttarget = x
@@ -106,7 +106,7 @@ else if (phase == 2)
                 nexttarget = ((obj_growtangle.x - (obj_growtangle.sprite_width / 2)) + random(obj_growtangle.sprite_width))
             var arctime = (((-vspeed) / gravity) * 2)
             hspeed = ((nexttarget - x) / arctime)
-            currentrotation = (((4 * 90) / arctime) * (-sign(hspeed)))
+            currentrotation = (((random(4) * 90) / arctime) * (-sign(hspeed)))
         }
     }
     if (bouncespecial == 1 && hspeed < -1)
@@ -120,7 +120,7 @@ else if (phase == 3)
     if (vspeed > 0 && animindex == 0)
     {
         sprite_index = spr_swatchling_blue_cannonball_prepare
-        var _smokeangle = 90
+        var _smokeangle = irandom(90)
         for (i = 0; i < 4; i++)
         {
             var _smoke = gml_Script_instance_create(x, y, obj_animation_dx)
@@ -149,4 +149,4 @@ else if (phase == 3)
     }
 }
 else if (phase == 4)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

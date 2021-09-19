@@ -1,25 +1,25 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 talkmax = 90
 image_speed = 0.16666666666666666
 hurtsprite = spr_tm_hurt
 timer = 0
-sprite[0] = 1690
-sprite[1] = 1682
-sprite[2] = 1680
-sprite[3] = 1684
-sprite[4] = 1688
-sprite[5] = 1692
-sparesprite[0] = 1691
-sparesprite[1] = 1683
-sparesprite[2] = 1681
-sparesprite[3] = 1687
-sparesprite[4] = 1689
-sparesprite[5] = 1693
+sprite[0] = spr_tm_head
+sprite[1] = spr_tm_body
+sprite[2] = spr_tm_tail
+sprite[3] = spr_tm_hand_l
+sprite[4] = spr_tm_hand_r
+sprite[5] = spr_tm_legs
+sparesprite[0] = 1692
+sparesprite[1] = 1684
+sparesprite[2] = 1682
+sparesprite[3] = 1688
+sparesprite[4] = 1690
+sparesprite[5] = 1694
 sparedsprite = spr_npc_tasquemanager
 for (i = 0; i < 6; i += 1)
 {
-    xOffset[i] = ((sprite[i] * 2) - 22)
-    yOffset[i] = ((sprite[i] * 2) - 6)
+    xOffset[i] = ((sprite_get_xoffset(sprite[i]) * 2) - 22)
+    yOffset[i] = ((sprite_get_yoffset(sprite[i]) * 2) - 6)
 }
 timesOrdered = 0
 timesCharged = 0

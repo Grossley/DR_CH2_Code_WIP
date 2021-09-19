@@ -8,7 +8,7 @@ if (init == 0)
             bosscheck = 1
         boss = true
         depth += 1
-        total = object_index
+        total = instance_number(object_index)
         for (i = 0; i < total; i++)
         {
             which[i] = instance_find(object_index, i)
@@ -19,4 +19,4 @@ if (init == 0)
     }
     init = 1
 }
-image_alpha = (((siner / 12) * 0.2) + 0.8)
+image_alpha = ((sin((siner / 12)) * 0.2) + 0.8)

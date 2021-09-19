@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 image_speed = 0
 caralert = 0
 shotready = 0

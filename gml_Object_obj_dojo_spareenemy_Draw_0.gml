@@ -9,7 +9,7 @@ if (global.flag[20] == 3)
 hurtsprite = (shaved ? spr_npc_puzzlepiece_shock2_shaved : spr_npc_puzzlepiece_shock2)
 if (state == 3)
 {
-    0.5
+    gml_Script_scr_enemyhurt_tired_after_damage(0.5)
     hurttimer -= 1
     if (hurttimer < 0)
         state = 0
@@ -23,7 +23,7 @@ if (state == 3)
             defeatanim.image_index = 0
             defeatanim.image_xscale = image_xscale
             defeatanim.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
         hurtshake += 1
         if (hurtshake > 1)
@@ -39,7 +39,7 @@ if (state == 3)
     }
 }
 if (custom_draw_example == 0)
-    image_speed
+    gml_Script_scr_enemy_drawidle_generic(image_speed)
 else if (state == 0)
 {
     if (flash == true)
@@ -49,8 +49,8 @@ else if (state == 0)
         gml_Script_draw_monster_body_part(sparedsprite, siner, x, y)
     else
     {
-        gml_Script_draw_monster_body_part(1558, 1, (x + (sin(siner) * 2)), y)
-        gml_Script_draw_monster_body_part(1558, 0, (x - (sin(siner) * 2)), (y + cos(siner)))
+        gml_Script_draw_monster_body_part(1559, 1, (x + (sin(siner) * 2)), y)
+        gml_Script_draw_monster_body_part(1559, 0, (x - (sin(siner) * 2)), (y + cos(siner)))
     }
 }
 if (becomeflash == false)

@@ -20,7 +20,7 @@ if (state == 3)
         if (global.monster[myself] == false)
         {
             global.flag[522] += 1
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_defeatrun()
         }
         hurtshake += 1
         if (hurtshake > 1)
@@ -46,7 +46,7 @@ if (state == 0)
     {
         fsiner += 1
         gml_Script_d3d_set_fog(true, c_white, 0, 1)
-        draw_sprite_ext(thissprite, (siner / 6), x, y, 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, (siner / 6), x, y, 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         gml_Script_d3d_set_fog(false, c_black, 0, 0)
     }
 }
@@ -60,24 +60,24 @@ if (actcon == 15)
 }
 else if (clockalpha >= 0)
     clockalpha -= 0.05
-if (room == room_dw_castle_dojo && 283)
+if (room == room_dw_castle_dojo && instance_exists(obj_dojofx))
 {
-    255
-    1
-    "mainbig"
-    var timestring = (topic_timer / 30)
-    if ((topic_timer / 30) < 10)
+    draw_set_color(c_red)
+    draw_set_halign(fa_center)
+    gml_Script_scr_84_set_draw_font("mainbig")
+    var timestring = string(round((topic_timer / 30)))
+    if (round((topic_timer / 30)) < 10)
         timestring = ("0" + timestring)
     if (topic_con != 0)
     {
         var timetextstring = gml_Script_stringsetloc("TIME: ", "obj_clubsenemy_slash_Draw_0_gml_98_0")
         var totaltimetextstring = (timetextstring + timestring)
-        0
-        (((((((((((0 + 298) + (string_height(totaltimetextstring) / 2)) + 40) + 320) + (string_width(totaltimetextstring) / 2)) + 10) + 298) - (string_height(totaltimetextstring) / 2)) + 320) - (string_width(totaltimetextstring) / 2)) - 10)
-        255
-        ((totaltimetextstring + 290) + 320)
-        0
-        16777215
+        draw_set_color(c_black)
+        draw_rectangle((((gml_Script_camerax() + 320) - (string_width(totaltimetextstring) / 2)) - 10), ((gml_Script_cameray() + 298) - (string_height(totaltimetextstring) / 2)), (((gml_Script_camerax() + 320) + (string_width(totaltimetextstring) / 2)) + 10), (((gml_Script_cameray() + 298) + (string_height(totaltimetextstring) / 2)) + 40), false)
+        draw_set_color(c_red)
+        draw_text((gml_Script_camerax() + 320), (gml_Script_cameray() + 290), totaltimetextstring)
+        draw_set_halign(fa_left)
+        draw_set_color(c_white)
     }
     cx = obj_dojofx.ball.x
     cy = (obj_dojofx.ball.y + 65)

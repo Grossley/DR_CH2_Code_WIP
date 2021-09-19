@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 platterLid = gml_Script_instance_create(x, y, obj_regularbullet)
 platterLid.sprite_index = spr_swatchling_platter_lid
 platterPlate = gml_Script_instance_create(x, y, obj_regularbullet)

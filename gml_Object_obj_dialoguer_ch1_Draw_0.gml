@@ -1,6 +1,6 @@
 if (active == true)
 {
-    // WARNING: Popz'd an empty stack.
-    if (!writer)
-        // WARNING: Popz'd an empty stack.
+    gml_Script_scr_dbox_ch1()
+    if (!instance_exists(writer))
+        instance_destroy()
 }

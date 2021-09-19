@@ -1,9 +1,9 @@
-if (parenttarget != self && (!parenttarget))
+if (parenttarget != self && (!gml_Script_i_ex(parenttarget)))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
-if (parenttarget != self && parenttarget)
+if (parenttarget != self && gml_Script_i_ex(parenttarget))
 {
     xstart = parenttarget.x
     ystart = parenttarget.y
@@ -34,7 +34,7 @@ if (track_target != noone)
 timer++
 if (timer > lifetime)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 var _progress = (timer / lifetime)
@@ -44,24 +44,24 @@ if thin
     image_blend = c_white
     image_yscale = 0.25
     image_angle = direction
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     x = (lerp(xx, xstart, gml_Script_scr_ease_in(_progress, 2)) + xoff)
     y = (lerp(yy, ystart, gml_Script_scr_ease_in(_progress, 2)) + yoff)
 }
 else
 {
-    var _drawalpha = 
-    image_blend
+    var _drawalpha = draw_get_alpha()
+    draw_set_color(image_blend)
     draw_circle(x, y, (radius - 2), 0)
-    image_alpha
+    draw_set_alpha(image_alpha)
     x = (lerp(xx, xstart, gml_Script_scr_ease_in(_progress, 2)) + xoff)
     y = (lerp(yy, ystart, gml_Script_scr_ease_in(_progress, 2)) + yoff)
     draw_circle(x, y, radius, 0)
     if ((radius - 3) > 0)
     {
-        16777215
+        draw_set_color(c_white)
         draw_circle(x, y, (radius - 2), 0)
     }
-    _drawalpha
+    draw_set_alpha(_drawalpha)
     radius = lerp(max_radius, 1, _progress)
 }

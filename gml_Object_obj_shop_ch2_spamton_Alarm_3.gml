@@ -1,5 +1,5 @@
 if (global.flag[7] == 0)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
 global.facing = 0
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-117
+room_goto(room_dw_city_spamton_shop_exterior)

@@ -1,6 +1,6 @@
 if (image_index == 0)
 {
-    if 1186
+    if gml_Script_i_ex(1186)
     {
         if (obj_controller_city_mice3.weird == 1)
         {

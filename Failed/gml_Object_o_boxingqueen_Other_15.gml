@@ -1,9 +1,11 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+flash = gml_Script_instance_create(x, y, o_afterimage)
+flash.sprite_index = sprite_index
+flash.image_index = image_index
+flash.image_xscale = image_xscale
+flash.image_yscale = image_yscale
+if (drawflip == 1)
+    flash.image_xscale *= -1
+flash.image_blend = image_blend
+flash.image_speed = 0
+flash.depth = (depth - 1)
+flash.boss = id

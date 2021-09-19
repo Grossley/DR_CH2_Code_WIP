@@ -1,4 +1,4 @@
-if (2 == 0)
+if (irandom(2) == 0)
 {
     targetx = obj_heart.x
     targety = obj_heart.y
@@ -9,15 +9,15 @@ else
     targety = (obj_growtangle.y + random_range(-50, 50))
 }
 targetAngle = point_direction(x, (y - 24), targetx, targety)
-if 559
+if instance_exists(obj_queen_buffercontroller)
 {
-    targetAngle = ((targetAngle / 45) * 45)
+    targetAngle = (round((targetAngle / 45)) * 45)
     if ((targetAngle % 90) == 0)
         targetAngle += choose(-45, 45)
 }
 else
 {
-    targetAngle = ((targetAngle / 15) * 15)
+    targetAngle = (round((targetAngle / 15)) * 15)
     if ((targetAngle % 90) == 0)
         targetAngle += choose(-15, 15)
 }

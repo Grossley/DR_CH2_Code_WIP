@@ -1,8 +1,8 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 element = 6
-if 694
-    damage = ((global.monsterat[obj_spamton_neo_enemy.myself] * 5) / 3)
-if 695
+if instance_exists(obj_spamton_neo_enemy)
+    damage = floor(((global.monsterat[obj_spamton_neo_enemy.myself] * 5) / 3))
+if instance_exists(obj_sneo_bulletcontroller)
     target = obj_sneo_bulletcontroller.target
 grazepoints = 4
 steptimer = 0
@@ -41,7 +41,7 @@ headoffset_y = 0
 dmgcon = 0
 back = gml_Script_instance_create(x, y, obj_sneo_final_forme_mouth_back)
 back.depth = (depth + 1)
-if 628
+if gml_Script_i_ex(628)
     back.depth = (obj_heart.depth + 1)
 hidemouthback = 0
-playback_sprite = "spr_sneo_playback"
+playback_sprite = gml_Script_scr_84_get_sprite("spr_sneo_playback")

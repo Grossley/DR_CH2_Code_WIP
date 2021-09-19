@@ -1,8 +1,8 @@
-if (y + 110)
+if (y < (gml_Script_cameray() + 110))
     return;
-if (y + 233)
+if (y > (gml_Script_cameray() + 233))
     return;
 if (image_alpha < 0.5)
     return;
-hitshot = 
-0
+hitshot = other
+event_user(0)

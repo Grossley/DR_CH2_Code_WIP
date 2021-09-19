@@ -4,28 +4,31 @@ if (con > 0 && con < 40)
     if (con == 1)
         global.interact = 1
     if (con == 2)
+    {
         var _temp_local_var_2 = k
+        gml_Script_scr_halt_ch1()
+    }
     if (con == 4)
     {
         global.typer = 10
         global.fc = 1
         global.fe = 0
-        global.msg[0] = "obj_darkdoor_slash_Step_0_gml_21_0"
-        global.msg[1] = "obj_darkdoor_slash_Step_0_gml_22_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_21_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_22_0")
         gml_Script_instance_create_ch1(0, 0, 1326)
         con = 4.5
     }
-    if (con == 4.5 && 1326 == 0)
+    if (con == 4.5 && instance_exists(obj_dialoguer_ch1) == 0)
     {
-        376
+        gml_Script_snd_play_ch1(376)
         image_index = 1
         con = 5.5
         alarm[4] = 60
     }
     if (con == 6.5)
     {
-        global.currentsong[0] = "creepydoor.ogg"
-        global.currentsong[0]
+        global.currentsong[0] = gml_Script_snd_init_ch1("creepydoor.ogg")
+        gml_Script_mus_loop_ch1(global.currentsong[0])
         open = 1
         con = 6
         alarm[4] = 60
@@ -116,7 +119,7 @@ if (con >= 40)
         global.currentsong[0] = gml_Script_snd_init_ch1("mus_birdnoise.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.6, 0.7)
         global.interact = 1
-        s = gml_Script_scr_marker_ch1(479, 92, 3530)
+        s = gml_Script_scr_marker_ch1(479, 92, 3531)
         var _temp_local_var_24 = s
         gml_Script_scr_depth_ch1()
     }
@@ -133,7 +136,7 @@ if (con >= 40)
     }
     if (con == 43 && (!gml_Script_d_ex_ch1()))
     {
-        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4203)
+        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4204)
         var _temp_local_var_26 = k
         gml_Script_scr_depth_ch1()
     }

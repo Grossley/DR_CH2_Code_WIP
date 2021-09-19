@@ -1,7 +1,7 @@
 if flash
 {
     gml_Script_d3d_set_fog(true, c_white, 0, 1)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     gml_Script_d3d_set_fog(false, c_black, 0, 0)
     flash = false
     return;
@@ -16,4 +16,4 @@ draw_sprite_part_ext(sprite_index, image_index, hw, 0, hw, hh, ((x + m) - ((xo *
 draw_sprite_part_ext(sprite_index, image_index, 0, hh, hw, hh, ((x - m) - ((xo * image_xscale) / 2)), ((y + m) - ((yo * image_yscale) / 2)), image_xscale, image_yscale, image_blend, image_alpha)
 draw_sprite_part_ext(sprite_index, image_index, hw, hh, hw, hh, ((x + m) - ((xo * image_xscale) / 2)), ((y + m) - ((yo * image_yscale) / 2)), image_xscale, image_yscale, image_blend, image_alpha)
 if (image_alpha < 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -27,7 +27,7 @@ if (type == 0)
     if (con == 2)
     {
         if (x <= -20)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (type == 1)
@@ -38,6 +38,6 @@ if (type == 1)
         active = false
         image_alpha -= 0.1
         if (image_alpha <= 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

@@ -10,6 +10,6 @@ if animdone
     {
         if (source != noone)
             source.image_alpha = 1
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

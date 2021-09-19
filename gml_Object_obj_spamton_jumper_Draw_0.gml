@@ -16,4 +16,4 @@ if (timer > 0)
 else
     gml_Script_scr_drawpart_crop(minx, 0, maxx, 800)
 if ((x + 20) < minx)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -1,11 +1,11 @@
 var _temp_local_var_1, _temp_local_var_5, _temp_local_var_6, _temp_local_var_14;
 if (global.chapter == 2 && global.flag[424] > 0)
 {
-    if 1033
+    if instance_exists(obj_ch2_room_beach)
     {
         with (obj_ch2_room_beach)
             canrest = 1
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (onioncount > 0)
@@ -26,11 +26,11 @@ if (global.flag[258] == 0)
     }
     if (global.chapter == 2)
     {
-        if 1033
+        if instance_exists(obj_ch2_room_beach)
         {
             with (obj_ch2_room_beach)
                 canrest = 1
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
 }
@@ -122,10 +122,10 @@ else if (global.flag[258] == 1 || global.flag[258] == 2)
 }
 else if (global.flag[258] == 3)
 {
-    if 1033
+    if instance_exists(obj_ch2_room_beach)
     {
         with (obj_ch2_room_beach)
             canrest = 1
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

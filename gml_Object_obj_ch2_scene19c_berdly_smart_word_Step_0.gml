@@ -13,5 +13,5 @@ if text_fade
     if (text_alpha > 0)
         text_alpha -= 0.05
     else
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

@@ -1,7 +1,7 @@
 var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4;
 if (global.interact == 0)
 {
-    if 244
+    if instance_exists(obj_starwalker_overworld)
     {
         bellcon = true
         myinteract = 0
@@ -9,12 +9,12 @@ if (global.interact == 0)
         with (obj_overworldbulletparent)
         {
             active = false
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
-        39
+        gml_Script_snd_play(39)
         if (obj_starwalker_overworld.beatcon == 0)
         {
-            if (room == room_forest_starwalker && (!101))
+            if (room == room_forest_starwalker && (!instance_exists(obj_npc_room)))
             {
                 originalstarwalker = gml_Script_instance_create(2200, 200, obj_npc_room)
                 if (x.room_width / 2)

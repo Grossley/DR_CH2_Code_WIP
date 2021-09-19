@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 var barrier = gml_Script_instance_create(x, (y + 120), obj_mansion_car_barrier)
 barrier.image_xscale = 2
 barrier.image_yscale = 2

@@ -1,7 +1,7 @@
 image_alpha -= 0.1
 grav += 0.3
 y += grav
-if (y + 10)
-    // WARNING: Popz'd an empty stack.
+if (y > ((gml_Script_cameray() + gml_Script_cameraheight()) + 10))
+    instance_destroy()
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

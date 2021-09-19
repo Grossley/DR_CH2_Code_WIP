@@ -1,4 +1,4 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9, _temp_local_var_16, _temp_local_var_24, _temp_local_var_26, _temp_local_var_28, _temp_local_var_29, _temp_local_var_30, _temp_local_var_32, _temp_local_var_34, _temp_local_var_42, _temp_local_var_43;
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_8, _temp_local_var_11, _temp_local_var_18, _temp_local_var_26, _temp_local_var_28, _temp_local_var_30, _temp_local_var_31, _temp_local_var_32, _temp_local_var_34, _temp_local_var_36;
 if (con == 1)
 {
     if (obj_mainchara_ch1.x >= 140 && global.interact == 0)
@@ -9,15 +9,11 @@ if (con == 1)
         fun = true
     }
 }
-if (con == 2)
-    _temp_local_var_2 = (!r)
-else
-    var _temp_local_var_43 = 0
-if (!r)
+if (con == 2 && (!gml_Script_d_ex_ch1()))
 {
     exc = gml_Script_instance_create_ch1((s.x + 30), (s.y - 20), 1486)
     con = 3
-    var _temp_local_var_3 = s
+    var _temp_local_var_4 = s
     sprite_index = spr_susiel_dark_ch1
 }
 if (con == 4)
@@ -37,24 +33,20 @@ if (con == 4)
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 5
 }
-if (con == 5)
-    _temp_local_var_3 = (!s)
-else
-    var _temp_local_var_42 = 0
-if (!s)
+if (con == 5 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_4 = r
+    var _temp_local_var_6 = r
     sprite_index = spr_ralseiu_ch1
 }
 if (con == 7)
 {
-    var _temp_local_var_6 = r
+    var _temp_local_var_8 = r
     sprite_index = spr_ralseir_ch1
 }
 if (con == 8 && (!gml_Script_d_ex_ch1()))
 {
     global.facing = 0
-    var _temp_local_var_9 = r
+    var _temp_local_var_11 = r
     fun = false
 }
 if (con == 9 && obj_mainchara_ch1.x < 40 && global.interact == 0)
@@ -86,20 +78,20 @@ if (con == 15 && global.interact == 0)
     if (obj_suitspuzz_ch1.won == 1)
     {
         global.facing = 1
-        var _temp_local_var_16 = global.cinstance[0]
+        var _temp_local_var_18 = global.cinstance[0]
         fun = true
         sprite_index = rsprite
     }
 }
 if (con == 12)
 {
-    var _temp_local_var_24 = s
+    var _temp_local_var_26 = s
     sprite_index = spr_susiel_dark_ch1
 }
 if (con == 13 && (!gml_Script_d_ex_ch1()))
 {
     global.fe = 2
-    var _temp_local_var_26 = s
+    var _temp_local_var_28 = s
     sprite_index = spr_susier_dark_ch1
     image_speed = 0.5
     hspeed = 14
@@ -111,7 +103,7 @@ if (con == 14 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 16)
 {
-    var _temp_local_var_28 = s
+    var _temp_local_var_30 = s
     x = (gml_Script___view_get(0, 0) + gml_Script___view_get(2, 0))
     sprite_index = spr_susiel_dark_ch1
     hspeed = -12
@@ -120,24 +112,24 @@ if (con == 17)
 {
     if (s.x <= 380)
     {
-        var _temp_local_var_29 = s
+        var _temp_local_var_31 = s
         gml_Script_scr_halt_ch1()
     }
 }
 if (con == 19)
 {
-    var _temp_local_var_30 = s
+    var _temp_local_var_32 = s
     sprite_index = spr_susieu_dark_ch1
 }
 if (con == 20 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_32 = s
+    var _temp_local_var_34 = s
     sprite_index = spr_susier_dark_ch1
     image_speed = 0.5
     hspeed = 12
 }
 if (con == 22)
 {
-    var _temp_local_var_34 = global.cinstance[0]
+    var _temp_local_var_36 = global.cinstance[0]
     fun = false
 }

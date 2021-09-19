@@ -68,10 +68,10 @@ if (state == 2)
         else
         {
             var attackstring = choose(gml_Script_stringsetloc("$$DEALS$", "obj_spamton_attack_mode_slash_Step_0_gml_69_0"), gml_Script_stringsetloc("$VALUES$", "obj_spamton_attack_mode_slash_Step_0_gml_69_1"), gml_Script_stringsetloc("$$REAL$$", "obj_spamton_attack_mode_slash_Step_0_gml_69_2"), gml_Script_stringsetloc("$\"CHEAP\"", "obj_spamton_attack_mode_slash_Step_0_gml_69_3"), gml_Script_stringsetloc("$PRICES$", "obj_spamton_attack_mode_slash_Step_0_gml_69_4"), gml_Script_stringsetloc("BARGAIN$", "obj_spamton_attack_mode_slash_Step_0_gml_69_5"), gml_Script_stringsetloc("$$49.998", "obj_spamton_attack_mode_slash_Step_0_gml_69_6"))
-            if (attackstring == gml_Script_stringsetloc("$VALUES$", "obj_spamton_attack_mode_slash_Step_0_gml_70_0") && 19 == 0)
+            if (attackstring == gml_Script_stringsetloc("$VALUES$", "obj_spamton_attack_mode_slash_Step_0_gml_70_0") && irandom(19) == 0)
                 attackstring = gml_Script_stringsetloc("$VAULES$", "obj_spamton_attack_mode_slash_Step_0_gml_70_1")
             var xoff = mouthx
-            var falsetimer = ((timer / 10) * 50)
+            var falsetimer = (sin((timer / 10)) * 50)
             for (i = 0; i < string_length(attackstring); i++)
             {
                 d = gml_Script_instance_create((x + xoff), (((y + mouthy) - 10) + (sin(((timer + 20) / 10)) * 50)), obj_spamton_wordbullet)
@@ -80,7 +80,7 @@ if (state == 2)
                 d.timer = ((-xoff) / 2)
                 d.offset = (((y + mouthy) - 10) - d.ystart)
                 d.mouthx = (x + mouthx)
-                d.creator = 
+                d.creator = self
                 d.bulletletter = string_char_at(attackstring, (i + 1))
                 d.target = target
                 d.damage = damage
@@ -97,7 +97,7 @@ if (state == 2)
         if (inhalesfx == 0)
         {
             inhalesfx = 1
-            136
+            gml_Script_snd_loop(136)
             gml_Script_snd_pitch(136, 3)
             gml_Script_snd_pitch_time(136, 5, 30)
             gml_Script_snd_volume(136, 0.5, 0)
@@ -108,7 +108,7 @@ if (state == 2)
             for (i = 0; i < 3; i++)
             {
                 d = gml_Script_instance_create((x + mouthx), (y + mouthy), obj_rouxls_power_up_orb)
-                d.direction = ((40 + (i * 40)) + 120)
+                d.direction = ((irandom(40) + (i * 40)) + 120)
                 d.distance_multiplier = 0.75
                 d.lifetime = 12
                 d.max_radius = 3
@@ -128,7 +128,7 @@ if (state == 3)
     if inhalesfx
     {
         inhalesfx = 0
-        136
+        gml_Script_snd_stop(136)
     }
     timer--
     if (timer == 0)

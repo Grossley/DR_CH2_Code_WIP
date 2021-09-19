@@ -25,12 +25,12 @@ if (lasertimer > 0 || laserdistance >= 100)
     if (lasertimer <= 0 && laserdistance <= laserspeed)
     {
         if (finalpoint == 1)
-            targety = 560
+            targety = (gml_Script_cameray() + 560)
         nextpoint++
         if (attackdirection == 1)
         {
             if (nextpoint == finalpoint)
-                targety = 560
+                targety = (gml_Script_cameray() + 560)
             else if (nextpoint == 2)
                 targety = (obj_growtangle.y - 100)
         }
@@ -45,9 +45,9 @@ if (lasertimer <= 0)
             y = (obj_heart.y + 8)
             targety = y
             if (attackdirection == 2)
-                targetx = 80
+                targetx = (gml_Script_camerax() - 80)
             else
-                targetx = 700
+                targetx = (gml_Script_camerax() + 700)
             lasertimer = 15
         }
         else

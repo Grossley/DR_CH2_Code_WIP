@@ -1,5 +1,5 @@
 if (!global.is_console)
-    return argument0;
+    return file_text_read_string(argument0);
 else
 {
     var handle = argument0

@@ -14,13 +14,13 @@ endcoastertimer = 0
 mykey[0] = 90
 mykey[1] = 88
 mykey[2] = 67
-BerdlyCoaster = ((494 + 203) + 470)
-if 949
+BerdlyCoaster = gml_Script_instance_create((gml_Script_camerax() + 470), (gml_Script_cameray() + 203), o_coaster_berdly)
+if instance_exists(obj_ch2_scene11a)
     o_coaster_berdly.x = (obj_ch2_scene11a.coaster_berdly.x + 16)
 i = 0
 while (i < 3)
 {
-    HeroCoaster[i] = ((((o_coaster_hero + 149) + (60 * i)) + 100) - (i * 20))
+    HeroCoaster[i] = gml_Script_instance_create(((gml_Script_camerax() + 100) - (i * 20)), ((gml_Script_cameray() + 149) + (60 * i)), o_coaster_hero)
     HeroCoaster[i].HeroID = i
     HeroCoaster[i].image_index = i
     HeroCoaster[i].depth = (HeroCoaster[i].y * -100)

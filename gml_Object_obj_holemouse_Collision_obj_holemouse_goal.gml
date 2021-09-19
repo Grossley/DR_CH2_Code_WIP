@@ -2,7 +2,7 @@ if (con != 5 || bouncethisframe)
 {
     if (gulped == 0)
     {
-        179
+        gml_Script_snd_play(179)
         gulped = 1
     }
     other.win = 1
@@ -10,14 +10,14 @@ if (con != 5 || bouncethisframe)
     con = 2
     if (room == room_dw_city_mice)
     {
-        if 1159
+        if instance_exists(obj_controller_dw_city_mice)
             obj_controller_dw_city_mice.victory = true
         if (global.plot < 72)
             global.plot = 72
     }
     if (room == room_dw_city_mice2)
     {
-        if 1161
+        if instance_exists(obj_controller_city_mice2)
             obj_controller_city_mice2.victory = true
         if (global.plot < 77)
             global.plot = 77

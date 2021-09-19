@@ -1,5 +1,5 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_18, _temp_local_var_20, _temp_local_var_22, _temp_local_var_24, _temp_local_var_26;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 wallcheck = 0
 nowx = x
 nowy = y
@@ -16,7 +16,7 @@ bkxy = 0
 jelly = 2
 if (global.interact == 0)
 {
-    if (threebuffer < 0)
+    if (gml_Script_button3_p() && threebuffer < 0)
     {
         if (global.flag[7] == 0 && battlemode == 0)
         {
@@ -35,12 +35,12 @@ if (global.interact == 0)
     }
     if (global.flag[11] == 1)
     {
-        if (twobuffer < 0)
+        if (gml_Script_button2_h_ch1() && twobuffer < 0)
             run = 0
         else
             run = 1
     }
-    else if (twobuffer < 0)
+    else if (gml_Script_button2_h_ch1() && twobuffer < 0)
         run = 1
     else
         run = 0
@@ -78,10 +78,14 @@ if (global.interact == 0)
     }
     if (run == 0)
         wspeed = bwspeed
-    press_l = 1
-    press_r = 1
-    press_u = 1
-    press_d = 1
+    if gml_Script_left_h_ch1()
+        press_l = 1
+    if gml_Script_right_h_ch1()
+        press_r = 1
+    if gml_Script_up_h_ch1()
+        press_u = 1
+    if gml_Script_down_h_ch1()
+        press_d = 1
     px = 0
     py = 0
     pressdir = -1
@@ -293,7 +297,7 @@ if (global.interact == 0)
             }
             else
             {
-                if (j >= 1)
+                if (abs(j) >= 1)
                 {
                     if (j > 0)
                         j -= 1
@@ -302,7 +306,7 @@ if (global.interact == 0)
                 }
                 else
                     j = 0
-                if (i >= 1)
+                if (abs(i) >= 1)
                 {
                     if (i > 0)
                         i -= 1
@@ -323,7 +327,7 @@ if (global.interact == 0)
     runmove = false
     if (run == 1 && xmeet == 0 && ymeet == 0 && xymeet == 0)
     {
-        if (px > 0 || py > 0)
+        if (abs(px) > 0 || abs(py) > 0)
         {
             runmove = true
             runtimer += 1
@@ -389,7 +393,7 @@ if (stepping == 1)
     {
         if (global.flag[31] == 0)
         {
-            457
+            gml_Script_snd_play_ch1(457)
             stepped = true
         }
     }
@@ -399,92 +403,95 @@ if (stepping == 1)
     {
         stepped = true
         if (global.flag[31] == 0)
-            458
+            gml_Script_snd_play_ch1(458)
     }
 }
 if (onebuffer < 0)
 {
     if (global.interact == 0)
     {
-        thisinteract = 0
-        d = (global.darkzone + 1)
-        if (global.facing == 1)
+        if gml_Script_button1_p_ch1()
         {
-            if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
-                thisinteract = 1
-            if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
-                thisinteract = 2
-        }
-        if (thisinteract > 0)
-        {
-            if (thisinteract == 1)
-                interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
-            if (thisinteract == 2)
-                interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
-            if (interactedobject != -4)
+            thisinteract = 0
+            d = (global.darkzone + 1)
+            if (global.facing == 1)
             {
-                var _temp_local_var_18 = interactedobject
-                facing = 3
+                if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
+                    thisinteract = 1
+                if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
+                    thisinteract = 2
             }
-        }
-        thisinteract = 0
-        if (global.facing == 3)
-        {
-            if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
-                thisinteract = 1
-            if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
-                thisinteract = 2
-        }
-        if (thisinteract > 0)
-        {
-            if (thisinteract == 1)
-                interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
-            if (thisinteract == 2)
-                interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
-            if (interactedobject != -4)
+            if (thisinteract > 0)
             {
-                var _temp_local_var_20 = interactedobject
-                facing = 1
+                if (thisinteract == 1)
+                    interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
+                if (thisinteract == 2)
+                    interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
+                if (interactedobject != -4)
+                {
+                    var _temp_local_var_18 = interactedobject
+                    facing = 3
+                }
             }
-        }
-        thisinteract = 0
-        if (global.facing == 0)
-        {
-            if collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactable_ch1, 0, 1)
-                thisinteract = 1
-            if collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactablesolid_ch1, 0, 1)
-                thisinteract = 2
-        }
-        if (thisinteract > 0)
-        {
-            if (thisinteract == 1)
-                interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactable_ch1, 0, 1)
-            if (thisinteract == 2)
-                interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactablesolid_ch1, 0, 1)
-            if (interactedobject != -4)
+            thisinteract = 0
+            if (global.facing == 3)
             {
-                var _temp_local_var_22 = interactedobject
-                facing = 2
+                if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
+                    thisinteract = 1
+                if collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
+                    thisinteract = 2
             }
-        }
-        thisinteract = 0
-        if (global.facing == 2)
-        {
-            if collision_rectangle((x + 3), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactable_ch1, 0, 1)
-                thisinteract = 1
-            if collision_rectangle((x + 3), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactablesolid_ch1, 0, 1)
-                thisinteract = 2
-        }
-        if (thisinteract > 0)
-        {
-            if (thisinteract == 1)
-                interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactable_ch1, 0, 1)
-            if (thisinteract == 2)
-                interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactablesolid_ch1, 0, 1)
-            if (interactedobject != -4)
+            if (thisinteract > 0)
             {
-                var _temp_local_var_24 = interactedobject
-                facing = 0
+                if (thisinteract == 1)
+                    interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
+                if (thisinteract == 2)
+                    interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
+                if (interactedobject != -4)
+                {
+                    var _temp_local_var_20 = interactedobject
+                    facing = 1
+                }
+            }
+            thisinteract = 0
+            if (global.facing == 0)
+            {
+                if collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactable_ch1, 0, 1)
+                    thisinteract = 1
+                if collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactablesolid_ch1, 0, 1)
+                    thisinteract = 2
+            }
+            if (thisinteract > 0)
+            {
+                if (thisinteract == 1)
+                    interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactable_ch1, 0, 1)
+                if (thisinteract == 2)
+                    interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactablesolid_ch1, 0, 1)
+                if (interactedobject != -4)
+                {
+                    var _temp_local_var_22 = interactedobject
+                    facing = 2
+                }
+            }
+            thisinteract = 0
+            if (global.facing == 2)
+            {
+                if collision_rectangle((x + 3), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactable_ch1, 0, 1)
+                    thisinteract = 1
+                if collision_rectangle((x + 3), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactablesolid_ch1, 0, 1)
+                    thisinteract = 2
+            }
+            if (thisinteract > 0)
+            {
+                if (thisinteract == 1)
+                    interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactable_ch1, 0, 1)
+                if (thisinteract == 2)
+                    interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactablesolid_ch1, 0, 1)
+                if (interactedobject != -4)
+                {
+                    var _temp_local_var_24 = interactedobject
+                    facing = 0
+                }
             }
         }
     }

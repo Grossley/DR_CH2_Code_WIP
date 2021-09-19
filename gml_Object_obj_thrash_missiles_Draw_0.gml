@@ -7,4 +7,4 @@ if (vspeed <= 0)
         hspeed += 0.5
 }
 else
-    // WARNING: Popz'd an empty stack.
+    draw_self()

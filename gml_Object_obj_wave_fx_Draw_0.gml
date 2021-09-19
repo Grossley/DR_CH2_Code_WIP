@@ -1,5 +1,5 @@
 if drawself
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 wave_siner += 1
 if (mode == 0)
 {

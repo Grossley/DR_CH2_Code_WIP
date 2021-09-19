@@ -1,4 +1,4 @@
-if goggles_surface
-    goggles_surface
-if static_surface
-    static_surface
+if surface_exists(goggles_surface)
+    surface_free(goggles_surface)
+if surface_exists(static_surface)
+    surface_free(static_surface)

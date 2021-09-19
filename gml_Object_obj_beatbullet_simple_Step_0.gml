@@ -2,7 +2,7 @@ if (dir == 0)
     horizontal = 0
 else
     horizontal = 1
-if 1244
+if instance_exists(obj_MovingPlat_dw_cyber_music_final)
 {
     xx = obj_MovingPlat_dw_cyber_music_final.x
     yy = obj_MovingPlat_dw_cyber_music_final.y
@@ -50,10 +50,10 @@ if (con == 0)
     }
 }
 if (dir == "down" && y > 399)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (dir == "left" && x <= xx)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (dir == "right" && x >= (xx + 278))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (con == 0 && place_meeting(x, y, obj_beatbullet_simple))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

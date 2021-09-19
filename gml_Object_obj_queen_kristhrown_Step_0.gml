@@ -22,7 +22,7 @@ if (con == 10)
         if (collided == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* Missed!/%", "obj_queen_kristhrown_slash_Step_0_gml_24_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         with (obj_herokris)
             visible = true
@@ -32,23 +32,23 @@ if (con == 10)
                 visible = true
             visible = false
             with (obj_queen_throwkris)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             with (obj_queen_throwtarget)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             con = 11
         }
         else
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
-if (con == 11 && (!62))
+if (con == 11 && (!instance_exists(obj_writer)))
 {
     obj_queen_enemy.actcon = 35
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (con == 2)
 {
-    if (x < (xx - 40) ? 1 : (y + 380))
+    if (x < (xx - 40) || y > (gml_Script_cameray() + 380))
     {
         timer = 0
         gravity = 0
@@ -62,7 +62,7 @@ if (con == 2)
         con = 10
     }
 }
-if (574 && x > (obj_queenshield_enemy.x - 60) && bonk == 0)
+if (instance_exists(obj_queenshield_enemy) && x > (obj_queenshield_enemy.x - 60) && bonk == 0)
 {
     block_star = gml_Script_instance_create((x + 60), (y + 14), obj_boxing_block_star)
     block_star.direction = (0 + random(90))
@@ -78,13 +78,13 @@ if (574 && x > (obj_queenshield_enemy.x - 60) && bonk == 0)
     with (obj_queenshield_enemy)
         con = 1
     with (obj_queenshield_enemy)
-        0
+        event_user(0)
     bonk = 1
     con = 2
-    39
+    gml_Script_snd_play(39)
     speed *= -0.2
     x += 15
     obj_queenshield_enemy.shaketimer = 4
 }
-if (y + 240)
+if (y > (gml_Script_cameray() + 240))
     depth = (obj_herokris.depth + 1000)

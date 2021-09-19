@@ -1,7 +1,7 @@
 destroyoffscreen = 1
 tolerance = 32
-if 80
-    1
+if instance_exists(obj_mainchara)
+    move_towards_point(gml_Script_charaHeartX(), gml_Script_charaHeartY(), 1)
 image_angle = direction
 idealFriction = -0.3
 friction = idealFriction

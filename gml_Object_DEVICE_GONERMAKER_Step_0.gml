@@ -3,9 +3,11 @@ x = (initx + (sin((siner / 24)) * 2))
 y = (inity + (cos((siner / 30)) * 2))
 if (FINISH == false && ONEBUFFER < 0 && CANCEL == false)
 {
-    PART[s] -= 1
-    PART[s] += 1
-    if (LOCK[s] == true)
+    if gml_Script_left_p()
+        PART[s] -= 1
+    if gml_Script_right_p()
+        PART[s] += 1
+    if (gml_Script_button1_p() && LOCK[s] == true)
     {
         FINISH = true
         global.flag[(900 + s)] = PART[s]
@@ -21,24 +23,24 @@ for (i = 0; i < 3; i += 1)
     IDEALX[i] = (PART[i] * -50)
     if (PARTX[i] < IDEALX[i])
     {
-        if ((IDEALX[i] - PARTX[i]) >= 0)
+        if (abs((IDEALX[i] - PARTX[i])) >= 0)
             PARTX[i] += 10
-        if ((IDEALX[i] - PARTX[i]) > 50)
+        if (abs((IDEALX[i] - PARTX[i])) > 50)
             PARTX[i] += 10
-        if ((IDEALX[i] - PARTX[i]) > 100)
+        if (abs((IDEALX[i] - PARTX[i])) > 100)
             PARTX[i] += 10
-        if ((IDEALX[i] - PARTX[i]) > 150)
+        if (abs((IDEALX[i] - PARTX[i])) > 150)
             PARTX[i] += 10
     }
     if (PARTX[i] > IDEALX[i])
     {
-        if ((IDEALX[i] - PARTX[i]) >= 0)
+        if (abs((IDEALX[i] - PARTX[i])) >= 0)
             PARTX[i] -= 10
-        if ((IDEALX[i] - PARTX[i]) > 50)
+        if (abs((IDEALX[i] - PARTX[i])) > 50)
             PARTX[i] -= 10
-        if ((IDEALX[i] - PARTX[i]) > 100)
+        if (abs((IDEALX[i] - PARTX[i])) > 100)
             PARTX[i] -= 10
-        if ((IDEALX[i] - PARTX[i]) > 150)
+        if (abs((IDEALX[i] - PARTX[i])) > 150)
             PARTX[i] -= 10
     }
     if (PARTX[i] == IDEALX[i])
@@ -52,4 +54,4 @@ if (FADEBUFFER > 0 && FINISH <= false)
 if (FINISH == true)
     FADEBUFFER += 1
 if (FADEBUFFER > 10)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

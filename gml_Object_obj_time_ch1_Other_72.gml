@@ -8,10 +8,10 @@ if (("id").async_load == global.savedata_async_id)
     if (("status").async_load < 0)
     {
         global.savedata_error = 1
-        global.savedata_debuginfo = ds_map_find_value(("status").async_load, (type + " failed: "))
+        global.savedata_debuginfo = string(ds_map_find_value(("status").async_load, (type + " failed: ")))
         if global.savedata_async_load
         {
-            global.savedata = 
+            global.savedata = ds_map_create()
             global.savedata_async_load = 0
         }
     }
@@ -19,16 +19,16 @@ if (("id").async_load == global.savedata_async_id)
     {
         global.savedata_error = 0
         global.savedata_debuginfo = (type + " succeeded")
-        ("**** " + string(global.savedata_debuginfo))
+        show_debug_message(("**** " + string(global.savedata_debuginfo)))
         if global.savedata_async_load
         {
             var json = buffer_read(global.savedata_buffer, buffer_string)
-            global.savedata = json
+            global.savedata = json_decode(json)
             global.savedata_async_load = 0
         }
         else if (os_type == os_switch)
-            // WARNING: Popz'd an empty stack.
+            switch_save_data_commit()
     }
-    global.savedata_buffer
+    buffer_delete(global.savedata_buffer)
     global.savedata_buffer = undefined
 }

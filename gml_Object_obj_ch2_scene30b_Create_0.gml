@@ -4,11 +4,11 @@ krisexplore = 0
 punchcon = 0
 punchtimer = 0
 if (global.chapter != 2 || global.plot < 205 || global.plot >= 210)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    blackall = gml_Script_scr_marker(-10, -10, 2528)
+    gml_Script_scr_losechar()
+    blackall = gml_Script_scr_marker(-10, -10, 2529)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

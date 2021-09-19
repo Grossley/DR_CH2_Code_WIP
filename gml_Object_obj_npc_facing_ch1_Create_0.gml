@@ -85,7 +85,7 @@ if (room == room_field2_ch1)
     if (room == room_field2_ch1)
     {
         if (global.plot >= 35)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (room == room_forest_maze_deadend_ch1)
@@ -100,7 +100,7 @@ if (room == room_forest_maze_deadend_ch1)
     rtsprite = spr_lancer_rt_ch1
     ltsprite = spr_lancer_lt_ch1
     if (global.plot >= 120)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_forest_maze_deadend2_ch1)
 {
@@ -112,7 +112,7 @@ if (room == room_forest_maze_deadend2_ch1)
     rtsprite = spr_susier_dark_ch1
     ltsprite = spr_susiel_dark_ch1
     if (global.plot >= 120)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_field_boxpuzzle_ch1)
 {
@@ -140,7 +140,7 @@ if (room == room_field_boxpuzzle_ch1)
 if (room == room_cc_kingbattle_ch1)
 {
     if (global.plot < 240)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     sprite_index = spr_ralseid_ch1
     dtsprite = spr_ralseid_ch1
     utsprite = spr_ralseiu_ch1
@@ -151,7 +151,7 @@ if (room == room_cc_kingbattle_ch1)
 if (room == room_cc_throneroom_ch1)
 {
     if (global.plot < 240)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     sprite_index = spr_lancer_dt_ch1
     dtsprite = spr_lancer_dt_ch1
     utsprite = spr_lancer_ut_ch1
@@ -180,7 +180,7 @@ if (room == room_forest_area1_ch1)
         ltsprite = spr_lancer_lt_ch1
     }
     if (global.plot > 70)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_forest_area3_ch1)
 {
@@ -291,10 +291,10 @@ if (room == room_town_north_ch1)
     utsprite = spr_noelle_ut_ch1
     rtsprite = spr_noelle_rt_ch1
     if (global.flag[255] < 1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_npcdir_ch1()
 y -= sprite_height
 if (depthcancel == false)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth_ch1()
 depth += depthbonus

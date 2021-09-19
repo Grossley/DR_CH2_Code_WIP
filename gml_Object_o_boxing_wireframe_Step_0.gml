@@ -2,13 +2,13 @@ var _temp_local_var_3;
 if talking
 {
     talktimer++
-    if (talktimer > 15)
+    if (gml_Script_button1_p() && talktimer > 15)
         talktimer = 90
     if (talktimer >= 90)
     {
         talktimer = 90
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         talking = 0
         talktimer = -10
         o_boxingcontroller.talking = 0

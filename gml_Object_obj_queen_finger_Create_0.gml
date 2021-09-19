@@ -1,5 +1,5 @@
 scrollSpeed = 0
-timer = (30 + 45)
+timer = (irandom(30) + 45)
 state = 0
 xx = (obj_growtangle.x + 100)
 yy = (obj_growtangle.y - 70)

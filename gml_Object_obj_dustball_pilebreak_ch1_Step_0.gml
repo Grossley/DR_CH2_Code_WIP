@@ -6,4 +6,4 @@ if (timer >= 30)
     image_alpha -= 0.1
 }
 if (timer >= 40)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

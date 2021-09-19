@@ -5,7 +5,7 @@ if (!init)
 }
 if (!ignoredepth)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()
     depth += 5
     if (name == "ralsei")
         depth -= 80
@@ -67,9 +67,9 @@ if (moved == 1 && follow == 1)
         sprite_index = slidesprite
         slided = 1
     }
-    if ((remx[(target + 1)] - remx[target]) > 4)
+    if (abs((remx[(target + 1)] - remx[target])) > 4)
         runmove = true
-    if ((remy[(target + 1)] - remy[target]) > 4)
+    if (abs((remy[(target + 1)] - remy[target])) > 4)
         runmove = true
     dir = facing[target]
 }
@@ -123,7 +123,7 @@ if ((dsprite == spr_ralseid || dsprite == spr_ralsei_walk_down) && global.intera
 {
     distfrommcx = (obj_mainchara.x - (x + 2))
     distfrommcy = (obj_mainchara.y - (y + 12))
-    if (distfrommcy <= 14 && distfrommcx <= 20)
+    if (abs(distfrommcy) <= 14 && abs(distfrommcx) <= 20)
     {
         if (distfrommcx <= 0 && global.facing == 1)
             blushtimer += 1

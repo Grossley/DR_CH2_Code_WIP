@@ -4,10 +4,10 @@ image_alpha = 0
 con = 0
 balloontimer = 0
 balloonthreshold = 5
-// WARNING: Popz'd an empty stack.
-274
-2
-3
+gml_Script_scr_losechar()
+gml_Script_safe_delete(274)
+gml_Script_scr_getchar(2)
+gml_Script_scr_getchar(3)
 caterpillarsus = gml_Script_scr_makecaterpillar(obj_mainchara.x, ((obj_mainchara.y - 16) + 2), 2, 0)
 caterpillarral = gml_Script_scr_makecaterpillar(obj_mainchara.x, ((obj_mainchara.y - 12) - 2), 3, 1)
 caterpillarnoe = gml_Script_scr_makecaterpillar((obj_mainchara.x - 4), ((obj_mainchara.y - 20) + 2), 4, 2)
@@ -38,8 +38,8 @@ if (room == room_dw_city_postbaseball_1)
 {
     if (global.flag[448] == 1)
     {
-        forcefieldtopright
-        forcefieldright
+        gml_Script_safe_delete(forcefieldtopright)
+        gml_Script_safe_delete(forcefieldright)
         switch1con = 2
         switch2con = 2
         rodeteacup = 3
@@ -47,7 +47,7 @@ if (room == room_dw_city_postbaseball_1)
     }
     if (global.flag[449] == 1)
     {
-        forcefieldtopleft
+        gml_Script_safe_delete(forcefieldtopleft)
         rodeteacup = 4
     }
 }

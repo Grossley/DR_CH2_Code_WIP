@@ -1,6 +1,5 @@
-var _temp_local_var_2;
 ol = (outline ? 2 : 0)
-var _temp_local_var_2 = (outline ? 0 : 16777215)
+draw_set_color((outline ? c_black : c_white))
 draw_circle(x, y, (24 + ol), 0)
 if (ol == 2)
     ol++

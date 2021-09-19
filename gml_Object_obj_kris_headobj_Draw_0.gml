@@ -1,10 +1,10 @@
 if (type == 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 if (type == 1)
 {
     if (mousefailcon == 0)
     {
-        // WARNING: Popz'd an empty stack.
+        draw_self()
         lettercolor = c_red
         var ones = (miceheld % 10)
         var tens = (miceheld div 10)

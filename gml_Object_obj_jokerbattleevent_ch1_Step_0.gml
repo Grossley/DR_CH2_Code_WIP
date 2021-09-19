@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_14, _temp_local_var_17, _temp_local_var_22, _temp_local_var_29;
 if (con == 1)
 {
-    25
+    gml_Script_scr_encountersetup_ch1(25)
     x = global.monstermakex[0]
     y = (global.monstermakey[0] + 100)
     with (obj_mainchara_ch1)
@@ -11,8 +11,9 @@ if (con == 1)
     i = 0
     while (i < 3)
     {
-        c[i] = gml_Script_scr_dark_marker_ch1((global.heromakex[i] - 100), global.heromakey[i], 4196)
+        c[i] = gml_Script_scr_dark_marker_ch1((global.heromakex[i] - 100), global.heromakey[i], 4197)
         var _temp_local_var_1 = c[i]
+        gml_Script_scr_depth_ch1()
         hspeed = 2
         image_speed = 0.2
     }
@@ -73,7 +74,7 @@ if (bulcon == 1)
     i = 0
     while (i < smax)
     {
-        sbul[i] = gml_Script_scr_dark_marker_ch1((s.x + 70), (((-i) * 100) - 40), 3941)
+        sbul[i] = gml_Script_scr_dark_marker_ch1((s.x + 70), (((-i) * 100) - 40), 3942)
         var _temp_local_var_7 = sbul[i]
         vspeed = 24
     }

@@ -9,8 +9,8 @@ if (cancollide == true)
         if (obj_mainchara.y < y)
         {
             abovey = 1
-            64
-            slide_noise = 236
+            gml_Script_snd_play(64)
+            slide_noise = gml_Script_snd_loop(236)
             with (obj_mainchara)
             {
                 fun = true
@@ -35,7 +35,7 @@ if (cancollide == true)
     slidetimer += 1
     if (move_lr_enabled && obj_mainchara.px == 0)
     {
-        if dust
+        if gml_Script_left_h()
         {
             with (obj_mainchara)
             {
@@ -44,11 +44,14 @@ if (cancollide == true)
                     x += _px
             }
         }
-        with (obj_mainchara)
+        if gml_Script_right_h()
         {
-            _px = 6
-            if (!place_meeting((x + _px), y, obj_solidblock))
-                x += _px
+            with (obj_mainchara)
+            {
+                _px = 6
+                if (!place_meeting((x + _px), y, obj_solidblock))
+                    x += _px
+            }
         }
     }
 }

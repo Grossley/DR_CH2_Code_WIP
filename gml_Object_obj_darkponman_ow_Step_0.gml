@@ -4,7 +4,7 @@ xx = (lengthdir_x(eyer, rot) + offx)
 yy = (lengthdir_y(eyer, rot) + offy)
 if (boss == true)
 {
-    if 80
+    if instance_exists(obj_mainchara)
     {
         obj_mainchara.battlemode = 0
         with (obj_darkponman_ow)
@@ -54,7 +54,7 @@ if (made == 1)
         siner -= 1
     for (i = 0; i < bmax; i += 1)
     {
-        if fb[i]
+        if gml_Script_i_ex(fb[i])
         {
             xa = (lengthdir_x((eyer * (2 + (i * 2))), (rot - (sin((siner / 10)) * (i * 2)))) + offx)
             ya = (lengthdir_y((eyer * (2 + (i * 2))), (rot - (sin((siner / 10)) * (i * 2)))) + offy)

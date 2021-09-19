@@ -6,7 +6,7 @@ sprite_index = spr_sneo_bigcircle
 depth = (obj_queen_enemy.depth - 1)
 timer = 0
 offset = 0
-path = 
+path = path_add()
 path_set_kind(path, 1)
 path_set_closed(path, 0)
 path_add_point(path, x, y, 100)

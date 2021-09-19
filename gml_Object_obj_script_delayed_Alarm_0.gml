@@ -1,2 +1,2 @@
-0
-// WARNING: Popz'd an empty stack.
+event_user(0)
+instance_destroy()

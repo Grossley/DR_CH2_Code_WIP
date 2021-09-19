@@ -67,10 +67,10 @@ else
 {
     if (destroycrop < 36)
     {
-        gml_Script_scr_draw_sprite_crop_ext(2014, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
-        gml_Script_scr_draw_sprite_crop_ext(2014, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y + offset), s, (-s), image_blend, 1)
-        gml_Script_scr_draw_sprite_crop_ext(2009, 2, 0, 0, 1, (18 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
-        gml_Script_scr_draw_sprite_crop_ext(2010, 2, 0, (destroycrop / 2), 1, 18, x, (y - offset), s, s, image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(2015, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(2015, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y + offset), s, (-s), image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(2010, 2, 0, 0, 1, (18 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(2011, 2, 0, (destroycrop / 2), 1, 18, x, (y - offset), s, s, image_blend, 1)
     }
     draw_sprite_ext(spr_sneo_pillar_thick, 0, x, 326, s, clamp(((326 - ((y + 32) + destroycrop)) / 16), 0, 16), 0, image_blend, 1)
     draw_sprite_ext(spr_sneo_pillar_thick, 0, x, ((y - 32) - destroycrop), s, 16, 0, image_blend, 1)
@@ -80,13 +80,13 @@ if ((destroying > 0 && difficulty != 3 && difficulty != 5) || (destroying > 0 &&
     var d = gml_Script_instance_create((x + random_range(-10, 10)), (y + destroying), obj_animation_dx)
     d.sprite_index = spr_thrash_missile_explosion
     d.depth = (depth - 1)
-    if ((y + destroying) + 280)
+    if ((y + destroying) > (gml_Script_cameray() + 280))
         d.depth = (obj_heart.depth + 100)
     d.image_angle = 180
     d = gml_Script_instance_create((x + random_range(-10, 10)), (y - destroying), obj_animation_dx)
     d.sprite_index = spr_thrash_missile_explosion
     d.depth = (depth - 1)
-    if ((y - destroying) + 280)
+    if ((y - destroying) > (gml_Script_cameray() + 280))
         d.depth = (obj_heart.depth + 100)
     if (crushedObj == 2)
     {

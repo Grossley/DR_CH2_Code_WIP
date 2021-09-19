@@ -1,13 +1,13 @@
 var _temp_local_var_2, _temp_local_var_3;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 if (con == 0 && myinteract == 1)
 {
     global.interact = 1
     myinteract = 0
     con = 1
     visible = false
-    if collider
-        collider
+    if gml_Script_i_ex(collider)
+        instance_destroy(collider)
     if (room == room_dw_mansion_east_2f_a)
     {
         with (obj_ch2_room_mansion_east_2f_a)
@@ -28,9 +28,9 @@ if (con == 0 && myinteract == 1)
 if (con == 1)
 {
     if (boss == true)
-        46
+        gml_Script_snd_play(46)
     radius = 0
-    keysaucer = saucercount
+    keysaucer = floor(random(saucercount))
     for (i = 0; i < saucercount; i += 1)
     {
         saucer[i] = gml_Script_instance_create(x, y, obj_saucer)
@@ -40,12 +40,12 @@ if (con == 1)
         if (i == keysaucer)
         {
             saucer[i].content = 3
-            saucer[i].contentsprite = 2309
+            saucer[i].contentsprite = 2310
         }
         else
         {
             saucer[i].content = 2
-            saucer[i].contentsprite = 2305
+            saucer[i].contentsprite = 2306
         }
         saucerangle[i] = (90 + ((360 / saucercount) * i))
     }
@@ -85,7 +85,7 @@ if (con == 3)
     if (timer >= 100)
     {
         if (boss == true)
-            loop = 111
+            loop = gml_Script_snd_loop(111)
         con = 4
         timer = 0
         maxsiner = (960 + ((floor(random(6)) * saucercount) / 360))
@@ -96,7 +96,7 @@ if (con == 3)
 if (con == 4)
 {
     if (boss == true)
-        gml_Script_snd_pitch(loop, (((siner / 8) * 0.5) + 1))
+        gml_Script_snd_pitch(loop, ((sin((siner / 8)) * 0.5) + 1))
     siner += (sinerspeed * multiplier)
     if (siner <= (maxsiner - 90))
     {
@@ -113,7 +113,7 @@ if (con == 4)
         siner = maxsiner
         con = 5
         if (boss == true)
-            loop
+            gml_Script_snd_stop(loop)
         with (obj_mainchara)
             global.interact = 0
         for (i = 0; i < saucercount; i += 1)
@@ -133,9 +133,9 @@ if (con == 4)
 if (con == 6)
 {
     obj_mainchara.battlemode = 1
-    if saucer[0]
+    if gml_Script_i_ex(saucer[0])
         timer = 0
-    if (!saucer[0])
+    if (!gml_Script_i_ex(saucer[0]))
     {
         timer += (1 * multiplier)
         if (timer >= 120)
@@ -176,5 +176,8 @@ if (con == 6)
 if (con == 7)
 {
     if (fakeme.y >= (y - 15))
+    {
         var _temp_local_var_3 = fakeme
+        instance_destroy()
+    }
 }

@@ -13,13 +13,13 @@ if (global.flag[385] == 0)
     with (obj_queenvase)
     {
         if (y > 540)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (global.flag[385] != 0)
 {
     with (obj_npc_butler)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     gml_Script_instance_create(0, 0, obj_controller_potparadise)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

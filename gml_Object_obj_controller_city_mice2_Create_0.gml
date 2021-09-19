@@ -1,6 +1,6 @@
 depth = 5000
 weird = 0
-if 2
+if (gml_Script_scr_sideb_get_phase() == 2)
     weird = 1
 inusecount = 0
 con = -2
@@ -24,15 +24,15 @@ if (global.flag[368] == 1 || global.plot >= 77)
         with (obj_mice2Switch)
         {
             depth = 600000
-            0
+            gml_Script_scr_createFrozen(0)
         }
         with (obj_rotationController_track)
-            1
-        if 285
+            gml_Script_scr_createFrozen(1)
+        if instance_exists(obj_forcefield)
         {
             with (obj_forcefield)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

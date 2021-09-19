@@ -3,11 +3,11 @@ bspace = 30
 padding = 5
 wd = 160
 ht = (40 + (bspace * button_amount))
-mx = mouse_x
-my = mouse_y
-0
+mx = (mouse_x - gml_Script_camerax())
+my = (mouse_y - gml_Script_cameray())
+draw_set_color(c_black)
 draw_rectangle((xx - 4), (yy - 4), ((xx + wd) + 4), ((yy + ht) + 4), false)
-12632256
+draw_set_color(c_silver)
 draw_rectangle(xx, yy, (xx + wd), (yy + ht), false)
 for (i = 0; i < button_amount; i++)
 {
@@ -17,9 +17,9 @@ for (i = 0; i < button_amount; i++)
         if (i > 0)
         {
             button_state[i] = 1
-            if 1
+            if mouse_check_button(mb_left)
                 button_state[i] = 2
-            if 1
+            if mouse_check_button_released(mb_left)
             {
                 button_state[i] = 3
                 button_clicked[i] = 1
@@ -28,7 +28,7 @@ for (i = 0; i < button_amount; i++)
         else
         {
             button_state[i] = 1
-            if 1
+            if mouse_check_button(mb_left)
             {
                 button_clicked[i] = 1
                 button_state[i] = 3
@@ -36,29 +36,29 @@ for (i = 0; i < button_amount; i++)
         }
     }
 }
-3
+draw_set_font(fnt_main)
 for (i = 0; i < button_amount; i++)
 {
     if (button_state[i] == 0)
-        12632256
+        draw_set_color(c_silver)
     if (button_state[i] == 1)
-        16777215
+        draw_set_color(c_white)
     if (button_state[i] == 2)
-        4210752
+        draw_set_color(c_dkgray)
     if (button_state[i] == 3)
-        16711680
+        draw_set_color(c_blue)
     if (i == 0)
-        merge_color(draw_get_color(), c_aqua, 0.7)
+        draw_set_color(merge_color(draw_get_color(), c_aqua, 0.7))
     draw_rectangle((xx + 10), ((yy + (bspace * i)) + padding), ((xx + wd) - 10), (((yy + 30) + ((bspace + 1) * i)) - padding), false)
-    0
+    draw_set_color(c_black)
     draw_rectangle((xx + 10), ((yy + (bspace * i)) + padding), ((xx + wd) - 10), (((yy + 30) + ((bspace + 1) * i)) - padding), true)
-    255
+    draw_set_color(c_red)
     draw_text((xx + 10), ((yy + (bspace * i)) + padding), button_text[i])
-    0
+    draw_set_color(c_black)
 }
 if (button_clicked[0] == 1)
 {
-    if 1
+    if mouse_check_button(mb_left)
     {
         xx += (mx - remmx)
         yy += (my - remmy)
@@ -70,11 +70,11 @@ if (type == 0)
 {
     if (button_clicked[1] == 1)
     {
-        if 900
+        if gml_Script_i_ex(900)
         {
-            if obj_debug_xy.selected_object
+            if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
-                checksprite = get_string("Enter new sprite_index.", "")
+                checksprite = asset_get_index(get_string("Enter new sprite_index.", ""))
                 if (checksprite != -1)
                     obj_debug_xy.selected_object.sprite_index = checksprite
             }
@@ -83,76 +83,79 @@ if (type == 0)
     }
     if (button_clicked[2] == 1)
     {
-        if 900
+        if gml_Script_i_ex(900)
         {
-            if obj_debug_xy.selected_object
+            if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
                 var so = obj_debug_xy.selected_object
                 var varname = get_string("Enter variable name. No quotation marks. No arrays.", "")
                 if variable_instance_exists(so, varname)
                 {
                     var foundvar = variable_instance_get(so, varname)
-                    foundvar = foundvar
+                    foundvar = string(foundvar)
                     var newvalue = get_string((((varname + " is ") + foundvar) + ". Enter new REAL NUMBER value."), "")
-                    variable_instance_set(so, varname, newvalue)
+                    variable_instance_set(so, varname, real(newvalue))
                 }
                 else
-                    "No variable exists. Zannen."
+                    show_message("No variable exists. Zannen.")
             }
         }
         button_clicked[2] = 0
     }
     if (button_clicked[3] == 1)
     {
-        if 900
+        if gml_Script_i_ex(900)
         {
-            if obj_debug_xy.selected_object
+            if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
                 so = obj_debug_xy.selected_object
                 varname = get_string("Enter variable name. No quotation marks. No arrays.", "")
                 if variable_instance_exists(so, varname)
                 {
-                    foundvar = variable_instance_get(so, varname)
+                    foundvar = string(variable_instance_get(so, varname))
                     newvalue = get_string((((varname + " is ") + foundvar) + ". Enter string value."), "")
-                    variable_instance_set(so, varname, newvalue)
+                    variable_instance_set(so, varname, string(newvalue))
                 }
                 else
-                    "No variable exists. Zannen."
+                    show_message("No variable exists. Zannen.")
             }
         }
         button_clicked[3] = 0
     }
     if (button_clicked[4] == 1)
     {
-        if 900
+        if gml_Script_i_ex(900)
         {
-            if obj_debug_xy.selected_object
+            if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
                 so = obj_debug_xy.selected_object
                 varname = get_string("Enter variable name. No quotation marks. No arrays.", "")
                 if variable_instance_exists(so, varname)
                     watchvar = varname
                 else
-                    "No variable exists. Zannen."
+                    show_message("No variable exists. Zannen.")
             }
         }
         button_clicked[4] = 0
     }
     if (button_clicked[5] == 1)
     {
-        if 900
+        if gml_Script_i_ex(900)
         {
-            if obj_debug_xy.selected_object
+            if gml_Script_i_ex(obj_debug_xy.selected_object)
+            {
                 var _temp_local_var_1 = obj_debug_xy.selected_object
+                instance_destroy()
+            }
         }
         button_clicked[4] = 0
     }
     if (watchvar != " ")
     {
         button_text[4] = "Watch Variable"
-        if 900
+        if gml_Script_i_ex(900)
         {
-            if obj_debug_xy.selected_object
+            if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
                 so = obj_debug_xy.selected_object
                 if variable_instance_exists(so, watchvar)
@@ -169,13 +172,13 @@ else if (type == 1)
         whatflag = get_string("Which flag? ", "")
         if (whatflag != "")
         {
-            whatflag = whatflag
+            whatflag = real(string_digits(whatflag))
             if (whatflag > 0)
             {
                 var flagvalue = global.flag[whatflag]
                 flagvalue = get_string((((("Flag [" + string(whatflag)) + "] is ") + string(flagvalue)) + ". Enter new value."), "")
                 if (flagvalue != "")
-                    global.flag[whatflag] = flagvalue
+                    global.flag[whatflag] = real(string_digits(flagvalue))
             }
         }
         button_clicked[1] = 0
@@ -186,7 +189,7 @@ else if (type == 1)
         whatflag = get_string("Flag to watch? ", "")
         if (whatflag != "")
         {
-            whatflag = whatflag
+            whatflag = real(string_digits(whatflag))
             if (whatflag > 0)
                 watchflag = whatflag
             button_clicked[2] = 0
@@ -199,18 +202,18 @@ else if (type == 1)
         varname = get_string("Enter variable name without \"global.\"", "")
         if (varname != "")
         {
-            if varname
+            if variable_global_exists(varname)
             {
-                var varval = varname
+                var varval = variable_global_get(varname)
                 var newval = get_string((((("The value of " + varname) + " is ") + string(varval)) + ". What to set it to?"), "")
                 if (newval != "")
                 {
-                    if (newval > 0)
-                        variable_global_set(varname, newval)
+                    if (real(string_digits(newval)) > 0)
+                        variable_global_set(varname, real(newval))
                 }
             }
             else
-                "No variable exists. Zannen."
+                show_message("No variable exists. Zannen.")
         }
         button_clicked[3] = 0
     }
@@ -219,11 +222,11 @@ else if (type == 1)
         varname = get_string("object name?", "")
         if (varname != "")
         {
-            if varname
+            if gml_Script_i_ex(asset_get_index(varname))
             {
                 with (obj_debug_xy)
                     selected_object = instance_find(asset_get_index(varname), 0)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
         button_clicked[4] = 0
@@ -233,12 +236,12 @@ else if (type == 1)
         varname = get_string("object name?", "")
         if (varname != "")
         {
-            if (varname > obj_sneo_friedpipis)
+            if (asset_get_index(varname) > 0)
             {
-                var bepis = varname.mouse_y.mouse_x
+                var bepis = asset_get_index(varname).mouse_y.mouse_x
                 with (obj_debug_xy)
                     selected_object = bepis
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             }
         }
         button_clicked[5] = 0
@@ -246,6 +249,6 @@ else if (type == 1)
 }
 xx = clamp(xx, 40, 500)
 yy = clamp(yy, 40, 340)
-remmx = mouse_x
-remmy = mouse_y
+remmx = (obj_debug_xy.selected_object.mouse_x - gml_Script_camerax())
+remmy = (mouse_y - gml_Script_cameray())
 draw_sprite(spr_maus_cursor, 0, mx, my)

@@ -1,7 +1,7 @@
 follow = 1
 breakcon = 0
 breaktimer = 0
-if 80
+if instance_exists(obj_mainchara)
     depth = (obj_mainchara.depth - 4)
 miceheld = 0
 type = 0

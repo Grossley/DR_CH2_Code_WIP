@@ -12,12 +12,12 @@ loaded = 0
 paused = 0
 pausing = 0
 screenshot = -1
-if (1645 > 1)
-    // WARNING: Popz'd an empty stack.
+if (instance_number(obj_time_ch1) > 1)
+    instance_destroy()
 else
 {
-    display_height = 
-    display_width = 
+    display_height = display_get_height()
+    display_width = display_get_width()
     window_size_multiplier = 1
     for (_ww = 2; _ww < 6; _ww += 1)
     {
@@ -31,12 +31,12 @@ else
     }
     if (os_type == os_switch)
     {
-        // WARNING: Popz'd an empty stack.
-        1
-        7
+        switch_controller_support_set_defaults()
+        switch_controller_support_set_singleplayer_only(1)
+        switch_controller_set_supported_styles(7)
     }
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_controls_default_ch1()
+    gml_Script_scr_ascii_input_names_ch1()
     for (i = 0; i < 10; i += 1)
     {
         global.input_pressed[i] = 0
@@ -45,8 +45,8 @@ else
     }
     if global.is_console
     {
-        1
-        0
+        application_surface_enable(true)
+        application_surface_draw_enable(false)
     }
-    global.is_console
+    gml_Script_scr_enable_screen_border_ch1(global.is_console)
 }

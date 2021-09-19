@@ -3,11 +3,11 @@ init = 0
 con = 0
 actor = -1
 spam_car = room == room_dw_mansion_b_east
-default_sprite_front = (spam_car ? 2053 : 869)
-default_sprite_back = (spam_car ? 2052 : 871)
-hurt_sprite_front = (spam_car ? 2053 : 867)
-hurt_sprite_back = (spam_car ? 2052 : 868)
-hurt_character_sprite = 1418
+default_sprite_front = (spam_car ? 2054 : 870)
+default_sprite_back = (spam_car ? 2053 : 872)
+hurt_sprite_front = (spam_car ? 2054 : 868)
+hurt_sprite_back = (spam_car ? 2053 : 869)
+hurt_character_sprite = 1419
 character_sprite = 652
 character_offset_x = 0
 character_offset_y = 0

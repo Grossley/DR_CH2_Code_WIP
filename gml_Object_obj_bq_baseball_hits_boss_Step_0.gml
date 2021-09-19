@@ -1,6 +1,6 @@
 var floory = 240
 if (x < -20)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (state == 1)
 {
     image_angle -= 4

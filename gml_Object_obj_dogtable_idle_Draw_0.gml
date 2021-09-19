@@ -5,7 +5,7 @@ if (draw_mode == 0)
     draw_sprite_ext(spr_saucernolegs, 0, x, ((y + 2) - raise), 2, 2, 0, c_white, 1)
 }
 if (draw_mode == 1)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 if (draw_mode == 2)
 {
     if (raise < 18)

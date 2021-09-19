@@ -28,5 +28,5 @@ if (growth == 1)
         image_angle = 0
     }
     if (timer <= 0 && growcon == 3)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

@@ -1,5 +1,5 @@
 var _temp_local_var_1;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 talkmax = 90
 image_speed = 0.16
 idlesprite = spr_werewire_idle
@@ -28,7 +28,7 @@ talkwait = 0
 m = 2
 global.turntimer = 0
 initid = 0
-werewire_count = object_index
+werewire_count = instance_number(object_index)
 shootmode = 2
 shootwait = 10
 var _temp_local_var_1 = object_index

@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_9, _temp_local_var_11, _temp_local_var_14, _temp_local_var_15;
 if (y >= 635)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 if (y < 120)
@@ -14,7 +14,7 @@ maxx = lerp(320, 600, (image_yscale / 2))
 x = lerp(minx, maxx, xrange)
 if (image_yscale < 0.1)
 {
-    image_yscale == (0.1 * flip)
+    abs(image_yscale == (0.1 * flip))
     image_xscale = 0.1
 }
 else if (variant == 2)
@@ -45,12 +45,12 @@ if (animtimer <= 50)
     image_index = (animtimer / 8)
 if (animtimer == 9 && playsounds == 1)
 {
-    156
-    117
+    gml_Script_snd_play(156)
+    gml_Script_snd_play(117)
     gml_Script_snd_volume(156, ((image_yscale + 0.4) / 2), 0)
     gml_Script_snd_volume(117, ((image_yscale + 0.4) / 2), 0)
-    snd3 = 156
-    snd4 = 117
+    snd3 = gml_Script_snd_play(156)
+    snd4 = gml_Script_snd_play(117)
     gml_Script_snd_volume(156, ((image_yscale + 0.4) / 2), 0)
     gml_Script_snd_volume(117, ((image_yscale + 0.4) / 2), 0)
     gml_Script_snd_pitch(snd3, 0.95)

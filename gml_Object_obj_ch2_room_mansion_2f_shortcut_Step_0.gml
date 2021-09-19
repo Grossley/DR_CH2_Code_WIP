@@ -1,13 +1,16 @@
 var _temp_local_var_1, _temp_local_var_4;
 if (global.flag[346] == 0)
 {
-    if key
+    if gml_Script_i_ex(key)
+    {
         var _temp_local_var_1 = key
+        gml_Script_scr_depth()
+    }
     if (con == 1)
     {
         con = 2
         global.interact = 1
-        key = gml_Script_scr_dark_marker(keyXPos, keyYPos, 2309)
+        key = gml_Script_scr_dark_marker(keyXPos, keyYPos, 2310)
         fadeplatters = 1
     }
     if fadeplatters
@@ -47,7 +50,7 @@ if (global.flag[346] == 0)
         {
             for (var i = 0; i < 1; i++)
             {
-                sparkle[i] = gml_Script_scr_marker((key.x + 50), (key.y + 30), 2470)
+                sparkle[i] = gml_Script_scr_marker((key.x + 50), (key.y + 30), 2471)
                 sparkle[i].image_speed = 0.5
                 sparkle[i].hspeed = random_range(-3, 3)
                 sparkle[i].friction = 0.05
@@ -75,24 +78,27 @@ if (global.flag[346] == 0)
         explosion.image_xscale = 2
         explosion.image_yscale = 2
         fadeplatters = 0
-        188
-        key
-        bookcase
+        gml_Script_snd_play(188)
+        gml_Script_safe_delete(key)
+        gml_Script_safe_delete(bookcase)
         i = 0
         while (i < array_length_1d(sparkle))
+        {
             var _temp_local_var_4 = sparkle[i]
+            instance_destroy()
+        }
         with (obj_saucer_monty)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_saucer)
         {
             if (x < 520)
             {
-                collider
-                // WARNING: Popz'd an empty stack.
+                instance_destroy(collider)
+                instance_destroy()
             }
         }
-        forcefield_right
-        // WARNING: Popz'd an empty stack.
+        gml_Script_safe_delete(forcefield_right)
+        instance_destroy()
     }
     if make_forcefield
     {

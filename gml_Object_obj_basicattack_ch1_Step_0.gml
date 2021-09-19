@@ -4,4 +4,4 @@ if (critical == true)
     image_yscale += 0.1
 }
 if (image_index >= maxindex)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

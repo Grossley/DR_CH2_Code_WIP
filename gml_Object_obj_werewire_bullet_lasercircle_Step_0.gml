@@ -1,4 +1,4 @@
-if (parent != self && parent)
+if (parent != self && gml_Script_i_ex(parent))
 {
     x = (parent.x - 32)
     y = parent.y
@@ -13,7 +13,7 @@ if (timer <= (6 / m))
 if (timer > (6 / m) && timer <= (my_length + 3))
 {
     laser = gml_Script_instance_create(x, y, obj_werewire_bullet_lasersquare)
-    laser
+    gml_Script_scr_bullet_inherit(laser)
     image_xscale -= (sin(((siner * 1.3) * m)) * 0.2)
     image_yscale -= (sin(((siner * 1.3) * m)) * 0.2)
     laser.image_angle = my_angle
@@ -22,20 +22,20 @@ if (timer > (6 / m) && timer <= (my_length + 3))
     laser.friction = (-my_accel)
     laser.image_yscale = 1
     laser.my_angle_change = my_angle_change
-    if 694
+    if gml_Script_i_ex(694)
         laser.sprite_index = spr_bullet_laser_square_sneo
     else
         laser.sprite_index = spr_bullet_laser_square
     if (timer == 3)
     {
-        if 694
+        if gml_Script_i_ex(694)
             laser.sprite_index = spr_bullet_laser_front_sneo
         else
             laser.sprite_index = spr_bullet_laser_front
     }
     if (timer == (my_length + 3))
     {
-        if 694
+        if gml_Script_i_ex(694)
             laser.sprite_index = spr_bullet_laser_front_sneo
         else
             laser.sprite_index = spr_bullet_laser_front
@@ -47,5 +47,5 @@ else
     image_xscale -= (0.1 * m)
     image_yscale -= (0.1 * m)
     if (image_xscale <= 0 && image_yscale <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

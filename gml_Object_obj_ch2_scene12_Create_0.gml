@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_4;
 con = 0
 customcon = 0
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     if (global.plot < 66)

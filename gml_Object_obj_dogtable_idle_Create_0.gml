@@ -4,7 +4,7 @@ image_speed = 0.25
 myinteract = 0
 con = 0
 icon = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 dogIndex = 0
 raise = 18
 draw_mode = 0

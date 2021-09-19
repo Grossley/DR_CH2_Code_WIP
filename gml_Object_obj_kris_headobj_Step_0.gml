@@ -1,7 +1,7 @@
 if (breakcon == 1)
 {
     breaktimer = 0
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_oflash()
     breakcon = 2
 }
 if (breakcon == 2)
@@ -9,12 +9,12 @@ if (breakcon == 2)
     breaktimer++
     if (breaktimer >= 4)
     {
-        231
+        gml_Script_snd_play(231)
         image_alpha = 0
         breakcon = 3
         for (var i = 0; i < 30; i++)
         {
-            sparkle[i] = gml_Script_scr_marker((x + random_range(-15, 15)), (y + random_range(-15, 15)), 2470)
+            sparkle[i] = gml_Script_scr_marker((x + random_range(-15, 15)), (y + random_range(-15, 15)), 2471)
             sparkle[i].image_speed = 0.5
             sparkle[i].hspeed = random_range(-3, 3)
             sparkle[i].friction = 0.05
@@ -22,7 +22,7 @@ if (breakcon == 2)
         }
     }
 }
-if 347
+if gml_Script_i_ex(347)
 {
     if (obj_room_dw_city_postbaseball.minigame == 1)
     {
@@ -34,7 +34,7 @@ if 347
             obj_mainchara.sprite_index = spr_krisb_defeat
             yoffset = 0
             sprite_index = spr_mousefunnel_tilted
-            64
+            gml_Script_snd_play(64)
             if (miceheld > 0)
             {
                 var mousedrop = clamp(10, 1, miceheld)
@@ -44,7 +44,7 @@ if 347
                     miceheld--
                     var mousepart = gml_Script_instance_create(x, y, obj_afterimage)
                     mousepart.sprite_index = spr_holemouse_emerge
-                    mousepart
+                    gml_Script_scr_darksize(mousepart)
                     mousepart.image_alpha = 2
                     gml_Script_scr_jump_to_point((x + random_range(-40, 40)), ((obj_fountainkris_ch2_sideb).room_height + (sprite_height * 2)), 16, mousepart)
                 }
@@ -55,7 +55,7 @@ if 347
         if (mousefailcon == 2)
         {
             mousetimer++
-            if 348
+            if gml_Script_i_ex(348)
                 mousetimer = 0
             if (mousetimer >= 25)
             {

@@ -2,7 +2,7 @@ if loaded
 {
     if (save_ready == 1 && image_alpha == 1)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_load_ch1()
         save_ready++
     }
     if (!alpha_set)

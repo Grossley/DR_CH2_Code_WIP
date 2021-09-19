@@ -1,4 +1,4 @@
-if 1630
+if instance_exists(obj_heart_ch1)
 {
     lborder = (x - (sprite_width / 2))
     rborder = (x + (sprite_width / 2))

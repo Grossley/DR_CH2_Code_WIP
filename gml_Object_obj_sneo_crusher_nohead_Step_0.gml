@@ -1,4 +1,4 @@
-if 616
+if instance_exists(obj_sneo_crusher)
     depth = obj_sneo_crusher.depth
 if (image_yscale < 0 && init == 0)
 {
@@ -28,12 +28,12 @@ if (vbounce == 1 && column == 0)
     if (y > bottomy)
     {
         y = (bottomy - 1)
-        vspeed = (-vspeed)
+        vspeed = (-abs(vspeed))
     }
     if (y < topy)
     {
         y = (topy + 1)
-        vspeed = vspeed
+        vspeed = abs(vspeed)
     }
 }
 if (column == 1)

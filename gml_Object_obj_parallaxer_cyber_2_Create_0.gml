@@ -40,9 +40,9 @@ if (room == room_dw_cyber_teacup_final)
 }
 with (obj_mainchara)
     bg = 1
-layersprites = [3132, 3133, 3135, 3136]
-drawx = 
-drawy = 
+layersprites = [3133, 3134, 3136, 3137]
+drawx = gml_Script_camerax()
+drawy = gml_Script_cameray()
 siner = 0
 y_offset = -80
 y_startpos = ystart

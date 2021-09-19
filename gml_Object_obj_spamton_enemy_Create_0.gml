@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 talkmax = 90
 image_speed = 0.16666666666666666
 idlesprite = spr_spamton_idle
@@ -7,7 +7,7 @@ sparedsprite = spr_spamton_spared
 bodymode = 0
 bodycon = 0
 bodytimer = 0
-headpiece = gml_Script_scr_dark_marker(-999, -999, 1830)
+headpiece = gml_Script_scr_dark_marker(-999, -999, 1831)
 headpiece.depth = -10
 headpiece.image_speed = 0.1
 bodyadvance = 0

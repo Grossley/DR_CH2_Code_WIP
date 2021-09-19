@@ -8,7 +8,7 @@ if (state == 1)
 {
     if (image_alpha > 2.2)
     {
-        if 1
+        if (gml_Script_button1_p() || gml_Script_button2_p() || gml_Script_button3_p() || gml_Script_down_p() || gml_Script_right_p() || gml_Script_left_p())
         {
             state = 2
             gml_Script_instance_create(x, y, o_bq_whitefade)
@@ -32,7 +32,7 @@ if (state == 2)
         }
         global.battlemsg[0] = gml_Script_stringsetloc("* GIGA Queen blocks the way!", "scr_encountersetup_slash_scr_encountersetup_gml_1104_0")
         gml_Script_instance_create(0, 0, o_bq_whitefade_persistent)
-        global.batmusic[0] = "boxing_boss.ogg"
+        global.batmusic[0] = gml_Script_snd_init("boxing_boss.ogg")
         gml_Script_mus_loop_ext(global.batmusic[0], 1, 1)
         global.boxingphase = 3
         with (obj_gigaqueen_enemy)
@@ -114,25 +114,25 @@ if (state == 2)
             sprite_index = spr_bqueen_idle
             x = xstart
             y = ystart
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_qb_reset()
             with (o_boxingcontroller)
                 boxingtimer = 270
-            1
+            event_user(1)
         }
         with (obj_closing_block_left)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_closing_block_right)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_rotating_sprite)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_rotating_sprites_controller)
-            // WARNING: Popz'd an empty stack.
-        // WARNING: Popz'd an empty stack.
+            instance_destroy()
+        instance_destroy()
     }
 }
-16777215
-1
-image_alpha
+draw_set_color(c_white)
+draw_set_halign(fa_center)
+draw_set_alpha(image_alpha)
 draw_text_transformed(340, 150, gml_Script_stringsetloc("Don't give up...!", "obj_boxing_loss_controller_slash_Draw_0_gml_116_0"), 2, 2, 0)
 draw_sprite(spr_bhero_bench, 0, 320, 320)
 if (o_boxingcontroller.headsprite == spr_bhero_head_a)
@@ -143,7 +143,7 @@ if (o_boxingcontroller.headsprite == spr_bhero_head_c)
     draw_sprite(spr_bhero_head_c, 9, 321, 303)
 if (o_boxingcontroller.headsprite == spr_bhero_head_d)
     draw_sprite(spr_bhero_head_d, 9, 321, 300)
-(image_alpha - 1)
+draw_set_alpha((image_alpha - 1))
 draw_sprite(spr_bhero_bench, 0, 320, 320)
 if (o_boxingcontroller.headsprite == spr_bhero_head_a)
     draw_sprite(spr_bhero_head_a, 9, 322, 305)
@@ -153,5 +153,5 @@ if (o_boxingcontroller.headsprite == spr_bhero_head_c)
     draw_sprite(spr_bhero_head_c, 9, 321, 303)
 if (o_boxingcontroller.headsprite == spr_bhero_head_d)
     draw_sprite(spr_bhero_head_d, 9, 321, 300)
-0
-1
+draw_set_halign(fa_left)
+draw_set_alpha(1)

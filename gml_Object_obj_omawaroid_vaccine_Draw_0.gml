@@ -7,4 +7,4 @@ if ((hspeed > 0 && x > ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) +
 }
 else if (image_alpha < 1)
     image_alpha += 0.1
-// WARNING: Popz'd an empty stack.
+draw_self()

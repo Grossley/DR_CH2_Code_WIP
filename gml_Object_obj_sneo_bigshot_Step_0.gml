@@ -3,10 +3,10 @@ if (sprite_index == spr_sneo_bigshot_l)
     timer2++
     if (timer2 < 11)
     {
-        if 640
+        if instance_exists(obj_sneo_lastattack)
             depth = (obj_sneo_lastattack.depth + 1)
     }
-    else if 640
+    else if instance_exists(obj_sneo_lastattack)
         depth = (obj_sneo_lastattack.depth - 1)
     if (timer2 < 16)
     {
@@ -20,12 +20,12 @@ if (sprite_index == spr_sneo_bigshot_l)
     }
     x += random_range(-1, 1)
     y = (ystart + random_range(-4, 4))
-    if (x + 400)
+    if (x < (gml_Script_camerax() + 400))
     {
-        0
+        event_user(0)
         playerhit = 1
         damage = 0
-        if 640
+        if instance_exists(obj_sneo_lastattack)
             obj_sneo_lastattack.endattack = 2
     }
 }
@@ -35,7 +35,7 @@ if (timer != 0)
     timer++
 if (timer > 16)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     gml_Script_snd_volume(222, 0, 70)
     obj_spamton_neo_enemy.stoprumblesfx = 70
 }

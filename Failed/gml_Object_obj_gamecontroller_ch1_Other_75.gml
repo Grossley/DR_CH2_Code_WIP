@@ -1,20 +1,26 @@
-/*
-DECOMPILER FAILED!
+show_debug_message(ds_map_find_value(("event_type").async_load, "***** Event = "))
+switch ("event_type").async_load
+{
+    case "gamepad discovered":
+        var pad = ds_map_find_value(("pad_index").async_load, null)
+        if gamepad_is_connected(pad)
+        {
+            gamepad_active = 1
+            gamepad_id = pad
+            gamepad_type = gamepad_get_description(gamepad_id) == "Sony DualShock 4"
+        }
+        break
+    case "gamepad lost":
+        gamepad_active = 0
+        if (null.os_type == os_switch)
+        {
+            if (switch_controller_support_show() == 0)
+            {
+                gamepad_active = 1
+                gamepad_id = switch_controller_support_get_selected_id()
+            }
+        }
+        break
+}
 
-System.Collections.Generic.KeyNotFoundException: The given key '_temp_local_var_1' was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at UndertaleModLib.Decompiler.Decompiler.ExpressionTempVar.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 982
-   at UndertaleModLib.Decompiler.Decompiler.Expression.CleanExpression(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 230
-   at UndertaleModLib.Decompiler.Decompiler.FunctionCall.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1256
-   at UndertaleModLib.Decompiler.Decompiler.Expression.CleanExpression(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 230
-   at UndertaleModLib.Decompiler.Decompiler.AssignmentStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1114
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2193
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanBlockStatement(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2202
-   at UndertaleModLib.Decompiler.Decompiler.HLSwitchCaseStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2589
-   at UndertaleModLib.Decompiler.Decompiler.HLSwitchStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2551
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2193
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanBlockStatement(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2202
-   at UndertaleModLib.Decompiler.Decompiler.HLDecompile(DecompileContext context, Dictionary`2 blocks, Block entryPoint, Block rootExitPoint) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3021
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3134
-   at Submission#0.DumpCode()
-*/
+// WARNING: Popz'd an empty stack.

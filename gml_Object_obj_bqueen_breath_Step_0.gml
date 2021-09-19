@@ -1,11 +1,11 @@
-if (!rotator_target)
+if (!gml_Script_i_ex(rotator_target))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
-if (!798)
+if (!instance_exists(obj_bqueen_breath_controller))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 siner++
@@ -16,23 +16,23 @@ image_yscale += 0.02
 afterimagetimer++
 if (afterimagetimer >= 1)
 {
-    a = 
+    a = gml_Script_scr_afterimage()
     a.image_alpha = (image_alpha / 3)
     a.fadeSpeed = 0.1
     afterimagetimer = 0
 }
-if (y + 300)
+if (y >= (gml_Script_cameray() + 300))
 {
     image_alpha -= 0.1
     if (image_alpha <= 0)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         return;
     }
 }
-if (!798)
+if (!instance_exists(obj_bqueen_breath_controller))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 if (type == 1)

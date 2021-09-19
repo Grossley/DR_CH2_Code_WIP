@@ -1,6 +1,6 @@
 var _temp_local_var_1;
 funbuffer = 0
-381
+gml_Script_snd_play_ch1(381)
 with (obj_glowtile_ch1)
 {
     active = false

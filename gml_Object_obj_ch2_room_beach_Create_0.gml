@@ -5,6 +5,6 @@ canrest = 0
 oceansong[0] = -1
 oceansong[1] = -1
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.flag[258] == 0)
     gml_Script_instance_create(90, 54, obj_npc_clamguy)

@@ -23,15 +23,15 @@ if (global.monster[myself] == true)
         else
             loaded_color = 1
     }
-    if (1 && global.monsterstatus[myself] == false)
-        myself
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_monsterpop() == 1 && global.monsterstatus[myself] == false)
+        gml_Script_scr_monster_make_tired(myself)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
-        if (1 && (!becameAlone))
+        if (gml_Script_scr_monsterpop() == 1 && (!becameAlone))
         {
             becameAlone = 1
             gml_Script_msgsetloc(0, "My outfit is coordinated now.&With myself.", "obj_swatchling_enemy_slash_Step_0_gml_46_0")
@@ -118,7 +118,7 @@ if (global.monster[myself] == true)
                 {
                     if (currentcolor == blue)
                     {
-                        var blueText = (100 >= 99 ? gml_Script_stringsetloc("What? The lasagna&has some kind of&explosive in it?", "obj_swatchling_enemy_slash_Step_0_gml_174_0") : gml_Script_stringsetloc("Please enjoy this&complimentary body slam.", "obj_swatchling_enemy_slash_Step_0_gml_174_1"))
+                        var blueText = (random(100) >= 99 ? gml_Script_stringsetloc("What? The lasagna&has some kind of&explosive in it?", "obj_swatchling_enemy_slash_Step_0_gml_174_0") : gml_Script_stringsetloc("Please enjoy this&complimentary body slam.", "obj_swatchling_enemy_slash_Step_0_gml_174_1"))
                         gml_Script_msgset(0, blueText)
                     }
                     else if (currentcolor == red)
@@ -128,7 +128,7 @@ if (global.monster[myself] == true)
                 }
             }
         }
-        if (myself - 1)
+        if (myself == (gml_Script_scr_monsterpop() - 1))
         {
             with (obj_swatchling_enemy)
                 previouscolor = currentcolor
@@ -137,24 +137,24 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         rtimer += 1
         if (rtimer == 1)
         {
-            if (!441)
+            if (!instance_exists(obj_swatchling_battle_controller))
                 gml_Script_instance_create(0, 0, obj_swatchling_battle_controller)
             if (currentcolor == blue)
                 obj_swatchling_battle_controller.blue_count++
@@ -172,7 +172,7 @@ if (global.monster[myself] == true)
         }
         if (rtimer == 16)
         {
-            if (!441)
+            if (!instance_exists(obj_swatchling_battle_controller))
                 gml_Script_instance_create(0, 0, obj_swatchling_battle_controller)
             if (currentcolor == red || currentcolor == orange)
             {
@@ -194,13 +194,13 @@ if (global.monster[myself] == true)
             }
             else
                 global.monsterattackname[myself] = "Bounce"
-            180
+            gml_Script_scr_turntimer(180)
             setmessage = 0
             turns += 1
             global.typer = 6
             global.fc = 0
             var battleText = ""
-            var monsterPop = 
+            var monsterPop = gml_Script_scr_monsterpop()
             rr = choose(0, 1, 2, 3, 4)
             if (rr == 0)
                 battleText = (monsterPop > 1 ? gml_Script_stringsetloc("* The Swatchlings are cleaning each other off with feather dusters.", "obj_swatchling_enemy_slash_Step_0_gml_284_0") : gml_Script_stringsetloc("* Swatchling feather dusts itself.", "obj_swatchling_enemy_slash_Step_0_gml_284_1"))
@@ -220,7 +220,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -231,7 +231,7 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* SWATCHLING - Happiest when their outfits are color-coordinated./%", "obj_swatchling_enemy_slash_Step_0_gml_328_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
@@ -242,7 +242,7 @@ if (global.myfight == 3)
             gml_Script_msgsetloc(0, "* Talked about the steam of a fresh hot chocolate./%", "obj_swatchling_enemy_slash_Step_0_gml_337_0")
         if (rr == 2)
             gml_Script_msgsetloc(0, "* Talked about the warmth of a loving embrace./%", "obj_swatchling_enemy_slash_Step_0_gml_338_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 5
     }
     if (acting == 3 && actcon == 0)
@@ -254,7 +254,7 @@ if (global.myfight == 3)
             gml_Script_msgsetloc(0, "* Talked about the chill of the wind on the ice skating pond./%", "obj_swatchling_enemy_slash_Step_0_gml_349_0")
         if (rr == 2)
             gml_Script_msgsetloc(0, "* Talked about the snow matted on your brother's nose./%", "obj_swatchling_enemy_slash_Step_0_gml_350_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 5
     }
     if (actcon == 5)
@@ -262,7 +262,7 @@ if (global.myfight == 3)
         previouscolor = currentcolor
         var warmify = (acting == 2 || actconsus == 2)
         var extreme = ((actconsus == 2 || actconral == 2) ? 1 : 2)
-        if (extreme == 2 && 434 != 1)
+        if (extreme == 2 && instance_number(obj_swatchling_enemy) != 1)
         {
             var a = 0
             if (currentcolor == blue || currentcolor == yellow)
@@ -300,16 +300,16 @@ if (global.myfight == 3)
         else
             currentcolor = clamp((currentcolor - extreme), blue, red)
         actcon = 10
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (actcon == 10 && (!62))
+    if (actcon == 10 && (!instance_exists(obj_writer)))
     {
         if (currentcolor != current_pal)
             current_pal = (current_pal > currentcolor ? clamp((current_pal - 0.1), currentcolor, 255) : clamp((current_pal + 0.1), 0, currentcolor))
         else
             actcon = 20
     }
-    if (actcon == 20 && (!62))
+    if (actcon == 20 && (!instance_exists(obj_writer)))
     {
         changedcolor = currentcolor != previouscolor
         if (changedcolor == 0)
@@ -353,7 +353,7 @@ if (global.myfight == 3)
         actcon = 1
         actconral = 0
         actconsus = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (actingsus == 1 && actconsus == 1)
     {
@@ -376,7 +376,7 @@ if (global.myfight == 3)
             actcon = 5
             actconsus = 2
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (actingral == 1 && actconral == 1)
     {
@@ -399,8 +399,8 @@ if (global.myfight == 3)
             actcon = 5
             actconral = 2
         }
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
-    if (actcon == 1 && (!62))
-        // WARNING: Popz'd an empty stack.
+    if (actcon == 1 && (!instance_exists(obj_writer)))
+        gml_Script_scr_nextact()
 }

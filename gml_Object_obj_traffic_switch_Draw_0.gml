@@ -5,7 +5,7 @@ if (active == false)
     image_index = 0
 if (active == true && type == 0)
     image_index = 1
-// WARNING: Popz'd an empty stack.
+draw_self()
 blend = c_gray
 if (active == true && type == 1)
     blend = c_lime
@@ -13,7 +13,7 @@ if (active == true && type == 0)
     blend = c_red
 if (active == false && clear_traffic)
     blend = c_lime
-timernumber = (timer / timefactor)
+timernumber = ceil((timer / timefactor))
 draw_sprite_ext(spr_trafficswitch_symbol, type, x, y, 2, 2, 0, blend, image_alpha)
 if (type != 2)
 {

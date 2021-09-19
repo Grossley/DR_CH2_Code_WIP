@@ -25,11 +25,11 @@ if (global.flag[384] == 1)
 }
 if (global.flag[310] == 1)
 {
-    if 1147
+    if gml_Script_i_ex(1147)
     {
         with (obj_solidblock_destructable)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (global.flag[360] == 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

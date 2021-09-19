@@ -1,28 +1,31 @@
 if (swordmode == 0)
-    // WARNING: Popz'd an empty stack.
-if (global.darkzone == false)
+    draw_self()
+if (gml_Script_button1_p() && gml_Script_scr_debug())
 {
-    255
-    if (global.facing == 1)
-        draw_rectangle((x + (sprite_width / 2)), ((y + 6) + (sprite_height / 2)), ((x + sprite_width) + 13), (y + sprite_height), true)
-    if (global.facing == 3)
-        draw_rectangle((x + (sprite_width / 2)), ((y + 6) + (sprite_height / 2)), (x - 13), (y + sprite_height), true)
-    if (global.facing == 0)
-        draw_rectangle((x + 4), (y + 28), ((x + sprite_width) - 4), ((y + sprite_height) + 15), true)
-    if (global.facing == 2)
-        draw_rectangle((x + 3), ((y + sprite_height) - 5), ((x + sprite_width) - 5), (y + 5), true)
-}
-if (global.darkzone == true)
-{
-    255
-    if (global.facing == 1)
-        draw_rectangle((x + (sprite_width / 2)), ((y + 12) + (sprite_height / 2)), ((x + sprite_width) + 26), (y + sprite_height), true)
-    if (global.facing == 3)
-        draw_rectangle((x + (sprite_width / 2)), ((y + 12) + (sprite_height / 2)), (x - 26), (y + sprite_height), true)
-    if (global.facing == 0)
-        draw_rectangle((x + 4), (y + 56), ((x + sprite_width) - 8), ((y + sprite_height) + 30), true)
-    if (global.facing == 2)
-        draw_rectangle((x + 3), ((y + sprite_height) - 10), ((x + sprite_width) - 10), (y + 10), true)
+    if (global.darkzone == false)
+    {
+        draw_set_color(c_red)
+        if (global.facing == 1)
+            draw_rectangle((x + (sprite_width / 2)), ((y + 6) + (sprite_height / 2)), ((x + sprite_width) + 13), (y + sprite_height), true)
+        if (global.facing == 3)
+            draw_rectangle((x + (sprite_width / 2)), ((y + 6) + (sprite_height / 2)), (x - 13), (y + sprite_height), true)
+        if (global.facing == 0)
+            draw_rectangle((x + 4), (y + 28), ((x + sprite_width) - 4), ((y + sprite_height) + 15), true)
+        if (global.facing == 2)
+            draw_rectangle((x + 3), ((y + sprite_height) - 5), ((x + sprite_width) - 5), (y + 5), true)
+    }
+    if (global.darkzone == true)
+    {
+        draw_set_color(c_red)
+        if (global.facing == 1)
+            draw_rectangle((x + (sprite_width / 2)), ((y + 12) + (sprite_height / 2)), ((x + sprite_width) + 26), (y + sprite_height), true)
+        if (global.facing == 3)
+            draw_rectangle((x + (sprite_width / 2)), ((y + 12) + (sprite_height / 2)), (x - 26), (y + sprite_height), true)
+        if (global.facing == 0)
+            draw_rectangle((x + 4), (y + 56), ((x + sprite_width) - 8), ((y + sprite_height) + 30), true)
+        if (global.facing == 2)
+            draw_rectangle((x + 3), ((y + sprite_height) - 10), ((x + sprite_width) - 10), (y + 10), true)
+    }
 }
 if (battlemode == 1)
 {
@@ -56,14 +59,15 @@ battleheart.x = (x + 12)
 battleheart.y = (y + 40)
 if (battlemode == 4)
 {
-    65280
-    0.5
+    draw_set_color(c_lime)
+    draw_set_alpha(0.5)
     draw_rectangle((x + 12), (y + 40), (x + 27), (y + 49), false)
     draw_line((x + 12), (y + 49), (x + 19), (y + 57))
     draw_line((x + 26), (y + 49), (x + 19), (y + 57))
-    1
+    draw_set_alpha(1)
 }
-255
+if gml_Script_scr_debug()
+    draw_set_color(c_red)
 if (swordmode == 1)
 {
     if (swordfacing == 1)

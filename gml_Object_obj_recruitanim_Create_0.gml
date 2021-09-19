@@ -1,4 +1,4 @@
-sprite_index = "spr_battlemsg"
+sprite_index = gml_Script_scr_84_get_sprite("spr_battlemsg")
 image_index = 6
 lerptimer = 0
 image_xscale = 4

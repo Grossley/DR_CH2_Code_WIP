@@ -26,13 +26,13 @@ if (global.monster[myself] == true)
     }
     if (talked == 1 && global.mnfight == 1)
     {
-        if (talktimer > 15)
+        if (gml_Script_button1_p() && talktimer > 15)
             talktimer = talkmax
         talktimer += 1
         if (talktimer >= talkmax)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.mnfight = 2
         }
     }
@@ -42,7 +42,7 @@ if (global.monster[myself] == true)
         simp.damage = (global.monsterat[myself] * 5)
         simp.target = mytarget
         attacked = true
-        rr = 4
+        rr = floor(random(4))
     }
 }
 if (global.myfight == 3)

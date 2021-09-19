@@ -2,28 +2,28 @@ if (global.monster[myself] == true)
 {
     if (global.mnfight == 1 && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_randomtarget_ch1()
         global.flag[(51 + myself)] = 4
         global.targeted[mytarget] = true
-        if (!1522)
+        if (!instance_exists(obj_darkener_ch1))
             gml_Script_instance_create_ch1(0, 0, 1522)
         global.typer = 50
         if (turns == 0)
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_17_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_17_0")
         if (turns == 1)
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_18_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_18_0")
         if (turns == 2)
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_19_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_19_0")
         if (turns >= 3)
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_20_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_20_0")
         if (compliment_just == 1)
         {
             if (compliment == 1)
-                global.msg[0] = "obj_lancerboss_slash_Step_0_gml_26_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_26_0")
             if (compliment == 2)
-                global.msg[0] = "obj_lancerboss_slash_Step_0_gml_30_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_30_0")
             if (compliment == 3)
-                global.msg[0] = "obj_lancerboss_slash_Step_0_gml_34_0"
+                global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_34_0")
             compliment_just = 0
         }
         gml_Script_scr_enemyblcon_ch1((x - 235), (y - 65), 3)
@@ -32,17 +32,17 @@ if (global.monster[myself] == true)
     }
     if (talked == 1 && global.mnfight == 1)
     {
-        if (talktimer > 15)
+        if (gml_Script_button1_p_ch1() && talktimer > 15)
             talktimer = talkmax
         talktimer += 1
         if (talktimer >= talkmax)
         {
-            if (!1536)
-                // WARNING: Popz'd an empty stack.
-            if (!1628)
+            if (!instance_exists(obj_moveheart_ch1))
+                gml_Script_scr_moveheart_ch1()
+            if (!instance_exists(obj_growtangle_ch1))
                 gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.mnfight = 2
         }
     }
@@ -69,25 +69,25 @@ if (global.monster[myself] == true)
         turns += 1
         global.turntimer = 999
         attacked = true
-        rr = 5
+        rr = floor(random(5))
         global.typer = 6
         global.fc = 0
         if (rr == 0)
-            global.battlemsg[0] = "obj_lancerboss_slash_Step_0_gml_90_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_90_0")
         if (rr == 1)
-            global.battlemsg[0] = "obj_lancerboss_slash_Step_0_gml_91_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_91_0")
         if (rr == 2)
-            global.battlemsg[0] = "obj_lancerboss_slash_Step_0_gml_92_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_92_0")
         if (rr == 3)
-            global.battlemsg[0] = "obj_lancerboss_slash_Step_0_gml_93_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_93_0")
         if (rr == 4)
-            global.battlemsg[0] = "obj_lancerboss_slash_Step_0_gml_94_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_94_0")
         if (turns == 1)
         {
             global.typer = 47
             global.fc = 1
             global.fe = 2
-            global.battlemsg[0] = "obj_lancerboss_slash_Step_0_gml_100_0"
+            global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_100_0")
         }
     }
 }
@@ -98,55 +98,55 @@ if (global.myfight == 3)
     if (acting == 1 && actcon == 0)
     {
         actcon = 1
-        global.msg[0] = "obj_lancerboss_slash_Step_0_gml_118_0"
-        global.msg[1] = "obj_lancerboss_slash_Step_0_gml_119_0"
-        // WARNING: Popz'd an empty stack.
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_118_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_119_0")
+        gml_Script_scr_battletext_default_ch1()
     }
     if (acting == 2 && actcon == 0)
     {
         actcon = 1
         if (global.automiss[myself] == false)
         {
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_130_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_130_0")
             global.automiss[myself] = true
         }
         else
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_135_0"
-        // WARNING: Popz'd an empty stack.
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_135_0")
+        gml_Script_scr_battletext_default_ch1()
     }
     if (acting == 3 && actcon == 0)
     {
         if (compliment >= 3)
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_145_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_145_0")
         if (compliment == 2)
         {
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_150_0"
-            global.msg[1] = "obj_lancerboss_slash_Step_0_gml_151_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_150_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_151_0")
             gml_Script_scr_mercyadd_ch1(myself, 20)
         }
         if (compliment == 1)
         {
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_157_0"
-            global.msg[1] = "obj_lancerboss_slash_Step_0_gml_158_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_157_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_158_0")
             gml_Script_scr_mercyadd_ch1(myself, 20)
             global.monsterat[myself] += 1
         }
         if (compliment == 0)
         {
-            global.msg[0] = "obj_lancerboss_slash_Step_0_gml_164_0"
-            global.msg[1] = "obj_lancerboss_slash_Step_0_gml_165_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_164_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_165_0")
             gml_Script_scr_mercyadd_ch1(myself, 20)
             global.monsterat[myself] -= 1
         }
         compliment_just = 1
         compliment += 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default_ch1()
         actcon = 1
     }
-    if (actcon == 1 && (!1327))
+    if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
         actcon = 0
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_attackphase_ch1()
     }
 }
 if (con == 1)
@@ -157,17 +157,17 @@ if (con == 1)
 if (con == 3)
 {
     global.typer = 50
-    global.msg[0] = "obj_lancerboss_slash_Step_0_gml_196_0"
-    global.msg[1] = "obj_lancerboss_slash_Step_0_gml_197_0"
-    global.msg[2] = "obj_lancerboss_slash_Step_0_gml_198_0"
-    global.msg[3] = "obj_lancerboss_slash_Step_0_gml_199_0"
-    global.msg[4] = "obj_lancerboss_slash_Step_0_gml_200_0"
-    global.msg[5] = "obj_lancerboss_slash_Step_0_gml_201_0"
-    global.msg[6] = "obj_lancerboss_slash_Step_0_gml_202_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_196_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_197_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_198_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_199_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_200_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_201_0")
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_202_0")
     con = 4
     gml_Script_scr_enemyblcon_ch1((x - 235), (y - 65), 3)
 }
-if (con == 4 && (!1327))
+if (con == 4 && (!instance_exists(obj_writer_ch1)))
 {
     hspeed = 20
     con = 5
@@ -184,7 +184,7 @@ if (con == 6)
     global.monstergold[myself] += 10
     if (global.plot < 22)
         global.plot = 22
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_monsterdefeat_ch1()
+    instance_destroy()
     con = 7
 }

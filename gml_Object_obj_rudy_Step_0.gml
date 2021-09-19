@@ -1,4 +1,4 @@
-var _temp_local_var_1, _temp_local_var_7, _temp_local_var_8;
+var _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7;
 if (con == 1)
 {
     global.interact = 1
@@ -24,22 +24,20 @@ if (con == 3)
     con = 4
     gml_Script_instance_create(0, 0, obj_dialoguer)
 }
-if (con == 4)
+if (con == 4 && (!gml_Script_d_ex()))
 {
+    sprite_index = spr_rudy_laugh
+    gml_Script_snd_play(232)
+    image_speed = 0.25
+    con = 5
+    alarm[4] = 30
 }
-else
-    var _temp_local_var_8 = 0
-sprite_index = spr_rudy_laugh
-232
-image_speed = 0.25
-con = 5
-alarm[4] = 30
 if (con == 6)
 {
     image_index = 0
-    232
+    gml_Script_snd_stop(232)
     sprite_index = spr_rudy_cough
-    233
+    gml_Script_snd_play(233)
     con = 7
     alarm[4] = 30
 }
@@ -84,12 +82,68 @@ if (con == 8)
     gml_Script_instance_create(0, 0, obj_dialoguer)
     con = 9
 }
-if (con == 9)
+if (con == 9 && (!gml_Script_d_ex()))
 {
+    var _temp_local_var_3 = n
+    sprite_index = spr_noelle_walk_down_lw
+    vspeed = 2
+    image_speed = 0.25
 }
-else
-    var _temp_local_var_7 = 0
-var _temp_local_var_1 = n
-sprite_index = spr_noelle_walk_down_lw
-vspeed = 2
-image_speed = 0.25
+if (con == 10)
+{
+    if (n.y >= 150)
+    {
+        sprite_index = spr_rudy_d
+        var _temp_local_var_4 = n
+        sprite_index = spr_noelle_walk_right_lw
+        hspeed = 2
+        vspeed = 0
+        image_speed = 0.25
+    }
+}
+if (con == 11)
+{
+    if (n.x >= 160)
+    {
+        var _temp_local_var_5 = n
+        sprite_index = spr_noelle_walk_down_lw
+        hspeed = 0
+        vspeed = 0
+        image_speed = 0
+        image_index = 0
+    }
+}
+if (con == 13)
+{
+    global.typer = 12
+    global.fc = 3
+    global.fe = 4
+    global.msg[0] = gml_Script_stringsetloc("* ... oh^1?&* Hi^1, Kris...?/%", "obj_rudy_slash_Step_0_gml_140_0")
+    gml_Script_instance_create(0, 0, obj_dialoguer)
+    con = 14
+    kcon = 0
+}
+if (con == 14 && (!gml_Script_d_ex()))
+{
+    var _temp_local_var_7 = n
+    vspeed = 3
+    image_speed = 0.25
+    sprite_index = spr_noelle_walk_down_lw
+}
+if (con == 15)
+{
+    with (obj_mainchara)
+    {
+        if (x > 140)
+            x -= 1
+    }
+}
+if (con == 16)
+{
+    gml_Script_instance_create(x, y, obj_npc_room)
+    global.facing = 0
+    global.flag[255] = 1
+    global.interact = 0
+    instance_destroy()
+    con = 17
+}

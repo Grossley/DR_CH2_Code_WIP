@@ -5,48 +5,48 @@ image_xscale = 0.4
 image_yscale = 0.4
 target = 694
 var dist = 9999
-if 624
+if instance_exists(obj_pipis_bullet)
 {
-    if (instance_nearest(x, y, obj_pipis_bullet) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_pipis_bullet)) < dist)
         target = instance_nearest(x, y, obj_pipis_bullet)
 }
-if 623
+if instance_exists(obj_pipis_egg_bullet)
 {
-    if (instance_nearest(x, y, obj_pipis_egg_bullet) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_pipis_egg_bullet)) < dist)
         target = instance_nearest(x, y, obj_pipis_egg_bullet)
 }
-if 606
+if instance_exists(obj_sneo_heartattack)
 {
-    if (instance_nearest(x, y, obj_sneo_heartattack) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_sneo_heartattack)) < dist)
         target = instance_nearest(x, y, obj_sneo_heartattack)
 }
-if 608
+if instance_exists(obj_sneo_heatattack_bullet)
 {
-    if (instance_nearest(x, y, obj_sneo_heatattack_bullet) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_sneo_heatattack_bullet)) < dist)
         target = instance_nearest(x, y, obj_sneo_heatattack_bullet)
 }
-if 600
+if instance_exists(obj_sneo_lilguy)
 {
-    if (instance_nearest(x, y, obj_sneo_lilguy) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_sneo_lilguy)) < dist)
         target = instance_nearest(x, y, obj_sneo_lilguy)
 }
-if 615
+if instance_exists(obj_sneo_lilguy_bullet)
 {
-    if (instance_nearest(x, y, obj_sneo_lilguy_bullet) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_sneo_lilguy_bullet)) < dist)
         target = instance_nearest(x, y, obj_sneo_lilguy_bullet)
 }
-if 632
+if instance_exists(obj_sneo_wireheart)
 {
-    if (instance_nearest(x, y, obj_sneo_wireheart) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_sneo_wireheart)) < dist)
         target = instance_nearest(x, y, obj_sneo_wireheart)
 }
-if 667
+if instance_exists(obj_sneo_faceattack_target)
 {
-    if (instance_nearest(x, y, obj_sneo_faceattack_target) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_sneo_faceattack_target)) < dist)
         target = instance_nearest(x, y, obj_sneo_faceattack_target)
 }
-if 367
+if instance_exists(obj_regularbullet)
 {
-    if (instance_nearest(x, y, obj_regularbullet) < dist)
+    if (distance_to_object(instance_nearest(x, y, obj_regularbullet)) < dist)
         target = instance_nearest(x, y, obj_regularbullet)
 }

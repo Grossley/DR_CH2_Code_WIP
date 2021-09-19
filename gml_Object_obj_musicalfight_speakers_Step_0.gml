@@ -34,8 +34,8 @@ if (state == 1)
             d.speed = 3
             d.direction = bulletdir
             d.sprite_index = spr_musical_notes
-            d.image_angle = (80 - 40)
-            if (angle_difference(direction, bulletdir) > 70)
+            d.image_angle = (random(80) - 40)
+            if (abs(angle_difference(direction, bulletdir)) > 70)
                 d.lifetime = 0
             else
                 d.lifetime = 60
@@ -50,7 +50,7 @@ else if (state == 2)
 {
     scale -= 0.1
     if (scale == 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 image_xscale = scale
 image_yscale = scale

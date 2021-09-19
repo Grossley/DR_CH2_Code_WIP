@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 element = 6
 destroyonhit = 0
 active = false
@@ -11,9 +11,9 @@ siner = 0
 orbsize = 0
 gml_Script_instance_create(x, y, obj_sneo_biglaser_friendlyhitbox)
 gml_Script_instance_create(x, y, obj_sneo_arm_laser_telegraph)
-if 694
+if instance_exists(obj_spamton_neo_enemy)
     damage = (global.monsterat[obj_spamton_neo_enemy.myself] * 5)
-if 695
+if instance_exists(obj_sneo_bulletcontroller)
     target = obj_sneo_bulletcontroller.target
 grazepoints = 10
 grazed = 1

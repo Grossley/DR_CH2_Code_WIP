@@ -7,20 +7,20 @@ for (var i = 0; i < 3; i++)
     }
     else
     {
-        var h_pixels = (current_sprite * resolution_factor)
-        var v_pixels = (current_sprite * resolution_factor)
-        var x_offset = (current_sprite * resolution_factor)
-        var y_offset = (current_sprite * resolution_factor)
+        var h_pixels = (sprite_get_width(current_sprite) * resolution_factor)
+        var v_pixels = (sprite_get_height(current_sprite) * resolution_factor)
+        var x_offset = (sprite_get_xoffset(current_sprite) * resolution_factor)
+        var y_offset = (sprite_get_yoffset(current_sprite) * resolution_factor)
         var surf = surface_create(h_pixels, v_pixels)
-        surf
+        surface_set_target(surf)
         draw_clear_alpha(c_black, 0)
         draw_sprite_ext(current_sprite, 0, x_offset, y_offset, resolution_factor, resolution_factor, 0, c_white, 1)
-        // WARNING: Popz'd an empty stack.
+        surface_reset_target()
         var pixels = 0
-        var pixelx = 
-        var pixely = 
-        var pixelrgb = 
-        var pixelalpha = 
+        var pixelx = []
+        var pixely = []
+        var pixelrgb = []
+        var pixelalpha = []
         for (var _x = 0; _x < h_pixels; _x++)
         {
             for (var _y = 0; _y < v_pixels; _y++)
@@ -43,7 +43,7 @@ for (var i = 0; i < 3; i++)
                 }
             }
         }
-        surf
+        surface_free(surf)
         var width = h_pixels
         var height = v_pixels
         ds_map_add(global.firework_sprite_pixel_data, current_sprite, [pixels, pixelx, pixely, width, height, pixelrgb, pixelalpha])

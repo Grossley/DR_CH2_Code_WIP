@@ -8,6 +8,6 @@ damage = 124
 active = true
 spec = 0
 image_alpha = 1
-if (!1630)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_heart_ch1))
+    instance_destroy()
 wall_destroy = 1

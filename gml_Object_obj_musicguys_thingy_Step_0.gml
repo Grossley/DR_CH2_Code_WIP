@@ -1,16 +1,16 @@
 var _temp_local_var_1, _temp_local_var_3, _temp_local_var_7, _temp_local_var_10;
 timer++
 image_alpha = 0.25
-if 869
+if instance_exists(obj_growtangle)
 {
     if (x >= ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) - 16))
     {
-        hspeed = (-hspeed)
+        hspeed = (-abs(hspeed))
         x -= 4
     }
     if (x <= (obj_growtangle.x - (obj_growtangle.sprite_width / 2)))
     {
-        hspeed = hspeed
+        hspeed = abs(hspeed)
         x += 4
     }
 }
@@ -39,8 +39,9 @@ if (mode == 1)
         triple = 1
         if (triple == 1)
         {
-            0
+            event_user(0)
             var _temp_local_var_1 = bul[choose(0, 1, 2)]
+            instance_destroy()
         }
         if (triple == 0)
         {
@@ -78,19 +79,19 @@ if (input_memorizer == 1)
         for (j = 0; j < 3; j++)
             mybul[i][j] = self
     }
-    file = "bulletpattern.txt"
+    file = file_text_open_write("bulletpattern.txt")
 }
 if (input_memorizer == 2)
 {
     framecount++
     timer = 0
-    if 32
-        file
+    if keyboard_check_pressed(vk_space)
+        file_text_close(file)
     makebullet = 0
     which = 0
     for (i = 0; i < 3; i++)
     {
-        if (mybutton[i] && pressed[i] == 1)
+        if (keyboard_check(mybutton[i]) && pressed[i] == 1)
         {
             var _temp_local_var_3 = mybul[i][0]
             image_yscale += 0.5
@@ -128,11 +129,12 @@ if (mode == 3)
 {
     if (mframecount >= remframe)
     {
-        0
+        event_user(0)
         bul[0].image_yscale = bullet_height[bulletcount]
         bul[1].image_yscale = bullet_height[bulletcount]
         bul[2].image_yscale = bullet_height[bulletcount]
         var _temp_local_var_10 = bul[bullet_pos[bulletcount]]
+        instance_destroy()
     }
     mframecount++
     if (bulletcount >= bulletmax)

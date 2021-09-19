@@ -12,8 +12,8 @@ if (con == 1)
 {
     con = 2
     timerb = 0
-    221
-    141
+    gml_Script_snd_play(221)
+    gml_Script_snd_play(141)
 }
 if (con == 2)
 {
@@ -25,7 +25,7 @@ if (con == 2)
     if (timerb == 60)
         gml_Script_instance_create(((320 - (sprite_width / 2)) + 10), 100, obj_rocketpunch_bhero)
     if (timerb == 74)
-        208
+        gml_Script_snd_play(208)
     if (timerb >= 10)
     {
         image_xscale = lerp(image_xscale, 4, 0.04)

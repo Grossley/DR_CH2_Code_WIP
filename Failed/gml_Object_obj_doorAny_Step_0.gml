@@ -1,25 +1,34 @@
-/*
-DECOMPILER FAILED!
+if (init == 0)
+{
+    switch image_index
+    {
+        case obj_pipis_bullet_cone:
+            doorRoom = (null.room + 1)
+            break
+        case obj_84_lang_helper:
+            doorRoom = (null.room - 1)
+            break
+        case obj_pipisFireworkGenerator:
+            doorRoom = (null.room + 2)
+            break
+        case obj_afterimage_anim:
+            doorRoom = (null.room - 2)
+            break
+        case obj_ch2_scene26_henshin_flash:
+            doorRoom = (null.room + 3)
+            break
+        case obj_spamtonpainting:
+            doorRoom = (null.room - 3)
+            break
+        default:
+            break
+    }
 
-System.Collections.Generic.KeyNotFoundException: The given key '_temp_local_var_1' was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at UndertaleModLib.Decompiler.Decompiler.ExpressionTempVar.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 982
-   at UndertaleModLib.Decompiler.Decompiler.Expression.CleanExpression(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 230
-   at UndertaleModLib.Decompiler.Decompiler.ExpressionVar.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1342
-   at UndertaleModLib.Decompiler.Decompiler.Expression.CleanExpression(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 230
-   at UndertaleModLib.Decompiler.Decompiler.ExpressionTwo.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 790
-   at UndertaleModLib.Decompiler.Decompiler.Expression.CleanExpression(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 230
-   at UndertaleModLib.Decompiler.Decompiler.AssignmentStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1114
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2193
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanBlockStatement(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2202
-   at UndertaleModLib.Decompiler.Decompiler.HLSwitchCaseStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2589
-   at UndertaleModLib.Decompiler.Decompiler.HLSwitchStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2551
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2193
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanBlockStatement(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2202
-   at UndertaleModLib.Decompiler.Decompiler.IfHLStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2233
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanStatement(DecompileContext context, BlockHLStatement block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2193
-   at UndertaleModLib.Decompiler.Decompiler.BlockHLStatement.CleanBlockStatement(DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2202
-   at UndertaleModLib.Decompiler.Decompiler.HLDecompile(DecompileContext context, Dictionary`2 blocks, Block entryPoint, Block rootExitPoint) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3021
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3134
-   at Submission#0.DumpCode()
-*/
+    // WARNING: Popz'd an empty stack.
+    if (image_index != 0)
+        doorEntrance = image_index
+    if (doorSpecial != "none")
+    {
+    }
+    init = 1
+}

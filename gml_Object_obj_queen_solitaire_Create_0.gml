@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 points_x[0] = x
 points_y[0] = y
 arraysize = 0

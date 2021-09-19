@@ -1,5 +1,5 @@
 image_speed = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 if (door_type == 0)
 {
     sprite_index = spr_dw_mansion_door_closed

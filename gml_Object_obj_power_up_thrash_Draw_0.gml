@@ -16,6 +16,6 @@ if (flashtimer >= flashspeed)
     flashtimer = 0
     flashspeed = max(4, ((flashspeed * 2) / 3))
 }
-var __flash = ((timer + 15) >= poweruptime ? lerp(0.4, 0.5, ((flashtimer / flashspeed) * pi)) : lerp((__alpha / 2), 0.5, ((flashtimer / flashspeed) * pi)))
+var __flash = ((timer + 15) >= poweruptime ? lerp(0.4, 0.5, sin(((flashtimer / flashspeed) * pi))) : lerp((__alpha / 2), 0.5, sin(((flashtimer / flashspeed) * pi))))
 thrash.glow = __flash
 gml_Script_d3d_set_fog(false, c_black, 0, 0)

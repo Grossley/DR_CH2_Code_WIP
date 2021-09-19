@@ -3,9 +3,9 @@ if release
     if (image_alpha == 0)
     {
         image_alpha = 1
-        x = 
-        y = 
-        ral_x = 
+        x = gml_Script_camerax()
+        y = gml_Script_cameray()
+        ral_x = gml_Script_camerax()
     }
     if (y_pos < 0)
         y_pos = (view_hport[0] + 100)
@@ -20,7 +20,7 @@ if release
             new_ypos = 95
         gml_Script_scr_lerpvar_instance(id, "y_pos", rem_y_pos, new_ypos, 30, -1, "out")
         var x_offset = ((wobble % 2) == 0 ? -20 : 20)
-        var new_xpos = (new_ypos == 95 ? 78 : (rem_x_pos + x_offset))
+        var new_xpos = (new_ypos == 95 ? (gml_Script_camerax() + 78) : (rem_x_pos + x_offset))
         gml_Script_scr_lerpvar_instance(id, "x_pos", rem_x_pos, new_xpos, 20, -1, "out")
     }
     if (climbtimer == 40)
@@ -37,9 +37,9 @@ if release_normal
     if (image_alpha == 0)
     {
         image_alpha = 1
-        x = 
-        y = 
-        ral_x = 
+        x = gml_Script_camerax()
+        y = gml_Script_cameray()
+        ral_x = gml_Script_camerax()
     }
     if (y_pos < 0)
         y_pos = (view_hport[0] + 100)
@@ -55,7 +55,7 @@ if leave
     if (y_pos >= (view_hport[0] + 100))
     {
         leave = 0
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if su_struggle

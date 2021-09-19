@@ -4,7 +4,7 @@ image_yscale = 2
 x = 320
 y = 300
 depth = 9
-// WARNING: Popz'd an empty stack.
+randomize()
 bg = gml_Script_instance_create(x, y, o_boxing_black_battle_bg)
 bg.depth = (depth + 1)
 health_count = 1500
@@ -133,7 +133,7 @@ myturn = 0
 debug_text = "nothing"
 maxpattern = 14
 useattacklist = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_qb_reset()
 if (o_boxingcontroller.wireframe_boxing == 1)
     sprite_index = spr_bqueen_wireframe
 if (room == room_dw_cyber_queen_boxing)

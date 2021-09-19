@@ -8,10 +8,10 @@ with (obj_mainchara)
 shouldActivate = _shouldActivate
 if (shouldActivate == 1 && framesAway > frames)
     readyToGo = 1
-if (global.currentsong[1] && inSync == 1)
+if (gml_Script_snd_is_playing(global.currentsong[1]) && inSync == 1)
 {
     var _prevBeats = beats
-    beats = (global.currentsong[1] / spb)
+    beats = (audio_sound_get_track_position(global.currentsong[1]) / spb)
     if (beats < _prevBeats)
     {
         targetBeat -= beatMax
@@ -23,7 +23,7 @@ else
     inSync = 0
     beats += bpf
 }
-if ((beats - beatsPrev) > 3)
+if (abs((beats - beatsPrev)) > 3)
 {
     if (!forgiveLoop)
         inSync = 0
@@ -35,13 +35,13 @@ framesAway = ((targetBeat - beats) / bpf)
 var _percent = max(0, (framesAway / frames))
 if (!horizontal)
 {
-    var _yDiff = (ystart - endY)
+    var _yDiff = abs((ystart - endY))
     y = gml_Script_ease_out_cubic(_percent, endY, (-_yDiff), 1)
     y = max(y, ystart)
 }
 else
 {
-    _yDiff = (xstart - endY)
+    _yDiff = abs((xstart - endY))
     x = gml_Script_ease_out_cubic(_percent, endY, (-_yDiff), 1)
     x = max(x, xstart)
 }

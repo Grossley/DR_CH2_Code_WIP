@@ -1,1 +1,1 @@
-__init_d3d()
+gml_Script___init_d3d()

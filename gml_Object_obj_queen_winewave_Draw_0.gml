@@ -17,7 +17,7 @@ var height_fix = (11 - (obj_queen_wineglass.fill / 30))
 visible = true
 var xx = 0
 var xx0 = 0
-if 512
+if instance_exists(obj_queen_wineglass)
 {
     if (obj_queen_wineglass.image_angle < -4)
     {

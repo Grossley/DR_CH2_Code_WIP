@@ -7,13 +7,13 @@ else if (timer == 0)
 }
 if (timer > 60)
 {
-    d = obj_fadein
+    d = gml_Script_instance_create(gml_Script_camerax(), gml_Script_cameray(), obj_fadein)
     with (obj_fadeout)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     d.image_blend = c_white
     d.fadespeed = -0.01
     if playerhit
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage_all()
     global.turntimer = 1
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

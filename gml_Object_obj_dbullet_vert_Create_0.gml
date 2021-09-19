@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 grazepoints = 5
 timepoints = 5
 active = false
@@ -11,6 +11,6 @@ difficulty = 1
 times = 0
 activetimer = 0
 image_alpha = 0
-if (!628)
-    // WARNING: Popz'd an empty stack.
+if (!instance_exists(obj_heart))
+    instance_destroy()
 type = 0

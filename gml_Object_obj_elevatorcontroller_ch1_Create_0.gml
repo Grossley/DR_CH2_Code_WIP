@@ -38,7 +38,7 @@ if (global.plot < 165)
     con = 1
     global.interact = 1
     with (obj_caterpillarchara_ch1)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 jup = 0
 a_timer = 0

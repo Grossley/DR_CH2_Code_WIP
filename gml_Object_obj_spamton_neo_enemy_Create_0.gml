@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 if (global.fighting == false)
 {
     myself = 0
@@ -78,7 +78,7 @@ lastwirecon = 0
 lastwiretimer = 0
 headendcon = 0
 finalattackconversationcon = 0
-laserflash = 3
+laserflash = irandom(3)
 talkmax = 90
 image_speed = 0.16666666666666666
 idlesprite = spr_sneo_example
@@ -116,14 +116,14 @@ blend = merge_color(c_white, c_black, 0.15)
 shootydanceinit = 0
 shootydancex = x
 shootydancey = y
-partsprite[0] = 1970
-partsprite[1] = 1971
-partsprite[2] = 1972
-partsprite[3] = 1973
-partsprite[4] = 1975
-partsprite[5] = 3318
-partsprite[6] = 1981
-partsprite[7] = 1980
+partsprite[0] = spr_sneo_wingl
+partsprite[1] = spr_sneo_arml
+partsprite[2] = spr_sneo_legl
+partsprite[3] = spr_sneo_legr
+partsprite[4] = spr_sneo_body
+partsprite[5] = spr_sneo_head
+partsprite[6] = spr_sneo_armr
+partsprite[7] = spr_sneo_wingr
 for (i = 0; i < 8; i += 1)
 {
     partframe[i] = 0
@@ -132,8 +132,8 @@ for (i = 0; i < 8; i += 1)
     partblend[i] = 16777215
     partx[i] = 0
     party[i] = 0
-    partxoff[i] = (partsprite[i] * 2)
-    partyoff[i] = (partsprite[i] * 2)
+    partxoff[i] = (sprite_get_xoffset(partsprite[i]) * 2)
+    partyoff[i] = (sprite_get_yoffset(partsprite[i]) * 2)
     partvisible[i] = 1
     partweakened[i] = 0
 }
@@ -142,8 +142,8 @@ for (ii = 0; ii < 18; ii += 1)
     partsiner_back[ii] = 0
     partx_back[ii] = 0
     party_back[ii] = 0
-    partxoff_back[ii] = (partsprite[0] * (1.8 + (ii / 9)))
-    partyoff_back[ii] = (partsprite[0] * 2)
+    partxoff_back[ii] = (sprite_get_xoffset(partsprite[0]) * (1.8 + (ii / 9)))
+    partyoff_back[ii] = (sprite_get_yoffset(partsprite[0]) * 2)
     partvisible_back[ii] = 1
 }
 heartattackoffsetx = 0

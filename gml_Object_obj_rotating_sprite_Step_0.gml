@@ -15,10 +15,10 @@ else
 if (x != (o_boxingcontroller.x + 38) && y != (o_boxingcontroller.y - 96))
 {
     var path_pos = path_position
-    // WARNING: Popz'd an empty stack.
+    path_end()
     x = (o_boxingcontroller.x + 38)
     y = (o_boxingcontroller.y - 96)
-    path = 
+    path = path_add()
     path_set_kind(path, 1)
     path_set_closed(path, 1)
     path_add_point(path, 368, 160, 100)

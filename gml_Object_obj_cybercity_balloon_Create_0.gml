@@ -1,10 +1,10 @@
-id
+gml_Script_scr_darksize(id)
 siner = 0
-flip_timer = 30
+flip_timer = floor(random(30))
 mode = 0
-remcameray = 
+remcameray = gml_Script_cameray()
 blend = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 breakable = 0
 attached = 0
 attachedobj = 348

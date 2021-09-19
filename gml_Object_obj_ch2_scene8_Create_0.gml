@@ -6,16 +6,16 @@ if (global.chapter != 2 || global.plot >= 20)
 else if (global.plot < 20)
 {
     with (obj_npc_facing)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_npc_room)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     con = 1
     global.interact = 1
-    foreground = 5000
+    foreground = layer_get_id_at_depth(5000)
     layer_depth(foreground[0], 900000)
 }
 if (destroyme == 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 drawdoor = 1
 darkbg = 0
 depth = 100000

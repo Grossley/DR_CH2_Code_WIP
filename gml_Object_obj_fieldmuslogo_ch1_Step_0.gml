@@ -10,5 +10,5 @@ if (siner >= 120)
     offx += (-8 + (siner / 15))
     image_alpha -= (1/30)
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

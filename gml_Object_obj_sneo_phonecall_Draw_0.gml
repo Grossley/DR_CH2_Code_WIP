@@ -1,6 +1,6 @@
 var _temp_local_var_1, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13;
-fadealpha
-16777215
+draw_set_alpha(fadealpha)
+draw_set_color(c_white)
 if (state == 0)
     var _temp_local_var_1 = 1
 else if (state == 1)
@@ -13,9 +13,9 @@ else
 if 1
 {
     siner++
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     draw_line_width(x, y, (obj_spamton_neo_enemy.x + obj_spamton_neo_enemy.partx[5]), -20, 2)
-    image_angle = ((siner / 20) * 10)
+    image_angle = (sin((siner / 20)) * 10)
     if (ringtimer > 0)
     {
         image_angle += ((ringtimer % 2) == 0 ? 1 : -1)
@@ -40,4 +40,4 @@ else
     var _temp_local_var_9 = (gml_Script_scr_orbitx(0, 0, 20, 50, partrot[1]) + sneo.x)
     var _temp_local_var_10 = sneo
 }
-1
+draw_set_alpha(1)

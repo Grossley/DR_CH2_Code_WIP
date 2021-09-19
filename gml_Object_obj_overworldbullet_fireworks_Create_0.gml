@@ -10,7 +10,7 @@ if (room == room_dw_mansion_dininghall)
 if (type == 0)
 {
     sprite_index = spr_bullet_laser_circle
-    94
+    gml_Script_snd_play(94)
     vspeed = (-20 - random(3))
     friction = 1
 }

@@ -8,12 +8,12 @@ if (anti_cheese == 0 || anti_cheese == 1)
     if (obj_heart.x != heart_xstart)
     {
         if (anti_cheese == 1)
-            "cheese punishment canceled"
+            gml_Script_scr_debug_print("cheese punishment canceled")
         anti_cheese = -1
     }
     else if (cheese_timer >= 45 && anti_cheese == 0)
     {
-        "cheese will be PUNISHED"
+        gml_Script_scr_debug_print("cheese will be PUNISHED")
         anti_cheese = 1
     }
 }

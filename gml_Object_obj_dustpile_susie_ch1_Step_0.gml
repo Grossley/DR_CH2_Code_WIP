@@ -1,22 +1,30 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_9, _temp_local_var_11, _temp_local_var_12, _temp_local_var_14, _temp_local_var_16, _temp_local_var_17, _temp_local_var_22, _temp_local_var_25, _temp_local_var_27;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 siner += 1
 if (con == 1 && gml_Script___view_get(0, 0) >= 280 && obj_mainchara_ch1.y > 535)
 {
-    darksus = gml_Script_scr_dark_marker_ch1(873, 602, 4183)
+    darksus = gml_Script_scr_dark_marker_ch1(873, 602, 4184)
     darksus.image_speed = 0.2
     var _temp_local_var_2 = darksus
+    gml_Script_scr_depth_ch1()
 }
 if (con == 3)
+{
     var _temp_local_var_3 = darksus
+    instance_destroy()
+}
 if (con == 4 && gml_Script___view_get(0, 0) >= 540 && obj_mainchara_ch1.y > 535)
 {
-    darksus2 = gml_Script_scr_dark_marker_ch1(1116, 720, 4183)
+    darksus2 = gml_Script_scr_dark_marker_ch1(1116, 720, 4184)
     darksus2.image_speed = 0.2
     var _temp_local_var_5 = darksus2
+    gml_Script_scr_depth_ch1()
 }
 if (con == 5)
+{
     var _temp_local_var_6 = darksus
+    instance_destroy()
+}
 if (con == 11)
 {
     var _temp_local_var_7 = s

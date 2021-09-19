@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (other.collided == 0)
 {
     slash = gml_Script_instance_create(other.x, other.y, obj_slashEffect)
@@ -27,27 +28,20 @@ if (other.collided == 0)
     if (other.good == 1)
     {
         global.msg[0] = gml_Script_stringsetloc("* The wire was cut!/%", "obj_sneo_kristhrown_slash_Collision_62cd1353_c3fa_4ba1_acea_aa0a3fa3dd95_gml_35_0")
-        148
-        with (stacktop)
-        {
-            if (offing == 1)
-                con = 1
-            else
-                con = 5
-        }
+        gml_Script_snd_play(148)
+        var _temp_local_var_1 = other
+        if (offing == 1)
+            con = 1
+        else
+            con = 5
     }
     else
     {
-        64
-        with (stacktop)
-            con = 7
-        global.msg[0] = gml_Script_stringsetloc("* The wire was cut!/%", "obj_sneo_kristhrown_slash_Collision_62cd1353_c3fa_4ba1_acea_aa0a3fa3dd95_gml_55_0")
-        hspeed = -12
-        vspeed = -4
-        gravity = 0.5
-        con = 2
+        gml_Script_snd_play(64)
+        _temp_local_var_1 = other
+        con = 7
     }
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_battletext_default()
     other.collided = 1
     collided = 1
 }

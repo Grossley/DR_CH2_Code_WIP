@@ -46,7 +46,7 @@ arcade_times_blocked = 0
 dead = 0
 dead_timer = 0
 arcade_mode_last_punched_direction = 0
-if (!"beat_phase1_no_damage_taken")
+if (!variable_global_exists("beat_phase1_no_damage_taken"))
     global.beat_phase1_no_damage_taken = 0
 beat_phase1_no_damage_taken_check = 0
 beat_phase2_no_damage_taken = 0

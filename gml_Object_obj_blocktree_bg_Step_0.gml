@@ -6,7 +6,7 @@ if (blocktimer == 20)
 {
     xv = ((x + (sprite_width / 4)) + random((sprite_width / 2)))
     yv = ((y + (sprite_height / 4)) + random((sprite_height / 4)))
-    block = gml_Script_scr_dark_marker(xv, yv, 2292)
+    block = gml_Script_scr_dark_marker(xv, yv, 2293)
     var _temp_local_var_1 = block
     hspeed = (0.4 + random(1))
     vspeed = (0.7 + random(1.5))

@@ -1,42 +1,57 @@
 if (MyTurn == 1)
 {
-    if (CursorX > 0)
-        CursorX -= 1
-    if (CursorX < 15)
-        CursorX += 1
-    if (CursorY > 0)
-        CursorY -= 1
-    if (CursorY < 5)
-        CursorY += 1
-    if (TileYouCanBuild[CursorX][CursorY] == 1)
+    if gml_Script_left_p()
     {
-        HouseCount++
-        TileYouCanBuild[CursorX][CursorY] = 0
-        TileHasHouse[CursorX][CursorY] = 1
-        64
-        obj_rouxls_enemy.hasplayerplacedhouses = 1
-        repeat (21)
+        if (CursorX > 0)
+            CursorX -= 1
+    }
+    if gml_Script_right_p()
+    {
+        if (CursorX < 15)
+            CursorX += 1
+    }
+    if gml_Script_up_p()
+    {
+        if (CursorY > 0)
+            CursorY -= 1
+    }
+    if gml_Script_down_p()
+    {
+        if (CursorY < 5)
+            CursorY += 1
+    }
+    if gml_Script_button1_p()
+    {
+        if (TileYouCanBuild[CursorX][CursorY] == 1)
         {
-            gml_Script_instance_create(((base_xpos + (CursorX * 40)) + irandom(40)), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
-            gml_Script_instance_create(((base_xpos + (CursorX * 40)) + irandom(40)), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
-            gml_Script_scr_fx_housesquare(((base_xpos + (CursorX * 40)) + 20), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + 20), 255)
-        }
-        // WARNING: Popz'd an empty stack.
-        if (GameOver == 1 || HouseCount >= HouseCountMax)
-        {
-            MyTurn = 0
-            TurnCon = 1
-            HouseCount = 0
+            HouseCount++
+            TileYouCanBuild[CursorX][CursorY] = 0
+            TileHasHouse[CursorX][CursorY] = 1
+            gml_Script_snd_play(64)
+            obj_rouxls_enemy.hasplayerplacedhouses = 1
+            repeat (21)
+            {
+                gml_Script_instance_create(((base_xpos + (CursorX * 40)) + irandom(40)), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
+                gml_Script_instance_create(((base_xpos + (CursorX * 40)) + irandom(40)), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
+                gml_Script_scr_fx_housesquare(((base_xpos + (CursorX * 40)) + 20), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + 20), 255)
+            }
+            gml_Script_scr_simtown_canbuild_check()
+            if (GameOver == 1 || HouseCount >= HouseCountMax)
+            {
+                MyTurn = 0
+                TurnCon = 1
+                HouseCount = 0
+            }
         }
     }
 }
 if (TurnCon == 1)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_simtown_canbuild_check()
     if (GameOver == 1)
     {
-        0
-        if 726
+        event_user(0)
+        if instance_exists(obj_rouxls_enemy)
         {
             global.mnfight = 0
             global.myfight = 3
@@ -55,7 +70,7 @@ if (TurnCon == 1)
         with (obj_rouxls_enemy)
         {
             gml_Script_msgsetloc(0, "* Finished!/%", "obj_rouxls_simtown_slash_Step_0_gml_93_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
             actcon = 1
         }
         TurnCon = 5
@@ -64,7 +79,7 @@ if (TurnCon == 1)
 }
 if (TurnCon == 2)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_simtown_canbuild_check()
     RouxlsWaitTimer = 0
     RouxlsHousesBuilt = 0
     TurnCon = 3
@@ -79,8 +94,8 @@ if (TurnCon == 3)
             found = 0
             while (found == 0)
             {
-                RandomHouseX = 15
-                RandomHouseY = 6
+                RandomHouseX = floor(random(15))
+                RandomHouseY = floor(random(6))
                 if (RandomHouseY == 6)
                     RandomHouseY = 5
                 if (TileRouxlsCanBuild[RandomHouseX][RandomHouseY] == 1)
@@ -88,7 +103,7 @@ if (TurnCon == 3)
             }
             TileYouCanBuild[RandomHouseX][RandomHouseY] = 0
             TileHasHouse[RandomHouseX][RandomHouseY] = 2
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_simtown_canbuild_check()
             RouxlsHousesBuilt += 1
             RouxlsWaitTimer = 0
             repeat (21)
@@ -97,7 +112,7 @@ if (TurnCon == 3)
                 gml_Script_instance_create(((gml_Script_camerax() + (RandomHouseX * 40)) + irandom(40)), (((gml_Script_cameray() + ((RandomHouseY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
                 gml_Script_scr_fx_housesquare(((gml_Script_camerax() + (RandomHouseX * 40)) + 20), (((gml_Script_cameray() + ((RandomHouseY + 1) * 40)) + 40) + 20), 16711680)
             }
-            64
+            gml_Script_snd_play(64)
         }
         else
             TurnCon = 4

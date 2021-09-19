@@ -1,13 +1,13 @@
-if (((y - height) + 500) ? 1 : ((x - 100) ? 1 : ((x + 740) ? 1 : ((!airborne) ? (y - 100) : 0))))
+if ((y - height) > (gml_Script_cameray() + 500) || x < (gml_Script_camerax() - 100) || x > (gml_Script_camerax() + 740) || ((!airborne) && y < (gml_Script_cameray() - 100)))
 {
-    if shadow
-        shadow
-    // WARNING: Popz'd an empty stack.
+    if gml_Script_i_ex(shadow)
+        instance_destroy(shadow)
+    instance_destroy()
 }
 if (!init)
 {
     init = 1
-    if shadow
+    if gml_Script_i_ex(shadow)
         shadow.depth = maxDepth
 }
 falltime++
@@ -19,9 +19,9 @@ if (!airborne)
     image_alpha = min(siner, 1)
     if (siner <= 0)
     {
-        if shadow
-            shadow
-        // WARNING: Popz'd an empty stack.
+        if gml_Script_i_ex(shadow)
+            instance_destroy(shadow)
+        instance_destroy()
     }
     return;
 }
@@ -36,7 +36,7 @@ if (fallspeed < 2)
 height -= fallspeed
 if (airborne && height <= 0 && y < maxy)
 {
-    shadow
+    instance_destroy(shadow)
     fallspeed = 0
     height = 0
     airborne = 0
@@ -51,8 +51,8 @@ if (airborne && height <= 0 && y < maxy)
 x += (sin((siner / 15)) * (fallspeed / 2))
 siner++
 image_speed = (1 + (speed / 15))
-// WARNING: Popz'd an empty stack.
-if shadow
+gml_Script_scr_depth()
+if gml_Script_i_ex(shadow)
 {
     shadow.image_alpha = (y > maxy ? 0 : 1)
     shadow.image_index = image_index

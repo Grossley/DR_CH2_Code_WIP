@@ -11,6 +11,6 @@ if (con == 5)
 {
     slash = gml_Script_instance_create(x, y, obj_slashEffect)
     slash.image_angle = (image_angle + 45)
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_afterimage_cut()
+    instance_destroy()
 }

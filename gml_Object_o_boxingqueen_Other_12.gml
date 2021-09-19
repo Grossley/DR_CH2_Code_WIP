@@ -21,7 +21,7 @@ if (useattacklist == 0)
 else
 {
     if (o_boxingcontroller.wireframe_boxing == 1 && (attackcount >= attackcountmax || (o_boxingqueen.health_count <= (health_count_max * 0.75) && attackpattern == 50) || (o_boxingqueen.health_count <= (health_count_max * 0.5) && attackpattern == 51) || (o_boxingqueen.health_count <= (health_count_max * 0.25) && attackpattern == 52)))
-        6
+        event_user(6)
     if (attackpattern != 53)
         arcadebaseballused = 0
     if (attackpattern == 53)
@@ -66,7 +66,7 @@ else
     }
     else if (attackcount >= attackcountmax)
     {
-        1
+        event_user(1)
         attackthreshold = attackthresholddefault
         movetimer = 0
         with (o_boxingcontroller)
@@ -98,7 +98,7 @@ else
                 {
                     with (o_boxingqueen)
                     {
-                        // WARNING: Popz'd an empty stack.
+                        gml_Script_scr_qb_reset()
                         attackpattern = 2
                     }
                     obj_gigaqueen_enemy.recentphasetransition = 2
@@ -107,7 +107,7 @@ else
                 {
                     with (o_boxingqueen)
                     {
-                        // WARNING: Popz'd an empty stack.
+                        gml_Script_scr_qb_reset()
                         attackpattern = 15
                     }
                     obj_gigaqueen_enemy.recentphasetransition = 3
@@ -116,7 +116,7 @@ else
                 {
                     with (o_boxingqueen)
                     {
-                        // WARNING: Popz'd an empty stack.
+                        gml_Script_scr_qb_reset()
                         attackpattern = 21
                     }
                     o_boxingcontroller.phase3_hit_check = 1

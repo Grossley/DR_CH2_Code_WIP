@@ -1,6 +1,6 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_6, _temp_local_var_14, _temp_local_var_16, _temp_local_var_26;
 global.faceaction[myself] = 0
-myself
+gml_Script_scr_retarget(myself)
 if (cancelattack == false)
 {
     dm = gml_Script_instance_create(global.monsterx[global.chartarget[myself]], ((global.monstery[global.chartarget[myself]] - (global.hittarget[global.chartarget[myself]] * 20)) + 20), obj_dmgwriter)
@@ -8,18 +8,18 @@ if (cancelattack == false)
     if (char == 4)
         dm.type = 6
     dm.delay = 8
-    if (global.chapter == 2 && 694 && obj_spamton_neo_enemy.weirdpathendcon > 0)
+    if (global.chapter == 2 && instance_exists(obj_spamton_neo_enemy) && obj_spamton_neo_enemy.weirdpathendcon > 0)
     {
-        damage = ((global.battleat[myself] * points) / 150)
+        damage = round(((global.battleat[myself] * points) / 150))
         if (damage < 5)
             damage = 5
         if (damage > 10)
             damage = 10
     }
     else
-        damage = (((global.battleat[myself] * points) / 20) - (global.monsterdf[global.chartarget[myself]] * 3))
+        damage = round((((global.battleat[myself] * points) / 20) - (global.monsterdf[global.chartarget[myself]] * 3)))
     if (global.monstertype[global.chartarget[myself]] == 19)
-        damage *= 0.3
+        damage = ceil((damage * 0.3))
     if (damage < 0)
         damage = 0
     if (damage == 0)

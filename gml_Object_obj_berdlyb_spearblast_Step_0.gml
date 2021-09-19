@@ -11,13 +11,13 @@ if (!init)
     for (i = 1; i < 5; i++)
     {
         var xpoint = ((-150 * i) + x)
-        if (aim_at_player && 1 && relativeY == 0 && (xpoint - (obj_heart.x + 10)) <= 150)
+        if (aim_at_player && gml_Script_scr_monsterpop() == 1 && relativeY == 0 && (xpoint - (obj_heart.x + 10)) <= 150)
         {
             relativeY = (random_range((-80 * i), (80 * i)) + boxy)
             path_add_point(mypath, xpoint, relativeY, 100)
             relativeY = (((obj_heart.y + 10) - relativeY) / abs(((obj_heart.x + 10) - xpoint)))
         }
-        else if (aim_at_player && 1 && relativeY != 0)
+        else if (aim_at_player && gml_Script_scr_monsterpop() == 1 && relativeY != 0)
         {
             relativeY = ((obj_heart.y + 10) + (relativeY * abs(((obj_heart.x + 10) - xpoint))))
             path_add_point(mypath, xpoint, clamp(relativeY, ((-80 * i) + boxy), ((80 * i) + boxy)), 100)

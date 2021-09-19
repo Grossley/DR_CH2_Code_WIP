@@ -1,5 +1,5 @@
 if (global.lang == "ja")
-    FN = FN
+    FN = gml_Script_string_to_hiragana(FN)
 if (FN == gml_Script_stringsetloc("SUSIE", "DEVICE_NAMER_slash_Other_10_gml_3_0"))
     FOUND = 2
 if (FN == gml_Script_stringsetloc("NOELLE", "DEVICE_NAMER_slash_Other_10_gml_4_0"))
@@ -38,7 +38,7 @@ if (FN == gml_Script_stringsetloc("QC", "DEVICE_NAMER_slash_Other_10_gml_20_0"))
     FOUND = 1
 if (global.lang == "ja")
 {
-    FN = FN
+    FN = gml_Script_string_to_ascii_from_full_width(FN)
     if (FN == gml_Script_stringsetloc("SUSIE", "DEVICE_NAMER_slash_Other_10_gml_27_0"))
         FOUND = 2
     if (FN == gml_Script_stringsetloc("NOELLE", "DEVICE_NAMER_slash_Other_10_gml_28_0"))

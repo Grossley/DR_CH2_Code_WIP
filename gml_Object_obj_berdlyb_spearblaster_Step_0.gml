@@ -1,7 +1,7 @@
 if (con == 0 && image_index >= 3.5)
 {
     gml_Script_snd_volume(159, 1, 0)
-    159
+    gml_Script_snd_play(159)
     con = 1
 }
 if (con == 1 && image_index >= 9.5)
@@ -14,6 +14,6 @@ if (con == 1 && image_index >= 9.5)
 }
 if (con == 2 && image_index >= 14.5)
 {
-    158
+    gml_Script_snd_play(158)
     con = 3
 }

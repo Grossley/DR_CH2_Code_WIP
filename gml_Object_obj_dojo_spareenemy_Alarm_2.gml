@@ -21,13 +21,13 @@ gml_Script_instance_create((x + 42), (_yy + 36), obj_dojo_shaveeffect)
 gml_Script_instance_create((x + 30), (_yy + 38), obj_dojo_shaveeffect)
 gml_Script_instance_create((x + 34), (_yy + 38), obj_dojo_shaveeffect)
 gml_Script_instance_create((x + 38), (_yy + 38), obj_dojo_shaveeffect)
-list = 
+list = ds_list_create()
 with (obj_dojo_shaveeffect)
-    other.list
-list
+    ds_list_add(other.list, self)
+ds_list_shuffle(list)
 for (i = 0; i < ds_list_size(list); i++)
 {
     var _item = ds_list_find_value(list, i)
     _item.sparkle_timer = (((i * -1) + irandom(2)) - 5)
 }
-list
+ds_list_destroy(list)

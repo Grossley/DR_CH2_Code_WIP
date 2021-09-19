@@ -6,19 +6,19 @@ if (throwcon == 1)
         anglespeed = -2
     if (angle <= -15)
         anglespeed = 2
-    if (throwalpha >= 0.9 && throwready == 1)
+    if (gml_Script_button3_p_ch1() && throwalpha >= 0.9 && throwready == 1)
     {
         activatethrow = true
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
-    if (throwready == 0)
+    if (gml_Script_button3_p_ch1() && throwready == 0)
     {
         throwready = 1
         with (obj_writer_ch1)
-            // WARNING: Popz'd an empty stack.
-        global.msg[0] = (("obj_throwralsei_slash_Step_0_gml_26_0" + gml_Script_scr_get_input_name_ch1(6)) + gml_Script_scr_84_get_lang_string_ch1("obj_throwralsei_slash_Step_0_gml_26_1"))
-        // WARNING: Popz'd an empty stack.
+            instance_destroy()
+        global.msg[0] = ((gml_Script_scr_84_get_lang_string_ch1("obj_throwralsei_slash_Step_0_gml_26_0") + gml_Script_scr_get_input_name_ch1(6)) + gml_Script_scr_84_get_lang_string_ch1("obj_throwralsei_slash_Step_0_gml_26_1"))
+        gml_Script_scr_battletext_default_ch1()
     }
     if (activatethrow == true)
     {
@@ -29,7 +29,7 @@ if (throwcon == 1)
         sprite_index = spr_susieb_attack_unarmed_ch1
         angledraw = 0
         throwcon = 2
-        425
+        gml_Script_snd_play_ch1(425)
         ral = gml_Script_instance_create_ch1(rx, ry, 1581)
         ral.speed = mypower
         ral.mypower = mypower

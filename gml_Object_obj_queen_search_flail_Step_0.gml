@@ -1,4 +1,3 @@
-var _temp_local_var_8;
 flip = 1
 if (broken > 0)
 {
@@ -30,13 +29,16 @@ if (hitstun > 0)
     hitstun--
     return;
 }
-if (bufferstate == 0)
+if (bufferstate == 0 && gml_Script_scr_queen_buffercheck())
 {
+    image_blend = c_gray
+    bufferstate = 1
 }
-else
-    var _temp_local_var_8 = 0
-image_blend = c_gray
-bufferstate = 1
+else if (bufferstate == 1 && (!gml_Script_scr_queen_buffercheck()))
+{
+    image_blend = c_white
+    bufferstate = 2
+}
 if (bufferstate == 1)
     return;
 if (loading > 0)
@@ -56,7 +58,7 @@ else
 {
     parentwindow.state = 5
     impact = 1
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (timer >= 400 && impact == 0)
 {
@@ -65,10 +67,10 @@ if (timer >= 400 && impact == 0)
     if (rotate_speed > 40)
         rotate_speed = 40
     gml_Script_scr_orbitaroundpoint_dx(xstart, ystart, min(((lengthtimer * 2) + _chainlength), maxchainlength), (((rotateposition * 8) * flip) + direction))
-    d = (191 ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
-    d.shakex = 2
-    d.shakey = 2
-    178
+    d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
+    d.shakex = ceil(2)
+    d.shakey = ceil(2)
+    gml_Script_snd_play(178)
     for (i = 0; i < 4; i++)
     {
         d = gml_Script_instance_create(x, y, obj_regularbullet)

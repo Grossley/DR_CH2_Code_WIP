@@ -1,17 +1,14 @@
-var _temp_local_var_4;
 if (skip == 1 || isswitch == 1)
     flippable = 0
 if (myinteract == 3)
 {
-    if (flip == 0)
+    if (flip == 0 && (!gml_Script_d_ex()))
     {
+        global.interact = 0
+        myinteract = 0
+        with (obj_mainchara)
+            onebuffer = 5
     }
-    else
-        var _temp_local_var_4 = 0
-    global.interact = 0
-    myinteract = 0
-    with (obj_mainchara)
-        onebuffer = 5
 }
 if (con == 3)
 {
@@ -29,7 +26,7 @@ if (con == 3)
         con = 0
     }
 }
-if 1156
+if instance_exists(obj_musictracker)
     trackpos = obj_musictracker.trackpos
 if (trackpos >= 18.862 && trackpos <= 18.902)
     con = 3

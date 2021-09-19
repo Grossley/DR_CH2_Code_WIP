@@ -4,23 +4,24 @@ if (global.monster[myself] == true)
     if (global.mnfight == 1 && talked == 0)
     {
         if (global.mercymod[myself] < 100)
-            // WARNING: Popz'd an empty stack.
-        if (!361)
+            gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         global.msg[0] = gml_Script_stringsetloc(" ", "obj_ponman_enemy_slash_Step_0_gml_10_0")
         g = gml_Script_scr_enemyblcon((x - 160), y, 3)
         var _temp_local_var_2 = g.mywriter
+        instance_destroy()
     }
     if (talked == 1 && global.mnfight == 1)
     {
         rtimer = 0
-        5
+        gml_Script_scr_blconskip(5)
         if (global.mnfight == 2)
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
@@ -30,7 +31,7 @@ if (global.monster[myself] == true)
         if (rtimer == 12)
         {
             global.turntimer = 150
-            pontotal = 
+            pontotal = gml_Script_scr_monsterpop()
             for (i = 0; i < 3; i += 1)
             {
                 if (global.monster[i] == true && global.mercymod[i] >= 100)
@@ -104,35 +105,35 @@ if (global.myfight == 3)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* PONMAN - AT 8 DF 0&* Its nucleus doubles as an eyespot./%", "obj_ponman_enemy_slash_Step_0_gml_106_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
         global.msg[0] = gml_Script_stringsetloc("* You whispered goodnight to Ponman^1.&* It fell asleep.../%", "obj_ponman_enemy_slash_Step_0_gml_114_0")
         sleeping = true
         gml_Script_scr_mercyadd(myself, 100)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 1
     }
     if (acting == 3 && actcon == 0)
     {
-        global.batmusic[1]
+        gml_Script_snd_pause(global.batmusic[1])
         if (lullabied == 0)
         {
-            singy = snd_ralseising1
+            singy = gml_Script_snd_play(snd_ralseising1)
             var _temp_local_var_11 = object_index
             lullabied = 1
         }
         else
         {
-            singy = snd_ralseising2
+            singy = gml_Script_snd_play(snd_ralseising2)
             _temp_local_var_11 = object_index
             lullabied = 0
         }
         global.msg[0] = gml_Script_stringsetloc("* Ralsei sang a soft and entrancing lullaby!/%", "obj_ponman_enemy_slash_Step_0_gml_134_0")
         with (obj_heroralsei)
             visible = false
-        ralsing = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1479)
+        ralsing = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1480)
         var _temp_local_var_12 = ralsing
         image_speed = 0.2
     }

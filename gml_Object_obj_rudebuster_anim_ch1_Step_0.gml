@@ -3,13 +3,13 @@ if (t >= 28)
 {
     with (obj_herosusie_ch1)
         visible = true
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
-if target
+if instance_exists(target)
 {
     if (t == 10)
     {
-        397
+        gml_Script_snd_play_ch1(397)
         blast = gml_Script_instance_create_ch1((x + 40), (y + 30), 1621)
         blast.caster = caster
         blast.target = target

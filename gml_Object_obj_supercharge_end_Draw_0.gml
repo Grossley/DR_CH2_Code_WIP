@@ -1,5 +1,5 @@
 timer++
 if (timer == 16)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (timer >= 96)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

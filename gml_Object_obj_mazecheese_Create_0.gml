@@ -6,7 +6,7 @@ con = 0
 type = 1
 read = 0
 splatnoise = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 if (x < 800)
     type = 1
 else
@@ -23,7 +23,7 @@ if (global.flag[384] == 1 && type == 2)
 }
 if (room == room_dw_city_postbaseball_2)
 {
-    61
+    gml_Script_snd_play(61)
     image_index = 0
     fallcon = 0
     type = 2

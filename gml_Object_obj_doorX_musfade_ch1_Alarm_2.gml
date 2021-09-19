@@ -1,63 +1,63 @@
 global.entrance = 24
 gml_Script_instance_create_ch1(0, 0, 1462)
 if (room == room_castle_town_ch1)
-    327
+    room_goto(room_castle_tutorial_ch1)
 if (room == room_castle_tutorial_ch1)
-    325
+    room_goto(room_castle_town_ch1)
 if (room == room_field_shop1_ch1)
-    413
+    room_goto(room_shop1_ch1)
 if (room == room_man_ch1)
-    362
+    room_goto(room_forest_savepoint2_ch1)
 if (room == room_forest_area5_ch1)
 {
-    ch = 50
+    ch = ceil(random(50))
     if (ch == 50 && global.flag[910] == 0)
-        422
+        room_goto(room_man_ch1)
     else
-        368
+        room_goto(room_forest_starwalker_ch1)
 }
 if (room == room_town_krisyard_ch1)
-    285
+    room_goto(room_torhouse_ch1)
 if (room == room_torhouse_ch1)
-    287
+    room_goto(room_town_krisyard_ch1)
 if (room == room_town_school_ch1)
-    309
+    room_goto(room_schoollobby_ch1)
 if (room == room_schoollobby_ch1)
-    294
+    room_goto(room_town_school_ch1)
 if (room == room_cc_1f_ch1)
 {
     if (x >= 1300)
-        389
+        room_goto(room_cc_prisonelevator_ch1)
     else
-        411
+        gml_Script_snd_play_ch1(411)
 }
 if (room == room_cc_5f_ch1)
-    414
+    room_goto(room_shop2_ch1)
 if (room == room_cc_prisonelevator_ch1)
 {
     if (global.flag[239] == 0)
-        387
+        room_goto(room_cc_prison_to_elevator_ch1)
     if (global.flag[239] == 1)
-        394
+        room_goto(room_cc_1f_ch1)
     if (global.flag[239] == 2)
-        403
+        room_goto(room_cc_5f_ch1)
     if (global.flag[239] == 3)
-        391
+        room_goto(room_cc_prison_prejoker_ch1)
 }
 if (room == room_cc_prison_to_elevator_ch1)
 {
     global.flag[239] = 0
-    389
+    room_goto(room_cc_prisonelevator_ch1)
 }
 if (room == room_cc_1f_ch1)
 {
     global.flag[239] = 1
-    389
+    room_goto(room_cc_prisonelevator_ch1)
 }
 if (room == room_cc_prison_prejoker_ch1)
 {
     global.flag[239] = 3
-    389
+    room_goto(room_cc_prisonelevator_ch1)
 }
 if (room == room_cc_entrance_ch1)
-    384
+    room_goto(room_forest_castlefront_ch1)

@@ -1,11 +1,11 @@
-if (!572)
+if (!instance_exists(obj_queen_bulletcontroller))
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }
 if (init == 0)
 {
-    if 628
+    if instance_exists(obj_heart)
     {
         idealangle = point_direction(x, y, (obj_heart.x + 10), (obj_heart.y + 10))
         aimx = obj_heart.x
@@ -15,12 +15,12 @@ if (init == 0)
         idealangle = 270
     if randomshot
     {
-        if 3
+        if floor(random(3))
             idealangle += random_range(-20, 20)
     }
     currentangle = (idealangle + 360)
     init = 1
-    46
+    gml_Script_snd_play(46)
     timer = 0
     size = 0
 }
@@ -46,7 +46,7 @@ if (inittimer >= inittime)
         timer++
         if (timer >= waittime)
         {
-            91
+            gml_Script_snd_play(91)
             laser = gml_Script_instance_create(x, y, obj_queen_laser)
             laser.image_angle = image_angle
             laser.direction = image_angle
@@ -63,6 +63,6 @@ if (inittimer >= inittime)
         if (timer >= 10)
             image_alpha -= 0.1
         if (image_alpha <= 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

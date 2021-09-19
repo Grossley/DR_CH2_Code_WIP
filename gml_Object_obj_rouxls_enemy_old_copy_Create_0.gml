@@ -1,10 +1,10 @@
 var _temp_local_var_1;
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 talkmax = 90
 image_speed = 0.16666666666666666
 idlesprite = spr_rurus_pirate
 hurtsprite = spr_rurus_pirate
-sabersprite = 1164
+sabersprite = 1165
 sparedsprite = spr_rurus_pirate
 custom_draw_example = 1
 depth = -10
@@ -21,7 +21,7 @@ movey = 0
 bulletoverride = -1
 advancespeed = 8
 returnspeed = 6
-aimtime = (15 + 10)
+aimtime = (irandom(15) + 10)
 floatheight = 0
 returnease = 0
 headattack = 0
@@ -52,5 +52,4 @@ tile5.image_xscale = 8
 tile6 = gml_Script_instance_create(160, 280, obj_simtown_landmaker)
 tile6.image_xscale = 8
 with (obj_battleback)
-{
-}
+    instance_destroy()

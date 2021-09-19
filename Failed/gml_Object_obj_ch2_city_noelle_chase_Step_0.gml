@@ -1,9 +1,44 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (room == room_dw_city_traffic_1)
+{
+    if ((noellemarker.x - gml_Script_camerax()) < obj_sneo_lastattack && leavecon == 0)
+    {
+        leavecon = 1
+        noellemarker.image_speed = 0.25
+    }
+    if (leavecon == 1)
+    {
+        if gml_Script_i_ex(noellemarker)
+        {
+            noellemarker.x += 6
+            if noellemarker.x.room_width
+            {
+                leavecon = 2
+                global.plot = 68
+                instance_destroy(noellemarker)
+                instance_destroy()
+            }
+        }
+    }
+}
+if (room == room_dw_city_roadblock)
+{
+    if (leavecon == 0 && (noellemarker.y - gml_Script_cameray()) < 480)
+    {
+        leavecon = 1
+        noellemarker.image_speed = 0.25
+    }
+    if (leavecon == 1)
+    {
+        if gml_Script_i_ex(noellemarker)
+        {
+            noellemarker.x += 6
+            if (noellemarker.x >= 1330)
+            {
+                leavecon = 2
+                global.plot = 69
+                instance_destroy(noellemarker)
+                instance_destroy()
+            }
+        }
+    }
+}

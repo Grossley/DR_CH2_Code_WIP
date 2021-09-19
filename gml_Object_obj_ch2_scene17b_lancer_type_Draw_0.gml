@@ -5,9 +5,9 @@ if monitor_on
     var x2 = (x1 + (sprite_get_width(spr_queenmonitor_bg) * 2))
     var y2 = (y1 + (sprite_get_height(spr_queenmonitor_bg) * 2))
     var color = (overload ? c_red : make_color_rgb(60, 120, 190))
-    color
+    draw_set_color(color)
     draw_rectangle(x1, y1, x2, y2, false)
-    16777215
+    draw_set_color(c_white)
     draw_sprite_ext(spr_dw_mansion_monitor_frame, 0, 142, 24, 2, 2, 0, c_white, 1)
     if (!overload)
     {
@@ -22,19 +22,19 @@ if monitor_on
         y2 = ((y_pos - 1) + (sprite_get_height(spr_cutscene_17b_lancer_letter) * 2))
         typer_alpha++
         fade += 0.1
-        (((((2 * fade) + 3) * pi) / 2) + 1)
+        draw_set_alpha((sin(((((2 * fade) + 3) * pi) / 2)) + 1))
         draw_rectangle(x1, y1, x2, y2, false)
-        1
+        draw_set_alpha(1)
     }
     else
     {
-        "mainbig"
-        1
+        gml_Script_scr_84_set_draw_font("mainbig")
+        draw_set_halign(fa_center)
         typer_alpha++
         fade += 0.1
-        (((((2 * fade) + 3) * pi) / 2) + 1)
-        ((gml_Script_stringsetloc("QUANTITY OVERLOAD", "obj_ch2_scene17b_lancer_type_slash_Draw_0_gml_44_0") + 70) + (view_wport[0] / 2))
-        1
-        0
+        draw_set_alpha((sin(((((2 * fade) + 3) * pi) / 2)) + 1))
+        draw_text((gml_Script_camerax() + (view_wport[0] / 2)), (gml_Script_cameray() + 70), gml_Script_stringsetloc("QUANTITY OVERLOAD", "obj_ch2_scene17b_lancer_type_slash_Draw_0_gml_44_0"))
+        draw_set_alpha(1)
+        draw_set_halign(fa_left)
     }
 }

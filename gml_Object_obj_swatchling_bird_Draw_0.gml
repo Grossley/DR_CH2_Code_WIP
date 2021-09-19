@@ -11,17 +11,17 @@ if (colorlerp < 1)
 if (colorlerp == 1)
 {
     var fadebird = 0
-    if (hspeed > 0 ? (x + 10) : 0)
+    if (hspeed > 0 && x > (gml_Script_gt_maxx() + 10))
         fadebird = 1
-    if (hspeed < 0 ? (x - 10) : 0)
+    if (hspeed < 0 && x < (gml_Script_gt_minx() - 10))
         fadebird = 1
-    if (vspeed > 0 ? (y + 10) : 0)
+    if (vspeed > 0 && y > (gml_Script_gt_maxy() + 10))
         fadebird = 1
-    if (vspeed < 0 ? (y - 10) : 0)
+    if (vspeed < 0 && y < (gml_Script_gt_miny() - 10))
         fadebird = 1
     if (fadebird == 1)
         image_alpha -= 0.2
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

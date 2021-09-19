@@ -2,9 +2,9 @@ con = 0
 noleavefield = 0
 if (global.flag[352] == 1)
 {
-    if 285
+    if instance_exists(obj_forcefield)
     {
         with (obj_forcefield)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

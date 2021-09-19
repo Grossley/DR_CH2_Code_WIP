@@ -1,6 +1,6 @@
 threebuffer -= 1
-ss = (siner / 4)
-ssb = (siner / 4)
+ss = sin((siner / 4))
+ssb = cos((siner / 4))
 if (swaptime == 5)
 {
     returncount = 0
@@ -53,7 +53,7 @@ if (swaptime == 2 || swaptime == 3)
         scolor[i] = c_gray
         if (select[i] < 0)
         {
-            cfactor = (partyb[i] - selecty)
+            cfactor = abs((partyb[i] - selecty))
             if (cfactor < closefactor && cfactor < 24)
             {
                 closefactor = cfactor
@@ -66,7 +66,7 @@ if (swaptime == 2 || swaptime == 3)
                 movex[i] += 6
             scolor[i] = c_yellow
             idealy = ((y + 28) + (select[i] * 25))
-            if ((partyb[i] - idealy) < 6)
+            if (abs((partyb[i] - idealy)) < 6)
                 partyb[i] = idealy
             if (partyb[i] < idealy)
                 partyb[i] += 6
@@ -92,10 +92,10 @@ if (swaptime == 2 || swaptime == 3)
     ypush = 0
     if (threebuffer == 1)
         ypush = 15
-    arrowcolor
+    draw_set_color(arrowcolor)
     if (finishtimer < 8 && selecttotal < (maxpart - 2))
         draw_arrow((((x - 50) + (sin((floatsin / 6)) * 2)) + arrowpush), ((selecty + 10) + ypush), (((x - 10) + (sin((floatsin / 6)) * 2)) + arrowpush), ((selecty + 10) + ypush), 16)
-    if (threebuffer < 0 && selecttotal < (maxpart - 2))
+    if (gml_Script_button3_p_ch1() && threebuffer < 0 && selecttotal < (maxpart - 2))
     {
         if (closest >= 0)
         {
@@ -125,7 +125,7 @@ if (swaptime == 0 || swaptime == 1 || swaptime == 6)
         {
             global.monsterstatus[myself] = true
             if (global.monstercomment[myself] == " ")
-                global.monstercomment[myself] = "obj_bloxer_enemy_slash_Draw_0_gml_141_0"
+                global.monstercomment[myself] = gml_Script_scr_84_get_lang_string_ch1("obj_bloxer_enemy_slash_Draw_0_gml_141_0")
         }
         hurttimer -= 1
         if (hurttimer < 0)
@@ -182,13 +182,13 @@ if (swaptime == 0 || swaptime == 1 || swaptime == 6)
     {
         fsiner += 1
         gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
-        draw_sprite_ext(thissprite, 5, ((((x - 24) + (ss * 2)) + (swapx * 1.5)) + shakex), ((y + 54) + (ssb * 2)), 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
-        draw_sprite_ext(thissprite, part[4], ((x - ss) + shakex), ((y + 100) - swapx), 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, 5, ((((x - 24) + (ss * 2)) + (swapx * 1.5)) + shakex), ((y + 54) + (ssb * 2)), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, part[4], ((x - ss) + shakex), ((y + 100) - swapx), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         if (swaptime == 1 || swaptime == 6)
-            draw_sprite_ext(thissprite, part[0], ((x + (ss * 2)) + shakex), (y + swapx), 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
-        draw_sprite_ext(thissprite, part[3], (((x - 4) + (ss * 2)) + shakex), (y + 78), 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
-        draw_sprite_ext(thissprite, part[2], (((x + 4) - (ss * 2)) + shakex), (y + 54), 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
-        draw_sprite_ext(thissprite, part[1], ((x + (ss * 2)) + shakex), (y + 28), 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+            draw_sprite_ext(thissprite, part[0], ((x + (ss * 2)) + shakex), (y + swapx), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, part[3], (((x - 4) + (ss * 2)) + shakex), (y + 78), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, part[2], (((x + 4) - (ss * 2)) + shakex), (y + 54), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, part[1], ((x + (ss * 2)) + shakex), (y + 28), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
     }
 }

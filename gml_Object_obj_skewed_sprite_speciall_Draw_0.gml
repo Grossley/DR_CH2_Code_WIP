@@ -4,8 +4,8 @@ if (kq == 1)
     gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, (x + ((6 * hskew) / 20)), y, image_xscale, image_yscale, image_angle, 8421504, image_alpha, hskew, vskew)
 }
 gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, hskew, vskew)
-0
-draw_text((x + 10), (y + 10), ((((("h: " + string(hskew)) + "#v: ") + string(vskew)) + "rot: ") + string(image_angle)))
+draw_set_color(c_black)
+draw_text((x + 10), (y + 10), string_hash_to_newline(((((("h: " + string(hskew)) + "#v: ") + string(vskew)) + "rot: ") + string(image_angle))))
 timer++
 if (auto == 1 || auto == 2)
 {

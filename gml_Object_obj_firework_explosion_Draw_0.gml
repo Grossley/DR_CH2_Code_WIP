@@ -1,4 +1,4 @@
-1
+gpu_set_blendmode(bm_add)
 for (var i = 0; i < pixels; i++)
 {
     var _x = lerp(0, mypixelx[i], pixelexpand_h[i])
@@ -18,4 +18,4 @@ for (var i = 0; i < pixels; i++)
     var _col = merge_color(c_white, pixelrgb[i], min((time / 30), 1))
     draw_sprite_ext(_spr, _img, (x + _x), (y + _y), (pixelscale[i] + scalebonus), (pixelscale[i] + scalebonus), 0, _col, pixelalpha[i])
 }
-0
+gpu_set_blendmode(bm_normal)

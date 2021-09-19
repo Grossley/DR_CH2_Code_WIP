@@ -4,4 +4,4 @@ for (i = 0; i < 15; i++)
     d.direction = random_range((direction - 20), (direction + 20))
     d.height = height
 }
-// WARNING: Popz'd an empty stack.
+instance_destroy()

@@ -2,7 +2,7 @@ var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5;
 if (t == 0)
 {
     if (size > 1)
-        startang = (-180)
+        startang = (-random(180))
     for (i = 0; i < maxspade; i += 1)
     {
         spadeang = (((360 / maxspade) * i) + startang)
@@ -11,7 +11,7 @@ if (t == 0)
         spadex = lengthdir_x(300, (spadeang + 180))
         spadey = lengthdir_y(300, (spadeang + 180))
         spade[i] = gml_Script_instance_create_ch1((spadex + obj_battlesolid_ch1.x), (spadey + obj_battlesolid_ch1.y), 1518)
-        spade[i]
+        gml_Script_scr_bullet_inherit_ch1(spade[i])
         spade[i].sprite_index = spr_spadebullet_ch1
         spade[i].image_alpha = 0
         spade[i].active = true

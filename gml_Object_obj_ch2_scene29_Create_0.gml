@@ -1,10 +1,10 @@
 con = -1
 customcon = 0
 if (global.chapter != 2 || global.plot < 200 || global.plot >= 205)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
 }

@@ -28,17 +28,17 @@ if (con == 5)
 }
 if (captured == 1)
 {
-    if 764
+    if instance_exists(obj_maus_split_basket)
     {
         image_alpha = obj_maus_split_basket.image_alpha
         if (image_alpha <= 0.2)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (con == 2)
 {
-    if (!creator)
-        // WARNING: Popz'd an empty stack.
+    if (!gml_Script_i_ex(creator))
+        instance_destroy()
     else
     {
         timer++

@@ -295,7 +295,7 @@ if (global.myfight == 3)
         gml_Script_snd_play_ch1(388)
         with (obj_herokris_ch1)
             visible = false
-        dancekris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3809)
+        dancekris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3810)
         var _temp_local_var_31 = dancekris
         image_speed = 0.3334
         depth = obj_herokris_ch1.depth

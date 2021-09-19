@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 obj_battlecontroller.hidemercy = 1
 depth = (obj_battlecontroller.depth - 2)
 talkmax = 180
@@ -9,16 +9,16 @@ recruitable = 0
 timer = 0
 timerB = 0
 down = 0
-sprite[0] = 1754
-sprite[1] = 1755
-sprite[2] = 1756
-sprite[3] = 1758
-sprite[4] = 1760
-sprite[5] = 1764
-sprite[6] = 1762
-sprite[7] = 1761
-sprite[8] = 1757
-sprite[9] = 1763
+sprite[0] = 1755
+sprite[1] = 1756
+sprite[2] = 1757
+sprite[3] = 1759
+sprite[4] = 1761
+sprite[5] = 1765
+sprite[6] = 1763
+sprite[7] = 1762
+sprite[8] = 1758
+sprite[9] = 1764
 heal = 0
 learnedAct = 0
 helpusattack = 0

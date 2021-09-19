@@ -1,7 +1,8 @@
+var _temp_local_var_1;
 targ = 15
-if 1193
+if instance_exists(obj_controller_dining3)
 {
-    if (258 == targ)
+    if (instance_number(obj_saucer) == targ)
     {
         obj_controller_dining3.key = gml_Script_instance_create(other.x, other.y, obj_marker)
         obj_controller_dining3.key.sprite_index = spr_ch2_gimmick_saucer_key
@@ -11,15 +12,6 @@ if 1193
             obj_controller_dining3.dogcon = 71
     }
 }
-with (stacktop)
-{
-    gml_Script_instance_create((x + 25), (y + 34), obj_saucerTable_knocked)
-    // WARNING: Popz'd an empty stack.
-}
-if (room == 1193)
-    vspeed *= 0.75
-if (258 == (targ - 1) && 1193)
-{
-    vertState = 1
-    global.interact = 1
-}
+var _temp_local_var_1 = other
+gml_Script_instance_create((x + 25), (y + 34), obj_saucerTable_knocked)
+instance_destroy()

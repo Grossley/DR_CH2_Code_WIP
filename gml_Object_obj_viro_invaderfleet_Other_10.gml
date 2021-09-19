@@ -1,5 +1,5 @@
 var loopdir = choose(-1, 1)
-shotqueue[0] = (fleetsize - 1)
+shotqueue[0] = irandom((fleetsize - 1))
 for (i = 1; i < fleetsize; i++)
 {
     shotqueue[i] = shotqueue[(i + loopdir)]

@@ -1,5 +1,5 @@
 if (global.turntimer < 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 x = (xstart + lengthdir_x(length, place))
 y = (ystart + lengthdir_y(length, place))
 var a = 1
@@ -13,7 +13,7 @@ repeat a
 }
 if (length <= 0)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     d = gml_Script_instance_create(x, y, obj_queen_explodinghead)
     d.buffer = bufferattack
     d.damage = damage

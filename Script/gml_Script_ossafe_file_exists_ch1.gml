@@ -1,4 +1,4 @@
 if (!global.is_console)
-    return argument0;
+    return file_exists(argument0);
 else
-    return ("savedata" && (!ds_map_find_value(global.savedata, argument0)));
+    return (variable_global_exists("savedata") && (!is_undefined(ds_map_find_value(global.savedata, argument0))));

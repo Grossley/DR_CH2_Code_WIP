@@ -1,6 +1,6 @@
 if (init == 0)
 {
-    if boss
+    if gml_Script_i_ex(boss)
     {
         if (orientation == "top")
         {
@@ -34,7 +34,7 @@ if (alt == 0)
     crawlsiner++
     if (orientation == "top")
     {
-        if ((crawlsiner / period) < 0)
+        if (sin((crawlsiner / period)) < 0)
         {
             wasmoving = 1
             movingcheck = 1
@@ -44,7 +44,7 @@ if (alt == 0)
     }
     if (orientation == "bottom")
     {
-        if (((crawlsiner / period) + 1.5707963267948966) < 0)
+        if (cos(((crawlsiner / period) + 1.5707963267948966)) < 0)
         {
             wasmoving = 1
             movingcheck = 1
@@ -52,19 +52,19 @@ if (alt == 0)
             x += (cos(((crawlsiner / period) + 1.5707963267948966)) * amplitude)
         }
     }
-    if boss
+    if gml_Script_i_ex(boss)
     {
         jointx = ((x + boss.x) / 2)
         jointy = ((remjointy + y) / 2)
     }
 }
-if (alt == 1 && boss)
+if (alt == 1 && gml_Script_i_ex(boss))
 {
     if (orientation == "top")
         crawlsiner++
     else
         crawlsiner--
-    xx = 200
+    xx = (gml_Script_camerax() + 200)
     endx = (boss.x - 20)
     x = ((xx + ((endx - xx) / 2)) + (sin((crawlsiner / 12)) * ((endx - xx) / 2)))
     btimer++
@@ -89,7 +89,7 @@ if (alt == 1 && boss)
         else
             btimer = 0
     }
-    if boss
+    if gml_Script_i_ex(boss)
     {
         jointx = ((x + boss.x) / 2)
         jointy = ((remjointy + y) / 2)

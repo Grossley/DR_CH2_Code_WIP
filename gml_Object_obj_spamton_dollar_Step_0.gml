@@ -1,5 +1,5 @@
-// WARNING: Popz'd an empty stack.
-if (!582)
+event_inherited()
+if (!instance_exists(obj_spamton_attack_mode))
     return;
 if (obj_spamton_attack_mode.state == 2)
 {

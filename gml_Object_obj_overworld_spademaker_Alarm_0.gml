@@ -1,7 +1,7 @@
 var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5;
 if (homing == 1)
 {
-    dir = 360
+    dir = random(360)
     radius = (200 + random(40))
     dirx = lengthdir_x(radius, dir)
     diry = lengthdir_y(radius, dir)

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 image_xscale = 2
 image_yscale = 2
 holecon = 0

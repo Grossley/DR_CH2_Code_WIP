@@ -1,6 +1,6 @@
 friction = 0.2
 image_alpha = 0.8
-if (80 && getdepth)
+if (instance_exists(obj_mainchara) && getdepth)
     depth = (obj_mainchara.depth + 100)
 remx = x
 remy = y
@@ -20,6 +20,6 @@ timer++
 if (timer >= lifecycle)
     image_alpha *= 0.9
 if (image_alpha < 0.05)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (y <= (starty - 20) || timer > 10)
     getdepth = 1

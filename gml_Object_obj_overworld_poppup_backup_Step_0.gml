@@ -1,4 +1,4 @@
-if 80
+if instance_exists(obj_mainchara)
     dist = distance_to_point((obj_mainchara.x + 20), (obj_mainchara.y + 40))
 if (dist < 160 && con == 0)
 {
@@ -12,10 +12,10 @@ if (con == 2)
         image_index = 3
     speed1 *= 1.5
     speed1 = clamp(speed1, 0, 8)
-    if 80
+    if instance_exists(obj_mainchara)
         move_towards_point((obj_mainchara.x + 40), (obj_mainchara.y + 80), speed1)
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_alt()
 if place_meeting(x, y, obj_mainchara)
 {
     sprite_index = spr_poppup_intro
@@ -38,5 +38,5 @@ if place_meeting(x, y, obj_mainchara)
         flyoff.image_angle = -10
     }
     gml_Script_scr_battle(51, 0, marker, 0, 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

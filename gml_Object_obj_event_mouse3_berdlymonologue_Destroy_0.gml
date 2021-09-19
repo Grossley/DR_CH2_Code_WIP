@@ -1,9 +1,12 @@
 var _temp_local_var_1;
 if (d != -4)
+{
     var _temp_local_var_1 = d
-if 62
+    instance_destroy()
+}
+if instance_exists(obj_writer)
 {
     with (obj_writer)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 global.interact = 0

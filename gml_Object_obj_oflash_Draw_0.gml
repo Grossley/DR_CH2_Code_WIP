@@ -1,4 +1,4 @@
-if target
+if gml_Script_i_ex(target)
 {
     image_index = target.image_index
     sprite_index = target.sprite_index
@@ -9,9 +9,9 @@ if target
     if (global.chapter == 2 && target.object_index == obj_spamton_neo_enemy)
     {
         siner += flashspeed
-        if (siner > 4 && (siner / 3) < 0)
+        if (siner > 4 && sin((siner / 3)) < 0)
         {
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
             obj_spamton_neo_enemy.state = 0
             return;
         }
@@ -35,7 +35,7 @@ if target
 }
 siner += flashspeed
 gml_Script_d3d_set_fog(true, flashcolor, 0, 1)
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, (siner / 3))
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, sin((siner / 3)))
 gml_Script_d3d_set_fog(false, c_black, 0, 0)
-if (siner > 4 && (siner / 3) < 0)
-    // WARNING: Popz'd an empty stack.
+if (siner > 4 && sin((siner / 3)) < 0)
+    instance_destroy()

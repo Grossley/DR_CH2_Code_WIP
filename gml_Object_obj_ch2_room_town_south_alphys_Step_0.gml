@@ -1,21 +1,22 @@
-var _temp_local_var_2, _temp_local_var_7, _temp_local_var_8;
-if (2 && obj_mainchara.x < x && con == -1 && global.flag[336] == 0)
+var _temp_local_var_2, _temp_local_var_7;
+if (gml_Script_scr_havechar(2) && obj_mainchara.x < x && con == -1 && global.flag[336] == 0)
 {
     con = 1
     global.interact = 1
     global.facing = 1
     global.flag[336] = 1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_losechar()
     susxpos = obj_caterpillarchara.x
     susypos = obj_caterpillarchara.y
-    nisesusie = gml_Script_scr_marker(susxpos, susypos, 848)
+    nisesusie = gml_Script_scr_marker(susxpos, susypos, 849)
     var _temp_local_var_2 = nisesusie
+    gml_Script_scr_depth()
 }
 if (con == 1)
 {
     con = 3
     leaveCounter++
-    "susie"
+    gml_Script_scr_speaker("susie")
     if (leaveCounter == 1)
     {
         gml_Script_msgsetloc(0, "\\E0* Uh oh. Alphys. Hell if I'm going any further./", "obj_ch2_room_town_south_alphys_slash_Step_0_gml_33_0")
@@ -25,21 +26,21 @@ if (con == 1)
     }
     else
         gml_Script_msgsetloc(0, "\\E0* Alphys? You're on your own./%", "obj_ch2_room_town_south_alphys_slash_Step_0_gml_39_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
 }
-if (obj_mainchara.x > x && global.flag[336] == 1 && (!2))
+if (obj_mainchara.x > x && global.flag[336] == 1 && (!gml_Script_scr_havechar(2)))
 {
-    2
-    3
+    gml_Script_scr_getchar(2)
+    gml_Script_scr_getchar(3)
     gml_Script_scr_makecaterpillar((obj_mainchara.x - 40), (obj_mainchara.y - 7), 2, 0)
     with (obj_caterpillarchara)
         visible = false
 }
-if (obj_mainchara.x < x && global.flag[336] == 1 && 2)
+if (obj_mainchara.x < x && global.flag[336] == 1 && gml_Script_scr_havechar(2))
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_losechar()
     with (obj_caterpillarchara)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (obj_mainchara.x > (x + 40) && global.flag[336] == 1)
 {
@@ -53,26 +54,25 @@ if (con == 4)
 {
     nisesusie.y = lerp(nisesusie.y, obj_caterpillarchara.y, 0.15)
     nisesusie.x = lerp(nisesusie.x, obj_caterpillarchara.x, 0.1)
-    if ((nisesusie.x - obj_caterpillarchara.x) <= 4 && (nisesusie.y - obj_caterpillarchara.y) <= 4)
+    if (abs((nisesusie.x - obj_caterpillarchara.x)) <= 4 && abs((nisesusie.y - obj_caterpillarchara.y)) <= 4)
     {
         nisesusie.x = obj_caterpillarchara.x
         nisesusie.sprite_index = obj_caterpillarchara.sprite_index
         with (obj_caterpillarchara)
             visible = true
         var _temp_local_var_7 = nisesusie
+        instance_destroy()
     }
 }
 if (con == 5)
 {
     con = 3
-    "susie"
+    gml_Script_scr_speaker("susie")
     gml_Script_msgsetloc(0, "\\E2* (Alright^1, let's go.)/%", "obj_ch2_room_town_south_alphys_slash_Step_0_gml_96_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
 }
-if (con == 3)
+if (con == 3 && (!gml_Script_d_ex()))
 {
+    global.interact = 0
+    con = -1
 }
-else
-    var _temp_local_var_8 = 0
-global.interact = 0
-con = -1

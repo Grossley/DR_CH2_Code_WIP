@@ -8,11 +8,11 @@ if (exploded == 1)
     image_index += 1
     image_alpha -= 0.2
     if (image_index >= 4)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (obj_mainchara.battlemode == 0)
     image_alpha *= 0.9
 if (image_alpha < 0.01)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (hit != 0)
     exploded = 1

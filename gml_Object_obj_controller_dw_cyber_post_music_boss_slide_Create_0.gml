@@ -16,7 +16,7 @@ plx = room_width
 susx = room_width
 if (global.flag[7] == 1)
     global.flag[7] = 0
-if 640
+if (gml_Script_charaX() < 640)
 {
     stopblock = gml_Script_instance_create(520, 2600, obj_solidblocksized)
     stopblock.visible = false

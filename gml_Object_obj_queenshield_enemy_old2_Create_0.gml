@@ -25,7 +25,7 @@ shieldhurttimer = 0
 shieldx = 0
 shieldy = 0
 shieldalpha = 1
-shieldheight = sprite_index
+shieldheight = sprite_get_height(sprite_index)
 shieldhpgradual = 0
 imabouttobreak = 0
 imabouttobreak_alpha = 0.4
@@ -41,6 +41,6 @@ for (i = 0; i < 14; i++)
     shieldpiece_xscale[i] = 2
     shieldpiece_yscale[i] = 2
     shieldpiece_alpha[i] = 1
-    shieldpiece_sprite_index[i] = 1890
+    shieldpiece_sprite_index[i] = 1891
     shieldpiece_image_index[i] = 0
 }

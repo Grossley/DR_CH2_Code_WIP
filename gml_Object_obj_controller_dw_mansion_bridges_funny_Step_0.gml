@@ -2,6 +2,7 @@ var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, 
 if (saved == 1)
 {
     var _temp_local_var_1 = swatchfriend
+    gml_Script_scr_depth()
     if (con == 0)
     {
         global.interact = 1
@@ -44,7 +45,7 @@ if (saved == 1)
         friendlySwatch.image_xscale = image_xscale
         friendlySwatch.image_yscale = image_yscale
         global.interact = 0
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }
 if (vaseSpawned == 0 && spawnVaseTrig == 1)
@@ -59,7 +60,7 @@ if (vaseSpawned == 0 && spawnVaseTrig == 1)
     vase.con = 0
     vase.newspeed = 4
 }
-if vase
+if gml_Script_i_ex(vase)
 {
     var _temp_local_var_3 = vase
     other.swatchLines = 1

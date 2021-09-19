@@ -9,4 +9,4 @@ base_text_ypos = (gml_Script___view_get(1, 0) + 180)
 base_heart_ypos = (gml_Script___view_get(1, 0) + 195)
 ypos_offset = 40
 init = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_snd_free_all_ch1()

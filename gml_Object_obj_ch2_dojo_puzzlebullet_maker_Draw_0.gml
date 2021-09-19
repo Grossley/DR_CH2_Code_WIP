@@ -17,7 +17,7 @@ if (active == true)
     activetimer++
     if (activetimer == timetarg)
     {
-        snd = 55
+        snd = gml_Script_snd_play(55)
         gml_Script_snd_pitch(snd, (1 + ((timesfired / times) / 2)))
         mybul = gml_Script_instance_create(x, y, obj_regularbullet)
         mybul.grazepoints = grazepoints
@@ -40,6 +40,5 @@ if (active == 2)
 {
     image_alpha *= 0.7
     if (image_alpha <= 0.01)
-    {
-    }
+        instance_destroy()
 }

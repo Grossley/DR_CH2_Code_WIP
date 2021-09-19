@@ -1,12 +1,12 @@
 if (songplay == 2)
 {
-    global.currentsong[0] = "THE_HOLY.ogg"
+    global.currentsong[0] = gml_Script_snd_init("THE_HOLY.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.8, 0.9)
     songplay = 3
 }
 if (songplay == 1)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
     songplay = 2
 }
 if (songplay == 0)
@@ -48,7 +48,7 @@ if (con == 3.1)
     gml_Script_instance_create((100 + JA_XOFF), 80, obj_writer)
     con = 4
 }
-if (con == 4 && (!62))
+if (con == 4 && (!instance_exists(obj_writer)))
 {
     sussprite = spr_susier_bright
     con = 3.2
@@ -73,7 +73,7 @@ if (con == 4.2)
     gml_Script_instance_create((100 + JA_XOFF), 80, obj_writer)
     con = 6
 }
-if (con == 6 && (!62))
+if (con == 6 && (!instance_exists(obj_writer)))
 {
     sussprite = spr_susieu_bright
     con = 7
@@ -100,12 +100,12 @@ if (con == 8)
     gml_Script_instance_create((100 + JA_XOFF), 80, obj_writer)
     con = 8.1
 }
-if (con == 8.1 && (!62))
+if (con == 8.1 && (!instance_exists(obj_writer)))
 {
     con = 9
     alarm[4] = 40
 }
-if (con == 9 && (!62))
+if (con == 9 && (!instance_exists(obj_writer)))
 {
     y -= 1
     image_index += 0.1
@@ -131,9 +131,9 @@ if (con == 10.1)
     gml_Script_instance_create((80 + JA_XOFF), 80, obj_writer)
     con = 12
 }
-if (con == 12 && (!62))
+if (con == 12 && (!instance_exists(obj_writer)))
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
     made = 1
     gml_Script_instance_create((x + (sprite_width / 2)), ((y + (sprite_width / 2)) + 20), obj_darkfountain_event)
     con = 13

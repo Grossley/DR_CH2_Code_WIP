@@ -2,7 +2,7 @@ spec = 0
 delaytimer = 0
 delay = 2
 active = false
-damage = 600
+damage = round(random(600))
 bounces = 0
 type = -1
 stretch = 0.2
@@ -22,5 +22,5 @@ with (obj_dmgwriter)
 }
 specialmessage = 0
 stayincamera = 1
-xx = 
-message_sprite = "spr_battlemsg"
+xx = gml_Script_camerax()
+message_sprite = gml_Script_scr_84_get_sprite("spr_battlemsg")

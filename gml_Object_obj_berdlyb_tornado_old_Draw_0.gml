@@ -6,7 +6,7 @@ if (init && image_alpha < 1)
         image_alpha += 0.1
 }
 if (middespawn && traveldistance <= ((maxdistance / 2) + 10))
-    image_blend = merge_color(c_gray, c_white, gml_Script_scr_inverselerp(((maxdistance / 2) - 10), ((maxdistance / 2) + 10), traveldistance))
+    image_blend = merge_color(c_gray, c_white, gml_Script_clamp01(gml_Script_scr_inverselerp(((maxdistance / 2) - 10), ((maxdistance / 2) + 10), traveldistance)))
 xflip = 1
 if (flipTimer < 0)
     xflip = -1

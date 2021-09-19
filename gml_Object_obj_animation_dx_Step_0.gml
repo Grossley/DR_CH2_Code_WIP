@@ -3,5 +3,5 @@ if animdone
 {
     timer++
     if (timer >= endtime)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

@@ -1,5 +1,5 @@
 if (explosion_hide == 0)
-    // WARNING: Popz'd an empty stack.
+    draw_self()
 if (timer > 0)
 {
     obj_sneo_lastattack.endattack = 3
@@ -14,7 +14,7 @@ if (timer > 0)
         if (explodesfx == 0)
         {
             explodesfx = 1
-            222
+            gml_Script_snd_loop(222)
             gml_Script_snd_play_x(208, 0.6, 1)
         }
         draw_sprite_ext(spr_sneo_bigcircle, 0, (x - 50), y, (image_xscale + (timer * 2)), (image_yscale + timer), 0, c_white, 1)

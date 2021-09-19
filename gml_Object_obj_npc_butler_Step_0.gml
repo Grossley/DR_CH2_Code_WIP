@@ -1,9 +1,9 @@
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+event_inherited()
+gml_Script_scr_depth()
 if (con == 1)
 {
     con = 2
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_shakeobj()
     sprite_index = spr_swatchling_hurt
     image_speed = 0
 }
@@ -23,6 +23,6 @@ if (con == 3)
     if (image_xscale == 2)
         image_xscale = -2
     x += 10
-    if (x + 1700)
-        // WARNING: Popz'd an empty stack.
+    if (x > (gml_Script_camerax() + 1700))
+        instance_destroy()
 }

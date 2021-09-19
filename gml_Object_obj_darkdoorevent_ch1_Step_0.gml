@@ -1,7 +1,7 @@
 var _temp_local_var_3, _temp_local_var_5, _temp_local_var_6;
 if (hcon == 1)
 {
-    if 1347
+    if instance_exists(obj_mainchara_ch1)
     {
         if (obj_mainchara_ch1.x >= 220 && global.interact == 0)
         {
@@ -11,14 +11,14 @@ if (hcon == 1)
             global.fc = 2
             global.fe = 3
             global.typer = 31
-            global.msc
+            gml_Script_scr_text_ch1(global.msc)
             gml_Script_instance_create_ch1(0, 0, 1326)
         }
     }
 }
 if (hcon == 2)
 {
-    if 0
+    if (gml_Script_d_ex_ch1() == 0)
     {
         if (global.plot < 32)
             global.plot = 32
@@ -28,7 +28,7 @@ if (hcon == 2)
 }
 if (con == 1)
 {
-    if 1347
+    if instance_exists(obj_mainchara_ch1)
     {
         if (obj_mainchara_ch1.y <= 200 && global.interact == 0)
         {
@@ -46,15 +46,16 @@ if (con == 2)
 }
 if (con == 3)
 {
-    if global.cinstance[0]
+    if instance_exists(global.cinstance[0])
         con = 4
     else
         con = 20
 }
 if (con == 4)
 {
-    r = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3566)
+    r = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3567)
     var _temp_local_var_3 = global.cinstance[0]
+    instance_destroy()
 }
 if (con == 6)
 {

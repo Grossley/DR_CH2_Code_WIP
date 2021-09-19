@@ -1,5 +1,4 @@
-var _temp_local_var_4;
-if 131
+if gml_Script_i_ex(131)
 {
     with (obj_readable_room1)
     {
@@ -13,14 +12,12 @@ if 131
             if (sprite_index == spr_tasque_idle_overworld)
                 depth = (y > 350 ? (obj_mainchara.depth - 100) : (obj_mainchara.depth + 100))
             else
-                // WARNING: Popz'd an empty stack.
+                gml_Script_scr_depth()
         }
     }
 }
-if (howl_con == 1)
+if (howl_con == 1 && (!gml_Script_d_ex()))
 {
+    howl_con = 0
+    gml_Script_snd_play(207)
 }
-else
-    var _temp_local_var_4 = 0
-howl_con = 0
-207

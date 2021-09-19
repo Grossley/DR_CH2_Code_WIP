@@ -4,14 +4,14 @@ if (autocomplete == 0)
     {
         if (con == 0)
         {
-            294
+            gml_Script_snd_play(294)
             jumpy = 20
-            if (1161 && obj_controller_city_mice2.victory == false)
+            if (instance_exists(obj_controller_city_mice2) && obj_controller_city_mice2.victory == false)
             {
                 targetx = 370
                 targety = 166
             }
-            if (1161 && obj_controller_city_mice2.victory == true)
+            if (instance_exists(obj_controller_city_mice2) && obj_controller_city_mice2.victory == true)
             {
                 targetx = 860
                 targety = 238
@@ -26,15 +26,15 @@ if (autocomplete == 0)
     }
     else
     {
-        if 1186
+        if instance_exists(obj_controller_city_mice3)
         {
             if (fallen == 0)
                 obj_controller_city_mice3.exttrig = "success"
             else
                 obj_controller_city_mice3.exttrig = "fell"
         }
-        294
-        if 1180
+        gml_Script_snd_play(294)
+        if instance_exists(obj_masterPlatformController)
         {
             if (con == 0)
             {

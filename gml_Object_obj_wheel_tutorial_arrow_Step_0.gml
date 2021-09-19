@@ -3,9 +3,9 @@ if (con == 0)
 {
     timer++
     if (o_boxingqueen.firstwheelattack == 0 && timer > 79)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (o_boxingqueen.firstwheelattack == 1 && timer > 29)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 flashtimer++
 if (flashtimer == 5)

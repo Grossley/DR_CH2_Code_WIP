@@ -1,6 +1,6 @@
-if (!baseball_hitbox)
+if (!gml_Script_i_ex(baseball_hitbox))
     return;
-if (!wheel_hitbox_graze)
+if (!gml_Script_i_ex(wheel_hitbox_graze))
     return;
 if (y > c && o_boxingcontroller.punchcon > 0)
 {

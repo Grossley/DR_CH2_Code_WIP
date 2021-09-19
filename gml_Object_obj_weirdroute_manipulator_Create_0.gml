@@ -1,6 +1,6 @@
 var _temp_local_var_7;
 havenoelle = 0
-if 274
+if instance_exists(obj_caterpillarchara)
 {
     with (obj_caterpillarchara)
     {
@@ -8,7 +8,7 @@ if 274
             other.havenoelle = 1
     }
 }
-phase = 
+phase = gml_Script_scr_sideb_get_phase()
 trashcon = 0
 if (global.flag[915] > 0 && global.flag[916] == 0)
 {
@@ -22,72 +22,72 @@ if (global.flag[915] >= 1.5 && global.flag[916] == 0)
 {
     if (room == room_dw_city_intro)
     {
-        101
-        108
+        gml_Script_safe_delete(101)
+        gml_Script_safe_delete(108)
     }
-    if 1265
+    if instance_exists(obj_city_parallaxStreet)
     {
         with (obj_city_parallaxStreet)
             nocars = 1
     }
     if (room == room_dw_city_traffic_1)
     {
-        1114
-        1115
-        1228
-        101
-        108
+        gml_Script_safe_delete(1114)
+        gml_Script_safe_delete(1115)
+        gml_Script_safe_delete(1228)
+        gml_Script_safe_delete(101)
+        gml_Script_safe_delete(108)
         omawaroid = gml_Script_instance_create(880, 160, obj_chaseenemy)
         tasque = gml_Script_instance_create(1680, 220, obj_chaseenemy)
     }
 }
 if (global.flag[915] >= 1.75 && global.flag[916] == 0)
 {
-    if 1265
+    if instance_exists(obj_city_parallaxStreet)
     {
         with (obj_city_parallaxStreet)
             nocars = 1
     }
     if (room == room_dw_city_traffic_2)
     {
-        1114
-        1115
-        1228
-        101
-        103
-        108
+        gml_Script_safe_delete(1114)
+        gml_Script_safe_delete(1115)
+        gml_Script_safe_delete(1228)
+        gml_Script_safe_delete(101)
+        gml_Script_safe_delete(103)
+        gml_Script_safe_delete(108)
         virokun = gml_Script_instance_create(840, 120, obj_chaseenemy)
         werewire = gml_Script_instance_create(1504, 80, obj_chaseenemy)
     }
     if (room == room_dw_city_mirrorfriend)
     {
-        101
-        1035
+        gml_Script_safe_delete(101)
+        gml_Script_safe_delete(1035)
     }
     if (room == room_dw_city_roadblock)
-        108
+        gml_Script_safe_delete(108)
     if (room == room_dw_city_big_1)
-        101
+        gml_Script_safe_delete(101)
     if (room == room_dw_city_susie_ralsei_fun_1)
     {
         with (obj_cybercity_balloon)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_ch2_susie_ralsei_fun)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_readable_room1)
-            // WARNING: Popz'd an empty stack.
-        if 127
+            instance_destroy()
+        if instance_exists(obj_marker)
         {
             with (obj_marker)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         with (obj_sprite_part_parallax_inverted)
             dontdraw = 1
         with (obj_sprite_part_parallax_example)
             dontdraw = 1
-        var lay_id = "CarnivalSprites"
+        var lay_id = layer_get_id("CarnivalSprites")
         var spr_id = layer_sprite_get_id(lay_id, "graphic_58FD8107")
-        layer_sprite_change(spr_id, 2998)
+        layer_sprite_change(spr_id, 2999)
         layer_sprite_x(spr_id, 216)
         layer_sprite_y(spr_id, -120)
     }
@@ -96,62 +96,62 @@ if (phase == 2)
 {
     if (room == room_dw_city_traffic_1 || room == room_dw_city_traffic_2 || room == room_dw_city_traffic_3 || room == room_dw_city_roadblock || room == room_dw_city_big_1 || room == room_dw_city_big_2 || room == room_dw_city_big_3 || room == room_dw_city_mirrorfriend || room == room_dw_city_entrance)
     {
-        1114
-        1228
-        103
-        101
-        108
-        313
-        314
-        311
-        1035
-        1251
-        if 1115
+        gml_Script_safe_delete(1114)
+        gml_Script_safe_delete(1228)
+        gml_Script_safe_delete(103)
+        gml_Script_safe_delete(101)
+        gml_Script_safe_delete(108)
+        gml_Script_safe_delete(313)
+        gml_Script_safe_delete(314)
+        gml_Script_safe_delete(311)
+        gml_Script_safe_delete(1035)
+        gml_Script_safe_delete(1251)
+        if instance_exists(obj_traffic_switch)
         {
             with (obj_traffic_switch)
-                1
+                gml_Script_scr_createFrozen(1)
         }
-        if 309
+        if instance_exists(obj_cybercity_bg_trafficlight_shine)
         {
             with (obj_cybercity_bg_trafficlight_shine)
                 mode = 0
         }
-        if 308
+        if instance_exists(obj_sprite_part_parallax_inverted)
         {
             with (obj_sprite_part_parallax_inverted)
                 dontdraw = 1
         }
-        if 307
+        if instance_exists(obj_sprite_part_parallax_example)
         {
             with (obj_sprite_part_parallax_example)
                 dontdraw = 1
         }
-        if 310
+        if instance_exists(obj_cybercity_bg_carbridge)
         {
             with (obj_cybercity_bg_carbridge)
                 dontdraw = 1
         }
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_mice2)
     {
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_intro)
     {
-        if 101
+        if instance_exists(obj_npc_room)
         {
             with (obj_npc_room)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
-        if 108
+        if instance_exists(obj_npc_room_animated)
         {
             with (obj_npc_room_animated)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_traffic_3)
@@ -162,42 +162,42 @@ if (phase == 2)
     if (room == room_dw_city_queen_drunk)
     {
         with (obj_ch2_scene13)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_npc_sign)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         gml_Script_instance_create(1238, 238, obj_chaseenemy)
     }
     if (room == room_dw_city_cheesemaze)
     {
         with (obj_controller_city_cheesemaze)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_mazecheese)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_cybercity_bg_sign)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         gml_Script_instance_create(1480, 480, obj_chaseenemy)
         gml_Script_instance_create(960, 640, obj_chaseenemy)
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_entrance)
     {
-        lay_id = "Assets_WelcomeSign"
+        lay_id = layer_get_id("Assets_WelcomeSign")
         spr_id = layer_sprite_get_id(lay_id, "graphic_66ADFD1")
         layer_sprite_speed(spr_id, 0)
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_savepoint)
     {
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
         with (obj_cybercity_bg_lightset)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_ch2_room_city_savepoint)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_npc_room_animated)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         box1 = gml_Script_instance_create(226, 152, obj_npc_room)
         box2 = gml_Script_instance_create(380, 152, obj_npc_room)
         box3 = gml_Script_instance_create(302, 176, obj_npc_room)
@@ -216,13 +216,13 @@ if (phase == 2)
         with (obj_cybercity_bg_trafficlight_shine)
             mode = 0
         with (obj_cybercity_bg_screen_dolphin)
-            // WARNING: Popz'd an empty stack.
-        lid = "TILES_Sidewalk_Animated"
+            instance_destroy()
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_moss)
     {
-        lid = "TILES_Sidewalk_Animated"
+        lid = layer_get_id("TILES_Sidewalk_Animated")
         layer_set_visible(lid, 0)
     }
     if (room == room_dw_city_queen_drunk)
@@ -232,7 +232,7 @@ if (phase == 2)
             door = gml_Script_instance_create(x, y, obj_doorA)
             door.image_yscale = image_xscale
             door.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     if (room == room_dw_city_savepoint)
@@ -242,14 +242,14 @@ if (phase == 2)
             door = gml_Script_instance_create(x, y, obj_doorA)
             door.image_yscale = image_xscale
             door.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
         with (obj_doorB_musfade)
         {
             door = gml_Script_instance_create(x, y, obj_doorB)
             door.image_yscale = image_xscale
             door.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     if (room == room_dw_city_big_3)
@@ -259,7 +259,7 @@ if (phase == 2)
             door = gml_Script_instance_create(x, y, obj_doorB)
             door.image_yscale = image_xscale
             door.image_yscale = image_yscale
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
 }
@@ -282,14 +282,14 @@ if (phase == 3)
         secretdoorlocked.sprite_index = spr_dw_mansion_door_closed
         secretdoorlocked.image_xscale = 1
         secretdoorlocked.image_yscale = 1
-        142
-        152
-        1285
-        1284
+        gml_Script_safe_delete(142)
+        gml_Script_safe_delete(152)
+        gml_Script_safe_delete(1285)
+        gml_Script_safe_delete(1284)
         with (obj_readable_room1)
         {
             if (x < 220)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
     if (room == room_dw_mansion_entrance || room == room_dw_mansion_east_3f || room == room_dw_mansion_east_2f_shortcut)
@@ -301,30 +301,30 @@ if (phase == 3)
     {
         gml_Script_scr_forcefield(760, 1000, 10, 2, 1, 0)
         with (obj_overworld_bulletarea)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         gml_Script_instance_create(860, 760, obj_queenart_red)
         with (obj_queenart_red)
         {
             spam = gml_Script_instance_create((x - (sprite_width / 2)), y, obj_spamtonpainting)
             spam.depth = depth
-            spam
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_darksize(spam)
+            instance_destroy()
         }
         with (obj_queenart_mona)
         {
             spam = gml_Script_instance_create(x, y, obj_spamtonpainting)
             spam.depth = depth
-            spam
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_darksize(spam)
+            instance_destroy()
         }
         with (obj_npc_sign)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         global.flag[362] = (1 && global.flag[382] == 0)
         layer_set_visible("TILES_LOCKED_DOOR", 0)
-        if 1215
+        if instance_exists(obj_lockedDoor_mansion_east_2f_transformed_new)
         {
             with (obj_lockedDoor_mansion_east_2f_transformed_new)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         kitchendoor = gml_Script_instance_create(640, 80, obj_npc_sign)
         kitchendoor.visible = true
@@ -348,18 +348,19 @@ if (phase == 3)
         }
         obj_controller_dining3.weird = 1
         with (obj_readable_room1)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_dininghall)
     {
-        258
-        1198
-        1197
+        gml_Script_safe_delete(258)
+        gml_Script_safe_delete(1198)
+        gml_Script_safe_delete(1197)
         layer_set_visible("TILES_Pathway_NoCorridors_Weird", 1)
         block = gml_Script_scr_forcefield(520, 160, 2, 10, 1, 0)
         var _temp_local_var_7 = block
+        gml_Script_scr_depth()
     }
-    if (room == room_dw_mansion_east_2f_c)
+    if (block.room == room_dw_mansion_east_2f_c)
     {
         door1 = gml_Script_instance_create(1580, 80, obj_solidblock)
         door1.visible = true
@@ -378,18 +379,18 @@ if (phase == 3)
         field = gml_Script_scr_forcefield(80, 280, 88, 2, 1, 1)
         field.depth = 800000
         with (obj_mansion_vase)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_ch2_room_mansion_east_2f_c_a)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_saucer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_east_2f_d)
     {
         with (obj_overworld_bulletarea)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_queenart_mona)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         obj_queenstatue_parallax.image_alpha = 0.15
         if (global.flag[542] == 0)
             gml_Script_instance_create(560, 160, obj_chaseenemy)
@@ -397,7 +398,7 @@ if (phase == 3)
     if (room == room_dw_mansion_east_3f)
     {
         with (obj_ch2_room_mansion_3f)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         global.plot = 160
         global.flag[392] = 1
         bathroomdoor = gml_Script_instance_create(960, 80, obj_solidblock)
@@ -406,24 +407,24 @@ if (phase == 3)
         bathroomdoor.image_xscale = 2
         bathroomdoor.image_yscale = 2
         bathroomdoor.depth = 899980
-        door = gml_Script_scr_dark_marker(590, 80, 2859)
+        door = gml_Script_scr_dark_marker(590, 80, 2860)
         door.depth = 899980
-        door_left = gml_Script_scr_dark_marker(250, 80, 2859)
+        door_left = gml_Script_scr_dark_marker(250, 80, 2860)
         door_left.depth = 899980
     }
     if (room == room_dw_mansion_acid_tunnel)
     {
         with (obj_npc_sign)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_east_3f_projection)
     {
         with (obj_npc_butler)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_shadowMaker)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_projector_footage)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         gml_Script_instance_create(255, 287, obj_chaseenemy)
     }
     if (room == room_dw_mansion_east_4f_b)
@@ -439,24 +440,24 @@ if (phase != 3)
     if (room == room_dw_mansion_east_2f_c || room == room_dw_mansion_east_2f_c_a)
     {
         with (obj_hangplug)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_entrance)
     {
         with (obj_cybercity_bg_screen)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         with (obj_queenscreen)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_dining3)
     {
         with (obj_mazepipis)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     if (room == room_dw_mansion_dininghall)
     {
-        266
-        3
+        gml_Script_safe_delete(266)
+        gml_Script_safe_delete(3)
     }
 }
 encountercheck = 0

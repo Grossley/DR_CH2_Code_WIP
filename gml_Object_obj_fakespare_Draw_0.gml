@@ -147,7 +147,7 @@ repeat (reverse ? reversespeed : 1)
     if (reverse && t < 0)
     {
         original.visible = true
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         return;
     }
 }

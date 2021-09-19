@@ -7,18 +7,18 @@ if (big == 1)
     if (image_yscale > 1)
         image_yscale -= (0.1 * f)
 }
-if (x + 700)
-    // WARNING: Popz'd an empty stack.
-if (y + 520)
-    // WARNING: Popz'd an empty stack.
-if (y - 40)
-    // WARNING: Popz'd an empty stack.
-if ((x + 500) && (x + 530) && 626 && obj_sneo_faceattack.init == 1)
+if (x >= (gml_Script_camerax() + 700))
+    instance_destroy()
+if (y >= (gml_Script_cameray() + 520))
+    instance_destroy()
+if (y <= (gml_Script_cameray() - 40))
+    instance_destroy()
+if (x >= (gml_Script_camerax() + 500) && x < (gml_Script_camerax() + 530) && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == 1)
 {
-    0
-    39
+    event_user(0)
+    gml_Script_snd_play(39)
 }
-if (sucked == 1 && 635)
+if (sucked == 1 && instance_exists(obj_sneo_final_forme))
 {
     if (y < (obj_sneo_final_forme.y + 146))
         y++

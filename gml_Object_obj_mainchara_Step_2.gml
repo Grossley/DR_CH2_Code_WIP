@@ -1,14 +1,14 @@
-if (global.chapter == 2 && 837)
+if (global.chapter == 2 && instance_exists(obj_gigaqueen_enemy))
     return;
 if (global.darkzone == true)
 {
-    if 1155
+    if instance_exists(obj_camera_advanced)
     {
         obj_camera_advanced.cutscene = cutscene
         with (obj_camera_advanced)
-            0
+            event_user(0)
     }
-    else if (cutscene == false && (!191))
+    else if (cutscene == false && (!instance_exists(obj_shake)))
     {
         wd = (x - floor(((gml_Script___view_get(2, 0) / 2) - (initwd / 2))))
         ht = (y - floor(((gml_Script___view_get(3, 0) / 2) - (initht / 2))))
@@ -28,13 +28,13 @@ if (global.darkzone == false)
 {
     if (global.plot >= 245 || global.chapter >= 2)
     {
-        if 1155
+        if instance_exists(obj_camera_advanced)
         {
             obj_camera_advanced.cutscene = cutscene
             with (obj_camera_advanced)
-                0
+                event_user(0)
         }
-        else if (cutscene == false && (!191))
+        else if (cutscene == false && (!instance_exists(obj_shake)))
         {
             gml_Script___view_set(9, 0, -4)
             wd = ((x - floor((gml_Script___view_get(2, 0) / 2))) + 11)
@@ -55,5 +55,5 @@ if (global.darkzone == false)
 if (bg == 1)
 {
     with (obj_backgrounderparent)
-        0
+        event_user(0)
 }

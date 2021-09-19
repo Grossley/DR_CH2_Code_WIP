@@ -1,4 +1,4 @@
 global.entrance = 4
-7
+event_user(7)
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-room
+room_goto(room_previous(room_previous(room)))

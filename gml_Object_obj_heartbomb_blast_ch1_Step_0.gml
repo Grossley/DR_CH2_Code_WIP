@@ -4,7 +4,7 @@ if (made == 0)
     {
         son[i] = gml_Script_instance_create_ch1(x, y, 1520)
         son[i].sprite_index = spr_heartbullet_ch1
-        son[i]
+        gml_Script_scr_bullet_inherit_ch1(son[i])
     }
     made = 1
 }
@@ -19,7 +19,7 @@ if (maxlength < 40)
     maxlength += 4
 for (i = 0; i < 4; i += 1)
 {
-    if son[i]
+    if instance_exists(son[i])
     {
         son[i].x = (x + lengthdir_x(maxlength, ((siner * 3) + (i * 90))))
         son[i].y = (y + lengthdir_y(maxlength, ((siner * 3) + (i * 90))))

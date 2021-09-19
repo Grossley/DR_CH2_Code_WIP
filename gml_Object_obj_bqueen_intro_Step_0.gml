@@ -6,9 +6,9 @@ if (con == 1)
         con = 2
         timer = 0
         gml_Script___view_set(0, 0, (gml_Script___view_get(0, 0) + 28))
-        "queen"
+        gml_Script_scr_speaker("queen")
         gml_Script_msgsetloc(0, "* Finally... a worthy opponent.../%", "obj_bqueen_intro_slash_Step_0_gml_13_0")
-        ((62 + 376) + 30)
+        gml_Script_instance_create((gml_Script_camerax() + 30), (gml_Script_cameray() + 376), obj_writer)
         gml_Script___view_set(0, 0, (gml_Script___view_get(0, 0) - 28))
         with (obj_writer)
         {
@@ -18,7 +18,7 @@ if (con == 1)
         }
     }
 }
-if (con == 2 && (!62))
+if (con == 2 && (!gml_Script_i_ex(62)))
 {
     con = 3
     y = -120
@@ -30,7 +30,7 @@ if (con == 2 && (!62))
 if (con == 3 && y < 280)
 {
     timer++
-    if 0
+    if (gml_Script_cameray() < 0)
         gml_Script___view_set(1, 0, (gml_Script___view_get(1, 0) + 7))
     else
         gml_Script___view_set(1, 0, 0)
@@ -55,7 +55,7 @@ if (con == 3 && y < 280)
 }
 if (con == 3 && y > 280)
 {
-    "no_name"
+    gml_Script_scr_speaker("no_name")
     global.typer = 4
     global.fc = 0
     global.fe = 0
@@ -67,10 +67,10 @@ if (con == 3 && y > 280)
     speed = 0
     gravity = 0
     y = 300
-    d = (191 ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
-    d.shakex = 2
-    d.shakey = 2
-    235
+    d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
+    d.shakex = ceil(2)
+    d.shakey = ceil(2)
+    gml_Script_snd_play(235)
 }
 if (con == 4)
 {
@@ -85,7 +85,7 @@ if (con == 5)
 {
     timer++
     if (timer == 1)
-        ((1081 - 220) / 2)
+        gml_Script_instance_create((gml_Script_camerax() + (gml_Script_camerawidth() / 2)), (gml_Script_cameray() - 220), obj_gigaqueen_intro_round)
     if (timer == 52)
         gml_Script_instance_create((obj_gigaqueen_intro_round.x + 5), obj_gigaqueen_intro_round.y, obj_gigaqueen_intro_fight)
     if (timer == 92)
@@ -99,7 +99,7 @@ if (con == 6)
 {
     timer++
     if (timer == 1 || timer == 10)
-        39
+        gml_Script_snd_play(39)
     if (timer == 22)
     {
         con = 8

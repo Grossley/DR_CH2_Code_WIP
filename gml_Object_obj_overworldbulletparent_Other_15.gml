@@ -1,11 +1,11 @@
 if (active == true)
 {
-    170
-    170
+    gml_Script_snd_stop(170)
+    gml_Script_snd_play(170)
     if (target != 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage()
     if (target == 3)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_damage_all_overworld()
     with (obj_darkcontroller)
         charcon = 1
     global.interact = 1

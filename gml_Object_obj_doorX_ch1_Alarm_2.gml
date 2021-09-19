@@ -1,45 +1,45 @@
 global.entrance = 24
 gml_Script_instance_create_ch1(0, 0, 1462)
 if (room == room_castle_town_ch1)
-    327
+    room_goto(room_castle_tutorial_ch1)
 if (room == room_castle_tutorial_ch1)
-    325
+    room_goto(room_castle_town_ch1)
 if (room == room_town_south_ch1)
-    306
+    room_goto(room_library_ch1)
 if (room == room_library_ch1)
-    293
+    room_goto(room_town_south_ch1)
 if (room == room_town_church_ch1)
-    303
+    room_goto(room_townhall_ch1)
 if (room == room_townhall_ch1)
-    295
+    room_goto(room_town_church_ch1)
 if (room == room_schoollobby_ch1)
-    294
+    room_goto(room_town_school_ch1)
 if (room == room_town_school_ch1)
-    309
+    room_goto(room_schoollobby_ch1)
 if (room == room_town_mid_ch1)
-    302
+    room_goto(room_diner_ch1)
 if (room == room_diner_ch1)
-    291
+    room_goto(room_town_mid_ch1)
 if (room == room_town_north_ch1)
-    304
+    room_goto(room_flowershop_1f_ch1)
 if (room == room_flowershop_1f_ch1)
-    289
+    room_goto(room_town_north_ch1)
 if (room == room_cc_prisonlancer_ch1)
-    385
+    room_goto(room_cc_prison_cells_ch1)
 if (room == room_cc_prison_cells_ch1)
-    386
+    room_goto(room_cc_prisonlancer_ch1)
 if (room == room_forest_secret1_ch1)
-    365
+    room_goto(room_forest_dancers1_ch1)
 if (room == room_forest_dancers1_ch1)
-    366
+    room_goto(room_forest_secret1_ch1)
 if (room == room_forest_savepoint3_ch1)
-    370
+    room_goto(room_forest_savepoint_relax_ch1)
 if (room == room_forest_savepoint_relax_ch1)
 {
     if (global.plot < 120)
-        371
+        room_goto(room_forest_maze1_ch1)
     else
-        376
+        room_goto(room_forest_savepoint3_ch1)
 }
 if (room == room_forest_maze_susie_ch1)
 {
@@ -47,24 +47,24 @@ if (room == room_forest_maze_susie_ch1)
     {
         global.flag[292] = 0
         global.flag[291] = 0
-        370
+        room_goto(room_forest_savepoint_relax_ch1)
     }
     else
-        374
+        room_goto(room_forest_maze2_ch1)
 }
 if (room == room_forest_castlefront_ch1)
 {
     if (global.plot < 150)
-        // WARNING: Popz'd an empty stack.
+        room_goto_previous()
     else
-        377
+        room_goto(room_forest_fightsusie_ch1)
 }
 if (room == room_forest_fightsusie_ch1)
 {
     if (global.plot < 150)
-        // WARNING: Popz'd an empty stack.
+        room_goto_next()
     else
-        384
+        room_goto(room_forest_castlefront_ch1)
 }
 if (room == room_forest_maze1_ch1 || room == room_forest_maze2_ch1)
 {
@@ -74,17 +74,17 @@ if (room == room_forest_maze1_ch1 || room == room_forest_maze2_ch1)
         if (room == room_forest_maze1_ch1)
         {
             global.flag[291] = 0
-            370
+            room_goto(room_forest_savepoint_relax_ch1)
         }
         if (room == room_forest_maze2_ch1)
         {
             global.flag[291] = 5
-            373
+            room_goto(room_forest_maze_susie_ch1)
         }
     }
     else
     {
         with (obj_forestmaze_controller_ch1)
-            0
+            event_user(0)
     }
 }

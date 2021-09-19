@@ -18,9 +18,9 @@ if (darken == false)
     with (obj_whiteedge)
         image_alpha = (obj_darkener.darkamt / 15)
     if (darkamt <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
-(darkamt / 20)
-0
+draw_set_alpha((darkamt / 20))
+draw_set_color(c_black)
 draw_rectangle((gml_Script___view_get(0, 0) - 40), (gml_Script___view_get(1, 0) - 40), (gml_Script___view_get(0, 0) + 680), (gml_Script___view_get(1, 0) + 520), false)
-1
+draw_set_alpha(1)

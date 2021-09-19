@@ -1,13 +1,13 @@
 if (wall_destroy == 1)
 {
     if (x < (gml_Script___view_get(0, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (x > (gml_Script___view_get(0, 0) + 760))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y > (gml_Script___view_get(1, 0) + 580))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (updateimageangle == 1)
     image_angle = direction
@@ -67,7 +67,7 @@ if (infecttarget != noone)
         infection = 1
         d = gml_Script_instance_create(infecttarget.x, infecttarget.y, obj_animation_dx)
         d.sprite_index = spr_viro_poison_effect_big
-        d.image_angle = (3 * 90)
+        d.image_angle = (irandom(3) * 90)
         d.image_blend = poisoncolor
         d.image_xscale = 1
         d.image_yscale = 1
@@ -85,6 +85,6 @@ if (infecttarget != noone)
             targety = lerp(y, infecttarget.y, 0.5)
             poisoncolor = 16777215
         }
-        infecttarget
+        instance_destroy(infecttarget)
     }
 }

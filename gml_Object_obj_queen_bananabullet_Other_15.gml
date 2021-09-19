@@ -4,7 +4,7 @@ if (active == true)
         active = false
     else
     {
-        damage
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_bullet_heal(damage)
+        instance_destroy()
     }
 }

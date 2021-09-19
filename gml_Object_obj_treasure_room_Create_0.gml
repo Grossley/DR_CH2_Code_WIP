@@ -105,4 +105,4 @@ if (room == room_dw_mansion_east_1f_e)
 }
 if (global.flag[itemflag] == 1)
     image_index = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

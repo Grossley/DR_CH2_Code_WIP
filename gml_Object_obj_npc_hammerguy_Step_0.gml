@@ -4,7 +4,7 @@ if (myinteract == 3)
 }
 if (myinteract == 3 && con == 0)
 {
-    if (mydialoguer == 0)
+    if (gml_Script_i_ex(mydialoguer) == 0)
     {
         sprite_index = spr_hammerguy
         image_speed = 0.1
@@ -18,20 +18,23 @@ if (con >= 5)
 {
     if (con == 10 || con == 30 || con == 50)
     {
-        global.currentsong[1]
-        sprite_index = spr_hammerguy_powerup
-        image_index = 0
-        image_speed = 0.5
-        64
-        con += 1
-        alarm[4] = 30
-        charcycle = 0
-        charamt = 0
-        if (global.char[1] > 0)
-            charamt = 1
-        if (global.char[2] > 0)
-            charamt = 2
-        charcycle = charamt
+        if (!gml_Script_d_ex())
+        {
+            gml_Script_snd_pause(global.currentsong[1])
+            sprite_index = spr_hammerguy_powerup
+            image_index = 0
+            image_speed = 0.5
+            gml_Script_snd_play(64)
+            con += 1
+            alarm[4] = 30
+            charcycle = 0
+            charamt = 0
+            if (global.char[1] > 0)
+                charamt = 1
+            if (global.char[2] > 0)
+                charamt = 2
+            charcycle = charamt
+        }
     }
     if (con == 12 || con == 32 || con == 52 || con == 72)
     {
@@ -42,7 +45,10 @@ if (con >= 5)
         con += 1
     }
     if (con == 15)
+    {
         var _temp_local_var_4 = char
+        instance_destroy()
+    }
     if (con == 13)
     {
         chartype = global.char[charcycle]
@@ -106,7 +112,7 @@ if (con >= 5)
     }
     if (con == 33)
     {
-        char = gml_Script_scr_dark_marker(385, 160, 1186)
+        char = gml_Script_scr_dark_marker(385, 160, 1187)
         var _temp_local_var_18 = char
         depth = 400000
     }
@@ -129,7 +135,7 @@ if (con >= 5)
     }
     if (con == 53)
     {
-        char = gml_Script_scr_dark_marker(390, 170, 1187)
+        char = gml_Script_scr_dark_marker(390, 170, 1188)
         var _temp_local_var_20 = char
         depth = 400000
     }

@@ -1,5 +1,5 @@
 timer = 0
-btimer = 10
+btimer = irandom(10)
 state = 0
 attack = 0
 firingspeed = 20
@@ -19,7 +19,7 @@ headtop.image_alpha = 0
 headtop.image_xscale = 2
 headtop.image_yscale = 2
 reposition = 0
-jumpy = 1
+jumpy = irandom(1)
 init = 0
 made = choose(0, 1)
 doublecount = 0

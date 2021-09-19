@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+audio_stop_all()
 global.lang_loaded = ""
 switch chaptertoload_temp
 {

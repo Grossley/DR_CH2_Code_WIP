@@ -1,14 +1,14 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (fadein < 10)
     fadein += 1
-(fadein / 10)
-16777215
+draw_set_alpha((fadein / 10))
+draw_set_color(c_white)
 draw_rectangle(lx, ux, rx, dx, true)
 draw_rectangle((lx + 1), (ux + 1), (rx - 1), (dx - 1), true)
-1
+draw_set_alpha(1)
 w = sprite_width
 h = sprite_height
-spikecount = (w / 11)
+spikecount = floor((w / 11))
 for (i = 0; i < spikecount; i += 1)
 {
     draw_sprite_ext(spr_bouncebox_spike_ch1, 0, ((x - (w / 2)) + 3), ((y - (h / 2)) + (i * 11)), 1, 1, 0, c_white, (fadein / 10))

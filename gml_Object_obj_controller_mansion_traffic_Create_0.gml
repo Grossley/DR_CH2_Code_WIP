@@ -14,7 +14,7 @@ if (global.flag[370] == 1)
         if (image_index == 0)
             image_index = 3
     }
-    if 1228
+    if instance_exists(obj_traffic_road_trigger)
     {
         with (obj_traffic_road_trigger)
         {
@@ -23,20 +23,20 @@ if (global.flag[370] == 1)
         }
     }
     with (obj_traffic_car_generator)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_mouseTrigger)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_traffic_switch)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_cybercity_bg_sign)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     layer_set_visible("HIDDEN_PATH", 1)
     layer_set_visible("TRAFFIC_JAM", 1)
     layer_set_visible("SPRITES_Alcoves_2", 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 else
 {
     with (obj_mansion_stanchion)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

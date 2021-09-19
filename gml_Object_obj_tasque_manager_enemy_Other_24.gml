@@ -1,4 +1,4 @@
-var sentenceEnd, _temp_local_var_1, _temp_local_var_4, _temp_local_var_18, _temp_local_var_43;
+var _temp_local_var_1, _temp_local_var_19;
 if (init == 0)
 {
     if (global.flag[419] == 1)
@@ -9,14 +9,14 @@ if (init == 0)
 }
 if (global.monster[myself] == true)
 {
-    if ("enemytalk" && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
     {
-        // WARNING: Popz'd an empty stack.
-        if (!361)
+        gml_Script_scr_randomtarget()
+        if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         global.typer = 50
         var dialogText = gml_Script_stringsetloc("", "obj_tasque_manager_enemy_slash_Step_0_gml_15_0")
-        rr = (1 ? choose(0, 1, 2, 3) : choose(0, 1, 2))
+        rr = (gml_Script_scr_monsterpop() > 1 ? choose(0, 1, 2, 3) : choose(0, 1, 2))
         if (rr == 0)
             dialogText = gml_Script_stringsetloc("Processes! Services!&Performance! Details!", "obj_tasque_manager_enemy_slash_Step_0_gml_19_0")
         if (rr == 1)
@@ -64,19 +64,19 @@ if (global.monster[myself] == true)
         talked = 1
         talktimer = 0
     }
-    if (talked == 1 && "enemytalk")
+    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        15
-        if "bullets"
+        gml_Script_scr_blconskip(15)
+        if gml_Script_scr_isphase("bullets")
         {
-            if (!377)
-                // WARNING: Popz'd an empty stack.
-            if (!869)
+            if (!instance_exists(obj_moveheart))
+                gml_Script_scr_moveheart()
+            if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
         }
     }
-    if ("bullets" && attacked == false)
+    if (gml_Script_scr_isphase("bullets") && attacked == false)
     {
         if (rtimer == 0)
         {
@@ -87,7 +87,7 @@ if (global.monster[myself] == true)
             if (rr == 2)
                 obj_growtangle.target_angle = 45
         }
-        if rtimer == 2
+        if (rtimer == 2 && gml_Script_scr_monsterpop() > 1)
         {
             if (rr == 2)
             {
@@ -117,7 +117,7 @@ if (global.monster[myself] == true)
                 dc.type = 32
                 dc.difficulty = quizDifficulty
             }
-            140
+            gml_Script_scr_turntimer(140)
             turns += 1
             global.typer = 6
             global.fc = 0
@@ -141,7 +141,7 @@ if (global.monster[myself] == true)
             attacked = true
         }
         else
-            120
+            gml_Script_scr_turntimer(120)
     }
 }
 if (global.myfight == 3)
@@ -152,26 +152,26 @@ if (global.myfight == 3)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* TASQUE MANAGER - Obsessed with order, and abhors Chaos. Whip it good!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_205_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (acting == 2 && actcon == 0)
     {
-        gml_Script_scr_act_charsprite("kris", 1426, 0, 0)
+        gml_Script_scr_act_charsprite("kris", 1427, 0, 0)
         gml_Script_scr_mercyadd(myself, 50)
         if (simultotal == 1)
         {
             actcon = 5
             gml_Script_msgsetloc(0, "* Kris got trained like an animal!!/%", "obj_tasque_manager_enemy_slash_Other_24_gml_235_0")
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_battletext_default()
         }
         else
         {
             gml_Script_msgsetloc(0, "* Kris got managed!/%", "obj_tasque_manager_enemy_slash_Other_24_gml_238_0")
-            "kris"
+            gml_Script_scr_simultext("kris")
             actcon = (simulorderkri == 0 ? 20 : -1)
         }
     }
-    if (actcon == 5 && (!62))
+    if (actcon == 5 && (!instance_exists(obj_writer)))
     {
         timesTrained++
         global.typer = 50
@@ -180,37 +180,124 @@ if (global.myfight == 3)
         balloon = gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
         global.typer = 6
         gml_Script_msgsetloc(0, "* Tasque Manager seemed slightly pleased at the Order!!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_236_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
         actcon = 6
         alarm[4] = 15
     }
-    if (actcon == 7)
+    if (actcon == 7 && gml_Script_button1_p())
     {
+        var _temp_local_var_19 = balloon
+        instance_destroy()
     }
-    else
-        var _temp_local_var_43 = 0
-    var _temp_local_var_18 = balloon
-}
-if 66
-{
-    if (overrideAttack == 0)
+    if (actingsus == 1 && actconsus == 1)
     {
-        overrideAttack = 1
-        "You've selected QUIZZLER"
+        gml_Script_scr_act_charsprite("susie", 1456, 0, 0)
+        gml_Script_scr_mercyadd(myself, 20)
+        if (simultotal == 1 || global.actsimulsus[myself][0] == 0)
+        {
+            gml_Script_msgsetloc(0, "* Susie was trained like an animal.../", "obj_tasque_manager_enemy_slash_Step_0_gml_256_0")
+            gml_Script_scr_anyface_next("susie", "I")
+            var sentenceEnd = "/%"
+            if (!treatText)
+            {
+                global.actsimulsus[myself][0] = 1
+                treatText = 1
+                gml_Script_scr_smallface(0, "ralsei", 12, 300, 50, gml_Script_stringsetloc("A treat!! Somebody give her a treat!!", "obj_tasque_manager_enemy_slash_Step_0_gml_265_0"))
+                sentenceEnd = "\\f0/%"
+            }
+            gml_Script_msgnextsubloc("\\EH* Play dead!? I'll teach YOU to play dead!!~1", sentenceEnd, "obj_tasque_manager_enemy_slash_Step_0_gml_269_0")
+            gml_Script_scr_battletext_default()
+            actconsus = 2
+        }
+        else
+        {
+            gml_Script_msgsetloc(0, "* Susie got managed!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_274_0")
+            gml_Script_scr_simultext("susie")
+            actconsus = (simulordersus == 0 ? 20 : -1)
+        }
     }
-    else
+    if (actconsus == 2 && (!instance_exists(obj_writer)))
     {
-        overrideAttack = 0
-        "Next attack will be random"
+        global.typer = 50
+        gml_Script_msgsetloc(0, "What a wonderfully crafted&signpost^1! I'm giving it an&obedience medal!", "obj_tasque_manager_enemy_slash_Step_0_gml_284_0")
+        balloon = gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
+        actconsus = 0
+        actcon = 6
+        alarm[4] = 15
+    }
+    if (actingral == 1 && actconral == 1)
+    {
+        gml_Script_scr_act_charsprite("ralsei", 1498, 0, 0)
+        gml_Script_scr_mercyadd(myself, 20)
+        if (simultotal == 1 || global.actsimulral[myself][0] == 0)
+        {
+            gml_Script_msgsetloc(0, "* Ralsei got trained like an animal!!/", "obj_tasque_manager_enemy_slash_Step_0_gml_299_0")
+            sentenceEnd = "/%"
+            if (!badgeText)
+            {
+                global.actsimulral[myself][0] = 1
+                badgeText = 1
+                gml_Script_scr_smallface(0, "susie", 12, 300, 50, gml_Script_stringsetloc("Why the hell do YOU get one of those!!", "obj_tasque_manager_enemy_slash_Step_0_gml_307_0"))
+                sentenceEnd = "\\f0/%"
+            }
+            gml_Script_msgnextsubloc("* Due to good behavior^1, he received an obedience badge.~1", sentenceEnd, "obj_tasque_manager_enemy_slash_Step_0_gml_311_0")
+            gml_Script_scr_battletext_default()
+            actconral = 2
+        }
+        else
+        {
+            gml_Script_msgsetloc(0, "* Ralsei got managed!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_316_0")
+            gml_Script_scr_simultext("ralsei")
+            actconral = (simulorderral == 0 ? 20 : -1)
+        }
+    }
+    if (actconral == 2 && (!instance_exists(obj_writer)))
+    {
+        global.typer = 50
+        gml_Script_msgsetloc(0, "He really&loves to do&what he's told^1,&doesn't he?/%", "obj_tasque_manager_enemy_slash_Step_0_gml_326_0")
+        balloon = gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
+        actconral = 0
+        actcon = 6
+        alarm[4] = 15
+    }
+    if (actcon == 1 && (!instance_exists(obj_writer)))
+    {
+        gml_Script_scr_act_charsprite_end()
+        gml_Script_scr_nextact()
+    }
+    if (actcon == 20 || actconsus == 20 || actconral == 20)
+    {
+        if gml_Script_scr_terminate_writer()
+        {
+            actconsus = -1
+            actconral = -1
+            actcon = 1
+        }
     }
 }
-if (81 && quizDifficulty > 0)
+if gml_Script_scr_debug()
 {
-    quizDifficulty--
-    ("Quiz difficulty = " + string(quizDifficulty))
-}
-if (87 && quizDifficulty < 5)
-{
-    quizDifficulty++
-    ("Quiz difficulty = " + string(quizDifficulty))
+    if keyboard_check_pressed(ord("B"))
+    {
+        if (overrideAttack == 0)
+        {
+            overrideAttack = 1
+            gml_Script_scr_debug_print("You've selected QUIZZLER")
+        }
+        else
+        {
+            overrideAttack = 0
+            gml_Script_scr_debug_print("Next attack will be random")
+        }
+    }
+    if (keyboard_check_pressed(ord("Q")) && quizDifficulty > 0)
+    {
+        quizDifficulty--
+        gml_Script_scr_debug_print(("Quiz difficulty = " + string(quizDifficulty)))
+    }
+    if (keyboard_check_pressed(ord("W")) && quizDifficulty < 5)
+    {
+        quizDifficulty++
+        gml_Script_scr_debug_print(("Quiz difficulty = " + string(quizDifficulty)))
+    }
 }

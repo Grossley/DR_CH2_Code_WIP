@@ -22,7 +22,7 @@ else if (state == 2)
         state = 3
         global.inv = -1
         with (obj_spamton_neo_enemy)
-            2
+            event_user(2)
         with (obj_dmgwriter)
         {
             depth = (obj_sneo_fakeheart.depth - 2)
@@ -46,6 +46,6 @@ else if (state == 3)
     {
         obj_heart.color = 0x000001
         obj_heart.image_alpha = 1
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

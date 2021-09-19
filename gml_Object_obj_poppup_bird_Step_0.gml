@@ -17,7 +17,7 @@ if (init == 0)
         direction += random_range(-10, 10)
     if (x > xx)
         image_xscale = -1
-    if ((y - yy) > 40)
+    if (abs((y - yy)) > 40)
     {
         if (y > yy)
             image_speed *= 2
@@ -38,7 +38,7 @@ if (timer >= (60 / slow))
 {
     image_alpha -= 0.1
     if (image_alpha == 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else if (image_alpha < 1)
     image_alpha += 0.1

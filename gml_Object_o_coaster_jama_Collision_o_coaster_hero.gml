@@ -1,40 +1,36 @@
+var _temp_local_var_1, _temp_local_var_4;
 if (active == true)
 {
     if (type == 0)
     {
         if (con >= 1)
         {
-            with (stacktop)
+            var _temp_local_var_1 = other
+            if (con == 0 && disabled == 0)
             {
-                if (con == 0 && disabled == 0)
-                {
-                    disabled = 1
-                    disabledtimer = 95
-                    xshake = 10
-                    disabledtype = 0
-                }
-                if (con != 0 && nitro == 0)
-                    damaged = 1
+                disabled = 1
+                disabledtimer = 95
+                xshake = 10
+                disabledtype = 0
             }
-            1
+            if (con != 0 && nitro == 0)
+                damaged = 1
         }
         else if (bigcar == 0)
         {
             gml_Script_instance_create((x + 20), (y - 40), o_coastersmoke)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         }
     }
     if (type == 1)
     {
-        with (stacktop)
+        var _temp_local_var_4 = other
+        if (disabled == 0 && con == 1)
         {
-            if (disabled == 0 && con == 1)
-            {
-                damaged = 1
-                disabled = 1
-                disabledtimer = 125
-                disabledtype = 1
-            }
+            damaged = 1
+            disabled = 1
+            disabledtimer = 125
+            disabledtype = 1
         }
     }
 }

@@ -1,11 +1,22 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1;
+if (con == 0)
+{
+    if instance_exists(obj_ow_virokun_mansion_east_1f_d)
+    {
+        if (obj_ow_virokun_mansion_east_1f_d.con == 3)
+            con = 1
+    }
+}
+if (con == 1)
+    con = 2
+if (con == 2)
+{
+    if instance_exists(obj_ow_virokun_mansion_east_1f_d)
+        move_towards_point((obj_ow_virokun_mansion_east_1f_d.x + (obj_ow_virokun_mansion_east_1f_d.sprite_width / 2)), (obj_ow_virokun_mansion_east_1f_d.y + obj_ow_virokun_mansion_east_1f_d.sprite_height), 12)
+    else
+    {
+        ((-128).room_width / 2)
+        var _temp_local_var_1 = 12
+    }
+}
+gml_Script_scr_depth()

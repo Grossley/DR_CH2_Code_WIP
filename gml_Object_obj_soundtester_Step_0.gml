@@ -1,29 +1,29 @@
-if 45
-    // WARNING: Popz'd an empty stack.
+if keyboard_check_pressed(vk_insert)
+    room_goto_next()
 var i = 0
 mute = 0
-if 68
+if keyboard_check_pressed(ord("D"))
 {
     file = "debug_soundlist.txt"
-    myfileid = file
+    myfileid = file_text_open_write(file)
     for (i = 0; i < soundtotal; i++)
     {
         file_text_write_string(myfileid, soundName[i])
-        myfileid
+        file_text_writeln(myfileid)
     }
-    myfileid
+    file_text_close(myfileid)
 }
-if 40
+if keyboard_check(vk_down)
     moved++
-if 38
+if keyboard_check(vk_up)
     moved--
-if 39
+if keyboard_check(vk_right)
     moved += 15
-if 37
+if keyboard_check(vk_left)
     moved -= 15
-if 40
+if keyboard_check_pressed(vk_down)
     moved = 5
-if 38
+if keyboard_check_pressed(vk_up)
     moved = -5
 if (auto == 1)
 {
@@ -48,14 +48,14 @@ if (current < 1)
     current = 1
 if (current > (soundtotal - 1))
     current = (soundtotal - 1)
-if 90
+if keyboard_check_pressed(ord("Z"))
     playsound = 1
-if 77
+if keyboard_check_pressed(ord("M"))
     mute = 1
 if mute
 {
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
+    gml_Script_snd_stop_all()
     mute = 0
 }
 if playsound
@@ -63,25 +63,25 @@ if playsound
     playsound = 0
     gml_Script_snd_play_pitch(soundNo[current], pitch)
 }
-if 65
+if keyboard_check_pressed(ord("A"))
 {
     if (auto == 0)
         auto = 1
     else
         auto = 0
 }
-if 74
+if keyboard_check_pressed(ord("J"))
 {
     checkstring = get_string("Enter index of sound to jump to sound. ex. snd_noise", "")
-    checkaudio = checkstring
-    if checkaudio
+    checkaudio = asset_get_index(checkstring)
+    if audio_exists(checkaudio)
         current = (checkaudio - firstsound)
 }
-if 33
+if keyboard_check_pressed(vk_pageup)
     current = 1
-if 34
+if keyboard_check_pressed(vk_pagedown)
     current = (soundtotal - 1)
-if 85
+if keyboard_check_pressed(ord("U"))
     pitch += 0.1
-if 89
+if keyboard_check_pressed(ord("Y"))
     pitch -= 0.1

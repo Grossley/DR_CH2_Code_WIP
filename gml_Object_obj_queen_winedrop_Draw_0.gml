@@ -1,7 +1,7 @@
 image_xscale = vspeed
 if (fillamount >= 15)
-    // WARNING: Popz'd an empty stack.
-acidColor
+    instance_destroy()
+draw_set_color(acidColor)
 var __glassbottom = ((obj_growtangle.ystart + 30) + ((28 - abs((x - obj_growtangle.xstart))) / 2))
 var __fillpoint = min(__glassbottom, (obj_queen_wineglass.starty - obj_queen_wineglass.fill))
 var __dropend = min(y, __glassbottom)
@@ -15,7 +15,7 @@ if (y > __fillpoint)
     if (createdroplets == 0)
     {
         createdroplets = 1
-        var rand_dir = 28
+        var rand_dir = random(28)
         bullet = gml_Script_instance_create(((x - 3) + random(5)), y, obj_wine_droplet)
         bullet.direction = (76 + rand_dir)
         bullet.speed = 12

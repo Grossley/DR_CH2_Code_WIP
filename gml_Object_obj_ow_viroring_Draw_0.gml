@@ -1,9 +1,9 @@
-// WARNING: Popz'd an empty stack.
-1
+draw_self()
+gml_Script_draw_set_blend_mode(1)
 if (timer >= (shotSpeed - 10) && active)
     flashamt = lerp(flashamt, ((timer - (shotSpeed - 10)) / 10), 0.5)
 else
     flashamt = lerp(flashamt, 0, 0.4)
 for (var i = 0; i < 5; i++)
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, flashamt)
-0
+gml_Script_draw_set_blend_mode(0)

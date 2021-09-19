@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 holeoffset = 36
 sideoffset = 100
 for (i = 0; i < 8; i++)

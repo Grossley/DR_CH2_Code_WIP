@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (deathtimer > 0)
     return;
 if (destroyable == 1)
@@ -5,8 +6,8 @@ if (destroyable == 1)
 if (other.big == 0)
 {
     hp--
-    with (stacktop)
-        0
+    var _temp_local_var_1 = other
+    event_user(0)
 }
 if (other.big || hp <= 0)
 {

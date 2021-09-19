@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 if (global.turntimer < 150)
 {
     hp = 0
@@ -15,9 +16,5 @@ else if (type == 0 || (type == 1 && obj_spamton_neo_enemy.difficulty > 2))
     global.turntimer -= 5
 else
     hp -= 0.25
-with (stacktop)
-    // WARNING: Popz'd an empty stack.
-damagetimer = 5
-166
-if (hp <= 0)
-    destroyed = 1
+var _temp_local_var_2 = other
+instance_destroy()

@@ -1,9 +1,9 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 targetx = ((obj_mainchara_ch1.x + (obj_mainchara_ch1.sprite_width / 2)) - (sprite_width / 2))
 targety = ((obj_mainchara_ch1.y + (obj_mainchara_ch1.sprite_height / 2)) - (sprite_height / 2))
 if (global.interact == 0)
     frozen = false
-if (200 && offscreen_frozen == true)
+if (gml_Script_scr_outside_camera_ch1(200) && offscreen_frozen == true)
     frozen = true
 else
     frozen = false
@@ -47,8 +47,8 @@ if (frozen == false)
         }
         if (pacetype == 2)
         {
-            hspeed = ((pacetimer / 24) * 4)
-            vspeed = ((pacetimer / 24) * 4)
+            hspeed = (sin((pacetimer / 24)) * 4)
+            vspeed = (cos((pacetimer / 24)) * 4)
         }
         if (pacetype == 5)
         {
@@ -65,14 +65,14 @@ if (frozen == false)
             walk_index += 0.25
         }
         if (pacetype == 7)
-            hspeed = ((-(pacetimer / 30)) * 10)
+            hspeed = ((-sin((pacetimer / 30))) * 10)
         if (pacetype == 7.5)
-            hspeed = ((pacetimer / 30) * 10)
+            hspeed = (sin((pacetimer / 30)) * 10)
         if (pacetype == 8)
-            vspeed = ((-(pacetimer / 25)) * 12.5)
+            vspeed = ((-sin((pacetimer / 25))) * 12.5)
         if (pacetype == 9)
         {
-            hspeed = ((pacetimer / (pacespeed * 30)) * (moveradius / 20))
+            hspeed = (sin((pacetimer / (pacespeed * 30))) * (moveradius / 20))
             pacespeed = 0.8
         }
         if (pacetype == 10)
@@ -100,7 +100,7 @@ if (frozen == false)
                 pacecon = 1
                 alerttimer = 0
                 alertcon = 1
-                431
+                gml_Script_snd_play_ch1(431)
                 gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y - 20), 1486)
                 alarm[4] = 20
             }
@@ -134,10 +134,14 @@ if (frozen == false)
             {
                 xnext = 0
                 ynext = 0
-                xnext = 132
-                xnext = -132
-                ynext = 132
-                ynext = -132
+                if gml_Script_right_h_ch1()
+                    xnext = 132
+                if gml_Script_left_h_ch1()
+                    xnext = -132
+                if gml_Script_down_h_ch1()
+                    ynext = 132
+                if gml_Script_up_h_ch1()
+                    ynext = -132
                 move_towards_point((targetx + xnext), (targety + ynext), 10)
             }
             alerttimer += 1

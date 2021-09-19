@@ -1,9 +1,5 @@
+var _temp_local_var_1;
 if (active == false)
     return;
-with (stacktop)
-    1
-if (alarm[0] > 0)
-    return;
-hp -= 10
-alarm[0] = 10
-170
+var _temp_local_var_1 = other
+event_user(1)

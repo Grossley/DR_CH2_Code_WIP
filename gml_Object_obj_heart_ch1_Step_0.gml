@@ -7,10 +7,14 @@ bkx = 0
 bky = 0
 bkxy = 0
 jelly = 2
-press_l = 1
-press_r = 1
-press_u = 1
-press_d = 1
+if gml_Script_left_h_ch1()
+    press_l = 1
+if gml_Script_right_h_ch1()
+    press_r = 1
+if gml_Script_up_h_ch1()
+    press_u = 1
+if gml_Script_down_h_ch1()
+    press_d = 1
 px = 0
 py = 0
 if (press_r == 1)
@@ -178,7 +182,7 @@ if place_meeting((x + px), (y + py), obj_battlesolid_ch1)
         }
         else
         {
-            if (j >= 1)
+            if (abs(j) >= 1)
             {
                 if (j > 0)
                     j -= 1
@@ -187,7 +191,7 @@ if place_meeting((x + px), (y + py), obj_battlesolid_ch1)
             }
             else
                 j = 0
-            if (i >= 1)
+            if (abs(i) >= 1)
             {
                 if (i > 0)
                     i -= 1
@@ -218,8 +222,8 @@ y += py
 if (dmgnoise == true)
 {
     dmgnoise = false
-    438
-    438
+    gml_Script_snd_stop_ch1(438)
+    gml_Script_snd_play_ch1(438)
 }
 global.inv -= 1
 if (global.inv > 0)

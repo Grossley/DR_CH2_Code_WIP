@@ -21,6 +21,6 @@ active = true
 sparkid = 0
 fallAmount = 160
 bounce = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 left = 0
 right = 0

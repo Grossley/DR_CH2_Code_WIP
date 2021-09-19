@@ -11,7 +11,7 @@ fallnow = 0
 boatx = 90
 boaty = 60
 depth = 830000
-if (object_index == obj_pipis_bullet_cone)
+if (instance_number(object_index) == 1)
 {
     boatfront = gml_Script_instance_create((x + boatx), (y + boaty), object_index)
     var _temp_local_var_1 = object_index

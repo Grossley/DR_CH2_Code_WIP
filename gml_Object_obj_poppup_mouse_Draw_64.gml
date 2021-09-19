@@ -1,4 +1,4 @@
-x = mouse_x
-y = mouse_y
+x = (mouse_x - gml_Script_camerax())
+y = (mouse_y - gml_Script_cameray())
 if (useSprite && active)
-    // WARNING: Popz'd an empty stack.
+    draw_self()

@@ -1,10 +1,10 @@
 con = 0
 timer = 0
-// WARNING: Popz'd an empty stack.
-var CH = global.chapter
-files_exist = ((("filech" + CH) + "_0") || (("filech" + CH) + "_1") || (("filech" + CH) + "_2") || (("filech" + CH) + "_3"))
+gml_Script_snd_free_all()
+var CH = string(global.chapter)
+files_exist = (gml_Script_ossafe_file_exists((("filech" + CH) + "_0")) || gml_Script_ossafe_file_exists((("filech" + CH) + "_1")) || gml_Script_ossafe_file_exists((("filech" + CH) + "_2")) || gml_Script_ossafe_file_exists((("filech" + CH) + "_3")))
 show_queen = 0
-queen_sprite = 3349
+queen_sprite = 3350
 queen_sprite_index = 0
 queen_siner = 0
 queen_animate = 1

@@ -14,11 +14,11 @@ if (tile_fade == true)
             gml_Script_tile_set_alpha_ch1(tilearray[i], (battlealpha * 2))
     }
 }
-battlealpha
-0
+draw_set_alpha(battlealpha)
+draw_set_color(c_black)
 draw_rectangle((gml_Script___view_get(0, 0) - 100), (gml_Script___view_get(1, 0) - 100), (gml_Script___view_get(0, 0) + 740), (gml_Script___view_get(1, 0) + 540), false)
-1
-if 1489
+draw_set_alpha(1)
+if instance_exists(obj_caterpillarchara_ch1)
 {
     obj_caterpillarchara_ch1.image_blend = merge_color(c_white, c_black, battlealpha)
     if (battlealpha <= 0)

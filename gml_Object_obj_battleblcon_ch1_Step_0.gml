@@ -1,2 +1,2 @@
-if (mywriter == 0)
-    // WARNING: Popz'd an empty stack.
+if (instance_exists(mywriter) == 0)
+    instance_destroy()

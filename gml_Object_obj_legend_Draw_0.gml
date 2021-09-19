@@ -15,7 +15,7 @@ if draw_screen
         if (textimer == 220)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("It was&a LEGEND&of HOPE.", "obj_legend_slash_Draw_0_gml_21_0")
             w = gml_Script_instance_create(40, 160, obj_writer)
             w.depth = -10
@@ -26,7 +26,7 @@ if draw_screen
         if (textimer == 340)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("It was&a LEGEND&of LIGHT.", "obj_legend_slash_Draw_0_gml_32_0")
             w = gml_Script_instance_create(40, 160, obj_writer)
             w.depth = -10
@@ -37,7 +37,7 @@ if draw_screen
         if (textimer == 460)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("This is the legend of&  ^3   DELTA RUNE", "obj_legend_slash_Draw_0_gml_43_0")
             w = gml_Script_instance_create(80, 160, obj_writer)
             w.depth = -10
@@ -53,7 +53,7 @@ if draw_screen
         {
             contimer += 1
             if (contimer == 40)
-                global.currentsong[1]
+                audio_pause_sound(global.currentsong[1])
             if (contimer == 100)
             {
                 con = 2
@@ -70,14 +70,14 @@ if draw_screen
         if (contimer == 40)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
     if (con == 3)
     {
         pic = spr_introimage1
         audio_sound_set_track_position(global.currentsong[1], 19.656)
-        global.currentsong[1]
+        audio_resume_sound(global.currentsong[1])
         con = 4
         contimer = 0
         chunkfade = 0
@@ -93,7 +93,7 @@ if draw_screen
         if (contimer == 270)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("But if this harmony&were to shatter...", "obj_legend_slash_Draw_0_gml_113_0")
             w = gml_Script_instance_create(70, 160, obj_writer)
         }
@@ -126,7 +126,7 @@ if draw_screen
         if (contimer == 130)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("A terrible calamity would occur.", "obj_legend_slash_Draw_0_gml_151_0")
             w = gml_Script_instance_create(40, 80, obj_writer)
         }
@@ -144,7 +144,7 @@ if draw_screen
         if (contimer == 275)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("The sky will run&black with terror", "obj_legend_slash_Draw_0_gml_170_0")
             w = gml_Script_instance_create(80, 185, obj_writer)
             fadespeed = 0.05
@@ -175,21 +175,21 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("And the land will&crack with fear.", "obj_legend_slash_Draw_0_gml_205_0")
             w = gml_Script_instance_create(80, 185, obj_writer)
         }
         if (contimer == 276)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Then^1, her heart pounding...", "obj_legend_slash_Draw_0_gml_212_0")
             w = gml_Script_instance_create(60, 185, obj_writer)
         }
         if (contimer == 414)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("The EARTH will draw&her final breath.", "obj_legend_slash_Draw_0_gml_219_0")
             w = gml_Script_instance_create(80, 185, obj_writer)
         }
@@ -202,7 +202,7 @@ if draw_screen
         if (contimer == 551)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Only then^1, shining with hope...", "obj_legend_slash_Draw_0_gml_233_0")
             w = gml_Script_instance_create(40, 185, obj_writer)
             contimer = 0
@@ -219,7 +219,7 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Three HEROES appear&at WORLDS' edge.", "obj_legend_slash_Draw_0_gml_253_0")
             w = gml_Script_instance_create(80, 185, obj_writer)
         }
@@ -245,7 +245,7 @@ if draw_screen
         if (contimer >= 277)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             contimer = 0
             c_chunkamt = 0
             chunkfade = 0
@@ -261,7 +261,7 @@ if draw_screen
         if (contimer == 4)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("A HUMAN,", "obj_legend_slash_Draw_0_gml_301_0")
             w = gml_Script_instance_create(20, 185, obj_writer)
         }
@@ -314,7 +314,7 @@ if draw_screen
         if (contimer >= 277)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Only they can seal the fountains", "obj_legend_slash_Draw_0_gml_356_0")
             w = gml_Script_instance_create(40, 185, obj_writer)
             contimer = 0
@@ -343,21 +343,21 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("And banish the ANGEL'S HEAVEN.", "obj_legend_slash_Draw_0_gml_387_0")
             w = gml_Script_instance_create(40, 185, obj_writer)
         }
         if (contimer == 276)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Only then will balance&be restored,", "obj_legend_slash_Draw_0_gml_394_0")
             w = gml_Script_instance_create(80, 185, obj_writer)
         }
         if (contimer == 414)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("And the WORLD saved&from destruction.", "obj_legend_slash_Draw_0_gml_401_0")
             w = gml_Script_instance_create(80, 185, obj_writer)
             fadespeed = 0.04
@@ -379,7 +379,7 @@ if draw_screen
             ytimer = 0
             xtimer = 0
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Today, the FOUNTAIN OF DARKNESS-", "obj_legend_slash_Draw_0_gml_426_0")
             w = gml_Script_instance_create(40, 160, obj_writer)
         }
@@ -397,28 +397,28 @@ if draw_screen
         if (contimer == 138)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("The geyser that&gives this land form-", "obj_legend_slash_Draw_0_gml_451_0")
             w = gml_Script_instance_create(80, 160, obj_writer)
         }
         if (contimer == 276)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("Stands tall at the&center of the kingdom.", "obj_legend_slash_Draw_0_gml_459_0")
             w = gml_Script_instance_create(80, 160, obj_writer)
         }
         if (contimer == 444)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("But recently, another fountain&has appeared on the horizon...", "obj_legend_slash_Draw_0_gml_466_0")
             w = gml_Script_instance_create(40, 160, obj_writer)
         }
         if (contimer == 640)
         {
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.msg[0] = gml_Script_stringsetloc("And with it^1, the balance of&LIGHT and DARK begins to shift...", "obj_legend_slash_Draw_0_gml_473_0")
             w = gml_Script_instance_create(40, 160, obj_writer)
         }
@@ -438,7 +438,7 @@ if draw_screen
         }
         if (contimer == 880 && skipped == 0)
         {
-            global.currentsong[0]
+            gml_Script_snd_free(global.currentsong[0])
             global.flag[6] = 0
             f = gml_Script_instance_create(0, 0, obj_fadeout)
             f.fadespeed = 0.02
@@ -448,15 +448,15 @@ if draw_screen
             if (global.plot == 20)
             {
                 gml_Script_instance_create(0, 0, obj_persistentfadein)
-                room_castle_front
+                room_goto(room_castle_front)
             }
             else
-                240
+                room_goto(PLACE_LOGO)
         }
     }
     if (border == 1)
     {
-        0
+        draw_set_color(c_black)
         draw_rectangle(-10, -10, 330, 27, false)
         draw_rectangle(-10, -10, 59, 300, false)
         draw_rectangle(400, -10, 260, 300, false)
@@ -466,7 +466,7 @@ if draw_screen
         chunkamt -= fadespeed
     if (chunkfade == 1 && chunkamt < 1)
         chunkamt += fadespeed
-    fadecolor
+    draw_set_color(fadecolor)
     alph = 0
     if (chunkamt >= 0.25)
         alph = 0.25
@@ -476,13 +476,13 @@ if draw_screen
         alph = 0.75
     if (chunkamt >= 1)
         alph = 1
-    alph
+    draw_set_alpha(alph)
     draw_rectangle(-10, -10, 330, 330, false)
 }
-1
+draw_set_alpha(1)
 if (ingame == 0)
 {
-    if (skipped == 0)
+    if (gml_Script_button1_p() && skipped == 0)
     {
         skipped = 1
         skiptimer = 0
@@ -494,9 +494,9 @@ if (ingame == 0)
         skiptimer += 1
     if (skiptimer == 19)
     {
-        global.currentsong[0]
+        gml_Script_snd_free(global.currentsong[0])
         global.flag[6] = 0
     }
     if (skiptimer == 20)
-        240
+        room_goto(PLACE_LOGO)
 }

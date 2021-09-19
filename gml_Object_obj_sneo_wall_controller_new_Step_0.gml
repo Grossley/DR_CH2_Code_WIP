@@ -1,6 +1,6 @@
 timer++
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (wallcount < wallcountmax && timer == wallcreatetimer[wallcount])
 {
     for (i = 0; i < wallsize; i++)

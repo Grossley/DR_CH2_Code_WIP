@@ -1,7 +1,7 @@
 destroyoffscreen = 1
 tolerance = 64
 teller = 0
-if 80
+if instance_exists(obj_mainchara)
 {
     with (obj_mainchara)
     {
@@ -13,7 +13,7 @@ if 80
             other.teller = 0
     }
 }
-(1 + (teller * 20))
+move_towards_point((gml_Script_charaHeartX() + (teller * 20)), gml_Script_charaHeartY(), 1)
 friction = -0.3
 alarm[0] = 300
 image_xscale = 0.2

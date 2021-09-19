@@ -9,9 +9,9 @@ quicksaved = 0
 window_center_toggle = 0
 if global.is_console
 {
-    if (!1109)
+    if (!instance_exists(obj_gamecontroller))
         gml_Script_instance_create(0, 0, obj_gamecontroller)
-    if (!1110)
+    if (!gml_Script_i_ex(1110))
         gml_Script_instance_create(0, 0, obj_border_controller)
 }
 paused = 0
@@ -25,12 +25,12 @@ border_fade_in = 0
 border_alpha = 1
 border_fade_value = 0.025
 _border_image = border_line_1080
-if (1131 > 1)
-    // WARNING: Popz'd an empty stack.
+if (instance_number(obj_time) > 1)
+    instance_destroy()
 else
 {
-    display_height = 
-    display_width = 
+    display_height = display_get_height()
+    display_width = display_get_width()
     window_size_multiplier = 1
     for (_ww = 2; _ww < 6; _ww += 1)
     {
@@ -44,12 +44,12 @@ else
     }
     if (os_type == os_switch)
     {
-        // WARNING: Popz'd an empty stack.
-        1
-        7
+        switch_controller_support_set_defaults()
+        switch_controller_support_set_singleplayer_only(1)
+        switch_controller_set_supported_styles(7)
     }
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_controls_default()
+    gml_Script_scr_ascii_input_names()
     for (i = 0; i < 10; i += 1)
     {
         global.input_pressed[i] = 0
@@ -58,8 +58,8 @@ else
     }
     if global.is_console
     {
-        1
-        0
+        application_surface_enable(true)
+        application_surface_draw_enable(false)
     }
-    global.is_console
+    gml_Script_scr_enable_screen_border(global.is_console)
 }

@@ -1,20 +1,20 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_14, _temp_local_var_15, _temp_local_var_18, _temp_local_var_20, _temp_local_var_22, _temp_local_var_23;
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_15, _temp_local_var_16, _temp_local_var_19, _temp_local_var_21, _temp_local_var_23, _temp_local_var_24;
 if (mcon == 2)
     mcon = 3
 if (mcon == 1)
 {
-    global.currentsong[0] = "lancer_susie.ogg"
+    global.currentsong[0] = gml_Script_snd_init_ch1("lancer_susie.ogg")
     mcon = 2
 }
 if (con == 1)
 {
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all_ch1()
     mm = 0.5
     image_blend = merge_color(c_white, c_black, mm)
     global.interact = 1
-    sus = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 100), global.cinstance[1].y, 3543)
-    ral = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 50), global.cinstance[0].y, 3569)
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4196)
+    sus = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 100), global.cinstance[1].y, 3544)
+    ral = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 50), global.cinstance[0].y, 3570)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4197)
     r = ral
     s = sus
     with (obj_caterpillarchara_ch1)
@@ -37,24 +37,25 @@ if (con == 3)
     global.facing = 1
     con = 4
     with (obj_marker_ch1)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_halt_ch1()
     obj_mainchara_ch1.x = k.x
     obj_mainchara_ch1.visible = true
     var _temp_local_var_1 = k
+    instance_destroy()
 }
 if (con == 5)
 {
-    global.currentsong[1] = global.currentsong[0]
+    global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
     global.fc = 5
     global.fe = 1
     global.typer = 32
-    global.msg[0] = "obj_lancerscare2_slash_Step_0_gml_60_0"
-    global.msg[1] = "obj_lancerscare2_slash_Step_0_gml_61_0"
-    global.msg[2] = "obj_lancerscare2_slash_Step_0_gml_62_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_60_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_61_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_62_0")
     con = 6
     gml_Script_instance_create_ch1(0, 0, 1326)
 }
-if (con == 6 ? 0 : 0)
+if (con == 6 && gml_Script_d_ex_ch1() == 0)
 {
     sprite_index = spr_lancer_dt_ch1
     con = 7
@@ -69,23 +70,23 @@ if (con == 8)
 if (con == 10)
 {
     global.fe = 1
-    global.msg[0] = "obj_lancerscare2_slash_Step_0_gml_84_0"
-    global.msg[1] = "obj_lancerscare2_slash_Step_0_gml_85_0"
-    global.msg[2] = "obj_lancerscare2_slash_Step_0_gml_86_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_84_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_85_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_86_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 11
 }
-if (con == 11 ? 0 : 0)
+if (con == 11 && gml_Script_d_ex_ch1() == 0)
 {
     sprite_index = spr_lancer_lt_laugh_ch1
     image_speed = 0.5
-    bucket = gml_Script_scr_dark_marker_ch1((x + 20), y, 3589)
+    bucket = gml_Script_scr_dark_marker_ch1((x + 20), y, 3590)
     bucket.hspeed = -4
     bucket.depth = (depth + 10)
-    // WARNING: Popz'd an empty stack.
-    454
-    376
-    lightning = gml_Script_scr_dark_marker_ch1(200, 0, 3588)
+    gml_Script_snd_free_all_ch1()
+    gml_Script_snd_play_ch1(454)
+    gml_Script_snd_play_ch1(376)
+    lightning = gml_Script_scr_dark_marker_ch1(200, 0, 3589)
     lightning.image_alpha = 3
     con = 12
     ctimer = 0
@@ -102,37 +103,37 @@ if (con == 12)
 }
 if (con == 15)
 {
-    global.currentsong[1] = global.currentsong[0]
+    global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
     global.fe = 3
-    global.msg[0] = "obj_lancerscare2_slash_Step_0_gml_137_0"
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_137_0")
     gml_Script_scr_susface_ch1(1, 7)
-    global.msg[2] = "obj_lancerscare2_slash_Step_0_gml_139_0"
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_139_0")
     gml_Script_scr_lanface_ch1(3, 2)
-    global.msg[4] = "obj_lancerscare2_slash_Step_0_gml_141_0"
-    global.msg[5] = "obj_lancerscare2_slash_Step_0_gml_142_0"
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_141_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_142_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 16
 }
 if (con == 14)
 {
     con = 15
-    global.currentsong[0] = "lancer.ogg"
+    global.currentsong[0] = gml_Script_snd_init_ch1("lancer.ogg")
 }
-if (con == 16 ? 0 : 0)
+if (con == 16 && gml_Script_d_ex_ch1() == 0)
 {
-    var _temp_local_var_6 = sus
+    var _temp_local_var_7 = sus
     sprite_index = spr_susiel_dark_ch1
 }
 if (con == 18)
 {
-    var _temp_local_var_7 = sus
+    var _temp_local_var_8 = sus
     sprite_index = spr_susier_dark_ch1
     hspeed = 6
     image_speed = 0.25
 }
 if (con == 20)
 {
-    var _temp_local_var_8 = sus
+    var _temp_local_var_9 = sus
     gml_Script_scr_halt_ch1()
 }
 if (con == 25)
@@ -141,34 +142,34 @@ if (con == 25)
     {
         if (obj_writer_ch1.msgno == 4)
         {
-            var _temp_local_var_9 = sus
+            var _temp_local_var_10 = sus
             sprite_index = spr_susied_dark_ch1
         }
         if (obj_writer_ch1.msgno == 5)
         {
-            var _temp_local_var_10 = sus
+            var _temp_local_var_11 = sus
             sprite_index = spr_susier_dark_ch1
         }
         if (obj_writer_ch1.msgno == 6)
         {
-            var _temp_local_var_11 = sus
+            var _temp_local_var_12 = sus
             sprite_index = spr_susied_dark_ch1
         }
         if (obj_writer_ch1.msgno == 8)
         {
-            var _temp_local_var_12 = sus
+            var _temp_local_var_13 = sus
             sprite_index = spr_susier_dark_ch1
         }
     }
 }
 if (con == 25 && gml_Script_d_ex_ch1() == 0)
 {
-    var _temp_local_var_14 = sus
+    var _temp_local_var_15 = sus
     sprite_index = spr_susied_dark_ch1
 }
 if (con == 27)
 {
-    var _temp_local_var_15 = sus
+    var _temp_local_var_16 = sus
     sprite_index = spr_susier_dark_ch1
 }
 if (con == 60 && gml_Script_d_ex_ch1() == 0)
@@ -207,7 +208,7 @@ if (con == 65)
 }
 if (con == 66)
 {
-    var _temp_local_var_18 = fd
+    var _temp_local_var_19 = fd
     instance_destroy()
 }
 if (con == 68)
@@ -223,7 +224,7 @@ if (con == 28 && gml_Script_d_ex_ch1() == 0)
     gml_Script_mus_volume_ch1(global.currentsong[1], 0, 30)
     hspeed = 16
     image_speed = 0.5
-    var _temp_local_var_20 = bucket
+    var _temp_local_var_21 = bucket
     hspeed = 16
 }
 if (con == 30)
@@ -238,14 +239,14 @@ if (con == 30)
 }
 if (con == 31 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_22 = sus
+    var _temp_local_var_23 = sus
     sprite_index = spr_susiel_dark_ch1
     hspeed = -6
     image_speed = 0.25
 }
 if (con == 33)
 {
-    var _temp_local_var_23 = sus
+    var _temp_local_var_24 = sus
     sprite_index = spr_susier_dark_ch1
     gml_Script_scr_halt_ch1()
 }

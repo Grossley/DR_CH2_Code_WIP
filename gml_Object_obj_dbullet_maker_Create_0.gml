@@ -11,7 +11,7 @@ activetimer = 0
 difficulty = 1
 times = 0
 image_alpha = 0
-if 628
+if instance_exists(obj_heart)
     futuredir = point_direction(x, y, (obj_heart.x + 8), (obj_heart.y + 8))
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

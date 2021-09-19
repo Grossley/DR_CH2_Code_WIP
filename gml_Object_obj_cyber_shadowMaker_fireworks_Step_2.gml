@@ -27,7 +27,7 @@ if (is_active || inactive_cleanup)
     shadow_char[0].image_alpha = frontshadOpacity
     shadow_char[0].image_index = obj_mainchara.image_index
     shadow_char[0].depth = (obj_mainchara.depth - 1)
-    if 274
+    if gml_Script_i_ex(274)
     {
         with (obj_caterpillarchara)
         {
@@ -73,7 +73,7 @@ if (is_active || inactive_cleanup)
             shadow_char[2].depth = (ral_depth - 1)
         }
     }
-    if 67
+    if gml_Script_i_ex(67)
     {
         with (obj_interactablesolid)
             var hacker_depth = depth

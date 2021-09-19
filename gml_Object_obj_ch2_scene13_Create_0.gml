@@ -13,10 +13,11 @@ else
     swatchling_npc_a = gml_Script_instance_create(1232, 30, obj_npc_room_animated)
     var _temp_local_var_4 = swatchling_npc_a
     sprite_index = spr_npc_swatchling_sweep
+    gml_Script_scr_depth()
     image_speed = 0.1
 }
 if (global.chapter != 2 || global.plot >= 75)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     statuenpc.visible = false
@@ -32,4 +33,5 @@ else
     noellebox.image_xscale = 2
     noellebox.image_yscale = 2
     var _temp_local_var_2 = noellebox
+    gml_Script_scr_depth()
 }

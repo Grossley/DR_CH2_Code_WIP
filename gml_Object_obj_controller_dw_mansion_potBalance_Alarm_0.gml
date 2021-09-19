@@ -1,5 +1,5 @@
 var _temp_local_var_1;
-if 107
+if instance_exists(obj_npc_butler)
 {
     with (obj_npc_butler)
     {
@@ -21,6 +21,7 @@ if 107
         noAlertSound = 1
         frozen = false
     }
+    instance_destroy()
 }
 spawnVase = 2
 triggered = 1

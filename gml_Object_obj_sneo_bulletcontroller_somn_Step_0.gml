@@ -1,6 +1,6 @@
 if (init == 0)
 {
-    sameattack = global.monsterattackname[creator]
+    sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])
     if (sameattack > 1)
     {
         if (creator == obj_84_lang_helper)
@@ -8,7 +8,7 @@ if (init == 0)
         else if (creator == obj_pipis_bullet_cone)
             sameattacker = (sameattack == 3 ? creator : global.monsterattackname[0] == global.monsterattackname[1])
     }
-    if 869
+    if instance_exists(obj_growtangle)
     {
         miny = (obj_growtangle.y - (obj_growtangle.sprite_height / 2))
         maxy = (obj_growtangle.y + (obj_growtangle.sprite_height / 2))
@@ -26,6 +26,6 @@ if (type == 5)
         gml_Script_instance_create(x, y, obj_sneo_sine_hand_controller)
         global.turntimer = 750
     }
-    if ((!609) && global.turntimer > 1)
+    if ((!instance_exists(obj_sneo_heartattack_intro)) && global.turntimer > 1)
         global.turntimer = 1
 }

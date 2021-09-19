@@ -2,42 +2,42 @@ if (init == 0)
     init = 1
 if (activecon == 0)
 {
-    if 80
+    if instance_exists(obj_mainchara)
     {
         aligned = 0
         if (extflag == 999)
         {
-            if (align_x == 1 ? (x ? x : 0) : 0)
+            if (align_x == 1 && x >= gml_Script_camerax() && x <= (gml_Script_camerax() + gml_Script_camerawidth()))
             {
-                if (((obj_mainchara.x + 20) - x) <= align_amount)
+                if (abs(((obj_mainchara.x + 20) - x)) <= align_amount)
                     aligned = 1
             }
-            if (align_y == 1 ? (y ? y : 0) : 0)
+            if (align_y == 1 && y >= gml_Script_cameray() && y <= (gml_Script_cameray() + gml_Script_cameraheight()))
             {
-                if (((obj_mainchara.y + 20) - y) <= align_amount)
+                if (abs(((obj_mainchara.y + 20) - y)) <= align_amount)
                     aligned = 1
             }
             if (align_distance == 1)
             {
-                if (80 < align_amount)
+                if (distance_to_object(obj_mainchara) < align_amount)
                     aligned = 1
             }
         }
         if (image_index != 14 && image_index != 13 && extflag == 0)
         {
-            if (align_x == 1 ? (x ? x : 0) : 0)
+            if (align_x == 1 && x >= gml_Script_camerax() && x <= (gml_Script_camerax() + gml_Script_camerawidth()))
             {
-                if (((obj_mainchara.x + 20) - x) <= align_amount)
+                if (abs(((obj_mainchara.x + 20) - x)) <= align_amount)
                     aligned = 1
             }
-            if (align_y == 1 ? (y ? y : 0) : 0)
+            if (align_y == 1 && y >= gml_Script_cameray() && y <= (gml_Script_cameray() + gml_Script_cameraheight()))
             {
-                if (((obj_mainchara.y + 20) - y) <= align_amount)
+                if (abs(((obj_mainchara.y + 20) - y)) <= align_amount)
                     aligned = 1
             }
             if (align_distance == 1)
             {
-                if (80 < align_amount)
+                if (distance_to_object(obj_mainchara) < align_amount)
                     aligned = 1
             }
         }
@@ -95,6 +95,6 @@ if (activecon == 1)
         image_xscale = lerp(2, 4, (timer / 30))
         image_yscale = lerp(2, 0, (timer / 30))
         if (timer >= 30)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

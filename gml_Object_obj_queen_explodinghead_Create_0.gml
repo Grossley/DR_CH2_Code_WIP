@@ -10,8 +10,8 @@ image_speed = 0
 buffering = 0
 laughpause = 0
 laughsound = 0
-if (500 == 1)
-    banana = 14
+if (irandom(500) == 1)
+    banana = irandom(14)
 else
     banana = 500
 first = 0

@@ -10,7 +10,7 @@ if (noleave == 0)
 if (noleave == 1)
 {
     with (obj_traffic_road_trigger)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     barrier = gml_Script_instance_create(200, 240, obj_forcefield)
     barrier.image_xscale = 2
     barrier.image_yscale = 8
@@ -20,6 +20,9 @@ if (noleave == 1)
 if (noleave == 2)
 {
     if (global.flag[352] != 0)
+    {
         var _temp_local_var_1 = barrier
-    // WARNING: Popz'd an empty stack.
+        instance_destroy()
+    }
+    instance_destroy()
 }

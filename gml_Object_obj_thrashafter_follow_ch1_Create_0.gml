@@ -10,11 +10,11 @@ image_yscale = 2
 if (global.flag[229] >= 99)
 {
     con = 999
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (room == room_forest_afterthrash3_ch1)
 {
-    tree = gml_Script_scr_dark_marker_ch1(440, 72, 4069)
+    tree = gml_Script_scr_dark_marker_ch1(440, 72, 4070)
     if (global.flag[229] >= 6)
         tree.image_index = 1
     var _temp_local_var_1 = tree

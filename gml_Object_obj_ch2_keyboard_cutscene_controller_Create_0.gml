@@ -17,7 +17,7 @@ autoWidth = 8
 autoString = gml_Script_stringsetloc("DECEMBER", "obj_ch2_keyboard_cutscene_controller_slash_Create_0_gml_25_0")
 autoX = x
 autoY = y
-var len = autoString
+var len = string_length(autoString)
 for (j = 0; j < 2; j++)
 {
     for (i = 0; i < len; i++)

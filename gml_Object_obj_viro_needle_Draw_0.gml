@@ -5,7 +5,7 @@ if (infection == 1)
     x = targetx
     y = targety
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (flash > false)
 {
     gml_Script_d3d_set_fog(true, merge_color(poisoncolor, c_white, 0.5), 0, 1)
@@ -20,7 +20,7 @@ if ((direction == 0 && x > (growt + gridth)) || (direction == 180 && x < (growt 
     active = false
     image_alpha -= 0.1
     if (image_alpha == 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 else if (image_alpha < 1)
     image_alpha += 0.1

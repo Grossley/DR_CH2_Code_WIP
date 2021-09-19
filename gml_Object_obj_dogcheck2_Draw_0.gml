@@ -1,8 +1,8 @@
 var _temp_local_var_1, _temp_local_var_4, _temp_local_var_7, _temp_local_var_8;
-trackpos = global.currentsong[1]
-if 82
-    // WARNING: Popz'd an empty stack.
-if 78
+trackpos = audio_sound_get_track_position(global.currentsong[1])
+if keyboard_check_pressed(ord("R"))
+    room_restart()
+if keyboard_check_pressed(ord("N"))
     audio_sound_set_track_position(global.currentsong[1], 10)
 if (maindog == obj_sneo_friedpipis)
 {
@@ -13,6 +13,7 @@ if (maindog == obj_sneo_friedpipis)
     maindog.image_yscale = 1
     maindog.image_speed = 0.25
     var _temp_local_var_1 = maindog
+    gml_Script_scr_depth()
 }
 trigpoint = 11.375
 if ((trackpos >= (trigpoint - 0.03) && trackpos <= (trigpoint + 0.01)) || (trackpos >= (trigpoint - 0.03) && trackpos <= (trigpoint + 0.01)))
@@ -29,6 +30,7 @@ if ((trackpos >= (trigpoint - 0.03) && trackpos <= (trigpoint + 0.01)) || (track
         newdog.friction = random_range(0.01, -0.01)
         newdog.image_speed = (((hspeed / 4) * 0.25) + 0.25)
         var _temp_local_var_4 = newdog
+        gml_Script_scr_depth()
     }
 }
 trigpoint = 14
@@ -46,16 +48,17 @@ if ((trackpos >= (trigpoint - 0.03) && trackpos <= (trigpoint + 0.01)) || (track
         newdog.friction = random_range(0.01, -0.01)
         newdog.image_speed = (((hspeed / 4) * 0.25) + 0.25)
         var _temp_local_var_7 = newdog
+        gml_Script_scr_depth()
     }
 }
-if 127
+if gml_Script_i_ex(127)
 {
     with (obj_marker)
     {
         if (x > 384)
         {
             if (id != other.maindog)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
     }
 }

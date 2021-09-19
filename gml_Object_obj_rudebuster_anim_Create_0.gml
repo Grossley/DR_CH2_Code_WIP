@@ -7,7 +7,7 @@ damage = 1
 caster = 0
 star = 0
 battlemode = 1
-if 371
+if instance_exists(obj_herosusie)
 {
     depth = obj_herosusie.depth
     with (obj_herosusie)

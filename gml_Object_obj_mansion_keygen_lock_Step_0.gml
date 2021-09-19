@@ -1,36 +1,29 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3;
-if (con == 1)
+if (con == 1 && (!gml_Script_d_ex()))
 {
+    global.interact = 1
+    gml_Script_snd_play(102)
+    con++
 }
-else
-    var _temp_local_var_3 = 0
-global.interact = 1
-102
-con++
-if (con == 2)
+if (con == 2 && (!gml_Script_d_ex()))
 {
+    gml_Script_scr_lerpvar_instance(id, "image_alpha", 1, 0, 30)
+    con++
 }
-else
-    var _temp_local_var_2 = 0
-gml_Script_scr_lerpvar_instance(id, "image_alpha", 1, 0, 30)
-con++
 if (con == 3)
 {
     fade_timer++
     if (fade_timer >= 30)
         con = 4
 }
-if (con == 4)
+if (con == 4 && (!gml_Script_d_ex()))
 {
+    con = 99
+    global.interact = 0
+    instance_destroy()
 }
-else
-    var _temp_local_var_1 = 0
-con = 99
-global.interact = 0
-// WARNING: Popz'd an empty stack.
 if (myinteract == 3)
 {
-    if (mydialoguer == 0)
+    if (gml_Script_i_ex(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0

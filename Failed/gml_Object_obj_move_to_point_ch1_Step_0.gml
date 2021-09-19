@@ -1,9 +1,23 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if instance_exists(target)
+{
+    if (moved == 0)
+    {
+        x = target.x
+        y = target.y
+        dist = distance_to_point(movex, movey)
+        dir = point_direction(x, y, movex, movey)
+        amt = (dist / movemax)
+        xadd = lengthdir_x(amt, dir)
+        yadd = lengthdir_y(amt, dir)
+        moved = 1
+    }
+    target.x += xadd
+    target.y += yadd
+    movetimer += 1
+    if (movetimer >= movemax)
+        instance_destroy()
+    if (target == 1646)
+        instance_destroy()
+}
+else
+    instance_destroy()

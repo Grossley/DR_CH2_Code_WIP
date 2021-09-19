@@ -9,17 +9,17 @@ if (global.chapter == 1)
 }
 if (global.chapter == 2)
 {
-    if 133
+    if gml_Script_i_ex(133)
     {
         with (obj_npc_facing)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
-    if 101
+    if gml_Script_i_ex(101)
     {
         with (obj_npc_room)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
-    if (global.plot >= 205 && (!3))
+    if (global.plot >= 205 && (!gml_Script_scr_sideb_get_phase() >= 3))
     {
     }
 }

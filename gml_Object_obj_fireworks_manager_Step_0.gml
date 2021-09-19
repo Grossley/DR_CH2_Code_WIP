@@ -10,7 +10,7 @@ if is_active
         {
             if (obj_mainchara.x <= 2320 && obj_mainchara.x > obj_bqueen_intro)
             {
-                if 344
+                if gml_Script_i_ex(344)
                 {
                     if (!obj_cyber_shadowMaker_fireworks.is_active)
                         obj_cyber_shadowMaker_fireworks.is_active = 1
@@ -21,7 +21,7 @@ if is_active
             }
             else
             {
-                if 344
+                if gml_Script_i_ex(344)
                 {
                     if obj_cyber_shadowMaker_fireworks.is_active
                     {
@@ -36,10 +36,11 @@ if is_active
         {
             spawn = (time % 50) == 40
             _y = (800 - random(80))
-            _x = max(1000, 640)
+            _x = max(1000, (gml_Script_camerax() + random(640)))
             if (_x.room_width - 200)
                 _x = (room_width - 200)
-            _x += 320
+            if gml_Script_right_h()
+                _x += 320
             if (obj_mainchara.y <= 500)
                 _y = (300 + random(40))
             if (room == room_dw_city_postbaseball_1)
@@ -52,7 +53,7 @@ if is_active
             else
             {
                 _y = 300
-                _x = (700 + 200)
+                _x = ((gml_Script_camerax() + random(700)) + 200)
             }
             if (global.interact != 0)
                 spawn = 0

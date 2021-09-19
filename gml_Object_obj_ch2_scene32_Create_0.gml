@@ -6,18 +6,18 @@ removefg = 0
 debug_skip = 0
 hide_border = 0
 if (global.chapter != 2 || global.plot < 211)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
-    // WARNING: Popz'd an empty stack.
-    if 274
-        274
-    if (!global.currentsong[1])
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
+    if (!audio_is_playing(global.currentsong[1]))
     {
-        global.currentsong[0] = "home.ogg"
-        global.currentsong[1] = global.currentsong[0]
+        global.currentsong[0] = gml_Script_snd_init("home.ogg")
+        global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
     }
-    blackall = gml_Script_scr_marker(-10, -10, 2528)
+    blackall = gml_Script_scr_marker(-10, -10, 2529)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
@@ -41,5 +41,5 @@ else
     credits_timer = 0
     fade_out_deep = 0
     with (obj_npc_room)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

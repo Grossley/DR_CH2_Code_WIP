@@ -56,9 +56,9 @@ if (hit == 1)
         vspeed = (-64 / f)
     if (y < -850)
     {
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         gml_Script_instance_create(x, y, obj_bq_baseball_final_hits_boss)
     }
 }
-if (y > 20 && (!820) && hit != 1)
+if (y > 20 && (!instance_exists(o_bq_whitefade)) && hit != 1)
     gml_Script_instance_create(x, y, o_bq_whitefade)

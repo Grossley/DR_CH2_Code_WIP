@@ -18,7 +18,7 @@ if (encountered == 0)
         if (global.flag[9] == 1)
         {
             if (global.encounterno != 62 && global.encounterno != 84)
-                global.batmusic[0] = "battle.ogg"
+                global.batmusic[0] = gml_Script_snd_init("battle.ogg")
         }
         alarm[5] = -300
         vspeed = 0

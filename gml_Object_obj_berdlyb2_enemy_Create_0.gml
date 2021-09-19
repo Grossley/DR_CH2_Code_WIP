@@ -1,10 +1,10 @@
 berdlytalk = 69
 noelletalk = 76
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 default_talkmax = 90
 talkmax = 90
 image_speed = 0.16666666666666666
-sideb_route = 0
+sideb_route = gml_Script_scr_sideb_get_phase() > 0
 idlesprite = (sideb_route ? spr_berdlyb_idle_serious : spr_berdlyb_idle)
 hurtsprite = spr_berdly_shocked_left_battle
 sparedsprite = spr_berdly_hurt_kneel_battle

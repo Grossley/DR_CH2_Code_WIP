@@ -1,2 +1,2 @@
-16777215
-// WARNING: Popz'd an empty stack.
+draw_set_color(c_white)
+draw_self()

@@ -5,8 +5,8 @@ if (room == room_town_krisyard)
     {
         global.interact = 1
         global.facing = 0
-        cutscene_master = 
-        // WARNING: Popz'd an empty stack.
+        cutscene_master = gml_Script_scr_cutscene_make()
+        gml_Script_scr_maincharacters_actors()
         kr_actor.x = 160
         kr_actor.y = 164
         kr_actor.sprite_index = spr_krisd
@@ -18,38 +18,38 @@ if (room == room_town_krisyard)
         car_actor = gml_Script_instance_create(130, 240, obj_actor)
         gml_Script_scr_actor_setup(car, car_actor, "car")
         car_actor.sprite_index = spr_torcar_d
-        30
-        1
-        "u"
-        "toriel"
-        0
-        "top"
+        gml_Script_c_wait(30)
+        gml_Script_c_sel(1)
+        gml_Script_c_facing("u")
+        gml_Script_c_speaker("toriel")
+        gml_Script_c_fe(0)
+        gml_Script_c_msgside("top")
         gml_Script_c_msgsetloc(0, "* Well^1, shall we go?/%", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_35_0")
-        // WARNING: Popz'd an empty stack.
-        0
-        1
+        gml_Script_c_talk_wait()
+        gml_Script_c_sel(0)
+        gml_Script_c_pannable(1)
         gml_Script_c_panspeed(0, 2, 25)
         gml_Script_c_walkdirect_wait(115, 249, 40)
         gml_Script_c_walk("r", 2, 20)
-        1
+        gml_Script_c_sel(1)
         gml_Script_c_walk_wait("l", 2, 20)
-        15
-        0
-        0
-        0
-        2
+        gml_Script_c_wait(15)
+        gml_Script_c_visible(0)
+        gml_Script_c_sel(0)
+        gml_Script_c_visible(0)
+        gml_Script_c_sel(2)
         gml_Script_c_walk("d", 5, 99)
         gml_Script_c_panspeed(0, 1, 999)
-        50
-        70
+        gml_Script_c_fadeout(50)
+        gml_Script_c_wait(70)
         con = 2
     }
-    if (con == 2 && (!895))
+    if (con == 2 && (!instance_exists(obj_cutscene_master)))
     {
         if (global.plot < 2)
             global.plot = 2
         gml_Script_instance_create(0, 0, obj_persistentfadein)
-        60
+        room_goto(room_alphysclass)
     }
 }
 if (room == room_schoollobby)
@@ -58,8 +58,8 @@ if (room == room_schoollobby)
     {
         global.interact = 1
         global.facing = 0
-        cutscene_master = 
-        // WARNING: Popz'd an empty stack.
+        cutscene_master = gml_Script_scr_cutscene_make()
+        gml_Script_scr_maincharacters_actors()
         kr_actor.sprite_index = spr_krisd
         kr_actor.x = 109
         kr_actor.y = 193

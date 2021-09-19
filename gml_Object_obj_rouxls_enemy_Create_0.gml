@@ -1,11 +1,12 @@
-// WARNING: Popz'd an empty stack.
+var _temp_local_var_1, _temp_local_var_6;
+gml_Script_scr_enemy_object_init()
 var tensionbonus = (((global.flag[458] / 7) * global.maxtension) * 0.3)
-tensionbonus
+gml_Script_scr_tensionheal(tensionbonus)
 talkmax = 90
 image_speed = 0.16666666666666666
 idlesprite = spr_rurus_pirate
 hurtsprite = spr_rurus_pirate
-sabersprite = 1164
+sabersprite = 1165
 sparedsprite = spr_rurus_pirate
 custom_draw_example = 1
 depth = -10
@@ -26,7 +27,7 @@ bulletoverride = -1
 chosenattack = 0
 advancespeed = 8
 returnspeed = 6
-aimtime = (15 + 10)
+aimtime = (irandom(15) + 10)
 floatheight = 0
 returnease = 0
 headattack = 0
@@ -35,6 +36,7 @@ puddle.sprite_index = spr_rouxls_puddle
 puddle.image_xscale = 2
 puddle.image_yscale = 2
 puddle.image_speed = 0
+var _temp_local_var_1 = thrash
 puddle.image_index = (part[0] == 2 ? obj_84_lang_helper : obj_sneo_friedpipis)
 var turretbody = part[0] == 2
 puddle.x = (remx + (turretbody ? 18 : 34))
@@ -67,14 +69,18 @@ if (thrash.room != room_dw_mansion_acid_tunnel_loop_rouxls)
     tile6 = gml_Script_instance_create((gml_Script_camerax() + 160), (gml_Script_cameray() + 280), obj_simtown_landmaker)
     tile6.image_xscale = 8
 }
-if ((!thrash) || room == room_dw_mansion_acid_tunnel_loop_rouxls)
+if (!gml_Script_scr_debug())
+    var _temp_local_var_6 = 1
+else
+    _temp_local_var_1 = thrash.room == room_dw_mansion_acid_tunnel_loop_rouxls
+if 1
 {
     with (obj_simtown_landmaker)
         visible = false
     with (obj_simtown_acidmaker)
         visible = false
 }
-if (!751)
+if (!gml_Script_i_ex(751))
     simcity = gml_Script_instance_create(x, y, obj_rouxls_simtown)
 else
     simcity = obj_rouxls_simtown
@@ -85,7 +91,7 @@ endbattle = 0
 actresult = "tie"
 target_multiplier = 0
 with (obj_battleback)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 ballooncount = 0
 ballooncon = 0
 talkedcon = 0

@@ -1,9 +1,66 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_4;
+if (state == 3)
+{
+    if (hurttimer > 0)
+    {
+        hurttimer = 0
+        body.condition = 1
+        body.siner = 0
+        body.maxdist += (20 + (hurtamt / 5))
+        if (body.maxdist < 30)
+            body.maxdist = 30
+        mhpratio = (global.monsterhp[myself] / global.monstermaxhp[myself])
+        body.floatsinerspeed = (1 + (1 - mhpratio))
+        if (mhpratio <= 0.8 && body.dancelv == 0)
+            body.dancelv = 1
+        if (mhpratio <= 0.4 && jturn < 17)
+            body.dancelv = 3
+        if (mhpratio <= 0.2 && jturn == 17)
+            body.dancelv = 2
+        if (mhpratio <= 0)
+        {
+            event_user(10)
+            global.flag[241] = 6
+        }
+        if instance_exists(obj_jokerbg_triangle_real_ch1)
+        {
+            if (mhpratio > 0)
+                obj_jokerbg_triangle_real_ch1.rotspeed = (1 + (1.5 - (mhpratio * 1.5)))
+        }
+        laughnoise = choose(0, 1, 2)
+        if (laughnoise == 0)
+            gml_Script_snd_play_ch1(462)
+        if (laughnoise == 1)
+            gml_Script_snd_play_ch1(467)
+        if (laughnoise == 2)
+            gml_Script_snd_play_ch1(464)
+    }
+    hurttimer -= 1
+    if (hurttimer < 0)
+        state = 0
+    else if (global.monster[myself] == false)
+    {
+    }
+}
+if (state == 0)
+{
+    siner += 1
+    thissprite = idlesprite
+    if (flash == true)
+    {
+        fsiner += 1
+        body.fsiner = fsiner
+        var _temp_local_var_4 = body
+        gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+        if (dancelv == 0)
+            draw_sprite_ext(spr_joker_main_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        if (dancelv == 1)
+            draw_sprite_ext(spr_joker_dance_ch1, (floatsiner / 3), (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        if (dancelv == 2)
+            draw_sprite_ext(spr_joker_tired_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+        gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+    }
+}
+if (becomeflash == false)
+    flash = false
+becomeflash = false

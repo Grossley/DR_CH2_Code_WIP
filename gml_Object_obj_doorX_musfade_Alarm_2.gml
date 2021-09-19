@@ -1,22 +1,22 @@
 global.entrance = 24
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-7
+event_user(7)
 if (room == room_castle_town)
-    65
+    room_goto(room_castle_tutorial)
 if (room == room_castle_tutorial)
-    64
+    room_goto(room_castle_town)
 if (room == room_town_krisyard)
-    30
+    room_goto(room_torhouse)
 if (room == room_torhouse)
-    32
+    room_goto(room_town_krisyard)
 if (room == room_town_school)
-    59
+    room_goto(room_schoollobby)
 if (room == room_schoollobby)
-    39
+    room_goto(room_town_school)
 if (global.chapter == 2)
 {
     if (room == room_dw_castle_area_2_transformed)
-        235
+        room_goto(room_shop1)
     if (room == room_dw_cyber_musical_shop)
-        236
+        room_goto(room_shop_ch2_music)
 }

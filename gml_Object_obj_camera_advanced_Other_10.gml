@@ -1,6 +1,6 @@
 cameraActive = 1
-cX = 
-cY = 
+cX = gml_Script_camerax()
+cY = gml_Script_cameray()
 cV = currentView
 if (ignoreFreezeArea[cV] != -2)
     ignoreFreeze = ignoreFreezeArea[cV]
@@ -19,7 +19,7 @@ if (cameraActive == 1)
     xAdd = 0
     yAdd = 0
     cameraFinished = 0
-    2
+    event_user(2)
     if (panStyle[cV] == 0)
     {
         panSpeed = panSpeedInit[cV]
@@ -62,9 +62,9 @@ if (cameraActive == 1)
         nextY = lerp(startLerpY, finalY, lerpProgress)
         if (lerpForceAmount[cV] != 0 && lerpSmooth[cV] == 1)
         {
-            if ((nextX - finalX) < 2)
+            if (abs((nextX - finalX)) < 2)
                 nextX = finalX
-            if ((nextY - finalY) < 2)
+            if (abs((nextY - finalY)) < 2)
                 nextY = finalY
         }
     }
@@ -89,14 +89,14 @@ if (cameraActive == 1)
             {
                 panXAccel = (-panXAccel)
                 panYAccel = (-panYAccel)
-                if (panXAccel == sign(panXSpeed) || panXSpeed == 0)
+                if (sign(panXAccel) == sign(panXSpeed) || panXSpeed == 0)
                     panXAccel = 0
-                if (panYAccel == sign(panYSpeed) || panYSpeed == 0)
+                if (sign(panYAccel) == sign(panYSpeed) || panYSpeed == 0)
                     panYAccel = 0
             }
         }
-        panXSpeed = clamp((panXSpeed + panXAccel), (-abs(panXSpeedMax)), panXSpeedMax)
-        panYSpeed = clamp((panYSpeed + panYAccel), (-abs(panYSpeedMax)), panYSpeedMax)
+        panXSpeed = clamp((panXSpeed + panXAccel), (-abs(panXSpeedMax)), abs(panXSpeedMax))
+        panYSpeed = clamp((panYSpeed + panYAccel), (-abs(panYSpeedMax)), abs(panYSpeedMax))
         xAdd = panXSpeed
         yAdd = panYSpeed
         nextX = (cX + xAdd)
@@ -125,9 +125,9 @@ if (cameraActive == 1)
     cX = clamp(cX, panLimitLeft[cV], panLimitRight[cV])
     cY = clamp(cY, panLimitTop[cV], panLimitBottom[cV])
     if (!ignoreX[cV])
-        cX
+        gml_Script_camerax_set(cX)
     if (!ignoreY[cV])
-        cY
+        gml_Script_cameray_set(cY)
     remFinalX = finalX
     remFinalY = finalY
     remTargetObject = targetObject[cV]

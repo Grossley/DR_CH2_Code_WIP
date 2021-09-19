@@ -1,4 +1,4 @@
-if target
+if gml_Script_i_ex(target)
 {
     if (init == 0)
     {
@@ -23,12 +23,12 @@ if target
         target.speed = 0
         target.image_index = 0
         target.image_speed = 0
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
         return;
     }
 }
 else
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     return;
 }

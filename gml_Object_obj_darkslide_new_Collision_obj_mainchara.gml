@@ -12,11 +12,11 @@ if (sliding == 0 && global.interact == 0)
         }
         if (solidcheck == 0)
         {
-            64
+            gml_Script_snd_play(64)
             if (room == room_dw_cyber_teacup_final)
-                236
+                gml_Script_snd_play(236)
             else
-                slide_noise = 236
+                slide_noise = gml_Script_snd_loop(236)
             with (obj_mainchara)
             {
                 sliding = 1
@@ -48,7 +48,7 @@ if (sliding == 1)
         slidetimer = -3
     if move_lr_enabled
     {
-        if dust
+        if gml_Script_left_h()
         {
             with (obj_mainchara)
             {
@@ -57,11 +57,14 @@ if (sliding == 1)
                     x += _px
             }
         }
-        with (obj_mainchara)
+        if gml_Script_right_h()
         {
-            _px = 6
-            if (!place_meeting((x + _px), y, obj_solidblock))
-                x += _px
+            with (obj_mainchara)
+            {
+                _px = 6
+                if (!place_meeting((x + _px), y, obj_solidblock))
+                    x += _px
+            }
         }
         solidcheck = 0
         with (obj_mainchara)

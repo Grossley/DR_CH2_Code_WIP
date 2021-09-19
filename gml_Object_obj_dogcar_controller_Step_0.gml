@@ -11,18 +11,18 @@ if (con == 2)
         alarm[1] = -1
     black = true
     with (obj_dogcar)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_animation)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     with (obj_dmgwriter)
-        // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+        instance_destroy()
+    audio_stop_all()
     audio_play_sound(snd_break2, 50, false)
     con = 3
     timer = 0
     remy = obj_mainchara.y
     remx = obj_mainchara.x
-    fellkris = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 2425)
+    fellkris = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 2426)
     fellkris.depth = -200
 }
 if (con == 3)
@@ -36,7 +36,7 @@ if (con == 3)
 }
 if (con == 4)
 {
-    "gameover_short.ogg"
+    gml_Script_mus_initloop("gameover_short.ogg")
     gml_Script_instance_create((gml_Script___view_get(0, 0) + 110), (gml_Script___view_get(1, 0) + 100), obj_dogcar_gameover)
     con = 5
     timer = 0
@@ -49,7 +49,7 @@ if (con == 5)
 }
 if (con == 6)
 {
-    if (!297)
+    if (!instance_exists(obj_dogcar_gameover))
     {
         timer += 1
         if (timer >= 100)
@@ -60,8 +60,8 @@ if (con == 6)
             fader = gml_Script_instance_create(0, 0, obj_persistentfadein)
             fader.image_alpha = 6
             fader.fadespeed = -2
-            33
-            151
+            gml_Script_scr_itemget(33)
+            room_goto(room_dw_city_moss)
         }
     }
 }

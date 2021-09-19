@@ -1,9 +1,48 @@
-/*
-DECOMPILER FAILED!
-
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1591
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5, _temp_local_var_8, _temp_local_var_13;
+for (i = 0; i < 2; i += 1)
+{
+    if instance_exists(global.cinstance[i])
+    {
+        if (global.char[(i + 1)] == 2)
+        {
+            if (global.cinstance[i].x != s.x || global.cinstance[i].y != s.x)
+            {
+                global.cinstance[i].x = s.x
+                global.cinstance[i].y = (s.y + 10)
+                var _temp_local_var_2 = global.cinstance[i]
+                gml_Script_scr_caterpillar_interpolate_ch1()
+            }
+            var _temp_local_var_5 = global.cinstance[i]
+            if (global.facing == 0)
+                sprite_index = dsprite
+            if (global.facing == 1)
+                sprite_index = rsprite
+            if (global.facing == 2)
+                sprite_index = usprite
+            if (global.facing == 3)
+                sprite_index = lsprite
+            visible = true
+        }
+        if (global.char[(i + 1)] == 3)
+        {
+            if (global.cinstance[i].x != r.x || global.cinstance[i].y != r.x)
+            {
+                global.cinstance[i].x = r.x
+                global.cinstance[i].y = (r.y + 10)
+                var _temp_local_var_8 = global.cinstance[i]
+                gml_Script_scr_caterpillar_interpolate_ch1()
+            }
+            var _temp_local_var_13 = global.cinstance[i]
+            if (global.facing == 0)
+                sprite_index = dsprite
+            if (global.facing == 1)
+                sprite_index = rsprite
+            if (global.facing == 2)
+                sprite_index = usprite
+            if (global.facing == 3)
+                sprite_index = lsprite
+            visible = true
+        }
+    }
+}
+return;

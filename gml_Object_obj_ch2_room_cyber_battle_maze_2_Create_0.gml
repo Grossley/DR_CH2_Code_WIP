@@ -1,7 +1,7 @@
 southcon = 0
 northcon = 0
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     hacker = gml_Script_instance_create(740, 100, obj_readable_room1)

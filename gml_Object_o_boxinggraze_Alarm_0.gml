@@ -1,3 +1,3 @@
 if (tpgain != 0)
-    other.tpgain
+    gml_Script_scr_tensionheal(other.tpgain)
 tpgain = 0

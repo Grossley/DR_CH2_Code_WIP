@@ -13,7 +13,7 @@ partySize = 1
 reverse = 0
 fixcamera = 0
 spin = 0
-screwSegHeight = (2545 * 2)
+screwSegHeight = (sprite_get_height(spr_teacup_screw) * 2)
 camTargetHeight = 0
 camFollowMultiplier = 2
 cupCharXnudge = -20
@@ -68,6 +68,7 @@ while (i < 3)
     image_speed = 0
     image_xscale = 2
     image_yscale = 2
+    gml_Script_scr_depth()
     spin = 0
 }
 if startOffset.undefined
@@ -83,6 +84,8 @@ if scoreboardExists
 }
 if (uniqueBulletPattern != -1)
     gml_Script_scr_tb_pattern(uniqueBulletPattern)
+else
+    gml_Script_scr_tb_pattern()
 if (global.chapter == 2)
 {
     if (scoreboard.room == room_dw_mansion_b_west_2f && global.tempflag[33] > 0)

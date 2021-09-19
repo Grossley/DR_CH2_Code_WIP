@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6;
 oo = 0
 if (spec == 1)
 {
-    if 1502
+    if instance_exists(obj_darkponman_ow_ch1)
     {
         oo = (-0.8 + ((obj_darkponman_ow_ch1.battlealpha * obj_darkponman_ow_ch1.max_battlealpha) * 1.5))
         if (oo < 0)
@@ -14,7 +14,7 @@ if (spec == 1)
 }
 if (spec == 2)
 {
-    if 1502
+    if instance_exists(obj_darkponman_ow_ch1)
     {
         oo = (4 - ((obj_darkponman_ow_ch1.battlealpha * obj_darkponman_ow_ch1.max_battlealpha) * 4))
         if (oo > 1)
@@ -30,7 +30,7 @@ if (blocktimer == 20)
 {
     xv = ((x + (sprite_width / 4)) + random((sprite_width / 2)))
     yv = ((y + (sprite_height / 4)) + random((sprite_height / 4)))
-    block = gml_Script_scr_dark_marker_ch1(xv, yv, 4062)
+    block = gml_Script_scr_dark_marker_ch1(xv, yv, 4063)
     var _temp_local_var_1 = block
     hspeed = (0.4 + random(1))
     vspeed = (0.7 + random(1.5))

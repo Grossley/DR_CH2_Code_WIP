@@ -1,2 +1,2 @@
-if laser_surface
-    laser_surface
+if surface_exists(laser_surface)
+    surface_free(laser_surface)

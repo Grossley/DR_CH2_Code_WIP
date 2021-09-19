@@ -1,3 +1,3 @@
 if (global.plot >= 60)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 siner = 0

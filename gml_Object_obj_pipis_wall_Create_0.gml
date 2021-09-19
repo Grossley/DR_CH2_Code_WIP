@@ -4,4 +4,4 @@ image_xscale = 1
 con = 0
 timer = 0
 type = 0
-siner = 100
+siner = random(100)

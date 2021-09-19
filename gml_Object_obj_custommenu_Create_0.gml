@@ -21,7 +21,7 @@ edgedebug = 0
 siner = 0
 type = 1
 reminteract = global.interact
-menuSprite = 2526
+menuSprite = 2527
 display_buttons = 0
 for (i = 0; i < menuMax; i++)
 {
@@ -49,7 +49,7 @@ for (i = 0; i < menuMax; i++)
     menuTextColorHover[i] = 65535
     menuTextColorInactive[i] = 8421504
     menuTextColorSelected[i] = 65535
-    menuTextFont[i] = "mainbig"
+    menuTextFont[i] = gml_Script_scr_84_get_font("mainbig")
     menuTextScaleType[i] = 0
     menuTextXScale[i] = 1
     menuTextYScale[i] = 1

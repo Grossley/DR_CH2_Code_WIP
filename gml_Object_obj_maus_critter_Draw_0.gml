@@ -24,7 +24,7 @@ if (init >= 2)
     else
         draw_sprite_ext(sprite_index, image_index, (x + (offset * sign((direction - 135)))), y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
     if (!_inbounds)
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_draw_in_box_end()
 }
 else
 {

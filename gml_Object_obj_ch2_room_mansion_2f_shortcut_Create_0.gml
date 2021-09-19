@@ -16,4 +16,5 @@ if (global.flag[346] == 0)
     bookcase = gml_Script_instance_create(221, 40, obj_npc_sign)
     bookcase.sprite_index = spr_dw_mansion_bookcase
     var _temp_local_var_1 = bookcase
+    gml_Script_scr_depth()
 }

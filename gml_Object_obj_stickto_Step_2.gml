@@ -1,8 +1,8 @@
-if (stickingobj && stucktoobj)
+if (gml_Script_i_ex(stickingobj) && gml_Script_i_ex(stucktoobj))
 {
     stickingobj.depth = (stucktoobj.depth + relativedepth)
     stickingobj.x = (stucktoobj.x + relx)
     stickingobj.y = (stucktoobj.y + rely)
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -10,7 +10,7 @@ if (room == room_cc_4f_ch1)
         }
         if (bluhtotal >= 3)
         {
-            358
+            gml_Script_snd_play_ch1(358)
             chest = gml_Script_instance_create_ch1(480, 980, 1410)
             global.flag[245] = 1
         }

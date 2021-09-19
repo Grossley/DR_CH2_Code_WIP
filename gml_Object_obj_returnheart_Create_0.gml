@@ -4,7 +4,7 @@ image_alpha = 1
 flytime = 8
 distx = (obj_herokris.x + 10)
 disty = (obj_herokris.y + 40)
-if (global.chapter == 2 && 837)
+if (global.chapter == 2 && instance_exists(obj_gigaqueen_enemy))
 {
     distx = o_boxingcontroller.x
     disty = (o_boxingcontroller.y - 110)

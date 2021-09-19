@@ -1,6 +1,6 @@
 timer++
 if (timer == 7)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (faster == 0)
 {
     if (timer < 3)

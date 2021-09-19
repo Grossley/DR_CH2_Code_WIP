@@ -7,7 +7,7 @@ image_speed = 0
 troublePiece = 0
 myPiece = instance_create_depth((x + choose(0, -20, 20)), (y + 170), depth, obj_shapepuzzlepiece)
 depth = 999990
-var _count = 1106
+var _count = instance_number(obj_shapepuzzlepiece)
 icon_color = pieceColours[(_count - 1)]
 bird = _count == 5
 berdly_taunt_timer = 0
@@ -19,10 +19,10 @@ image_index = (1 + _count)
 image_blend = pieceColours[(_count - 1)]
 image_xscale = 2
 image_yscale = 2
-if (myPiece.room == room_dw_mansion_darkbulb_2 && image_index == 5)
+if (other.room == room_dw_mansion_darkbulb_2 && image_index == 5)
     other.troublePiece = 1
-if (room == room_dw_mansion_darkbulb_3)
-    var _loopcount = 3
+if (myPiece.room == room_dw_mansion_darkbulb_3)
+    var _loopcount = irandom(3)
 else if other.troublePiece
     _loopcount = 1
 else

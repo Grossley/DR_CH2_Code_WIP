@@ -10,7 +10,7 @@ doafter = 0
 docon = 0
 if (global.darkzone == true)
 {
-    id
+    gml_Script_scr_darksize(id)
     if (room == room_dw_city_traffic_2)
         sprite_index = spr_npc_werewire
     if (room == room_dw_city_queen_drunk)
@@ -82,8 +82,8 @@ if (room == room_lw_police)
 }
 if (room == room_dw_city_big_3)
 {
-    if (16 == 1 || gml_Script_scr_armorcheck_equipped(1, 16) == 1)
-        // WARNING: Popz'd an empty stack.
+    if (gml_Script_scr_armorcheck_inventory(16) == 1 || gml_Script_scr_armorcheck_equipped(1, 16) == 1)
+        instance_destroy()
     else
         sprite_index = spr_mannequin_dress
 }
@@ -96,7 +96,7 @@ if (room == room_dw_mansion_entrance && x < 340)
     depth = 880000
     setdepth = 0
     if (global.flag[916] != 0 || global.flag[915] < 7)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_cyber_teacup_final)
 {
@@ -111,14 +111,14 @@ if (room == room_dw_cyber_maze_queenscreen)
     {
         sprite_index = spr_npc_spinning_disk
         image_speed = 0.25
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_depth()
     }
 }
 if (room == room_dw_cyber_post_music_boss_slide)
 {
     sprite_index = spr_cyber_broken_camera
     if (global.plot < 150)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (room == room_dw_city_poppup)
 {
@@ -135,5 +135,5 @@ if (room == room_dw_city_poppup)
 if (room == room_dw_cyber_tasque_battle)
     sprite_index = spr_losingrecruits
 if (setdepth == 1)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_depth()
 depth += depthbonus

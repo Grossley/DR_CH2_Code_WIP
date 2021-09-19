@@ -4,7 +4,7 @@ if (hurtstate2 == 1)
     return;
 }
 if (state == 3)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemy_drawhurt_generic()
 if (state == 0)
 {
     if (dancing == 1)
@@ -17,13 +17,13 @@ if (state == 0)
             siner += 2
             updatetimer = 0
         }
-        gml_Script_draw_monster_body_part_ext(1768, dance_index, (x + (sin((siner / 4)) * 14)), ((y + (abs(cos((siner / 4))) * 4)) - 4), 2, 2, 0, 16777215, 1)
-        gml_Script_draw_monster_body_part_ext(1768, 3, (x - (sin((siner / 4)) * 8)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, 1)
-        gml_Script_draw_monster_body_part_ext(1768, 2, (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, 1)
-        gml_Script_draw_monster_body_part_ext(1768, 1, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, 1)
-        gml_Script_draw_monster_body_part_ext(1768, 6, ((x + (sin((siner / 2)) * 2)) + (sin((siner / 4)) * 4)), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, 1)
+        gml_Script_draw_monster_body_part_ext(1769, dance_index, (x + (sin((siner / 4)) * 14)), ((y + (abs(cos((siner / 4))) * 4)) - 4), 2, 2, 0, 16777215, 1)
+        gml_Script_draw_monster_body_part_ext(1769, 3, (x - (sin((siner / 4)) * 8)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, 1)
+        gml_Script_draw_monster_body_part_ext(1769, 2, (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, 1)
+        gml_Script_draw_monster_body_part_ext(1769, 1, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, 1)
+        gml_Script_draw_monster_body_part_ext(1769, 6, ((x + (sin((siner / 2)) * 2)) + (sin((siner / 4)) * 4)), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, 1)
         dancetimer++
-        if ((siner / 4) > 0)
+        if (sin((siner / 4)) > 0)
             dance_index = 4
         else
             dance_index = 5
@@ -51,9 +51,9 @@ if (state == 0)
             timerB += 1
             timer = 0
         }
-        if (timerB > 0.8)
+        if (cos(timerB) > 0.8)
             down = 1
-        if (timerB < -0.8)
+        if (cos(timerB) < -0.8)
             down = 0
         gml_Script_draw_monster_body_part_ext(sprite[0], 0, x, y, 2, 2, 0, 16777215, 1)
         gml_Script_draw_monster_body_part_ext(sprite[1], 0, x, (y + (cos(timerB) * 2)), 2, 2, 0, 16777215, 1)
@@ -69,7 +69,7 @@ if (state == 0)
 if (becomeflash == false)
     flash = false
 becomeflash = false
-16777215
+draw_set_color(c_white)
 if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13)
 {
     siner2++
@@ -82,7 +82,7 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
     }
     if (global.myfight == 0)
     {
-        "mainbig"
+        gml_Script_scr_84_set_draw_font("mainbig")
         if (danceCounter == 1)
         {
             draw_text_ext_transformed(((gml_Script___view_get(0, 0) + 258) + xoffset), (((gml_Script___view_get(1, 0) + 369) + yoffset) + 30), gml_Script_stringsetloc("Dancing!", "obj_kk_enemy_slash_Draw_0_gml_106_0"), 9999, 9999, 0.7, 1, 0)

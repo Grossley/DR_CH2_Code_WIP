@@ -17,3 +17,4 @@ cageanimal.depth = (cagesamb.depth + 10)
 var checkers = gml_Script_instance_create(60, 260, obj_npc_room_animated)
 checkers.sprite_index = spr_smallcheckers_front
 var _temp_local_var_1 = checkers
+gml_Script_scr_depth()

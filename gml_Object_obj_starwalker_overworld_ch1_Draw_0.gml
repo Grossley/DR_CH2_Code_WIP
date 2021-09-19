@@ -11,7 +11,7 @@ if (attackcon < 2)
     if (bodyfacing == 2)
         xmake = 2
 }
-bounce = (siner / 5)
+bounce = sin((siner / 5))
 wing_index += (0.2 + abs((bounce / 8)))
 if (attackcon == -1)
     draw_sprite_ext(spr_starwalker_attack_ch1, 0, x, (y + (bounce * 4)), xmake, 2, image_angle, c_white, image_alpha)
@@ -25,8 +25,8 @@ if (attackcon == 1)
     draw_sprite_ext(spr_starwalker_attack_ch1, 0, x, (y + (bounce * 4)), xmake, 2, image_angle, c_white, image_alpha)
 if (attackcon == 2)
 {
-    shkx = shakefactor
-    shky = shakefactor
+    shkx = random(shakefactor)
+    shky = random(shakefactor)
     if (shakefactor > 0)
         shakefactor -= 1
     draw_sprite_ext(spr_starwalker_attack_ch1, 1, (x + shkx), ((y + shky) + (bounce * 4)), xmake, 2, image_angle, c_white, image_alpha)

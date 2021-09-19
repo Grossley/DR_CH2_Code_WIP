@@ -3,28 +3,28 @@ if (con == -1)
     con = 1
     global.interact = 1
     global.facing = 1
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
-    kr
-    0
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
+    gml_Script_c_sel(kr)
+    gml_Script_c_visible(0)
 }
 if (con == 1)
 {
     con = 2
-    "free_all"
+    gml_Script_c_mus("free_all")
     gml_Script_c_mus2("initloop", "noelle_ferriswheel.ogg", 0)
-    "bottom"
+    gml_Script_c_msgside("bottom")
     gml_Script_c_var_lerp_instance(ferris_wheel, "x", -100, 320, 400)
     gml_Script_c_var_lerp_instance(blackall, "image_alpha", 1, 0, 30)
-    120
-    1121
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_wait(120)
+    gml_Script_c_msc(1121)
+    gml_Script_c_talk_wait()
 }
 if (con == 10)
 {
     con = 11
     gml_Script_scr_smallface(0, "susie", 3, "middle", "bottom", gml_Script_stringsetloc("I guess I do like slime and blood...", "obj_ch2_scene23c_slash_Step_0_gml_40_0"))
-    "noelle"
+    gml_Script_c_speaker("noelle")
     gml_Script_c_msgsetloc(0, "\\E6* .../", "obj_ch2_scene23c_slash_Step_0_gml_43_0")
     gml_Script_c_facenext("susie", "K")
     gml_Script_c_msgnextloc("\\EK* So^1, uh..^1. Ferris wheels^1, huh./", "obj_ch2_scene23c_slash_Step_0_gml_45_0")
@@ -65,14 +65,14 @@ if (con == 10)
     gml_Script_c_msgnextloc("\\E3* You're the..^1. good kind of scary./", "obj_ch2_scene23c_slash_Step_0_gml_80_0")
     gml_Script_c_msgnextloc("\\ES* You aren't afraid to... break the rules^1, y'know?/", "obj_ch2_scene23c_slash_Step_0_gml_81_0")
     gml_Script_c_msgnextloc("\\E9* ..^1. I wish I could do crazy stuff like you./%", "obj_ch2_scene23c_slash_Step_0_gml_82_0")
-    // WARNING: Popz'd an empty stack.
-    1123
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
+    gml_Script_c_msc(1123)
+    gml_Script_c_talk_wait()
 }
 if (con == 20)
 {
     con = 21
-    "susie"
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EK* So^1, um.../", "obj_ch2_scene23c_slash_Step_0_gml_94_0")
     gml_Script_c_msgnextloc("\\E1* If YOU could do something crazy right now^1,/", "obj_ch2_scene23c_slash_Step_0_gml_95_0")
     gml_Script_c_msgnextloc("\\E2* What would you do?/", "obj_ch2_scene23c_slash_Step_0_gml_96_0")
@@ -93,14 +93,14 @@ if (con == 20)
     gml_Script_c_msgnextloc("\\ER* Hahaha!^1! No promises!/", "obj_ch2_scene23c_slash_Step_0_gml_111_0")
     gml_Script_c_msgnextloc("\\E2* ..^1. Susie...?/", "obj_ch2_scene23c_slash_Step_0_gml_112_0")
     gml_Script_c_msgnextloc("\\E3* What do YOU think looking out there?/%", "obj_ch2_scene23c_slash_Step_0_gml_113_0")
-    // WARNING: Popz'd an empty stack.
-    1125
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
+    gml_Script_c_msc(1125)
+    gml_Script_c_talk_wait()
 }
 if (con == 30)
 {
     con = 31
-    "susie"
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EK* Uh..^1. seeing everything small^1, makes me feel like^1, um.../", "obj_ch2_scene23c_slash_Step_0_gml_125_0")
     gml_Script_c_msgnextloc("\\EH* If I was Susiezilla or something^1, I could wreck the whole city./", "obj_ch2_scene23c_slash_Step_0_gml_126_0")
     gml_Script_c_facenext("noelle", "4")
@@ -109,15 +109,15 @@ if (con == 30)
     gml_Script_c_msgnextloc("\\E2* Heh^1, what!?/", "obj_ch2_scene23c_slash_Step_0_gml_130_0")
     gml_Script_c_facenext("noelle", "8")
     gml_Script_c_msgnextloc("\\E8* ..^1. is being Susiezilla something you think about a lot?/%", "obj_ch2_scene23c_slash_Step_0_gml_132_0")
-    // WARNING: Popz'd an empty stack.
-    1127
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
+    gml_Script_c_msc(1127)
+    gml_Script_c_talk_wait()
 }
 if (con == 40)
 {
     con = 49
     alarm[0] = 30
-    "susie"
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EK* No I just made it up now./", "obj_ch2_scene23c_slash_Step_0_gml_145_0")
     gml_Script_c_facenext("noelle", "6")
     gml_Script_c_msgnextloc("\\E6* ..^1. does your tail always do that when you lie?/", "obj_ch2_scene23c_slash_Step_0_gml_147_0")
@@ -141,28 +141,28 @@ if (con == 40)
     gml_Script_c_msgnextloc("\\EM* ..^1. whatever./", "obj_ch2_scene23c_slash_Step_0_gml_165_0")
     gml_Script_c_facenext("noelle", "4")
     gml_Script_c_msgnextloc("\\E4* (It's wagging...)/%", "obj_ch2_scene23c_slash_Step_0_gml_167_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
     gml_Script_c_var_lerp_instance(ferris_wheel, "x", 320, 840, 300)
-    80
+    gml_Script_c_wait(80)
     gml_Script_c_var_lerp_instance(blackall, "image_alpha", 0, 1, 50)
-    80
-    "susie"
+    gml_Script_c_wait(80)
+    gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\E0* ..^1. you stopped shaking./", "obj_ch2_scene23c_slash_Step_0_gml_181_0")
     gml_Script_c_facenext("noelle", 6)
     gml_Script_c_msgnextloc("\\E6* Guess I got comfortable./", "obj_ch2_scene23c_slash_Step_0_gml_183_0")
     gml_Script_c_facenext("susie", "0")
     gml_Script_c_msgnextloc("\\E0* .../", "obj_ch2_scene23c_slash_Step_0_gml_185_0")
     gml_Script_c_msgnextloc("\\EL* ..^1. me too./%", "obj_ch2_scene23c_slash_Step_0_gml_186_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_talk_wait()
     gml_Script_c_mus2("volume", 0, 30)
-    31
-    "free_all"
-    // WARNING: Popz'd an empty stack.
-    // WARNING: Popz'd an empty stack.
+    gml_Script_c_wait(31)
+    gml_Script_c_mus("free_all")
+    gml_Script_c_actortokris()
+    gml_Script_c_terminatekillactors()
 }
-if (con == 50 && (!895))
+if (con == 50 && (!gml_Script_i_ex(895)))
 {
     con = 0
     global.flag[319] = 2
-    209
+    room_goto(room_dw_mansion_ferris_wheel_post)
 }

@@ -1,11 +1,25 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1563
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+if (timer[0] > 0)
+{
+    obj_sneo_friedpipis.timer[timer[obj_sneo_friedpipis]]--
+    self
+    totaltimer--
+}
+if (timer[0] <= 0)
+{
+    messagecount--
+    if (messagecount <= 0)
+        instance_destroy()
+    else
+    {
+        for (i = 0; i < messagecount; i++)
+        {
+            message[i] = message[(i + 1)]
+            timer[i] = timer[(i + 1)]
+        }
+        message[messagecount] = ""
+        timer[messagecount] = 0
+        debugmessage = message[0]
+        for (i = 1; i < messagecount; i++)
+            debugmessage += ("#" + message[i])
+    }
+}

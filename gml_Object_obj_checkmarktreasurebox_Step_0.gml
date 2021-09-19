@@ -12,7 +12,7 @@ if (myinteract == 3)
                 onebuffer = 5
         }
     }
-    else if (mydialoguer == 0)
+    else if (gml_Script_i_ex(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0

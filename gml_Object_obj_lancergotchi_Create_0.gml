@@ -12,23 +12,23 @@ spinsprite[3] = rsprite
 alarm[0] = 60
 movecon = 4
 con = 0
-minx = 100
-maxx = 400
-maxy = 280
+minx = (gml_Script_camerax() + 100)
+maxx = (gml_Script_camerax() + 400)
+maxy = (gml_Script_cameray() + 280)
 x = (minx + 150)
 y = maxy
 depth = -20
 rouxls = 0
-if 9
+if gml_Script_scr_keyitemcheck(9)
     rouxls = 1
 starwalker = 0
-if 14
+if gml_Script_scr_keyitemcheck(14)
     starwalker = 1
 sleeptimer = 0
 remmovecon = 0
-if global.flag[915] >= 1.5
+if (global.flag[915] >= 1.5 && gml_Script_scr_sideb_get_phase() >= 1)
     movecon = 10
-if 3
+if (gml_Script_scr_sideb_get_phase() >= 3)
     movecon = 11
 if (global.plot >= 200)
     movecon = 4

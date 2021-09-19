@@ -9,11 +9,11 @@ if (fightcon == 2)
         global.encounterno = 58
         encounterflag = 529
         global.flag[54] = encounterflag
-        global.encounterno
+        gml_Script_scr_encountersetup(global.encounterno)
         if (global.flag[9] != 2)
         {
             global.flag[9] = 1
-            global.batmusic[0] = "berdly_chase.ogg"
+            global.batmusic[0] = gml_Script_snd_init("berdly_chase.ogg")
         }
         global.interact = 2
         if (global.flag[9] == 1)

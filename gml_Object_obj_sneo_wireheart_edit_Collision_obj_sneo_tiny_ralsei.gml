@@ -1,10 +1,10 @@
+var _temp_local_var_1, _temp_local_var_6;
 if (other.active == false)
     return;
 if (invincibility_timer > 0)
 {
-    with (stacktop)
-        // WARNING: Popz'd an empty stack.
-    return;
+    var _temp_local_var_1 = other
+    instance_destroy()
 }
 invincibility_timer = 10
 if (global.turntimer < 150)
@@ -26,11 +26,12 @@ else
 {
     hp -= 5
     other.hp -= 10
-    alarm[0] = 10
-    if (!170)
-        170
+    alarm[0] = other
+    var _temp_local_var_6 = 10
+    if (!audio_is_playing(snd_hurt1))
+        gml_Script_snd_play(170)
 }
 damagetimer = 5
-166
+gml_Script_snd_play(166)
 if (hp <= 0)
     destroyed = 1

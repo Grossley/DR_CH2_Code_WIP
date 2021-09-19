@@ -19,7 +19,7 @@ target = -1
 element = 6
 tm = 0
 animator = noone
-if 454
+if instance_exists(obj_tm_whip_animation)
     animator = 454
 else
 {

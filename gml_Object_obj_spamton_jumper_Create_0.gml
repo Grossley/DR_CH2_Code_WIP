@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 flip = 0
 jumper = 0
 init = 0

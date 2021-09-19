@@ -6,21 +6,21 @@ if (global.flag[915] == 7 && global.flag[916] == 0)
     global.flag[346] = 1
     global.flag[340] = 1
     weird = 1
-    // WARNING: Popz'd an empty stack.
-    2
-    3
+    gml_Script_scr_losechar()
+    gml_Script_scr_getchar(2)
+    gml_Script_scr_getchar(3)
     with (obj_caterpillarchara)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     obj_mainchara.x = 440
     obj_mainchara.y = 690
     gml_Script_scr_makecaterpillar((obj_mainchara.x - 6), ((obj_mainchara.y + 10) - 2), 2, 0)
     gml_Script_scr_makecaterpillar((obj_mainchara.x - 2), ((obj_mainchara.y + 20) + 2), 3, 1)
     with (obj_caterpillarchara)
-        // WARNING: Popz'd an empty stack.
-    30
+        gml_Script_scr_caterpillar_interpolate()
+    gml_Script_scr_fadein(30)
 }
 if (global.chapter != 2)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else if (global.flag[340] == 1)
     layer_set_visible("TILES_Secret", 0)
 else
@@ -44,5 +44,5 @@ if (global.plot < 160)
 if (global.flag[418] == 0)
 {
     global.flag[418] = 1
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_tempsave()
 }

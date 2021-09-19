@@ -1,4 +1,4 @@
-if 1329
+if instance_exists(obj_insideclosetcutscene_ch1)
 {
     i = obj_insideclosetcutscene_ch1.papeno
     obj_insideclosetcutscene_ch1.pape[i] = id

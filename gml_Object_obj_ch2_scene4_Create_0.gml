@@ -7,7 +7,7 @@ talked = 0
 if (global.chapter != 2)
 {
     con = -1
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 else
 {
@@ -16,6 +16,7 @@ else
         con = 10
         susie = gml_Script_instance_create(377, 541, obj_npc_room)
         var _temp_local_var_2 = susie
+        gml_Script_scr_depth()
     }
     if (global.plot == 9)
     {

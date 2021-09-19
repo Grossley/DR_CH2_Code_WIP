@@ -1,7 +1,7 @@
 if (active == true)
 {
     if (drawkris == 1)
-        // WARNING: Popz'd an empty stack.
+        draw_self()
     if (ballcon == 1)
     {
         xballtimer += (xballtimer + 1)
@@ -9,14 +9,14 @@ if (active == true)
         balltimer++
         cenx = (x + 18)
         ceny = (y + 57)
-        16777215
+        draw_set_color(c_white)
         draw_ellipse((cenx - xballtimer), (ceny - 1), (cenx + xballtimer), (ceny + 1), 0)
         if (xballtimer >= 80)
         {
             balltimer = 0
             yballtimer = 1
             ballcon = 2
-            whitecolor = 16777215
+            whitecolor = c_white
         }
     }
     if (ballcon == 2)
@@ -51,9 +51,9 @@ if (active == true)
                 fountain_sound = audio_play_sound(snd_deep_noise, 50, true)
             }
         }
-        16777215
+        draw_set_color(c_white)
         draw_ellipse(((cenx - xballtimer) - 2), (ceny - yballtimer), ((cenx + xballtimer) + 2), (ceny + 1), 0)
-        whitecolor
+        draw_set_color(whitecolor)
         draw_ellipse((cenx - xballtimer), (ceny - yballtimer), (cenx + xballtimer), (ceny + 1), 0)
         if (releasetimer <= 0)
         {
@@ -92,12 +92,12 @@ if (active == true)
             ceilheight += 0.5
         for (i = 0; i < 12; i++)
         {
-            ceilballx[i] = (((ceiltimer + (i * 40)) % 400) + -40)
+            ceilballx[i] = ((((ceiltimer + (i * 40)) % 400) + -40) + gml_Script_camerax())
             draw_sprite_ext(spr_kris_fountain_ball, 0, ceilballx[i], ((ceilheight - 80) + (sin((i + (ceiltimer / 8))) * 7)), 1.05, 1.05, 0, c_white, 1)
         }
         for (i = 0; i < 12; i++)
             draw_sprite_ext(spr_kris_fountain_ball, 0, ceilballx[i], ((ceilheight - 80) + (sin((i + (ceiltimer / 8))) * 7)), 1, 1, 0, c_black, 1)
-        0
+        draw_set_color(c_black)
         draw_rectangle(-10, (ceilheight - 80), 999, -90, false)
     }
 }

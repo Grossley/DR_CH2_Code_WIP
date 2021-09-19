@@ -1,9 +1,9 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 alarm[2] = 2
 global.currentroom = room
 autorun = 0
 bg = 0
-if 1455
+if instance_exists(obj_backgrounderparent_ch1)
     bg = 1
 stepping = 0
 stepped = false

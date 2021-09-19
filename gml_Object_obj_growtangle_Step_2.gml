@@ -1,6 +1,6 @@
 if (keep == 1)
 {
-    if 628
+    if instance_exists(obj_heart)
     {
         if (path_speed != 0 || speed != 0 || megakeep == 1)
         {

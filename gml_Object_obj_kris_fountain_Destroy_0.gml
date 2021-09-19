@@ -1,2 +1,2 @@
 if (fountain_sound != -4)
-    fountain_sound
+    audio_stop_sound(fountain_sound)

@@ -1,6 +1,6 @@
-if (!"chemg_stack")
+if (!variable_global_exists("chemg_stack"))
 {
-    global.chemg_stack = 0
+    global.chemg_stack = array_create(0)
     global.chemg_stack[0] = 0
 }
 var top_ndx = global.chemg_stack[0]

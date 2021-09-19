@@ -7,5 +7,5 @@ image_yscale = 2
 if (room == room_field_boxpuzzle_ch1)
 {
     if (global.flag[212] == 2)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

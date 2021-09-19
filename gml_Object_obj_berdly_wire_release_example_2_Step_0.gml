@@ -33,11 +33,11 @@ if (tornadocon == 1)
         floatcon = 1
         x = remx
         y = remy
-        // WARNING: Popz'd an empty stack.
-        51
+        gml_Script_scr_oflash()
+        gml_Script_snd_play(51)
         for (i = 0; i < 12; i++)
         {
-            tornado = gml_Script_scr_marker((x + 30), (y + 60), 1849)
+            tornado = gml_Script_scr_marker((x + 30), (y + 60), 1850)
             tornado.gravity = (-0.5 - random(0.2))
             tornado.friction = 0.2
             tornado.image_speed = 0.25
@@ -56,8 +56,8 @@ if (tornadocon == 1)
 if (con == 1)
 {
     floatcon = 0
-    // WARNING: Popz'd an empty stack.
-    60
+    gml_Script_scr_shakeobj()
+    gml_Script_snd_play(60)
     sprite_index = spr_cutscene_25_berdly_grab_plug_old
     con = 2
 }
@@ -93,12 +93,15 @@ if (con == 15 || con == 20)
     tornado.depth = (depth - 10)
     gml_Script_scr_doom(tornado, 60)
 }
-if 32
+if gml_Script_scr_debug()
 {
-    if (con == 0)
-        con = 1
-    else if (con == 2)
-        con = 5
-    else
-        con = 0
+    if keyboard_check_pressed(vk_space)
+    {
+        if (con == 0)
+            con = 1
+        else if (con == 2)
+            con = 5
+        else
+            con = 0
+    }
 }

@@ -2,7 +2,7 @@ var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5;
 if (con == 10)
 {
     gml_Script_mus_volume(global.currentsong[1], 0, 30)
-    if 80
+    if instance_exists(obj_mainchara)
     {
         obj_mainchara.visible = false
         kr_actor = instance_create_depth(obj_mainchara.x, obj_mainchara.y, obj_mainchara.depth, obj_actor)
@@ -36,7 +36,7 @@ if (con == 10)
                 me.sprite_index = spr_ralsei_wave_start
                 me.image_speed = 0.2
                 var _temp_local_var_5 = me
-                gml_Script_scr_script_delayed(gml_Script_scr_var, 15, "sprite_index", 799)
+                gml_Script_scr_script_delayed(gml_Script_scr_var, 15, "sprite_index", 800)
             }
         }
     }

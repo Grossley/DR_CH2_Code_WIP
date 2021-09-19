@@ -1,6 +1,6 @@
 if (global.flag[7] == 0)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_snd_free_all()
 global.facing = 0
 gml_Script_instance_create(0, 0, obj_persistentfadein)
-returnroom = (global.chapter >= 2 ? 71 : room_field_shop1)
-returnroom
+returnroom = (global.chapter >= 2 ? room_dw_castle_area_2_transformed : room_field_shop1)
+room_goto(returnroom)

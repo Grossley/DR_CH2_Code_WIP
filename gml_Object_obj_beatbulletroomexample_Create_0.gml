@@ -10,8 +10,8 @@ safeAreaRight = (room_width - safeAreaLeft)
 lanesSeparation = 200
 newBulletsEvery = 4
 lanesCount = (room_width div lanesSeparation)
-global.currentsong[0]
-"cyber.ogg"
+gml_Script_snd_free(global.currentsong[0])
+gml_Script_mus_initloop("cyber.ogg")
 for (var i = 0; i < lanesCount; i++)
 {
     var _xx = (i * lanesSeparation)

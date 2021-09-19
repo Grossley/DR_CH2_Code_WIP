@@ -1,4 +1,4 @@
-if (482 && obj_berdlyb_enemy.nitro > 0)
+if (instance_exists(obj_berdlyb_enemy) && obj_berdlyb_enemy.nitro > 0)
     nitro = 1
 else
     nitro = 0
@@ -37,7 +37,7 @@ if (o_coaster_controller.actcon == 1 && o_coaster_controller.timer < o_coaster_c
 }
 if (o_coaster_controller.actcon != 0)
     actoncondelay = 1
-if 867
+if instance_exists(obj_battleblcon)
     actoncondelay = 0
 if (o_coaster_controller.actcon == 0 && actoncondelay == 0 && endscene == 0)
 {
@@ -46,12 +46,12 @@ if (o_coaster_controller.actcon == 0 && actoncondelay == 0 && endscene == 0)
         sprite_index = obj_herokris.sprite_index
         image_index = (obj_herokris.image_index - 1)
     }
-    if (HeroID == 1 && forceact == 0 && 371)
+    if (HeroID == 1 && forceact == 0 && instance_exists(obj_herosusie))
     {
         sprite_index = obj_herosusie.sprite_index
         image_index = (obj_herosusie.image_index - 1)
     }
-    if (HeroID == 2 && forceact == 0 && 372)
+    if (HeroID == 2 && forceact == 0 && instance_exists(obj_heroralsei))
     {
         sprite_index = obj_heroralsei.sprite_index
         image_index = (obj_heroralsei.image_index - 1)
@@ -265,9 +265,9 @@ if (HeroID == 0)
         userealsprite = 0
     }
     else
-        obj_herokris.x = 300
+        obj_herokris.x = (gml_Script_camerax() - 300)
 }
-if (HeroID == 1 && 371)
+if (HeroID == 1 && instance_exists(obj_herosusie))
 {
     if (sprite_index == spr_susie_hurt)
     {
@@ -311,7 +311,7 @@ if (HeroID == 1 && 371)
         userealsprite = 1
         obj_herosusie.depth = (depth + 1)
     }
-    else if 857
+    else if instance_exists(obj_rudebuster_anim)
     {
         obj_rudebuster_anim.x = ((x + 20) + xx)
         obj_rudebuster_anim.y = (((y - (sprite_get_height(sprite_index) * a)) + yy) + 8)
@@ -361,9 +361,9 @@ if (HeroID == 1 && 371)
         userealsprite = 0
     }
     else
-        obj_herosusie.x = 300
+        obj_herosusie.x = (gml_Script_camerax() - 300)
 }
-if (HeroID == 2 && 372)
+if (HeroID == 2 && instance_exists(obj_heroralsei))
 {
     if (sprite_index == spr_ralsei_idle && dontshowherosprite < 1)
     {
@@ -406,9 +406,9 @@ if (HeroID == 2 && 372)
         userealsprite = 0
     }
     else
-        obj_heroralsei.x = 300
+        obj_heroralsei.x = (gml_Script_camerax() - 300)
 }
-if (endscene == 1 && 949)
+if (endscene == 1 && instance_exists(obj_ch2_scene11a))
 {
     if (HeroID == 0)
     {
@@ -477,7 +477,7 @@ if (con == 1)
     smoketimer += 2
     if (smoketimer >= 3)
         smoketimer = 0
-    if (x + 200)
+    if (x >= (gml_Script_camerax() + 200))
         con = 2
     if (damaged == 1)
     {
@@ -496,7 +496,7 @@ if (con == 2)
     if (nitro == 1)
     {
         hspeed -= 1
-        if ((x + 400) && hspeed > 0)
+        if (x >= (gml_Script_camerax() + 400) && hspeed > 0)
             hspeed = -2
     }
     if (x <= (xstart + 10))

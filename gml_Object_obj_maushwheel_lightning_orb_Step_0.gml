@@ -8,7 +8,7 @@ if (timer < 24)
 if (timer > 0 && timer < 16)
 {
     d = gml_Script_instance_create(x, y, obj_rouxls_power_up_orb)
-    d.direction = 360
+    d.direction = irandom(360)
     d.lifetime = 12
     d.depth = (depth + 1)
     d.image_blend = image_blend
@@ -24,25 +24,25 @@ if (timer == 24)
         move_towards_point(median(obj_heart.x, obj_growtangle.x), median(obj_heart.y, obj_growtangle.y), 4.5)
     else
         move_towards_point(obj_heart.x, obj_heart.y, 5)
-    var randoffset = 360
+    var randoffset = irandom(360)
     var new_bullet = noone
     new_bullet = gml_Script_instance_create((x + lengthdir_x(8, randoffset)), (y + lengthdir_y(8, randoffset)), obj_mauswheel_lightning_orb_ball)
-    new_bullet
+    gml_Script_scr_bullet_inherit(new_bullet)
     new_bullet.source = id
     new_bullet = gml_Script_instance_create((x + lengthdir_x(8, (randoffset + 120))), (y + lengthdir_y(8, (randoffset + 120))), obj_mauswheel_lightning_orb_ball)
-    new_bullet
+    gml_Script_scr_bullet_inherit(new_bullet)
     new_bullet.source = id
     new_bullet = gml_Script_instance_create((x + lengthdir_x(8, (randoffset - 120))), (y + lengthdir_y(8, (randoffset - 120))), obj_mauswheel_lightning_orb_ball)
-    new_bullet
+    gml_Script_scr_bullet_inherit(new_bullet)
     new_bullet.source = id
     active = false
     visible = false
     mask_index = spr_nothing
     gml_Script_scr_lerpvar_instance(obj_mauswheel_enemy.id, "image_speed", obj_mauswheel_enemy.image_speed, 0.5, 8)
-    136
-    135
+    gml_Script_snd_stop(136)
+    gml_Script_snd_play(135)
     with (obj_rouxls_power_up_orb)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (timer > 24)
 {
@@ -67,12 +67,12 @@ if (timer > 24)
         }
     }
 }
-if (x - 60)
+if (x < (gml_Script_camerax() - 60))
 {
     with (obj_mauswheel_lightning_orb_ball)
     {
         if (other.id == source)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

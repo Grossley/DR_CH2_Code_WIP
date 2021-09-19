@@ -1,7 +1,7 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 bulletletter = "$"
-sinesize = (ystart - obj_growtangle.y)
-sinesign = (obj_growtangle.y - ystart)
+sinesize = abs((ystart - obj_growtangle.y))
+sinesign = sign((obj_growtangle.y - ystart))
 mouthx = 0
 creator = obj_sneo_friedpipis
 type = 0

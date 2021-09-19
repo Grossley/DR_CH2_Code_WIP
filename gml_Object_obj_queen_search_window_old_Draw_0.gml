@@ -17,9 +17,9 @@ if (state > 0)
 if (state == 1)
 {
     draw_sprite(sprite_index, 3, x, y)
-    var _count = clamp(floor((timer / 2)), 0, targetstring)
-    0
-    "main"
+    var _count = clamp(floor((timer / 2)), 0, string_length(targetstring))
+    draw_set_color(c_black)
+    gml_Script_scr_84_set_draw_font("main")
     var _finalstring = string_copy(targetstring, 0, _count)
     if (_count == 0 || _count == string_length(targetstring))
     {
@@ -38,7 +38,7 @@ if (state == 1)
     if (timer >= (45 + spawndelay))
         state = 2
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (state == 2)
 {
     if (search == 1)
@@ -46,7 +46,7 @@ if (state == 2)
         d = gml_Script_instance_create((x - (20 * sign((obj_growtangle.x - x)))), (y + 12), obj_queen_search_gun)
         d.damage = damage
         d.target = target
-        d.parentwindow = 
+        d.parentwindow = self
         state = 3
     }
     else if (search == 2)
@@ -54,13 +54,13 @@ if (state == 2)
         d = gml_Script_instance_create(x, y, obj_queen_search_flail)
         d.damage = damage
         d.target = target
-        d.parentwindow = 
+        d.parentwindow = self
         state = 3
     }
     else if (search == 3)
     {
         d = gml_Script_instance_create(x, y, obj_queen_search_image)
-        d.parentwindow = 
+        d.parentwindow = self
         state = 3
     }
     else
@@ -68,6 +68,6 @@ if (state == 2)
         image_xscale -= 0.2
         image_yscale -= 0.2
         if (image_xscale <= 0)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }

@@ -1,5 +1,5 @@
-if 3
-    // WARNING: Popz'd an empty stack.
+if (gml_Script_scr_sideb_get_phase() == 3)
+    instance_destroy()
 if (global.flag[382] == 0)
 {
     con = 0

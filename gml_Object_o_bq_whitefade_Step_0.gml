@@ -7,11 +7,11 @@ if (state == 0)
         state = 1
         o_boxingqueen.x = o_boxingqueen.basex
         o_boxingqueen.y = o_boxingqueen.basey
-        if 789
+        if instance_exists(obj_bq_baseball_final_hits_boss)
         {
-            208
+            gml_Script_snd_play(208)
             with (obj_bq_baseball_final_hits_boss)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             gml_Script___view_set(1, 0, 0)
             o_boxingqueen.sprite_index = spr_bqueen
             o_boxingqueen.image_index = 26
@@ -22,5 +22,5 @@ if (state == 1 && dont_fade_out == 0)
 {
     image_alpha -= 0.02
     if (image_alpha < 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

@@ -259,7 +259,7 @@ if (facechange <= 0)
     }
     if (global.fc == 21)
     {
-        face = "spr_face_queen"
+        face = gml_Script_scr_84_get_sprite("spr_face_queen")
         face_index = global.fe
         draw_sprite_ext(face, face_index, x, y, f, f, 0, c_white, 1)
     }

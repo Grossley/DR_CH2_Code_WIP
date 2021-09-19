@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (room == room_dw_cyber_teacup_final)
 {
     if (theScore == 70)

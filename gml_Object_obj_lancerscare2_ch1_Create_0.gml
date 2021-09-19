@@ -1,7 +1,7 @@
 image_speed = 0
 con = 0
 if (global.plot >= 55)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 else
 {
     con = 1

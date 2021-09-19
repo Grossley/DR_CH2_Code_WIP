@@ -4,13 +4,13 @@ if (t == 25)
     active = true
 if (t == 0)
 {
-    maxspeed = hspeed
+    maxspeed = abs(hspeed)
     hspeed = 0
 }
 t += 1
 siner += sinspeed
-sinfactor_0 = ((siner - 1) / 20)
-sinfactor = (siner / 20)
+sinfactor_0 = sin(((siner - 1) / 20))
+sinfactor = sin((siner / 20))
 sinsign = (sinfactor - sinfactor_0)
 x = (obj_battlesolid_ch1.x - (sinfactor * 150))
 image_xscale = (sinsign * 50)

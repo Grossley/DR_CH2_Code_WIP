@@ -6,19 +6,19 @@ if (throwcon == 1)
         anglespeed = -2
     if (angle <= -15)
         anglespeed = 2
-    if (throwalpha >= 0.9 && throwready == 1)
+    if (gml_Script_button3_p() && throwalpha >= 0.9 && throwready == 1)
     {
         activatethrow = true
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
-    if (throwready == 0)
+    if (gml_Script_button3_p() && throwready == 0)
     {
         throwready = 1
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         global.msg[0] = gml_Script_stringsetsubloc("* Press ~1 to determine the POWER!", gml_Script_scr_get_input_name(6), "obj_throwralsei_slash_Step_0_gml_26_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_battletext_default()
     }
     if (activatethrow == true)
     {
@@ -29,7 +29,7 @@ if (throwcon == 1)
         sprite_index = spr_susieb_attack_unarmed
         angledraw = 0
         throwcon = 2
-        157
+        gml_Script_snd_play(157)
         ral = gml_Script_instance_create(rx, ry, obj_ralseithrown)
         ral.speed = mypower
         ral.mypower = mypower

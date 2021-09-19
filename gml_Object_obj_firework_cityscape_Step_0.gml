@@ -2,7 +2,7 @@ if (layer_y_pos == 0)
 {
     var y_pos = 0
     var x_pos = 0
-    if 194
+    if gml_Script_i_ex(194)
     {
         with (obj_parallaxer_layer_cyber)
         {

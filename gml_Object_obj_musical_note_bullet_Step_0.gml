@@ -4,7 +4,7 @@ if (timer > 90)
     active = false
     image_alpha -= 0.25
     if (image_alpha < 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (copymake > 0)
 {
@@ -30,6 +30,6 @@ if grow
 if growb
 {
     image_xscale += ((sin((timer / 2)) * 0.04) + 0.012)
-    var a = 
+    var a = gml_Script_scr_afterimage()
     a.image_alpha = 0.5
 }

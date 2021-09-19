@@ -1,4 +1,4 @@
-var _temp_local_var_1, _temp_local_var_11;
+var _temp_local_var_1, _temp_local_var_5, _temp_local_var_12;
 if (dead == 1)
     return;
 if (dead > 0 && o_boxingcontroller.wireframe_boxing == 1)
@@ -9,8 +9,8 @@ if (other.baseball == 1 && invincible == 1)
     return;
 if (other.baseball == 1 && other.graze_only == 0)
 {
-    with (stacktop)
-        // WARNING: Popz'd an empty stack.
+    var _temp_local_var_5 = other
+    instance_destroy()
 }
 if (other.graze_only == 0)
 {
@@ -25,7 +25,7 @@ if (other.graze_only == 0)
         hit_me = 0
     if (hit_me == 1)
     {
-        2
+        event_user(2)
         times_hit_by_boss += 1
         with (o_boxinggraze)
             tpgain = 0
@@ -70,9 +70,9 @@ if (other.graze_only == 0)
                         damage_reduction_in_turn = 0.3
                 }
                 if (defend == 0)
-                    final_damage_amount = (other.damage * damage_reduction_in_turn)
+                    final_damage_amount = floor((other.damage * damage_reduction_in_turn))
                 else
-                    final_damage_amount = ((other.damage * 0.75) * damage_reduction_in_turn)
+                    final_damage_amount = floor(((other.damage * 0.75) * damage_reduction_in_turn))
                 if (final_damage_amount < 10)
                     final_damage_amount = 10
                 damagetakenthisturn += final_damage_amount
@@ -89,7 +89,7 @@ if (other.graze_only == 0)
             dead = 0.5
         }
         if (global.hp[1] < 1)
-            3
+            event_user(3)
         if (other.kick == 1 && wireframe_boxing == 1)
         {
             failed_kick_tutorial_counter++
@@ -106,11 +106,11 @@ if (other.graze_only == 0)
         if (o_boxingcontroller.wireframe_boxing == 0)
         {
             d = gml_Script_instance_create(0, 0, obj_shake)
-            d.shakex = 2
-            d.shakey = 2
+            d.shakex = ceil(2)
+            d.shakey = ceil(2)
         }
         hit_fx = gml_Script_instance_create(((x - 20) + irandom(40)), ((y - 80) - irandom(40)), obj_boxing_hit_fx)
-        var _temp_local_var_11 = hit_fx
+        var _temp_local_var_12 = hit_fx
         event_user(0)
     }
 }

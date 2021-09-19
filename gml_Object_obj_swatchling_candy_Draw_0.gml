@@ -8,4 +8,4 @@ if (image_alpha < 1)
         gml_Script_scr_drawpart_crop((x - 17), sourcePlatter.platterLid.y, (x + 17), sourcePlatter.platterPlate.y)
 }
 else
-    // WARNING: Popz'd an empty stack.
+    draw_self()

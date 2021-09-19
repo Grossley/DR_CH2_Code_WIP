@@ -1,3 +1,4 @@
-if custom_box_sprite
-    custom_box_sprite
-// WARNING: Popz'd an empty stack.
+if sprite_exists(custom_box_sprite)
+    sprite_delete(custom_box_sprite)
+if instance_exists(self)
+    instance_destroy()

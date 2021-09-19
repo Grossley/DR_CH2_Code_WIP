@@ -32,7 +32,7 @@ if (TYPE == 1)
 {
     for (i = 0; i <= 7; i += 1)
     {
-        NAME[i][0] = (1 + i)
+        NAME[i][0] = string((1 + i))
         NAMEX[i][0] = (80 + (i * 20))
         NAMEY[i][0] = 180
         XMAX += 1
@@ -46,7 +46,7 @@ if (TYPE == 2)
 {
     for (i = 0; i <= 6; i += 1)
     {
-        NAME[0][i] = (1 + i)
+        NAME[0][i] = string((1 + i))
         NAMEX[0][i] = 80
         NAMEY[0][i] = (100 + (i * 20))
         YMAX += 1

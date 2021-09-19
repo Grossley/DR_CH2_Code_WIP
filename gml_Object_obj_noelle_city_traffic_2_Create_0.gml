@@ -1,4 +1,4 @@
-id
+gml_Script_scr_darksize(id)
 image_speed = 0
 idealPositionProgress = 0
 positionProgressB = 0

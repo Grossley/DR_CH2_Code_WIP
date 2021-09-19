@@ -1,13 +1,13 @@
-if (y + 40)
+if (y > (gml_Script_gt_maxy() + 40))
 {
     image_alpha -= 0.2
     platterPlate.image_alpha = image_alpha
     platterLid.image_alpha = image_alpha
     if (image_alpha <= 0)
     {
-        // WARNING: Popz'd an empty stack.
-        platterPlate
-        platterLid
+        instance_destroy()
+        instance_destroy(platterPlate)
+        instance_destroy(platterLid)
     }
 }
 else if (image_alpha < 1)

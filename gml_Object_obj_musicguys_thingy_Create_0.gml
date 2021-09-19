@@ -2,12 +2,12 @@ timer = 0
 mode = 4
 count = 0
 input_memorizer = 0
-file = "bulletpattern.txt"
+file = file_text_open_read("bulletpattern.txt")
 n = 0
 finished = 0
 while (finished == 0)
 {
-    linestring = file
+    linestring = file_text_read_string(file)
     if (linestring == "x")
         break
     else
@@ -29,17 +29,17 @@ while (finished == 0)
             if (foundchar == "")
                 found = 1
         }
-        bullet_frame[n] = (mystring[0] - 150)
-        bullet_pos[n] = mystring[1]
-        bullet_height[n] = mystring[2]
-        file
+        bullet_frame[n] = (real(mystring[0]) - 150)
+        bullet_pos[n] = real(mystring[1])
+        bullet_height[n] = real(mystring[2])
+        file_text_readln(file)
         n++
         if (n >= 2000)
             finished = 1
         continue
     }
 }
-file
+file_text_close(file)
 remframe = bullet_frame[0]
 bulletcount = 0
 bulletmax = (n - 1)

@@ -21,14 +21,14 @@ if (stop == 0)
     }
     for (i = 0; i < 3; i++)
     {
-        // WARNING: Popz'd an empty stack.
-        draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, c_white, (siner / 4))
-        draw_sprite_ext(sprite_index, 2, x, y, image_xscale, image_yscale, image_angle, c_white, (2 + (siner / 4)))
+        draw_self()
+        draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, c_white, sin((siner / 4)))
+        draw_sprite_ext(sprite_index, 2, x, y, image_xscale, image_yscale, image_angle, c_white, sin((2 + (siner / 4))))
     }
 }
 else
 {
     image_angle = 0
-    // WARNING: Popz'd an empty stack.
+    draw_self()
     draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_white, 1)
 }

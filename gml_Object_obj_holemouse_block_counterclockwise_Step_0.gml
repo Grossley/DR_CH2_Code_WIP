@@ -18,7 +18,7 @@ if (movecourse == 1)
 }
 if (myinteract == 3)
 {
-    if (mydialoguer == 0)
+    if (gml_Script_i_ex(mydialoguer) == 0)
     {
         global.interact = 0
         myinteract = 0

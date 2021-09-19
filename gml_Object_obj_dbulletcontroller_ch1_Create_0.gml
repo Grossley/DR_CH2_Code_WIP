@@ -15,13 +15,13 @@ made = 0
 special = 0
 miny = 150
 maxy = 280
-if 1628
+if instance_exists(obj_growtangle_ch1)
 {
     miny = (obj_growtangle_ch1.y - (obj_growtangle_ch1.sprite_height / 2))
     maxy = (obj_growtangle_ch1.y + (obj_growtangle_ch1.sprite_height / 2))
 }
 ratio = 1
-if 2
+if (gml_Script_scr_monsterpop_ch1() == 2)
     ratio = 1.6
-if 3
+if (gml_Script_scr_monsterpop_ch1() == 3)
     ratio = 2.3

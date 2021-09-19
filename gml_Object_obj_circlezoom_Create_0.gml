@@ -1,7 +1,7 @@
 surf = room_height.room_width
-surf
-0
-// WARNING: Popz'd an empty stack.
+surface_set_target(surf)
+draw_clear(c_black)
+surface_reset_target()
 zoomtime = 2400
 zoomtimer = 0
 startradius = 600

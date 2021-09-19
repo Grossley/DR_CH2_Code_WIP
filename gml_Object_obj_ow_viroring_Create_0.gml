@@ -9,4 +9,4 @@ spear = 0
 shotSpeed = 30
 startingX = x
 image_speed = 0.25
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()

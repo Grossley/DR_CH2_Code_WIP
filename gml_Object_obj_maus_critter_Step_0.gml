@@ -23,6 +23,6 @@ if (big && alarm[0] == -1)
         stuck = 0
     }
 }
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (x > ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) + 50) || x < ((obj_growtangle.x - (obj_growtangle.sprite_width / 2)) - 50) || y > ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) + 50) || y < ((obj_growtangle.y - (obj_growtangle.sprite_height / 2)) - 50))
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -3,7 +3,7 @@ myinteract = 0
 image_speed = 0
 timer = 0
 mousecreate = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 rotate = 0
 left = 0
 right = 0

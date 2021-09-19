@@ -2,7 +2,7 @@ CURX = 0
 CURY = 0
 XMAX = 0
 YMAX = 0
-NAME[0][0] = "DEVICE_CHOICE_slash_Create_0_gml_7_0"
+NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_7_0")
 NAMEX[0][0] = 20
 NAMEY[0][0] = 20
 PLAYERNAMEY = 40
@@ -17,8 +17,8 @@ if (global.lang == "ja")
 global.choice = -1
 if (TYPE == 0)
 {
-    NAME[0][0] = "DEVICE_CHOICE_slash_Create_0_gml_22_0"
-    NAME[1][0] = "DEVICE_CHOICE_slash_Create_0_gml_23_0"
+    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_22_0")
+    NAME[1][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_23_0")
     NAMEX[0][0] = 110
     NAMEX[1][0] = 190
     NAMEY[0][0] = 180
@@ -32,7 +32,7 @@ if (TYPE == 1)
 {
     for (i = 0; i <= 7; i += 1)
     {
-        NAME[i][0] = (1 + i)
+        NAME[i][0] = string((1 + i))
         NAMEX[i][0] = (80 + (i * 20))
         NAMEY[i][0] = 180
         XMAX += 1
@@ -46,18 +46,18 @@ if (TYPE == 2)
 {
     for (i = 0; i <= 6; i += 1)
     {
-        NAME[0][i] = (1 + i)
+        NAME[0][i] = string((1 + i))
         NAMEX[0][i] = 80
         NAMEY[0][i] = (100 + (i * 20))
         YMAX += 1
     }
-    NAME[0][0] = "DEVICE_CHOICE_slash_Create_0_gml_57_0"
-    NAME[0][1] = "DEVICE_CHOICE_slash_Create_0_gml_58_0"
-    NAME[0][2] = "DEVICE_CHOICE_slash_Create_0_gml_59_0"
-    NAME[0][3] = "DEVICE_CHOICE_slash_Create_0_gml_60_0"
-    NAME[0][4] = "DEVICE_CHOICE_slash_Create_0_gml_61_0"
-    NAME[0][5] = "DEVICE_CHOICE_slash_Create_0_gml_62_0"
-    NAME[0][6] = "DEVICE_CHOICE_slash_Create_0_gml_63_0"
+    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_57_0")
+    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_58_0")
+    NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_59_0")
+    NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_60_0")
+    NAME[0][4] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_61_0")
+    NAME[0][5] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_62_0")
+    NAME[0][6] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CHOICE_slash_Create_0_gml_63_0")
     HEARTX = (NAMEX[0][0] - 20)
     HEARTY = NAMEY[0][0]
     XMAX = 0
@@ -65,7 +65,7 @@ if (TYPE == 2)
     xoff = -20
 }
 if (TYPE == 3)
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_84_name_input_setup_ch1()
 HEARTX = NAMEX[0][0]
 HEARTY = NAMEY[0][0]
 if (TYPE == 0)

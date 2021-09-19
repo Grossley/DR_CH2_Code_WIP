@@ -13,6 +13,7 @@ if (global.chapter == 2)
     var catti_mom = gml_Script_instance_create(36, 74, obj_npc_room_animated)
     catti_mom.sprite_index = spr_npc_catti_mom_no1
     var _temp_local_var_1 = catti_mom
+    gml_Script_scr_depth()
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

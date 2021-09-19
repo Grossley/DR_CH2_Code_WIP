@@ -12,7 +12,7 @@ if (global.plot < 16)
 else
 {
     con = 99
-    if 3
+    if gml_Script_scr_havechar_ch1(3)
     {
         rd = gml_Script_instance_create_ch1(240, 240, 1405)
         rd.image_xscale = 8

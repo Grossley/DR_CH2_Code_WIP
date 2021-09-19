@@ -3,6 +3,6 @@ image_index = 0
 toggle = 0
 keepdown = 0
 caterpillarable = 1
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 depth += 1000
 keeptoggled = global.flag[383]

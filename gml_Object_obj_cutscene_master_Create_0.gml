@@ -25,5 +25,5 @@ for (i = 0; i < 20; i++)
 }
 for (i = 0; i < 10; i++)
     save_object[i] = 99999999
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_cutscene_master_commands_initialize()
 terminate_this_frame = 0

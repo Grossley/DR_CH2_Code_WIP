@@ -1,20 +1,25 @@
-var _temp_local_var_4;
-if (bufferstate == 0)
+if (bufferstate == 0 && gml_Script_scr_queen_buffercheck())
 {
+    image_blend = c_gray
+    bufferstate = 1
+    originalspeed = speed
+    speed = 0
+    destroyonhit = 0
 }
-else
-    var _temp_local_var_4 = 0
-image_blend = c_gray
-bufferstate = 1
-originalspeed = speed
-speed = 0
-destroyonhit = 0
+else if (bufferstate == 1 && (!gml_Script_scr_queen_buffercheck()))
+{
+    image_blend = c_white
+    speed = originalspeed
+    bufferstate = 0
+    sprite_index = spr_queen_jpegbullet
+    destroyonhit = 1
+}
 timer++
 if (fadeaway == 1 && timer >= 60)
 {
     image_alpha -= 0.1
     if (image_alpha < 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (slowdown == 1)
 {

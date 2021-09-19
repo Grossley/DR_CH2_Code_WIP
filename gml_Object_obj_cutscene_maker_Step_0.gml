@@ -4,7 +4,7 @@ hover_y = mouse_y
 _asx = actor_startx[actor_selected][step_current]
 _asy = actor_starty[actor_selected][step_current]
 dir_from_actor = point_direction(hover_x, hover_y, _asx, _asy)
-thiscardinal = dir_from_actor
+thiscardinal = gml_Script_scr_get_cardinal_direction(dir_from_actor)
 if (move_mode == 1)
 {
     actor_move_style[actor_selected][step_current] = "cardinal"
@@ -18,32 +18,32 @@ else
     actor_move_style[actor_selected][step_current] = "direct"
 if (grid_mode == 1)
 {
-    hover_x = ((hover_x / 20) * 20)
-    hover_y = ((hover_y / 20) * 20)
+    hover_x = (round((hover_x / 20)) * 20)
+    hover_y = (round((hover_y / 20)) * 20)
 }
-if 49
+if keyboard_check_pressed(ord("1"))
 {
     if (actor_selected > 0)
         actor_selected--
 }
-if 50
+if keyboard_check_pressed(ord("2"))
 {
     if (actor_selected < 8)
         actor_selected++
 }
-if 77
+if keyboard_check_pressed(ord("M"))
 {
     actor_startx[actor_selected][step_current] = mouse_x
     actor_starty[actor_selected][step_current] = mouse_y
 }
-if 73
-    actor_endsprite[actor_selected][step_current] = 988
-if 1
+if keyboard_check_pressed(ord("I"))
+    actor_endsprite[actor_selected][step_current] = 989
+if mouse_check_button_pressed(mb_left)
 {
     actor_endx[actor_selected][step_current] = hover_x
     actor_endy[actor_selected][step_current] = hover_y
 }
-if 78
+if keyboard_check_pressed(ord("N"))
     newstep = 1
 if (newstep == 1)
 {
@@ -69,7 +69,7 @@ if (newstep == 1)
     }
     newstep = 0
 }
-if 32
+if keyboard_check_pressed(vk_space)
 {
     totalstring = ""
     for (j = 0; j < step_max; j++)
@@ -105,5 +105,5 @@ if 32
                 totalstring += (this_action_string_head + this_action_string_foot)
         }
     }
-    totalstring
+    clipboard_set_text(totalstring)
 }

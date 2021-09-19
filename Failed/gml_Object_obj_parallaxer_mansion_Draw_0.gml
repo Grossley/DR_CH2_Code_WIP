@@ -1,11 +1,15 @@
-/*
-DECOMPILER FAILED!
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block, List`1 tempvars, Stack`1 workQueue) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 1896
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Block block) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2014
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3132
-   at Submission#0.DumpCode()
-*/
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10;
+drawx = ((gml_Script___view_get(0, 0) * -0.125) + xstart)
+if (room == room_dw_mansion_acid_tunnel_exit)
+    drawy = ((gml_Script___view_get(1, 0) * -0.125) + ystart)
+2869
+var _temp_local_var_1 = 0
+var _temp_local_var_2 = (drawx + x_offset)
+var _temp_local_var_3 = (drawy + y_offset)
+var _temp_local_var_4 = (drawx + x_offset)
+var _temp_local_var_5 = drawy
+var _temp_local_var_6 = ((drawy + y_offset) + view_hport[0]).room_width
+var _temp_local_var_7 = 1
+var _temp_local_var_8 = 1
+var _temp_local_var_9 = 16777215
+var _temp_local_var_10 = 1

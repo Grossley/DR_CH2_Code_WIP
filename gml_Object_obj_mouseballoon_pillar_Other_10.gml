@@ -1,5 +1,5 @@
 var dialogue = 0
-if 72
+if gml_Script_i_ex(72)
 {
     dialogue = 1
     if (obj_kris_headobj.miceheld >= micerequired)
@@ -8,7 +8,7 @@ if 72
 if (completed == 1)
     dialogue = 3
 myinteract = 3
-"no_name"
+gml_Script_scr_speaker("no_name")
 gml_Script_msgsetloc(0, "* Looks like a hole to put mice in^1, but you don't have any mice./%", "obj_mouseballoon_pillar_slash_Other_10_gml_17_0")
 if (dialogue == 1)
     gml_Script_msgsetloc(0, "* (You don't have enough mice to fill up the hole.)/%", "obj_mouseballoon_pillar_slash_Other_10_gml_19_0")

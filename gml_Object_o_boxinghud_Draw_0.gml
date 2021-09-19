@@ -55,7 +55,7 @@ else if (global.boxingphase == 1 || global.boxingphase == 2)
             bottomyy = 60
     }
 }
-if (hide_ui_quick == 1 || 1078 || 1077)
+if (hide_ui_quick == 1 || instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
 if (sub_healthbar_count == 0 && o_boxingqueen.health_count < 1 && o_boxingcontroller.wireframe_boxing == 0)
 {
@@ -63,7 +63,7 @@ if (sub_healthbar_count == 0 && o_boxingqueen.health_count < 1 && o_boxingcontro
     if (o_boxingqueen.attackpattern != 99)
     {
         with (o_boxingqueen)
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_qb_reset()
     }
 }
 if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxingqueen.sprite_index != spr_bqueen_defeated)
@@ -71,22 +71,22 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
     var _ratio = 3.75
     if (sub_healthbar_count == 0)
         _ratio = 4.5
-    16777215
+    draw_set_color(c_white)
     draw_text(50, (-31 + topyy), gml_Script_stringsetloc("BOSS", "o_boxinghud_slash_Draw_0_gml_66_0"))
-    0
+    draw_set_color(c_black)
     draw_rectangle(118, ((-30 + topyy) - 2), (122 + (o_boxingqueen.health_count_max / _ratio)), ((-20 + topyy) + 2), false)
     col = merge_colour(c_red, c_black, 0.85)
-    col
+    draw_set_color(col)
     draw_rectangle(120, (-30 + topyy), (120 + (o_boxingqueen.health_count_max / _ratio)), (-20 + topyy), false)
-    255
+    draw_set_color(c_red)
     draw_rectangle(120, (-30 + topyy), (120 + (o_boxingqueen.health_count_prev / _ratio)), (-20 + topyy), false)
-    65280
+    draw_set_color(c_lime)
     draw_rectangle(120, (-30 + topyy), (120 + (o_boxingqueen.health_count / _ratio)), (-20 + topyy), false)
-    16777215
-    (healthbar_flash / 100)
+    draw_set_color(c_white)
+    draw_set_alpha((healthbar_flash / 100))
     healthbar_flash -= 10
     draw_rectangle_colour(120, (-30 + topyy), (120 + (o_boxingqueen.health_count / _ratio)), (-20 + topyy), c_white, c_white, c_white, c_white, 0)
-    1
+    draw_set_alpha(1)
     o_boxingqueen.health_count_prev_timer -= 1
     if (o_boxingqueen.health_count_prev_timer < 1 && o_boxingqueen.health_count_prev > o_boxingqueen.health_count)
     {
@@ -108,31 +108,31 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
         {
             if arcade
             {
-                if 308
-                    56
-                if 321
-                    115
-                if 322
-                    157
-                if 323
-                    122
-                if 324
-                    158
-                320
+                if audio_is_playing(snd_squeaky_bc)
+                    audio_stop_sound(snd_squeaky)
+                if audio_is_playing(snd_punchheavythunder_bc)
+                    audio_stop_sound(snd_punchheavythunder)
+                if audio_is_playing(snd_ultraswing_bc)
+                    audio_stop_sound(snd_ultraswing)
+                if audio_is_playing(punch_ish_1_bc)
+                    audio_stop_sound(punch_ish_1)
+                if audio_is_playing(snd_criticalswing_bc)
+                    audio_stop_sound(snd_criticalswing)
+                gml_Script_snd_play(320)
             }
             else
             {
-                if 56
-                    56
-                if 115
-                    115
-                if 157
-                    157
-                if 122
-                    122
-                if 158
-                    158
-                223
+                if audio_is_playing(snd_squeaky)
+                    audio_stop_sound(snd_squeaky)
+                if audio_is_playing(snd_punchheavythunder)
+                    audio_stop_sound(snd_punchheavythunder)
+                if audio_is_playing(snd_ultraswing)
+                    audio_stop_sound(snd_ultraswing)
+                if audio_is_playing(punch_ish_1)
+                    audio_stop_sound(punch_ish_1)
+                if audio_is_playing(snd_criticalswing)
+                    audio_stop_sound(snd_criticalswing)
+                gml_Script_snd_play(223)
             }
             if (o_boxinghud.sub_healthbar_count == 0)
                 o_boxingqueen.health_count_max = 1800
@@ -151,7 +151,7 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
             {
                 with (o_boxingqueen)
                 {
-                    // WARNING: Popz'd an empty stack.
+                    gml_Script_scr_qb_reset()
                     attackpattern = 2
                     if (usedbaseball == 0)
                     {
@@ -165,7 +165,7 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
             {
                 with (o_boxingqueen)
                 {
-                    // WARNING: Popz'd an empty stack.
+                    gml_Script_scr_qb_reset()
                     attackpattern = 15
                 }
                 obj_gigaqueen_enemy.recentphasetransition = 3
@@ -174,7 +174,7 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
             {
                 with (o_boxingqueen)
                 {
-                    // WARNING: Popz'd an empty stack.
+                    gml_Script_scr_qb_reset()
                     attackpattern = 21
                 }
                 o_boxingcontroller.phase3_hit_check = 1

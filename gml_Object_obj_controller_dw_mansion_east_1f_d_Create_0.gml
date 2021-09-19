@@ -1,4 +1,4 @@
-if 80
+if instance_exists(obj_mainchara)
 {
     if (obj_mainchara.x < 200)
         startside = "Left"
@@ -8,7 +8,7 @@ if 80
 spawnedGates = 0
 spawnedViro = 0
 viro = 0
-if 266
+if instance_exists(obj_overworld_bulletarea)
 {
     with (obj_overworld_bulletarea)
         visible = false

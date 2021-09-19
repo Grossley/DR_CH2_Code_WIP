@@ -19,7 +19,7 @@ if (con == 1)
             image_index = 0
         }
     }
-    "ralsei"
+    gml_Script_scr_speaker("ralsei")
     gml_Script_msgsetloc(0, "\\E1* I..^1. have a surprise for you two...!/", "obj_ch2_room_castle_2f_slash_Step_0_gml_26_0")
     gml_Script_msgnextloc("\\E2* ..^1. I made rooms for you in the castle!/", "obj_ch2_room_castle_2f_slash_Step_0_gml_27_0")
     gml_Script_scr_anyface_next("susie", 6)
@@ -33,7 +33,7 @@ if (con == 1)
     gml_Script_scr_anyface_next("susie", 6)
     gml_Script_msgnextloc("\\E6* .../", "obj_ch2_room_castle_2f_slash_Step_0_gml_37_0")
     gml_Script_msgnextloc("\\EA* Heh^1, well^1, we'll take a look./%", "obj_ch2_room_castle_2f_slash_Step_0_gml_38_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
 }
 if (obj_mainchara.x < x && global.plot == 14 && global.interact == 0)
 {
@@ -43,7 +43,7 @@ if (obj_mainchara.x < x && global.plot == 14 && global.interact == 0)
     obj_mainchara.x = (x + 4)
     leaveCounter++
     var sentenceEnd = (leaveCounter == 1 ? "/" : "/%")
-    "susie"
+    gml_Script_scr_speaker("susie")
     gml_Script_msgsetsubloc(0, "\\E5* Hey^1, lemme look at my freaking room a sec!~1", sentenceEnd, "obj_ch2_room_castle_2f_slash_Step_0_gml_54_0")
     if (leaveCounter == 1)
     {
@@ -51,7 +51,7 @@ if (obj_mainchara.x < x && global.plot == 14 && global.interact == 0)
         gml_Script_scr_anyface_next("ralsei", 33)
         gml_Script_msgnextloc("\\EX* (..^1. is that projection?)/%", "obj_ch2_room_castle_2f_slash_Step_0_gml_60_0")
     }
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
 }
 if (obj_mainchara.x < x && global.plot == 15 && global.flag[432] == 0 && global.interact == 0)
 {
@@ -59,28 +59,31 @@ if (obj_mainchara.x < x && global.plot == 15 && global.flag[432] == 0 && global.
     global.interact = 1
     global.flag[432] = 1
     global.facing = 1
-    "susie"
+    gml_Script_scr_speaker("susie")
     gml_Script_msgsetloc(0, "\\EK* So^1, what do we do now?/", "obj_ch2_room_castle_2f_slash_Step_0_gml_75_0")
     gml_Script_scr_anyface_next("ralsei", 2)
     gml_Script_msgnextloc("\\E2* Feel free to explore the town until you're ready to \\cYleave\\c0!/", "obj_ch2_room_castle_2f_slash_Step_0_gml_77_0")
     gml_Script_scr_anyface_next("susie", 2)
     gml_Script_msgnextloc("\\E2* Hah^1! Like we're gonna \\cYleave\\c0 now^1, right^1, Kris?/%", "obj_ch2_room_castle_2f_slash_Step_0_gml_79_0")
-    // WARNING: Popz'd an empty stack.
+    gml_Script_d_make()
 }
 if (con == 3 || con == 4)
 {
-    if (con == 3)
+    if (!gml_Script_d_ex())
     {
-        global.facing = 0
-        with (obj_caterpillarchara)
+        if (con == 3)
         {
-            if (name == "susie")
+            global.facing = 0
+            with (obj_caterpillarchara)
             {
-                fun = false
-                sprite_index = _remsprite
+                if (name == "susie")
+                {
+                    fun = false
+                    sprite_index = _remsprite
+                }
             }
         }
+        global.interact = 0
+        con = -1
     }
-    global.interact = 0
-    con = -1
 }

@@ -1,7 +1,7 @@
 siner += 1
 draw_sprite_ext(spr_shop_rurusbg, 0, 0, 0, 2, 2, 0, c_white, 1)
-draw_sprite_ext(spr_shop_rurussparkle, 0, (148 + (sin((siner / 6)) * 4)), (52 + (cos((siner / 6)) * 4)), 2, ((sin((siner / 8)) * 3) - 1), 0, c_white, (((siner / 8) * 2) - 1))
-draw_sprite_ext(spr_shop_rurussparkle, 0, (48 + (sin((siner / 6)) * 4)), (42 + (cos((siner / 6)) * 4)), 2, ((cos((siner / 8)) * 3) - 1), 0, c_white, (((siner / 8) * 2) - 1))
+draw_sprite_ext(spr_shop_rurussparkle, 0, (148 + (sin((siner / 6)) * 4)), (52 + (cos((siner / 6)) * 4)), 2, ((sin((siner / 8)) * 3) - 1), 0, c_white, ((sin((siner / 8)) * 2) - 1))
+draw_sprite_ext(spr_shop_rurussparkle, 0, (48 + (sin((siner / 6)) * 4)), (42 + (cos((siner / 6)) * 4)), 2, ((cos((siner / 8)) * 3) - 1), 0, c_white, ((cos((siner / 8)) * 2) - 1))
 draw_sprite_ext(spr_shop_rurusface, global.fe, 72, 62, 2, 2, 0, c_white, 1)
 draw_sprite_ext(spr_shop_rurushand, (siner / 3.73), 200, 56, 2, 2, 0, c_white, 1)
 draw_sprite_ext(spr_shop_rurusfoot, (siner / 3.73), 340, 150, 2, 2, 0, c_white, 1)
@@ -13,13 +13,13 @@ for (i = 0; i < worm_max; i += 1)
         worm_siner[i] += (worm_image[i] / 3)
     if (worm_image[i] >= 6)
         worm_image[i] -= 6
-    complexwormx = (((worm_siner[i] / 50) * 20) + (sin((worm_siner[i] / 3)) * 2))
-    complexwormy = (worm_siner[i] / 8)
+    complexwormx = ((sin((worm_siner[i] / 50)) * 20) + (sin((worm_siner[i] / 3)) * 2))
+    complexwormy = cos((worm_siner[i] / 8))
     draw_sprite_ext(spr_shop_rurusworm, worm_image[i], (530 + complexwormx), ((204 + complexwormy) + worm_y[i]), 2, 2, 0, c_white, 1)
 }
-0
+draw_set_color(c_black)
 draw_rectangle(0, 240, 640, 480, false)
-0
+gml_Script_scr_shopmenu(0)
 if (menu <= 3 || menu >= 10)
 {
     gml_Script_scr_darkbox_black(0, 240, 415, 480)
@@ -36,7 +36,7 @@ if (menu == 0)
     menuc[2] = 0
     menuc[3] = 0
     menuc[4] = 0
-    if (62 == 0)
+    if (instance_exists(obj_writer) == 0)
     {
         global.typer = 6
         global.msg[0] = gml_Script_stringsetloc("\\E0* Anything else?", "obj_shop2_slash_Draw_0_gml_70_0")
@@ -49,46 +49,49 @@ if (menu == 0)
         gml_Script_instance_create(30, 270, obj_writer)
     }
     menumax = 3
-    16777215
-    "mainbig"
-    draw_text(480, 260, gml_Script_stringsetloc("Buy", "obj_shop2_slash_Draw_0_gml_82_0"))
-    draw_text(480, 300, gml_Script_stringsetloc("Sell", "obj_shop2_slash_Draw_0_gml_83_0"))
-    draw_text(480, 340, gml_Script_stringsetloc("Talk", "obj_shop2_slash_Draw_0_gml_84_0"))
-    draw_text(480, 380, gml_Script_stringsetloc("Exit", "obj_shop2_slash_Draw_0_gml_85_0"))
+    draw_set_color(c_white)
+    gml_Script_scr_84_set_draw_font("mainbig")
+    draw_text(480, 260, string_hash_to_newline(gml_Script_stringsetloc("Buy", "obj_shop2_slash_Draw_0_gml_82_0")))
+    draw_text(480, 300, string_hash_to_newline(gml_Script_stringsetloc("Sell", "obj_shop2_slash_Draw_0_gml_83_0")))
+    draw_text(480, 340, string_hash_to_newline(gml_Script_stringsetloc("Talk", "obj_shop2_slash_Draw_0_gml_84_0")))
+    draw_text(480, 380, string_hash_to_newline(gml_Script_stringsetloc("Exit", "obj_shop2_slash_Draw_0_gml_85_0")))
     draw_sprite(spr_heart, 0, 450, ((135 + (menuc[0] * 20)) * 2))
-    onebuffer = 2
-    mainmessage = 1
-    with (obj_writer)
-        // WARNING: Popz'd an empty stack.
-    if (menuc[0] == 0)
-        menu = 1
-    if (menuc[0] == 1)
+    if gml_Script_button1_p()
     {
-        menu = 10
-        sidemessage = 0
-    }
-    if (menuc[0] == 2)
-        menu = 3
-    if (menuc[0] == 3)
-    {
-        sell = 2
-        menu = 4
+        onebuffer = 2
+        mainmessage = 1
+        with (obj_writer)
+            instance_destroy()
+        if (menuc[0] == 0)
+            menu = 1
+        if (menuc[0] == 1)
+        {
+            menu = 10
+            sidemessage = 0
+        }
+        if (menuc[0] == 2)
+            menu = 3
+        if (menuc[0] == 3)
+        {
+            sell = 2
+            menu = 4
+        }
     }
 }
 if (menu == 1 || menu == 2)
 {
-    16777215
-    "mainbig"
+    draw_set_color(c_white)
+    gml_Script_scr_84_set_draw_font("mainbig")
     for (i = 0; i < itemtotal; i += 1)
     {
-        draw_text(60, (260 + (i * 40)), shopitemname[i])
-        draw_text(300, (260 + (i * 40)), gml_Script_stringsetsubloc("$~1", string(buyvalue[i]), "obj_shop2_slash_Draw_0_gml_113_0"))
+        draw_text(60, (260 + (i * 40)), string_hash_to_newline(shopitemname[i]))
+        draw_text(300, (260 + (i * 40)), string_hash_to_newline(gml_Script_stringsetsubloc("$~1", string(buyvalue[i]), "obj_shop2_slash_Draw_0_gml_113_0")))
     }
-    draw_text(60, (260 + (itemtotal * 40)), gml_Script_stringsetloc("Exit", "obj_shop2_slash_Draw_0_gml_115_0"))
+    draw_text(60, (260 + (itemtotal * 40)), string_hash_to_newline(gml_Script_stringsetloc("Exit", "obj_shop2_slash_Draw_0_gml_115_0")))
     if (menu == 1)
     {
         menumax = 4
-        if (62 == 0)
+        if (instance_exists(obj_writer) == 0)
         {
             if (sidemessage == 0)
                 global.msg[0] = gml_Script_stringsetloc("\\E0What&shalt&thou buy?", "obj_shop2_slash_Draw_0_gml_124_0")
@@ -109,45 +112,45 @@ if (menu == 1 || menu == 2)
             gml_Script_instance_create(450, 260, obj_writer)
         }
         draw_sprite(spr_heart, 0, 30, (270 + (menuc[1] * 40)))
-        if (onebuffer < 0)
+        if (gml_Script_button1_p() && onebuffer < 0)
         {
             menu = 2
             onebuffer = 2
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             if (menuc[1] == menumax)
                 menu = 0
         }
-        if (twobuffer < 0 && onebuffer < 2)
+        if (gml_Script_button2_p() && twobuffer < 0 && onebuffer < 2)
         {
             menu = 0
             twobuffer = 2
             minimenuy = 220
             with (obj_writer)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
         }
         menuc[2] = 0
     }
     if (menu == 2)
     {
         menumax = 1
-        16777215
-        "mainbig"
+        draw_set_color(c_white)
+        gml_Script_scr_84_set_draw_font("mainbig")
         var y1_off = gml_Script_langopt(260, 290)
         var y2_off = gml_Script_langopt(290, 260)
-        draw_text(460, y1_off, gml_Script_stringsetloc("Buyeth for", "obj_shop2_slash_Draw_0_gml_144_0"))
-        draw_text(460, y2_off, gml_Script_stringsetsubloc("$~1 ?", string(buyvalue[menuc[1]]), "obj_shop2_slash_Draw_0_gml_147_0_b"))
-        draw_text(480, 340, gml_Script_stringsetloc("Yes", "obj_shop2_slash_Draw_0_gml_146_0"))
-        draw_text(480, 370, gml_Script_stringsetloc("No", "obj_shop2_slash_Draw_0_gml_147_0"))
+        draw_text(460, y1_off, string_hash_to_newline(gml_Script_stringsetloc("Buyeth for", "obj_shop2_slash_Draw_0_gml_144_0")))
+        draw_text(460, y2_off, string_hash_to_newline(gml_Script_stringsetsubloc("$~1 ?", string(buyvalue[menuc[1]]), "obj_shop2_slash_Draw_0_gml_147_0_b")))
+        draw_text(480, 340, string_hash_to_newline(gml_Script_stringsetloc("Yes", "obj_shop2_slash_Draw_0_gml_146_0")))
+        draw_text(480, 370, string_hash_to_newline(gml_Script_stringsetloc("No", "obj_shop2_slash_Draw_0_gml_147_0")))
         draw_sprite(spr_heart, 0, 450, (350 + (menuc[2] * 30)))
-        if (twobuffer < 0)
+        if (gml_Script_button2_p() && twobuffer < 0)
         {
             menu = 1
             sidemessage = 2
             twobuffer = 2
             onebuffer = 2
         }
-        if (onebuffer < 0 && twobuffer < 0)
+        if (gml_Script_button1_p() && onebuffer < 0 && twobuffer < 0)
         {
             if (menuc[2] == 0)
             {
@@ -157,16 +160,16 @@ if (menu == 1 || menu == 2)
                 if (afford == true)
                 {
                     if (itemtype[menuc[1]] == "item")
-                        item[menuc[1]]
+                        gml_Script_scr_itemget(item[menuc[1]])
                     if (itemtype[menuc[1]] == "weapon")
-                        item[menuc[1]]
+                        gml_Script_scr_weaponget(item[menuc[1]])
                     if (itemtype[menuc[1]] == "armor")
-                        item[menuc[1]]
+                        gml_Script_scr_armorget(item[menuc[1]])
                     if (noroom == false)
                     {
                         global.gold -= buyvalue[menuc[1]]
                         sidemessage = 1
-                        59
+                        gml_Script_snd_play(59)
                     }
                     if (noroom == true)
                         sidemessage = 4
@@ -200,24 +203,24 @@ if (menu == 1 || menu == 2)
 if (menu == 3)
 {
     menumax = 4
-    16777215
-    "mainbig"
-    draw_text(80, 260, gml_Script_stringsetloc("About yourself", "obj_shop2_slash_Draw_0_gml_194_0"))
-    draw_text(80, 300, gml_Script_stringsetloc("Why sell to us", "obj_shop2_slash_Draw_0_gml_195_0"))
-    draw_text(80, 340, gml_Script_stringsetloc("The King", "obj_shop2_slash_Draw_0_gml_196_0"))
-    draw_text(80, 380, gml_Script_stringsetloc("The King's Son", "obj_shop2_slash_Draw_0_gml_197_0"))
-    draw_text(80, 420, gml_Script_stringsetloc("Exit", "obj_shop2_slash_Draw_0_gml_198_0"))
-    if (62 == 0)
+    draw_set_color(c_white)
+    gml_Script_scr_84_set_draw_font("mainbig")
+    draw_text(80, 260, string_hash_to_newline(gml_Script_stringsetloc("About yourself", "obj_shop2_slash_Draw_0_gml_194_0")))
+    draw_text(80, 300, string_hash_to_newline(gml_Script_stringsetloc("Why sell to us", "obj_shop2_slash_Draw_0_gml_195_0")))
+    draw_text(80, 340, string_hash_to_newline(gml_Script_stringsetloc("The King", "obj_shop2_slash_Draw_0_gml_196_0")))
+    draw_text(80, 380, string_hash_to_newline(gml_Script_stringsetloc("The King's Son", "obj_shop2_slash_Draw_0_gml_197_0")))
+    draw_text(80, 420, string_hash_to_newline(gml_Script_stringsetloc("Exit", "obj_shop2_slash_Draw_0_gml_198_0")))
+    if (instance_exists(obj_writer) == 0)
     {
         global.msg[0] = gml_Script_stringsetloc("\\E5Ah^1, what is&thine&Intereste?", "obj_shop2_slash_Draw_0_gml_202_0")
         gml_Script_instance_create(440, 260, obj_writer)
     }
     draw_sprite(spr_heart, 0, 50, (270 + (menuc[3] * 40)))
-    if (onebuffer < 0)
+    if (gml_Script_button1_p() && onebuffer < 0)
     {
         onebuffer = 2
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         if (menuc[3] < menumax)
         {
             sell = (menuc[3] + 3)
@@ -226,12 +229,12 @@ if (menu == 3)
         else
             menu = 0
     }
-    else if (twobuffer < 0 && onebuffer < 0)
+    else if (gml_Script_button2_p() && twobuffer < 0 && onebuffer < 0)
     {
         twobuffer = 2
         menu = 0
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (menu == 10)
@@ -240,13 +243,13 @@ if (menu == 10)
     menuc[12] = 0
     menuc[13] = 0
     menumax = 3
-    16777215
-    "mainbig"
-    draw_text(80, 260, gml_Script_stringsetloc("Selleth Items", "obj_shop2_slash_Draw_0_gml_236_0"))
-    draw_text(80, 300, gml_Script_stringsetloc("Selleth Weapons", "obj_shop2_slash_Draw_0_gml_237_0"))
-    draw_text(80, 340, gml_Script_stringsetloc("Selleth Armor", "obj_shop2_slash_Draw_0_gml_238_0"))
-    draw_text(80, 380, gml_Script_stringsetloc("Returnst", "obj_shop2_slash_Draw_0_gml_239_0"))
-    if (62 == 0)
+    draw_set_color(c_white)
+    gml_Script_scr_84_set_draw_font("mainbig")
+    draw_text(80, 260, string_hash_to_newline(gml_Script_stringsetloc("Selleth Items", "obj_shop2_slash_Draw_0_gml_236_0")))
+    draw_text(80, 300, string_hash_to_newline(gml_Script_stringsetloc("Selleth Weapons", "obj_shop2_slash_Draw_0_gml_237_0")))
+    draw_text(80, 340, string_hash_to_newline(gml_Script_stringsetloc("Selleth Armor", "obj_shop2_slash_Draw_0_gml_238_0")))
+    draw_text(80, 380, string_hash_to_newline(gml_Script_stringsetloc("Returnst", "obj_shop2_slash_Draw_0_gml_239_0")))
+    if (instance_exists(obj_writer) == 0)
     {
         if (sidemessage == 0)
             global.msg[0] = gml_Script_stringsetloc("\\E0Showeth&me your&treasure!", "obj_shop2_slash_Draw_0_gml_243_0")
@@ -257,44 +260,44 @@ if (menu == 10)
         gml_Script_instance_create(460, 260, obj_writer)
     }
     draw_sprite(spr_heart, 0, 50, (270 + (menuc[10] * 40)))
-    if (onebuffer < 0)
+    if (gml_Script_button1_p() && onebuffer < 0)
     {
         pagemax = 0
         sidemessage2 = 0
         onebuffer = 2
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
         can = 1
         idealmenu = (menuc[10] + 11)
         if (idealmenu == 11)
         {
-            0
+            gml_Script_scr_itemcheck(0)
             if (itemcount == 12)
             {
                 sidemessage = 2
                 can = 0
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_iteminfo_all()
         }
         if (idealmenu == 12)
         {
-            0
+            gml_Script_scr_weaponcheck_inventory(0)
             if (itemcount == 12)
             {
                 sidemessage = 2
                 can = 0
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_weaponinfo_all()
         }
         if (idealmenu == 13)
         {
-            0
+            gml_Script_scr_armorcheck_inventory(0)
             if (itemcount == 12)
             {
                 sidemessage = 2
                 can = 0
             }
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_armorinfo_all()
         }
         if (menuc[10] < menumax)
         {
@@ -307,17 +310,17 @@ if (menu == 10)
         submenu = 0
         submenuc[1] = 0
     }
-    if (twobuffer < 0 && onebuffer < 0)
+    if (gml_Script_button2_p() && twobuffer < 0 && onebuffer < 0)
     {
         twobuffer = 2
         menu = 0
         with (obj_writer)
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
 }
 if (menu == 11 || menu == 12 || menu == 13)
 {
-    if (62 == 0)
+    if (instance_exists(obj_writer) == 0)
     {
         if (sidemessage2 == 0 && menu == 11)
             global.msg[0] = gml_Script_stringsetloc("\\E0What ITEM&shalt thou&proffer?", "obj_shop2_slash_Draw_0_gml_305_0")
@@ -336,26 +339,26 @@ if (menu == 11 || menu == 12 || menu == 13)
         gml_Script_instance_create(450, 260, obj_writer)
     }
 }
-4
+gml_Script_scr_shopmenu(4)
 if (menu == 15 || menu == 16 || menu == 17)
 {
     menumax = 1
-    16777215
-    "mainbig"
+    draw_set_color(c_white)
+    gml_Script_scr_84_set_draw_font("mainbig")
     y1_off = gml_Script_langopt(260, 290)
     y2_off = gml_Script_langopt(290, 260)
-    draw_text(460, y1_off, gml_Script_stringsetloc("Sell it for", "obj_shop2_slash_Draw_0_gml_323_0"))
-    draw_text(460, y2_off, gml_Script_stringsetsubloc("$~1 ?", string(sellvalue), "obj_shop2_slash_Draw_0_gml_328_0"))
-    draw_text(480, 340, gml_Script_stringsetloc("Yes", "obj_shop2_slash_Draw_0_gml_325_0"))
-    draw_text(480, 370, gml_Script_stringsetloc("No", "obj_shop2_slash_Draw_0_gml_326_0"))
+    draw_text(460, y1_off, string_hash_to_newline(gml_Script_stringsetloc("Sell it for", "obj_shop2_slash_Draw_0_gml_323_0")))
+    draw_text(460, y2_off, string_hash_to_newline(gml_Script_stringsetsubloc("$~1 ?", string(sellvalue), "obj_shop2_slash_Draw_0_gml_328_0")))
+    draw_text(480, 340, string_hash_to_newline(gml_Script_stringsetloc("Yes", "obj_shop2_slash_Draw_0_gml_325_0")))
+    draw_text(480, 370, string_hash_to_newline(gml_Script_stringsetloc("No", "obj_shop2_slash_Draw_0_gml_326_0")))
     draw_sprite(spr_heart, 0, 450, (350 + (menuc[menu] * 30)))
 }
-5
+gml_Script_scr_shopmenu(5)
 if (menu == 4)
 {
     if (sell == 0)
         menu = 0
-    if (62 == 0 && selling == 0)
+    if (instance_exists(obj_writer) == 0 && selling == 0)
     {
         if (sell == 1)
         {
@@ -423,12 +426,12 @@ if (menu == 4)
         gml_Script_instance_create(30, 270, obj_writer)
         selling = 1
     }
-    if (selling == 1 && 62 == 0)
+    if (selling == 1 && instance_exists(obj_writer) == 0)
     {
         if (sell == 2)
         {
             selling = 2
-            1
+            event_user(1)
         }
         else
         {
@@ -441,17 +444,23 @@ if (menu == 4)
         }
     }
 }
-if (menu != 11 && menu != 12 && menu != 13)
+if gml_Script_down_p()
 {
-    menuc[menu] += 1
-    if (menuc[menu] > menumax)
-        menuc[menu] = 0
+    if (menu != 11 && menu != 12 && menu != 13)
+    {
+        menuc[menu] += 1
+        if (menuc[menu] > menumax)
+            menuc[menu] = 0
+    }
 }
-if (menu != 11 && menu != 12 && menu != 13)
+if gml_Script_up_p()
 {
-    menuc[menu] -= 1
-    if (menuc[menu] < 0)
-        menuc[menu] = menumax
+    if (menu != 11 && menu != 12 && menu != 13)
+    {
+        menuc[menu] -= 1
+        if (menuc[menu] < 0)
+            menuc[menu] = menumax
+    }
 }
 if (menu < 4 || menu >= 10)
 {
@@ -461,20 +470,20 @@ if (menu < 4 || menu >= 10)
         if (menuc[1] < 4)
         {
             if (itemtype[menuc[1]] == "item")
-                0
+                gml_Script_scr_itemcheck(0)
             if (itemtype[menuc[1]] == "armor")
-                0
+                gml_Script_scr_armorcheck_inventory(0)
             if (itemtype[menuc[1]] == "weapon")
-                0
-            "dotumche"
+                gml_Script_scr_weaponcheck_inventory(0)
+            gml_Script_scr_84_set_draw_font("dotumche")
             if (itemcount < 10)
                 roomstring = ("0" + string(itemcount))
             else
-                roomstring = itemcount
+                roomstring = string(itemcount)
             if (itemcount > 0)
-                draw_text(520, 430, gml_Script_stringsetsubloc("Space:~1", roomstring, "obj_shop2_slash_Draw_0_gml_482_0"))
+                draw_text(520, 430, string_hash_to_newline(gml_Script_stringsetsubloc("Space:~1", roomstring, "obj_shop2_slash_Draw_0_gml_482_0")))
             if (itemcount == 0)
-                draw_text(520, 430, gml_Script_stringsetloc("NO SPACE", "obj_shop2_slash_Draw_0_gml_481_0"))
+                draw_text(520, 430, string_hash_to_newline(gml_Script_stringsetloc("NO SPACE", "obj_shop2_slash_Draw_0_gml_481_0")))
         }
     }
 }

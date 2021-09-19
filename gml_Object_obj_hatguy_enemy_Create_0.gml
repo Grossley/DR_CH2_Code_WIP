@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_enemy_object_init()
 obj_battlecontroller.hidemercy = 1
 depth = (obj_battlecontroller.depth - 3)
 talkmax = 180

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 con = 0
 closetimer = 0
 image_yscale = 2
@@ -30,7 +30,7 @@ if (swatch_color != "")
     }
 
 }
-sprite_palette = 1812
+sprite_palette = 1813
 color_init = 0
 new_color = 0
 base_colors[0] = blue

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_snd_free_all()
 colcol = 0
 image_speed = 0
 image_xscale = 2
@@ -10,7 +10,7 @@ imageanimator = 0
 con = 0
 global.interact = 1
 y += 260
-275
+instance_deactivate_object(obj_darkcontroller)
 with (obj_mainchara)
     visible = false
 draw_kris = 1

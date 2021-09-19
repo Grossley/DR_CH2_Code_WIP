@@ -1,6 +1,6 @@
 if (global.darkzone == true)
 {
-    if (cutscene == false && (!1464))
+    if (cutscene == false && (!instance_exists(obj_shake_ch1)))
     {
         wd = (x - floor(((gml_Script___view_get(2, 0) / 2) - (initwd / 2))))
         ht = (y - floor(((gml_Script___view_get(3, 0) / 2) - (initht / 2))))
@@ -18,7 +18,7 @@ if (global.darkzone == true)
 }
 if (global.darkzone == false && global.plot >= 245)
 {
-    if (cutscene == false && (!1464))
+    if (cutscene == false && (!instance_exists(obj_shake_ch1)))
     {
         gml_Script___view_set(9, 0, -4)
         wd = ((x - floor((gml_Script___view_get(2, 0) / 2))) + 11)
@@ -38,5 +38,5 @@ if (global.darkzone == false && global.plot >= 245)
 if (bg == 1)
 {
     with (obj_backgrounderparent_ch1)
-        0
+        event_user(0)
 }

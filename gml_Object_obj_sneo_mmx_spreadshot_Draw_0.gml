@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (flashtimer > 0)
     flashtimer--
 gml_Script_d3d_set_fog(true, c_yellow, 0, 1)

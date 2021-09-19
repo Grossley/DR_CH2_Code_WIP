@@ -20,4 +20,4 @@ if dojo
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

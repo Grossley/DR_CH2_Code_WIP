@@ -7,7 +7,7 @@ if (obj_spamton_neo_enemy.difficulty == 2)
     type = 3
 if (obj_spamton_neo_enemy.difficulty == 3)
     type = 4
-if 606
+if instance_exists(obj_sneo_heartattack)
     type = 5
 if (obj_spamton_neo_enemy.difficulty == 6)
     type = 6

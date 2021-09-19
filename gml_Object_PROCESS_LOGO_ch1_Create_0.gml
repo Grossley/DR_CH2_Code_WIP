@@ -1,6 +1,6 @@
 w = sprite_width
 h = sprite_height
-NOISE = 489
+NOISE = gml_Script_snd_play_ch1(489)
 siner = 0
 factor = 1
 factor2 = 0

@@ -32,13 +32,13 @@ if (timer >= 31)
             }
         }
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }
 if (hide == 1)
     return;
-32768
+draw_set_color(c_green)
 draw_line_width(x1, y1, x2, y2, width)
-((31 - timer) / 30)
-make_colour_rgb(0, 51, 0)
+draw_set_alpha(((31 - timer) / 30))
+draw_set_color(make_colour_rgb(0, 51, 0))
 draw_line_width(x1, y1, x2, y2, width)
-1
+draw_set_alpha(1)

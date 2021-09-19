@@ -21,16 +21,16 @@ if (global.plot < 94)
 {
     if (global.flag[7] == 1)
         global.flag[7] = 0
-    if (!4)
+    if (!gml_Script_scr_havechar(4))
     {
-        // WARNING: Popz'd an empty stack.
-        if 274
-            274
-        4
+        gml_Script_scr_losechar()
+        if instance_exists(obj_caterpillarchara)
+            instance_destroy(obj_caterpillarchara)
+        gml_Script_scr_getchar(4)
         gml_Script_scr_makecaterpillar(obj_mainchara.x, (obj_mainchara.y - 40), 4, 0)
         with (obj_caterpillarchara)
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_caterpillar_interpolate()
     }
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

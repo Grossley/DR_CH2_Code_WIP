@@ -8,7 +8,7 @@ if (type == 0)
     if (timer >= 30)
     {
         var bulletcount = 16
-        var randodir = 60
+        var randodir = random(60)
         for (var i = 0; i < bulletcount; i++)
         {
             shot = gml_Script_instance_create(x, y, obj_overworldbulletparent)
@@ -28,8 +28,8 @@ if (type == 0)
                 gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
             }
         }
-        95
-        // WARNING: Popz'd an empty stack.
+        gml_Script_snd_play(95)
+        instance_destroy()
     }
 }
 if (type == 1)
@@ -41,7 +41,7 @@ if (type == 1)
     if ((dir == "right" && x >= obj_doorA) ? 1 : (dir == "left" ? (x.room_width - 140) : 0))
     {
         bulletcount = 12
-        randodir = 120
+        randodir = random(120)
         for (i = 0; i < bulletcount; i++)
         {
             shot = gml_Script_instance_create(x, y, obj_overworldbulletparent)
@@ -61,6 +61,6 @@ if (type == 1)
             }
         }
         gml_Script_snd_play_pitch(95, 1.4)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

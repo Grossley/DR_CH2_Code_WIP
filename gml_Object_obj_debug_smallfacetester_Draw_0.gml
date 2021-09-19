@@ -1,9 +1,9 @@
-0.8
-0
+draw_set_alpha(0.8)
+draw_set_color(c_black)
 draw_rectangle(0, 0, 640, 480, false)
-1
-3
-8421376
+draw_set_alpha(1)
+draw_set_font(fnt_main)
+draw_set_color(c_teal)
 var spacing = 12
 draw_text(1, (-3 + (spacing * 0)), "[1]     Light World")
 draw_text(1, (-3 + (spacing * 1)), "[2]     Dark World")
@@ -13,20 +13,20 @@ draw_text(141, (-3 + (spacing * 0)), "[P]     Screenshot")
 draw_text(141, (-3 + (spacing * 1)), "[R]     Reset Room")
 if (fileExists == 0)
 {
-    255
+    draw_set_color(c_red)
     draw_text(20, 57, "The file ``smallface.txt`` is not found.")
     draw_text(20, 71, "Ask for new smallface.txt and add it to")
     draw_text(20, 85, "your save directory, then reboot.")
 }
-16777215
+draw_set_color(c_white)
 if (haswritten == 1)
 {
-    3
+    draw_set_font(fnt_main)
     if (global.lang == "ja")
-        10
+        draw_set_font(fnt_ja_main)
     spacing = 14
     ypos = 50
-    0
+    draw_set_halign(fa_left)
     draw_text(10, (ypos + (spacing * 0)), (("smallname = \"" + smallname) + "\""))
     draw_text(10, (ypos + (spacing * 1)), ("emotion = " + string(emotion)))
     if (position == "name")
@@ -44,23 +44,23 @@ if (haswritten == 1)
     draw_text(10, (ypos + (spacing * 5)), (("smalltext = \"" + smalltext) + "\""))
     draw_text(10, (ypos + (spacing * 6)), (("maintext = \"" + maintext) + "\""))
 }
-if 49
+if keyboard_check_pressed(ord("1"))
 {
     global.darkzone = false
-    5
+    room_goto(room_debug_smallface)
 }
-if 50
+if keyboard_check_pressed(ord("2"))
 {
     global.darkzone = true
-    7
+    room_goto(room_debug_smallface_dark)
 }
-if 32
+if keyboard_check_pressed(vk_space)
 {
     haswritten = 1
-    62
+    gml_Script_safe_delete(62)
     if fileExists
     {
-        "smallface.txt"
+        ini_open("smallface.txt")
         smallname = ini_read_string("smallface", "smallname", "susie")
         emotion = ini_read_real("smallface", "emotion", 0)
         position = ini_read_string("smallface", "position", "name")
@@ -70,35 +70,38 @@ if 32
         numb_ypos = ini_read_real("smallface", "numb_ypos", 120)
         smalltext = ini_read_string("smallface", "smalltext", "Example Dialogue.")
         maintext = ini_read_string("smallface", "maintext", "* Example text.")
-        // WARNING: Popz'd an empty stack.
+        ini_close()
         if (position == "name")
             gml_Script_scr_smallface(0, smallname, emotion, name_xpos, name_ypos, smalltext)
         else
             gml_Script_scr_smallface(0, smallname, emotion, numb_xpos, numb_ypos, smalltext)
         global.msg[0] = maintext
-        d = 
+        d = gml_Script_d_make()
         d.side = 1
     }
     else
-        289
+        gml_Script_snd_play(289)
 }
-global.interact = 1
-if 80
+if gml_Script_d_ex()
+    global.interact = 1
+else
+    global.interact = 0
+if keyboard_check_pressed(ord("P"))
 {
-    203
-    var date = (((("_" + "_") + "_") + "_") + "_")
-    (("Smallface_Screenshot_" + date) + ".png")
+    gml_Script_snd_play(203)
+    var date = ((((((((((string(date_get_year(date_current_datetime())) + "_") + string(date_get_month(date_current_datetime()))) + "_") + string(date_get_day(date_current_datetime()))) + "_") + string(date_get_hour(date_current_datetime()))) + "_") + string(date_get_minute(date_current_datetime()))) + "_") + string(date_get_second(date_current_datetime())))
+    screen_save((("Smallface_Screenshot_" + date) + ".png"))
 }
-if 67
+if keyboard_check_pressed(ord("C"))
 {
-    0.9
-    0
+    draw_set_alpha(0.9)
+    draw_set_color(c_black)
     draw_rectangle(0, 0, 640, 480, false)
-    1
-    16777215
-    1
+    draw_set_alpha(1)
+    draw_set_color(c_white)
+    draw_set_halign(fa_center)
     if (global.darkzone == true)
-        2
+        draw_set_font(fnt_mainbig)
     draw_text((160 * (1 + global.darkzone)), (100 * (1 + global.darkzone)), "PLEASE WAIT WHILE WE LOAD THE TEXT")
     draw_text((160 * (1 + global.darkzone)), (120 * (1 + global.darkzone)), "THE ROOM WILL BE RELOADED")
     alarm[0] = 1

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 if (global.flag[20] == 0)
     sprite_index = spr_king_sulk
 if (global.flag[20] == 1)

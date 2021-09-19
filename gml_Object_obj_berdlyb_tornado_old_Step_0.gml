@@ -17,7 +17,7 @@ if (!init)
 if middespawn
 {
     if (traveldistance >= maxdistance)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (spindir != 0)
 {
@@ -27,7 +27,7 @@ if (spindir != 0)
         active = true
     }
     var _progress = (traveldistance / maxdistance)
-    var _dist = ((_progress * pi) * 150)
+    var _dist = (sin((_progress * pi)) * 150)
     var __theta = (start_angle + ((_progress * spindir) * 45))
     x = (obj_growtangle.x + lengthdir_x(_dist, __theta))
     y = (obj_growtangle.y + lengthdir_y(_dist, __theta))
@@ -36,13 +36,13 @@ if (spindir != 0)
 else if (wall_destroy == 1)
 {
     if (x < (gml_Script___view_get(0, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (x > (gml_Script___view_get(0, 0) + 760))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y < (gml_Script___view_get(1, 0) - 80))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     if (y > (gml_Script___view_get(1, 0) + 580))
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }
 if (updateimageangle == 1)
     image_angle = direction

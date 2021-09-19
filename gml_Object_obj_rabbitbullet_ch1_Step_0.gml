@@ -4,7 +4,7 @@ if (image_alpha < 1 && active == false)
 else
     active = true
 bottomy = ((obj_battlesolid_ch1.y + (obj_battlesolid_ch1.sprite_height / 2)) - 20)
-jsine = ((jumpsiner / jumpspeed) * jumpheight)
+jsine = (sin((jumpsiner / jumpspeed)) * jumpheight)
 y = ((bottomy + jsine) - jumpheight)
 image_speed = 0
 image_index = 1

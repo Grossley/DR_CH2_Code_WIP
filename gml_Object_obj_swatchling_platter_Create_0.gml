@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 if (x < obj_growtangle.x)
 {
     side = -1

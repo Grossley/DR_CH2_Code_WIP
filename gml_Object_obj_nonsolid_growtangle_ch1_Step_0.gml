@@ -28,5 +28,5 @@ if (growth == 1)
         keep = 1
     }
     if (timer <= 0 && growcon == 3)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

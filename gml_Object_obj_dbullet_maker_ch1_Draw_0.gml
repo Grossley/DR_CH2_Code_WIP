@@ -22,7 +22,7 @@ if (dont == 0)
         if (activetimer >= 5 && times < difficulty)
         {
             mybul = gml_Script_instance_create_ch1(x, y, 1520)
-            if mybul
+            if instance_exists(mybul)
             {
                 mybul.damage = damage
                 mybul.target = target
@@ -39,8 +39,7 @@ if (dont == 0)
         {
             image_alpha -= 0.2
             if (image_alpha <= 0)
-            {
-            }
+                instance_destroy()
         }
     }
 }

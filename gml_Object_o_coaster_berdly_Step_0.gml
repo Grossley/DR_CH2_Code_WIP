@@ -1,9 +1,9 @@
-if ((482 && global.mercymod[obj_berdlyb_enemy.myself] > 50) || (482 && global.monsterhp[obj_berdlyb_enemy.myself] < (global.monstermaxhp[obj_berdlyb_enemy.myself] * 0.5)))
+if ((instance_exists(obj_berdlyb_enemy) && global.mercymod[obj_berdlyb_enemy.myself] > 50) || (instance_exists(obj_berdlyb_enemy) && global.monsterhp[obj_berdlyb_enemy.myself] < (global.monstermaxhp[obj_berdlyb_enemy.myself] * 0.5)))
 {
     if (smokestart == 0)
     {
         smokestart = 1
-        141
+        gml_Script_snd_play(141)
         for (var _i = 0; _i < 8; _i++)
         {
             smoke = gml_Script_instance_create((x + 90), y, obj_berdly_smoke)
@@ -85,11 +85,11 @@ if (xshake != 0)
     {
         shaketimer = 0
         xshake *= -0.8
-        if (xshake <= 1)
+        if (abs(xshake) <= 1)
             xshake = 0
     }
 }
-if (endscene == 1 && 949)
+if (endscene == 1 && instance_exists(obj_ch2_scene11a))
 {
     var xx = (((obj_ch2_scene11a.coaster_berdly.x + 22) + obj_ch2_scene11a.coaster_berdly.sinerx) + obj_ch2_scene11a.coaster_berdly.coaster_offset_x)
     var yy = (((obj_ch2_scene11a.coaster_berdly.y + 47) + obj_ch2_scene11a.coaster_berdly.sinery) + obj_ch2_scene11a.coaster_berdly.coaster_offset_y)
@@ -194,11 +194,11 @@ if (movecon == 0)
                 nexty[(i + 6)] = -1
             }
             ycount = 0
-            pick = (6 + 6)
+            pick = floor((random(6) + 6))
             for (i = 0; i < 2; i++)
             {
                 while (nexty[pick] != -1)
-                    pick = (6 + 6)
+                    pick = floor((random(6) + 6))
                 nexty[pick] = i
             }
             for (j = 6; j < 12; j++)

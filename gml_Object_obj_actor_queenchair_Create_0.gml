@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 usprite = spr_queen_chair_swish_wine
 rsprite = spr_queen_chair_swish_wine
 dsprite = spr_queen_chair_swish_wine
@@ -17,5 +17,5 @@ fakeshadow.image_xscale = 2
 fakeshadow.visible = false
 fakeshadow.image_yscale = 0.25
 fakeshadow.image_speed = 0
-specialsprite[0] = 758
-specialsprite[1] = 760
+specialsprite[0] = 759
+specialsprite[1] = 761

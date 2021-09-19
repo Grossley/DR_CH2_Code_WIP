@@ -3,7 +3,7 @@ for (i = cardstart; i < arraysize; i++)
     var _index = ((i + arrayoffset) % arraycap)
     draw_sprite(sprite_index, image_index, points_x[_index], points_y[_index])
 }
-// WARNING: Popz'd an empty stack.
+draw_self()
 if (cardstart == 0)
 {
     if (arraysize < arraycap)
@@ -23,5 +23,5 @@ else
 {
     cardstart++
     if (cardstart >= arraysize)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

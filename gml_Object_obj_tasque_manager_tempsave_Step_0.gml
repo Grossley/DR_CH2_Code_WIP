@@ -1,10 +1,10 @@
-if ((!273) && (!355))
+if ((!gml_Script_i_ex(273)) && (!gml_Script_i_ex(355)))
 {
     if (global.flag[371] != 1)
     {
         global.flag[9] = 0
         global.flag[371] = 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_tempsave()
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

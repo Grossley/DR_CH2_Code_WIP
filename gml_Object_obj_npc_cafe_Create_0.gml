@@ -8,6 +8,6 @@ remanimspeed = 0
 image_index_fake = 0
 image_speed_fake = 0
 mode = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 fsiner = 0
-6
+event_user(6)

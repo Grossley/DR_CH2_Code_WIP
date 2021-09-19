@@ -31,6 +31,6 @@ if (init == 1)
         image_blend = c_red
     }
     if (hidesprite == 0)
-        // WARNING: Popz'd an empty stack.
+        draw_self()
     draw_sprite_ext(spr_battlebg_0, 0, (x - 3), (y + 70), 2.4, 2, 0, blend, 1)
 }

@@ -13,7 +13,7 @@ y4 = y
 depth = (obj_spamton_neo_enemy.depth + 5)
 a = 0
 selected_vine = 0
-var c = 17
+var c = irandom(17)
 var d = 0
 var e = 0
 while (d == 0)
@@ -37,7 +37,7 @@ while (d == 0)
         e++
         if (e > 18)
         {
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
             return;
         }
     }

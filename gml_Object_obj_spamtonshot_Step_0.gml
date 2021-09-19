@@ -1,16 +1,16 @@
-if 694
+if instance_exists(obj_spamton_neo_enemy)
     damage = (global.monsterat[obj_spamton_neo_enemy.myself] * 5)
 if (global.turntimer < 1)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 dontexplode = 1
-if 628
+if instance_exists(obj_heart)
 {
-    if (y + 280)
+    if (y > (gml_Script_cameray() + 280))
         depth = (obj_heart.depth + 100)
     else
         depth = (obj_heart.depth + 2)
 }
-else if 600
+else if instance_exists(obj_sneo_lilguy)
     depth = (obj_sneo_lilguy.depth - 1)
 else
     depth = (obj_heart.depth + 2)
@@ -28,7 +28,7 @@ if (con == 1)
     image_yscale -= (0.05 * f)
     if (image_xscale <= 0 && image_yscale <= 0)
     {
-        uniformangleoff = 360
+        uniformangleoff = random(360)
         uniformanglespeed = (-1 + random(2))
         shotamount = 20
         off = 0
@@ -53,6 +53,6 @@ if (con == 1)
             shot[i].image_yscale = 1.5
             shot[i].sprite_index = spr_sneo_bullet_arrow
         }
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     }
 }

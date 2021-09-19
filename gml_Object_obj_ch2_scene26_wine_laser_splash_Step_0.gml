@@ -1,2 +1,2 @@
-if ((y + 500) ? 1 : ((x + 700) ? 1 : (x - 60)))
-    // WARNING: Popz'd an empty stack.
+if (y > (gml_Script_cameray() + 500) || x > (gml_Script_camerax() + 700) || x < (gml_Script_camerax() - 60))
+    instance_destroy()

@@ -1,10 +1,31 @@
-/*
-DECOMPILER FAILED!
+var _temp_local_var_1, _temp_local_var_5;
+if (init == 0)
+{
+    var _temp_local_var_1 = tasque
+    path_start(path_tasquePaintings_tasque, 200, path_action_continue, 1)
+}
+if (gml_Script_i_ex(tasque) && gml_Script_i_ex(swatch))
+{
+    if (global.interact == 0)
+    {
+        pathProg += 0.6
+        timer++
+    }
+    if (pathProg > 100)
+        pathProg -= 100
+    pathProg2 = (pathProg + 50)
+    if (pathProg2 > 100)
+        pathProg2 -= 100
+    tasque.path_position = (pathProg / 100)
+    swatch.path_position = (pathProg2 / 100)
+    switch swatch
+    {
+        case 90:
+            var _temp_local_var_5 = 1
+    }
 
-System.Exception: Malformed switch statement: bad condition var (direction)
-   at UndertaleModLib.Decompiler.Decompiler.HLDecompileBlocks(DecompileContext context, Block& block, Dictionary`2 blocks, Dictionary`2 loops, Dictionary`2 reverseDominators, List`1 alreadyVisited, Block currentLoop, Block stopAt, Block breakTo, Boolean decompileTheLoop, UInt32 depth) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2854
-   at UndertaleModLib.Decompiler.Decompiler.HLDecompileBlocks(DecompileContext context, Block& block, Dictionary`2 blocks, Dictionary`2 loops, Dictionary`2 reverseDominators, List`1 alreadyVisited, Block currentLoop, Block stopAt, Block breakTo, Boolean decompileTheLoop, UInt32 depth) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 2971
-   at UndertaleModLib.Decompiler.Decompiler.HLDecompile(DecompileContext context, Dictionary`2 blocks, Block entryPoint, Block rootExitPoint) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3021
-   at UndertaleModLib.Decompiler.Decompiler.Decompile(UndertaleCode code, DecompileContext context) in C:\Users\User\Documents\GitHub\UndertaleModTool_Local\UndertaleModLib\Decompiler\Decompiler.cs:line 3134
-   at Submission#0.DumpCode()
-*/
+    if (direction == 180)
+        facing = 0
+    if (direction == 270 || direction == 0)
+        facing = 1
+}

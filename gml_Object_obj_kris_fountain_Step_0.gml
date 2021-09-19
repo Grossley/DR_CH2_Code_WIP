@@ -45,7 +45,7 @@ if (active == true)
     }
     if (con == 60 || con == 56)
     {
-        228
+        gml_Script_snd_play(228)
         blazetimer++
         anim = gml_Script_instance_create(((x - 40) + (blazetimer * 6)), ((y + 10) + random(20)), obj_animation)
         anim.sprite_index = spr_kris_make_fountain_flash
@@ -53,7 +53,7 @@ if (active == true)
     }
     if (con == 61)
     {
-        229
+        gml_Script_snd_play(229)
         ballcon = 1
         image_index = 14
         image_speed = 0.5
@@ -113,9 +113,9 @@ if (active == true)
         if (image_index <= 4)
             image_index += 0.25
     }
-    if ballcheck
+    if gml_Script_scr_debug()
     {
-        if 32
-            // WARNING: Popz'd an empty stack.
+        if keyboard_check(vk_space)
+            room_restart()
     }
 }

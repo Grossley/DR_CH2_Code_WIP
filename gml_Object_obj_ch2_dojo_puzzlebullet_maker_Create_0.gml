@@ -1,5 +1,5 @@
 sprite_index = spr_ch2_dojo_puzzlebullet
-image_index = sprite_index
+image_index = floor(random(sprite_get_number(sprite_index)))
 image_speed = 0
 grazed = 0
 target = 0
@@ -15,7 +15,7 @@ timesfired = 0
 timetarg = 0
 bulletspeed = 5
 image_alpha = 0
-if 628
+if instance_exists(obj_heart)
     futuredir = point_direction(x, y, (obj_heart.x + 8), (obj_heart.y + 8))
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

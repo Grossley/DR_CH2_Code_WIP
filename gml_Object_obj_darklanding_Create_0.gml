@@ -13,7 +13,7 @@ if (global.chapter == 1)
         }
         alarm[4] = 45
     }
-    else if 3
+    else if gml_Script_scr_havechar(3)
     {
         rd = gml_Script_instance_create(240, 240, obj_readable_room1)
         rd.image_xscale = 8

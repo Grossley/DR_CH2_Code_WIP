@@ -7,8 +7,8 @@ if (writedisplay == 1)
 lastval[0] = 0
 if (interactshower == 1)
 {
-    65535
-    2
+    draw_set_color(c_yellow)
+    draw_set_font(fnt_mainbig)
     gml_Script_draw_text_outline(20, 20, ("global.interact=" + string(global.interact)), 0)
-    16777215
+    draw_set_color(c_white)
 }

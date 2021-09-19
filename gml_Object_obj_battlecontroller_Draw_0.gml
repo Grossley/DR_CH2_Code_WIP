@@ -1,7 +1,7 @@
 var __drawstatus, __actname, __plainactname, mercypercent, mercywidth, __actnamestring, __actnamestringwidth, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_46, _temp_local_var_48, _temp_local_var_51;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
-if (global.chapter == 2 && 837)
+if (global.chapter == 2 && instance_exists(obj_gigaqueen_enemy))
 {
     if (gigaqueencon == 1)
     {
@@ -56,7 +56,7 @@ if (intro == 2)
 {
     if (bp > 0)
     {
-        if (((bpy - bp) / 5) > 15)
+        if (round(((bpy - bp) / 5)) > 15)
             bp -= round(((bpy - bp) / 2.5))
         else
             bp -= 30
@@ -64,22 +64,22 @@ if (intro == 2)
     else
         bp = 0
 }
-0
+draw_set_color(c_black)
 draw_rectangle((xx - 10), (481 + yy), (xx + 700), (((480 - bp) + yy) - 4), false)
-bcolor
+draw_set_color(bcolor)
 draw_rectangle((xx - 10), (((480 - bp) - 3) + yy), (xx + 700), (((480 - bp) - 2) + yy), false)
-bcolor
+draw_set_color(bcolor)
 draw_rectangle((xx - 10), (((480 - bp) + 34) + yy), (xx + 700), (((480 - bp) + 36) + yy), false)
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_charbox()
 if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13)
 {
     if (global.myfight == 0)
     {
         draw_sprite(spr_heart, 0, (xx + 55), ((yy + 385) + (global.bmenucoord[global.bmenuno][global.charturn] * 30)))
-        "mainbig"
-        namewidthb[0] = global.monstername[0]
-        namewidthb[1] = global.monstername[1]
-        namewidthb[2] = global.monstername[2]
+        gml_Script_scr_84_set_draw_font("mainbig")
+        namewidthb[0] = string_width(string_hash_to_newline(global.monstername[0]))
+        namewidthb[1] = string_width(string_hash_to_newline(global.monstername[1]))
+        namewidthb[2] = string_width(string_hash_to_newline(global.monstername[2]))
         var namewidthmax = 0
         for (i = 0; i < 3; i++)
         {
@@ -116,13 +116,13 @@ if (global.bmenuno == 2 && global.myfight == 0 && global.flag[34] == 1)
     if (spellcoord > 3)
         icy = 445
     draw_sprite(spr_heart, 0, (xx + icx), (yy + icy))
-    "mainbig"
+    gml_Script_scr_84_set_draw_font("mainbig")
     for (i = 0; i < 3; i += 1)
     {
         var currentspell = global.spell[thischar][((page * 6) + (i * 2))]
-        16777215
+        draw_set_color(c_white)
         if (global.tension < global.spellcost[thischar][((page * 6) + (i * 2))])
-            8421504
+            draw_set_color(c_gray)
         else if (currentspell == 3 || currentspell == 8)
         {
             pacify_glow = false
@@ -135,19 +135,19 @@ if (global.bmenuno == 2 && global.myfight == 0 && global.flag[34] == 1)
                 }
             }
             if (pacify_glow == true)
-                merge_color(c_aqua, c_blue, 0.3)
+                draw_set_color(merge_color(c_aqua, c_blue, 0.3))
         }
-        draw_text((xx + 30), ((yy + 375) + (i * 30)), global.spellnameb[thischar][((page * 6) + (i * 2))])
-        16777215
+        draw_text((xx + 30), ((yy + 375) + (i * 30)), string_hash_to_newline(global.spellnameb[thischar][((page * 6) + (i * 2))]))
+        draw_set_color(c_white)
         if (global.tension < global.spellcost[thischar][(((page * 6) + (i * 2)) + 1)])
-            8421504
-        draw_text((xx + 260), ((yy + 375) + (i * 30)), global.spellnameb[thischar][(((page * 6) + (i * 2)) + 1)])
+            draw_set_color(c_gray)
+        draw_text((xx + 260), ((yy + 375) + (i * 30)), string_hash_to_newline(global.spellnameb[thischar][(((page * 6) + (i * 2)) + 1)]))
     }
-    8421504
-    draw_text((xx + spell_offset), (yy + 375), global.spelldescb[thischar][((page * 6) + spellcoord)])
-    thiscost = ((global.spellcost[thischar][((page * 6) + spellcoord)] / global.maxtension) * 100)
-    4235519
-    draw_text((xx + spell_offset), (yy + 440), (thiscost + "% TP"))
+    draw_set_color(c_gray)
+    draw_text((xx + spell_offset), (yy + 375), string_hash_to_newline(global.spelldescb[thischar][((page * 6) + spellcoord)]))
+    thiscost = round(((global.spellcost[thischar][((page * 6) + spellcoord)] / global.maxtension) * 100))
+    draw_set_color(c_orange)
+    draw_text((xx + spell_offset), (yy + 440), string_hash_to_newline((string(thiscost) + "% TP")))
 }
 if (global.bmenuno == 2 && global.myfight == 0 && global.flag[34] == 0)
 {
@@ -168,7 +168,7 @@ if (global.bmenuno == 2 && global.myfight == 0 && global.flag[34] == 0)
     if (spellcoord > 3)
         icy = 445
     draw_sprite(spr_heart, 0, (xx + icx), (yy + icy))
-    "mainbig"
+    gml_Script_scr_84_set_draw_font("mainbig")
     for (i = 0; i < 3; i += 1)
     {
         var __n = 0
@@ -198,12 +198,12 @@ if (global.bmenuno == 2 && global.myfight == 0 && global.flag[34] == 0)
             __n++
         }
     }
-    8421504
-    draw_text((xx + spell_offset), (yy + 375), global.battlespelldesc[thischar][((page * 6) + spellcoord)])
-    thiscost = ((global.battlespellcost[thischar][((page * 6) + spellcoord)] / global.maxtension) * 100)
-    4235519
+    draw_set_color(c_gray)
+    draw_text((xx + spell_offset), (yy + 375), string_hash_to_newline(global.battlespelldesc[thischar][((page * 6) + spellcoord)]))
+    thiscost = round(((global.battlespellcost[thischar][((page * 6) + spellcoord)] / global.maxtension) * 100))
+    draw_set_color(c_orange)
     if (thiscost > 0)
-        draw_text((xx + spell_offset), (yy + 440), (thiscost + "% TP"))
+        draw_text((xx + spell_offset), (yy + 440), string_hash_to_newline((string(thiscost) + "% TP")))
 }
 if (global.bmenuno == 4 && global.myfight == 0)
 {
@@ -223,16 +223,16 @@ if (global.bmenuno == 4 && global.myfight == 0)
     if (itemcoord > 3)
         icy = 445
     draw_sprite(spr_heart, 0, (xx + icx), (yy + icy))
-    "mainbig"
+    gml_Script_scr_84_set_draw_font("mainbig")
     for (i = 0; i < 3; i += 1)
     {
-        var s1 = tempitemnameb[((page * 6) + (i * 2))][global.charturn]
-        var s2 = tempitemnameb[(((page * 6) + (i * 2)) + 1)][global.charturn]
-        var s1_width = s1
-        var s2_width = s2
+        var s1 = string_hash_to_newline(tempitemnameb[((page * 6) + (i * 2))][global.charturn])
+        var s2 = string_hash_to_newline(tempitemnameb[(((page * 6) + (i * 2)) + 1)][global.charturn])
+        var s1_width = string_width(s1)
+        var s2_width = string_width(s2)
         var s1_xscale = min(1, (200 / s1_width))
         var s2_xscale = min(1, (200 / s2_width))
-        16777215
+        draw_set_color(c_white)
         draw_text_transformed((xx + 30), ((yy + 375) + (i * 30)), s1, s1_xscale, 1, 0)
         draw_text_transformed((xx + 260), ((yy + 375) + (i * 30)), s2, s2_xscale, 1, 0)
     }
@@ -240,8 +240,8 @@ if (global.bmenuno == 4 && global.myfight == 0)
         draw_sprite(spr_morearrow, 0, (xx + 470), ((yy + 445) + (sin((s_siner / 10)) * 2)))
     if (page == 1)
         draw_sprite_ext(spr_morearrow, 0, (xx + 470), ((yy + 395) - (sin((s_siner / 10)) * 2)), 1, -1, 0, c_white, 1)
-    8421504
-    draw_text((xx + spell_offset), (yy + 375), tempitemdescb[((page * 6) + itemcoord)][global.charturn])
+    draw_set_color(c_gray)
+    draw_text((xx + spell_offset), (yy + 375), string_hash_to_newline(tempitemdescb[((page * 6) + itemcoord)][global.charturn]))
 }
 if (global.bmenuno == 9 && global.myfight == 0)
 {
@@ -292,7 +292,7 @@ if (global.bmenuno == 9 && global.myfight == 0)
     if (actcoord > 3)
         icy = 445
     draw_sprite(spr_heart, 0, (xx + icx), (yy + icy))
-    "mainbig"
+    gml_Script_scr_84_set_draw_font("mainbig")
     for (i = 0; i < 6; i += 1)
     {
         cant = false
@@ -348,9 +348,9 @@ if (global.bmenuno == 9 && global.myfight == 0)
             cant = true
         if (chartime == 4)
             charoffset *= 2
-        16777215
+        draw_set_color(c_white)
         if (cant == true)
-            8421504
+            draw_set_color(c_gray)
         if (chartime == 2)
             draw_sprite_ext(spr_headsusie, 0, ((xx + 30) + xoffset), ((yy + 375) + yoffset), 1, 1, 0, susblend, 1)
         if (chartime == 3)
@@ -362,7 +362,7 @@ if (global.bmenuno == 9 && global.myfight == 0)
         }
         if (chartime == 5)
             draw_sprite_ext(spr_headnoelle, 0, ((xx + 30) + xoffset), ((yy + 375) + yoffset), 1, 1, 0, noeblend, 1)
-        if (global.chapter == 2 && 694 && obj_spamton_neo_enemy.savemeactcon > 0)
+        if (global.chapter == 2 && instance_exists(obj_spamton_neo_enemy) && obj_spamton_neo_enemy.savemeactcon > 0)
         {
             if (obj_spamton_neo_enemy.savemeactcon == 1)
                 draw_sprite_ext(spr_headralsei, 0, (xx + 30), (yy + 380), 1, 1, 0, noeblend, 1)
@@ -375,8 +375,8 @@ if (global.bmenuno == 9 && global.myfight == 0)
             if (obj_spamton_neo_enemy.savemeactcon > 4)
                 draw_sprite_ext(spr_headnoelle, 0, (xx + 30), (yy + 380), 1, 1, 0, noeblend, 1)
         }
-        s1 = actname[i]
-        s1_width = max(1, s1)
+        s1 = string_hash_to_newline(actname[i])
+        s1_width = max(1, string_width(s1))
         s1_xscale = ((206 - charoffset) / s1_width)
         if (s1_xscale > 1)
             s1_xscale = 1
@@ -384,13 +384,13 @@ if (global.bmenuno == 9 && global.myfight == 0)
             s1_xscale = 0.5
         draw_text_transformed((((xx + 30) + charoffset) + xoffset), ((yy + 375) + yoffset), string_hash_to_newline(actname[i]), s1_xscale, 1, 0)
     }
-    8421504
-    draw_text((xx + 500), (yy + 375), actdesc[actcoord])
+    draw_set_color(c_gray)
+    draw_text((xx + 500), (yy + 375), string_hash_to_newline(actdesc[actcoord]))
     if (global.tensionselect > 0)
     {
-        thiscost = ((acttpcost[actcoord] / global.maxtension) * 100)
-        4235519
-        draw_text((xx + 500), (yy + 440), (thiscost + "% TP"))
+        thiscost = round(((acttpcost[actcoord] / global.maxtension) * 100))
+        draw_set_color(c_orange)
+        draw_text((xx + 500), (yy + 440), string_hash_to_newline((string(thiscost) + "% TP")))
     }
     var _temp_local_var_46 = global.monsterinstance[global.bmenucoord[11][global.charturn]]
     if (flash == false)
@@ -423,7 +423,7 @@ if keyboard_check(ord("A"))
     {
         if (global.bmenuno == 11 || global.bmenuno == 13 || global.bmenuno == 2)
         {
-            var remfont = global.monsterinstance[global.bmenucoord[11][global.charturn]]
+            var remfont = draw_get_font()
             for (i = 0; i < 3; i++)
             {
                 var __y = 0
@@ -437,24 +437,24 @@ if keyboard_check(ord("A"))
                     __offsety = sactionboxy
                 }
             }
-            remfont
+            draw_set_font(remfont)
         }
     }
 }
-if (global.myfight == 0 && global.chapter == 2 && 571 && (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13))
+if (global.myfight == 0 && global.chapter == 2 && instance_exists(obj_queen_enemy) && (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13))
 {
-    if 573
+    if gml_Script_i_ex(573)
     {
-        8421504
+        draw_set_color(c_gray)
         draw_text_ext_transformed((gml_Script___view_get(0, 0) + 80), (gml_Script___view_get(1, 0) + 407), gml_Script_stringsetloc("Berdly", "obj_battlecontroller_slash_Draw_0_gml_653_0"), 9999, 9999, 1, 1, 0)
-        16777215
+        draw_set_color(c_white)
         draw_healthbar((gml_Script___view_get(0, 0) + 520), (gml_Script___view_get(1, 0) + 418), (gml_Script___view_get(0, 0) + 600), (gml_Script___view_get(1, 0) + 433), obj_queen_enemy.bardlymercy, c_gray, c_yellow, c_yellow, 0, 1, 0)
     }
     else
     {
-        8421504
+        draw_set_color(c_gray)
         draw_text_ext_transformed((gml_Script___view_get(0, 0) + 80), (gml_Script___view_get(1, 0) + 407), gml_Script_stringsetloc("Shield", "obj_queen_enemy_slash_Draw_0_gml_67_0"), 9999, 9999, 1, 1, 0)
-        16777215
+        draw_set_color(c_white)
         draw_healthbar((gml_Script___view_get(0, 0) + 520), (gml_Script___view_get(1, 0) + 418), (gml_Script___view_get(0, 0) + 600), (gml_Script___view_get(1, 0) + 433), ((obj_queen_enemy.shieldacthp / obj_queen_enemy.shieldactmaxhp) * 10), c_gray, c_yellow, c_yellow, 0, 1, 0)
     }
     var xx2 = 0

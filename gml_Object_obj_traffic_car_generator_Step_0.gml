@@ -14,10 +14,11 @@ if (prepopulate == 1)
         car.alwayswalking = alwayswalking
         car.speedadjust = speedadjust
         var _temp_local_var_1 = car
+        gml_Script_scr_depth()
     }
     prepopulate = 0
 }
-if (active == true && (global.interact == 0 || 895))
+if (active == true && (global.interact == 0 || gml_Script_i_ex(895)))
 {
     if (walking == 0)
         timer++
@@ -48,6 +49,7 @@ if (timer >= gen_rate)
         car.alwayswalking = alwayswalking
         car.speedadjust = speedadjust
         var _temp_local_var_3 = car
+        gml_Script_scr_depth()
     }
     timer = 0
 }

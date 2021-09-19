@@ -1,10 +1,10 @@
 if (state == 3)
 {
-    0.5
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_enemyhurt_tired_after_damage(0.5)
+    gml_Script_scr_enemy_drawhurt_generic()
 }
 var imageSpeed = animspeed
-imageSpeed
+gml_Script_scr_enemy_drawidle_generic(imageSpeed)
 if cloning
 {
     cloneTimer = clamp((cloneTimer + 0.25), 0, 1)

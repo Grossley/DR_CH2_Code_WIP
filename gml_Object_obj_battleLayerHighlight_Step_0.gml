@@ -1,4 +1,4 @@
-if 80
+if gml_Script_i_ex(80)
 {
     if (obj_mainchara.battlemode == 1)
         myalpha = lerp(myalpha, 1, 0.25)

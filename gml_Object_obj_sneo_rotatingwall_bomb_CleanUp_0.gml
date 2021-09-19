@@ -1,2 +1,2 @@
 if (timer > 0)
-    bomsfallsfx
+    gml_Script_snd_stop(bomsfallsfx)

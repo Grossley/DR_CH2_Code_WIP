@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth()
 direction = 270
 image_xscale = 2
 image_yscale = 2
@@ -10,7 +10,7 @@ deathtimer = 0
 target = 0
 hastarget = 0
 jumppuzzle = 0
-if 1180
+if instance_exists(obj_masterPlatformController)
 {
     jumppuzzle = 1
     hastarget = 1

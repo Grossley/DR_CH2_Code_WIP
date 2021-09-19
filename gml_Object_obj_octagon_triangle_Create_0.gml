@@ -1,4 +1,4 @@
 f = 2
-image_angle = 359
-direction = 359
+image_angle = irandom(359)
+direction = irandom(359)
 speed = (16 / f)

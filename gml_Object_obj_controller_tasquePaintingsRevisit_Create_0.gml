@@ -17,6 +17,6 @@ if (global.flag[542] != 0)
     eraser = true
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 pathProg = 0
 timer = 0

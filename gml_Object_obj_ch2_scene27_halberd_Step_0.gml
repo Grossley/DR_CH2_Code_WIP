@@ -35,11 +35,11 @@ if (con == 4)
     timer++
     if (timer >= 15)
     {
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_oflash()
         timer = 0
     }
-    var goalx = lengthdir_x((sprite_width * 2), 360)
-    var goaly = lengthdir_y(sprite_height, 360)
+    var goalx = lengthdir_x((sprite_width * 2), random(360))
+    var goaly = lengthdir_y(sprite_height, random(360))
     var thisid = id
     ball = gml_Script_instance_create((x + goalx), (y + goaly), obj_afterimage_grow)
     ball.sprite_index = spr_cutscene_27_berdly_halberd_orb
@@ -57,8 +57,7 @@ if (con == 4)
 if (con == 5)
 {
     with (obj_lerpvar)
-    {
-    }
+        instance_destroy()
     with (obj_afterimage)
     {
         gravity = 1

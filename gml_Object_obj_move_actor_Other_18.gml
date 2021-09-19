@@ -3,11 +3,11 @@ if (global.chapter == 2)
 {
     if (global.plot < 6)
         dothis = 0
-    if 927
+    if instance_exists(obj_ch2_scene4)
         dothis = 0
-    if 928
+    if instance_exists(obj_ch2_scene6)
         dothis = 0
-    if 929
+    if instance_exists(obj_ch2_scene7)
         dothis = 0
 }
 if (dothis == 1)

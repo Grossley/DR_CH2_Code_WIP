@@ -5,13 +5,13 @@ if (constant == 1)
     timer++
     if (timer >= rate)
     {
-        if (target && totaltimer < max_time)
+        if (gml_Script_i_ex(target) && totaltimer < max_time)
         {
-            0
+            event_user(0)
             timer = 0
         }
         else
-            // WARNING: Popz'd an empty stack.
+            instance_destroy()
     }
     totaltimer++
 }

@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 coughcon = -1
 laughcon = -1
 talked = 0

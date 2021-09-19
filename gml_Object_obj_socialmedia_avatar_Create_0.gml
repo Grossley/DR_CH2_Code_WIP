@@ -9,6 +9,6 @@ isqueen = 0
 queencon = 0
 queentimer = 0
 index_timer = 0
-chosen_face = 7
-if (100 < 3)
+chosen_face = irandom(7)
+if (irandom(100) < 3)
     chosen_face = 8

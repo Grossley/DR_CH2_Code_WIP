@@ -3,7 +3,7 @@ if (state == 3)
 {
     sleepcounter = 99
     sleeping = false
-    global.monstercomment[myself] = "obj_susieenemy_slash_Draw_0_gml_5_0"
+    global.monstercomment[myself] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Draw_0_gml_5_0")
     global.monsterstatus[myself] = false
     idlesprite = spr_susie_enemy_ch1
     hurttimer -= 1
@@ -13,7 +13,7 @@ if (state == 3)
     {
         if (global.monster[myself] == false)
         {
-            383
+            gml_Script_snd_play_ch1(383)
             with (obj_susieandlancer_event_ch1)
             {
                 var _temp_local_var_1 = s
@@ -46,7 +46,7 @@ if (state == 0)
     {
         fsiner += 1
         gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
-        draw_sprite_ext(thissprite, (siner / 6), x, y, 2, 2, 0, image_blend, (((-(fsiner / 5)) * 0.4) + 0.6))
+        draw_sprite_ext(thissprite, (siner / 6), x, y, 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
     }
 }

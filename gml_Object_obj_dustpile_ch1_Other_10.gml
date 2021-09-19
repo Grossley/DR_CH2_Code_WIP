@@ -2,7 +2,7 @@ if (bust == 0)
 {
     global.interact = 1
     gml_Script_instance_create_ch1(0, 0, 1464)
-    456
+    gml_Script_snd_play_ch1(456)
     alarm[3] = 6
     bust = 1
     for (i = 0; i < 12; i += 1)

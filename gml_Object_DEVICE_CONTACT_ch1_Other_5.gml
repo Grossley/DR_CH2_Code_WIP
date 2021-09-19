@@ -1,2 +1,2 @@
-// WARNING: Popz'd an empty stack.
-// WARNING: Popz'd an empty stack.
+gml_Script_snd_stop_all_ch1()
+gml_Script_snd_free_all_ch1()

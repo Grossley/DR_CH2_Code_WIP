@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 startcolor = 255
 colorlerp = 0
 init = 0

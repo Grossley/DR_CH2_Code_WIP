@@ -11,7 +11,7 @@ if (myself == 1)
 }
 if (state == 3)
 {
-    0.5
+    gml_Script_scr_enemyhurt_tired_after_damage(0.5)
     fatal = 1
     hurttimer -= 1
     if (hurttimer < 0)
@@ -22,7 +22,7 @@ if (state == 3)
         {
             x = (xstart - 16)
             y = (ystart - 12)
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_defeatrun()
         }
         hurtshake += 1
         if (hurtshake > 1)
@@ -38,7 +38,7 @@ if (state == 3)
     }
 }
 if (custom_draw_example == 0)
-    0
+    gml_Script_scr_enemy_drawidle_generic(0)
 else if (state == 0)
 {
     if (flash == true)
@@ -48,8 +48,8 @@ else if (state == 0)
         gml_Script_draw_monster_body_part(sparedsprite, siner, x, y)
     else
     {
-        gml_Script_draw_monster_body_part(1558, 1, (x + (sin(siner) * 2)), y)
-        gml_Script_draw_monster_body_part(1558, 0, (x - (sin(siner) * 2)), (y + cos(siner)))
+        gml_Script_draw_monster_body_part(1559, 1, (x + (sin(siner) * 2)), y)
+        gml_Script_draw_monster_body_part(1559, 0, (x - (sin(siner) * 2)), (y + cos(siner)))
     }
 }
 if (becomeflash == false)

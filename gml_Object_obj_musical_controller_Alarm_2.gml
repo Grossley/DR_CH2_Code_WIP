@@ -1,5 +1,5 @@
 with (obj_writer)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 if (obj_sweet_enemy.hurtstate2 == 1)
 {
     if (obj_kk_enemy.hurtstate2 == 1 || obj_hatguy_enemy.hurtstate2 == 1)
@@ -21,5 +21,5 @@ if (obj_hatguy_enemy.hurtstate2 == 1)
     gml_Script_msgsetloc(0, "* (Cap'n snapped out of the dance!)/%", "obj_musical_controller_slash_Alarm_2_gml_30_0")
     obj_sweet_enemy.stoppeddancingcounter++
 }
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_battletext_default()
 d = 1

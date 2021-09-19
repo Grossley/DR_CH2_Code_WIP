@@ -1,7 +1,7 @@
-var _temp_local_var_1, _temp_local_var_8;
+var _temp_local_var_2;
 if (myinteract == 3)
 {
-    if (!mydialoguer)
+    if (!gml_Script_i_ex(mydialoguer))
     {
         global.interact = 0
         myinteract = 0
@@ -9,27 +9,25 @@ if (myinteract == 3)
             onebuffer = 5
     }
 }
-if (myinteract == 1)
+if (myinteract == 1 && (!gml_Script_d_ex()))
 {
+    con = 1
+    myinteract = 0
+    timer = 99
+    bucket = obj_kris_headobj
 }
-else
-    var _temp_local_var_8 = 0
-con = 1
-myinteract = 0
-timer = 99
-bucket = obj_kris_headobj
 if (con == 1)
 {
     timer++
     if (timer >= 5)
     {
-        176
-        mouse = gml_Script_scr_dark_marker(bucket.x, bucket.y, 2689)
+        gml_Script_snd_play(176)
+        mouse = gml_Script_scr_dark_marker(bucket.x, bucket.y, 2690)
         mouse.depth = (bucket.depth + 10)
         var _x = (x + 20)
         var _y = (y + 20)
         mouse.image_alpha = 2
-        var _temp_local_var_1 = mouse
+        var _temp_local_var_2 = mouse
         gml_Script_scr_lerpvar("x", x, _x, 15, 2, "out")
     }
 }

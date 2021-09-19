@@ -9,7 +9,7 @@ drawx = 0
 animsiner = 0
 drawx_prev = 0
 nocars = 0
-max_cars = (((room_width * 2) / 160) + 1)
+max_cars = (floor(((room_width * 2) / 160)) + 1)
 for (var i = 0; i < max_cars; i++)
 {
     for (var j = 0; j < 2; j++)

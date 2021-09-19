@@ -1,6 +1,6 @@
 siner++
 talking = 0
-if (59 && global.fc == 21)
+if (gml_Script_i_ex(59) && global.fc == 21)
     talking = 1
 if (turnon == 1 && con == 0)
 {
@@ -80,12 +80,12 @@ if (con != 3)
 }
 if (con == 3)
 {
-    sineheight = (35 + 36)
-    0
+    sineheight = (sin(35) + 36)
+    gml_Script_draw_set_blend_mode(0)
     draw_sprite_ext(spr_queenmonitor_bg, 0, x, y, xscale, yscale, 0, c_white, 1)
-    1
-    draw_sprite_ext(spr_queenmonitor_bg, 0, x, y, xscale, yscale, 0, c_white, (((siner / 12) * 0.05) + 0.02))
-    0
+    gml_Script_draw_set_blend_mode(1)
+    draw_sprite_ext(spr_queenmonitor_bg, 0, x, y, xscale, yscale, 0, c_white, ((sin((siner / 12)) * 0.05) + 0.02))
+    gml_Script_draw_set_blend_mode(0)
     draw_sprite_ext(spr_queenmonitor, talkframe, x, y, xscale, yscale, 0, c_white, 1)
 }
 draw_sprite_ext(spr_queenmonitor_border, 0, x, y, 2, 2, 0, c_white, 1)

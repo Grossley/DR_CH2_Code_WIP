@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+event_inherited()
 direction = 270
 image_angle = direction
 timer = choose(0, pi)

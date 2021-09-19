@@ -2,7 +2,7 @@ if (bustertimer >= 100 && bustertimer < 159)
 {
     with (obj_spamton_neo_enemy)
     {
-        if 628
+        if instance_exists(obj_heart)
         {
             armangle = (point_direction((x + partxoff[1]), (y + partyoff[1]), (obj_heart.x + 8), (obj_heart.y + 8)) + 90)
             aimmode = 1

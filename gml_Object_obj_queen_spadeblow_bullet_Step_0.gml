@@ -12,9 +12,9 @@ if (type == 2)
     y = (rotator_target.y + lengthdir_y(length, obj_queen_spadeblow.place2))
     image_angle = obj_queen_spadeblow.place2
 }
-if (y + 300)
+if (y >= (gml_Script_cameray() + 300))
 {
     image_alpha -= 0.1
     if (image_alpha <= 0)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

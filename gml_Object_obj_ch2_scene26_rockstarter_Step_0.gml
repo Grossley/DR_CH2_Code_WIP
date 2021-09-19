@@ -5,15 +5,15 @@ if (init == 0)
         sourcelayer = "BG_Rocks_Small"
         image_blend = make_color_rgb(163, 183, 255)
     }
-    depth = sourcelayer
+    depth = layer_get_depth(sourcelayer)
 }
 if smallrocks
     y -= 2
 else
     y -= 5
-if y
+if (y <= gml_Script_cameray())
 {
     layer_set_visible(sourcelayer, 1)
     layer_y(sourcelayer, y)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

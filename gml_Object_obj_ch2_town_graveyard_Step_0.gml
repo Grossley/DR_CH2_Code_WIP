@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (global.flag[337] == 2)
 {
     if (con == -1 && obj_mainchara.x > 465)
@@ -10,19 +9,17 @@ if (global.flag[337] == 2)
     {
         con = 3
         alarm[0] = 30
-        "no_name"
+        gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (You heard Alvin mumbling to himself as you walked away.)/", "obj_ch2_town_graveyard_slash_Step_0_gml_18_0")
         gml_Script_msgnextloc("* ..^1. were you proud of me^1, father...?/", "obj_ch2_town_graveyard_slash_Step_0_gml_19_0")
         gml_Script_msgnextloc("* And..^1. is it right for this hammer to.../%", "obj_ch2_town_graveyard_slash_Step_0_gml_20_0")
-        // WARNING: Popz'd an empty stack.
+        gml_Script_d_make()
     }
-    if (con == 4)
+    if (con == 4 && (!gml_Script_d_ex()))
     {
+        con = 0
+        global.interact = 0
+        global.facing = 0
+        global.flag[337] = 3
     }
-    else
-        var _temp_local_var_2 = 0
-    con = 0
-    global.interact = 0
-    global.facing = 0
-    global.flag[337] = 3
 }

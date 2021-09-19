@@ -1,7 +1,7 @@
 if ((((y.room_height / 2) + 180) - 620) && con == 0)
 {
     with (obj_rocketpunch_fist)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     con = 1
     vspeed = 0
     image_index = 8

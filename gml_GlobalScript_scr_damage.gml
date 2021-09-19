@@ -1,19 +1,19 @@
-var _temp_local_var_3, _temp_local_var_4;
+var _temp_local_var_1, _temp_local_var_3, _temp_local_var_4;
 if (global.inv < 0)
 {
     var __element = 0
     if variable_instance_exists(id, "element")
     {
-        if element
+        if is_real(element)
             __element = element
     }
     if (target < 3)
     {
         if (global.hp[global.char[target]] <= 0)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_randomtarget_old()
             target = mytarget
-            var _temp_local_var_3 = global.charinstance[target]
+            var _temp_local_var_1 = global.charinstance[target]
             image_blend = c_white
             darkify = false
         }
@@ -22,23 +22,24 @@ if (global.inv < 0)
     if (target == 4)
     {
         __remtarget = 4
+        gml_Script_scr_randomtarget_old()
         target = mytarget
-        if ((global.hp[global.char[target]] / global.maxhp[global.char[target]]) / 2)
+        if ((global.hp[global.char[target]] / global.maxhp[global.char[target]]) < (gml_Script_scr_party_hpaverage() / 2))
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_randomtarget_old()
             target = mytarget
         }
-        if ((global.hp[global.char[target]] / global.maxhp[global.char[target]]) / 2)
+        if ((global.hp[global.char[target]] / global.maxhp[global.char[target]]) < (gml_Script_scr_party_hpaverage() / 2))
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_randomtarget_old()
             target = mytarget
         }
         if (target == 0 && (global.hp[global.char[target]] / global.maxhp[global.char[target]]) < 0.35)
         {
-            // WARNING: Popz'd an empty stack.
+            gml_Script_scr_randomtarget_old()
             target = mytarget
         }
-        _temp_local_var_3 = global.charinstance[target]
+        var _temp_local_var_3 = global.charinstance[target]
         image_blend = c_white
         darkify = false
     }

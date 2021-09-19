@@ -20,7 +20,7 @@ if (global.chapter == 1)
 }
 if (global.chapter == 2)
     global.msc = 1105
-global.msc
+gml_Script_scr_text(global.msc)
 myinteract = 3
 mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)
 mydialoguer.side = room == room_dw_castle_dojo

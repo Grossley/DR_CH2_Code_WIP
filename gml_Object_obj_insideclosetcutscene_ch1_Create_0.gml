@@ -4,7 +4,7 @@ papei = 0
 papefall = 0
 image_speed = 0
 papeshake = 0
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_depth_ch1()
 global.facing = 1
 if (global.plot < 6)
 {
@@ -13,7 +13,7 @@ if (global.plot < 6)
     global.interact = 1
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 dex = 0
 grav = 1
 bgdraw = 0

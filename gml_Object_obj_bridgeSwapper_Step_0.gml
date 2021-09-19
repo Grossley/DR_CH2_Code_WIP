@@ -9,7 +9,7 @@ if (con == 1)
         {
             if (place_meeting(x, y, obj_solidblock) || place_meeting(x, y, obj_bridgeSwappable))
             {
-                "kris isn't safe"
+                gml_Script_scr_debug_print("kris isn't safe")
                 other.notallcharactersaresafe++
             }
         }
@@ -17,7 +17,7 @@ if (con == 1)
         {
             if (place_meeting(x, y, obj_solidblock) || place_meeting(x, y, obj_bridgeSwappable))
             {
-                "ralsei isn't safe"
+                gml_Script_scr_debug_print("ralsei isn't safe")
                 other.notallcharactersaresafe++
             }
         }
@@ -31,9 +31,9 @@ if (con == 1)
 }
 if (con == 2)
 {
-    "con=2"
-    cutscene_master = 
-    // WARNING: Popz'd an empty stack.
+    gml_Script_scr_debug_print("con=2")
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
     con++
 }
 if (con == 3)
@@ -94,11 +94,12 @@ if (con == 98)
 {
     con = 99
     var _temp_local_var_4 = panpoint
+    instance_destroy()
 }
 if (con == 99)
 {
     alarm[0] = 1
-    59
+    gml_Script_snd_play(59)
     gml_Script_instance_create(x, y, obj_shakeobj)
     global.interact = 0
     con = 0

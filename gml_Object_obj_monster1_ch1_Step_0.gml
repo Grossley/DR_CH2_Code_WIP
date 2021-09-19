@@ -17,22 +17,22 @@ if (global.monster[myself] == true)
         global.targeted[mytarget] = true
         gml_Script_instance_create_ch1(0, 0, 1522)
         global.typer = 7
-        global.msg[0] = "obj_monster1_slash_Step_0_gml_25_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_25_0")
         if (global.mercymod[myself] >= global.mercymax[myself])
-            global.msg[0] = "obj_monster1_slash_Step_0_gml_26_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_26_0")
         mywriter = gml_Script_instance_create_ch1((x - 60), (y - 30), 1327)
         talked = 1
         talktimer = 0
     }
     if (talked == 1 && global.mnfight == 1)
     {
-        if (talktimer > 15)
+        if (gml_Script_button1_p_ch1() && talktimer > 15)
             talktimer = talkmax
         talktimer += 1
         if (talktimer >= talkmax)
         {
             with (obj_writer_ch1)
-                // WARNING: Popz'd an empty stack.
+                instance_destroy()
             global.mnfight = 2
         }
     }
@@ -44,7 +44,7 @@ if (global.myfight == 3)
     if (acting == 1 && actcon == 0)
     {
         actcon = 1
-        global.msg[0] = "obj_monster1_slash_Step_0_gml_75_0"
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_75_0")
         global.typer = global.battletyper
         battlewriter = gml_Script_instance_create_ch1((xx + 30), (yy + 376), 1327)
         if (global.fc != 0)
@@ -52,13 +52,13 @@ if (global.myfight == 3)
         if (acting == 1)
             global.mercymod[myself] += 120
         if (global.mercymod[myself] >= global.mercymax[myself])
-            global.msg[0] = "obj_monster1_slash_Step_0_gml_82_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_82_0")
     }
     if (acting == 2)
     {
         if (acttimer == 0)
         {
-            global.msg[0] = "obj_monster1_slash_Step_0_gml_91_0"
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_91_0")
             global.typer = global.battletyper
             battlewriter = gml_Script_instance_create_ch1((xx + 130), (yy + 376), 1327)
             if (global.fc != 0)

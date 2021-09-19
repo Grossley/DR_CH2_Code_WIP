@@ -1,6 +1,6 @@
 if (hp < 1)
-    // WARNING: Popz'd an empty stack.
-if 628
+    instance_destroy()
+if instance_exists(obj_heart)
 {
     if (init == 0)
     {
@@ -18,9 +18,9 @@ if (axe_timer > 10 && visible == true)
     axe_timer = 0
     gml_Script_instance_create(x, y, obj_sneo_tiny_susie_axe)
 }
-if (!628)
+if (!instance_exists(obj_heart))
     visible = false
-if 628
+if instance_exists(obj_heart)
 {
     if (alarm[0] == 9)
         visible = false

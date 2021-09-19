@@ -1,5 +1,5 @@
 havenoelle = 0
-if 274
+if instance_exists(obj_caterpillarchara)
 {
     with (obj_caterpillarchara)
     {
@@ -32,4 +32,4 @@ if makeviro
     viro.encounterflag = 531
 }
 else
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

@@ -8,7 +8,7 @@ for (i = 0; i < 10; i++)
 }
 for (i = 0; i < 4; i++)
 {
-    var alphaadd = (((siner / 4) + i) * 0.1)
+    var alphaadd = (sin(((siner / 4) + i)) * 0.1)
     if (global.flag[8] == 1)
         alphaadd = 0
     draw_sprite_ext(spr_beatbullet_smol, 0, (x + 60), (y - (i * 30)), 2, 2, 90, c_white, (0.9 + alphaadd))

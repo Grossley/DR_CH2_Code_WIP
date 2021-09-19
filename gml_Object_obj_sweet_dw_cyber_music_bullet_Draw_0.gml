@@ -1,9 +1,9 @@
 image_speed = 0.25
-if 80
+if instance_exists(obj_mainchara)
 {
     if (obj_mainchara.x >= 200 && move == 0)
     {
-        220
+        gml_Script_snd_play(220)
         gml_Script_snd_play_pitch(220, 1.6)
         global.flag[428] = 1
         move = 1
@@ -25,5 +25,5 @@ if (move == 1)
     hspeed *= 1.1
     yy -= 2
 }
-if ((x + 640) + (sprite_width * 2))
-    // WARNING: Popz'd an empty stack.
+if (x > ((gml_Script_camerax() + 640) + (sprite_width * 2)))
+    instance_destroy()

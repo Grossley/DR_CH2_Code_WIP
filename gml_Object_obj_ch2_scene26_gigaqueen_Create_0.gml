@@ -2,8 +2,8 @@ damaged = global.plot >= 170
 damagedfx = damaged
 head_sprite = (damaged ? 348 : 261)
 head_index = 0
-head_x_pos = (damaged ? ((view_wport[0] / 2) - sprite_get_width(spr_cutscene_26_queen_giga_head)) : -1)
-head_y_pos = (damaged ? 15 : -1)
+head_x_pos = (damaged ? ((gml_Script_camerax() + (view_wport[0] / 2)) - sprite_get_width(spr_cutscene_26_queen_giga_head)) : -1)
+head_y_pos = (damaged ? (gml_Script_cameray() - 15) : -1)
 head_shake_x = 0
 head_shake_y = 0
 smoketimer = 0
@@ -15,8 +15,8 @@ rem_head_y_pos = head_y_pos
 static_happened = 0
 if (room == room_dw_mansion_top)
 {
-    if 2
-        head_y_pos = (view_hport[0] + 100)
+    if (gml_Script_scr_sideb_get_phase() < 2)
+        head_y_pos = ((gml_Script_cameray() + view_hport[0]) + 100)
     else
         head_y_pos = -1
 }

@@ -72,7 +72,7 @@ if (object_index == obj_herokris_ch1)
     defendframes = 5
     spellframes = 10
     attackspeed = 0.5
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     mywidth = 68
     myheight = 74
 }
@@ -105,7 +105,7 @@ if (object_index == obj_herosusie_ch1)
     spellsprite = spr_susieb_spell_ch1
     defeatsprite = spr_susieb_defeat_ch1
     victorysprite = spr_susieb_victory_ch1
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     mywidth = 70
     myheight = 82
 }
@@ -131,7 +131,7 @@ if (object_index == obj_heroralsei_ch1)
     victorysprite = spr_ralseib_victory_ch1
     actreadysprite = spr_ralseib_actready_ch1
     actsprite = spr_ralseib_act_ch1
-    victoryframes = victorysprite
+    victoryframes = sprite_get_number(victorysprite)
     mywidth = 52
     myheight = 86
 }

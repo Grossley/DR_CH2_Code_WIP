@@ -20,9 +20,9 @@ else if (timer > 0)
 }
 if (fallspeed > 0 && y >= ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - 30))
 {
-    141
+    gml_Script_snd_play(141)
     d = gml_Script_instance_create(x, y, obj_animation_dx)
     d.sprite_index = spr_thrash_missile_explosion
     d.depth = (depth - 5)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

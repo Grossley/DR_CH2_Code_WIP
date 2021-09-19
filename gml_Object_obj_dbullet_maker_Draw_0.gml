@@ -22,7 +22,7 @@ if (dont == 0)
         if (activetimer >= 5 && times < difficulty)
         {
             mybul = gml_Script_instance_create(x, y, obj_regularbullet)
-            if mybul
+            if gml_Script_i_ex(mybul)
             {
                 mybul.grazepoints = grazepoints
                 mybul.damage = damage
@@ -40,8 +40,7 @@ if (dont == 0)
         {
             image_alpha -= 0.2
             if (image_alpha <= 0)
-            {
-            }
+                instance_destroy()
         }
     }
 }

@@ -6,7 +6,7 @@ if (EVENT == 0)
     EVENT = 70
 }
 var CANCELMENU = 0
-if (EVENT == 70 && 62 == 0)
+if (EVENT == 70 && instance_exists(obj_writer) == 0)
 {
     JA_XOFF = -12
     JA_YOFF = 0
@@ -16,7 +16,7 @@ if (EVENT == 70 && 62 == 0)
         JA_YOFF = 10
     }
     with (obj_writer)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
     gml_Script_msgsetloc(0, "ENTER YOUR OWN NAME.", "DEVICE_NAMER_slash_Draw_0_gml_18_0")
     W = gml_Script_instance_create((80 + JA_XOFF), (20 + JA_YOFF), obj_writer)
     var _temp_local_var_2 = W

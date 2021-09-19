@@ -1,4 +1,4 @@
-if mywriter
+if gml_Script_i_ex(mywriter)
 {
     mywriter.depth = (depth - 5)
     if (remmsgno != obj_writer.msgno)
@@ -30,7 +30,7 @@ if mywriter
             {
                 var checkstring = mywriter.mystring
                 var spacing = mywriter.hspace
-                var stringlength = checkstring
+                var stringlength = string_length(checkstring)
                 var newmaxlength = 0
                 var currentlength = 0
                 for (var ii = 1; ii < (stringlength + 1); ii += 1)
@@ -45,7 +45,7 @@ if mywriter
                     else if (mychar == "/" || mychar == "%")
                     {
                     }
-                    else if (mychar < 256 || (mychar >= 65377 && mychar <= 65439))
+                    else if (ord(mychar) < 256 || (ord(mychar) >= 65377 && ord(mychar) <= 65439))
                         currentlength += (spacing * 0.5)
                     else
                         currentlength += spacing
@@ -72,7 +72,7 @@ if mywriter
         }
     }
     if (auto_length == 0)
-        // WARNING: Popz'd an empty stack.
+        draw_self()
     if (auto_length == 1 && init == 1)
     {
         blconscale = 1
@@ -82,7 +82,7 @@ if mywriter
             draw_sprite_ext(spr_battleblcon_parts, 4, x, y, 1, blconscale, 0, c_white, 1)
         if (side == -1)
             draw_sprite_ext(spr_battleblcon_parts, 4, (x - xoffset), y, -1, blconscale, 0, c_white, 1)
-        16777215
+        draw_set_color(c_white)
         draw_rectangle((writingx - 10), (writingy - 5), (writingx + balloonwidth), ((writingy + balloonheight) - 5), false)
         draw_rectangle((writingx - 5), (writingy - 10), ((writingx + balloonwidth) - 5), (writingy + balloonheight), false)
     }

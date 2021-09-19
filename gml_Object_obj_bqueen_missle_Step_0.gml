@@ -14,5 +14,5 @@ if (con == 1)
 {
     timer++
     if (timer == 60)
-        // WARNING: Popz'd an empty stack.
+        instance_destroy()
 }

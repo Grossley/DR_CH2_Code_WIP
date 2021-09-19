@@ -1,4 +1,4 @@
-// WARNING: Popz'd an empty stack.
+gml_Script_scr_bullet_init()
 timer = 0
 con = 0
 image_speed = 0
@@ -12,8 +12,8 @@ hspeed = random_range(2, -2)
 vspeed = random_range(2, -2)
 homingfactor = 0
 maxhomingfactor = 2
-if 798
+if instance_exists(obj_bqueen_breath_controller)
     damage = obj_bqueen_breath_controller.damage
-if 798
+if instance_exists(obj_bqueen_breath_controller)
     target = obj_bqueen_breath_controller.target
 grazepoints = 3

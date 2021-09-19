@@ -1,2 +1,2 @@
-if healthbar_surf
-    healthbar_surf
+if surface_exists(healthbar_surf)
+    surface_free(healthbar_surf)

@@ -1,6 +1,6 @@
 var _temp_local_var_1;
 with (obj_npc_room)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 wirecon = 0
 wiretimer = 0
 funcon = 0
@@ -9,13 +9,14 @@ con = 0
 destroyme = 0
 if (global.plot >= 51)
 {
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
     con = -1
 }
 else
 {
     npc1_o = gml_Script_instance_create(260, 200, obj_npc_room)
     var _temp_local_var_1 = npc1_o
+    gml_Script_scr_depth()
 }
 screencon = 0
 screenmax = 0

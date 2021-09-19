@@ -1,4 +1,4 @@
-if (global.turntimer > 1 && swatchbc.red_count > swatchbc.blue_count && (x - xstart) > 20 && swatchbc)
+if (global.turntimer > 1 && swatchbc.red_count > swatchbc.blue_count && (x - xstart) > 20 && gml_Script_i_ex(swatchbc))
 {
     yy = ystart
     if ((swatchbc.shockwave_x_1 + 100) > x)

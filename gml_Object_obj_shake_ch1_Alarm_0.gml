@@ -13,4 +13,4 @@ if (permashake == false)
 shakesign = (-shakesign)
 alarm[0] = shakespeed
 if (shakex == 0 && shakey == 0)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()

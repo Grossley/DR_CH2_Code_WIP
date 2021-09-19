@@ -1,7 +1,7 @@
-if 493
+if instance_exists(o_coaster_hero)
 {
     timer++
     if (timer < 3)
         return;
 }
-// WARNING: Popz'd an empty stack.
+draw_self()

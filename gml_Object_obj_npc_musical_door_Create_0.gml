@@ -17,7 +17,7 @@ else
     if (global.flag[416] == 0)
     {
         global.flag[416] = 1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_tempsave()
     }
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 }

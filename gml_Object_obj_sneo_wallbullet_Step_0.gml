@@ -6,7 +6,7 @@ if (init == 0)
     init = 1
 }
 if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
-    // WARNING: Popz'd an empty stack.
+    instance_destroy()
 direction += angle_speed
 if (angleadjust == 1)
     image_angle = direction
@@ -18,7 +18,7 @@ if (destroyable == 1)
 sinespeed = obj_sneo_wall_controller.sinespeed
 siner += sinespeed
 x = (xx + (cos(((-siner) / 20)) * xdist))
-var _falsedepth = (siner / 20)
+var _falsedepth = sin((siner / 20))
 active = _falsedepth >= false
 var _depthblend = clamp((_falsedepth + 0.5), 0, 1)
 if destroyable
@@ -30,14 +30,14 @@ if (destroyable == 1)
 {
     if (active == true)
         depth = (obj_heart.depth - 100)
-    if (y + 110)
+    if (y < (gml_Script_cameray() + 110))
     {
-        image_xscale = ((y - 90) / 20)
-        image_yscale = ((y - 90) / 20)
+        image_xscale = (((y - gml_Script_cameray()) - 90) / 20)
+        image_yscale = (((y - gml_Script_cameray()) - 90) / 20)
         if (obj_sneo_wall_controller.introtimer > 24)
-            image_alpha = ((y - 90) / 20)
+            image_alpha = (((y - gml_Script_cameray()) - 90) / 20)
     }
-    else if (y + 233)
+    else if (y > (gml_Script_cameray() + 233))
     {
         image_xscale = ((20 - ((y - gml_Script_cameray()) - 233)) / 20)
         image_yscale = ((20 - ((y - gml_Script_cameray()) - 233)) / 20)
@@ -64,5 +64,5 @@ if (bighitbox == 1)
 {
     hitshot = collision_rectangle(x, y, (x + sprite_width), (y + sprite_height), obj_yheart_shot, 1, 0)
     if (hitshot != -4)
-        0
+        event_user(0)
 }

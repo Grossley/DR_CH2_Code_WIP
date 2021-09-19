@@ -8,16 +8,18 @@ if (screenChangeTrigger == 1)
     dumbread = gml_Script_instance_create(440, 140, obj_readable_room1)
     screenChangeTrigger = 2
 }
-if 865
+if instance_exists(obj_battleback)
 {
-    if tasquescreen1
+    if gml_Script_i_ex(tasquescreen1)
     {
         var _temp_local_var_2 = tasquescreen1
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_afterimage()
+        instance_destroy()
     }
-    if tasquescreen2
+    if gml_Script_i_ex(tasquescreen2)
     {
         var _temp_local_var_3 = tasquescreen2
-        // WARNING: Popz'd an empty stack.
+        gml_Script_scr_afterimage()
+        instance_destroy()
     }
 }

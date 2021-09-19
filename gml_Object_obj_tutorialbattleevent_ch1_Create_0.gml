@@ -7,7 +7,7 @@ if (global.plot >= 31)
     con = 400
 if (global.plot < 6)
 {
-    3
+    gml_Script_scr_getchar_ch1(3)
     global.cinstance[0] = gml_Script_instance_create_ch1((obj_mainchara_ch1.x - 6), (obj_mainchara_ch1.y - 16), 1489)
     global.cinstance[0].target = 12
     var _temp_local_var_1 = global.cinstance[0]
