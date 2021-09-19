@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (timer > 10)
 {
     var _temp_local_var_1 = instance_create_depth(x, y, 0, obj_beatflash)

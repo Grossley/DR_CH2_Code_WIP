@@ -1,4 +1,4 @@
-var lvsnd, _tensionhealed, _drivenoise, _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_11, _temp_local_var_16, _temp_local_var_19, _temp_local_var_20, _temp_local_var_22, _temp_local_var_37, _temp_local_var_52, _temp_local_var_74, _temp_local_var_75, _temp_local_var_76, _temp_local_var_77, _temp_local_var_78, _temp_local_var_79, _temp_local_var_80, _temp_local_var_81, _temp_local_var_82, _temp_local_var_83, _temp_local_var_92, _temp_local_var_118, _temp_local_var_194, _temp_local_var_196;
+var lvsnd, _tensionhealed, _drivenoise;
 if (global.chapter == 2)
 {
     if (gigaqueencon != 0)
@@ -16,8 +16,8 @@ if (victory == true && victoried == 0)
     global.battleend = true
     global.mnfight = -1
     global.myfight = 7
-    var _temp_local_var_5 = battlewriter
-    instance_destroy()
+    with (battlewriter)
+		instance_destroy()
 }
 if (victoried == 1)
 {

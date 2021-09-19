@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6;
 oo = 0
 if (spec < 2)
     blocktimer += 1

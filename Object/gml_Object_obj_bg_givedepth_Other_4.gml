@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 layerarray = layer_get_all()
 var i = 0
 while (i < array_length_1d(layerarray))

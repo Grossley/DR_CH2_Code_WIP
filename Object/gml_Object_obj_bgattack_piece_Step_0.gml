@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_9, _temp_local_var_11, _temp_local_var_14, _temp_local_var_15;
 if (y >= 635)
 {
     instance_destroy()

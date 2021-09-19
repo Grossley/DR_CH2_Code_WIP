@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 draw_sprite_ext(sprite_index, image_index, (x - 2), (y + 135), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 introtimer++
 if (introtimer == 15)

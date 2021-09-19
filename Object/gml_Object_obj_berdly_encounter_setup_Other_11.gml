@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 state = 1
 gml_Script_instance_create(x, y, o_berdly_hide_intro_markers)
 global.specialbattle = 3

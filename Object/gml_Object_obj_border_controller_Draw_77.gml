@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9;
 var ww = window_get_width()
 var wh = window_get_height()
 var sw = surface_get_width(application_surface)

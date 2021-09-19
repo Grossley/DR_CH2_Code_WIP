@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 with (obj_ch2_scene11a)
 {
     var _temp_local_var_1 = coaster_berdly

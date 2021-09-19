@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_20, _temp_local_var_22, _temp_local_var_24, _temp_local_var_26, _temp_local_var_27, _temp_local_var_28, _temp_local_var_29, _temp_local_var_31, _temp_local_var_63;
 if (global.monster[myself] == true)
 {
     if (gml_Script_scr_isphase("enemytalk") && talked == 0)

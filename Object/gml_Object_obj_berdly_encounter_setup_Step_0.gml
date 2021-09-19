@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (fightcon == 2)
 {
     counttimer += 1

@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_6;
 draw_sprite_ext(sprite_index, image_index, x, (y + 133), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 timer++
 timer2++
