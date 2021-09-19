@@ -46,9 +46,8 @@ if (timer <= 0 && mausqueue > 0)
         {
             d.big = 1
             d.sprite_index = spr_maus_critter_stuck
-            alarm[0] = d
+            d.alarm[0] = 22
             bigmaus--
-            var _temp_local_var_3 = 22
         }
     }
 }

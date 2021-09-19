@@ -471,8 +471,7 @@ if (global.chapter == 2)
         no_actor = gml_Script_instance_create(noelle_npc.x, noelle_npc.y, obj_actor)
         gml_Script_scr_actor_setup(no, no_actor, "noelle")
         no_actor.sprite_index = spr_noelle_walk_up_lw
-        specialsprite[0] = no_actor
-        var _temp_local_var_16 = 13
+        no_actor.specialsprite[0] = 13
         visible = false
     }
     if (customconb == 1)

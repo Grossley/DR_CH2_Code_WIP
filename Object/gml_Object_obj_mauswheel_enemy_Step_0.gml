@@ -171,11 +171,10 @@ if (global.myfight == 3)
         basket.maker = id
         actcon = 11
         actfailure = 1
-        cancatch[myself] = basket
+        basket.cancatch[myself] = 1
         caught[0] = 0
         caught[1] = 0
         caught[2] = 0
-        var _temp_local_var_13 = 1
     }
     if (actcon == 12)
     {

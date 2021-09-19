@@ -227,17 +227,13 @@ if (global.myfight == 3)
         basket.maker = id
         if (trappingX == 1)
         {
-            cancatch[0] = basket
-            cancatch[1] = basket
-            cancatch[2] = basket
-            var _temp_local_var_10 = 1
-            var _temp_local_var_11 = 1
-            var _temp_local_var_12 = 1
+            basket.cancatch[0] = true
+            basket.cancatch[1] = true
+            basket.cancatch[2] = true
         }
         else
         {
-            cancatch[myself] = basket
-            var _temp_local_var_41 = 1
+            basket.cancatch[myself] = true
         }
         basket.trappingX = trappingX
         actcon = 11

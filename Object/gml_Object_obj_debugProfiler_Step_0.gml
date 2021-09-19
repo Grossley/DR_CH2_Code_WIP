@@ -77,10 +77,7 @@ if (global.chemg_god_mode == 1)
     for (i = 0; i < 6; i++)
     {
         if (global.hp[i] < global.maxhp[i])
-        {
-            var _temp_local_var_7 = global.hp[i]
             global.hp[i] = (global.hp[i] + 1)
-        }
     }
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("B")))

@@ -62,12 +62,9 @@ if (tIntroCon == 1)
     fakedoor = gml_Script_scr_dark_marker(obj_holemouse_generator.x, obj_holemouse_generator.y, 2681)
     fakedoor.image_index = 5
     realdoor = instance_find(obj_holemouse_generator, 0)
-    save_object[0] = cutscene_master
-    save_object[1] = cutscene_master
-    save_object[2] = cutscene_master
-    var _temp_local_var_10 = realdoor
-    var _temp_local_var_11 = fakedoor
-    var _temp_local_var_12 = fakemouse
+    cutscene_master.save_object[0] = fakemouse
+    cutscene_master.save_object[1] = fakedoor
+    cutscene_master.save_object[2] = realdoor
 }
 if (tIntroCon == 2)
 {

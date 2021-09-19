@@ -15,8 +15,8 @@ if (con == 99 && obj_mainchara.x >= 540)
     no_actor = gml_Script_instance_create(950, 208, obj_actor)
     gml_Script_scr_actor_setup(no, no_actor, "noelle")
     no_actor.sprite_index = spr_noelle_kneel
-    specialsprite[5] = no_actor
-    specialsprite[6] = no_actor
+    no_actor.specialsprite[5] = 713
+    no_actor.specialsprite[6] = 716
     qu = (actor_count + 2)
     qu_actor = gml_Script_instance_create(725, 273, obj_actor_queenchair)
     gml_Script_scr_actor_setup_nofacing(qu, qu_actor, "queen")
@@ -24,8 +24,6 @@ if (con == 99 && obj_mainchara.x >= 540)
     qu_actor.shadow = 0
     qu_actor.auto_depth = 0
     qu_actor.depth = 1000300
-    var _temp_local_var_3 = 716
-    var _temp_local_var_4 = 713
     fakeshadow.visible = false
 }
 if (screencon == 1)

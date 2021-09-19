@@ -19,8 +19,7 @@ if (con == 1)
     su_actor = gml_Script_instance_create((obj_mainchara.x + 300), obj_mainchara.y, obj_actor)
     gml_Script_scr_actor_setup(su, su_actor, "susie")
     su_actor.sprite_index = spr_susiel_dark
-    specialsprite[6] = su_actor
-    var _temp_local_var_3 = 21
+    su_actor.specialsprite[6] = 21
     gml_Script_scr_emote("!", 30)
 }
 if (con == 2)

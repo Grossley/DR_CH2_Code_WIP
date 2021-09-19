@@ -337,8 +337,7 @@ if (con == 23 && customcon == 1)
         gml_Script_scr_move_to_point_over_time((gml_Script_camerax() + 520), (gml_Script_cameray() + 110), 20)
         __doom = gml_Script_instance_create(x, y, obj_doom)
         __doom.target = id
-        alarm[0] = __doom
-        var _temp_local_var_6 = 25
+        __doom.alarm[0] = 25
     }
     if (con == 30 && gml_Script_i_ex(355))
     {

@@ -29,11 +29,10 @@ if (con == 0)
             fb[i].damage = 16
             fb[i].image_angle = (rot - i)
             fb[i].depth = 200
-            alarm[0] = fb[i]
+            fb[i].alarm[0] = -10
             fb[i].image_alpha = 0
             fb[i].image_xscale = 0.7
             i += 1
-            var _temp_local_var_2 = -10
         }
         made = 1
     }

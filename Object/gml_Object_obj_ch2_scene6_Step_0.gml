@@ -429,7 +429,7 @@ if (con == 51)
     kr_actor.x = obj_mainchara.x
     kr_actor.y = obj_mainchara.y
     su_actor.sprite_index = spr_susie_shock
-    specialsprite[6] = su_actor
+    su_actor.specialsprite[6] = 25
     su_actor.x = (obj_mainchara.x + 80)
     su_actor.y = obj_mainchara.y
     ra_actor.sprite_index = spr_ralsei_walk_up
@@ -440,7 +440,6 @@ if (con == 51)
     gml_Script_scr_actor_setup(la, la_actor, "lancer")
     la_actor.sprite_index = spr_lancer_dt
     hathy = gml_Script_scr_dark_marker(883, 605, 1573)
-    var _temp_local_var_12 = 25
     gml_Script_scr_depth()
 }
 if (con == 52 && (!gml_Script_i_ex(895)))

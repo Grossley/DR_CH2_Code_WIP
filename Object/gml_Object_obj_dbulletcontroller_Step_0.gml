@@ -897,7 +897,6 @@ else if (type == 27)
     }
     if (thrashcon <= 2)
         btimer = 10
-    var _temp_local_var_129 = legattack
     switch legattack
     {
         case 0:
@@ -1337,7 +1336,6 @@ else if (type == 48)
         bm.grazepoints = grazepoints
         bm.damage = 1
         bm.target = target
-        var _temp_local_var_171 = roundcount
         switch roundcount
         {
             case 0:

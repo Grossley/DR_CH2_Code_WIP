@@ -20,11 +20,9 @@ if (timer <= 90)
 }
 else
 {
-    x = xpos[followindex]
-    y = ypos[followindex]
+    memory.x = xpos[followindex]
+    memory.y = ypos[followindex]
     followindex++
-    var _temp_local_var_3 = memory
-    var _temp_local_var_4 = memory
 }
 d = gml_Script_instance_create(x, y, obj_maus_cursor_trail)
 d.image_blend = image_blend

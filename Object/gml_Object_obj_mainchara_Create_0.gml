@@ -94,7 +94,6 @@ if (global.interact == 3)
             global.flag[21] = -10
             roomenterfreezeend = 1
         }
-        var _temp_local_var_1 = global.entrance
         switch global.entrance
         {
             case 1:

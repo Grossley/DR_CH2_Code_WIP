@@ -15,6 +15,5 @@ if (caught[other.which] == 0)
     }
 }
 monsterhit[other.which] = 1
-caught[other.which] = maker
-var _temp_local_var_1 = 1
+maker.caught[other.which] = 1
 actfailure = 0

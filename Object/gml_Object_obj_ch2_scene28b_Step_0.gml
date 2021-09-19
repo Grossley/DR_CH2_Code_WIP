@@ -58,7 +58,7 @@ if (con == 1)
     su_actor = gml_Script_instance_create(157, 114, obj_actor)
     gml_Script_scr_actor_setup(su, su_actor, "susie")
     su_actor.sprite_index = spr_susie_walk_up_lw
-    specialsprite[0] = su_actor
+    su_actor.specialsprite[0] = 14
     gml_Script_c_sel(su)
     gml_Script_c_facing("u")
     no = 2
@@ -89,7 +89,6 @@ if (con == 1)
     gml_Script_c_sel(bo_be)
     gml_Script_c_autowalk(0)
     gml_Script_c_halt()
-    var _temp_local_var_4 = 14
 }
 if (con == 2)
 {
