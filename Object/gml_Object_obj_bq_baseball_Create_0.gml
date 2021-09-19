@@ -22,8 +22,8 @@ image_xscale = 1.75
 image_yscale = 1.75
 reticletimer = -10
 baseball_hitbox = gml_Script_instance_create(x, y, o_boxing_hitbox)
-var _temp_local_var_1 = baseball_hitbox
-baseball = 1
+with (baseball_hitbox)
+	baseball = 1
 hit_jumping = 0
 give_hurt = (22 / f)
 timer = (400 / f)
