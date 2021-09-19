@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 global.fighting = false
 if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbattle == 3)
 {
@@ -10,9 +9,11 @@ if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbatt
             x = global.charinstance[0].x
             y = global.charinstance[0].y
         }
-        var _temp_local_var_2 = global.cinstance[0]
-        x = global.charinstance[1].x
-        y = global.charinstance[1].y
+        with (global.cinstance[0])
+		{
+			x = global.charinstance[1].x
+			y = global.charinstance[1].y
+		}
     }
     gml_Script_instance_create(0, 0, obj_endbattle)
     with (obj_monsterparent)
