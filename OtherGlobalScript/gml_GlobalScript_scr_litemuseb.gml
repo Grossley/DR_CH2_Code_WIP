@@ -1,55 +1,55 @@
 switch argument1
 {
-    case obj_sneo_friedpipis:
+    case 0:
         global.msg[0] = gml_Script_stringsetloc("* You grasped at nothing./%%", "scr_litemuseb_slash_scr_litemuseb_gml_6_0")
         break
-    case obj_pipis_bullet_cone:
+    case 1:
         global.msg[0] = gml_Script_stringsetloc("* You drank the hot chocolate^1.&* It tasted wonderful^1.&* Your throat tightened.../%", "scr_litemuseb_slash_scr_litemuseb_gml_9_0")
         gml_Script_snd_play(179)
         gml_Script_scr_writetext(0, "x", 0, 0)
         script_execute(gml_Script_scr_litemshift, argument0, 0)
         break
-    case obj_84_lang_helper:
+    case 2:
         global.msg[0] = gml_Script_stringsetloc("* You equipped the Pencil./%", "scr_litemuseb_slash_scr_litemuseb_gml_18_0")
         gml_Script_scr_lweaponeq(argument0, argument1)
         gml_Script_snd_play(172)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_pipisFireworkGenerator:
+    case 3:
         global.msg[0] = gml_Script_stringsetloc("* You re-applied the bandage.", "scr_litemuseb_slash_scr_litemuseb_gml_26_0")
         script_execute(gml_Script_scr_lrecoitem, 1)
         script_execute(gml_Script_scr_litemshift, argument0, 0)
         break
-    case obj_afterimage_anim:
+    case 4:
         global.msg[0] = gml_Script_stringsetloc("* You held out the flowers^1.&* A floral scent fills the air^1.&* Nothing happened./%", "scr_litemuseb_slash_scr_litemuseb_gml_34_0")
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_ch2_scene26_henshin_flash:
+    case 5:
         global.msg[0] = gml_Script_stringsetloc("* You looked at the junk ball in admiration^1.&* Nothing happened./%", "scr_litemuseb_slash_scr_litemuseb_gml_42_0")
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_spamtonpainting:
+    case 6:
         global.msg[0] = gml_Script_stringsetloc("* You equipped the Halloween Pencil./%", "scr_litemuseb_slash_scr_litemuseb_gml_48_0")
         gml_Script_scr_lweaponeq(argument0, argument1)
         gml_Script_snd_play(172)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_growtangle_spark:
+    case 7:
         global.msg[0] = gml_Script_stringsetloc("* You equipped the Lucky Pencil./%", "scr_litemuseb_slash_scr_litemuseb_gml_56_0")
         gml_Script_scr_lweaponeq(argument0, argument1)
         gml_Script_snd_play(172)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_mettaton_bomb_hitbox:
+    case 8:
         global.msg[0] = gml_Script_stringsetloc("* You used the Egg./%", "scr_litemuseb_slash_scr_litemuseb_gml_63_0")
         gml_Script_snd_play(55)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_dw_city_mice3Fence:
+    case 9:
         gml_Script_msgsetloc(0, "* You held the cards^1.&* They felt flimsy between your fingers./%", "scr_litemuseb_slash_scr_litemuseb_gml_69_0")
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_gigaqueen_intro_fight:
+    case 10:
         var consume_item = 0
         var have_susie = gml_Script_scr_havechar(2)
         var sans_npc = 0
@@ -128,7 +128,7 @@ switch argument1
         if consume_item
             script_execute(gml_Script_scr_litemshift, argument0, 0)
         break
-    case obj_berdlyb_tornado_old:
+    case 11:
         if (gml_Script_scr_havechar(2) && global.flag[953] == 0)
         {
             global.flag[953] = 1
@@ -148,12 +148,12 @@ switch argument1
             gml_Script_msgsetloc(0, "* It doesn't seem very useful./%", "scr_litemuseb_slash_scr_litemuseb_gml_182_0")
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
-    case obj_power_up_fx_old:
+    case 201:
         tempsaid = 0
         gml_Script_snd_play_x(53, 0.7, 1)
         global.msg[0] = gml_Script_stringsetloc("* Ring.../", "scr_litemuseb_slash_scr_litemuseb_gml_116_0")
         global.msg[1] = gml_Script_stringsetloc("* No one picked up./%", "scr_litemuseb_slash_scr_litemuseb_gml_117_0")
-        if (null.room == room_krisroom || room == room_krishallway || room == room_torbathroom)
+        if (room == room_krisroom || room == room_krishallway || room == room_torbathroom)
         {
             tempsaid = 1
             global.flag[268] = 1

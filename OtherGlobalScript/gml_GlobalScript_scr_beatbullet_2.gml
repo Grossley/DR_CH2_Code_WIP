@@ -17,43 +17,46 @@ if (!_horizontal)
     var _bullet = instance_create_depth(argument[0], _yTop, 0, obj_beatbullet_2)
 else
     _bullet = instance_create_depth(_yTop, argument[0], 0, obj_beatbullet_2)
-var _temp_local_var_1 = _bullet
-horizontal = _horizontal
-if horizontal
-    image_angle = 90
-endY = _yBottom
-targetX = argument[0]
-follow = argument[4]
-bpm = argument[3]
-framesAway = 999
-frames = _frames
-fadeSpeed = _fadeInFrames
-image_alpha = 0
-bps = (bpm / 60)
-spb = (1 / bps)
-bpf = (bps / game_get_speed(gamespeed_fps))
-if gml_Script_snd_is_playing(global.currentsong[1])
+with (_bullet)
 {
-    soundTimeStep = audio_sound_get_track_position(global.currentsong[1])
-    var _length = audio_sound_length(global.currentsong[1])
-    beats = (soundTimeStep / spb)
-    beatMax = (_length / spb)
-    beatsPrev = beats
-    looping = argument[5]
-    beatLoop = _targetBeat
-    loopOffset = _loopOffset
-    if (looping == 0)
-        targetBeat = _targetBeat
+    horizontal = _horizontal
+    if horizontal
+        image_angle = 90
+    endY = _yBottom
+    targetX = argument[0]
+    follow = argument[4]
+    bpm = argument[3]
+    framesAway = 999
+    frames = _frames
+    fadeSpeed = _fadeInFrames
+    image_alpha = 0
+    bps = (bpm / 60)
+    spb = (1 / bps)
+    bpf = (bps / game_get_speed(gamespeed_fps))
+    if gml_Script_snd_is_playing(global.currentsong[1])
+    {
+        soundTimeStep = audio_sound_get_track_position(global.currentsong[1])
+        var _length = audio_sound_length(global.currentsong[1])
+        beats = (soundTimeStep / spb)
+        beatMax = (_length / spb)
+        beatsPrev = beats
+        looping = argument[5]
+        beatLoop = _targetBeat
+        loopOffset = _loopOffset
+        if (looping == 0)
+            targetBeat = _targetBeat
+        else
+            targetBeat = (((ceil((beats / looping)) * looping) + _targetBeat) + _loopOffset)
+        inSync = 1
+    }
     else
-        targetBeat = (((ceil((beats / looping)) * looping) + _targetBeat) + _loopOffset)
-    inSync = 1
+    {
+        beatMax = 9999
+        loopOffset = _loopOffset
+        looping = argument[5]
+        beatLoop = _targetBeat
+        targetBeat = (_targetBeat + loopOffset)
+        inSync = 0
+    }
 }
-else
-{
-    beatMax = 9999
-    loopOffset = _loopOffset
-    looping = argument[5]
-    beatLoop = _targetBeat
-    targetBeat = (_targetBeat + loopOffset)
-    inSync = 0
-}
+return _bullet;

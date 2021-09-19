@@ -5,5 +5,6 @@ if (argument1 != 0)
     _moveprecise.xOrientation = argument1
 if (argument2 != 0)
     _moveprecise.yOrientation = argument2
-var _temp_local_var_1 = _moveprecise
-event_user(0)
+with (_moveprecise)
+    event_user(0)
+return _moveprecise;

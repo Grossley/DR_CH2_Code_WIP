@@ -13,11 +13,7 @@ if (global.monster[myself] == true)
     {
         global.flag[40] += 1
         if (fatal == 1)
-        {
-            global.flag[44]
-            obj_battleLayerHighlight.flag[global.flag[obj_battleLayerHighlight]] = (global.flag[obj_battleLayerHighlight] + 1)
-            global
-        }
+            global.flag[44] += 1
     }
     if (global.flag[(51 + myself)] == 2)
         global.flag[41] += 1
@@ -59,11 +55,7 @@ if (global.monster[myself] == true)
         if (_violenced > 0)
             global.flag[50] = 1
         if (global.flag[50] == 6)
-        {
-            global.flag[926]
-            obj_ch2_lw_cutscenes_short.flag[global.flag[obj_ch2_lw_cutscenes_short]] = (global.flag[obj_ch2_lw_cutscenes_short] + 1)
-            global
-        }
+            global.flag[926] += 1
         if (global.flag[54] != 0)
         {
             global.flag[global.flag[54]] = global.flag[50]

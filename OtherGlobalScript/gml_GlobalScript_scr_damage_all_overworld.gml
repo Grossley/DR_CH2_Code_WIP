@@ -8,16 +8,39 @@ if (global.inv < 0)
         killactive = 1
     gml_Script_snd_stop(170)
     gml_Script_snd_play(170)
-    ti = 0
-    while (ti < 3)
+    for (ti = 0; ti < 3; ti += 1)
     {
         global.inv = -1
         damage = remdamage
         target = ti
         tdamage = damage
-        var _temp_local_var_1 = global.charinstance[target]
-        hurt = true
-        hurttimer = 0
+        with (global.charinstance[target])
+        {
+            hurt = true
+            hurttimer = 0
+        }
+        hpdiff = tdamage
+        if (hpdiff >= global.hp[global.char[target]])
+            hpdiff = (global.hp[global.char[target]] - 1)
+        d_cancel = 0
+        if (hpdiff <= 1)
+        {
+            d_cancel = 1
+            hpdiff = 0
+        }
+        if (d_cancel == 0)
+        {
+            doomtype = -1
+            global.hp[global.char[target]] -= hpdiff
+            if (global.charinstance[target].visible == true)
+            {
+                dmgwriter = gml_Script_instance_create(global.charinstance[target].x, ((global.charinstance[target].y + global.charinstance[target].myheight) - 24), obj_dmgwriter)
+                dmgwriter.damage = hpdiff
+                dmgwriter.type = doomtype
+            }
+        }
+        if (global.hp[global.char[target]] < 1)
+            global.hp[global.char[target]] = 1
     }
     gameover = 1
     if (global.char[0] != 0 && global.hp[global.char[0]] > 2)

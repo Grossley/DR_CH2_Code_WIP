@@ -23,7 +23,7 @@ if (argument[0] == "...")
     __emotebubble.y = (y - (10 * __dmult))
     __emotexoff = (10 * __dmult)
 }
-if (argument[1].argument_count >= 3)
+if (argument_count >= 3)
     __emotexoff = argument[2]
 if (image_xscale > 0)
     __emotebubble.x = ((((x - (__anchorx * image_xscale)) + ((sprite_width / 2) * sign(image_xscale))) - (__emotebubble.sprite_width / 2)) + __emotexoff)

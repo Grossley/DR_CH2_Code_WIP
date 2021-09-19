@@ -1,8 +1,8 @@
 switch argument0
 {
-    case obj_sneo_friedpipis:
+    case 0:
         break
-    case obj_gigaqueen_intro_fight:
+    case 10:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_8_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_9_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_12_0_b")
@@ -13,7 +13,7 @@ switch argument0
         if (global.chapter >= 2)
             gml_Script_msgsetloc(0, "* You took it from your pocket^1.&* You have a \\cYvery^1, very^1, bad feeling\\c0 about throwing it away./", "scr_text_slash_scr_text_gml_19_0")
         break
-    case obj_berdlyb_tornado_old:
+    case 11:
         if (global.choice == 0)
         {
             global.flag[466] = 1
@@ -33,7 +33,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* You felt a feeling of relief./%", "scr_text_slash_scr_text_gml_34_0")
         break
-    case obj_npc_rudy:
+    case 100:
         global.msg[0] = gml_Script_stringsetloc("* Hey, Kris^1! What's up^1?&* Didja lose your pencil again?/", "scr_text_slash_scr_text_gml_39_0")
         global.msg[1] = gml_Script_stringsetloc("\\E4* Here^1, you want the candy-cane one or the one with lights on it?/", "scr_text_slash_scr_text_gml_40_0")
         global.msg[2] = gml_Script_stringsetloc("\\E1* Huh^1?&* You want to be partners?/", "scr_text_slash_scr_text_gml_41_0")
@@ -42,7 +42,7 @@ switch argument0
         global.msg[5] = gml_Script_stringsetloc("\\E4* I'll ask if you're sure!& &Not yet     Yes. Ask.\\C1 ", "scr_text_slash_scr_text_gml_44_0")
         global.msg[6] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_47_0")
         break
-    case obj_npc_room:
+    case 101:
         if (global.choice == 1)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* OK^1, I'll ask!/", "scr_text_slash_scr_text_gml_51_0")
@@ -53,11 +53,11 @@ switch argument0
         if (global.choice == 0)
             global.msg[0] = gml_Script_stringsetloc("\\E4* Yeah^1, I'm sure there's someone else you can ask!/%", "scr_text_slash_scr_text_gml_57_0")
         break
-    case obj_npc_catti:
+    case 102:
         global.msg[0] = gml_Script_stringsetloc("\\E0* Do you wanna be partners?&Not yet     Yes\\C1 ", "scr_text_slash_scr_text_gml_62_0")
         global.msg[1] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_65_0")
         break
-    case obj_npc_sign:
+    case 103:
         if (global.choice == 1)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* OK^1, I'll ask!/", "scr_text_slash_scr_text_gml_69_0")
@@ -68,17 +68,17 @@ switch argument0
         if (global.choice == 0)
             global.msg[0] = gml_Script_stringsetloc("\\E4* Umm^1, OK^1.&* You just keep doing your thing^1, Kris./%", "scr_text_slash_scr_text_gml_75_0")
         break
-    case obj_npc_dumpster:
+    case 104:
         global.msg[0] = gml_Script_stringsetloc("\\E0* Alright^1.&* Let's get this over with./", "scr_text_slash_scr_text_gml_80_0")
         global.msg[1] = gml_Script_stringsetloc("* We'll get more chalk^1.&* Mosey back to class^1.&* And then^1, Kris.../", "scr_text_slash_scr_text_gml_81_0")
         global.msg[2] = gml_Script_stringsetloc("\\E2* YOU'LL do our project./", "scr_text_slash_scr_text_gml_82_0")
         global.msg[3] = gml_Script_stringsetloc("* How's that sound?& &Good        Bad\\C1 ", "scr_text_slash_scr_text_gml_83_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_86_0")
         break
-    case obj_npc_addison_tea:
+    case 105:
         global.msg[0] = gml_Script_stringsetloc(" %%", "scr_text_slash_scr_text_gml_90_0")
         break
-    case obj_checkmarktreasurebox:
+    case 110:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_92_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_93_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_96_0")
@@ -92,7 +92,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (It's dark inside.)/%", "scr_text_slash_scr_text_gml_104_0")
         break
-    case obj_npc_city_cheese:
+    case 111:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* (You got the Glowshard.)/%", "scr_text_slash_scr_text_gml_112_0")
@@ -100,14 +100,14 @@ switch argument0
             gml_Script_scr_itemget(3)
             with (obj_readable_room1)
             {
-                var _temp_local_var_2 = shine
-                instance_destroy()
+                with (shine)
+                    instance_destroy()
             }
         }
         else
             global.msg[0] = gml_Script_stringsetloc("* (It stayed.)/%", "scr_text_slash_scr_text_gml_119_0")
         break
-    case obj_npc_musical_door:
+    case 120:
         global.choicemsg[0] = gml_Script_stringsetloc("#Listen", "scr_text_slash_scr_text_gml_125_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_126_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_129_0_b")
@@ -121,7 +121,7 @@ switch argument0
         global.msg[6] = gml_Script_stringsetloc(" \\C2 ", "scr_text_slash_scr_text_gml_135_0")
         global.msg[7] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_138_0")
         break
-    case obj_npc_library_upstairs:
+    case 121:
         global.choicemsg[0] = gml_Script_stringsetloc("#Listen", "scr_text_slash_scr_text_gml_140_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#We know it#Already", "scr_text_slash_scr_text_gml_141_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_144_0")
@@ -138,17 +138,38 @@ switch argument0
             global.msg[5] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_157_0")
         }
         break
-    case obj_queencar:
+    case 122:
         if (global.choice == 0)
             global.msg[0] = gml_Script_stringsetloc("\\E0* Phew^1!&* Um^1, very well then.../%", "scr_text_slash_scr_text_gml_163_0")
         else
         {
             global.flag[203] = 1
-            var _temp_local_var_3 = obj_darkcastle_event
-            con = 30
+            with (obj_darkcastle_event)
+                con = 30
+            global.msg[0] = gml_Script_stringsetloc("* ... really^1?&* You've heard it already?/", "scr_text_slash_scr_text_gml_169_0")
+            global.msg[1] = gml_Script_stringsetloc("* Oh..^1. Perhaps I shouldn't have rehearsed it so much.../", "scr_text_slash_scr_text_gml_170_0")
+            gml_Script_scr_susface(2, 0)
+            global.msg[3] = gml_Script_stringsetloc("* Look^1, dude^1, we didn't come here for a bedtime story./", "scr_text_slash_scr_text_gml_172_0")
+            global.msg[4] = gml_Script_stringsetloc("* Just tell us how to get home./", "scr_text_slash_scr_text_gml_173_0")
+            gml_Script_scr_ralface(5, 0)
+            global.msg[6] = gml_Script_stringsetloc("* Ummm^1, the easiest way would be to seal the \\cYEastern FOUNTAIN\\cW./", "scr_text_slash_scr_text_gml_175_0")
+            gml_Script_scr_susface(7, 0)
+            global.msg[8] = gml_Script_stringsetloc("* Fountain?/", "scr_text_slash_scr_text_gml_177_0")
+            global.msg[9] = gml_Script_stringsetloc("\\E1* You mean^1, uh^1, like the water bubbler or something?/", "scr_text_slash_scr_text_gml_178_0")
+            gml_Script_scr_ralface(10, 0)
+            global.msg[11] = gml_Script_stringsetloc("* THE fountain^1.&* That which gives the \\cYDARK WORLD\\cW form./", "scr_text_slash_scr_text_gml_180_0")
+            global.msg[12] = gml_Script_stringsetloc("\\E1* ... umm^1, are you sure you actually know the legend?/", "scr_text_slash_scr_text_gml_181_0")
+            gml_Script_scr_susface(13, 1)
+            global.msg[14] = gml_Script_stringsetloc("* Look./", "scr_text_slash_scr_text_gml_183_0")
+            global.msg[15] = gml_Script_stringsetloc("* .../", "scr_text_slash_scr_text_gml_184_0")
+            global.msg[16] = gml_Script_stringsetloc("* No./", "scr_text_slash_scr_text_gml_185_0")
+            global.msg[17] = gml_Script_stringsetloc("* But I think I've got enough info./", "scr_text_slash_scr_text_gml_186_0")
+            global.msg[18] = gml_Script_stringsetloc("* See you two later./", "scr_text_slash_scr_text_gml_187_0")
+            gml_Script_scr_ralface(19, 1)
+            global.msg[20] = gml_Script_stringsetloc("* W-wait^1!&* Let me at least tell you how to.../%", "scr_text_slash_scr_text_gml_189_0")
         }
         break
-    case obj_savepoint:
+    case 125:
         global.choicemsg[0] = gml_Script_stringsetloc("I'll be#Your#Subject", "scr_text_slash_scr_text_gml_196_0")
         global.choicemsg[1] = gml_Script_stringsetloc("Keep#Dreaming", "scr_text_slash_scr_text_gml_197_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_198_0")
@@ -160,7 +181,7 @@ switch argument0
         global.msg[4] = gml_Script_stringsetloc(" \\C2", "scr_text_slash_scr_text_gml_202_0")
         global.msg[5] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_205_0")
         break
-    case obj_animation:
+    case 126:
         if (global.choice == 0)
         {
             global.fe = 7
@@ -178,7 +199,7 @@ switch argument0
             global.msg[0] = gml_Script_stringsetloc("* Oh^1, thank you^1, Kris^2!&* I will!/%", "scr_text_slash_scr_text_gml_224_0")
         }
         break
-    case obj_readable:
+    case 130:
         global.choicemsg[0] = gml_Script_stringsetloc("#I know", "scr_text_slash_scr_text_gml_227_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Really!?", "scr_text_slash_scr_text_gml_228_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_231_0")
@@ -188,7 +209,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc(" \\C2", "scr_text_slash_scr_text_gml_233_0")
         global.msg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_236_0")
         break
-    case obj_readable_room1:
+    case 131:
         if (global.choice == 0)
         {
             global.fe = 3
@@ -205,7 +226,7 @@ switch argument0
             global.msg[2] = gml_Script_stringsetloc("\\E6* ... Unless you want to get away^1, in which case^1, sorry./%", "scr_text_slash_scr_text_gml_252_0")
         }
         break
-    case obj_npc_toriel:
+    case 132:
         global.choicemsg[0] = gml_Script_stringsetloc("#I know", "scr_text_slash_scr_text_gml_258_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Really!?", "scr_text_slash_scr_text_gml_259_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_262_0_b")
@@ -215,7 +236,7 @@ switch argument0
         global.msg[2] = gml_Script_stringsetloc(" \\C2", "scr_text_slash_scr_text_gml_264_0")
         global.msg[3] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_267_0")
         break
-    case obj_npc_facing:
+    case 133:
         if (global.choice == 0)
         {
             global.fe = 3
@@ -231,7 +252,7 @@ switch argument0
             global.msg[2] = gml_Script_stringsetloc("\\E6* ... No need to skip my text^1, right^1, Kris?/%", "scr_text_slash_scr_text_gml_282_0")
         }
         break
-    case obj_bug_treasure_chest:
+    case 135:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_289_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Don't", "scr_text_slash_scr_text_gml_290_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_293_0_b")
@@ -242,12 +263,12 @@ switch argument0
         global.msg[3] = gml_Script_stringsetloc(" \\C2", "scr_text_slash_scr_text_gml_296_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_299_0")
         break
-    case obj_event_room:
+    case 136:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* OK^1!&* Get ready, Kris!/%", "scr_text_slash_scr_text_gml_303_0")
-            var _temp_local_var_4 = obj_tutorialbattleevent
-            con = 20
+            with (obj_tutorialbattleevent)
+                con = 20
         }
         else
         {
@@ -260,7 +281,7 @@ switch argument0
             global.msg[6] = gml_Script_stringsetloc("* (You got the Manual.)/%", "scr_text_slash_scr_text_gml_314_0")
         }
         break
-    case obj_doorA:
+    case 140:
         global.choicemsg[0] = gml_Script_stringsetloc("#I can#handle it", "scr_text_slash_scr_text_gml_319_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#.....#", "scr_text_slash_scr_text_gml_320_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_323_0_b")
@@ -283,7 +304,7 @@ switch argument0
         global.msg[15] = gml_Script_stringsetloc(" \\C2", "scr_text_slash_scr_text_gml_338_0")
         global.msg[16] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_341_0")
         break
-    case obj_doorA_musfade:
+    case 141:
         global.msg[0] = gml_Script_stringsetloc("\\E0* Kris^1, I knew you were a hero the moment I saw you./", "scr_text_slash_scr_text_gml_343_0")
         global.msg[1] = gml_Script_stringsetloc("\\E8* Let's try our best^1, alright?/%", "scr_text_slash_scr_text_gml_344_0")
         if (global.choice == 1)
@@ -294,7 +315,7 @@ switch argument0
             global.msg[3] = gml_Script_stringsetloc("\\E0* So just try your best^1, and don't worry!/%", "scr_text_slash_scr_text_gml_351_0")
         }
         break
-    case obj_doorC_musfade:
+    case 145:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_358_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_359_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_362_0")
@@ -314,7 +335,7 @@ switch argument0
         if (global.flag[101] >= 2)
             global.msg[0] = gml_Script_stringsetloc("* (There's nothing hanging low enough to take.)/%", "scr_text_slash_scr_text_gml_377_0")
         break
-    case obj_doorD:
+    case 146:
         if (global.choice == 0)
         {
             gml_Script_scr_itemget(1)
@@ -329,7 +350,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (You decided to let the tree keep it.)/%", "scr_text_slash_scr_text_gml_399_0")
         break
-    case obj_doorD_musfade:
+    case 147:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_404_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_405_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_408_0")
@@ -349,7 +370,7 @@ switch argument0
         if (global.flag[102] >= 2)
             global.msg[0] = gml_Script_stringsetloc("* (There's nothing hanging low enough to take.)/%", "scr_text_slash_scr_text_gml_423_0")
         break
-    case obj_doorE:
+    case 148:
         if (global.choice == 0)
         {
             gml_Script_scr_itemget(1)
@@ -364,7 +385,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (You decided to let the tree keep it.)/%", "scr_text_slash_scr_text_gml_445_0")
         break
-    case obj_doorF:
+    case 149:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_450_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_451_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_454_0")
@@ -378,7 +399,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (The remains of the cake are still smoldering...)/%", "scr_text_slash_scr_text_gml_462_0")
         break
-    case obj_doorX:
+    case 150:
         if (global.choice == 0)
         {
             gml_Script_scr_keyitemget(3)
@@ -393,7 +414,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (You decided putting cake in your pockets is a bad idea.)/%", "scr_text_slash_scr_text_gml_484_0")
         break
-    case obj_musicer_room:
+    case 175:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Crumpled#paper", "scr_text_slash_scr_text_gml_492_0")
         global.choicemsg[1] = gml_Script_stringsetloc("LANCER#labelled#paper", "scr_text_slash_scr_text_gml_493_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Neat paper", "scr_text_slash_scr_text_gml_494_0")
@@ -404,7 +425,7 @@ switch argument0
         global.msg[3] = gml_Script_stringsetloc("\\C3 ", "scr_text_slash_scr_text_gml_499_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_502_0")
         break
-    case obj_musicer_city:
+    case 176:
         if (global.choice == 0)
         {
             global.fc = 0
@@ -490,7 +511,7 @@ switch argument0
             global.flag[214] = 3
         }
         break
-    case obj_wave_fx:
+    case 180:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_596_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_597_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_600_0_b")
@@ -501,7 +522,7 @@ switch argument0
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_603_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_606_0")
         break
-    case obj_astream:
+    case 181:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Noelle", "scr_text_slash_scr_text_gml_608_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Family", "scr_text_slash_scr_text_gml_609_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Illness", "scr_text_slash_scr_text_gml_610_0")
@@ -531,7 +552,7 @@ switch argument0
             global.msg[6] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_637_0")
         }
         break
-    case obj_gameover_init:
+    case 182:
         global.msg[0] = gml_Script_stringsetloc("* Huh?/%", "scr_text_slash_scr_text_gml_642_0")
         if (global.choice == 0)
         {
@@ -576,7 +597,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\E7* You thought this was the zoo or something!^1? C'mon!/%", "scr_text_slash_scr_text_gml_684_0")
         }
         break
-    case obj_backgrounder_standard:
+    case 185:
         global.choicemsg[0] = gml_Script_stringsetloc("No No No#No No No#No No No", "scr_text_slash_scr_text_gml_690_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_691_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_694_0_b")
@@ -585,7 +606,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_695_0")
         global.msg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_698_0")
         break
-    case obj_backgrounder_sprite:
+    case 186:
         global.msg[0] = gml_Script_stringsetloc("* Teen'z Corner&Monthly Toon Review:&Mew Mew Kissy Cutie 2/", "scr_text_slash_scr_text_gml_700_0")
         global.msg[1] = gml_Script_stringsetloc("* This reviewer had Mew Mew 2 as her first exposure to the series.../", "scr_text_slash_scr_text_gml_701_0")
         global.msg[2] = gml_Script_stringsetloc("* And let her tell you^1, it makes Mew Mew 1 look like a dumpster with sparkly cat ears!/", "scr_text_slash_scr_text_gml_702_0")
@@ -599,7 +620,7 @@ switch argument0
         if (global.choice < 1)
             global.msg[0] = gml_Script_stringsetloc("* (You decide not to read it.)/%", "scr_text_slash_scr_text_gml_710_0")
         break
-    case obj_persistentfadein:
+    case 190:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Sit", "scr_text_slash_scr_text_gml_716_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Don't Sit", "scr_text_slash_scr_text_gml_717_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_718_0_b")
@@ -610,13 +631,13 @@ switch argument0
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_721_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_724_0")
         break
-    case obj_shake:
+    case 191:
         if (global.choice == 0)
             global.msg[0] = gml_Script_stringsetloc("* (Didn't feel like it.)/%", "scr_text_slash_scr_text_gml_730_0")
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (You decided not to sit.)/%", "scr_text_slash_scr_text_gml_736_0")
         break
-    case obj_circlezoom:
+    case 192:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Stick fingers", "scr_text_slash_scr_text_gml_739_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Don't", "scr_text_slash_scr_text_gml_740_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_743_0")
@@ -628,7 +649,7 @@ switch argument0
         if (global.flag[257] == 1)
             global.msg[0] = gml_Script_stringsetloc("* (It's a metal picnic table.^1)&* (Cigarette butts lay on the ground underneath it.)/%", "scr_text_slash_scr_text_gml_750_0")
         break
-    case obj_parallaxer_layer:
+    case 193:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* (Your fingers don't fit through the top anymore.^1)&* (You try from below.)/", "scr_text_slash_scr_text_gml_757_0")
@@ -638,7 +659,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (You decided not to stick your fingers through.)/%", "scr_text_slash_scr_text_gml_764_0")
         break
-    case obj_parallaxer_cyber:
+    case 195:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_770_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_771_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_774_0")
@@ -652,7 +673,7 @@ switch argument0
         global.msg[6] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_781_0")
         global.msg[7] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_784_0")
         break
-    case obj_parallaxer_cyber_2:
+    case 196:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Kris", "scr_text_slash_scr_text_gml_787_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Hippo-#potamus", "scr_text_slash_scr_text_gml_788_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_791_0")
@@ -672,7 +693,7 @@ switch argument0
             global.msg[0] = gml_Script_stringsetloc("%%%", "scr_text_slash_scr_text_gml_807_0")
         }
         break
-    case obj_parallaxer_coaster:
+    case 197:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Onion", "scr_text_slash_scr_text_gml_810_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Beauty", "scr_text_slash_scr_text_gml_811_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Asriel II", "scr_text_slash_scr_text_gml_812_0")
@@ -697,7 +718,7 @@ switch argument0
         global.msg[5] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_832_0")
         global.msg[6] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_835_0")
         break
-    case obj_parallaxer_fountain:
+    case 198:
         if (global.choice == 0)
         {
             global.flag[258] = 2
@@ -738,7 +759,7 @@ switch argument0
         global.msg[7] = gml_Script_stringsetloc("\\M5* Somethin' I can only tell a friend.../", "scr_text_slash_scr_text_gml_875_0")
         global.msg[8] = gml_Script_stringsetloc("\\M5* Come back soon, y'hear.../%", "scr_text_slash_scr_text_gml_876_0")
         break
-    case obj_castle_house:
+    case 210:
         global.choicemsg[0] = gml_Script_stringsetloc("Open#Fridge", "scr_text_slash_scr_text_gml_880_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Don't", "scr_text_slash_scr_text_gml_881_0")
         global.choicemsg[2] = gml_Script_stringsetloc("See photos", "scr_text_slash_scr_text_gml_882_0")
@@ -757,7 +778,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\C3 ", "scr_text_slash_scr_text_gml_896_0")
         }
         break
-    case obj_bluhpainting:
+    case 211:
         global.fc = 0
         global.typer = 5
         global.msg[0] = gml_Script_stringsetloc("* Nothing happened./%", "scr_text_slash_scr_text_gml_903_0")
@@ -800,7 +821,7 @@ switch argument0
             global.msg[3] = gml_Script_stringsetloc("* (They all look happy.)/%", "scr_text_slash_scr_text_gml_951_0")
         }
         break
-    case obj_castle_cafe:
+    case 215:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Asriel", "scr_text_slash_scr_text_gml_956_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Neighbors", "scr_text_slash_scr_text_gml_957_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Sister", "scr_text_slash_scr_text_gml_958_0")
@@ -819,7 +840,7 @@ switch argument0
         }
         global.flag[265] = 1
         break
-    case obj_castle_dojo:
+    case 216:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E2* Oh my god^1, Asriel^1!&* Like^1, what a cutie pie!/", "scr_text_slash_scr_text_gml_980_0")
@@ -858,7 +879,7 @@ switch argument0
             global.msg[2] = gml_Script_stringsetloc("\\E2* Hahaha^1, JK^1!&* I totally don't want to^1! Laters!/%", "scr_text_slash_scr_text_gml_1013_0")
         }
         break
-    case obj_cauldron_cake:
+    case 220:
         global.choicemsg[0] = gml_Script_stringsetloc("#Neighbor", "scr_text_slash_scr_text_gml_1018_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Memories", "scr_text_slash_scr_text_gml_1019_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Go Away", "scr_text_slash_scr_text_gml_1020_0")
@@ -867,7 +888,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("\\E0* What's up^1?&* Did you wanna talk about something?/", "scr_text_slash_scr_text_gml_1023_0")
         global.msg[2] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_1024_0")
         break
-    case obj_blocktree_bg:
+    case 221:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E2* Ugh^1, that chick next door drives me NUTS./", "scr_text_slash_scr_text_gml_1030_0")
@@ -906,7 +927,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\E6* That's adorable..^1.&* Now get out of here./%", "scr_text_slash_scr_text_gml_1065_0")
         }
         break
-    case obj_firework_cityscape:
+    case 225:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_1070_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_1071_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1074_0_b")
@@ -916,7 +937,7 @@ switch argument0
         global.msg[2] = gml_Script_stringsetloc("* It's only 50 Dark Dollars./", "scr_text_slash_scr_text_gml_1076_0")
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_1077_0")
         break
-    case obj_cyber_light:
+    case 226:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_1081_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_1082_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1085_0")
@@ -953,7 +974,7 @@ switch argument0
             afford = false
         }
         break
-    case obj_cyber_light_standalone:
+    case 227:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_1121_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_1122_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1125_0")
@@ -990,7 +1011,7 @@ switch argument0
             afford = false
         }
         break
-    case obj_anim:
+    case 228:
         if (global.choice == 0)
         {
             afford = true
@@ -1031,7 +1052,7 @@ switch argument0
             afford = false
         }
         break
-    case obj_darkfountain:
+    case 230:
         global.choicemsg[0] = gml_Script_stringsetloc(" #What's TP?", "scr_text_slash_scr_text_gml_1203_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Secret", "scr_text_slash_scr_text_gml_1204_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Gaining TP", "scr_text_slash_scr_text_gml_1205_0")
@@ -1039,7 +1060,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* I'm TP Master^1.&* Ask me about TP's./", "scr_text_slash_scr_text_gml_1207_0")
         global.msg[1] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_1208_0")
         break
-    case obj_darkfountain_event:
+    case 231:
         global.msg[0] = gml_Script_stringsetloc("* Later^1, kid./%", "scr_text_slash_scr_text_gml_1212_0")
         if (global.choice == 0)
         {
@@ -1076,7 +1097,7 @@ switch argument0
             }
         }
         break
-    case obj_swordobj_example:
+    case 235:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Pacify", "scr_text_slash_scr_text_gml_1252_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Healing", "scr_text_slash_scr_text_gml_1253_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Fact", "scr_text_slash_scr_text_gml_1254_0")
@@ -1084,7 +1105,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* I'm Ralsei Master^1.&* Ask me about RALSEI's./", "scr_text_slash_scr_text_gml_1256_0")
         global.msg[1] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_1257_0")
         break
-    case obj_swordhitbox:
+    case 236:
         global.msg[0] = gml_Script_stringsetloc("* Later^1, kid./%", "scr_text_slash_scr_text_gml_1261_0")
         if (global.choice == 0)
         {
@@ -1112,7 +1133,7 @@ switch argument0
             global.msg[4] = gml_Script_stringsetloc("\\E8* You don't need money to get me to do that!/%", "scr_text_slash_scr_text_gml_1286_0")
         }
         break
-    case obj_sneo_heart_laser:
+    case 240:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Warning", "scr_text_slash_scr_text_gml_1291_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Attack", "scr_text_slash_scr_text_gml_1292_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Fact", "scr_text_slash_scr_text_gml_1293_0")
@@ -1120,7 +1141,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* I'm Susie Master^1.&* Ask me about SUSIE's./", "scr_text_slash_scr_text_gml_1295_0")
         global.msg[1] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_1296_0")
         break
-    case obj_encounter_bullet:
+    case 241:
         global.msg[0] = gml_Script_stringsetloc("* Later^1, kid./%", "scr_text_slash_scr_text_gml_1300_0")
         if (global.choice == 0)
         {
@@ -1182,7 +1203,7 @@ switch argument0
             }
         }
         break
-    case obj_starwalker_offswitch:
+    case 245:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Reviving", "scr_text_slash_scr_text_gml_1374_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Acting", "scr_text_slash_scr_text_gml_1375_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Fact", "scr_text_slash_scr_text_gml_1376_0")
@@ -1190,7 +1211,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* I'm Kris Master^1.&* Ask me about KRIS's./", "scr_text_slash_scr_text_gml_1378_0")
         global.msg[1] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_1379_0")
         break
-    case obj_overworldheart:
+    case 246:
         global.msg[0] = gml_Script_stringsetloc("* Later^1, kid./%", "scr_text_slash_scr_text_gml_1383_0")
         if (global.choice == 0)
         {
@@ -1223,7 +1244,7 @@ switch argument0
             global.msg[3] = gml_Script_stringsetloc("* We had a BOX^1, but it got STOLE./%", "scr_text_slash_scr_text_gml_1413_0")
         }
         break
-    case obj_dancer_gen:
+    case 250:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Throw $1", "scr_text_slash_scr_text_gml_1418_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_1419_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1422_0_b")
@@ -1234,7 +1255,7 @@ switch argument0
         if (global.flag[216] == 1)
             global.msg[0] = gml_Script_stringsetloc("* (The hole is filled to the brim with cash.)/%", "scr_text_slash_scr_text_gml_1427_0")
         break
-    case obj_darkponman_ow:
+    case 251:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* (You put a dollar in the \"Hole.\")/", "scr_text_slash_scr_text_gml_1434_0")
@@ -1255,7 +1276,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (You decided to save the dollar for a different hole.)/%", "scr_text_slash_scr_text_gml_1447_0")
         break
-    case obj_overworld_spade_homing:
+    case 255:
         global.choicemsg[0] = gml_Script_stringsetloc("Make#Ralsei#try it", "scr_text_slash_scr_text_gml_1452_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Try it", "scr_text_slash_scr_text_gml_1453_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Decline", "scr_text_slash_scr_text_gml_1454_0")
@@ -1282,7 +1303,7 @@ switch argument0
         global.msg[19] = gml_Script_stringsetloc("* Kris^1, do you want to^1, um^1, try it?/", "scr_text_slash_scr_text_gml_1475_0")
         global.msg[20] = gml_Script_stringsetloc("\\C3 ", "scr_text_slash_scr_text_gml_1476_0")
         break
-    case obj_overworld_spade:
+    case 256:
         global.flag[232] = 1
         if (global.choice == 0)
         {
@@ -1331,7 +1352,7 @@ switch argument0
             global.msg[12] = gml_Script_stringsetloc("* I don't know!/%", "scr_text_slash_scr_text_gml_1533_0")
         }
         break
-    case obj_queenartfire:
+    case 270:
         addflag = false
         if (global.flag[267] == -10)
         {
@@ -1358,7 +1379,7 @@ switch argument0
         if (addflag == true)
             global.flag[267] += 1
         break
-    case obj_forcefield:
+    case 285:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Flowers", "scr_text_slash_scr_text_gml_1587_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Saucer", "scr_text_slash_scr_text_gml_1588_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Chalk", "scr_text_slash_scr_text_gml_1589_0")
@@ -1367,7 +1388,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("\\E4* D..^1. Did you want to talk about something?/", "scr_text_slash_scr_text_gml_1592_0")
         global.msg[2] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_1593_0")
         break
-    case obj_queenmonitor:
+    case 286:
         global.msg[0] = gml_Script_stringsetloc("* Huh?/%", "scr_text_slash_scr_text_gml_1597_0")
         if (global.choice == 0)
         {
@@ -1423,7 +1444,7 @@ switch argument0
             global.msg[2] = gml_Script_stringsetloc("\\EB* H..^1. Heheheh..^1. Umm^1, tell your mom I said hi./%", "scr_text_slash_scr_text_gml_1653_0")
         }
         break
-    case obj_ferriswheel:
+    case 290:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Add Spade", "scr_text_slash_scr_text_gml_1659_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Add Diamond", "scr_text_slash_scr_text_gml_1660_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Swap", "scr_text_slash_scr_text_gml_1661_0")
@@ -1431,25 +1452,25 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("\\C3 ", "scr_text_slash_scr_text_gml_1663_0")
         global.msg[1] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1666_0")
         break
-    case obj_berdly_wire:
+    case 291:
         if (global.choice == 0)
         {
-            var _temp_local_var_5 = obj_suitspuzz
-            event_user(2)
+            with (obj_suitspuzz)
+                event_user(2)
         }
         if (global.choice == 1)
         {
-            var _temp_local_var_6 = obj_suitspuzz
-            event_user(3)
+            with (obj_suitspuzz)
+                event_user(3)
         }
         if (global.choice == 2)
         {
-            var _temp_local_var_7 = obj_suitspuzz
-            event_user(4)
+            with (obj_suitspuzz)
+                event_user(4)
         }
         global.msg[0] = gml_Script_stringsetloc(" %%", "scr_text_slash_scr_text_gml_1682_0")
         break
-    case obj_caterpillarchara_susiebreakspots:
+    case 295:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Perpetuate", "scr_text_slash_scr_text_gml_1684_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_1685_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1688_0_b")
@@ -1461,7 +1482,7 @@ switch argument0
         if (global.flag[106] == 1)
             global.msg[0] = gml_Script_stringsetloc("* (The moss has been eaten.^1)&* (The cycle continues...)/%", "scr_text_slash_scr_text_gml_1694_0")
         break
-    case obj_beatbullet_wall:
+    case 296:
         if (global.choice == 0)
         {
             global.hp[1] = global.maxhp[1]
@@ -1473,7 +1494,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (The cycle ends here^1, in the corner of a small cell...)/%", "scr_text_slash_scr_text_gml_1709_0")
         break
-    case obj_queenmansion_bg:
+    case 300:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Take", "scr_text_slash_scr_text_gml_1714_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_1715_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1718_0_b")
@@ -1485,7 +1506,7 @@ switch argument0
         if (global.flag[105] == 1)
             global.msg[0] = gml_Script_stringsetloc("* (Ain't nothin' to hold you down...)/%", "scr_text_slash_scr_text_gml_1724_0")
         break
-    case obj_caradventure_car:
+    case 301:
         if (global.choice == 0)
         {
             gml_Script_scr_armorget(5)
@@ -1502,7 +1523,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (Don't need nothin' to hold you down...)/%", "scr_text_slash_scr_text_gml_1745_0")
         break
-    case obj_skewed_sprite_speciall:
+    case 305:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_1750_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #She'll be#fine", "scr_text_slash_scr_text_gml_1751_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1754_0_b")
@@ -1514,12 +1535,12 @@ switch argument0
         global.msg[4] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_1758_0")
         global.msg[5] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1761_0")
         break
-    case obj_skewed_sprite_example:
+    case 306:
         global.msg[0] = gml_Script_stringsetloc("\\E6* Well, regardless of how you feel.../", "scr_text_slash_scr_text_gml_1763_0")
         global.msg[1] = gml_Script_stringsetloc("\\E0* I don't think it would hurt to take a moment.../", "scr_text_slash_scr_text_gml_1764_0")
         global.msg[2] = gml_Script_stringsetloc("\\E6* Close your eyes^1, and think about what she's doing now.../%", "scr_text_slash_scr_text_gml_1765_0")
         break
-    case obj_cybercity_bg_carbridge:
+    case 310:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Go Left", "scr_text_slash_scr_text_gml_1769_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Go Right", "scr_text_slash_scr_text_gml_1770_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1773_0_b")
@@ -1530,11 +1551,11 @@ switch argument0
         global.msg[3] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1778_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1779_0")
         break
-    case obj_cybercity_bg_screen:
+    case 311:
         global.msg[0] = gml_Script_stringsetloc("\\E9* Huh...? Kris...^1? Did you say something back there?/", "scr_text_slash_scr_text_gml_1781_0")
         global.msg[1] = gml_Script_stringsetloc("\\E0* (... I can't hear them anymore...)/%", "scr_text_slash_scr_text_gml_1782_0")
         break
-    case obj_cybercity_trashcan:
+    case 315:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Fix Item", "scr_text_slash_scr_text_gml_1786_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Leave", "scr_text_slash_scr_text_gml_1787_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Fix Us", "scr_text_slash_scr_text_gml_1788_0")
@@ -1543,7 +1564,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("* ... I can even fix you^1! Well^1, well^1, what will it be?/", "scr_text_slash_scr_text_gml_1791_0")
         global.msg[2] = gml_Script_stringsetloc("\\C3 ", "scr_text_slash_scr_text_gml_1792_0")
         break
-    case obj_cybercity_balloon:
+    case 316:
         global.msg[0] = gml_Script_stringsetloc("* Hm^1? What is it now?/%", "scr_text_slash_scr_text_gml_1796_0")
         if (global.choice == 0)
         {
@@ -1594,7 +1615,7 @@ switch argument0
                 con = 10
         }
         break
-    case obj_mansion_doorframe_left_side:
+    case 325:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_1854_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_1855_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1858_0_b")
@@ -1609,7 +1630,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_1865_0")
         }
         break
-    case obj_mansion_doorframe_right_side:
+    case 326:
         if (global.choice == 0)
         {
             if (global.gold >= 40)
@@ -1629,7 +1650,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* Okay I guess./%", "scr_text_slash_scr_text_gml_1892_0")
         break
-    case obj_mansion_doorframe_top:
+    case 327:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_1901_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_1902_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1905_0")
@@ -1638,7 +1659,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_1906_0")
         global.msg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1909_0")
         break
-    case obj_mansion_doorframe_left_top:
+    case 328:
         if (global.choice == 0)
         {
             if (global.gold >= 40)
@@ -1658,7 +1679,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (Hathy accepted your choice.)/%", "scr_text_slash_scr_text_gml_1933_0")
         break
-    case obj_mansion_plate:
+    case 330:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_1939_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_1940_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1943_0")
@@ -1675,7 +1696,7 @@ switch argument0
         global.msg[6] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_1952_0")
         global.msg[7] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_1955_0")
         break
-    case obj_mansion_chandelier:
+    case 331:
         if (global.choice == 0)
         {
             if (global.gold >= 40)
@@ -1694,8 +1715,8 @@ switch argument0
                     global.msg[4] = gml_Script_stringsetloc("\\E2* For getting CHEATED by us!!/", "scr_text_slash_scr_text_gml_1973_0")
                     gml_Script_scr_lanface(5, 1)
                     global.msg[6] = gml_Script_stringsetloc("* Now we may fund our illicit plans!!/%", "scr_text_slash_scr_text_gml_1975_0")
-                    var _temp_local_var_12 = obj_lancerbakesale_event
-                    con = 10
+                    with (obj_lancerbakesale_event)
+                        con = 10
                 }
                 else
                 {
@@ -1715,8 +1736,8 @@ switch argument0
                     global.msg[9] = gml_Script_stringsetloc("* ... to getting SWINDLED by us!/", "scr_text_slash_scr_text_gml_1994_0")
                     gml_Script_scr_lanface(10, 2)
                     global.msg[11] = gml_Script_stringsetloc("* Now we can fund our illicit plans!!!/%", "scr_text_slash_scr_text_gml_1996_0")
-                    _temp_local_var_12 = obj_lancerbakesale_event
-                    con = 10
+                    with (obj_lancerbakesale_event)
+                        con = 10
                 }
             }
             else
@@ -1743,7 +1764,7 @@ switch argument0
             global.msg[4] = gml_Script_stringsetloc("* (Let's just buy one^1, Kris.)/%", "scr_text_slash_scr_text_gml_2023_0")
         }
         break
-    case obj_mansion_car_barrier:
+    case 335:
         global.choicemsg[0] = gml_Script_stringsetloc("#Alphys", "scr_text_slash_scr_text_gml_2028_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Dark World", "scr_text_slash_scr_text_gml_2029_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Help you", "scr_text_slash_scr_text_gml_2030_0")
@@ -1766,7 +1787,7 @@ switch argument0
         }
         global.flag[270] = 1
         break
-    case obj_mansion_art_frame:
+    case 336:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* ... Alphys?/", "scr_text_slash_scr_text_gml_2054_0")
@@ -1796,7 +1817,7 @@ switch argument0
             global.msg[2] = gml_Script_stringsetloc("\\E4* There's one wanted on SEVERAL counts of Comic Mischief./%", "scr_text_slash_scr_text_gml_2078_0")
         }
         break
-    case obj_cyber_tree_spin:
+    case 340:
         global.choicemsg[0] = gml_Script_stringsetloc("#Asriel", "scr_text_slash_scr_text_gml_2083_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Job", "scr_text_slash_scr_text_gml_2084_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Co-Workers", "scr_text_slash_scr_text_gml_2085_0")
@@ -1813,7 +1834,7 @@ switch argument0
         }
         global.flag[271] = 2
         break
-    case obj_cyber_wall_lights:
+    case 341:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* Do you know when Azzy's coming home?/", "scr_text_slash_scr_text_gml_2103_0")
@@ -1856,7 +1877,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\E1* Just enjoy your freedom... While it lasts.../%", "scr_text_slash_scr_text_gml_2142_0")
         }
         break
-    case obj_cyber_teacup_parallaxer:
+    case 345:
         global.choicemsg[0] = gml_Script_stringsetloc("#Fruit Juice", "scr_text_slash_scr_text_gml_2147_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Nothing", "scr_text_slash_scr_text_gml_2148_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2151_0_b")
@@ -1866,7 +1887,7 @@ switch argument0
         global.msg[2] = gml_Script_stringsetloc("* I^1, Father Alvin^1, implore you^1.&* If you have anything weighing on your mind^1, please^1, speak./", "scr_text_slash_scr_text_gml_2153_0")
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2154_0")
         break
-    case obj_city_postbaseball_background:
+    case 346:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* Kris, if you want some of our \"sick\" Fruit Juice^1, you should come to our service./", "scr_text_slash_scr_text_gml_2160_0")
@@ -1881,7 +1902,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("* Let the Angel's power light your way./%", "scr_text_slash_scr_text_gml_2169_0")
         }
         break
-    case obj_afterimage:
+    case 350:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_2174_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_2175_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2178_0_b")
@@ -1889,13 +1910,13 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* (Scented markers.)/", "scr_text_slash_scr_text_gml_2178_0")
         global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2179_0")
         break
-    case obj_afterimage_grow:
+    case 351:
         if (global.choice == 0)
             global.msg[0] = gml_Script_stringsetloc("* (You dig out the marshmallow one and start huffing it.)/%", "scr_text_slash_scr_text_gml_2185_0")
         else
             global.msg[0] = gml_Script_stringsetloc("* (The chocolate one smells too fake anyway.)/%", "scr_text_slash_scr_text_gml_2189_0")
         break
-    case obj_battlecontroller:
+    case 355:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_2194_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_2195_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2198_0_b")
@@ -1906,7 +1927,7 @@ switch argument0
         if (global.plot >= 0)
             global.msg[1] = gml_Script_stringsetloc(" \\C2", "scr_text_slash_scr_text_gml_2205_0")
         break
-    case obj_battlesolid:
+    case 356:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("%%", "scr_text_slash_scr_text_gml_2216_0")
@@ -1916,7 +1937,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (It's good to conserve water.)/%", "scr_text_slash_scr_text_gml_2219_0")
         break
-    case obj_chasebullet:
+    case 360:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_2226_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_2227_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2228_0_b")
@@ -1926,7 +1947,7 @@ switch argument0
         global.msg[2] = gml_Script_stringsetloc("* (Play it?)/", "scr_text_slash_scr_text_gml_2230_0")
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2231_0")
         break
-    case obj_darkener:
+    case 361:
         if (global.choice == 0)
         {
             with (obj_npc_room)
@@ -1937,7 +1958,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (Your hands linger over the keys doing nothing.)/%", "scr_text_slash_scr_text_gml_2243_0")
         break
-    case obj_heartburst:
+    case 365:
         global.msg[0] = gml_Script_stringsetloc("* (Ring^1, ring...)/", "scr_text_slash_scr_text_gml_2248_0")
         gml_Script_scr_torface(1, 8)
         global.msg[2] = gml_Script_stringsetloc("* K..^1. Kris!?/", "scr_text_slash_scr_text_gml_2250_0")
@@ -1959,7 +1980,7 @@ switch argument0
         gml_Script_scr_noface(18)
         global.msg[19] = gml_Script_stringsetloc("* (Click...)/%", "scr_text_slash_scr_text_gml_2267_0")
         break
-    case obj_herokris:
+    case 370:
         global.choicemsg[0] = gml_Script_stringsetloc("Great to#see you#again", "scr_text_slash_scr_text_gml_2271_0")
         global.choicemsg[1] = gml_Script_stringsetloc("Who the#hell are#you?", "scr_text_slash_scr_text_gml_2272_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2275_0_b")
@@ -1968,7 +1989,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("\\E2* how are ya^1, kid?/", "scr_text_slash_scr_text_gml_2276_0")
         global.msg[2] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2277_0")
         break
-    case obj_herosusie:
+    case 371:
         global.choicemsg[0] = gml_Script_stringsetloc("#Store", "scr_text_slash_scr_text_gml_2281_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Friends", "scr_text_slash_scr_text_gml_2282_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Leave", "scr_text_slash_scr_text_gml_2283_0")
@@ -1997,7 +2018,7 @@ switch argument0
         if (global.flag[273] < 1)
             global.flag[273] = 1
         break
-    case obj_heroralsei:
+    case 372:
         global.choicemsg[0] = gml_Script_stringsetloc("#Me", "scr_text_slash_scr_text_gml_2311_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#My Mom", "scr_text_slash_scr_text_gml_2312_0")
         global.choicemsg[2] = gml_Script_stringsetloc("My Teacher", "scr_text_slash_scr_text_gml_2313_0")
@@ -2022,7 +2043,7 @@ switch argument0
             global.msg[2] = gml_Script_stringsetloc("\\E2* anyway^1, i'll be standing here doing nothing./%", "scr_text_slash_scr_text_gml_2335_0")
         }
         break
-    case obj_heronoelle:
+    case 373:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* huh?/%", "scr_text_slash_scr_text_gml_2342_0")
@@ -2072,7 +2093,7 @@ switch argument0
         if (global.choice == 3)
             global.msg[0] = gml_Script_stringsetloc("\\E1* harsh^1, but fair./%", "scr_text_slash_scr_text_gml_2393_0")
         break
-    case obj_krisplace:
+    case 375:
         global.choicemsg[0] = gml_Script_stringsetloc("#1", "scr_text_slash_scr_text_gml_2398_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#2", "scr_text_slash_scr_text_gml_2399_0")
         global.choicemsg[2] = gml_Script_stringsetloc("3", "scr_text_slash_scr_text_gml_2402_0")
@@ -2089,7 +2110,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("* (The phone kept ringing infinitely.)/%", "scr_text_slash_scr_text_gml_2411_0")
         }
         break
-    case obj_monster1:
+    case 376:
         if (global.flag[274] == 1)
             global.flag[274] = 2
         gml_Script_scr_phonename()
@@ -2119,7 +2140,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("* (Click...)/%", "scr_text_slash_scr_text_gml_2429_0")
         }
         break
-    case obj_whiteedge:
+    case 380:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_2435_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_2436_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2439_0_b")
@@ -2131,7 +2152,7 @@ switch argument0
         global.msg[4] = gml_Script_stringsetloc("\\E5* i live just next door^1, ya know./", "scr_text_slash_scr_text_gml_2443_0")
         global.msg[5] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2444_0")
         break
-    case obj_pacifyspell:
+    case 381:
         if (global.choice == 0)
         {
             if (global.flag[33] < 40)
@@ -2170,7 +2191,7 @@ switch argument0
             global.msg[7] = gml_Script_stringsetloc("\\E5* see ya./%", "scr_text_slash_scr_text_gml_2492_0")
         }
         break
-    case obj_icespell:
+    case 385:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Susie", "scr_text_slash_scr_text_gml_2499_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Key", "scr_text_slash_scr_text_gml_2500_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Anything", "scr_text_slash_scr_text_gml_2501_0")
@@ -2196,7 +2217,7 @@ switch argument0
         if (global.flag[276] == 0)
             global.flag[276] = 1
         break
-    case obj_icespell_hexagon:
+    case 386:
         global.choicemsg[0] = gml_Script_stringsetloc(" #She's nice", "scr_text_slash_scr_text_gml_2525_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Terrible", "scr_text_slash_scr_text_gml_2526_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Eats Chalk", "scr_text_slash_scr_text_gml_2527_0")
@@ -2242,7 +2263,7 @@ switch argument0
         if (global.choice == 3)
             global.msg[0] = gml_Script_stringsetloc("\\E0* Tell Azzy I said hi^1, Kris!/%", "scr_text_slash_scr_text_gml_2571_0")
         break
-    case obj_bulletgenparent:
+    case 387:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E2* What...^1?&* She's..^1. a nice person?/", "scr_text_slash_scr_text_gml_2584_0")
@@ -2294,7 +2315,7 @@ switch argument0
             global.msg[7] = gml_Script_stringsetloc("\\E8* (I blew it, didn't I...)/%", "scr_text_slash_scr_text_gml_2630_0")
         }
         break
-    case obj_ralseithrown:
+    case 400:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_2636_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_2637_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2640_0_b")
@@ -2303,7 +2324,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("* (Will you go to bed?)/", "scr_text_slash_scr_text_gml_2641_0")
         global.msg[2] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2642_0")
         break
-    case obj_throwralsei:
+    case 401:
         if (global.choice == 0)
         {
             with (obj_krisroom)
@@ -2313,7 +2334,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (You will sleep later.)/%", "scr_text_slash_scr_text_gml_2653_0")
         break
-    case obj_checkers_leap:
+    case 402:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Sleep", "scr_text_slash_scr_text_gml_2658_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_2659_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2662_0_b")
@@ -2323,7 +2344,7 @@ switch argument0
         global.msg[2] = gml_Script_stringsetloc("* (Will you go to bed?)/", "scr_text_slash_scr_text_gml_2664_0")
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2665_0")
         break
-    case obj_ponman_enemy:
+    case 403:
         if (global.choice == 0)
         {
             global.choicemsg[0] = gml_Script_stringsetloc(" #Sleep!!!", "scr_text_slash_scr_text_gml_2671_0")
@@ -2337,7 +2358,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* (You can sleep in class.)/%", "scr_text_slash_scr_text_gml_2681_0")
         break
-    case obj_clubsbullet_dark:
+    case 405:
         global.choicemsg[0] = gml_Script_stringsetloc("Play#a game", "scr_text_slash_scr_text_gml_2686_0")
         global.choicemsg[1] = gml_Script_stringsetloc("Do not#play a#game", "scr_text_slash_scr_text_gml_2687_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2690_0_b")
@@ -2374,7 +2395,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("* THE KEY IS HIDDEN FROM THE EYES^1. THE OLD SHOPKEEPER KNOWS A SECRET./%", "scr_text_slash_scr_text_gml_2720_0")
         }
         break
-    case obj_clubsbullet:
+    case 406:
         global.choicemsg[0] = gml_Script_stringsetloc("Play#a game", "scr_text_slash_scr_text_gml_2725_0")
         global.choicemsg[1] = gml_Script_stringsetloc("Do not#play a#game", "scr_text_slash_scr_text_gml_2726_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2729_0")
@@ -2396,7 +2417,7 @@ switch argument0
                 con = 20
         }
         break
-    case obj_omawaroid_policecar:
+    case 410:
         global.choicemsg[0] = gml_Script_stringsetloc("#Use Key", "scr_text_slash_scr_text_gml_2745_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do not", "scr_text_slash_scr_text_gml_2746_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2749_0_b")
@@ -2407,7 +2428,7 @@ switch argument0
         global.msg[3] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2752_0")
         global.msg[4] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2755_0")
         break
-    case obj_viro_invaderbullet:
+    case 411:
         if (global.flag[241] < 5)
             global.flag[241] = 5
         gml_Script_scr_keyitemremove(4)
@@ -2428,10 +2449,10 @@ switch argument0
                 con = 5
         }
         break
-    case obj_omawaroid_explosion:
+    case 415:
         global.msg[0] = gml_Script_stringsetloc("* DO NOT TARRY!/%", "scr_text_slash_scr_text_gml_2777_0")
         break
-    case obj_viro_invader:
+    case 420:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Blaze", "scr_text_slash_scr_text_gml_2783_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do Not Blaze", "scr_text_slash_scr_text_gml_2784_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2785_0")
@@ -2439,7 +2460,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* Blaze it./", "scr_text_slash_scr_text_gml_2787_0")
         global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2786_0")
         break
-    case obj_poppup_ad:
+    case 425:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Apologize#Profusely", "scr_text_slash_scr_text_gml_2790_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Intimidate", "scr_text_slash_scr_text_gml_2791_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2794_0_b")
@@ -2448,7 +2469,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("* There's no way I'll forgive you^1, so scram!/", "scr_text_slash_scr_text_gml_2795_0")
         global.msg[2] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2796_0")
         break
-    case obj_blocked_total_fx:
+    case 426:
         if (global.choice == 0)
         {
             gml_Script_scr_ralface(0, 6)
@@ -2485,7 +2506,7 @@ switch argument0
             global.flag[243] = 2
         }
         break
-    case obj_overworld_poppup:
+    case 430:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Listen", "scr_text_slash_scr_text_gml_2841_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do Not", "scr_text_slash_scr_text_gml_2842_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2845_0_b")
@@ -2493,7 +2514,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* (It's a music player.^1)&* (Listen to the contents?)/", "scr_text_slash_scr_text_gml_2845_0")
         global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_2848_0")
         break
-    case obj_overworld_poppup_backup:
+    case 431:
         if (global.choice == 0)
         {
             gml_Script_snd_play(40)
@@ -2503,7 +2524,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (You did not listen.)/%", "scr_text_slash_scr_text_gml_2858_0")
         break
-    case obj_swatchling_shockwave:
+    case 435:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Prison B1", "scr_text_slash_scr_text_gml_2863_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Floor 1F", "scr_text_slash_scr_text_gml_2864_0")
         global.choicemsg[2] = gml_Script_stringsetloc("??????", "scr_text_slash_scr_text_gml_2865_0")
@@ -2511,24 +2532,26 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* (Where will you ride the elevator to?)/", "scr_text_slash_scr_text_gml_2867_0")
         global.msg[1] = gml_Script_stringsetloc("\\C3", "scr_text_slash_scr_text_gml_2868_0")
         break
-    case obj_swatchling_cannonball:
+    case 436:
         global.msg[0] = gml_Script_stringsetloc("%%", "scr_text_slash_scr_text_gml_2874_0")
         if (global.choice == 0)
         {
             if (global.flag[239] != 0)
             {
-                var _temp_local_var_14 = obj_elevatorcontroller
-                if (global.flag[239] == 1)
+                with (obj_elevatorcontroller)
                 {
-                    dir = -1
-                    newcno = 0
-                    con = 100
-                }
-                else
-                {
-                    dir = 1
-                    newcno = 0
-                    con = 100
+                    if (global.flag[239] == 1)
+                    {
+                        dir = -1
+                        newcno = 0
+                        con = 100
+                    }
+                    else
+                    {
+                        dir = 1
+                        newcno = 0
+                        con = 100
+                    }
                 }
             }
             else
@@ -2538,10 +2561,12 @@ switch argument0
         {
             if (global.flag[239] != 1)
             {
-                var _temp_local_var_15 = obj_elevatorcontroller
-                dir = 1
-                newcno = 1
-                con = 100
+                with (obj_elevatorcontroller)
+                {
+                    dir = 1
+                    newcno = 1
+                    con = 100
+                }
             }
             else
                 global.msg[0] = gml_Script_stringsetloc("* (You're there.)/%", "scr_text_slash_scr_text_gml_2909_0")
@@ -2550,16 +2575,18 @@ switch argument0
         {
             if (global.flag[239] != 3)
             {
-                var _temp_local_var_16 = obj_elevatorcontroller
-                dir = -1
-                newcno = 3
-                con = 100
+                with (obj_elevatorcontroller)
+                {
+                    dir = -1
+                    newcno = 3
+                    con = 100
+                }
             }
             else
                 global.msg[0] = gml_Script_stringsetloc("* (You're there.)/%", "scr_text_slash_scr_text_gml_2925_0")
         }
         break
-    case obj_swatchling_candy:
+    case 440:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Ride", "scr_text_slash_scr_text_gml_2934_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_2935_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2938_0_b")
@@ -2567,26 +2594,28 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* (Ride the elevator?)/", "scr_text_slash_scr_text_gml_2938_0")
         global.msg[1] = gml_Script_stringsetloc("\\C2", "scr_text_slash_scr_text_gml_2939_0")
         break
-    case obj_swatchling_battle_controller:
+    case 441:
         global.msg[0] = gml_Script_stringsetloc("%%", "scr_text_slash_scr_text_gml_2945_0")
         if (global.choice == 0)
         {
-            var _temp_local_var_17 = obj_elevatorcontroller
-            if (global.flag[239] == 1)
+            with (obj_elevatorcontroller)
             {
-                dir = 1
-                newcno = 2
-                con = 100
-            }
-            else
-            {
-                dir = -1
-                newcno = 1
-                con = 100
+                if (global.flag[239] == 1)
+                {
+                    dir = 1
+                    newcno = 2
+                    con = 100
+                }
+                else
+                {
+                    dir = -1
+                    newcno = 1
+                    con = 100
+                }
             }
         }
         break
-    case obj_swatchling_bulletcontroller:
+    case 445:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_2966_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Don't", "scr_text_slash_scr_text_gml_2967_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_2970_0")
@@ -2603,7 +2632,7 @@ switch argument0
         global.msg[6] = gml_Script_stringsetloc("\\E2* Y'know, we could go back a sec^1. If you wanted./", "scr_text_slash_scr_text_gml_2979_0")
         global.msg[7] = gml_Script_stringsetloc("\\C2", "scr_text_slash_scr_text_gml_2980_0")
         break
-    case obj_tasque_enemy:
+    case 446:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E2* Well^1, then what are we waiting for?/", "scr_text_slash_scr_text_gml_2986_0")
@@ -2615,7 +2644,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\E9* Let's at least say goodbye to Lancer!/%", "scr_text_slash_scr_text_gml_2992_0")
         }
         break
-    case obj_tasque_soundwave:
+    case 450:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Let's Fight", "scr_text_slash_scr_text_gml_2998_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Let's Not", "scr_text_slash_scr_text_gml_2999_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3002_0_b")
@@ -2630,12 +2659,12 @@ switch argument0
         global.msg[7] = gml_Script_stringsetloc("\\E1* So^1, whaddya say...?/", "scr_text_slash_scr_text_gml_3010_0")
         global.msg[8] = gml_Script_stringsetloc("\\C2", "scr_text_slash_scr_text_gml_3011_0")
         break
-    case obj_tasque_manager_enemy:
+    case 451:
         global.msg[0] = gml_Script_stringsetloc("* Eh^1, don't bother answering./", "scr_text_slash_scr_text_gml_3015_0")
         global.msg[1] = gml_Script_stringsetloc("\\E2* We were just gonna thrash you anyway^1, so.../", "scr_text_slash_scr_text_gml_3016_0")
         global.msg[2] = gml_Script_stringsetloc("\\E3* See ya!/%", "scr_text_slash_scr_text_gml_3017_0")
         break
-    case obj_tm_whip_animation_old:
+    case 455:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Me", "scr_text_slash_scr_text_gml_3022_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Asriel", "scr_text_slash_scr_text_gml_3023_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Pie", "scr_text_slash_scr_text_gml_3024_0")
@@ -2645,7 +2674,7 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* Kris^1? What is it^1, honey?/", "scr_text_slash_scr_text_gml_3027_0")
         global.msg[1] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_3028_0")
         break
-    case obj_tm_whip:
+    case 456:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("\\E0* Kris^1, honey^1, you have grown up so much.../", "scr_text_slash_scr_text_gml_3036_0_b")
@@ -2694,7 +2723,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("* You do not look quite yourself./%", "scr_text_slash_scr_text_gml_3079_0")
         }
         break
-    case obj_tm_quizzler_old:
+    case 460:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Field", "scr_text_slash_scr_text_gml_3084_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Forest", "scr_text_slash_scr_text_gml_3085_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3088_0_b")
@@ -2713,7 +2742,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\C4 ", "scr_text_slash_scr_text_gml_3101_0")
         }
         break
-    case obj_tm_quizzap:
+    case 461:
         global.msg[0] = gml_Script_stringsetloc("* (But nothing happened.)/%", "scr_text_slash_scr_text_gml_3104_0")
         if (global.choice == 0)
         {
@@ -2746,7 +2775,7 @@ switch argument0
             }
         }
         break
-    case obj_maus_basket:
+    case 465:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Give Cake", "scr_text_slash_scr_text_gml_3138_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Do not", "scr_text_slash_scr_text_gml_3139_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3142_0_b")
@@ -2755,7 +2784,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("* It's my cake^1, isn't it!^1?&* Did you repair it!^1?&* Will you return it!?/", "scr_text_slash_scr_text_gml_3143_0")
         global.msg[2] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_3146_0")
         break
-    case obj_maus_basket_susie:
+    case 466:
         if (global.choice == 0)
         {
             gml_Script_scr_itemremove(6)
@@ -2771,7 +2800,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* Sweet in cake^1, but not in character^1! A tragedy!!/%", "scr_text_slash_scr_text_gml_3162_0")
         break
-    case obj_maus_critter:
+    case 470:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Take Cake", "scr_text_slash_scr_text_gml_3167_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_3168_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3171_0")
@@ -2784,7 +2813,7 @@ switch argument0
             global.msg[1] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_3181_0")
         }
         break
-    case obj_player_trail:
+    case 471:
         if (global.choice == 0)
         {
             gml_Script_scr_itemget(7)
@@ -2797,7 +2826,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc("* I understand!^1! Too much cake will make you spin and cry!!/%", "scr_text_slash_scr_text_gml_3197_0")
         break
-    case obj_sneo_lilguy:
+    case 600:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Yes", "scr_text_slash_scr_text_gml_3202_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_3205_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3206_0_b")
@@ -2806,7 +2835,7 @@ switch argument0
         global.msg[1] = gml_Script_stringsetloc("* (He offered you something.)/", "scr_text_slash_scr_text_gml_3207_0")
         global.msg[2] = gml_Script_stringsetloc("\\C2 ", "scr_text_slash_scr_text_gml_3210_0")
         break
-    case obj_sneo_crew_dissolve:
+    case 601:
         global.flag[910] = 2
         if (global.choice == 0)
         {
@@ -2817,7 +2846,7 @@ switch argument0
         else
             global.msg[0] = gml_Script_stringsetloc("* (Then he needn't be here.)/%", "scr_text_slash_scr_text_gml_3221_0")
         break
-    case obj_ch2_sceneex3:
+    case 1000:
         global.choicemsg[0] = gml_Script_stringsetloc("Lost sleep#from being#Susie's partner", "scr_text_slash_scr_text_gml_3233_0")
         global.choicemsg[1] = gml_Script_stringsetloc("Actually my#sleep#quality#increased", "scr_text_slash_scr_text_gml_3234_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3235_0")
@@ -2828,7 +2857,7 @@ switch argument0
         gml_Script_msgnextloc("\\E9* You didn't lose sleep over it^1, did you?/", "scr_text_slash_scr_text_gml_3241_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3242_0")
         break
-    case obj_ch2_scene_sideb_noelleroom:
+    case 1001:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("alphys")
@@ -2851,7 +2880,7 @@ switch argument0
             gml_Script_msgnextloc("\\EA* I don't want to revert into my primal form./%", "scr_text_slash_scr_text_gml_3266_0")
         }
         break
-    case obj_fountainball:
+    case 1002:
         global.choicemsg[0] = gml_Script_stringsetloc("Hanging out#alone in#the closet", "scr_text_slash_scr_text_gml_3272_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Crime", "scr_text_slash_scr_text_gml_3273_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3274_0")
@@ -2860,7 +2889,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\EP* (Kris^1! Help me out here^1! What do we say!?)/", "scr_text_slash_scr_text_gml_3278_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3279_0")
         break
-    case obj_kris_fountain:
+    case 1003:
         with (obj_actor)
         {
             if (name != "noelle")
@@ -2882,7 +2911,7 @@ switch argument0
             gml_Script_msgnextloc("\\E5* It sucks./%", "scr_text_slash_scr_text_gml_3301_0")
         }
         break
-    case obj_ch2_city_berdly:
+    case 1010:
         global.choicemsg[0] = gml_Script_stringsetloc("#Hug", "scr_text_slash_scr_text_gml_3308_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_3309_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3310_0")
@@ -2891,7 +2920,7 @@ switch argument0
         gml_Script_msgnextloc("* (Hug the dummy?)/", "scr_text_slash_scr_text_gml_3314_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3315_0")
         break
-    case obj_ch2_city_car_a:
+    case 1011:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "* You hugged the dummy./", "scr_text_slash_scr_text_gml_3321_0")
@@ -2904,7 +2933,7 @@ switch argument0
             gml_Script_msgnextloc("* You won't take the path of fluffiness any longer./%", "scr_text_slash_scr_text_gml_3328_0")
         }
         break
-    case obj_ch2_city_car_b:
+    case 1012:
         global.choicemsg[0] = gml_Script_stringsetloc("#Hell yeah!", "scr_text_slash_scr_text_gml_3333_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No...", "scr_text_slash_scr_text_gml_3334_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3335_0")
@@ -2916,7 +2945,7 @@ switch argument0
         gml_Script_scr_anyface_next("no_name", 0)
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3341_0")
         break
-    case obj_ch2_city_noelle_monologue:
+    case 1013:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("susie")
@@ -2945,7 +2974,7 @@ switch argument0
             gml_Script_msgnextloc("\\E0\\M0* My giant hamster wheel is getting cold./%", "scr_text_slash_scr_text_gml_3370_0")
         }
         break
-    case obj_ch2_room_castle_2f:
+    case 1014:
         global.choicemsg[0] = gml_Script_stringsetloc("#Bosom", "scr_text_slash_scr_text_gml_3375_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Perish", "scr_text_slash_scr_text_gml_3376_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3377_0")
@@ -2963,10 +2992,10 @@ switch argument0
         gml_Script_msgnextloc("\\EC* Flourish Under The Warm Bosom Of My Hellish Reign/", "scr_text_slash_scr_text_gml_3389_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3390_0")
         break
-    case obj_ch2_room_town_south_alphys:
+    case 1015:
         gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_3394_0")
         break
-    case obj_ch2_room_castle_kris:
+    case 1020:
         global.choicemsg[0] = gml_Script_stringsetloc("Lie and say#you want to#hear more", "scr_text_slash_scr_text_gml_3398_0")
         global.choicemsg[1] = gml_Script_stringsetloc("Stop#Conversation", "scr_text_slash_scr_text_gml_3399_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3400_0")
@@ -2998,7 +3027,7 @@ switch argument0
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3429_0")
         }
         break
-    case obj_ch2_room_dungeon_2f:
+    case 1021:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("burgerpants")
@@ -3024,7 +3053,7 @@ switch argument0
             gml_Script_msgnextloc("\\E8* Go ahead and tell Asriel right now!!!/%", "scr_text_slash_scr_text_gml_3456_0")
         }
         break
-    case obj_ch2_room_dungeon_2f_ee:
+    case 1022:
         global.choicemsg[0] = gml_Script_stringsetloc("#Inspect", "scr_text_slash_scr_text_gml_3461_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do not", "scr_text_slash_scr_text_gml_3462_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3463_0")
@@ -3033,7 +3062,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's a soda-dispensing machine.)/", "scr_text_slash_scr_text_gml_3466_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3467_0")
         break
-    case obj_ch2_room_castle_1f:
+    case 1023:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -3053,7 +3082,7 @@ switch argument0
             gml_Script_msgnextloc("\\EK* What? What!? They do^1, right!?/%", "scr_text_slash_scr_text_gml_3487_0")
         }
         break
-    case obj_ch2_room_castle_1f_cake:
+    case 1024:
         global.choicemsg[0] = gml_Script_stringsetloc("#Dark World", "scr_text_slash_scr_text_gml_3492_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#...", "scr_text_slash_scr_text_gml_3493_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3494_0")
@@ -3064,7 +3093,7 @@ switch argument0
         gml_Script_msgnextloc("* Anything I can help you with^1, punk?/", "scr_text_slash_scr_text_gml_3499_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3500_0")
         break
-    case obj_ch2_room_cyber_battle_maze_2:
+    case 1025:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("undyne")
@@ -3082,7 +3111,7 @@ switch argument0
             gml_Script_msgnextloc("\\E6* Punks like you should be home playing video games./%", "scr_text_slash_scr_text_gml_3519_0")
         }
         break
-    case obj_ch2_room_mansion_east_1f_e:
+    case 1028:
         global.choicemsg[0] = gml_Script_stringsetloc("#Complain#About#Police", "scr_text_slash_scr_text_gml_3547_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Talk#About#School", "scr_text_slash_scr_text_gml_3548_0")
         global.choicemsg[2] = gml_Script_stringsetloc("See ya", "scr_text_slash_scr_text_gml_3549_0")
@@ -3111,7 +3140,7 @@ switch argument0
             gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_3575_0")
         }
         break
-    case obj_ch2_room_mansion_east_1f_secret:
+    case 1029:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("alphys")
@@ -3151,7 +3180,7 @@ switch argument0
             gml_Script_msgnextloc("\\E3* U-umm^1, there's^1, no school tomorrow though!!/%", "scr_text_slash_scr_text_gml_3615_0")
         }
         break
-    case obj_ch2_room_mansion_east_2f_a:
+    case 1030:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_3620_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_3621_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3622_0")
@@ -3164,7 +3193,7 @@ switch argument0
         gml_Script_msgnextloc("\\M0* Didja miss..^1. me?/", "scr_text_slash_scr_text_gml_3629_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3630_0")
         break
-    case obj_ch2_room_mansion_east_2f_c_a:
+    case 1031:
         if (global.choice == 0)
         {
             global.flag[425] = 1
@@ -3212,7 +3241,7 @@ switch argument0
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_3678_0")
         }
         break
-    case obj_ch2_room_city_susie_ralsei_fun_2:
+    case 1035:
         global.choicemsg[0] = gml_Script_stringsetloc("#Let's go!#Let's go!", "scr_text_slash_scr_text_gml_3683_0")
         global.choicemsg[1] = gml_Script_stringsetloc("We can use#the computer#at my#house", "scr_text_slash_scr_text_gml_3684_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3685_0")
@@ -3222,7 +3251,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* ... So what's it gonna be^1, Kris?/", "scr_text_slash_scr_text_gml_3689_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3690_0")
         break
-    case obj_ch2_room_city_savepoint:
+    case 1036:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("susie")
@@ -3246,7 +3275,7 @@ switch argument0
             gml_Script_msgnextloc("\\EY* I'm dragging you in too!/%", "scr_text_slash_scr_text_gml_3714_0")
         }
         break
-    case obj_ch2_room_spamton_shop_exterior:
+    case 1037:
         global.choicemsg[0] = gml_Script_stringsetloc("#Talk", "scr_text_slash_scr_text_gml_3719_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Susie", "scr_text_slash_scr_text_gml_3720_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Don't", "scr_text_slash_scr_text_gml_3721_0")
@@ -3273,7 +3302,7 @@ switch argument0
         }
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_3747_0")
         break
-    case obj_ch2_town_library:
+    case 1038:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("bratty")
@@ -3307,7 +3336,7 @@ switch argument0
             gml_Script_msgnextloc("\\E6* Like^1, don't even THINK you can like them as much as me./%", "scr_text_slash_scr_text_gml_3781_0")
         }
         break
-    case obj_ch2_castle_tutorial:
+    case 1039:
         global.choicemsg[0] = gml_Script_stringsetloc("#Talk More", "scr_text_slash_scr_text_gml_3786_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Don't talk more", "scr_text_slash_scr_text_gml_3787_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3788_0")
@@ -3332,7 +3361,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\E6* What's up^1, Kris?/", "scr_text_slash_scr_text_gml_3812_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3815_0")
         break
-    case obj_ch2_town_diner:
+    case 1040:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("catty")
@@ -3351,7 +3380,7 @@ switch argument0
             gml_Script_msgnextloc("\\E8* OK!^1! Don't get stuck in a tree!^1! Mwah!^1! Mwah!!/%", "scr_text_slash_scr_text_gml_3835_0")
         }
         break
-    case obj_ch2_town_graveyard:
+    case 1041:
         global.choicemsg[0] = gml_Script_stringsetloc("#Cause they#care", "scr_text_slash_scr_text_gml_3840_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Your family#is weird", "scr_text_slash_scr_text_gml_3841_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_3842_0")
@@ -3365,7 +3394,7 @@ switch argument0
         gml_Script_msgnextloc("\\E1* Why are they even here?/", "scr_text_slash_scr_text_gml_3850_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_3851_0")
         break
-    case obj_ch2_town_pizza:
+    case 1042:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("catti")
@@ -3388,7 +3417,7 @@ switch argument0
                 con = 0
         }
         break
-    case obj_ch2_town_north:
+    case 1043:
         global.choicemsg[0] = gml_Script_stringsetloc("#Noelle", "scr_text_slash_scr_text_gml_3877_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Family", "scr_text_slash_scr_text_gml_3878_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Jockington", "scr_text_slash_scr_text_gml_3879_0")
@@ -3398,7 +3427,7 @@ switch argument0
         gml_Script_msgnextloc("\\E1* What?/", "scr_text_slash_scr_text_gml_3883_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_3884_0")
         break
-    case obj_ch2_rouxls_boat:
+    case 1044:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("catti")
@@ -3446,7 +3475,7 @@ switch argument0
         else if (global.choice == 3)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_3932_0")
         break
-    case obj_ch2_susie_ralsei_fun:
+    case 1045:
         global.choicemsg[0] = gml_Script_stringsetloc("#Gerson", "scr_text_slash_scr_text_gml_3937_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Hammer", "scr_text_slash_scr_text_gml_3938_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Asriel", "scr_text_slash_scr_text_gml_3939_0")
@@ -3456,14 +3485,11 @@ switch argument0
         gml_Script_msgnextloc("* Did you seek something from me?/", "scr_text_slash_scr_text_gml_3943_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_3944_0")
         break
-    case obj_ch2_room_mansion_3f:
+    case 1046:
         if (global.choice == 0)
         {
             if (global.flag[337] < 2)
-            {
-                global.flag[337] = (null + 1)
-                // WARNING: Popz'd an empty stack.
-            }
+                global.flag[337] += 1
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* It's been a few years since my father passed on.../", "scr_text_slash_scr_text_gml_3955_0")
             gml_Script_msgnextloc("* Fans of his famous book series^1, Lord of the Hammer.../", "scr_text_slash_scr_text_gml_3956_0")
@@ -3476,10 +3502,7 @@ switch argument0
         else if (global.choice == 1)
         {
             if (global.flag[337] < 2)
-            {
-                global.flag[337] = (null + 1)
-                // WARNING: Popz'd an empty stack.
-            }
+                global.flag[337] += 1
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* As per the ritual^1, a hammer is buried in the earth here./", "scr_text_slash_scr_text_gml_3970_0")
             gml_Script_msgnextloc("* To symbolize his existence./", "scr_text_slash_scr_text_gml_3971_0")
@@ -3513,7 +3536,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* Good day^1, Kris. May the Angel watch over you.../%", "scr_text_slash_scr_text_gml_3997_0")
         }
         break
-    case obj_ch2_room_mansion_dining:
+    case 1047:
         global.choicemsg[0] = gml_Script_stringsetloc("#Current#situation", "scr_text_slash_scr_text_gml_4002_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Susie", "scr_text_slash_scr_text_gml_4003_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Noelle", "scr_text_slash_scr_text_gml_4004_0")
@@ -3534,7 +3557,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\E2* What is it^1, Krismas?/", "scr_text_slash_scr_text_gml_4021_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_4024_0")
         break
-    case obj_ch2_room_mansion_kitchen:
+    case 1048:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("rudy")
@@ -3579,7 +3602,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\E2* Yeah^1, get on outta here and do something fun!/%", "scr_text_slash_scr_text_gml_4069_0")
         }
         break
-    case obj_ch2_room_mansion_2f_shortcut:
+    case 1049:
         global.choicemsg[0] = gml_Script_stringsetloc("#Take it", "scr_text_slash_scr_text_gml_4074_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do not", "scr_text_slash_scr_text_gml_4075_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4076_0")
@@ -3592,7 +3615,7 @@ switch argument0
         else
             gml_Script_msgsetloc(0, "* (You have already taken enough.)/%", "scr_text_slash_scr_text_gml_4098_0_b")
         break
-    case obj_ch2_room_mansion_projection:
+    case 1050:
         if (global.choice == 0)
         {
             global.flag[430] = 1
@@ -3602,7 +3625,7 @@ switch argument0
         else
             gml_Script_msgsetloc(0, "* It isn't yours^1, after all./%", "scr_text_slash_scr_text_gml_4090_0")
         break
-    case obj_ch2_room_city_spamton_house:
+    case 1055:
         global.choicemsg[0] = gml_Script_stringsetloc("#You", "scr_text_slash_scr_text_gml_4095_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Someone#Else", "scr_text_slash_scr_text_gml_4096_0")
         global.choicemsg[2] = gml_Script_stringsetloc("No", "scr_text_slash_scr_text_gml_4097_0")
@@ -3613,7 +3636,7 @@ switch argument0
         gml_Script_msgnextloc("* ..^1. unless you're looking for someone else?/", "scr_text_slash_scr_text_gml_4101_0")
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_4102_0")
         break
-    case obj_ch2_room_cyber_intro_1:
+    case 1056:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "* Me? Me? ME!?!/", "scr_text_slash_scr_text_gml_4108_0")
@@ -3667,7 +3690,7 @@ switch argument0
         if (global.choice == 2)
             gml_Script_msgsetloc(0, "* Then leave^1! Leave^1! LEAVE!!!/%", "scr_text_slash_scr_text_gml_4169_0")
         break
-    case obj_ch2_room_castle_area_1:
+    case 1057:
         global.choicemsg[0] = gml_Script_stringsetloc("#Go with#Ralsei", "scr_text_slash_scr_text_gml_4174_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Go with#Susie", "scr_text_slash_scr_text_gml_4175_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4176_0")
@@ -3678,12 +3701,12 @@ switch argument0
         gml_Script_msgnextloc("\\E2* Who do you want to go with?/", "scr_text_slash_scr_text_gml_4181_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4182_0")
         break
-    case obj_ch2_room_castle_dojo:
+    case 1058:
         gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4186_0")
         with (obj_ch2_scene12)
             con = 10
         break
-    case obj_ch2_room_mansion_east_4f_b:
+    case 1059:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yeah", "scr_text_slash_scr_text_gml_4191_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Not yet", "scr_text_slash_scr_text_gml_4192_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4193_0")
@@ -3692,7 +3715,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E0* Kris^1, you going home?/", "scr_text_slash_scr_text_gml_4196_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4197_0")
         break
-    case obj_ch2_room_city_traffic_jam:
+    case 1060:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4203_0")
@@ -3708,7 +3731,7 @@ switch argument0
                 con = 6
         }
         break
-    case obj_viro_poison_effect:
+    case 1061:
         global.choicemsg[0] = gml_Script_stringsetloc("#Wondering", "scr_text_slash_scr_text_gml_4218_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Don't care", "scr_text_slash_scr_text_gml_4219_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4220_0")
@@ -3718,7 +3741,7 @@ switch argument0
         gml_Script_msgnextloc("\\EI* ..^1. Are you wondering how Susie is doing right now?/", "scr_text_slash_scr_text_gml_4224_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4225_0")
         break
-    case obj_ch2_room_castle_transformed:
+    case 1062:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("ralsei")
@@ -3734,7 +3757,7 @@ switch argument0
                 con = 20
         }
         break
-    case obj_ch2_room_town_south:
+    case 1063:
         global.choicemsg[0] = gml_Script_stringsetloc("#Wondering", "scr_text_slash_scr_text_gml_4246_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Really#don't care", "scr_text_slash_scr_text_gml_4247_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4248_0")
@@ -3745,7 +3768,7 @@ switch argument0
         gml_Script_msgnextloc("\\EJ* Perhaps^1, if you could potentially see it^1, would you want to?/", "scr_text_slash_scr_text_gml_4253_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4254_0")
         break
-    case obj_berdly_rose:
+    case 1064:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("ralsei")
@@ -3763,7 +3786,7 @@ switch argument0
                 con = 30
         }
         break
-    case obj_ch2_queen_static:
+    case 1065:
         global.choicemsg[0] = gml_Script_stringsetloc("#Of course", "scr_text_slash_scr_text_gml_4277_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No Triple#Trucies", "scr_text_slash_scr_text_gml_4278_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4279_0")
@@ -3773,7 +3796,7 @@ switch argument0
         gml_Script_msgnextloc("\\E2* ..^1. G-got any room for another truce?/", "scr_text_slash_scr_text_gml_4283_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4284_0")
         break
-    case obj_berdlycoaster_event:
+    case 1066:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -3790,7 +3813,7 @@ switch argument0
                 con = 20
         }
         break
-    case obj_visualEffect_pacify:
+    case 1069:
         global.choicemsg[0] = gml_Script_stringsetloc("#We're friends", "scr_text_slash_scr_text_gml_4306_0")
         global.choicemsg[1] = gml_Script_stringsetloc("We're#something#else", "scr_text_slash_scr_text_gml_4307_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4308_0")
@@ -3808,7 +3831,7 @@ switch argument0
         gml_Script_msgnextloc("\\E8* (..^1. yet^1, somehow^1, it's hard to say we're exactly friends...?)/", "scr_text_slash_scr_text_gml_4320_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4321_0")
         break
-    case obj_anime_bg_ellipse:
+    case 1070:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -3825,17 +3848,17 @@ switch argument0
             gml_Script_msgnextloc("\\E2* (There's no good interpretation^1, that's for sure!)/%", "scr_text_slash_scr_text_gml_4336_0")
         }
         break
-    case obj_anime_bg_star:
+    case 1071:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_4341_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Talk", "scr_text_slash_scr_text_gml_4342_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Leave", "scr_text_slash_scr_text_gml_4343_0")
         global.choicemsg[3] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4344_0")
         gml_Script_scr_miniface_init_sweet()
         gml_Script_instance_create(0, 0, obj_moneydisplay)
-        gml_Script_msgsetloc(0, "\\m3        *What'll it be^1, chief?&    I got CD Bagels^1, $80 a pop!/", "scr_text_slash_scr_text_gml_4346_0")
+        gml_Script_msgsetloc(0, "\\m3		*What'll it be^1, chief?&	I got CD Bagels^1, $80 a pop!/", "scr_text_slash_scr_text_gml_4346_0")
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_4347_0")
         break
-    case obj_anime_bg_dot:
+    case 1072:
         if (global.choice == 0)
         {
             var can_afford = global.gold >= 80
@@ -3846,20 +3869,20 @@ switch argument0
                 {
                     global.gold -= 80
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3        *Good eye for music^1!/", "scr_text_slash_scr_text_gml_4360_0")
+                    gml_Script_msgsetloc(0, "\\m3		*Good eye for music^1!/", "scr_text_slash_scr_text_gml_4360_0")
                     gml_Script_snd_play(149)
                     gml_Script_msgnext(itemgetstring)
                 }
                 else
                 {
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3        *Too much stuff^1, chief^1!&    It won't fit^2!&\\m2    I can't fit either^2./%", "scr_text_slash_scr_text_gml_4366_0")
+                    gml_Script_msgsetloc(0, "\\m3		*Too much stuff^1, chief^1!&	It won't fit^2!&\\m2	I can't fit either^2./%", "scr_text_slash_scr_text_gml_4366_0")
                 }
             }
             else
             {
                 gml_Script_scr_miniface_init_sweet()
-                gml_Script_msgsetloc(0, "\\m3        *Hey^1, you can't&    shortchange me^2!&\\m2    Only me^2./%", "scr_text_slash_scr_text_gml_4372_0")
+                gml_Script_msgsetloc(0, "\\m3		*Hey^1, you can't&	shortchange me^2!&\\m2	Only me^2./%", "scr_text_slash_scr_text_gml_4372_0")
             }
         }
         if (global.choice == 1)
@@ -3875,17 +3898,17 @@ switch argument0
                 if gml_Script_scr_havechar(4)
                 {
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3        *And who is that^1, ahem^1,& madimoyzel^2?&\\m1    Leave her alone^1, Cap^2!/", "scr_text_slash_scr_text_gml_4392_0")
-                    gml_Script_msgnextloc("\\m3        *Nice radio antenna you& got there..^2.&\\m1    Those are antlers^1, Cap^2!/", "scr_text_slash_scr_text_gml_4393_0")
-                    gml_Script_msgnextloc("\\m3        *H-huh!? I^1, uhh..^1. hmm^2.&\\m3    .../", "scr_text_slash_scr_text_gml_4394_0")
-                    gml_Script_msgnextloc("\\m2        *Let's play her a song!/%", "scr_text_slash_scr_text_gml_4395_0")
+                    gml_Script_msgsetloc(0, "\\m3		*And who is that^1, ahem^1,& madimoyzel^2?&\\m1	Leave her alone^1, Cap^2!/", "scr_text_slash_scr_text_gml_4392_0")
+                    gml_Script_msgnextloc("\\m3		*Nice radio antenna you& got there..^2.&\\m1	Those are antlers^1, Cap^2!/", "scr_text_slash_scr_text_gml_4393_0")
+                    gml_Script_msgnextloc("\\m3		*H-huh!? I^1, uhh..^1. hmm^2.&\\m3	.../", "scr_text_slash_scr_text_gml_4394_0")
+                    gml_Script_msgnextloc("\\m2		*Let's play her a song!/%", "scr_text_slash_scr_text_gml_4395_0")
                 }
                 else
                 {
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3        *..^1. so where's the moyzel^2?&\\m1    Huh!? She's kidnapped!/", "scr_text_slash_scr_text_gml_4399_0")
-                    gml_Script_msgnextloc("\\m1        *That's awful..^2.&\\m3    That sucks..^2.&\\m2    .../", "scr_text_slash_scr_text_gml_4400_0")
-                    gml_Script_msgnextloc("\\m2        *Let's cheer up!/%", "scr_text_slash_scr_text_gml_4401_0")
+                    gml_Script_msgsetloc(0, "\\m3		*..^1. so where's the moyzel^2?&\\m1	Huh!? She's kidnapped!/", "scr_text_slash_scr_text_gml_4399_0")
+                    gml_Script_msgnextloc("\\m1		*That's awful..^2.&\\m3	That sucks..^2.&\\m2	.../", "scr_text_slash_scr_text_gml_4400_0")
+                    gml_Script_msgnextloc("\\m2		*Let's cheer up!/%", "scr_text_slash_scr_text_gml_4401_0")
                 }
                 with (obj_ch2_room_city_savepoint)
                     con = 10
@@ -3893,13 +3916,13 @@ switch argument0
             else
             {
                 gml_Script_scr_miniface_init_sweet()
-                gml_Script_msgsetloc(0, "\\m3        *This music^1, it's nice music^2.&\\m2    That's my favorite genre^2./%", "scr_text_slash_scr_text_gml_4408_0")
+                gml_Script_msgsetloc(0, "\\m3		*This music^1, it's nice music^2.&\\m2	That's my favorite genre^2./%", "scr_text_slash_scr_text_gml_4408_0")
             }
         }
         if (global.choice == 2)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4413_0")
         break
-    case obj_anime_bg_line:
+    case 1073:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Take", "scr_text_slash_scr_text_gml_4418_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Don't", "scr_text_slash_scr_text_gml_4419_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4420_0")
@@ -3909,7 +3932,7 @@ switch argument0
         gml_Script_msgnextloc("* Free samples!^1! Would you like one!?/", "scr_text_slash_scr_text_gml_4424_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4425_0")
         break
-    case obj_thrash_transformation_original:
+    case 1074:
         if (global.choice == 0)
         {
             var haveSusie = gml_Script_scr_havechar(2)
@@ -3953,7 +3976,7 @@ switch argument0
             }
         }
         break
-    case obj_thrash_transformation_controller:
+    case 1075:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_4481_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #Don't Buy", "scr_text_slash_scr_text_gml_4482_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4483_0")
@@ -3964,7 +3987,7 @@ switch argument0
         gml_Script_msgnextloc("* We're selling this for 75`% off! Only 300 Dark Dollars!/", "scr_text_slash_scr_text_gml_4487_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4489_0")
         break
-    case obj_thrash_transformation_part:
+    case 1076:
         if (global.choice == 0)
         {
             if (global.gold >= 300)
@@ -3995,7 +4018,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4534_0")
         break
-    case obj_thrash_transformation_transition:
+    case 1077:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Buy", "scr_text_slash_scr_text_gml_4539_0")
         global.choicemsg[1] = gml_Script_stringsetloc(" #No", "scr_text_slash_scr_text_gml_4540_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4541_0")
@@ -4006,7 +4029,7 @@ switch argument0
         gml_Script_msgnextloc("* For $100^1, Choose your OWN flavor!!/", "scr_text_slash_scr_text_gml_4546_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4547_0")
         break
-    case obj_thrash_intro:
+    case 1078:
         if (global.choice == 0)
         {
             var hasroom = 0
@@ -4032,7 +4055,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* But if you don't choose a flavor^1, who will!?!?/%", "scr_text_slash_scr_text_gml_4580_0")
         }
         break
-    case obj_thrash_transform:
+    case 1079:
         global.choicemsg[0] = gml_Script_stringsetloc(" #Kris", "scr_text_slash_scr_text_gml_4585_0")
         global.choicemsg[1] = (gml_Script_scr_havechar(4) ? gml_Script_stringsetloc(" #Noelle", "scr_text_slash_scr_text_gml_4586_0") : gml_Script_stringsetloc(" #Susie", "scr_text_slash_scr_text_gml_4586_1"))
         global.choicemsg[2] = (gml_Script_scr_havechar(4) ? gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4587_0_b") : gml_Script_stringsetloc("Ralsei", "scr_text_slash_scr_text_gml_4587_1"))
@@ -4042,7 +4065,7 @@ switch argument0
         var choiceAmount = (gml_Script_scr_havechar(4) ? "\\C2 " : "\\C3 ")
         gml_Script_msgnext(choiceAmount)
         break
-    case obj_bqueen_intro:
+    case 1080:
         itemgetstring = gml_Script_stringsetloc("%%", "scr_text_slash_scr_text_gml_4596_0")
         if (global.choice == 0)
             itemgetstring = gml_Script_scr_itemget_anytype_text(18, "item")
@@ -4057,7 +4080,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* Okay^1, here you go!/", "scr_text_slash_scr_text_gml_4617_0")
         gml_Script_msgnext(itemgetstring)
         break
-    case obj_gigaqueen_intro_round:
+    case 1081:
         global.choicemsg[0] = gml_Script_stringsetloc("#Go Inside", "scr_text_slash_scr_text_gml_4622_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Don't#go in", "scr_text_slash_scr_text_gml_4623_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4624_0")
@@ -4066,7 +4089,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (The door is unlocked.)/", "scr_text_slash_scr_text_gml_4627_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4628_0")
         break
-    case obj_thrash_spark:
+    case 1082:
         if (global.choice == 0)
         {
             if gml_Script_scr_havechar(4)
@@ -4097,7 +4120,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4659_0")
         break
-    case obj_thrash_zap_controller:
+    case 1083:
         global.choicemsg[0] = gml_Script_stringsetloc("#Give to#Ralsei", "scr_text_slash_scr_text_gml_4664_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Give to#Susie", "scr_text_slash_scr_text_gml_4665_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Give to Noelle", "scr_text_slash_scr_text_gml_4666_0")
@@ -4107,7 +4130,7 @@ switch argument0
         gml_Script_msgnextloc("\\E1* Is that a..^1. gift for someone?/", "scr_text_slash_scr_text_gml_4670_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_4671_0")
         break
-    case obj_thrash_zap:
+    case 1084:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4677_0")
@@ -4133,7 +4156,7 @@ switch argument0
                 con = 40
         }
         break
-    case obj_zap_burn:
+    case 1085:
         global.choicemsg[0] = gml_Script_stringsetloc("#We have#a truce", "scr_text_slash_scr_text_gml_4701_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#She is#our enemy", "scr_text_slash_scr_text_gml_4702_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4703_0")
@@ -4142,7 +4165,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\EI* (Kris^1, help me...)/", "scr_text_slash_scr_text_gml_4706_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4707_0")
         break
-    case obj_ch2_scene_hospital_sideb:
+    case 1086:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4713_0")
@@ -4156,7 +4179,7 @@ switch argument0
                 con = 12
         }
         break
-    case obj_sprite_musicsync:
+    case 1087:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_4726_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_4727_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4728_0")
@@ -4166,7 +4189,7 @@ switch argument0
         gml_Script_msgnextloc("* Will you run the tap?/", "scr_text_slash_scr_text_gml_4732_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4733_0")
         break
-    case obj_teacup:
+    case 1088:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4742_0")
@@ -4179,7 +4202,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* Then the tap will be waiting until you choose to run it./%", "scr_text_slash_scr_text_gml_4749_0")
         }
         break
-    case obj_teacup_bullet:
+    case 1089:
         global.choicemsg[0] = gml_Script_stringsetloc("#Noelle", "scr_text_slash_scr_text_gml_4754_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Ralsei", "scr_text_slash_scr_text_gml_4755_0")
         global.choicemsg[2] = gml_Script_stringsetloc("You", "scr_text_slash_scr_text_gml_4756_0")
@@ -4189,7 +4212,7 @@ switch argument0
         gml_Script_msgnextloc("\\E2* Noelle..^1. or Ralsei?/", "scr_text_slash_scr_text_gml_4760_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_4761_0")
         break
-    case obj_teacup_scoreboard:
+    case 1090:
         global.flag[437] = (global.choice + 1)
         if (global.choice == 0 || global.choice == 1)
         {
@@ -4219,7 +4242,7 @@ switch argument0
                 con = 10
         }
         break
-    case obj_teacup_bullet_dead:
+    case 1091:
         global.choicemsg[0] = gml_Script_stringsetloc("I am going#to touch the#cheese", "scr_text_slash_scr_text_gml_4792_0")
         global.choicemsg[1] = gml_Script_stringsetloc("I do not#touch the#cheese", "scr_text_slash_scr_text_gml_4793_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4794_0")
@@ -4238,7 +4261,7 @@ switch argument0
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4807_0")
         }
         break
-    case obj_teacup_reverser:
+    case 1092:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -4254,7 +4277,7 @@ switch argument0
                 con = 15
         }
         break
-    case obj_doom:
+    case 1093:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_4828_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_4829_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4830_0")
@@ -4263,7 +4286,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (Looks like the clothes are nibbled. Take a bite?)/", "scr_text_slash_scr_text_gml_4833_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4834_0")
         break
-    case obj_teacup_landingspot:
+    case 1094:
         if (global.choice == 0)
         {
             gml_Script_scr_smallface(0, "ralsei", 30, "right", "bottom", gml_Script_stringsetloc("... and Susie?", "scr_text_slash_scr_text_gml_4841_0"))
@@ -4281,8 +4304,8 @@ switch argument0
             gml_Script_msgsetloc(0, "\\E4* Don't bother. It tastes awful.\\f0/%", "scr_text_slash_scr_text_gml_4854_0")
         }
         break
-    case obj_beatbullet:
-        global.choicemsg[0] = (null.room == room_dw_castle_cafe ? gml_Script_stringsetloc("#Check#Recruits", "scr_text_slash_scr_text_gml_4930_0") : gml_Script_stringsetloc("#Prize", "scr_text_slash_scr_text_gml_4931_0"))
+    case 1099:
+        global.choicemsg[0] = (room == room_dw_castle_cafe ? gml_Script_stringsetloc("#Check#Recruits", "scr_text_slash_scr_text_gml_4930_0") : gml_Script_stringsetloc("#Prize", "scr_text_slash_scr_text_gml_4931_0"))
         global.choicemsg[1] = (room == room_dw_castle_cafe ? gml_Script_stringsetloc("#Prize", "scr_text_slash_scr_text_gml_4931_0_b") : gml_Script_stringsetloc("#Nothing", "scr_text_slash_scr_text_gml_4931_1"))
         global.choicemsg[2] = (room == room_dw_castle_cafe ? gml_Script_stringsetloc("Nothing", "scr_text_slash_scr_text_gml_4932_0_b") : " ")
         global.choicemsg[3] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4933_0_b")
@@ -4317,21 +4340,14 @@ switch argument0
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_4966_0")
         }
         break
-    case obj_beatbullet_2:
-        if (global.choice == 0)
-            var _temp_local_var_1 = null.room == room_dw_castle_cafe
-        else
-            var _temp_local_var_56 = 0
-        if (null.room == room_dw_castle_cafe)
+    case 1100:
+        if (global.choice == 0 && room == room_dw_castle_cafe)
         {
-            var _temp_local_var_44 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 3
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+                type = 3
+            gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_4975_0")
         }
-        if (global.choice == 1)
-            _temp_local_var_44 = gml_Script_instance_create(0, 0, obj_fusionmenu).room == room_dw_castle_cafe
-        else
-            var _temp_local_var_55 = 0
-        if (gml_Script_instance_create(0, 0, obj_fusionmenu).room == room_dw_castle_cafe || (global.choice == 0 && room == room_dw_castle_restaurant))
+        if ((global.choice == 1 && room == room_dw_castle_cafe) || (global.choice == 0 && room == room_dw_castle_restaurant))
         {
             if (global.flag[253] == 1)
             {
@@ -4388,7 +4404,7 @@ switch argument0
         if ((global.choice == 2 && room == room_dw_castle_cafe) || (global.choice == 1 && room == room_dw_castle_restaurant))
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5043_0")
         break
-    case obj_beatbullet_simple:
+    case 1101:
         global.choicemsg[0] = gml_Script_stringsetloc("#Fuse Items", "scr_text_slash_scr_text_gml_5048_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Fix Us", "scr_text_slash_scr_text_gml_5049_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Chat", "scr_text_slash_scr_text_gml_5050_0")
@@ -4412,11 +4428,12 @@ switch argument0
             gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_5071_0")
         }
         break
-    case obj_beatbulletroomexample:
+    case 1102:
         if (global.choice == 0)
         {
-            var _temp_local_var_57 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 1
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+                type = 1
+            gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5079_0")
         }
         if (global.choice == 1)
         {
@@ -4448,7 +4465,7 @@ switch argument0
             }
         }
         break
-    case obj_beatbulletroom:
+    case 1103:
         global.choicemsg[0] = gml_Script_stringsetloc("#Take Cookie", "scr_text_slash_scr_text_gml_5117_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do Not", "scr_text_slash_scr_text_gml_5118_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5119_0")
@@ -4476,7 +4493,7 @@ switch argument0
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5145_0")
         }
         break
-    case obj_musicalbattlebullet:
+    case 1104:
         if (global.choice == 0)
         {
             if gml_Script_scr_itemcheck_inventory_and_pocket(9)
@@ -4513,7 +4530,7 @@ switch argument0
             gml_Script_msgnextloc("\\EK* (Maybe if you need to be healed 1 HP...)/%", "scr_text_slash_scr_text_gml_5185_0")
         }
         break
-    case obj_musicalbattlenote:
+    case 1105:
         global.choicemsg[0] = gml_Script_stringsetloc("#Grazing", "scr_text_slash_scr_text_gml_5190_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Hitbox", "scr_text_slash_scr_text_gml_5191_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Hole", "scr_text_slash_scr_text_gml_5192_0")
@@ -4522,7 +4539,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* I'm Battle's Master. Ask me about Battles./", "scr_text_slash_scr_text_gml_5196_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_5197_0")
         break
-    case obj_shapepuzzlepiece:
+    case 1106:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -4567,7 +4584,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* Okay./%", "scr_text_slash_scr_text_gml_5244_0")
         }
         break
-    case obj_shapepuzzle:
+    case 1107:
         global.choicemsg[0] = gml_Script_stringsetloc("#Challenge", "scr_text_slash_scr_text_gml_5249_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Nothing", "scr_text_slash_scr_text_gml_5250_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5251_0")
@@ -4599,11 +4616,13 @@ switch argument0
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5229_0")
         }
         break
-    case obj_shapepuzzlebutton:
+    case 1108:
         if (global.choice == 0)
         {
-            var _temp_local_var_60 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 2
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+                type = 2
+            gml_Script_scr_speaker("no_name")
+            gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5290_0")
         }
         if (global.choice == 1)
         {
@@ -4613,7 +4632,7 @@ switch argument0
                 gml_Script_msgsetloc(0, "* No worries^1, Boss^1! We'll always be here./%", "scr_text_slash_scr_text_gml_5252_0_b")
         }
         break
-    case obj_gamecontroller:
+    case 1109:
         global.choicemsg[0] = gml_Script_stringsetloc("#Join", "scr_text_slash_scr_text_gml_5301_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do not join", "scr_text_slash_scr_text_gml_5302_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5303_0")
@@ -4625,7 +4644,7 @@ switch argument0
         gml_Script_msgnextloc("\\E6* Join our side^1, and I might let you scrub our royal toilet!/", "scr_text_slash_scr_text_gml_5310_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5311_0")
         break
-    case obj_border_controller:
+    case 1110:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("berdly")
@@ -4643,7 +4662,7 @@ switch argument0
                 con = 10
         }
         break
-    case obj_mazecheese:
+    case 1111:
         global.choicemsg[0] = gml_Script_stringsetloc("#I feel#the same", "scr_text_slash_scr_text_gml_5335_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#It's strange", "scr_text_slash_scr_text_gml_5336_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5337_0")
@@ -4653,7 +4672,7 @@ switch argument0
         gml_Script_msgnextloc("\\E1\\M0* It's nice spending time alone with you like this...?/", "scr_text_slash_scr_text_gml_5342_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5343_0")
         break
-    case obj_traffic_car:
+    case 1112:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5349_0")
@@ -4667,7 +4686,7 @@ switch argument0
                 con = 15
         }
         break
-    case obj_traffic_car_run:
+    case 1113:
         var thinkingof = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_5361_0")
         if (global.flag[307] == 2)
             thinkingof = gml_Script_stringsetloc("Susie", "scr_text_slash_scr_text_gml_5362_0")
@@ -4683,7 +4702,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E2* ..^1. what are you thinking about right now?/", "scr_text_slash_scr_text_gml_5372_0")
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_5373_0")
         break
-    case obj_traffic_car_generator:
+    case 1114:
         if (global.choice == 0 || global.choice == 1 || global.choice == 2)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5379_0")
@@ -4691,7 +4710,7 @@ switch argument0
                 con = 20
         }
         break
-    case obj_traffic_switch:
+    case 1115:
         global.choicemsg[0] = gml_Script_stringsetloc("It's nice#that Ralsei#is Ralsei", "scr_text_slash_scr_text_gml_5385_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#...", "scr_text_slash_scr_text_gml_5386_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5387_0")
@@ -4700,7 +4719,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E1* And of course^1, Kris. It's nice that..^1. you're you./", "scr_text_slash_scr_text_gml_5391_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5392_0")
         break
-    case obj_charmarker:
+    case 1116:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("ralsei")
@@ -4727,7 +4746,7 @@ switch argument0
                 con = 28
         }
         break
-    case obj_charmarker_old:
+    case 1117:
         global.choicemsg[0] = gml_Script_stringsetloc("#Do not pose", "scr_text_slash_scr_text_gml_5425_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Hug Ralsei", "scr_text_slash_scr_text_gml_5426_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Peace sign", "scr_text_slash_scr_text_gml_5427_0")
@@ -4737,7 +4756,7 @@ switch argument0
         gml_Script_msgnextloc("\\EJ* O-oh^1, there's a camera^1! Should we^1, um..^1. pose!?/", "scr_text_slash_scr_text_gml_5432_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_5433_0")
         break
-    case obj_coaster:
+    case 1118:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5439_0")
@@ -4763,7 +4782,7 @@ switch argument0
                 photocon = 4
         }
         break
-    case obj_ch2_keyboardpuzzle_tile:
+    case 1119:
         global.choicemsg[0] = gml_Script_stringsetloc("#Dark World", "scr_text_slash_scr_text_gml_5463_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Evil Queen's#Castle", "scr_text_slash_scr_text_gml_5464_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5465_0")
@@ -4772,7 +4791,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* Uhhh^1, it's uhhh..../", "scr_text_slash_scr_text_gml_5469_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5470_0")
         break
-    case obj_ch2_keyboardpuzzle_controller:
+    case 1120:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5476_0")
@@ -4786,7 +4805,7 @@ switch argument0
                 con = 10
         }
         break
-    case obj_ch2_keyboardpuzzle_monologue_controller:
+    case 1121:
         global.choicemsg[0] = gml_Script_stringsetloc("#Point and#hearts come out", "scr_text_slash_scr_text_gml_5488_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Eat Moss", "scr_text_slash_scr_text_gml_5489_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5490_0")
@@ -4796,12 +4815,12 @@ switch argument0
         gml_Script_msgnextloc("\\EK* (Damn^1, Kris would know what to do!)/", "scr_text_slash_scr_text_gml_5495_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5496_0")
         break
-    case obj_ch2_keyboardpuzzle_speaker:
+    case 1122:
         gml_Script_msgsetloc(0, "\\EC* (...Actually^1, uh^1, maybe Kris wouldn't know what to do...)/%", "scr_text_slash_scr_text_gml_5507_0")
         with (obj_ch2_scene23c)
             con = 10
         break
-    case obj_ch2_keyboardpuzzle_screen:
+    case 1123:
         global.choicemsg[0] = gml_Script_stringsetloc("#Do something#nuts", "scr_text_slash_scr_text_gml_5514_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do something#crazy", "scr_text_slash_scr_text_gml_5515_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5516_0")
@@ -4810,7 +4829,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\EK* .../", "scr_text_slash_scr_text_gml_5520_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5521_0")
         break
-    case obj_ch2_noellepuzzle_key_noelle:
+    case 1124:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5527_0")
@@ -4824,7 +4843,7 @@ switch argument0
                 con = 20
         }
         break
-    case obj_ch2_noellepuzzle_key_kris:
+    case 1125:
         global.choicemsg[0] = gml_Script_stringsetloc("#Say something#romantic", "scr_text_slash_scr_text_gml_5539_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Say something#cool", "scr_text_slash_scr_text_gml_5540_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5541_0")
@@ -4833,7 +4852,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E6* M..^1. me? Umm.../", "scr_text_slash_scr_text_gml_5545_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5546_0")
         break
-    case obj_ch2_noellepuzzle_forcefield:
+    case 1126:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5552_0")
@@ -4847,7 +4866,7 @@ switch argument0
                 con = 30
         }
         break
-    case obj_ch2_noellepuzzle_screen:
+    case 1127:
         global.choicemsg[0] = gml_Script_stringsetloc("#Lie", "scr_text_slash_scr_text_gml_5564_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Lie", "scr_text_slash_scr_text_gml_5565_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5566_0")
@@ -4856,7 +4875,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\EA* Uhhh^1, like^1,/", "scr_text_slash_scr_text_gml_5570_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5571_0")
         break
-    case obj_ch2_noellepuzzle_cityscape:
+    case 1128:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5577_0")
@@ -4870,7 +4889,7 @@ switch argument0
                 con = 40
         }
         break
-    case obj_rouxls_enemy_old_copy:
+    case 1129:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_5589_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_5590_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5591_0")
@@ -4881,7 +4900,7 @@ switch argument0
         gml_Script_msgnextloc("\\EC* (..^1. you ok?)/", "scr_text_slash_scr_text_gml_5597_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5598_0")
         break
-    case obj_jean_debug:
+    case 1130:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5604_0")
@@ -4895,7 +4914,7 @@ switch argument0
                 con = 20
         }
         break
-    case obj_time:
+    case 1131:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_5616_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_5617_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5618_0")
@@ -4904,7 +4923,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* There's something shining inside the old machine..^1. take it?/", "scr_text_slash_scr_text_gml_5622_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5623_0")
         break
-    case obj_legend:
+    case 1132:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -4920,7 +4939,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5642_0")
         break
-    case obj_legend_neo:
+    case 1133:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_5647_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_5648_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5649_0")
@@ -4930,7 +4949,7 @@ switch argument0
         gml_Script_msgnextloc("* (Insert the LoadedDisk?)/", "scr_text_slash_scr_text_gml_5654_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5655_0")
         break
-    case obj_savemenu:
+    case 1134:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -4950,7 +4969,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5676_0")
         break
-    case obj_initializer2:
+    case 1135:
         global.choicemsg[0] = gml_Script_stringsetloc("#Check#Recruits", "scr_text_slash_scr_text_gml_5681_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Recommendation", "scr_text_slash_scr_text_gml_5682_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Exit", "scr_text_slash_scr_text_gml_5683_0")
@@ -4989,11 +5008,12 @@ switch argument0
             gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_5723_0")
         }
         break
-    case obj_overworldc:
+    case 1136:
         if (global.choice == 0)
         {
-            var _temp_local_var_65 = gml_Script_instance_create(0, 0, obj_fusionmenu)
-            type = 3
+            with (gml_Script_instance_create(0, 0, obj_fusionmenu))
+                type = 3
+            gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5732_0")
         }
         if (global.choice == 1)
         {
@@ -5044,7 +5064,7 @@ switch argument0
         if (global.choice == 2)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_5787_0")
         break
-    case obj_sur:
+    case 1140:
         gml_Script_scr_speaker("noone")
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_5798_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_5799_0")
@@ -5054,7 +5074,7 @@ switch argument0
         gml_Script_msgnextloc("* Would you assist in organizing these paintings?/", "scr_text_slash_scr_text_gml_5803_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5804_0")
         break
-    case obj_soliddark:
+    case 1141:
         global.choicemsg[0] = gml_Script_stringsetloc("#Left", "scr_text_slash_scr_text_gml_5811_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Right", "scr_text_slash_scr_text_gml_5812_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Top", "scr_text_slash_scr_text_gml_5813_0")
@@ -5075,7 +5095,7 @@ switch argument0
                 obj_npc_tasquemanager.con = 1
         }
         break
-    case obj_sur_dark:
+    case 1142:
         global.choicemsg[0] = gml_Script_stringsetloc("#Left", "scr_text_slash_scr_text_gml_5836_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Right", "scr_text_slash_scr_text_gml_5837_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Top", "scr_text_slash_scr_text_gml_5838_0")
@@ -5096,7 +5116,7 @@ switch argument0
                 obj_npc_tasquemanager.con = 1
         }
         break
-    case obj_sul_dark:
+    case 1143:
         global.choicemsg[0] = gml_Script_stringsetloc("#Left", "scr_text_slash_scr_text_gml_5863_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Right", "scr_text_slash_scr_text_gml_5864_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Top", "scr_text_slash_scr_text_gml_5865_0")
@@ -5117,7 +5137,7 @@ switch argument0
                 obj_npc_tasquemanager.con = 1
         }
         break
-    case obj_sdl_dark:
+    case 1144:
         gml_Script_scr_speaker("noone")
         if (global.choice == 0)
         {
@@ -5143,7 +5163,7 @@ switch argument0
                 obj_npc_tasquemanager.con = 1
         }
         break
-    case obj_sdr_dark:
+    case 1145:
         global.choicemsg[0] = gml_Script_stringsetloc("#Buy", "scr_text_slash_scr_text_gml_5915_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Don't Buy", "scr_text_slash_scr_text_gml_5916_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_5917_0")
@@ -5159,19 +5179,19 @@ switch argument0
         if (!capntalked)
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3        *Yo^1, (snicker)^1, it's hard work&    being Queen's minion^1,&    ain't it?/", "scr_text_slash_scr_text_gml_5935_0")
-            gml_Script_msgnextloc("\\m3        *Why don't you take a break and&    grab a snack?/", "scr_text_slash_scr_text_gml_5936_0")
-            gml_Script_msgnextloc("\\m3        *Ultra seedy CD Bagels^1, only&    $400 each!/", "scr_text_slash_scr_text_gml_5937_0")
+            gml_Script_msgsetloc(0, "\\m3		*Yo^1, (snicker)^1, it's hard work&	being Queen's minion^1,&	ain't it?/", "scr_text_slash_scr_text_gml_5935_0")
+            gml_Script_msgnextloc("\\m3		*Why don't you take a break and&	grab a snack?/", "scr_text_slash_scr_text_gml_5936_0")
+            gml_Script_msgnextloc("\\m3		*Ultra seedy CD Bagels^1, only&	$400 each!/", "scr_text_slash_scr_text_gml_5937_0")
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5938_0")
         }
         else
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3        *Wanna buy a CD bagel!? Only&    $400 each!/", "scr_text_slash_scr_text_gml_5942_0")
+            gml_Script_msgsetloc(0, "\\m3		*Wanna buy a CD bagel!? Only&	$400 each!/", "scr_text_slash_scr_text_gml_5942_0")
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5943_0")
         }
         break
-    case obj_solidblocksized:
+    case 1146:
         if (global.choice == 0)
         {
             can_afford = global.gold >= 400
@@ -5183,33 +5203,33 @@ switch argument0
                     global.gold -= 400
                     gml_Script_scr_miniface_init_sweet()
                     gml_Script_scr_speaker("no_name")
-                    gml_Script_msgsetloc(0, "\\m3        *Pleasure doin' business with&    ya^1! ..^1. (snicker)/", "scr_text_slash_scr_text_gml_5959_0")
+                    gml_Script_msgsetloc(0, "\\m3		*Pleasure doin' business with&	ya^1! ..^1. (snicker)/", "scr_text_slash_scr_text_gml_5959_0")
                     gml_Script_snd_play(149)
                     gml_Script_msgnext(itemgetstring)
                 }
                 else
                 {
                     gml_Script_scr_speaker("no_name")
-                    gml_Script_msgsetloc(0, "\\m3        *Hey^1, you don't have any room./", "scr_text_slash_scr_text_gml_5965_0")
-                    gml_Script_msgnextloc("\\m3        *What^1, took too many bribes?/%", "scr_text_slash_scr_text_gml_5966_0")
+                    gml_Script_msgsetloc(0, "\\m3		*Hey^1, you don't have any room./", "scr_text_slash_scr_text_gml_5965_0")
+                    gml_Script_msgnextloc("\\m3		*What^1, took too many bribes?/%", "scr_text_slash_scr_text_gml_5966_0")
                 }
             }
             else
             {
                 gml_Script_scr_miniface_init_sweet()
                 gml_Script_scr_speaker("no_name")
-                gml_Script_msgsetloc(0, "\\m3        *What!? Too expensive!?/", "scr_text_slash_scr_text_gml_5972_0")
-                gml_Script_msgnextloc("\\m3        *Well too bad^1! You're not gonna&    get a better deal anywhere&    else!/%", "scr_text_slash_scr_text_gml_5973_0")
+                gml_Script_msgsetloc(0, "\\m3		*What!? Too expensive!?/", "scr_text_slash_scr_text_gml_5972_0")
+                gml_Script_msgnextloc("\\m3		*Well too bad^1! You're not gonna&	get a better deal anywhere&	else!/%", "scr_text_slash_scr_text_gml_5973_0")
             }
         }
         if (global.choice == 1)
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3        *Huh? C'mon^1, you can't survive&    off the air she breathes!/", "scr_text_slash_scr_text_gml_5980_0")
-            gml_Script_msgnextloc("\\m3        *Believe me^1, I've tried^1!&    ..^1. what?/%", "scr_text_slash_scr_text_gml_5981_0")
+            gml_Script_msgsetloc(0, "\\m3		*Huh? C'mon^1, you can't survive&	off the air she breathes!/", "scr_text_slash_scr_text_gml_5980_0")
+            gml_Script_msgnextloc("\\m3		*Believe me^1, I've tried^1!&	..^1. what?/%", "scr_text_slash_scr_text_gml_5981_0")
         }
         break
-    case obj_solidblock_destructable:
+    case 1147:
         global.choicemsg[0] = gml_Script_stringsetloc("#Buy 400 bagels", "scr_text_slash_scr_text_gml_5986_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Buy 1 bagel", "scr_text_slash_scr_text_gml_5987_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Don't Buy", "scr_text_slash_scr_text_gml_5988_0")
@@ -5225,19 +5245,19 @@ switch argument0
         if (!kktalked)
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m2        *Want to buy a bagel? Only $80.&\\m3    K_K^1, no^1! It's 400^1! 400!/", "scr_text_slash_scr_text_gml_6006_0")
-            gml_Script_msgnextloc("\\m2        *Got it./", "scr_text_slash_scr_text_gml_6007_0")
-            gml_Script_msgnextloc("\\m2        *Want to buy 400 bagels?&    Only $80./", "scr_text_slash_scr_text_gml_6008_0")
+            gml_Script_msgsetloc(0, "\\m2		*Want to buy a bagel? Only $80.&\\m3	K_K^1, no^1! It's 400^1! 400!/", "scr_text_slash_scr_text_gml_6006_0")
+            gml_Script_msgnextloc("\\m2		*Got it./", "scr_text_slash_scr_text_gml_6007_0")
+            gml_Script_msgnextloc("\\m2		*Want to buy 400 bagels?&	Only $80./", "scr_text_slash_scr_text_gml_6008_0")
             gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_6009_0")
         }
         else
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m2        *One bagel^1, $80. 400 bagels^1,&    $80./", "scr_text_slash_scr_text_gml_6013_0")
+            gml_Script_msgsetloc(0, "\\m2		*One bagel^1, $80. 400 bagels^1,&	$80./", "scr_text_slash_scr_text_gml_6013_0")
             gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_6014_0")
         }
         break
-    case obj_triggervolume:
+    case 1148:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_6026_0")
@@ -5249,20 +5269,19 @@ switch argument0
             gml_Script_scr_itemget(16)
             if (noroom == false)
             {
-                global.flag[354] = (null.room == room_dw_castle_cafe + 1)
-                // WARNING: Popz'd an empty stack.
+                global.flag[354] += 1
                 if (global.gold >= 80)
                 {
                     global.gold -= 80
                     gml_Script_snd_play(149)
                     gml_Script_scr_speaker("no_name")
                     gml_Script_msgsetloc(0, "* (You paid $80 for a bagel.)/", "scr_text_slash_scr_text_gml_6043_0")
-                    gml_Script_msgnextloc("\\m2        *Can I have one^1, too?&\\m3    You're selling them!/%", "scr_text_slash_scr_text_gml_6044_0")
+                    gml_Script_msgnextloc("\\m2		*Can I have one^1, too?&\\m3	You're selling them!/%", "scr_text_slash_scr_text_gml_6044_0")
                 }
                 else
                 {
                     gml_Script_scr_speaker("k_k")
-                    gml_Script_msgsetloc(0, "\\m2        *You can't afford it? Don't&    worry^1, this one's on me!/", "scr_text_slash_scr_text_gml_6049_0")
+                    gml_Script_msgsetloc(0, "\\m2		*You can't afford it? Don't&	worry^1, this one's on me!/", "scr_text_slash_scr_text_gml_6049_0")
                     gml_Script_scr_anyface_next("no_name", 0)
                     gml_Script_msgnextloc("* (You got a bagel.)/%", "scr_text_slash_scr_text_gml_6051_0")
                     gml_Script_snd_play(149)
@@ -5271,16 +5290,16 @@ switch argument0
             else
             {
                 gml_Script_scr_speaker("no_name")
-                gml_Script_msgsetloc(0, "\\m3        *No room for a bagel!&\\m2    What about the hole?/%", "scr_text_slash_scr_text_gml_6056_0")
+                gml_Script_msgsetloc(0, "\\m3		*No room for a bagel!&\\m2	What about the hole?/%", "scr_text_slash_scr_text_gml_6056_0")
             }
         }
         if (global.choice == 2)
         {
             gml_Script_scr_speaker("k_k")
-            gml_Script_msgsetloc(0, "\\m2        *That's OK. I haven't bought&    one either./%", "scr_text_slash_scr_text_gml_6063_0")
+            gml_Script_msgsetloc(0, "\\m2		*That's OK. I haven't bought&	one either./%", "scr_text_slash_scr_text_gml_6063_0")
         }
         break
-    case obj_solidlong:
+    case 1149:
         global.choicemsg[0] = gml_Script_stringsetloc("#Look in#the back", "scr_text_slash_scr_text_gml_6068_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Look inside", "scr_text_slash_scr_text_gml_6069_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6070_0")
@@ -5290,7 +5309,7 @@ switch argument0
         gml_Script_msgnextloc("* (It's a book for monsters on how to care for humans.)/", "scr_text_slash_scr_text_gml_6075_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6076_0")
         break
-    case obj_credits_2:
+    case 1150:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -5304,7 +5323,7 @@ switch argument0
             gml_Script_msgnextloc("* (You shut the book quickly.)/%", "scr_text_slash_scr_text_gml_6091_0")
         }
         break
-    case obj_diag:
+    case 1151:
         global.choicemsg[0] = gml_Script_stringsetloc("#Read", "scr_text_slash_scr_text_gml_6097_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Don't", "scr_text_slash_scr_text_gml_6098_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6099_0")
@@ -5313,7 +5332,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's Book 1 about SOULS. Read it?)/", "scr_text_slash_scr_text_gml_6103_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6104_0")
         break
-    case obj_solidcircle:
+    case 1152:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -5325,7 +5344,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgsetloc(0, "%%", "scr_text_slash_scr_text_gml_6119_0")
         break
-    case obj_diamond:
+    case 1153:
         global.choicemsg[0] = gml_Script_stringsetloc("#Occupation", "scr_text_slash_scr_text_gml_6124_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#See brother", "scr_text_slash_scr_text_gml_6125_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Buy things", "scr_text_slash_scr_text_gml_6126_0")
@@ -5334,7 +5353,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* hey^1, what's up?/", "scr_text_slash_scr_text_gml_6130_0")
         gml_Script_msgnextloc("\\C4 ", "scr_text_slash_scr_text_gml_6131_0")
         break
-    case obj_bg_givedepth:
+    case 1154:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("susie")
@@ -5424,7 +5443,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\E5* take it easy./%", "scr_text_slash_scr_text_gml_6222_0")
         }
         break
-    case obj_camera_advanced:
+    case 1155:
         global.choicemsg[0] = gml_Script_stringsetloc("#Play", "scr_text_slash_scr_text_gml_6227_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do Not", "scr_text_slash_scr_text_gml_6228_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6229_0")
@@ -5433,7 +5452,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E6* Woah^1, Kris^1, you can play the piano?/", "scr_text_slash_scr_text_gml_6233_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6234_0")
         break
-    case obj_musictracker:
+    case 1156:
         if (global.choice == 0)
         {
             gml_Script_snd_play(47)
@@ -5449,7 +5468,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\E0* ..^1. damn. Got kinda hyped for a sec./%", "scr_text_slash_scr_text_gml_6252_0")
         }
         break
-    case obj_camera_area:
+    case 1157:
         global.choicemsg[0] = gml_Script_stringsetloc("#Give chocolate", "scr_text_slash_scr_text_gml_6257_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Hoard chocolate", "scr_text_slash_scr_text_gml_6258_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6259_0")
@@ -5458,7 +5477,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E3* ..^1. Huh? Kris? Do you have something for me?/", "scr_text_slash_scr_text_gml_6263_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6264_0")
         break
-    case lang_sprite_layer_hider:
+    case 1158:
         if (global.choice == 0)
         {
             global.flag[342] = 3
@@ -5481,7 +5500,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\EB* Umm^1, okay^1, ehehe. Don't know why I thought that./%", "scr_text_slash_scr_text_gml_6289_0")
         }
         break
-    case obj_controller_dw_city_mice:
+    case 1159:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6294_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6295_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6296_0")
@@ -5490,7 +5509,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's someone's diary. Read it?)/", "scr_text_slash_scr_text_gml_6300_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6301_0")
         break
-    case obj_mouseSpawnSwitch:
+    case 1160:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("napstablook")
@@ -5501,7 +5520,7 @@ switch argument0
         if (global.choice == 1)
             global.msg[0] = gml_Script_stringsetloc(" %%", "scr_text_slash_scr_text_gml_6315_0")
         break
-    case obj_controller_city_mice2:
+    case 1161:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6323_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Nooooo", "scr_text_slash_scr_text_gml_6324_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6325_0")
@@ -5511,7 +5530,7 @@ switch argument0
         gml_Script_msgnextloc("\\E8* ..^1. gosh^1, do you need a dog treat or something?/", "scr_text_slash_scr_text_gml_6329_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6330_0")
         break
-    case obj_mice2Switch:
+    case 1162:
         gml_Script_scr_speaker("noelle")
         if (global.choice == 0)
         {
@@ -5528,7 +5547,7 @@ switch argument0
                 obj_controller_dw_city_big_2.con = 70
         }
         break
-    case obj_holemouse_goal:
+    case 1163:
         global.choicemsg[0] = gml_Script_stringsetloc("#It's horrible", "scr_text_slash_scr_text_gml_6358_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#It's natural", "scr_text_slash_scr_text_gml_6359_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6360_0")
@@ -5543,14 +5562,14 @@ switch argument0
         gml_Script_msgnextloc("\\EW* (Noelle^1, no^1, don't think that^1! It's horrible...)/", "scr_text_slash_scr_text_gml_6334_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6370_0")
         break
-    case obj_holemouse_generator:
+    case 1164:
         gml_Script_scr_speaker("noelle")
         gml_Script_msgsetloc(0, "\\EB* K-Kris...^1? What are you talking about!?/", "scr_text_slash_scr_text_gml_6378_0")
         gml_Script_msgnextloc("\\EB* (I..^1. I must have said that out loud...?)/%", "scr_text_slash_scr_text_gml_6379_0")
         if instance_exists(obj_controller_dw_city_big_2)
             obj_controller_dw_city_big_2.con = 14
         break
-    case obj_holemouse:
+    case 1165:
         global.choicemsg[0] = gml_Script_stringsetloc("#Seems a little#far fetched", "scr_text_slash_scr_text_gml_6387_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Yeah let's#do it", "scr_text_slash_scr_text_gml_6388_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6389_0")
@@ -5559,7 +5578,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\EA* I mean^1, we'd be unstoppable^1, is what I'm saying./", "scr_text_slash_scr_text_gml_6393_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6394_0")
         break
-    case obj_noelle_scared:
+    case 1166:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("susie")
@@ -5583,7 +5602,7 @@ switch argument0
                 con = 5
         }
         break
-    case obj_lottery_holemouse_generator:
+    case 1167:
         global.choicemsg[0] = gml_Script_stringsetloc("#Of course", "scr_text_slash_scr_text_gml_6424_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Of course not", "scr_text_slash_scr_text_gml_6425_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6426_0")
@@ -5592,7 +5611,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E1* Kris^1, do you think of me as your lackey...?/", "scr_text_slash_scr_text_gml_6430_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6431_0")
         break
-    case obj_holemouse_lottery:
+    case 1168:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("ralsei")
@@ -5606,7 +5625,7 @@ switch argument0
             gml_Script_msgnextloc("\\EH* (Y-you think of me as more than a lackey...?)/%", "scr_text_slash_scr_text_gml_6446_0")
         }
         break
-    case obj_holemouse_block_counterclockwise:
+    case 1169:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6451_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6452_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6453_0")
@@ -5616,7 +5635,7 @@ switch argument0
         gml_Script_msgnextloc("* ARE YOU LOOKING FOR THE [Ring] of [Thorns]?/", "scr_text_slash_scr_text_gml_6458_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6459_0")
         break
-    case obj_holemouse_block_clockwise_moveable:
+    case 1170:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc(" %%", "scr_text_slash_scr_text_gml_6465_0")
@@ -5632,7 +5651,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* THEN [[Why]] GO TO A DUMPSTER!!!/%", "scr_text_slash_scr_text_gml_6475_0")
         }
         break
-    case obj_holemouse_block_clockwise:
+    case 1171:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6480_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6481_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6482_0")
@@ -5641,7 +5660,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* THat'll be 1997 KROMER./", "scr_text_slash_scr_text_gml_6486_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6487_0")
         break
-    case obj_holemouse_invis_clockwise:
+    case 1172:
         if (global.choice == 0)
         {
             if (global.gold >= 1997)
@@ -5681,7 +5700,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* BUT IT WAS SUCH A GOOD YEAR./%", "scr_text_slash_scr_text_gml_6526_0")
         }
         break
-    case obj_holemouse_invis_counterclockwise:
+    case 1173:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6531_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6532_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6533_0")
@@ -5692,7 +5711,7 @@ switch argument0
         gml_Script_msgnextloc("* What do you think?/", "scr_text_slash_scr_text_gml_6539_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6540_0")
         break
-    case obj_pushable_block:
+    case 1174:
         global.flag[917] = 3
         if (global.choice == 0)
         {
@@ -5708,7 +5727,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* Well^1, there was not a man here./%", "scr_text_slash_scr_text_gml_6556_0")
         }
         break
-    case obj_resetBell:
+    case 1175:
         global.choicemsg[0] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_6561_0")
         global.choicemsg[1] = gml_Script_stringsetloc("I'm#protecting#her from you!", "scr_text_slash_scr_text_gml_6562_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6563_0")
@@ -5717,7 +5736,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\EN* Getting stronger..^1. how^1?&* Kris^1, what are you doing!?/", "scr_text_slash_scr_text_gml_6567_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6568_0")
         break
-    case obj_lottery_bridgeBuilder1:
+    case 1176:
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("%%", "scr_text_slash_scr_text_gml_6574_0")
@@ -5737,7 +5756,7 @@ switch argument0
             }
         }
         break
-    case obj_mouseTrigger:
+    case 1177:
         global.choicemsg[0] = gml_Script_stringsetloc("#Gaming is#my life", "scr_text_slash_scr_text_gml_6592_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Gaming is#not my life", "scr_text_slash_scr_text_gml_6593_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6594_0")
@@ -5746,7 +5765,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E2* Kris^1, I bet you're very good at games^1, aren't you?/", "scr_text_slash_scr_text_gml_6598_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6599_0")
         break
-    case obj_mouseTowerTrigger:
+    case 1178:
         if (global.choice == 0)
         {
             gml_Script_scr_smallface(0, "susie", 0, "middle", "bottom", gml_Script_stringsetloc("(... That was the most monotone\nresponse I've heard in my life?)", "scr_text_slash_scr_text_gml_6605_0"))
@@ -5762,7 +5781,7 @@ switch argument0
             gml_Script_msgnextloc("\\EX* We don't want that...\\f0/%", "scr_text_slash_scr_text_gml_6618_0")
         }
         break
-    case obj_rotationTile_track2:
+    case 1183:
         global.choicemsg[0] = gml_Script_stringsetloc("#They like you", "scr_text_slash_scr_text_gml_6703_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Unknown", "scr_text_slash_scr_text_gml_6704_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Yes", "scr_text_slash_scr_text_gml_6705_0")
@@ -5772,7 +5791,7 @@ switch argument0
         gml_Script_msgnextloc("\\E8* What do I look like^1, the girl from the Nutcracker?/", "scr_text_slash_scr_text_gml_6710_0")
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_6711_0")
         break
-    case obj_rotationTile_track3:
+    case 1184:
         if (global.choice == 0)
         {
             global.flag[415] = 1
@@ -5799,7 +5818,7 @@ switch argument0
             gml_Script_msgnextloc("\\E2* (Don't just stand there in silence...)/%", "scr_text_slash_scr_text_gml_6737_0")
         }
         break
-    case obj_mouseKiller:
+    case 1185:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6742_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6743_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6744_0")
@@ -5808,7 +5827,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (Use the communication device?)/", "scr_text_slash_scr_text_gml_6748_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6749_0")
         break
-    case obj_controller_city_mice3:
+    case 1186:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -5821,13 +5840,13 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgset(0, "%%")
         break
-    case obj_event_mouse3_berdlymonologue:
+    case 1187:
         gml_Script_c_msgsetloc(0, "\\EH* Don't try to run away^1, you little.../%", "scr_text_slash_scr_text_gml_6771_0")
         break
-    case obj_mice3_tempBridge:
+    case 1188:
         gml_Script_c_msgsetloc(0, "\\E5* HEY^1, WAIT A SEC!/%", "scr_text_slash_scr_text_gml_6777_0")
         break
-    case obj_mice3_platSwitch:
+    case 1189:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6782_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6783_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6784_0")
@@ -5844,7 +5863,7 @@ switch argument0
         gml_Script_msgset(0, lightner_prompt)
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6796_0")
         break
-    case obj_tower_o_mice:
+    case 1190:
         var l_door = ""
         with (obj_readable_room1)
         {
@@ -5908,7 +5927,7 @@ switch argument0
             }
         }
         break
-    case obj_holemouse_descend:
+    case 1191:
         global.choicemsg[0] = gml_Script_stringsetloc("#I will ride#with you", "scr_text_slash_scr_text_gml_6862_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Susie wouldn't", "scr_text_slash_scr_text_gml_6863_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Susie would", "scr_text_slash_scr_text_gml_6864_0")
@@ -5922,7 +5941,7 @@ switch argument0
         gml_Script_msgnextloc("\\E8* ..^1. Gosh^1, who am I kidding?/", "scr_text_slash_scr_text_gml_6873_0")
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_6874_0")
         break
-    case obj_lotterymouseController:
+    case 1192:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -5953,7 +5972,7 @@ switch argument0
             gml_Script_msgnextloc("\\E8* (Hey^1, Kris^1, how'd YOU become the Susie Expert!?)/%", "scr_text_slash_scr_text_gml_6910_0")
         }
         break
-    case obj_controller_dining3:
+    case 1193:
         global.choicemsg[0] = gml_Script_stringsetloc("#Noelle will#ride with me", "scr_text_slash_scr_text_gml_6915_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Sorry", "scr_text_slash_scr_text_gml_6916_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6917_0")
@@ -5961,7 +5980,7 @@ switch argument0
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "\\C2 ", "scr_text_slash_scr_text_gml_6921_0")
         break
-    case obj_dogtable_idle:
+    case 1194:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -5979,7 +5998,7 @@ switch argument0
             gml_Script_msgnextloc("\\E8* We ALL know you can't help it^1! Fahaha!!/%", "scr_text_slash_scr_text_gml_6939_0")
         }
         break
-    case obj_dogtable_controlled:
+    case 1195:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_6944_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_6945_0")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_6946_0")
@@ -5988,7 +6007,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's a bed. Go to sleep?)/", "scr_text_slash_scr_text_gml_6950_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_6951_0")
         break
-    case obj_saucerTable_knocked:
+    case 1196:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("ralsei")
@@ -6002,7 +6021,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* (It's not your bed anyhow.)/%", "scr_text_slash_scr_text_gml_6966_0")
         }
         break
-    case obj_controller_keyboard_puzzle_1:
+    case 1200:
         global.choicemsg[0] = gml_Script_stringsetloc("#Mansion", "scr_text_slash_scr_text_gml_6993_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Cyber Field", "scr_text_slash_scr_text_gml_6994_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Trash Zone", "scr_text_slash_scr_text_gml_6995_0")
@@ -6011,7 +6030,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's a door.^1)&* (Where will you go?)//", "scr_text_slash_scr_text_gml_6999_0")
         gml_Script_msgnext("\\C4 ")
         break
-    case obj_controller_keyboard_puzzle_2:
+    case 1201:
         global.msg[0] = gml_Script_stringsetloc("* (But nothing happened.)/%", "scr_text_slash_scr_text_gml_3104_0")
         if (global.choice == 0)
         {
@@ -6044,7 +6063,7 @@ switch argument0
             }
         }
         break
-    case obj_controller_keyboard_puzzle_3:
+    case 1202:
         global.choicemsg[0] = gml_Script_stringsetloc("#Sorry, I'll #do the puzzle", "scr_text_slash_scr_text_gml_7046_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_7047_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7048_0_b")
@@ -6053,7 +6072,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E2* Kris? Are..^1. you really going to leave me...?/", "scr_text_slash_scr_text_gml_7052_0_b")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7053_0")
         break
-    case obj_controller_room_dw_cyber_teacup_final:
+    case 1203:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6069,7 +6088,7 @@ switch argument0
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7072_0")
         }
         break
-    case obj_controller_dw_cyber_teacup_final:
+    case 1204:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6085,7 +6104,7 @@ switch argument0
             obj_mouseSpawnSwitch.introCon = 131
         }
         break
-    case obj_controller_dw_cyber_viromaze2:
+    case 1205:
         global.choicemsg[0] = gml_Script_stringsetloc("#Let's solve#it together!", "scr_text_slash_scr_text_gml_7099_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_7100_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7101_0")
@@ -6095,7 +6114,7 @@ switch argument0
         gml_Script_msgnextloc("\\E2* H..^1. How should we solve it this time?/", "scr_text_slash_scr_text_gml_6971_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7105_0")
         break
-    case obj_controller_dw_cyber_battle_maze_2:
+    case 1206:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6113,9 +6132,9 @@ switch argument0
             obj_controller_city_mice2.timer = 0
         }
         break
-    case obj_controller_dw_cyber_music_final:
+    case 1207:
         break
-    case obj_controller_dw_cyber_maze_queenscreen:
+    case 1208:
         global.choicemsg[0] = gml_Script_stringsetloc("#Get it", "scr_text_slash_scr_text_gml_7153_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#We're fine", "scr_text_slash_scr_text_gml_7154_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7155_0")
@@ -6124,7 +6143,7 @@ switch argument0
         gml_Script_msgsetloc(0, "\\E8* (Faha^1, Kris buying ME a ring...? Yeah^1, right!)/", "scr_text_slash_scr_text_gml_7158_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7159_0")
         break
-    case obj_controller_dw_mansion_bridges_funny:
+    case 1209:
         global.choicemsg[0] = gml_Script_stringsetloc("#Get it", "scr_text_slash_scr_text_gml_7166_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#We're fine", "scr_text_slash_scr_text_gml_7167_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7168_0")
@@ -6151,7 +6170,7 @@ switch argument0
             obj_weirdEvent_addison_city_big_2.con = 72
         }
         break
-    case obj_ch2_tutorialViroMaker:
+    case 1210:
         if (global.choice == 0)
         {
             gml_Script_safe_delete(mony)
@@ -6168,7 +6187,7 @@ switch argument0
             obj_weirdEvent_addison_city_big_2.con = 72
         }
         break
-    case obj_controller_dw_city_big_2:
+    case 1211:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6185,7 +6204,7 @@ switch argument0
             obj_weirdEvent_addison_city_big_2.con = 72
         }
         break
-    case obj_controller_city_cheesemaze:
+    case 1212:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6199,7 +6218,7 @@ switch argument0
             obj_weirdEvent_addison_city_big_2.con = 72
         }
         break
-    case obj_controller_mansion_traffic_old:
+    case 1213:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6213,7 +6232,7 @@ switch argument0
             obj_weirdEvent_addison_city_big_2.con = 72
         }
         break
-    case obj_lockedDoor_mansion_east_2f_transformed_new:
+    case 1215:
         global.choicemsg[0] = gml_Script_stringsetloc("#To see your #father", "scr_text_slash_scr_text_gml_7247_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#To see you", "scr_text_slash_scr_text_gml_7248_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7249_0")
@@ -6235,7 +6254,7 @@ switch argument0
         gml_Script_msgnextloc("* (Why they keep coming..^1. to the hospital...)/", "scr_text_slash_scr_text_gml_7265_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7266_0")
         break
-    case obj_controller_dw_cyber_post_music_boss_slide:
+    case 1216:
         gml_Script_scr_speaker("noelle")
         global.typer = 63
         global.fc = 0
@@ -6246,7 +6265,7 @@ switch argument0
         gml_Script_msgnextloc("* (There's nothing to be afraid of...)/", "scr_text_slash_scr_text_gml_7277_0")
         gml_Script_msgnextloc("* (After all^1, a dream is just a dream^1, right...?)/%", "scr_text_slash_scr_text_gml_7278_0")
         break
-    case obj_controller_mansion_hands:
+    case 1217:
         global.choicemsg[0] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7283_0")
         global.choicemsg[1] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7284_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7285_0")
@@ -6279,7 +6298,7 @@ switch argument0
         else
             gml_Script_msgsetloc(0, "\\M1* S-stop^1! Don't come any closer!", "scr_text_slash_scr_text_gml_7247_0_b")
         break
-    case obj_controller_dw_mansion_bridges:
+    case 1218:
         gml_Script_snd_play(63)
         gml_Script_scr_script_delayed(gml_Script_snd_play, 10, 62)
         gml_Script_scr_speaker("susie")
@@ -6295,7 +6314,7 @@ switch argument0
         gml_Script_msgnextloc("\\EF* O-oh^1, u-um^1, n-nothing^1, Susie!/", "scr_text_slash_scr_text_gml_7326_0")
         gml_Script_msgnextloc("\\ED* I was..^1. I was just about to go home^1! U-umm..^1. see you!/%", "scr_text_slash_scr_text_gml_7327_0")
         break
-    case obj_controller_dw_mansion_single_pot:
+    case 1219:
         gml_Script_scr_speaker("susie")
         gml_Script_msgsetloc(0, "\\E0* .../", "scr_text_slash_scr_text_gml_7333_0")
         gml_Script_msgnextloc("\\ED* Guess she's afraid of me again^1, huh.../", "scr_text_slash_scr_text_gml_7334_0")
@@ -6304,7 +6323,7 @@ switch argument0
         gml_Script_msgnextloc("\\E9* .../", "scr_text_slash_scr_text_gml_7337_0")
         gml_Script_msgnextloc("\\EK* C'mon^1, try to be a little more enthusiastic. Heh./%", "scr_text_slash_scr_text_gml_7338_0")
         break
-    case obj_controller_dw_mansion_fire_paintings:
+    case 1220:
         global.choicemsg[0] = gml_Script_stringsetloc("#Take", "scr_text_slash_scr_text_gml_7344_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Do Not", "scr_text_slash_scr_text_gml_7345_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7346_0")
@@ -6313,7 +6332,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's a box filled with bagels. Take one?)/", "scr_text_slash_scr_text_gml_7350_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7351_0")
         break
-    case obj_mouseLotteryCompleteHint:
+    case 1221:
         if (global.choice == 0)
         {
             if (global.flag[423] < 4)
@@ -6321,10 +6340,7 @@ switch argument0
                 gml_Script_snd_play(149)
                 itemgetstring = gml_Script_scr_itemget_anytype_text(16, "item")
                 if (noroom == false)
-                {
-                    global.flag[423] = (null.room == room_dw_castle_cafe + 1)
-                    // WARNING: Popz'd an empty stack.
-                }
+                    global.flag[423] += 1
                 gml_Script_scr_speaker("no_name")
                 gml_Script_msgset(0, itemgetstring)
             }
@@ -6344,7 +6360,7 @@ switch argument0
         }
         else
             break
-    case obj_controller_potparadise:
+    case 1222:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_7296_0_b")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_7297_0_b")
         global.choicemsg[2] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_7335_0_b")
@@ -6354,7 +6370,7 @@ switch argument0
         gml_Script_msgnextloc("* (Enter it?)/", "scr_text_slash_scr_text_gml_7340_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7341_0")
         break
-    case obj_controller_tasquePaintingsRevisit:
+    case 1223:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -6364,7 +6380,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgset(0, "%%")
         break
-    case obj_tasquePawPrint:
+    case 1224:
         global.choicemsg[0] = gml_Script_stringsetloc("#Sorry, I'll #do the puzzle", "scr_text_slash_scr_text_gml_7046_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_7047_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7048_0_b")
@@ -6375,7 +6391,7 @@ switch argument0
         gml_Script_msgnextloc("\\E3* Kris^1, there's..^1. the path is blocked^1, isn't it?/", "scr_text_slash_scr_text_gml_7327_0_b")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7328_0")
         break
-    case obj_teacupParallaxer:
+    case 1225:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6393,7 +6409,7 @@ switch argument0
             obj_controller_city_mice2.timer = 0
         }
         break
-    case obj_cyber_music_battleBullets:
+    case 1226:
         global.choicemsg[0] = gml_Script_stringsetloc("#Sorry, I'll #do the puzzle", "scr_text_slash_scr_text_gml_7046_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_7047_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7048_0_b")
@@ -6404,7 +6420,7 @@ switch argument0
         gml_Script_msgnextloc("\\ED* Kris^1, is..^1. is everything okay?/", "scr_text_slash_scr_text_gml_7360_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7361_0")
         break
-    case obj_beatbullet_simpleglow:
+    case 1227:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6422,7 +6438,7 @@ switch argument0
             obj_controller_city_mice2.timer = 0
         }
         break
-    case obj_traffic_road_trigger:
+    case 1228:
         global.choicemsg[0] = gml_Script_stringsetloc("#Sorry, I'll #do the puzzle", "scr_text_slash_scr_text_gml_7046_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_7047_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7048_0_b")
@@ -6434,7 +6450,7 @@ switch argument0
         gml_Script_msgnextloc("\\ED* You..^1. you wouldn't... let me.../", "scr_text_slash_scr_text_gml_7395_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7396_0")
         break
-    case obj_weirdEvent_addison_city_big_2:
+    case 1229:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6452,7 +6468,7 @@ switch argument0
             obj_controller_city_mice2.timer = 0
         }
         break
-    case obj_roadcrossing:
+    case 1230:
         global.choicemsg[0] = gml_Script_stringsetloc("#Sorry, I'll #do the puzzle", "scr_text_slash_scr_text_gml_7046_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Proceed", "scr_text_slash_scr_text_gml_7047_0")
         global.choicemsg[2] = gml_Script_stringsetloc("", "scr_text_slash_scr_text_gml_7048_0_b")
@@ -6462,7 +6478,7 @@ switch argument0
         gml_Script_msgnextloc("\\ED* Kris...?/", "scr_text_slash_scr_text_gml_7428_0")
         gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_7429_0")
         break
-    case obj_queenstatue_acid:
+    case 1231:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("noelle")
@@ -6480,7 +6496,7 @@ switch argument0
             obj_controller_city_mice2.timer = 0
         }
         break
-    case obj_rouxlsbattle_hey:
+    case 1232:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_7454_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_7455_0")
         global.choicemsg[2] = gml_Script_stringset(" ")
@@ -6490,7 +6506,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's a machine that sells pre-fountain refreshments.)&* (1 bagel is $120. Buy?)/", "scr_text_slash_scr_text_gml_7462_0")
         gml_Script_msgnext("\\C2 ")
         break
-    case obj_cone:
+    case 1233:
         if (global.choice == 0)
         {
             can_afford = global.gold >= 120
@@ -6511,7 +6527,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgset(0, "%%")
         break
-    case obj_wallplug:
+    case 1234:
         global.choicemsg[0] = gml_Script_stringsetloc("#Recruits", "scr_text_slash_scr_text_gml_7497_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#Item storage", "scr_text_slash_scr_text_gml_7498_0")
         global.choicemsg[2] = gml_Script_stringsetloc("Controls", "scr_text_slash_scr_text_gml_7499_0")
@@ -6520,7 +6536,7 @@ switch argument0
         gml_Script_msgsetloc(0, "* (It's a manual. Read a topic?)/", "scr_text_slash_scr_text_gml_7503_0")
         gml_Script_msgnext("\\C4 ")
         break
-    case obj_hangplug:
+    case 1235:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -6549,7 +6565,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* (There's no time to read books.)/%", "scr_text_slash_scr_text_gml_7536_0")
         }
         break
-    case obj_hangplug_spark:
+    case 1236:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_7568_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_7569_0")
         global.choicemsg[2] = gml_Script_stringset(" ")
@@ -6560,7 +6576,7 @@ switch argument0
         gml_Script_msgnextloc("* (Ralsei wrote an article about LOSING RECRUITS. Read it?)/", "scr_text_slash_scr_text_gml_7556_0")
         gml_Script_msgnext("\\C2 ")
         break
-    case obj_dw_cyber_maze_tasque_controller:
+    case 1237:
         if (global.choice == 0)
         {
             gml_Script_scr_speaker("no_name")
@@ -6575,7 +6591,7 @@ switch argument0
             gml_Script_msgsetloc(0, "* (Who has time to read a book in the Cyber World?)/%", "scr_text_slash_scr_text_gml_7590_0")
         }
         break
-    case obj_dw_cyber_virovirokun_fight_controller:
+    case 1238:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_7595_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_7596_0")
         global.choicemsg[2] = gml_Script_stringset(" ")
@@ -6584,7 +6600,7 @@ switch argument0
         gml_Script_msgnextloc("* (Put the LoadedDisk inside?)/", "scr_text_slash_scr_text_gml_7600_0")
         gml_Script_msgnext("\\C2 ")
         break
-    case obj_virovirokun_needle:
+    case 1239:
         if (global.choice == 0)
         {
             gml_Script_msgsetloc(0, "* (The LoadedDisk squirmed and won't fit!)/%", "scr_text_slash_scr_text_gml_7607_0")
@@ -6593,7 +6609,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgset(0, "%%")
         break
-    case obj_ow_enemy_virovirokun:
+    case 1240:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_7619_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_7620_0")
         global.choicemsg[2] = gml_Script_stringset(" ")
@@ -6603,7 +6619,7 @@ switch argument0
         gml_Script_msgnextloc("* (Look inside?)/", "scr_text_slash_scr_text_gml_7626_0")
         gml_Script_msgnext("\\C2 ")
         break
-    case obj_ow_virokun_mansion_east_1f_d:
+    case 1241:
         if (global.choice == 0)
         {
             itemgetstring = ""
@@ -6637,7 +6653,7 @@ switch argument0
         if (global.choice == 1)
             gml_Script_msgset(0, "%%")
         break
-    case obj_ow_virovirokunswitch:
+    case 1242:
         global.choicemsg[0] = gml_Script_stringsetloc("#Yes", "scr_text_slash_scr_text_gml_7568_0")
         global.choicemsg[1] = gml_Script_stringsetloc("#No", "scr_text_slash_scr_text_gml_7569_0")
         global.choicemsg[2] = gml_Script_stringset(" ")
@@ -6648,7 +6664,7 @@ switch argument0
         gml_Script_msgnextloc("* (Ralsei wrote an article about LOSING RECRUITS. Read it?)/", "scr_text_slash_scr_text_gml_7676_0")
         gml_Script_msgnext("\\C2 ")
         break
-    case obj_fakeWalkway_dw_cyber_music_final:
+    case 1243:
         if (global.choice == 0)
         {
             var small_text = gml_Script_stringsetloc("Yeah you did.", "scr_text_slash_scr_text_gml_7680_0")

@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 var gr = obj_sneo_friedpipis
 i = 0
 while (i < 3)

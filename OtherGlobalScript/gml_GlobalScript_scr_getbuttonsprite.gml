@@ -52,7 +52,7 @@ if isString
 else
 {
     button = control
-    if (control == 32783)
+    if (control == gp_padl)
     {
         button_sprite = 3267
         if (os_type == os_switch)
@@ -61,7 +61,7 @@ else
             button_sprite = (invert ? 131 : 2605)
         return button_sprite;
     }
-    if (control == 32784)
+    if (control == gp_padr)
     {
         button_sprite = 3262
         if (os_type == os_switch)
@@ -70,7 +70,7 @@ else
             button_sprite = (invert ? 3318 : 2606)
         return button_sprite;
     }
-    if (control == 32781)
+    if (control == gp_padu)
     {
         button_sprite = 1255
         if (os_type == os_switch)
@@ -79,7 +79,7 @@ else
             button_sprite = (invert ? 3274 : 2607)
         return button_sprite;
     }
-    if (control == 32782)
+    if (control == gp_padd)
     {
         button_sprite = 1916
         if (os_type == os_switch)
@@ -89,7 +89,7 @@ else
         return button_sprite;
     }
 }
-if (button == 32769)
+if (button == gp_face1)
 {
     button_sprite = 91
     if is_dualshock
@@ -98,7 +98,7 @@ if (button == 32769)
         button_sprite = 2588
     return button_sprite;
 }
-if (button == 32770)
+if (button == gp_face2)
 {
     button_sprite = 3329
     if is_dualshock
@@ -107,7 +107,7 @@ if (button == 32770)
         button_sprite = 2587
     return button_sprite;
 }
-if (button == 32771)
+if (button == gp_face3)
 {
     button_sprite = 1298
     if is_dualshock
@@ -116,7 +116,7 @@ if (button == 32771)
         button_sprite = 2583
     return button_sprite;
 }
-if (button == 32772)
+if (button == gp_face4)
 {
     button_sprite = 3295
     if is_dualshock
@@ -125,7 +125,7 @@ if (button == 32772)
         button_sprite = 2582
     return button_sprite;
 }
-if (button == 32773)
+if (button == gp_shoulderl)
 {
     button_sprite = 1645
     if is_dualshock
@@ -134,7 +134,7 @@ if (button == 32773)
         button_sprite = 2573
     return button_sprite;
 }
-if (button == 32775)
+if (button == gp_shoulderlb)
 {
     button_sprite = 2326
     if is_dualshock
@@ -143,7 +143,7 @@ if (button == 32775)
         button_sprite = 2584
     return button_sprite;
 }
-if (button == 32774)
+if (button == gp_shoulderr)
 {
     button_sprite = 3301
     if is_dualshock
@@ -152,7 +152,7 @@ if (button == 32774)
         button_sprite = 2577
     return button_sprite;
 }
-if (button == 32776)
+if (button == gp_shoulderrb)
 {
     button_sprite = 23
     if is_dualshock
@@ -161,7 +161,7 @@ if (button == 32776)
         button_sprite = 2585
     return button_sprite;
 }
-if (button == 32779)
+if (button == gp_stickl)
 {
     button_sprite = 753
     if is_dualshock
@@ -170,7 +170,7 @@ if (button == 32779)
         button_sprite = 2591
     return button_sprite;
 }
-if (button == 32780)
+if (button == gp_stickr)
 {
     button_sprite = 2414
     if is_dualshock
@@ -179,7 +179,7 @@ if (button == 32780)
         button_sprite = 2592
     return button_sprite;
 }
-if (button == 32777)
+if (button == gp_select)
 {
     button_sprite = 3352
     if is_dualshock
@@ -188,16 +188,16 @@ if (button == 32777)
         button_sprite = 2575
     return button_sprite;
 }
-if (button == 32778)
+if (button == gp_start)
 {
     button_sprite = 3302
     if is_dualshock
-        return 2516;
+        return button_ps4_options;
     if (os_type == os_switch)
         button_sprite = 2576
     return button_sprite;
 }
-if (button == 32783)
+if (button == gp_padl)
 {
     button_sprite = 3267
     if (os_type == os_switch)
@@ -206,7 +206,7 @@ if (button == 32783)
         button_sprite = (invert ? 131 : 2605)
     return button_sprite;
 }
-if (button == 32784)
+if (button == gp_padr)
 {
     button_sprite = 3262
     if (os_type == os_switch)
@@ -215,7 +215,7 @@ if (button == 32784)
         button_sprite = (invert ? 3318 : 2606)
     return button_sprite;
 }
-if (button == 32781)
+if (button == gp_padu)
 {
     button_sprite = 1255
     if (os_type == os_switch)
@@ -224,7 +224,7 @@ if (button == 32781)
         button_sprite = (invert ? 3274 : 2607)
     return button_sprite;
 }
-if (button == 32782)
+if (button == gp_padd)
 {
     button_sprite = 1916
     if (os_type == os_switch)

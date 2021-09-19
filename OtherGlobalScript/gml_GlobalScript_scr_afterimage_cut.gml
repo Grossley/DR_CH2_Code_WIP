@@ -7,5 +7,6 @@ afterimage.depth = depth
 afterimage.image_xscale = image_xscale
 afterimage.image_yscale = image_yscale
 afterimage.image_angle = image_angle
-var _temp_local_var_1 = afterimage
-event_user(0)
+with (afterimage)
+    event_user(0)
+return afterimage;

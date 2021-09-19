@@ -34,8 +34,10 @@ if (qualifybolt != -1)
     if (p == 0)
     {
         points[bc] += 150
-        var _temp_local_var_3 = burstbolt
-        image_blend = c_yellow
+        with (burstbolt)
+            image_blend = c_yellow
+        with (burstbolt)
+            mag = 0.2
     }
     if (p == 1)
         points[bc] += 120
@@ -57,8 +59,10 @@ if (qualifybolt != -1)
         if (p == 0)
         {
             points[bc] += 150
-            var _temp_local_var_5 = burstbolt
-            image_blend = c_yellow
+            with (burstbolt)
+                image_blend = c_yellow
+            with (burstbolt)
+                mag = 0.2
         }
         if (p == 1)
             points[bc] += 120

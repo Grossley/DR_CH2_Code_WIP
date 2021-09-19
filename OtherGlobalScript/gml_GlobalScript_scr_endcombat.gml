@@ -9,9 +9,23 @@ if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbatt
             x = global.charinstance[0].x
             y = global.charinstance[0].y
         }
-        var _temp_local_var_2 = global.cinstance[0]
-        x = global.charinstance[1].x
-        y = global.charinstance[1].y
+        with (global.cinstance[0])
+        {
+            x = global.charinstance[1].x
+            y = global.charinstance[1].y
+        }
+        with (global.cinstance[1])
+        {
+            x = global.charinstance[2].x
+            y = global.charinstance[2].y
+        }
+        with (obj_caterpillarchara)
+            gml_Script_scr_caterpillar_interpolate()
+        gml_Script_scr_pan_to_obj(80, 30)
+        with (obj_mainchara)
+            visible = true
+        with (obj_caterpillarchara)
+            visible = true
     }
     gml_Script_instance_create(0, 0, obj_endbattle)
     with (obj_monsterparent)

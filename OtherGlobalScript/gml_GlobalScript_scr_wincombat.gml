@@ -8,8 +8,8 @@ if (global.flag[60] == 0 || global.flag[36] == 1)
     {
         if (global.monster[i] == true && gml_Script_i_ex(global.monsterinstance[i]))
         {
-            var _temp_local_var_3 = global.monsterinstance[i]
-            gml_Script_scr_monsterdefeat()
+            with (global.monsterinstance[i])
+                gml_Script_scr_monsterdefeat()
         }
     }
 }

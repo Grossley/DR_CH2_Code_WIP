@@ -4,7 +4,7 @@ itemcomment.msg = argument1
 itemcomment.who = argument0
 if (global.flag[32] == 1)
 {
-    var _temp_local_var_1 = itemcomment
-    instance_destroy()
+    with (itemcomment)
+        instance_destroy()
 }
 return;

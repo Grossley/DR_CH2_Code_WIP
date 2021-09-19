@@ -20,12 +20,15 @@ for (__ien = 0; __ien < 3; __ien++)
             __enemymarker[__ien].depth = (-__ien)
         }
         __enemymarker[__ien].__ien = __ien
-        var _temp_local_var_1 = __enemymarker[__ien]
-        gml_Script_scr_move_to_point_over_time(global.monstermakex[__ien], global.monstermakey[__ien], 20)
-        __doom = gml_Script_instance_create(x, y, obj_doom)
-        __doom.target = id
-        alarm[0] = __doom
-        var _temp_local_var_2 = 25
+        with (__enemymarker[__ien])
+        {
+            gml_Script_scr_move_to_point_over_time(global.monstermakex[__ien], global.monstermakey[__ien], 20)
+            __doom = gml_Script_instance_create(x, y, obj_doom)
+            __doom.target = id
+            alarm[0] = __doom
+            var _temp_local_var_1 = 25
+        }
+        continue
     }
 }
 return;

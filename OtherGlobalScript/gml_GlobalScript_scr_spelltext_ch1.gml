@@ -116,12 +116,14 @@ switch spell
                 {
                     spec_shard = 1
                     shardtest[_en] = 3
-                    var _temp_local_var_3 = global.monsterinstance[_en]
-                    battlecancel = 1
-                    if (manual == 0)
+                    with (global.monsterinstance[_en])
                     {
-                        manual = 1
-                        gml_Script_scr_mercyadd_ch1(myself, 50)
+                        battlecancel = 1
+                        if (manual == 0)
+                        {
+                            manual = 1
+                            gml_Script_scr_mercyadd_ch1(myself, 50)
+                        }
                     }
                 }
             }

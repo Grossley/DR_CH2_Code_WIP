@@ -1,18 +1,12 @@
 var _maxvalue = 0
-var _i = obj_sneo_friedpipis
-while _i.argument_count
-{
+for (var _i = 0; _i < argument_count; _i++)
     _maxvalue += argument[_i]
-    _i++
-}
 var _randomvalue = random(_maxvalue)
 _maxvalue = 0
-_i = obj_sneo_friedpipis
-while _i.argument_count
+for (_i = 0; _i < argument_count; _i++)
 {
     _maxvalue += argument[_i]
     if (_randomvalue <= _maxvalue)
         return _i;
-    _i++
 }
 return;
