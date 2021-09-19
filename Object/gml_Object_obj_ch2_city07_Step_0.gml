@@ -1091,8 +1091,8 @@ if (con == 60 && (!gml_Script_i_ex(895)))
     {
         var walkerpos = (berdlygift ? 4 : 3)
         gml_Script_scr_makecaterpillar(starwalker.x, starwalker.y, 6, walkerpos)
-        var _temp_local_var_10 = starwalker
-        instance_destroy()
+        with (starwalker)
+            instance_destroy()
     }
     with (obj_actor)
         instance_destroy()
@@ -1153,19 +1153,10 @@ if hit_bottles
     {
         if (hit_timer == 1)
         {
-            _temp_local_var_13.gravity = (bottle[i].gravity + 2)
+            bottle[i].gravity += 2
             bottle[i].gravity_direction = random_range(60, 150)
-            var _temp_local_var_14 = starwalker
-            var _temp_local_var_15 = ralsei_ball
-            var _temp_local_var_16 = -9
-            var _temp_local_var_17 = bottle[i]
         }
-        var _temp_local_var_19 = starwalker
-        var _temp_local_var_20 = ralsei_ball
-        var _temp_local_var_21 = -9
-        var _temp_local_var_22 = -9
-        var _temp_local_var_23 = bottle[i]
-        _temp_local_var_19.image_angle = (bottle[i].image_angle + (bottle[i].x <= 1390 ? 50 : -50))
+        bottle[i].image_angle = (bottle[i].image_angle + (bottle[i].x <= 1390 ? 50 : -50))
     }
     if (hit_timer >= 30)
         hit_bottles = 0
@@ -1179,11 +1170,7 @@ if susie_heal
         heal_beam = gml_Script_scr_dark_marker((su_actor.x + 100), (su_actor.y + 65), 180)
         heal_beam.image_speed = 0.25
     }
-    _temp_local_var_13.x = (heal_beam.x + 2)
-    var _temp_local_var_26 = starwalker
-    var _temp_local_var_27 = ralsei_ball
-    var _temp_local_var_28 = -9
-    var _temp_local_var_29 = heal_beam
+    heal_beam.x += 2
     if (heal_beam.x >= 1310)
     {
         susie_heal = 0
@@ -1194,9 +1181,11 @@ if heal_effect
 {
     heal_effect = 0
     healamt = gml_Script_instance_create(kr_actor.x, kr_actor.y, obj_dmgwriter)
-    var _temp_local_var_30 = healamt
-    delay = 4
-    type = 3
+    with (healamt)
+    {
+        delay = 4
+        type = 3
+    }
 }
 if box_remove_effect
 {
@@ -1211,8 +1200,8 @@ if box_remove_effect
     if (box_remove_timer >= 5)
     {
         box_remove_effect = 0
-        var _temp_local_var_31 = fx
-        instance_destroy()
+        with (fx)
+            instance_destroy()
     }
 }
 if present_transform
@@ -1220,7 +1209,7 @@ if present_transform
     present_transform = 0
     if (gi_actor != -4)
     {
-        var _temp_local_var_32 = gi_actor
-        gml_Script_scr_oflash()
+        with (gi_actor)
+            gml_Script_scr_oflash()
     }
 }

@@ -123,9 +123,11 @@ if (con > 0)
         {
             with (catty)
             {
-                var _temp_local_var_25 = catty
-                sprite_index = spr_npc_catty_wave_ch1
-                image_speed = 0.2
+                with (catty)
+                {
+                    sprite_index = spr_npc_catty_wave_ch1
+                    image_speed = 0.2
+                }
             }
         }
         if (car.x >= 550)
@@ -203,9 +205,11 @@ if (con > 0)
         {
             with (car)
             {
-                var _temp_local_var_34 = qc
-                sprite_index = spr_npc_qc_wave_ch1
-                image_speed = 0.2
+                with (qc)
+                {
+                    sprite_index = spr_npc_qc_wave_ch1
+                    image_speed = 0.2
+                }
             }
         }
         if (car.x >= 1000)

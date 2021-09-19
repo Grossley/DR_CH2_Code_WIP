@@ -27,15 +27,10 @@ linesiner++
 if (init == 1)
 {
     draw_set_alpha(0.1)
-    i = 0
-    while (i < 19)
+    for (i = 0; i < 19; i++)
     {
         draw_set_color(merge_color(c_navy, c_black, (i * 0.05)))
-        -100
-        i++
-        var _temp_local_var_1 = (yy - 50)
-        var _temp_local_var_2 = (((yy - 50) + (i * 15)).room_width + 100)
-        var _temp_local_var_3 = 0
+        draw_rectangle(-100, (yy - 50), room_width + 100, ((yy - 50) + (i * 15)), 0)
     }
     draw_set_alpha((0.5 + (sin((linesiner / 12)) * 0.1)))
     draw_set_color(c_lime)

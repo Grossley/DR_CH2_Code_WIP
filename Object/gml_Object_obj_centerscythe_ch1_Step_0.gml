@@ -72,13 +72,13 @@ if (king == 1)
         }
         if (scythetimer >= 100 && scythetimer < 105)
         {
-            var _temp_local_var_7 = sbul
-            image_alpha -= 0.2
+            with (sbul)
+                image_alpha -= 0.2
         }
         if (scythetimer >= 105)
         {
-            var _temp_local_var_8 = sbul
-            instance_destroy()
+            with (sbul)
+                instance_destroy()
         }
     }
 }

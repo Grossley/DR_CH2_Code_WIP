@@ -64,8 +64,8 @@ if (con == 1.1)
         kick.image_xscale = 2
         kick.image_yscale = 2
         kick.image_speed = 0.25
-        var _temp_local_var_4 = kick
-        gml_Script_scr_depth()
+        with (kick)
+            gml_Script_scr_depth()
     }
     if (kick.image_index == 2)
         susid.active = true
@@ -73,8 +73,8 @@ if (con == 1.1)
     {
         susid.active = false
         susid.visible = true
-        var _temp_local_var_5 = kick
-        instance_destroy()
+        with (kick)
+            instance_destroy()
     }
 }
 if (con == 2)
@@ -82,14 +82,16 @@ if (con == 2)
     if (global.interact == 0)
     {
         var caid = caterpillarid
-        var _temp_local_var_6 = susid
-        direction = point_direction(x, y, caid.x, caid.y)
-        fake_direction = direction
-        fake_speed = gml_Script_scr_move_step_solids_direction(8, direction)
+        with (susid)
+        {
+            direction = point_direction(x, y, caid.x, caid.y)
+            fake_direction = direction
+            fake_speed = gml_Script_scr_move_step_solids_direction(8, direction)
+        }
     }
     else
     {
-        var _temp_local_var_8 = susid
-        fake_speed = 0
+        with (susid)
+            fake_speed = 0
     }
 }

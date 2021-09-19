@@ -506,8 +506,8 @@ if (con == 50 && (!gml_Script_i_ex(895)))
     global.facing = 0
     var dumpster_npc = gml_Script_instance_create(560, 106, obj_npc_sign)
     dumpster_npc.sprite_index = spr_cutscene_14_dumpster_open
-    var _temp_local_var_10 = dumpster_npc
-    gml_Script_scr_depth()
+    with (dumpster_npc)
+        gml_Script_scr_depth()
 }
 if play_intro
 {
@@ -531,6 +531,6 @@ if open_dumpster
     open_dumpster = 0
     dumpster_nakami.visible = true
     dumpster_nakami.depth = 95000
-    var _temp_local_var_11 = dumpster_nakami
-    gml_Script_scr_shakeobj()
+    with (dumpster_nakami)
+        gml_Script_scr_shakeobj()
 }

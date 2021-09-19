@@ -3,23 +3,23 @@ if (room == room_cc_1f_ch1)
     if (global.flag[240] == 0)
     {
         elevatorblocker = gml_Script_instance_create_ch1(1040, 160, 1656)
-        var _temp_local_var_1 = elevatorblocker
-        image_xscale = 6
+        with (elevatorblocker)
+            image_xscale = 6
     }
 }
 if (elevatorblocker.room == room_cc_2f_ch1)
 {
     spike[0] = gml_Script_scr_dark_marker_ch1(800, 280, 3607)
     spike[1] = gml_Script_scr_dark_marker_ch1(840, 280, 3607)
-    var _temp_local_var_2 = spike[0]
-    depth = 900000
+    with (spike[0])
+        depth = 900000
 }
 if (null.room == room_cc_4f_ch1)
 {
     spike[0] = gml_Script_scr_dark_marker_ch1(680, 920, 3607)
     spike[1] = gml_Script_scr_dark_marker_ch1(720, 920, 3607)
-    var _temp_local_var_6 = spike[0]
-    depth = 900000
+    with (spike[0])
+        depth = 900000
 }
 if (null.room == room_cc_5f_ch1)
     global.flag[240] = 1
