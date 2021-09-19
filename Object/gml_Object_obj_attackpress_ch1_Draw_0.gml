@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_8, _temp_local_var_19;
 maxdelaytimer += 1
 if (spelluse == 1)
 {

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_5;
 global.cinstance[argument3] = gml_Script_instance_create(argument0, argument1, obj_caterpillarchara)
 global.cinstance[argument3].target = (12 + (argument3 * 12))
 if (argument2 == 3)

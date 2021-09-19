@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_14, _temp_local_var_15, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_21, _temp_local_var_23, _temp_local_var_24, _temp_local_var_25, _temp_local_var_26, _temp_local_var_27, _temp_local_var_28, _temp_local_var_29, _temp_local_var_30, _temp_local_var_31, _temp_local_var_32, _temp_local_var_33, _temp_local_var_34, _temp_local_var_39, _temp_local_var_43, _temp_local_var_52, _temp_local_var_53, _temp_local_var_54, _temp_local_var_55, _temp_local_var_56, _temp_local_var_57, _temp_local_var_58, _temp_local_var_59;
 if (_c == "delaycmd")
 {
     delaycmd = gml_Script_instance_create(0, 0, obj_cutscene_delaycmd)

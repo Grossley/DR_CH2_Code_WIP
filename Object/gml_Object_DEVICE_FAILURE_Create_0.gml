@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 EVENT = 0
 TIMER = 0
 HEARTMADE = 0
@@ -19,6 +18,5 @@ gamepad_controls = [32769, 32770, 32771, 32772, 32773, 32775, 32774, 32776, 3277
 if (global.chapter > 1)
 {
     var gameover_bg = gml_Script_instance_create(0, 20, obj_gameoverbg)
-    var _temp_local_var_1 = gameover_bg
     gml_Script_scr_depth()
 }

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4;
 dm = gml_Script_instance_create_ch1(global.monsterx[argument0], ((global.monstery[argument0] + 20) - (global.hittarget[argument0] * 20)), 1629)
 dm.type = (global.char[caster] - 1)
 dm.damage = argument1

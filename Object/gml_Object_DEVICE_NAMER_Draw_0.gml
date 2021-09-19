@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_6, _temp_local_var_7;
 depth = -10000
 if (EVENT == 0)
 {
@@ -19,9 +18,11 @@ if (EVENT == 70 && instance_exists(obj_writer) == 0)
         instance_destroy()
     gml_Script_msgsetloc(0, "ENTER YOUR OWN NAME.", "DEVICE_NAMER_slash_Draw_0_gml_18_0")
     W = gml_Script_instance_create((80 + JA_XOFF), (20 + JA_YOFF), obj_writer)
-    var _temp_local_var_2 = W
-    hspace *= 0.8
-    skipme = true
+    with (W)
+	{
+		hspace *= 0.8
+		skipme = true
+	}
 }
 if (EVENT == 71)
 {
@@ -37,8 +38,8 @@ if (EVENT == 71)
         if (CHOICE.backout == 1)
         {
             CANCELMENU = 1
-            var _temp_local_var_6 = CHOICE
-            instance_destroy()
+            with (CHOICE)
+				instance_destroy()
         }
     }
     else
@@ -55,9 +56,11 @@ if (EVENT == 73)
     if (global.lang == "ja")
         JA_XOFF = -30
     W = gml_Script_instance_create((78 + JA_XOFF), (20 + JA_YOFF), obj_writer)
-    var _temp_local_var_7 = W
-    hspace *= 0.8
-    skipme = true
+    with (W)
+	{
+		hspace *= 0.8
+		skipme = true
+	}
 }
 if (EVENT == 74)
 {

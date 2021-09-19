@@ -8,9 +8,11 @@ if (gml_Script_scr_monsterpop_ch1() > 0)
             if instance_exists(global.charinstance[i])
             {
                 global.charinstance[i].points = points[i]
-                var _temp_local_var_1 = global.charinstance[i]
-                state = 1
-                attacktimer = 0
+                with (global.charinstance[i])
+				{
+					state = 1
+					attacktimer = 0
+				}
             }
         }
     }

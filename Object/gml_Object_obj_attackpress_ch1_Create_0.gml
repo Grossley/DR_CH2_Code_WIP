@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_20;
 active = false
 fastmode = true
 if (fastmode == true)
