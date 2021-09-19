@@ -89,11 +89,13 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
         i = 0
         while (i < 3)
         {
-            var _temp_local_var_3 = global.monsterinstance[global.bmenucoord[global.bmenuno][global.charturn]]
-            if (flash == false)
-                fsiner = 0
-            flash = true
-            becomeflash = true
+            with (global.monsterinstance[global.bmenucoord[global.bmenuno][global.charturn]])
+			{
+				if (flash == false)
+					fsiner = 0
+				flash = true
+				becomeflash = true
+			}
         }
     }
 }
@@ -392,11 +394,13 @@ if (global.bmenuno == 9 && global.myfight == 0)
         draw_set_color(c_orange)
         draw_text((xx + 500), (yy + 440), string_hash_to_newline((string(thiscost) + "% TP")))
     }
-    var _temp_local_var_46 = global.monsterinstance[global.bmenucoord[11][global.charturn]]
-    if (flash == false)
-        fsiner = 0
-    flash = true
-    becomeflash = true
+	with (global.monsterinstance[global.bmenucoord[11][global.charturn]])
+	{
+		if (flash == false)
+			fsiner = 0
+		flash = true
+		becomeflash = true
+	}
 }
 if (global.bmenuno == 7 || global.bmenuno == 8)
 {
@@ -408,11 +412,13 @@ if (global.bmenuno == 7 || global.bmenuno == 8)
         {
             if (global.char[i] != 0)
             {
-                var _temp_local_var_48 = global.charinstance[global.bmenucoord[global.bmenuno][global.charturn]]
-                if (flash == false)
-                    fsiner = 0
-                flash = true
-                becomeflash = true
+                with (global.charinstance[global.bmenucoord[global.bmenuno][global.charturn]])
+				{
+					if (flash == false)
+						fsiner = 0
+					flash = true
+					becomeflash = true
+				}
             }
         }
     }
@@ -432,9 +438,11 @@ if keyboard_check(ord("A"))
                 var __offsety = 0
                 if global.monster[i]
                 {
-                    var _temp_local_var_51 = global.monsterinstance[i]
-                    __offsetx = sactionboxx
-                    __offsety = sactionboxy
+                    with (global.monsterinstance[i])
+					{
+						__offsetx = sactionboxx
+						__offsety = sactionboxy
+					}
                 }
             }
             draw_set_font(remfont)

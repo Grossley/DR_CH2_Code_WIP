@@ -16,5 +16,7 @@ if (global.flag[9] == 1)
 gml_Script_scr_encountersetup(global.encounterno)
 with (obj_mainchara)
     visible = false
-var _temp_local_var_1 = global.cinstance[0]
-visible = false
+with (global.cinstance[0])
+{
+	visible = false
+}

@@ -14,8 +14,8 @@ while (i < array_length_1d(layerarray))
                 layersprite.image_yscale = layer_sprite_get_yscale(elements[j])
                 layersprite.image_speed = layer_sprite_get_speed(elements[j])
                 layersprite.image_index = layer_sprite_get_index(elements[j])
-                var _temp_local_var_1 = layersprite
-                gml_Script_scr_depth()
+                with (layersprite)
+					gml_Script_scr_depth()
             }
         }
         break

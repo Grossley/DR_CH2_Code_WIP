@@ -73,7 +73,6 @@ if (y > 375 && create_hitbox == 0)
         kick_hitbox = gml_Script_instance_create(x, (y - 120), o_boxing_hitbox)
 		with (kick_hitbox)
 		{
-			var _temp_local_var_9 = kick_hitbox
 			give_hurt = (22 / f)
 			timer = (400 / f)
 			damage = 25

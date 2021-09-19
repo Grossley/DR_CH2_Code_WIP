@@ -32,9 +32,11 @@ if (con == 0)
     }
     fallmarker[1].sprite_index = spr_susie_dw_fall_d
     fallmarker[2].sprite_index = spr_ralsei_jump
-    var _temp_local_var_1 = fallmarker[0]
-    x = kris_x
-    y = kris_y
+    with (fallmarker[0])
+	{
+		x = kris_x
+		y = kris_y
+	}
 }
 if (con == 0.1)
 {
@@ -54,8 +56,8 @@ if (con == 1)
         i = 0
         while (i < 3)
         {
-            var _temp_local_var_4 = fallmarker[i]
-            instance_destroy()
+            with (fallmarker[i])
+				instance_destroy()
         }
         timer = 0
         con = 2
