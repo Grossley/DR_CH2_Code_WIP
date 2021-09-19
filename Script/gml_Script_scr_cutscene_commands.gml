@@ -37,16 +37,8 @@ if (_c == "walk")
     }
     else
     {
-        _temp_local_var_7.x = (command_actor[i].x + lengthdir_x((command_arg2[i] * command_arg3[i]), ((gml_Script_scr_facing_letter_to_number(command_arg1[i]) * 90) - 90)))
-        _temp_local_var_8.y = (command_actor[i].y + lengthdir_y((command_arg2[i] * command_arg3[i]), ((gml_Script_scr_facing_letter_to_number(command_arg1[i]) * 90) - 90)))
-        var _temp_local_var_52 = command_arg6[i]
-        var _temp_local_var_53 = -9
-        var _temp_local_var_54 = -9
-        var _temp_local_var_55 = command_actor[i]
-        var _temp_local_var_56 = obj_sneo_friedpipis
-        var _temp_local_var_57 = command_arg6[i]
-        var _temp_local_var_58 = -9
-        var _temp_local_var_59 = command_actor[i]
+        command_actor[i].x += lengthdir_x((command_arg2[i] * command_arg3[i]), ((gml_Script_scr_facing_letter_to_number(command_arg1[i]) * 90) - 90))
+        command_actor[i].y += lengthdir_y((command_arg2[i] * command_arg3[i]), ((gml_Script_scr_facing_letter_to_number(command_arg1[i]) * 90) - 90))
     }
 }
 if (_c == "walkdirect")
@@ -312,7 +304,7 @@ if (_c == "specialsprite")
 {
     command_actor[i].sprite_index = specialsprite[command_arg1[i]]
     command_actor[i].specialspriteno = command_arg1[i]
-    var _temp_local_var_19 = command_actor[i]
+    var _temp_local_var_9 = command_actor[i]
 }
 if (_c == "visible")
     command_actor[i].visible = command_arg1[i]
@@ -517,16 +509,8 @@ if (_c == "jumpsprite")
 }
 if (_c == "addxy")
 {
-    _temp_local_var_26.x = (command_actor[i].x + command_arg1[i])
-    _temp_local_var_25.y = (command_actor[i].y + command_arg2[i])
-    var _temp_local_var_27 = command_actor[i]
-    var _temp_local_var_28 = -9
-    var _temp_local_var_29 = -9
-    var _temp_local_var_30 = command_actor[i]
-    var _temp_local_var_31 = command_actor[i]
-    var _temp_local_var_32 = command_actor[i]
-    var _temp_local_var_33 = -9
-    var _temp_local_var_34 = command_actor[i]
+    command_actor[i].x += command_arg1[i]
+    command_actor[i].y += command_arg2[i]
 }
 if (_c == "setxy")
 {
@@ -614,6 +598,9 @@ if (_c == "waitcustom")
 {
     with (master_object)
         customcon = 1
+    cs_wait_custom = 1
+    waiting = 1
+    breakme = 1
 }
 if (_c == "waitdialoguer")
 {

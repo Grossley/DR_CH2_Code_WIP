@@ -24,12 +24,28 @@ if (techwon == false)
     global.bmenuno = 0
     global.charturn = 0
     skip = 0
-    i = 0
-    while (i < 3)
+    for (i = 0; i < 3; i += 1)
     {
         global.hittarget[i] = 0
         with (global.charinstance[i])
             tu = 0
+        hptarget = global.char[i]
+        if (global.char[i] != 0 && global.hp[hptarget] <= 0)
+        {
+            healamt = ceil((global.maxhp[hptarget] / 8))
+            dmgwr = gml_Script_instance_create(global.charinstance[i].x, ((global.charinstance[i].y + global.charinstance[i].myheight) - 24), obj_dmgwriter)
+            with (dmgwr)
+            {
+                delay = 1
+                type = 3
+            }
+            dmgwr.damage = gml_Script_scr_heal(i, healamt)
+            if (global.hp[hptarget] >= 1)
+            {
+                with (dmgwr)
+                    specialmessage = 4
+            }
+        }
     }
     if (global.charmove[0] == false || global.charauto[global.char[0]] == 1)
         global.charturn = 1

@@ -32,3 +32,4 @@ with (instance_create_depth(argument[0], _yTop, 0, obj_beatbullet))
         inSync = 0
     }
 }
+return;

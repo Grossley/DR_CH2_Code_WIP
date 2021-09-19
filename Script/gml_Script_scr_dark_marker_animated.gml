@@ -11,3 +11,4 @@ with (thismarker)
     image_yscale = 2
     gml_Script_scr_depth()
 }
+return thismarker;

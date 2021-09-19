@@ -1,6 +1,5 @@
 gml_Script_scr_healall_ch1(argument0)
-i = 0
-while (i < 3)
+for (i = 0; i < 3; i += 1)
 {
     with (global.charinstance[i])
     {
@@ -13,6 +12,12 @@ while (i < 3)
             type = 3
             damage = argument0
         }
+        if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+        {
+            with (dmgwr)
+                specialmessage = 3
+        }
+        tu += 1
     }
 }
 global.spelldelay = 20

@@ -9,3 +9,4 @@ with (instance_create_depth(_positionX, -30, 0, obj_slidebullet))
     targetBeat = _targetBeat
     image_alpha = 0
 }
+return;

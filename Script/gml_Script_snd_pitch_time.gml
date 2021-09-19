@@ -9,3 +9,4 @@ pitchthing.targetpitch = argument1
 pitchthing.maxframes = argument2
 with (pitchthing)
     event_user(0)
+return;

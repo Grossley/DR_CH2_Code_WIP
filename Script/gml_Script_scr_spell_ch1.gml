@@ -30,13 +30,22 @@ switch spell
         {
             ha = gml_Script_instance_create_ch1(x, y, 1618)
             ha.target = id
+            dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
+            with (dmgwr)
+            {
+                delay = 8
+                type = 3
+            }
+            if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+            {
+                with (dmgwr)
+                    specialmessage = 3
+            }
+            dmgwr.damage = healnum
+            tu += 1
         }
-        dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
-        with (dmgwr)
-        {
-            delay = 8
-            type = 3
-        }
+        global.spelldelay = 15
+        break
     case 3:
         if (global.monster[star] == false)
             gml_Script_scr_retarget_spell_ch1()
@@ -107,8 +116,7 @@ switch spell
         break
     case 6:
         healnum = (global.battlemag[argument1] * 4)
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             gml_Script_scr_heal_ch1(i, healnum)
             global.charinstance[i].healnum = healnum
@@ -116,12 +124,19 @@ switch spell
             {
                 ha = gml_Script_instance_create_ch1(x, y, 1618)
                 ha.target = id
-            }
-            dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
-            with (dmgwr)
-            {
-                delay = 8
-                type = 3
+                dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
+                with (dmgwr)
+                {
+                    delay = 8
+                    type = 3
+                }
+                if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+                {
+                    with (dmgwr)
+                        specialmessage = 3
+                }
+                dmgwr.damage = healnum
+                tu += 1
             }
         }
         global.spelldelay = 15

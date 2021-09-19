@@ -26,6 +26,8 @@ if (qualifybolt != -1)
         points[argument0] += 150
         with (burstbolt)
             image_blend = c_yellow
+        with (burstbolt)
+            mag = 0.2
     }
     if (p == 1)
         points[argument0] += 120

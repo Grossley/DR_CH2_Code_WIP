@@ -14,3 +14,4 @@ with (__jump_to_point)
         usesprites = 1
     drawshadow = 0
 }
+return __jump_to_point;

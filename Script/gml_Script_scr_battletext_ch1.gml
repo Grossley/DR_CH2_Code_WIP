@@ -12,3 +12,4 @@ with (battlewriter)
     if (global.fc == 0 && originalcharline == 33)
         charline = 26
 }
+return battlewriter;

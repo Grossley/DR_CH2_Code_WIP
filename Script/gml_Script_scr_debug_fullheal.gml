@@ -4,8 +4,7 @@ with (obj_dmgwriter)
         killactive = 1
 }
 gml_Script_scr_healallitemspell(999)
-i = 0
-while (i < 3)
+for (i = 0; i < 3; i++)
 {
     with (global.charinstance[i])
         tu--

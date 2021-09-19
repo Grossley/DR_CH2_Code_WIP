@@ -17,11 +17,11 @@ for (i = 0; i < 3; i += 1)
 }
 switch argument0
 {
-    case obj_sneo_friedpipis:
+    case 0:
         itemnameb = " "
         itemdescb = "---"
         break
-    case obj_pipis_bullet_cone:
+    case 1:
         gml_Script_scr_healitem(global.charselect, 40)
         usable = true
         if (_gc == 2)
@@ -35,7 +35,7 @@ switch argument0
         if (_gc == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Oh, it's... sticky?", "scr_itemuse_slash_scr_itemuse_gml_42_0"))
         break
-    case obj_84_lang_helper:
+    case 2:
         reviveamt = ceil((global.maxhp[global.char[global.charselect]] / 2))
         gml_Script_scr_healitem(global.charselect, reviveamt)
         usable = true
@@ -56,7 +56,7 @@ switch argument0
         if (_gc == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Mints? I love mints!", "scr_itemuse_slash_scr_itemuse_gml_65_0"))
         break
-    case obj_afterimage_anim:
+    case 4:
         global.interact = 6
         with (obj_darkcontroller)
             charcon = 0
@@ -68,11 +68,11 @@ switch argument0
         global.msg[0] = gml_Script_stringsetloc("* (You tried to read the manual^1, but it was so dense it made your head spin...)/%", "scr_itemuse_slash_scr_itemuse_gml_82_0")
         gml_Script_instance_create(0, 0, obj_dialoguer)
         break
-    case obj_ch2_scene26_henshin_flash:
+    case 5:
         gml_Script_scr_healitem(global.charselect, 20)
         usable = true
         break
-    case obj_spamtonpainting:
+    case 6:
         gml_Script_scr_healitem_all(160)
         if gml_Script_scr_havechar(2)
             gml_Script_scr_itemcomment(suspos, gml_Script_stringsetloc("Mmm, seconds!", "scr_itemuse_slash_scr_itemuse_gml_94_0"))
@@ -82,7 +82,7 @@ switch argument0
             gml_Script_scr_itemcomment(noepos, gml_Script_stringsetloc("Happy birthday! Haha!", "scr_itemuse_slash_scr_itemuse_gml_96_0"))
         usable = true
         break
-    case obj_growtangle_spark:
+    case 7:
         if (global.chapter == 1)
             gml_Script_scr_healitem_all(80)
         if (global.chapter == 2)
@@ -95,7 +95,7 @@ switch argument0
             gml_Script_scr_itemcomment(noepos, gml_Script_stringsetloc("My eyes are spinning...", "scr_itemuse_slash_scr_itemuse_gml_112_0"))
         usable = true
         break
-    case obj_mettaton_bomb_hitbox:
+    case 8:
         _healchoice = 70
         usable = true
         if (global.char[global.charselect] == 2)
@@ -109,7 +109,7 @@ switch argument0
         }
         gml_Script_scr_healitem(global.charselect, _healchoice)
         break
-    case obj_dw_city_mice3Fence:
+    case 9:
         gml_Script_scr_healitem(global.charselect, 1)
         usable = true
         if (global.char[global.charselect] == 2)
@@ -119,7 +119,7 @@ switch argument0
         if (global.char[global.charselect] == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Umm, what is this? It's cute...", "scr_itemuse_slash_scr_itemuse_gml_151_0"))
         break
-    case obj_gigaqueen_intro_fight:
+    case 10:
         _healchoice = 4
         usable = true
         if (global.char[global.charselect] == 2)
@@ -133,7 +133,7 @@ switch argument0
         }
         gml_Script_scr_healitem(global.charselect, _healchoice)
         break
-    case obj_berdlyb_tornado_old:
+    case 11:
         gml_Script_scr_healitem_all(70)
         if gml_Script_scr_havechar(2)
             gml_Script_scr_itemcomment(suspos, gml_Script_stringsetloc("Quit hogging!", "scr_itemuse_slash_scr_itemuse_gml_177_0"))
@@ -143,7 +143,7 @@ switch argument0
             gml_Script_scr_itemcomment(noepos, gml_Script_stringsetloc("(Kris took two thirds of it...)", "scr_itemuse_slash_scr_itemuse_gml_179_0"))
         usable = true
         break
-    case obj_magicalglass:
+    case 12:
         usable = true
         if (global.char[global.charselect] == 1)
             gml_Script_scr_healitem(global.charselect, 20)
@@ -163,7 +163,7 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Mmm... what!? It's blood!?", "scr_itemuse_slash_scr_itemuse_gml_203_0"))
         }
         break
-    case obj_intro_ch2:
+    case 13:
         usable = true
         if (global.char[global.charselect] == 1)
             gml_Script_scr_healitem(global.charselect, 80)
@@ -184,7 +184,7 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Umm, it's ok, Kris, I'll share...", "scr_itemuse_slash_scr_itemuse_gml_229_0"))
         }
         break
-    case obj_sneo_wireheart_old:
+    case 14:
         usable = true
         gml_Script_scr_healitem(global.charselect, 500)
         if (global.char[global.charselect] == 2)
@@ -194,7 +194,7 @@ switch argument0
         if (global.char[global.charselect] == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("(Huh? I didn't know Kris liked this flavor.)", "scr_itemuse_slash_scr_itemuse_gml_247_0"))
         break
-    case obj_flowerking:
+    case 15:
         gml_Script_scr_healitem(global.charselect, 50)
         usable = true
         if (global.char[global.charselect] == 2)
@@ -204,7 +204,7 @@ switch argument0
         if (global.char[global.charselect] == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Tastes like... jumprope?", "scr_itemuse_slash_scr_itemuse_gml_265_0"))
         break
-    case obj_sprite_hunter:
+    case 16:
         gml_Script_scr_healitem(global.charselect, 80)
         usable = true
         if (_gc == 1)
@@ -225,13 +225,13 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("What a nice song...", "scr_itemuse_slash_scr_itemuse_gml_283_0"))
         }
         break
-    case obj_mazepipis:
+    case 17:
         gml_Script_scr_speaker("noone")
         gml_Script_msgsetloc(0, "* (The clothes are stuck to the doll...)/", "scr_itemuse_slash_scr_itemuse_gml_290_0")
         gml_Script_msgnextloc("* (There's no way you can use this.)/%", "scr_itemuse_slash_scr_itemuse_gml_291_0")
         gml_Script_scr_itemdialoguer()
         break
-    case obj_sneo_wireheart_edit:
+    case 18:
         usable = true
         _healamount = gml_Script_scr_teaamount(1, global.char[global.charselect])
         if (global.char[global.charselect] == 1)
@@ -257,7 +257,7 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("Tastes like cinnamon! (What is this aftertaste...?)", "scr_itemuse_slash_scr_itemuse_gml_320_0"))
         gml_Script_scr_healitem(global.charselect, _healamount)
         break
-    case obj_tutorial_puzboy:
+    case 19:
         usable = true
         _healamount = gml_Script_scr_teaamount(4, global.char[global.charselect])
         if (global.char[global.charselect] == 1)
@@ -281,7 +281,7 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("... this is just water! You're pranking me, right?!", "scr_itemuse_slash_scr_itemuse_gml_349_0"))
         gml_Script_scr_healitem(global.charselect, _healamount)
         break
-    case obj_fountainkris_ch2_sideb:
+    case 20:
         usable = true
         _healamount = gml_Script_scr_teaamount(3, global.char[global.charselect])
         if (global.char[global.charselect] == 1)
@@ -303,7 +303,7 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("There's nothing in here!", "scr_itemuse_slash_scr_itemuse_gml_377_0"))
         gml_Script_scr_healitem(global.charselect, _healamount)
         break
-    case obj_debug_ballooner:
+    case 21:
         usable = true
         _healamount = gml_Script_scr_teaamount(2, global.char[global.charselect])
         if (global.char[global.charselect] == 1)
@@ -325,7 +325,7 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("(Wonder if they sell this in gallons?)", "scr_itemuse_slash_scr_itemuse_gml_405_0"))
         gml_Script_scr_healitem(global.charselect, _healamount)
         break
-    case obj_sneo_rotatingwall_pipis:
+    case 22:
         _healchoice = 60
         usable = true
         replaceable = 8
@@ -340,7 +340,7 @@ switch argument0
         }
         gml_Script_scr_healitem(global.charselect, _healchoice)
         break
-    case obj_tasque_manager_tempsave:
+    case 23:
         gml_Script_scr_healitem(global.charselect, 120)
         usable = true
         if (global.char[global.charselect] == 2)
@@ -350,7 +350,7 @@ switch argument0
         if (global.char[global.charselect] == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("(I-isn't this the chalk I gave her?)", "scr_itemuse_slash_scr_itemuse_gml_446_0"))
         break
-    case obj_tm_quiz_result:
+    case 24:
         gml_Script_scr_healitem(global.charselect, 100)
         usable = true
         if (global.char[global.charselect] == 2)
@@ -360,7 +360,7 @@ switch argument0
         if (global.char[global.charselect] == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("B-Brainfreeze! ... kidding!", "scr_itemuse_slash_scr_itemuse_gml_464_0"))
         break
-    case obj_power_up_fx_rouxls_backup:
+    case 25:
         gml_Script_scr_healitem_all(30)
         usable = true
         if gml_Script_scr_havechar(2)
@@ -370,7 +370,7 @@ switch argument0
         if gml_Script_scr_havechar(4)
             gml_Script_scr_itemcomment(noepos, gml_Script_stringsetloc("Reminds me of one of my sweaters.", "scr_itemuse_slash_scr_itemuse_gml_474_0"))
         break
-    case obj_ch2_scene11a_fountain:
+    case 26:
         usable = true
         var heal_amount = 90
         if (global.char[global.charselect] == 1)
@@ -383,28 +383,28 @@ switch argument0
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("I... I can't read these symbols...", "scr_itemuse_slash_scr_itemuse_gml_495_0"))
         gml_Script_scr_healitem(global.charselect, heal_amount)
         break
-    case obj_debug_drawInput:
+    case 27:
         usable = false
         gml_Script_scr_speaker("noone")
         global.msg[0] = gml_Script_stringsetloc("* (You felt tense.)/", "scr_itemuse_slash_scr_itemuse_gml_504_0")
         global.msg[1] = gml_Script_stringsetloc("* (... try using it in battle.)/%", "scr_itemuse_slash_scr_itemuse_gml_505_0")
         gml_Script_scr_itemdialoguer()
         break
-    case obj_sneo_weird_end_pipis_bullet:
+    case 28:
         usable = false
         gml_Script_scr_speaker("noone")
         global.msg[0] = gml_Script_stringsetloc("* (You felt tense.)/", "scr_itemuse_slash_scr_itemuse_gml_512_0")
         global.msg[1] = gml_Script_stringsetloc("* (... try using it in battle.)/%", "scr_itemuse_slash_scr_itemuse_gml_513_0")
         gml_Script_scr_itemdialoguer()
         break
-    case obj_debug_smallfacetester:
+    case 29:
         usable = false
         gml_Script_scr_speaker("noone")
         global.msg[0] = gml_Script_stringsetloc("* (You felt tense.)/", "scr_itemuse_slash_scr_itemuse_gml_520_0")
         global.msg[1] = gml_Script_stringsetloc("* (... try using it in battle.)/%", "scr_itemuse_slash_scr_itemuse_gml_521_0")
         gml_Script_scr_itemdialoguer()
         break
-    case obj_sneo_heart_biter_bullet:
+    case 30:
         usable = true
         gml_Script_scr_healitem_all(10)
         if gml_Script_scr_havechar(2)
@@ -414,7 +414,7 @@ switch argument0
         if gml_Script_scr_havechar(4)
             gml_Script_scr_itemcomment(noepos, gml_Script_stringsetloc("What are you sprinkling?", "scr_itemuse_slash_scr_itemuse_gml_531_0"))
         break
-    case obj_sneo_weird_end_pipis:
+    case 31:
         usable = true
         gml_Script_scr_healitem_all(50)
         if gml_Script_scr_havechar(2)
@@ -424,7 +424,7 @@ switch argument0
         if gml_Script_scr_havechar(4)
             gml_Script_scr_itemcomment(noepos, gml_Script_stringsetloc("What are you throwing?", "scr_itemuse_slash_scr_itemuse_gml_540_0"))
         break
-    case obj_CHAPTER_SELECT:
+    case 32:
         if (global.char[global.charselect] != 4)
         {
             global.hp[_gc] = max((global.hp[_gc] - 20), 1)
@@ -438,15 +438,15 @@ switch argument0
         if (global.char[global.charselect] == 4)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("(I'll... just pretend to drink it...)", "scr_itemuse_slash_scr_itemuse_gml_561_0"))
         break
-    case obj_viroarrow:
+    case 33:
         usable = false
         gml_Script_scr_speaker("noone")
         global.msg[0] = gml_Script_stringsetloc("* (Where'd this come from?)/%", "scr_itemuse_slash_scr_itemuse_gml_575_0")
         gml_Script_scr_itemdialoguer()
         break
-    case obj_queenmansion_bg:
+    case 300:
         break
-    case obj_caradventure_car:
+    case 301:
         with (obj_darkcontroller)
             charcon = 0
         global.menuno = -1
@@ -460,14 +460,14 @@ switch argument0
         gml_Script_instance_create(0, 0, obj_darkphone_event)
         global.interact = 1
         break
-    case obj_caradventure_car_enemy:
+    case 302:
         gml_Script_snd_play(55)
         gml_Script_scr_speaker("noone")
         global.msg[0] = gml_Script_stringsetloc("* (You used the Egg.)/%", "scr_itemuse_slash_scr_itemuse_gml_441_0")
         gml_Script_scr_itemdialoguer()
         break
-    case obj_sprite_part_parallax_inverted:
-        if (null.room == room_dw_mansion_krisroom)
+    case 308:
+        if (room == room_dw_mansion_krisroom)
         {
             if instance_exists(obj_ch2_scene17b)
             {

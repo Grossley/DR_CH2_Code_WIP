@@ -1,18 +1,23 @@
 gml_Script_scr_healall(argument0)
-i = 0
-while (i < 3)
+for (i = 0; i < 3; i += 1)
 {
     with (global.charinstance[i])
     {
         ha = gml_Script_instance_create(x, y, obj_healanim)
         ha.target = id
-    }
-    dmgwr = gml_Script_scr_dmgwriter_selfchar()
-    with (dmgwr)
-    {
-        delay = 8
-        type = 3
-        damage = argument0
+        dmgwr = gml_Script_scr_dmgwriter_selfchar()
+        with (dmgwr)
+        {
+            delay = 8
+            type = 3
+            damage = argument0
+        }
+        if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+        {
+            with (dmgwr)
+                specialmessage = 3
+        }
+        tu += 1
     }
 }
 global.spelldelay = 20

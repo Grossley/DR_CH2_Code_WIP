@@ -1,9 +1,9 @@
 var kanafound = 0
 var ___stringlength = string_length(argument0)
-var ___i = obj_pipis_bullet_cone
+var ___i = 1
 while (___i <= ___stringlength)
 {
-    if (ord(___i.argument0) >= 12352)
+    if (ord(string_char_at(argument0, ___i)) >= 12352)
     {
         kanafound = 1
         break

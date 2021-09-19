@@ -7,3 +7,4 @@ if (argument2 != 0)
     _moveprecise.yOrientation = argument2
 with (_moveprecise)
     event_user(0)
+return _moveprecise;

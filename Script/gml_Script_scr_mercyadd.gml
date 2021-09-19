@@ -28,6 +28,5 @@ if _playsound
 __mercydmgwriter = gml_Script_instance_create(global.monsterx[argument0], ((global.monstery[argument0] + 20) - (global.hittarget[argument0] * 20)), obj_dmgwriter)
 __mercydmgwriter.damage = argument1
 __mercydmgwriter.type = 5
-argument0.hittarget[global.hittarget[argument0]] = (global.hittarget[argument0] + 1)
-global
+global.hittarget[argument0] += 1
 return;

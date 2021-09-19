@@ -59,3 +59,4 @@ with (_bullet)
         inSync = 0
     }
 }
+return _bullet;

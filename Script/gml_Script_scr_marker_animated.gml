@@ -9,3 +9,4 @@ with (thismarker)
     image_speed = anim_speed
     gml_Script_scr_depth()
 }
+return thismarker;

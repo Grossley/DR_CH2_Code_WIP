@@ -5,3 +5,4 @@ with (_instance)
     bpm = argument3
     loopsPerBeat = argument4
 }
+return _instance;

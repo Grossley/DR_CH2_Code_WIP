@@ -47,3 +47,4 @@ with (_mytbullet)
     spriteWidthRoot = sprite_get_width(sprite_index)
     spriteHeightRoot = sprite_get_width(sprite_index)
 }
+return _mytbullet;

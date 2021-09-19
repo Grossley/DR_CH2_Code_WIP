@@ -5,3 +5,4 @@ field.skip = argument4
 field.stayVisible = argument5
 with (field)
     gml_Script_scr_depth()
+return field;

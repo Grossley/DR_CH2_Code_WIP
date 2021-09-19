@@ -17,6 +17,8 @@ if (argument1 > 0)
         state = 3
         hurttimer = 30
     }
+    if gml_Script_i_ex(global.monsterinstance[argument0])
+        global.monsterinstance[argument0].hurtamt = argument1
 }
 global.hittarget[argument0] += 1
 if (argument1 == 0)

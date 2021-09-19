@@ -30,13 +30,22 @@ switch spell
         {
             ha = gml_Script_instance_create(x, y, obj_healanim)
             ha.target = id
+            dmgwr = gml_Script_scr_dmgwriter_selfchar()
+            with (dmgwr)
+            {
+                delay = 8
+                type = 3
+            }
+            if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+            {
+                with (dmgwr)
+                    specialmessage = 3
+            }
+            dmgwr.damage = healnum
+            tu += 1
         }
-        dmgwr = gml_Script_scr_dmgwriter_selfchar()
-        with (dmgwr)
-        {
-            delay = 8
-            type = 3
-        }
+        global.spelldelay = 15
+        break
     case 3:
         if (global.monster[star] == false)
             gml_Script_scr_retarget_spell()
@@ -132,8 +141,7 @@ switch spell
         break
     case 6:
         healnum = ceil((global.battlemag[argument1] * 5.5))
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             gml_Script_scr_heal(i, healnum)
             global.charinstance[i].healnum = healnum
@@ -141,12 +149,19 @@ switch spell
             {
                 ha = gml_Script_instance_create(x, y, obj_healanim)
                 ha.target = id
-            }
-            dmgwr = gml_Script_scr_dmgwriter_selfchar()
-            with (dmgwr)
-            {
-                delay = 8
-                type = 3
+                dmgwr = gml_Script_scr_dmgwriter_selfchar()
+                with (dmgwr)
+                {
+                    delay = 8
+                    type = 3
+                }
+                if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+                {
+                    with (dmgwr)
+                        specialmessage = 3
+                }
+                dmgwr.damage = healnum
+                tu += 1
             }
         }
         global.spelldelay = 15
@@ -176,8 +191,7 @@ switch spell
             gml_Script_scr_retarget_spell()
         if (cancelattack == false)
         {
-            global.flag[925] = (null + 1)
-            // WARNING: Popz'd an empty stack.
+            global.flag[925] += 1
             var minbattlemag = clamp((global.battlemag[argument1] - 10), 1, 999)
             global.spelldelay = 40
             damage = ceil((((minbattlemag * 30) + 90) + random(10)))
@@ -216,13 +230,27 @@ switch spell
         {
             ha = gml_Script_instance_create(x, y, obj_healanim)
             ha.target = id
+            dmgwr = gml_Script_scr_dmgwriter_selfchar()
+            with (dmgwr)
+            {
+                delay = 8
+                type = 3
+            }
+            if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+            {
+                with (dmgwr)
+                    specialmessage = 3
+            }
+            dmgwr.damage = healnum
+            tu += 1
         }
-        dmgwr = gml_Script_scr_dmgwriter_selfchar()
-        with (dmgwr)
+        global.spelldelay = 15
+        if (global.encounterno == 50)
         {
-            delay = 8
-            type = 3
+            if gml_Script_i_ex(409)
+                obj_omawaroid_enemy.ultimatehealprompt = 1
         }
+        break
     case 100:
         if (global.monster[star] == false)
             gml_Script_scr_retarget_spell()

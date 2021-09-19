@@ -26,11 +26,20 @@ with (global.charinstance[target])
 {
     ha = gml_Script_instance_create(x, y, obj_healanim)
     ha.target = id
+    dmgwr = gml_Script_scr_dmgwriter_selfchar()
+    with (dmgwr)
+    {
+        delay = 8
+        type = 3
+        damage = argument0
+    }
+    if (global.hp[global.char[myself]] >= global.maxhp[global.char[myself]])
+    {
+        with (dmgwr)
+            specialmessage = 3
+    }
+    tu += 1
 }
-dmgwr = gml_Script_scr_dmgwriter_selfchar()
-with (dmgwr)
-{
-    delay = 8
-    type = 3
-    damage = argument0
-}
+gml_Script_snd_stop(162)
+gml_Script_snd_play(162)
+return;

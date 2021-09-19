@@ -1,16 +1,13 @@
 if (global.chapter == 2)
 {
     if (room == room_dw_mansion_b_west_2f)
-    {
-        obj_viroarrow.tempflag[global.tempflag[obj_viroarrow]] = (global.tempflag[obj_viroarrow] + 1)
-        global
-    }
+        global.tempflag[33] += 1
 }
 if (global.flag[35] == 0)
 {
     audio_stop_all()
     gml_Script_snd_play(170)
-    global.screenshot = sprite_create_from_surface(self.application_surface, 0, 0, __view_get(2, 0), __view_get(3, 0), false, false, 0, 0)
+    global.screenshot = sprite_create_from_surface(application_surface, 0, 0, gml_Script___view_get(2, 0), gml_Script___view_get(3, 0), false, false, 0, 0)
     gml_Script_snd_free_all()
     room_goto(room_gameover)
 }

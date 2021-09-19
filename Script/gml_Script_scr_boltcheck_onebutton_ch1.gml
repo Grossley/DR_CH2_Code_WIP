@@ -36,6 +36,8 @@ if (qualifybolt != -1)
         points[bc] += 150
         with (burstbolt)
             image_blend = c_yellow
+        with (burstbolt)
+            mag = 0.2
     }
     if (p == 1)
         points[bc] += 120
@@ -59,6 +61,8 @@ if (qualifybolt != -1)
             points[bc] += 150
             with (burstbolt)
                 image_blend = c_yellow
+            with (burstbolt)
+                mag = 0.2
         }
         if (p == 1)
             points[bc] += 120
