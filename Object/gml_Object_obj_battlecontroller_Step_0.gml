@@ -1,4 +1,3 @@
-var _temp_local_var_5, _temp_local_var_54;
 if (global.chapter == 2)
 {
     if (gigaqueencon != 0)
@@ -946,10 +945,7 @@ if (global.charweapon[4] == 13)
     if ((t_siner % 6) == 0)
     {
         if (global.hp[4] > round((global.maxhp[4] / 3)))
-        {
-            var _temp_local_var_54 = global.hp[4]
-            global.hp[4] = (global.hp[4] - 1)
-        }
+            global.hp[4] -= 1
     }
 }
 t_siner++

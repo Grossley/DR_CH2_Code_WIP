@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_14, _temp_local_var_15;
 if (obj_mainchara.x > (x - 60) && con == -1)
 {
     con = 1

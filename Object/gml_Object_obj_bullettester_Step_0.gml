@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3;
 if (global.mnfight != 2)
 {
     timer++
@@ -70,15 +69,9 @@ if keyboard_check_pressed(vk_space)
     room_restart()
 }
 if keyboard_check_pressed(ord("I"))
-{
-    var _temp_local_var_1 = global.tempflag[27]
-    global.tempflag[27] = (global.tempflag[27] + 1)
-}
+    global.tempflag[27] += 1
 else if (keyboard_check_pressed(ord("U")) && global.tempflag[27] > 0)
-{
-    var _temp_local_var_3 = global.tempflag[27]
-    global.tempflag[27] = (global.tempflag[27] - 1)
-}
+    global.tempflag[27] -= 1
 global.tempflag[20] = global.monster[0]
 global.tempflag[21] = global.monster[1]
 global.tempflag[22] = global.monster[2]

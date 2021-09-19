@@ -1,10 +1,8 @@
-var _temp_local_var_2;
 if (phase > 1 && image_blend != c_white)
 {
     color_timer += 0.1
     image_blend = merge_color(c_gray, c_white, color_timer)
 }
-var _temp_local_var_2 = phase
 switch phase
 {
     case 0:

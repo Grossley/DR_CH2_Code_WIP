@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (con == 1.1)
     con = 1.2
 if (obj_mainchara.x > 450 && con == -1)
