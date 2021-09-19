@@ -1,4 +1,4 @@
-var collider_right, _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_10, _temp_local_var_12, _temp_local_var_20, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_24, _temp_local_var_25, _temp_local_var_26, _temp_local_var_27, _temp_local_var_28, _temp_local_var_30, _temp_local_var_31, _temp_local_var_32, _temp_local_var_33, _temp_local_var_36, _temp_local_var_38, _temp_local_var_43, _temp_local_var_46, _temp_local_var_49, _temp_local_var_51;
+var collider_right;
 if (global.plot < 150)
 {
     if (swanboat.x < 540)

@@ -1,4 +1,4 @@
-var ral_sprite, _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_8, _temp_local_var_10, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_21;
+var ral_sprite;
 if (myinteract == 3)
 {
 }
