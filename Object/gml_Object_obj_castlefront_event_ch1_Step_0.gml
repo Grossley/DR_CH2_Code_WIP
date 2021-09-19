@@ -23,9 +23,11 @@ if (con == 3)
 }
 if (con == 4 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_2 = l
-    sprite_index = spr_lancer_dt_unhappy_ch1
-    vspeed = -3
+    with (l)
+	{
+		sprite_index = spr_lancer_dt_unhappy_ch1
+		vspeed = -3
+	}
 }
 if (con == 6)
 {
@@ -34,8 +36,8 @@ if (con == 6)
     gml_Script_instance_create_ch1(0, 0, 1464)
     door = gml_Script_scr_dark_marker_ch1(226, 534, 4066)
     door.depth = 1000000
-    var _temp_local_var_5 = l
-    instance_destroy()
+    with (l)
+		instance_destroy()
 }
 if (con == 8)
 {
@@ -45,13 +47,13 @@ if (con == 8)
 }
 if (con == 15 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_9 = s
-    sprite_index = spr_susier_dark_unhappy_ch1
+    with (s)
+		sprite_index = spr_susier_dark_unhappy_ch1
 }
 if (con == 17)
 {
-    var _temp_local_var_15 = exc
-    instance_destroy()
+    with (exc)
+		instance_destroy()
 }
 if (con == 19)
 {
@@ -84,20 +86,22 @@ if (con == 20 && (!gml_Script_d_ex_ch1()))
         yd = lengthdir_y(radius, angle)
         db[dcount] = gml_Script_scr_dark_marker_ch1((xpoint + xd), (ypoint + yd), 3781)
         db[dcount].image_angle = angle
-        var _temp_local_var_17 = db[dcount]
-        image_xscale = 1
-        image_yscale = 1
-        image_alpha = 0
-        direction = image_angle
-        speed = 2
-        depth = 10000
-        friction = 0.1
+        with (db[dcount])
+		{
+			image_xscale = 1
+			image_yscale = 1
+			image_alpha = 0
+			direction = image_angle
+			speed = 2
+			depth = 10000
+			friction = 0.1
+		}
     }
     i = 0
     while (i < dcount)
     {
-        var _temp_local_var_18 = db[i]
-        image_alpha += 0.1
+        with (db[i])
+			image_alpha += 0.1
     }
     if (dcount >= maxd)
     {
@@ -120,10 +124,12 @@ if (con == 22 && (!gml_Script_d_ex_ch1()))
     i = 0
     while (i < dcount)
     {
-        var _temp_local_var_20 = db[i]
-        gravity = 1
-        gravity_direction = (image_angle + 180)
-    }
+        with (db[i])
+		{
+			gravity = 1
+			gravity_direction = (image_angle + 180)
+		}
+	}
     con = 26
 }
 if (con == 26)

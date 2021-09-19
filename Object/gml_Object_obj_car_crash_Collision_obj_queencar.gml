@@ -14,6 +14,6 @@ if (!crash)
     explosion.sprite_index = spr_realisticexplosion
     explosion.image_xscale = 2
     explosion.image_yscale = 2
-    var _temp_local_var_1 = explosion
-    gml_Script_scr_depth()
+    with (explosion)
+		gml_Script_scr_depth()
 }

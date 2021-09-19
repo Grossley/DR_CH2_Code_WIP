@@ -1,4 +1,4 @@
-var xpos, ypos, _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_8, _temp_local_var_9, _temp_local_var_13, _temp_local_var_15, _temp_local_var_17, _temp_local_var_18;
+var xpos, ypos;
 if (keyboard_check_pressed(ord("P")) && gml_Script_scr_debug())
     audio_sound_set_track_position(global.currentsong[1], 15.67)
 if (obj_mainchara.x > (x - 80) && con == -1)

@@ -42,18 +42,20 @@ if (buffer >= 19)
             throw_n = 1
             carrot = gml_Script_instance_create_ch1(x, y, 1518)
             gml_Script_scr_bullet_inherit_ch1(carrot)
-            var _temp_local_var_3 = carrot
-            speedmax = 7
-            if (gml_Script_scr_monsterpop_ch1() == 2)
-                speedmax = 6
-            if (gml_Script_scr_monsterpop_ch1() == 3)
-                speedmax = 5
-            active = true
-            image_xscale = 2
-            image_yscale = 2
-            vspeed = speedmax
-            image_speed = 0.25
-            sprite_index = spr_carrotbullet_ch1
+            with (carrot)
+			{
+				speedmax = 7
+				if (gml_Script_scr_monsterpop_ch1() == 2)
+					speedmax = 6
+				if (gml_Script_scr_monsterpop_ch1() == 3)
+					speedmax = 5
+				active = true
+				image_xscale = 2
+				image_yscale = 2
+				vspeed = speedmax
+				image_speed = 0.25
+				sprite_index = spr_carrotbullet_ch1
+			}
         }
         if (image_index >= 3)
         {
