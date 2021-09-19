@@ -33,7 +33,6 @@ for (i = 0; i < shotcount; i++)
             amp = abs((sin((siner / 18)) * 30))
             shot[i].y = (y + (sin((abs((siner / 14)) + (singletimer[i] / 14))) * amp))
         }
-        var _temp_local_var_1 = singletimer[i]
         singletimer[i]++
     }
 }

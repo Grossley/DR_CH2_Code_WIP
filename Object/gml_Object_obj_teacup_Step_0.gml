@@ -180,7 +180,6 @@ if (state == 5)
             _riseSpeedFinal = 12
     }
     var _spinDir = ((gml_Script_down_h() || gml_Script_left_h()) - (gml_Script_up_h() || gml_Script_right_h()))
-    var _temp_local_var_15 = _mode
     switch _mode
     {
         case 0:

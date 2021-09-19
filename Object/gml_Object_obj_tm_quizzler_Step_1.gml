@@ -107,9 +107,8 @@ if (state == 0)
                 temp.outline = 1
                 temp.depth++
             }
-            alarm[0] = temp
+            temp.alarm[0] = ((20 * (turns - currentturn)) - (((turns - 1) - currentturn) * 2))
             i++
-            var _temp_local_var_5 = ((20 * (turns - currentturn)) - (((turns - 1) - currentturn) * 2))
         }
         currentturn++
         gml_Script_snd_play(voiceclips[_letter])

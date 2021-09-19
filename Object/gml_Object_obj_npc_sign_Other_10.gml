@@ -672,7 +672,6 @@ if (room == room_dw_city_queen_drunk)
     }
     else
     {
-        var _temp_local_var_15 = global.flag[347]
         global.flag[347] = (global.flag[347] + 1)
         if (global.flag[347] == 1)
         {

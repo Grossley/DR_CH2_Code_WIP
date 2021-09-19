@@ -8,7 +8,6 @@ if (obj_spamton_neo_enemy.singleshotmercy > 9)
             __mercydmgwriter = gml_Script_instance_create(global.monsterx[myself], ((global.monstery[myself] + 20) - (global.hittarget[myself] * 20)), obj_dmgwriter)
             __mercydmgwriter.damage = 1
             __mercydmgwriter.type = 5
-            var _temp_local_var_2 = global.hittarget[myself]
             global.hittarget[myself] = (global.hittarget[myself] + 1)
         }
         else

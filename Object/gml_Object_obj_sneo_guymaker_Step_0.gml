@@ -58,9 +58,9 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
             guy.hspeed = -18
             guy.friction = -0.1
             guy.vspeed = -2
-            alarm[0] = guy
-            alarm[1] = guy
-            alarm[2] = guy
+            guy.alarm[0] = 44
+            guy.alarm[1] = 40
+            guy.alarm[2] = 32
             guy.gravity = 0.5
             guy.gravity_direction = 0
             guy.destroyable = 1
@@ -70,14 +70,8 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
             guy.altspeed = 4
             guy.altfriction = -0.2
             guy.altgravity = 0
-            var _temp_local_var_6 = 32
-            var _temp_local_var_7 = 40
-            var _temp_local_var_8 = 44
             if (type == 2)
-            {
-                alarm[0] = guy
-                var _temp_local_var_9 = 44
-            }
+                guy.alarm[0] = 44
             if (row == 1)
             {
                 guy.y -= 240
@@ -94,10 +88,9 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
                 guy.hspeed = -21
                 guy.gravity = 0
                 guy.friction = 0.5
-                alarm[0] = guy
+                guy.alarm[0] = 36
                 guy.changedirection = 1
                 guy.altdirection = guy.direction
-                var _temp_local_var_11 = 36
             }
             if ((type == 2 || type == 3 || type == 4 || type == 5) && row == 2)
                 guy.y = rowy
@@ -109,16 +102,13 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
             {
                 guy[guyi] = gml_Script_instance_create((xx + 300), ((yy - 40) + (400 * guyi)), obj_sneo_lilguy)
                 guy[guyi].vspeed = (18 - (36 * guyi))
-                alarm[0] = guy[guyi]
-                alarm[1] = guy[guyi]
-                alarm[2] = guy[guyi]
+                guy[guyi].alarm[0] = 44
+                guy[guyi].alarm[1] = 40
+                guy[guyi].alarm[2] = 32
                 guy[guyi].gravity = (0.8 - (1.6 * guyi))
                 guy[guyi].gravity_direction = 90
                 guy[guyi].destroyable = 1
                 guyi++
-                var _temp_local_var_15 = 32
-                var _temp_local_var_16 = 40
-                var _temp_local_var_17 = 44
             }
         }
         if (row == 6 && timer == 5)
@@ -135,27 +125,21 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
                 {
                     guy = gml_Script_instance_create(((xx + 410) + (a * 70)), ((yy - 20) + 0), obj_sneo_lilguy)
                     guy.vspeed = 15
-                    alarm[0] = guy
-                    alarm[1] = guy
-                    alarm[2] = guy
+                    guy.alarm[0] = 44
+                    guy.alarm[1] = 30
+                    guy.alarm[2] = 32
                     guy.gravity = 0.53
                     guy.gravity_direction = 90
                     guy.destroyable = 1
                     guy = gml_Script_instance_create(((xx + 445) + (a * 70)), ((yy - 20) + 400), obj_sneo_lilguy)
                     guy.vspeed = -15
-                    alarm[0] = guy
-                    alarm[1] = guy
-                    alarm[2] = guy
+                    guy.alarm[0] = 44
+                    guy.alarm[1] = 40
+                    guy.alarm[2] = (32 - 1)
                     guy.gravity = -0.53
                     guy.gravity_direction = 90
                     guy.destroyable = 1
                     a++
-                    var _temp_local_var_35 = (32 - 1)
-                    var _temp_local_var_36 = 40
-                    var _temp_local_var_37 = 44
-                    var _temp_local_var_38 = 32
-                    var _temp_local_var_39 = 30
-                    var _temp_local_var_40 = 44
                     if (32 - 1)
                         continue
                 }
@@ -164,13 +148,10 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
         if (row == 7 && timer != 20)
         {
             guy = gml_Script_instance_create((xx + 630), (yy + 100), obj_sneo_lilguy)
-            alarm[0] = guy
-            alarm[1] = guy
-            alarm[2] = guy
+            guy.alarm[0] = 44
+            guy.alarm[1] = 40
+            guy.alarm[2] = 32
             guy.destroyable = 1
-            var _temp_local_var_21 = 32
-            var _temp_local_var_22 = 40
-            var _temp_local_var_23 = 44
             path_start(path_sneo_head_path1, 11, path_action_stop, 0)
         }
     }

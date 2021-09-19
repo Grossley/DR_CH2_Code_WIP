@@ -31,9 +31,8 @@ for (i = 0; i < 3; i += 1)
         back.parentid = id
     }
     yspot[i] = HeroCoaster[i].y
-    yspot[i] = BerdlyCoaster
+    BerdlyCoaster.yspot[i] = HeroCoaster[i].y
     obj_herokris.x = (gml_Script_camerax() - 200)
-    var _temp_local_var_1 = HeroCoaster[i].y
     if instance_exists(obj_herosusie)
         obj_herosusie.x = (gml_Script_camerax() - 200)
     if instance_exists(obj_heroralsei)

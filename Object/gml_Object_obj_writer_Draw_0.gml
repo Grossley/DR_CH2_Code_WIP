@@ -348,11 +348,10 @@ for (n = 1; n < pos; n += 1)
                     smallface.sprite_index = global.smsprite[fam]
                     smallface.image_speed = global.smimagespeed[fam]
                     smallface.image_index = global.smimage[fam]
-                    alarm[0] = smallface
+                    smallface.alarm[0] = global.smalarm[fam]
                     smallface.mystring = global.smstring[fam]
                     smallface.mycolor = global.smcolor[fam]
                     smallface.writergod = id
-                    var _temp_local_var_28 = global.smalarm[fam]
                 }
             }
         }

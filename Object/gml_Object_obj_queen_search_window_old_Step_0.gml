@@ -1,7 +1,6 @@
 if (init == 0)
 {
     var _jpmode = global.lang == "ja"
-    var _temp_local_var_1 = search
     switch search
     {
         case 0:

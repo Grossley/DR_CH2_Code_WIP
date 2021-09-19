@@ -10,11 +10,7 @@ if (global.flag[(51 + myself)] == 1)
 {
     global.flag[40] += 1
     if (fatal == 1)
-    {
-        global.flag[44]
-        var _temp_local_var_1 = global.flag[44]
         global.flag[44] = (global.flag[44] + 1)
-    }
 }
 if (global.flag[(51 + myself)] == 2)
     global.flag[41] += 1
@@ -54,11 +50,7 @@ if (_spared > 0)
 if (_violenced > 0)
     global.flag[50] = 1
 if (global.flag[50] == 6)
-{
-    global.flag[926]
-    var _temp_local_var_2 = global.flag[926]
     global.flag[926] = (global.flag[926] + 1)
-}
 if (global.flag[54] != 0)
 {
     global.flag[global.flag[54]] = global.flag[50]

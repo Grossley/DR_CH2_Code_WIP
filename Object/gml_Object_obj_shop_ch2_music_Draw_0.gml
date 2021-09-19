@@ -2,7 +2,6 @@ if gml_Script_snd_is_playing(global.currentsong[1])
     siner++
 for (i = 0; i < 3; i++)
 {
-    var _temp_local_var_1 = spritetalkingbuffer[i]
     spritetalkingbuffer[i]--
     if (spritetalkingbuffer[i] <= 0)
         spritetalking[i] = 0
@@ -12,22 +11,11 @@ if instance_exists(obj_writer)
     if (obj_writer.pos < obj_writer.length && obj_writer.miniface_drawn >= 0)
     {
         if (obj_writer.miniface_drawn == 1)
-        {
-            var _temp_local_var_3 = spritetalkingframe[1]
             spritetalkingframe[1]++
-        }
         if (obj_writer.miniface_drawn == 2)
-        {
-            spritetalkingframe[0]
-            var _temp_local_var_4 = spritetalkingframe[0]
             spritetalkingframe[0]++
-        }
         if (obj_writer.miniface_drawn == 3)
-        {
-            spritetalkingframe[2]
-            var _temp_local_var_5 = spritetalkingframe[2]
             spritetalkingframe[2]++
-        }
         for (i = 0; i < 3; i++)
         {
             if (spritetalkingframe[i] >= 2)

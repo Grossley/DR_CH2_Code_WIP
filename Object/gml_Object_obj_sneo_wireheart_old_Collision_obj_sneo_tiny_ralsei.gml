@@ -26,8 +26,7 @@ else
 {
     hp -= 5
     other.hp -= 10
-    alarm[0] = other
-    var _temp_local_var_5 = 10
+    other.alarm[0] = 10
     if (!audio_is_playing(snd_hurt1))
         gml_Script_snd_play(170)
 }

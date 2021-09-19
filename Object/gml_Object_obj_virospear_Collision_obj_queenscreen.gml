@@ -87,7 +87,7 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
         b.target = 3
         b.damage = 16
         b.depth = 200
-        alarm[0] = b
+        b.alarm[0] = -10
         b.image_xscale = 2
         b.image_yscale = 2
         var _temp_local_var_5 = -10

@@ -105,8 +105,7 @@ if (con == 17)
         {
             marker[i].vspeed = 0
             marker[i].gravity = 0
-            jumped[i] = marker[i]
-            var _temp_local_var_5 = 2
+            marker[i].jumped[i] = 2
         }
     }
 }

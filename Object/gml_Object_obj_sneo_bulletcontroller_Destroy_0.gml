@@ -1,8 +1,5 @@
 if hideshooty
-{
-    partframe[1] = sneo
-    var _temp_local_var_1 = 0
-}
+    sneo.partframe[1] = 0
 with (obj_spamton_neo_enemy)
 {
     makeheartinit = 0

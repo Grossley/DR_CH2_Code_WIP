@@ -11,12 +11,9 @@ if (init == 0)
             {
                 bossid = bossidcheck
                 bossid.allcount++
-                countid[count] = bossid
-                counttimer[count] = bossid
-                counttype[count] = bossid
-                var _temp_local_var_1 = type
-                var _temp_local_var_2 = default_time
-                var _temp_local_var_3 = id
+                bossid.countid[count] = id
+                bossid.counttimer[count] = default_time
+                bossid.counttype[count] = type
             }
         }
         obj_traffic_switch.allcountcheck = allcount

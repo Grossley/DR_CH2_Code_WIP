@@ -668,7 +668,6 @@ if (global.monster[myself] == true)
         rtimer += 1
         if (rtimer == 16)
         {
-            var _temp_local_var_25 = rr
             switch rr
             {
                 case 0:

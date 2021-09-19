@@ -446,8 +446,7 @@ if (state == 1)
             explosion = gml_Script_instance_create(x, (y - 230), obj_vector_explosion)
             explosion.image_xscale = 1
             explosion.image_yscale = 1
-            alarm[0] = explosion
-            var _temp_local_var_31 = 70
+            explosion.alarm[0] = 70
             if (o_boxingcontroller.wireframe_boxing == 1)
                 gml_Script_snd_free(boxing_game_music)
             o_boxingcontroller.y = o_boxingcontroller.basey
@@ -465,9 +464,8 @@ if (state == 1)
             explosion = gml_Script_instance_create(x, (y - 50), obj_vector_explosion_big)
             explosion.image_xscale = 7
             explosion.image_yscale = 7
-            alarm[0] = explosion
+            explosion.alarm[0] = 60
             explosion.depth = (obj_ch2_scene10.qu_actor.depth + 1)
-            var _temp_local_var_32 = 60
         }
         if (phase_transition_timer == (276 / f))
             gml_Script_instance_create(x, y, obj_ch2_scene10_arcade_fg2)
@@ -2940,8 +2938,7 @@ if (state == 3)
             {
                 gml_Script_instance_create((x + 5), (y - 320), obj_bq_baseball_final)
                 charge = gml_Script_instance_create((x + 5), (y - 320), o_charge_ring_controller)
-                alarm[0] = charge
-                var _temp_local_var_141 = 50
+                charge.alarm[0] = 50
             }
             if (attacktimer == (56 / f) && instance_exists(obj_bq_baseball_final) && obj_bq_baseball_final.image_xscale < 6)
                 attacktimer -= 1

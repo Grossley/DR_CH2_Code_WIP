@@ -253,16 +253,9 @@ for (i = 0; i < 10; i++)
     repeat (5)
     {
         if (shieldpiece_y[i] < shieldpiece_y_origin[i])
-        {
-            var _temp_local_var_4 = shieldpiece_y[i]
             shieldpiece_y[i]++
-        }
         if (shieldpiece_y[i] > shieldpiece_y_origin[i])
-        {
-            shieldpiece_y[i]
-            var _temp_local_var_5 = shieldpiece_y[i]
             shieldpiece_y[i]--
-        }
     }
     if (obj_queen_enemy.shieldhp <= 5 || obj_queen_enemy.shieldacthp < 1)
     {

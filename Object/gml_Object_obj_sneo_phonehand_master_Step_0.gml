@@ -61,12 +61,11 @@ if (difficulty == 0 || difficulty == 1 || difficulty == 2)
             shot.friction = 1
         else
             shot.speed = 10
-        alarm[0] = shot
+        shot.alarm[0] = 25
         shot.direction = (180 + random_range(-5, 5))
         shot.depth = (depth - 1)
         shot.target = target
         sprite_index = spr_sneo_head_open
         alarm[0] = 10
-        var _temp_local_var_4 = 25
     }
 }

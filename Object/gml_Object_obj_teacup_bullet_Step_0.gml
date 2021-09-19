@@ -85,7 +85,6 @@ if ((ystart - bounceCurrent) > (master.y - bulletHitHeight) && (cutOff / sprite_
             if (abs(angle_difference(spin, _cupChar[i].spin)) < bulletCollisionAngle)
             {
                 debugHitThisFrame = 1
-                var _temp_local_var_4 = hitType
                 switch hitType
                 {
                     case 0:

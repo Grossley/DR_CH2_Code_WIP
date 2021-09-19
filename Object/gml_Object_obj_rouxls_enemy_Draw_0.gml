@@ -120,7 +120,6 @@ if (thrashmode == 1)
             if (!headattack)
             {
                 aimtime = 10
-                var _temp_local_var_42 = obj_thrashmachine.part[2]
                 switch obj_thrashmachine.part[2]
                 {
                     case 0:
