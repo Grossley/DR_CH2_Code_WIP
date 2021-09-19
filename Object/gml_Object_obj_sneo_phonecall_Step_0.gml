@@ -124,8 +124,7 @@ else if (state == 5)
         else
         {
             gml_Script_msgsetloc(0, "... IT'S&FOR YOU.", "obj_sneo_phonecall_slash_Step_0_gml_138_0")
-            partframe[1] = sneo
-            var _temp_local_var_18 = 3
+            sneo.partframe[1] = 3
         }
         textboxdistance = 40
         writeline = 1

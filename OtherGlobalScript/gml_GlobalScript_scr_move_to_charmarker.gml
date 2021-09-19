@@ -16,20 +16,11 @@ __marker[2] = self
 with (obj_charmarker)
 {
     if (group == __arg0 && char == 0)
-    {
-        __marker[0] = __myid
-        var _temp_local_var_3 = id
-    }
+        __myid.__marker[0] = id
     if (group == __arg0 && char == 1)
-    {
-        __marker[1] = __myid
-        var _temp_local_var_5 = id
-    }
+        __myid.__marker[1] = id
     if (group == __arg0 && char == 2)
-    {
-        __marker[2] = __myid
-        var _temp_local_var_7 = id
-    }
+        __myid.__marker[2] = id
 }
 if (__marker[0] != self && __marker[1] == self)
     __marker[1] = __marker[0]

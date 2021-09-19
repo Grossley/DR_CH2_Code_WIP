@@ -2,19 +2,13 @@ if (_c == "delaycmd")
 {
     delaycmd = gml_Script_instance_create(0, 0, obj_cutscene_delaycmd)
     delaycmd.master_object = master_object
-    command_actor[0] = delaycmd
-    alarm[0] = delaycmd
+    delaycmd.command_actor[0] = command_actor[i]
+    delaycmd.alarm[0] = command_arg1[i]
     delaycmd._c = command_arg2[i]
-    command_arg1[0] = delaycmd
-    command_arg2[0] = delaycmd
-    command_arg3[0] = delaycmd
-    command_arg4[0] = delaycmd
-    var _temp_local_var_1 = command_arg6[i]
-    var _temp_local_var_2 = command_arg5[i]
-    var _temp_local_var_3 = command_arg4[i]
-    var _temp_local_var_4 = command_arg3[i]
-    var _temp_local_var_5 = command_arg1[i]
-    var _temp_local_var_6 = command_actor[i]
+    delaycmd.command_arg1[0] = command_arg3[i]
+    delaycmd.command_arg2[0] = command_arg4[i]
+    delaycmd.command_arg3[0] = command_arg5[i]
+    delaycmd.command_arg4[0] = command_arg6[i]
     if instant
     {
         alarm[0] = delaycmd

@@ -25,8 +25,7 @@ for (__ien = 0; __ien < 3; __ien++)
             gml_Script_scr_move_to_point_over_time(global.monstermakex[__ien], global.monstermakey[__ien], 20)
             __doom = gml_Script_instance_create(x, y, obj_doom)
             __doom.target = id
-            alarm[0] = __doom
-            var _temp_local_var_1 = 25
+            __doom.alarm[0] = 25
         }
         continue
     }

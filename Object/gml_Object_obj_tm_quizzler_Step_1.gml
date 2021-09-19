@@ -136,9 +136,8 @@ else if (state == 1)
             else
             {
                 d = gml_Script_scr_bullet_create(xx, yy, 461)
-                alarm[0] = d
+                d.alarm[0] = zaptime
                 d.letter = i
-                var _temp_local_var_8 = zaptime
             }
         }
         currentturn++
