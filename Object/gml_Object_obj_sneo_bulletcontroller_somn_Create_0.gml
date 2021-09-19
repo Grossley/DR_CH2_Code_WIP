@@ -24,7 +24,5 @@ creator = obj_sneo_friedpipis
 sneo = obj_spamton_neo_enemy
 hideshooty = 1
 lastType = 0
-sneoarm_x = (sneo + partxoff[1])
-sneoarm_y = (sneo + partyoff[1])
-var _temp_local_var_1 = sneo.y
-var _temp_local_var_2 = sneo.x
+sneoarm_x = sneo.x = (sneo + partxoff[1])
+sneoarm_y = sneo.y = (sneo + partyoff[1])

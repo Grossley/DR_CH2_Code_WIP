@@ -45,9 +45,8 @@ if gml_Script_scr_debug()
     global.flag[221] = 0
     global.flag[222] = 3
 }
-var turretbody = part[0] == 2
+var turretbody = thrash = part[0] == 2
 thrash.s = 3
-var _temp_local_var_4 = thrash
 var puddx = (remx + (turretbody ? 18 : 34))
 var puddy = ((remy + 173) + ((thrash.s * thrash.walkc) / 4))
 puddle.x = puddx

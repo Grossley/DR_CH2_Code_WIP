@@ -141,7 +141,6 @@ if (state == 5)
         }
         if (uniqueRideExperience == 4 && gml_Script_scr_sideb_get_phase() != 3)
         {
-            var _temp_local_var_72 = teaBullets
             if (teaBullets-- > 0)
             {
                 if ((teaBullets % 3) == 0)

@@ -35,25 +35,17 @@ if (whitetimer >= 20 && whitecon == 1)
     if instance_exists(global.cinstance[0])
     {
         global.cinstance[0].x -= xdiff
-        i = obj_power_up_fx_rouxls_backup
-        while (i >= obj_sneo_friedpipis)
-        {
-            i.remx[global.cinstance[0]] = (remx[i] - xdiff)
-            i -= 1
-            var _temp_local_var_3 = stacktop
-            var _temp_local_var_4 = global.cinstance[0]
-        }
+        for (i = 25; i >= 0; i -= 1)
+            global.cinstance[0].remx[i] -= xdiff
     }
     if instance_exists(global.cinstance[1])
     {
         global.cinstance[1].x -= xdiff
-        i = obj_power_up_fx_rouxls_backup
+        i = 25
         while (i >= 0)
         {
-            i.remx[global.cinstance[1]] = (remx[i] - xdiff)
+            global.cinstance[1].remx[i] -= xdiff
             i -= 1
-            var _temp_local_var_5 = stacktop
-            var _temp_local_var_6 = global.cinstance[1]
         }
     }
     whitecon = 2

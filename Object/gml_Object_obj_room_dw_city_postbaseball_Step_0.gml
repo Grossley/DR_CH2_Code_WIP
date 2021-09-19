@@ -528,8 +528,7 @@ if (room == room_dw_city_postbaseball_3)
             with (balloon[0])
             {
                 event_user(0)
-                gml_Script_scr_lerpvar("y", y, ballremy[0], other, 15, 2)
-                var _temp_local_var_10 = "out"
+                gml_Script_scr_lerpvar("y", y, ballremy[0], other, 15, 2, "out")
                 balloondestroyed[0] = 0
             }
             if (switch1con >= 0)

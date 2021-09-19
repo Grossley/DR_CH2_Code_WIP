@@ -37,8 +37,8 @@ if (type == 0)
     {
         if (btimer == 40 || btimer == 150 || btimer == 260)
         {
-            sneoarm_x = (sneo + partxoff[1])
-            sneoarm_y = (sneo + partyoff[1])
+            sneoarm_x = sneo.x = (sneo + partxoff[1])
+            sneoarm_y = sneo.y = (sneo + partyoff[1])
             armangle = (-68 - random(32))
             side = armangle
             d = gml_Script_instance_create((sneoarm_x + lengthdir_x(60, (armangle - 90))), (sneoarm_y + lengthdir_y(60, (armangle - 90))), obj_sneo_biglaser)
@@ -50,8 +50,6 @@ if (type == 0)
             sneo.aimmode = 1
             sneo.armaim = armangle
             sneo.partmode = 3
-            var _temp_local_var_62 = sneo.y
-            var _temp_local_var_63 = sneo.x
         }
         else if (btimer == 90 || btimer == 200 || btimer == 310)
         {

@@ -829,12 +829,10 @@ else if (type == 26 && init == 1)
 {
     var _thrash = obj_rouxls_enemy.thrash
     obj_rouxls_enemy.head_difficulty = 1
-    var headattack = part[1]
+    var headattack = _thrash = part[1]
     obj_rouxls_enemy.headattack = 1
-    var _temp_local_var_120 = _thrash
     if (headattack != 3)
         obj_rouxls_enemy.thrashmode = 1
-    var _temp_local_var_121 = headattack
     switch headattack
     {
         case 0:
@@ -872,10 +870,9 @@ else if (type == 27)
     x = obj_rouxls_enemy.x
     y = obj_rouxls_enemy.y
     _thrash = obj_rouxls_enemy.thrash
-    var legattack = part[2]
+    var legattack = _thrash = part[2]
     var thrashcon = obj_rouxls_enemy.thrashcon
     obj_rouxls_enemy.headattack = 0
-    var _temp_local_var_126 = _thrash
     if (init == 1)
     {
         obj_rouxls_enemy.wheel_difficulty = 1
@@ -884,13 +881,11 @@ else if (type == 27)
         d = gml_Script_instance_create(x, y, obj_thrash_bodyhitbox)
         d.thrash = _thrash
         d.grazepoints = 15
-        d.damage = damage
+        d.damage = _thrash = damage
         d.target = target
-        var _temp_local_var_127 = _thrash
         if (part[0] == 3)
         {
-            d.damage = 1
-            var _temp_local_var_128 = _thrash
+            d.damage = _thrash = 1
             if (part[1] == 3)
                 d.duckmode = 1
         }

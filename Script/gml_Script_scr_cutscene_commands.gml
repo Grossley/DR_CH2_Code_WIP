@@ -298,7 +298,6 @@ if (_c == "specialsprite")
 {
     command_actor[i].sprite_index = specialsprite[command_arg1[i]]
     command_actor[i].specialspriteno = command_arg1[i]
-    var _temp_local_var_9 = command_actor[i]
 }
 if (_c == "visible")
     command_actor[i].visible = command_arg1[i]

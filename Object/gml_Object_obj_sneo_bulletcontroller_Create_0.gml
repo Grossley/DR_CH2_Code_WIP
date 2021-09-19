@@ -25,8 +25,8 @@ creator = obj_sneo_friedpipis
 sneo = obj_spamton_neo_enemy
 hideshooty = 1
 lastType = 0
-sneoarm_x = (sneo + partxoff[1])
-sneoarm_y = (sneo + partyoff[1])
+sneoarm_x = sneo.x = (sneo + partxoff[1])
+sneoarm_y = sneo.y = (sneo + partyoff[1])
 elevatororb = 2
 doubleelevatorattack = 0
 arm1 = -1
@@ -39,5 +39,3 @@ facetimeincrease = 0
 krishp = global.hp[1]
 sushp = global.hp[2]
 ralhp = global.hp[3]
-var _temp_local_var_1 = sneo.y
-var _temp_local_var_2 = sneo.x

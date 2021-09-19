@@ -21,7 +21,6 @@ with (myPiece)
     image_blend = pieceColours[(_count - 1)]
     image_xscale = 2
     image_yscale = 2
-    var _temp_local_var_2 = other
     if (room == room_dw_mansion_darkbulb_2 && image_index == 5)
         other.troublePiece = 1
     if (room == room_dw_mansion_darkbulb_3)

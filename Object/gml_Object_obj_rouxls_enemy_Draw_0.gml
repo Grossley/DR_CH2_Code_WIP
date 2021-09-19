@@ -58,9 +58,8 @@ becomeflash = false
 if gml_Script_scr_debug()
 {
 }
-var turretbody = part[0] == 2
+var turretbody = thrash = part[0] == 2
 thrash.s = 3
-var _temp_local_var_4 = thrash
 var puddx = (remx + (turretbody ? 18 : 34))
 var puddy = ((remy + 173) + ((thrash.s * thrash.walkc) / 4))
 if ((!depthChange) && instance_exists(obj_growtangle))
@@ -157,10 +156,7 @@ if (thrashmode == 1)
             submerged = 0
         }
         if headattack
-        {
-            var _temp_local_var_22 = (headattack ? 40 : 10)
-            y = ((gml_Script_cameray() + thrashtimer) - (sin((thrashtimer / (headattack ? 10 : height_multiplier))) * 40))
-        }
+            y = ((gml_Script_cameray() + (headattack ? 40 : 10) + thrashtimer) - (sin((thrashtimer / (headattack ? 10 : height_multiplier))) * 40))
         else if (thrashtimer <= aimtime)
             y = ((gml_Script_cameray() + 45) - (sin(((thrashtimer / aimtime) * pi)) * 10))
         if (headattack && y <= (gml_Script_cameray() + 10) && global.turntimer <= 40)
