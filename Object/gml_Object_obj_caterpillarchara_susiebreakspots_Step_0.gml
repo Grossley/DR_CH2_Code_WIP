@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_8;
 if (con == 0 && global.interact == 0 && susiestart == 1)
 {
     susid = noone

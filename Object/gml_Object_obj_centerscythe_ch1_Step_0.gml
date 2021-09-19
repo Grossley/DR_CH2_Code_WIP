@@ -1,4 +1,3 @@
-var _temp_local_var_7, _temp_local_var_8;
 if (chasecon == 1)
 {
     image_alpha += 0.04

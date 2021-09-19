@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_6, _temp_local_var_8, _temp_local_var_10, _temp_local_var_11;
 if (room == room_cc_1f_ch1)
 {
     if (global.flag[240] == 0)

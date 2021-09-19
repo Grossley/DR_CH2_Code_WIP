@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 grazed = 0
 grazepoints = 3
 timepoints = 2
@@ -52,9 +51,11 @@ if (instance_number(obj_centerscythe_ch1) == 1)
     x = (centerx - radius)
     y = centery
     s2 = gml_Script_instance_create_ch1((centerx + radius), centery, 1589)
-    var _temp_local_var_1 = s2
-    sine = 0
-    dir = 180
-    un = 1
+	with (s2)
+	{
+		sine = 0
+		dir = 180
+		un = 1
+	}
 }
 wall_destroy = 0

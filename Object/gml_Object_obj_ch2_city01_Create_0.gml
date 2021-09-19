@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 con = -1
 customcon = 0
 noellejoin = 0
@@ -17,8 +16,8 @@ else if (global.plot < 70)
     alleyoverlay.image_yscale = 50
     alleyoverlay.image_blend = c_black
     alleyoverlay.image_alpha = 0.5
-    var _temp_local_var_1 = alleyoverlay
-    gml_Script_scr_depth()
+    with (alleyoverlay)
+		gml_Script_scr_depth()
 }
 else
 {

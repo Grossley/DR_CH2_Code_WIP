@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8;
 if (con == 0 && global.interact == 0 && keyboard_check_pressed(ord("B")) && gml_Script_scr_debug())
 {
     susid = noone

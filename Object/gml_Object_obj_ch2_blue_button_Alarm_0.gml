@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3;
 var _forcefield = instance_nearest((x - 160), (y + 160), obj_forcefield)
 if (!gml_Script_i_ex(_forcefield))
     return;
