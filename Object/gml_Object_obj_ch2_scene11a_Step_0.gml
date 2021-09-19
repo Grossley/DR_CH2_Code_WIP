@@ -329,9 +329,11 @@ if (con == 3 && customcon == 1)
 {
     con = 4
     alarm[0] = 30
-    var _temp_local_var_10 = coaster_noelle
-    gravity = 2
-    gravity_direction = 70
+    with (coaster_noelle)
+	{
+		gravity = 2
+		gravity_direction = 70
+	}
 }
 if (con == 5)
 {
@@ -497,8 +499,8 @@ if (con == 11 && customcon == 1)
 }
 if (con == 13 && (!instance_exists(obj_battlecontroller)))
 {
-    var _temp_local_var_13 = coaster_berdly
-    visible = true
+    with (coaster_berdly)
+		visible = true
 }
 if (smokecon == 1)
 {
@@ -545,9 +547,11 @@ if (con == 16 && customcon == 1)
 {
     con = 17
     alarm[0] = 30
-    var _temp_local_var_18 = be_actor
-    vspeed = 16
-    gravity = 1
+    with (be_actor)
+	{
+		vspeed = 16
+		gravity = 1
+	}
 }
 if (con == 18)
 {
@@ -675,11 +679,13 @@ if (explosion > 0)
     else
     {
         var finish = 0
-        var _temp_local_var_20 = explosion_marker
-        if (sprite_index == spr_realisticexplosion && image_index >= 16)
-        {
-            finish = 1
-            instance_destroy()
+		with (explosion_marker)
+		{
+			if (sprite_index == spr_realisticexplosion && image_index >= 16)
+			{
+				finish = 1
+				instance_destroy()
+			}
         }
     }
 }
