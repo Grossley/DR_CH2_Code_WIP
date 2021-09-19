@@ -44,7 +44,7 @@ if (global.myfight == 0)
             if (global.bmenucoord[0][global.charturn] == 0)
                 global.bmenucoord[0][global.charturn] = 4
             else
-                var _temp_local_var_196 = global.charturn
+                global.bmenucoord[0][global.charturn] -= 1
             movenoise = true
             rbuffer = 1
         }
@@ -53,7 +53,7 @@ if (global.myfight == 0)
             if (global.bmenucoord[0][global.charturn] == 4)
                 global.bmenucoord[0][global.charturn] = 0
             else
-                var _temp_local_var_194 = global.charturn
+                global.bmenucoord[0][global.charturn] += 1
             movenoise = true
             lbuffer = 1
         }
@@ -81,7 +81,7 @@ if (global.myfight == 0)
                 for (i = 0; i < 12; i += 1)
                 {
                     if (tempitem[global.bmenucoord[4][global.charturn]][global.charturn] == 0 && global.bmenucoord[4][global.charturn] > 0)
-                        var _temp_local_var_16 = global.charturn
+                        global.bmenucoord[4][global.charturn] -= 1
                 }
             }
             if (global.bmenucoord[0][global.charturn] == 3)
@@ -141,29 +141,21 @@ if (global.myfight == 0)
                     cango = false
                     if ((actcoord % 2) == 1 && actcoord > 0)
                     {
-                        var _temp_local_var_74 = 
-                        var _temp_local_var_75 = global.bmenucoord[9][global.charturn]
+                        global.bmenucoord[9][global.charturn] -= 1
                     }
                 }
             }
             else
             {
+                global.bmenucoord[9][global.charturn] -= 1
                 cango = false
-                _temp_local_var_74 = 
-                _temp_local_var_75 = global.bmenucoord[9][global.charturn]
             }
             if (cango == true)
             {
                 if ((actcoord % 2) == 0)
-                {
-                    var _temp_local_var_76 = 
-                    var _temp_local_var_77 = global.bmenucoord[9][global.charturn]
-                }
+                    global.bmenucoord[9][global.charturn] += 1
                 else
-                {
-                    _temp_local_var_76 = 
-                    _temp_local_var_77 = global.bmenucoord[9][global.charturn]
-                }
+                    global.bmenucoord[9][global.charturn] -= 1
             }
         }
         if gml_Script_left_p()
@@ -174,14 +166,12 @@ if (global.myfight == 0)
             {
                 if (canact[(actcoord + 1)] != false)
                 {
-                    var _temp_local_var_78 = _temp_local_var_74
-                    var _temp_local_var_79 = global.bmenucoord[9][global.charturn]
+                    global.bmenucoord[9][global.charturn] += 1
                 }
             }
             else
             {
-                _temp_local_var_78 = _temp_local_var_74
-                _temp_local_var_79 = global.bmenucoord[9][global.charturn]
+                global.bmenucoord[9][global.charturn] -= 1
             }
         }
         if gml_Script_down_p()
@@ -196,8 +186,7 @@ if (global.myfight == 0)
             {
                 if (cango == true)
                 {
-                    var _temp_local_var_80 = _temp_local_var_76
-                    var _temp_local_var_81 = global.bmenucoord[9][global.charturn]
+                    global.bmenucoord[9][global.charturn] += 2
                 }
             }
         }
@@ -209,8 +198,7 @@ if (global.myfight == 0)
                 cango = false
             if (cango == true)
             {
-                var _temp_local_var_82 = _temp_local_var_74
-                var _temp_local_var_83 = global.bmenucoord[9][global.charturn]
+                global.bmenucoord[9][global.charturn] -= 2
             }
         }
         global.tensionselect = acttpcost[global.bmenucoord[9][global.charturn]]
