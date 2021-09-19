@@ -14,17 +14,18 @@ if (global.chapter == 1)
     obj[8] = gml_Script_scr_marker(261, 183, 909)
 if (global.chapter == 2)
     obj[8] = gml_Script_scr_marker(261, 173, 2971)
-i = 0
-while (i < 9)
+for (i = 0; i < 9; i += 1)
 {
-    var _temp_local_var_1 = obj[i]
-    gml_Script_scr_depth()
+    with (obj[i])
+        gml_Script_scr_depth()
 }
 desk_fruit.depth = (obj[0].depth - 10)
 if (global.plot >= 100)
 {
     sunset = gml_Script_scr_marker(0, 0, 901)
-    var _temp_local_var_2 = sunset
-    image_alpha = 0.4
-    depth = 2000
+    with (sunset)
+    {
+        image_alpha = 0.4
+        depth = 2000
+    }
 }

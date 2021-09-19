@@ -15,5 +15,9 @@ else if (type == 0 || (type == 1 && obj_spamton_neo_enemy.difficulty > 2))
     global.turntimer -= 5
 else
     hp -= 0.25
-var _temp_local_var_2 = other
-instance_destroy()
+with (other)
+    instance_destroy()
+damagetimer = 5
+gml_Script_snd_play(166)
+if (hp <= 0)
+    destroyed = 1

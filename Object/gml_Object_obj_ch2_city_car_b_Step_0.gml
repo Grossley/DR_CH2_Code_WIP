@@ -90,8 +90,10 @@ if (global.plot >= 85 && global.plot < 90)
             layer_hspeed("BG_Coaster_Railings_Top", -4)
             layer_hspeed("BG_Bridge_Lining", -4)
             layer_hspeed("BG_Cityscape", -4.5)
-            var _temp_local_var_6 = girder_marker
-            hspeed = -4
+            with (girder_marker)
+                hspeed = -4
+            with (girder_marker_2)
+                hspeed = -4
         }
         if (car_convo == 0)
         {
@@ -165,19 +167,9 @@ if (global.plot >= 85 && global.plot < 90)
         queencar.pause_x_move = 1
         queencar.pause_y_move = 1
         if (queencar.y > 180)
-        {
-            _temp_local_var_7.y = (queencar.y - 2)
-            var _temp_local_var_12 = girder_marker
-            var _temp_local_var_13 = -9
-            var _temp_local_var_14 = queencar
-        }
+            queencar.y -= 2
         else
-        {
-            _temp_local_var_7.y = (queencar.y + 2)
-            _temp_local_var_12 = girder_marker
-            _temp_local_var_13 = -9
-            _temp_local_var_14 = queencar
-        }
+            queencar.y += 2
         if (abs((queencar.y - 180)) <= 2)
         {
             queencar.y = 180
@@ -332,11 +324,7 @@ if (global.plot >= 85 && global.plot < 90)
     }
     if release_car
     {
-        _temp_local_var_12.x = (queencar.x + 5)
-        var _temp_local_var_17 = -9
-        var _temp_local_var_18 = queencar
-        var _temp_local_var_19 = -9
-        var _temp_local_var_20 = queencar
+        queencar.x += 5
         if (queencar.x <= 400)
             release_car = 0
     }
@@ -349,8 +337,8 @@ if (global.plot >= 85 && global.plot < 90)
             explosion_marker.sprite_index = spr_realisticexplosion
             explosion_marker.image_xscale = 4
             explosion_marker.image_yscale = 2
-            var _temp_local_var_21 = explosion_marker
-            gml_Script_scr_depth()
+            with (explosion_marker)
+                gml_Script_scr_depth()
         }
         else
         {

@@ -41,6 +41,6 @@ startX = x
 active = true
 if (global.flag[544] != 0 && type == 0)
 {
-    var _temp_local_var_3 = mySwatch
-    instance_destroy()
+    with (mySwatch)
+        instance_destroy()
 }

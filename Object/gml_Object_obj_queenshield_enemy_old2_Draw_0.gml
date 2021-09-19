@@ -1,3 +1,4 @@
+var _temp_local_var_4, _temp_local_var_5;
 shieldsiner++
 y += (sin((shieldsiner / 6)) * 0.5)
 if ((obj_queen_enemy.shieldhp / obj_queen_enemy.shieldmaxhp) <= (obj_queen_enemy.shieldacthp / obj_queen_enemy.shieldactmaxhp))
@@ -246,7 +247,7 @@ draw_set_alpha((shieldalpha * 0.8))
 draw_set_color(c_lime)
 draw_triangle(queenhandx, queenhandy, (x + 81), (shieldpiece_y[0] + 2), (x + 81), ((shieldpiece_y[(shieldsize - 1)] + y) + 33), 1)
 draw_triangle_colour(queenhandx, queenhandy, (x + 81), (shieldpiece_y[0] + 2), (x + 81), ((shieldpiece_y[(shieldsize - 1)] + y) + 33), 0, 65280, 65280, 0)
-for (i = obj_sneo_friedpipis; i < 10; i++)
+for (i = 0; i < 10; i++)
 {
     shieldpiece_x[i] = (x + 40)
     draw_sprite_ext(spr_queenshield_pieces, shieldpiece_image_index[i], shieldpiece_x[i], shieldpiece_y[i], shieldpiece_xscale[i], (shieldpiece_yscale[i] + y), 0, c_white, shieldpiece_alpha[i])
@@ -254,14 +255,14 @@ for (i = obj_sneo_friedpipis; i < 10; i++)
     {
         if (shieldpiece_y[i] < shieldpiece_y_origin[i])
         {
-            shieldpiece_y[i] = (5 + 1)
-            // WARNING: Popz'd an empty stack.
+            var _temp_local_var_4 = shieldpiece_y[i]
+            shieldpiece_y[i]++
         }
         if (shieldpiece_y[i] > shieldpiece_y_origin[i])
         {
             shieldpiece_y[i]
-            i.shieldpiece_y[shieldpiece_y[i]]--
-            self
+            var _temp_local_var_5 = shieldpiece_y[i]
+            shieldpiece_y[i]--
         }
     }
     if (obj_queen_enemy.shieldhp <= 5 || obj_queen_enemy.shieldacthp < 1)

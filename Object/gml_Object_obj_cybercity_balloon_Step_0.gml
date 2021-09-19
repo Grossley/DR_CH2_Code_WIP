@@ -64,9 +64,11 @@ if (breakable == 1)
     {
         if attached
         {
-            var _temp_local_var_2 = attachedinstance
-            gml_Script_scr_stickto_stop()
-            falling = 1
+            with (attachedinstance)
+            {
+                gml_Script_scr_stickto_stop()
+                falling = 1
+            }
         }
         if (image_xscale < 0)
             gml_Script_scr_flip("h")
@@ -79,7 +81,8 @@ if (breakable == 1)
         afterimage.depth = depth
         gml_Script_scr_darksize(afterimage)
         afterimage.image_angle = image_angle
-        var _temp_local_var_3 = afterimage
-        event_user(0)
+        with (afterimage)
+            event_user(0)
+        instance_destroy()
     }
 }

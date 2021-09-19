@@ -20,8 +20,9 @@ if (global.chapter == 2)
                 tasque.visible = true
                 tasque.image_xscale = 2
                 tasque.image_yscale = 2
-                var _temp_local_var_3 = tasque
-                path_start(path_great_door, 2, path_action_continue, 0)
+                with (tasque)
+                    path_start(path_great_door, 2, path_action_continue, 0)
+                lost_animals++
             }
             if (global.flag[634] == 1)
             {
@@ -30,9 +31,12 @@ if (global.chapter == 2)
                 maus.visible = true
                 maus.image_xscale = 2
                 maus.image_yscale = 2
-                var _temp_local_var_4 = maus
-                path_start(path_great_door, 2, path_action_continue, 0)
-                path_position = 0.2
+                with (maus)
+                {
+                    path_start(path_great_door, 2, path_action_continue, 0)
+                    path_position = 0.2
+                }
+                lost_animals++
             }
             if (global.flag[631] == 1)
             {
@@ -41,9 +45,12 @@ if (global.chapter == 2)
                 poppup.visible = true
                 poppup.image_xscale = 2
                 poppup.image_yscale = 2
-                var _temp_local_var_5 = poppup
-                path_start(path_great_door, 2, path_action_continue, 0)
-                path_position = 0.4
+                with (poppup)
+                {
+                    path_start(path_great_door, 2, path_action_continue, 0)
+                    path_position = 0.4
+                }
+                lost_animals++
             }
         }
         if (lost_animals == 0 && global.flag[462] < 3 && global.flag[465] == 1)
@@ -53,8 +60,8 @@ if (global.chapter == 2)
             car.visible = true
             car.image_xscale = 2
             car.image_yscale = 2
-            var _temp_local_var_7 = car
-            path_start(path_great_door, 2, path_action_continue, 0)
+            with (car)
+                path_start(path_great_door, 2, path_action_continue, 0)
         }
     }
 }

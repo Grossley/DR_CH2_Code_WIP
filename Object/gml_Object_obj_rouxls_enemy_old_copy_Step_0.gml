@@ -200,7 +200,7 @@ if gml_Script_scr_debug()
     }
     if (keytestmode && keyboard_lastchar != "")
     {
-        gml_Script_scr_debug_print((string((string("Last key pressed was ".keyboard_lastchar) + " (").keyboard_lastkey) + ")"))
+        gml_Script_scr_debug_print((((("Last key pressed was " + string(keyboard_lastchar)) + " (") + string(keyboard_lastkey)) + ")"))
         keyboard_lastchar = ""
     }
     if (keyboard_check_pressed(vk_numpad7) || keyboard_check_pressed(ord("1")))

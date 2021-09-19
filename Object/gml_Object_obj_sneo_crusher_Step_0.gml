@@ -44,7 +44,7 @@ if (new_movement == 1)
         }
     }
 }
-if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
+if (x >= (room_width + 100) || x <= -100 || y >= (room_height + 100) || y <= -100)
 {
     instance_destroy()
     if (creatednewalls == 1)
@@ -126,8 +126,8 @@ if (destroying < 1)
         enemy[i] = instance_find(obj_yheart_shot, i)
         if (enemy[i].x > (x - 22))
         {
-            var _temp_local_var_19 = enemy[i]
-            event_user(0)
+            with (enemy[i])
+                event_user(0)
         }
     }
 }

@@ -27,8 +27,11 @@ if (dothis == 1)
             if (sprite_index == spr_treasurebox)
             {
                 box = gml_Script_instance_create((x + 30), (y + 12), obj_treasure_room)
-                var _temp_local_var_3 = box
-                depth = (other.depth - 10)
+                with (box)
+                    depth = (other.depth - 10)
+                if (other.complete == 0)
+                    other.complete = 1
+                instance_destroy()
             }
         }
     }

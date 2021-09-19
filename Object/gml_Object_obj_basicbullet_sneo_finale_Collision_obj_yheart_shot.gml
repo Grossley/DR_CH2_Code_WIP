@@ -10,6 +10,7 @@ if (destroyable == 1)
     anim.image_yscale = image_yscale
     with (anim)
         sprite_index = spr_yheart_shot_hit3
+    instance_destroy()
 }
 else if (destroyable == -1)
 {

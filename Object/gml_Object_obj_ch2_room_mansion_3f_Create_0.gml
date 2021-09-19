@@ -1,4 +1,3 @@
-var floor_dir_1f, sign_4f, floor_dir_4f;
 if (gml_Script_scr_sideb_get_phase() != 3)
 {
     con = -1
@@ -8,8 +7,12 @@ if (gml_Script_scr_sideb_get_phase() != 3)
     else
     {
         berdly_marker = gml_Script_scr_dark_marker(680, 165, 669)
-        var _temp_local_var_12 = berdly_marker
-        gml_Script_scr_depth()
+        with (berdly_marker)
+            gml_Script_scr_depth()
+        berdly_exit = 0
+        berdly_shadow = 0
+        susie_exit = 0
+        susie_shadow = 0
     }
     door = gml_Script_scr_dark_marker(590, 80, 2860)
     door.depth = 999999
@@ -27,8 +30,22 @@ if (gml_Script_scr_sideb_get_phase() != 3)
     {
         var sign_1f = gml_Script_scr_dark_marker(250, 40, 2933)
         sign_1f.image_speed = 0
-        var _temp_local_var_5 = sign_1f
-        gml_Script_scr_depth()
+        with (sign_1f)
+            gml_Script_scr_depth()
+        var floor_dir_1f = gml_Script_scr_dark_marker(250, 0, 2946)
+        floor_dir_1f.image_speed = 0
+        floor_dir_1f.image_index = 1
+        with (floor_dir_1f)
+            gml_Script_scr_depth()
+        var sign_4f = gml_Script_scr_dark_marker(590, 40, 2933)
+        sign_4f.image_speed = 0
+        sign_4f.image_index = 3
+        with (sign_4f)
+            gml_Script_scr_depth()
+        var floor_dir_4f = gml_Script_scr_dark_marker(590, 0, 2946)
+        floor_dir_4f.image_speed = 0
+        with (floor_dir_4f)
+            gml_Script_scr_depth()
     }
     hide_entrance = 0
     if (!gml_Script_scr_havechar(2))

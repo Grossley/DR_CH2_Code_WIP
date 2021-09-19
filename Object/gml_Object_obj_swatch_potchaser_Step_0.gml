@@ -65,40 +65,42 @@ if (point_in_rectangle(gml_Script_charaX(), gml_Script_charaY(), (x + colX), (y 
             with (obj_swatch_potchaser)
             {
                 newenem = gml_Script_instance_create(x, y, obj_chaseenemy)
-                var _temp_local_var_6 = newenem
-                if (other.sprite_index == spr_npc_swatchling_scared)
+                with (newenem)
                 {
-                    if (other.image_xscale == -2)
+                    if (other.sprite_index == spr_npc_swatchling_scared)
                     {
-                        x = (other.x - 110)
-                        y = (other.y + 2)
+                        if (other.image_xscale == -2)
+                        {
+                            x = (other.x - 110)
+                            y = (other.y + 2)
+                        }
+                        else
+                        {
+                            x = (other.x - 12)
+                            y = (other.y + 2)
+                        }
+                    }
+                    else if (other.image_xscale == -2)
+                    {
+                        x = (other.x - 142)
+                        y = other.y
                     }
                     else
                     {
-                        x = (other.x - 12)
-                        y = (other.y + 2)
+                        x = (other.x + 24)
+                        y = other.y
                     }
+                    myencounter = 56
+                    sprite_index = spr_npc_swatchling_sweep
+                    touchsprite = spr_npc_swatchling_sweep
+                    radius = 10000
+                    ignoresolid = false
+                    alertcon = 0
+                    eraser = true
+                    facing = 1
                 }
-                else if (other.image_xscale == -2)
-                {
-                    x = (other.x - 142)
-                    y = other.y
-                }
-                else
-                {
-                    x = (other.x + 24)
-                    y = other.y
-                }
-                myencounter = 56
-                sprite_index = spr_npc_swatchling_sweep
-                touchsprite = spr_npc_swatchling_sweep
-                radius = 10000
-                ignoresolid = false
-                alertcon = 0
-                eraser = true
-                facing = 1
+                instance_destroy()
             }
-            instance_destroy()
         }
         if instance_exists(obj_controller_dw_mansion_potBalance)
             obj_controller_dw_mansion_potBalance.triggered = 1

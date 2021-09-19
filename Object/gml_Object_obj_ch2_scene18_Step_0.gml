@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (con == 0)
 {
     global.interact = 1
@@ -238,20 +239,11 @@ if susie_heal
         heal_beam.image_speed = 0.25
         heal_beam.image_xscale = -2
     }
-    _temp_local_var_1.x = (heal_beam.x - 8)
-    heal_beam.y = (heal_beam.y + 1)
-    var _temp_local_var_6 = id
-    var _temp_local_var_7 = -9
-    var _temp_local_var_8 = heal_beam
-    var _temp_local_var_9 = -9
-    var _temp_local_var_10 = heal_beam
+    heal_beam.x -= 8
+    heal_beam.y += 1
     if (heal_beam.x <= (la_actor.x + 80))
     {
-        _temp_local_var_6.image_alpha = (heal_beam.image_alpha - 0.25)
-        var _temp_local_var_11 = -9
-        var _temp_local_var_12 = heal_beam
-        var _temp_local_var_13 = -9
-        var _temp_local_var_14 = heal_beam
+        heal_beam.image_alpha -= 0.25
         if (heal_beam.image_alpha <= 0)
         {
             susie_heal = 0

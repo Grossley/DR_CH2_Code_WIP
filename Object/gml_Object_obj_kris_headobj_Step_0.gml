@@ -38,15 +38,15 @@ if gml_Script_i_ex(347)
             if (miceheld > 0)
             {
                 var mousedrop = clamp(10, 1, miceheld)
-                i = 0
-                while (i < mousedrop)
+                for (i = 0; i < mousedrop; i++)
                 {
                     miceheld--
                     var mousepart = gml_Script_instance_create(x, y, obj_afterimage)
                     mousepart.sprite_index = spr_holemouse_emerge
                     gml_Script_scr_darksize(mousepart)
                     mousepart.image_alpha = 2
-                    gml_Script_scr_jump_to_point((x + random_range(-40, 40)), ((obj_fountainkris_ch2_sideb).room_height + (sprite_height * 2)), 16, mousepart)
+                    with (mousepart)
+                        gml_Script_scr_jump_to_point((x + random_range(-40, 40)), (room_height + (sprite_height * 2)), 20, 16)
                 }
             }
             mousefailcon++

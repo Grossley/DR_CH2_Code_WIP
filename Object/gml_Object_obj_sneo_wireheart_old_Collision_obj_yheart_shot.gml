@@ -1,7 +1,8 @@
 if (invincibility_timer > 0 && other.big == 0)
 {
-    var _temp_local_var_2 = other
-    instance_destroy()
+    with (other)
+        instance_destroy()
+    return;
 }
 invincibility_timer = 10
 if (global.turntimer < 150)
@@ -44,5 +45,9 @@ else
         show_debug_message(hp)
     }
 }
-var _temp_local_var_4 = other
-instance_destroy()
+with (other)
+    instance_destroy()
+damagetimer = 5
+gml_Script_snd_play(166)
+if (hp <= 0)
+    destroyed = 1

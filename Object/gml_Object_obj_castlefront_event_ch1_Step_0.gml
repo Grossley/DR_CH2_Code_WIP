@@ -28,6 +28,24 @@ if (con == 4 && (!gml_Script_d_ex_ch1()))
         sprite_index = spr_lancer_dt_unhappy_ch1
         vspeed = -3
     }
+    with (obj_mainchara_ch1)
+    {
+        fun = true
+        vspeed = -8
+        image_speed = 0.25
+    }
+    with (s)
+    {
+        vspeed = -8
+        image_speed = 0.25
+    }
+    with (r)
+    {
+        vspeed = -8
+        image_speed = 0.25
+    }
+    con = 5
+    alarm[4] = 48
 }
 if (con == 6)
 {
@@ -38,6 +56,14 @@ if (con == 6)
     door.depth = 1000000
     with (l)
         instance_destroy()
+    with (s)
+        gml_Script_scr_halt_ch1()
+    with (r)
+        gml_Script_scr_halt_ch1()
+    with (obj_mainchara_ch1)
+        gml_Script_scr_halt_ch1()
+    con = 7
+    alarm[4] = 40
 }
 if (con == 8)
 {
@@ -49,11 +75,57 @@ if (con == 15 && (!gml_Script_d_ex_ch1()))
 {
     with (s)
         sprite_index = spr_susier_dark_unhappy_ch1
+    with (r)
+        sprite_index = spr_ralseil_ch1
+    global.facing = 0
+    with (obj_mainchara_ch1)
+        sprite_index = spr_krisd_dark_ch1
+    exc = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + 20), (obj_mainchara_ch1.y - 20), 1486)
+    con = 16
+    alarm[4] = 20
+    for (i = 0; i < 4; i += 1)
+    {
+        spademanl[i] = gml_Script_scr_dark_marker_ch1((0 - (10 * i)), (680 + (30 * i)), 3985)
+        with (spademanl[i])
+        {
+            image_xscale = -2
+            hspeed = 12
+            gml_Script_scr_depth_ch1()
+        }
+    }
+    for (i = 0; i < 4; i += 1)
+    {
+        spademanr[i] = gml_Script_scr_dark_marker_ch1((640 + (10 * i)), (680 + (30 * i)), 3985)
+        with (spademanr[i])
+        {
+            image_xscale = 2
+            hspeed = -12
+            gml_Script_scr_depth_ch1()
+        }
+    }
+    spademand[0] = gml_Script_scr_dark_marker_ch1(320, 1100, 3985)
+    with (spademand[0])
+    {
+        image_xscale = -2
+        vspeed = -12
+        gml_Script_scr_depth_ch1()
+    }
+    spademand[1] = gml_Script_scr_dark_marker_ch1(320, 1100, 3985)
+    with (spademand[1])
+    {
+        image_xscale = 2
+        vspeed = -12
+        gml_Script_scr_depth_ch1()
+    }
 }
 if (con == 17)
 {
     with (exc)
         instance_destroy()
+    with (obj_marker_ch1)
+        gml_Script_scr_halt_ch1()
+    con = 18
+    alarm[4] = 20
 }
 if (con == 19)
 {
@@ -96,9 +168,9 @@ if (con == 20 && (!gml_Script_d_ex_ch1()))
             depth = 10000
             friction = 0.1
         }
+        dcount += 1
     }
-    i = 0
-    while (i < dcount)
+    for (i = 0; i < dcount; i += 1)
     {
         with (db[i])
             image_alpha += 0.1
@@ -121,8 +193,7 @@ if (con == 21)
 }
 if (con == 22 && (!gml_Script_d_ex_ch1()))
 {
-    i = 0
-    while (i < dcount)
+    for (i = 0; i < dcount; i += 1)
     {
         with (db[i])
         {

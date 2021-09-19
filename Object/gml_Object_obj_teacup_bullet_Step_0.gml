@@ -1,3 +1,4 @@
+var _temp_local_var_4;
 if (cupDistanceFromCenter == 0)
     cupDistanceFromCenter = master.cupDistanceFromCenter
 circleX = lengthdir_x(cupDistanceFromCenter, spin)
@@ -31,14 +32,16 @@ if (cutOff > sprite_height)
 {
     if (hitType == 5)
     {
-        var _temp_local_var_1 = master
-        teaFilled += 0.05
-        swallownoise = 1
+        with (master)
+        {
+            teaFilled += 0.05
+            swallownoise = 1
+        }
     }
     else
     {
-        _temp_local_var_1 = master
-        wooshnoise = 1
+        with (master)
+            wooshnoise = 1
     }
     instance_destroy()
 }
@@ -46,8 +49,14 @@ if (hitType == 3)
 {
     if (cutOff > 0 && bouncesLeft > 0 && (!bouncing))
     {
-        var _temp_local_var_3 = master
-        bouncenoise = 1
+        with (master)
+            bouncenoise = 1
+        bouncesLeft--
+        bouncing = 1
+        bounceHeight = 128
+        bounceTime = 1
+        bounceCurrent = 0
+        bounceProgress = ((1/15) / bounceTime)
     }
     if bouncing
     {
@@ -55,8 +64,15 @@ if (hitType == 3)
         bounceCurrent = abs((sin((bounceProgress * pi)) * bounceHeight))
         if (bounceProgress >= 1)
         {
-            var _temp_local_var_4 = master
-            bouncenoise = 1
+            with (master)
+                bouncenoise = 1
+            bouncesLeft--
+            bounceProgress--
+            if (bouncesLeft < 0)
+            {
+                bouncing = 0
+                bounceCurrent = 0
+            }
         }
     }
 }
@@ -70,6 +86,7 @@ if ((ystart - bounceCurrent) > (master.y - bulletHitHeight) && (cutOff / sprite_
             if (abs(angle_difference(spin, _cupChar[i].spin)) < bulletCollisionAngle)
             {
                 debugHitThisFrame = 1
+                var _temp_local_var_4 = hitType
                 switch hitType
                 {
                     case 0:
@@ -103,14 +120,22 @@ if ((ystart - bounceCurrent) > (master.y - bulletHitHeight) && (cutOff / sprite_
                         break
                     case 1:
                         image_blend = c_white
-                        var _temp_local_var_9 = master
-                        if (theScore == 0)
-                            myPitch = 1
-                        gml_Script_snd_pitch(gml_Script_snd_play(293), myPitch)
-                        riseSpeedBoost += other.boostAmount
-                        theScore++
-                        tutorialRide = 0
-                        myPitch *= 1.05946
+                        with (master)
+                        {
+                            if (theScore == 0)
+                                myPitch = 1
+                            gml_Script_snd_pitch(gml_Script_snd_play(293), myPitch)
+                            riseSpeedBoost += other.boostAmount
+                            theScore++
+                            tutorialRide = 0
+                            myPitch *= 1.05946
+                        }
+                        if (room == room_dw_cyber_teacup_final)
+                        {
+                            with (obj_teacup_scoreboard)
+                                theScore++
+                        }
+                        break
                     case 2:
                         break
                     case 5:
@@ -119,19 +144,22 @@ if ((ystart - bounceCurrent) > (master.y - bulletHitHeight) && (cutOff / sprite_
 
                 if (hitType != 5)
                 {
-                    var _temp_local_var_8 = instance_create_depth(x, y, depth, obj_teacup_bullet_dead)
-                    sprite_index = other.sprite_index
-                    image_index = other.image_index
-                    image_speed = other.image_speed
-                    image_xscale = (other.image_xscale + 0.2)
-                    image_yscale = (other.image_yscale + 0.2)
-                    image_alpha = other.image_alpha
-                    image_blend = other.image_blend
-                    spriteWidthRoot = other.spriteWidthRoot
-                    spriteHeightRoot = other.spriteHeightRoot
-                    cutOff = other.cutOff
-                    master = other.master
-                    posY = (y - master.y)
+                    with (instance_create_depth(x, y, depth, obj_teacup_bullet_dead))
+                    {
+                        sprite_index = other.sprite_index
+                        image_index = other.image_index
+                        image_speed = other.image_speed
+                        image_xscale = (other.image_xscale + 0.2)
+                        image_yscale = (other.image_yscale + 0.2)
+                        image_alpha = other.image_alpha
+                        image_blend = other.image_blend
+                        spriteWidthRoot = other.spriteWidthRoot
+                        spriteHeightRoot = other.spriteHeightRoot
+                        cutOff = other.cutOff
+                        master = other.master
+                        posY = (y - master.y)
+                    }
+                    instance_destroy()
                 }
             }
         }

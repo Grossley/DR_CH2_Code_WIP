@@ -57,14 +57,20 @@ if (type == 0)
     {
         hitnoise = gml_Script_snd_play(184)
         gml_Script_snd_pitch(hitnoise, (1 + (warnpitch / 16)))
-        var _temp_local_var_2 = l
-        sprite_index = spr_lancer_lt
-        hspeed = -10
+        with (l)
+        {
+            sprite_index = spr_lancer_lt
+            hspeed = -10
+        }
+        con = -45
+        alarm[4] = 3
     }
     if (con == -44)
     {
-        var _temp_local_var_3 = l
-        gml_Script_scr_halt()
+        with (l)
+            gml_Script_scr_halt()
+        con = -43
+        alarm[4] = 15
     }
     if (con == -42)
     {
@@ -116,8 +122,8 @@ if (type == 0)
         ltimer += 1
         if (ltimer >= 20)
         {
-            var _temp_local_var_5 = l
-            gml_Script_scr_halt()
+            with (l)
+                gml_Script_scr_halt()
         }
         if (k.x >= 140)
             obj_mainchara.x = k.x
@@ -133,8 +139,12 @@ if (type == 0)
         obj_mainchara.x = k.x
         obj_mainchara.visible = true
         obj_mainchara.cutscene = true
-        var _temp_local_var_6 = l
-        sprite_index = spr_lancer_rt
+        with (l)
+            sprite_index = spr_lancer_rt
+        with (k)
+            instance_destroy()
+        alarm[4] = 16
+        gml_Script_scr_pan(5, 0, 16)
     }
     if (con == -7)
     {
@@ -189,32 +199,16 @@ if (type == 0)
     }
     if (con == 2.2)
     {
-        j = 0
-        while (j < 3)
-        {
-            _temp_local_var_7.image_alpha = (tile[j].image_alpha + 0.1)
-            j += 1
-            var _temp_local_var_9 = l
-            var _temp_local_var_10 = l
-            var _temp_local_var_11 = -9
-            var _temp_local_var_12 = tile[j]
-        }
+        for (j = 0; j < 3; j += 1)
+            tile[j].image_alpha += 0.1
         ttimer += 1
         if (ttimer >= 10)
             con = 2.3
     }
     if (con == 2.3)
     {
-        j = 0
-        while (j < 3)
-        {
-            _temp_local_var_7.image_alpha = (tile[j].image_alpha - 0.1)
-            j += 1
-            var _temp_local_var_13 = l
-            var _temp_local_var_14 = l
-            var _temp_local_var_15 = -9
-            var _temp_local_var_16 = tile[j]
-        }
+        for (j = 0; j < 3; j += 1)
+            tile[j].image_alpha -= 0.1
         ttimer += 1
         if (ttimer >= 30)
             con = 3.1
@@ -241,8 +235,10 @@ if (type == 0)
             sprite_index = spr_smallchecker_transform
             y += 2
             gml_Script_snd_play(152)
-            var _temp_local_var_17 = crown
-            instance_destroy()
+            with (crown)
+                instance_destroy()
+            con = 6
+            alarm[4] = 50
         }
     }
     if (con == 7)
@@ -284,13 +280,27 @@ if (type == 0)
         x -= 18
         y -= 90
         gml_Script_snd_play(61)
-        var _temp_local_var_18 = s
-        sprite_index = spr_susie_shock_r
+        with (s)
+            sprite_index = spr_susie_shock_r
+        with (r)
+            sprite_index = spr_ralsei_shock_overworld
+        gml_Script_instance_create(0, 0, obj_shake)
+        sprite_index = spr_checkers_idle
+        image_speed = 0
+        image_index = 0
+        con = 16
+        alarm[4] = 30
     }
     if (con == 17)
     {
-        var _temp_local_var_20 = r
-        sprite_index = spr_ralseir
+        with (r)
+            sprite_index = spr_ralseir
+        with (s)
+            sprite_index = spr_susier_dark
+        global.fe = 6
+        global.msg[0] = gml_Script_stringsetloc("* It crushes people to death^1, I think./%", "obj_checker_animtest_slash_Step_0_gml_356_0")
+        con = 18
+        gml_Script_instance_create(0, 0, obj_dialoguer)
     }
     if (con == 18 && (!gml_Script_d_ex()))
     {
@@ -347,39 +357,30 @@ if (type == 1)
             windsound = true
         }
         if (secondtime == false)
-        {
-            _temp_local_var_21.hspeed = (crown.hspeed + 0.2)
-            var _temp_local_var_23 = r
-            var _temp_local_var_24 = 
-            var _temp_local_var_25 = -9
-            var _temp_local_var_26 = crown
-        }
+            crown.hspeed += 0.2
         else
-        {
-            _temp_local_var_21.hspeed = (crown.hspeed + 0.4)
-            _temp_local_var_23 = r
-            _temp_local_var_24 = 
-            _temp_local_var_25 = -9
-            _temp_local_var_26 = crown
-        }
+            crown.hspeed += 0.4
         if (crown.hspeed >= 3)
             con = 1.5
     }
     if (con == 1.5)
     {
-        var _temp_local_var_27 = crown
-        maxy = (obj_checker_animtest.y + obj_checker_animtest.sprite_height)
-        image_angle = -45
-        y -= 10
-        gravity = 0.5
-        hspeed = 5
-        friction = 0.2
+        with (crown)
+        {
+            maxy = (obj_checker_animtest.y + obj_checker_animtest.sprite_height)
+            image_angle = -45
+            y -= 10
+            gravity = 0.5
+            hspeed = 5
+            friction = 0.2
+        }
+        con = 1.6
     }
     if (con == 1.6)
     {
         if (crown.y >= ((crown.maxy - crown.sprite_height) - 10))
         {
-            _temp_local_var_27.y = (crown.y + 10)
+            crown.y += 10
             crown.image_angle = 0
             crown.gravity = 0
             crown.vspeed = 0
@@ -387,10 +388,6 @@ if (type == 1)
             crown.hspeed = 1
             con = 0.9
             alarm[4] = 30
-            var _temp_local_var_28 = r
-            var _temp_local_var_29 = _temp_local_var_24
-            var _temp_local_var_30 = -9
-            var _temp_local_var_31 = crown
             if (secondtime == true)
             {
                 alarm[4] = 10
@@ -508,14 +505,20 @@ if (type == 2)
     }
     if (con == 3 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_33 = l
-        hspeed = 18
+        with (l)
+            hspeed = 18
+        con = 4
+        alarm[4] = 20
     }
     if (con == 5)
     {
-        var _temp_local_var_34 = l
-        gml_Script_scr_halt()
-        sprite_index = spr_lancer_lt
+        with (l)
+        {
+            gml_Script_scr_halt()
+            sprite_index = spr_lancer_lt
+        }
+        con = 6
+        alarm[4] = 15
     }
     if (con == 7)
     {
@@ -532,38 +535,92 @@ if (type == 2)
     if (con == 7.1 && (!gml_Script_d_ex()))
     {
         gml_Script_snd_play(65)
-        var _temp_local_var_36 = s
-        image_speed = 0.2
+        with (s)
+            image_speed = 0.2
+        con = 6.2
+        alarm[4] = 60
     }
     if (con == 7.2 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_38 = global.cinstance[0]
-        visible = false
+        with (global.cinstance[0])
+            visible = false
+        with (global.cinstance[1])
+            visible = false
+        with (obj_mainchara)
+            visible = false
+        r = gml_Script_scr_dark_marker(global.cinstance[0].x, global.cinstance[0].y, 1012)
+        s = gml_Script_scr_dark_marker(global.cinstance[1].x, global.cinstance[1].y, 985)
+        k = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 654)
+        global.typer = 31
+        global.fc = 2
+        global.fe = 1
+        global.msg[0] = gml_Script_stringsetloc("\\E8* Ummm^1, Susie...?/", "obj_checker_animtest_slash_Step_0_gml_657_0")
+        global.msg[1] = gml_Script_stringsetloc("\\E8* Not to downplay your contributions^1, but.../", "obj_checker_animtest_slash_Step_0_gml_658_0")
+        global.msg[2] = gml_Script_stringsetloc("\\E1* You..^1. didn't actually help at all./", "obj_checker_animtest_slash_Step_0_gml_659_0")
+        global.msg[3] = gml_Script_stringsetloc("\\EB* You only made everything WORSE by attacking it./", "obj_checker_animtest_slash_Step_0_gml_660_0")
+        global.msg[4] = gml_Script_stringsetloc("\\E1* If you had just acted nice to it in the first place.../", "obj_checker_animtest_slash_Step_0_gml_661_0")
+        global.msg[5] = gml_Script_stringsetloc("\\E6* We could have avoided that entire battle./", "obj_checker_animtest_slash_Step_0_gml_662_0")
+        gml_Script_scr_susface(6, 6)
+        global.msg[7] = gml_Script_stringsetloc("* Huh^1?&* Are you FOR REAL?/", "obj_checker_animtest_slash_Step_0_gml_664_0")
+        global.msg[8] = gml_Script_stringsetloc("\\E7* That thing was BLOODTHIRSTY!!!/", "obj_checker_animtest_slash_Step_0_gml_665_0")
+        global.msg[9] = gml_Script_stringsetloc("\\E2* The only thing keeping it at bay was MY AX!/%", "obj_checker_animtest_slash_Step_0_gml_666_0")
+        con = 50
+        gml_Script_instance_create(0, 0, obj_dialoguer)
     }
     if (con == 50 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_41 = r
-        sprite_index = spr_ralseid
+        with (r)
+            sprite_index = spr_ralseid
+        con = 51
+        alarm[4] = 30
     }
     if (con == 52)
     {
-        var _temp_local_var_42 = r
-        sprite_index = spr_ralseil
+        with (r)
+            sprite_index = spr_ralseil
+        global.fc = 2
+        global.fe = 6
+        global.typer = 31
+        global.msg[0] = gml_Script_stringsetloc("* And^1, earlier^1, you terrorized those troops.../", "obj_checker_animtest_slash_Step_0_gml_685_0")
+        gml_Script_scr_susface(1, 0)
+        global.msg[2] = gml_Script_stringsetloc("* Those guys were ENEMIES^1. They're FOR terrorizing./", "obj_checker_animtest_slash_Step_0_gml_687_0")
+        gml_Script_scr_lanface(3, 3)
+        global.msg[4] = gml_Script_stringsetloc("* Yeah^1! She's right!!/", "obj_checker_animtest_slash_Step_0_gml_689_0")
+        gml_Script_scr_ralface(5, 1)
+        global.msg[6] = gml_Script_stringsetloc("* And before that^1, you ate an innocent person's cake.../%", "obj_checker_animtest_slash_Step_0_gml_691_0")
+        con = 53
+        gml_Script_instance_create(0, 0, obj_dialoguer)
     }
     if (con == 53 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_44 = s
-        sprite_index = spr_susied_dark
+        with (s)
+            sprite_index = spr_susied_dark
+        con = 54
+        alarm[4] = 30
     }
     if (con == 55)
     {
-        var _temp_local_var_45 = s
-        sprite_index = spr_susier_dark
+        with (s)
+            sprite_index = spr_susier_dark
+        global.fc = 1
+        global.fe = 2
+        global.typer = 30
+        global.msg[0] = gml_Script_stringsetloc("* Cakes..^1. are also my enemy./", "obj_checker_animtest_slash_Step_0_gml_709_0")
+        gml_Script_scr_ralface(1, "C")
+        global.msg[2] = gml_Script_stringsetloc("* .../", "obj_checker_animtest_slash_Step_0_gml_711_0")
+        global.msg[3] = gml_Script_stringsetloc("\\E1* Susie..^1. Whether you like it or not.../", "obj_checker_animtest_slash_Step_0_gml_712_0")
+        global.msg[4] = gml_Script_stringsetloc("\\E6* You're a hero./", "obj_checker_animtest_slash_Step_0_gml_713_0")
+        global.msg[5] = gml_Script_stringsetloc("\\E0* One with the power to bring peace to the future./", "obj_checker_animtest_slash_Step_0_gml_714_0")
+        global.msg[6] = gml_Script_stringsetloc("\\E5* Could you please start..^1. acting like one?/%", "obj_checker_animtest_slash_Step_0_gml_715_0")
+        con = 56
+        gml_Script_instance_create(0, 0, obj_dialoguer)
     }
     if (con == 56 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_47 = s
-        sprite_index = spr_susiel_dark_unhappy
+        with (s)
+            sprite_index = spr_susiel_dark_unhappy
+        con = 57
+        alarm[4] = 60
     }
     if (con == 58)
     {
@@ -578,15 +635,28 @@ if (type == 2)
     }
     if (con == 59 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_49 = s
-        vspeed = 2
-        image_speed = 0.2
-        sprite_index = spr_susied_dark_unhappy
+        with (s)
+        {
+            vspeed = 2
+            image_speed = 0.2
+            sprite_index = spr_susied_dark_unhappy
+        }
+        con = 60
+        alarm[4] = 10
     }
     if (con == 61)
     {
-        var _temp_local_var_50 = k
-        gml_Script_scr_depth()
+        with (k)
+            gml_Script_scr_depth()
+        with (r)
+            gml_Script_scr_depth()
+        with (s)
+        {
+            gml_Script_scr_halt()
+            gml_Script_scr_depth()
+        }
+        con = 62
+        alarm[4] = 30
     }
     if (con == 63)
     {
@@ -597,17 +667,27 @@ if (type == 2)
     }
     if (con == 64 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_54 = s
-        hspeed = 12
-        sprite_index = spr_susier_dark
-        image_speed = 0.5
+        with (s)
+        {
+            hspeed = 12
+            sprite_index = spr_susier_dark
+            image_speed = 0.5
+        }
+        con = 65
     }
     if (con == 65)
     {
         if (s.x >= (gml_Script___view_get(0, 0) + 460))
         {
-            var _temp_local_var_55 = s
-            gml_Script_scr_halt()
+            with (s)
+                gml_Script_scr_halt()
+            with (s)
+                sprite_index = spr_susiel_dark
+            with (k)
+                sprite_index = spr_krisr_dark
+            with (r)
+                sprite_index = spr_ralseir
+            con = 66
         }
     }
     if (con == 66)
@@ -621,45 +701,109 @@ if (type == 2)
     }
     if (con == 67 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_60 = r
-        sprite_index = spr_ralsei_shock_overworld
+        with (r)
+            sprite_index = spr_ralsei_shock_overworld
+        con = 68
+        alarm[4] = 20
     }
     if (con == 69)
     {
         global.currentsong[0] = gml_Script_snd_init("lancer.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.6, 1)
-        var _temp_local_var_61 = r
-        sprite_index = spr_ralseir
+        with (r)
+            sprite_index = spr_ralseir
+        global.fc = 5
+        global.typer = 32
+        global.fe = 2
+        global.msg[0] = gml_Script_stringsetloc("* R... Really!?/", "obj_checker_animtest_slash_Step_0_gml_820_0")
+        global.msg[1] = gml_Script_stringsetloc("\\E3* You're going to be on MY team?/", "obj_checker_animtest_slash_Step_0_gml_821_0")
+        gml_Script_scr_susface(2, 2)
+        global.msg[3] = gml_Script_stringsetloc("* Yeah^1, sounds way easier^1, honestly./", "obj_checker_animtest_slash_Step_0_gml_823_0")
+        gml_Script_scr_ralface(4, 3)
+        global.msg[5] = gml_Script_stringsetloc("* Susie^1, you can't just -/", "obj_checker_animtest_slash_Step_0_gml_825_0")
+        gml_Script_scr_lanface(6, 1)
+        global.msg[7] = gml_Script_stringsetloc("* Quiet^1, Toothpaste Boy^1! Susie is MY comrade now!/", "obj_checker_animtest_slash_Step_0_gml_827_0")
+        gml_Script_scr_susface(8, 2)
+        global.msg[9] = gml_Script_stringsetloc("* Hahaha^1, yeah^1, Toothpaste Boy!/", "obj_checker_animtest_slash_Step_0_gml_829_0")
+        gml_Script_scr_lanface(10, 3)
+        global.msg[11] = gml_Script_stringsetloc("* We're going to have monogrammed track jackets!/", "obj_checker_animtest_slash_Step_0_gml_831_0")
+        gml_Script_scr_susface(12, 2)
+        global.msg[13] = gml_Script_stringsetloc("* Yeah!/", "obj_checker_animtest_slash_Step_0_gml_833_0")
+        gml_Script_scr_lanface(14, 1)
+        global.msg[15] = gml_Script_stringsetloc("* And sleepovers^1! Where we tell each other secrets!/", "obj_checker_animtest_slash_Step_0_gml_835_0")
+        gml_Script_scr_susface(16, 6)
+        global.msg[17] = gml_Script_stringsetloc("* Ummm^1, yeah?/", "obj_checker_animtest_slash_Step_0_gml_837_0")
+        global.msg[18] = gml_Script_stringsetloc("\\E2* Anyway^1, uhh^1, see you guys never./", "obj_checker_animtest_slash_Step_0_gml_838_0")
+        gml_Script_scr_lanface(19, 3)
+        global.msg[20] = gml_Script_stringsetloc("* Haha!^1! If you can even last that long!/%", "obj_checker_animtest_slash_Step_0_gml_840_0")
+        gml_Script_instance_create(0, 0, obj_dialoguer)
+        con = 70
     }
     if (con == 70 && (!gml_Script_d_ex()))
     {
         gml_Script_snd_volume(global.currentsong[1], 0, 50)
         gml_Script_snd_play(187)
-        var _temp_local_var_63 = l
-        sprite_index = spr_lancer_lt_laugh
-        image_speed = 0.2
-        hspeed = 12
+        with (l)
+        {
+            sprite_index = spr_lancer_lt_laugh
+            image_speed = 0.2
+            hspeed = 12
+        }
+        with (s)
+        {
+            sprite_index = spr_susier_dark
+            image_speed = 0.5
+            hspeed = 12
+        }
+        con = 71
+        alarm[4] = 70
     }
     if (con == 72)
         con = 22
     if (con == 22 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_66 = r
-        hspeed = 6
-        image_speed = 0.25
+        with (r)
+        {
+            hspeed = 6
+            image_speed = 0.25
+        }
+        con = 23
+        alarm[4] = 20
     }
     if (con == 24)
     {
         gml_Script_snd_free_all()
         global.facing = 2
-        var _temp_local_var_67 = r
-        gml_Script_scr_halt()
+        with (r)
+            gml_Script_scr_halt()
+        global.fc = 2
+        global.typer = 31
+        global.fe = 1
+        global.msg[0] = gml_Script_stringsetloc("* Kris.../", "obj_checker_animtest_slash_Step_0_gml_893_0")
+        global.msg[1] = gml_Script_stringsetloc("\\E6* Perhaps I shouldn't have been so hard on her./", "obj_checker_animtest_slash_Step_0_gml_894_0")
+        global.msg[2] = gml_Script_stringsetloc("\\E1* .../", "obj_checker_animtest_slash_Step_0_gml_895_0")
+        global.msg[3] = gml_Script_stringsetloc("* But^1, I just worry that if Susie is too eager to fight.../", "obj_checker_animtest_slash_Step_0_gml_896_0")
+        global.msg[4] = gml_Script_stringsetloc("\\E4* Then.../", "obj_checker_animtest_slash_Step_0_gml_897_0")
+        global.msg[5] = gml_Script_stringsetloc("\\E6* Well^1, let's just be kind to her^1, OK^1, Kris?/", "obj_checker_animtest_slash_Step_0_gml_898_0")
+        global.msg[6] = gml_Script_stringsetloc("\\E8* I'm sure Susie'll come around soon!/%", "obj_checker_animtest_slash_Step_0_gml_899_0")
+        con = 28
+        gml_Script_instance_create(0, 0, obj_dialoguer)
     }
     if (con == 28 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_69 = k
-        hspeed = 8
-        image_speed = 0.25
+        with (k)
+        {
+            hspeed = 8
+            image_speed = 0.25
+        }
+        with (r)
+        {
+            hspeed = 8
+            image_speed = 0.25
+            sprite_index = spr_ralseir
+        }
+        con = 29
+        alarm[4] = 10
     }
     if (con == 30)
     {

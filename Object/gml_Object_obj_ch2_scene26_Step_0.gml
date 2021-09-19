@@ -525,11 +525,11 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_scr_smallface(0, "rouxls", 1, "left", "bottom", gml_Script_stringsetloc("I shalt also take Credite for This", "obj_ch2_scene26_slash_Step_0_gml_850_0"))
         gml_Script_scr_miniface_init_sweet()
         gml_Script_c_speaker("no_name")
-        gml_Script_c_msgsetloc(0, "\\m1        *On your quest against Queen,/", "obj_ch2_scene26_slash_Step_0_gml_855_0")
-        gml_Script_c_msgnextloc("\\m3        *You've made all sorts of&    buddies, right?!/", "obj_ch2_scene26_slash_Step_0_gml_856_0")
-        gml_Script_c_msgnextloc("\\m1        *Using our junk-making&    skills.../", "obj_ch2_scene26_slash_Step_0_gml_857_0")
-        gml_Script_c_msgnextloc("\\m3        *We modified everyone.../", "obj_ch2_scene26_slash_Step_0_gml_858_0")
-        gml_Script_c_msgnextloc("\\m2        *To work together!\\f0/%", "obj_ch2_scene26_slash_Step_0_gml_859_0")
+        gml_Script_c_msgsetloc(0, "\\m1		*On your quest against Queen,/", "obj_ch2_scene26_slash_Step_0_gml_855_0")
+        gml_Script_c_msgnextloc("\\m3		*You've made all sorts of&	buddies, right?!/", "obj_ch2_scene26_slash_Step_0_gml_856_0")
+        gml_Script_c_msgnextloc("\\m1		*Using our junk-making&	skills.../", "obj_ch2_scene26_slash_Step_0_gml_857_0")
+        gml_Script_c_msgnextloc("\\m3		*We modified everyone.../", "obj_ch2_scene26_slash_Step_0_gml_858_0")
+        gml_Script_c_msgnextloc("\\m2		*To work together!\\f0/%", "obj_ch2_scene26_slash_Step_0_gml_859_0")
         gml_Script_c_talk_wait()
         gml_Script_c_var_instance(id, "berdly_coaster_leave", 1)
         gml_Script_c_wait(60)
@@ -773,20 +773,28 @@ if (con == 18)
         with (obj_looping_tiled_area)
             instance_destroy()
     }
-    var _temp_local_var_8 = anime_bg
-    instance_destroy()
+    with (anime_bg)
+        instance_destroy()
+    gml_Script_snd_free_all()
+    global.char[1] = 0
+    global.char[2] = 0
+    global.flag[9] = 2
+    encounterflag = 551
+    global.flag[54] = encounterflag
+    gml_Script_scr_battle(84, 2, 0, 0, 0)
+    global.flag[9] = 1
+    gml_Script_camerax_set(0)
+    gml_Script_cameray_set(0)
 }
 if (con == 19 && gml_Script_i_ex(355))
 {
     if gml_Script_i_ex(whiteall)
     {
-        _temp_local_var_8.image_alpha = (whiteall.image_alpha - 0.1)
-        var _temp_local_var_10 = -9
-        var _temp_local_var_11 = whiteall
+        whiteall.image_alpha -= 0.1
         if (whiteall.image_alpha < 0)
         {
-            var _temp_local_var_12 = whiteall
-            instance_destroy()
+            with (whiteall)
+                instance_destroy()
         }
     }
 }
@@ -850,8 +858,8 @@ if make_npc_a
     queen_npc = gml_Script_instance_create(qu_actor.x, qu_actor.y, obj_npc_sign)
     queen_npc.sprite_index = qu_actor.sprite_index
     queen_npc.image_index = qu_actor.image_index
-    var _temp_local_var_14 = queen_npc
-    gml_Script_scr_depth()
+    with (queen_npc)
+        gml_Script_scr_depth()
 }
 if (con == 30 && (!gml_Script_d_ex()) && gml_Script_scr_sideb_get_phase() >= 2)
 {
@@ -1046,8 +1054,8 @@ if make_npc_b
     ralsei_npc = gml_Script_instance_create(ra_actor.x, ra_actor.y, obj_npc_sign)
     ralsei_npc.sprite_index = ra_actor.sprite_index
     ralsei_npc.image_index = ra_actor.image_index
-    var _temp_local_var_18 = ralsei_npc
-    gml_Script_scr_depth()
+    with (ralsei_npc)
+        gml_Script_scr_depth()
 }
 if (con == 32 && (!gml_Script_i_ex(895)))
 {
@@ -1059,7 +1067,7 @@ if (con == 32 && (!gml_Script_i_ex(895)))
 if rudebuster
 {
     rudebuster = 0
-    rudebusteranim = gml_Script_instance_create((gml_Script_camerax() - 60), ((obj_rudebuster_bolt).room_height / 2), ralsei_npc)
+    rudebusteranim = gml_Script_instance_create((gml_Script_camerax() - 60), (room_height / 2), obj_rudebuster_bolt)
     rudebusteranim.target = qu_actor
 }
 if winelaser
@@ -1097,457 +1105,8 @@ if platform_fall
         {
             with (obj_ch2_scene26_wall)
             {
-                _temp_local_var_14.y_pos = (looping_coaster_top.y_pos + 30)
-                _temp_local_var_12.y_pos = (looping_coaster.y_pos + 30)
-                var _temp_local_var_26 = -9
-                var _temp_local_var_27 = -9
-                var _temp_local_var_28 = -9
-                var _temp_local_var_29 = looping_coaster
-                var _temp_local_var_30 = whiteall
-                var _temp_local_var_31 = -9
-                var _temp_local_var_32 = -9
-                var _temp_local_var_33 = looping_coaster_top
-            }
-            if hand_shake
-            {
-                hand_shake = 0
-                var i = 0
-                while (i < 3)
-                {
-                    var _temp_local_var_20 = hand_platform[i]
-                    gml_Script_scr_shakeobj()
-                }
-            }
-            if hand_catch
-            {
-                i = 0
-                while (i < 3)
-                {
-                    var _i = i
-                    var _temp_local_var_21 = hand_platform[i]
-                    y = lerp(y, (70 + (_i * 100)), 0.125)
-                    if (_i == 2 && y >= 270)
-                        hand_catch = 0
-                }
-            }
-            if cityscape_fall
-            {
-                cityscape_fall = 0
-                if gml_Script_i_ex(983)
-                {
-                    with (obj_ch2_scene26_cityscape)
-                        auto_scroll_y = 1
-                }
-            }
-            if disable_face
-            {
-                disable_face = 0
-                global.fc = 0
-            }
-            if enable_face
-            {
-                enable_face = 0
-                global.fc = 1
-            }
-            if set_queen_voice
-            {
-                set_queen_voice = 0
-                global.typer = 62
-            }
-            if rockanim
-            {
-                layer_x("BG_rocks", gml_Script_camerax())
-                gml_Script_instance_create(gml_Script_camerax(), (gml_Script_cameray() + 480), obj_ch2_scene26_rockstarter)
-                layer_vspeed("BG_rocks", -5)
-                layer_x("BG_Rocks_Small", gml_Script_camerax())
-                var rockstart = gml_Script_instance_create(gml_Script_camerax(), (gml_Script_cameray() + 420), obj_ch2_scene26_rockstarter)
-                rockstart.smallrocks = 1
-                layer_vspeed("BG_Rocks_Small", -2)
-                rockanim = 0
-            }
-            if rockdog
-            {
-                rockdog = 0
-                rockdogobj = gml_Script_instance_create(((gml_Script___view_get(0, 0) + 545) + 12), (((gml_Script_cameray() + 6) + view_hport[0]) + 100), obj_ch2_scene26_rock_dog)
-            }
-            if rockdogstop
-            {
-                rockdogstop = 0
-                instance_destroy(rockdogobj)
-            }
-            if rockanimstop
-            {
-                rockanimstop = 0
-                layer_vspeed("BG_rocks", 0)
-                layer_set_visible("BG_rocks", 0)
-                layer_vspeed("BG_Rocks_Small", 0)
-                layer_set_visible("BG_Rocks_Small", 0)
-            }
-            if queen_afterimage
-            {
-                if (qu_actor != -4)
-                {
-                    var _temp_local_var_24 = qu_actor
-                    gml_Script_scr_afterimagefast()
-                }
-            }
-            if wallanimstart
-            {
-                if (wallcon == 1)
-                {
-                    wallcon = 99
-                    if gml_Script_i_ex(984)
-                    {
-                        with (obj_ch2_scene26_wall)
-                            wall_con = 1
-                    }
-                }
-                if (wallcon == 2)
-                {
-                    wallcon = 99
-                    wallanimstart = 0
-                    if gml_Script_i_ex(984)
-                    {
-                        with (obj_ch2_scene26_wall)
-                            wall_con = 3
-                    }
-                    if gml_Script_i_ex(983)
-                    {
-                        with (obj_ch2_scene26_cityscape)
-                            auto_scroll = 1
-                    }
-                }
-            }
-            if berdly_coaster_start
-            {
-                berdly_coaster_start = 0
-                berdly_coaster = gml_Script_instance_create(gml_Script_camerax(), gml_Script_cameray(), obj_berdlycoaster_event)
-            }
-            if berdly_coaster_leave
-            {
-                berdly_coaster_leave = 0
-                var _temp_local_var_25 = berdly_coaster
-                con = 4
-            }
-            if (laser_con >= 0)
-            {
-                if (laser_con == 0)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        show_laser_outline = 1
-                }
-                if (laser_con == 1)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                    {
-                        show_hands = 1
-                        hand_both_reveal = 1
-                    }
-                }
-                if (laser_con == 2)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        knife_reveal = 1
-                }
-                if (laser_con == 3)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        knife_stab = 1
-                }
-                if (laser_con == 5)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        fade_away = 1
-                }
-                if (laser_con == 6)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        show_lightners = 1
-                }
-                if (laser_con == 7)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        show_mini_fountains = 1
-                }
-                if (laser_con == 8)
-                {
-                    laser_con = 99
-                    with (obj_ch2_scene26_cityscape)
-                        merge_lightners = 1
-                }
-            }
-            if release_queen
-            {
-                release_queen = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        release = 1
-                }
-            }
-            if queen_laugh_start
-            {
-                queen_laugh_start = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        laugh = 1
-                }
-            }
-            if queen_laugh_stop
-            {
-                queen_laugh_stop = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        laugh = 0
-                }
-            }
-            if hand_release
-            {
-                hand_release = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                    {
-                        if (gml_Script_scr_sideb_get_phase() < 2)
-                            release = 1
-                        else
-                            release_normal = 1
-                    }
-                }
-            }
-            if hand_leave
-            {
-                hand_leave = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        leave = 1
-                }
-            }
-            if su_struggle
-            {
-                su_struggle = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_struggle = 1
-                }
-            }
-            if su_shocked
-            {
-                su_shocked = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_shocked = 1
-                }
-            }
-            if su_look_left
-            {
-                su_look_left = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_look_left = 1
-                }
-            }
-            if su_look_right
-            {
-                su_look_right = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_look_right = 1
-                }
-            }
-            if su_grin_1
-            {
-                su_grin_1 = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_grin_1 = 1
-                }
-            }
-            if su_grin_2
-            {
-                su_grin_2 = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_grin_2 = 1
-                }
-            }
-            if su_squint_1
-            {
-                su_squint_1 = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_squint_1 = 1
-                }
-            }
-            if su_squint_2
-            {
-                su_squint_2 = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_squint_2 = 1
-                }
-            }
-            if su_concerned
-            {
-                su_concerned = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        su_concerned = 1
-                }
-            }
-            if ra_struggle
-            {
-                ra_struggle = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_struggle = 1
-                }
-            }
-            if ra_huh
-            {
-                ra_huh = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_huh = 1
-                }
-            }
-            if ra_look
-            {
-                ra_look = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_look = 1
-                }
-            }
-            if ra_smile
-            {
-                ra_smile = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_smile = 1
-                }
-            }
-            if ra_scared
-            {
-                ra_scared = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_scared = 1
-                }
-            }
-            if ra_stern
-            {
-                ra_stern = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_stern = 1
-                }
-            }
-            if ra_mu
-            {
-                ra_mu = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_mu = 1
-                }
-            }
-            if ra_shake
-            {
-                ra_shake = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        ra_shake = 1
-                }
-            }
-            if shake_hand
-            {
-                shake_hand = 0
-                if gml_Script_i_ex(987)
-                {
-                    with (obj_ch2_scene27_queenhand)
-                        gml_Script_scr_shakeobj()
-                }
-            }
-            if queen_laugh_start
-            {
-                queen_laugh_start = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        laugh = 1
-                }
-            }
-            if queen_laugh_stop
-            {
-                queen_laugh_stop = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        laugh = 0
-                }
-            }
-            if queen_surprised
-            {
-                queen_surprised = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        surprised = 1
-                }
-            }
-            if queen_leave
-            {
-                queen_leave = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        leave = 1
-                }
-            }
-            if queen_leave_fast
-            {
-                queen_leave_fast = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        leave_fast = 1
-                }
-            }
-            if queen_release_fast
-            {
-                queen_release_fast = 0
-                if gml_Script_i_ex(985)
-                {
-                    with (obj_ch2_scene26_gigaqueen)
-                        release_fast = 1
-                }
+                looping_coaster_top.y_pos += 30
+                looping_coaster.y_pos += 30
             }
         }
     }
@@ -1555,23 +1114,23 @@ if platform_fall
 if hand_shake
 {
     hand_shake = 0
-    var i = 0
-    while (i < 3)
+    for (var i = 0; i < 3; i++)
     {
-        var _temp_local_var_20 = hand_platform[i]
-        gml_Script_scr_shakeobj()
+        with (hand_platform[i])
+            gml_Script_scr_shakeobj()
     }
 }
 if hand_catch
 {
-    i = 0
-    while (i < 3)
+    for (i = 0; i < 3; i++)
     {
         var _i = i
-        var _temp_local_var_21 = hand_platform[i]
-        y = lerp(y, (70 + (_i * 100)), 0.125)
-        if (_i == 2 && y >= 270)
-            hand_catch = 0
+        with (hand_platform[i])
+        {
+            y = lerp(y, (70 + (_i * 100)), 0.125)
+            if (_i == 2 && y >= 270)
+                hand_catch = 0
+        }
     }
 }
 if cityscape_fall
@@ -1629,10 +1188,10 @@ if rockanimstop
 }
 if queen_afterimage
 {
-    if (qu_actor != -4)
+    if (qu_actor != noone)
     {
-        var _temp_local_var_24 = qu_actor
-        gml_Script_scr_afterimagefast()
+        with (qu_actor)
+            gml_Script_scr_afterimagefast()
     }
 }
 if wallanimstart
@@ -1670,8 +1229,8 @@ if berdly_coaster_start
 if berdly_coaster_leave
 {
     berdly_coaster_leave = 0
-    var _temp_local_var_25 = berdly_coaster
-    con = 4
+    with (berdly_coaster)
+        con = 4
 }
 if (laser_con >= 0)
 {

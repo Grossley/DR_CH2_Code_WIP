@@ -49,14 +49,16 @@ if (con == 2)
     }
     if (type == 1)
     {
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             diamond[i] = gml_Script_instance_create_ch1(x, y, 1520)
             diamond[i].damage = 100
             gml_Script_scr_bullet_inherit_ch1(diamond[i])
-            var _temp_local_var_1 = diamond[i]
-            move_towards_point((obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8), 11)
+            with (diamond[i])
+                move_towards_point((obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8), 11)
+            diamond[i].speed -= i
+            diamond[i].image_angle = diamond[i].direction
+            diamond[i].sprite_index = spr_diamondbullet_ch1
         }
         con = 3
     }

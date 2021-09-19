@@ -1,4 +1,3 @@
-var _moveDir, pieceCenterLen, pieceCenterDir, _xx, _yy, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6;
 if (mybuffer < 10)
     mybuffer++
 if (mybuffer > 2)
@@ -14,34 +13,74 @@ if (mybuffer > 2)
             image_index = 0
             global.interact = obj_shapepuzzle.goalHit
             global.facing = 0
-            var _temp_local_var_3 = myPiece
-            active = false
+            with (myPiece)
+                active = false
+            return;
         }
         if gml_Script_button1_p()
         {
             gml_Script_snd_play_pitch(172, 1.5)
-            var _temp_local_var_4 = myPiece
-            if (other.troublePiece && image_angle == -90)
+            with (myPiece)
             {
-                image_angle += 90
-                x -= lengthdir_x(sprite_width, image_angle)
-                y -= lengthdir_y(sprite_width, image_angle)
+                if (other.troublePiece && image_angle == -90)
+                {
+                    image_angle += 90
+                    x -= lengthdir_x(sprite_width, image_angle)
+                    y -= lengthdir_y(sprite_width, image_angle)
+                }
+                else
+                {
+                    image_angle -= 90
+                    x += lengthdir_x(sprite_width, (image_angle + 90))
+                    y += lengthdir_y(sprite_width, (image_angle + 90))
+                }
             }
-            else
-            {
-                image_angle -= 90
-                x += lengthdir_x(sprite_width, (image_angle + 90))
-                y += lengthdir_y(sprite_width, (image_angle + 90))
-            }
+            with (obj_shapepuzzle)
+                goalCheck = 1
         }
         var _moveH = (gml_Script_right_h() - gml_Script_left_h())
         var _moveV = (gml_Script_down_h() - gml_Script_up_h())
-        var _temp_local_var_6 = myPiece
-        var _centerLength = (sprite_width * (sqrt(2) / 2))
-        if (((x + lengthdir_x(_centerLength, (image_angle - 45))) + (_moveH * other.moveAmount)) < 0 || ((x + lengthdir_x(_centerLength, (image_angle - 45))) + (_moveH * other.moveAmount)) > 640)
-            _moveH = 0
-        if (((y + lengthdir_y(_centerLength, (image_angle - 45))) + (_moveV * other.moveAmount)) < 200 || ((y + lengthdir_y(_centerLength, (image_angle - 45))) + (_moveV * other.moveAmount)) > 480)
-            _moveV = 0
+        with (myPiece)
+        {
+            var _centerLength = (sprite_width * (sqrt(2) / 2))
+            if (((x + lengthdir_x(_centerLength, (image_angle - 45))) + (_moveH * other.moveAmount)) < 0 || ((x + lengthdir_x(_centerLength, (image_angle - 45))) + (_moveH * other.moveAmount)) > 640)
+                _moveH = 0
+            if (((y + lengthdir_y(_centerLength, (image_angle - 45))) + (_moveV * other.moveAmount)) < 200 || ((y + lengthdir_y(_centerLength, (image_angle - 45))) + (_moveV * other.moveAmount)) > 480)
+                _moveV = 0
+        }
+        var _moveDir = point_direction(0, 0, _moveH, _moveV)
+        if (_moveH == 0 && _moveV == 0)
+        {
+            holdDelay = 0
+            image_index = 0
+        }
+        else
+        {
+            image_index = min((1 + round((_moveDir / 90))), 4)
+            if (--holdDelay <= 0)
+            {
+                gml_Script_snd_play_pitch(259, 1.5)
+                holdDelay = holdDelayMax
+                with (myPiece)
+                {
+                    x += (_moveH * other.moveAmount)
+                    y += (_moveV * other.moveAmount)
+                    if (other.bird > 0)
+                    {
+                        var pieceCenterLen = point_distance(0, 0, (sprite_width / 2), (sprite_height / 2))
+                        var pieceCenterDir = point_direction(0, 0, (sprite_width / 2), (sprite_height / 2))
+                        var _xx = (x + lengthdir_x(pieceCenterLen, (pieceCenterDir + image_angle)))
+                        var _yy = (y + lengthdir_y(pieceCenterLen, (pieceCenterDir + image_angle)))
+                        if (_xx >= 530 && _xx <= 610 && _yy >= 255 && _yy <= 315)
+                            other.bird = 2
+                        else
+                            other.bird = 1
+                    }
+                }
+                with (obj_shapepuzzle)
+                    goalCheck = 1
+            }
+        }
     }
     else if obj_shapepuzzle.goalHit
     {

@@ -13,18 +13,28 @@ if (global.chapter == 1)
         k = gml_Script_scr_marker(290, 198, 662)
         s = gml_Script_scr_marker(310, 190, 979)
         global.interact = 1
-        var _temp_local_var_1 = s
-        vspeed = -1
-        image_speed = 0.2
+        with (s)
+        {
+            vspeed = -1
+            image_speed = 0.2
+        }
+        with (k)
+        {
+            vspeed = -1
+            image_speed = 0.2
+        }
+        alarm[4] = 90
     }
     else
     {
         block = gml_Script_instance_create(280, 100, obj_solidblock)
         block.image_xscale = 4
         sunset = gml_Script_scr_marker(0, 0, 903)
-        var _temp_local_var_4 = sunset
-        image_alpha = 0.4
-        depth = 2000
+        with (sunset)
+        {
+            image_alpha = 0.4
+            depth = 2000
+        }
     }
     if (global.plot == 250)
     {
@@ -42,8 +52,12 @@ if (global.chapter >= 2)
     if (global.plot >= 100)
     {
         sunset = gml_Script_scr_marker(0, 0, 903)
-        var _temp_local_var_3 = sunset
-        image_alpha = 0.4
-        depth = 2000
+        with (sunset)
+        {
+            image_alpha = 0.4
+            depth = 2000
+        }
+        if (!gml_Script_i_ex(177))
+            gml_Script_instance_create(0, 0, obj_musicer_town)
     }
 }

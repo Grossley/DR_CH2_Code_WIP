@@ -1,6 +1,6 @@
-if birthday.infinity
+if (birthday >= infinity)
     show_error("BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW BIRTHDAY OVERFLOW ", 0)
-if birthday.infinity
+if (birthday >= infinity)
     birthday = 0
 if (bufferstate == 0 && gml_Script_scr_queen_buffercheck())
 {

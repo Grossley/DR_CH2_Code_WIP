@@ -14,6 +14,6 @@ if (con == 2)
 {
     hspeed *= 1.05
     vspeed *= 1.1
-    if y.room_height
+    if (y > room_height)
         instance_destroy()
 }

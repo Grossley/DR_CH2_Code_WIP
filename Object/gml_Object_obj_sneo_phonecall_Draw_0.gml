@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13;
 draw_set_alpha(fadealpha)
 draw_set_color(c_white)
 if (state == 0)

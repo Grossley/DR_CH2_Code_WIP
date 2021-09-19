@@ -67,11 +67,13 @@ for (i = 0; i < 3; i += 1)
         {
             global.cinstance[(i - 1)] = gml_Script_instance_create_ch1((obj_mainchara_ch1.x - 4), (obj_mainchara_ch1.y - 12), 1489)
             global.cinstance[(i - 1)].target = (i * 12)
-            var _temp_local_var_1 = global.cinstance[(i - 1)]
-            usprite = spr_ralseiu_ch1
-            dsprite = spr_ralseid_ch1
-            rsprite = spr_ralseir_ch1
-            lsprite = spr_ralseil_ch1
+            with (global.cinstance[(i - 1)])
+            {
+                usprite = spr_ralseiu_ch1
+                dsprite = spr_ralseid_ch1
+                rsprite = spr_ralseir_ch1
+                lsprite = spr_ralseil_ch1
+            }
         }
     }
 }

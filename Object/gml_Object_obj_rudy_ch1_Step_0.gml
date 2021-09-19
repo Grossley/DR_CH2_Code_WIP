@@ -83,33 +83,43 @@ if (con == 8)
 }
 if (con == 9 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_3 = n
-    sprite_index = spr_noelle_d_ch1
-    vspeed = 2
-    image_speed = 0.25
+    with (n)
+    {
+        sprite_index = spr_noelle_d_ch1
+        vspeed = 2
+        image_speed = 0.25
+    }
+    con = 10
 }
 if (con == 10)
 {
     if (n.y >= 150)
     {
         sprite_index = spr_rudy_d_ch1
-        var _temp_local_var_4 = n
-        sprite_index = spr_noelle_r_ch1
-        hspeed = 2
-        vspeed = 0
-        image_speed = 0.25
+        with (n)
+        {
+            sprite_index = spr_noelle_r_ch1
+            hspeed = 2
+            vspeed = 0
+            image_speed = 0.25
+        }
+        con = 11
     }
 }
 if (con == 11)
 {
     if (n.x >= 160)
     {
-        var _temp_local_var_5 = n
-        sprite_index = spr_noelle_dt_ch1
-        hspeed = 0
-        vspeed = 0
-        image_speed = 0
-        image_index = 0
+        with (n)
+        {
+            sprite_index = spr_noelle_dt_ch1
+            hspeed = 0
+            vspeed = 0
+            image_speed = 0
+            image_index = 0
+        }
+        con = 12
+        alarm[4] = 30
     }
 }
 if (con == 13)
@@ -124,10 +134,15 @@ if (con == 13)
 }
 if (con == 14 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_7 = n
-    vspeed = 3
-    image_speed = 0.25
-    sprite_index = spr_noelle_d_ch1
+    with (n)
+    {
+        vspeed = 3
+        image_speed = 0.25
+        sprite_index = spr_noelle_d_ch1
+    }
+    con = 15
+    kcon = 1
+    alarm[4] = 30
 }
 if (con == 15)
 {

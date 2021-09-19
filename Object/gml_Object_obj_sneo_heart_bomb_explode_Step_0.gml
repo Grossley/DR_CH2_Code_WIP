@@ -16,19 +16,39 @@ if (siner == 96)
 {
     gml_Script_snd_play(220)
     var a = random(44)
-    var _temp_local_var_2 = 8
-    if (8 <= 0)
+    repeat (8)
     {
-    }
-    else
-    {
-        while (true)
-        {
-            radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
-            var _temp_local_var_3 = radialshot
+        radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
+        with (radialshot)
             gml_Script_scr_bullet_init()
-        }
-        gml_Script_scr_bullet_init()
+        radialshot.sprite_index = spr_diamondbullet
+        radialshot.direction = a
+        radialshot.image_angle = a
+        radialshot.active = true
+        radialshot.speed = 1
+        radialshot.friction = -0.34
+        radialshot.depth = (depth - 1)
+        radialshot.target = target
+        radialshot.damage = damage
+        radialshot.grazed = 0
+        radialshot.newtype = 1
+        radialshot.element = 6
+        radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
+        with (radialshot)
+            gml_Script_scr_bullet_init()
+        radialshot.sprite_index = spr_diamondbullet
+        radialshot.direction = (a + 10)
+        radialshot.image_angle = (a + 10)
+        radialshot.active = true
+        radialshot.speed = 1
+        radialshot.friction = -0.1
+        radialshot.depth = (depth - 1)
+        radialshot.target = target
+        radialshot.damage = damage
+        radialshot.grazed = 0
+        radialshot.newtype = 1
+        radialshot.element = 6
+        a += 45
     }
     instance_destroy()
 }

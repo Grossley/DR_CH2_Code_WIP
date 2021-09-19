@@ -41,18 +41,22 @@ if (con == 11)
         swordbullet.siner = movesiner
         gml_Script_scr_bullet_inherit(swordbullet)
         swordbullet.throwernumber = throwernumber
-        var _temp_local_var_2 = swordbullet
-        active = true
-        sprite_index = spr_diamondswordbullet
-        image_xscale = 2
-        image_yscale = 2
-        move_towards_point((obj_heart.x + 8), (obj_heart.y + 8), (9 + (sin((siner / 10)) * 4)))
-        if (throwernumber == 2)
-            speed *= 0.85
-        if (throwernumber == 3)
-            speed *= 0.7
-        direction += (5 - random(10))
-        image_angle = direction
+        with (swordbullet)
+        {
+            active = true
+            sprite_index = spr_diamondswordbullet
+            image_xscale = 2
+            image_yscale = 2
+            move_towards_point((obj_heart.x + 8), (obj_heart.y + 8), (9 + (sin((siner / 10)) * 4)))
+            if (throwernumber == 2)
+                speed *= 0.85
+            if (throwernumber == 3)
+                speed *= 0.7
+            direction += (5 - random(10))
+            image_angle = direction
+        }
+        swordbullet.depth = (depth + 1)
+        thrown = 1
     }
     if (image_index >= 6)
     {

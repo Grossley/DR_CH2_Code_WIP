@@ -235,8 +235,10 @@ if (global.myfight == 3)
             global.monsterinstance[newpopupid].x = x
             global.monsterinstance[newpopupid].y = y
             global.monsterinstance[newpopupid].siner = siner
-            var _temp_local_var_48 = global.monsterinstance[newpopupid]
-            gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
+            with (global.monsterinstance[newpopupid])
+                gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
+            actcon = 6
+            alarm[4] = 20
         }
     }
     if (actcon == 5.1)
@@ -308,8 +310,9 @@ if (global.myfight == 3)
             {
                 with (obj_poppup_enemy)
                     mercytotal += 10
-                var _temp_local_var_16 = ads[blocked]
-                blockstate = 1
+                with (ads[blocked])
+                    blockstate = 1
+                blocked++
             }
             if (blocked == 10)
                 actcon = 21.5
@@ -331,11 +334,10 @@ if (global.myfight == 3)
                 allblocked = 1
         }
         alarm[4] = 40
-        var i = 0
-        while (i < array_length_1d(ads))
+        for (var i = 0; i < array_length_1d(ads); i++)
         {
-            var _temp_local_var_18 = ads[i]
-            instance_destroy()
+            with (ads[i])
+                instance_destroy()
         }
         if (!instance_exists(obj_blocked_total_fx))
         {

@@ -185,8 +185,11 @@ if (global.myfight == 3)
     }
     if (actcon == 7 && gml_Script_button1_p())
     {
-        var _temp_local_var_19 = balloon
-        instance_destroy()
+        with (balloon)
+            instance_destroy()
+        with (obj_writer)
+            instance_destroy()
+        actcon = 1
     }
     if (actingsus == 1 && actconsus == 1)
     {

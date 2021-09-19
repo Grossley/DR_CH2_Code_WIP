@@ -20,8 +20,8 @@ if (!ignoreHardWork)
         hasToggled = 1
         if gml_Script_i_ex(forcefield)
         {
-            var _temp_local_var_1 = forcefield
-            instance_destroy()
+            with (forcefield)
+                instance_destroy()
         }
     }
     else if (!gml_Script_i_ex(forcefield))
@@ -128,68 +128,78 @@ if (weirdRoute == 0)
     {
         if (toggle == 1)
         {
-            var _temp_local_var_6 = noellePuzzle
-            if (starty > 1064)
+            with (noellePuzzle)
             {
-                if (y > 1064)
+                if (starty > 1064)
                 {
-                    y -= 2
-                    image_speed = 0.25
-                    sprite_index = spr_noelle_walk_up_dw
+                    if (y > 1064)
+                    {
+                        y -= 2
+                        image_speed = 0.25
+                        sprite_index = spr_noelle_walk_up_dw
+                    }
+                    else
+                    {
+                        image_speed = 0
+                        y = 1064
+                        starty = 1064
+                    }
                 }
-                else
+                if (starty < 1064)
                 {
-                    image_speed = 0
-                    y = 1064
-                    starty = 1064
+                    if (y < 1064)
+                    {
+                        y += 2
+                        image_speed = 0.25
+                        sprite_index = spr_noelle_walk_down_dw
+                    }
+                    else
+                    {
+                        image_speed = 0
+                        y = 1064
+                        starty = 1064
+                    }
                 }
+                if (starty == 1064 && startx < 758)
+                {
+                    if (x < 758)
+                    {
+                        image_speed = 0.25
+                        sprite_index = spr_noelle_walk_right_dw
+                        x += 2
+                    }
+                    else
+                    {
+                        image_speed = 0
+                        x = 758
+                        startx = 758
+                    }
+                }
+                if (starty == 1064 && startx > 758)
+                {
+                    if (x > 758)
+                    {
+                        image_speed = 0.25
+                        sprite_index = spr_noelle_walk_left_dw
+                        x -= 2
+                    }
+                    else
+                    {
+                        image_speed = 0
+                        x = 758
+                        startx = 758
+                    }
+                }
+                gml_Script_scr_depth()
             }
-            if (starty < 1064)
+            if (noellePuzzle.x == 758 && noellePuzzle.y == 1064)
             {
-                if (y < 1064)
-                {
-                    y += 2
-                    image_speed = 0.25
-                    sprite_index = spr_noelle_walk_down_dw
-                }
-                else
-                {
-                    image_speed = 0
-                    y = 1064
-                    starty = 1064
-                }
+                noellePuzzle.sprite_index = spr_noelle_walk_left_dw
+                noellePuzzle.image_index = 0
+                noellePuzzle.speed = 0
+                noellePuzzle.image_speed = 0
+                con = 8
             }
-            if (starty == 1064 && startx < 758)
-            {
-                if (x < 758)
-                {
-                    image_speed = 0.25
-                    sprite_index = spr_noelle_walk_right_dw
-                    x += 2
-                }
-                else
-                {
-                    image_speed = 0
-                    x = 758
-                    startx = 758
-                }
-            }
-            if (starty == 1064 && startx > 758)
-            {
-                if (x > 758)
-                {
-                    image_speed = 0.25
-                    sprite_index = spr_noelle_walk_left_dw
-                    x -= 2
-                }
-                else
-                {
-                    image_speed = 0
-                    x = 758
-                    startx = 758
-                }
-            }
-            gml_Script_scr_depth()
         }
         if (toggle == 0)
         {
@@ -250,8 +260,12 @@ if (weirdRoute == 0)
             visible = true
             gml_Script_scr_caterpillar_interpolate()
         }
-        var _temp_local_var_11 = noellePuzzle
-        instance_destroy()
+        with (noellePuzzle)
+            instance_destroy()
+        global.facing = 0
+        global.interact = 0
+        global.flag[7] = 0
+        con++
     }
     if (con == 20)
     {
@@ -266,43 +280,45 @@ if (weirdRoute == 0)
     }
     if (con == 21)
     {
-        var _temp_local_var_12 = noellePuzzle
-        if (startx > 560)
+        with (noellePuzzle)
         {
-            if (x > 560)
+            if (startx > 560)
             {
-                x -= 8
+                if (x > 560)
+                {
+                    x -= 8
+                    sprite_index = spr_noelle_walk_left_dw
+                    image_speed = 0.25
+                }
+                else
+                {
+                    image_speed = 0
+                    x = 560
+                    startx = 560
+                }
+            }
+            if (startx < 560)
+            {
+                if (x < 560)
+                {
+                    x += 4
+                    sprite_index = spr_noelle_walk_right_dw
+                    image_speed = 0.25
+                }
+                else
+                {
+                    image_speed = 0
+                    x = 560
+                    startx = 560
+                }
+            }
+            if (x == 560)
+            {
                 sprite_index = spr_noelle_walk_left_dw
-                image_speed = 0.25
-            }
-            else
-            {
                 image_speed = 0
-                x = 560
-                startx = 560
+                image_index = 0
+                other.con++
             }
-        }
-        if (startx < 560)
-        {
-            if (x < 560)
-            {
-                x += 4
-                sprite_index = spr_noelle_walk_right_dw
-                image_speed = 0.25
-            }
-            else
-            {
-                image_speed = 0
-                x = 560
-                startx = 560
-            }
-        }
-        if (x == 560)
-        {
-            sprite_index = spr_noelle_walk_left_dw
-            image_speed = 0
-            image_index = 0
-            other.con++
         }
     }
     if (con == 22)
@@ -337,10 +353,35 @@ if (weirdRoute == 0)
     }
     if (con == 50)
     {
-        var _temp_local_var_13 = noellePuzzle
-        move_towards_point(718, 1064, 8)
-        image_speed = 0.25
-        sprite_index = spr_noelle_cower_right
+        with (noellePuzzle)
+        {
+            move_towards_point(718, 1064, 8)
+            image_speed = 0.25
+            sprite_index = spr_noelle_cower_right
+        }
+        if (noellePuzzle.x > 708)
+        {
+            noellePuzzle.x = 718
+            noellePuzzle.hspeed = 0
+        }
+        if (noellePuzzle.y > 1064)
+        {
+            noellePuzzle.y = 1064
+            noellePuzzle.vspeed = 0
+        }
+        if (noellePuzzle.x == 718 && noellePuzzle.y == 1064)
+        {
+            noellePuzzle.sprite_index = spr_noelle_cower_right
+            noellePuzzle.image_index = 0
+            noellePuzzle.speed = 0
+            noellePuzzle.image_speed = 0
+            gml_Script_scr_speaker("noelle")
+            gml_Script_msgsetloc(0, "\\EE* A--aahhh!!/", "obj_controller_dw_city_big_2_slash_Step_0_gml_429_0")
+            gml_Script_msgnextloc("\\E8* K..^1. Kris^1! C'mon^1, you..^1. you know that isn't very nice!/", "obj_controller_dw_city_big_2_slash_Step_0_gml_430_0")
+            gml_Script_msgnextloc("\\E8* (I was almost roast deer for a second there...)/%", "obj_controller_dw_city_big_2_slash_Step_0_gml_431_0")
+            d = gml_Script_d_make()
+            con++
+        }
     }
     if (con == 51)
     {
@@ -349,11 +390,21 @@ if (weirdRoute == 0)
     }
     if (con == 52)
     {
-        var _temp_local_var_15 = noellePuzzle
-        if (x < 758)
-            x += 4
-        else
-            x = 758
+        with (noellePuzzle)
+        {
+            if (x < 758)
+                x += 4
+            else
+                x = 758
+        }
+        if (noellePuzzle.x == 758)
+        {
+            noellePuzzle.sprite_index = spr_noelle_walk_left_dw
+            noellePuzzle.image_index = 0
+            noellePuzzle.speed = 0
+            noellePuzzle.image_speed = 0
+            con++
+        }
     }
     if (con == 53)
     {
@@ -391,19 +442,27 @@ if (weirdRoute == 0)
         {
             if (noellePuzzle.x <= 798)
             {
-                _temp_local_var_15.x = (noellePuzzle.x + 12)
+                noellePuzzle.x += 12
                 noellePuzzle.image_index = 1
-                var _temp_local_var_16 = noellePuzzle
-                var _temp_local_var_17 = noellePuzzle
-                var _temp_local_var_18 = -9
-                var _temp_local_var_19 = noellePuzzle
             }
             else
             {
-                var _temp_local_var_38 = noellePuzzle
-                x = 798
-                sprite_index = spr_noelle_laugh_dw
-                image_speed = 0.25
+                with (noellePuzzle)
+                {
+                    x = 798
+                    sprite_index = spr_noelle_laugh_dw
+                    image_speed = 0.25
+                }
+                ignoreHardWork = 1
+                gml_Script_snd_play(239)
+                field = gml_Script_scr_forcefield(680, 1040, 2, 8, 1, 1)
+                with (obj_alleySwitch)
+                {
+                    if (x > 600)
+                        toggle = 1
+                }
+                timer = 0
+                con++
             }
         }
     }
@@ -413,24 +472,26 @@ if (weirdRoute == 0)
             timer = 61
         if (timer > 60)
         {
-            var _temp_local_var_20 = noellePuzzle
-            if (x > 760)
-                x -= 8
-            else
+            with (noellePuzzle)
             {
-                other.ignoreHardWork = 0
-                gml_Script_snd_play(64)
-                with (obj_alleySwitch)
+                if (x > 760)
+                    x -= 8
+                else
                 {
-                    if (x > 600)
-                        toggle = 0
+                    other.ignoreHardWork = 0
+                    gml_Script_snd_play(64)
+                    with (obj_alleySwitch)
+                    {
+                        if (x > 600)
+                            toggle = 0
+                    }
+                    with (obj_forcefield)
+                        instance_destroy()
+                    x = 758
+                    image_speed = 0
+                    image_index = 0
+                    other.con++
                 }
-                with (obj_forcefield)
-                    instance_destroy()
-                x = 758
-                image_speed = 0
-                image_index = 0
-                other.con++
             }
         }
     }
@@ -511,31 +572,33 @@ if (weirdRoute == 1)
     }
     if (con == 3)
     {
-        var _temp_local_var_22 = noellePuzzle
-        gml_Script_scr_depth()
-        targX = 476
-        targY = 1054
-        if (x > targX)
-            sprite_index = spr_noelle_walk_left_dw
-        if (x < targX)
-            sprite_index = spr_noelle_walk_right_dw
-        if (distance_to_point((targX - (x - bbox_left)), (targY - (y - bbox_top))) > 2.1)
-        {
-            move_towards_point(targX, targY, 4)
-            image_speed = 0.25
-        }
-        else
+        with (noellePuzzle)
         {
             gml_Script_scr_depth()
-            sprite_index = spr_noelle_walk_right_dw
-            image_index = 0
-            hspeed = 0
-            vspeed = 0
-            speed = 0
-            x = targX
-            y = targY
-            image_speed = 0
-            other.con++
+            targX = 476
+            targY = 1054
+            if (x > targX)
+                sprite_index = spr_noelle_walk_left_dw
+            if (x < targX)
+                sprite_index = spr_noelle_walk_right_dw
+            if (distance_to_point((targX - (x - bbox_left)), (targY - (y - bbox_top))) > 2.1)
+            {
+                move_towards_point(targX, targY, 4)
+                image_speed = 0.25
+            }
+            else
+            {
+                gml_Script_scr_depth()
+                sprite_index = spr_noelle_walk_right_dw
+                image_index = 0
+                hspeed = 0
+                vspeed = 0
+                speed = 0
+                x = targX
+                y = targY
+                image_speed = 0
+                other.con++
+            }
         }
     }
     if (con == 4)
@@ -627,8 +690,10 @@ if (weirdRoute == 1)
         if (timer > 15)
         {
             global.facing = 3
-            var _temp_local_var_24 = noelleWaitCheck
-            instance_destroy()
+            with (noelleWaitCheck)
+                instance_destroy()
+            timer = 0
+            con++
         }
     }
     if (con == 12)
@@ -637,10 +702,12 @@ if (weirdRoute == 1)
         newtargy = (obj_mainchara.y - 18)
         if (timer == 0)
         {
-            var _temp_local_var_25 = noellePuzzle
-            sprite_index = spr_noelle_walk_right_dw
-            image_speed = 0.25
-            gml_Script_scr_move_to_point_over_time(other.newtargx, other.newtargy, 32)
+            with (noellePuzzle)
+            {
+                sprite_index = spr_noelle_walk_right_dw
+                image_speed = 0.25
+                gml_Script_scr_move_to_point_over_time(other.newtargx, other.newtargy, 32)
+            }
         }
         timer++
         if (noellePuzzle.x == newtargx && noellePuzzle.y == newtargy)

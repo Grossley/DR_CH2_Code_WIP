@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_19;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 if (global.interact == 5)
@@ -351,8 +352,8 @@ if (global.interact == 5)
         }
         if (global.submenu == 34)
         {
-            obj_solidblocksized_alt.submenucoord[global.submenucoord[obj_solidblocksized_alt]] = (global.submenucoord[obj_solidblocksized_alt] + 1)
-            global
+            var _temp_local_var_19 = global.submenucoord[34]
+            global.submenucoord[34] = (global.submenucoord[34] + 1)
             if (global.submenucoord[34] == 1)
             {
                 global.chapter_return = 2

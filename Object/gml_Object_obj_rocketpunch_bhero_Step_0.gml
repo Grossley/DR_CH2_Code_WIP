@@ -1,4 +1,4 @@
-if ((((y.room_height / 2) + 180) - 620) && con == 0)
+if (y <= (((room_height / 2) + 180) - 620) && con == 0)
 {
     with (obj_rocketpunch_fist)
         instance_destroy()

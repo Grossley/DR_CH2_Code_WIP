@@ -63,8 +63,7 @@ if (con == 3)
     gml_Script_scr_depth()
     global.interact = 1
     sprite_index = spr_virovirokun_hurt
-    ((-128).room_width / 2)
-    var _temp_local_var_3 = 12
+    move_towards_point((room_width / 2), -128, 12)
     if (y <= -128)
     {
         global.flag[354] = 1

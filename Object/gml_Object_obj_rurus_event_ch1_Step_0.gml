@@ -10,8 +10,20 @@ if (room == room_cc_rurus1_ch1)
         }
         if (obj_mainchara_ch1.x >= 125 && cinstancecheck == 1)
         {
-            var _temp_local_var_5 = flashobj
-            instance_destroy()
+            with (flashobj)
+                instance_destroy()
+            global.interact = 1
+            gml_Script_snd_free_all_ch1()
+            gml_Script_snd_play_ch1(378)
+            gml_Script_instance_create_ch1(0, 0, 1464)
+            for (i = 0; i < 4; i += 1)
+                spike[i].image_index = 0
+            spikewall1 = gml_Script_instance_create_ch1(spike[0].x, spike[0].y, 1656)
+            spikewall2 = gml_Script_instance_create_ch1(spike[2].x, spike[2].y, 1656)
+            spikewall1.image_yscale = 2
+            spikewall2.image_yscale = 2
+            con = 1
+            alarm[4] = 30
         }
     }
     if (con == 2)
@@ -75,15 +87,20 @@ if (room == room_cc_rurus1_ch1)
     if (con == 15)
     {
         visible = true
-        var _temp_local_var_9 = appear
-        instance_destroy()
+        with (appear)
+            instance_destroy()
+        vspeed = 0
+        con = 16
+        alarm[4] = 21
     }
     if (con == 16)
     {
-        var _temp_local_var_10 = darkfade
-        image_alpha -= 0.03
-        if (image_alpha <= 0)
-            image_alpha = 0
+        with (darkfade)
+        {
+            image_alpha -= 0.03
+            if (image_alpha <= 0)
+                image_alpha = 0
+        }
     }
     if (con == 17)
     {
@@ -105,9 +122,11 @@ if (room == room_cc_rurus1_ch1)
         gml_Script_snd_play_ch1(430)
         fade = 0
         con = 19
-        var _temp_local_var_12 = darkfade
-        image_blend = c_white
-        depth = -200
+        with (darkfade)
+        {
+            image_blend = c_white
+            depth = -200
+        }
     }
     if (con == 19)
     {
@@ -127,14 +146,26 @@ if (room == room_cc_rurus1_ch1)
         darkfade.image_alpha = fade
         if (fade <= 0)
         {
-            var _temp_local_var_13 = darkfade
-            instance_destroy()
+            with (darkfade)
+                instance_destroy()
+            con = 21
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_164_0")
+            d = gml_Script_instance_create_ch1(0, 0, 1326)
+            d.side = 1
         }
     }
     if (con == 21 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_15 = floorwall
-        instance_destroy()
+        with (floorwall)
+            instance_destroy()
+        interactable = gml_Script_instance_create_ch1(280, 160, 1405)
+        interactable.image_xscale = 4
+        interactable.image_yscale = 2
+        global.facing = 0
+        with (obj_caterpillarchara_ch1)
+            fun = false
+        global.interact = 0
+        con = 25
     }
     if (con == 25)
     {
@@ -143,8 +174,16 @@ if (room == room_cc_rurus1_ch1)
             gml_Script_snd_free_all_ch1()
             global.interact = 1
             gml_Script_snd_play_ch1(374)
-            var _temp_local_var_17 = spikewall1
-            instance_destroy()
+            with (spikewall1)
+                instance_destroy()
+            with (spikewall2)
+                instance_destroy()
+            with (interactable)
+                instance_destroy()
+            for (i = 0; i < 4; i += 1)
+                spike[i].image_index = 1
+            con = 26
+            alarm[4] = 30
         }
     }
     if (con == 27)
@@ -173,7 +212,7 @@ if (room == room_cc_rurus1_ch1)
         con = 30
     }
 }
-if (null.room == room_cc_rurus2_ch1)
+if (room == room_cc_rurus2_ch1)
 {
     if (con == 0 && global.interact == 0)
     {
@@ -185,8 +224,20 @@ if (null.room == room_cc_rurus2_ch1)
         }
         if (obj_mainchara_ch1.x >= 125 && cinstancecheck == 1)
         {
-            var _temp_local_var_26 = flashobj
-            instance_destroy()
+            with (flashobj)
+                instance_destroy()
+            global.interact = 1
+            gml_Script_snd_free_all_ch1()
+            gml_Script_snd_play_ch1(378)
+            gml_Script_instance_create_ch1(0, 0, 1464)
+            for (i = 0; i < 4; i += 1)
+                spike[i].image_index = 0
+            spikewall1 = gml_Script_instance_create_ch1(spike[0].x, spike[0].y, 1656)
+            spikewall2 = gml_Script_instance_create_ch1(spike[2].x, spike[2].y, 1656)
+            spikewall1.image_yscale = 2
+            spikewall2.image_yscale = 2
+            con = 7
+            alarm[4] = 30
         }
     }
     if (con == 8 && (!instance_exists(obj_writer_ch1)))
@@ -200,8 +251,11 @@ if (null.room == room_cc_rurus2_ch1)
     if (con == 15)
     {
         visible = true
-        var _temp_local_var_28 = appear
-        instance_destroy()
+        with (appear)
+            instance_destroy()
+        vspeed = 0
+        con = 16
+        alarm[4] = 21
     }
     if (con == 17)
     {
@@ -227,9 +281,11 @@ if (null.room == room_cc_rurus2_ch1)
         darkfade = gml_Script_scr_marker_ch1(-10, -10, 4277)
         darkfade.image_xscale = 700
         darkfade.image_yscale = 400
-        var _temp_local_var_30 = darkfade
-        image_blend = c_white
-        depth = -200
+        with (darkfade)
+        {
+            image_blend = c_white
+            depth = -200
+        }
     }
     if (con == 19)
     {
@@ -249,8 +305,12 @@ if (null.room == room_cc_rurus2_ch1)
         darkfade.image_alpha = fade
         if (fade <= 0)
         {
-            var _temp_local_var_31 = darkfade
-            instance_destroy()
+            with (darkfade)
+                instance_destroy()
+            con = 21
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_341_0")
+            d = gml_Script_instance_create_ch1(0, 0, 1326)
+            d.side = 1
         }
     }
     if (con == 21 && (!gml_Script_d_ex_ch1()))
@@ -258,8 +318,13 @@ if (null.room == room_cc_rurus2_ch1)
         interactable = gml_Script_instance_create_ch1(280, 160, 1405)
         interactable.image_xscale = 4
         interactable.image_yscale = 2
-        var _temp_local_var_33 = floorwall
-        instance_destroy()
+        with (floorwall)
+            instance_destroy()
+        global.facing = 0
+        with (obj_caterpillarchara_ch1)
+            fun = false
+        global.interact = 0
+        con = 25
     }
     if (con == 25)
     {
@@ -268,8 +333,16 @@ if (null.room == room_cc_rurus2_ch1)
             gml_Script_snd_free_all_ch1()
             global.interact = 1
             gml_Script_snd_play_ch1(374)
-            var _temp_local_var_35 = interactable
-            instance_destroy()
+            with (interactable)
+                instance_destroy()
+            with (spikewall1)
+                instance_destroy()
+            with (spikewall2)
+                instance_destroy()
+            for (i = 0; i < 4; i += 1)
+                spike[i].image_index = 1
+            con = 26
+            alarm[4] = 30
         }
     }
     if (con == 27)

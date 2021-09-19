@@ -3,8 +3,11 @@ if (timer == 1)
     gml_Script_snd_free_all_ch1()
 if (timer == 30)
 {
-    var _temp_local_var_1 = bg
-    instance_destroy()
+    with (bg)
+        instance_destroy()
+    visible = true
+    x = global.heartx
+    y = global.hearty
 }
 if (timer == 31)
     sprite_delete(global.screenshot)
@@ -24,16 +27,17 @@ if (timer == 90)
     sh[3] = gml_Script_instance_create_ch1((x + 8), y, 1403)
     sh[4] = gml_Script_instance_create_ch1((x + 10), (y + 3), 1403)
     sh[5] = gml_Script_instance_create_ch1((x + 12), (y + 6), 1403)
-    i = 0
-    while (i < 6)
+    for (i = 0; i < 6; i += 1)
     {
-        var _temp_local_var_2 = sh[i]
-        direction = random(360)
-        speed = 7
-        gravity_direction = 270
-        gravity = 0.2
-        sprite_index = spr_heartshards_ch1
-        image_speed = 0.2
+        with (sh[i])
+        {
+            direction = random(360)
+            speed = 7
+            gravity_direction = 270
+            gravity = 0.2
+            sprite_index = spr_heartshards_ch1
+            image_speed = 0.2
+        }
     }
     if (global.tempflag[3] >= 1)
         timer += 15

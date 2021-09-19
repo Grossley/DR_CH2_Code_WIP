@@ -1,3 +1,4 @@
+var _temp_local_var_2, _temp_local_var_4, _temp_local_var_22, _temp_local_var_42;
 if (state == 3)
 {
     gml_Script_scr_enemyhurt_tired_after_damage(0)
@@ -109,10 +110,8 @@ if (thrashmode == 1)
             thrash.drawfeet = 1
         if (y >= (gml_Script_cameray() + ((!headattack) ? 45 : 10)))
         {
-            _temp_local_var_4.wsiner = (thrash.wsiner + 1.6)
+            thrash.wsiner += 1.6
             y -= 4
-            var _temp_local_var_20 = stacktop
-            var _temp_local_var_21 = thrash
         }
         else
         {
@@ -122,6 +121,7 @@ if (thrashmode == 1)
             if (!headattack)
             {
                 aimtime = 10
+                var _temp_local_var_42 = obj_thrashmachine.part[2]
                 switch obj_thrashmachine.part[2]
                 {
                     case 0:
@@ -160,7 +160,7 @@ if (thrashmode == 1)
         }
         if headattack
         {
-            var _temp_local_var_24 = (headattack ? 40 : 10)
+            var _temp_local_var_22 = (headattack ? 40 : 10)
             y = ((gml_Script_cameray() + thrashtimer) - (sin((thrashtimer / (headattack ? 10 : height_multiplier))) * 40))
         }
         else if (thrashtimer <= aimtime)
@@ -185,11 +185,7 @@ if (thrashmode == 1)
         }
         else if (!headattack)
         {
-            _temp_local_var_20.wsiner = (thrash.wsiner + (1.6 * (advancespeed / 4)))
-            var _temp_local_var_61 = thrash
-            var _temp_local_var_62 = thrash
-            var _temp_local_var_63 = -9
-            var _temp_local_var_64 = thrash
+            thrash.wsiner += (1.6 * (advancespeed / 4))
             if ((!headattack) && ((thrashtimer - aimtime) % 3) == 0)
             {
                 d = gml_Script_instance_create(puddle.x, (puddle.y + 10), obj_rouxls_splasheffect)
@@ -204,12 +200,8 @@ if (thrashmode == 1)
     {
         if (x >= (gml_Script_camerax() + 200))
         {
-            _temp_local_var_20.wsiner = (thrash.wsiner + (1.6 * (advancespeed / 8)))
+            thrash.wsiner += (1.6 * (advancespeed / 8))
             x -= advancespeed
-            var _temp_local_var_27 = thrash
-            var _temp_local_var_28 = thrash
-            var _temp_local_var_29 = stacktop
-            var _temp_local_var_30 = thrash
         }
         else
             thrashcon = 4
@@ -220,21 +212,9 @@ if (thrashmode == 1)
         if _wheels
         {
             if (thrashtimer <= 90)
-            {
-                _temp_local_var_27.wsiner = (thrash.wsiner + (1.6 * (advancespeed / 8)))
-                var _temp_local_var_31 = thrash
-                var _temp_local_var_32 = stacktop
-                var _temp_local_var_33 = stacktop
-                var _temp_local_var_34 = thrash
-            }
+                thrash.wsiner += (1.6 * (advancespeed / 8))
             else
-            {
-                _temp_local_var_27.wsiner = (thrash.wsiner - 0.5)
-                _temp_local_var_31 = thrash
-                _temp_local_var_32 = stacktop
-                _temp_local_var_33 = stacktop
-                _temp_local_var_34 = thrash
-            }
+                thrash.wsiner -= 0.5
         }
         if (thrashtimer >= (_wheels ? 105 : 15))
         {
@@ -247,11 +227,7 @@ if (thrashmode == 1)
         if (x < (remx - 6))
         {
             x += returnspeed
-            _temp_local_var_31.wsiner = (thrash.wsiner - (1.6 * (returnspeed / 6)))
-            var _temp_local_var_37 = stacktop
-            var _temp_local_var_38 = stacktop
-            var _temp_local_var_39 = -9
-            var _temp_local_var_40 = thrash
+            thrash.wsiner -= (1.6 * (returnspeed / 6))
         }
         else
         {
@@ -288,11 +264,7 @@ if (thrashmode == 1)
         if (y <= (remy - 4))
         {
             y += 4
-            _temp_local_var_37.wsiner = (thrash.wsiner - 0.8)
-            var _temp_local_var_44 = stacktop
-            var _temp_local_var_45 = -9
-            var _temp_local_var_46 = -9
-            var _temp_local_var_47 = thrash
+            thrash.wsiner -= 0.8
         }
         else
         {
@@ -315,11 +287,7 @@ if (thrashmode == 1)
         if (thrashtimer < 75)
         {
             thrashtimer++
-            _temp_local_var_44.wsiner = (thrash.wsiner - 0.8)
-            var _temp_local_var_48 = -9
-            var _temp_local_var_49 = -9
-            var _temp_local_var_50 = -9
-            var _temp_local_var_51 = thrash
+            thrash.wsiner -= 0.8
         }
         else
         {

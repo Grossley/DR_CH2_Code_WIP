@@ -1,3 +1,4 @@
+var _temp_local_var_2, _temp_local_var_28;
 button1 = 0
 button2 = 0
 button3 = 0

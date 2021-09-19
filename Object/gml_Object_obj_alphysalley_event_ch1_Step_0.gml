@@ -10,12 +10,27 @@ if (con == 1 && global.interact == 0)
             dfacing = 0
             sprite_index = spr_alphysd_ch1
         }
+        exc = gml_Script_instance_create_ch1((a.x + 15), (a.y - 6), 1486)
+        con = 2
+        alarm[4] = 30
     }
 }
 if (con == 3)
 {
     with (exc)
         instance_destroy()
+    global.typer = 20
+    global.fc = 11
+    global.fe = 3
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_25_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_26_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_27_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_28_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_29_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_30_0")
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_alphysalley_event_slash_Step_0_gml_31_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 4
 }
 if (con == 4 && (!gml_Script_d_ex_ch1()))
 {

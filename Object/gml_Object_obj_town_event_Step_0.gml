@@ -12,13 +12,24 @@ if (room == room_town_mid)
         global.interact = 1
         banim = gml_Script_scr_marker((bnpc.x - 1), (bnpc.y - 14), 1067)
         banim.depth = bnpc.depth
-        var _temp_local_var_2 = bnpc
-        visible = false
+        with (bnpc)
+            visible = false
+        with (banim)
+            image_speed = 0.334
+        con = 23
+        alarm[4] = 36
     }
     if (con == 24)
     {
-        var _temp_local_var_4 = bnpc
-        instance_destroy()
+        with (bnpc)
+            instance_destroy()
+        bnpc = gml_Script_instance_create((banim.x + 9), (banim.y + 18), obj_npc_room)
+        with (bnpc)
+            sprite_index = spr_npc_burgerpants
+        with (banim)
+            instance_destroy()
+        con = 25
+        alarm[4] = 20
     }
     if (con == 26)
     {
@@ -68,7 +79,7 @@ if (room == room_town_mid)
         global.facing = 0
     }
 }
-if (null.room == room_town_south)
+if (room == room_town_south)
 {
     if (con == 50 && (!gml_Script_d_ex()))
     {
@@ -79,8 +90,8 @@ if (null.room == room_town_south)
     if (con == 51)
     {
         global.interact = 1
-        var _temp_local_var_12 = policewindow
-        image_index += 0.1
+        with (policewindow)
+            image_index += 0.1
     }
     if (con == 52)
     {
@@ -95,7 +106,7 @@ if (null.room == room_town_south)
         con = 55
     }
 }
-if (policewindow.room == room_torbathroom)
+if (room == room_torbathroom)
 {
     if (con == 60 && (!gml_Script_d_ex()))
     {

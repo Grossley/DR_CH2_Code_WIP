@@ -25,14 +25,21 @@ if (active == true)
         mybul.sprite_index = spr_ch2_dojo_puzzlebullet_solid
         mybul.image_index = image_index
         mybul.direction = futuredir
-        var _temp_local_var_1 = mybul
-        spin = 1
-        spinspeed = 12
-        image_speed = 0
-        speed = other.bulletspeed
-        image_angle = direction
-        depth = other.depth
-        bottomfade = 246
+        with (mybul)
+        {
+            spin = 1
+            spinspeed = 12
+            image_speed = 0
+            speed = other.bulletspeed
+            image_angle = direction
+            depth = other.depth
+            bottomfade = 246
+        }
+        timesfired++
+        if (timesfired < times)
+            activetimer = 0
+        else
+            active = 2
     }
 }
 if (active == 2)

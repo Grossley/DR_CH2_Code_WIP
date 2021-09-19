@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2;
 global.monstergold[3] += global.monstergold[myself]
 global.monsterexp[3] += global.monsterexp[myself]
 if (global.flag[(51 + myself)] == 0)
@@ -12,8 +13,8 @@ if (global.flag[(51 + myself)] == 1)
     if (fatal == 1)
     {
         global.flag[44]
-        obj_battleLayerHighlight.flag[global.flag[obj_battleLayerHighlight]] = (global.flag[obj_battleLayerHighlight] + 1)
-        global
+        var _temp_local_var_1 = global.flag[44]
+        global.flag[44] = (global.flag[44] + 1)
     }
 }
 if (global.flag[(51 + myself)] == 2)
@@ -56,8 +57,8 @@ if (_violenced > 0)
 if (global.flag[50] == 6)
 {
     global.flag[926]
-    obj_ch2_lw_cutscenes_short.flag[global.flag[obj_ch2_lw_cutscenes_short]] = (global.flag[obj_ch2_lw_cutscenes_short] + 1)
-    global
+    var _temp_local_var_2 = global.flag[926]
+    global.flag[926] = (global.flag[926] + 1)
 }
 if (global.flag[54] != 0)
 {

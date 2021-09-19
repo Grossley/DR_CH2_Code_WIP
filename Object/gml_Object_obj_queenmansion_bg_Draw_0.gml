@@ -1,15 +1,10 @@
 draw_sprite_tiled_ext(spr_cyber_coaster_bg_cityscape, 0, gml_Script_camerax(), y, 1, 1, c_white, 1)
 draw_rectangle_color(gml_Script_camerax(), (gml_Script_cameray() + 160), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + view_hport[0]), c_black, c_black, c_black, c_black, 0)
 draw_set_color(c_navy)
-i = 0
-while (i < 7)
+for (i = 0; i < 7; i++)
 {
     ly = lerp(160, 250, ((i * i) / 100))
-    -10
-    i++
-    var _temp_local_var_1 = ly
-    var _temp_local_var_2 = (ly.room_width + 10)
-    var _temp_local_var_3 = (4 - (i / 3))
+    draw_line_width(-10, ly, (room_width + 10), ly, (4 - (i / 3)))
 }
 drawx = ((gml_Script_camerax() + cx) - (gml_Script_cameray() / factor))
 animsiner++

@@ -10,10 +10,19 @@ if (global.plot < 100)
 else
 {
     swatchling_npc_a = gml_Script_instance_create(1232, 30, obj_npc_room_animated)
-    var _temp_local_var_4 = swatchling_npc_a
-    sprite_index = spr_npc_swatchling_sweep
-    gml_Script_scr_depth()
-    image_speed = 0.1
+    with (swatchling_npc_a)
+    {
+        sprite_index = spr_npc_swatchling_sweep
+        gml_Script_scr_depth()
+        image_speed = 0.1
+    }
+    swatchling_npc_b = gml_Script_instance_create(1375, 110, obj_npc_room_animated)
+    with (swatchling_npc_b)
+    {
+        sprite_index = spr_npc_swatchling_sweep
+        gml_Script_scr_depth()
+        image_speed = 0.1
+    }
 }
 if (global.chapter != 2 || global.plot >= 75)
     instance_destroy()
@@ -31,6 +40,7 @@ else
     noellebox.image_speed = 0
     noellebox.image_xscale = 2
     noellebox.image_yscale = 2
-    var _temp_local_var_2 = noellebox
-    gml_Script_scr_depth()
+    with (noellebox)
+        gml_Script_scr_depth()
+    noellelost = 0
 }

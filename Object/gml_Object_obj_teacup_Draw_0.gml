@@ -11,7 +11,7 @@ if (mode != 0)
         adjustForCamera = 0
 }
 var _bottomY = (ystart + heldAmount)
-if (startOffset.undefined && startOffset > 0)
+if (startOffset != undefined && startOffset > 0)
     _bottomY += startOffset
 var _screwSegTotal = (((_bottomY - y) div screwSegHeight) + 1)
 var _screwSegStart = 0

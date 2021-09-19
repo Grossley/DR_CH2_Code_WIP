@@ -86,15 +86,17 @@ if (active == true)
     if (con == 67)
     {
         ballcheck = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_fountainball, 0, 1)
-        if (ballcheck != -4)
+        if (ballcheck != noone)
         {
-            var _temp_local_var_2 = ballcheck
-            if (back == 0)
+            with (ballcheck)
             {
-                hspeed += (-4 + random(8))
-                vspeed -= random(3)
-                backball.hspeed = hspeed
-                backball.vspeed = vspeed
+                if (back == 0)
+                {
+                    hspeed += (-4 + random(8))
+                    vspeed -= random(3)
+                    backball.hspeed = hspeed
+                    backball.vspeed = vspeed
+                }
             }
         }
         if (y >= 120)

@@ -56,6 +56,6 @@ if (dumpster_con == 10 && (!gml_Script_d_ex()))
 {
     dumpster_con = 99
     alarm[1] = 120
-    var _temp_local_var_7 = dumpster
-    gml_Script_scr_shakeobj()
+    with (dumpster)
+        gml_Script_scr_shakeobj()
 }

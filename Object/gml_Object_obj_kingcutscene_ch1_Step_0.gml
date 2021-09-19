@@ -62,31 +62,105 @@ if (con < 76)
     if (con == 5 && (!gml_Script_d_ex_ch1()))
     {
         king = gml_Script_scr_dark_marker_ch1((820 + global.xoff), 120, 4131)
-        var _temp_local_var_2 = l
-        hspeed = 5
+        with (l)
+            hspeed = 5
+        if (global.tempflag[8] == 0)
+            gml_Script_scr_pan_ch1(8, 0, 90)
+        con = 5.1
+        alarm[4] = 90
+        if (global.tempflag[8] == 1)
+        {
+            with (l)
+                hspeed = 10
+            gml_Script_scr_pan_ch1(16, 0, 45)
+            con = 5.1
+            alarm[4] = 45
+        }
     }
     if (con == 6.1)
     {
-        var _temp_local_var_4 = l
-        hspeed = 0
+        with (l)
+            hspeed = 0
+        con = 6
+        alarm[4] = 20
     }
     if (con == 7)
     {
-        var _temp_local_var_5 = l
-        hspeed = 0
+        with (l)
+            hspeed = 0
+        global.fc = 5
+        global.typer = 32
+        global.fe = 3
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_110_0")
+        gml_Script_scr_kingface_ch1(1, 0)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_112_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_113_0")
+        gml_Script_scr_lanface_ch1(4, 7)
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_115_0")
+        global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_116_0")
+        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_117_0")
+        global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_118_0")
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 8
+        if (global.tempflag[8] == 1)
+            con = 9
     }
     if (con == 8 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_7 = king
-        sprite_index = spr_kingl_shadow_ch1
-        gml_Script_snd_play_ch1(378)
-        gml_Script_instance_create_ch1(0, 0, 1464)
-        gml_Script_scr_shakeobj_ch1()
+        with (king)
+        {
+            sprite_index = spr_kingl_shadow_ch1
+            gml_Script_snd_play_ch1(378)
+            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_scr_shakeobj_ch1()
+        }
+        global.fc = 0
+        global.typer = 36
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_137_0")
+        gml_Script_scr_lanface_ch1(1, 3)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_139_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_140_0")
+        gml_Script_scr_kingface_ch1(4, 0)
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_142_0")
+        gml_Script_scr_lanface_ch1(6, 4)
+        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_144_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 9
     }
     if (con == 9 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_9 = king
-        sprite_index = spr_kingl_shadow_ch1
+        with (king)
+            sprite_index = spr_kingl_shadow_ch1
+        with (k)
+        {
+            x = (440 + global.xoff)
+            y = 50
+            gml_Script_scr_depth_ch1()
+        }
+        with (s)
+        {
+            x = (440 + global.xoff)
+            y = 130
+            gml_Script_scr_depth_ch1()
+        }
+        with (r)
+        {
+            x = (440 + global.xoff)
+            y = 210
+            gml_Script_scr_depth_ch1()
+        }
+        with (l)
+            sprite_index = spr_lancer_lt_ch1
+        if (global.tempflag[8] == 0)
+            gml_Script_scr_pan_ch1(-4, 0, 30)
+        con = 10
+        alarm[4] = 60
+        if (global.tempflag[8] == 1)
+        {
+            gml_Script_scr_pan_ch1(-8, 0, 15)
+            alarm[4] = 20
+        }
     }
     if (con == 11)
     {
@@ -102,30 +176,69 @@ if (con < 76)
     }
     if (con == 12 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_15 = l
-        sprite_index = spr_lancer_rt_ch1
+        with (l)
+            sprite_index = spr_lancer_rt_ch1
+        global.typer = 36
+        global.fc = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_187_0")
+        gml_Script_scr_lanface_ch1(1, 7)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_189_0")
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 13
     }
     if (con == 13 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_17 = king
-        hspeed = -2
-        image_speed = 0.1
+        with (king)
+        {
+            hspeed = -2
+            image_speed = 0.1
+        }
+        con = 14
+        alarm[4] = 30
     }
     if (con == 15)
     {
-        var _temp_local_var_18 = l
-        visible = false
+        with (l)
+            visible = false
+        with (king)
+        {
+            hspeed = 0
+            sprite_index = spr_king_liftlancer_ch1
+            image_index = 0
+            image_speed = 0.2
+        }
+        con = 16
+        alarm[4] = 15
     }
     if (con == 17)
     {
-        var _temp_local_var_20 = s
-        sprite_index = spr_susier_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susier_dark_unhappy_ch1
+        with (king)
+        {
+            image_index = 3
+            image_speed = 0
+        }
+        global.typer = 36
+        global.fe = 0
+        global.fc = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_223_0")
+        gml_Script_scr_lanface_ch1(1, 5)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_225_0")
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 17.1
     }
     if (con == 17.1 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_23 = king
-        image_index = 3
-        image_speed = 0.1
+        with (king)
+        {
+            image_index = 3
+            image_speed = 0.1
+        }
+        con = 17.3
+        alarm[4] = 15
     }
     if ((con >= 17.3 && con < 19) || (con == 19 && gml_Script_d_ex_ch1()))
     {
@@ -154,40 +267,73 @@ if (con < 76)
     {
         gml_Script_snd_free_all_ch1()
         gml_Script_snd_play_ch1(377)
-        var _temp_local_var_28 = s
-        sprite_index = spr_susie_shock_r_ch1
+        with (s)
+            sprite_index = spr_susie_shock_r_ch1
+        with (r)
+            sprite_index = spr_ralsei_shock_overworld_ch1
+        with (king)
+        {
+            image_index = 5
+            image_speed = 0.2
+        }
+        con = 20
+        alarm[4] = 4
     }
     if (con == 20)
     {
-        var _temp_local_var_31 = king
-        if (image_index > 5)
-            image_index = 6
+        with (king)
+        {
+            if (image_index > 5)
+                image_index = 6
+        }
     }
     if (con == 21)
     {
-        var _temp_local_var_32 = king
-        if (image_index > 6)
+        with (king)
+        {
+            if (image_index > 6)
+            {
+                image_speed = 0
+                image_index = 7
+            }
+        }
+        con = 22
+        alarm[4] = 20
+    }
+    if (con == 23)
+    {
+        with (king)
         {
             image_speed = 0
             image_index = 7
         }
-    }
-    if (con == 23)
-    {
-        var _temp_local_var_33 = king
-        image_speed = 0
-        image_index = 7
+        global.typer = 36
+        global.fc = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_285_0")
+        global.msg[1] = "%"
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 24
     }
     if (con == 24 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(407)
-        var _temp_local_var_35 = r
-        sprite_index = spr_ralseir_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        with (s)
+        {
+            sprite_index = spr_susieb_attackready_unhappy_ch1
+            hspeed = 8
+        }
+        con = 25
+        alarm[4] = 5
     }
     if (con == 26)
     {
-        var _temp_local_var_37 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 27
+        alarm[4] = 20
     }
     if (con == 28)
     {
@@ -209,14 +355,22 @@ if (con < 76)
     if (con == 30 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(381)
-        var _temp_local_var_39 = king
-        image_speed = 0.25
+        with (king)
+            image_speed = 0.25
+        con = 31
+        alarm[4] = 8
     }
     if (con == 32)
     {
-        var _temp_local_var_40 = king
-        image_index = 9
-        image_speed = 0
+        with (king)
+        {
+            image_index = 9
+            image_speed = 0
+        }
+        con = 33
+        alarm[4] = 20
+        if (global.tempflag[8] == 1)
+            alarm[4] = 2
     }
     if (con == 34)
     {
@@ -251,15 +405,23 @@ if (con < 76)
     }
     if (con == 37 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_44 = s
-        sprite_index = spr_susier_dark_unhappy_ch1
-        image_speed = 0.2
-        hspeed = -2
+        with (s)
+        {
+            sprite_index = spr_susier_dark_unhappy_ch1
+            image_speed = 0.2
+            hspeed = -2
+        }
+        con = 38
+        alarm[4] = 20
     }
     if (con == 39)
     {
-        var _temp_local_var_45 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 39.1
+        alarm[4] = 30
+        if (global.tempflag[8] == 1)
+            alarm[4] = 2
     }
     if (con == 40.1)
     {
@@ -281,18 +443,30 @@ if (con < 76)
     }
     if (con == 41.2 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_48 = r
-        sprite_index = spr_ralseir_kneel_ch1
+        with (r)
+            sprite_index = spr_ralseir_kneel_ch1
+        with (s)
+            sprite_index = spr_susier_kneel_ch1
+        with (k)
+            sprite_index = spr_krisr_kneel_ch1
+        con = 42
+        alarm[4] = 30
+        if (global.tempflag[8] == 1)
+            alarm[4] = 2
     }
     if (con == 43)
     {
-        var _temp_local_var_51 = king
-        hspeed = -1
+        with (king)
+            hspeed = -1
+        con = 44
+        alarm[4] = 15
     }
     if (con == 45)
     {
-        var _temp_local_var_52 = king
-        hspeed = 0
+        with (king)
+            hspeed = 0
+        con = 46
+        alarm[4] = 15
     }
     if (con == 47)
     {
@@ -324,11 +498,7 @@ if (con < 76)
     {
         for (i = 0; i < 3; i += 1)
         {
-            _temp_local_var_52.image_alpha = (spadechunk[i].image_alpha + 0.1)
-            var _temp_local_var_54 = king
-            var _temp_local_var_55 = 
-            var _temp_local_var_56 = -9
-            var _temp_local_var_57 = spadechunk[i]
+            spadechunk[i].image_alpha += 0.1
             if (spadechunk[i].image_alpha >= 3)
                 con = 50
         }
@@ -344,15 +514,25 @@ if (con < 76)
     if (con == 51 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(362)
-        var _temp_local_var_59 = king
-        image_speed = 0.25
-        image_index = 10
+        with (king)
+        {
+            image_speed = 0.25
+            image_index = 10
+        }
+        alarm[4] = 16
+        con = 52
     }
     if (con == 53)
     {
-        var _temp_local_var_60 = king
-        image_speed = 0
-        image_index = 13
+        with (king)
+        {
+            image_speed = 0
+            image_index = 13
+        }
+        lspade = gml_Script_scr_marker_ch1((gml_Script___view_get(0, 0) + 660), (king.y + 60), 4046)
+        lspade.image_angle = 180
+        lspade.hspeed = -16
+        con = 54
     }
     if (con == 54)
     {
@@ -360,39 +540,69 @@ if (con < 76)
         {
             gml_Script_snd_play_ch1(434)
             gml_Script_snd_play_ch1(402)
-            var _temp_local_var_61 = lspade
-            instance_destroy()
+            with (lspade)
+                instance_destroy()
+            with (king)
+            {
+                sprite_index = spr_king_droplancer_ch1
+                image_index = 0
+                gml_Script_scr_shakeobj_ch1()
+            }
+            with (l)
+            {
+                x += 24
+                y -= 60
+                sprite_index = spr_lancer_l_unhappy_ch1
+                vspeed = 10
+                hspeed = -4
+                visible = true
+            }
+            con = 55
+            alarm[4] = 6
+            spadechunk[0].image_alpha = 1
+            spadechunk[1].image_alpha = 1
+            spadechunk[2].image_alpha = 1
         }
     }
     if (con == 55)
     {
-        i = 0
-        while (i < 3)
-        {
-            _temp_local_var_63.image_alpha = (spadechunk[i].image_alpha - 0.18)
-            i += 1
-            var _temp_local_var_64 = 
-            var _temp_local_var_65 = lspade
-            var _temp_local_var_66 = -9
-            var _temp_local_var_67 = spadechunk[i]
-        }
+        for (i = 0; i < 3; i += 1)
+            spadechunk[i].image_alpha -= 0.18
     }
     if (con == 56)
     {
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
-            var _temp_local_var_68 = spadechunk[i]
-            instance_destroy()
+            with (spadechunk[i])
+                instance_destroy()
         }
-        var _temp_local_var_69 = l
-        speed = 0
+        with (l)
+            speed = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_529_0")
+        global.msg[1] = "%"
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 57
     }
     if (con == 57 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_71 = l
-        hspeed = -16
-        gml_Script_scr_depth_ch1()
+        with (l)
+        {
+            hspeed = -16
+            gml_Script_scr_depth_ch1()
+        }
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        with (s)
+            sprite_index = spr_susier_dark_unhappy_ch1
+        with (k)
+            sprite_index = spr_krisr_dark_ch1
+        con = 58
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_543_0")
+        global.msg[1] = "%"
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        alarm[4] = 30
     }
     if (con == 59 && (!gml_Script_d_ex_ch1()))
     {
@@ -408,8 +618,14 @@ if (con < 76)
     if (con == 60 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(442)
-        var _temp_local_var_77 = k
-        gml_Script_scr_anim_ch1(3814, 0.25)
+        with (k)
+            gml_Script_scr_anim_ch1(3814, 0.25)
+        with (s)
+            gml_Script_scr_anim_ch1(3840, 0.25)
+        with (r)
+            gml_Script_scr_anim_ch1(3855, 0.25)
+        con = 61
+        alarm[4] = 30
     }
     if (con == 62)
     {
@@ -422,40 +638,77 @@ if (con < 76)
     }
     if (con == 64 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_81 = king
-        image_index = 1
-        hspeed = 3
-        friction = 0.1
+        with (king)
+        {
+            image_index = 1
+            hspeed = 3
+            friction = 0.1
+        }
+        con = 65
+        alarm[4] = 20
     }
     if (con == 66)
     {
-        var _temp_local_var_82 = king
-        hspeed = 0
-        gml_Script_scr_shakeobj_ch1()
+        with (king)
+        {
+            hspeed = 0
+            gml_Script_scr_shakeobj_ch1()
+        }
+        global.typer = 36
+        global.fc = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_592_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_593_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_594_0")
+        global.msg[3] = "%"
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 67
     }
     if (con == 67 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_84 = king
-        sprite_index = spr_king_pullweapon_ch1
-        image_index = 0
-        image_speed = 0.5
+        with (king)
+        {
+            sprite_index = spr_king_pullweapon_ch1
+            image_index = 0
+            image_speed = 0.5
+        }
+        con = 66.1
+        alarm[4] = 10
     }
     if (con == 67.1)
     {
-        var _temp_local_var_85 = king
-        image_index = 6
-        image_speed = 0
+        with (king)
+        {
+            image_index = 6
+            image_speed = 0
+        }
+        shadowking = gml_Script_scr_dark_marker_ch1(king.x, king.y, 4126)
+        shadowking.image_speed = 0
+        shadowking.image_index = 5
+        shadowking.depth = (king.depth - 1)
+        con = 68.2
+        gml_Script_snd_free_all_ch1()
+        gml_Script_snd_play_ch1(361)
+        alarm[4] = 60
     }
     if (con == 68.2)
     {
-        var _temp_local_var_86 = shadowking
-        image_alpha -= 0.03
+        with (shadowking)
+            image_alpha -= 0.03
     }
     if (con == 69.2)
     {
         global.plot = 235
-        var _temp_local_var_87 = shadowking
-        instance_destroy()
+        with (shadowking)
+            instance_destroy()
+        global.typer = 33
+        global.fe = 4
+        global.fc = 20
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_636_0")
+        global.msg[1] = "%"
+        if (global.tempflag[8] == 0)
+            gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 68.1
     }
     if (con == 68.1 && (!gml_Script_d_ex_ch1()))
     {
@@ -474,20 +727,73 @@ if (con < 76)
         global.cinstance[0].y = s.y
         global.cinstance[1].x = r.x
         global.cinstance[1].y = r.y
-        var _temp_local_var_90 = global.cinstance[0]
-        gml_Script_scr_caterpillar_interpolate_ch1()
+        with (global.cinstance[0])
+            gml_Script_scr_caterpillar_interpolate_ch1()
+        with (global.cinstance[1])
+            gml_Script_scr_caterpillar_interpolate_ch1()
+        gml_Script_scr_caterpillar_facing_ch1(1)
+        with (obj_mainchara_ch1)
+        {
+            visible = true
+            sprite_index = spr_krisb_idle_ch1
+            fun = true
+        }
+        with (global.cinstance[0])
+        {
+            visible = true
+            sprite_index = spr_susieb_idle_serious_ch1
+            fun = true
+        }
+        with (global.cinstance[1])
+        {
+            visible = true
+            sprite_index = spr_ralseib_idle_ch1
+            fun = true
+        }
+        with (k)
+            visible = false
+        with (r)
+            visible = false
+        with (s)
+            visible = false
+        global.flag[9] = 1
+        global.batmusic[0] = gml_Script_snd_init_ch1("kingboss.ogg")
+        global.encounterno = 40
+        gml_Script_scr_encountersetup_ch1(global.encounterno)
+        global.specialbattle = 3
+        remkingx = king.x
+        remkingy = king.y
+        gml_Script_instance_create_ch1(0, 0, 1488)
+        con = 71
+        king.sprite_index = spr_chainking_idle_ch1
+        king.image_index = 0
+        king.image_speed = 0
+        with (king)
+            gml_Script_scr_move_to_point_over_time_ch1(global.monstermakex[0], global.monstermakey[0], 10)
+        with (king)
+            depth = 1000
+        alarm[4] = 25
+        bultimer = 0
     }
     if (con == 72)
     {
-        var _temp_local_var_99 = king
-        visible = false
+        with (king)
+            visible = false
+        con = 73
+        alarm[4] = 15
     }
     if (con == 74)
     {
         if (!instance_exists(obj_battlecontroller_ch1))
         {
-            var _temp_local_var_100 = king
-            visible = true
+            with (king)
+                visible = true
+            king.remkingx = remkingx
+            king.remkingy = remkingy
+            with (king)
+                gml_Script_scr_move_to_point_over_time_ch1(remkingx, remkingy, 10)
+            con = 75
+            alarm[4] = 30
         }
     }
 }
@@ -502,15 +808,41 @@ if (con >= 76 && con < 150)
             s = gml_Script_scr_dark_marker_ch1(0, 0, 3836)
             r = gml_Script_scr_dark_marker_ch1(0, 0, 3847)
             king = gml_Script_scr_dark_marker_ch1((784 + global.xoff), 120, 4118)
-            var _temp_local_var_104 = k
-            x = (440 + global.xoff)
-            y = 50
-            gml_Script_scr_depth_ch1()
+            with (k)
+            {
+                x = (440 + global.xoff)
+                y = 50
+                gml_Script_scr_depth_ch1()
+            }
+            with (s)
+            {
+                x = (440 + global.xoff)
+                y = 130
+                gml_Script_scr_depth_ch1()
+            }
+            with (r)
+            {
+                x = (440 + global.xoff)
+                y = 210
+                gml_Script_scr_depth_ch1()
+            }
+            part = 1
         }
         else
         {
-            _temp_local_var_104 = k
-            visible = true
+            with (k)
+                visible = true
+            with (s)
+                visible = true
+            with (r)
+                visible = true
+            obj_mainchara_ch1.visible = false
+            with (obj_caterpillarchara_ch1)
+                visible = false
+            k.sprite_index = spr_krisb_idle_ch1
+            s.sprite_index = spr_susieb_idle_serious_ch1
+            r.sprite_index = spr_ralseib_idle_ch1
+            king.sprite_index = spr_king_kneeldown_ch1
         }
         con = 78
         alarm[4] = 20
@@ -534,8 +866,10 @@ if (con >= 76 && con < 150)
     if (con == 81 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(424)
-        var _temp_local_var_108 = king
-        gml_Script_scr_anim_ch1(4118, 0.1)
+        with (king)
+            gml_Script_scr_anim_ch1(4118, 0.1)
+        con = 82
+        alarm[4] = 50
     }
     if (con == 83)
     {
@@ -569,14 +903,25 @@ if (con >= 76 && con < 150)
     }
     if (con == 86 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_110 = king
-        gml_Script_scr_shakeobj_ch1()
-        image_index = 2
+        with (king)
+        {
+            gml_Script_scr_shakeobj_ch1()
+            image_index = 2
+        }
+        gml_Script_snd_play_ch1(432)
+        con = 87
+        alarm[4] = 60
     }
     if (con == 88)
     {
-        var _temp_local_var_111 = king
-        image_index = 2
+        with (king)
+            image_index = 2
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_826_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_827_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_828_0")
+        global.msg[3] = "%"
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 88.1
     }
     if (con == 88.1 && (!gml_Script_d_ex_ch1()))
     {
@@ -586,14 +931,18 @@ if (con >= 76 && con < 150)
     if (con == 89.2 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(423)
-        var _temp_local_var_114 = r
-        sprite_index = spr_ralseir_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        con = 90
+        alarm[4] = 30
     }
     if (con == 91)
     {
         gml_Script_snd_play_ch1(423)
-        var _temp_local_var_115 = k
-        sprite_index = spr_krisr_dark_ch1
+        with (k)
+            sprite_index = spr_krisr_dark_ch1
+        con = 92
+        alarm[4] = 45
     }
     if (con == 93)
     {
@@ -614,19 +963,41 @@ if (con >= 76 && con < 150)
     if (con == 96)
     {
         gml_Script_snd_play_ch1(423)
-        var _temp_local_var_117 = s
-        sprite_index = spr_susier_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susier_dark_unhappy_ch1
+        con = 97
+        alarm[4] = 30
     }
     if (con == 98)
     {
-        var _temp_local_var_118 = s
-        hspeed = 3
-        image_speed = 0.2
+        with (s)
+        {
+            hspeed = 3
+            image_speed = 0.2
+        }
+        with (k)
+        {
+            hspeed = 3
+            image_speed = 0.2
+        }
+        with (r)
+        {
+            hspeed = 4
+            image_speed = 0.2
+        }
+        con = 99
+        alarm[4] = 30
     }
     if (con == 100)
     {
-        var _temp_local_var_121 = k
-        gml_Script_scr_halt_ch1()
+        with (k)
+            gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        con = 101
+        alarm[4] = 15
     }
     if (con == 102)
     {
@@ -646,9 +1017,13 @@ if (con >= 76 && con < 150)
     if (con == 103 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(432)
-        var _temp_local_var_125 = king
-        gml_Script_scr_shakeobj_ch1()
-        image_index = 2
+        with (king)
+        {
+            gml_Script_scr_shakeobj_ch1()
+            image_index = 2
+        }
+        con = 104
+        alarm[4] = 30
     }
     if (con == 105)
     {
@@ -666,21 +1041,32 @@ if (con >= 76 && con < 150)
     {
         disto = (point_distance(r.x, r.y, (king.x - 90), (king.y + 50)) / 2)
         r.king = king
-        var _temp_local_var_127 = r
-        image_speed = 0.25
-        move_towards_point((king.x - 90), (king.y + 50), 2)
+        with (r)
+        {
+            image_speed = 0.25
+            move_towards_point((king.x - 90), (king.y + 50), 2)
+        }
+        con = 107
+        alarm[4] = disto
     }
     if (con == 108)
     {
-        var _temp_local_var_128 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        con = 109
+        alarm[4] = 10
     }
     if (con == 110)
     {
-        var _temp_local_var_129 = r
-        gml_Script_scr_anim_ch1(3862, 0.25)
-        x -= 10
-        y -= 10
+        with (r)
+        {
+            gml_Script_scr_anim_ch1(3862, 0.25)
+            x -= 10
+            y -= 10
+        }
+        gml_Script_snd_play_ch1(395)
+        con = 111
+        alarm[4] = 15
     }
     if (con == 112)
     {
@@ -692,53 +1078,95 @@ if (con >= 76 && con < 150)
     }
     if (con == 116)
     {
-        var _temp_local_var_130 = r
-        sprite_index = spr_ralseir_ch1
-        x += 10
-        y += 10
+        with (r)
+        {
+            sprite_index = spr_ralseir_ch1
+            x += 10
+            y += 10
+        }
+        global.fe = 8
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_994_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_995_0")
+        gml_Script_scr_kingface_ch1(2, 1)
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_997_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 125
     }
     if (con == 125 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(428)
         gml_Script_snd_play_ch1(362)
-        var _temp_local_var_132 = king
-        image_index = 4
+        with (king)
+            image_index = 4
+        deathhit0 = 0
+        deathhit1 = 0
+        deathhit2 = 0
+        for (i = 0; i < 15; i += 1)
+        {
+            deathwave[i][0] = gml_Script_scr_marker_ch1((k.x + 20), (500 + (i * 30)), 4142)
+            deathwave[i][1] = gml_Script_scr_marker_ch1((r.x + 20), (500 + (i * 30)), 4142)
+            for (j = 0; j < 2; j += 1)
+            {
+                with (deathwave[i][j])
+                {
+                    vspeed = -40
+                    image_angle = 90
+                }
+            }
+        }
+        con = 126
+        alarm[4] = 80
     }
     if (con == 126)
     {
         if (deathwave[0][0].y <= (s.y + 20) && deathhit0 == 0)
         {
-            var _temp_local_var_135 = s
-            sprite_index = spr_susie_fell_ch1
-            vspeed = 4
-            hspeed = -1
-            friction = 0.2
-            gml_Script_scr_shakeobj_ch1()
+            with (s)
+            {
+                sprite_index = spr_susie_fell_ch1
+                vspeed = 4
+                hspeed = -1
+                friction = 0.2
+                gml_Script_scr_shakeobj_ch1()
+            }
+            deathhit0 = 1
+            gml_Script_snd_play_ch1(434)
         }
         if (deathwave[0][0].y <= (k.y + 20) && deathhit1 == 0)
         {
-            var _temp_local_var_137 = k
-            sprite_index = spr_kris_fell_ch1
-            hspeed = 2
-            vspeed = 4
-            friction = 0.2
-            gml_Script_scr_shakeobj_ch1()
+            with (k)
+            {
+                sprite_index = spr_kris_fell_ch1
+                hspeed = 2
+                vspeed = 4
+                friction = 0.2
+                gml_Script_scr_shakeobj_ch1()
+            }
+            deathhit1 = 1
+            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_snd_play_ch1(438)
         }
         if (deathwave[0][1].y <= (r.y + 20) && deathhit2 == 0)
         {
-            var _temp_local_var_139 = r
-            sprite_index = spr_ralsei_fell_ch1
-            gml_Script_scr_shakeobj_ch1()
-            hspeed = 2
-            vspeed = -6
-            friction = 0.2
+            with (r)
+            {
+                sprite_index = spr_ralsei_fell_ch1
+                gml_Script_scr_shakeobj_ch1()
+                hspeed = 2
+                vspeed = -6
+                friction = 0.2
+            }
+            deathhit2 = 1
+            gml_Script_snd_play_ch1(434)
         }
     }
     if (con == 127)
     {
         gml_Script_snd_play_ch1(423)
-        var _temp_local_var_140 = king
-        sprite_index = spr_kingl_ch1
+        with (king)
+            sprite_index = spr_kingl_ch1
+        con = 128
+        alarm[4] = 30
     }
     if (con == 129)
     {
@@ -753,9 +1181,18 @@ if (con >= 76 && con < 150)
         global.currentsong[0] = gml_Script_snd_init_ch1("GALLERY.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.8, 1)
         gml_Script_snd_play_ch1(432)
-        var _temp_local_var_142 = s
-        sprite_index = spr_susier_kneel_ch1
-        gml_Script_scr_shakeobj_ch1()
+        with (s)
+        {
+            sprite_index = spr_susier_kneel_ch1
+            gml_Script_scr_shakeobj_ch1()
+        }
+        with (k)
+        {
+            sprite_index = spr_krisr_kneel_ch1
+            gml_Script_scr_shakeobj_ch1()
+        }
+        con = 131
+        alarm[4] = 30
     }
     if (con == 132)
     {
@@ -778,21 +1215,16 @@ if (con >= 76 && con < 150)
         spadechunk2.friction = 0.1
         for (i = 0; i < 15; i += 1)
         {
-            j = 0
-            while (j < 2)
+            for (j = 0; j < 2; j += 1)
             {
-                var _temp_local_var_145 = deathwave[i][j]
-                instance_destroy()
+                with (deathwave[i][j])
+                    instance_destroy()
             }
         }
     }
     if (con == 134)
     {
-        _temp_local_var_143.image_alpha = (spadechunk2.image_alpha + 0.1)
-        var _temp_local_var_146 = s
-        var _temp_local_var_147 = king
-        var _temp_local_var_148 = -9
-        var _temp_local_var_149 = spadechunk2
+        spadechunk2.image_alpha += 0.1
         if (spadechunk2.image_alpha >= 2)
             con = 135
     }
@@ -815,16 +1247,26 @@ if (con >= 76 && con < 150)
         disto = (point_distance(k.x, k.y, (s.x + 60), (s.y + 10)) / 10)
         k.s = s
         k.disto = disto
-        var _temp_local_var_151 = k
-        gml_Script_scr_anim_ch1(3824, 0.5)
-        move_towards_point((s.x + 60), (s.y + 10), disto)
+        with (k)
+        {
+            gml_Script_scr_anim_ch1(3824, 0.5)
+            move_towards_point((s.x + 60), (s.y + 10), disto)
+        }
+        con = 137
+        alarm[4] = disto
     }
     if (con == 138)
     {
         gml_Script_snd_play_ch1(357)
-        var _temp_local_var_152 = k
-        gml_Script_scr_halt_ch1()
-        gml_Script_scr_shakeobj_ch1()
+        with (k)
+        {
+            gml_Script_scr_halt_ch1()
+            gml_Script_scr_shakeobj_ch1()
+        }
+        with (spadechunk2)
+            instance_destroy()
+        con = 139
+        alarm[4] = 30
     }
     if (con == 140)
     {
@@ -842,13 +1284,14 @@ if (con >= 76 && con < 150)
         gml_Script_snd_play_ch1(362)
         deathhit0 = 0
         deathhit1 = 0
-        i = 0
-        while (i < 15)
+        for (i = 0; i < 15; i += 1)
         {
             deathwave[i][0] = gml_Script_scr_marker_ch1(k.x, (-30 - (i * 30)), 4142)
-            var _temp_local_var_155 = deathwave[i][0]
-            vspeed = 40
-            image_angle = 270
+            with (deathwave[i][0])
+            {
+                vspeed = 40
+                image_angle = 270
+            }
         }
         con = 142
         alarm[4] = 40
@@ -858,24 +1301,30 @@ if (con >= 76 && con < 150)
         if (deathwave[0][0].y >= (s.y + 20) && deathhit0 == 0)
         {
             gml_Script_snd_play_ch1(434)
-            var _temp_local_var_157 = s
-            sprite_index = spr_susie_fell_ch1
-            vspeed = 4
-            hspeed = 2
-            friction = 0.2
-            gml_Script_scr_shakeobj_ch1()
+            with (s)
+            {
+                sprite_index = spr_susie_fell_ch1
+                vspeed = 4
+                hspeed = 2
+                friction = 0.2
+                gml_Script_scr_shakeobj_ch1()
+            }
+            deathhit0 = 1
         }
         if (deathwave[0][0].y >= (k.y + 20) && deathhit1 == 0)
         {
             gml_Script_instance_create_ch1(0, 0, 1464)
             gml_Script_snd_play_ch1(434)
             gml_Script_snd_play_ch1(438)
-            var _temp_local_var_159 = k
-            sprite_index = spr_krisr_kneel_ch1
-            hspeed = 1
-            vspeed = 2
-            friction = 0.2
-            gml_Script_scr_shakeobj_ch1()
+            with (k)
+            {
+                sprite_index = spr_krisr_kneel_ch1
+                hspeed = 1
+                vspeed = 2
+                friction = 0.2
+                gml_Script_scr_shakeobj_ch1()
+            }
+            deathhit1 = 1
         }
     }
     if (con == 143)
@@ -902,12 +1351,16 @@ if (con >= 76 && con < 150)
         if (spadechunk3.y >= (k.y + 20) && deathhit1 == 0)
         {
             gml_Script_snd_play_ch1(438)
-            var _temp_local_var_162 = k
-            sprite_index = spr_kris_fell_ch1
-            hspeed = -16
-            vspeed = 0
-            friction = 0.2
-            gml_Script_scr_shakeobj_ch1()
+            with (k)
+            {
+                sprite_index = spr_kris_fell_ch1
+                hspeed = -16
+                vspeed = 0
+                friction = 0.2
+                gml_Script_scr_shakeobj_ch1()
+            }
+            deathhit1 = 1
+            con = 145
         }
     }
     if (con == 145)
@@ -933,8 +1386,15 @@ if (con >= 150 && con < 250)
         }
         else
         {
-            var _temp_local_var_446 = king
-            instance_destroy()
+            with (king)
+                instance_destroy()
+            with (s)
+                instance_destroy()
+            with (r)
+                instance_destroy()
+            with (obj_marker_ch1)
+                instance_destroy()
+            k = gml_Script_scr_dark_marker_ch1(266, 180, 4133)
         }
         con = 151
         alarm[4] = 1
@@ -953,16 +1413,14 @@ if (con >= 150 && con < 250)
             king.image_index = 1
         else
             king.image_index = 0
-        _temp_local_var_162.x = (king.x - sinup)
-        var _temp_local_var_164 = k
-        var _temp_local_var_165 = s
-        var _temp_local_var_166 = -9
-        var _temp_local_var_167 = king
+        king.x -= sinup
         if (king.x <= (k.x + 47))
         {
             king.x = (k.x + 46)
-            var _temp_local_var_168 = king
-            gml_Script_scr_halt_ch1()
+            with (king)
+                gml_Script_scr_halt_ch1()
+            con = 154
+            alarm[4] = 30
         }
     }
     if (con == 155)
@@ -980,9 +1438,13 @@ if (con >= 150 && con < 250)
     if (con == 156 && (!gml_Script_d_ex_ch1()))
     {
         k.visible = false
-        var _temp_local_var_170 = king
-        sprite_index = spr_king_liftkris_ch1
-        image_index = 1
+        with (king)
+        {
+            sprite_index = spr_king_liftkris_ch1
+            image_index = 1
+        }
+        con = 157
+        alarm[4] = 30
     }
     if (con == 158)
     {
@@ -1001,11 +1463,7 @@ if (con >= 150 && con < 250)
             gml_Script_snd_play_ch1(377)
             grabsounded = true
         }
-        _temp_local_var_170.image_index = (king.image_index + 0.25)
-        var _temp_local_var_172 = king
-        var _temp_local_var_173 = k
-        var _temp_local_var_174 = -9
-        var _temp_local_var_175 = king
+        king.image_index += 0.25
         if (king.image_index >= 4)
         {
             gml_Script_snd_play_ch1(363)
@@ -1019,13 +1477,7 @@ if (con >= 150 && con < 250)
         }
     }
     if (con == 160)
-    {
-        _temp_local_var_172.image_alpha = (spadechunk4.image_alpha + 0.1)
-        var _temp_local_var_176 = k
-        var _temp_local_var_177 = -9
-        var _temp_local_var_178 = -9
-        var _temp_local_var_179 = spadechunk4
-    }
+        spadechunk4.image_alpha += 0.1
     if (con == 161)
     {
         global.fe = 4
@@ -1050,22 +1502,24 @@ if (con >= 150 && con < 250)
         k2 = gml_Script_scr_dark_marker_ch1((king.x - 30), (king.y + 34), 4132)
         k2.gravity = 1
         k2.hspeed = -2
-        var _temp_local_var_181 = king
-        gml_Script_scr_shakeobj_ch1()
-        image_index = 5
+        with (king)
+        {
+            gml_Script_scr_shakeobj_ch1()
+            image_index = 5
+        }
+        con = 163
     }
     if (con == 163)
     {
-        _temp_local_var_181.image_alpha = (spadechunk4.image_alpha - 0.2)
-        var _temp_local_var_182 = k
-        var _temp_local_var_183 = -9
-        var _temp_local_var_184 = -9
-        var _temp_local_var_185 = spadechunk4
+        spadechunk4.image_alpha -= 0.2
         if (k2.y >= (king.y + 80))
         {
             k.x = k2.x
-            var _temp_local_var_186 = k2
-            instance_destroy()
+            with (k2)
+                instance_destroy()
+            k.visible = true
+            con = 164
+            alarm[4] = 30
         }
     }
     if (con == 165)
@@ -1097,11 +1551,15 @@ if (con >= 150 && con < 250)
     if (con == 170 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(423)
-        var _temp_local_var_188 = king
-        sprite_index = spr_kingr_ch1
-        hspeed = 4
-        friction = 0.5
-        image_index = 0
+        with (king)
+        {
+            sprite_index = spr_kingr_ch1
+            hspeed = 4
+            friction = 0.5
+            image_index = 0
+        }
+        con = 171
+        alarm[4] = 30
     }
     if (con == 172)
     {
@@ -1132,8 +1590,10 @@ if (con >= 150 && con < 250)
     }
     if (con == 175)
     {
-        var _temp_local_var_190 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 176
+        alarm[4] = 10
     }
     if (con == 177)
     {
@@ -1151,11 +1611,7 @@ if (con >= 150 && con < 250)
     {
         siner += 1
         sinup = abs((sin((siner / 8)) * 3))
-        _temp_local_var_190.x = (king.x + sinup)
-        var _temp_local_var_192 = king
-        var _temp_local_var_193 = k2
-        var _temp_local_var_194 = -9
-        var _temp_local_var_195 = king
+        king.x += sinup
         if (sinup >= 1.5)
             king.image_index = 1
         else
@@ -1163,14 +1619,18 @@ if (con >= 150 && con < 250)
         if (king.x >= (s.x - 240))
         {
             king.x = (s.x - 240)
-            var _temp_local_var_196 = king
-            gml_Script_scr_halt_ch1()
+            with (king)
+                gml_Script_scr_halt_ch1()
+            con = 179
+            alarm[4] = 30
         }
     }
     if (con == 180)
     {
-        var _temp_local_var_197 = king
-        image_index = 0
+        with (king)
+            image_index = 0
+        con = 181
+        alarm[4] = 20
     }
     if (con == 182)
     {
@@ -1195,11 +1655,7 @@ if (con >= 150 && con < 250)
     {
         siner += 1
         sinup = abs((sin((siner / 8)) * 2))
-        _temp_local_var_197.x = (king.x + sinup)
-        var _temp_local_var_199 = king
-        var _temp_local_var_200 = king
-        var _temp_local_var_201 = -9
-        var _temp_local_var_202 = king
+        king.x += sinup
         if (sinup >= 1)
             king.image_index = 1
         else
@@ -1209,8 +1665,12 @@ if (con >= 150 && con < 250)
     }
     if (con == 187)
     {
-        var _temp_local_var_203 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        with (king)
+            gml_Script_scr_halt_ch1()
+        con = 188
+        alarm[4] = 30
     }
     if (con == 189)
     {
@@ -1257,11 +1717,7 @@ if (con >= 150 && con < 250)
     {
         for (i = 0; i < 2; i += 1)
         {
-            _temp_local_var_204.image_alpha = (spadechunkf[i].image_alpha + 0.1)
-            var _temp_local_var_206 = s
-            var _temp_local_var_207 = king
-            var _temp_local_var_208 = -9
-            var _temp_local_var_209 = spadechunkf[i]
+            spadechunkf[i].image_alpha += 0.1
             if (spadechunkf[i].image_alpha >= 3)
                 con = 192
         }
@@ -1271,26 +1727,32 @@ if (con >= 150 && con < 250)
     if (con == 192 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_free_all_ch1()
-        var _temp_local_var_212 = king
-        sprite_index = spr_kingr_fallasleep_ch1
+        with (king)
+            sprite_index = spr_kingr_fallasleep_ch1
+        with (king)
+        {
+            o = gml_Script_scr_oflash_ch1()
+            o.flashcolor = c_blue
+        }
+        gml_Script_snd_play_ch1(361)
+        king.image_index = 0
+        con = 193
+        spadetimer = 0
+        spadechunkf[0].image_alpha = 1
+        spadechunkf[1].image_alpha = 1
     }
     if (con == 193)
     {
         spadetimer += 1
-        i = 0
-        while (i < 2)
-        {
-            _temp_local_var_213.image_alpha = (spadechunkf[i].image_alpha - 0.1)
-            i += 1
-            var _temp_local_var_214 = king
-            var _temp_local_var_215 = 
-            var _temp_local_var_216 = -9
-            var _temp_local_var_217 = spadechunkf[i]
-        }
+        for (i = 0; i < 2; i += 1)
+            spadechunkf[i].image_alpha -= 0.1
         if (spadetimer >= 60)
         {
-            var _temp_local_var_218 = spadechunkf[0]
-            instance_destroy()
+            with (spadechunkf[0])
+                instance_destroy()
+            with (spadechunkf[1])
+                instance_destroy()
+            con = 194
         }
     }
     if (con == 194)
@@ -1307,36 +1769,80 @@ if (con >= 150 && con < 250)
     }
     if (con == 195 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_221 = king
-        image_index = 1
-        gml_Script_scr_shakeobj_ch1()
-        hspeed = -4
-        friction = 0.5
+        with (king)
+        {
+            image_index = 1
+            gml_Script_scr_shakeobj_ch1()
+            hspeed = -4
+            friction = 0.5
+        }
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1690_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1691_0")
+        global.msg[2] = "%"
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 196
     }
     if (con == 196 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_223 = king
-        image_index = 2
+        with (king)
+            image_index = 2
+        global.typer = 36
+        global.fe = 8
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1702_0")
+        global.msg[1] = "%"
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 197
     }
     if (con == 197 && (!gml_Script_d_ex_ch1()))
     {
         con = 201
-        var _temp_local_var_225 = king
-        sprite_index = spr_kingr_asleep_ch1
-        image_speed = 0.1
+        with (king)
+        {
+            sprite_index = spr_kingr_asleep_ch1
+            image_speed = 0.1
+        }
+        with (s)
+        {
+            x += 60
+            y -= 10
+            sprite_index = spr_susiel_eye_dark_unhappy_ch1
+        }
     }
     if (con == 200)
     {
         king = gml_Script_scr_dark_marker_ch1(480, 100, 4129)
-        var _temp_local_var_227 = king
-        gml_Script_scr_depth_ch1()
+        with (king)
+            gml_Script_scr_depth_ch1()
+        k = gml_Script_scr_dark_marker_ch1(262, 180, 4133)
+        with (k)
+            gml_Script_scr_depth_ch1()
+        s = gml_Script_scr_dark_marker_ch1(700, 166, 4149)
+        with (s)
+            gml_Script_scr_depth_ch1()
+        gml_Script___view_set(0, 0, 200)
+        con = 201
     }
     if (con == 201)
     {
-        var _temp_local_var_230 = s
-        hspeed = -13
-        image_speed = 0.25
-        gml_Script_scr_depth_ch1()
+        with (s)
+        {
+            hspeed = -13
+            image_speed = 0.25
+            gml_Script_scr_depth_ch1()
+        }
+        with (k)
+            gml_Script_scr_depth_ch1()
+        with (king)
+        {
+            vspeed = -8
+            friction = 0.8
+            depth = 800000
+        }
+        gml_Script_scr_pan_ch1(-7, 0, 28)
+        con = 202
+        blend = 0
+        alarm[4] = 28
     }
     if (con == 202)
     {
@@ -1345,30 +1851,62 @@ if (con >= 150 && con < 250)
     }
     if (con == 203)
     {
-        var _temp_local_var_233 = r
-        instance_destroy()
+        with (r)
+            instance_destroy()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 204
+        alarm[4] = 20
     }
     if (con == 205)
     {
-        var _temp_local_var_235 = k
-        sprite_index = spr_krisr_kneel_ch1
+        with (k)
+            sprite_index = spr_krisr_kneel_ch1
+        global.fe = 3
+        global.fc = 1
+        global.typer = 30
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1760_0")
+        global.msg[1] = "%"
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 206
     }
     if (con == 206 && (!gml_Script_d_ex_ch1()))
     {
         r = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 640), (s.y + 10), 3568)
-        var _temp_local_var_237 = r
-        hspeed = -6
-        image_speed = 0.2
+        with (r)
+        {
+            hspeed = -6
+            image_speed = 0.2
+        }
+        r.depth = (s.depth - 1000)
+        con = 207
+        alarm[4] = 36
     }
     if (con == 208)
     {
-        var _temp_local_var_238 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        with (s)
+            sprite_index = spr_susier_eye_dark_ch1
+        with (k)
+            sprite_index = spr_krisr_dark_ch1
+        global.fc = 2
+        global.fe = 1
+        global.typer = 31
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1785_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1786_0")
+        gml_Script_scr_susface_ch1(2, 2)
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1788_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1789_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 209
     }
     if (con == 209 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_242 = r
-        sprite_index = spr_ralseir_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        con = 210
+        alarm[4] = 30
     }
     if (con == 211)
     {
@@ -1384,66 +1922,178 @@ if (con >= 150 && con < 250)
         con = 212
     }
     if (con == 212 && (!gml_Script_d_ex_ch1()))
-        var _temp_local_var_244 = s
+    {
+        with (s)
+        {
+        }
+        with (r)
+            sprite_index = spr_ralseil_ch1
+        con = 213
+        alarm[4] = 4
+    }
     if (con == 214)
     {
-        var _temp_local_var_246 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        global.fc = 1
+        global.typer = 30
+        global.fe = 3
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1828_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1829_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1830_0")
+        global.msg[3] = "%"
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 215
     }
     if (con == 215 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_248 = s
-        sprite_index = spr_susiel_eye_dark_ch1
+        with (s)
+            sprite_index = spr_susiel_eye_dark_ch1
+        con = 216
     }
     if (con == 216 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_250 = k
-        sprite_index = spr_krisl_dark_ch1
+        with (k)
+            sprite_index = spr_krisl_dark_ch1
+        with (l)
+            instance_destroy()
+        l = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 80), k.y, 3578)
+        with (l)
+            hspeed = 8
+        con = 217
+        alarm[4] = 20
     }
     if (con == 218)
     {
-        var _temp_local_var_253 = l
-        gml_Script_scr_halt_ch1()
+        with (l)
+            gml_Script_scr_halt_ch1()
+        global.fe = 2
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1856_0")
+        gml_Script_scr_lanface_ch1(1, 3)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1858_0")
+        gml_Script_scr_susface_ch1(3, 9)
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1860_0")
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1861_0")
+        gml_Script_scr_lanface_ch1(6, 2)
+        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1863_0")
+        global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1864_0")
+        global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1865_0")
+        gml_Script_scr_susface_ch1(10, 9)
+        global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1867_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 219
     }
     if (con == 219 && (!gml_Script_d_ex_ch1()))
     {
         screen_noise = gml_Script_snd_loop_ch1(460)
-        var _temp_local_var_255 = l
-        sprite_index = spr_lancer_l_unhappy_ch1
+        with (l)
+            sprite_index = spr_lancer_l_unhappy_ch1
+        with (s)
+            sprite_index = spr_susie_shock_ch1
+        with (r)
+            sprite_index = spr_ralsei_shock_overworld_ch1
+        shake = gml_Script_instance_create_ch1(0, 0, 1464)
+        with (shake)
+        {
+            permashake = true
+            shakex = 2
+            shakey = 2
+        }
+        con = 220
+        alarm[4] = 60
     }
     if (con == 221)
     {
-        var _temp_local_var_259 = shake
-        permashake = false
+        with (shake)
+            permashake = false
+        gml_Script_snd_stop_ch1(screen_noise)
+        with (l)
+            sprite_index = spr_lancer_r_unhappy_ch1
+        with (s)
+            sprite_index = spr_susiel_eye_dark_unhappy_ch1
+        with (r)
+            sprite_index = spr_ralseil_ch1
+        global.typer = 31
+        global.fc = 2
+        global.fe = 3
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1896_0")
+        gml_Script_scr_lanface_ch1(1, 4)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1898_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1899_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1900_0")
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1901_0")
+        global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1902_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 222
     }
     if (con == 222 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_264 = l
-        sprite_index = spr_lancer_l_unhappy_ch1
+        with (l)
+            sprite_index = spr_lancer_l_unhappy_ch1
+        global.fe = 4
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1911_0")
+        gml_Script_scr_susface_ch1(1, 3)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_1913_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 223
     }
     if (con == 223 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_266 = l
-        sprite_index = spr_lancer_r_unhappy_ch1
+        with (l)
+            sprite_index = spr_lancer_r_unhappy_ch1
+        with (r)
+        {
+            sprite_index = spr_ralseid_ch1
+            image_speed = 0.25
+            vspeed = 3
+        }
+        con = 222.1
+        alarm[4] = 10
     }
     if (con == 223.1)
     {
-        var _temp_local_var_268 = r
-        sprite_index = spr_ralseil_ch1
-        vspeed = 0
-        hspeed = -6
+        with (r)
+        {
+            sprite_index = spr_ralseil_ch1
+            vspeed = 0
+            hspeed = -6
+        }
+        con = 222.2
+        alarm[4] = 35
     }
     if (con == 223.2)
     {
-        var _temp_local_var_269 = r
-        sprite_index = spr_ralseiu_ch1
-        vspeed = -3
-        hspeed = 0
+        with (r)
+        {
+            sprite_index = spr_ralseiu_ch1
+            vspeed = -3
+            hspeed = 0
+        }
+        with (k)
+        {
+            hspeed = 3
+            image_speed = 0.25
+        }
+        with (s)
+        {
+            hspeed = 3
+            image_speed = 0.25
+        }
+        con = 224
+        alarm[4] = 10
     }
     if (con == 225)
     {
-        var _temp_local_var_272 = k
-        gml_Script_scr_halt_ch1()
+        with (k)
+            gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        con = 226
+        alarm[4] = 30
     }
     if (con == 227)
     {
@@ -1468,15 +2118,33 @@ if (con >= 150 && con < 250)
     if (con == 241 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_free_all_ch1()
-        var _temp_local_var_278 = s
-        x += 60
-        y -= 10
-        sprite_index = spr_susiel_eye_dark_ch1
+        with (s)
+        {
+            x += 60
+            y -= 10
+            sprite_index = spr_susiel_eye_dark_ch1
+        }
+        with (king)
+            sprite_index = spr_king_shock_ch1
+        king.image_index = 0
+        king.siner = 0
+        shake = gml_Script_instance_create_ch1(0, 0, 1464)
+        with (shake)
+        {
+            permashake = true
+            shakex = 2
+            shakey = 2
+        }
+        rumble = gml_Script_snd_loop_ch1(460)
+        con = 242
+        alarm[4] = 30
     }
     if (con == 242)
     {
-        var _temp_local_var_281 = spadechunkf[0]
-        image_alpha -= 0.1
+        with (spadechunkf[0])
+            image_alpha -= 0.1
+        with (spadechunkf[1])
+            image_alpha -= 0.1
     }
     if (con == 243)
         con = 250
@@ -1488,34 +2156,70 @@ if (con >= 250 && con <= 265)
         if (part == 0)
         {
             k = gml_Script_scr_dark_marker_ch1(266, 180, 4133)
-            var _temp_local_var_284 = k
-            depth = 800000
+            with (k)
+                depth = 800000
+            gml_Script___view_set(0, 0, 200)
+            king = gml_Script_scr_dark_marker_ch1(439, 100, 4116)
+            king.siner = 0
+            part = 1
         }
-        var _temp_local_var_285 = k
-        depth = 800000
+        with (k)
+            depth = 800000
+        xmake = 8
+        ymake = 4
+        for (i = 0; i < xmake; i += 1)
+        {
+            for (j = 0; j < ymake; j += 1)
+            {
+                cwp[i][j] = gml_Script_scr_dark_marker_ch1(((gml_Script___view_get(0, 0) - 180) - (i * 90)), (230 + (j * 30)), 4112)
+                with (cwp[i][j])
+                {
+                    siner = 0
+                    hspeed = 12
+                    gml_Script_scr_depth_ch1()
+                }
+                cwp[i][j].siner = (i + (j * 2))
+            }
+        }
+        l = gml_Script_scr_dark_marker_ch1(((gml_Script___view_get(0, 0) - 180) - 280), 60, 3578)
+        with (l)
+        {
+            hspeed = 12
+            siner = 0
+        }
+        crowdshift = 1
+        con = 251
+        alarm[4] = 45
+        lifttimer = 0
+        liftking = 0
     }
     if (crowdshift == 1)
     {
         for (i = 0; i < xmake; i += 1)
         {
-            j = 0
-            while (j < ymake)
+            for (j = 0; j < ymake; j += 1)
             {
-                var _temp_local_var_288 = cwp[i][j]
-                siner += 1
-                image_xscale = (2 + (sin((siner / 12)) * 0.05))
-                image_yscale = (2 + (sin((siner / 6)) * 0.1))
+                with (cwp[i][j])
+                {
+                    siner += 1
+                    image_xscale = (2 + (sin((siner / 12)) * 0.05))
+                    image_yscale = (2 + (sin((siner / 6)) * 0.1))
+                }
             }
         }
-        var _temp_local_var_289 = l
-        siner += 1
-        y += sin((siner / 6))
+        with (l)
+        {
+            siner += 1
+            y += sin((siner / 6))
+        }
     }
     if (liftking == 1)
     {
-        var _temp_local_var_290 = king
-        siner += 1
-        y += sin((siner / 6))
+        with (king)
+        {
+            siner += 1
+            y += sin((siner / 6))
+        }
     }
     if (con == 251)
     {
@@ -1524,17 +2228,22 @@ if (con >= 250 && con <= 265)
             gml_Script_snd_play_ch1(368)
         if (lifttimer >= 18)
         {
-            var _temp_local_var_292 = k
-            sprite_index = spr_krisr_kneel_ch1
-            x += 12
+            with (k)
+            {
+                sprite_index = spr_krisr_kneel_ch1
+                x += 12
+            }
         }
         if (lifttimer >= 35)
         {
-            var _temp_local_var_293 = king
-            vspeed = -8
-            friction = 1
-            sprite_index = spr_king_fall_ch1
-            image_speed = 0.2
+            with (king)
+            {
+                vspeed = -8
+                friction = 1
+                sprite_index = spr_king_fall_ch1
+                image_speed = 0.2
+            }
+            liftking = 1
         }
     }
     if (con == 252)
@@ -1544,8 +2253,18 @@ if (con >= 250 && con <= 265)
         with (obj_shake_ch1)
             permashake = false
         gml_Script_snd_stop_ch1(460)
-        var _temp_local_var_294 = l
-        gml_Script_scr_halt_ch1()
+        with (l)
+            gml_Script_scr_halt_ch1()
+        for (i = 0; i < xmake; i += 1)
+        {
+            for (j = 0; j < ymake; j += 1)
+            {
+                with (cwp[i][j])
+                    gml_Script_scr_halt_ch1()
+            }
+        }
+        con = 253
+        alarm[4] = 30
     }
     if (con == 254)
     {
@@ -1574,9 +2293,28 @@ if (con >= 250 && con <= 265)
     if (con == 255 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 60)
-        var _temp_local_var_297 = king
-        hspeed = -12
-        friction = 0
+        with (king)
+        {
+            hspeed = -12
+            friction = 0
+        }
+        with (l)
+            hspeed = -12
+        for (i = 0; i < xmake; i += 1)
+        {
+            for (j = 0; j < ymake; j += 1)
+            {
+                with (cwp[i][j])
+                    hspeed = -12
+            }
+        }
+        con = 256
+        alarm[4] = 60
+        global.fc = 20
+        global.fe = 6
+        global.typer = 33
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2155_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 257 && (!gml_Script_d_ex_ch1()))
     {
@@ -1588,8 +2326,10 @@ if (con >= 265 && con < 320)
 {
     if (con == 268 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_303 = s
-        sprite_index = spr_susier_eye_dark_lookup_ch1
+        with (s)
+            sprite_index = spr_susier_eye_dark_lookup_ch1
+        con = 269
+        alarm[4] = 15
     }
     if (con == 270)
     {
@@ -1602,54 +2342,158 @@ if (con >= 265 && con < 320)
     }
     if (con == 275 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_305 = s
-        sprite_index = spr_susiel_eye_dark_ch1
+        with (s)
+            sprite_index = spr_susiel_eye_dark_ch1
+        with (l)
+        {
+            hspeed = 8
+            sprite_index = spr_lancer_rt_ch1
+        }
+        with (r)
+            sprite_index = spr_ralseil_ch1
+        with (k)
+            sprite_index = spr_krisl_dark_ch1
+        con = 276
+        alarm[4] = 3
     }
     if (con == 277 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_310 = l
-        gml_Script_scr_halt_ch1()
+        with (l)
+            gml_Script_scr_halt_ch1()
+        global.typer = 32
+        global.fc = 5
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2205_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2206_0")
+        gml_Script_scr_susface_ch1(2, 2)
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2208_0")
+        gml_Script_scr_lanface_ch1(4, 3)
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2210_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 280
     }
     if (con == 280 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_312 = s
-        sprite_index = spr_susiel_dark_laugh_ch1
-        image_speed = 0.334
+        with (s)
+        {
+            sprite_index = spr_susiel_dark_laugh_ch1
+            image_speed = 0.334
+        }
+        with (l)
+        {
+            sprite_index = spr_lancer_rt_laugh_ch1
+            image_speed = 0.334
+        }
+        ll = gml_Script_snd_play_ch1(454)
+        sl = gml_Script_snd_play_ch1(382)
+        gml_Script_snd_volume_ch1(ll, 0.8, 0)
+        gml_Script_snd_volume_ch1(sl, 0.8, 0)
+        con = 281
+        alarm[4] = 70
     }
     if (con == 282)
     {
-        var _temp_local_var_314 = s
-        gml_Script_scr_halt_ch1()
-        sprite_index = spr_susiel_dark_eyes_ch1
+        with (s)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_susiel_dark_eyes_ch1
+        }
+        with (l)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_lancer_lt_ch1
+        }
+        global.typer = 32
+        global.fc = 5
+        global.fe = 3
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2235_0")
+        gml_Script_scr_susface_ch1(1, 2)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2237_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 283
     }
     if (con == 283 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_317 = l
-        hspeed = -8
+        with (l)
+            hspeed = -8
+        with (k)
+        {
+            hspeed = 6
+            sprite_index = spr_krisr_dark_ch1
+            image_speed = 0.2
+        }
+        with (s)
+        {
+            hspeed = 6
+            sprite_index = spr_susier_eye_dark_ch1
+            image_speed = 0.2
+        }
+        with (r)
+        {
+            hspeed = 5.5
+            sprite_index = spr_ralseir_ch1
+            image_speed = 0.2
+        }
+        gml_Script_scr_pan_ch1(6, 0, 160)
+        con = 284
+        alarm[4] = 160
     }
     if (con == 285)
     {
-        var _temp_local_var_321 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        with (s)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_susiel_eye_dark_unhappy_ch1
+        }
+        with (k)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_krisl_dark_ch1
+        }
+        global.fc = 2
+        global.fe = 4
+        global.typer = 31
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2262_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2263_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 286
     }
     if (con == 286 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_325 = r
-        sprite_index = spr_ralsei_pullhat_ch1
-        image_speed = 0.1
+        with (r)
+        {
+            sprite_index = spr_ralsei_pullhat_ch1
+            image_speed = 0.1
+        }
+        global.fc = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2272_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2273_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 287
+        rtimer = 0
     }
     if (con == 287 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_327 = r
-        sprite_index = spr_ralsei_reveal_ch1
-        image_index = 0
-        image_speed = 0
+        with (r)
+        {
+            sprite_index = spr_ralsei_reveal_ch1
+            image_index = 0
+            image_speed = 0
+        }
+        con = 288
     }
     if (con == 288)
     {
         rtimer += 0.1
-        var _temp_local_var_328 = r
-        image_index += 0.1
+        with (r)
+            image_index += 0.1
+        if (rtimer >= 2)
+        {
+            con = 289
+            alarm[4] = 10
+        }
     }
     if (con == 290)
     {
@@ -1671,8 +2515,19 @@ if (con >= 265 && con < 320)
             gml_Script_snd_play_ch1(368)
             hatsounded = true
         }
-        var _temp_local_var_330 = r
-        image_index += 0.1
+        with (r)
+            image_index += 0.1
+        rtimer += 0.1
+        if (rtimer >= 6)
+        {
+            con = 292
+            alarm[4] = 30
+            with (s)
+            {
+                sprite_index = spr_susie_shock_ch1
+                gml_Script_scr_shakeobj_ch1()
+            }
+        }
     }
     if (con == 293)
     {
@@ -1686,8 +2541,14 @@ if (con >= 265 && con < 320)
     }
     if (con == 294 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_333 = r
-        image_index += 0.1
+        with (r)
+            image_index += 0.1
+        rtimer += 0.1
+        if (rtimer >= 11)
+        {
+            con = 295
+            alarm[4] = 30
+        }
     }
     if (con == 296)
     {
@@ -1709,13 +2570,28 @@ if (con >= 265 && con < 320)
     }
     if (con == 298 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_336 = k
-        sprite_index = spr_krisr_dark_ch1
+        with (k)
+            sprite_index = spr_krisr_dark_ch1
+        with (s)
+        {
+            sprite_index = spr_susier_eye_dark_ch1
+            image_index = 1
+            hspeed = 6
+        }
+        if (global.plot >= 240)
+        {
+            with (s)
+                hspeed = 0
+        }
+        con = 299
+        alarm[4] = 4
     }
     if (con == 300)
     {
-        var _temp_local_var_339 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 301
+        alarm[4] = 30
     }
     if (con == 302)
     {
@@ -1726,9 +2602,23 @@ if (con >= 265 && con < 320)
     }
     if (con == 303 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_341 = s
-        image_speed = 0.2
-        hspeed = 4
+        with (s)
+        {
+            image_speed = 0.2
+            hspeed = 4
+        }
+        with (k)
+        {
+            image_speed = 0.2
+            hspeed = 4
+        }
+        con = 304
+        alarm[4] = 110
+        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        with (fade)
+            fadespeed = 0.01
+        if (global.plot < 240)
+            gml_Script_scr_pan_ch1(3, 0, 999)
     }
     if (con == 305)
     {
@@ -1754,26 +2644,58 @@ if (con >= 350 && con < 700)
             gml_Script___view_set(0, 0, 200)
             k = gml_Script_scr_dark_marker_ch1(598, 180, 4134)
             s = gml_Script_scr_dark_marker_ch1(700, 166, 4149)
-            var _temp_local_var_346 = k
-            depth = 800000
+            with (k)
+                depth = 800000
+            with (s)
+                gml_Script_scr_depth_ch1()
         }
-        var _temp_local_var_348 = k
-        gml_Script_scr_depth_ch1()
+        with (k)
+            gml_Script_scr_depth_ch1()
+        with (s)
+            gml_Script_scr_depth_ch1()
+        with (r)
+            instance_destroy()
+        with (s)
+        {
+            hspeed = -6
+            image_speed = 0.25
+        }
+        con = 351
+        alarm[4] = 6
     }
     if (con == 352)
     {
-        var _temp_local_var_352 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        global.fe = 3
+        global.typer = 30
+        global.fc = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2435_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 353
     }
     if (con == 353 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_354 = k
-        sprite_index = spr_krisr_dark_ch1
+        with (k)
+            sprite_index = spr_krisr_dark_ch1
+        with (s)
+            sprite_index = spr_susier_eye_dark_ch1
+        gml_Script_scr_pan_ch1(3, 0, 60)
+        r = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 800), (s.y + 10), 3568)
+        with (r)
+        {
+            hspeed = -4
+            image_speed = 0.2
+        }
+        con = 354
+        alarm[4] = 60
     }
     if (con == 355)
     {
-        var _temp_local_var_357 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        con = 356
+        alarm[4] = 30
     }
     if (con == 357)
     {
@@ -1789,8 +2711,10 @@ if (con >= 350 && con < 700)
     }
     if (con == 358 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_359 = r
-        sprite_index = spr_ralseir_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        con = 359
+        alarm[4] = 30
     }
     if (con == 360)
     {
@@ -1806,61 +2730,148 @@ if (con >= 350 && con < 700)
         con = 361
     }
     if (con == 361 && (!gml_Script_d_ex_ch1()))
-        var _temp_local_var_361 = s
+    {
+        with (s)
+        {
+        }
+        with (r)
+            sprite_index = spr_ralseil_ch1
+        con = 362
+        alarm[4] = 4
+    }
     if (con == 363)
     {
-        var _temp_local_var_363 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        global.typer = 30
+        global.fc = 1
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2506_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2507_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2508_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 364
     }
     if (con == 364 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_365 = s
-        sprite_index = spr_susier_eye_dark_lookup_ch1
+        with (s)
+            sprite_index = spr_susier_eye_dark_lookup_ch1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2516_0")
+        con = 365
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 365 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_367 = s
-        sprite_index = spr_susier_eye_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susier_eye_dark_unhappy_ch1
+        with (r)
+            sprite_index = spr_ralseid_pleased_ch1
+        global.typer = 31
+        global.fc = 2
+        global.fe = 8
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2528_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2529_0")
+        gml_Script_scr_susface_ch1(2, 2)
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2531_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 366
     }
     if (con == 366 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_370 = r
-        sprite_index = spr_ralseid_ch1
+        with (r)
+            sprite_index = spr_ralseid_ch1
+        con = 367
+        alarm[4] = 30
     }
     if (con == 368)
     {
-        var _temp_local_var_371 = r
-        sprite_index = spr_ralseil_ch1
+        with (r)
+            sprite_index = spr_ralseil_ch1
+        global.typer = 31
+        global.fc = 2
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2549_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2550_0")
+        gml_Script_scr_susface_ch1(2, 1)
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2552_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2553_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 369
     }
     if (con == 369 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_373 = r
-        vspeed = -1
-        image_speed = 0.2
-        sprite_index = spr_ralseid_ch1
+        with (r)
+        {
+            vspeed = -1
+            image_speed = 0.2
+            sprite_index = spr_ralseid_ch1
+        }
+        with (s)
+        {
+            hspeed = 5
+            image_speed = 0.2
+        }
+        with (k)
+        {
+            hspeed = 5
+            image_speed = 0.2
+        }
+        with (r)
+            depth = 900000
+        gml_Script_scr_pan_ch1(4, 0, 50)
+        con = 370
+        alarm[4] = 50
     }
     if (con == 371)
     {
-        var _temp_local_var_377 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        with (k)
+            gml_Script_scr_halt_ch1()
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        con = 372
+        alarm[4] = 45
     }
     if (con == 373)
     {
-        var _temp_local_var_381 = s
-        sprite_index = spr_susiel_eye_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susiel_eye_dark_unhappy_ch1
+        with (k)
+            sprite_index = spr_krisl_dark_ch1
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2584_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2585_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 374
     }
     if (con == 374 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_384 = k
-        sprite_index = spr_krisr_dark_ch1
-        image_speed = 0.2
-        hspeed = 6
+        with (k)
+        {
+            sprite_index = spr_krisr_dark_ch1
+            image_speed = 0.2
+            hspeed = 6
+        }
+        with (s)
+        {
+            sprite_index = spr_susier_eye_dark_unhappy_ch1
+            image_speed = 0.2
+            hspeed = 6
+        }
+        gml_Script_scr_pan_ch1(5, 0, 999)
+        con = 375
+        alarm[4] = 60
     }
     if (con == 376)
     {
         fade = gml_Script_instance_create_ch1(0, 0, 1460)
-        var _temp_local_var_386 = fade
-        fadespeed = 0.02
+        with (fade)
+            fadespeed = 0.02
+        con = 377
+        alarm[4] = 60
     }
     if (con == 378)
     {
@@ -1886,20 +2897,38 @@ if (con >= 700)
         with (obj_npc_facing_ch1)
             visible = false
         s = gml_Script_scr_dark_marker_ch1(obj_caterpillarchara_ch1.x, obj_caterpillarchara_ch1.y, 3560)
-        var _temp_local_var_388 = s
-        gml_Script_scr_depth_ch1()
+        with (s)
+            gml_Script_scr_depth_ch1()
+        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4199)
+        with (k)
+            gml_Script_scr_depth_ch1()
+        r = gml_Script_scr_dark_marker_ch1(obj_npc_facing_ch1.x, obj_npc_facing_ch1.y, 3570)
+        with (r)
+            gml_Script_scr_depth_ch1()
+        global.typer = 31
+        global.fc = 2
+        global.fe = 6
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_kingcutscene_slash_Step_0_gml_2648_0")
+        gml_Script_mus_volume_ch1(global.currentsong[1], 0, 80)
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 701 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_392 = r
-        sprite_index = spr_ralseid_ch1
-        image_speed = 0.1
-        vspeed = 1
+        with (r)
+        {
+            sprite_index = spr_ralseid_ch1
+            image_speed = 0.1
+            vspeed = 1
+        }
+        con = 702
+        alarm[4] = 60
     }
     if (con == 703)
     {
-        var _temp_local_var_393 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        con = 704
+        alarm[4] = 20
     }
     if (con == 705)
     {

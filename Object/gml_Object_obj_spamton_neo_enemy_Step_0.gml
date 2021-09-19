@@ -1,3 +1,4 @@
+var _temp_local_var_5, _temp_local_var_6, _temp_local_var_57, _temp_local_var_61;
 if (bigshot == 1)
     global.sp = 5
 if (cantspareinit == 0 && gml_Script_scr_sideb_get_phase() > 2 && gml_Script_i_ex(355))
@@ -1661,20 +1662,19 @@ if (global.fighting == true)
                     dontchangepose = 0
                     smokethreshold = 10
                     partmode = 40
-                    var _temp_local_var_103 = 6
-                    if (6 <= 0)
+                    repeat (6)
                     {
-                    }
-                    else
-                    {
-                        while (true)
-                        {
-                            var smokey = gml_Script_instance_create((x + 50), (y + 80), obj_afterimage_grow)
-                            smokey.visible = false
-                            var _temp_local_var_104 = smokey
+                        var smokey = gml_Script_instance_create((x + 50), (y + 80), obj_afterimage_grow)
+                        smokey.visible = false
+                        with (smokey)
                             gml_Script_scr_script_delayed(gml_Script_scr_var, 1, "visible", 1)
-                        }
-                        gml_Script_scr_script_delayed(gml_Script_scr_var, 1, "visible", 1)
+                        smokey.depth = (depth + 10)
+                        smokey.image_alpha = 2.5
+                        smokey.sprite_index = spr_cakesmoke
+                        smokey.hspeed = random_range(2, 10)
+                        smokey.gravity = -0.5
+                        smokey.friction = 0.2
+                        smokey.vspeed = random_range(-1, -8)
                     }
                 }
                 else if (ballooncon == 6)
@@ -1812,11 +1812,13 @@ if (global.fighting == true)
                     blackall.image_alpha = lerp(0, 1, ((endtimer - 300) / 30))
                 if (endtimer == 331)
                 {
-                    var _temp_local_var_75 = whiteall
-                    if gml_Script_i_ex(996)
-                        obj_ch2_sceneex2.forcend = 1
-                    if gml_Script_i_ex(996)
-                        obj_ch2_sceneex2.con = 13
+                    with (whiteall)
+                    {
+                        if gml_Script_i_ex(996)
+                            obj_ch2_sceneex2.forcend = 1
+                        if gml_Script_i_ex(996)
+                            obj_ch2_sceneex2.con = 13
+                    }
                 }
             }
         }
@@ -2022,11 +2024,13 @@ if (global.fighting == true)
                 }
                 if (endtimer == 450)
                 {
-                    var _temp_local_var_85 = blackall2
-                    if gml_Script_i_ex(996)
-                        obj_ch2_sceneex2.forcend = 1
-                    if gml_Script_i_ex(996)
-                        obj_ch2_sceneex2.con = 13
+                    with (blackall2)
+                    {
+                        if gml_Script_i_ex(996)
+                            obj_ch2_sceneex2.forcend = 1
+                        if gml_Script_i_ex(996)
+                            obj_ch2_sceneex2.con = 13
+                    }
                 }
             }
             if (ballooncon == 0 && endtimer == 0)

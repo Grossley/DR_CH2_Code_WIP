@@ -15,6 +15,9 @@ if broken
     afterimage.depth = depth
     gml_Script_scr_darksize(afterimage)
     afterimage.image_angle = image_angle
-    var _temp_local_var_1 = afterimage
-    event_user(0)
+    with (afterimage)
+        event_user(0)
+    gml_Script_instance_create((x + 8), (y + 96), obj_mazecheese)
+    global.flag[447] = 1
+    instance_destroy()
 }

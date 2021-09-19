@@ -31,9 +31,9 @@ if (con == 1 && (!gml_Script_d_ex()) && gml_Script_i_ex(101))
 if remove_shine
 {
     remove_shine = 0
-    if (shine != -4)
+    if (shine != noone)
     {
-        var _temp_local_var_2 = shine
-        instance_destroy()
+        with (shine)
+            instance_destroy()
     }
 }

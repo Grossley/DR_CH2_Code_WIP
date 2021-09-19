@@ -28,7 +28,7 @@ if (con == 0)
         con++
     }
 }
-if (place_meeting(x, y, obj_solidenemy) || (x.room_width + sprite_width) || x < (0 - sprite_width))
+if (place_meeting(x, y, obj_solidenemy) || x > (room_width + sprite_width) || x < (0 - sprite_width))
 {
     active = false
     fadeaway = 1

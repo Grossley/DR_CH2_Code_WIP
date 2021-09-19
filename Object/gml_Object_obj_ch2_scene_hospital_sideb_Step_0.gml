@@ -1,7 +1,11 @@
 if (con == 1)
 {
-    var _temp_local_var_1 = blackscreen
-    depth = 500
+    with (blackscreen)
+        depth = 500
+    timer = 0
+    global.interact = 1
+    con = 2
+    right_press = 0
 }
 if (con == 2)
 {
@@ -119,8 +123,10 @@ if (con == 6 && (!gml_Script_i_ex(61)))
 if (con == 7 && (!gml_Script_i_ex(61)))
 {
     timer++
-    var _temp_local_var_12 = blackscreen
-    image_alpha -= 0.04
+    with (blackscreen)
+        image_alpha -= 0.04
+    if (timer > 30)
+        con = 8
 }
 if (con == 8)
 {

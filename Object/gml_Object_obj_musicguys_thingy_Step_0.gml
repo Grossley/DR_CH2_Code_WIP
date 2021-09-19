@@ -39,8 +39,8 @@ if (mode == 1)
         if (triple == 1)
         {
             event_user(0)
-            var _temp_local_var_1 = bul[choose(0, 1, 2)]
-            instance_destroy()
+            with (bul[choose(0, 1, 2)])
+                instance_destroy()
         }
         if (triple == 0)
         {
@@ -92,8 +92,12 @@ if (input_memorizer == 2)
     {
         if (keyboard_check(mybutton[i]) && pressed[i] == 1)
         {
-            var _temp_local_var_3 = mybul[i][0]
-            image_yscale += 0.5
+            with (mybul[i][0])
+                image_yscale += 0.5
+            with (mybul[i][1])
+                image_yscale += 0.5
+            with (mybul[i][2])
+                image_yscale += 0.5
         }
         if (keyboard_check(mybutton[i]) && pressed[i] == 0)
         {
@@ -102,8 +106,9 @@ if (input_memorizer == 2)
             mybul[i][0] = bul[0]
             mybul[i][1] = bul[1]
             mybul[i][2] = bul[2]
-            var _temp_local_var_7 = bul[i]
-            instance_destroy()
+            with (bul[i])
+                instance_destroy()
+            pressed[i] = 1
         }
         if keyboard_check_released(mybutton[i])
         {
@@ -132,8 +137,10 @@ if (mode == 3)
         bul[0].image_yscale = bullet_height[bulletcount]
         bul[1].image_yscale = bullet_height[bulletcount]
         bul[2].image_yscale = bullet_height[bulletcount]
-        var _temp_local_var_10 = bul[bullet_pos[bulletcount]]
-        instance_destroy()
+        with (bul[bullet_pos[bulletcount]])
+            instance_destroy()
+        bulletcount++
+        remframe = bullet_frame[bulletcount]
     }
     mframecount++
     if (bulletcount >= bulletmax)

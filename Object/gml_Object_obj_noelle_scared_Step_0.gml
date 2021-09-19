@@ -165,7 +165,7 @@ if (jostlecon == 2)
         jumpstyle = 0
     }
 }
-if (fallen == 0 ? y.room_height : 0)
+if (fallen == 0 && y > room_height)
 {
     failureCount++
     fallen = 1
@@ -198,8 +198,9 @@ if (con == 0 && jostlecon == 0 && extflag == "mice1Scare")
     noelleFacing.image_xscale = 2
     noelleFacing.image_yscale = 2
     noelleFacing.y = noelleFacing.ystart
-    var _temp_local_var_9 = noelleFacing
-    gml_Script_scr_set_facing_sprites("noelledark")
+    with (noelleFacing)
+        gml_Script_scr_set_facing_sprites("noelledark")
+    instance_destroy()
 }
 if (con == 0 && jostlecon == 0)
     jostletimer++

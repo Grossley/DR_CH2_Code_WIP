@@ -20,7 +20,7 @@ else
     sprite_index = spr_pipis_egg
     image_speed = 0
     image_index = 0
-    if x.room_width
+    if (x > room_width)
     {
         dir = "left"
         hspeed = (-12 - random(3))

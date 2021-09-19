@@ -71,7 +71,7 @@ if (event == 1)
     mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
     if (sd == 1)
     {
-        var _temp_local_var_3 = mydialoguer
-        side = 1
+        with (mydialoguer)
+            side = 1
     }
 }

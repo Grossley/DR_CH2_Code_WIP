@@ -8,7 +8,8 @@ if (active == true)
         if (char >= 3 || spelltotal == 1)
         {
             gml_Script_scr_attackphase()
-            var _temp_local_var_3 = spellwriter
+            with (spellwriter)
+                instance_destroy()
             instance_destroy()
         }
         else if (gml_Script_scr_monsterpop() > 0)
@@ -16,14 +17,22 @@ if (active == true)
             if (gotitem[char] == 1)
             {
                 re_castyet = 1
-                var _temp_local_var_4 = global.charinstance[char]
-                state = 4
+                with (global.charinstance[char])
+                    state = 4
+                with (spellwriter)
+                    instance_destroy()
+                gml_Script_scr_spelltext(global.charspecial[char], char)
+                spellwriter = gml_Script_scr_battletext_default()
             }
             if (gotspell[char] == 1)
             {
                 re_castyet = 1
-                var _temp_local_var_6 = global.charinstance[char]
-                state = 2
+                with (global.charinstance[char])
+                    state = 2
+                with (spellwriter)
+                    instance_destroy()
+                gml_Script_scr_spelltext(global.charspecial[char], char)
+                spellwriter = gml_Script_scr_battletext_default()
             }
             global.spelldelay = 90
             if (re_castyet == 0)
@@ -43,7 +52,8 @@ if (active == true)
         else
         {
             gml_Script_scr_attackphase()
-            var _temp_local_var_9 = spellwriter
+            with (spellwriter)
+                instance_destroy()
             instance_destroy()
         }
     }

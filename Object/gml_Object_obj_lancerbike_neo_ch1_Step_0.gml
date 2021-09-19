@@ -21,10 +21,12 @@ if (racecon == 0)
     s.lx = x
     s.ly = (y - 108)
     gml_Script_snd_play_ch1(427)
-    var _temp_local_var_1 = s
-    hspeed = -2
-    vspeed -= 7
-    gravity = 1
+    with (s)
+    {
+        hspeed = -2
+        vspeed -= 7
+        gravity = 1
+    }
 }
 if (racecon == 1)
 {
@@ -42,10 +44,19 @@ if (racecon == 1)
     }
     if (rtimer == 16)
     {
-        var _temp_local_var_2 = s
-        speed = 0
-        gravity = 0
-        image_index = 0
+        with (s)
+        {
+            speed = 0
+            gravity = 0
+            image_index = 0
+        }
+        sfitx = (s.x - x)
+        sfity = (s.y - y)
+        s_tracking = 1
+        ax_timer = 0
+        s_timer = 0
+        racecon = 2
+        rtimer = 0
     }
 }
 if (s_attack == 1)
@@ -57,19 +68,27 @@ if (s_attack == 1)
         axe = gml_Script_instance_create_ch1((s.x - 40), (s.y - 15), 1602)
         gml_Script_scr_bullet_inherit_ch1(axe)
         axe.depth = (depth + 2)
-        var _temp_local_var_3 = axe
-        hspeed = -16
-        if (obj_heart_ch1.y >= y)
+        with (axe)
         {
-            gravity_direction = (-15 + random(10))
-            vspeed = 2
+            hspeed = -16
+            if (obj_heart_ch1.y >= y)
+            {
+                gravity_direction = (-15 + random(10))
+                vspeed = 2
+            }
+            else
+            {
+                gravity_direction = (5 + random(10))
+                vspeed = -2
+            }
+            gravity = 0.5
         }
-        else
-        {
-            gravity_direction = (5 + random(10))
-            vspeed = -2
-        }
-        gravity = 0.5
+        axe.hspeed += (0.3 * ax_timer)
+        gml_Script_snd_play_ch1(442)
+        s.sprite_index = spr_susie_enemy_attack_ch1
+        s.active = false
+        s.image_index = 0
+        s.image_speed = 0.5
     }
     if (s_timer == 4)
         s.active = false
@@ -96,8 +115,8 @@ if (racecon == 2)
         vspeed = 0
         gml_Script_snd_play_ch1(441)
         honkimg = gml_Script_instance_create_ch1((x - 60), (y - 40), 1510)
-        var _temp_local_var_13 = honkimg
-        sprite_index = spr_lancernoise_ch1
+        with (honkimg)
+            sprite_index = spr_lancernoise_ch1
     }
     if (rtimer == 30)
     {

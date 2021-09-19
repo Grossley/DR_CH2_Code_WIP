@@ -1,3 +1,4 @@
+var _temp_local_var_5;
 draw_set_color(c_black)
 draw_rectangle((xx - 10), (yy - 10), (xx + 999), (yy + 999), false)
 if (con == 0)
@@ -178,18 +179,11 @@ if (con == 21)
     with (obj_sweet_enemy)
         endcon = 4
     var a = 0
-    var _temp_local_var_8 = 9
-    if (9 <= 0)
+    repeat (9)
     {
-    }
-    else
-    {
-        while (true)
-        {
-            var _temp_local_var_11 = marker[a]
+        with (marker[a])
             instance_destroy()
-        }
-        instance_destroy()
+        a++
     }
     instance_destroy()
 }

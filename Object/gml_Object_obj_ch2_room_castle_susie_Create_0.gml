@@ -12,8 +12,8 @@ if (global.flag[307] == 2)
 {
     var susie_plush = gml_Script_instance_create(317, 143, obj_npc_sign)
     susie_plush.sprite_index = spr_dw_susie_plush
-    var _temp_local_var_1 = susie_plush
-    gml_Script_scr_depth()
+    with (susie_plush)
+        gml_Script_scr_depth()
 }
 if (global.chapter != 2 || global.plot >= 15)
     instance_destroy()

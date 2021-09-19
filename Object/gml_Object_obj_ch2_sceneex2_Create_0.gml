@@ -40,6 +40,32 @@ else
     if instance_exists(obj_caterpillarchara)
         instance_destroy(obj_caterpillarchara)
     coaster_marker_kris = gml_Script_scr_dark_marker(0, (gml_Script_cameray() - 500), 2052)
-    var _temp_local_var_3 = coaster_marker_kris
-    gml_Script_scr_depth()
+    with (coaster_marker_kris)
+        gml_Script_scr_depth()
+    coaster_marker_ra = gml_Script_scr_dark_marker(0, (gml_Script_cameray() - 500), 2052)
+    with (coaster_marker_ra)
+        gml_Script_scr_depth()
+    coaster_marker_su = gml_Script_scr_dark_marker(0, (gml_Script_cameray() - 500), 2052)
+    with (coaster_marker_su)
+        gml_Script_scr_depth()
+    coaster_kris = gml_Script_instance_create(0, (gml_Script_cameray() - 500), obj_coaster)
+    coaster_kris.depth = 90000
+    coaster_kris.visible = false
+    coaster_susie = gml_Script_instance_create(0, (gml_Script_cameray() - 500), obj_coaster)
+    coaster_susie.type = 1
+    coaster_susie.depth = 80000
+    coaster_susie.character_sprite = 995
+    coaster_susie.visible = false
+    coaster_ralsei = gml_Script_instance_create(0, (gml_Script_cameray() - 500), obj_coaster)
+    coaster_ralsei.type = 2
+    coaster_ralsei.depth = 70000
+    coaster_ralsei.character_sprite = 1508
+    coaster_ralsei.visible = false
+    loop_tiles = 0
+    bg_loop = layer_get_id("BG_Loop")
+    whiteall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    whiteall.image_xscale = 999
+    whiteall.image_yscale = 999
+    whiteall.depth = 0
+    whiteall.image_alpha = 0
 }

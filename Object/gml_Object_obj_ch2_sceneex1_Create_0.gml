@@ -8,8 +8,12 @@ else if (global.flag[358] == 1)
 {
     nise_susie = gml_Script_scr_dark_marker(575, 275, 496)
     nise_susie.image_speed = 0.25
-    var _temp_local_var_2 = nise_susie
-    gml_Script_scr_depth()
+    with (nise_susie)
+        gml_Script_scr_depth()
+    nise_ralsei = gml_Script_scr_dark_marker(660, 280, 494)
+    nise_ralsei.image_speed = 0.25
+    with (nise_ralsei)
+        gml_Script_scr_depth()
 }
 else if (global.flag[358] > 1)
 {

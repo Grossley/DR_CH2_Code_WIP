@@ -20,17 +20,18 @@ if (actual == true)
 {
     if (made == 0)
     {
-        t = 0
-        while (t < 16)
+        for (t = 0; t < 16; t += 1)
         {
             bul[t] = gml_Script_instance_create_ch1(-20, -20, 1521)
             bul[t].damage = damage
-            var _temp_local_var_1 = bul[t]
-            grazepoints = 2
-            timepoints = 1
-            depth = 0
-            image_alpha = 0
-            sprite_index = spr_heartbullet_ch1
+            with (bul[t])
+            {
+                grazepoints = 2
+                timepoints = 1
+                depth = 0
+                image_alpha = 0
+                sprite_index = spr_heartbullet_ch1
+            }
         }
         made = 1
     }
@@ -63,9 +64,11 @@ if (actual == true)
             tcount += 1
             if (radcon == 0)
             {
-                var _temp_local_var_3 = bul[t]
-                if (image_alpha < 1)
-                    image_alpha += 0.1
+                with (bul[t])
+                {
+                    if (image_alpha < 1)
+                        image_alpha += 0.1
+                }
             }
             xx = (sin((((pi * t) / 8) + (siner / 20))) * radius)
             yy = (cos((((pi * t) / 8) + (siner / 20))) * radius)
@@ -75,11 +78,13 @@ if (actual == true)
             bul[t].y = yyy
             if (radcon == 1)
             {
-                var _temp_local_var_4 = bul[t]
-                image_alpha -= 0.1
-                active = false
-                if (image_alpha <= 0.1)
-                    instance_destroy()
+                with (bul[t])
+                {
+                    image_alpha -= 0.1
+                    active = false
+                    if (image_alpha <= 0.1)
+                        instance_destroy()
+                }
             }
         }
     }

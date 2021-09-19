@@ -15,7 +15,7 @@ if (!init)
     }
     init = 1
 }
-if ((x.room_width + 100) || x <= -100 || (y.room_height + 100) || y <= -100)
+if (x >= (room_width + 100) || x <= -100 || y >= (room_height + 100) || y <= -100)
     instance_destroy()
 if hitfreeze
 {

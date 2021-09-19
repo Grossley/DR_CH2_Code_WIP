@@ -1,3 +1,4 @@
+var _temp_local_var_3;
 if (init == 0)
 {
     if (pivotx == -999)
@@ -38,19 +39,19 @@ flashtimer++
 if (ripple_effect == 0 && flashtimer >= (flashspeed / 2))
 {
     ripple_effect = 1
-    var _temp_local_var_3 = obj_ch2_scene21_loop.puddle
-    var ripple = gml_Script_scr_custom_afterimage(203)
-    ripple.sprite_index = spr_rouxls_ripple
-    ripple.image_blend = 0x67FFE3
-    _temp_local_var_3.yrate = (ripple.yrate * 5)
-    ripple.use_pivot = 1
-    ripple.maxsize = clamp((1 - ((y - 90) / 45)), 0.1, 2)
-    ripple.image_speed = 0
-    var _temp_local_var_4 = obj_ch2_scene21_loop.thrash
-    var _temp_local_var_5 = -9
-    var _temp_local_var_6 = ripple
-    ripple.image_index = part[0] == 2
-    ripple.depth = (depth - 1)
+    with (obj_ch2_scene21_loop.puddle)
+    {
+        var ripple = gml_Script_scr_custom_afterimage(203)
+        ripple.sprite_index = spr_rouxls_ripple
+        ripple.image_blend = 0x67FFE3
+        ripple.yrate *= 5
+        ripple.use_pivot = 1
+        ripple.maxsize = clamp((1 - ((y - 90) / 45)), 0.1, 2)
+        ripple.image_speed = 0
+        var _temp_local_var_3 = obj_ch2_scene21_loop.thrash
+        ripple.image_index = part[0] == 2
+        ripple.depth = (depth - 1)
+    }
 }
 if (flashtimer >= flashspeed)
 {
@@ -93,15 +94,11 @@ if ((timer + 15) >= poweruptime && after_image_flash == 1)
     d = gml_Script_scr_custom_afterimage(203)
     d.image_alpha = max(0.1, __alpha)
     d.fade = 0.1
-    _temp_local_var_4.depth = (d.depth + 2)
+    d.depth += 2
     d.image_blend = image_blend
     d.pivotx = pivotx
     d.pivoty = pivoty
     after_image_flash = 0
-    var _temp_local_var_9 = -9
-    var _temp_local_var_10 = ripple
-    var _temp_local_var_11 = -9
-    var _temp_local_var_12 = d
 }
 else
     after_image_flash = 1

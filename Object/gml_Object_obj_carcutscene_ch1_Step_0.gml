@@ -9,6 +9,15 @@ if (con > 0)
             fun = true
             cutscene = true
         }
+        with (t)
+            sprite_index = spr_toriel_u_ch1
+        global.fc = 4
+        global.fe = 2
+        global.typer = 7
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_carcutscene_slash_Step_0_gml_17_0")
+        dd = gml_Script_instance_create_ch1(0, 0, 1326)
+        dd.side = 0
+        con = 3
     }
     if (con == 3 && instance_exists(obj_dialoguer_ch1) == 0)
     {
@@ -19,27 +28,61 @@ if (con > 0)
             image_speed = 0
             image_index = 0
         }
+        gml_Script_scr_pan_ch1(0, 1, 60)
+        con = 2.1
+        alarm[4] = 40
+        with (k)
+        {
+            sprite_index = spr_krisl_ch1
+            image_speed = 0.25
+            hspeed = -1
+        }
     }
     if (con == 3.1)
     {
         with (t)
-        {
             sprite_index = spr_toriel_l_ch1
+        with (k)
+            gml_Script_scr_halt_ch1()
+        with (k)
+        {
+            sprite_index = spr_krisd_ch1
+            vspeed = 1
+            image_speed = 0.2
         }
+        con = 4
+        alarm[4] = 60
     }
     if (con == 5)
     {
         with (t)
-        {
             sprite_index = spr_toriel_l_ch1
+        with (k)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_krisr_ch1
         }
+        con = 8
+        alarm[4] = 40
     }
     if (con == 9)
     {
         with (c)
-        {
             depth = 6000
+        with (t)
+        {
+            hspeed = -1
+            image_speed = 0.2
         }
+        with (k)
+        {
+            sprite_index = spr_krisr_ch1
+            hspeed = 1
+            vspeed = 0
+            image_speed = 0.2
+        }
+        con = 10
+        alarm[4] = 32
     }
     if (con == 11)
     {
@@ -50,9 +93,9 @@ if (con > 0)
         ctx = (c.x - t.x)
         cty = (c.y - t.y)
         with (t)
-        {
             visible = false
-        }
+        with (k)
+            visible = false
     }
     if (con == 13)
     {
@@ -62,13 +105,15 @@ if (con > 0)
             hspeed = 1
             image_speed = 0.25
         }
+        con = 14
+        alarm[4] = 80
     }
     if (con == 15)
     {
         with (c)
-        {
             gml_Script_scr_halt_ch1()
-        }
+        con = 16
+        alarm[4] = 30
     }
     if (con == 17)
     {
@@ -77,6 +122,8 @@ if (con > 0)
             hspeed = -1
             image_speed = 0.25
         }
+        con = 18
+        alarm[4] = 80
     }
     if (con == 19)
     {
@@ -87,6 +134,12 @@ if (con > 0)
             hspeed = 0
             vspeed = 2
         }
+        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade.depth = 4000
+        fade.height = 400
+        fade.fadespeed = 0.01
+        con = 20
+        alarm[4] = 190
     }
     if (con == 21)
     {
@@ -107,6 +160,35 @@ if (con > 0)
             image_speed = 0.25
             vspeed = 3
         }
+        gml_Script___view_set(9, 0, -4)
+        with (obj_mainchara_ch1)
+        {
+            visible = false
+            cutscene = true
+        }
+        gml_Script___view_set(0, 0, 180)
+        gml_Script_scr_pan_ch1(2.5, 0, 900)
+        global.interact = 1
+        con = 24
+        alarm[4] = (140 / car.vspeed)
+        carcon = 1
+        with (obj_npc_room_ch1)
+            instance_destroy()
+        catty = gml_Script_scr_marker_ch1(486, 68, 3651)
+        cattydad = gml_Script_scr_marker_ch1(574, 64, 3649)
+        bratty = gml_Script_scr_marker_ch1(744, 174, 3650)
+        froggit = gml_Script_scr_marker_ch1(800, 114, 3657)
+        with (froggit)
+        {
+            gml_Script_scr_depth_ch1()
+            image_speed = 0.2
+        }
+        with (catty)
+            gml_Script_scr_depth_ch1()
+        with (cattydad)
+            gml_Script_scr_depth_ch1()
+        with (bratty)
+            gml_Script_scr_depth_ch1()
     }
     if (con == 23)
     {
@@ -123,11 +205,8 @@ if (con > 0)
         {
             with (catty)
             {
-                with (catty)
-                {
-                    sprite_index = spr_npc_catty_wave_ch1
-                    image_speed = 0.2
-                }
+                sprite_index = spr_npc_catty_wave_ch1
+                image_speed = 0.2
             }
         }
         if (car.x >= 550)
@@ -149,6 +228,8 @@ if (con > 0)
             vspeed = 0
             hspeed = 3
         }
+        con = 26
+        alarm[4] = (240 / car.hspeed)
     }
     if (con == 27)
     {
@@ -158,6 +239,10 @@ if (con > 0)
             hspeed = 0
             vspeed = 3
         }
+        carcon = 0
+        con = 133
+        gml_Script_instance_create_ch1(0, 0, 1460)
+        alarm[4] = 30
     }
     if (con == 130)
     {
@@ -168,6 +253,16 @@ if (con > 0)
             image_speed = 0.25
             vspeed = 3
         }
+        gml_Script___view_set(9, 0, -4)
+        with (obj_mainchara_ch1)
+        {
+            visible = false
+            cutscene = true
+        }
+        gml_Script___view_set(0, 0, 670)
+        global.interact = 1
+        con = 131
+        alarm[4] = (200 / car.vspeed)
     }
     if (con == 29)
     {
@@ -192,6 +287,31 @@ if (con > 0)
             image_speed = 0.25
             vspeed = 3
         }
+        with (obj_npc_room_ch1)
+            instance_destroy()
+        with (obj_npc_facing_ch1)
+            instance_destroy()
+        gml_Script___view_set(9, 0, -4)
+        with (obj_mainchara_ch1)
+        {
+            visible = false
+            cutscene = true
+        }
+        gml_Script___view_set(0, 0, 660)
+        gml_Script_scr_pan_ch1(2, 0, 300)
+        global.interact = 1
+        con = 141
+        alarm[4] = (140 / car.vspeed)
+        carcon = 2
+        qc = gml_Script_scr_marker_ch1(764, 85, 3660)
+        undyne = gml_Script_scr_marker_ch1(905, 80, 3644)
+        bear = gml_Script_scr_marker_ch1(710, 82, 3679)
+        with (bear)
+            gml_Script_scr_depth_ch1()
+        with (qc)
+            gml_Script_scr_depth_ch1()
+        with (undyne)
+            gml_Script_scr_depth_ch1()
     }
     if (con == 134)
     {
@@ -203,13 +323,15 @@ if (con > 0)
     {
         if (car.y >= 100)
         {
-            with (car)
+            with (qc)
             {
-                with (qc)
-                {
-                    sprite_index = spr_npc_qc_wave_ch1
-                    image_speed = 0.2
-                }
+                sprite_index = spr_npc_qc_wave_ch1
+                image_speed = 0.2
+            }
+            with (undyne)
+            {
+                sprite_index = spr_undyne_d_wave_ch1
+                image_speed = 0.2
             }
         }
         if (car.x >= 1000)
@@ -226,6 +348,8 @@ if (con > 0)
             hspeed = 3
             sprite_index = spr_torcar_r_ch1
         }
+        con = 143
+        alarm[4] = (260 / car.hspeed)
     }
     if (con == 144)
     {
@@ -243,6 +367,18 @@ if (con > 0)
             image_speed = 0.25
             hspeed = 2
         }
+        gml_Script___view_set(9, 0, -4)
+        with (obj_mainchara_ch1)
+        {
+            visible = false
+            cutscene = true
+        }
+        gml_Script___view_set(0, 0, 0)
+        gml_Script___view_set(1, 0, (room_height - gml_Script___view_get(3, 0)))
+        global.interact = 1
+        con = 162
+        gml_Script_scr_pan_ch1(1, 0, 100)
+        alarm[4] = (240 / car.hspeed)
     }
     if (con == 146)
     {
@@ -260,13 +396,15 @@ if (con > 0)
             hspeed = 0
             sprite_index = spr_torcar_u_ch1
         }
+        con = 164
+        alarm[4] = 30
     }
     if (con == 165)
     {
         with (car)
-        {
             gml_Script_scr_halt_ch1()
-        }
+        con = 36
+        alarm[4] = 30
     }
     if (con == 37)
     {
@@ -276,21 +414,56 @@ if (con > 0)
             speed = 0
             image_speed = 0
         }
+        con = 38
+        alarm[4] = 15
     }
     if (con == 39)
     {
         gml_Script_scr_pan_ch1(1, -0.334, 100)
         with (car)
-        {
             depth = 500
+        k = gml_Script_scr_marker_ch1(((car.x - ctx) + 10), (car.y - cty), 4202)
+        t = gml_Script_scr_marker_ch1((car.x - ckx), (car.y - cky), 3464)
+        with (k)
+        {
+            depth = 50000
+            visible = true
+            image_speed = 0.2
+            sprite_index = spr_krisr_ch1
+            hspeed = 1
         }
+        with (t)
+        {
+            image_speed = 0.2
+            depth = 50000
+            visible = true
+            sprite_index = spr_toriel_l_ch1
+            hspeed = -1
+        }
+        con = 40
+        alarm[4] = 30
     }
     if (con == 41)
     {
         with (car)
-        {
             depth = 600000
+        with (k)
+        {
+            speed = 0
+            sprite_index = spr_krisd_ch1
+            image_index = 0
+            image_speed = 0
         }
+        with (t)
+        {
+            vspeed = 2
+            hspeed = 0
+            depth = 10000
+            sprite_index = spr_toriel_d_ch1
+            image_speed = 0.25
+        }
+        con = 42
+        alarm[4] = 15
     }
     if (con == 43)
     {
@@ -300,13 +473,21 @@ if (con > 0)
             vspeed = 0
             hspeed = 2
         }
+        con = 44
+        alarm[4] = 51
     }
     if (con == 45)
     {
         with (k)
-        {
             sprite_index = spr_krisr_ch1
+        with (t)
+        {
+            hspeed = 0
+            vspeed = -2
+            sprite_index = spr_toriel_u_ch1
         }
+        con = 46
+        alarm[4] = 22
     }
     if (con == 47)
     {
@@ -317,13 +498,17 @@ if (con > 0)
             image_speed = 0
             image_index = 0
         }
+        con = 48
+        alarm[4] = 30
     }
     if (con == 49)
     {
         with (k)
-        {
             visible = false
-        }
+        with (t)
+            sprite_index = spr_toriel_handhold_r_ch1
+        con = 50
+        alarm[4] = 30
     }
     if (con == 51)
     {
@@ -332,6 +517,8 @@ if (con > 0)
             hspeed = 1
             image_speed = 0.1
         }
+        con = 52
+        alarm[4] = 44
     }
     if (con == 53)
     {
@@ -342,6 +529,12 @@ if (con > 0)
             hspeed = 0
             sprite_index = spr_toriel_handhold_u_ch1
         }
+        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        with (fade)
+            fadespeed = 0.03
+        con = 56
+        persistent = false
+        alarm[4] = 40
     }
     if (con == 55)
         alarm[4] = 40
@@ -352,5 +545,6 @@ if (con > 0)
         pf = gml_Script_instance_create_ch1(0, 0, 1462)
         with (pf)
             image_alpha = 1.2
+        room_goto(room_schoollobby_ch1)
     }
 }

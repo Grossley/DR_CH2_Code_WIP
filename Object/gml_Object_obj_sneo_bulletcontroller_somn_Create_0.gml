@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2;
 type = 1
 btimer = 99
 timermax = 12

@@ -474,8 +474,8 @@ if (global.monster[myself] == true)
             if (attackcon != 1)
             {
                 global.turntimer = -100
-                var _temp_local_var_17 = dc
-                instance_destroy()
+                with (dc)
+                    instance_destroy()
             }
             attackcon = 2
             attacked = true
@@ -598,18 +598,26 @@ if (global.myfight == 3)
     }
     if (actcon == 10)
     {
-        var _temp_local_var_22 = global.charinstance[0]
-        visible = false
+        with (global.charinstance[0])
+            visible = false
+        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, 1407)
+        with (k)
+            gml_Script_scr_move_to_point_over_time((global.monsterx[0] - 42), (global.monstery[0] - 30), 15)
+        actcon = 11
+        alarm[4] = 25
     }
     if (actcon == 12)
     {
-        var _temp_local_var_24 = k
-        image_speed = 0.25
+        with (k)
+            image_speed = 0.25
+        actcon = 13
+        alarm[4] = 12
     }
     if (actcon == 14)
     {
-        var _temp_local_var_25 = k
-        image_speed = 0
+        with (k)
+            image_speed = 0
+        actcon = 15
     }
     if (actcon == 15 && (!instance_exists(obj_writer)))
     {
@@ -662,18 +670,30 @@ if (global.myfight == 3)
     }
     if (actcon == 16 && (!instance_exists(obj_writer)))
     {
-        var _temp_local_var_28 = myface
-        instance_destroy()
+        with (myface)
+            instance_destroy()
+        with (k)
+            image_speed = -0.25
+        actcon = 17
+        alarm[4] = 12
     }
     if (actcon == 18)
     {
-        var _temp_local_var_30 = k
-        image_speed = 0
+        with (k)
+            image_speed = 0
+        with (k)
+            gml_Script_scr_move_to_point_over_time(global.charinstance[0].x, global.charinstance[0].y, 15)
+        actcon = 19
+        alarm[4] = 25
     }
     if (actcon == 20)
     {
-        var _temp_local_var_32 = k
-        instance_destroy()
+        with (k)
+            instance_destroy()
+        global.mercymod[0] = 100
+        global.mercymod[1] = 100
+        global.charinstance[0].visible = true
+        actcon = 1
     }
     if (acting == 3 && actcon == 0)
     {
@@ -698,8 +718,13 @@ if (global.myfight == 3)
     {
         makekris = 1
         maker = 0
-        var _temp_local_var_34 = global.charinstance[0]
-        visible = false
+        with (global.charinstance[0])
+            visible = false
+        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, 1407)
+        with (k)
+            gml_Script_scr_move_to_point_over_time((obj_heroralsei.x - 24), (obj_heroralsei.y + 10), 15)
+        actcon = 31
+        alarm[4] = 25
     }
     if (actcon == 32)
     {
@@ -707,13 +732,16 @@ if (global.myfight == 3)
         with (obj_heroralsei)
             visible = false
         rb = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1013)
-        var _temp_local_var_36 = k
-        image_speed = 0.25
+        with (k)
+            image_speed = 0.25
+        actcon = 33
+        alarm[4] = 12
     }
     if (actcon == 34)
     {
-        var _temp_local_var_37 = k
-        image_speed = 0
+        with (k)
+            image_speed = 0
+        actcon = 35
     }
     if (actcon == 35 && (!instance_exists(obj_writer)))
     {
@@ -749,32 +777,50 @@ if (global.myfight == 3)
     }
     if (actcon == 36 && (!instance_exists(obj_writer)))
     {
-        var _temp_local_var_40 = myface
-        instance_destroy()
+        with (myface)
+            instance_destroy()
+        with (k)
+            image_speed = -0.25
+        actcon = 37
+        alarm[4] = 12
     }
     if (actcon == 38)
     {
-        var _temp_local_var_42 = k
-        image_speed = 0
+        with (k)
+            image_speed = 0
+        with (k)
+            gml_Script_scr_move_to_point_over_time(global.charinstance[0].x, global.charinstance[0].y, 15)
+        actcon = 39
+        alarm[4] = 25
     }
     if (actcon == 40)
     {
         makekris = 0
         maker = 0
-        var _temp_local_var_44 = rb
-        instance_destroy()
+        with (rb)
+            instance_destroy()
+        with (obj_heroralsei)
+            visible = true
+        with (k)
+            instance_destroy()
+        global.charinstance[0].visible = true
+        actcon = 1
     }
     if (actcon >= 30 && actcon < 40)
     {
         if (makekris == 1)
         {
-            var _temp_local_var_47 = k
-            gml_Script_scr_depth()
+            with (k)
+                gml_Script_scr_depth()
+            with (k)
+                depth -= 100000
         }
         if (maker == 1)
         {
-            var _temp_local_var_49 = rb
-            gml_Script_scr_depth()
+            with (rb)
+                gml_Script_scr_depth()
+            with (rb)
+                depth -= 100000
         }
     }
 }

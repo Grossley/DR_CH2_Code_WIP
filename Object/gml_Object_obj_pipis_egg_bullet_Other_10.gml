@@ -43,16 +43,53 @@ if (obj_spamton_neo_enemy.difficulty != 4)
 }
 if (obj_spamton_neo_enemy.difficulty == 4)
 {
-    i = 0
-    while (i < 15)
+    for (i = 0; i < 15; i++)
     {
         radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
-        var _temp_local_var_1 = radialshot
-        gml_Script_scr_bullet_init()
+        with (radialshot)
+            gml_Script_scr_bullet_init()
+        radialshot.sprite_index = spr_diamondbullet
+        radialshot.dir = (((i * 24) + random(14)) - 7)
+        radialshot.active = true
+        radialshot.depth = (depth - 100)
+        radialshot.target = target
+        radialshot.damage = damage
+        radialshot.grazed = 0
+        radialshot.element = 6
     }
     radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
-    var _temp_local_var_2 = radialshot
-    gml_Script_scr_bullet_init()
+    with (radialshot)
+        gml_Script_scr_bullet_init()
+    radialshot.sprite_index = spr_diamondbullet
+    radialshot.dir = point_direction(x, y, (obj_heart.x + 10), (obj_heart.y + 10))
+    radialshot.active = true
+    radialshot.depth = (depth - 100)
+    radialshot.target = target
+    radialshot.damage = damage
+    radialshot.grazed = 0
+    radialshot.element = 6
+    radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
+    with (radialshot)
+        gml_Script_scr_bullet_init()
+    radialshot.sprite_index = spr_diamondbullet
+    radialshot.dir = point_direction(x, y, (obj_heart.x + 10), ((obj_heart.y + 10) - 40))
+    radialshot.active = true
+    radialshot.depth = (depth - 100)
+    radialshot.target = target
+    radialshot.damage = damage
+    radialshot.grazed = 0
+    radialshot.element = 6
+    radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
+    with (radialshot)
+        gml_Script_scr_bullet_init()
+    radialshot.sprite_index = spr_diamondbullet
+    radialshot.dir = point_direction(x, y, (obj_heart.x + 10), ((obj_heart.y + 10) + 40))
+    radialshot.active = true
+    radialshot.depth = (depth - 100)
+    radialshot.target = target
+    radialshot.damage = damage
+    radialshot.grazed = 0
+    radialshot.element = 6
 }
 repeat (3)
 {

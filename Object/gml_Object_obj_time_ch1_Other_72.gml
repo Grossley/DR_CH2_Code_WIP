@@ -1,14 +1,14 @@
-if (("id").async_load == global.savedata_async_id)
+if (ds_map_find_value(async_load, "id") == global.savedata_async_id)
 {
     global.savedata_async_id = -1
     if global.savedata_async_load
         var type = "load"
     else
         type = "save"
-    if (("status").async_load < 0)
+    if (ds_map_find_value(async_load, "status") < 0)
     {
         global.savedata_error = 1
-        global.savedata_debuginfo = string(ds_map_find_value(("status").async_load, (type + " failed: ")))
+        global.savedata_debuginfo = ((type + " failed: ") + string(ds_map_find_value(async_load, "status")))
         if global.savedata_async_load
         {
             global.savedata = ds_map_create()

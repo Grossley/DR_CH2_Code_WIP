@@ -1,3 +1,4 @@
+var _temp_local_var_7;
 if gml_Script_i_ex(boss)
 {
     var xx = (50 - (boss.heart_release_con * 100))
@@ -61,18 +62,19 @@ if (destroyed == 1)
     }
     else
         gml_Script_scr_afterimage_cut()
-    i = 10
-    while (i >= 0)
+    for (i = 10; i >= 0; i--)
     {
         piece = gml_Script_scr_marker(lerp(x, rembossx, (i / 9)), lerp(y, rembossy, (i / 9)), 2049)
         piece.image_index = 4
         piece.i = i
         piece.depth = (depth + 1)
-        var _temp_local_var_4 = piece
-        gml_Script_scr_script_delayed(gml_Script_scr_afterimage_cut, (i * 2))
-        gml_Script_scr_script_delayed(gml_Script_snd_play, (i * 2), 141)
-        gml_Script_scr_script_delayed(gml_Script_snd_volume, (i * 2), 141, 0.5, 0)
-        gml_Script_scr_doom(id, ((i * 2) + 1))
+        with (piece)
+        {
+            gml_Script_scr_script_delayed(gml_Script_scr_afterimage_cut, (i * 2))
+            gml_Script_scr_script_delayed(gml_Script_snd_play, (i * 2), 141)
+            gml_Script_scr_script_delayed(gml_Script_snd_volume, (i * 2), 141, 0.5, 0)
+            gml_Script_scr_doom(id, ((i * 2) + 1))
+        }
     }
     if (altbiter == 1 || altbiter == 2)
         obj_spamton_neo_enemy.makeheartalt = (altbiter + 2)
@@ -88,8 +90,8 @@ if (destroyed == 1)
                     __mercydmgwriter = gml_Script_instance_create(global.monsterx[myself], ((global.monstery[myself] + 20) - (global.hittarget[myself] * 20)), obj_dmgwriter)
                     __mercydmgwriter.damage = 3
                     __mercydmgwriter.type = 5
-                    myself.hittarget[global.hittarget[myself]] = (global.hittarget[myself] + 1)
-                    global
+                    var _temp_local_var_7 = global.hittarget[myself]
+                    global.hittarget[myself] = (global.hittarget[myself] + 1)
                 }
             }
             else

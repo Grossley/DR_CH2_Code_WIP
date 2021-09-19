@@ -9,13 +9,12 @@ if (global.flag[309] == 9)
     addison_sprites[3] = spr_npc_addison_orange_up
     addison_sprites[4] = spr_npc_addison_blue_up
     addison_sprites[5] = spr_npc_addison_yellow_up
-    var i = 0
-    while (i < array_length_1d(addison_sprites))
+    for (var i = 0; i < array_length_1d(addison_sprites); i++)
     {
         var npc = gml_Script_instance_create((400 + (i * 120)), 132, obj_npc_room)
         npc.sprite_index = addison_sprites[i]
-        var _temp_local_var_1 = npc
-        gml_Script_scr_depth()
+        with (npc)
+            gml_Script_scr_depth()
     }
 }
 else

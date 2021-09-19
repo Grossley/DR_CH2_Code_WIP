@@ -334,14 +334,16 @@ if (con == 32)
     if (timer == 0)
     {
         megablack = gml_Script_scr_dark_marker(-10, -10, 547)
-        var _temp_local_var_6 = megablack
-        depth = 150
-        image_alpha = 1
-        y = -999
-        image_xscale = 999
-        image_yscale = 999
-        image_blend = c_black
-        persistent = true
+        with (megablack)
+        {
+            depth = 150
+            image_alpha = 1
+            y = -999
+            image_xscale = 999
+            image_yscale = 999
+            image_blend = c_black
+            persistent = true
+        }
     }
     if (timer == 2)
         megablack.y = 0
@@ -473,8 +475,13 @@ if (con == 34)
     }
     if (timer >= 30 && timer < 60)
     {
-        var _temp_local_var_14 = megablack
-        image_alpha -= 0.05
+        with (megablack)
+            image_alpha -= 0.05
+        if (quick_mode == 1)
+        {
+            with (megablack)
+                image_alpha -= 0.05
+        }
     }
     if (timer == 50)
         getup_index = 1
@@ -482,7 +489,32 @@ if (con == 34)
         getup_index = 2
     if (timer == 55)
     {
-        var _temp_local_var_16 = megablack
+        with (megablack)
+            instance_destroy()
+        persistent = false
+        global.interact = 0
+        global.facing = 0
+        obj_mainchara.x = ((kris_x * 2) + 8)
+        obj_mainchara.y = ((kris_y * 2) + 4)
+        with (obj_mainchara)
+            visible = true
+        if gml_Script_i_ex(global.cinstance[1])
+        {
+            with (global.cinstance[1])
+                instance_destroy()
+        }
+        if (kris_only == 0 && gml_Script_i_ex(global.cinstance[0]))
+        {
+            global.cinstance[0].x = ((sus_x * 2) + 10)
+            global.cinstance[0].y = (sus_y * 2)
+            with (obj_caterpillarchara)
+            {
+                visible = true
+                gml_Script_scr_caterpillar_interpolate()
+                facing[target] = 0
+                sprite_index = dsprite
+            }
+        }
         instance_destroy()
     }
 }

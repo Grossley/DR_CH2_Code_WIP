@@ -76,8 +76,37 @@ else
     kriscon = -1
     boombox = gml_Script_scr_marker(75, 68, 2968)
     bars = gml_Script_scr_marker(177, 35, 3195)
-    var _temp_local_var_1 = bars
-    auto_depth = 0
-    depthcancel = false
-    depth = 0
+    with (bars)
+    {
+        auto_depth = 0
+        depthcancel = false
+        depth = 0
+    }
+    bars_bottom = gml_Script_scr_marker(177, 35, 3196)
+    with (bars_bottom)
+        depth = 100000
+    jail_collider_bottom = gml_Script_instance_create(180, 98, obj_solidblock)
+    jail_collider_bottom.image_xscale = 2
+    jail_collider_bottom.image_yscale = 0.35
+    jail_collider_side = gml_Script_instance_create(255, 98, obj_solidblock)
+    jail_collider_side.image_xscale = 1
+    jail_collider_side.image_yscale = 0.35
+    doorcollider = gml_Script_instance_create(223, 95, obj_solidblock)
+    doorcollider.image_xscale = 0.35
+    doorcollider.image_yscale = 0.95
+    undynedesk = gml_Script_instance_create(128, 97, obj_npc_room)
+    undynedesk.sprite_index = spr_lw_police_table_broken
+    napstablook = gml_Script_instance_create(92, 84, obj_npc_napstablook_cop)
+    soundalarm = global.flag[317] == 2
+    napstacon = (global.flag[317] == 2 ? 0 : -1)
+    if soundalarm
+    {
+        with (obj_doorAny)
+            doorFadeMusic = 1
+        gml_Script_snd_free_all()
+        global.currentsong[0] = gml_Script_snd_init("napsta_alarm.ogg")
+        global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 1)
+    }
+    undyne_slam = 0
+    undyne_slam_timer = 0
 }

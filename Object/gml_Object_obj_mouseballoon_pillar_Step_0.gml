@@ -26,8 +26,21 @@ if (con == 1)
         var _x = (x + 20)
         var _y = (y + 20)
         mouse.image_alpha = 2
-        var _temp_local_var_2 = mouse
-        gml_Script_scr_lerpvar("x", x, _x, 15, 2, "out")
+        with (mouse)
+            gml_Script_scr_lerpvar("x", x, _x, 15, 2, "out")
+        with (mouse)
+            gml_Script_scr_lerpvar("y", y, _y, 15, 2, "out")
+        with (mouse)
+            gml_Script_scr_lerpvar("image_alpha", 4, 0, 25, 2, "out")
+        gml_Script_scr_doom(mouse, 25)
+        timer = 0
+        bucket.miceheld--
+        micerequired--
+        if (bucket.miceheld <= 0)
+        {
+            con = 2
+            timer = 0
+        }
     }
 }
 if (con == 2)

@@ -1,6 +1,6 @@
 if (room == room_dw_city_traffic_1)
 {
-    if ((noellemarker.x - gml_Script_camerax()) < obj_sneo_lastattack && leavecon == 0)
+    if ((noellemarker.x - gml_Script_camerax()) < 640 && leavecon == 0)
     {
         leavecon = 1
         noellemarker.image_speed = 0.25
@@ -10,7 +10,7 @@ if (room == room_dw_city_traffic_1)
         if gml_Script_i_ex(noellemarker)
         {
             noellemarker.x += 6
-            if noellemarker.x.room_width
+            if (noellemarker.x >= room_width)
             {
                 leavecon = 2
                 global.plot = 68

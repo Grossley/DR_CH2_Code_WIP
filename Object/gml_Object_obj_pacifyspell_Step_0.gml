@@ -33,7 +33,8 @@ if (con == 1)
 }
 if (con == 2)
 {
-    var _temp_local_var_2 = target
+    with (target)
+        instance_destroy()
     instance_destroy()
 }
 if (con == 5)

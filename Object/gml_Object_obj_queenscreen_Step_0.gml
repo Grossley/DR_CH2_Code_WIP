@@ -283,9 +283,15 @@ if (activecon == 1)
             tasquemarker.depth = (depth - 10)
             gml_Script_snd_play(159)
             tasquemarker.remid = id
-            var _temp_local_var_15 = tasquemarker
-            remjump = gml_Script_scr_jump_to_point(other.tasquex, other.tasquey, 15, 24)
-            remid.remjump = remjump
+            with (tasquemarker)
+            {
+                remjump = gml_Script_scr_jump_to_point(other.tasquex, other.tasquey, 15, 24)
+                remid.remjump = remjump
+            }
+            with (tasquemarker_head)
+                gml_Script_scr_jump_to_point(other.tasquex, other.tasquey, 15, 24)
+            remjump.image_alpha = 0
+            tasquecon = 2
         }
     }
     if (tasquecon == 2)
@@ -300,8 +306,11 @@ if (activecon == 1)
             image_xscale *= 0.6
             image_yscale *= 0.6
         }
-        var _temp_local_var_17 = remjump
-        image_alpha += 0.05
+        with (remjump)
+            image_alpha += 0.05
+        tasquetimer++
+        if (tasquetimer >= 24)
+            tasquecon = 3
     }
     if (tasquecon == 3)
     {
@@ -315,8 +324,11 @@ if (activecon == 1)
         tenemy.pacespeed = tasquespeed
         tenemy.eraser = true
         tenemy.facing = tasquedir
-        var _temp_local_var_18 = tasquemarker
-        instance_destroy()
+        with (tasquemarker)
+            instance_destroy()
+        with (tasquemarker_head)
+            instance_destroy()
+        tasquecon = 4
     }
     if (dismiss == 1)
     {
@@ -333,11 +345,7 @@ if (activecon == 1)
             instance_destroy()
     }
 }
-if (extflag == 3)
-    var _temp_local_var_19 = null.room == room_dw_cyber_maze_virokun
-else
-    var _temp_local_var_20 = 0
-if (null.room == room_dw_cyber_maze_virokun)
+if (extflag == 3 && room == room_dw_cyber_maze_virokun)
 {
     bpf = 58.5
     count += bpf

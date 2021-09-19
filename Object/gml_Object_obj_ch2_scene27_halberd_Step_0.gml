@@ -48,10 +48,12 @@ if (con == 4)
     ball.fade = -0.1
     ball.xrate = -0.08
     ball.yrate = -0.08
-    var _temp_local_var_1 = ball
-    gml_Script_scr_lerpvar("x", x, thisid.x, 20, 2, "in")
-    gml_Script_scr_lerpvar("y", y, (thisid.y + (goaly / 4)), 20, 2, "in")
-    gml_Script_scr_doom(id, 20)
+    with (ball)
+    {
+        gml_Script_scr_lerpvar("x", x, thisid.x, 20, 2, "in")
+        gml_Script_scr_lerpvar("y", y, (thisid.y + (goaly / 4)), 20, 2, "in")
+        gml_Script_scr_doom(id, 20)
+    }
 }
 if (con == 5)
 {

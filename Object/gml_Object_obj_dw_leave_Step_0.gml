@@ -8,21 +8,27 @@ if (con == 10)
         kr_actor.sprite_index = obj_mainchara.sprite_index
         kr_actor.__x = (kris_x + 6)
         kr_actor.__y = (kris_y + 20)
-        var _temp_local_var_1 = kr_actor
-        gml_Script_scr_set_facing_sprites("kris")
-        fun = true
-        image_speed = 0.25
-        gml_Script_scr_move_to_point_over_time(__x, __y, 10)
+        with (kr_actor)
+        {
+            gml_Script_scr_set_facing_sprites("kris")
+            fun = true
+            image_speed = 0.25
+            gml_Script_scr_move_to_point_over_time(__x, __y, 10)
+        }
     }
     if (instance_exists(obj_caterpillarchara) && gml_Script_scr_havechar(2))
     {
         su_actor = instance_create_depth(global.cinstance[0].x, global.cinstance[0].y, global.cinstance[0].depth, obj_actor)
         su_actor.__x = sus_x
         su_actor.__y = (sus_y + 8)
-        var _temp_local_var_3 = su_actor
-        sprite_index = global.cinstance[0].sprite_index
-        gml_Script_scr_set_facing_sprites("susie")
-        gml_Script_scr_move_to_point_over_time(__x, __y, 10)
+        with (su_actor)
+        {
+            sprite_index = global.cinstance[0].sprite_index
+            gml_Script_scr_set_facing_sprites("susie")
+            gml_Script_scr_move_to_point_over_time(__x, __y, 10)
+        }
+        with (global.cinstance[0])
+            visible = false
     }
     with (obj_caterpillarchara)
     {
@@ -34,8 +40,8 @@ if (con == 10)
             {
                 me.sprite_index = spr_ralsei_wave_start
                 me.image_speed = 0.2
-                var _temp_local_var_5 = me
-                gml_Script_scr_script_delayed(gml_Script_scr_var, 15, "sprite_index", 800)
+                with (me)
+                    gml_Script_scr_script_delayed(gml_Script_scr_var, 15, "sprite_index", 800)
             }
         }
     }

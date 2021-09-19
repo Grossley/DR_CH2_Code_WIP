@@ -134,10 +134,15 @@ if surface_exists(surface)
             queenbubble = gml_Script_scr_enemyblcon((gml_Script_camerax() + 428), (gml_Script_cameray() + 388), 7)
             talktimer = 0
             talking = 1
-            var _temp_local_var_61 = queenbubble
-            depth = (obj_ch2_scene10.qu_actor.depth - 1)
-            auto_length = 1
-            side = -1
+            with (queenbubble)
+            {
+                depth = (obj_ch2_scene10.qu_actor.depth - 1)
+                auto_length = 1
+                side = -1
+            }
+            talktype = 1
+            introtalk = 1
+            alarm[1] = 240
         }
     }
     if ((o_boxingqueen_janky_sprite_index == 2144 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || (o_boxingqueen_janky_sprite_index == 2143 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || zx_timer > 0)
@@ -301,8 +306,9 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
                 susieballoon1 = gml_Script_scr_enemyblcon((obj_ch2_scene10.su_actor.x + 0), (obj_ch2_scene10.su_actor.y + 20), 10)
                 talktimer = 0
                 talking = 1
-                var _temp_local_var_28 = susieballoon1
-                depth = (obj_ch2_scene10.su_actor.depth - 1)
+                with (susieballoon1)
+                    depth = (obj_ch2_scene10.su_actor.depth - 1)
+                talktype = 0
             }
         }
     }
@@ -318,8 +324,9 @@ if (o_boxingcontroller.dead == 4 || o_boxingcontroller.dead == 5)
             susieballoon2 = gml_Script_scr_enemyblcon((obj_ch2_scene10.su_actor.x + 0), (obj_ch2_scene10.su_actor.y + 20), 10)
             talktimer = 0
             talking = 1
-            var _temp_local_var_31 = susieballoon2
-            depth = (obj_ch2_scene10.su_actor.depth - 1)
+            with (susieballoon2)
+                depth = (obj_ch2_scene10.su_actor.depth - 1)
+            talktype = 0
         }
     }
 }

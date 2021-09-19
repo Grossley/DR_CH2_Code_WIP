@@ -13,8 +13,8 @@ if (attacked == false)
         dc.target = mytarget
         dc.grazepoints = 2
         dc.damage = (global.monsterat[myself] * 5)
-        var _temp_local_var_1 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 1)
     {
@@ -31,8 +31,8 @@ if (attacked == false)
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
         dc.grazepoints = 3
-        var _temp_local_var_2 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 3)
     {
@@ -62,8 +62,8 @@ if (attacked == false)
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
         global.turntimer = 300
-        var _temp_local_var_3 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 6)
     {
@@ -99,8 +99,8 @@ if (attacked == false)
         dc.damage = (global.monsterat[myself] * 4)
         dc.grazepoints = 4
         global.turntimer = 270
-        var _temp_local_var_4 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 10)
     {
@@ -126,8 +126,8 @@ if (attacked == false)
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 5)
         dc.grazepoints = 2
-        var _temp_local_var_5 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 13)
     {
@@ -137,8 +137,8 @@ if (attacked == false)
         dc.damage = (global.monsterat[myself] * 4)
         dc.grazepoints = 4
         global.turntimer = 330
-        var _temp_local_var_6 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 14)
     {
@@ -164,8 +164,8 @@ if (attacked == false)
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
         global.turntimer = 300
-        var _temp_local_var_7 = body
-        condition = 2
+        with (body)
+            condition = 2
     }
     if (jattack == 999)
     {

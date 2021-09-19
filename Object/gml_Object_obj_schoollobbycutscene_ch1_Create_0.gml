@@ -13,10 +13,15 @@ if (global.plot < 2)
     with (obj_mainchara_ch1)
         visible = false
     t = gml_Script_scr_marker_ch1(460, 360, 3456)
-    var _temp_local_var_1 = t
-    vspeed = -2
-    image_speed = 0.2
-    depth = 10000
+    with (t)
+    {
+        vspeed = -2
+        image_speed = 0.2
+        depth = 10000
+    }
+    alarm[4] = 85
+    con = 1
+    type = 1
 }
 if (global.plot == 3)
 {
@@ -28,15 +33,34 @@ if (global.plot == 3)
         y = obj_markerB_ch1.y
     }
     k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4205)
-    var _temp_local_var_2 = k
-    gml_Script_scr_depth_ch1()
+    with (k)
+        gml_Script_scr_depth_ch1()
+    s = gml_Script_scr_marker_ch1(240, 192, 3535)
+    with (s)
+    {
+        gml_Script_scr_depth_ch1()
+        depth -= 5
+    }
+    global.interact = 1
+    with (obj_doorA_ch1)
+        instance_destroy()
+    doorsolid = gml_Script_instance_create_ch1(110, 200, 1334)
+    con = 0.1
+    alarm[4] = 50
 }
 if (global.plot >= 250)
 {
     sunset = gml_Script_scr_marker_ch1(0, 0, 3467)
-    var _temp_local_var_4 = sunset
-    image_alpha = 0.4
-    depth = 2000
+    with (sunset)
+    {
+        image_alpha = 0.4
+        depth = 2000
+    }
+    if (!gml_Script_snd_is_playing_ch1(global.currentsong[1]))
+    {
+        global.currentsong[0] = gml_Script_snd_init_ch1("mus_birdnoise.ogg")
+        global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.6, 0.7)
+    }
 }
 if (global.plot >= 251)
     type = 4

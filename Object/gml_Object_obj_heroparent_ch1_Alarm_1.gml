@@ -13,11 +13,13 @@ if (cancelattack == false)
     if (damage == 0)
     {
         dm.delay = 2
-        var _temp_local_var_1 = global.monsterinstance[global.chartarget[myself]]
-        if (hurttimer <= 15 && candodge == true)
+        with (global.monsterinstance[global.chartarget[myself]])
         {
-            dodgetimer = 0
-            state = 4
+            if (hurttimer <= 15 && candodge == true)
+            {
+                dodgetimer = 0
+                state = 4
+            }
         }
     }
     dm.damage = damage
@@ -25,8 +27,8 @@ if (cancelattack == false)
     global.monsterhp[global.chartarget[myself]] -= damage
     if (is_auto_susie == true && global.monsterhp[global.chartarget[myself]] <= 0)
     {
-        var _temp_local_var_4 = global.chartarget[myself]
-        global.flag[(51 + myself)] = 5
+        with (global.chartarget[myself])
+            global.flag[(51 + myself)] = 5
     }
     if (damage > 0)
     {
@@ -54,14 +56,18 @@ if (cancelattack == false)
             attack.image_xscale = 2.5
             attack.image_yscale = 2.5
         }
-        var _temp_local_var_5 = global.monsterinstance[global.chartarget[myself]]
-        shakex = 9
-        state = 3
-        hurttimer = 30
+        with (global.monsterinstance[global.chartarget[myself]])
+        {
+            shakex = 9
+            state = 3
+            hurttimer = 30
+        }
+        if instance_exists(global.monsterinstance[global.chartarget[myself]])
+            global.monsterinstance[global.chartarget[myself]].hurtamt = damage
     }
     if (global.monsterhp[global.chartarget[myself]] <= 0)
     {
-        var _temp_local_var_6 = global.monsterinstance[global.chartarget[myself]]
-        gml_Script_scr_monsterdefeat_ch1()
+        with (global.monsterinstance[global.chartarget[myself]])
+            gml_Script_scr_monsterdefeat_ch1()
     }
 }

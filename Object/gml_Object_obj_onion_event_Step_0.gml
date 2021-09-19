@@ -45,14 +45,29 @@ else if (global.flag[258] == 1 || global.flag[258] == 2)
         }
         if (con == 2)
         {
-            var _temp_local_var_5 = onion
-            on = 1
+            with (onion)
+                on = 1
+            con = 3
+            alarm[4] = 50
         }
         if (con == 4)
         {
             global.facing = 1
-            var _temp_local_var_6 = onion
-            on = 2
+            with (onion)
+                on = 2
+            con = ((global.chapter == 2 && gml_Script_scr_havechar(2)) ? 19 : 5)
+            if (global.chapter == 2 && gml_Script_scr_havechar(2))
+            {
+                with (obj_caterpillarchara)
+                    visible = false
+                cutscene_master = gml_Script_scr_cutscene_make()
+                gml_Script_scr_maincharacters_actors()
+                gml_Script_c_sel(su)
+                gml_Script_c_facing("r")
+                gml_Script_c_emote("!", 30)
+                gml_Script_c_waitcustom()
+            }
+            alarm[4] = 150
         }
         if (con == 6)
         {
@@ -74,7 +89,15 @@ else if (global.flag[258] == 1 || global.flag[258] == 2)
         {
             con = 10
             global.flag[424] = 1
-            var _temp_local_var_14 = onion
+            with (onion)
+                instance_destroy()
+            global.interact = 0
+            global.facing = 0
+            if instance_exists(obj_ch2_room_beach)
+            {
+                with (obj_ch2_room_beach)
+                    canrest = 1
+            }
             instance_destroy()
         }
         if (con == 20 && customcon == 1)

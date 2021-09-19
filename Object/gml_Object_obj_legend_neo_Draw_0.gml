@@ -40,8 +40,13 @@ if (con == 3.1)
     }
     if (contimer == 200)
     {
-        var _temp_local_var_2 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "When the FOUNTAINS fill the sky", "obj_legend_neo_slash_Draw_0_gml_46_0")
+        wx = 37
+        if jp
+            wx = 83
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 200 && contimer <= 300)
     {
@@ -57,17 +62,32 @@ if (con == 3.1)
         flamecon = 1
         flamealph = 0.7
         wave_siner = 0
-        flameya = (w.room_height - 30)
+        flameya = (room_height - 30)
         flameyb = room_height
         wave_maxa = sprite_get_height(spr_cutscene_27_3_fire_1)
         wave_maxb = sprite_get_height(spr_cutscene_27_3_fire_2)
-        _temp_local_var_2 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "All will fall into CHAOS.", "obj_legend_neo_slash_Draw_0_gml_69_0")
+        wx = 63
+        if jp
+            wx = 55
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer == 600)
     {
-        var _temp_local_var_4 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        pic = picb
+        picy = picyb
+        pic = picb
+        con_alphb = 0
+        picb = 315
+        gml_Script_msgsetloc(0, "The TITANS will take&form from the FOUNTAINS", "obj_legend_neo_slash_Draw_0_gml_80_0")
+        wx = 69
+        if jp
+            wx = 65
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 600 && contimer <= 680)
     {
@@ -81,8 +101,13 @@ if (con == 3.1)
         pic = picb
         con_alphb = 0
         picb = 316
-        var _temp_local_var_6 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "          And envelop&   the land in devastation.", "obj_legend_neo_slash_Draw_0_gml_99_0")
+        wx = 43
+        if jp
+            wx = 48
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 800 && contimer <= 980)
     {
@@ -91,8 +116,13 @@ if (con == 3.1)
     }
     if (contimer >= 1030 && contimer <= 1130)
     {
-        var _temp_local_var_9 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        con_alph = 0
+        if (con_alphb > 0)
+            con_alphb -= 0.01
+        if (flamealph > 0)
+            flamealph -= 0.01
     }
     if (contimer == 1160)
     {
@@ -101,9 +131,9 @@ if (con == 3.1)
     }
     if (flamecon == 1)
     {
-        if (w > (flameya.room_height - wave_maxa))
+        if (flameya > (room_height - wave_maxa))
             flameya -= 1.5
-        if (w > (flameyb.room_height - wave_maxb))
+        if (flameyb > (room_height - wave_maxb))
             flameyb--
         thickness = 2
         wave_siner++
@@ -146,8 +176,13 @@ if (con == 5)
     }
     if (contimer == 240)
     {
-        var _temp_local_var_10 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "Will slowly, one by one,&turn into statues...", "obj_legend_neo_slash_Draw_0_gml_180_0")
+        wx = 67
+        if jp
+            wx = 55
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 240 && contimer <= 360)
     {
@@ -159,8 +194,13 @@ if (con == 5)
         pic = picb
         picb = 321
         con_alphb = 0
-        var _temp_local_var_12 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "Leaving the Lightners&to fend for themselves", "obj_legend_neo_slash_Draw_0_gml_196_0")
+        wx = 73
+        if jp
+            wx = 58
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 420 && contimer <= 520)
     {
@@ -172,8 +212,13 @@ if (con == 5)
         pic = picb
         picb = 322
         con_alphb = 0
-        var _temp_local_var_14 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "Lost eternally in an&    endless night...", "obj_legend_neo_slash_Draw_0_gml_211_0")
+        wx = 81
+        if jp
+            wx = 69
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 600 && contimer <= 700)
     {
@@ -184,8 +229,14 @@ if (con == 5)
     {
         pic = picb
         con_alphb = 0
-        var _temp_local_var_16 = w
-        instance_destroy()
+        with (w)
+            instance_destroy()
+        gml_Script_msgsetloc(0, "Is that your idea&  of paradise?", "obj_legend_neo_slash_Draw_0_gml_225_0")
+        gml_Script_snd_volume(global.currentsong[1], 0, 200)
+        wx = 103
+        if jp
+            wx = 90
+        w = gml_Script_instance_create(wx, 185, obj_writer)
     }
     if (contimer >= 840)
         con_alph -= 0.01

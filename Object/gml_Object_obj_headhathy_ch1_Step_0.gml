@@ -60,8 +60,8 @@ if (global.monster[myself] == true)
                 dc.damage = (global.monsterat[myself] * 5)
                 if (instance_number(object_index) > 1 && instance_number(obj_dbulletcontroller_ch1) > 1)
                 {
-                    var _temp_local_var_22 = dc
-                    instance_destroy()
+                    with (dc)
+                        instance_destroy()
                 }
             }
             turns += 1

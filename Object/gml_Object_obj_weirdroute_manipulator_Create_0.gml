@@ -356,10 +356,10 @@ if (phase == 3)
         gml_Script_safe_delete(1197)
         layer_set_visible("TILES_Pathway_NoCorridors_Weird", 1)
         block = gml_Script_scr_forcefield(520, 160, 2, 10, 1, 0)
-        var _temp_local_var_7 = block
-        gml_Script_scr_depth()
+        with (block)
+            gml_Script_scr_depth()
     }
-    if (block.room == room_dw_mansion_east_2f_c)
+    if (room == room_dw_mansion_east_2f_c)
     {
         door1 = gml_Script_instance_create(1580, 80, obj_solidblock)
         door1.visible = true

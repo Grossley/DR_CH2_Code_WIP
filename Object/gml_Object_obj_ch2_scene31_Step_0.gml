@@ -7,8 +7,48 @@ if (con == 10 && (!gml_Script_d_ex()))
     anykey = 1
     audio_sound_gain(global.currentsong[1], 0, 1000)
     var foreground = gml_Script_scr_marker(0, 0, 412)
-    var _temp_local_var_2 = foreground
-    depth = 95000
+    with (foreground)
+        depth = 95000
+    faucet = gml_Script_scr_marker(194, 106, 413)
+    faucet.image_speed = 0.25
+    faucet.visible = false
+    with (faucet)
+        gml_Script_scr_depth()
+    cabinet_heartless = gml_Script_scr_marker(faucet.x, faucet.y, 429)
+    cabinet_heartless.image_speed = 0
+    cabinet_heartless.visible = false
+    with (cabinet_heartless)
+        gml_Script_scr_depth()
+    cabinet_heart = gml_Script_scr_marker(faucet.x, faucet.y, 428)
+    cabinet_heart.image_speed = 0
+    cabinet_heart.visible = false
+    with (cabinet_heart)
+        gml_Script_scr_depth()
+    window = gml_Script_scr_marker(52, 89, 425)
+    window.image_speed = 0
+    with (window)
+        depth = 1000000
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
+    obj_cutscene_master.save_object[0] = faucet
+    obj_cutscene_master.save_object[1] = window
+    obj_cutscene_master.save_object[2] = cabinet_heart
+    obj_cutscene_master.save_object[3] = cabinet_heartless
+    gml_Script_c_var_instance(faucet, "depth", (kr_actor.depth + 1000))
+    gml_Script_c_mus2("volume", 0, 10)
+    gml_Script_c_sel(kr)
+    gml_Script_c_walkdirect_wait(202, 109, 10)
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(10)
+    gml_Script_c_mus("free_all")
+    gml_Script_c_mus2("initloop", "sink_noise.ogg", 0)
+    gml_Script_c_soundplay(64)
+    gml_Script_c_var_instance(faucet, "visible", 1)
+    gml_Script_c_speaker("no_name")
+    gml_Script_c_msgsetloc(0, "* It started to run./", "obj_ch2_scene31_slash_Step_0_gml_60_0")
+    gml_Script_c_msgnextloc("* It's making a lot of noise./%", "obj_ch2_scene31_slash_Step_0_gml_61_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_waitcustom()
 }
 if (con == 11 && anykey == 1 && customcon == 1)
 {
@@ -18,8 +58,8 @@ if (con == 11 && anykey == 1 && customcon == 1)
         if (keyboard_check_pressed(vk_anykey) || gml_Script_scr_gamepad_check_pressed_any())
         {
             maxshaketime--
-            var _temp_local_var_10 = kr_actor
-            gml_Script_scr_shakeobj()
+            with (kr_actor)
+                gml_Script_scr_shakeobj()
         }
     }
     if (keytimer >= maxshaketime)

@@ -38,7 +38,8 @@ if (con == 2)
     timer++
     if (timer > 20)
     {
-        var _temp_local_var_1 = teacup1
-        instance_destroy()
+        with (teacup1)
+            instance_destroy()
+        global.interact = 0
     }
 }

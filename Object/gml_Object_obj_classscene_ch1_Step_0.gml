@@ -16,8 +16,12 @@ if (con == 2.5)
 if (con == 3 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     gml_Script_snd_play_ch1(380)
-    var _temp_local_var_2 = door
-    image_index = 1
+    with (door)
+        image_index = 1
+    con = 4
+    with (alphys)
+        sprite_index = spr_alphysr_ch1
+    alarm[4] = 30
 }
 if (con == 5)
 {
@@ -39,8 +43,11 @@ if (con == 7)
         vspeed = 0
         image_speed = 0
     }
-    var _temp_local_var_4 = door
-    image_index = 0
+    with (door)
+        image_index = 0
+    gml_Script_snd_play_ch1(379)
+    con = 8
+    alarm[4] = 30
 }
 if (con == 9)
 {
@@ -57,8 +64,18 @@ if (con == 10 && instance_exists(obj_dialoguer_ch1) == 0)
     door_readable = gml_Script_instance_create_ch1(244, 51, 1405)
     alphys2 = alphys
     alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), 1407)
-    var _temp_local_var_6 = alphys2
-    instance_destroy()
+    with (alphys2)
+        instance_destroy()
+    doorsolid = gml_Script_instance_create_ch1(236, 52, 1334)
+    with (doorsolid)
+        image_xscale = 2
+    with (door)
+        depth = 500000
+    with (obj_mainchara_ch1)
+        fun = false
+    global.plot = 2
+    global.interact = 0
+    con = 11
 }
 if (con == 20 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -88,38 +105,63 @@ if (con == 23 && instance_exists(obj_dialoguer_ch1) == 0)
     gml_Script_instance_create_ch1(0, 0, 1464)
     gml_Script_snd_stop_all_ch1()
     gml_Script_snd_free_ch1(global.currentsong[0])
-    var _temp_local_var_11 = door
-    image_index = 0
-    image_speed = 0.5
-    sprite_index = spr_classdoorslam_ch1
-    depth = 5000
+    with (door)
+    {
+        image_index = 0
+        image_speed = 0.5
+        sprite_index = spr_classdoorslam_ch1
+        depth = 5000
+    }
+    sus = gml_Script_scr_marker_ch1(237, 24, 3540)
+    with (sus)
+        gml_Script_scr_depth_ch1()
+    con = 24
+    alarm[4] = 4
+    with (doorsolid)
+        instance_destroy()
 }
 if (con == 25)
 {
     gml_Script_snd_play_ch1(378)
     alphys2 = alphys
     alphys = gml_Script_scr_marker_ch1(alphys.x, alphys.y, 3484)
-    var _temp_local_var_14 = alphys
-    gml_Script_scr_depth_ch1()
+    with (alphys)
+        gml_Script_scr_depth_ch1()
+    with (alphys2)
+        instance_destroy()
+    con = 26
+    alarm[4] = 6
 }
 if (con == 27)
 {
-    var _temp_local_var_16 = door
-    image_speed = 0
-    depth = 500000
+    with (door)
+    {
+        image_speed = 0
+        depth = 500000
+    }
+    con = 32
+    alarm[4] = 50
 }
 if (con == 29 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_18 = sus
-    image_speed = 0.1
-    vspeed = 0.5
+    with (sus)
+    {
+        image_speed = 0.1
+        vspeed = 0.5
+    }
+    con = 30
+    alarm[4] = 40
 }
 if (con == 31)
 {
-    var _temp_local_var_19 = sus
-    image_index = 0
-    image_speed = 0
-    vspeed = 0
+    with (sus)
+    {
+        image_index = 0
+        image_speed = 0
+        vspeed = 0
+    }
+    con = 34
+    alarm[4] = 30
 }
 if (con == 33)
 {
@@ -151,8 +193,8 @@ if (con == 36 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     con = 37
     alarm[4] = 40
-    var _temp_local_var_21 = alphys
-    sprite_index = spr_alphysd_ch1
+    with (alphys)
+        sprite_index = spr_alphysd_ch1
 }
 if (con == 38)
 {
@@ -166,18 +208,26 @@ if (con == 38)
 }
 if (con == 39 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_23 = alphys
-    sprite_index = spr_alphysr_ch1
-    hspeed = 3
-    image_speed = 0.2
+    with (alphys)
+    {
+        sprite_index = spr_alphysr_ch1
+        hspeed = 3
+        image_speed = 0.2
+    }
+    con = 40
+    alarm[4] = 26
 }
 if (con == 41)
 {
-    var _temp_local_var_24 = alphys
-    sprite_index = spr_alphysu_ch1
-    image_index = 0
-    image_speed = 0
-    hspeed = 0
+    with (alphys)
+    {
+        sprite_index = spr_alphysu_ch1
+        image_index = 0
+        image_speed = 0
+        hspeed = 0
+    }
+    con = 42
+    alarm[4] = 30
 }
 if (con == 43)
 {
@@ -188,18 +238,24 @@ if (con == 43)
 if (con == 44 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     con = 45
-    var _temp_local_var_26 = alphys
-    sprite_index = spr_alphysl_ch1
+    with (alphys)
+        sprite_index = spr_alphysl_ch1
+    con = 46
+    alarm[4] = 20
 }
 if (con == 47)
 {
-    var _temp_local_var_27 = alphys
-    sprite_index = spr_alphysr_ch1
+    with (alphys)
+        sprite_index = spr_alphysr_ch1
+    con = 48
+    alarm[4] = 20
 }
 if (con == 49)
 {
-    var _temp_local_var_28 = alphys
-    sprite_index = spr_alphysd_ch1
+    with (alphys)
+        sprite_index = spr_alphysd_ch1
+    con = 50
+    alarm[4] = 30
 }
 if (con == 51)
 {
@@ -218,23 +274,42 @@ if (con == 51)
 }
 if (con == 51.1 && gml_Script_d_ex_ch1() == 0)
 {
-    var _temp_local_var_30 = alphys
-    sprite_index = spr_alphysd_ch1
+    with (alphys)
+        sprite_index = spr_alphysd_ch1
+    con = 50.2
+    alarm[4] = 90
 }
 if (con == 51.2)
 {
-    var _temp_local_var_31 = alphys
-    sprite_index = spr_alphysd_ch1
+    with (alphys)
+        sprite_index = spr_alphysd_ch1
+    global.fe = 6
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_319_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_320_0")
+    con = 51.3
+    gml_Script_instance_create_ch1(0, 0, 1326)
 }
 if (con == 51.3 && gml_Script_d_ex_ch1() == 0)
 {
-    var _temp_local_var_33 = alphys
-    sprite_index = spr_alphysr_ch1
+    with (alphys)
+        sprite_index = spr_alphysr_ch1
+    con = 50.4
+    alarm[4] = 90
 }
 if (con == 51.4)
 {
-    var _temp_local_var_34 = alphys
-    sprite_index = spr_alphysd_ch1
+    with (alphys)
+        sprite_index = spr_alphysd_ch1
+    global.fe = 9
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_336_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_337_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_338_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_339_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_340_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_341_0")
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_342_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 52
 }
 if (con == 52)
 {
@@ -242,30 +317,63 @@ if (con == 52)
     {
         if (obj_writer_ch1.msgno == 4)
         {
-            var _temp_local_var_35 = alphys
-            sprite_index = spr_alphysr_ch1
+            with (alphys)
+                sprite_index = spr_alphysr_ch1
         }
     }
 }
 if (con == 52 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_37 = sus
-    vspeed = -1
-    sprite_index = spr_susieu_ch1
-    image_speed = 0.2
+    with (sus)
+    {
+        vspeed = -1
+        sprite_index = spr_susieu_ch1
+        image_speed = 0.2
+    }
+    con = 53
+    alarm[4] = 15
 }
 if (con == 54)
 {
-    var _temp_local_var_38 = sus
-    instance_destroy()
+    with (sus)
+        instance_destroy()
+    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(378)
+    with (door)
+        image_index = 0
+    con = 55
+    alarm[4] = 50
 }
 if (con == 56)
 {
-    var _temp_local_var_40 = sus
-    instance_destroy()
+    with (sus)
+        instance_destroy()
+    with (alphys)
+        sprite_index = spr_alphysd_ch1
+    global.fc = 11
+    global.typer = 20
+    global.fe = 4
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_394_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_395_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_396_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 57
 }
 if (con == 57 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_43 = door_readable
-    instance_destroy()
+    with (door_readable)
+        instance_destroy()
+    doorb = gml_Script_instance_create_ch1(242, 51, 1417)
+    global.plot = 3
+    global.facing = 0
+    alphys2 = alphys
+    alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), 1407)
+    with (obj_npc_facing_ch1)
+        talked = 0
+    with (alphys2)
+        instance_destroy()
+    with (doorsolid)
+        instance_destroy()
+    global.interact = 0
+    con = 58
 }

@@ -19,6 +19,6 @@ if (con == 1)
 if (gml_Script_i_ex(forcefield) && global.flag[373] == 1)
 {
     layer_set_visible("TILES_Edge_Hidden", 0)
-    var _temp_local_var_4 = forcefield
-    instance_destroy()
+    with (forcefield)
+        instance_destroy()
 }

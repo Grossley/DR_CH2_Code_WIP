@@ -11,6 +11,15 @@ if instance_exists(obj_controller_dining3)
             obj_controller_dining3.dogcon = 71
     }
 }
-var _temp_local_var_1 = other
-gml_Script_instance_create((x + 25), (y + 34), obj_saucerTable_knocked)
-instance_destroy()
+with (other)
+{
+    gml_Script_instance_create((x + 25), (y + 34), obj_saucerTable_knocked)
+    instance_destroy()
+}
+if (room == 1193)
+    vspeed *= 0.75
+if (instance_number(obj_saucer) == (targ - 1) && gml_Script_i_ex(1193))
+{
+    vertState = 1
+    global.interact = 1
+}

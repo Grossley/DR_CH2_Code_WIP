@@ -72,8 +72,8 @@ if (blockedstart == 0)
                     turnfx.image_angle = direction
                     turnfx.sprite_index = spr_holemouse_turnrightfx
                     turnfx.image_index = 0
-                    turnfx.x += obj_fountainkris_ch2_sideb
-                    turnfx.y += obj_fountainkris_ch2_sideb
+                    turnfx.x += 20
+                    turnfx.y += 20
                     if (turndir == "right")
                         turnfx.image_index = 1
                 }
@@ -100,7 +100,7 @@ if (blockedstart == 0)
         if (deathtimer >= 3)
             instance_destroy()
     }
-    if ((x.room_width + 40) || x < -40 || (y.room_height + 40) || y < -40)
+    if (x > (room_width + 40) || x < -40 || y > (room_height + 40) || y < -40)
         instance_destroy()
 }
 if (blockedstart == 1)
@@ -119,7 +119,7 @@ if (con == 1)
             instance_destroy()
     }
 }
-if (x < gml_Script_camerax() || x > (gml_Script_camerax() + 640) || y < gml_Script_cameray() || y > (gml_Script_cameray() + 480) || x < (obj_sneo_friedpipis - (sprite_width * 2)) || (x.room_width + (sprite_width * 2)) || (y.room_height + (sprite_height * 2)) || y < (0 - (sprite_height * 2)))
+if (x < gml_Script_camerax() || x > (gml_Script_camerax() + 640) || y < gml_Script_cameray() || y > (gml_Script_cameray() + 480) || x < (0 - (sprite_width * 2)) || x > (room_width + (sprite_width * 2)) || y > (room_height + (sprite_height * 2)) || y < (0 - (sprite_height * 2)))
     instance_destroy()
 if (con == 5)
 {

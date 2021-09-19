@@ -26,8 +26,9 @@ if (con < 400)
     {
         if instance_exists(obj_battlecontroller_ch1)
         {
-            var _temp_local_var_3 = dummy
-            visible = false
+            with (dummy)
+                visible = false
+            con = 23
         }
     }
     if (con == 23)

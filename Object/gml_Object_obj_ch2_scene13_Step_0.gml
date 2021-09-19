@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 if (obj_mainchara.x > x && con == -1)
 {
     con = 1
@@ -683,6 +684,13 @@ if (con == 60 && (!gml_Script_i_ex(895)))
 }
 if (noellelost == 1)
 {
-    var _temp_local_var_11 = noellebox
-    gml_Script_scr_depth()
+    with (noellebox)
+        gml_Script_scr_depth()
+    noellebox.x = gml_Script_scr_movetowards(noellebox.x, 1240, 5)
+    noellebox.y = gml_Script_scr_movetowards(noellebox.y, 159, 2)
+    if (noellebox.x >= 1215)
+    {
+        noellelost = 0
+        con = 20
+    }
 }

@@ -165,9 +165,12 @@ else if (state == 3)
         {
             instance_destroy()
             aa = gml_Script_instance_create(x, (ystart - abs((sin((steptimer + 0.15)) * 40))), obj_sneo_lastattack)
-            var _temp_local_var_34 = aa
-            yspot[0] = (((obj_growtangle.y - (obj_growtangle.sprite_height / 2)) - y_offset) + 40)
-            yspot[1] = (((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - y_offset) - 40)
+            with (aa)
+            {
+                yspot[0] = (((obj_growtangle.y - (obj_growtangle.sprite_height / 2)) - y_offset) + 40)
+                yspot[1] = (((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - y_offset) - 40)
+            }
+            global.turntimer = 300
         }
     }
 }
@@ -181,11 +184,34 @@ else if (state == 4 && formtimer >= 25)
 else if (state == 10)
 {
     fakeheart_speed = gml_Script_scr_movetowards(fakeheart_speed, 10, 1)
-    var _temp_local_var_37 = fakeheart
-    var _targetx = ((obj_sneo_final_forme.x + obj_sneo_final_forme.mouthx) + 5)
-    if (x > (_targetx - 10))
-        _targetx += 20
-    move_towards_point(_targetx, (obj_sneo_final_forme.y + obj_sneo_final_forme.mouthy), obj_sneo_final_forme.fakeheart_speed)
+    with (fakeheart)
+    {
+        var _targetx = ((obj_sneo_final_forme.x + obj_sneo_final_forme.mouthx) + 5)
+        if (x > (_targetx - 10))
+            _targetx += 20
+        move_towards_point(_targetx, (obj_sneo_final_forme.y + obj_sneo_final_forme.mouthy), obj_sneo_final_forme.fakeheart_speed)
+    }
+    obj_sneo_warped_box.inhalespeed += 0.01
+    if (x > ((x + mouthx) + 10))
+    {
+        image_index = 4
+        gml_Script_snd_stop(136)
+    }
+    if (formtimer > 45)
+    {
+        fakeheart.speed = 0
+        fakeheart.direction = 0
+        state = 11
+        formtimer = 0
+        image_index = 4
+        hidemouthback = 1
+        gml_Script_snd_stop(136)
+        obj_sneo_warped_box.image_alpha = 0
+        obj_sneo_warped_box.timer = 0
+        fakeheart.state = 1
+        with (obj_sneo_dollar)
+            fade = 1
+    }
 }
 else if (state == 11)
 {

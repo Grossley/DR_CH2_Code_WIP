@@ -139,3 +139,52 @@ global.charinstance[1] = 12129292
 global.charinstance[2] = 12129292
 with (global.charinstance[0])
     myself = 0
+with (global.charinstance[1])
+    myself = 1
+with (global.charinstance[2])
+    myself = 2
+mmy[0] = 0
+mmy[1] = 0
+mmy[2] = 0
+for (i = 0; i < 3; i += 1)
+{
+    if (global.char[i] != 0)
+        chartotal += 1
+    if (global.char[i] == 1)
+    {
+        havechar[0] = true
+        charpos[0] = i
+        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], 1530)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 1
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+    if (global.char[i] == 2)
+    {
+        havechar[1] = true
+        charpos[1] = i
+        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], 1531)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 2
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+    if (global.char[i] == 3)
+    {
+        havechar[2] = true
+        charpos[2] = i
+        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], 1532)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 3
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+}
+slmxx = 0
+slmyy = 0
+s_siner = 0
+gml_Script_instance_create_ch1(0, 0, 1650)
+reset = false
+timeron = true
+noreturn = false
+hpcolor[0] = c_aqua
+hpcolor[1] = c_fuchsia
+hpcolor[2] = c_lime

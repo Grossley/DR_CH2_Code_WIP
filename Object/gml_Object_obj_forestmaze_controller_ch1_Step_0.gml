@@ -6,16 +6,18 @@ if (lancercon == 1)
         lancercon = 2
         if (susie_side >= 0)
         {
-            var _temp_local_var_1 = susie
-            vspeed = -10
-            sprite_index = spr_susieu_dark_ch1
-            image_speed = 0.2
+            with (susie)
+            {
+                vspeed = -10
+                sprite_index = spr_susieu_dark_ch1
+                image_speed = 0.2
+            }
         }
     }
 }
 if (battlemoder == true)
 {
-    if (susie.room == room_forest_maze1_ch1)
+    if (room == room_forest_maze1_ch1)
     {
         if (obj_mainchara_ch1.y <= 480)
             obj_mainchara_ch1.battlemode = 1

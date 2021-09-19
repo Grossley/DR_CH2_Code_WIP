@@ -1,3 +1,4 @@
+var _temp_local_var_4;
 if (gml_Script_i_ex(desk_marker) && desk_marker.visible == true)
 {
     if (standing == 0)
@@ -640,8 +641,10 @@ if susie_mad
     if (susie_mad_timer >= 2)
     {
         susie_mad_timer = 0
-        var _temp_local_var_9 = su_actor
-        x = (142 + choose(-2, -1, 1, 2))
-        y = (139 + choose(-2, -1, 1, 2))
+        with (su_actor)
+        {
+            x = (142 + choose(-2, -1, 1, 2))
+            y = (139 + choose(-2, -1, 1, 2))
+        }
     }
 }

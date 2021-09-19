@@ -18,8 +18,11 @@ if (myinteract == 3)
 }
 if (con == 5 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_2 = pwall
-    instance_destroy()
+    with (pwall)
+        instance_destroy()
+    hspeed = -8
+    con = 6
+    alarm[4] = 30
 }
 if (con == 7)
 {

@@ -106,8 +106,16 @@ if (weird == 1)
     {
         layer_set_visible(layer_get_id("BG_Tiles_HiddenPath"), 1)
         layer_set_visible(layer_get_id("BG_Tiles_HiddenPath_Sidewalk"), 1)
-        var _temp_local_var_1 = fakeWall
-        instance_destroy()
+        with (fakeWall)
+            instance_destroy()
+        drawshine = 0
+        with (obj_rotationtile_tower)
+            y = (room_height + 480)
+        with (obj_mouseTowerTrigger)
+            gml_Script_scr_createFrozen(1)
+        with (bridge)
+            instance_destroy()
+        solve = 2
     }
 }
 if (weird == 0)
@@ -183,8 +191,27 @@ if (weird == 0)
     }
     if (con == 7)
     {
-        var _temp_local_var_3 = noelle
-        gml_Script_scr_depth()
+        with (noelle)
+            gml_Script_scr_depth()
+        timer++
+        if (timer == 32)
+        {
+            noelle.image_index = 0
+            noelle.image_speed = 0
+        }
+        if (timer == 62)
+            noelle.sprite_index = spr_noelle_walk_down_dw
+        if (timer == 92)
+            noelle.sprite_index = spr_noelle_walk_up_dw
+        if (timer == 122)
+        {
+            gml_Script_scr_speaker("noelle")
+            gml_Script_msgsetloc(0, "\\E5* Hmm..^1. the switch didn't seem to work?/%", "obj_controller_city_mice3_slash_Step_0_gml_129_0")
+            d = gml_Script_d_make()
+            d.side = 0
+            timer = 0
+            con++
+        }
     }
     if (con == 8 && (!gml_Script_d_ex()))
     {
@@ -198,8 +225,11 @@ if (weird == 0)
         {
             gml_Script_snd_play(61)
             gml_Script_instance_create(0, 0, obj_shake)
-            var _temp_local_var_5 = bridge
-            instance_destroy()
+            with (bridge)
+                instance_destroy()
+            noelle.sprite_index = spr_noelle_walk_left_dw
+            timer = 0
+            con++
         }
     }
     if (con == 10)
@@ -207,8 +237,8 @@ if (weird == 0)
         timer++
         if (timer > 24)
         {
-            var _temp_local_var_6 = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
-            x = (lx + random_range(-2, 2))
+            with (obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)])
+                x = (lx + random_range(-2, 2))
         }
         if (timer == 25)
         {
@@ -238,14 +268,16 @@ if (weird == 0)
                 }
             }
         }
-        var _temp_local_var_8 = obj_masterPlatformController.plat[0]
-        x = (lx + random_range(-2, 2))
+        with (obj_masterPlatformController.plat[0])
+            x = (lx + random_range(-2, 2))
     }
     if (con == 12)
     {
-        var _temp_local_var_9 = obj_masterPlatformController.plat[0]
-        if (phase == 3)
-            x = (lx + random_range(-2, 2))
+        with (obj_masterPlatformController.plat[0])
+        {
+            if (phase == 3)
+                x = (lx + random_range(-2, 2))
+        }
     }
     if (con == 11 && (!gml_Script_d_ex()))
     {
@@ -370,8 +402,17 @@ if (weird == 0)
             freeze = 0
         if (timer == 40)
         {
-            var _temp_local_var_16 = obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)]
-            gml_Script_scr_shakeobj()
+            with (obj_masterPlatformController.plat[(obj_masterPlatformController.currentPlatform - 1)])
+                gml_Script_scr_shakeobj()
+            global.currentsong[0] = gml_Script_snd_init("boxing_game.ogg")
+            global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 1)
+            gml_Script_snd_pitch(global.currentsong[1], 1.2)
+            gml_Script_scr_speaker("noelle")
+            gml_Script_msgsetloc(0, "\\EE* Th..^1. this one's falling^1, too!/", "obj_controller_city_mice3_slash_Step_0_gml_292_0")
+            gml_Script_msgnextloc("\\E8* Kris^1, whatever you just did^1, keep doing it!!/%", "obj_controller_city_mice3_slash_Step_0_gml_293_0")
+            d = gml_Script_d_make()
+            d.side = 0
+            con++
         }
     }
     if (con == 19 && (!gml_Script_d_ex()))
@@ -404,13 +445,26 @@ if (weird == 0)
         berdly.image_yscale = 2
         berdly.image_speed = 0.25
         berdly.sprite_index = spr_berdly_walk_down_dw
-        var _temp_local_var_19 = berdly
-        gml_Script_scr_move_to_point_over_time(40, 163, 48)
+        with (berdly)
+            gml_Script_scr_move_to_point_over_time(40, 163, 48)
+        timer = 0
+        con++
     }
     if (con == 22)
     {
-        var _temp_local_var_20 = berdly
-        gml_Script_scr_depth()
+        with (berdly)
+            gml_Script_scr_depth()
+        timer++
+        if (timer == 48)
+        {
+            berdly.image_speed = 0
+            berdly.image_index = 0
+        }
+        if (timer == 63)
+        {
+            monologue = gml_Script_instance_create(x, y, obj_event_mouse3_berdlymonologue)
+            con++
+        }
     }
     if gml_Script_i_ex(berdly)
         berdly.visible = true
@@ -425,14 +479,18 @@ if (weird == 0)
             obj_mouseTowerTrigger.rotate = 0
             if gml_Script_i_ex(monologue)
             {
-                var _temp_local_var_21 = monologue
-                instance_destroy()
+                with (monologue)
+                    instance_destroy()
             }
             obj_dw_city_mice3Fence.image_index = 1
             layer_set_visible(layer_get_id("BG_Tiles_HiddenPath"), 1)
             layer_set_visible(layer_get_id("BG_Tiles_HiddenPath_Sidewalk"), 1)
-            var _temp_local_var_22 = fakeWall
-            instance_destroy()
+            with (fakeWall)
+                instance_destroy()
+            gml_Script_snd_play(61)
+            gml_Script_instance_create(0, 0, obj_shake)
+            timer = 0
+            con++
         }
     }
     if (con == 24)
@@ -443,8 +501,16 @@ if (weird == 0)
             berdly.x = 38
             berdly.sprite_index = spr_berdly_walk_up_dw
             image_speed = 0.25
-            var _temp_local_var_23 = berdly
-            gml_Script_scr_move_to_point_over_time(38, 38, 16)
+            with (berdly)
+                gml_Script_scr_move_to_point_over_time(38, 38, 16)
+            timer = 0
+            with (obj_noelle_scared)
+            {
+                sprite_index = spr_noelle_walk_down_dw
+                image_index = 0
+                image_speed = 0
+            }
+            con = 24.1
         }
     }
     if (con == 24.1 && (!gml_Script_d_ex()))
@@ -455,7 +521,7 @@ if (weird == 0)
             berdly.sprite_index = spr_berdly_walk_right_dw
             berdly.image_speed = 0
             berdly.x = 45
-            berdly.y = obj_sneo_final_forme_mouth_back
+            berdly.y = 38
             global.interact = 1
             gml_Script_scr_speaker("berdly")
             gml_Script_msgsetloc(0, "\\EN* What./", "obj_controller_city_mice3_slash_Step_0_gml_419_0")
@@ -468,8 +534,12 @@ if (weird == 0)
     }
     if (con == 24.2 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_26 = berdly
-        gml_Script_scr_depth()
+        with (berdly)
+            gml_Script_scr_depth()
+        berdly.x = 57
+        berdly.y = 36
+        berdly.sprite_index = spr_berdly_mad_right_dw
+        con = 25
     }
     if (con == 25 && (!gml_Script_d_ex()))
     {
@@ -488,8 +558,8 @@ if (weird == 0)
         timer++
         if (timer == 1)
         {
-            var _temp_local_var_29 = berdly
-            gml_Script_instance_create((x + (sprite_width / 2)), (y - 20), obj_excblcon)
+            with (berdly)
+                gml_Script_instance_create((x + (sprite_width / 2)), (y - 20), obj_excblcon)
         }
         if (timer == 35)
             berdly.sprite_index = spr_berdly_walk_right_dw
@@ -507,8 +577,9 @@ if (weird == 0)
         if (timer == 0)
         {
             berdly.sprite_index = spr_berdly_walk_right_dw
-            var _temp_local_var_31 = berdly
-            gml_Script_scr_move_to_point_over_time((x + 255), y, 30)
+            with (berdly)
+                gml_Script_scr_move_to_point_over_time((x + 255), y, 30)
+            berdly.image_speed = 0.25
         }
         timer++
         if (timer == 30)
@@ -545,7 +616,10 @@ if (weird == 0)
     {
         berdly.sprite_index = spr_berdly_walk_right_dw_unhappy
         berdly.image_speed = 0.25
-        gml_Script_scr_move_to_point_over_time((y.room_width + 64), 64, berdly)
+        with (berdly)
+            gml_Script_scr_move_to_point_over_time((room_width + 64), y, 64)
+        timer = 0
+        con++
     }
     if (con == 30)
     {
@@ -578,16 +652,20 @@ if (weird == 0)
             freeze = 1
         if gml_Script_i_ex(noelle)
         {
-            var _temp_local_var_35 = noelle
-            instance_destroy()
+            with (noelle)
+                instance_destroy()
         }
         noelle = gml_Script_instance_create(obj_noelle_scared.x, obj_noelle_scared.y, obj_marker)
         noelle.sprite_index = obj_noelle_scared.sprite_index
         noelle.image_xscale = 2
         noelle.image_yscale = 2
         noelle.image_speed = 0
-        var _temp_local_var_36 = noelle
-        gml_Script_scr_depth()
+        with (noelle)
+            gml_Script_scr_depth()
+        with (obj_noelle_scared)
+            instance_destroy()
+        timer = 0
+        con = 32.5
     }
     if (con == 32.5)
     {
@@ -607,8 +685,11 @@ if (weird == 0)
         disttopt = floor((abs((noelle.y - 256)) / 2))
         disttopt = clamp(disttopt, 1, 8)
         show_debug_message(("disttopt=" + string(disttopt)))
-        var _temp_local_var_37 = noelle
-        gml_Script_scr_move_to_point_over_time(x, 256, other.disttopt)
+        with (noelle)
+            gml_Script_scr_move_to_point_over_time(x, 256, other.disttopt)
+        noelle.image_speed = 0.25
+        timer = 0
+        con++
     }
     if (con == 34)
     {
@@ -616,25 +697,26 @@ if (weird == 0)
         if (timer == disttopt)
         {
             noelle.sprite_index = spr_noelle_walk_left_dw
-            var _temp_local_var_38 = noelle
-            gml_Script_scr_move_to_point_over_time(36, y, 64)
+            with (noelle)
+                gml_Script_scr_move_to_point_over_time(36, y, 64)
+            with (obj_caterpillarchara)
+            {
+                x = 36
+                y = other.noelle.y
+            }
+            timer = 0
+            con++
         }
     }
     if (con == 35)
     {
         timer++
         if (noelle.x < 100)
-        {
-            _temp_local_var_38.image_alpha = (bridge.image_alpha * 0.8)
-            var _temp_local_var_39 = noelle
-            var _temp_local_var_40 = noelle
-            var _temp_local_var_41 = -9
-            var _temp_local_var_42 = bridge
-        }
+            bridge.image_alpha *= 0.8
         if (timer == 52)
         {
             with (obj_rotationtile_tower)
-                gml_Script_scr_move_to_point_over_time(x, choose(62, 63, 64, 65, 66, 67, 68, 69, 70).room_height, noelle)
+                gml_Script_scr_move_to_point_over_time(x, room_height, choose(62, 63, 64, 65, 66, 67, 68, 69, 70))
         }
         if (timer == 64)
         {
@@ -650,23 +732,33 @@ if (weird == 0)
             d.side = 0
             global.facing = 0
             timer = 0
-            var _temp_local_var_43 = bridge
-            instance_destroy()
+            with (bridge)
+                instance_destroy()
+            con++
         }
     }
     if (con == 36 && (!gml_Script_d_ex()))
     {
         noelle.sprite_index = spr_noelle_walk_up_dw
         noelle.image_speed = 0.25
-        var _temp_local_var_45 = noelle
-        gml_Script_scr_move_to_point_over_time(obj_caterpillarchara.x, obj_caterpillarchara.y, 12)
+        with (noelle)
+            gml_Script_scr_move_to_point_over_time(obj_caterpillarchara.x, obj_caterpillarchara.y, 12)
+        con++
     }
     if (con == 37)
     {
         if (noelle.x == obj_caterpillarchara.x && noelle.y == obj_caterpillarchara.y)
         {
-            var _temp_local_var_47 = leaveBlock
-            instance_destroy()
+            with (leaveBlock)
+                instance_destroy()
+            obj_caterpillarchara.visible = true
+            with (noelle)
+                instance_destroy()
+            gml_Script_scr_speaker("no_name")
+            gml_Script_msgsetloc(0, "* (Noelle is now immune to mice.)/%", "obj_controller_city_mice3_slash_Step_0_gml_660_0")
+            d = gml_Script_d_make()
+            d.side = 0
+            con++
         }
     }
     if (con == 38 && (!gml_Script_d_ex()))
@@ -680,7 +772,18 @@ if (weird == 0)
         global.interact = 0
         global.flag[379] = 1
         global.plot = 78
-        var _temp_local_var_50 = noExit
-        instance_destroy()
+        with (noExit)
+            instance_destroy()
+        with (forcefield)
+            instance_destroy()
+        if instance_exists(obj_musicer_city)
+        {
+            with (obj_musicer_city)
+                instance_destroy()
+        }
+        gml_Script_instance_create(x, y, obj_musicer_city)
+        con++
+        tempsave = gml_Script_instance_create(480, 40, obj_savepoint)
+        gml_Script_scr_tempsave()
     }
 }

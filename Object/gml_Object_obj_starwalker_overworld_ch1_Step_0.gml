@@ -4,7 +4,7 @@ if instance_exists(obj_mainchara_ch1)
     {
         if (room == room_forest_starwalker_ch1)
         {
-            if (obj_mainchara_ch1.x.room_width / 2)
+            if (obj_mainchara_ch1.x >= (room_width / 2))
                 x = 2200
         }
         loc_check = 1
@@ -31,9 +31,13 @@ if (keyboard_check_pressed(vk_backspace) && beatcon == 89898 && gml_Script_scr_d
     with (obj_mainchara_ch1)
         battlemode = 0
     dead = gml_Script_instance_create_ch1((x - 92), (y - 74), 1494)
-    var _temp_local_var_4 = dead
-    walkcon = 1
-    walktimer = 0
+    with (dead)
+    {
+        walkcon = 1
+        walktimer = 0
+    }
+    with (shadow)
+        instance_destroy()
 }
 targetx = (obj_mainchara_ch1.x + (obj_mainchara_ch1.sprite_width / 2))
 targety = (obj_mainchara_ch1.y + (obj_mainchara_ch1.sprite_height / 2))
@@ -137,11 +141,10 @@ if (beatcon == 0)
         attackcon = 1
         if (shot == 1)
         {
-            i = 0
-            while (i < 3)
+            for (i = 0; i < 3; i += 1)
             {
-                var _temp_local_var_9 = starbullet[i]
-                instance_destroy()
+                with (starbullet[i])
+                    instance_destroy()
             }
         }
     }
@@ -216,7 +219,10 @@ if (beatcon == 2)
     beattimer += 1
     if (dead.x >= (gml_Script___view_get(0, 0) + gml_Script___view_get(2, 0)) && global.interact != 0)
     {
-        var _temp_local_var_12 = dead
+        with (dead)
+            instance_destroy()
+        global.interact = 0
+        beatcon = 3
         instance_destroy()
     }
 }

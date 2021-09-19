@@ -115,9 +115,11 @@ if (con == 6)
     if (fallnow == 1)
     {
         fallnow = 2
-        var _temp_local_var_1 = object_index
-        if (isrouxls == 1)
-            drawthrash = 1
+        with (object_index)
+        {
+            if (isrouxls == 1)
+                drawthrash = 1
+        }
     }
     if (fallnow == 2)
     {

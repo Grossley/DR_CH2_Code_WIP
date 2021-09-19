@@ -32,17 +32,33 @@ if (con == 3 && (!instance_exists(obj_queenvase)))
     global.flag[400] = 2
     gml_Script_snd_play(163)
     enemy1 = gml_Script_instance_create(-146, 200, obj_chaseenemy)
-    var _temp_local_var_6 = enemy1
-    myencounter = 64
-    sprite_index = spr_npc_swatchling_sweep_walk
-    touchsprite = spr_swatchling_hurt
-    radius = 10000
-    ignoresolid = true
-    alertcon = 0
-    alertskip = 1
-    eraser = true
-    facing = 1
-    chasetype = 7
+    with (enemy1)
+    {
+        myencounter = 64
+        sprite_index = spr_npc_swatchling_sweep_walk
+        touchsprite = spr_swatchling_hurt
+        radius = 10000
+        ignoresolid = true
+        alertcon = 0
+        alertskip = 1
+        eraser = true
+        facing = 1
+        chasetype = 7
+    }
+    enemy2 = gml_Script_instance_create(640, 200, obj_chaseenemy)
+    with (enemy2)
+    {
+        myencounter = 64
+        sprite_index = spr_npc_swatchling_sweep_walk
+        touchsprite = spr_swatchling_hurt
+        radius = 10000
+        ignoresolid = true
+        alertcon = 0
+        eraser = true
+        alertskip = 1
+        chasetype = 7
+    }
+    con = 4
 }
 if (con == 4)
 {

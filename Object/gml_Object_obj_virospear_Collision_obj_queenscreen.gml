@@ -1,3 +1,4 @@
+var _temp_local_var_5;
 var redscreen = 26
 if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) && active == true && other.aligned == 1 && other.image_index != redscreen && other.image_index != 9 && other.sprite_index != spr_queenscreen_red)
 {
@@ -90,21 +91,20 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
         alarm[0] = b
         b.image_xscale = 2
         b.image_yscale = 2
-        var _temp_local_var_5 = b
-        var _temp_local_var_6 = -10
+        var _temp_local_var_5 = -10
         move_towards_point((obj_mainchara.x + 2), (obj_mainchara.y + 4), 4)
     }
     if (cause_explosion == 1)
     {
         if (btype == "bomb")
         {
-            var _temp_local_var_7 = other
-            gml_Script_instance_create(x, y, obj_viroroom_bomb)
+            with (other)
+                gml_Script_instance_create(x, y, obj_viroroom_bomb)
         }
         if (btype == "tribomb")
         {
-            var _temp_local_var_8 = other
-            gml_Script_instance_create(x, y, obj_viroroom_tribullet)
+            with (other)
+                gml_Script_instance_create(x, y, obj_viroroom_tribullet)
         }
     }
     if (other.extflag == 11)
@@ -114,16 +114,7 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
     active = false
     gml_Script_snd_play_pitch(159, 2.5)
 }
-if (other.image_index == 9)
-{
-    if (active == true)
-        _temp_local_var_8 = other.room == room_dw_mansion_east_1f_d
-    else
-        var _temp_local_var_11 = 0
-}
-else
-    var _temp_local_var_11 = 0
-if (other.room == room_dw_mansion_east_1f_d)
+if (other.image_index == 9 && active == true && room == room_dw_mansion_east_1f_d)
 {
     if (other.x >= gml_Script_camerax() && other.x <= (gml_Script_camerax() + 640) && other.y >= gml_Script_cameray() && other.y <= (gml_Script_cameray() + 480))
     {

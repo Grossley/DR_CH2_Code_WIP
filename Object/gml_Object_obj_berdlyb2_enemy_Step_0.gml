@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_19;
 if (global.monster[myself] == true)
 {
     if (gml_Script_scr_isphase("enemytalk") && talked == 0)
@@ -295,31 +296,18 @@ if (global.monster[myself] == true)
         if (summontimer == 0)
         {
             var _count = (3 - gml_Script_scr_monsterpop())
-            var _temp_local_var_5 = _count
-            if (_count <= 0)
+            repeat _count
             {
-            }
-            else
-            {
-                while (true)
+                var _newwerewire = gml_Script_scr_monster_add(33, 474)
+                with (global.monsterinstance[_newwerewire])
                 {
-                    var _newwerewire = gml_Script_scr_monster_add(33, 474)
-                    with (global.monsterinstance[_newwerewire])
-                    {
-                        skiptext = 1
-                        x = (gml_Script_camerax() + 740)
-                        y = global.monstermakey[myself]
-                        rtimer = 0
-                        talkwait = 1
-                        gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
-                    }
+                    skiptext = 1
+                    x = (gml_Script_camerax() + 740)
+                    y = global.monstermakey[myself]
+                    rtimer = 0
+                    talkwait = 1
+                    gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
                 }
-                skiptext = 1
-                x = (gml_Script_camerax() + 740)
-                y = global.monstermakey[myself]
-                rtimer = 0
-                talkwait = 1
-                gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
             }
         }
         summontimer++
@@ -657,8 +645,8 @@ if (global.bmenuno == 99)
             gml_Script_scr_anyface_next("none", 0)
             gml_Script_msgnextloc("%%", "obj_berdlyb2_enemy_slash_Step_0_gml_726_0")
         }
-        obj_script_delayed.flag[global.flag[obj_script_delayed]] = (global.flag[obj_script_delayed] + 1)
-        global
+        var _temp_local_var_19 = global.flag[924]
+        global.flag[924] = (global.flag[924] + 1)
         with (obj_writer)
             instance_destroy()
         gml_Script_scr_battletext()
@@ -687,8 +675,10 @@ if (sidebcon > 0)
         {
             with (spellwriter)
                 instance_destroy()
+            instance_destroy()
         }
-        instance_destroy()
+        sidebcon = 4
+        alarm[5] = 150
     }
     if (sidebcon == 5)
     {
@@ -702,11 +692,23 @@ if (sidebcon > 0)
     {
         with (fn)
             gml_Script_scr_flip("h")
+        fb.image_alpha = 0.9
+        sidebcon = 7
+        gml_Script_msgsetloc(0, "* What.../", "obj_berdlyb2_enemy_slash_Step_0_gml_441_0")
+        gml_Script_msgnextloc("* What happened?/", "obj_berdlyb2_enemy_slash_Step_0_gml_442_0")
+        gml_Script_msgnextloc("* There was so much snow^1, I couldn't see anything.../", "obj_berdlyb2_enemy_slash_Step_0_gml_443_0")
+        gml_Script_msgnextloc("* I.../%", "obj_berdlyb2_enemy_slash_Step_0_gml_444_0")
+        gml_Script_scr_battletext()
     }
     if (sidebcon == 7 && (!gml_Script_i_ex(62)))
     {
         with (fn)
             gml_Script_scr_flip("h")
+        fn.sprite_index = spr_noelle_walk_up_dw
+        fn.image_speed = 0
+        sidebcon = 8
+        fntimer = 0
+        alarm[5] = 120
     }
     if (sidebcon == 9)
     {
@@ -738,5 +740,13 @@ if (sidebcon > 0)
         berdlysign.sprite_index = spr_berdly_ice
         with (fn)
             instance_destroy()
+        with (fb)
+            instance_destroy()
+        gml_Script_scr_losechar()
+        with (obj_caterpillarchara)
+            instance_destroy()
+        sidebcon = 11
+        global.flag[915] = 6
+        gml_Script_scr_wincombat()
     }
 }

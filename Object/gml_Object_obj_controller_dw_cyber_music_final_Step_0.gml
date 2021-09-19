@@ -77,8 +77,13 @@ if (state == 3)
     global.interact = 0
     if (obj_cyber_music_battleBullets.sndinit == 2)
     {
-        x = bulletarea.room_width
-        y = room_height
+        with (bulletarea)
+        {
+            x = room_width
+            y = room_height
+        }
+        state = 4
+        timer = 0
     }
 }
 if (state == 4)
@@ -91,8 +96,12 @@ if (state == 4)
         obj_MovingPlat_dw_cyber_music_final.x = 1640
         timer = 0
         gml_Script_snd_play(61)
-        var _temp_local_var_3 = movingwall1
-        instance_destroy()
+        with (movingwall1)
+            instance_destroy()
+        endwall = gml_Script_instance_create(1600, 120, obj_soliddark)
+        endwall.image_xscale = 1
+        endwall.image_yscale = 7
+        state = 5
     }
 }
 if (state == 5)

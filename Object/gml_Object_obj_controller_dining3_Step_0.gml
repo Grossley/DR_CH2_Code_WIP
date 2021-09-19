@@ -1,7 +1,8 @@
 if (weird == 1)
 {
     layer_set_visible("TILES_Doorway", 1)
-    var _temp_local_var_1 = blocker
+    with (blocker)
+        instance_destroy()
     instance_destroy()
 }
 if (dogcon == 0)
@@ -469,8 +470,8 @@ if (dogcon == 69)
     {
         if gml_Script_i_ex(collider)
         {
-            var _temp_local_var_31 = collider
-            instance_destroy()
+            with (collider)
+                instance_destroy()
         }
     }
     if instance_exists(obj_doorB)
@@ -500,8 +501,10 @@ if (dogcon == 71)
     {
         gml_Script_snd_play(231)
         obj_dogtable_controlled.drawcustom = 0
-        var _temp_local_var_32 = key
-        depth = 80
+        with (key)
+            depth = 80
+        with (key)
+            gml_Script_scr_move_to_point_over_time((other.dogtable.x - (sprite_width / 2)), (other.dogtable.y - 228), 16)
     }
     timer++
     if (timer == 20)
@@ -543,8 +546,8 @@ if (dogcon == 72 && (!gml_Script_d_ex()))
     timer++
     if (timer == 29)
     {
-        var _temp_local_var_35 = dogtable
-        gml_Script_scr_move_to_point_over_time(x, (y - 128), 4)
+        with (dogtable)
+            gml_Script_scr_move_to_point_over_time(x, (y - 128), 4)
     }
     if (timer == 33)
     {
@@ -560,8 +563,8 @@ if (dogcon == 72 && (!gml_Script_d_ex()))
             shard[i].depth = (key.depth + 1)
         }
         gml_Script_snd_play(165)
-        var _temp_local_var_36 = key
-        instance_destroy()
+        with (key)
+            instance_destroy()
     }
     if (timer == 50)
     {
@@ -582,14 +585,14 @@ if (dogcon == 73 && (!gml_Script_d_ex()))
         targy = dogtable.y
     if (timer == 0)
     {
-        var _temp_local_var_38 = dogtable
-        gml_Script_scr_move_to_point_over_time(640, targy, dist)
+        with (dogtable)
+            gml_Script_scr_move_to_point_over_time(640, targy, dist)
     }
     timer++
     if (timer == (dist + 10))
     {
-        var _temp_local_var_39 = dogtable
-        gml_Script_scr_move_to_point_over_time(640, -128, ((y - 128) / 24))
+        with (dogtable)
+            gml_Script_scr_move_to_point_over_time(640, -128, ((y - 128) / 24))
     }
     if (dogtable.y <= 160 && timer > 18)
     {

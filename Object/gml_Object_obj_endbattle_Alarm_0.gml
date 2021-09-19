@@ -8,11 +8,10 @@ with (obj_caterpillarchara)
     visible = true
 if (global.specialbattle == 0 || global.specialbattle == 3)
 {
-    i = 0
-    while (i < (count + 1))
+    for (i = 0; i < (count + 1); i += 1)
     {
-        var _temp_local_var_2 = c[i]
-        instance_destroy()
+        with (c[i])
+            instance_destroy()
     }
 }
 if (global.specialbattle == 0 || global.specialbattle == 2)

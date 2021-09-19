@@ -31,21 +31,23 @@ if (room == room_town_mid)
 if (room == room_town_south)
 {
     policewindow = gml_Script_scr_marker(292, 57, 1096)
-    var _temp_local_var_1 = policewindow
-    depth = 940000
+    with (policewindow)
+        depth = 940000
 }
-if (policewindow.room == room_graveyard)
+if (room == room_graveyard)
 {
     overlay = gml_Script_instance_create(0, 0, obj_backgrounder_sprite)
     with (obj_mainchara)
         bg = 1
-    var _temp_local_var_2 = overlay
-    image_alpha = 0.4
-    ss = 0.1
-    sprite_index = spr_graveyard_overlay
-    depth = 1000
+    with (overlay)
+    {
+        image_alpha = 0.4
+        ss = 0.1
+        sprite_index = spr_graveyard_overlay
+        depth = 1000
+    }
 }
-if (overlay.room == room_town_south)
+if (room == room_town_south)
 {
     if (global.chapter == 2 && global.plot >= 15 && global.plot < 200)
     {

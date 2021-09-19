@@ -2,8 +2,9 @@ if (global.flag[346] == 0)
 {
     if gml_Script_i_ex(key)
     {
-        var _temp_local_var_1 = key
-        gml_Script_scr_depth()
+        with (key)
+            gml_Script_scr_depth()
+        bookcase.depth = (key.depth + 10)
     }
     if (con == 1)
     {
@@ -80,11 +81,10 @@ if (global.flag[346] == 0)
         gml_Script_snd_play(188)
         gml_Script_safe_delete(key)
         gml_Script_safe_delete(bookcase)
-        i = 0
-        while (i < array_length_1d(sparkle))
+        for (i = 0; i < array_length_1d(sparkle); i++)
         {
-            var _temp_local_var_4 = sparkle[i]
-            instance_destroy()
+            with (sparkle[i])
+                instance_destroy()
         }
         with (obj_saucer_monty)
             instance_destroy()

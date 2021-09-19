@@ -139,28 +139,23 @@ if (mode == 1)
             myinteract = 0
             lid.y = lid.ystart
             image_index = 0
-            var _temp_local_var_11 = lid
-            instance_destroy()
+            with (lid)
+                instance_destroy()
+            if (makecontent == 1)
+            {
+                with (contentmarker)
+                    instance_destroy()
+            }
+            if (room == room_dw_mansion_dining3)
+                global.interact = 0
+            if instance_exists(obj_controller_dining3)
+                obj_controller_dining3.checkCount++
         }
     }
 }
 if (mode == 2)
 {
-    if (con == 0)
-    {
-        if (myinteract == 1)
-        {
-            if (global.facing != 2)
-                _temp_local_var_11 = lid.room == room_dw_mansion_east_2f_c_a
-            else
-                var _temp_local_var_22 = 0
-        }
-        else
-            var _temp_local_var_22 = 0
-    }
-    else
-        var _temp_local_var_22 = 0
-    if (lid.room == room_dw_mansion_east_2f_c_a)
+    if (con == 0 && myinteract == 1 && global.facing != 2 && room == room_dw_mansion_east_2f_c_a)
         myinteract = 0
     if (con == 0 && myinteract == 1)
     {
@@ -227,8 +222,8 @@ if (mode == 4)
             }
             if (makecontent == 1)
             {
-                var _temp_local_var_15 = contentmarker
-                instance_destroy()
+                with (contentmarker)
+                    instance_destroy()
             }
             if gml_Script_i_ex(collider)
                 instance_destroy(collider)
@@ -262,10 +257,12 @@ if (mode == 5)
             contentmarker.image_speed = 0
             contentmarker.image_xscale = 2
             contentmarker.image_yscale = 2
-            var _temp_local_var_17 = contentmarker
-            itemid = other.itemid
-            itemtype = other.itemtype
-            itemflag = other.itemflag
+            with (contentmarker)
+            {
+                itemid = other.itemid
+                itemtype = other.itemtype
+                itemflag = other.itemflag
+            }
         }
     }
 }

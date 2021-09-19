@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_7, _temp_local_var_11, _temp_local_var_15, _temp_local_var_20;
 if (!audio_group_is_loaded(1))
     return;
 if (!init_loaded)
@@ -62,7 +63,7 @@ if (con == "nofile")
     if (fade != 0)
         fade = lerp(fade, 0, 0.125)
     xx = (160 * scale)
-    yy = (obj_checkmarktreasurebox * scale)
+    yy = (110 * scale)
     mspace = (20 * scale)
     fadescaled = (fade * scale)
     drawcolor = merge_color(c_white, c_black, (fade / fademax))
@@ -100,6 +101,7 @@ if (con == "nofile")
     if (gml_Script_button1_p() && timer > 10)
     {
         select_noise = 1
+        var _temp_local_var_7 = mpos
         switch mpos
         {
             case 0:
@@ -134,7 +136,7 @@ if (con == "startNextChapter")
     if (fade != 0)
         fade = lerp(fade, 0, 0.125)
     xx = (160 * scale)
-    yy = (obj_checkmarktreasurebox * scale)
+    yy = (110 * scale)
     mspace = (20 * scale)
     fadescaled = (fade * scale)
     drawcolor = merge_color(c_white, c_black, (fade / fademax))
@@ -178,6 +180,7 @@ if (con == "startNextChapter")
     if (gml_Script_button1_p() && timer > 10)
     {
         select_noise = 1
+        var _temp_local_var_11 = mpos
         switch mpos
         {
             case 0:
@@ -205,7 +208,7 @@ if (con == "continueChapter")
     if (fade != 0)
         fade = lerp(fade, 0, 0.125)
     xx = (160 * scale)
-    yy = (obj_checkmarktreasurebox * scale)
+    yy = (110 * scale)
     mspace = (20 * scale)
     fadescaled = (fade * scale)
     drawcolor = merge_color(c_white, c_black, (fade / fademax))
@@ -245,6 +248,7 @@ if (con == "continueChapter")
     {
         timer = 0
         select_noise = 1
+        var _temp_local_var_15 = mpos
         switch mpos
         {
             case 0:
@@ -299,7 +303,7 @@ if (con == "chapterselect")
     else
         mpos = clamp(mpos, 0, 7)
     xx = (35 * scale)
-    yy = (obj_gigaqueen_intro_fight * scale)
+    yy = (10 * scale)
     mspace = (30 * scale)
     var max_options = 7
     for (i = 0; i < max_options; i++)
@@ -367,7 +371,7 @@ else if (con == "gameloadConfirm")
     else
         mpos = clamp(mpos, 0, 7)
     xx = (35 * scale)
-    yy = (obj_gigaqueen_intro_fight * scale)
+    yy = (10 * scale)
     mspace = (30 * scale)
     if gml_Script_left_p()
     {
@@ -451,13 +455,14 @@ if (con == "gameload")
 {
     if (spr_aftereffect == IMAGE_LOGO)
     {
-        spr_aftereffect = sprite_create_from_surface(application_surface, 0, 0, room_width, room_height, 0, 0, 0, 0)
+        spr_aftereffect = sprite_create_from_surface(application_surface, 0, 0, room_width, room_height, false, false, 0, 0)
         sprite_set_offset(spr_aftereffect, (room_width / 2), (room_height / 2))
         yy = (room_height / 2)
     }
     if (chaptertoload != 0)
     {
         audio_sound_gain(loop, 0, 500)
+        var _temp_local_var_20 = chaptertoload
         switch chaptertoload
         {
             case 1:
@@ -472,7 +477,7 @@ if (con == "gameload")
         chaptertoload = 0
         alarm[2] = 60
     }
-    draw_sprite_ext(spr_aftereffect, 0, (yy.room_width / 2), xscale, yscale, 0, 16777215, fadeout, 0)
+    draw_sprite_ext(spr_aftereffect, 0, (room_width / 2), yy, xscale, yscale, 0, c_white, fadeout)
     fadeout = lerp(fadeout, 0, 0.125)
     xscale *= 0.95
     yscale *= 0.99

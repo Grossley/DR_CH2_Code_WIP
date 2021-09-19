@@ -1,4 +1,4 @@
-var lancer_npc;
+var _temp_local_var_1, _temp_local_var_12;
 if (con == 0 && obj_mainchara.y >= (y - 26) && global.interact == 0)
 {
     if (global.plot < 14)
@@ -37,8 +37,215 @@ if (con == 1)
     sw_actor = gml_Script_instance_create((obj_mainchara.x - 20), 900, obj_actor)
     gml_Script_scr_actor_setup(sw, sw_actor, "starwalker")
     sw_actor.sprite_index = spr_npc_originalstarwalker
-    var _temp_local_var_2 = sw_actor
-    specialsprite[0] = 1209
+    with (sw_actor)
+        specialsprite[0] = 1209
+    gml_Script_c_sel(sw)
+    gml_Script_c_autowalk(0)
+    la_card = gml_Script_instance_create(0, 0, obj_marker)
+    la_card.sprite_index = spr_cutscene_06_lancer_card
+    ro_card = gml_Script_instance_create(0, 0, obj_marker)
+    ro_card.sprite_index = spr_cutscene_06_rouxls_card
+    gml_Script_scr_maincharacters_actors()
+    gml_Script_c_msgside("bottom")
+    gml_Script_c_sel(su)
+    gml_Script_c_arg_objectxy(kr_actor, 42, -80)
+    gml_Script_c_walkdirect(x, y, 15)
+    gml_Script_c_sel(ra)
+    gml_Script_c_arg_objectxy(kr_actor, -50, -75)
+    gml_Script_c_walkdirect(x, y, 15)
+    gml_Script_c_wait(15)
+    gml_Script_c_facing("d")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("d")
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("u")
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\E6* Wait^1, Kris^1, we're leaving!? But we just got here!/", "obj_ch2_scene6_slash_Step_0_gml_84_0")
+    gml_Script_c_msgnextloc("\\EK* Man^1, I don't wanna go do our group project.../%", "obj_ch2_scene6_slash_Step_0_gml_85_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait("5")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("r")
+    gml_Script_c_wait("5")
+    gml_Script_c_speaker("ralsei")
+    gml_Script_c_msgsetloc(0, "\\EK* Oh^1... You two have homework?/%", "obj_ch2_scene6_slash_Step_0_gml_93_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait("5")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("r")
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\EK* Uhh^1, well^1,/%", "obj_ch2_scene6_slash_Step_0_gml_101_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("ralsei")
+    gml_Script_c_msgsetloc(0, "\\EN* Susie^1, Kris^1, you ought to do it right away^1! School's important!/", "obj_ch2_scene6_slash_Step_0_gml_106_0")
+    gml_Script_c_msgnextloc("\\EN* I banish you from this kingdom until you start your project!/%", "obj_ch2_scene6_slash_Step_0_gml_107_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("l")
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\EH* Ugh^1, fine!!^1! I'll do it!!^1! Jeez!!!/%", "obj_ch2_scene6_slash_Step_0_gml_116_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(la)
+    gml_Script_c_walk_wait("d", 15, 15)
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("susieunhappy")
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(15)
+    gml_Script_c_speaker("lancer")
+    gml_Script_c_msgsetloc(0, "\\E1* Susie!^1! Don't worry!^1! I'll go and help you^1, too!!!/", "obj_ch2_scene6_slash_Step_0_gml_128_0")
+    gml_Script_c_facenext("ralsei", "C")
+    gml_Script_c_msgnextloc("* Er^1, wait^1, Lancer^1! Perhaps you shouldn't -/", "obj_ch2_scene6_slash_Step_0_gml_130_0")
+    gml_Script_c_facenext("lancer", 3)
+    gml_Script_c_msgnextloc("* Too late^1, kindboy!^1! Friendship Forme!!/%", "obj_ch2_scene6_slash_Step_0_gml_132_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(kr)
+    gml_Script_c_autodepth(0)
+    gml_Script_c_depth(90)
+    gml_Script_c_sel(la)
+    gml_Script_c_spin(2)
+    gml_Script_c_walk("d", 4, 35)
+    gml_Script_c_sel(su)
+    gml_Script_c_delayfacing(15, "l")
+    gml_Script_c_delayfacing(30, "d")
+    gml_Script_c_sel(ra)
+    gml_Script_c_delayfacing(15, "r")
+    gml_Script_c_delayfacing(30, "d")
+    gml_Script_c_wait(35)
+    gml_Script_c_sel(la)
+    gml_Script_c_visible(0)
+    gml_Script_c_soundplay(104)
+    gml_Script_c_sel(kr)
+    gml_Script_c_autodepth(1)
+    gml_Script_c_wait(60)
+    gml_Script_c_soundplay(194)
+    gml_Script_c_speaker("no_name")
+    gml_Script_c_msgsetloc(0, "* (LANCER was added to your Key Items.)/", "obj_ch2_scene6_slash_Step_0_gml_161_0")
+    gml_Script_c_facenext("susie", 6)
+    gml_Script_c_msgnextloc("* ..^1. What? Where'd you go...?/", "obj_ch2_scene6_slash_Step_0_gml_163_0")
+    gml_Script_c_facenext("lancer", 0)
+    gml_Script_c_msgnextloc("* Don't worry!^1! I just entered your INVENTORY!!/", "obj_ch2_scene6_slash_Step_0_gml_165_0")
+    gml_Script_c_msgnextloc("\\E3* I'll just be hanging out in Kris's pocket!!!/", "obj_ch2_scene6_slash_Step_0_gml_166_0")
+    gml_Script_c_facenext("susie", "K")
+    gml_Script_c_msgnextloc("\\EK* Dunno what that means^1, but OK!/%", "obj_ch2_scene6_slash_Step_0_gml_168_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(ro)
+    gml_Script_c_walk_wait("d", 15, 12)
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(15)
+    gml_Script_c_speaker("rouxls")
+    gml_Script_c_msgsetloc(0, "* Feare not^1! I too^1, shall Assisteth!/", "obj_ch2_scene6_slash_Step_0_gml_180_0")
+    gml_Script_c_facenext("susie", "4")
+    gml_Script_c_msgnextloc("\\E4* Uh^1, we're good./", "obj_ch2_scene6_slash_Step_0_gml_182_0")
+    gml_Script_c_facenext("rouxls", "3")
+    gml_Script_c_msgnextloc("\\E3* Ahah^1, quite!^1! We^1, as a Teame ^1- art Good!!!/%", "obj_ch2_scene6_slash_Step_0_gml_184_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(ro)
+    gml_Script_c_arg_objectxy(kr_actor, -28, -40)
+    gml_Script_c_walkdirect(x, y, 10)
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("d")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("d")
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(ro)
+    gml_Script_c_visible(0)
+    gml_Script_c_wait(5)
+    gml_Script_c_soundplay(172)
+    gml_Script_c_speaker("no_name")
+    gml_Script_c_msgsetloc(0, "* (ROUXLS became a Key Item even though no one wanted that.)/%", "obj_ch2_scene6_slash_Step_0_gml_201_0")
+    gml_Script_c_talk_wait()
+    if (global.flag[254] == 1)
+    {
+        gml_Script_scr_keyitemget(14)
+        gml_Script_c_wait(10)
+        gml_Script_c_sel(sw)
+        gml_Script_c_walk_wait("d", 15, 15)
+        gml_Script_c_sel(su)
+        gml_Script_c_facing("u")
+        gml_Script_c_sel(ra)
+        gml_Script_c_facing("u")
+        gml_Script_c_sel(sw)
+        gml_Script_c_speaker("no_name")
+        gml_Script_c_msgsetloc(0, "* \\cYI\\cW will also \\cYjoin\\cW/%", "obj_ch2_scene6_slash_Step_0_gml_214_0")
+        gml_Script_c_talk_wait()
+        gml_Script_c_wait(5)
+        gml_Script_c_sprite(1209)
+        gml_Script_c_imagespeed(0.25)
+        gml_Script_c_arg_objectxy(kr_actor, -20, -20)
+        gml_Script_c_walkdirect(x, y, 60)
+        gml_Script_c_wait(20)
+        gml_Script_c_sel(su)
+        gml_Script_c_facing("l")
+        gml_Script_c_sel(ra)
+        gml_Script_c_facing("r")
+        gml_Script_c_wait(20)
+        gml_Script_c_sel(su)
+        gml_Script_c_facing("d")
+        gml_Script_c_sel(ra)
+        gml_Script_c_facing("d")
+        gml_Script_c_wait(20)
+        gml_Script_c_sel(sw)
+        gml_Script_c_visible(0)
+        gml_Script_c_soundplay(152)
+        gml_Script_c_wait(20)
+        gml_Script_c_soundplay(172)
+        gml_Script_c_speaker("no_name")
+        gml_Script_c_msgsetloc(0, "* (THE ORIGINAL   \\cYSTARWALKER\\cW became a Key Item.)/%", "obj_ch2_scene6_slash_Step_0_gml_238_0")
+        gml_Script_c_talk_wait()
+    }
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\EK* .../%", "obj_ch2_scene6_slash_Step_0_gml_243_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("d")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("d")
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\E0* Alright^1, enough already. Let's get going./%", "obj_ch2_scene6_slash_Step_0_gml_250_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(su)
+    gml_Script_c_walk_wait("l", 8, 5)
+    gml_Script_c_sel(kr)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_walk("l", 6, 5)
+    gml_Script_c_sel(su)
+    gml_Script_c_walk("d", 8, 95)
+    gml_Script_c_wait(15)
+    gml_Script_c_sel(kr)
+    gml_Script_c_walk("r", 3, 10)
+    gml_Script_c_wait(15)
+    gml_Script_c_sel(ra)
+    gml_Script_c_walk_wait("r", 4, 13)
+    gml_Script_c_walk_wait("d", 4, 10)
+    gml_Script_c_wait(5)
+    gml_Script_c_facing("d")
+    gml_Script_c_speaker("ralsei")
+    gml_Script_c_msgsetloc(0, "\\E2* Good luck today^1, Kris. See you soon!/%", "obj_ch2_scene6_slash_Step_0_gml_276_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(kr)
+    gml_Script_c_autowalk(1)
+    gml_Script_c_walk("d", 6, 85)
+    gml_Script_c_wait(5)
+    gml_Script_c_fadeout(35)
+    gml_Script_c_wait(40)
+    gml_Script_c_actortokris()
+    gml_Script_c_pannable(0)
+    gml_Script_c_terminatekillactors()
 }
 if (customcon == 1 && con == 2)
 {
@@ -51,8 +258,8 @@ if (customcon == 1 && con == 2)
     ralTimer++
     if (ralTimer == 1)
     {
-        var _temp_local_var_4 = ra_actor
-        gml_Script_scr_jump_in_place(10, 10)
+        with (ra_actor)
+            gml_Script_scr_jump_in_place(10, 10)
     }
     if (ralTimer > 11)
         ralTimer = 0
@@ -88,12 +295,7 @@ if (customcon == 1 && con == 3)
             gml_Script_scr_actor_facing(la_actor, "d")
     }
     if (lancerCard == 1)
-    {
-        _temp_local_var_4.y = (la_card.y + 4)
-        var _temp_local_var_6 = sw_actor
-        var _temp_local_var_7 = -9
-        var _temp_local_var_8 = la_card
-    }
+        la_card.y += 4
     if (la_card.y > (su_actor.y + 30) && stepAway == 0)
     {
         gml_Script_scr_actor_facing(su_actor, "l")
@@ -108,8 +310,10 @@ if (customcon == 1 && con == 3)
     {
         moveAmount = 0
         addAmount = 0
-        var _temp_local_var_10 = la_card
-        visible = false
+        with (la_card)
+            visible = false
+        with (la_actor)
+            visible = false
     }
     if (totalSpins > 3 && lancerGlow == 0)
     {
@@ -141,13 +345,7 @@ if (customcon == 1 && con == 4)
     }
     kr_actor.depth = -99999999
     if (rouxlsCard == 1)
-    {
-        _temp_local_var_11.y = (ro_card.y + 6)
-        var _temp_local_var_15 = la_card
-        var _temp_local_var_16 = sw_actor
-        var _temp_local_var_17 = -9
-        var _temp_local_var_18 = ro_card
-    }
+        ro_card.y += 6
     if (ro_card.y > (su_actor.y + 30) && stepAway == 0)
     {
         gml_Script_scr_actor_facing(su_actor, "l")
@@ -162,8 +360,10 @@ if (customcon == 1 && con == 4)
     {
         moveAmount = 0
         addAmount = 0
-        var _temp_local_var_20 = ro_card
-        visible = false
+        with (ro_card)
+            visible = false
+        with (ro_actor)
+            visible = false
     }
     if (conTimer >= 5 && lancerGlow == 3)
     {
@@ -241,12 +441,25 @@ if (con == 51)
     gml_Script_scr_actor_setup(la, la_actor, "lancer")
     la_actor.sprite_index = spr_lancer_dt
     hathy = gml_Script_scr_dark_marker(883, 605, 1573)
-    var _temp_local_var_25 = hathy
-    var _temp_local_var_26 = 25
+    var _temp_local_var_12 = 25
     gml_Script_scr_depth()
 }
 if (con == 52 && (!gml_Script_i_ex(895)))
 {
-    var _temp_local_var_30 = hathy
-    instance_destroy()
+    with (hathy)
+        instance_destroy()
+    with (rabbick)
+        instance_destroy()
+    with (blockler)
+        instance_destroy()
+    var lancer_npc = gml_Script_instance_create(675, 355, obj_npc_room)
+    lancer_npc.sprite_index = spr_lancer_rt
+    with (lancer_npc)
+        gml_Script_scr_depth()
+    global.interact = 0
+    if (global.plot < 12)
+        global.plot = 12
+    global.facing = 0
+    con = 0
+    gml_Script_scr_tempsave()
 }

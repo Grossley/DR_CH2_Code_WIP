@@ -6,9 +6,11 @@ if (global.flag[40] == 0)
     if (total_recruits < 7)
     {
         var trashy_npc = gml_Script_instance_create(1210, 310, obj_npc_room_animated)
-        var _temp_local_var_1 = trashy_npc
-        sprite_index = spr_npc_trashy
-        gml_Script_scr_depth()
+        with (trashy_npc)
+        {
+            sprite_index = spr_npc_trashy
+            gml_Script_scr_depth()
+        }
     }
 }
 if (global.chapter != 2 || global.flag[319] > 0 || global.plot >= 160)

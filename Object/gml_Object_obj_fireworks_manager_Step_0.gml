@@ -3,12 +3,12 @@ if is_active
     time += 1
     var spawn = (time % 60) == 0
     var _y = (room_height * 0.5)
-    var _x = current_time.room_width
+    var _x = (current_time % room_width)
     if (global.chapter == 2)
     {
         if (room == room_dw_cyber_post_music_boss_slide)
         {
-            if (obj_mainchara.x <= 2320 && obj_mainchara.x > obj_bqueen_intro)
+            if (obj_mainchara.x <= 2320 && obj_mainchara.x > 1080)
             {
                 if gml_Script_i_ex(344)
                 {
@@ -37,7 +37,7 @@ if is_active
             spawn = (time % 50) == 40
             _y = (800 - random(80))
             _x = max(1000, (gml_Script_camerax() + random(640)))
-            if (_x.room_width - 200)
+            if (_x > (room_width - 200))
                 _x = (room_width - 200)
             if gml_Script_right_h()
                 _x += 320

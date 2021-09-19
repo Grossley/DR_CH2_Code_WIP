@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_13;
 if (global.monster[myself] == true)
 {
     if (gml_Script_scr_isphase("enemytalk") && talked == 0)
@@ -149,8 +150,11 @@ if (global.myfight == 3)
     if (actconral == 2.5 && basket.gravity == 0)
     {
         actconral = 3
-        var _temp_local_var_12 = nise_susie
-        gml_Script_scr_shakeobj()
+        with (nise_susie)
+            gml_Script_scr_shakeobj()
+        with (basket)
+            gml_Script_scr_shakeobj()
+        gml_Script_snd_play(61)
     }
     if (actconral == 3 && (!instance_exists(obj_writer)))
     {
@@ -172,7 +176,7 @@ if (global.myfight == 3)
         caught[0] = 0
         caught[1] = 0
         caught[2] = 0
-        var _temp_local_var_15 = 1
+        var _temp_local_var_13 = 1
     }
     if (actcon == 12)
     {
@@ -295,13 +299,18 @@ if (global.myfight == 3)
             global.monstermakey[myself] = (y - 15)
             global.monstermakex[myself] = tasquemarker.x
             newtasque = gml_Script_scr_monster_change(myself, 32, 446)
-            var _temp_local_var_26 = tasquemarker
+            with (tasquemarker)
+                instance_destroy()
             instance_destroy()
         }
-        if (basket != -4)
+        if (basket != noone)
         {
-            var _temp_local_var_27 = nise_susie
-            instance_destroy()
+            with (nise_susie)
+                instance_destroy()
+            with (basket)
+                instance_destroy()
+            with (obj_herosusie)
+                visible = true
         }
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20 || actconnoe == 20)

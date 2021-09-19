@@ -16,5 +16,5 @@ songplay = 0
 with (obj_mainchara_ch1)
     visible = false
 fin = gml_Script_instance_create_ch1(0, 0, 1461)
-var _temp_local_var_1 = fin
-fadespeed = -0.01
+with (fin)
+    fadespeed = -0.01

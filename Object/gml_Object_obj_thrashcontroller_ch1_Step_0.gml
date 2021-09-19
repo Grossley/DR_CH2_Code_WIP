@@ -9,9 +9,13 @@ if (con == 0)
 }
 if (con == 1)
 {
-    var _temp_local_var_1 = thrash
-    if (a < 1)
-        a += 0.1
+    with (thrash)
+    {
+        if (a < 1)
+            a += 0.1
+    }
+    if (thrash.a >= 1)
+        con = 2
 }
 if (con == 2)
 {
@@ -186,8 +190,16 @@ if (con == 2)
 }
 if (con == 5)
 {
-    var _temp_local_var_14 = thrash
-    a -= 0.03
+    with (thrash)
+        a -= 0.03
+    logocon = 3
+    ctimer += 1
+    if (ctimer >= 40)
+    {
+        with (thrash)
+            instance_destroy()
+        instance_destroy()
+    }
 }
 buffer1 -= 1
 buffer2 -= 1

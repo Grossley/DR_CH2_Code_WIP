@@ -1,3 +1,4 @@
+var _temp_local_var_4, _temp_local_var_5;
 depth = (obj_queen_enemy.depth - 1)
 shieldsiner++
 y += (sin((shieldsiner / 6)) * 0.5)
@@ -322,16 +323,16 @@ if (shieldhurt == 0)
         {
             if (shieldpiece_fadetimer[ii] < 10)
             {
-                ii.shieldpiece_fadetimer[shieldpiece_fadetimer[ii]]++
-                self
+                var _temp_local_var_4 = shieldpiece_fadetimer[ii]
+                shieldpiece_fadetimer[ii]++
             }
             draw_sprite_ext(spr_queenshield_pieces_hurt, shieldpiece_image_index[ii], shieldpiece_x[ii], (shieldpiece_y[ii] + y), shieldpiece_xscale[ii], shieldpiece_yscale[ii], 0, c_white, (shieldpiece_fadetimer[ii] / 10))
         }
         if (shieldpiece_fadecon[ii] == 2)
         {
             shieldpiece_fadetimer[ii]
-            ii.shieldpiece_fadetimer[shieldpiece_fadetimer[ii]]--
-            self
+            var _temp_local_var_5 = shieldpiece_fadetimer[ii]
+            shieldpiece_fadetimer[ii]--
             if (shieldpiece_fadetimer[ii] == 0)
                 shieldpiece_fadecon[ii] = 0
             draw_sprite_ext(spr_queenshield_pieces_hurt, shieldpiece_image_index[ii], shieldpiece_x[ii], (shieldpiece_y[ii] + y), shieldpiece_xscale[ii], shieldpiece_yscale[ii], 0, c_white, (shieldpiece_fadetimer[ii] / 10))

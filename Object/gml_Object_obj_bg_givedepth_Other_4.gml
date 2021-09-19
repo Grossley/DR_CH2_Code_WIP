@@ -16,6 +16,7 @@ while (i < array_length_1d(layerarray))
                 layersprite.image_index = layer_sprite_get_index(elements[j])
                 with (layersprite)
                     gml_Script_scr_depth()
+                layer_sprite_destroy(elements[j])
             }
         }
         break

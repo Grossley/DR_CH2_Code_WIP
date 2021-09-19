@@ -93,8 +93,27 @@ if (isswitch == 1)
             flipcon = 0
             flip = 1
             gml_Script_instance_create(x, y, obj_shake)
-            var _temp_local_var_3 = shine
-            instance_destroy()
+            with (shine)
+                instance_destroy()
+            with (obj_queenart_mona)
+            {
+                if (extflag == "exitblocker")
+                {
+                    decor = gml_Script_instance_create(x, y, obj_queenart_red)
+                    decor.decorative = 1
+                    decor.sprite_index = spr_queenart_red
+                    decor.spriteindex2 = 2922
+                    decor.extflag = "decor"
+                    decor.depth = 998000
+                    gml_Script_snd_play(61)
+                    instance_destroy()
+                }
+            }
+            with (obj_overworld_bulletarea)
+            {
+                if (extflag == "blocker")
+                    instance_destroy()
+            }
         }
     }
 }

@@ -30,5 +30,5 @@ if (damagecon == 0)
 }
 gml_Script_snd_play(110)
 gml_Script_snd_play(166)
-var _temp_local_var_1 = other
-damaged = 1
+with (other)
+    damaged = 1

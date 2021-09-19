@@ -223,8 +223,9 @@ if (punchcon == 1)
     if (su_actor.image_index >= 1 && punchtimer == 0)
     {
         punchtimer = 1
-        var _temp_local_var_2 = kr_actor
-        gml_Script_scr_shakeobj()
+        with (kr_actor)
+            gml_Script_scr_shakeobj()
+        gml_Script_snd_play(61)
     }
     else if (su_actor.image_index < 1)
         punchtimer = 0

@@ -1,7 +1,7 @@
 gml_Script_scr_depth()
-if (walkdir == "down" ? (y.room_height + 30) : 0)
+if (walkdir == "down" && y >= (room_height + 30))
     endme = 1
-if (walkdir == "right" ? (x.room_width + (sprite_width * 2)) : 0)
+if (walkdir == "right" && x >= (room_width + (sprite_width * 2)))
     endme = 1
 if (walkdir == "left" && x <= (0 - (sprite_width * 2)))
     endme = 1
@@ -145,25 +145,34 @@ if (active == false && madeblock == 0)
 }
 if (active == true && madeblock == 1)
 {
-    var _temp_local_var_10 = myblock
-    instance_destroy()
+    with (myblock)
+        instance_destroy()
+    madeblock = 0
 }
 if place_meeting(x, y, obj_carTurner)
 {
     if (turned == 0)
     {
         car = gml_Script_instance_create(x, y, obj_traffic_car)
-        var _temp_local_var_11 = car
-        myspeed = other.myspeed
-        walkdir = "right"
-        remspeed = other.remspeed
-        group = other.group
-        walking = other.walking
-        active = other.active
-        touchcon = other.touchcon
-        touchtimer = other.touchtimer
-        speedadjust = 1
-        turned = 1
+        with (car)
+        {
+            myspeed = other.myspeed
+            walkdir = "right"
+            remspeed = other.remspeed
+            group = other.group
+            walking = other.walking
+            active = other.active
+            touchcon = other.touchcon
+            touchtimer = other.touchtimer
+            speedadjust = 1
+            turned = 1
+        }
+        if (madeblock == 1)
+        {
+            with (myblock)
+                instance_destroy()
+        }
+        endme = 1
     }
 }
 if (endme == 1)
@@ -174,8 +183,8 @@ if (endme == 1)
     {
         if madeblock
         {
-            var _temp_local_var_13 = myblock
-            instance_destroy()
+            with (myblock)
+                instance_destroy()
         }
         instance_destroy()
     }

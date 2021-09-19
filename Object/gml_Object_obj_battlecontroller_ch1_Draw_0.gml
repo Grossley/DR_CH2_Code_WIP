@@ -44,8 +44,7 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
     {
         draw_sprite(spr_heart_ch1, 0, (xx + 55), ((yy + 385) + (global.bmenucoord[global.bmenuno][global.charturn] * 30)))
         gml_Script_scr_84_set_draw_font_ch1("mainbig")
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             with (global.monsterinstance[global.bmenucoord[global.bmenuno][global.charturn]])
             {
@@ -53,6 +52,48 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
                     fsiner = 0
                 flash = true
                 becomeflash = true
+            }
+            if (global.monster[i] == true)
+            {
+                draw_set_color(c_white)
+                mercydraw = false
+                tireddraw = false
+                mnamecolor1 = c_white
+                mnamecolor2 = c_white
+                aqcolor = merge_color(c_aqua, c_blue, 0.3)
+                if (global.monsterstatus[i] == true)
+                    tireddraw = true
+                if (global.mercymod[i] >= global.mercymax[i])
+                    mercydraw = true
+                namewidth = string_width(string_hash_to_newline(global.monstername[i]))
+                if (tireddraw == true)
+                {
+                    if (global.encounterno != 31)
+                    {
+                        draw_set_color(aqcolor)
+                        mnamecolor1 = aqcolor
+                        mnamecolor2 = aqcolor
+                    }
+                    draw_sprite(spr_tiredmark_ch1, 0, (((xx + 80) + namewidth) + 40), ((yy + 385) + (i * 30)))
+                }
+                if (mercydraw == true)
+                {
+                    draw_set_color(c_yellow)
+                    mnamecolor1 = c_yellow
+                    if (tireddraw == false)
+                        mnamecolor2 = c_yellow
+                    draw_sprite(spr_sparestar_ch1, 0, (((xx + 80) + namewidth) + 20), ((yy + 385) + (i * 30)))
+                }
+                draw_text_colour((xx + 80), ((yy + 375) + (i * 30)), string_hash_to_newline(global.monstername[i]), mnamecolor1, mnamecolor2, mnamecolor2, mnamecolor1, 1)
+                draw_set_color(c_gray)
+                draw_text((((xx + 80) + namewidth) + 60), ((yy + 375) + (i * 30)), string_hash_to_newline(global.monstercomment[i]))
+                draw_set_color(c_maroon)
+                draw_rectangle((xx + 510), ((yy + 380) + (i * 30)), (xx + 590), (((yy + 380) + (i * 30)) + 15), false)
+                draw_set_color(c_lime)
+                draw_rectangle((xx + 510), ((yy + 380) + (i * 30)), ((xx + 510) + ((global.monsterhp[i] / global.monstermaxhp[i]) * 80)), (((yy + 380) + (i * 30)) + 15), false)
+                mercyamt = global.mercymod[i]
+                if (mercyamt >= 100)
+                    mercyamt = 100
             }
         }
     }
@@ -283,6 +324,12 @@ if (global.bmenuno == 7 || global.bmenuno == 8)
                     flash = true
                     becomeflash = true
                 }
+                draw_set_color(c_white)
+                draw_text((xx + 80), ((yy + 375) + (i * 30)), string_hash_to_newline(global.charname[global.char[i]]))
+                draw_set_color(c_maroon)
+                draw_rectangle((xx + 400), ((yy + 380) + (i * 30)), (xx + 500), (((yy + 380) + (i * 30)) + 15), false)
+                draw_set_color(c_lime)
+                draw_rectangle((xx + 400), ((yy + 380) + (i * 30)), ((xx + 400) + ((global.hp[global.char[i]] / global.maxhp[global.char[i]]) * 100)), (((yy + 380) + (i * 30)) + 15), false)
             }
         }
     }

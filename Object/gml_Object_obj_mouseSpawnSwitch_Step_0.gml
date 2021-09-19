@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12;
 if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot < 72)
 {
     pressed = 1
@@ -217,13 +218,7 @@ if (introCon == 3)
         }
     }
     else
-    {
-        _temp_local_var_10.image_index = (fakenoelle.image_index + 0.5)
-        var _temp_local_var_38 = fakedoor
-        var _temp_local_var_39 = fakemouse
-        var _temp_local_var_40 = -9
-        var _temp_local_var_41 = fakenoelle
-    }
+        fakenoelle.image_index += 0.5
 }
 if (introCon == 4 && (!gml_Script_d_ex()) && (!instance_exists(obj_cutscene_master)))
 {
@@ -234,8 +229,10 @@ if (introCon == 4 && (!gml_Script_d_ex()) && (!instance_exists(obj_cutscene_mast
         noelleFacing.image_xscale = 2
         noelleFacing.image_yscale = 2
         noelleFacing.y = noelleFacing.ystart
-        var _temp_local_var_18 = noelleFacing
-        gml_Script_scr_set_facing_sprites("noelledark")
+        with (noelleFacing)
+            gml_Script_scr_set_facing_sprites("noelledark")
+        with (obj_noelle_scared)
+            instance_destroy()
     }
     if gml_Script_i_ex(317)
     {
@@ -257,11 +254,14 @@ if (introCon == 4)
         noelleFacing.sprite_index = obj_noelle_scared.sprite_index
         noelleFacing.image_xscale = 2
         noelleFacing.image_yscale = 2
-        var _temp_local_var_19 = noelleFacing
-        gml_Script_scr_set_facing_sprites("noelledark")
+        with (noelleFacing)
+            gml_Script_scr_set_facing_sprites("noelledark")
+        noelleFacing.y = noelleFacing.ystart
     }
-    var _temp_local_var_20 = noelleFacing
-    instance_destroy()
+    with (noelleFacing)
+        instance_destroy()
+    if (!gml_Script_d_ex())
+        introCon++
 }
 if (introCon == 5)
 {

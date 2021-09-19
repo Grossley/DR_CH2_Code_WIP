@@ -63,7 +63,18 @@ if (con == 4)
         gml_Script_scr_tempsave()
         realral.x = npcral.x
         realral.y = npcral.y
-        var _temp_local_var_3 = realral
-        gml_Script_scr_caterpillar_interpolate()
+        with (realral)
+            gml_Script_scr_caterpillar_interpolate()
+        realral.visible = true
+        realsus.x = npcsus.x
+        realsus.y = npcsus.y
+        with (realsus)
+            gml_Script_scr_caterpillar_interpolate()
+        realsus.visible = true
+        with (npcral)
+            instance_destroy()
+        with (npcsus)
+            instance_destroy()
+        con++
     }
 }

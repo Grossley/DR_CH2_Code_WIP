@@ -1,4 +1,4 @@
-var collider_right;
+var _temp_local_var_1, _temp_local_var_10;
 if (global.plot < 150)
 {
     if (swanboat.x < 540)
@@ -227,8 +227,10 @@ if (global.plot < 150)
         inside_tunnel = 0
         remove_shadow = 1
         shift_islands = 1
-        var _temp_local_var_10 = swanboat
-        gml_Script_scr_move_to_point_over_time(775, 110, 245)
+        with (swanboat)
+            gml_Script_scr_move_to_point_over_time(775, 110, 245)
+        with (swan_shadow)
+            gml_Script_scr_move_to_point_over_time(775, 110, 245)
     }
     if shift_islands
     {
@@ -265,7 +267,7 @@ if (global.plot < 150)
         puddle.image_yscale = 2
         puddle.depth = (thrash.depth + 1)
         puddle.image_speed = 0
-        var _temp_local_var_12 = thrash
+        var _temp_local_var_10 = thrash
         puddle.image_index = (part[0] == 2 ? 2 : 0)
         puddle.visible = false
         var rouxls_ypos = (global.flag[221] == 3 ? (thrash.y + 45) : (thrash.y + 19))
@@ -469,8 +471,11 @@ if (global.plot < 150)
         }
         if battle_end
         {
-            var _temp_local_var_20 = battlehey
-            instance_destroy()
+            with (battlehey)
+                instance_destroy()
+            con = 41
+            alarm[0] = 30
+            gml_Script_snd_volume(global.batmusic[1], 0, 25)
         }
     }
     if (con == 42)
@@ -485,19 +490,39 @@ if (global.plot < 150)
         kr_actor.sprite_index = obj_herokris.sprite_index
         rouxls.sprite_index = spr_rouxls_stone_origin
         rouxls.image_index = 0
-        _temp_local_var_20.x = (rouxls.x + 34)
-        _temp_local_var_12.y = (rouxls.y + 126)
+        rouxls.x += 34
+        rouxls.y += 126
         instance_destroy(battle_swan)
         instance_destroy(swan_cover)
-        var _temp_local_var_21 = 
-        var _temp_local_var_22 = -9
-        var _temp_local_var_23 = -9
-        var _temp_local_var_24 = rouxls
-        var _temp_local_var_25 = thrash
-        var _temp_local_var_26 = 
-        var _temp_local_var_27 = -9
-        var _temp_local_var_28 = rouxls
-        visible = true
+        with (obj_actor)
+            visible = true
+        with (obj_thrashmachine)
+        {
+            if (visible == true)
+                instance_destroy()
+            else
+                visible = true
+        }
+        with (obj_marker)
+        {
+            if (sprite_index == spr_rouxls_puddle && visible == true)
+                instance_destroy()
+        }
+        rouxls.visible = true
+        thrash.visible = true
+        puddle.visible = true
+        gml_Script_snd_free(global.batmusic[0])
+        gml_Script_snd_volume(global.currentsong[1], 0, 0)
+        gml_Script_snd_resume(global.currentsong[1])
+        gml_Script_snd_volume(global.currentsong[1], 1, 20)
+        with (obj_monsterparent)
+            instance_destroy()
+        with (obj_bulletparent)
+            instance_destroy()
+        with (obj_heroparent)
+            instance_destroy()
+        if gml_Script_i_ex(355)
+            instance_destroy(obj_battlecontroller)
     }
     if rouxls_power_up
     {
@@ -505,11 +530,7 @@ if (global.plot < 150)
         if (!gml_Script_i_ex(40))
         {
             d = gml_Script_scr_following_afterimage(40, rouxls)
-            _temp_local_var_21.depth = (d.depth - 1)
-            var _temp_local_var_30 = -9
-            var _temp_local_var_31 = -9
-            var _temp_local_var_32 = -9
-            var _temp_local_var_33 = d
+            d.depth -= 1
         }
     }
     if rouxls_power_up_cancel
@@ -659,8 +680,8 @@ if (global.plot < 150)
         alarm[0] = 20
         rouxls.depth = 10000
         adjust_actors = 0
-        var _temp_local_var_36 = swanboat
-        gml_Script_scr_move_to_point_over_time(800, 100, 20)
+        with (swanboat)
+            gml_Script_scr_move_to_point_over_time(800, 100, 20)
     }
     if (con == 52)
     {
@@ -673,8 +694,8 @@ if (global.plot < 150)
         con = 55
         alarm[0] = 20
         swanboat.pause_x_move = 1
-        var _temp_local_var_38 = swanboat
-        gml_Script_scr_move_to_point_over_time(1284, 140, 20)
+        with (swanboat)
+            gml_Script_scr_move_to_point_over_time(1284, 140, 20)
     }
     if (con == 56)
     {
@@ -850,8 +871,8 @@ if (global.plot < 150)
     {
         swanboat.pause_x_move = 1
         swanboat.pause_y_move = 1
-        var _temp_local_var_43 = swanboat
-        gml_Script_scr_move_to_point_over_time(2525, 175, 80)
+        with (swanboat)
+            gml_Script_scr_move_to_point_over_time(2525, 175, 80)
     }
     if (con == 62 && swanboat.x >= 2525 && (!gml_Script_d_ex()))
     {
@@ -900,8 +921,12 @@ if (global.plot < 150)
         var swanboat_npc = gml_Script_instance_create(swanboat.x, swanboat.y, obj_npc_room_animated)
         swanboat_npc.sprite_index = spr_swanboat
         swanboat_npc.image_speed = 0.15
-        var _temp_local_var_46 = swanboat_npc
-        gml_Script_scr_depth()
+        with (swanboat_npc)
+            gml_Script_scr_depth()
+        with (swanboat)
+            instance_destroy()
+        var collider_right = gml_Script_instance_create(2670, 278, obj_solidblock)
+        collider_right.image_yscale = 10
     }
     if (remove_island_obj && (!gml_Script_d_ex()))
     {
@@ -919,8 +944,17 @@ if (global.plot < 150)
             explosion_marker.sprite_index = spr_realisticexplosion
             explosion_marker.image_xscale = 2
             explosion_marker.image_yscale = 2
-            var _temp_local_var_49 = explosion_marker
-            gml_Script_scr_depth()
+            with (explosion_marker)
+                gml_Script_scr_depth()
+            finish_thrash = 1
+            with (thrash)
+            {
+                direction = 90
+                speed = 10
+                gravity = 0.1
+                launch = 1
+                drawfeet = 1
+            }
         }
         else
         {
@@ -947,8 +981,20 @@ if (global.plot < 150)
     }
     if finish_thrash
     {
-        var _temp_local_var_51 = thrash
-        xx += 15
-        launch = 1
+        with (thrash)
+        {
+            xx += 15
+            launch = 1
+        }
+        with (puddle)
+            x += 15
+        if (thrash.xx > ((gml_Script_camerax() + view_wport[0]) + 200))
+        {
+            finish_thrash = 0
+            with (thrash)
+                instance_destroy()
+            with (puddle)
+                instance_destroy()
+        }
     }
 }

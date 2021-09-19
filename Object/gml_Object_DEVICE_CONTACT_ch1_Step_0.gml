@@ -192,6 +192,8 @@ if (EVENT == 32)
         {
             with (GM)
                 FINISH = true
+            EVENT = 15
+            alarm[4] = 20
         }
     }
 }
@@ -224,7 +226,7 @@ if (EVENT == 36 && (!instance_exists(obj_writer_ch1)))
 if (EVENT == 37)
 {
     GMSINE += 1
-    GM.initx = (GM.initx + (sin((GMSINE / 14)) * 1))
+    GM.initx += (sin((GMSINE / 14)) * 1)
 }
 if (EVENT == 38)
 {
@@ -238,12 +240,7 @@ if (EVENT == 38)
             NAME[0][i] = string((1 + i))
             NAMEX[0][i] = 80
             if (global.lang == "ja")
-            {
-                with (GM)
-                {
-                    NAMEX[0][i] -= 16;
-                }
-            }
+                NAMEX[0][i][i] -= 16
             NAMEY[0][i] = (100 + (i * 16))
             YMAX += 1
         }
@@ -340,9 +337,7 @@ if (EVENT == 48)
             NAME[0][i] = string((1 + i))
             NAMEX[0][i] = 80
             if (global.lang == "ja")
-            {
-                CHOICE.NAMEX[0][i] -= 16
-            }
+                NAMEX[0][i][i] -= 16
             NAMEY[0][i] = (100 + (i * 16))
             YMAX += 1
         }
@@ -570,13 +565,9 @@ if (EVENT == 65.5)
     if instance_exists(DEVICE_GONERMAKER_ch1)
     {
         if (GM.initx > (gmx - 24))
-        {
-            GM.initx = (GM.initx - 1)
-        }
+            GM.initx -= 1
         if (GM.inity < (gmy + 56))
-        {
-            GM.inity = (GM.inity + 2)
-        }
+            GM.inity += 2
     }
 }
 if (EVENT == 66.5 && instance_exists(obj_writer_ch1) == 0)
@@ -592,8 +583,12 @@ if (EVENT == 66.5 && instance_exists(obj_writer_ch1) == 0)
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 67
     with (CHOICE)
-    {
         event_user(0)
+    with (CHOICE)
+    {
+        STRINGMAX = 9
+        if (global.lang == "ja")
+            STRINGMAX = 7
     }
 }
 if (EVENT == 67)
@@ -646,6 +641,11 @@ if (EVENT == 70 && instance_exists(obj_writer_ch1) == 0)
     EVENT = 71
     with (CHOICE)
         event_user(0)
+    with (CHOICE)
+    {
+        if (global.lang == "ja")
+            STRINGMAX = 7
+    }
 }
 if (EVENT == 71)
 {

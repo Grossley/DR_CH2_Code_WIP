@@ -1,4 +1,3 @@
-var ballX, ballY, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6;
 if (init == 0)
 {
     idealLength = string_length(idealString)
@@ -21,16 +20,56 @@ if (con == 11)
         gml_Script_snd_play(151)
     if (timer == 60)
     {
-        var _temp_local_var_2 = lastPressedTile
-        bouncecon = 1
+        with (lastPressedTile)
+            bouncecon = 1
+        gml_Script_snd_play(159)
+        ball = gml_Script_scr_dark_marker((obj_mainchara.x - 10), (obj_mainchara.y - 40), 544)
+        ball.image_speed = 0.5
+        ball.depth = 100
+        if (puzzle_id == 2)
+        {
+            krisStartX = 80
+            krisStartY = 220
+            if (firstTileX > 420)
+            {
+                krisStartX = 522
+                if use_ja
+                    krisStartX += 16
+            }
+            else if (firstTileX > 180)
+            {
+                krisStartX = 302
+                krisStartY = 312
+            }
+            else if use_ja
+                krisStartX -= 16
+        }
+        var ballX = (krisStartX - 10)
+        var ballY = (krisStartY - 40)
+        with (ball)
+            gml_Script_scr_jump_to_point(ballX, ballY, 30, 20)
+        with (obj_mainchara)
+        {
+            x = other.ball.x
+            y = other.ball.y
+            visible = false
+        }
+        letterCount = 0
+        addString = ""
+        currentString = ""
+        lost = 0
     }
     if (timer == 80)
     {
         obj_mainchara.x = krisStartX
         obj_mainchara.y = krisStartY
         global.facing = 0
-        var _temp_local_var_4 = ball
-        instance_destroy()
+        with (ball)
+            instance_destroy()
+        with (obj_mainchara)
+            visible = true
+        global.interact = 0
+        failcount++
     }
 }
 if (con == 20 && global.interact == 0)
@@ -70,11 +109,7 @@ if (con == 21)
     }
     if (timer == 90)
     {
-        if (puzzle_id == 0)
-            _temp_local_var_4 = ball.room != room_dw_cyber_keyboard_puzzle_2
-        else
-            var _temp_local_var_6 = 0
-        if (ball.room != room_dw_cyber_keyboard_puzzle_2)
+        if (puzzle_id == 0 && room != room_dw_cyber_keyboard_puzzle_2)
         {
             global.interact = 0
             con = 0
@@ -83,7 +118,7 @@ if (con == 21)
         else
         {
             con = 22
-            if (null.room == room_dw_cyber_keyboard_puzzle_2)
+            if (room == room_dw_cyber_keyboard_puzzle_2)
             {
                 gml_Script_snd_play(295)
                 victorySprite = 2396
@@ -104,7 +139,7 @@ if (con == 22)
 }
 if (con == 23)
 {
-    if (null.room == room_dw_cyber_keyboard_puzzle_2)
+    if (room == room_dw_cyber_keyboard_puzzle_2)
     {
         gml_Script_scr_speaker("queen")
         gml_Script_msgsetloc(0, "\\E1* You Typed: Agree 2 All/", "obj_ch2_keyboardpuzzle_controller_slash_Step_0_gml_160_0")

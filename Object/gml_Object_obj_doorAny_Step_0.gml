@@ -1,30 +1,31 @@
+var _temp_local_var_1;
 if (init == 0)
 {
+    var _temp_local_var_1 = image_index
     switch image_index
     {
-        case obj_pipis_bullet_cone:
-            doorRoom = (null.room + 1)
+        case 1:
+            doorRoom = (room + 1)
             break
-        case obj_84_lang_helper:
-            doorRoom = (null.room - 1)
+        case 2:
+            doorRoom = (room - 1)
             break
-        case obj_pipisFireworkGenerator:
-            doorRoom = (null.room + 2)
+        case 3:
+            doorRoom = (room + 2)
             break
-        case obj_afterimage_anim:
-            doorRoom = (null.room - 2)
+        case 4:
+            doorRoom = (room - 2)
             break
-        case obj_ch2_scene26_henshin_flash:
-            doorRoom = (null.room + 3)
+        case 5:
+            doorRoom = (room + 3)
             break
-        case obj_spamtonpainting:
-            doorRoom = (null.room - 3)
+        case 6:
+            doorRoom = (room - 3)
             break
         default:
             break
     }
 
-    // WARNING: Popz'd an empty stack.
     if (image_index != 0)
         doorEntrance = image_index
     if (doorSpecial != "none")

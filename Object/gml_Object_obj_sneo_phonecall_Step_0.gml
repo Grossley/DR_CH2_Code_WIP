@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_18;
 if (init == 0)
 {
     y = -30
@@ -125,24 +126,26 @@ else if (state == 5)
         {
             gml_Script_msgsetloc(0, "... IT'S&FOR YOU.", "obj_sneo_phonecall_slash_Step_0_gml_138_0")
             partframe[1] = sneo
-            var _temp_local_var_19 = 3
+            var _temp_local_var_18 = 3
         }
         textboxdistance = 40
         writeline = 1
     }
     else
         state = 6
-    var _temp_local_var_18 = sneo
-    if (obj_spamton_neo_enemy.difficulty != 3)
+    with (sneo)
     {
-        partmode = 9
-        partrot[1] = -180
-        partframe[1] = 3
-    }
-    else
-    {
-        partmode = 9
-        partframe[1] = 4
+        if (obj_spamton_neo_enemy.difficulty != 3)
+        {
+            partmode = 9
+            partrot[1] = -180
+            partframe[1] = 3
+        }
+        else
+        {
+            partmode = 9
+            partframe[1] = 4
+        }
     }
 }
 if writeline

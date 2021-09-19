@@ -7,6 +7,7 @@ if (global.chapter != 2 || global.plot >= 85)
     dumpster.sprite_index = spr_cutscene_14_dumpster_open
     with (dumpster)
         gml_Script_scr_depth()
+    instance_destroy()
 }
 else
 {
@@ -22,4 +23,11 @@ else
     dumpster.depth = 900000
     with (dumpster)
         gml_Script_scr_depth_alt()
+    dumpster_nakami = gml_Script_scr_dark_marker(560, 106, 135)
+    dumpster_nakami.depth = (dumpster.depth - 100)
+    dumpster_nakami.visible = false
+    play_intro = 0
+    stop_intro = 0
+    stop_timer = 0
+    open_dumpster = 0
 }

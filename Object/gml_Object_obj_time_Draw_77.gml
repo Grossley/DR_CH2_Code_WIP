@@ -16,15 +16,9 @@ if gml_Script_scr_debug()
         else if (gif_timer < 600 && gif_release == 0)
         {
             if keyboard_check(vk_shift)
-            {
-                gif_image
-                var _temp_local_var_3 = (obj_gigaqueen_intro_fight).application_surface
-            }
+                gif_add_surface(gif_image, application_surface, 10)
             else
-            {
-                gif_image
-                _temp_local_var_3 = (3.3333333333333335).application_surface
-            }
+                gif_add_surface(gif_image, application_surface, 3.3333333333333335)
         }
         else
         {

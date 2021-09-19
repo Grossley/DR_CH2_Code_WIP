@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_11, _temp_local_var_15, _temp_local_var_16, _temp_local_var_17, _temp_local_var_19, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_38, _temp_local_var_39, _temp_local_var_40;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 timer++
@@ -70,32 +71,24 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
             guy.altspeed = 4
             guy.altfriction = -0.2
             guy.altgravity = 0
-            var _temp_local_var_6 = obj_CHAPTER_SELECT
+            var _temp_local_var_6 = 32
             var _temp_local_var_7 = 40
             var _temp_local_var_8 = 44
             if (type == 2)
             {
                 alarm[0] = guy
-                var _temp_local_var_9 = obj_battleLayerHighlight
+                var _temp_local_var_9 = 44
             }
             if (row == 1)
             {
-                _temp_local_var_9.y = (guy.y - 240)
+                guy.y -= 240
                 guy.vspeed = (-guy.vspeed)
-                var _temp_local_var_10 = obj_CHAPTER_SELECT
-                var _temp_local_var_11 = 40
-                var _temp_local_var_12 = -9
-                var _temp_local_var_13 = guy
             }
             if (row == 2)
             {
-                _temp_local_var_10.y = (guy.y - 120)
+                guy.y -= 120
                 guy.vspeed = 0
                 guy.hspeed = -21
-                var _temp_local_var_14 = 40
-                var _temp_local_var_15 = -9
-                var _temp_local_var_16 = -9
-                var _temp_local_var_17 = guy
             }
             if (row == 2 && type == 2)
             {
@@ -105,7 +98,7 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
                 alarm[0] = guy
                 guy.changedirection = 1
                 guy.altdirection = guy.direction
-                var _temp_local_var_19 = 36
+                var _temp_local_var_11 = 36
             }
             if ((type == 2 || type == 3 || type == 4 || type == 5) && row == 2)
                 guy.y = rowy
@@ -124,16 +117,16 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
                 guy[guyi].gravity_direction = 90
                 guy[guyi].destroyable = 1
                 guyi++
-                var _temp_local_var_23 = 32
-                var _temp_local_var_24 = 40
-                var _temp_local_var_25 = 44
+                var _temp_local_var_15 = 32
+                var _temp_local_var_16 = 40
+                var _temp_local_var_17 = 44
             }
         }
         if (row == 6 && timer == 5)
         {
             spawncount = 2
             var a = 0
-            var _temp_local_var_27 = spawncount
+            var _temp_local_var_19 = spawncount
             if (spawncount <= 0)
             {
             }
@@ -158,12 +151,12 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
                     guy.gravity_direction = 90
                     guy.destroyable = 1
                     a++
-                    var _temp_local_var_44 = (32 - 1)
-                    var _temp_local_var_45 = 40
-                    var _temp_local_var_46 = 44
-                    var _temp_local_var_47 = 32
-                    var _temp_local_var_48 = 30
-                    var _temp_local_var_49 = 44
+                    var _temp_local_var_35 = (32 - 1)
+                    var _temp_local_var_36 = 40
+                    var _temp_local_var_37 = 44
+                    var _temp_local_var_38 = 32
+                    var _temp_local_var_39 = 30
+                    var _temp_local_var_40 = 44
                     if (32 - 1)
                         continue
                 }
@@ -176,10 +169,9 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
             alarm[1] = guy
             alarm[2] = guy
             guy.destroyable = 1
-            var _temp_local_var_29 = guy
-            var _temp_local_var_30 = 32
-            var _temp_local_var_31 = 40
-            var _temp_local_var_32 = 44
+            var _temp_local_var_21 = 32
+            var _temp_local_var_22 = 40
+            var _temp_local_var_23 = 44
             path_start(path_sneo_head_path1, 11, path_action_stop, 0)
         }
     }

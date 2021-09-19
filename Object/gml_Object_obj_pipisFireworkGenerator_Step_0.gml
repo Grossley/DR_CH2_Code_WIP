@@ -54,7 +54,7 @@ if (con == 1)
         if ((shotcount % 2) == 0)
             px = random_range(-20, -40)
         else
-            px = ((room_width + 40).room_width + 20)
+            px = random_range((room_width + 20), (room_width + 40))
         pipis = gml_Script_instance_create(px, py, obj_overworldbullet_fireworks)
         pipis.depth = (depth - 50)
         shotcount++

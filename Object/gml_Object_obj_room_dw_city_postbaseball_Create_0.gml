@@ -67,7 +67,40 @@ if (room == room_dw_city_postbaseball_3)
     minigamestartcon = 0
     timer = 0
     balloon[0] = gml_Script_instance_create(626, 40, obj_cybercity_balloon)
-    var _temp_local_var_2 = balloon[0]
-    balloonid = 0
-    event_user(0)
+    with (balloon[0])
+    {
+        balloonid = 0
+        event_user(0)
+    }
+    ballremx[0] = balloon[0].x
+    ballremy[0] = balloon[0].y
+    balloondestroyed[0] = 0
+    pillar1 = gml_Script_instance_create(700, 200, obj_mouseballoon_pillar)
+    pillar1.pillarid = 1
+    blockforcefield = gml_Script_instance_create(760, 320, obj_solidblocksized)
+    blockforcefield2 = gml_Script_instance_create(1560, 320, obj_solidblocksized)
+    blockforcefield3 = gml_Script_instance_create(1960, 320, obj_solidblocksized)
+    blockforcefield4 = gml_Script_instance_create(2560, 120, obj_solidblocksized)
+    blockforcefield.image_xscale = 3
+    blockforcefield2.image_xscale = 3
+    blockforcefield3.image_xscale = 3
+    blockforcefield4.image_xscale = 3
+    blockforcefield4.image_yscale = 10
+    pillaremerge = gml_Script_instance_create(900, 200, obj_mouseballoon_pillar_release)
+    pillar2 = gml_Script_instance_create(1500, 200, obj_mouseballoon_pillar)
+    pillar2.pillarid = 2
+    pillar2.micerequired = 1
+    pillar3 = gml_Script_instance_create(1900, 200, obj_mouseballoon_pillar)
+    pillar3.pillarid = 3
+    pillar3.micerequired = 20
+    bucket = gml_Script_instance_create(500, 335, obj_kris_putonheadobj)
+    gml_Script_scr_darksize(bucket)
+    switch2 = gml_Script_instance_create(1340, 320, obj_pushtile_room)
+    switch2.pushVariableName = "switch2con"
+    gml_Script_scr_darksize(switch2)
+    bucketpillar = gml_Script_instance_create(2440, 188, obj_mouseballoon_pillar_bucket)
+    layer_set_visible("TILE_BLOCKLAYER1", 1)
+    layer_set_visible("TILE_BLOCKLAYER2", 1)
+    layer_set_visible("TILE_BLOCKLAYER3", 1)
+    layer_set_visible("TILE_BLOCKLAYER4", 1)
 }

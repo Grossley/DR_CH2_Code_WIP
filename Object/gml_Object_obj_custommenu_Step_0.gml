@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_8, _temp_local_var_9, _temp_local_var_18, _temp_local_var_26, _temp_local_var_30;
 global.interact = reminteract
 move_d = 0
 move_r = 0
@@ -70,8 +71,8 @@ if (move_l == 1 && move_r == 0)
     }
     else
     {
-        menu.menuCoord[menuCoord[menu]]--
-        self
+        var _temp_local_var_26 = menuCoord[menu]
+        menuCoord[menu]--
     }
 }
 else if (move_r == 1 && move_l == 0)
@@ -85,8 +86,8 @@ else if (move_r == 1 && move_l == 0)
     }
     else
     {
-        menu.menuCoord[menuCoord[menu]]++
-        self
+        var _temp_local_var_30 = menuCoord[menu]
+        menuCoord[menu]++
     }
 }
 if (move_d == 1 && move_u == 0)
@@ -171,8 +172,8 @@ if (hpageturn != 0 || vpageturn != 0)
                     while (menuCoord[menu] > menuMaximumID[menu])
                     {
                         menuCoord[menu]
-                        menu.menuCoord[menuCoord[menu]]--
-                        self
+                        var _temp_local_var_18 = menuCoord[menu]
+                        menuCoord[menu]--
                     }
                 }
             }
@@ -200,8 +201,8 @@ if (hpageturn != 0 || vpageturn != 0)
         while ((menuScrollCurrent[menu] % menuWidth[menu]) != 0)
         {
             menuScrollCurrent[menu]
-            menu.menuScrollCurrent[menuScrollCurrent[menu]]++
-            self
+            var _temp_local_var_8 = menuScrollCurrent[menu]
+            menuScrollCurrent[menu]++
         }
     }
     if (menuWidth[menu] == 1)
@@ -209,8 +210,8 @@ if (hpageturn != 0 || vpageturn != 0)
         while ((menuScrollCurrent[menu] % menuHeight[menu]) != 0)
         {
             menuScrollCurrent[menu]
-            menu.menuScrollCurrent[menuScrollCurrent[menu]]++
-            self
+            var _temp_local_var_9 = menuScrollCurrent[menu]
+            menuScrollCurrent[menu]++
         }
     }
 }

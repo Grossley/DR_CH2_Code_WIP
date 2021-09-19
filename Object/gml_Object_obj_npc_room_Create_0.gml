@@ -25,10 +25,12 @@ if (global.darkzone == false)
     if (room == room_graveyard)
     {
         fence = gml_Script_scr_marker(81, 122, 1091)
-        var _temp_local_var_1 = fence
-        gml_Script_scr_depth()
+        with (fence)
+            gml_Script_scr_depth()
+        if (x < 30)
+            sprite_index = spr_npc_bench
     }
-    if (fence.room == room_hospital_lobby)
+    if (room == room_hospital_lobby)
         sprite_index = spr_npc_nurse
     if (room == room_hospital_rudy)
     {
@@ -281,8 +283,9 @@ if (global.darkzone == true)
                 rabbicksweep = gml_Script_instance_create(1222, 562, obj_npc_room_animated)
                 rabbicksweep.sprite_index = spr_npc_rabbick_sweep
                 rabbicksweep.image_speed = 0.1
-                var _temp_local_var_36 = rabbicksweep
-                gml_Script_scr_depth()
+                with (rabbicksweep)
+                    gml_Script_scr_depth()
+                instance_destroy()
             }
         }
         if (global.flag[636] == 1)
@@ -301,8 +304,8 @@ if (global.darkzone == true)
                 swatchsweep = gml_Script_instance_create(1085, 522, obj_npc_room_animated)
                 swatchsweep.sprite_index = spr_npc_swatchling_sweep
                 swatchsweep.image_speed = 0.1
-                var _temp_local_var_20 = swatchsweep
-                gml_Script_scr_depth()
+                with (swatchsweep)
+                    gml_Script_scr_depth()
             }
         }
         if (x > 250 && x < 280 && y > 550 && y < 650)
@@ -342,8 +345,8 @@ if (global.darkzone == true)
                 {
                     viro = gml_Script_instance_create(x, (y - 20), obj_npc_room_animated)
                     viro.sprite_index = spr_virovirokun_idle
-                    var _temp_local_var_24 = viro
-                    gml_Script_scr_depth()
+                    with (viro)
+                        gml_Script_scr_depth()
                 }
                 instance_destroy()
             }
@@ -364,14 +367,14 @@ if (global.darkzone == true)
                 instance_destroy()
         }
     }
-    if (viro.room == room_cc_lancer)
+    if (room == room_cc_lancer)
     {
         if (global.plot >= 200 && gml_Script_scr_get_total_recruits(2) >= 9)
             instance_destroy()
         else
             sprite_index = spr_lancer_dt
     }
-    if (swatchsweep.room == room_dw_castle_dungeon)
+    if (room == room_dw_castle_dungeon)
     {
         sprite_index = spr_king_left
         depthcancel = true

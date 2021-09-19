@@ -23,32 +23,34 @@ if (global.flag[379] == 0)
         {
             if gml_Script_left_h()
             {
-                var _temp_local_var_3 = controlled
-                move = -1
+                with (controlled)
+                    move = -1
             }
             if gml_Script_right_h()
             {
-                var _temp_local_var_4 = controlled
-                move = 1
+                with (controlled)
+                    move = 1
             }
             if (gml_Script_down_p() && controlled.phase >= 3 && controlled.moving == 0)
             {
-                var _temp_local_var_6 = controlled.hole
-                mousecreate = 1
-                gentimer = 20
+                with (controlled.hole)
+                {
+                    mousecreate = 1
+                    gentimer = 20
+                }
             }
         }
         if gml_Script_i_ex(controlled)
         {
             if (gml_Script_left_h() && gml_Script_right_h())
             {
-                var _temp_local_var_8 = controlled
-                move = 0
+                with (controlled)
+                    move = 0
             }
             if ((!gml_Script_left_h()) && (!gml_Script_right_h()))
             {
-                var _temp_local_var_10 = controlled
-                move = 0
+                with (controlled)
+                    move = 0
             }
         }
     }

@@ -1,3 +1,4 @@
+var _temp_local_var_2, _temp_local_var_21;
 if (encounterflag > 0 && init == 0)
 {
     if (global.flag[encounterflag] == 1)
@@ -656,8 +657,9 @@ if (frozen == false)
         {
             bullet = gml_Script_instance_create(x, y, obj_encounter_bullet)
             bullet.creator = id
-            var _temp_local_var_24 = bullet
-            move_towards_point((obj_mainchara.x + 20), (obj_mainchara.y + 20), 4)
+            with (bullet)
+                move_towards_point((obj_mainchara.x + 20), (obj_mainchara.y + 20), 4)
+            test_release_bullet_timer = 0
         }
     }
 }

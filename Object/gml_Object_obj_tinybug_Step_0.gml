@@ -14,7 +14,7 @@ if (place_meeting(x, y, obj_solidblock) || (place_meeting(x, y, obj_bug_treasure
     x = remx
     y = remy
 }
-if y.room_height
+if (y > room_height)
     y = remy
 timer++
 if (timer >= lifecycle)

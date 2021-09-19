@@ -1,9 +1,11 @@
+var _temp_local_var_5;
 if (other.active == false)
     return;
 if (invincibility_timer > 0)
 {
-    var _temp_local_var_1 = other
-    instance_destroy()
+    with (other)
+        instance_destroy()
+    return;
 }
 invincibility_timer = 10
 if (global.turntimer < 150)
@@ -26,7 +28,7 @@ else
     hp -= 5
     other.hp -= 10
     alarm[0] = other
-    var _temp_local_var_6 = 10
+    var _temp_local_var_5 = 10
     if (!audio_is_playing(snd_hurt1))
         gml_Script_snd_play(170)
 }

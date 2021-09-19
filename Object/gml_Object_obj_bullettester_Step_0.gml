@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_3;
 if (global.mnfight != 2)
 {
     timer++
@@ -70,13 +71,13 @@ if keyboard_check_pressed(vk_space)
 }
 if keyboard_check_pressed(ord("I"))
 {
-    obj_debug_drawInput.tempflag[global.tempflag[obj_debug_drawInput]] = (global.tempflag[obj_debug_drawInput] + 1)
-    global
+    var _temp_local_var_1 = global.tempflag[27]
+    global.tempflag[27] = (global.tempflag[27] + 1)
 }
 else if (keyboard_check_pressed(ord("U")) && global.tempflag[27] > 0)
 {
-    obj_debug_drawInput.tempflag[global.tempflag[obj_debug_drawInput]] = (global.tempflag[obj_debug_drawInput] - 1)
-    global
+    var _temp_local_var_3 = global.tempflag[27]
+    global.tempflag[27] = (global.tempflag[27] - 1)
 }
 global.tempflag[20] = global.monster[0]
 global.tempflag[21] = global.monster[1]

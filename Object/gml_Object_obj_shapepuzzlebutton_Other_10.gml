@@ -6,6 +6,7 @@ if (!obj_shapepuzzle.goalHit)
     active = true
     with (obj_shapepuzzle)
         inUse = 1
-    var _temp_local_var_1 = myPiece
-    active = true
+    with (myPiece)
+        active = true
+    mybuffer = 0
 }

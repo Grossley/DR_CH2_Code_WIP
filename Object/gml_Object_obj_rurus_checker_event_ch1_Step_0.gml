@@ -55,15 +55,21 @@ if (con == 6 && (!instance_exists(obj_writer_ch1)))
 }
 if (con == 15)
 {
-    var _temp_local_var_3 = rurus
-    visible = true
+    with (rurus)
+        visible = true
+    with (appear)
+        instance_destroy()
+    con = 16
+    alarm[4] = 21
 }
 if (con == 16)
 {
-    var _temp_local_var_5 = darkfade
-    image_alpha -= 0.05
-    if (image_alpha <= 0)
-        image_alpha = 0
+    with (darkfade)
+    {
+        image_alpha -= 0.05
+        if (image_alpha <= 0)
+            image_alpha = 0
+    }
 }
 if (con == 17)
 {
@@ -81,18 +87,56 @@ if (con == 17)
 }
 if (con == 18 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_7 = rurus
-    hspeed = 7
+    with (rurus)
+        hspeed = 7
+    con = 19
+    alarm[4] = 15
 }
 if (con == 20)
 {
-    var _temp_local_var_8 = rurus
-    gml_Script_scr_halt_ch1()
+    with (rurus)
+        gml_Script_scr_halt_ch1()
+    gml_Script_snd_play_ch1(360)
+    checkerappear = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 380), (gml_Script___view_get(1, 0) + 120), 1370)
+    with (checkerappear)
+        type = 1
+    checker = gml_Script_scr_dark_marker_ch1(checkerappear.x, checkerappear.y, 3912)
+    with (checker)
+        visible = false
+    con = 21
+    alarm[4] = 60
 }
 if (con == 22)
 {
-    var _temp_local_var_11 = checker
-    visible = true
+    with (checker)
+        visible = true
+    with (checkerappear)
+        instance_destroy()
+    global.smalarm[0] = 5
+    global.smyy[0] = 70
+    global.smxx[0] = 170
+    global.smdir[0] = 180
+    global.smspeed[0] = 10
+    global.smtype[0] = 3
+    global.smsprite[0] = spr_face_s6_ch1
+    global.smcolor[0] = c_white
+    global.smstring[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_133_0")
+    global.smalarm[1] = 5
+    global.smyy[1] = 70
+    global.smxx[1] = 170
+    global.smdir[1] = 180
+    global.smspeed[1] = 10
+    global.smtype[1] = 3
+    global.smsprite[1] = spr_face_s7_ch1
+    global.smcolor[1] = c_white
+    global.smstring[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_143_0")
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_145_0")
+    gml_Script_scr_ralface_ch1(1, 3)
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_147_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_148_0")
+    global.msg[4] = "%%"
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 23
 }
 if (con == 23 && (!gml_Script_d_ex_ch1()))
 {
@@ -108,8 +152,10 @@ if (con == 24 && (!gml_Script_d_ex_ch1()))
 {
     gml_Script_snd_play_ch1(378)
     gml_Script_instance_create_ch1(0, 0, 1464)
-    var _temp_local_var_15 = checker
-    image_index = 4
+    with (checker)
+        image_index = 4
+    con = 25
+    alarm[4] = 30
 }
 if (con == 26)
 {
@@ -135,34 +181,54 @@ if (con == 27 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 28 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_18 = rurus
-    hspeed = 10
+    with (rurus)
+        hspeed = 10
+    gml_Script_snd_free_all_ch1()
+    global.encounterno = 27
+    gml_Script_scr_encountersetup_ch1(global.encounterno)
+    global.flag[9] = 1
+    global.batmusic[0] = gml_Script_snd_init_ch1("checkers.ogg")
+    global.specialbattle = 3
+    gml_Script_instance_create_ch1(0, 0, 1488)
+    depth = 4000
+    with (checker)
+        gml_Script_scr_move_to_point_over_time_ch1(global.monstermakex[0], global.monstermakey[0], 20)
+    con = 29
+    alarm[4] = 20
 }
 if (con == 30)
 {
-    var _temp_local_var_20 = checker
-    speed = 0
+    with (checker)
+        speed = 0
+    con = 31
+    alarm[4] = 5
 }
 if (con == 32)
 {
-    var _temp_local_var_21 = checker
-    instance_destroy()
+    with (checker)
+        instance_destroy()
+    con = 35
+    alarm[4] = 30
+    victimer = 0
 }
 if (con == 36)
 {
     if (!instance_exists(obj_battlecontroller_ch1))
     {
         rurus.x = (gml_Script___view_get(0, 0) + 660)
-        var _temp_local_var_22 = rurus
-        hspeed = -12
+        with (rurus)
+            hspeed = -12
+        con = 37
     }
 }
 if (con == 37)
 {
     if (rurus.x <= (gml_Script___view_get(0, 0) + 420))
     {
-        var _temp_local_var_23 = rurus
-        gml_Script_scr_halt_ch1()
+        with (rurus)
+            gml_Script_scr_halt_ch1()
+        con = 38
+        alarm[4] = 20
     }
 }
 if (con == 39)
@@ -212,8 +278,8 @@ if (con == 43 && (!gml_Script_d_ex_ch1()))
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_306_0")
     gml_Script_instance_create_ch1(0, 0, 1326)
     con = 44
-    var _temp_local_var_27 = rurus
-    hspeed = 24
+    with (rurus)
+        hspeed = 24
 }
 if (con == 44 && (!gml_Script_d_ex_ch1()))
 {

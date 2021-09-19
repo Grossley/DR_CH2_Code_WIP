@@ -52,7 +52,8 @@ if (toss == 2)
     lid.image_alpha *= 0.9
     if (lidtimer == 60)
     {
-        var _temp_local_var_3 = lid
-        instance_destroy()
+        with (lid)
+            instance_destroy()
+        toss = 3
     }
 }

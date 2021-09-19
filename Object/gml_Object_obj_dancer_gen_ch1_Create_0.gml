@@ -14,50 +14,71 @@ areay2[2] = 1360
 battlealpha = 0
 if (room == room_forest_dancers1_ch1)
 {
-    var i = 0
-    while (i < 5)
+    for (var i = 0; i < 5; i += 1)
     {
         sc = gml_Script_instance_create_ch1(320, (160 + (80 * i)), 1500)
-        var _temp_local_var_1 = sc
-        hspeed = 0
-        vspeed = -5
+        with (sc)
+        {
+            hspeed = 0
+            vspeed = -5
+        }
     }
-    i = 0
-    while (i < 4)
+    for (i = 0; i < 4; i += 1)
     {
         sc = gml_Script_instance_create_ch1((520 + (80 * i)), 450, 1500)
-        var _temp_local_var_2 = sc
-        vspeed = 0
-        hspeed = -5
+        with (sc)
+        {
+            vspeed = 0
+            hspeed = -5
+        }
     }
-    i = 0
-    while (i < 2)
+    for (i = 0; i < 2; i += 1)
     {
         sc = gml_Script_instance_create_ch1(500, (170 - (80 * i)), 1500)
-        var _temp_local_var_3 = sc
+        with (sc)
+        {
+            vspeed = 5
+            hspeed = 0
+        }
+    }
+    for (i = 0; i < 4; i += 1)
+    {
+        sc = gml_Script_instance_create_ch1(960, (440 - (80 * i)), 1500)
+        with (sc)
+            vspeed = 5
+    }
+    for (i = 0; i < 4; i += 1)
+    {
+        sc = gml_Script_instance_create_ch1(960, (40 - (80 * i)), 1500)
+        with (sc)
+            vspeed = 5
+    }
+    sc = gml_Script_instance_create_ch1(280, 830, 1500)
+    with (sc)
+    {
+        vspeed = -5
+        hspeed = 0
+    }
+    sc = gml_Script_instance_create_ch1(580, 820, 1500)
+    with (sc)
+    {
+        hspeed = 5
+        vspeed = 0
+    }
+    sc = gml_Script_instance_create_ch1(590, 1050, 1500)
+    with (sc)
+    {
         vspeed = 5
         hspeed = 0
     }
-    i = 0
-    while (i < 4)
+    sc = gml_Script_instance_create_ch1(290, 1060, 1500)
+    with (sc)
     {
-        sc = gml_Script_instance_create_ch1(960, (440 - (80 * i)), 1500)
-        var _temp_local_var_4 = sc
-        vspeed = 5
+        hspeed = -5
+        vspeed = 0
     }
-    i = 0
-    while (i < 4)
-    {
-        sc = gml_Script_instance_create_ch1(960, (40 - (80 * i)), 1500)
-        var _temp_local_var_5 = sc
-        vspeed = 5
-    }
-    sc = gml_Script_instance_create_ch1(280, 830, 1500)
-    var _temp_local_var_6 = sc
-    vspeed = -5
-    hspeed = 0
 }
-if (null.room == room_cc_4f_ch1)
+if (room == room_cc_4f_ch1)
 {
     areax1[0] = 260
     areay1[0] = 40
@@ -66,11 +87,7 @@ if (null.room == room_cc_4f_ch1)
     areas = 1
 }
 tile_fade = false
-if (null.room == room_forest_dancers1_ch1)
-    var _temp_local_var_10 = 1
-else
-    var _temp_local_var_7 = null.room == room_cc_4f_ch1
-if 1
+if (room == room_forest_dancers1_ch1 || room == room_cc_4f_ch1)
 {
     alpha_changed = false
     tile_fade = true

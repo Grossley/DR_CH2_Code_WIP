@@ -15,12 +15,67 @@ if gml_Script_i_ex(target)
         body_obj.depth = target.depth
         checksprite = body_obj.sprite_index
         var __depthcheck = 0
-        var _temp_local_var_1 = body_obj
-        _remdepth = depth
+        with (body_obj)
+        {
+            _remdepth = depth
+            gml_Script_scr_depth()
+            if (_remdepth != depth)
+                __depthcheck = 1
+            depth = _remdepth
+        }
+        if (__depthcheck == 1)
+            ignoredepth = 1
+        remy = y
+        shadowoffx = 0
+        shadowoffy = 0
+        shadowheight = sprite_get_height(checksprite)
+        y = endy
         gml_Script_scr_depth()
-        if (_remdepth != depth)
-            __depthcheck = 1
-        depth = _remdepth
+        y = remy
+        target.visible = false
+        falseendx = endx
+        falseendy = endy
+        if (usesprites == 1)
+        {
+            usespritetimer = 0
+            if (landsprite > IMAGE_LOGO)
+            {
+                body_obj.sprite_index = landsprite
+                body_obj.image_speed = 0
+                body_obj.image_index = 0
+                if (landsprite == spr_kris_dw_landed)
+                {
+                    body_obj.x -= (2 * dark)
+                    body_obj.y += (1 * dark)
+                    falseendx -= (4 * dark)
+                    startx -= (4 * dark)
+                    starty -= (4 * dark)
+                }
+                if (landsprite == spr_susie_dw_landed)
+                {
+                    body_obj.x -= (4 * dark)
+                    falseendx -= (4 * dark)
+                    startx += (6 * dark)
+                    starty -= (6 * dark)
+                }
+                if (landsprite == spr_teacup_ralsei_land)
+                {
+                    body_obj.y += (2 * dark)
+                    starty += 4
+                    startx -= 6
+                    falseendx -= 6
+                    falseendy += (2 * dark)
+                }
+                if (jumpsprite == spr_ralsei_jump)
+                {
+                    shadowoffx -= 10
+                    shadowoffy -= 4
+                }
+            }
+            con = 1
+        }
+        else
+            con = 2
     }
     if (con == 1)
     {

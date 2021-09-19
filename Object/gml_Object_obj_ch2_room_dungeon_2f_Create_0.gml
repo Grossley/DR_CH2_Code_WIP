@@ -15,5 +15,7 @@ cageanimal.sprite_index = spr_npc_cage_animals_castle
 cageanimal.depth = (cagesamb.depth + 10)
 var checkers = gml_Script_instance_create(60, 260, obj_npc_room_animated)
 checkers.sprite_index = spr_smallcheckers_front
-var _temp_local_var_1 = checkers
-gml_Script_scr_depth()
+with (checkers)
+    gml_Script_scr_depth()
+if (global.chapter != 2 || global.flag[301] == 2 || global.plot >= 200)
+    instance_destroy()

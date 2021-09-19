@@ -33,5 +33,5 @@ if (built == 0)
 }
 else
     gml_Script_snd_play(176)
-var _temp_local_var_1 = other
-instance_destroy()
+with (other)
+    instance_destroy()

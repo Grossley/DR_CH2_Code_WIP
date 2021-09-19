@@ -18,12 +18,15 @@ if (room == room_cc_4f)
 }
 bullet = gml_Script_instance_create(x, y, obj_overworldbulletparent)
 bullet.sprite_index = spr_scissordancer_precise
-var _temp_local_var_1 = bullet
-active = true
-target = 3
-damage = 15
-visible = false
-image_blend = c_red
-image_alpha = 1
-image_xscale = 2
-image_yscale = 2
+with (bullet)
+{
+    active = true
+    target = 3
+    damage = 15
+    visible = false
+    image_blend = c_red
+    image_alpha = 1
+    image_xscale = 2
+    image_yscale = 2
+}
+myinteract = 0

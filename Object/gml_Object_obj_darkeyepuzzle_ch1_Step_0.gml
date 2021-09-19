@@ -17,8 +17,19 @@ if (con == 3)
         glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, 4188)
         glass.depth = 950000
     }
-    var _temp_local_var_3 = block
-    instance_destroy()
+    with (block)
+        instance_destroy()
+    gml_Script_snd_play_ch1(378)
+    gml_Script_instance_create_ch1(0, 0, 1464)
+    global.facing = 1
+    alarm[4] = 30
+    for (i = 0; i < 3; i += 1)
+    {
+        with (shine[i])
+            instance_destroy()
+    }
+    with (obj_darkeyepuzzle_switch_ch1)
+        instance_destroy()
 }
 if (con == 5)
 {

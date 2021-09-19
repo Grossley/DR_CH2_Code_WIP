@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 if (con == 1.1)
     con = 1.2
 if (obj_mainchara.x > 450 && con == -1)
@@ -508,6 +509,9 @@ if (con == 50 && (!gml_Script_i_ex(895)))
     dumpster_npc.sprite_index = spr_cutscene_14_dumpster_open
     with (dumpster_npc)
         gml_Script_scr_depth()
+    instance_destroy(dumpster)
+    instance_destroy(dumpster_nakami)
+    instance_destroy()
 }
 if play_intro
 {

@@ -162,6 +162,8 @@ if (active == true)
                 attacktimer = 0
                 is_auto_susie = true
             }
+            posttimer -= 25
+            autoed = true
         }
         if (posttimer > timermax)
         {

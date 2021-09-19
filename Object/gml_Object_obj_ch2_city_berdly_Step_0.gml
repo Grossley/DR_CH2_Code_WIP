@@ -367,14 +367,14 @@ if (con == 7)
         gml_Script_scr_losechar()
         if gml_Script_i_ex(north_collider)
         {
-            var _temp_local_var_20 = north_collider
-            instance_destroy()
+            with (north_collider)
+                instance_destroy()
         }
-        _temp_local_var_20.x = (dogcone2.x - 30)
-        dogcone2.y = (dogcone2.y + 35)
-        _temp_local_var_20.x = (dogcone1.x + 67)
-        dogcone2.y = (dogcone1.y + 47)
-        image_angle = (dogcone1.image_angle - 90)
+        dogcone2.x -= 30
+        dogcone2.y += 35
+        dogcone1.x += 67
+        dogcone1.y += 47
+        dogcone1.image_angle -= 90
         global.flag[349] = 1
         global.flag[38] = 0
         obj_mainchara.x = 310
@@ -387,23 +387,12 @@ if (con == 7)
         gml_Script_instance_create(880, 200, obj_cone)
         kr_actor.x = obj_mainchara.x
         kr_actor.y = obj_mainchara.y
-        var _temp_local_var_21 = dogcone1
-        var _temp_local_var_22 = -9
-        var _temp_local_var_23 = dogcone1
-        var _temp_local_var_24 = -9
-        var _temp_local_var_25 = stacktop
-        var _temp_local_var_26 = dogcone1
-        var _temp_local_var_27 = -9
-        var _temp_local_var_28 = dogcone2
-        var _temp_local_var_29 = -9
-        var _temp_local_var_30 = dogcone1
-        var _temp_local_var_31 = north_collider
-        var _temp_local_var_32 = -9
-        var _temp_local_var_33 = dogcone2
-        var _temp_local_var_34 = -9
-        var _temp_local_var_35 = dogcone2
-        if (name != "kris")
-            instance_destroy()
+        with (obj_actor)
+        {
+            if (name != "kris")
+                instance_destroy()
+        }
+        draw_set_alpha(1)
     }
     with (obj_actor)
         visible = true
@@ -564,6 +553,9 @@ if (con == 60 && (!gml_Script_i_ex(895)))
     }
     else
         savepoint = gml_Script_instance_create(386, 97, obj_savepoint)
-    var _temp_local_var_10 = savepoint
-    gml_Script_scr_depth()
+    with (savepoint)
+        gml_Script_scr_depth()
+    gml_Script_snd_free_all()
+    gml_Script_scr_tempsave()
+    instance_destroy()
 }

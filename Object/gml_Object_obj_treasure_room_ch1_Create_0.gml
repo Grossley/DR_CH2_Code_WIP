@@ -21,7 +21,7 @@ if (room == room_forest_dancers1_ch1)
     itemtype = "item"
     t_itemid = 2
     extratext = 1
-    if (x.room_width / 2)
+    if (x >= (room_width / 2))
     {
         itemflag = 116
         itemtype = "key"
@@ -45,7 +45,7 @@ if (room == room_forest_area3A_ch1)
 }
 if (room == room_forest_area4_ch1)
 {
-    if (y.room_height / 2)
+    if (y <= (room_height / 2))
     {
         itemflag = 110
         itemtype = "gold"

@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_12, _temp_local_var_17, _temp_local_var_120, _temp_local_var_121, _temp_local_var_126, _temp_local_var_127, _temp_local_var_128, _temp_local_var_129, _temp_local_var_171;
 if (init == 0)
 {
     sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])
@@ -419,7 +420,7 @@ else if (type == 12 && sameattacker == 0)
 {
     if (init == 1)
     {
-        (obj_poppup_mouse).mouse_y.mouse_x
+        gml_Script_instance_create(mouse_x, mouse_y, obj_poppup_mouse)
         d = gml_Script_instance_create(obj_heart.x, obj_heart.y, obj_hiddenheart)
         d.depth -= 20
         init = 2
@@ -834,6 +835,7 @@ else if (type == 26 && init == 1)
     var _temp_local_var_120 = _thrash
     if (headattack != 3)
         obj_rouxls_enemy.thrashmode = 1
+    var _temp_local_var_121 = headattack
     switch headattack
     {
         case 0:
@@ -874,7 +876,7 @@ else if (type == 27)
     var legattack = part[2]
     var thrashcon = obj_rouxls_enemy.thrashcon
     obj_rouxls_enemy.headattack = 0
-    var _temp_local_var_122 = _thrash
+    var _temp_local_var_126 = _thrash
     if (init == 1)
     {
         obj_rouxls_enemy.wheel_difficulty = 1
@@ -885,17 +887,18 @@ else if (type == 27)
         d.grazepoints = 15
         d.damage = damage
         d.target = target
-        var _temp_local_var_123 = _thrash
+        var _temp_local_var_127 = _thrash
         if (part[0] == 3)
         {
             d.damage = 1
-            var _temp_local_var_124 = _thrash
+            var _temp_local_var_128 = _thrash
             if (part[1] == 3)
                 d.duckmode = 1
         }
     }
     if (thrashcon <= 2)
         btimer = 10
+    var _temp_local_var_129 = legattack
     switch legattack
     {
         case 0:
@@ -1057,8 +1060,12 @@ else if (type == 31)
         d.direction = (dir + 180)
         d.speed = 20
         d.friction = 1
-        var _temp_local_var_134 = d
-        image_angle = direction
+        with (d)
+            image_angle = direction
+        if (side == 1)
+            side = -1
+        else
+            side = 1
     }
 }
 else if (type == 32)
@@ -1331,6 +1338,7 @@ else if (type == 48)
         bm.grazepoints = grazepoints
         bm.damage = 1
         bm.target = target
+        var _temp_local_var_171 = roundcount
         switch roundcount
         {
             case 0:
@@ -1385,7 +1393,7 @@ else if (type == 50)
         var initangle = random(80)
         var initspeed = 4
         bulcount = 9
-        repeat (obj_84_lang_helper)
+        repeat (2)
         {
             i = 0
             if (i < bulcount)
@@ -1396,13 +1404,10 @@ else if (type == 50)
                 bullet.image_speed = 0.25
                 bullet.direction = initangle
                 bullet.speed = (2 + initspeed)
-                _temp_local_var_167.depth = (bullet.depth - made)
+                bullet.depth -= made
                 initangle += (360 / bulcount)
                 gml_Script_scr_bullet_inherit(bullet)
-                i++
-                var _temp_local_var_168 = -9
-                var _temp_local_var_169 = bullet
-                while (i < bulcount)
+                for (i++; i < bulcount; i++)
                 {
                     bullet = gml_Script_instance_create(x, y, obj_regularbullet)
                     bullet.sprite_index = spr_spamtonhead
@@ -1410,20 +1415,19 @@ else if (type == 50)
                     bullet.image_speed = 0.25
                     bullet.direction = initangle
                     bullet.speed = (2 + initspeed)
-                    _temp_local_var_167.depth = (bullet.depth - made)
+                    bullet.depth -= made
                     initangle += (360 / bulcount)
                     gml_Script_scr_bullet_inherit(bullet)
-                    i++
-                    var _temp_local_var_168 = -9
-                    var _temp_local_var_169 = bullet
                 }
             }
             initspeed += 4
             initangle = random(50)
         }
-        var _temp_local_var_167 = creatorid
-        global.monster[myself] = false
-        visible = false
+        with (creatorid)
+        {
+            global.monster[myself] = false
+            visible = false
+        }
     }
 }
 else if (type == 51)

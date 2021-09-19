@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 siner += image_xscale
 if (mode == 0)
     y += (sin((siner / 12)) * 5)
@@ -19,7 +20,7 @@ if (timer >= threshold)
     shotcount++
     timer = 0
 }
-for (i = obj_sneo_friedpipis; i < shotcount; i++)
+for (i = 0; i < shotcount; i++)
 {
     if gml_Script_i_ex(shot[i])
     {
@@ -33,7 +34,7 @@ for (i = obj_sneo_friedpipis; i < shotcount; i++)
             amp = abs((sin((siner / 18)) * 30))
             shot[i].y = (y + (sin((abs((siner / 14)) + (singletimer[i] / 14))) * amp))
         }
-        i.singletimer[singletimer[i]]++
-        self
+        var _temp_local_var_1 = singletimer[i]
+        singletimer[i]++
     }
 }

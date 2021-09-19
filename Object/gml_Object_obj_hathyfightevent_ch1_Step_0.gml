@@ -34,12 +34,11 @@ if (con > 2)
         global.flag[9] = 1
         global.batmusic[0] = gml_Script_snd_init_ch1("battle.ogg")
         gml_Script_instance_create_ch1(0, 0, 1488)
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             h[i] = gml_Script_scr_dark_marker_ch1((global.monstermakex[i] + 250), global.monstermakey[i], 3881)
-            var _temp_local_var_3 = h[i]
-            hspeed = -10
+            with (h[i])
+                hspeed = -10
         }
         con = 7
         if (global.plot < 36)
@@ -48,11 +47,10 @@ if (con > 2)
     }
     if (con == 8)
     {
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
-            var _temp_local_var_4 = h[i]
-            instance_destroy()
+            with (h[i])
+                instance_destroy()
         }
         con = 9
         alarm[4] = 15

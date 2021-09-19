@@ -15,14 +15,29 @@ if (timer == 8)
     fx = gml_Script_instance_create(x, y, obj_pipis_destroy_fx)
     fx.image_xscale = 1.5
     fx.image_yscale = 1.5
-    i = 0
-    while (i < 12)
+    for (i = 0; i < 12; i++)
     {
         radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
-        var _temp_local_var_1 = radialshot
-        gml_Script_scr_bullet_init()
+        with (radialshot)
+            gml_Script_scr_bullet_init()
+        radialshot.sprite_index = spr_diamondbullet
+        radialshot.dir = (((i * 30) + random(28)) - 14)
+        radialshot.active = true
+        radialshot.depth = (depth - 1)
+        radialshot.target = target
+        radialshot.damage = damage
+        radialshot.grazed = 0
+        radialshot.element = 6
     }
     radialshot = gml_Script_instance_create(x, y, obj_sneo_heatattack_bullet)
-    var _temp_local_var_2 = radialshot
-    gml_Script_scr_bullet_init()
+    with (radialshot)
+        gml_Script_scr_bullet_init()
+    radialshot.sprite_index = spr_diamondbullet
+    radialshot.dir = ((point_direction(x, y, (obj_heart.x + 10), (obj_heart.y + 10)) - 5) + random(10))
+    radialshot.active = true
+    radialshot.depth = (depth - 1)
+    radialshot.target = target
+    radialshot.damage = damage
+    radialshot.grazed = 0
+    radialshot.element = 6
 }

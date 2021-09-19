@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_14, _temp_local_var_15;
 if (obj_mainchara.x > (x - 60) && con == -1)
 {
     con = 1
@@ -44,12 +45,17 @@ if (obj_mainchara.x > (x - 60) && con == -1)
     if (havewalker == 1)
     {
         starwalker = gml_Script_scr_dark_marker((gml_Script_camerax() - 500), 239, 1208)
-        cutscene_master.save_object[4] = starwalker
+        save_object[4] = cutscene_master
+        var _temp_local_var_2 = starwalker
     }
-    cutscene_master.save_object[0] = gift
-    cutscene_master.save_object[1] = healimpact
-    cutscene_master.save_object[2] = boxhead
-    cutscene_master.save_object[3] = ralsei_ball
+    save_object[0] = cutscene_master
+    save_object[1] = cutscene_master
+    save_object[2] = cutscene_master
+    save_object[3] = cutscene_master
+    var _temp_local_var_3 = ralsei_ball
+    var _temp_local_var_4 = boxhead
+    var _temp_local_var_5 = healimpact
+    var _temp_local_var_6 = gift
 }
 if (con == 1)
 {
@@ -1129,8 +1135,8 @@ if hit_bottles
         explosion_marker.sprite_index = spr_realisticexplosion
         explosion_marker.image_xscale = 2
         explosion_marker.image_yscale = 2
-        var _temp_local_var_13 = explosion_marker
-        gml_Script_scr_depth()
+        with (explosion_marker)
+            gml_Script_scr_depth()
     }
     else
     {
@@ -1151,7 +1157,9 @@ if hit_bottles
             bottle[i].gravity += 2
             bottle[i].gravity_direction = random_range(60, 150)
         }
-        bottle[i].image_angle = (bottle[i].image_angle + (bottle[i].x <= 1390 ? 50 : -50))
+        var _temp_local_var_14 = stacktop
+        var _temp_local_var_15 = bottle[i]
+        _temp_local_var_14.image_angle = (bottle[i].image_angle + (bottle[i].x <= 1390 ? 50 : -50))
     }
     if (hit_timer >= 30)
         hit_bottles = 0
@@ -1181,6 +1189,10 @@ if heal_effect
         delay = 4
         type = 3
     }
+    healamt.damage = 2
+    healanim = gml_Script_instance_create(kr_actor.x, kr_actor.y, obj_healanim)
+    healanim.target = kr_actor.id
+    global.hp[global.char[0]] = min((global.hp[global.char[0]] + 2), global.maxhp[global.char[0]])
 }
 if box_remove_effect
 {
@@ -1202,7 +1214,7 @@ if box_remove_effect
 if present_transform
 {
     present_transform = 0
-    if (gi_actor != -4)
+    if (gi_actor != noone)
     {
         with (gi_actor)
             gml_Script_scr_oflash()

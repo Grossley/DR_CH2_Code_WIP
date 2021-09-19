@@ -35,8 +35,9 @@ if (global.monster[myself] == true)
                 shootcon = 0
                 shootmode = 1
                 shoottimer = 0
-                var _temp_local_var_4 = object_index
-                shootwait = random(5)
+                with (object_index)
+                    shootwait = random(5)
+                werewire_count = gml_Script_scr_monsterpop()
             }
             else if (rr == 1)
             {
@@ -117,8 +118,7 @@ if (global.monster[myself] == true)
         shoottimer -= 1
         if (shoottimer <= 0)
         {
-            i = 0
-            while (i < 3)
+            for (i = 0; i < 3; i += 1)
             {
                 gml_Script_snd_play_x(219, 0.8, 1.9)
                 lasercircle = gml_Script_instance_create((x - 52), (y + 18), obj_werewire_bullet_lasercircle)
@@ -128,10 +128,13 @@ if (global.monster[myself] == true)
                     laser_angle = ((point_direction(lasercircle.x, lasercircle.y, (obj_heart.x + 8), (obj_heart.y + 8)) - 2) + random(4))
                 lasercircle.my_angle = ((laser_angle - 5) + (5 * i))
                 lasercircle.my_angle_change = (((-1 + i) * 0.8) * m)
-                var _temp_local_var_7 = lasercircle
-                my_speed = 4
-                my_accel = 0.2
-                my_length = 4
+                with (lasercircle)
+                {
+                    my_speed = 4
+                    my_accel = 0.2
+                    my_length = 4
+                }
+                lasercircle.my_accel = 0.4
             }
             shoottimer = (10 / m)
             shootcount += 1
@@ -206,13 +209,14 @@ if (global.monster[myself] == true)
             }
             if (image_index >= 4)
             {
-                i = 0
-                while (i < 5)
+                for (i = 0; i < 5; i += 1)
                 {
-                    var _temp_local_var_10 = bullet[i]
-                    if (speed <= 0)
-                        speed = 0.2
-                    friction = -0.25
+                    with (bullet[i])
+                    {
+                        if (speed <= 0)
+                            speed = 0.2
+                        friction = -0.25
+                    }
                 }
                 shootcon = 0
                 image_index = 0

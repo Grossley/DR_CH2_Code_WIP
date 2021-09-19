@@ -238,9 +238,11 @@ if (leapmode == 2)
             bul.damage = damage
             if (magamt == 6 || magamt == 12)
             {
-                var _temp_local_var_2 = bul
-                gravity = 0
-                move_towards_point((obj_heart.x + 8), (obj_heart.y + 8), 3)
+                with (bul)
+                {
+                    gravity = 0
+                    move_towards_point((obj_heart.x + 8), (obj_heart.y + 8), 3)
+                }
             }
             s_timer = 21
             magamt += 1

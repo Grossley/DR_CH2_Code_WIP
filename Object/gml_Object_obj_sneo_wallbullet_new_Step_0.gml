@@ -39,16 +39,17 @@ if (sprite_index == spr_sneo_crew)
         {
             if (hitshot.big == 0)
             {
-                var _temp_local_var_5 = hitshot
-                event_user(0)
+                with (hitshot)
+                    event_user(0)
             }
             gml_Script_snd_play_pitch(141, (1.1 + random(0.2)))
             gml_Script_scr_afterimage_cut()
             anim = gml_Script_instance_create(x, y, obj_yshot_anim)
             anim.image_xscale = image_xscale
             anim.image_yscale = image_yscale
-            var _temp_local_var_6 = anim
-            sprite_index = spr_yheart_shot_hit3
+            with (anim)
+                sprite_index = spr_yheart_shot_hit3
+            instance_destroy()
         }
     }
 }

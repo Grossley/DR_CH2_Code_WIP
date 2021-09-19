@@ -27,6 +27,8 @@ if (con == 3)
     obj_mainchara_ch1.visible = true
     with (k)
         instance_destroy()
+    alarm[4] = 30
+    gml_Script_instance_create_ch1((ral.x + 20), (ral.y - 20), 1486)
 }
 if (con == 5)
 {
@@ -45,14 +47,26 @@ if (con == 6 && gml_Script_d_ex_ch1() == 0)
 {
     with (sus)
         sprite_index = spr_susieu_dark_ch1
+    global.facing = 2
+    with (ral)
+    {
+        sprite_index = spr_ralseiu_ch1
+        vspeed = -6
+        image_speed = 0.25
+    }
+    con = 12
 }
 if (con == 12)
 {
     global.facing = 2
-    if (ral.y <= obj_npc_rudy)
+    if (ral.y <= 100)
     {
         with (ral)
             gml_Script_scr_halt_ch1()
+        with (ral)
+            sprite_index = spr_ralseid_ch1
+        con = 13
+        alarm[4] = 10
     }
 }
 if (con == 14)
@@ -78,10 +92,11 @@ if (con == 5.5 && gml_Script_d_ex_ch1() == 0)
         hspeed = 12
         image_speed = 0.334
     }
+    con = 6.5
 }
 if (con == 6.5)
 {
-    if (sus.x >= obj_werewire_spare2)
+    if (sus.x >= 480)
     {
         sus.vspeed = -12
         sus.hspeed = 0
@@ -91,16 +106,30 @@ if (con == 6.5)
 }
 if (con == 7.5)
 {
-    if (sus.y <= obj_npc_rudy)
+    if (sus.y <= 100)
     {
         with (sus)
             gml_Script_scr_halt_ch1()
+        con = 8.5
+        alarm[4] = 10
     }
 }
 if (con == 9.5)
 {
     with (sus)
         sprite_index = spr_susied_dark_ch1
+    global.typer = 30
+    global.fc = 1
+    global.fe = 1
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_134_0")
+    gml_Script_scr_ralface_ch1(1, 3)
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_136_0")
+    gml_Script_scr_susface_ch1(3, 2)
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_138_0")
+    gml_Script_scr_ralface_ch1(5, 8)
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_140_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 15
 }
 if (con == 15 && gml_Script_d_ex_ch1() == 0)
 {
@@ -111,12 +140,18 @@ if (con == 15 && gml_Script_d_ex_ch1() == 0)
     ral2 = gml_Script_instance_create_ch1(ral.x, ral.y, 1407)
     with (sus)
         instance_destroy()
+    with (ral)
+        instance_destroy()
+    global.interact = 0
+    con = 20
+    boxcon = 1
+    leavecon = 1
 }
 if (leavecon == 1 && global.interact == 0)
 {
-    if (obj_mainchara_ch1.x < obj_unusedclassevent)
+    if (obj_mainchara_ch1.x < 70)
     {
-        obj_mainchara_ch1.x = obj_unusedclassevent
+        obj_mainchara_ch1.x = 70
         global.facing = 1
         global.interact = 1
         leavecon = 2
@@ -185,6 +220,11 @@ if (con == 20)
         image_index = 1
         with (groundblock)
             instance_destroy()
+        global.interact = 1
+        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(378)
+        con = 25
+        alarm[4] = 30
     }
     else if (tilecount == 2 && boxcount == 1 && global.interact == 0 && boxcon == 1)
     {
@@ -250,12 +290,21 @@ if (con == 27)
         sus3 = gml_Script_scr_dark_marker_ch1(sus2.x, sus2.y, 3541)
         with (ral2)
             instance_destroy()
+        with (sus2)
+            instance_destroy()
+        with (sus3)
+        {
+            gml_Script_scr_depth_ch1()
+            hspeed = -8
+            image_speed = 0.334
+        }
+        con = 28
     }
 }
 if (con == 28)
 {
     global.interact = 1
-    if ( <= ((sus3.x.room_width / 2) - 20) && gml_Script_d_ex_ch1() == 0)
+    if (sus3.x <= ((room_width / 2) - 20) && gml_Script_d_ex_ch1() == 0)
     {
         with (sus3)
         {
@@ -264,12 +313,21 @@ if (con == 28)
             hspeed = 0
             sprite_index = spr_susieu_dark_ch1
         }
+        con = 29
+        alarm[4] = 60
     }
 }
 if (con == 30)
 {
     with (ral3)
         sprite_index = spr_ralseid_ch1
+    global.typer = 31
+    global.fc = 2
+    global.fe = 8
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_347_0")
+    dl = gml_Script_instance_create_ch1(0, 0, 1326)
+    dl.side = 1
+    con = 31
 }
 if (con == 31)
 {
@@ -282,11 +340,12 @@ if (con == 31)
             hspeed = 6
             image_speed = 0.25
         }
+        con = 32
     }
 }
 if (con == 32)
 {
-    if (ral3 >= ((ral3.x.room_width / 2) - 20))
+    if (ral3.x >= ((room_width / 2) - 20))
     {
         with (ral3)
         {
@@ -294,6 +353,8 @@ if (con == 32)
             hspeed = 0
             sprite_index = spr_ralseiu_ch1
         }
+        con = 33
+        alarm[4] = 30
     }
 }
 if (con == 34)
@@ -325,12 +386,30 @@ if (con == 52)
     ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, 3570)
     with (ral3)
         gml_Script_scr_depth_ch1()
+    with (ral2)
+        instance_destroy()
+    sus3 = gml_Script_scr_dark_marker_ch1(((room_width / 2) - 22), sus2.y, 3548)
+    with (sus3)
+        gml_Script_scr_depth_ch1()
+    with (sus2)
+        instance_destroy()
+    gml_Script_snd_play_ch1(378)
+    con = 53
+    alarm[4] = 30
 }
 if (con == 54)
 {
     image_index = 2
     with (groundblock)
         instance_destroy()
+    with (obj_pushableblock_ch1)
+        instance_destroy()
+    with (fade)
+        instance_destroy()
+    global.facing = 2
+    gml_Script_instance_create_ch1(0, 0, 1461)
+    con = 55
+    alarm[4] = 50
 }
 if (con == 56)
 {

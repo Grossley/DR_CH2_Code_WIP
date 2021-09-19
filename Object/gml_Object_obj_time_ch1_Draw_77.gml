@@ -36,16 +36,7 @@ if (os_type == os_switch || os_type == os_ps4)
     {
         paused = 1
         if (!sprite_exists(screenshot))
-        {
-            screenshot = (obj_sneo_friedpipis).application_surface
-            var _temp_local_var_5 = 0
-            var _temp_local_var_6 = sw
-            var _temp_local_var_7 = sh
-            var _temp_local_var_8 = 0
-            var _temp_local_var_9 = 0
-            var _temp_local_var_10 = 0
-            var _temp_local_var_11 = 0
-        }
+            screenshot = sprite_create_from_surface(application_surface, 0, 0, sw, sh, false, false, 0, 0)
         alarm[1] = 1
     }
     if (paused && (!os_is_paused()))
@@ -56,7 +47,7 @@ if (os_type == os_switch || os_type == os_ps4)
         alarm[0] = 1
     }
     gml_Script_draw_enable_alphablend(0)
-    draw_surface_ext(xx.application_surface, yy, global.window_scale, global.window_scale, 0, 16777215, 0x000001, 0)
+    draw_surface_ext(application_surface, xx, yy, global.window_scale, global.window_scale, 0, c_white, 1)
     if sprite_exists(screenshot)
         draw_sprite_ext(screenshot, 0, xx, yy, global.window_scale, global.window_scale, 0, c_white, 1)
     gml_Script_draw_enable_alphablend(1)

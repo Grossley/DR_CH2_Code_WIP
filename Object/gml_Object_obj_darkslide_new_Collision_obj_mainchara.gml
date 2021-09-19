@@ -38,9 +38,12 @@ if (sliding == 1)
     if (slidetimer == 0)
     {
         dust = gml_Script_instance_create((obj_mainchara.x + 20), (obj_mainchara.y + 30), obj_slidedust)
-        var _temp_local_var_2 = dust
-        vspeed = -6
-        hspeed = (-1 + random(2))
+        with (dust)
+        {
+            vspeed = -6
+            hspeed = (-1 + random(2))
+        }
+        slidetimer = -3
     }
     slidetimer += 1
     if (slidetimer >= 1)

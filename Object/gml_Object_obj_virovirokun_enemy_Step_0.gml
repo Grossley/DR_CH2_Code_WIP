@@ -139,8 +139,8 @@ if (global.myfight == 3)
                 {
                     noelle_fall = 1
                     noelle_fall_timer = 0
-                    var _temp_local_var_37 = object_index
-                    noelle_splat = 1
+                    with (object_index)
+                        noelle_splat = 1
                 }
                 gml_Script_msgsetloc(0, "* You and Noelle showed the enemy tender loving care!/%", "obj_virovirokun_enemy_slash_Step_0_gml_183_0")
             }
@@ -181,8 +181,13 @@ if (global.myfight == 3)
             {
                 noelle_special_con = 5
                 alarm[5] = 30
-                var _temp_local_var_40 = balloon
-                instance_destroy()
+                with (balloon)
+                    instance_destroy()
+                with (obj_writer)
+                    instance_destroy()
+                gml_Script_scr_speaker("noelle")
+                gml_Script_msgsetloc(0, "\\E6* Uh... well... um... yes./%", "obj_virovirokun_enemy_slash_Step_0_gml_222_0")
+                gml_Script_scr_battletext()
             }
             if (noelle_special_con == 6 && (!gml_Script_i_ex(62)))
             {
@@ -196,8 +201,11 @@ if (global.myfight == 3)
             {
                 noelle_special_con = 9
                 alarm[5] = 30
-                var _temp_local_var_43 = balloon
-                instance_destroy()
+                with (balloon)
+                    instance_destroy()
+                audio_pause_sound(global.batmusic[0])
+                fadeout = gml_Script_instance_create(0, 0, obj_fadeout)
+                fadeout.depth = 0
             }
             if (noelle_special_con == 10)
             {
@@ -211,11 +219,13 @@ if (global.myfight == 3)
             }
             if (noelle_special_con >= 11 && noelle_special_con < 13)
             {
-                if (viro_talk != -4)
+                if (viro_talk != noone)
                 {
-                    var _temp_local_var_45 = viro_talk
-                    if gml_Script_i_ex(writer)
-                        writer.depth = (depth - 100)
+                    with (viro_talk)
+                    {
+                        if gml_Script_i_ex(writer)
+                            writer.depth = (depth - 100)
+                    }
                 }
             }
             if (noelle_special_con == 12 && gml_Script_button1_p())
@@ -224,8 +234,8 @@ if (global.myfight == 3)
                 alarm[5] = 15
                 instance_destroy(obj_writer)
                 gml_Script_instance_create(0, 0, obj_fadein)
-                var _temp_local_var_47 = fadeout
-                instance_destroy()
+                with (fadeout)
+                    instance_destroy()
             }
             if (noelle_special_con == 14 && (!gml_Script_i_ex(62)))
             {
@@ -248,8 +258,14 @@ if (global.myfight == 3)
             {
                 noelle_special_con = 19
                 alarm[5] = 15
-                var _temp_local_var_51 = balloon
-                instance_destroy()
+                with (balloon)
+                    instance_destroy()
+                with (obj_writer)
+                    instance_destroy()
+                gml_Script_scr_speaker("noelle")
+                gml_Script_msgsetloc(0, "\\E2* And the way I have to do that is.../", "obj_virovirokun_enemy_slash_Step_0_gml_320_0")
+                gml_Script_msgnextloc("\\EH* Dressing up in a weird costume./%", "obj_virovirokun_enemy_slash_Step_0_gml_321_0")
+                gml_Script_scr_battletext()
             }
             if (noelle_special_con == 20 && (!gml_Script_i_ex(62)))
             {
@@ -263,8 +279,14 @@ if (global.myfight == 3)
             {
                 noelle_special_con = 23
                 alarm[5] = 15
-                var _temp_local_var_54 = balloon
-                instance_destroy()
+                with (balloon)
+                    instance_destroy()
+                with (obj_writer)
+                    instance_destroy()
+                gml_Script_scr_speaker("noelle")
+                gml_Script_msgsetloc(0, "\\EH* .../%", "obj_virovirokun_enemy_slash_Step_0_gml_344_0")
+                gml_Script_scr_battletext()
+                gml_Script_scr_speaker("no_one")
             }
             if (noelle_special_con == 24 && (!gml_Script_i_ex(62)))
             {
@@ -285,23 +307,26 @@ if (global.myfight == 3)
                 image_alpha = 0
             }
             nise_noelle = gml_Script_scr_dark_marker(obj_heronoelle.x, obj_heronoelle.y, 1531)
-            var _temp_local_var_8 = nise_noelle
-            depth = (20 - (gml_Script___view_get(1, 0) / 40))
-            gml_Script_scr_oflash()
-            a = gml_Script_scr_afterimage()
-            a.hspeed = 2.5
-            a.depth = (depth + 1)
-            b = gml_Script_scr_afterimage()
-            b.image_alpha = 0.6
-            b.hspeed = 5
-            b.depth = (depth + 2)
+            with (nise_noelle)
+            {
+                depth = (20 - (gml_Script___view_get(1, 0) / 40))
+                gml_Script_scr_oflash()
+                a = gml_Script_scr_afterimage()
+                a.hspeed = 2.5
+                a.depth = (depth + 1)
+                b = gml_Script_scr_afterimage()
+                b.image_alpha = 0.6
+                b.hspeed = 5
+                b.depth = (depth + 2)
+            }
+            nise_noelle.image_speed = 0
         }
         if (noelle_fall_timer == 30)
         {
             nise_noelle.image_index = 1
             gml_Script_snd_play(64)
-            var _temp_local_var_9 = nise_noelle
-            gml_Script_scr_shakeobj()
+            with (nise_noelle)
+                gml_Script_scr_shakeobj()
         }
         if (noelle_fall_timer == 50)
         {
@@ -429,13 +454,15 @@ if (global.myfight == 3)
         {
             if gml_Script_i_ex(nise_noelle)
             {
-                var _temp_local_var_19 = nise_noelle
-                instance_destroy()
+                with (nise_noelle)
+                    instance_destroy()
+                with (obj_heronoelle)
+                    image_alpha = 1
             }
-            if (explosion != -4)
+            if (explosion != noone)
             {
-                var _temp_local_var_20 = explosion
-                instance_destroy()
+                with (explosion)
+                    instance_destroy()
             }
             noelle_fall = 0
             noelle_fall_timer = 0
@@ -449,8 +476,10 @@ if (global.myfight == 3)
         {
             if gml_Script_i_ex(nise_noelle)
             {
-                var _temp_local_var_22 = nise_noelle
-                instance_destroy()
+                with (nise_noelle)
+                    instance_destroy()
+                with (obj_heronoelle)
+                    image_alpha = 1
             }
             if gml_Script_scr_terminate_writer()
             {

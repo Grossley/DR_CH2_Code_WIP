@@ -22,12 +22,25 @@ image_yscale = 1.75
 reticletimer = -10
 baseball_hitbox = gml_Script_instance_create(x, y, o_boxing_hitbox)
 with (baseball_hitbox)
+{
     baseball = 1
-hit_jumping = 0
-give_hurt = (22 / f)
-timer = (400 / f)
-damage = 25
-grazed = 1
-maker_id = id
-image_yscale = 2
-image_xscale = 4
+    hit_jumping = 0
+    give_hurt = (22 / f)
+    timer = (400 / f)
+    damage = 25
+    grazed = 1
+    maker_id = id
+    image_yscale = 2
+    image_xscale = 4
+}
+wheel_hitbox_graze = gml_Script_instance_create(x, y, o_boxing_hitbox)
+with (wheel_hitbox_graze)
+{
+    baseball = 1
+    hit_jumping = 0
+    timer = (400 / f)
+    graze_only = 1
+    maker_id = id
+    image_yscale = 2
+    image_xscale = 8
+}

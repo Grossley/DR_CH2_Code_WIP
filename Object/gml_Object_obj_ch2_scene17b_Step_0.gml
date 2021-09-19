@@ -388,8 +388,10 @@ if (con == 11)
 if (con == 12 && (!gml_Script_d_ex()))
 {
     con = 50
-    var _temp_local_var_7 = cage_collider
-    instance_destroy()
+    with (cage_collider)
+        instance_destroy()
+    gml_Script_c_actortokris()
+    gml_Script_c_terminatekillactors()
 }
 if (con == 50 && (!gml_Script_i_ex(895)))
 {
@@ -439,6 +441,19 @@ if overload
 }
 if open_capsule
 {
-    var _temp_local_var_11 = cagetop
-    image_speed = 0.25
+    with (cagetop)
+        image_speed = 0.25
+    with (cagebars)
+        image_speed = 0.25
+    if (cagetop.image_index >= 5)
+    {
+        open_capsule = 0
+        with (cagetop)
+        {
+            image_speed = 0
+            gravity = -1
+        }
+        with (cagebars)
+            image_speed = 0
+    }
 }

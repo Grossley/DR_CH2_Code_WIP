@@ -21,12 +21,13 @@ repeat (reverse ? reversespeed : 1)
     }
     if (t != 0 && first_pass)
     {
-        i = 0
-        while (i < starcount)
+        for (i = 0; i < starcount; i += 1)
         {
-            var _temp_local_var_4 = star[i]
-            hspeed += gravity
-            x += hspeed
+            with (star[i])
+            {
+                hspeed += gravity
+                x += hspeed
+            }
         }
     }
     if (t >= 6 && t <= 26)
@@ -61,32 +62,35 @@ repeat (reverse ? reversespeed : 1)
     {
         if (t >= 1 && t <= 5)
         {
-            i = 0
-            while (i < 2)
+            for (i = 0; i < 2; i += 1)
             {
                 star[starcount] = gml_Script_instance_create((x + random(sprite_width)), (y + random(sprite_height)), obj_marker)
                 star[starcount].reversespeed = reversespeed
-                var _temp_local_var_7 = star[starcount]
-                image_xscale = 2
-                image_yscale = 2
-                sprite_index = spr_sparestar_anim
-                image_alpha = 2
-                image_speed = 0.25
-                hspeed = -3
-                gravity = 0.5
-                gravity_direction = 0
+                with (star[starcount])
+                {
+                    image_xscale = 2
+                    image_yscale = 2
+                    sprite_index = spr_sparestar_anim
+                    image_alpha = 2
+                    image_speed = 0.25
+                    hspeed = -3
+                    gravity = 0.5
+                    gravity_direction = 0
+                }
+                starcount += 1
             }
         }
         if (t >= 5 && t <= 30)
         {
-            i = 0
-            while (i < starcount)
+            for (i = 0; i < starcount; i += 1)
             {
-                var _temp_local_var_9 = star[i]
-                image_angle += 10
-                image_alpha -= 0.1
-                if (image_alpha <= 0)
-                    visible = false
+                with (star[i])
+                {
+                    image_angle += 10
+                    image_alpha -= 0.1
+                    if (image_alpha <= 0)
+                        visible = false
+                }
             }
         }
     }
@@ -94,24 +98,24 @@ repeat (reverse ? reversespeed : 1)
     {
         if (t >= 6 && t <= 31)
         {
-            i = 0
-            while (i < starcount)
+            for (i = 0; i < starcount; i += 1)
             {
-                var _temp_local_var_22 = star[i]
-                image_angle -= 10
-                image_alpha += 0.1
-                if ((!visible) && image_alpha >= 0 && image_alpha < 2)
-                    visible = true
+                with (star[i])
+                {
+                    image_angle -= 10
+                    image_alpha += 0.1
+                    if ((!visible) && image_alpha >= 0 && image_alpha < 2)
+                        visible = true
+                }
             }
         }
         if (t >= 2 && t <= 6)
         {
-            i = 0
-            while (i < 2)
+            for (i = 0; i < 2; i += 1)
             {
                 starcount--
-                var _temp_local_var_26 = star[starcount]
-                instance_destroy()
+                with (star[starcount])
+                    instance_destroy()
             }
         }
     }
@@ -128,12 +132,13 @@ repeat (reverse ? reversespeed : 1)
         gml_Script_snd_play(299)
     if (t >= 50 && (!reverse))
     {
-        i = 0
-        while (i < starcount)
+        for (i = 0; i < starcount; i += 1)
         {
-            var _temp_local_var_13 = star[i]
-            image_speed *= (-reversespeed)
-            hspeed = ((-hspeed) - gravity)
+            with (star[i])
+            {
+                image_speed *= (-reversespeed)
+                hspeed = ((-hspeed) - gravity)
+            }
         }
         first_pass = 0
         reverse = 1

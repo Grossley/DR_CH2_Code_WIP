@@ -14,8 +14,12 @@ if (global.plot >= 51)
 else
 {
     npc1_o = gml_Script_instance_create(260, 200, obj_npc_room)
-    var _temp_local_var_1 = npc1_o
-    gml_Script_scr_depth()
+    with (npc1_o)
+        gml_Script_scr_depth()
+    npc2_o = gml_Script_instance_create(380, 280, obj_npc_room)
+    with (npc2_o)
+        gml_Script_scr_depth()
+    con = 1
 }
 screencon = 0
 screenmax = 0

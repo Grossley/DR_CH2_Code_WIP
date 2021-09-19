@@ -72,8 +72,10 @@ if (con == 19)
     gml_Script_snd_play(64)
     lightsoff = 0
     s = gml_Script_scr_marker(146, 70, 981)
-    var _temp_local_var_3 = s
-    depth = 100000
+    with (s)
+        depth = 100000
+    con = 24
+    alarm[4] = 50
 }
 if (con == 25)
 {
@@ -87,19 +89,32 @@ if (con == 25)
 }
 if (con == 26 && (!gml_Script_d_ex()))
 {
-    var _temp_local_var_5 = s
-    image_speed = 0.1
-    vspeed = 0.5
+    with (s)
+    {
+        image_speed = 0.1
+        vspeed = 0.5
+    }
+    con = 27
+    alarm[4] = 40
 }
 if (con == 28)
 {
-    var _temp_local_var_6 = s
-    gml_Script_scr_halt()
+    with (s)
+        gml_Script_scr_halt()
+    con = 29
+    alarm[4] = 45
+    global.fe = 0
 }
 if (con == 30)
 {
-    var _temp_local_var_7 = s
-    sprite_index = spr_susier_plain
+    with (s)
+        sprite_index = spr_susier_plain
+    global.msg[0] = gml_Script_stringsetloc("* ... Hey, Kris.../", "obj_unusedclassevent_slash_Step_0_gml_123_0")
+    global.msg[1] = gml_Script_stringsetloc("\\E1* What.../", "obj_unusedclassevent_slash_Step_0_gml_124_0")
+    global.msg[2] = gml_Script_stringsetloc("\\E0* What just happened...?/", "obj_unusedclassevent_slash_Step_0_gml_125_0")
+    global.msg[3] = gml_Script_stringsetloc("\\E3* Like^1, that wasn't a dream or anything^1, was it...?/%", "obj_unusedclassevent_slash_Step_0_gml_126_0")
+    gml_Script_instance_create(0, 0, obj_dialoguer)
+    con = 31
 }
 if (con == 31 && (!gml_Script_d_ex()))
 {
@@ -108,22 +123,32 @@ if (con == 31 && (!gml_Script_d_ex()))
 }
 if (con == 33)
 {
-    var _temp_local_var_9 = s
-    sprite_index = spr_susied_plain
+    with (s)
+        sprite_index = spr_susied_plain
+    global.fe = 0
+    global.msg[0] = gml_Script_stringsetloc("\\E0* .../", "obj_unusedclassevent_slash_Step_0_gml_141_0")
+    global.msg[1] = gml_Script_stringsetloc("\\E3* Anyway, as I was SAYING,/", "obj_unusedclassevent_slash_Step_0_gml_142_0")
+    global.msg[2] = gml_Script_stringsetloc("\\E2* Let's just tell Alphys we couldn't find any chalk./%", "obj_unusedclassevent_slash_Step_0_gml_143_0")
+    gml_Script_instance_create(0, 0, obj_dialoguer)
+    con = 34
 }
 if (con == 34 && (!gml_Script_d_ex()))
 {
-    var _temp_local_var_11 = s
-    vspeed = 2
-    image_speed = 0.2
+    with (s)
+    {
+        vspeed = 2
+        image_speed = 0.2
+    }
+    con = 35
 }
 if (con == 35)
 {
     if (s.y >= 140)
     {
         gml_Script_snd_play(62)
-        var _temp_local_var_12 = s
-        visible = false
+        with (s)
+            visible = false
+        con = 37
     }
 }
 if (con == 37)

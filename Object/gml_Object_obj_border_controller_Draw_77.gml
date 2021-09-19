@@ -46,7 +46,7 @@ else
         global.disable_border = 1
 }
 gml_Script_draw_enable_alphablend(0)
-draw_surface_ext(application_surface, xx, yy, window_scale, window_scale, 0, 16777215, 1)
+draw_surface_ext(application_surface, xx, yy, global.window_scale, global.window_scale, 0, c_white, 1)
 if instance_exists(obj_time)
 {
     var is_paused = 0

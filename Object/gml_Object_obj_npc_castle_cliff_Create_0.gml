@@ -26,8 +26,16 @@ if (global.plot >= 10)
     if (show_shine && global.plot >= 200 && global.flag[309] < 9)
         show_shine = 0
     var hole = gml_Script_scr_marker(281, 200, 3328)
-    var _temp_local_var_4 = hole
-    gml_Script_scr_depth()
+    with (hole)
+        gml_Script_scr_depth()
+    if show_shine
+    {
+        shine = gml_Script_scr_marker(320, 235, 2435)
+        shine.image_speed = 0.1
+        shine.image_xscale = 2
+        shine.image_yscale = 2
+        shine.depth = (hole.depth - 10)
+    }
 }
 if (global.chapter != 2 || global.flag[314] == 1)
     instance_destroy()

@@ -18,6 +18,7 @@ else if (global.plot < 70)
     alleyoverlay.image_alpha = 0.5
     with (alleyoverlay)
         gml_Script_scr_depth()
+    noellemarker = gml_Script_scr_dark_marker(360, 205, 723)
 }
 else
 {

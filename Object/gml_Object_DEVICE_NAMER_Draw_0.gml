@@ -23,6 +23,16 @@ if (EVENT == 70 && instance_exists(obj_writer) == 0)
         hspace *= 0.8
         skipme = true
     }
+    CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
+    EVENT = 71
+    with (CHOICE)
+        event_user(0)
+    with (CHOICE)
+    {
+        depth = -100
+        if (global.lang == "ja")
+            STRINGMAX = 7
+    }
 }
 if (EVENT == 71)
 {
@@ -61,6 +71,12 @@ if (EVENT == 73)
         hspace *= 0.8
         skipme = true
     }
+    DRAWNAME = 1
+    FIXY = 0
+    EVENT = 74
+    global.choice = -1
+    CHOICE = gml_Script_instance_create(100, 100, DEVICE_CHOICE)
+    CHOICE.depth = -100
 }
 if (EVENT == 74)
 {

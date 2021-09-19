@@ -7,6 +7,10 @@ if (active && obj_thrashmachine.duckmode)
     explosion_marker.depth = (depth - 5)
     explosion_marker.sprite_index = spr_realisticexplosion
     explosion_marker.endtime = 30
-    var _temp_local_var_2 = explosion_marker
-    gml_Script_snd_play(188)
+    with (explosion_marker)
+        gml_Script_snd_play(188)
+    obj_rouxls_enemy.advancespeed = 0
+    obj_rouxls_enemy.wheel_difficulty = 0
+    deathtimer = 5
+    active = false
 }

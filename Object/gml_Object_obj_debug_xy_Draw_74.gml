@@ -27,9 +27,8 @@ draw_text(330, 0, string_hash_to_newline(gml_Script_stringsetloc("PgDown: Show A
 draw_text(330, 20, string_hash_to_newline(gml_Script_stringsetsubloc("CameraX: ~1 CameraY: ~2", string(gml_Script___view_get(0, 0)), string(gml_Script___view_get(1, 0)), "obj_debug_xy_slash_Draw_74_gml_27_0")))
 if (show_invisible == 1)
     draw_text(330, 40, string_hash_to_newline(gml_Script_stringsetloc("Show Invisible", "obj_debug_xy_slash_Draw_74_gml_28_0")))
-draw_text(330, 60, string_hash_to_newline("instance_count: ~1"))
+draw_text(330, 60, string_hash_to_newline(gml_Script_stringsetsubloc("instance_count: ~1", string(instance_count), "obj_debug_xy_slash_Draw_74_gml_29_0_b")))
 draw_text(480, 0, string_hash_to_newline(gml_Script_stringsetloc("PgUp: XY Camera-Relative", "obj_debug_xy_slash_Draw_74_gml_29_0")))
-var _temp_local_var_1 = string(("obj_debug_xy_slash_Draw_74_gml_29_0_b").instance_count)
 if (xy_camera_relative >= 1)
 {
     draw_set_color(c_yellow)

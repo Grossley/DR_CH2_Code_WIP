@@ -3,8 +3,9 @@ if (global.chapter != 2)
 else
 {
     hacker = gml_Script_instance_create(394, 206, obj_npc_sign)
-    var _temp_local_var_1 = hacker
-    gml_Script_scr_depth()
+    with (hacker)
+        gml_Script_scr_depth()
+    hacker.sprite_index = spr_npc_cursor_walk_left
 }
 check1 = 0
 check2 = 0

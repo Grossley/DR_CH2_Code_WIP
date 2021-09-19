@@ -280,8 +280,13 @@ if (con == 41)
 }
 if (con == 53)
 {
-    var _temp_local_var_2 = wagon
-    visible = false
+    with (wagon)
+        visible = false
+    sprite_index = spr_dkris_heartthrow_ch1
+    image_index = 0
+    image_speed = 0.25
+    con = 54
+    alarm[4] = 40
 }
 if (con == 54)
 {
@@ -354,21 +359,31 @@ if (con == 65)
 {
     eyeflash = gml_Script_scr_marker_ch1((x + 15), (y + 9), 4245)
     eyeflash.image_blend = c_red
-    var _temp_local_var_3 = eyeflash
-    image_speed = 0.2
+    with (eyeflash)
+        image_speed = 0.2
+    image_speed = 0
+    gml_Script_snd_play_ch1(433)
+    con = 66
+    alarm[4] = 25
 }
 if (con == 67)
 {
-    var _temp_local_var_4 = eyeflash
-    instance_destroy()
+    with (eyeflash)
+        instance_destroy()
+    con = 68
+    alarm[4] = 60
 }
 if (con == 69)
 {
     pix = gml_Script_scr_marker_ch1(-10, -10, 4277)
-    var _temp_local_var_5 = pix
-    image_blend = c_black
-    image_xscale = 700
-    image_yscale = 700
+    with (pix)
+    {
+        image_blend = c_black
+        image_xscale = 700
+        image_yscale = 700
+    }
+    con = 70
+    alarm[4] = 60
 }
 if (con == 71)
     room_goto(PLACE_LOGO_ch1)

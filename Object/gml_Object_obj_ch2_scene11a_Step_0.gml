@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 if (obj_mainchara.x > 440 && obj_mainchara.y < 300 && con == -1)
 {
     con = 1
@@ -334,6 +335,7 @@ if (con == 3 && customcon == 1)
         gravity = 2
         gravity_direction = 70
     }
+    customcon = 0
 }
 if (con == 5)
 {
@@ -501,6 +503,17 @@ if (con == 13 && (!instance_exists(obj_battlecontroller)))
 {
     with (coaster_berdly)
         visible = true
+    with (coaster_kris)
+        visible = true
+    with (coaster_susie)
+        visible = true
+    with (coaster_ralsei)
+        visible = true
+    smokecon = 1
+    global.flag[61] = 0
+    con = 14
+    customcon = 0
+    gml_Script_c_waitcustom_end()
 }
 if (smokecon == 1)
 {
@@ -552,6 +565,7 @@ if (con == 16 && customcon == 1)
         vspeed = 16
         gravity = 1
     }
+    customcon = 0
 }
 if (con == 18)
 {
@@ -686,6 +700,11 @@ if (explosion > 0)
                 finish = 1
                 instance_destroy()
             }
+        }
+        if finish
+        {
+            explosion = 0
+            explodetimer = 0
         }
     }
 }

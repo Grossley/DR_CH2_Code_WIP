@@ -94,10 +94,13 @@ if (angrycon == 3)
     {
         word = gml_Script_instance_create((x - (20 * side)), (y - 10), obj_wordbullet)
         word.depth = (depth - 1)
-        var _temp_local_var_2 = word
-        angry = 1
-        direction = (point_direction(x, y, (obj_heart.x + 10), (obj_heart.y + 10)) + random_range(30, -30))
-        image_angle = direction
-        speed = 7
+        with (word)
+        {
+            angry = 1
+            direction = (point_direction(x, y, (obj_heart.x + 10), (obj_heart.y + 10)) + random_range(30, -30))
+            image_angle = direction
+            speed = 7
+        }
+        timer = (-random(4))
     }
 }

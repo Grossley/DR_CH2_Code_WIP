@@ -7,29 +7,46 @@ if (con == 1)
         visible = false
     with (obj_caterpillarchara_ch1)
         visible = false
-    i = 0
-    while (i < 3)
+    for (i = 0; i < 3; i += 1)
     {
         c[i] = gml_Script_scr_dark_marker_ch1((global.heromakex[i] - 100), global.heromakey[i], 4197)
-        var _temp_local_var_1 = c[i]
-        gml_Script_scr_depth_ch1()
-        hspeed = 2
-        image_speed = 0.2
+        with (c[i])
+        {
+            gml_Script_scr_depth_ch1()
+            hspeed = 2
+            image_speed = 0.2
+        }
+        if (quick == 1)
+        {
+            with (c[i])
+            {
+                x += 1
+                gml_Script_scr_depth_ch1()
+                hspeed = 5
+                image_speed = 0.334
+            }
+        }
     }
     k = c[0]
     s = c[1]
-    var _temp_local_var_3 = s
-    sprite_index = spr_susier_dark_ch1
+    with (s)
+        sprite_index = spr_susier_dark_ch1
+    r = c[2]
+    with (r)
+        sprite_index = spr_ralseir_ch1
+    con = 2
+    alarm[4] = 83
+    if (quick == 1)
+        alarm[4] = 33
 }
 if (con == 2)
     global.interact = 1
 if (con == 3)
 {
-    i = 0
-    while (i < 3)
+    for (i = 0; i < 3; i += 1)
     {
-        var _temp_local_var_5 = c[i]
-        gml_Script_scr_halt_ch1()
+        with (c[i])
+            gml_Script_scr_halt_ch1()
     }
     con = 4
     alarm[4] = 20
@@ -70,45 +87,91 @@ if (con == 10)
 }
 if (bulcon == 1)
 {
-    i = 0
-    while (i < smax)
+    for (i = 0; i < smax; i += 1)
     {
         sbul[i] = gml_Script_scr_dark_marker_ch1((s.x + 70), (((-i) * 100) - 40), 3942)
-        var _temp_local_var_7 = sbul[i]
-        vspeed = 24
+        with (sbul[i])
+            vspeed = 24
+        with (sbul[i])
+            image_angle = random(360)
     }
     bulcon = 2
 }
 if (bulcon == 2)
 {
     below = 0
-    i = 0
-    while (i < smax)
+    for (i = 0; i < smax; i += 1)
     {
-        var _temp_local_var_9 = sbul[i]
-        image_angle += 24
-        aft = gml_Script_scr_afterimage_ch1()
-        var _temp_local_var_10 = aft
-        image_alpha = 0.5
+        with (sbul[i])
+        {
+            image_angle += 24
+            aft = gml_Script_scr_afterimage_ch1()
+            with (aft)
+                image_alpha = 0.5
+        }
+        if (sbul[i].y >= (gml_Script___view_get(1, 0) + 580))
+            below += 1
     }
     if (below >= smax)
         bulcon = 3
 }
 if (con == 12)
 {
-    var _temp_local_var_11 = s
-    sprite_index = spr_susie_shock_r_ch1
+    with (s)
+        sprite_index = spr_susie_shock_r_ch1
+    with (r)
+        sprite_index = spr_ralsei_shock_overworld_ch1
+    for (i = 0; i < 3; i += 1)
+    {
+        with (c[i])
+        {
+            hspeed = -10
+            friction = 1
+        }
+    }
+    con = 13
+    alarm[4] = 45
+    if (quick == 1)
+    {
+        con = 22
+        alarm[4] = 40
+        gml_Script_snd_free_all_ch1()
+    }
 }
 if (con == 14)
 {
     image_speed = 0
-    var _temp_local_var_14 = s
-    sprite_index = spr_susier_dark_unhappy_ch1
+    with (s)
+        sprite_index = spr_susier_dark_unhappy_ch1
+    with (r)
+        sprite_index = spr_ralseir_ch1
+    global.typer = 30
+    global.fe = 0
+    global.typer = 35
+    global.fc = 0
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_140_0")
+    gml_Script_scr_susface_ch1(1, 0)
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_142_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_143_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 15.1
 }
 if (con == 15.1 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_17 = s
-    sprite_index = spr_susieb_attack_ch1
+    with (s)
+        sprite_index = spr_susieb_attack_ch1
+    with (r)
+        sprite_index = spr_ralseib_attack_ch1
+    with (k)
+        sprite_index = spr_krisb_attack_ch1
+    for (i = 0; i < 3; i += 1)
+    {
+        c[i].image_index = 0
+        c[i].image_speed = 0.25
+    }
+    con = 16
+    alarm[4] = 60
+    gml_Script_snd_play_ch1(442)
 }
 if (con == 16)
 {
@@ -157,16 +220,44 @@ if (con == 23)
     global.cinstance[0].y = s.y
     global.cinstance[1].x = r.x
     global.cinstance[1].y = r.y
-    var _temp_local_var_22 = global.cinstance[0]
-    gml_Script_scr_caterpillar_interpolate_ch1()
+    with (global.cinstance[0])
+        gml_Script_scr_caterpillar_interpolate_ch1()
+    with (global.cinstance[1])
+        gml_Script_scr_caterpillar_interpolate_ch1()
+    gml_Script_scr_caterpillar_facing_ch1(1)
+    with (obj_mainchara_ch1)
+        visible = true
+    with (global.cinstance[0])
+        visible = true
+    with (global.cinstance[1])
+        visible = true
+    with (k)
+        visible = false
+    with (r)
+        visible = false
+    with (s)
+        visible = false
+    global.flag[9] = 1
+    global.batmusic[0] = gml_Script_snd_init_ch1("joker.ogg")
+    global.encounterno = 25
+    global.specialbattle = 3
+    gml_Script_instance_create_ch1(0, 0, 1488)
+    con = 25
+    bultimer = 0
+    bulcon = 10
 }
 if (bulcon == 10)
 {
     image_speed = 0.5
     bultimer += 1
     aft = gml_Script_scr_afterimage_ch1()
-    var _temp_local_var_29 = aft
-    image_alpha = 0.5
+    with (aft)
+        image_alpha = 0.5
+    y -= 16
+    x += 5
+    bultimer += 1
+    if (bultimer >= 10)
+        bulcon = 11
 }
 if (con == 25)
 {

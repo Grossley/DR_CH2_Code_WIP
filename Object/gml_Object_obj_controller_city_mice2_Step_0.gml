@@ -148,9 +148,11 @@ if (victory == false)
                 }
                 if (timer == 5)
                 {
-                    var _temp_local_var_4 = noellemarker
-                    image_speed = 0.25
-                    gml_Script_scr_move_to_point_over_time((x + 80), y, 30)
+                    with (noellemarker)
+                    {
+                        image_speed = 0.25
+                        gml_Script_scr_move_to_point_over_time((x + 80), y, 30)
+                    }
                 }
                 if (timer == 35)
                 {
@@ -204,9 +206,11 @@ if (victory == false)
                 }
                 if (timer == 5)
                 {
-                    var _temp_local_var_6 = noellemarker
-                    image_speed = 0.25
-                    gml_Script_scr_move_to_point_over_time((x + 80), y, 30)
+                    with (noellemarker)
+                    {
+                        image_speed = 0.25
+                        gml_Script_scr_move_to_point_over_time((x + 80), y, 30)
+                    }
                 }
                 if (timer == 35)
                 {
@@ -260,9 +264,11 @@ if (victory == false)
                 }
                 if (timer == 5)
                 {
-                    var _temp_local_var_8 = noellemarker
-                    image_speed = 0.25
-                    gml_Script_scr_move_to_point_over_time((x + 80), y, 30)
+                    with (noellemarker)
+                    {
+                        image_speed = 0.25
+                        gml_Script_scr_move_to_point_over_time((x + 80), y, 30)
+                    }
                 }
                 if (timer == 35)
                 {
@@ -316,9 +322,11 @@ if (victory == false)
                 }
                 if (timer == 5)
                 {
-                    var _temp_local_var_10 = noellemarker
-                    image_speed = 0.25
-                    gml_Script_scr_move_to_point_over_time(760, y, 30)
+                    with (noellemarker)
+                    {
+                        image_speed = 0.25
+                        gml_Script_scr_move_to_point_over_time(760, y, 30)
+                    }
                 }
                 if (timer == 35)
                 {
@@ -381,8 +389,8 @@ if (victory == false)
                 if (timer == 90)
                 {
                     fadein = gml_Script_instance_create(0, 0, obj_fadein)
-                    var _temp_local_var_12 = fadeout
-                    instance_destroy()
+                    with (fadeout)
+                        instance_destroy()
                 }
                 if (timer == 140)
                 {
@@ -464,10 +472,11 @@ if (victory == true)
             with (obj_rotationController_track)
             {
                 rotate = 0
-                var _temp_local_var_16 = controlled
-                move = 0
+                with (controlled)
+                    move = 0
+                global.facing = 0
             }
-            global.facing = 0
+            con++
         }
     }
     if (con == -1 && (!gml_Script_d_ex()) && (!gml_Script_i_ex(1165)) && (!gml_Script_i_ex(1166)))
@@ -531,8 +540,13 @@ if (victory == true)
         scaredNoelle.sprite_index = spr_noelle_walk_up_headtilt_dw
         scaredNoelle.image_xscale = 2
         scaredNoelle.image_yscale = 2
-        var _temp_local_var_19 = scaredNoelle
-        gml_Script_scr_depth()
+        with (scaredNoelle)
+            gml_Script_scr_depth()
+        with (noelle)
+            instance_destroy()
+        global.interact = 0
+        global.flag[7] = 0
+        con++
     }
     if (con == 5.9 && (!gml_Script_d_ex()))
     {
@@ -559,9 +573,25 @@ if (victory == true)
                 with (obj_rotationController_track)
                 {
                     rotate = 0
-                    var _temp_local_var_22 = controlled
-                    move = 0
+                    with (controlled)
+                        move = 0
                 }
+                gml_Script_instance_create(x, y, obj_shake)
+                gml_Script_snd_play(64)
+                gml_Script_snd_play(61)
+                other.endNoelle = gml_Script_instance_create(obj_noelle_scared.x, obj_noelle_scared.y, obj_marker)
+                other.endNoelle.visible = true
+                other.endNoelle.sprite_index = spr_noelle_shocked_dw
+                other.endNoelle.image_index = image_index
+                other.endNoelle.image_xscale = image_xscale
+                other.endNoelle.image_yscale = image_yscale
+                other.endNoelle.image_speed = 0
+                global.interact = 1
+                global.facing = 0
+                other.con++
+                other.timer = 0
+                with (obj_noelle_scared)
+                    instance_destroy()
             }
         }
     }
@@ -571,8 +601,14 @@ if (victory == true)
         if (timer == 45)
         {
             walkDist = floor(((endNoelle.x - obj_mainchara.x) / 8))
-            var _temp_local_var_23 = endNoelle
-            gml_Script_scr_move_to_point_over_time(obj_mainchara.x, y, other.walkDist)
+            with (endNoelle)
+                gml_Script_scr_move_to_point_over_time(obj_mainchara.x, y, other.walkDist)
+            endNoelle.image_speed = 0.25
+            endNoelle.sprite_index = spr_noelle_walk_left_mad_dw
+            timer = 0
+            con++
+            with (endNoelle)
+                gml_Script_scr_depth()
         }
     }
     if (con == 8)
@@ -582,8 +618,8 @@ if (victory == true)
         gml_Script_d_make()
         timer++
         con = 8.1
-        var _temp_local_var_25 = endNoelle
-        gml_Script_scr_depth()
+        with (endNoelle)
+            gml_Script_scr_depth()
     }
     if (con == 8.1)
     {
@@ -626,8 +662,12 @@ if (victory == true)
     {
         obj_caterpillarchara.x = endNoelle.x
         obj_caterpillarchara.y = endNoelle.y
-        var _temp_local_var_27 = endNoelle
-        instance_destroy()
+        with (endNoelle)
+            instance_destroy()
+        global.interact = 1
+        cutscene_master = gml_Script_scr_cutscene_make()
+        gml_Script_scr_maincharacters_actors()
+        con++
     }
     if (con == 12)
     {
@@ -679,12 +719,14 @@ if instance_exists(obj_noelle_scared)
             other.scaredNoelle.sprite_index = sprite_index
             other.scaredNoelle.image_xscale = 2
             other.scaredNoelle.image_yscale = 2
-            var _temp_local_var_29 = other.scaredNoelle
-            gml_Script_scr_set_facing_sprites("noelledark")
+            with (other.scaredNoelle)
+                gml_Script_scr_set_facing_sprites("noelledark")
+            other.scaredNoelle.y = other.scaredNoelle.ystart
+            with (other.scaredNoelle)
+                gml_Script_scr_depth()
+            instance_destroy()
         }
-        other.scaredNoelle.y = other.scaredNoelle.ystart
-        var _temp_local_var_30 = other.scaredNoelle
-        gml_Script_scr_depth()
+        scared++
     }
 }
 if (scared == 1 && (!gml_Script_d_ex()))

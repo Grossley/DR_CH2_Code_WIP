@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 if (obj_mainchara.x > x && con == -1)
 {
     con = 1
@@ -247,8 +248,8 @@ if (con == 3 && customcon == 1)
     global.currentsong[0] = gml_Script_snd_init("queen_car_radio.ogg")
     gml_Script_mus_volume(global.currentsong[1], 0.8, 0)
     global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
-    var _temp_local_var_4 = queencar
-    active = true
+    with (queencar)
+        active = true
 }
 if (con == 4)
 {
@@ -271,27 +272,13 @@ if (con == 6 && queencar.x >= 1740)
     queencar.pause_x_move = 1
     queencar.active = false
     if (queencar.y > 208)
-    {
-        _temp_local_var_4.y = (queencar.y - 6)
-        var _temp_local_var_7 = id
-        var _temp_local_var_8 = stacktop
-        var _temp_local_var_9 = queencar
-    }
+        queencar.y -= 6
     else
-    {
-        _temp_local_var_4.y = (queencar.y + 6)
-        _temp_local_var_7 = id
-        _temp_local_var_8 = stacktop
-        _temp_local_var_9 = queencar
-    }
+        queencar.y += 6
     if (abs((queencar.y - 208)) <= 6)
         queencar.y = 208
-    _temp_local_var_7.x = (queencar.x + 6)
+    queencar.x += 6
     gml_Script_camerax_set((gml_Script_camerax() + 3))
-    var _temp_local_var_10 = stacktop
-    var _temp_local_var_11 = queencar
-    var _temp_local_var_12 = -9
-    var _temp_local_var_13 = queencar
     if (queencar.x >= 2075)
     {
         con = 30
@@ -385,11 +372,7 @@ if break_pie
 }
 if release_car
 {
-    _temp_local_var_10.x = (queencar.x - 5)
-    var _temp_local_var_16 = queencar
-    var _temp_local_var_17 = -9
-    var _temp_local_var_18 = -9
-    var _temp_local_var_19 = queencar
+    queencar.x -= 5
     if (queencar.x <= 400)
         release_car = 0
 }
@@ -420,14 +403,14 @@ if leftside_traffic
     {
         for (var i = 0; i < 4; i++)
         {
-            var j = 0
-            while (j < 6)
+            for (var j = 0; j < 6; j++)
             {
                 xpos = (1500 + (85 * i))
                 ypos = (65 + (j * 55))
                 traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, 2369)
-                var _temp_local_var_20 = traffic_car[i][j]
-                gml_Script_scr_depth()
+                with (traffic_car[i][j])
+                    gml_Script_scr_depth()
+                traffic_car[i][j].image_speed = 0.15
             }
         }
     }
@@ -435,16 +418,8 @@ if leftside_traffic
     {
         for (i = 0; i < array_height_2d(traffic_car); i++)
         {
-            j = 0
-            while (j < array_length_2d(traffic_car, i))
-            {
-                _temp_local_var_16.x = (traffic_car[i][j].x + 13.17)
-                j++
-                var _temp_local_var_21 = -9
-                var _temp_local_var_22 = -9
-                var _temp_local_var_23 = -9
-                var _temp_local_var_24 = traffic_car[i][j]
-            }
+            for (j = 0; j < array_length_2d(traffic_car, i); j++)
+                traffic_car[i][j].x += 13.17
         }
     }
     else

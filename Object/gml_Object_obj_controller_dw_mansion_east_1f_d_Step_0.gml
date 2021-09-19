@@ -15,10 +15,7 @@ if (global.flag[354] == 1 && spawnedViro == 0)
     if (startside == "Left")
         viro = gml_Script_instance_create(380, -128, obj_ow_virokun_mansion_east_1f_d)
     if (startside == "Right")
-    {
-        viro = (((-128).room_width - 380) - (sprite_width * 2))
-        var _temp_local_var_3 = 1241
-    }
+        viro = gml_Script_instance_create(((room_width - 380) - (sprite_width * 2)), -128, obj_ow_virokun_mansion_east_1f_d)
     spawnedViro = 1
 }
 if instance_exists(obj_mainchara)

@@ -1,7 +1,41 @@
-var puzzle_master_npc, desk_marker, desk_collider, help_marker, clover_npc, blockguy_npc, pippins_npc, were_npc, _temp_local_var_1;
 con = -1
 var dojo_npc = gml_Script_instance_create(290, 220, obj_npc_dojo)
-var _temp_local_var_1 = dojo_npc
-gml_Script_scr_depth()
-image_xscale = 2
-image_yscale = 2
+with (dojo_npc)
+{
+    gml_Script_scr_depth()
+    image_xscale = 2
+    image_yscale = 2
+}
+var puzzle_master_npc = gml_Script_instance_create(130, 80, obj_npc_puzzlemaster2)
+with (puzzle_master_npc)
+    gml_Script_scr_depth()
+var desk_marker = gml_Script_scr_marker(84, 112, 3215)
+desk_marker.depth = (puzzle_master_npc.depth - 10)
+var desk_collider = gml_Script_instance_create(84, 115, obj_soliddark)
+desk_collider.image_xscale = 4
+desk_collider.image_yscale = 1.5
+var help_marker = gml_Script_scr_marker(115, 30, 3214)
+with (help_marker)
+    gml_Script_scr_depth()
+var clover_npc = gml_Script_instance_create(370, 248, obj_npc_room)
+clover_npc.sprite_index = spr_clubs_idle
+with (clover_npc)
+    gml_Script_scr_depth()
+var blockguy_npc = gml_Script_instance_create(480, 78, obj_npc_room)
+blockguy_npc.sprite_index = spr_blockguy_idleFriendly
+with (blockguy_npc)
+    gml_Script_scr_depth()
+if (global.flag[640] != 1 || global.plot < 200)
+{
+    var pippins_npc = gml_Script_instance_create(472, 200, obj_npc_room)
+    pippins_npc.sprite_index = spr_npc_pippins
+    with (pippins_npc)
+        gml_Script_scr_depth()
+}
+else
+{
+    var were_npc = gml_Script_instance_create(452, 220, obj_npc_room)
+    were_npc.sprite_index = spr_werewerewire_idle
+    with (were_npc)
+        gml_Script_scr_depth()
+}

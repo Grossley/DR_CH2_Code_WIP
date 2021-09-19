@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (con == 0)
 {
     with (obj_camera_area)
@@ -13,8 +14,8 @@ if (con == 0)
     {
         if gml_Script_i_ex(collider)
         {
-            var _temp_local_var_1 = collider
-            instance_destroy()
+            with (collider)
+                instance_destroy()
         }
     }
     with (obj_caterpillarchara)
@@ -57,7 +58,7 @@ if (con == 2)
     memy = dog.y
     save_object[0] = cutscene_master
     con++
-    var _temp_local_var_2 = dog
+    var _temp_local_var_1 = dog
 }
 if (con == 3)
 {

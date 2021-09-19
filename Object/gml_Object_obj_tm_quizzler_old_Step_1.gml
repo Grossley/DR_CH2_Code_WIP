@@ -1,3 +1,4 @@
+var _temp_local_var_5, _temp_local_var_8;
 if (init == 0 || restart)
 {
     if (init == 0)

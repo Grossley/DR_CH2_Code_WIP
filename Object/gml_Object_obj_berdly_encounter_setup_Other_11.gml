@@ -17,6 +17,13 @@ gml_Script_scr_encountersetup(global.encounterno)
 with (obj_mainchara)
     visible = false
 with (global.cinstance[0])
-{
     visible = false
-}
+with (global.cinstance[1])
+    visible = false
+with (obj_mainchara)
+    fun = false
+with (obj_caterpillarchara)
+    fun = false
+count = 0
+fightcon = 1
+counttimer = 0

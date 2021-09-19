@@ -235,8 +235,15 @@ if (dancecon == 1.1 && (!instance_exists(obj_writer)))
 }
 if (dancecon == 1.15 && (!instance_exists(obj_writer)))
 {
-    var _temp_local_var_12 = susi
-    move_towards_point((obj_heroralsei.x + 100), (obj_heroralsei.y + 5), 10)
+    with (susi)
+        move_towards_point((obj_heroralsei.x + 100), (obj_heroralsei.y + 5), 10)
+    if (susi.y >= (obj_heroralsei.y - 3))
+    {
+        susi.x = (obj_heroralsei.x + 100)
+        susi.y = (obj_heroralsei.y + 5)
+        susi.speed = 0
+        dancecon = 1.2
+    }
 }
 if (dancecon == 1.2 || (dancescenetimer > 0 && dancescenetimer <= 146))
 {
@@ -353,9 +360,18 @@ if (dancecon == 2.4 && (!instance_exists(obj_writer)))
 }
 if (dancecon == 2.5 && (!instance_exists(obj_writer)))
 {
-    var _temp_local_var_20 = susi
-    move_towards_point(obj_herosusie.x, obj_herosusie.y, 10)
-    depth = (obj_heroralsei.depth + 1)
+    with (susi)
+    {
+        move_towards_point(obj_herosusie.x, obj_herosusie.y, 10)
+        depth = (obj_heroralsei.depth + 1)
+    }
+    if (susi.y <= (obj_herosusie.y + 8))
+    {
+        susi.x = obj_herosusie.x
+        susi.y = obj_herosusie.y
+        susi.speed = 0
+        dancecon = 4
+    }
 }
 if (dancecon == 4 && (!instance_exists(obj_writer)))
 {

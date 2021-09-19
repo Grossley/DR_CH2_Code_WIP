@@ -94,14 +94,17 @@ if (con == 4)
 if (con == 5)
 {
     tenemy1 = gml_Script_instance_create(x, y, obj_chaseenemy)
-    var _temp_local_var_4 = tenemy1
-    myencounter = 55
-    sprite_index = spr_virovirokun_idle
-    touchsprite = spr_virovirokun_hurt
-    radius = 1
-    moveradius = 0
-    pacetype = 9
-    chasetype = 3
-    alertskip = 1
-    ignoresolid = false
+    with (tenemy1)
+    {
+        myencounter = 55
+        sprite_index = spr_virovirokun_idle
+        touchsprite = spr_virovirokun_hurt
+        radius = 1
+        moveradius = 0
+        pacetype = 9
+        chasetype = 3
+        alertskip = 1
+        ignoresolid = false
+    }
+    instance_destroy()
 }

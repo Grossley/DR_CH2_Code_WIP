@@ -4,30 +4,44 @@ if (con == 1 && gml_Script___view_get(0, 0) >= 280 && obj_mainchara_ch1.y > 535)
 {
     darksus = gml_Script_scr_dark_marker_ch1(873, 602, 4184)
     darksus.image_speed = 0.2
-    var _temp_local_var_2 = darksus
-    gml_Script_scr_depth_ch1()
+    with (darksus)
+        gml_Script_scr_depth_ch1()
+    suspeed = (point_distance(873, 602, 1116, 720) / 15)
+    darksus.speed = suspeed
+    darksus.direction = point_direction(darksus.x, darksus.y, 1116, 720)
+    con = 2
+    alarm[4] = 15
 }
 if (con == 3)
 {
-    var _temp_local_var_3 = darksus
-    instance_destroy()
+    with (darksus)
+        instance_destroy()
+    con = 4
 }
 if (con == 4 && gml_Script___view_get(0, 0) >= 540 && obj_mainchara_ch1.y > 535)
 {
     darksus2 = gml_Script_scr_dark_marker_ch1(1116, 720, 4184)
     darksus2.image_speed = 0.2
-    var _temp_local_var_5 = darksus2
-    gml_Script_scr_depth_ch1()
+    with (darksus2)
+        gml_Script_scr_depth_ch1()
+    suspeed = (point_distance(1116, 720, 1348, 643) / 15)
+    darksus2.speed = suspeed
+    darksus2.direction = point_direction(darksus2.x, darksus2.y, 1348, 643)
+    con = 5
+    alarm[4] = 15
 }
 if (con == 5)
 {
-    var _temp_local_var_6 = darksus
-    instance_destroy()
+    with (darksus)
+        instance_destroy()
+    con = 6
 }
 if (con == 11)
 {
-    var _temp_local_var_7 = s
-    hspeed = 0
+    with (s)
+        hspeed = 0
+    con = 12
+    alarm[4] = 20
 }
 if (con == 13)
 {
@@ -47,18 +61,30 @@ if (con == 15)
     image_alpha -= 0.04
 if (con == 16)
 {
-    var _temp_local_var_9 = s
-    sprite_index = spr_susiel_dark_ch1
+    with (s)
+        sprite_index = spr_susiel_dark_ch1
+    global.fe = 6
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_78_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_79_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_80_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_81_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_82_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 17
 }
 if (con == 17 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_11 = s
-    sprite_index = spr_susier_dark_ch1
+    with (s)
+        sprite_index = spr_susier_dark_ch1
+    con = 18
+    alarm[4] = 30
 }
 if (con == 19)
 {
-    var _temp_local_var_12 = s
-    sprite_index = spr_susieu_dark_ch1
+    with (s)
+        sprite_index = spr_susieu_dark_ch1
+    con = 20
+    alarm[4] = 30
 }
 if (con == 21)
 {
@@ -74,14 +100,22 @@ if (con == 22 && instance_exists(obj_dialoguer_ch1) == 0)
 }
 if (con == 24)
 {
-    var _temp_local_var_14 = s
-    sprite_index = spr_susiel_dark_ch1
+    with (s)
+        sprite_index = spr_susiel_dark_ch1
+    global.fe = 7
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_119_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 25
 }
 if (con == 25 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_16 = s
-    hspeed = -4
-    image_speed = 0.2
+    with (s)
+    {
+        hspeed = -4
+        image_speed = 0.2
+    }
+    con = 26
+    alarm[4] = 15
 }
 if (con == 27)
 {
@@ -94,8 +128,12 @@ if (con == 27)
 }
 if (con == 29)
 {
-    var _temp_local_var_17 = s
-    instance_destroy()
+    with (s)
+        instance_destroy()
+    with (partysus)
+        visible = true
+    con = 30
+    alarm[4] = 30
 }
 if (con == 31)
 {
@@ -145,13 +183,29 @@ if (con == 33 && global.interact == 0)
 }
 if (con == 34 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_22 = partysus
-    visible = false
+    with (partysus)
+        visible = false
+    news = gml_Script_scr_dark_marker_ch1(partysus.x, partysus.y, 3544)
+    with (news)
+    {
+        move_towards_point(940, 660, 14)
+        image_speed = 0.334
+    }
+    con = 39
+    alarm[4] = 40
 }
 if (con == 35 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    var _temp_local_var_25 = partysus
-    visible = false
+    with (partysus)
+        visible = false
+    news = gml_Script_scr_dark_marker_ch1(partysus.x, partysus.y, 3544)
+    with (news)
+    {
+        hspeed = 14
+        image_speed = 0.334
+    }
+    con = 39
+    alarm[4] = 40
 }
 if (con == 40)
 {
@@ -160,6 +214,8 @@ if (con == 40)
     if (global.plot < 14)
         global.plot = 14
     global.interact = 0
-    var _temp_local_var_27 = news
+    with (news)
+        instance_destroy()
+    con = 41
     instance_destroy()
 }

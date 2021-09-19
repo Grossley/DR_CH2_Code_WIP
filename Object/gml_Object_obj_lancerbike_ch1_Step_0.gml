@@ -26,19 +26,23 @@ if (lcon >= 6 && lcon < 10)
         yoff = lengthdir_y(40, (image_angle - 20))
         gml_Script_snd_play_ch1(362)
         bullet = gml_Script_instance_create_ch1((x - xoff), (y - yoff), 1520)
-        var _temp_local_var_2 = bullet
-        target = obj_lancerbike_ch1.target
-        damage = obj_lancerbike_ch1.damage
-        if (target == 0)
+        with (bullet)
         {
-            if (global.hp[1] <= (global.maxhp[1] / 2))
-                damage = ceil((global.hp[1] / 3))
+            target = obj_lancerbike_ch1.target
+            damage = obj_lancerbike_ch1.damage
+            if (target == 0)
+            {
+                if (global.hp[1] <= (global.maxhp[1] / 2))
+                    damage = ceil((global.hp[1] / 3))
+            }
+            timepoints = 0
+            sprite_index = spr_spadebullet_ch1
+            move_towards_point((obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8), 4)
+            image_angle = direction
+            friction = -0.4
         }
-        timepoints = 0
-        sprite_index = spr_spadebullet_ch1
-        move_towards_point((obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8), 4)
-        image_angle = direction
-        friction = -0.4
+        bullet.depth = (depth + 1)
+        btimer = 0
     }
 }
 if (lcon == 2)
@@ -192,11 +196,7 @@ if (racecon == 2)
     if (s_moveup == 1)
     {
         if (s.y > -20)
-        {
-            _temp_local_var_2.y = (s.y - 10)
-            var _temp_local_var_4 = -9
-            var _temp_local_var_5 = s
-        }
+            s.y -= 10
     }
     if (y < (topy + 10))
         vspeed = 12
@@ -217,8 +217,8 @@ if (racecon == 3)
     {
         gml_Script_snd_play_ch1(441)
         honkimg = gml_Script_instance_create_ch1((x - 60), (y - 40), 1510)
-        var _temp_local_var_7 = honkimg
-        sprite_index = spr_lancernoise_ch1
+        with (honkimg)
+            sprite_index = spr_lancernoise_ch1
     }
     if (rtimer >= 25)
     {
@@ -233,11 +233,7 @@ if (racecon == 4)
 {
     if (s_moveup == 1)
     {
-        _temp_local_var_7.y = (s.y + 10)
-        var _temp_local_var_8 = -9
-        var _temp_local_var_9 = s
-        var _temp_local_var_10 = -9
-        var _temp_local_var_11 = s
+        s.y += 10
         if (s.y >= sy)
         {
             s.y = sy

@@ -9,6 +9,6 @@ if (global.plot >= 14)
 else
 {
     partysus = gml_Script_instance_create_ch1(500, 500, 1489)
-    var _temp_local_var_1 = partysus
-    visible = false
+    with (partysus)
+        visible = false
 }

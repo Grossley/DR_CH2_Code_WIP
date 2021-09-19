@@ -49,15 +49,17 @@ if (state == 0)
     {
         fsiner += 1
         body.fsiner = fsiner
-        var _temp_local_var_4 = body
-        gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
-        if (dancelv == 0)
-            draw_sprite_ext(spr_joker_main_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-        if (dancelv == 1)
-            draw_sprite_ext(spr_joker_dance_ch1, (floatsiner / 3), (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-        if (dancelv == 2)
-            draw_sprite_ext(spr_joker_tired_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-        gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+        with (body)
+        {
+            gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+            if (dancelv == 0)
+                draw_sprite_ext(spr_joker_main_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+            if (dancelv == 1)
+                draw_sprite_ext(spr_joker_dance_ch1, (floatsiner / 3), (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+            if (dancelv == 2)
+                draw_sprite_ext(spr_joker_tired_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+            gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+        }
     }
 }
 if (becomeflash == false)

@@ -36,9 +36,21 @@ if (con == 2)
             }
             gml_Script_snd_play(170)
             gml_Script_snd_play(166)
-            var _temp_local_var_4 = sneo
-            gravity = 0
-            vspeed = 0
+            with (sneo)
+            {
+                gravity = 0
+                vspeed = 0
+            }
+            with (obj_mainchara)
+            {
+                fun = true
+                sprite_index = spr_kris_dw_landed
+                image_speed = 0
+                hspeed = 18
+                friction = 0.8
+            }
+            con = 4
+            alarm[0] = 30
         }
     }
     else
@@ -69,8 +81,17 @@ if (con == 5)
     with (obj_caterpillarchara)
         visible = false
     coaster_empty1 = gml_Script_scr_dark_marker(-100, -100, 2052)
-    var _temp_local_var_5 = coaster_empty1
-    depth = 98900
+    with (coaster_empty1)
+        depth = 98900
+    coaster_empty2 = gml_Script_scr_dark_marker(-100, -100, 2052)
+    with (coaster_empty2)
+        depth = 98000
+    coaster_empty3 = gml_Script_scr_dark_marker(-100, -100, 2052)
+    with (coaster_empty3)
+        depth = 98000
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
+    con = 5.1
 }
 if (con == 5.1 || gml_Script_scr_cutscene_loaded())
 {
@@ -485,29 +506,19 @@ if (con == 7 && customcon == 1 && special_scene == 0)
         with (obj_encounterbasic)
         {
             counttimer = 14
-            _temp_local_var_7.y = (c[2].y - 28)
+            c[2].y -= 28
             fightcon = 2
-            var _temp_local_var_11 = 
-            var _temp_local_var_12 = coaster_empty1
-            var _temp_local_var_13 = -9
-            var _temp_local_var_14 = c[2]
         }
-        instance_destroy()
     }
     else
     {
         with (obj_encounterbasic)
         {
             counttimer = 9
-            _temp_local_var_7.y = (c[2].y - 28)
-            _temp_local_var_11 = 
-            _temp_local_var_12 = coaster_empty1
-            _temp_local_var_13 = -9
-            _temp_local_var_14 = c[2]
-            with (obj_doom)
-                alarm[0] -= 9
+            c[2].y -= 28
         }
-        instance_destroy()
+        with (obj_doom)
+            alarm[0] -= 9
     }
     with (obj_battleback)
         instance_destroy()
@@ -602,8 +613,15 @@ if rudebuster
 }
 if sneo_fly
 {
-    var _temp_local_var_22 = sneo
-    gravity = -2
+    with (sneo)
+        gravity = -2
+    if (sneo.y <= (gml_Script_cameray() - 200))
+    {
+        sneo_fly = 0
+        sneo.gravity = 0
+        sneo.x = 840
+        sneo.y = (gml_Script_cameray() - 200)
+    }
 }
 if sneo_release
 {
@@ -616,8 +634,10 @@ if sneo_release
     if (sneo.y >= 80)
     {
         sneo_release = 0
-        var _temp_local_var_23 = sneo
-        gravity = 0
-        vspeed = 0
+        with (sneo)
+        {
+            gravity = 0
+            vspeed = 0
+        }
     }
 }

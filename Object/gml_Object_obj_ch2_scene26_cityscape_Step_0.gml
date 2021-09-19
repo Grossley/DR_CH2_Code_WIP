@@ -28,8 +28,10 @@ if merge_lightners
     make_new = 1
     merge_lightners = 0
     beam_offset = 0
-    var _temp_local_var_1 = kris_screen
-    gml_Script_scr_move_to_point_over_time(other.sus_screen.x, other.sus_screen.y, other.merge_timer)
+    with (kris_screen)
+        gml_Script_scr_move_to_point_over_time(other.sus_screen.x, other.sus_screen.y, other.merge_timer)
+    with (no_screen)
+        gml_Script_scr_move_to_point_over_time(other.sus_screen.x, other.sus_screen.y, other.merge_timer)
 }
 if make_new
 {

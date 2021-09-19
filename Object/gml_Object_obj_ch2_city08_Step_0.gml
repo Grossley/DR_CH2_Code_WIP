@@ -499,13 +499,13 @@ if (weird == 1)
 if circle_zoom_start
 {
     circle_zoom_timer++
-    if (circle_zoom == -1)
+    if (circle_zoom == self)
         circle_zoom = gml_Script_instance_create((qu_actor.x + 50), (qu_actor.y + 40), obj_circlezoom)
     if (circle_zoom_timer >= 60)
     {
         circle_zoom_start = 0
-        var _temp_local_var_4 = circle_zoom
-        finish = 1
+        with (circle_zoom)
+            finish = 1
     }
 }
 if cityscape_parallax

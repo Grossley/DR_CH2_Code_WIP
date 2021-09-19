@@ -42,9 +42,21 @@ if (con == 4)
 }
 if (con == 5)
 {
-    var _temp_local_var_2 = fellkris
-    image_alpha -= 0.04
-    y += 4
+    with (fellkris)
+    {
+        image_alpha -= 0.04
+        y += 4
+    }
+    timer += 1
+    if (timer >= 120)
+    {
+        con = 6
+        timer = 0
+        gml_Script_snd_free_all()
+        dogcar = gml_Script_instance_create((gml_Script___view_get(0, 0) + 700), (obj_dogcar_gameover.y + 50), obj_dogcar)
+        dogcar.hspeed = -30
+        dogcar.mode = 1
+    }
 }
 if (con == 6)
 {

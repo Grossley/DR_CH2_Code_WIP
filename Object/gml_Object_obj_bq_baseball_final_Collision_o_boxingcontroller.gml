@@ -13,3 +13,9 @@ with (baseball_hitbox)
     image_xscale = 4
     final_attack = 1
 }
+instance_destroy()
+with (o_boxingqueen)
+{
+    friction = 0
+    gravity = 0
+}

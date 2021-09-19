@@ -4,63 +4,97 @@ if (global.chapter == 1)
     {
         if (con == 1 && instance_exists(obj_dialoguer) == 0)
         {
-            var _temp_local_var_3 = t
-            image_index = 0
-            image_speed = 0.25
-            vspeed = -2
-            sprite_index = spr_toriel_u
+            with (t)
+            {
+                image_index = 0
+                image_speed = 0.25
+                vspeed = -2
+                sprite_index = spr_toriel_u
+            }
+            alarm[4] = 20
+            con = 2
         }
         if (con == 3)
         {
-            var _temp_local_var_4 = t
-            image_index = 0
-            image_speed = 0
-            vspeed = 0
+            with (t)
+            {
+                image_index = 0
+                image_speed = 0
+                vspeed = 0
+            }
+            alarm[4] = 10
+            con = 4
         }
         if (con == 5)
         {
-            var _temp_local_var_5 = t
-            image_speed = 0.25
-            sprite_index = spr_toriel_windowopen
+            with (t)
+            {
+                image_speed = 0.25
+                sprite_index = spr_toriel_windowopen
+            }
+            alarm[4] = 10
+            con = 6
+            with (wallwindow)
+                image_index = 1
+            gml_Script_snd_play(51)
         }
         if (con == 7)
         {
-            var _temp_local_var_7 = t
-            image_speed = 0
+            with (t)
+                image_speed = 0
+            con = 8
+            alarm[4] = 20
         }
         if (con == 9)
         {
-            var _temp_local_var_8 = t
-            sprite_index = spr_toriel_d
-            image_index = 0
-            image_speed = 0.25
-            vspeed = 2
+            with (t)
+            {
+                sprite_index = spr_toriel_d
+                image_index = 0
+                image_speed = 0.25
+                vspeed = 2
+            }
+            alarm[4] = 20
+            con = 10
         }
         if (con == 11)
         {
-            var _temp_local_var_9 = t
-            image_index = 0
-            image_speed = 0
-            vspeed = 0
+            with (t)
+            {
+                image_index = 0
+                image_speed = 0
+                vspeed = 0
+            }
+            alarm[4] = 20
+            con = 12
         }
         if (con == 13)
         {
-            var _temp_local_var_10 = t
-            sprite_index = spr_toriel_rt
+            with (t)
+                sprite_index = spr_toriel_rt
+            alarm[4] = 20
+            con = 14
         }
         if (con == 15)
         {
             global.fe = 0
-            var _temp_local_var_11 = t
-            image_speed = 0.25
+            with (t)
+                image_speed = 0.25
+            global.msg[0] = gml_Script_stringsetloc("* I will wait outside for you^1, alright?/%", "obj_krisroom_slash_Step_0_gml_94_0")
+            d = gml_Script_instance_create(0, 0, obj_dialoguer)
+            con = 20
         }
         if (con == 20 && instance_exists(obj_dialoguer) == 0)
         {
-            var _temp_local_var_13 = t
-            image_index = 0
-            sprite_index = spr_toriel_d
-            image_speed = 0.25
-            vspeed = 3
+            with (t)
+            {
+                image_index = 0
+                sprite_index = spr_toriel_d
+                image_speed = 0.25
+                vspeed = 3
+            }
+            alarm[4] = 90
+            con = 21
         }
         if (con == 22)
         {
@@ -138,8 +172,10 @@ if (global.chapter == 1)
             global.filechoice = _remfilechoice
             gml_Script_mus_volume(global.currentsong[1], 0, 100)
             fade = gml_Script_instance_create(0, 0, obj_fadeout)
-            var _temp_local_var_16 = fade
-            fadespeed = 0.01
+            with (fade)
+                fadespeed = 0.01
+            con = 51
+            alarm[4] = 100
         }
         if (con == 52)
         {
@@ -161,9 +197,13 @@ if (global.chapter == 1)
         {
             gml_Script_mus_volume(global.currentsong[1], 0, 50)
             fade = gml_Script_instance_create(0, 0, obj_fadeout)
-            var _temp_local_var_19 = fade
-            fadespeed = 0.02
-            depth = 10000
+            with (fade)
+            {
+                fadespeed = 0.02
+                depth = 10000
+            }
+            con = 101
+            alarm[4] = 50
         }
         if (con == 102)
         {
@@ -240,8 +280,50 @@ if (global.chapter == 2)
     if (con == 8 && (!instance_exists(obj_writer)))
     {
         global.flag[6] = 0
-        var _temp_local_var_24 = whitefade
-        instance_destroy()
+        with (whitefade)
+            instance_destroy()
+        with (obj_marker)
+            instance_destroy()
+        show_border = 1
+        cutscene_master = gml_Script_scr_cutscene_make()
+        tor = 0
+        tor_actor = gml_Script_instance_create(151, 207, obj_actor)
+        gml_Script_scr_actor_setup(tor, tor_actor, "toriel")
+        tor_actor.sprite_index = spr_toriel_u
+        gml_Script_c_sel(0)
+        gml_Script_c_walk_wait("u", 4, 27.5)
+        gml_Script_c_autowalk(0)
+        gml_Script_c_sprite(5)
+        gml_Script_c_imagespeed(0.25)
+        gml_Script_c_walk_wait("r", 4, 12.5)
+        gml_Script_c_halt()
+        gml_Script_c_wait(30)
+        gml_Script_c_speaker("toriel")
+        gml_Script_c_fe(5)
+        gml_Script_c_msgsetloc(0, "* Kris^1, did you eat all of the pie!?/%", "obj_krisroom_slash_Step_0_gml_388_0")
+        gml_Script_c_talk_wait()
+        gml_Script_c_soundplay(216)
+        gml_Script_c_sprite(3)
+        gml_Script_c_wait(60)
+        gml_Script_c_speaker("toriel")
+        gml_Script_c_msgsetloc(0, "\\E3* It is YOUR knife in this empty tin, is it not!?/", "obj_krisroom_slash_Step_0_gml_393_0")
+        gml_Script_c_msgnextloc("\\E8* Oh, Kris.../%", "obj_krisroom_slash_Step_0_gml_394_0")
+        gml_Script_c_talk_wait()
+        gml_Script_c_autowalk(0)
+        gml_Script_c_sprite(7)
+        gml_Script_c_imagespeed(0.25)
+        gml_Script_c_msgsetloc(0, "\\E4* Am I going to have to lock the oven again?/%", "obj_krisroom_slash_Step_0_gml_399_0")
+        gml_Script_c_talk_wait()
+        gml_Script_c_sprite(11)
+        gml_Script_c_walk_wait("l", 2, 25)
+        gml_Script_c_sprite(10)
+        gml_Script_c_halt()
+        gml_Script_c_msgsetloc(0, "\\E1* Well^1, hurry out of bed^1. It is time for school./%", "obj_krisroom_slash_Step_0_gml_406_0")
+        gml_Script_c_talk_wait()
+        gml_Script_c_sprite(8)
+        gml_Script_c_imagespeed(0.25)
+        gml_Script_c_walk_wait("d", 2, 75)
+        con = 9
     }
     if (con == 9 && (!instance_exists(obj_cutscene_master)))
         con = 22

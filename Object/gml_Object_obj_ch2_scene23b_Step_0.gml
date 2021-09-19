@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (moon != noone)
     moon.x = ((gml_Script___view_get(0, 0) * 0.5) + moon.xstart)
 if (global.flag[319] == 0)
@@ -20,7 +21,7 @@ if (global.flag[319] == 0)
         gml_Script_scr_actor_setup(no, no_actor, "noelle")
         no_actor.sprite_index = spr_cutscene_23b_noelle_kneel_forward
         save_object[0] = cutscene_master
-        var _temp_local_var_3 = id
+        var _temp_local_var_1 = id
     }
     if (con == 1)
     {
@@ -417,15 +418,14 @@ if (global.flag[319] == 0)
         rudebuster_timer++
         if (rudebuster_timer == 1)
         {
-            rudebusteranim = gml_Script_instance_create((gml_Script_camerax() - 60), ((obj_rudebuster_bolt).room_height / 2), id)
+            rudebusteranim = gml_Script_instance_create((gml_Script_camerax() - 60), (room_height / 2), obj_rudebuster_bolt)
             rudebusteranim.target = werewire2
         }
         if (rudebuster_timer == 16)
         {
             rudebuster = 0
-            rudebusteranim = (gml_Script_camerax() - 60)
+            rudebusteranim = gml_Script_instance_create((gml_Script_camerax() - 60), (room_height / 2), obj_rudebuster_bolt)
             rudebusteranim.target = werewire1
-            _temp_local_var_3 = ((obj_rudebuster_bolt).room_height / 2)
         }
     }
     if (sparecon == 1)
@@ -469,14 +469,14 @@ if (steal_susie && (!gml_Script_d_ex()))
     steal_susie = 0
     global.flag[393] = 1
     gml_Script_snd_play(172)
-    var _temp_local_var_5 = susie_statue
-    instance_destroy()
+    with (susie_statue)
+        instance_destroy()
 }
 if (steal_icee && (!gml_Script_d_ex()))
 {
     steal_icee = 0
     global.flag[394] = 1
     gml_Script_snd_play(172)
-    var _temp_local_var_7 = icee_cushion
-    instance_destroy()
+    with (icee_cushion)
+        instance_destroy()
 }

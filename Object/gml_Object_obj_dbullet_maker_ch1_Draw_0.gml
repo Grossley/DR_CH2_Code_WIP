@@ -27,9 +27,11 @@ if (dont == 0)
                 mybul.target = target
                 mybul.sprite_index = spr_diamondbullet_ch1
                 mybul.direction = futuredir
-                var _temp_local_var_2 = mybul
-                speed = 6
-                image_angle = direction
+                with (mybul)
+                {
+                    speed = 6
+                    image_angle = direction
+                }
             }
             times += 1
             activetimer = 0

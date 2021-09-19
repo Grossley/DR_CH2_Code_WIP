@@ -64,83 +64,104 @@ if (state == 0)
         }
         slideSus = gml_Script_instance_create(susX, susY, obj_marker)
         slideRal = gml_Script_instance_create(ralX, ralY, obj_marker)
-        var _temp_local_var_2 = slideSus
-        con = 0
-        sprite_index = spr_susie_slide
-        image_xscale = 2
-        image_yscale = 2
-        image_speed = 0.25
-        depth = 900000
-        timer = 0
+        with (slideSus)
+        {
+            con = 0
+            sprite_index = spr_susie_slide
+            image_xscale = 2
+            image_yscale = 2
+            image_speed = 0.25
+            depth = 900000
+            timer = 0
+        }
+        with (slideRal)
+        {
+            con = 0
+            sprite_index = spr_ralsei_slide
+            image_xscale = 2
+            image_yscale = 2
+            image_speed = 0.25
+            depth = 900000
+            timer = 0
+        }
+        gml_Script_snd_play(64)
+        slideSound = gml_Script_snd_loop(236)
+        alarm[1] = 1
+        state = 1
+        gml_Script_instance_create(0, 0, obj_battlealphaer)
     }
 }
-if (slideRal != 0)
+if (slideRal != obj_sneo_friedpipis)
 {
-    var _temp_local_var_4 = slideRal
-    depth = 900000
-    if (con == 0)
+    with (slideRal)
     {
-        desiredpoint = 210
-        if (((gml_Script_charaX() - 64) - 10) > desiredpoint)
-            desiredpoint = ((gml_Script_charaX() - 64) - 10)
-        gml_Script_scr_move_to_point_over_time(desiredpoint, 148, 10)
-        con++
-    }
-    if (con == 1)
-    {
-        timer++
-        if (timer == 60)
-            con++
-    }
-    if (con == 2)
-    {
-        if (other.slideSus.con == 2)
+        depth = 900000
+        if (con == 0)
         {
-            other.slideSus.con = 3
+            desiredpoint = 210
+            if (((gml_Script_charaX() - 64) - 10) > desiredpoint)
+                desiredpoint = ((gml_Script_charaX() - 64) - 10)
+            gml_Script_scr_move_to_point_over_time(desiredpoint, 148, 10)
             con++
         }
+        if (con == 1)
+        {
+            timer++
+            if (timer == 60)
+                con++
+        }
+        if (con == 2)
+        {
+            if (other.slideSus.con == 2)
+            {
+                other.slideSus.con = 3
+                con++
+            }
+        }
+        if (con == 3)
+        {
+            y += 8
+            image_alpha *= 0.99
+            if (y > ((gml_Script_cameray() + 480) + 32))
+                instance_destroy()
+        }
+        if (y > 360)
+            image_alpha -= 0.1
     }
-    if (con == 3)
-    {
-        y += 8
-        image_alpha *= 0.99
-        if (y > ((gml_Script_cameray() + 480) + 32))
-            instance_destroy()
-    }
-    if (y > 360)
-        image_alpha -= 0.1
 }
 if (slideSus != obj_sneo_friedpipis)
 {
-    var _temp_local_var_5 = slideSus
-    depth = 900000
-    if (con == 0)
+    with (slideSus)
     {
-        desiredpoint = 260
-        if (desiredpoint < ((gml_Script_charaX() + 28) + 10))
-            desiredpoint = ((gml_Script_charaX() + 28) + 10)
-        desiredpoint = clamp(desiredpoint, 260, 390)
-        gml_Script_scr_move_to_point_over_time(desiredpoint, 148, 10)
-        con++
-    }
-    if (con == 1)
-    {
-        timer++
-        if (timer == 60)
+        depth = 900000
+        if (con == 0)
+        {
+            desiredpoint = 260
+            if (desiredpoint < ((gml_Script_charaX() + 28) + 10))
+                desiredpoint = ((gml_Script_charaX() + 28) + 10)
+            desiredpoint = clamp(desiredpoint, 260, 390)
+            gml_Script_scr_move_to_point_over_time(desiredpoint, 148, 10)
             con++
+        }
+        if (con == 1)
+        {
+            timer++
+            if (timer == 60)
+                con++
+        }
+        if (con == 2)
+        {
+        }
+        if (con == 3)
+        {
+            y += 10
+            image_alpha *= 0.99
+            if (y > ((gml_Script_cameray() + 480) + 32))
+                instance_destroy()
+        }
+        if (y > 360)
+            image_alpha -= 0.1
     }
-    if (con == 2)
-    {
-    }
-    if (con == 3)
-    {
-        y += 10
-        image_alpha *= 0.99
-        if (y > ((gml_Script_cameray() + 480) + 32))
-            instance_destroy()
-    }
-    if (y > 360)
-        image_alpha -= 0.1
 }
 if (state > 0)
 {
@@ -225,8 +246,11 @@ if fadingOut
     {
         with (obj_mainchara)
             battlemode = 0
-        var _temp_local_var_6 = gml_Script_instance_create(0, 0, obj_persistentfadein)
-        image_blend = c_white
+        with (gml_Script_instance_create(0, 0, obj_persistentfadein))
+            image_blend = c_white
+        global.interact = 3
+        global.entrance = 1
+        room_goto_next()
     }
 }
 depth = (obj_mainchara.depth + 1)

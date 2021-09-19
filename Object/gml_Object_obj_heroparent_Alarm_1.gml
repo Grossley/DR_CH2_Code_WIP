@@ -24,11 +24,13 @@ if (cancelattack == false)
     if (damage == 0)
     {
         dm.delay = 2
-        var _temp_local_var_2 = global.monsterinstance[global.chartarget[myself]]
-        if (hurttimer <= 15 && candodge == true)
+        with (global.monsterinstance[global.chartarget[myself]])
         {
-            dodgetimer = 0
-            state = 4
+            if (hurttimer <= 15 && candodge == true)
+            {
+                dodgetimer = 0
+                state = 4
+            }
         }
     }
     dm.damage = damage
@@ -56,8 +58,8 @@ if (cancelattack == false)
         global.monsterhp[global.chartarget[myself]] -= damage
     if (is_auto_susie == true && global.monsterhp[global.chartarget[myself]] <= 0)
     {
-        var _temp_local_var_6 = global.chartarget[myself]
-        global.flag[(51 + myself)] = 5
+        with (global.chartarget[myself])
+            global.flag[(51 + myself)] = 5
     }
     if (damage > 0)
     {
@@ -118,10 +120,12 @@ if (cancelattack == false)
                     hurttimer2 = 10
                 }
             }
-            var _temp_local_var_26 = global.monsterinstance[global.chartarget[myself]]
-            shakex = 9
-            state = 3
-            hurttimer = 30
+            with (global.monsterinstance[global.chartarget[myself]])
+            {
+                shakex = 9
+                state = 3
+                hurttimer = 30
+            }
         }
         if gml_Script_i_ex(global.monsterinstance[global.chartarget[myself]])
             global.monsterinstance[global.chartarget[myself]].hurtamt = damage
@@ -142,12 +146,12 @@ if (cancelattack == false)
         a = 3
     if (global.monsterhp[global.chartarget[myself]] <= 0 && a == 0)
     {
-        var _temp_local_var_14 = global.monsterinstance[global.chartarget[myself]]
-        gml_Script_scr_monsterdefeat()
+        with (global.monsterinstance[global.chartarget[myself]])
+            gml_Script_scr_monsterdefeat()
     }
     if (global.chapter == 2 && global.monsterhp[global.chartarget[myself]] <= 0 && a == 3)
     {
-        var _temp_local_var_16 = global.monsterinstance[global.chartarget[myself]]
-        endcon = 1
+        with (global.monsterinstance[global.chartarget[myself]])
+            endcon = 1
     }
 }

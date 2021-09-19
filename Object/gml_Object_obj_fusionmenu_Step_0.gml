@@ -216,7 +216,7 @@ if (init == 0)
             if (global.flag[dojoFlag[j]] >= 1)
             {
                 optionCommentAColor[0][j] = 65535
-                var _temp_local_var_1 = optionCommentA[0][j]
+                optionCommentA[0][j][j] += gml_Script_stringsetloc("!", "obj_fusionmenu_slash_Step_0_gml_244_0")
             }
             optionTopComment[0][j] = dojoTopComment[j]
         }

@@ -9,18 +9,18 @@ if (global.flag[106] == 1)
 {
     moss_readable = gml_Script_instance_create(470, 386, obj_readable_room1)
     moss = gml_Script_scr_marker(460, 366, 3126)
-    var _temp_local_var_1 = moss
-    depth = 900000
+    with (moss)
+        depth = 900000
 }
 if (global.flag[207] >= 2)
 {
     trash = gml_Script_scr_marker(301, 108, 3298)
-    var _temp_local_var_2 = trash
-    gml_Script_scr_depth()
+    with (trash)
+        gml_Script_scr_depth()
 }
 else
 {
     manual_stand = gml_Script_scr_marker(301, 108, 1194)
-    var _temp_local_var_3 = manual_stand
-    gml_Script_scr_depth()
+    with (manual_stand)
+        gml_Script_scr_depth()
 }

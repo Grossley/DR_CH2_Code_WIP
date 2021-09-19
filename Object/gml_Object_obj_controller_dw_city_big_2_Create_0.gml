@@ -18,7 +18,8 @@ if (global.flag[383] == 1)
 {
     con = 9999
     bothToggled = 1
-    var _temp_local_var_1 = forcefield
+    with (forcefield)
+        instance_destroy()
     instance_destroy()
 }
 weird_prompt = 0

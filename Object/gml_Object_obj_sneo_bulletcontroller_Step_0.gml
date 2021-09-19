@@ -1,3 +1,4 @@
+var _temp_local_var_6, _temp_local_var_62, _temp_local_var_63;
 if (global.mercymod[obj_spamton_neo_enemy.myself] > 99 && global.turntimer > 1)
     global.turntimer = 1
 if (init == 0)
@@ -44,17 +45,14 @@ if (type == 0)
             d = gml_Script_instance_create((sneoarm_x + lengthdir_x(60, (armangle - 90))), (sneoarm_y + lengthdir_y(60, (armangle - 90))), obj_sneo_biglaser)
             d.direction = (armangle - 90)
             d.image_angle = (armangle - 90)
-            sneo.y.depth = (d.depth + 1)
+            d.depth += 1
             d.damage = (damage * 2)
             d.target = target
             sneo.aimmode = 1
             sneo.armaim = armangle
             sneo.partmode = 3
+            var _temp_local_var_62 = sneo.y
             var _temp_local_var_63 = sneo.x
-            var _temp_local_var_64 = -9
-            var _temp_local_var_65 = d
-            var _temp_local_var_66 = sneo.y
-            var _temp_local_var_67 = sneo.x
         }
         else if (btimer == 90 || btimer == 200 || btimer == 310)
         {
@@ -864,8 +862,32 @@ if (type == 12)
         face.damage = damage
         if (obj_spamton_neo_enemy.faceattackcount == 1)
             face.first_time = 1
-        var _temp_local_var_24 = face
-        event_user(0)
+        with (face)
+            event_user(0)
+        obj_sneo_bulletcontroller.facetimeincrease = 0
+        if (obj_spamton_neo_enemy.eyeshp <= 0)
+            obj_sneo_bulletcontroller.facetimeincrease++
+        if (obj_spamton_neo_enemy.nosehp <= 0)
+            obj_sneo_bulletcontroller.facetimeincrease++
+        if (obj_spamton_neo_enemy.mouthhp <= 0)
+            obj_sneo_bulletcontroller.facetimeincrease++
+        with (obj_sneo_faceattack)
+        {
+            if (type != 1)
+            {
+                if (obj_sneo_bulletcontroller.facetimeincrease == 1)
+                    timer += 20
+                if (obj_sneo_bulletcontroller.facetimeincrease == 2 || obj_sneo_bulletcontroller.facetimeincrease == 3)
+                    timer += 50
+            }
+            if (type == 1)
+            {
+                if (obj_sneo_bulletcontroller.facetimeincrease == 1)
+                    timer += 20
+                if (obj_sneo_bulletcontroller.facetimeincrease == 2 || obj_sneo_bulletcontroller.facetimeincrease == 3)
+                    timer += 20
+            }
+        }
     }
     if (global.turntimer > 80 && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == 1 && obj_spamton_neo_enemy.facebroken == 0)
     {

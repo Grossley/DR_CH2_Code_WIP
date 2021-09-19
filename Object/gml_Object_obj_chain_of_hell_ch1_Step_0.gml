@@ -88,8 +88,10 @@ if (chaincon == 6)
     framerule = 0
     if (chainrate == 1)
     {
-        var _temp_local_var_2 = chain[chain_number]
-        instance_destroy()
+        with (chain[chain_number])
+            instance_destroy()
+        chain_number -= 1
+        chain_max -= 1
     }
     chaincon = 10
 }
@@ -106,8 +108,10 @@ if (chaincon == 10)
         chaintimer = (chainrate * factor)
         if (chain_number >= 0)
         {
-            var _temp_local_var_3 = chain[chain_number]
-            instance_destroy()
+            with (chain[chain_number])
+                instance_destroy()
+            chain_number -= 1
+            chain_max -= 1
         }
     }
     if (path_position >= 1)

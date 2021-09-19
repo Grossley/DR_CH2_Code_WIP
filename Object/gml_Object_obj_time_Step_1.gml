@@ -8,14 +8,7 @@ if (!paused)
         {
             var sw = surface_get_width(application_surface)
             var sh = surface_get_height(application_surface)
-            screenshot = (obj_sneo_friedpipis).application_surface
-            var _temp_local_var_2 = 0
-            var _temp_local_var_3 = sw
-            var _temp_local_var_4 = sh
-            var _temp_local_var_5 = 0
-            var _temp_local_var_6 = 0
-            var _temp_local_var_7 = 0
-            var _temp_local_var_8 = 0
+            screenshot = sprite_create_from_surface(application_surface, 0, 0, sw, sh, false, false, 0, 0)
         }
         return;
     }
@@ -38,15 +31,40 @@ if gml_Script_scr_debug()
         remturntimer = global.turntimer
         remcamerax = gml_Script_camerax()
         remcameray = gml_Script_cameray()
-        var i = obj_sneo_friedpipis
-        while i.instance_count
+        for (var i = 0; i < instance_count; i++)
         {
             instance_list[i] = instance_id_get(i)
             xstart_list[i] = instance_list[i].xstart
             ystart_list[i] = instance_list[i].ystart
             object_list[i] = instance_list[i].object_index
-            var _temp_local_var_10 = instance_list[i]
-            __quickSaved = 1
+            with (instance_list[i])
+                __quickSaved = 1
+            __masterArray = variable_instance_get_names(instance_list[i])
+            __arrayLength[i] = array_length_1d(__masterArray)
+            for (var __n = 0; __n < __arrayLength[i]; __n++)
+            {
+                __remArray[i][__n] = __masterArray[__n]
+                ___saveSpriteIndex[i] = instance_list[i].sprite_index
+                ___saveImageIndex[i] = instance_list[i].image_index
+                ___saveXscale[i] = instance_list[i].image_xscale
+                ___saveYscale[i] = instance_list[i].image_yscale
+                ___saveAlpha[i] = instance_list[i].image_alpha
+                ___saveBlend[i] = instance_list[i].image_blend
+                ___saveAngle[i] = instance_list[i].image_angle
+                ___saveX[i] = instance_list[i].x
+                ___saveY[i] = instance_list[i].y
+                ___saveSpeed[i] = instance_list[i].speed
+                ___saveDirection[i] = instance_list[i].direction
+                ___saveDepth[i] = instance_list[i].depth
+                ___saveVisible[i] = instance_list[i].visible
+                ___saveGravity[i] = instance_list[i].gravity
+                ___saveGravityDirection[i] = instance_list[i].gravity_direction
+                ___saveFriction[i] = instance_list[i].friction
+                if (__masterArray[__n] == "__myVar")
+                    __myVar[i][__n] = 0
+                else
+                    __myVar[i][__n] = variable_instance_get(instance_list[i], __masterArray[__n])
+            }
         }
         reminstancecount = instance_count
     }
@@ -73,13 +91,13 @@ if gml_Script_scr_debug()
             {
                 instance_list[i] = gml_Script_instance_create(xstart_list[i], ystart_list[i], obj_marker)
                 instance_list[i].__changeobject = object_list[i]
-                var _temp_local_var_13 = instance_list[i]
-                instance_change(__changeobject, false)
+                with (instance_list[i])
+                    instance_change(__changeobject, false)
             }
         }
         for (i = 0; i < reminstancecount; i++)
         {
-            for (var __n = 0; __n < __arrayLength[i]; __n++)
+            for (__n = 0; __n < __arrayLength[i]; __n++)
             {
                 instance_list[i].sprite_index = ___saveSpriteIndex[i]
                 instance_list[i].image_index = ___saveImageIndex[i]

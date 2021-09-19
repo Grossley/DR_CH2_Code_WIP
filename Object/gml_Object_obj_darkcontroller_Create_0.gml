@@ -69,22 +69,24 @@ for (i = 0; i < 3; i += 1)
         {
             global.cinstance[(i - 1)] = gml_Script_instance_create((obj_mainchara.x - 2), (obj_mainchara.y - 12), obj_caterpillarchara)
             global.cinstance[(i - 1)].target = (i * 12)
-            var _temp_local_var_1 = global.cinstance[(i - 1)]
-            name = "ralsei"
-            slidesprite = spr_ralsei_slide
-            if (global.chapter >= 2)
+            with (global.cinstance[(i - 1)])
             {
-                usprite = spr_ralsei_walk_up
-                dsprite = spr_ralsei_walk_down
-                rsprite = spr_ralsei_walk_right
-                lsprite = spr_ralsei_walk_left
-            }
-            else
-            {
-                usprite = spr_ralseiu
-                dsprite = spr_ralseid
-                rsprite = spr_ralseir
-                lsprite = spr_ralseil
+                name = "ralsei"
+                slidesprite = spr_ralsei_slide
+                if (global.chapter >= 2)
+                {
+                    usprite = spr_ralsei_walk_up
+                    dsprite = spr_ralsei_walk_down
+                    rsprite = spr_ralsei_walk_right
+                    lsprite = spr_ralsei_walk_left
+                }
+                else
+                {
+                    usprite = spr_ralseiu
+                    dsprite = spr_ralseid
+                    rsprite = spr_ralseir
+                    lsprite = spr_ralseil
+                }
             }
         }
     }
@@ -96,13 +98,15 @@ for (i = 0; i < 3; i += 1)
         {
             global.cinstance[(i - 1)] = gml_Script_instance_create((obj_mainchara.x - 4), (obj_mainchara.y - 20), obj_caterpillarchara)
             global.cinstance[(i - 1)].target = (i * 12)
-            var _temp_local_var_2 = global.cinstance[(i - 1)]
-            name = "noelle"
-            slidesprite = spr_noelle_walk_down_dw
-            usprite = spr_noelle_walk_up_dw
-            dsprite = spr_noelle_walk_down_dw
-            rsprite = spr_noelle_walk_right_dw
-            lsprite = spr_noelle_walk_left_dw
+            with (global.cinstance[(i - 1)])
+            {
+                name = "noelle"
+                slidesprite = spr_noelle_walk_down_dw
+                usprite = spr_noelle_walk_up_dw
+                dsprite = spr_noelle_walk_down_dw
+                rsprite = spr_noelle_walk_right_dw
+                lsprite = spr_noelle_walk_left_dw
+            }
         }
     }
 }

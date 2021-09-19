@@ -39,9 +39,27 @@ if (roomno == 2)
 if (roomno == 3)
 {
     holesolid = gml_Script_instance_create_ch1(280, 280, 1656)
-    var _temp_local_var_1 = holesolid
-    image_xscale = 2
-    image_yscale = 2
+    with (holesolid)
+    {
+        image_xscale = 2
+        image_yscale = 2
+    }
+    hole = gml_Script_scr_dark_marker_ch1(280, 280, 4056)
+    with (hole)
+    {
+        image_xscale = 2
+        image_yscale = 2
+        depth = 950000
+    }
+    battlemoder = true
+    lancer_side = 0
+    proper_choice = 1
+    darkponman = gml_Script_instance_create_ch1(((room_width / 2) - 28), 268, 1502)
+    with (obj_darkponman_ow_ch1)
+    {
+        boss = false
+        bmax = 8
+    }
 }
 if (roomno == 5)
 {
@@ -81,9 +99,50 @@ if (roomno == 7)
 if (roomno == 8)
 {
     holesolid = gml_Script_instance_create_ch1(180, 380, 1656)
-    var _temp_local_var_3 = holesolid
-    image_xscale = 2
-    image_yscale = 2
+    with (holesolid)
+    {
+        image_xscale = 2
+        image_yscale = 2
+    }
+    hole = gml_Script_scr_dark_marker_ch1(180, 380, 4056)
+    with (hole)
+    {
+        image_xscale = 2
+        image_yscale = 2
+        depth = 950000
+    }
+    holesolid = gml_Script_instance_create_ch1(380, 380, 1656)
+    with (holesolid)
+    {
+        image_xscale = 2
+        image_yscale = 2
+    }
+    hole = gml_Script_scr_dark_marker_ch1(380, 380, 4056)
+    with (hole)
+    {
+        image_xscale = 2
+        image_yscale = 2
+        depth = 950000
+    }
+    battlemoder = true
+    proper_choice = 3
+    lancer_side = 2
+    susie_side = 4
+    darkponman = gml_Script_instance_create_ch1(((room_width / 2) - 126), 368, 1502)
+    with (obj_darkponman_ow_ch1)
+    {
+        boss = false
+        bmax = 8
+        rot = 180
+    }
+    darkponman = gml_Script_instance_create_ch1(((room_width / 2) + 72), 368, 1502)
+    with (darkponman)
+    {
+        boss = false
+        bmax = 8
+        rotspeed = -4
+        rot = 0
+    }
 }
 if (lancer_side >= 0)
 {

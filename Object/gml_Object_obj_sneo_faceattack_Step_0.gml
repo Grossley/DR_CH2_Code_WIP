@@ -76,8 +76,9 @@ if first_time
 }
 if (broken == 1 && type != 0 && destroytarget == 0)
 {
-    var _temp_local_var_2 = targ
-    instance_destroy()
+    with (targ)
+        instance_destroy()
+    destroytarget = 1
 }
 timer++
 if (image_alpha < 1 && global.turntimer > 21)
@@ -168,11 +169,7 @@ if (type == 2 && broken == 0)
             bullet.friction = 0.4
             bullet.vspeed = (-4 + (i * 4.5))
             if (brokenmod == 2)
-            {
-                _temp_local_var_2.vspeed = (bullet.vspeed + randomvspeed)
-                var _temp_local_var_10 = -9
-                var _temp_local_var_11 = bullet
-            }
+                bullet.vspeed += randomvspeed
             bullet.hspeed = -3
             bullet.target = target
             bullet.damage = damage
@@ -200,11 +197,7 @@ if (type == 3 && broken == 0)
         bullet.hspeed = random_range(-4, -7)
         bullet.vspeed = random_range(6, -2)
         if (obj_heart.y >= obj_growtangle.y)
-        {
-            _temp_local_var_2.vspeed = (bullet.vspeed + 1)
-            var _temp_local_var_15 = -9
-            var _temp_local_var_16 = bullet
-        }
+            bullet.vspeed += 1
         bullet.gravity = -0.2
         bullet.target = target
         bullet.damage = damage

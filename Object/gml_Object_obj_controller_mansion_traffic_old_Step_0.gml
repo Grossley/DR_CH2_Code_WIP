@@ -1,20 +1,22 @@
 if (obj_mainchara.x > x && (!gml_Script_i_ex(carGen)) && victory == false)
 {
     carGen = gml_Script_instance_create(1120, 262, obj_traffic_car_generator)
-    var _temp_local_var_2 = carGen
-    image_xscale = 2
-    image_yscale = 2
-    group = 0
-    gen_rate = 10
-    timer = -2
-    gen_speed = 15
-    car_sprite = 2371
-    skipEvery = 0
+    with (carGen)
+    {
+        image_xscale = 2
+        image_yscale = 2
+        group = 0
+        gen_rate = 10
+        timer = -2
+        gen_speed = 15
+        car_sprite = 2371
+        skipEvery = 0
+    }
 }
 if (obj_mainchara.x < x && gml_Script_i_ex(carGen))
 {
-    var _temp_local_var_4 = carGen
-    instance_destroy()
+    with (carGen)
+        instance_destroy()
 }
 if (obj_mainchara.x < x)
 {
@@ -56,8 +58,8 @@ if (victory == true)
                 runCar.hspeed = -16
                 if (madeblock == 1)
                 {
-                    var _temp_local_var_5 = myblock
-                    instance_destroy()
+                    with (myblock)
+                        instance_destroy()
                 }
                 instance_destroy()
             }
@@ -74,8 +76,8 @@ if (victory == true)
         {
             if (madeblock == 1)
             {
-                var _temp_local_var_6 = myblock
-                instance_destroy()
+                with (myblock)
+                    instance_destroy()
             }
             instance_destroy()
         }

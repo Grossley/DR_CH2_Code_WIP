@@ -28,7 +28,7 @@ if (room == room_alphysclass_ch1)
         rtsprite = spr_noelle_ut_r_ch1
         utsprite = spr_noelle_ut_ch1
         ltsprite = spr_noelle_ut_l_ch1
-        if (x > obj_npc_musical_door)
+        if (x > 120)
         {
             utsprite = spr_berdly_ut_ch1
             rtsprite = spr_berdly_ut_r_ch1
@@ -42,7 +42,7 @@ if (room == room_alphysclass_ch1)
         utsprite = spr_catti_ut_ch1
         rtsprite = spr_catti_ut_ch1
         ltsprite = spr_catti_ut_ch1
-        if (x > obj_npc_musical_door)
+        if (x > 120)
         {
             dtsprite = spr_mkid_ut_ch1
             rtsprite = spr_mkid_ut_r_ch1
@@ -56,7 +56,7 @@ if (room == room_alphysclass_ch1)
         utsprite = spr_jockington_ut_ch1
         rtsprite = spr_jockington_rt_ch1
         ltsprite = spr_jockington_lt_ch1
-        if (x > obj_npc_musical_door)
+        if (x > 120)
         {
             utsprite = spr_snowy_ut_ch1
             ltsprite = spr_snowy_ut_l_ch1
@@ -117,7 +117,7 @@ if (room == room_forest_maze_deadend2_ch1)
 if (room == room_field_boxpuzzle_ch1)
 {
     type = 0
-    if (x.room_width / 2)
+    if (x < (room_width / 2))
     {
         sprite_index = spr_ralseid_ch1
         dtsprite = spr_ralseid_ch1

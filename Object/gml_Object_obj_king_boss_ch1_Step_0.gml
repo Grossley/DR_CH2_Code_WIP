@@ -293,13 +293,20 @@ if (global.myfight == 3)
         global.acting[1] = 0
         gml_Script_snd_play_ch1(414)
         heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), 1402)
-        var _temp_local_var_11 = heartanim
-        depth = -20
-        image_index = 0
-        image_xscale = 2
-        image_yscale = 2
-        image_speed = 1
-        sprite_index = spr_soulshining_ch1
+        with (heartanim)
+        {
+            depth = -20
+            image_index = 0
+            image_xscale = 2
+            image_yscale = 2
+            image_speed = 1
+            sprite_index = spr_soulshining_ch1
+        }
+        with (obj_herokris_ch1)
+            gml_Script_scr_oflash_ch1()
+        with (obj_herosusie_ch1)
+            gml_Script_scr_oflash_ch1()
+        actcon = 12
     }
     if (actcon == 12)
     {
@@ -329,13 +336,20 @@ if (global.myfight == 3)
         global.acting[2] = 0
         gml_Script_snd_play_ch1(414)
         heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), 1402)
-        var _temp_local_var_13 = heartanim
-        depth = -20
-        image_index = 0
-        image_xscale = 2
-        image_yscale = 2
-        image_speed = 1
-        sprite_index = spr_soulshining_ch1
+        with (heartanim)
+        {
+            depth = -20
+            image_index = 0
+            image_xscale = 2
+            image_yscale = 2
+            image_speed = 1
+            sprite_index = spr_soulshining_ch1
+        }
+        with (obj_heroralsei_ch1)
+            gml_Script_scr_oflash_ch1()
+        with (obj_herokris_ch1)
+            gml_Script_scr_oflash_ch1()
+        actcon = 22
     }
     if (actcon == 22)
     {

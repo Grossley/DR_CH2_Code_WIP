@@ -15,8 +15,56 @@ if (active == true)
                 gml_Script_snd_play(choose(164, 165))
                 brokenpot = gml_Script_scr_dark_marker(x, y, sprite_index)
                 brokenpot.image_index = 1
-                var _temp_local_var_2 = brokenpot
-                gml_Script_scr_depth_alt()
+                with (brokenpot)
+                    gml_Script_scr_depth_alt()
+                if (room == room_dw_mansion_east_2f_c)
+                {
+                    if instance_exists(obj_swatch_potchaser)
+                    {
+                        with (obj_swatch_potchaser)
+                        {
+                            newenem = gml_Script_instance_create(x, y, obj_chaseenemy)
+                            with (newenem)
+                            {
+                                if (other.sprite_index == spr_npc_swatchling_scared)
+                                {
+                                    if (other.image_xscale == -2)
+                                    {
+                                        x = (other.x - 110)
+                                        y = (other.y + 2)
+                                    }
+                                    else
+                                    {
+                                        x = (other.x - 12)
+                                        y = (other.y + 2)
+                                    }
+                                }
+                                else if (other.image_xscale == -2)
+                                {
+                                    x = (other.x - 142)
+                                    y = other.y
+                                }
+                                else
+                                {
+                                    x = (other.x + 24)
+                                    y = other.y
+                                }
+                                myencounter = 56
+                                sprite_index = spr_npc_swatchling_sweep_walk
+                                touchsprite = spr_npc_swatchling_sweep_walk
+                                radius = 10000
+                                ignoresolid = true
+                                alertcon = 0
+                                eraser = true
+                                facing = 1
+                            }
+                            instance_destroy()
+                        }
+                    }
+                    if instance_exists(obj_controller_dw_mansion_potBalance)
+                        obj_controller_dw_mansion_potBalance.triggered = 1
+                }
+                active = false
             }
         }
         if (type == 1)

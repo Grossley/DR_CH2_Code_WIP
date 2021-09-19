@@ -1,3 +1,4 @@
+var _temp_local_var_2, _temp_local_var_25;
 if (global.monster[myself] == true)
 {
     if (actcon == 36 && alarm[4] > 17)
@@ -110,20 +111,32 @@ if (global.monster[myself] == true)
     {
         winetimer++
         var movetimer = winetimer
-        var _temp_local_var_4 = wineglass
-        after = gml_Script_instance_create(x, y, obj_afterimage)
-        after.x = x
-        after.y = y
-        after.image_speed = 0
-        after.image_xscale = image_xscale
-        after.image_yscale = image_yscale
-        after.sprite_index = sprite_index
-        after.depth = (depth + 1)
-        after.image_blend = c_lime
-        x = lerp(_remx, _idealx, (movetimer / 15))
-        y = lerp(_remy, _idealy, (movetimer / 15))
-        image_xscale = lerp(0.4, 2, (movetimer / 15))
-        image_yscale = lerp(0.6, 2, (movetimer / 15))
+        with (wineglass)
+        {
+            after = gml_Script_instance_create(x, y, obj_afterimage)
+            after.x = x
+            after.y = y
+            after.image_speed = 0
+            after.image_xscale = image_xscale
+            after.image_yscale = image_yscale
+            after.sprite_index = sprite_index
+            after.depth = (depth + 1)
+            after.image_blend = c_lime
+            x = lerp(_remx, _idealx, (movetimer / 15))
+            y = lerp(_remy, _idealy, (movetimer / 15))
+            image_xscale = lerp(0.4, 2, (movetimer / 15))
+            image_yscale = lerp(0.6, 2, (movetimer / 15))
+        }
+        if (winetimer >= 15)
+        {
+            wineglasscon = 0
+            with (obj_queen_bulletcontroller)
+                init = 3
+            with (obj_queen_wineglass)
+                visible = true
+            with (obj_queen_battlesolid_wine)
+                instance_destroy()
+        }
     }
     if (wineglasscon == 10)
     {
@@ -656,6 +669,7 @@ if (global.monster[myself] == true)
         rtimer += 1
         if (rtimer == 16)
         {
+            var _temp_local_var_25 = rr
             switch rr
             {
                 case 0:
@@ -1273,13 +1287,20 @@ if (global.myfight == 3)
         global.acting[1] = 0
         gml_Script_snd_play(150)
         heartanim = gml_Script_instance_create((obj_herokris.x + 30), (obj_herokris.y + 50), obj_animation)
-        var _temp_local_var_47 = heartanim
-        depth = -20
-        image_index = 0
-        image_xscale = 2
-        image_yscale = 2
-        image_speed = 1
-        sprite_index = spr_soulshining
+        with (heartanim)
+        {
+            depth = -20
+            image_index = 0
+            image_xscale = 2
+            image_yscale = 2
+            image_speed = 1
+            sprite_index = spr_soulshining
+        }
+        with (obj_herokris)
+            gml_Script_scr_oflash()
+        with (obj_herosusie)
+            gml_Script_scr_oflash()
+        actcon = 12
     }
     if (actcon == 12)
     {
@@ -1309,13 +1330,20 @@ if (global.myfight == 3)
         global.acting[2] = 0
         gml_Script_snd_play(150)
         heartanim = gml_Script_instance_create((obj_herokris.x + 30), (obj_herokris.y + 50), obj_animation)
-        var _temp_local_var_49 = heartanim
-        depth = -20
-        image_index = 0
-        image_xscale = 2
-        image_yscale = 2
-        image_speed = 1
-        sprite_index = spr_soulshining
+        with (heartanim)
+        {
+            depth = -20
+            image_index = 0
+            image_xscale = 2
+            image_yscale = 2
+            image_speed = 1
+            sprite_index = spr_soulshining
+        }
+        with (obj_heroralsei)
+            gml_Script_scr_oflash()
+        with (obj_herokris)
+            gml_Script_scr_oflash()
+        actcon = 22
     }
     if (actcon == 22)
     {

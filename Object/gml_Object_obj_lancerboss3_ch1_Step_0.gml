@@ -18,9 +18,14 @@ if (global.monster[myself] == true && defeated == 0)
                 global.monster[0] = true
                 global.monsterinstance[0] = gml_Script_instance_create_ch1(global.monstermakex[0], global.monstermakey[0], global.monsterinstancetype[0])
                 global.monsterinstance[0].myself = 0
-                var _temp_local_var_4 = global.monsterinstance[0]
-                event_user(12)
-                event_user(1)
+                with (global.monsterinstance[0])
+                {
+                    event_user(12)
+                    event_user(1)
+                }
+                global.monsterhp[0] = 40
+                gml_Script_snd_play_ch1(430)
+                susie_revive_count = 0
             }
         }
         attack_qual = true
@@ -315,8 +320,17 @@ if (global.myfight == 3)
     }
     if (actcon == 21 && (!instance_exists(obj_writer_ch1)))
     {
-        var _temp_local_var_16 = blocklan
-        instance_destroy()
+        with (blocklan)
+            instance_destroy()
+        visible = true
+        with (obj_susieenemy_ch1)
+            visible = true
+        if (gml_Script_scr_monsterpop_ch1() == 1)
+        {
+            with (obj_susieandlancer_event_ch1)
+                s.visible = true
+        }
+        actcon = 1
     }
 }
 if (con == 1)

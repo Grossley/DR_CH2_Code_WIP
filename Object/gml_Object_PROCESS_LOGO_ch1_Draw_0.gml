@@ -76,8 +76,10 @@ if (ingame == 0)
     if (gml_Script_button1_p_ch1() && skipped == 0)
     {
         fade = gml_Script_instance_create_ch1(0, 0, 1460)
-        var _temp_local_var_3 = fade
-        fadespeed = 0.04
+        with (fade)
+            fadespeed = 0.04
+        gml_Script_snd_volume_ch1(NOISE, 0, 20)
+        skipped = 1
     }
     if (skipped == 1)
     {

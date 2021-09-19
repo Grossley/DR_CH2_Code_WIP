@@ -34,8 +34,17 @@ if (altpath == 1)
         fntimer++
         if (fntimer >= 120)
         {
-            var _temp_local_var_1 = fn
-            gml_Script_scr_oflash()
+            with (fn)
+                gml_Script_scr_oflash()
+            fn.sprite_index = spr_noelleb_spell_special
+            fn.image_speed = 0.5
+            fncon = 0.8
+            fntimer = 0
+            amplitude = 0
+            with (obj_berdlyb2_enemy)
+                visible = false
+            fb = gml_Script_scr_dark_marker(obj_berdlyb2_enemy.x, obj_berdlyb2_enemy.y, 1846)
+            fb.depth = obj_berdlyb2_enemy.depth
         }
     }
     if (fncon == 0.8)
@@ -53,24 +62,11 @@ if (altpath == 1)
             amplitude += 0.03
         if (fn.y > (fn.ystart - 70))
         {
-            _temp_local_var_1.y = (fn.y - amplitude)
-            fn.x = (fn.x + (amplitude * 2.94))
-            var _temp_local_var_3 = fn
-            var _temp_local_var_4 = -9
-            var _temp_local_var_5 = fn
-            var _temp_local_var_6 = -9
-            var _temp_local_var_7 = fn
+            fn.y -= amplitude
+            fn.x += (amplitude * 2.94)
         }
-        _temp_local_var_3.x = (fn.x + (sin((timer / 3)) * amplitude))
-        _temp_local_var_4.y = (fn.y + (cos((timer / 3)) * amplitude))
-        var _temp_local_var_8 = fn
-        var _temp_local_var_9 = -9
-        var _temp_local_var_10 = -9
-        var _temp_local_var_11 = fn
-        var _temp_local_var_12 = -9
-        var _temp_local_var_13 = fn
-        var _temp_local_var_14 = -9
-        var _temp_local_var_15 = fn
+        fn.x += (sin((timer / 3)) * amplitude)
+        fn.y += (cos((timer / 3)) * amplitude)
         if ((timer % 4) == 0 && timer < 70)
         {
             dustsnd = gml_Script_snd_play(39)
@@ -104,8 +100,9 @@ if (altpath == 1)
             fn.sprite_index = spr_noelleb_defeat
             fn.speed = 0
             fn.gravity = 0
-            var _temp_local_var_17 = fn
-            gml_Script_scr_shakeobj()
+            with (fn)
+                gml_Script_scr_shakeobj()
+            fncon = 4
         }
     }
 }
@@ -143,16 +140,8 @@ if (timer >= 20 && timer <= (75 + (altpath * 30)))
 if (timer == 70 && altpath == 1)
 {
     fb.sprite_index = spr_berdly_ice
-    _temp_local_var_17.x = (fb.x - 22)
-    _temp_local_var_8.y = (fb.y - 48)
-    var _temp_local_var_21 = -9
-    var _temp_local_var_22 = -9
-    var _temp_local_var_23 = -9
-    var _temp_local_var_24 = fb
-    var _temp_local_var_25 = fn
-    var _temp_local_var_26 = -9
-    var _temp_local_var_27 = -9
-    var _temp_local_var_28 = fb
+    fb.x -= 22
+    fb.y -= 48
 }
 if (timer == (95 + (altpath * 30)) && damage > 0 && global.fighting == true)
 {
@@ -176,13 +165,13 @@ if (timer == (95 + (altpath * 30)) && damage > 0 && global.fighting == true)
                 if (global.monsterhp[i] > 0 && altpath == 0)
                 {
                     global.monsterinstance[i].fatal = 0
-                    var _temp_local_var_31 = global.monsterinstance[i]
-                    __of = gml_Script_scr_oflash()
+                    with (global.monsterinstance[i])
+                        __of = gml_Script_scr_oflash()
                 }
                 if altpath
                 {
-                    var _temp_local_var_32 = fb
-                    gml_Script_scr_oflash()
+                    with (fb)
+                        gml_Script_scr_oflash()
                 }
             }
         }

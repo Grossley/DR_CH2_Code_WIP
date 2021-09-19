@@ -1,7 +1,7 @@
-if (d != -4)
+if (d != noone)
 {
-    var _temp_local_var_1 = d
-    instance_destroy()
+    with (d)
+        instance_destroy()
 }
 if instance_exists(obj_writer)
 {

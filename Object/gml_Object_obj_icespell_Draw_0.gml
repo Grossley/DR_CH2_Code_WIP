@@ -9,26 +9,31 @@ if (timer == 7)
     hex[2] = gml_Script_instance_create(x, (y + 20), obj_icespell_hexagon)
 if (timer == 10)
 {
-    i = 0
-    while (i < 3)
+    for (i = 0; i < 3; i++)
     {
-        var _temp_local_var_1 = hex[i]
-        for (j = 0; j < 6; j++)
+        with (hex[i])
         {
-            hexhex[j] = gml_Script_instance_create(x, y, obj_icespell_hexagon)
-            hexhex[j].image_xscale = 0.75
-            hexhex[j].image_yscale = 0.75
-            hexhex[j].con = 1
-            hexhex[j].direction = (60 * j)
-            hexhex[j].speed = 8
-            hexhex[j].friction = 0.2
+            for (j = 0; j < 6; j++)
+            {
+                hexhex[j] = gml_Script_instance_create(x, y, obj_icespell_hexagon)
+                hexhex[j].image_xscale = 0.75
+                hexhex[j].image_yscale = 0.75
+                hexhex[j].con = 1
+                hexhex[j].direction = (60 * j)
+                hexhex[j].speed = 8
+                hexhex[j].friction = 0.2
+            }
         }
     }
 }
 if (timer == 11)
 {
-    var _temp_local_var_2 = hex[0]
-    instance_destroy()
+    with (hex[0])
+        instance_destroy()
+    with (hex[1])
+        instance_destroy()
+    with (hex[2])
+        instance_destroy()
 }
 if (timer == 15)
 {
@@ -46,8 +51,8 @@ if (timer == 15)
         gml_Script_scr_damage_enemy(star, damage)
         if (global.monster[star] == true)
         {
-            var _temp_local_var_5 = target
-            __of = gml_Script_scr_oflash()
+            with (target)
+                __of = gml_Script_scr_oflash()
         }
     }
 }

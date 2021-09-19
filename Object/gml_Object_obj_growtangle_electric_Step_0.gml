@@ -60,9 +60,46 @@ if instance_exists(obj_growtangle)
         {
             shottimer = 0
             lightning = gml_Script_instance_create(-100, y, obj_growtangle_spark)
-            var _temp_local_var_2 = lightning
-            gml_Script_scr_bullet_init()
-            destroyonhit = 1
+            with (lightning)
+            {
+                gml_Script_scr_bullet_init()
+                destroyonhit = 1
+            }
+            if (speedmode == 1)
+            {
+                wx = lengthdir_x((obj_growtangle.sprite_width / 2), image_angle)
+                wy = lengthdir_y((obj_growtangle.sprite_width / 2), image_angle)
+                if (moveamount > 0)
+                {
+                    lightning.x = ((x + xx) + wx)
+                    lightning.y = ((y + yy) + wy)
+                    lightning.gravity_direction = (180 + image_angle)
+                }
+                if (moveamount < 0)
+                {
+                    lightning.x = ((x + xx) - wx)
+                    lightning.y = ((y + yy) + wy)
+                    lightning.gravity_direction = image_angle
+                }
+                lightning.direction = (lightning.gravity_direction + 180)
+                lightning.speed = (5 + random(1))
+                lightning.depth = (depth - 5)
+                if (type == 1)
+                    lightning.speed = (6 + random(1))
+                with (lightning)
+                    motion_add((direction + choose(90, 270)), random(1.5))
+            }
+            lightning.gravity = 0.3
+            lightning.image_xscale = 1.5
+            lightning.image_yscale = 1.5
+            with (lightning)
+            {
+                if instance_exists(obj_queen_enemy)
+                    damage = (global.monsterat[obj_queen_enemy.myself] * 5)
+            }
+            gml_Script_scr_bullet_inherit(lightning)
+            lightning.active = true
+            lightning.sprite_index = spr_growtangle_elecbullet
         }
         if (timer >= 150)
         {

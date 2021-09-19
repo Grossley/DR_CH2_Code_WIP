@@ -12,18 +12,20 @@ if (room == room_dw_mansion_east_2f_c)
         with (obj_npc_sign)
         {
             newenem = gml_Script_instance_create(x, y, obj_chaseenemy)
-            var _temp_local_var_1 = newenem
-            if (image_xscale > 0)
-                x -= sprite_width
-            myencounter = 56
-            sprite_index = spr_npc_swatchling_sweep
-            touchsprite = spr_swatchling_hurt
-            radius = 10000
-            ignoresolid = true
-            alertcon = 0
-            eraser = true
+            with (newenem)
+            {
+                if (image_xscale > 0)
+                    x -= sprite_width
+                myencounter = 56
+                sprite_index = spr_npc_swatchling_sweep
+                touchsprite = spr_swatchling_hurt
+                radius = 10000
+                ignoresolid = true
+                alertcon = 0
+                eraser = true
+            }
+            instance_destroy()
         }
-        instance_destroy()
     }
     if instance_exists(obj_controller_dw_mansion_potBalance)
         obj_controller_dw_mansion_potBalance.triggered = 1

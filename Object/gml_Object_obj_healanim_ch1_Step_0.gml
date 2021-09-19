@@ -22,37 +22,42 @@ if instance_exists(target)
             sw = target.mywidth
             sh = target.myheight
         }
-        var _temp_local_var_1 = target
-        gml_Script_scr_oflash_ch1()
+        with (target)
+            gml_Script_scr_oflash_ch1()
     }
     if (t >= 1 && t <= 5)
     {
-        i = 0
-        while (i < 2)
+        for (i = 0; i < 2; i += 1)
         {
             star[starcount] = gml_Script_instance_create_ch1((x + random(sw)), (y + random(sh)), 1403)
-            var _temp_local_var_3 = star[starcount]
-            image_angle = random(360)
-            depth = -10
-            image_xscale = 2
-            image_yscale = 2
-            image_alpha = 2
-            image_speed = 0.25
-            hspeed = (2 - random(2))
-            vspeed = (-3 - random(2))
-            friction = 0.2
+            with (star[starcount])
+            {
+                image_angle = random(360)
+                depth = -10
+                image_xscale = 2
+                image_yscale = 2
+                image_alpha = 2
+                image_speed = 0.25
+                hspeed = (2 - random(2))
+                vspeed = (-3 - random(2))
+                friction = 0.2
+            }
+            star[starcount].sprite_index = particlesprite
+            star[starcount].image_blend = particlecolor
+            starcount += 1
         }
     }
     if (t >= 5 && t <= 30)
     {
-        i = 0
-        while (i < starcount)
+        for (i = 0; i < starcount; i += 1)
         {
-            var _temp_local_var_5 = star[i]
-            image_angle -= 10
-            image_alpha -= 0.1
-            if (image_alpha <= 0)
-                instance_destroy()
+            with (star[i])
+            {
+                image_angle -= 10
+                image_alpha -= 0.1
+                if (image_alpha <= 0)
+                    instance_destroy()
+            }
         }
         if (t >= 30)
             instance_destroy()
@@ -60,11 +65,10 @@ if instance_exists(target)
 }
 else
 {
-    i = 0
-    while (i < starcount)
+    for (i = 0; i < starcount; i += 1)
     {
-        var _temp_local_var_8 = star[i]
-        instance_destroy()
+        with (star[i])
+            instance_destroy()
     }
     instance_destroy()
 }

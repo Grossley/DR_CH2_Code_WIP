@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (con == -1)
 {
     con = 1
@@ -919,14 +920,14 @@ if berdly_power_up_start
 if berdly_power_up
 {
     berdly_power_up = 0
-    var _temp_local_var_5 = berdly_halberd
-    con = 4
+    with (berdly_halberd)
+        con = 4
 }
 if berdly_power_up_cancel
 {
     berdly_power_up_cancel = 0
-    var _temp_local_var_6 = berdly_halberd
-    con = 5
+    with (berdly_halberd)
+        con = 5
 }
 if shake_hand
 {

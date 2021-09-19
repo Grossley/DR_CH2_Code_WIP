@@ -28,9 +28,9 @@ if (con >= 5)
             alarm[4] = 30
             charcycle = 0
             charamt = 0
-            if (global.char[1] > 0)
+            if (global.char[1] > obj_sneo_friedpipis)
                 charamt = 1
-            if (global.char[2] > 0)
+            if (global.char[2] > obj_sneo_friedpipis)
                 charamt = 2
             charcycle = charamt
         }
@@ -45,8 +45,17 @@ if (con >= 5)
     }
     if (con == 15)
     {
-        var _temp_local_var_4 = char
-        instance_destroy()
+        with (char)
+            instance_destroy()
+        with (global.cinstance[0])
+            visible = true
+        with (global.cinstance[1])
+            visible = true
+        obj_mainchara_ch1.visible = true
+        con = 13
+        charcycle -= 1
+        if (charcycle < 0)
+            con = 16
     }
     if (con == 13)
     {
@@ -56,13 +65,25 @@ if (con >= 5)
             with (obj_mainchara_ch1)
                 visible = false
             char = gml_Script_scr_dark_marker_ch1(390, 125, 4195)
-            var _temp_local_var_7 = char
-            depth = 400000
+            with (char)
+                depth = 400000
         }
         if (charcycle == 1 || charcycle == 2)
         {
-            var _temp_local_var_9 = global.cinstance[(charcycle - 1)]
-            visible = false
+            with (global.cinstance[(charcycle - 1)])
+                visible = false
+            if (chartype == 2)
+            {
+                char = gml_Script_scr_dark_marker_ch1(380, 110, 3554)
+                with (char)
+                    depth = 400000
+            }
+            if (chartype == 3)
+            {
+                char = gml_Script_scr_dark_marker_ch1(390, 140, 3861)
+                with (char)
+                    depth = 400000
+            }
         }
         con = 14
         alarm[4] = 36
@@ -110,13 +131,16 @@ if (con >= 5)
     if (con == 33)
     {
         char = gml_Script_scr_dark_marker_ch1(385, 160, 3700)
-        var _temp_local_var_14 = char
-        depth = 400000
+        with (char)
+            depth = 400000
+        con = 34
+        alarm[4] = 50
     }
     if (con == 35)
     {
-        var _temp_local_var_15 = char
-        instance_destroy()
+        with (char)
+            instance_destroy()
+        con = 36
     }
     if (con == 37)
     {
@@ -133,13 +157,16 @@ if (con >= 5)
     if (con == 53)
     {
         char = gml_Script_scr_dark_marker_ch1(390, 170, 3701)
-        var _temp_local_var_16 = char
-        depth = 400000
+        with (char)
+            depth = 400000
+        con = 54
+        alarm[4] = 50
     }
     if (con == 55)
     {
-        var _temp_local_var_17 = char
-        instance_destroy()
+        with (char)
+            instance_destroy()
+        con = 56
     }
     if (con == 57)
     {

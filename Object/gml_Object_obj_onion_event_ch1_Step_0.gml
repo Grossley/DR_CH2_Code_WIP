@@ -16,14 +16,18 @@ if instance_exists(obj_mainchara_ch1)
     }
     if (con == 2)
     {
-        var _temp_local_var_2 = onion
-        on = 1
+        with (onion)
+            on = 1
+        con = 3
+        alarm[4] = 50
     }
     if (con == 4)
     {
         global.facing = 1
-        var _temp_local_var_3 = onion
-        on = 2
+        with (onion)
+            on = 2
+        con = 5
+        alarm[4] = 150
     }
     if (con == 6)
     {
@@ -43,7 +47,11 @@ if instance_exists(obj_mainchara_ch1)
     }
     if (con == 9)
     {
-        var _temp_local_var_5 = onion
+        with (onion)
+            instance_destroy()
+        con = 10
+        global.interact = 0
+        global.facing = 0
         instance_destroy()
     }
 }

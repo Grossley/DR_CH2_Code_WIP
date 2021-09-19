@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 gml_Script_scr_enemy_object_init()
 talkmax = 300
 image_speed = 0.16666666666666666
@@ -25,6 +26,7 @@ base_colors[0] = red
 base_colors[1] = blue
 base_colors[2] = yellow
 show_debug_message(("global.flag[426]=" + string(global.flag[426])))
+var _temp_local_var_1 = global.flag[426]
 switch global.flag[426]
 {
     case -1:

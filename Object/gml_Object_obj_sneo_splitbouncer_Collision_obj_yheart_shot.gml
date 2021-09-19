@@ -13,7 +13,7 @@ if (destroyable == 1)
     flash = true
     if (other.big == 0)
     {
-        var _temp_local_var_2 = other
-        event_user(0)
+        with (other)
+            event_user(0)
     }
 }

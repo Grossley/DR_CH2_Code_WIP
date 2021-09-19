@@ -36,6 +36,9 @@ if gml_Script_i_ex(wheel_hitbox_graze)
 }
 if (x >= 1000 || x <= -300)
 {
-    var _temp_local_var_4 = wheel_hitbox
+    with (wheel_hitbox)
+        instance_destroy()
+    with (wheel_hitbox_graze)
+        instance_destroy()
     instance_destroy()
 }

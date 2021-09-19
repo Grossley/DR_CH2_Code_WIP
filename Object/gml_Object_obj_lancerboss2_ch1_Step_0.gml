@@ -161,11 +161,24 @@ if (global.myfight == 3)
         gml_Script_snd_free_all_ch1()
         gml_Script_snd_play_ch1(442)
         black = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 20), (gml_Script___view_get(1, 0) - 20), 4277)
-        var _temp_local_var_9 = black
-        image_blend = c_black
-        depth = -10000
-        image_xscale = 900
-        image_yscale = 900
+        with (black)
+        {
+            image_blend = c_black
+            depth = -10000
+            image_xscale = 900
+            image_yscale = 900
+        }
+        actcon = 3
+        acttimer = 0
+        if instance_exists(obj_lancerbattle2_event_ch1)
+        {
+            obj_lancerbattle2_event_ch1.black = black
+            with (obj_lancerbattle2_event_ch1)
+            {
+                con = 52
+                alarm[4] = 80
+            }
+        }
     }
     if (actcon == 3)
     {

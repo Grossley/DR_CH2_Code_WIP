@@ -6,5 +6,7 @@ newme.touchsprite = touchsprite
 newme.slidesprite = sprite_index
 newme.depth = depth
 newme.eraser = eraser
-var _temp_local_var_1 = newme
-event_user(0)
+with (newme)
+    event_user(0)
+global.encounterno = myencounter
+instance_destroy()

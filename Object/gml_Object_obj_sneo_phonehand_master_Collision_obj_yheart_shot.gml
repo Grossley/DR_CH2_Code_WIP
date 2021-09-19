@@ -18,5 +18,5 @@ if (x <= (gml_Script_camerax() + 480))
 gml_Script_snd_play(166)
 if (x >= (gml_Script_camerax() + 480))
     x = (gml_Script_camerax() + 480)
-var _temp_local_var_1 = other
-event_user(0)
+with (other)
+    event_user(0)

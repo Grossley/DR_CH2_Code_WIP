@@ -52,25 +52,26 @@ var _offsetX = [64, 0, 0]
 for (var i = 0; i < 3; i++)
 {
     var _check = endPos[i]
-    if _check[0].undefined
+    if (_check[0] == undefined)
         endPos[i] = [((x + 200) + _offsetX[i]), ((endY + _offsetY[i]) - 64)]
     _check = startPos[i]
-    if _check[0].undefined
+    if (_check[0] == undefined)
         startPos[i] = [((x - 200) - _offsetX[i]), ((ystart + _offsetY[i]) - 64)]
 }
-i = 0
-while (i < 3)
+for (i = 0; i < 3; i += 1)
 {
     cup_char[i] = instance_create_depth(0, 0, 0, obj_markercup)
-    var _temp_local_var_1 = cup_char[i]
-    sprite_index = spr_teacup_empty
-    image_speed = 0
-    image_xscale = 2
-    image_yscale = 2
-    gml_Script_scr_depth()
-    spin = 0
+    with (cup_char[i])
+    {
+        sprite_index = spr_teacup_empty
+        image_speed = 0
+        image_xscale = 2
+        image_yscale = 2
+        gml_Script_scr_depth()
+        spin = 0
+    }
 }
-if startOffset.undefined
+if (startOffset != undefined)
 {
     state = 0
     y += startOffset
@@ -78,8 +79,8 @@ if startOffset.undefined
 if scoreboardExists
 {
     scoreboard = instance_create_depth(x, y, (depth - 9999), obj_teacup_scoreboard)
-    var _temp_local_var_2 = scoreboard
-    scoreCol = 14483711
+    with (scoreboard)
+        scoreCol = 14483711
 }
 if (uniqueBulletPattern != -1)
     gml_Script_scr_tb_pattern(uniqueBulletPattern)
@@ -87,7 +88,7 @@ else
     gml_Script_scr_tb_pattern()
 if (global.chapter == 2)
 {
-    if (scoreboard.room == room_dw_mansion_b_west_2f && global.tempflag[33] > 0)
+    if (room == room_dw_mansion_b_west_2f && global.tempflag[33] > 0)
     {
         y = 600
         riseSpeedInitial = 12

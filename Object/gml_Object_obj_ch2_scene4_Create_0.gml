@@ -14,8 +14,11 @@ else
     {
         con = 10
         susie = gml_Script_instance_create(377, 541, obj_npc_room)
-        var _temp_local_var_2 = susie
-        gml_Script_scr_depth()
+        with (susie)
+            gml_Script_scr_depth()
+        ralsei = gml_Script_instance_create(279, 590, obj_npc_facing)
+        with (ralsei)
+            gml_Script_scr_depth()
     }
     if (global.plot == 9)
     {

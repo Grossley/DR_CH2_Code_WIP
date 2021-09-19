@@ -4,8 +4,19 @@ if (con == 1)
     global.interact = 1
     global.facing = 3
     sneo = gml_Script_scr_dark_marker(288, -170, 1842)
-    var _temp_local_var_1 = sneo
-    gml_Script_scr_depth()
+    with (sneo)
+        gml_Script_scr_depth()
+    cutscene_master = gml_Script_scr_cutscene_make()
+    gml_Script_scr_maincharacters_actors()
+    gml_Script_c_sel(kr)
+    gml_Script_c_setxy(304, 221)
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(ra)
+    gml_Script_c_setxy(215, 310)
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(su)
+    gml_Script_c_setxy(374, 303)
+    gml_Script_c_facing("u")
 }
 if (con == 1)
 {

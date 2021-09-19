@@ -346,9 +346,13 @@ if (attackcon < 92 && attackcon > 0)
     if (attackcon == 11 && instance_exists(obj_writer_ch1) == 0)
     {
         b1 = gml_Script_instance_create_ch1((xx + 440), (obj_heart_ch1.y + 8), 1560)
-        var _temp_local_var_13 = b1
-        special = 1
-        alarm[0] = 40
+        with (b1)
+        {
+            special = 1
+            alarm[0] = 40
+        }
+        attackcon = 12
+        alarm[5] = 80
     }
     if (attackcon == 13)
     {
@@ -416,19 +420,27 @@ if (global.myfight == 3)
     }
     if (actcon == 10)
     {
-        var _temp_local_var_18 = global.charinstance[0]
-        visible = false
+        with (global.charinstance[0])
+            visible = false
+        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, 3809)
+        with (k)
+            gml_Script_scr_move_to_point_over_time_ch1((global.monsterx[1] - 42), (global.monstery[1] - 16), 15)
+        actcon = 11
+        alarm[4] = 25
     }
     if (actcon == 12)
     {
         sprite_index = spr_ralseib_idle_enemy_blush_ch1
-        var _temp_local_var_20 = k
-        image_speed = 0.25
+        with (k)
+            image_speed = 0.25
+        actcon = 13
+        alarm[4] = 12
     }
     if (actcon == 14)
     {
-        var _temp_local_var_21 = k
-        image_speed = 0
+        with (k)
+            image_speed = 0
+        actcon = 15
     }
     if (actcon == 15 && (!instance_exists(obj_writer_ch1)))
     {
@@ -457,19 +469,34 @@ if (global.myfight == 3)
     }
     if (actcon == 16 && (!instance_exists(obj_writer_ch1)))
     {
-        var _temp_local_var_24 = myface
-        instance_destroy()
+        with (myface)
+            instance_destroy()
+        with (k)
+            image_speed = -0.25
+        actcon = 17
+        alarm[4] = 12
     }
     if (actcon == 18)
     {
-        var _temp_local_var_26 = k
-        image_speed = 0
+        with (k)
+            image_speed = 0
+        with (k)
+            gml_Script_scr_move_to_point_over_time_ch1(global.charinstance[0].x, global.charinstance[0].y, 15)
+        actcon = 19
+        alarm[4] = 25
     }
     if (actcon == 20)
     {
         sprite_index = spr_ralseib_idle_enemy_ch1
-        var _temp_local_var_28 = k
-        instance_destroy()
+        with (k)
+            instance_destroy()
+        global.charinstance[0].visible = true
+        actcon = 1
+        if (won == 1)
+        {
+            global.mercymod[0] = 999999
+            global.mercymod[1] = 999999
+        }
     }
 }
 if (con == 1)

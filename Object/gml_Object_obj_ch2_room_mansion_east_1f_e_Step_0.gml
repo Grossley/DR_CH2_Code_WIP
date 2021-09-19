@@ -5,8 +5,15 @@ if (hacker != noone)
         pause_timer++
         hacker.path_speed = 0
         hacker.image_speed = 0
-        var _temp_local_var_2 = hacker
-        path_end()
+        with (hacker)
+            path_end()
+        if (pause_timer >= 60)
+        {
+            pause_timer = 0
+            hacker_init_path = 1
+            with (hacker)
+                path_start(path_hacker_loop, 2, path_action_reverse, 1)
+        }
     }
     if (hacker_init_path && hacker_can_pause)
     {
@@ -32,39 +39,41 @@ if (hacker != noone)
             hacker_can_pause = 1
         }
     }
-    var _temp_local_var_6 = hacker
-    gml_Script_scr_depth()
-    image_speed = (path_speed == 0 ? 0 : 0.25)
-    if (direction == 180)
+    with (hacker)
     {
-        if (x > 1318 && x < 1388)
-            sprite_index = spr_npc_pointer_walk_left
+        gml_Script_scr_depth()
+        image_speed = (path_speed == 0 ? 0 : 0.25)
+        if (direction == 180)
+        {
+            if (x > 1318 && x < 1388)
+                sprite_index = spr_npc_pointer_walk_left
+            else
+                sprite_index = spr_npc_cursor_walk_left
+        }
+        else if (x > 1380 && x < 1450)
+            sprite_index = spr_npc_pointer_walk_right
         else
-            sprite_index = spr_npc_cursor_walk_left
-    }
-    else if (x > 1380 && x < 1450)
-        sprite_index = spr_npc_pointer_walk_right
-    else
-        sprite_index = spr_npc_cursor_walk_right
-    if (global.interact != 0 && myinteract == 0)
-        myinteract = 14
-    if (global.interact == 0 && myinteract == 14)
-        myinteract = 0
-    if (gml_Script_d_ex() && myinteract == 0)
-        myinteract = 32
-    if ((!gml_Script_d_ex()) && myinteract == 32)
-        myinteract = 0
-    if (myinteract != 0 && path_speed != 0)
-    {
-        currentspeed = path_speed
-        path_speed = 0
-        image_index = 0
-        pathpause = 1
-    }
-    if (myinteract == 0 && pathpause)
-    {
-        path_speed = currentspeed
-        pathpause = 0
+            sprite_index = spr_npc_cursor_walk_right
+        if (global.interact != 0 && myinteract == 0)
+            myinteract = 14
+        if (global.interact == 0 && myinteract == 14)
+            myinteract = 0
+        if (gml_Script_d_ex() && myinteract == 0)
+            myinteract = 32
+        if ((!gml_Script_d_ex()) && myinteract == 32)
+            myinteract = 0
+        if (myinteract != 0 && path_speed != 0)
+        {
+            currentspeed = path_speed
+            path_speed = 0
+            image_index = 0
+            pathpause = 1
+        }
+        if (myinteract == 0 && pathpause)
+        {
+            path_speed = currentspeed
+            pathpause = 0
+        }
     }
 }
 if (con == 1)

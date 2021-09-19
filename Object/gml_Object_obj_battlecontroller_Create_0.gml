@@ -166,3 +166,88 @@ global.charinstance[1] = 12129292
 global.charinstance[2] = 12129292
 with (global.charinstance[0])
     myself = 0
+with (global.charinstance[1])
+    myself = 1
+with (global.charinstance[2])
+    myself = 2
+mmy[0] = 0
+mmy[1] = 0
+mmy[2] = 0
+mmy[3] = 0
+for (i = 0; i < 3; i += 1)
+{
+    if (global.char[i] != 0)
+        chartotal += 1
+    if (global.char[i] == 1)
+    {
+        havechar[0] = true
+        charpos[0] = i
+        global.charinstance[i] = gml_Script_instance_create(global.heromakex[i], global.heromakey[i], obj_herokris)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 1
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+    if (global.char[i] == 2)
+    {
+        havechar[1] = true
+        charpos[1] = i
+        global.charinstance[i] = gml_Script_instance_create(global.heromakex[i], global.heromakey[i], obj_herosusie)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 2
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+    if (global.char[i] == 3)
+    {
+        havechar[2] = true
+        charpos[2] = i
+        global.charinstance[i] = gml_Script_instance_create(global.heromakex[i], global.heromakey[i], obj_heroralsei)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 3
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+    if (global.char[i] == 4)
+    {
+        havechar[3] = true
+        charpos[3] = i
+        global.charinstance[i] = gml_Script_instance_create(global.heromakex[i], global.heromakey[i], obj_heronoelle)
+        global.charinstance[i].myself = i
+        global.charinstance[i].char = 4
+        global.charinstance[i].depth = (200 - (i * 20))
+    }
+}
+slmxx = 0
+slmyy = 0
+s_siner = 0
+t_siner = 0
+gml_Script_instance_create(0, 0, obj_tensionbar)
+reset = false
+timeron = true
+noreturn = false
+hpcolor[0] = c_aqua
+hpcolor[1] = c_fuchsia
+hpcolor[2] = c_lime
+hpcolor[3] = c_yellow
+for (i = 0; i < 4; i++)
+    hpcolorsoft[i] = merge_color(hpcolor[i], c_white, 0.5)
+global.flag[36] = 0
+global.flag[39] = 0
+if (global.ambush == 1)
+{
+    gml_Script_scr_ambush()
+    global.ambush = 0
+}
+if (global.ambush == 2)
+{
+    with (obj_monsterparent)
+        firststrike = 1
+    global.tension = round((global.maxtension / 4))
+    global.ambush = 0
+}
+if (global.chapter == 2)
+{
+    gigaqueeny = 0
+    gigaqueentimer = 0
+    gigaqueencon = 0
+    if instance_exists(obj_gigaqueen_enemy)
+        gigaqueencon = 3
+}

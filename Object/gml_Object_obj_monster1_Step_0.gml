@@ -77,8 +77,10 @@ if (global.myfight == 3)
             global.chartarget[1] = myself
             global.charspecial[0] = 1
             global.charspecial[1] = 1
-            var _temp_local_var_7 = global.charinstance[0]
-            state = 2
+            with (global.charinstance[0])
+                state = 2
+            with (global.charinstance[1])
+                state = 2
         }
         if (acttimer == 40)
             actcon = 1

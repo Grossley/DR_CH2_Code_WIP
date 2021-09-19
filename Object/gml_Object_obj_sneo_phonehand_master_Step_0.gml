@@ -1,3 +1,4 @@
+var _temp_local_var_4;
 siner++
 bluesiner++
 image_blend = merge_color(0xE8A200, c_aqua, (0.25 + (sin((bluesiner / 3)) * 0.25)))

@@ -34,6 +34,16 @@ if (con == 1)
             fake_direction = direction
             fake_speed = gml_Script_scr_move_step_solids_direction(4, direction)
         }
+        timer++
+        if (timer >= 30)
+        {
+            with (susid)
+                direction += 90
+            timer = 0
+        }
+        overalltimer++
+        if (overalltimer >= 120)
+            con = 2
     }
     else
     {
@@ -51,6 +61,14 @@ if (con == 2)
             direction = point_direction(x, y, caid.x, caid.y)
             fake_direction = direction
             fake_speed = gml_Script_scr_move_step_solids_direction(8, direction)
+        }
+        if ((abs((susid.x - caterpillarid.x)) + abs((susid.y - caterpillarid.y))) < 12)
+        {
+            with (susid)
+                instance_destroy()
+            caterpillarid.visible = true
+            con = 0
+            instance_destroy()
         }
     }
     else

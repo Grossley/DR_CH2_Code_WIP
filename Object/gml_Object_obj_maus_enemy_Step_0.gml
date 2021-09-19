@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_4, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_41;
 if (global.monster[myself] == true)
 {
     if (gml_Script_scr_isphase("enemytalk") && talked == 0)
@@ -150,13 +151,38 @@ if (global.myfight == 3)
             nact_count++
             if (global.flag[379] == 1)
             {
-                var _temp_local_var_51 = object_index
-                complimentact = 1
+                with (object_index)
+                    complimentact = 1
+                gml_Script_scr_speaker("no_name")
+                gml_Script_msgsetloc(0, "* Noelle complimented the enemies!/", "obj_maus_enemy_slash_Step_0_gml_188_0_b")
+                gml_Script_scr_anyface_next("noelle", 3)
+                gml_Script_msgnextloc("\\E3* They're..^1. kind of cute^1, right...?/%", "obj_maus_enemy_slash_Step_0_gml_190_0")
+                gml_Script_scr_battletext()
+                with (obj_monsterparent)
+                    gml_Script_scr_mercyadd(myself, 100)
             }
             else
             {
-                _temp_local_var_51 = object_index
-                fearact = 1
+                with (object_index)
+                    fearact = 1
+                if (nact_count == 1)
+                {
+                    gml_Script_scr_speaker("noelle")
+                    gml_Script_msgsetloc(0, "\\EE* Th-the way it moves is just so..^1. so scary!/", "obj_maus_enemy_slash_Step_0_gml_188_0")
+                    gml_Script_msgnextloc("\\EE* It's disgusting!/", "obj_maus_enemy_slash_Step_0_gml_189_0")
+                    gml_Script_scr_anyface_next("no_name", 0)
+                    gml_Script_msgnextloc("* Maus was rejected..^1. everyone felt TIRED./%", "obj_maus_enemy_slash_Step_0_gml_191_0")
+                    gml_Script_scr_battletext()
+                }
+                else
+                {
+                    gml_Script_scr_speaker("no_name")
+                    gml_Script_msgsetloc(0, "* Noelle reacted in fear!/", "obj_maus_enemy_slash_Step_0_gml_196_0")
+                    gml_Script_msgnextloc("* The enemies felt dejected and TIRED.../%", "obj_maus_enemy_slash_Step_0_gml_197_0")
+                    gml_Script_scr_battletext_default()
+                }
+                with (obj_monsterparent)
+                    gml_Script_scr_monster_make_tired(myself)
             }
             actcon = 1
         }
@@ -170,8 +196,10 @@ if (global.myfight == 3)
         var currentY = (y - 15)
         image_xscale = -2
         gml_Script_scr_move_to_point_over_time((gml_Script_camerax() + 800), global.monstermakey[myself], 30)
-        var _temp_local_var_8 = tasquemarker
-        gml_Script_scr_move_to_point_over_time(currentX, currentY, 30)
+        with (tasquemarker)
+            gml_Script_scr_move_to_point_over_time(currentX, currentY, 30)
+        actcon = 31
+        alarm[4] = 30
     }
     if (actcon == 32)
     {
@@ -203,14 +231,14 @@ if (global.myfight == 3)
             cancatch[0] = basket
             cancatch[1] = basket
             cancatch[2] = basket
+            var _temp_local_var_10 = 1
             var _temp_local_var_11 = 1
             var _temp_local_var_12 = 1
-            var _temp_local_var_13 = 1
         }
         else
         {
             cancatch[myself] = basket
-            var _temp_local_var_47 = 1
+            var _temp_local_var_41 = 1
         }
         basket.trappingX = trappingX
         actcon = 11
@@ -282,8 +310,11 @@ if (global.myfight == 3)
     if (actconral == 2.5 && basket.gravity == 0)
     {
         actconral = 3
-        var _temp_local_var_21 = nise_susie
-        gml_Script_scr_shakeobj()
+        with (nise_susie)
+            gml_Script_scr_shakeobj()
+        with (basket)
+            gml_Script_scr_shakeobj()
+        gml_Script_snd_play(61)
     }
     if (actconral == 3 && (!instance_exists(obj_writer)))
     {
@@ -325,13 +356,23 @@ if (global.myfight == 3)
             global.monstermakey[myself] = (y - 15)
             global.monstermakex[myself] = tasquemarker.x
             newtasque = gml_Script_scr_monster_change(myself, 32, 446)
-            var _temp_local_var_27 = tasquemarker
+            with (tasquemarker)
+                instance_destroy()
+            if (global.char[2] == 3)
+            {
+                if (global.actingtarget[2] == myself)
+                    gml_Script_scr_nextact()
+            }
             instance_destroy()
         }
-        if (basket != -4)
+        if (basket != noone)
         {
-            var _temp_local_var_28 = nise_susie
-            instance_destroy()
+            with (nise_susie)
+                instance_destroy()
+            with (basket)
+                instance_destroy()
+            with (obj_herosusie)
+                visible = true
         }
     }
     if (actcon == 20 || actconsus == 20 || actconral == 20 || actconnoe == 20)

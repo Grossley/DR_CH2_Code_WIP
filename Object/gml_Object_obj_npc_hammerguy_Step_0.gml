@@ -1,4 +1,3 @@
-var ral_sprite;
 if (myinteract == 3)
 {
 }
@@ -29,9 +28,9 @@ if (con >= 5)
             alarm[4] = 30
             charcycle = 0
             charamt = 0
-            if (global.char[1] > 0)
+            if (global.char[1] > obj_sneo_friedpipis)
                 charamt = 1
-            if (global.char[2] > 0)
+            if (global.char[2] > obj_sneo_friedpipis)
                 charamt = 2
             charcycle = charamt
         }
@@ -46,8 +45,17 @@ if (con >= 5)
     }
     if (con == 15)
     {
-        var _temp_local_var_4 = char
-        instance_destroy()
+        with (char)
+            instance_destroy()
+        with (global.cinstance[0])
+            visible = true
+        with (global.cinstance[1])
+            visible = true
+        obj_mainchara.visible = true
+        con = 13
+        charcycle -= 1
+        if (charcycle < 0)
+            con = 16
     }
     if (con == 13)
     {
@@ -59,13 +67,30 @@ if (con >= 5)
             var xpos = (global.chapter == 1 ? 390 : (x + 105))
             var ypos = (global.chapter == 1 ? 125 : (y + 30))
             char = gml_Script_scr_dark_marker(xpos, ypos, 650)
-            var _temp_local_var_8 = char
-            depth = 400000
+            with (char)
+                depth = 400000
         }
         if (charcycle == 1 || charcycle == 2)
         {
-            var _temp_local_var_10 = global.cinstance[(charcycle - 1)]
-            visible = false
+            with (global.cinstance[(charcycle - 1)])
+                visible = false
+            if (chartype == 2)
+            {
+                xpos = (global.chapter == 1 ? 380 : (x + 85))
+                ypos = (global.chapter == 1 ? 110 : (y + 15))
+                char = gml_Script_scr_dark_marker(xpos, ypos, 995)
+                with (char)
+                    depth = 400000
+            }
+            if (chartype == 3)
+            {
+                xpos = (global.chapter == 1 ? 390 : (x + 90))
+                ypos = (global.chapter == 1 ? 140 : (y + 35))
+                var ral_sprite = (global.chapter == 1 ? 1494 : 1506)
+                char = gml_Script_scr_dark_marker(xpos, ypos, ral_sprite)
+                with (char)
+                    depth = 400000
+            }
         }
         con = 14
         alarm[4] = 36
@@ -113,13 +138,16 @@ if (con >= 5)
     if (con == 33)
     {
         char = gml_Script_scr_dark_marker(385, 160, 1187)
-        var _temp_local_var_18 = char
-        depth = 400000
+        with (char)
+            depth = 400000
+        con = 34
+        alarm[4] = 50
     }
     if (con == 35)
     {
-        var _temp_local_var_19 = char
-        instance_destroy()
+        with (char)
+            instance_destroy()
+        con = 36
     }
     if (con == 37)
     {
@@ -136,13 +164,16 @@ if (con >= 5)
     if (con == 53)
     {
         char = gml_Script_scr_dark_marker(390, 170, 1188)
-        var _temp_local_var_20 = char
-        depth = 400000
+        with (char)
+            depth = 400000
+        con = 54
+        alarm[4] = 50
     }
     if (con == 55)
     {
-        var _temp_local_var_21 = char
-        instance_destroy()
+        with (char)
+            instance_destroy()
+        con = 56
     }
     if (con == 57)
     {

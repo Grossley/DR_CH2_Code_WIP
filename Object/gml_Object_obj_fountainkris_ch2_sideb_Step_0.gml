@@ -68,9 +68,22 @@ if (con == 10)
         alarm[4] = 60
         gml_Script_snd_play(170)
         gml_Script_snd_play(166)
-        var _temp_local_var_3 = sneo
-        gravity = 0
-        vspeed = 0
+        with (sneo)
+        {
+            gravity = 0
+            vspeed = 0
+        }
+        draw_kris = 0
+        with (obj_mainchara)
+        {
+            visible = true
+            fun = true
+            sprite_index = spr_kris_dw_landed
+            image_speed = 0
+            hspeed = -20
+            friction = 0.8
+        }
+        gml_Script_snd_play_x(154, 1, 0.5)
     }
 }
 if (con == 13)
@@ -79,8 +92,15 @@ if (con == 13)
     {
         if (sneo.gravity == 0)
             gml_Script_snd_play_x(154, 1, 0.5)
-        var _temp_local_var_4 = sneo
-        gravity = -2
+        with (sneo)
+            gravity = -2
+        if (sneo.y <= (gml_Script_cameray() - 200))
+        {
+            con = 14
+            sneo.gravity = 0
+            sneo.x = 460
+            sneo.y = (gml_Script_cameray() - 200)
+        }
     }
     else
     {
@@ -107,9 +127,12 @@ if (con == 14)
         con = 15
         alarm[4] = 60
         gml_Script_snd_play(61)
-        var _temp_local_var_5 = sneo
-        gravity = 0
-        vspeed = 0
+        with (sneo)
+        {
+            gravity = 0
+            vspeed = 0
+        }
+        sneo.partmode = 33
     }
 }
 if (con == 16)

@@ -14,10 +14,12 @@ if checkPress
         alarm[0] = 15
         gml_Script_snd_play(51)
         var exit_forcefield = gml_Script_instance_create((x - 130), (y - 40), obj_forcefield)
-        var _temp_local_var_2 = exit_forcefield
-        image_xscale = 2
-        image_yscale = 4
-        gml_Script_scr_depth()
-        canttalk = 1
+        with (exit_forcefield)
+        {
+            image_xscale = 2
+            image_yscale = 4
+            gml_Script_scr_depth()
+            canttalk = 1
+        }
     }
 }

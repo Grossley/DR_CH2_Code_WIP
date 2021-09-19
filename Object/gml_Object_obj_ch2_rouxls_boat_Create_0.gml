@@ -13,9 +13,15 @@ depth = 830000
 if (instance_number(object_index) == 1)
 {
     boatfront = gml_Script_instance_create((x + boatx), (y + boaty), object_index)
-    var _temp_local_var_1 = object_index
-    image_xscale = 2
-    image_yscale = 2
-    image_speed = 0
-    isrouxls = 0
+    with (object_index)
+    {
+        image_xscale = 2
+        image_yscale = 2
+        image_speed = 0
+        isrouxls = 0
+    }
+    isrouxls = 1
+    boatfront.depth = (depth - 50)
+    boatfront.image_index = 1
+    boatfront.con = 5
 }

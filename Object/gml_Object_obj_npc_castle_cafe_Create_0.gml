@@ -1,4 +1,63 @@
-var table_a, table_b, table_c, table_collider_a, table_collider_b, table_collider_c, counter, topchef, swatchlingA, swatchlingB, tm, tasqueA, _temp_local_var_1;
 var jukebox = gml_Script_scr_marker(44, 82, 3123)
-var _temp_local_var_1 = jukebox
-gml_Script_scr_depth()
+with (jukebox)
+    gml_Script_scr_depth()
+var table_a = gml_Script_scr_marker(42, 230, 3122)
+with (table_a)
+    gml_Script_scr_depth()
+var table_b = gml_Script_scr_marker(260, 230, 3122)
+with (table_b)
+    gml_Script_scr_depth()
+var table_c = gml_Script_scr_marker(140, 325, 3122)
+with (table_c)
+    gml_Script_scr_depth()
+var table_collider_a = gml_Script_instance_create((table_a.x + 8), (table_a.y + 10), obj_soliddark)
+table_collider_a.image_xscale = 1.9
+table_collider_a.image_yscale = 1.3
+var table_collider_b = gml_Script_instance_create((table_b.x + 8), (table_b.y + 10), obj_soliddark)
+table_collider_b.image_xscale = 1.9
+table_collider_b.image_yscale = 1.3
+var table_collider_c = gml_Script_instance_create((table_c.x + 8), (table_c.y + 10), obj_soliddark)
+table_collider_c.image_xscale = 1.9
+table_collider_c.image_yscale = 1.3
+var counter = gml_Script_scr_marker(365, 110, 3124)
+counter.depth = 98000
+tm_con = -1
+t_con = -1
+if (global.chapter == 1)
+{
+    var topchef = gml_Script_instance_create(395, 70, obj_npc_room)
+    topchef.sprite_index = spr_topchef
+}
+if (global.chapter == 2)
+{
+    if (global.plot < 200)
+    {
+        topchef = gml_Script_instance_create(405, 70, obj_npc_room)
+        topchef.sprite_index = spr_topchef
+    }
+    else
+    {
+        var swatchlingA = gml_Script_instance_create(418, 62, obj_npc_room)
+        swatchlingA.sprite_index = spr_npc_swatchling_cafe
+        with (swatchlingA)
+            gml_Script_scr_depth()
+        if (global.flag[636] == 1)
+        {
+            var swatchlingB = gml_Script_instance_create(517, 187, obj_npc_room)
+            swatchlingB.sprite_index = spr_npc_swatchling_down
+            with (swatchlingB)
+                gml_Script_scr_depth()
+        }
+        if (global.flag[642] == 1 && global.flag[632] == 1)
+        {
+            var tm = gml_Script_instance_create(237, 23, obj_npc_room)
+            tm.sprite_index = spr_npc_tasquemanager
+            tm.image_xscale = -2
+        }
+        if (global.flag[632] == 1)
+        {
+            var tasqueA = gml_Script_instance_create(255, 63, obj_npc_room)
+            tasqueA.sprite_index = spr_tasque_idle
+        }
+    }
+}

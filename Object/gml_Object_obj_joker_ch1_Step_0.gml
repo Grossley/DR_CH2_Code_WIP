@@ -9,35 +9,35 @@ if (global.monster[myself] == true)
         if (mhpratio <= 0.8 && jturn == 4)
         {
             jturn = 5
-            var _temp_local_var_3 = body
-            dancelv = 1
+            with (body)
+                dancelv = 1
         }
         if (mhpratio <= 0.6 && jturn == 9)
             jturn = 10
         if (mhpratio <= 0.4 && jturn == 14)
         {
             jturn = 15
-            var _temp_local_var_6 = body
-            dancelv = 3
+            with (body)
+                dancelv = 3
         }
         if (mhpratio <= 0.15 && jturn < 17)
         {
             jturn = 17
-            var _temp_local_var_8 = body
-            dancelv = 2
+            with (body)
+                dancelv = 2
         }
         if (jturn >= 18)
         {
-            var _temp_local_var_9 = body
-            dancelv = 3
+            with (body)
+                dancelv = 3
         }
         if (hypnosiscounter >= 2 && jturn == 4)
         {
             if (turns >= (5 - hypnosiscounter))
             {
                 jturn = 5
-                var _temp_local_var_11 = body
-                dancelv = 1
+                with (body)
+                    dancelv = 1
             }
         }
         if (hypnosiscounter >= 4 && jturn == 9)
@@ -45,8 +45,8 @@ if (global.monster[myself] == true)
             if (turns >= (11 - hypnosiscounter))
             {
                 jturn = 10
-                var _temp_local_var_13 = body
-                dancelv = 1
+                with (body)
+                    dancelv = 1
             }
         }
         if (hypnosiscounter >= 6 && jturn == 14)
@@ -54,8 +54,8 @@ if (global.monster[myself] == true)
             if (turns >= (17 - hypnosiscounter))
             {
                 jturn = 15
-                var _temp_local_var_15 = body
-                dancelv = 1
+                with (body)
+                    dancelv = 1
             }
         }
         if (jturn >= 19)
@@ -64,8 +64,8 @@ if (global.monster[myself] == true)
             {
                 tired = true
                 global.monsterstatus[myself] = true
-                var _temp_local_var_16 = body
-                dancelv = 2
+                with (body)
+                    dancelv = 2
             }
         }
         if (!instance_exists(obj_darkener_ch1))
@@ -83,8 +83,8 @@ if (global.monster[myself] == true)
         if (jturn == 3)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_38_0")
-            var _temp_local_var_17 = body
-            condition = 5
+            with (body)
+                condition = 5
         }
         if (jturn == 5)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_39_0")
@@ -106,8 +106,8 @@ if (global.monster[myself] == true)
         if (jturn == 13)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_46_0")
-            var _temp_local_var_18 = body
-            condition = 5
+            with (body)
+                condition = 5
         }
         if (jturn == 15)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_47_0")
@@ -116,14 +116,14 @@ if (global.monster[myself] == true)
         if (jturn == 17)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_49_0")
-            var _temp_local_var_19 = body
-            dancelv = 2
+            with (body)
+                dancelv = 2
         }
         if (jturn == 18)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_50_0")
-            var _temp_local_var_20 = body
-            condition = 5
+            with (body)
+                condition = 5
         }
         if (jturn == 4 || jturn == 9 || jturn == 14 || jturn == 19)
         {
@@ -295,14 +295,146 @@ if (global.myfight == 3)
         with (obj_herokris_ch1)
             visible = false
         dancekris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3810)
-        var _temp_local_var_31 = dancekris
-        image_speed = 0.3334
-        depth = obj_herokris_ch1.depth
+        with (dancekris)
+        {
+            image_speed = 0.3334
+            depth = obj_herokris_ch1.depth
+        }
+        fx = gml_Script_instance_create_ch1((dancekris.x + 28), (dancekris.y + 40), 1510)
+        fx.sprite_index = spr_pirouette_fx_ch1
+        fx.image_xscale = 2
+        fx.image_yscale = 2
+        gml_Script_scr_battletext_default_ch1()
     }
     if (actcon == 5 && (!instance_exists(obj_writer_ch1)))
     {
-        var _temp_local_var_33 = dancekris
-        instance_destroy()
+        with (dancekris)
+            instance_destroy()
+        with (obj_herokris_ch1)
+            visible = true
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_272_0")
+        if (chaosdance == 0)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_276_0")
+            ch = choose(0, 1, 2)
+            if (ch == 0)
+                gml_Script_snd_play_ch1(455)
+            if (ch == 1)
+                gml_Script_snd_play_ch1(387)
+            if (ch == 2)
+                gml_Script_snd_play_ch1(366)
+        }
+        if (chaosdance == 1)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_284_0")
+            if (global.monsterdf[myself] >= -16)
+                global.monsterdf[myself] -= 4
+            gml_Script_snd_play_ch1(389)
+        }
+        if (chaosdance == 2)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_290_0")
+            gml_Script_snd_play_ch1(390)
+            global.invc = 0.4
+        }
+        if (chaosdance == 3)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_296_0")
+            pfactor = 0.7
+            gml_Script_snd_play_ch1(361)
+        }
+        if (chaosdance == 4)
+        {
+            with (obj_marker_ch1)
+            {
+                if (sprite_index == spr_uselessbird_ch1)
+                    instance_destroy()
+            }
+            bird = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 40), (gml_Script___view_get(1, 0) + 60), 3929)
+            with (bird)
+            {
+                hspeed = 12
+                image_speed = 0.334
+            }
+            gml_Script_snd_play_ch1(385)
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_310_0")
+        }
+        if (chaosdance == 5)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_314_0")
+            star = choose(0, 1, 2)
+            gml_Script_scr_healitemspell_ch1(floor((random(31) + 25)))
+        }
+        if (chaosdance == 6)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_320_0")
+            swap1 = 1
+            swap2 = 1
+            swap1 = choose(2, 3)
+            if (swap1 == 2)
+                swap2 = 3
+            if (swap1 == 3)
+                swap2 = 2
+            for (i = 0; i < 4; i += 1)
+            {
+                remhp[i] = global.hp[i]
+                curmaxhp[i] = global.maxhp[i]
+            }
+            global.maxhp[1] = curmaxhp[swap1]
+            global.maxhp[swap1] = curmaxhp[swap2]
+            global.maxhp[swap2] = curmaxhp[1]
+            global.hp[1] = remhp[swap1]
+            global.hp[swap1] = remhp[swap2]
+            global.hp[swap2] = remhp[1]
+            remhpcolor[0] = obj_battlecontroller_ch1.hpcolor[0]
+            remhpcolor[1] = obj_battlecontroller_ch1.hpcolor[1]
+            remhpcolor[2] = obj_battlecontroller_ch1.hpcolor[2]
+            obj_battlecontroller_ch1.hpcolor[0] = remhpcolor[(swap1 - 1)]
+            obj_battlecontroller_ch1.hpcolor[(swap1 - 1)] = remhpcolor[(swap2 - 1)]
+            obj_battlecontroller_ch1.hpcolor[(swap2 - 1)] = remhpcolor[0]
+            for (i = 1; i <= 3; i += 1)
+            {
+                if (global.hp[i] < 1)
+                {
+                    global.hp[1] += floor((global.hp[i] / 3))
+                    global.hp[2] += floor((global.hp[i] / 3))
+                    global.hp[3] += floor((global.hp[i] / 3))
+                    global.hp[i] = 1
+                }
+            }
+            if (global.hp[1] < 1)
+                global.hp[1] = 1
+            if (global.hp[2] < 1)
+                global.hp[2] = 1
+            if (global.hp[3] < 1)
+                global.hp[3] = 1
+            gml_Script_scr_revive_ch1(0)
+            gml_Script_scr_revive_ch1(1)
+            gml_Script_scr_revive_ch1(2)
+            gml_Script_snd_play_ch1(389)
+        }
+        if (chaosdance == 7)
+        {
+            gml_Script_snd_play_ch1(414)
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_373_0")
+            pfactor = 1.25
+        }
+        if (chaosdance == 8)
+        {
+            gml_Script_snd_play_ch1(386)
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_379_0")
+            gml_Script_scr_healallitemspell_ch1((36 + floor(random(15))))
+        }
+        gml_Script_scr_battletext_default_ch1()
+        hypnosiscounter += 0.5
+        if (hypnosiscounter >= 9)
+        {
+            txtpart3 = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_387_0")
+            global.monsterstatus[myself] = true
+        }
+        pirouette = chaosdance
+        pirouettecounter += 1
+        actcon = 1
     }
     if (acting == 3 && actcon == 0)
     {

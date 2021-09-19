@@ -21,32 +21,48 @@ if (con == 1)
     }
     if (waketimer == 60 || waketimer == 62)
     {
-        var _temp_local_var_4 = k
-        sprite_index = spr_kris_fallen_dark_ch1
-        x = (xstart + choose(-2, 2))
-        y = (ystart + choose(-2, 2))
+        with (k)
+        {
+            sprite_index = spr_kris_fallen_dark_ch1
+            x = (xstart + choose(-2, 2))
+            y = (ystart + choose(-2, 2))
+        }
     }
     if (waketimer == 63)
     {
-        var _temp_local_var_5 = k
-        x = xstart
-        y = ystart
+        with (k)
+        {
+            x = xstart
+            y = ystart
+        }
     }
     if (waketimer == 120 || waketimer == 121 || waketimer == 122 || waketimer == 123)
     {
-        var _temp_local_var_7 = k
-        x = (xstart + choose(-2, 2, 0))
-        y = (ystart + choose(-2, 2, 0))
+        with (k)
+        {
+            x = (xstart + choose(-2, 2, 0))
+            y = (ystart + choose(-2, 2, 0))
+        }
     }
     if (waketimer >= 180 && waketimer <= 184)
     {
-        var _temp_local_var_9 = k
-        x = (xstart + choose(-2, 2, 0))
-        y = (ystart + choose(-2, 2, 0))
+        with (k)
+        {
+            x = (xstart + choose(-2, 2, 0))
+            y = (ystart + choose(-2, 2, 0))
+        }
     }
     if (waketimer == 185)
     {
-        var _temp_local_var_10 = k
+        with (k)
+            instance_destroy()
+        with (obj_mainchara_ch1)
+            visible = true
+        global.interact = 0
+        con = 2
+        if (global.plot < 11)
+            global.plot = 11
+        gml_Script_scr_tempsave_ch1()
         instance_destroy()
     }
 }

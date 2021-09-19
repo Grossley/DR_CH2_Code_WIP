@@ -2,8 +2,8 @@ if (destroyable == 1)
 {
     if (other.big == 0)
     {
-        var _temp_local_var_1 = other
-        event_user(0)
+        with (other)
+            event_user(0)
     }
     hp--
     if (other.big || hp <= 0)
@@ -11,8 +11,9 @@ if (destroyable == 1)
         anim = gml_Script_instance_create(x, y, obj_yshot_anim)
         anim.image_xscale = image_xscale
         anim.image_yscale = image_yscale
-        var _temp_local_var_3 = anim
-        sprite_index = spr_yheart_shot_hit3
+        with (anim)
+            sprite_index = spr_yheart_shot_hit3
+        instance_destroy()
     }
     else
     {
@@ -23,6 +24,6 @@ if (destroyable == 1)
 }
 else if (destroyable == -1)
 {
-    var _temp_local_var_5 = other
-    event_user(0)
+    with (other)
+        event_user(0)
 }

@@ -143,7 +143,8 @@ if (type == 0)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
-                var _temp_local_var_1 = obj_debug_xy.selected_object
+                with (obj_debug_xy.selected_object)
+                    instance_destroy()
                 instance_destroy()
             }
         }
@@ -237,7 +238,7 @@ else if (type == 1)
         {
             if (asset_get_index(varname) > 0)
             {
-                var bepis = asset_get_index(varname).mouse_y.mouse_x
+                var bepis = gml_Script_instance_create(mouse_x, mouse_y, asset_get_index(varname))
                 with (obj_debug_xy)
                     selected_object = bepis
                 instance_destroy()
@@ -248,6 +249,6 @@ else if (type == 1)
 }
 xx = clamp(xx, 40, 500)
 yy = clamp(yy, 40, 340)
-remmx = (obj_debug_xy.selected_object.mouse_x - gml_Script_camerax())
+remmx = (mouse_x - gml_Script_camerax())
 remmy = (mouse_y - gml_Script_cameray())
 draw_sprite(spr_maus_cursor, 0, mx, my)

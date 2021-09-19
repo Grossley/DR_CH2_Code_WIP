@@ -20,8 +20,8 @@ if (noleave == 2)
 {
     if (global.flag[352] != 0)
     {
-        var _temp_local_var_1 = barrier
-        instance_destroy()
+        with (barrier)
+            instance_destroy()
     }
     instance_destroy()
 }

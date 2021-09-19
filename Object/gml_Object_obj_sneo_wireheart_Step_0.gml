@@ -87,8 +87,8 @@ if (con == 1)
     con = 2
     if (type == 0 || type == 1)
     {
-        var _temp_local_var_4 = boss
-        heart_release_con = 1
+        with (boss)
+            heart_release_con = 1
     }
 }
 if (con == 2)
@@ -142,8 +142,8 @@ if (con == 10)
     y = gml_Script_lerp_ease_in(targety, bossy, movetimer, 2)
     if ((movetimer > 0.5 && type == 0) || (movetimer > 0.5 && type == 1 && obj_spamton_neo_enemy.difficulty > 2))
     {
-        var _temp_local_var_9 = boss
-        heart_release_con = 0
+        with (boss)
+            heart_release_con = 0
     }
     if (movetimer >= 1)
     {
@@ -168,12 +168,31 @@ if (con == 2 || con == 3 || con == 10)
                     dir = (25 + random(10))
                 if (bighearttype == 1 && y > obj_growtangle.y)
                     dir = ((random(10) * -1) - 25)
-                i = 0
-                while (i < radial)
+                for (i = 0; i < radial; i++)
                 {
                     radialshot = gml_Script_instance_create(x, y, obj_collidebullet)
-                    var _temp_local_var_13 = radialshot
-                    gml_Script_scr_bullet_init()
+                    with (radialshot)
+                        gml_Script_scr_bullet_init()
+                    radialshot.sprite_index = spr_diamondbullet
+                    radialshot.direction = ((((i / radial) * 180) + 110) + dir)
+                    radialshot.image_angle = radialshot.direction
+                    radialshot.active = true
+                    radialshot.speed = 1
+                    radialshot.friction = -0.3
+                    if (bighearttype == 1)
+                    {
+                        radialshot.speed = 1
+                        radialshot.friction = -0.23
+                    }
+                    radialshot.depth = (depth - 1)
+                    radialshot.target = target
+                    radialshot.damage = damage
+                    radialshot.grazed = 0
+                    radialshot.element = 6
+                    if (obj_spamton_neo_enemy.difficulty == 0)
+                        radialshot.grazepoints = 3
+                    if (obj_spamton_neo_enemy.difficulty == 2)
+                        radialshot.grazepoints = 2
                 }
                 shottimer = 10
                 if (bighearttype == 1)
@@ -182,12 +201,24 @@ if (con == 2 || con == 3 || con == 10)
             else if (type == 1)
             {
                 firedtimer = 4
-                i = 0
-                while (i < radial)
+                for (i = 0; i < radial; i++)
                 {
                     radialshot = gml_Script_instance_create(x, y, obj_collidebullet)
-                    var _temp_local_var_16 = radialshot
-                    gml_Script_scr_bullet_init()
+                    with (radialshot)
+                        gml_Script_scr_bullet_init()
+                    radialshot.sprite_index = spr_diamondbullet
+                    radialshot.direction = point_direction(radialshot.x, radialshot.y, (obj_heart.x + 10), (obj_heart.y + 10))
+                    radialshot.image_angle = radialshot.direction
+                    radialshot.image_xscale = 0.5
+                    radialshot.image_yscale = 0.5
+                    radialshot.active = true
+                    radialshot.speed = 3
+                    radialshot.friction = -0.2
+                    radialshot.depth = (depth - 1)
+                    radialshot.target = target
+                    radialshot.damage = damage
+                    radialshot.grazed = 0
+                    radialshot.element = 6
                 }
                 shottimer = 6
             }

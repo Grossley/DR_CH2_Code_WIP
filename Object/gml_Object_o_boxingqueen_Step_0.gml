@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_3, _temp_local_var_14, _temp_local_var_31, _temp_local_var_32, _temp_local_var_141;
 if (instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
 if (phase_transition > 0 && state != 1)
@@ -933,16 +934,26 @@ if (state == 3)
             if (attacktimer == 1)
             {
                 punch_hitbox = gml_Script_instance_create(x, (y - 60), o_boxing_hitbox)
-                var _temp_local_var_55 = punch_hitbox
-                give_hurt = (22 / f)
-                if (o_boxingcontroller.wireframe_boxing == 1)
-                    give_hurt = (32 / f)
-                timer = (5 / f)
-                damage = 25
-                if (o_boxingqueen.punch_type == 2 || o_boxingqueen.punch_type == 3)
-                    damage = 15
-                image_yscale = 5
-                image_xscale = 2.8
+                with (punch_hitbox)
+                {
+                    give_hurt = (22 / f)
+                    if (o_boxingcontroller.wireframe_boxing == 1)
+                        give_hurt = (32 / f)
+                    timer = (5 / f)
+                    damage = 25
+                    if (o_boxingqueen.punch_type == 2 || o_boxingqueen.punch_type == 3)
+                        damage = 15
+                    image_yscale = 5
+                    image_xscale = 2.8
+                }
+                punch_hitbox_graze = gml_Script_instance_create((x - 5), (y - 60), o_boxing_hitbox)
+                with (punch_hitbox_graze)
+                {
+                    graze_only = 1
+                    image_xscale = 6
+                    image_yscale = 2.8
+                }
+                punch_hitbox.hit_direction = drawflip
             }
             if (attacktimer >= 2)
             {
@@ -1002,13 +1013,15 @@ if (state == 3)
                         queenbubble = gml_Script_scr_enemyblcon((gml_Script_camerax() + 428), (gml_Script_cameray() + 388), 7)
                         talktimer = 0
                         talking = 1
-                        var _temp_local_var_59 = queenbubble
-                        depth = (obj_ch2_scene10.qu_actor.depth - 1)
-                        auto_length = 1
-                        side = -1
-                        xoffset = 194
+                        with (queenbubble)
+                        {
+                            depth = (obj_ch2_scene10.qu_actor.depth - 1)
+                            auto_length = 1
+                            side = -1
+                            xoffset = 194
+                        }
+                        talktype = 1
                     }
-                    talktype = 1
                 }
             }
             if arcade
@@ -1190,19 +1203,24 @@ if (state == 3)
                 audio_sound_pitch(kickyell, ((1 + (kick_amount * 0.08)) - (kicks_done * 0.08)))
                 attack_succeeded = 0
                 kick_hitbox = gml_Script_instance_create(basex, (basey - 50), o_boxing_hitbox)
-                var _temp_local_var_68 = kick_hitbox
-                give_hurt = (34 / f)
-                timer = (4 / f)
-                damage = (40 * o_boxingcontroller.failed_kick_tutorial_counter)
-                if (o_boxingcontroller.succeeded_kick_tutorial == 1)
-                    damage = 40
-                if (o_boxingqueen.kick_amount == 2)
-                    damage = floor((damage * 0.6))
-                if (o_boxingqueen.kick_amount >= 3)
-                    damage = floor((damage * 0.5))
-                kick = 1
-                image_yscale = 10
-                image_xscale = 3
+                with (kick_hitbox)
+                {
+                    give_hurt = (34 / f)
+                    timer = (4 / f)
+                    damage = (40 * o_boxingcontroller.failed_kick_tutorial_counter)
+                    if (o_boxingcontroller.succeeded_kick_tutorial == 1)
+                        damage = 40
+                    if (o_boxingqueen.kick_amount == 2)
+                        damage = floor((damage * 0.6))
+                    if (o_boxingqueen.kick_amount >= 3)
+                        damage = floor((damage * 0.5))
+                    kick = 1
+                    image_yscale = 10
+                    image_xscale = 3
+                }
+                kick_hitbox.hit_direction = drawflip
+                hspeed = (-3 * ff)
+                vspeed = (-4 * f)
             }
             if (attacktimer >= 1)
                 vspeed += 1
@@ -1468,13 +1486,23 @@ if (state == 3)
             if (attacktimer == 1)
             {
                 splash_hitbox = gml_Script_instance_create((x - (ff * 40)), (y - 40), o_boxing_hitbox)
-                var _temp_local_var_76 = splash_hitbox
-                hit_dodging = 1
-                give_hurt = (22 / f)
-                timer = 2
-                damage = 30
-                image_yscale = 5
-                image_xscale = 12
+                with (splash_hitbox)
+                {
+                    hit_dodging = 1
+                    give_hurt = (22 / f)
+                    timer = 2
+                    damage = 30
+                    image_yscale = 5
+                    image_xscale = 12
+                }
+                splash_hitbox.hit_direction = drawflip
+                splash_hitbox_graze = gml_Script_instance_create((x - (ff * 30)), (y - 40), o_boxing_hitbox)
+                with (splash_hitbox_graze)
+                {
+                    graze_only = 1
+                    image_xscale = 14
+                    image_yscale = 5
+                }
             }
             if (attacktimer >= 2)
             {
@@ -1664,14 +1692,17 @@ if (state == 3)
             gml_Script_snd_pitch(9, 1.7)
             gml_Script_snd_volume(9, 0.5, 0)
             dive_hitbox = gml_Script_instance_create(x, (y - 20), o_boxing_hitbox)
-            var _temp_local_var_86 = dive_hitbox
-            hit_ducking = 1
-            give_hurt = (30 / f)
-            give_invincibility = (40 / f)
-            timer = 400
-            damage = 25
-            image_yscale = 4
-            image_xscale = 2.8
+            with (dive_hitbox)
+            {
+                hit_ducking = 1
+                give_hurt = (30 / f)
+                give_invincibility = (40 / f)
+                timer = 400
+                damage = 25
+                image_yscale = 4
+                image_xscale = 2.8
+            }
+            dive_hitbox.hit_direction = drawflip
         }
         if (attackcon == 3)
         {
@@ -1707,8 +1738,14 @@ if (state == 3)
                 pirouette_count += 1
                 if (pirouette_count >= pirouette_amount)
                 {
-                    var _temp_local_var_90 = dive_hitbox
-                    instance_destroy()
+                    with (dive_hitbox)
+                        instance_destroy()
+                    attackcon = 4
+                    y = basey
+                    x = -20
+                    vspeed = 0
+                    hspeed = (24 * f)
+                    depth = original_depth
                 }
                 else if (pirouette_type == 0)
                 {
@@ -1810,13 +1847,15 @@ if (state == 3)
                         queenbubble = gml_Script_scr_enemyblcon((gml_Script_camerax() + 428), (gml_Script_cameray() + 388), 7)
                         talktimer = 0
                         talking = 1
-                        var _temp_local_var_91 = queenbubble
-                        depth = (obj_ch2_scene10.qu_actor.depth - 1)
-                        auto_length = 1
-                        side = -1
-                        xoffset = 222
+                        with (queenbubble)
+                        {
+                            depth = (obj_ch2_scene10.qu_actor.depth - 1)
+                            auto_length = 1
+                            side = -1
+                            xoffset = 222
+                        }
+                        talktype = 1
                     }
-                    talktype = 1
                 }
             }
             vspeed = (-0.5 * f)
@@ -1851,9 +1890,25 @@ if (state == 3)
                 wheeltimer = 0
                 wheel1 = gml_Script_instance_create(-215, 255, o_boxing_wheel)
                 wheel2 = gml_Script_instance_create(825, 255, o_boxing_wheel)
-                var _temp_local_var_94 = wheel2
-                hspeed = (-hspeed)
-                rotspeed = (-rotspeed)
+                with (wheel2)
+                {
+                    hspeed = (-hspeed)
+                    rotspeed = (-rotspeed)
+                }
+                if (o_boxingcontroller.wireframe_boxing == 0 && firstwheelattack == 0)
+                {
+                    with (wheel1)
+                        hspeed /= 1.4
+                    with (wheel2)
+                        hspeed /= 1.4
+                }
+                wheel_count += 1
+                if (punch_type == 2 && wheel_count >= (wheel_amount + 2))
+                    wheel_done = 1
+                if (punch_type != 2 && wheel_count >= wheel_amount)
+                    wheel_done = 1
+                if (o_boxingcontroller.wireframe_boxing == 1 && first_octagon_attack == 0)
+                    wheel_done = 1
             }
             minitimer += 1
             attacktimer += 1
@@ -1964,13 +2019,7 @@ if (state == 3)
             flash.image_xscale = image_xscale
             flash.image_yscale = image_yscale
             if (drawflip == 1)
-            {
-                _temp_local_var_97.image_xscale = (flash.image_xscale * -1)
-                var _temp_local_var_103 = 
-                var _temp_local_var_104 = wheel2
-                var _temp_local_var_105 = -9
-                var _temp_local_var_106 = flash
-            }
+                flash.image_xscale *= -1
             flash.image_blend = image_blend
             flash.image_speed = 0
             flash.boss = id
@@ -2893,7 +2942,7 @@ if (state == 3)
                 gml_Script_instance_create((x + 5), (y - 320), obj_bq_baseball_final)
                 charge = gml_Script_instance_create((x + 5), (y - 320), o_charge_ring_controller)
                 alarm[0] = charge
-                var _temp_local_var_157 = 50
+                var _temp_local_var_141 = 50
             }
             if (attacktimer == (56 / f) && instance_exists(obj_bq_baseball_final) && obj_bq_baseball_final.image_xscale < 6)
                 attacktimer -= 1

@@ -32,10 +32,12 @@ if (con == 0 && obj_mainchara.x > 150)
     no_silhouette = gml_Script_instance_create(no_actor.x, (gml_Script_cameray() - 100), obj_following_silhouette)
     no_silhouette.target_char = no_actor
     var exit_forcefield = gml_Script_instance_create(20, 240, obj_forcefield)
-    var _temp_local_var_2 = exit_forcefield
-    image_xscale = 2
-    image_yscale = 4
-    gml_Script_scr_depth()
+    with (exit_forcefield)
+    {
+        image_xscale = 2
+        image_yscale = 4
+        gml_Script_scr_depth()
+    }
 }
 if (con == 1)
 {

@@ -123,18 +123,33 @@ if (scon == 1.5 && (!instance_exists(obj_writer)))
     global.turntimer = 999
     gml_Script_scr_battletext_default()
     milk = gml_Script_scr_dark_marker((x - 100), (y + 60), 1781)
-    var _temp_local_var_5 = milk
-    image_speed = 0
-    image_xscale = 4
-    image_yscale = 4
-    image_alpha = 0
+    with (milk)
+    {
+        image_speed = 0
+        image_xscale = 4
+        image_yscale = 4
+        image_alpha = 0
+    }
+    milk.depth = (depth - 1)
+    scon = 2
+    milktimer = 0
 }
 if (scon == 2)
 {
-    var _temp_local_var_6 = milk
-    image_xscale -= 0.2
-    image_yscale -= 0.2
-    image_alpha += 0.1
+    with (milk)
+    {
+        image_xscale -= 0.2
+        image_yscale -= 0.2
+        image_alpha += 0.1
+    }
+    milktimer += 1
+    if (milktimer >= 10)
+    {
+        scon = 3
+        milktimer = 0
+        with (milk)
+            image_alpha = 1.4
+    }
 }
 if (scon == 3)
 {
@@ -147,9 +162,39 @@ if (scon == 3)
 }
 if (scon == 4)
 {
-    var _temp_local_var_8 = milk
-    hspeed += 2
-    image_alpha -= 0.1
+    with (milk)
+    {
+        hspeed += 2
+        image_alpha -= 0.1
+    }
+    milktimer += 1
+    if (milktimer == 10)
+    {
+        if (global.monsterat[myself] < 10)
+            global.monsterat[myself] += 0.5
+        gml_Script_snd_play(162)
+        milkheal = 700
+        if (milk_counter == 0)
+            milkheal = 300
+        global.monsterhp[myself] += milkheal
+        healamt = gml_Script_instance_create(global.monsterx[myself], global.monstery[myself], obj_dmgwriter)
+        with (healamt)
+        {
+            delay = 8
+            type = 3
+            damage = 700
+        }
+        healamt.damage = milkheal
+        hanim = gml_Script_instance_create(x, y, obj_healanim)
+        hanim.target = id
+    }
+    if (milktimer >= 15)
+    {
+        with (milk)
+            instance_destroy()
+        scon = 5
+        milktimer = 0
+    }
 }
 if (scon == 5)
 {
@@ -233,23 +278,87 @@ if (global.myfight == 3)
         global.faceaction[0] = 0
         global.charaction[0] = 0
         bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1409)
-        var _temp_local_var_13 = bowkris
-        gml_Script_scr_oflash()
-        a = gml_Script_scr_afterimage()
-        a.hspeed = 5
-        a.depth = (depth + 1)
+        with (bowkris)
+        {
+            gml_Script_scr_oflash()
+            a = gml_Script_scr_afterimage()
+            a.hspeed = 5
+            a.depth = (depth + 1)
+        }
+        gml_Script_snd_play(172)
+        gml_Script_scr_battletext_default()
+        actcon = 20
     }
     if (actcon == 20 && (!instance_exists(obj_writer)))
     {
         visible = false
         bowcheck = gml_Script_scr_dark_marker(x, y, spr_checkers_bow)
-        var _temp_local_var_15 = bowcheck
-        image_speed = 0.334
+        with (bowcheck)
+            image_speed = 0.334
+        global.fc = 0
+        global.typer = 4
+        global.msg[0] = gml_Script_stringsetloc("* It bowed back^1.&* Its crown loosened a little./%", "obj_checkers_enemy_slash_Step_0_gml_327_0")
+        if (ralsei_lecture == false && secondtime == false)
+        {
+            global.msg[0] = gml_Script_stringsetloc("* It bowed back^1.&* Its crown loosened a little./", "obj_checkers_enemy_slash_Step_0_gml_330_0")
+            gml_Script_scr_ralface(1, 0)
+            global.msg[2] = gml_Script_stringsetloc("* That's it^1, Kris^1! If we can get its crown off.../", "obj_checkers_enemy_slash_Step_0_gml_332_0")
+            global.msg[3] = gml_Script_stringsetloc("\\E8* It should turn back into a little guy...!/", "obj_checkers_enemy_slash_Step_0_gml_333_0")
+            global.msg[4] = gml_Script_stringsetloc("\\E0* Susie^1! Help us bow at it!/", "obj_checkers_enemy_slash_Step_0_gml_334_0")
+            gml_Script_scr_susface(5, 0)
+            global.msg[6] = gml_Script_stringsetloc("* Nah^1, it's crown'll come off.../", "obj_checkers_enemy_slash_Step_0_gml_336_0")
+            global.msg[7] = gml_Script_stringsetloc("\\E4* When I smash this guy into the GROUND!/", "obj_checkers_enemy_slash_Step_0_gml_337_0")
+            gml_Script_scr_ralface(8, 1)
+            global.msg[9] = gml_Script_stringsetloc("* .../%", "obj_checkers_enemy_slash_Step_0_gml_339_0")
+            ralsei_lecture = true
+        }
+        if (thrown == 0 && secondtime == true)
+        {
+            if (bowcounter == 0)
+            {
+                global.fc = 2
+                global.fe = 3
+                global.typer = 45
+                global.msg[0] = gml_Script_stringsetloc("* Huh!? That hardly did anything!/", "obj_checkers_enemy_slash_Step_0_gml_349_0")
+                global.msg[1] = gml_Script_stringsetloc("\\E1* How can we push off that CROWN...?/", "obj_checkers_enemy_slash_Step_0_gml_350_0")
+                gml_Script_scr_susface(2, 1)
+                global.msg[3] = gml_Script_stringsetloc("* ... Hmm./%", "obj_checkers_enemy_slash_Step_0_gml_352_0")
+            }
+            if (bowcounter == 1)
+            {
+                global.fc = 2
+                global.fe = 3
+                global.typer = 45
+                global.msg[0] = gml_Script_stringsetloc("* It's still hardly working!/", "obj_checkers_enemy_slash_Step_0_gml_359_0")
+                global.msg[1] = gml_Script_stringsetloc("\\E6* Whatever can we do^1, Kris...?/", "obj_checkers_enemy_slash_Step_0_gml_360_0")
+                gml_Script_scr_susface(2, 2)
+                global.msg[3] = gml_Script_stringsetloc("* ... Hey./%", "obj_checkers_enemy_slash_Step_0_gml_362_0")
+            }
+            if (bowcounter == 2)
+            {
+                global.fc = 2
+                global.fe = 8
+                global.typer = 45
+                global.msg[0] = gml_Script_stringsetloc("* Sometimes persistence is key^1, Kris!!/", "obj_checkers_enemy_slash_Step_0_gml_369_0")
+                global.msg[1] = gml_Script_stringsetloc("\\E6* It'll be hard^1, but we can do it!!/", "obj_checkers_enemy_slash_Step_0_gml_370_0")
+                gml_Script_scr_susface(2, 7)
+                global.msg[3] = gml_Script_stringsetloc("* HEY YOU GUYS!!!/%", "obj_checkers_enemy_slash_Step_0_gml_372_0")
+            }
+        }
+        bowcounter += 1
+        gml_Script_scr_battletext()
+        actcon = 21
     }
     if (actcon == 21 && (!instance_exists(obj_writer)))
     {
-        var _temp_local_var_19 = bowkris
-        instance_destroy()
+        with (bowkris)
+            instance_destroy()
+        with (bowcheck)
+            instance_destroy()
+        visible = true
+        with (obj_herokris)
+            visible = true
+        actcon = 1
     }
     if (secondtime == false)
     {
@@ -266,24 +375,64 @@ if (global.myfight == 3)
             global.faceaction[1] = 0
             global.charaction[1] = 0
             bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1409)
-            var _temp_local_var_22 = bowkris
-            gml_Script_scr_oflash()
-            a = gml_Script_scr_afterimage()
-            a.hspeed = 5
-            a.depth = (depth + 1)
+            with (bowkris)
+            {
+                gml_Script_scr_oflash()
+                a = gml_Script_scr_afterimage()
+                a.hspeed = 5
+                a.depth = (depth + 1)
+            }
+            bowral = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1484)
+            with (bowral)
+            {
+                gml_Script_scr_oflash()
+                a = gml_Script_scr_afterimage()
+                a.hspeed = 5
+                a.depth = (depth + 1)
+            }
+            gml_Script_snd_play(172)
+            gml_Script_scr_battletext_default()
+            actcon = 30
         }
     }
     if (actcon == 30 && (!instance_exists(obj_writer)))
     {
         visible = false
         bowcheck = gml_Script_scr_dark_marker(x, y, spr_checkers_bow)
-        var _temp_local_var_25 = bowcheck
-        image_speed = 0.5
+        with (bowcheck)
+            image_speed = 0.5
+        global.msg[0] = gml_Script_stringsetloc("* K. ROUND bowed back^1.&* Its crown loosened!/%", "obj_checkers_enemy_slash_Step_0_gml_442_0")
+        if (ralsei_lecture == false && secondtime == false)
+        {
+            global.msg[0] = gml_Script_stringsetloc("* K. ROUND bowed back^1.&* Its crown loosened!/", "obj_checkers_enemy_slash_Step_0_gml_445_0")
+            gml_Script_scr_ralface(1, 0)
+            global.msg[2] = gml_Script_stringsetloc("* That's it^1, Kris^1! If we can get its crown off.../", "obj_checkers_enemy_slash_Step_0_gml_447_0")
+            global.msg[3] = gml_Script_stringsetloc("\\E8* It should turn back into a little guy...!/", "obj_checkers_enemy_slash_Step_0_gml_448_0")
+            global.msg[4] = gml_Script_stringsetloc("\\E0* Susie^1! Help us bow at it!/", "obj_checkers_enemy_slash_Step_0_gml_449_0")
+            gml_Script_scr_susface(5, 0)
+            global.msg[6] = gml_Script_stringsetloc("* Nah^1, its crown'll come off.../", "obj_checkers_enemy_slash_Step_0_gml_451_0")
+            global.msg[7] = gml_Script_stringsetloc("\\E4* When I smash this guy to the GROUND!/", "obj_checkers_enemy_slash_Step_0_gml_452_0")
+            gml_Script_scr_ralface(8, 1)
+            global.msg[9] = gml_Script_stringsetloc("* .../%", "obj_checkers_enemy_slash_Step_0_gml_454_0")
+            ralsei_lecture = true
+        }
+        gml_Script_scr_battletext_default()
+        actcon = 31
     }
     if (actcon == 31 && (!instance_exists(obj_writer)))
     {
-        var _temp_local_var_28 = bowral
-        instance_destroy()
+        with (bowral)
+            instance_destroy()
+        with (bowkris)
+            instance_destroy()
+        with (bowcheck)
+            instance_destroy()
+        visible = true
+        with (obj_heroralsei)
+            visible = true
+        with (obj_herokris)
+            visible = true
+        actcon = 1
     }
     if (secondtime == true)
     {
@@ -291,8 +440,9 @@ if (global.myfight == 3)
         {
             if (thrown == 1)
             {
-                var _temp_local_var_32 = trsus
-                instance_destroy()
+                with (trsus)
+                    instance_destroy()
+                thrown = 2
             }
             if (thrown > 0)
             {

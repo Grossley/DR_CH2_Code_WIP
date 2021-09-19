@@ -90,8 +90,7 @@ if (shootcon == 2)
     shoottimer--
     if (shoottimer <= 0)
     {
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             var lasercircle = gml_Script_instance_create(xx, yy, obj_werewire_bullet_lasercircle)
             lasercircle.damage = damage
@@ -100,10 +99,13 @@ if (shootcon == 2)
             var laser_angle = (direction + random_range(-2, 2))
             lasercircle.my_angle = ((laser_angle - 5) + (5 * i))
             lasercircle.my_angle_change = (((-1 + i) * 0.8) * m)
-            var _temp_local_var_11 = lasercircle
-            my_speed = 4
-            my_accel = 0.2
-            my_length = 4
+            with (lasercircle)
+            {
+                my_speed = 4
+                my_accel = 0.2
+                my_length = 4
+            }
+            lasercircle.my_accel = 0.4
         }
         shoottimer = (10 / m)
         shootcount += 1
@@ -158,13 +160,14 @@ if (shootcon == 4)
         }
         if (image_index >= 4)
         {
-            i = 0
-            while (i < 5)
+            for (i = 0; i < 5; i += 1)
             {
-                var _temp_local_var_14 = bullet[i]
-                if (speed <= 0)
-                    speed = 0.2
-                friction = -0.25
+                with (bullet[i])
+                {
+                    if (speed <= 0)
+                        speed = 0.2
+                    friction = -0.25
+                }
             }
             shootcon = 0
             image_index = 0

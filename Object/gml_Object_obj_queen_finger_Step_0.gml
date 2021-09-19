@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 timer--
 xx = (obj_growtangle.x + 80)
 if (state == 0)
@@ -45,6 +46,7 @@ else if (state == 8)
 }
 if (timer <= 0)
 {
+    var _temp_local_var_2 = state
     switch state
     {
         case 0:

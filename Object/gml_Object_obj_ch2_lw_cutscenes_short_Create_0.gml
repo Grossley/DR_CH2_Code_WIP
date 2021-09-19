@@ -34,8 +34,10 @@ else
         con = 50
         alphys = gml_Script_scr_marker(469, 222, 922)
         toriel = gml_Script_scr_marker(551, 201, 897)
-        var _temp_local_var_6 = alphys
-        gml_Script_scr_depth()
+        with (alphys)
+            gml_Script_scr_depth()
+        with (toriel)
+            gml_Script_scr_depth()
     }
 }
 if (destroyme == 1)

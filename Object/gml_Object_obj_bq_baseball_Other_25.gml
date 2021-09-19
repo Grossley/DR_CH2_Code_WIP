@@ -12,3 +12,4 @@ with (baseball_hitbox)
     image_yscale = 4
     image_xscale = 4
 }
+instance_destroy()

@@ -1,11 +1,20 @@
 if (init == 1)
 {
     noelle = gml_Script_instance_create((obj_controller_city_mice3.noelle.x + 4), obj_controller_city_mice3.noelle.y, obj_noelle_scared)
-    var _temp_local_var_1 = noelle
-    hastarget = 1
-    jumppuzzle = 1
-    if instance_exists(obj_masterPlatformController)
-        target = obj_masterPlatformController.plat[0]
+    with (noelle)
+    {
+        hastarget = 1
+        jumppuzzle = 1
+        if instance_exists(obj_masterPlatformController)
+            target = obj_masterPlatformController.plat[0]
+    }
+    with (obj_controller_city_mice3)
+    {
+        with (noelle)
+            instance_destroy()
+    }
+    active = true
+    init = 2
 }
 if (active == true)
 {
@@ -18,15 +27,23 @@ if (active == true)
             phase++
         currentPlatform++
         plat[currentPlatform] = gml_Script_instance_create(x, y, obj_rotationtile_tower)
-        var _temp_local_var_4 = plat[currentPlatform]
-        x = 640
-        y = 480
+        with (plat[currentPlatform])
+        {
+            x = 640
+            y = 480
+        }
+        makenewplatform = 0
+        waitbuffer = 30
     }
     if (mouseSpawn == 1 && plat[(currentPlatform - 1)].tilecon == 0)
     {
-        var _temp_local_var_6 = plat[(currentPlatform - 1)]
-        hole.mousecreate = 1
-        hole.gentimer = 20
+        with (plat[(currentPlatform - 1)])
+        {
+            hole.mousecreate = 1
+            hole.gentimer = 20
+        }
+        freezespawn = 60
+        mouseSpawn = 0
     }
     freezespawn--
     if (freezespawn == 0)

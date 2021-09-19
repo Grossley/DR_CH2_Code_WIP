@@ -8,6 +8,13 @@ if (room == room_forest_area5_ch1)
     talkto.image_xscale = image_xscale
     talkto.image_yscale = image_yscale
     tree = gml_Script_instance_create_ch1((x - 40), (y - 120), 1469)
-    var _temp_local_var_1 = tree
-    gml_Script_scr_depth_ch1()
+    with (tree)
+        gml_Script_scr_depth_ch1()
+    if (global.flag[237] > 0)
+    {
+        with (tree)
+            instance_destroy()
+        with (block)
+            instance_destroy()
+    }
 }

@@ -10,10 +10,7 @@ if gml_Script_i_ex(837)
 global.hp[1] = 1
 dead = 0.5
 if (global.flag[526] < 10)
-{
-    obj_queen_explodinghead.flag[global.flag[obj_queen_explodinghead]] = (global.flag[obj_queen_explodinghead] + 1)
-    global
-}
+    global.flag[526] = (global.flag[526] + 1)
 gml_Script_snd_free(global.batmusic[0])
 health_count = 0
 dead_timer = 0

@@ -5,6 +5,9 @@ if (global.plot >= 80 || global.flag[238] == 1)
 else
 {
     s = gml_Script_scr_dark_marker_ch1((x + 20), (y + 60), 3548)
-    var _temp_local_var_2 = s
-    gml_Script_scr_depth_ch1()
+    with (s)
+        gml_Script_scr_depth_ch1()
+    l = gml_Script_scr_dark_marker_ch1((x + 60), (y + 80), 3573)
+    with (l)
+        gml_Script_scr_depth_ch1()
 }

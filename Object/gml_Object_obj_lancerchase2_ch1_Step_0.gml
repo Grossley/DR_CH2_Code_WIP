@@ -17,23 +17,23 @@ if (con == 2)
         global.interact = 1
         con = 3
         alarm[4] = 14
-        i = 0
-        while (i < dmax)
+        for (i = 0; i < dmax; i += 1)
         {
             d[i] = gml_Script_scr_dark_marker_ch1((400 + (i * 120)), -100, 3985)
-            var _temp_local_var_2 = d[i]
-            vspeed = 10
-            gml_Script_scr_depth_ch1()
+            with (d[i])
+            {
+                vspeed = 10
+                gml_Script_scr_depth_ch1()
+            }
         }
     }
 }
 if (con == 4)
 {
-    i = 0
-    while (i < dmax)
+    for (i = 0; i < dmax; i += 1)
     {
-        var _temp_local_var_3 = d[i]
-        gml_Script_scr_halt_ch1()
+        with (d[i])
+            gml_Script_scr_halt_ch1()
     }
     con = 5
     alarm[4] = 15

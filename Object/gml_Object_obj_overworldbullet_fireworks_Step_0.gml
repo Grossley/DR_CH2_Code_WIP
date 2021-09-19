@@ -23,8 +23,8 @@ if (type == 0)
             if (global.flag[8] == 0)
             {
                 shot.image_blend = make_color_hsv(random(255), 120, 255)
-                var _temp_local_var_1 = shot
-                gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
+                with (shot)
+                    gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
             }
         }
         gml_Script_snd_play(95)
@@ -37,7 +37,7 @@ if (type == 1)
     image_alpha += 0.1
     image_xscale += (sin((timer / 2)) * 0.2)
     image_yscale += (sin((timer / 2)) * 0.2)
-    if ((dir == "right" && x >= obj_doorA) ? 1 : (dir == "left" ? (x.room_width - 140) : 0))
+    if ((dir == "right" && x >= 140) || (dir == "left" && x <= (room_width - 140)))
     {
         bulletcount = 12
         randodir = random(120)
@@ -55,8 +55,8 @@ if (type == 1)
             shot.direction = (((360 / bulletcount) * i) + randodir)
             if (global.flag[8] == 0)
             {
-                var _temp_local_var_4 = shot
-                gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
+                with (shot)
+                    gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
             }
         }
         gml_Script_snd_play_pitch(95, 1.4)

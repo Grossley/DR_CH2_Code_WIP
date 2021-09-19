@@ -21,10 +21,14 @@ if (con == 1)
     if instance_exists(obj_caterpillarchara)
     {
         su_actor = gml_Script_scr_marker(obj_caterpillarchara.x, obj_caterpillarchara.y, 979)
-        var _temp_local_var_1 = su_actor
-        gml_Script_scr_depth()
-        image_speed = 0.25
-        gml_Script_scr_move_to_point_over_time(313, 86, 6)
+        with (su_actor)
+        {
+            gml_Script_scr_depth()
+            image_speed = 0.25
+            gml_Script_scr_move_to_point_over_time(313, 86, 6)
+        }
+        with (obj_caterpillarchara)
+            instance_destroy()
     }
     gml_Script_scr_pan_lerp(151, 0, 6)
     con = 2
@@ -37,8 +41,8 @@ if (con == 3)
     gml_Script_instance_create(x, y, obj_dw_transition)
     if gml_Script_scr_havechar(2)
     {
-        var _temp_local_var_2 = su_actor
-        instance_destroy()
+        with (su_actor)
+            instance_destroy()
     }
     with (obj_dw_transition)
     {

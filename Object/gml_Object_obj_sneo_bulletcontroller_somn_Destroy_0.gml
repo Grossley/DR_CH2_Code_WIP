@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 sneo.partmode = 1
 if hideshooty
 {

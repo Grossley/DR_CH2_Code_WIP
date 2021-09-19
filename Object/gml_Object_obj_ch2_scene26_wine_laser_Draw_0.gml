@@ -37,8 +37,29 @@ if (timer >= 40)
     d.image_yscale = 2
     d.image_speed = 0.75
     d.depth -= bombdepth
-    var _temp_local_var_4 = d
-    gml_Script_scr_depth()
+    with (d)
+        gml_Script_scr_depth()
+    if (d.x > (gml_Script_camerax() + 680) && explosioncount >= 24)
+    {
+        if instance_exists(obj_shake)
+        {
+            with (obj_shake)
+                instance_destroy()
+        }
+        if test_mode
+        {
+            timer = -60
+            trailstart = 0
+            trailend = 0
+            explosioncount = 0
+            return;
+        }
+        else
+        {
+            instance_destroy()
+            return;
+        }
+    }
 }
 if (timer >= 50)
 {

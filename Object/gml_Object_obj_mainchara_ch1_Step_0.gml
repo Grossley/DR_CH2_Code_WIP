@@ -426,10 +426,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_18 = interactedobject
-                    facing = 3
+                    with (interactedobject)
+                        facing = 3
+                    with (interactedobject)
+                        gml_Script_scr_interact_ch1()
                 }
             }
             thisinteract = 0
@@ -446,10 +448,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactable_ch1, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactablesolid_ch1, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_20 = interactedobject
-                    facing = 1
+                    with (interactedobject)
+                        facing = 1
+                    with (interactedobject)
+                        gml_Script_scr_interact_ch1()
                 }
             }
             thisinteract = 0
@@ -466,10 +470,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactable_ch1, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactablesolid_ch1, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_22 = interactedobject
-                    facing = 2
+                    with (interactedobject)
+                        facing = 2
+                    with (interactedobject)
+                        gml_Script_scr_interact_ch1()
                 }
             }
             thisinteract = 0
@@ -486,10 +492,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactable_ch1, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactablesolid_ch1, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_24 = interactedobject
-                    facing = 0
+                    with (interactedobject)
+                        facing = 0
+                    with (interactedobject)
+                        gml_Script_scr_interact_ch1()
                 }
             }
         }
@@ -498,5 +506,18 @@ if (onebuffer < 0)
 onebuffer -= 1
 twobuffer -= 1
 threebuffer -= 1
-var _temp_local_var_26 = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_doorparent_ch1, 0, 0)
-event_user(9)
+with (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_doorparent_ch1, 0, 0))
+    event_user(9)
+if (battlemode == 1)
+{
+    global.inv -= 1
+    if (global.inv < 0 && global.interact != 3)
+    {
+        with (collision_rectangle((x + 12), (y + 40), (x + 27), (y + 49), obj_overworldbulletparent_ch1, 1, 0))
+            event_user(5)
+        with (collision_line((x + 12), (y + 49), (x + 19), (y + 57), obj_overworldbulletparent_ch1, true, false))
+            event_user(5)
+        with (collision_line((x + 26), (y + 49), (x + 19), (y + 57), obj_overworldbulletparent_ch1, true, false))
+            event_user(5)
+    }
+}

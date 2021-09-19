@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 gml_Script_scr_depth()
 wallcheck = 0
 nowx = x
@@ -18,8 +19,8 @@ if (!roomenterfreezeend)
     {
         if (global.flag[21] > 0)
         {
-            obj_debug_ballooner.flag[global.flag[obj_debug_ballooner]] = (global.flag[obj_debug_ballooner] - 1)
-            global
+            var _temp_local_var_2 = global.flag[21]
+            global.flag[21] = (global.flag[21] - 1)
         }
         else
         {
@@ -54,8 +55,17 @@ if (swordcon == 1)
     swordtimer++
     if (swordtimer >= 15)
     {
-        var _temp_local_var_4 = slashmarker
-        instance_destroy()
+        with (slashmarker)
+            instance_destroy()
+        swordcon = 0
+        swordsprite = rsprite
+        fun = false
+        if (global.interact == 4)
+            global.interact = 0
+        swordtimer = 0
+        image_speed = 0
+        image_index = 0
+        image_alpha = 1
     }
 }
 if (global.interact == 0)
@@ -181,10 +191,8 @@ if (global.interact == 0)
             slashmarker.image_speed = 1
             if (swordfacing == -1)
             {
-                _temp_local_var_4.x = (slashmarker.x + sprite_width)
+                slashmarker.x += sprite_width
                 slashmarker.image_xscale = (-image_xscale)
-                var _temp_local_var_12 = -9
-                var _temp_local_var_13 = slashmarker
             }
             image_alpha = 0
             fun = true
@@ -492,10 +500,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactable, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), ((x + sprite_width) + (13 * d)), (y + sprite_height), obj_interactablesolid, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_29 = interactedobject
-                    facing = 3
+                    with (interactedobject)
+                        facing = 3
+                    with (interactedobject)
+                        gml_Script_scr_interact()
                 }
             }
             thisinteract = 0
@@ -512,10 +522,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactable, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (sprite_width / 2)), ((y + (6 * d)) + (sprite_height / 2)), (x - (13 * d)), (y + sprite_height), obj_interactablesolid, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_31 = interactedobject
-                    facing = 1
+                    with (interactedobject)
+                        facing = 1
+                    with (interactedobject)
+                        gml_Script_scr_interact()
                 }
             }
             thisinteract = 0
@@ -532,10 +544,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactable, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (4 * d)), (y + (28 * d)), ((x + sprite_width) - (4 * d)), ((y + sprite_height) + (15 * d)), obj_interactablesolid, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_33 = interactedobject
-                    facing = 2
+                    with (interactedobject)
+                        facing = 2
+                    with (interactedobject)
+                        gml_Script_scr_interact()
                 }
             }
             thisinteract = 0
@@ -552,10 +566,12 @@ if (onebuffer < 0)
                     interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactable, 0, 1)
                 if (thisinteract == 2)
                     interactedobject = collision_rectangle((x + (3 * d)), ((y + sprite_height) - (5 * d)), ((x + sprite_width) - (5 * d)), (y + (5 * d)), obj_interactablesolid, 0, 1)
-                if (interactedobject != -4)
+                if (interactedobject != noone)
                 {
-                    var _temp_local_var_35 = interactedobject
-                    facing = 0
+                    with (interactedobject)
+                        facing = 0
+                    with (interactedobject)
+                        gml_Script_scr_interact()
                 }
             }
         }
@@ -564,5 +580,57 @@ if (onebuffer < 0)
 onebuffer -= 1
 twobuffer -= 1
 threebuffer -= 1
-var _temp_local_var_37 = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_doorparent, 0, 0)
-event_user(9)
+with (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_doorparent, 0, 0))
+    event_user(9)
+if (battlemode == 1)
+{
+    global.inv -= 1
+    if (global.inv < 0)
+    {
+        with (collision_rectangle((x + 12), (y + 40), (x + 27), (y + 49), obj_overworldbulletparent, 1, 0))
+            event_user(5)
+        with (collision_line((x + 12), (y + 49), (x + 19), (y + 57), obj_overworldbulletparent, true, false))
+            event_user(5)
+        with (collision_line((x + 26), (y + 49), (x + 19), (y + 57), obj_overworldbulletparent, true, false))
+            event_user(5)
+    }
+}
+if gml_Script_scr_debug()
+{
+    if keyboard_check_pressed(vk_insert)
+        room_goto_next()
+    if keyboard_check_pressed(vk_delete)
+        room_goto_previous()
+    if keyboard_check_pressed(vk_home)
+    {
+        if keyboard_check(ord("1"))
+        {
+            room_goto(room_dw_cyber_intro_1)
+            global.darkzone = true
+        }
+        if keyboard_check(ord("2"))
+        {
+            room_goto(room_krisroom)
+            global.plot = 0
+            global.darkzone = false
+        }
+        if keyboard_check(ord("3"))
+        {
+            room_goto(room_dw_castle_area_1)
+            global.plot = 7
+            global.darkzone = true
+        }
+        if keyboard_check(ord("7"))
+            room_goto(room_legend_neo)
+        if keyboard_check(ord("8"))
+        {
+            room_goto(room_battletest)
+            global.darkzone = true
+        }
+        if keyboard_check(ord("9"))
+        {
+            room_goto(room_bullettest)
+            global.darkzone = true
+        }
+    }
+}

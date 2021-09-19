@@ -18,6 +18,7 @@ if (y == startY && timer > 15)
     newsaucer = gml_Script_instance_create(x, y, obj_saucer)
     newsaucer.mode = 1
     newsaucer.content = 0
-    var _temp_local_var_2 = newsaucer
-    gml_Script_scr_depth()
+    with (newsaucer)
+        gml_Script_scr_depth()
+    instance_destroy()
 }

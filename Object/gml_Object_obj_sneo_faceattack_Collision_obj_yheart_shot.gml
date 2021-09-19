@@ -3,13 +3,15 @@ if (type == 0 || image_alpha < 0.9)
 if (broken == 1)
 {
     gml_Script_snd_play(39)
-    var _temp_local_var_2 = other
-    event_user(0)
+    with (other)
+        event_user(0)
+    return;
 }
 if (invincibilitytimer > 0 && other.big == 0)
 {
-    var _temp_local_var_4 = other
-    instance_destroy()
+    with (other)
+        instance_destroy()
+    return;
 }
 shake = 6
 if (other.big == 0)
@@ -41,5 +43,5 @@ if ((type == 1 && obj_spamton_neo_enemy.eyeshp <= 0) || (type == 2 && obj_spamto
     gml_Script_snd_play(220)
     explodetimer = 16
 }
-var _temp_local_var_7 = other
-event_user(0)
+with (other)
+    event_user(0)

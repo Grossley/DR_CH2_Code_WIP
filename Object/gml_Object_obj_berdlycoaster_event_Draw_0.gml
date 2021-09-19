@@ -37,6 +37,17 @@ if (con == 0)
         x = kris_x
         y = kris_y
     }
+    with (fallmarker[1])
+    {
+        x = sus_x
+        y = sus_y
+    }
+    with (fallmarker[2])
+    {
+        x = ral_x
+        y = ral_y
+    }
+    con = 0.5
 }
 if (con == 0.1)
 {
@@ -53,8 +64,7 @@ if (con == 1)
 {
     if (x >= (gml_Script_camerax() + 360))
     {
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i++)
         {
             with (fallmarker[i])
                 instance_destroy()

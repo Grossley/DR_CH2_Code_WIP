@@ -12,7 +12,7 @@ global.msg[0] = gml_Script_stringsetloc("* Suddenly^1, your body seizes up^1.&* 
 global.msg[0] = gml_Script_stringset("* [NO TEXT] (obj_readable_room1)/%")
 if (room == room_krisroom)
 {
-    if (y < obj_doorX)
+    if (y < 150)
     {
         if (global.chapter == 1)
         {
@@ -37,7 +37,7 @@ if (room == room_krisroom)
             gml_Script_msgnextloc("* Doesn't seem like this game ever saw the light of day.../%", "obj_readable_room1_slash_Other_10_gml_45_0")
         }
     }
-    if (x > obj_npc_rudy)
+    if (x > 100)
     {
         if (global.chapter == 1)
         {
@@ -59,16 +59,16 @@ if (room == room_krisroom)
             gml_Script_scr_text(global.msc)
         }
     }
-    if (x > obj_event_room)
+    if (x > 136)
     {
         if (global.chapter == 1)
             global.msg[0] = gml_Script_stringsetloc("* It's a beautiful day outside./%", "obj_readable_room1_slash_Other_10_gml_80_0")
         if (global.chapter == 2)
             gml_Script_msgsetloc(0, "* Even after a long night^1, the sunrise is the same as always./%", "obj_readable_room1_slash_Other_10_gml_86_0")
     }
-    if (x > obj_circlezoom)
+    if (x > 192)
         global.msg[0] = gml_Script_stringsetloc("* Clothes drawer./%", "obj_readable_room1_slash_Other_10_gml_91_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
     {
         global.msg[0] = gml_Script_stringsetloc("* Your bed./%", "obj_readable_room1_slash_Other_10_gml_96_0")
         if (global.chapter == 1)
@@ -85,20 +85,20 @@ if (room == room_krisroom)
             }
         }
     }
-    if (x > obj_dancer_gen)
+    if (x > 250)
         global.msg[0] = gml_Script_stringsetloc("* It's stained./%", "obj_readable_room1_slash_Other_10_gml_112_0")
 }
 if (room == room_debug_loc)
 {
     global.msg[0] = gml_Script_stringsetloc("* The door is locked./%", "obj_readable_room1_slash_Other_10_gml_120_0")
-    if (x > obj_npc_musical_door)
+    if (x > 120)
     {
         if (global.chapter == 1)
             global.msg[0] = gml_Script_stringsetloc("* It's only you./%", "obj_readable_room1_slash_Other_10_gml_127_0")
         if (global.chapter == 2)
             gml_Script_msgsetloc(0, "* (It's what they call \"you.\")/%", "obj_readable_room1_slash_Other_10_gml_133_0")
     }
-    if (x > obj_markerr)
+    if (x > 160)
     {
         if (global.chapter == 1)
             global.msg[0] = gml_Script_stringsetloc("* There are crayons in the drawer^1. Their labels have long faded^1, and there's no green./%", "obj_readable_room1_slash_Other_10_gml_141_0")
@@ -110,9 +110,9 @@ if (room == room_debug_loc)
             gml_Script_msgnextloc("* (Your brother will never return this book.)/%", "obj_readable_room1_slash_Other_10_gml_150_0")
         }
     }
-    if (x > obj_cauldron_cake)
+    if (x > 220)
         global.msg[0] = gml_Script_stringsetloc("* A cactus^1.&* There's not much to say about it./%", "obj_readable_room1_slash_Other_10_gml_169_0")
-    if (x > obj_city_trashbag)
+    if (x > 320)
     {
         if (global.chapter == 1)
         {
@@ -131,14 +131,14 @@ if (room == room_debug_loc)
 if (room == room_krishallway)
 {
     global.msg[0] = gml_Script_stringsetloc("* The door is locked./%", "obj_readable_room1_slash_Other_10_gml_120_0")
-    if (x > obj_npc_musical_door)
+    if (x > 120)
     {
         if (global.chapter == 1)
             global.msg[0] = gml_Script_stringsetloc("* It's only you./%", "obj_readable_room1_slash_Other_10_gml_127_0")
         if (global.chapter == 2)
             gml_Script_msgsetloc(0, "* (It's what they call \"you.\")/%", "obj_readable_room1_slash_Other_10_gml_196_0")
     }
-    if (x > obj_markerr)
+    if (x > 160)
     {
         if (global.chapter == 1)
             global.msg[0] = gml_Script_stringsetloc("* There are crayons in the drawer^1. Their labels have long faded^1, and there's no green./%", "obj_readable_room1_slash_Other_10_gml_141_0")
@@ -150,9 +150,9 @@ if (room == room_krishallway)
             gml_Script_msgnextloc("* (Your brother will never return this book.)/%", "obj_readable_room1_slash_Other_10_gml_213_0")
         }
     }
-    if (x > obj_cauldron_cake)
+    if (x > 220)
         global.msg[0] = gml_Script_stringsetloc("* A cactus^1.&* There's not much to say about it./%", "obj_readable_room1_slash_Other_10_gml_169_0")
-    if (x > obj_city_trashbag)
+    if (x > 320)
     {
         if (global.chapter == 1)
         {
@@ -170,9 +170,9 @@ if (room == room_krishallway)
 }
 if (room == room_torhouse)
 {
-    if (x > obj_persistentfadein)
+    if (x > 190)
         global.msg[0] = gml_Script_stringsetloc("* There's a photo on the fridge^1. It's of you^1, your mother, and your brother./%", "obj_readable_room1_slash_Other_10_gml_200_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
     {
         if instance_exists(obj_ch2_scene30b)
         {
@@ -183,47 +183,47 @@ if (room == room_torhouse)
         else
             global.msg[0] = gml_Script_stringsetloc("* There is some white fur stuck in the drain./%", "obj_readable_room1_slash_Other_10_gml_211_0")
     }
-    if (x > obj_saucer_ufo_bullet)
+    if (x > 260)
     {
         global.msg[0] = gml_Script_stringsetloc("* There's some cinnamony batter caked on the stovetop./%", "obj_readable_room1_slash_Other_10_gml_217_0")
         if (global.plot >= 250)
             global.msg[0] = gml_Script_stringsetloc("* (It's a butterscotch-cinnamon pie.^1)&* (It's still cooling.)/%", "obj_readable_room1_slash_Other_10_gml_220_0")
     }
-    if (x > obj_queenmansion_bg)
+    if (x > 300)
         global.msg[0] = gml_Script_stringsetloc("* (Cookie cutters for gingerbread monsters and gingerbread humans.)/%", "obj_readable_room1_slash_Other_10_gml_226_0")
-    if (x > obj_cyber_tree_spin)
+    if (x > 340)
     {
         global.msg[0] = gml_Script_stringsetloc("* It's a trashcan^1.&* Somehow^1, it's emitting a pleasant floral scent./%", "obj_readable_room1_slash_Other_10_gml_231_0")
         if (global.flag[262] >= 4)
             global.msg[0] = gml_Script_stringsetloc("* It's a trashcan^1.&* Somehow^1, its floral scent has increased./%", "obj_readable_room1_slash_Other_10_gml_234_0")
     }
-    if (x > obj_heroparent)
+    if (x > 369)
         global.msg[0] = gml_Script_stringsetloc("* It's a landline phone^1.&* But you already have a cell phone./%", "obj_readable_room1_slash_Other_10_gml_240_0")
-    if (x > obj_swatchling_candy)
+    if (x > 440)
     {
         if (global.chapter == 1)
             global.msg[0] = gml_Script_stringsetloc("* It's the TV^1.&* Doesn't seem to even be plugged in anymore./%", "obj_readable_room1_slash_Other_10_gml_245_0")
         else
             gml_Script_msgsetloc(0, "* (It's the TV^1.)&* (Looks like it's plugged in, but it's dusty.)/%", "obj_readable_room1_slash_Other_10_gml_320_0")
     }
-    if (x > obj_bulletdeleter)
+    if (x > 560)
         global.msg[0] = gml_Script_stringsetloc("* It's a book of hymns./%", "obj_readable_room1_slash_Other_10_gml_251_0")
 }
 if (room == room_torbathroom)
 {
     if (global.chapter == 1)
     {
-        if (x >= obj_npc_rudy)
+        if (x >= 100)
         {
             global.msg[0] = gml_Script_stringsetloc("* On the shower ledge^1, there's a small container of apple-scented shampoo./", "obj_readable_room1_slash_Other_10_gml_263_0")
             global.msg[1] = gml_Script_stringsetloc("* ... and a gallon-sized container of pet shampoo./%", "obj_readable_room1_slash_Other_10_gml_264_0")
         }
-        if (x >= obj_markerr && x <= obj_persistentfadein)
+        if (x >= 160 && x <= 190)
         {
             global.msc = 355
             gml_Script_scr_text(global.msc)
         }
-        if (x >= obj_persistentfadein)
+        if (x >= 190)
         {
             global.msg[0] = gml_Script_stringsetloc("* You looked inside the sink cupboard^1.&* There's.../", "obj_readable_room1_slash_Other_10_gml_273_0")
             global.msg[1] = gml_Script_stringsetloc("* A can of Ice-E's Cool Boys Body Spray \"Spray For The Boys,\" Flamin' Hot Pizza Flavor./", "obj_readable_room1_slash_Other_10_gml_274_0")
@@ -232,7 +232,7 @@ if (room == room_torbathroom)
     }
     if (global.chapter == 2)
     {
-        if (x >= obj_npc_rudy)
+        if (x >= 100)
         {
             if (global.plot == 210)
             {
@@ -250,7 +250,7 @@ if (room == room_torbathroom)
                 global.msg[1] = gml_Script_stringsetloc("* ... and a gallon-sized container of pet shampoo./%", "obj_readable_room1_slash_Other_10_gml_358_0")
             }
         }
-        if (x >= obj_markerr && x <= obj_persistentfadein)
+        if (x >= 160 && x <= 190)
         {
             if (global.plot == 210)
             {
@@ -263,7 +263,7 @@ if (room == room_torbathroom)
                 gml_Script_scr_text(global.msc)
             }
         }
-        if (x >= obj_persistentfadein)
+        if (x >= 190)
         {
             if (global.plot < 210)
             {
@@ -285,7 +285,7 @@ if (room == room_torbathroom)
 }
 if (room == room_schoollobby)
 {
-    if (x >= obj_doorA && x < obj_sneo_heart_laser)
+    if (x >= 140 && x < 240)
     {
         if (tempvar == 0)
             global.msg[0] = gml_Script_stringsetloc("* The locker is locked./%", "obj_readable_room1_slash_Other_10_gml_335_0")
@@ -300,20 +300,20 @@ if (room == room_schoollobby)
         with (obj_readable_room1)
             tempvar += 1
     }
-    if (x == obj_sneo_heart_laser)
+    if (x == 240)
         global.msg[0] = gml_Script_stringsetloc("* (The locker is covered in Jockington memorabilia.)/%", "obj_readable_room1_slash_Other_10_gml_344_0")
-    if (x >= obj_npc_cafe)
+    if (x >= 280)
     {
         global.msg[0] = gml_Script_stringsetloc("* (Are you ready for the Sadie Hawkman's dance?)/", "obj_readable_room1_slash_Other_10_gml_349_0")
         global.msg[1] = gml_Script_stringsetloc("* (At this dance^1, all the chaperones wear giant hawk heads...)/", "obj_readable_room1_slash_Other_10_gml_350_0")
         global.msg[2] = gml_Script_stringsetloc("* (... and screech at any students that make contact while dancing.)/%", "obj_readable_room1_slash_Other_10_gml_351_0")
     }
-    if (x < obj_doorA)
+    if (x < 140)
     {
         global.msg[0] = gml_Script_stringsetloc("* (You look through the frosted window.)/", "obj_readable_room1_slash_Other_10_gml_356_0")
         global.msg[1] = gml_Script_stringsetloc("* (A blurry yellow object is teaching a bunch of blurry bored-looking objects.)/%", "obj_readable_room1_slash_Other_10_gml_357_0")
     }
-    if (x >= obj_queen_wine_attack_bottom_hurtbox)
+    if (x >= 520)
     {
         global.msg[0] = gml_Script_stringsetloc("* (You ran the water fountain.^1)&* (It's lukewarm.)/%", "obj_readable_room1_slash_Other_10_gml_362_0")
         if (read == 1)
@@ -332,17 +332,17 @@ if (room == room_schoollobby)
             }
         }
     }
-    if (x >= obj_bulletdeleter)
+    if (x >= 560)
     {
         global.msg[0] = gml_Script_stringsetloc("* Do you like^1, breathing^1? Moving fast^1, with or without^1, legs?/", "obj_readable_room1_slash_Other_10_gml_382_0")
         global.msg[1] = gml_Script_stringsetloc("* But usually^1, with legs?/", "obj_readable_room1_slash_Other_10_gml_383_0")
         global.msg[2] = gml_Script_stringsetloc("* Join the Cross Country Team with Jockington^1, and Noelle!/%", "obj_readable_room1_slash_Other_10_gml_384_0")
     }
-    if (x >= o_coaster_controller_sneo)
+    if (x >= 690)
         global.msg[0] = gml_Script_stringsetloc("* (Locker^1. It's locked.)/%", "obj_readable_room1_slash_Other_10_gml_390_0")
-    if (x == obj_mauswheel_cursor)
+    if (x == 760)
         global.msg[0] = gml_Script_stringsetloc("* (This used to be your brother's locker.)/%", "obj_readable_room1_slash_Other_10_gml_396_0")
-    if (x == obj_bq_laser)
+    if (x == 780)
         global.msg[0] = gml_Script_stringsetloc("* (It's your locker.^1)&* (It's empty.)/%", "obj_readable_room1_slash_Other_10_gml_400_0")
 }
 if (room == room_alphysclass)
@@ -354,7 +354,7 @@ if (room == room_alphysclass)
         global.msg[0] = gml_Script_stringsetloc("* (You checked the time.)/", "obj_readable_room1_slash_Other_10_gml_414_0")
         global.msg[1] = gml_Script_stringsetloc("* (... It seems to not be time for class.)/%", "obj_readable_room1_slash_Other_10_gml_415_0")
     }
-    if (x > obj_sneo_heart_laser)
+    if (x > 240)
     {
         global.fe = 1
         global.fc = 11
@@ -362,7 +362,7 @@ if (room == room_alphysclass)
         global.msg[0] = gml_Script_stringsetloc("* Um^1, Kris^1, the hope is that you.../", "obj_readable_room1_slash_Other_10_gml_423_0")
         global.msg[1] = gml_Script_stringsetloc("\\E0* ... choose someone in the class?/%", "obj_readable_room1_slash_Other_10_gml_424_0")
     }
-    if (x < obj_power_up_fx)
+    if (x < 200)
     {
         if (global.chapter == 1)
         {
@@ -382,9 +382,9 @@ if (room == room_alphysclass)
             gml_Script_msgnextloc("* (You wonder if your mother had some influence on this change.)/%", "obj_readable_room1_slash_Other_10_gml_514_0")
         }
     }
-    if (x < obj_doorX)
+    if (x < 150)
         global.msg[0] = gml_Script_stringsetloc("* (It's a bunch of roses.)/%", "obj_readable_room1_slash_Other_10_gml_453_0")
-    if (x < obj_mainchara)
+    if (x < 80)
     {
         global.msg[0] = gml_Script_stringsetloc("* (Looks like motivational quotes from various literature.)/", "obj_readable_room1_slash_Other_10_gml_459_0")
         global.msg[1] = gml_Script_stringsetloc("* \"Try your best^1, Astral Wolf^1!\"&* \"Even in your darkest hour...!\"/", "obj_readable_room1_slash_Other_10_gml_460_0")
@@ -393,14 +393,14 @@ if (room == room_alphysclass)
 }
 if (room == room_torielclass)
 {
-    if (y.room_height / 2)
+    if (y <= (room_height / 2))
     {
-        if (x >= obj_npc_rudy)
+        if (x >= 100)
         {
             global.msg[0] = gml_Script_stringsetloc("* (\"Ms. Toriel\" is written in cursive on the dry-erase board.)/", "obj_readable_room1_slash_Other_10_gml_473_0")
             global.msg[1] = gml_Script_stringsetloc("* (Seems like it hasn't been erased in a very long time.)/%", "obj_readable_room1_slash_Other_10_gml_474_0")
         }
-        if (x >= obj_readable)
+        if (x >= 130)
         {
             if (global.chapter == 1)
             {
@@ -414,7 +414,7 @@ if (room == room_torielclass)
                 gml_Script_msgnextloc("* (Your brother is using the knockoff controller.)/%", "obj_readable_room1_slash_Other_10_gml_556_0")
             }
         }
-        if (x >= obj_musicer_mansion)
+        if (x >= 170)
         {
             if (global.chapter == 1)
             {
@@ -427,24 +427,24 @@ if (room == room_torielclass)
                 gml_Script_msgnextloc("* (It's almost dry^1, but that gives it a refined^1, aged apple bouquet.)/%", "obj_readable_room1_slash_Other_10_gml_571_0")
             }
         }
-        if (x >= obj_parallaxer_fountain)
+        if (x >= 198)
         {
             if (global.chapter == 1)
                 global.msg[0] = gml_Script_stringsetloc("* (Some kind of teacher food.)/%", "obj_readable_room1_slash_Other_10_gml_510_0")
             if (global.chapter == 2)
                 gml_Script_msgsetloc(0, "* (It's an orange. It's unknown if it's safe for teachers to eat this.)/%", "obj_readable_room1_slash_Other_10_gml_583_0")
         }
-        if (x >= obj_background_cyberlines)
+        if (x >= 204)
         {
             global.msg[0] = gml_Script_stringsetloc("* (It's a poster of several basic shapes.^1)&* (Circle, Oval, Square...)/", "obj_readable_room1_slash_Other_10_gml_521_0")
             global.msg[1] = gml_Script_stringsetloc("* (Hyperdodecahedron...)/%", "obj_readable_room1_slash_Other_10_gml_522_0")
         }
-        if (x >= obj_darkfountain)
+        if (x >= 230)
             global.msg[0] = gml_Script_stringsetloc("* (Kids' books.^1)&* (Some of them used to be yours.)/%", "obj_readable_room1_slash_Other_10_gml_526_0")
-        if (x >= obj_overworld_spade)
+        if (x >= 256)
             global.msg[0] = gml_Script_stringsetloc("* (It's a primitive drawing of your mom.)/%", "obj_readable_room1_slash_Other_10_gml_530_0")
     }
-    else if (x.room_width / 2)
+    else if (x <= (room_width / 2))
         global.msg[0] = gml_Script_stringsetloc("* (Some kind of primitive sculpture.)&* (Who knows what it represents?)/%", "obj_readable_room1_slash_Other_10_gml_537_0")
     else
     {
@@ -458,32 +458,32 @@ if (room == room_schooldoor)
     global.msg[0] = gml_Script_stringsetloc("* (The door is locked.)/%", "obj_readable_room1_slash_Other_10_gml_626_0")
 if (room == room_school_unusedroom)
 {
-    if (x < obj_mainchara)
+    if (x < 80)
         global.msg[0] = gml_Script_stringsetloc("* (The door is locked.)/%", "obj_readable_room1_slash_Other_10_gml_631_0")
-    if (x > obj_npc_rudy)
+    if (x > 100)
         global.msg[0] = gml_Script_stringsetloc("* (It's a worn-down stuffed animal.)/%", "obj_readable_room1_slash_Other_10_gml_632_0")
-    if (x > obj_markerr && y < obj_npc_rudy)
+    if (x > 160 && y < 100)
         global.msg[0] = gml_Script_stringsetloc("* (It's a lightswitch.)/%", "obj_readable_room1_slash_Other_10_gml_633_0")
-    if (x > obj_markerr && y > obj_npc_rudy)
+    if (x > 160 && y > 100)
         global.msg[0] = gml_Script_stringsetloc("* (It's a checkerboard.^1)&* (There are pawns strewn on it.)/%", "obj_readable_room1_slash_Other_10_gml_634_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
         global.msg[0] = gml_Script_stringsetloc("* (Playing cards spill out of a deck in the closet.)/%", "obj_readable_room1_slash_Other_10_gml_635_0")
-    if (x > obj_dancer_gen)
+    if (x > 250)
     {
         global.msg[0] = gml_Script_stringsetloc("* (It's a yellowed, poorly-drawn picture of a green turtle.)/", "obj_readable_room1_slash_Other_10_gml_638_0")
         global.msg[1] = gml_Script_stringsetloc("* (It's signed 'Alvin.')/%", "obj_readable_room1_slash_Other_10_gml_639_0")
     }
     if (global.chapter == 2)
     {
-        if (x > obj_markerr && y > obj_npc_rudy)
+        if (x > 160 && y > 100)
             gml_Script_msgsetloc(0, "* (You stared at the checkerboard from the doorway.)/%", "obj_readable_room1_slash_Other_10_gml_644_0")
-        if (x > obj_cauldron_cake)
+        if (x > 220)
             gml_Script_msgsetloc(0, "* (Managed to cram everything into the closet^1. Even the rug.)/%", "obj_readable_room1_slash_Other_10_gml_645_0")
     }
 }
 if (room == room_hospital_lobby)
 {
-    if (x <= obj_markerr)
+    if (x <= 160)
     {
         if (global.chapter == 1)
         {
@@ -505,7 +505,7 @@ if (room == room_hospital_lobby)
             }
         }
     }
-    if (x >= obj_markerr)
+    if (x >= 160)
     {
         if (global.chapter == 1)
         {
@@ -544,7 +544,7 @@ if (room == room_dw_castle_west_cliff)
         gml_Script_msgnextloc("* (Someone around here really cares about the details.)/%", "obj_readable_room1_slash_Other_10_gml_717_0")
         if (global.plot >= 10)
         {
-            if (obj_mainchara.x > obj_npc_cafe && obj_mainchara.x < obj_chasebullet)
+            if (obj_mainchara.x > 280 && obj_mainchara.x < 360)
             {
                 if (global.plot >= 200 && global.flag[309] < 9)
                     global.tempflag[36] = 3
@@ -576,15 +576,15 @@ if (global.chapter == 1)
 }
 if (room == room_cc_clover)
 {
-    if (x < obj_lancerslideevent)
+    if (x < 90)
     {
         if (global.flag[412] == 0)
             global.flag[412] = 1
     }
     global.msg[0] = gml_Script_stringsetloc("* (It's a bed for three people^1, or one three-headed person.)/%", "obj_readable_room1_slash_Other_10_gml_662_0")
-    if (x.room_width / 2)
+    if (x > (room_width / 2))
     {
-        if (y.room_height / 2)
+        if (y < (room_height / 2))
         {
             global.msg[0] = gml_Script_stringsetloc("* (It's a giant baseball.^1)&* (For parties.)/%", "obj_readable_room1_slash_Other_10_gml_667_0")
             if (read >= 1)

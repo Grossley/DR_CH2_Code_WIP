@@ -189,6 +189,8 @@ if (EVENT == 32)
         {
             with (GM)
                 FINISH = true
+            EVENT = 15
+            alarm[4] = 20
         }
     }
 }
@@ -221,7 +223,7 @@ if (EVENT == 36 && (!instance_exists(obj_writer)))
 if (EVENT == 37)
 {
     GMSINE += 1
-    GM.initx = (GM.initx + (sin((GMSINE / 14)) * 1))
+    GM.initx += (sin((GMSINE / 14)) * 1)
 }
 if (EVENT == 38)
 {
@@ -553,13 +555,9 @@ if (EVENT == 65.5)
     if gml_Script_i_ex(882)
     {
         if (GM.initx > (gmx - 24))
-        {
-            GM.initx = (GM.initx - 1)
-        }
+            GM.initx -= 1
         if (GM.inity < (gmy + 56))
-        {
-            GM.inity = (GM.inity + 2)
-        }
+            GM.inity += 2
     }
 }
 if (EVENT == 66.5 && instance_exists(obj_writer) == 0)
@@ -573,6 +571,8 @@ if (EVENT == 66.5 && instance_exists(obj_writer) == 0)
     EVENT = 67
     with (CHOICE)
         event_user(0)
+    with (CHOICE)
+        STRINGMAX = 9
 }
 if (EVENT == 67)
 {

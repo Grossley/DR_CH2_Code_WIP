@@ -73,16 +73,24 @@ if (con == 3 && (!gml_Script_i_ex(895)))
 }
 if (con == 4 && queen_monitor.turnoff == 0 && queen_monitor.con == 0)
 {
-    var _temp_local_var_4 = queen_monitor
-    instance_destroy()
+    with (queen_monitor)
+        instance_destroy()
+    with (queen_monitor_frame)
+        instance_destroy()
+    con++
+    gml_Script_snd_play(157)
 }
 if (con == 5)
 {
-    var _temp_local_var_6 = queen_wall
-    if (image_xscale > 0.1)
-        image_xscale *= 0.8
-    else
-        instance_destroy()
+    with (queen_wall)
+    {
+        if (image_xscale > 0.1)
+            image_xscale *= 0.8
+        else
+            instance_destroy()
+    }
+    if (!gml_Script_i_ex(queen_wall))
+        con = 5.5
 }
 if (con == 5.5)
 {
@@ -99,14 +107,16 @@ if (con == 5.6)
     timer++
     if (timer == 5)
         gml_Script_snd_play(154)
-    var _temp_local_var_7 = queen_wall
-    if (image_xscale < 2)
-        image_xscale *= 1.25
-    else
+    with (queen_wall)
     {
-        other.con = 5.7
-        other.timer = 0
-        image_xscale = 2
+        if (image_xscale < 2)
+            image_xscale *= 1.25
+        else
+        {
+            other.con = 5.7
+            other.timer = 0
+            image_xscale = 2
+        }
     }
 }
 if (con == 5.7)
@@ -120,8 +130,16 @@ if (con == 6)
     con = 7
     alarm[0] = 30
     suppress = 0
-    var _temp_local_var_8 = knockout
-    instance_destroy()
+    with (knockout)
+        instance_destroy()
+    with (queen_wall)
+        instance_destroy()
+    bularea = gml_Script_instance_create(120, 280, obj_overworld_bulletarea)
+    bularea.image_xscale = 18
+    bularea.image_yscale = 2
+    global.facing = 0
+    global.interact = 0
+    global.flag[397] = 1
 }
 if (con == 8)
 {

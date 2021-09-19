@@ -1,4 +1,3 @@
-var swan_interact, _temp_local_var_3, _temp_local_var_4;
 con = -1
 customcon = 0
 if (global.chapter != 2)
@@ -23,13 +22,44 @@ else
         }
         var swanboat_x = (global.plot < 140 ? -200 : 140)
         swanboat = gml_Script_instance_create(swanboat_x, 240, obj_queencar)
-        var _temp_local_var_3 = swanboat
-        gml_Script_scr_depth()
+        with (swanboat)
+            gml_Script_scr_depth()
+        swanboat.con = global.plot < 140
+        swanboat.pause_y_move = 1
+        swanboat.pause_auto_talk = 1
+        queenhand = gml_Script_instance_create(285, 185, obj_npc_sign)
+        queenhand.sprite_index = spr_dw_mansion_hand
+        queenhand.image_xscale = 2
+        queenhand.image_yscale = 2
+        queenhand.setdepth = 0
+        queenhand.depth = (swanboat.depth + 100)
+        remove_collider = 0
+        if (global.plot >= 140)
+        {
+            bottom_collider = gml_Script_instance_create(200, 320, obj_soliddark)
+            bottom_collider.visible = false
+            bottom_collider.image_xscale = 6
+            var swan_interact = gml_Script_instance_create((swanboat.x + 50), (swanboat.y + 80), obj_npc_sign)
+            swan_interact.visible = false
+            swan_interact.image_xscale = 4
+        }
     }
     if (global.flag[343] == 1)
     {
         swanboat = gml_Script_instance_create(235, 240, obj_queencar)
-        var _temp_local_var_4 = swanboat
-        gml_Script_scr_depth()
+        with (swanboat)
+            gml_Script_scr_depth()
+        swanboat.pause_y_move = 1
+        swanboat.pause_auto_talk = 1
+        swan_interact = gml_Script_instance_create((swanboat.x + 20), 320, obj_npc_sign)
+        swan_interact.visible = false
+        swan_interact.image_xscale = 6
+        remove_collider = 0
+        left_collider = gml_Script_instance_create(200, 320, obj_soliddark)
+        left_collider.visible = false
+        left_collider.image_xscale = 2
+        right_collider = gml_Script_instance_create(360, 320, obj_soliddark)
+        right_collider.visible = false
+        right_collider.image_xscale = 2
     }
 }

@@ -4,21 +4,116 @@ if instance_exists(obj_mainchara)
     {
         werespawn = 1
         werewire1 = gml_Script_instance_create(520, 200, obj_chaseenemy)
-        var _temp_local_var_2 = werewire1
-        myencounter = 74
-        sprite_index = spr_werewire_hang_overworld
-        touchsprite = spr_werewire_hang_overworld
-        radius = 1
-        pacetype = 13
-        chasetype = -1
-        alertskip = 1
-        offscreen_frozen = false
-        increment = 2
-        amplitude = 160
-        t = 270
-        t = ((t + increment) % 360)
-        shift = (amplitude * dsin(t))
-        y = (yy + shift)
+        with (werewire1)
+        {
+            myencounter = 74
+            sprite_index = spr_werewire_hang_overworld
+            touchsprite = spr_werewire_hang_overworld
+            radius = 1
+            pacetype = 13
+            chasetype = -1
+            alertskip = 1
+            offscreen_frozen = false
+            increment = 2
+            amplitude = 160
+            t = 270
+            t = ((t + increment) % 360)
+            shift = (amplitude * dsin(t))
+            y = (yy + shift)
+        }
+        werewire2 = gml_Script_instance_create(720, 200, obj_chaseenemy)
+        with (werewire2)
+        {
+            myencounter = 74
+            sprite_index = spr_werewire_hang_overworld
+            touchsprite = spr_werewire_hang_overworld
+            radius = 1
+            pacetype = 13
+            chasetype = -1
+            alertskip = 1
+            offscreen_frozen = false
+            increment = 2
+            amplitude = 160
+            t = 290
+            t = ((t + increment) % 360)
+            shift = (amplitude * dsin(t))
+            y = (yy + shift)
+        }
+        werewire3 = gml_Script_instance_create(920, 200, obj_chaseenemy)
+        with (werewire3)
+        {
+            myencounter = 74
+            sprite_index = spr_werewire_hang_overworld
+            touchsprite = spr_werewire_hang_overworld
+            radius = 1
+            pacetype = 13
+            chasetype = -1
+            alertskip = 1
+            offscreen_frozen = false
+            increment = 2
+            amplitude = 160
+            t = 310
+            t = ((t + increment) % 360)
+            shift = (amplitude * dsin(t))
+            y = (yy + shift)
+        }
+        werewire4 = gml_Script_instance_create(1120, 200, obj_chaseenemy)
+        with (werewire4)
+        {
+            myencounter = 74
+            sprite_index = spr_werewire_hang_overworld
+            touchsprite = spr_werewire_hang_overworld
+            radius = 1
+            pacetype = 13
+            chasetype = -1
+            alertskip = 1
+            offscreen_frozen = false
+            increment = 2
+            amplitude = 160
+            t = 330
+            t = ((t + increment) % 360)
+            shift = (amplitude * dsin(t))
+            y = (yy + shift)
+        }
+        werewire5 = gml_Script_instance_create(1320, 200, obj_chaseenemy)
+        with (werewire5)
+        {
+            myencounter = 74
+            sprite_index = spr_werewire_hang_overworld
+            touchsprite = spr_werewire_hang_overworld
+            radius = 1
+            pacetype = 13
+            chasetype = -1
+            alertskip = 1
+            offscreen_frozen = false
+            increment = 2
+            amplitude = 160
+            t = 350
+            t = ((t + increment) % 360)
+            shift = (amplitude * dsin(t))
+            y = (yy + shift)
+        }
+        if (global.entrance != 2)
+        {
+            werewire6 = gml_Script_instance_create(2000, 360, obj_chaseenemy)
+            with (werewire6)
+            {
+                myencounter = 74
+                sprite_index = spr_werewire_hang_overworld
+                touchsprite = spr_werewire_hang_overworld
+                radius = 1
+                pacetype = 13
+                chasetype = -1
+                alertskip = 1
+                offscreen_frozen = false
+                increment = 2
+                amplitude = 160
+                t = 370
+                t = ((t + increment) % 360)
+                shift = (amplitude * dsin(t))
+                y = (yy + shift)
+            }
+        }
     }
 }
 if gml_Script_i_ex(80)
@@ -43,13 +138,16 @@ if (global.entrance == 2 || global.flag[528] == 1)
 if (spawned == 0 && spawn7 == 1)
 {
     werewire7 = gml_Script_instance_create(2000, 362, obj_solidblock)
-    var _temp_local_var_11 = werewire7
-    sprite_index = spr_werewire_hang_overworld
-    image_speed = 0.125
-    image_xscale = 2
-    image_yscale = 2
-    visible = true
-    depth = 100000
+    with (werewire7)
+    {
+        sprite_index = spr_werewire_hang_overworld
+        image_speed = 0.125
+        image_xscale = 2
+        image_yscale = 2
+        visible = true
+        depth = 100000
+    }
+    spawned = 1
 }
 if ((!gml_Script_i_ex(hintscreen)) && global.flag[351] == 1)
 {
@@ -61,21 +159,13 @@ if ((!gml_Script_i_ex(hintscreen)) && global.flag[351] == 1)
 }
 if (state == 0)
 {
-    _temp_local_var_11.y = (hintscreen.y - 4)
-    var _temp_local_var_13 = 
-    var _temp_local_var_14 = 
-    var _temp_local_var_15 = -9
-    var _temp_local_var_16 = hintscreen
+    hintscreen.y -= 4
     if (hintscreen.y <= 900)
         state = 1
 }
 if (state == 1)
 {
-    _temp_local_var_13.x = (hintscreen.x + 4)
-    var _temp_local_var_17 = _temp_local_var_14
-    var _temp_local_var_18 = -9
-    var _temp_local_var_19 = -9
-    var _temp_local_var_20 = hintscreen
+    hintscreen.x += 4
     if (hintscreen.x >= 1280)
         state = 2
 }
@@ -89,10 +179,12 @@ if gml_Script_i_ex(werewire6)
 }
 if (spawned == 1 && gml_Script_i_ex(hat) && hatflyaway == 1 && gml_Script_i_ex(865))
 {
-    var _temp_local_var_22 = hat
-    hatfade = gml_Script_scr_afterimage()
-    hatfade.vspeed = -16
-    hatfade.hspeed = 4
-    hatfade.friction = 0.25
-    instance_destroy()
+    with (hat)
+    {
+        hatfade = gml_Script_scr_afterimage()
+        hatfade.vspeed = -16
+        hatfade.hspeed = 4
+        hatfade.friction = 0.25
+        instance_destroy()
+    }
 }

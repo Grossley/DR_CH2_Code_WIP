@@ -34,6 +34,13 @@ if (con == 1)
 }
 if (!gml_Script_d_ex())
 {
-    var _temp_local_var_2 = puzboy
-    fade = 1
+    with (puzboy)
+        fade = 1
+    if gml_Script_i_ex(1319)
+    {
+        with (obj_tutorial_bullet)
+            fade = 1
+    }
+    growtangle.growcon = 3
+    instance_destroy()
 }

@@ -11,6 +11,21 @@ door_destination = room
 door_location = room
 on = 1
 weirdlight = gml_Script_scr_dark_marker_ch1((x + 6), (y + 96), 3719)
-var _temp_local_var_1 = weirdlight
-depth = 895000
-image_speed = 0.125
+with (weirdlight)
+{
+    depth = 895000
+    image_speed = 0.125
+}
+if (global.plot < 60)
+    on = 0
+if (room == room_forest_fightsusie_ch1)
+{
+    if (global.plot < 154)
+        on = 0
+}
+if (on == 0)
+{
+    sprite_index = spr_shortcut_door_off_ch1
+    with (weirdlight)
+        instance_destroy()
+}

@@ -1,4 +1,3 @@
-var __drawstatus, __actname, __plainactname, mercypercent, mercywidth, __actnamestring, __actnamestringwidth;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 if (global.chapter == 2 && instance_exists(obj_gigaqueen_enemy))
@@ -86,8 +85,7 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
             if (namewidthb[i] > namewidthmax)
                 namewidthmax = namewidthb[i]
         }
-        i = 0
-        while (i < 3)
+        for (i = 0; i < 3; i += 1)
         {
             with (global.monsterinstance[global.bmenucoord[global.bmenuno][global.charturn]])
             {
@@ -95,6 +93,104 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
                     fsiner = 0
                 flash = true
                 becomeflash = true
+            }
+            if (global.monster[i] == true)
+            {
+                draw_set_color(c_white)
+                mercydraw = false
+                tireddraw = false
+                mnamecolor1 = c_white
+                mnamecolor2 = c_white
+                aqcolor = merge_color(c_aqua, c_blue, 0.3)
+                if (global.monsterstatus[i] == true)
+                    tireddraw = true
+                if (global.mercymod[i] >= global.mercymax[i])
+                    mercydraw = true
+                namewidth = string_width(string_hash_to_newline(global.monstername[i]))
+                if (tireddraw == true)
+                {
+                    if (global.encounterno != 31)
+                    {
+                        draw_set_color(aqcolor)
+                        mnamecolor1 = aqcolor
+                        mnamecolor2 = aqcolor
+                    }
+                    draw_sprite(spr_tiredmark, 0, (((xx + 80) + namewidth) + 40), ((yy + 385) + (i * 30)))
+                }
+                if (mercydraw == true)
+                {
+                    draw_set_color(c_yellow)
+                    mnamecolor1 = c_yellow
+                    if (tireddraw == false)
+                        mnamecolor2 = c_yellow
+                    if (hidemercy == 0)
+                        draw_sprite(spr_sparestar, 0, (((xx + 80) + namewidth) + 20), ((yy + 385) + (i * 30)))
+                }
+                draw_text_colour((xx + 80), ((yy + 375) + (i * 30)), string_hash_to_newline(global.monstername[i]), mnamecolor1, mnamecolor2, mnamecolor2, mnamecolor1, 1)
+                var __drawstatus = 0
+                if (global.bmenuno == 13)
+                    __drawstatus = 1
+                if (__drawstatus == 0)
+                {
+                    draw_set_color(c_gray)
+                    if (global.lang != "ja")
+                        draw_text((((xx + 80) + namewidth) + 60), ((yy + 375) + (i * 30)), string_hash_to_newline(global.monstercomment[i]))
+                    else if ((((80 + namewidth) + 60) + (string_width(global.monstercomment[i]) / 2)) < 415)
+                        draw_text_transformed((((xx + 80) + namewidth) + 60), ((yy + 375) + (i * 30)), string_hash_to_newline(global.monstercomment[i]), 0.5, 1, 0)
+                    draw_set_color(c_maroon)
+                    draw_rectangle((xx + 420), ((yy + 380) + (i * 30)), (xx + 500), (((yy + 380) + (i * 30)) + 15), false)
+                    draw_set_color(c_lime)
+                    draw_rectangle((xx + 420), ((yy + 380) + (i * 30)), ((xx + 420) + ((global.monsterhp[i] / global.monstermaxhp[i]) * 80)), (((yy + 380) + (i * 30)) + 15), false)
+                    draw_set_color(c_white)
+                    draw_text_transformed((xx + 424), (yy + 364), gml_Script_stringsetloc("HP", "obj_battlecontroller_slash_Draw_0_gml_173_0"), 1, 0.5, 0)
+                    draw_text_transformed((xx + 424), ((yy + 380) + (i * 30)), (string(ceil(((global.monsterhp[i] / global.monstermaxhp[i]) * 100))) + "%"), 1, 0.5, 0)
+                }
+                else
+                {
+                    var __actname = gml_Script_stringsetloc("Standard", "obj_battlecontroller_slash_Draw_0_gml_172_0")
+                    var __plainactname = __actname
+                    if (global.char[global.charturn] == 2)
+                        __actname = global.actnamesus[i][global.bmenucoord[2][global.charturn]]
+                    if (global.char[global.charturn] == 3)
+                        __actname = global.actnameral[i][global.bmenucoord[2][global.charturn]]
+                    if (global.char[global.charturn] == 4)
+                        __actname = global.actnamenoe[i][global.bmenucoord[2][global.charturn]]
+                    if (__actname == "S-Action")
+                        __actname = __plainactname
+                    if (__actname == "R-Action")
+                        __actname = __plainactname
+                    if (__actname == "N-Action")
+                        __actname = __plainactname
+                    draw_set_color(hpcolorsoft[(global.char[global.charturn] - 1)])
+                    gml_Script_draw_text_width((((xx + 80) + namewidthmax) + 60), ((yy + 375) + (i * 30)), string_hash_to_newline(__actname), (514 - ((80 + namewidthmax) + 60)))
+                }
+                mercyamt = global.mercymod[i]
+                if (mercyamt >= 100)
+                    mercyamt = 100
+                if (hidemercy == 0)
+                {
+                    var mercypercent = ceil(((global.mercymod[i] / global.mercymax[i]) * 100))
+                    if (mercypercent > 100)
+                        mercypercent = 100
+                    draw_set_color(merge_color(c_orange, c_red, 0.5))
+                    draw_rectangle((xx + 520), ((yy + 380) + (i * 30)), (xx + 600), (((yy + 380) + (i * 30)) + 15), false)
+                    draw_set_color(c_yellow)
+                    if (mercyamt > 0 && cantspare[i] == 0)
+                        draw_rectangle((xx + 520), ((yy + 380) + (i * 30)), ((xx + 520) + (mercypercent * 0.8)), (((yy + 380) + (i * 30)) + 15), false)
+                    draw_set_color(c_white)
+                    var mercywidth = 1
+                    if (global.lang == "ja")
+                        mercywidth = 0.5
+                    draw_text_transformed((xx + 524), (yy + 364), gml_Script_stringsetloc("MERCY", "obj_battlecontroller_slash_Draw_0_gml_208_0"), mercywidth, 0.5, 0)
+                    draw_set_color(c_maroon)
+                    if (cantspare[i] == 0)
+                        draw_text_transformed((xx + 524), ((yy + 380) + (i * 30)), (string(mercypercent) + "%"), 1, 0.5, 0)
+                    if (cantspare[i] == 1)
+                    {
+                        draw_line_width_color(((xx + 520) - 1), ((yy + 380) + (i * 30)), (xx + 600), (((yy + 380) + (i * 30)) + 15), 2, c_maroon, c_maroon)
+                        draw_line_width_color(((xx + 520) - 1), (((yy + 380) + (i * 30)) + 15), (xx + 600), ((yy + 380) + (i * 30)), 2, c_maroon, c_maroon)
+                    }
+                }
             }
         }
     }
@@ -419,6 +515,12 @@ if (global.bmenuno == 7 || global.bmenuno == 8)
                     flash = true
                     becomeflash = true
                 }
+                draw_set_color(c_white)
+                draw_text((xx + 80), ((yy + 375) + (i * 30)), string_hash_to_newline(global.charname[global.char[i]]))
+                draw_set_color(c_maroon)
+                draw_rectangle((xx + 400), ((yy + 380) + (i * 30)), (xx + 500), (((yy + 380) + (i * 30)) + 15), false)
+                draw_set_color(c_lime)
+                draw_rectangle((xx + 400), ((yy + 380) + (i * 30)), ((xx + 400) + ((global.hp[global.char[i]] / global.maxhp[global.char[i]]) * 100)), (((yy + 380) + (i * 30)) + 15), false)
             }
         }
     }
@@ -443,6 +545,67 @@ if keyboard_check(ord("A"))
                         __offsetx = sactionboxx
                         __offsety = sactionboxy
                     }
+                    gml_Script_scr_84_set_draw_font("main")
+                    if gml_Script_scr_havechar(2)
+                    {
+                        for (__n = 0; __n < 3; __n++)
+                        {
+                            draw_set_color(hpcolorsoft[1])
+                            if (global.canactsus[i][__n] == 1)
+                            {
+                                var __actnamestring = global.actnamesus[i][__n]
+                                var __actnamestringwidth = string_width(__actnamestring)
+                                if ((__actnamestringwidth - 45) > __x)
+                                    __x = (__actnamestringwidth - 45)
+                                if (__actnamestring != "S-Action")
+                                    draw_text(((global.monsterx[i] - 200) + __offsetx), ((global.monstery[i] + __y) + __offsety), ("S-Action - " + __actnamestring))
+                                else
+                                    draw_text(((global.monsterx[i] - 200) + __offsetx), ((global.monstery[i] + __y) + __offsety), __actnamestring)
+                                __y += 18
+                            }
+                        }
+                    }
+                    if gml_Script_scr_havechar(3)
+                    {
+                        for (__n = 0; __n < 3; __n++)
+                        {
+                            draw_set_color(hpcolorsoft[2])
+                            if (global.canactral[i][__n] == 1)
+                            {
+                                __actnamestring = global.actnameral[i][__n]
+                                __actnamestringwidth = string_width(__actnamestring)
+                                if ((__actnamestringwidth - 45) > __x)
+                                    __x = (__actnamestringwidth - 45)
+                                if (global.actnameral[i][__n] != "R-Action")
+                                    draw_text(((global.monsterx[i] - 200) + __offsetx), ((global.monstery[i] + __y) + __offsety), ("R-Action - " + global.actnameral[i][__n]))
+                                else
+                                    draw_text(((global.monsterx[i] - 200) + __offsetx), ((global.monstery[i] + __y) + __offsety), "R-Action - Standard")
+                                __y += 18
+                            }
+                        }
+                    }
+                    if gml_Script_scr_havechar(4)
+                    {
+                        for (__n = 0; __n < 3; __n++)
+                        {
+                            draw_set_color(hpcolorsoft[3])
+                            if (global.canactnoe[i][__n] == 1)
+                            {
+                                __actnamestring = global.actnamenoe[i][__n]
+                                __actnamestringwidth = string_width(__actnamestring)
+                                if ((__actnamestringwidth - 45) > __x)
+                                    __x = (__actnamestringwidth - 45)
+                                if (global.actnamenoe[i][__n] != "N-Action")
+                                    draw_text(((global.monsterx[i] - 200) + __offsetx), ((global.monstery[i] + __y) + __offsety), ("N-Action - " + global.actnamenoe[i][__n]))
+                                else
+                                    draw_text(((global.monsterx[i] - 200) + __offsetx), ((global.monstery[i] + __y) + __offsety), "N-Action - Standard")
+                                __y += 18
+                            }
+                        }
+                    }
+                    draw_set_color(c_fuchsia)
+                    if (__y > 0)
+                        draw_rectangle(((global.monsterx[i] - 210) + __offsetx), (global.monstery[i] + __offsety), (((global.monsterx[i] - 80) + __x) + __offsetx), ((global.monstery[i] + __y) + __offsety), true)
                 }
             }
             draw_set_font(remfont)

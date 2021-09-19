@@ -11,14 +11,18 @@ if instance_exists(obj_battleback)
 {
     if gml_Script_i_ex(tasquescreen1)
     {
-        var _temp_local_var_2 = tasquescreen1
-        gml_Script_scr_afterimage()
-        instance_destroy()
+        with (tasquescreen1)
+        {
+            gml_Script_scr_afterimage()
+            instance_destroy()
+        }
     }
     if gml_Script_i_ex(tasquescreen2)
     {
-        var _temp_local_var_3 = tasquescreen2
-        gml_Script_scr_afterimage()
-        instance_destroy()
+        with (tasquescreen2)
+        {
+            gml_Script_scr_afterimage()
+            instance_destroy()
+        }
     }
 }

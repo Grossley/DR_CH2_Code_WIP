@@ -1,3 +1,4 @@
+var _temp_local_var_7;
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("C")))
 {
     gml_Script_snd_play_pitch(55, 1.2)
@@ -22,18 +23,18 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
         writedisplay = 1
     else
         writedisplay = 0
-    for (var i = (array_length_1d(global.flag) - 1); i > self; i--)
+    for (var i = (array_length_1d(global.flag) - 1); i > -1; i--)
         lastval[i] = global.flag[i]
     gml_Script_snd_play_pitch(289, 1.1)
 }
 if (writedisplay == 1)
 {
-    for (i = (array_length_1d(global.flag) - 1); i > self; i--)
+    for (i = (array_length_1d(global.flag) - 1); i > -1; i--)
     {
         if (lastval[i] != global.flag[i])
             gml_Script_debug_message(((((("global.flag[" + string(i)) + "] has been changed from ") + string(lastval[i])) + " to ") + string(global.flag[i])))
     }
-    for (i = (array_length_1d(global.flag) - 1); i > self; i--)
+    for (i = (array_length_1d(global.flag) - 1); i > -1; i--)
         lastval[i] = global.flag[i]
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("P")))
@@ -74,12 +75,12 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
 }
 if (global.chemg_god_mode == 1)
 {
-    for (i = obj_sneo_friedpipis; i < 6; i++)
+    for (i = 0; i < 6; i++)
     {
         if (global.hp[i] < global.maxhp[i])
         {
-            i.hp[global.hp[i]] = (global.hp[i] + 1)
-            global
+            var _temp_local_var_7 = global.hp[i]
+            global.hp[i] = (global.hp[i] + 1)
         }
     }
 }

@@ -442,8 +442,29 @@ if (con == 2 && customcon == 1 && morphDone == 0)
 if (con == 2 && customcon == 1 && morphDone == 1)
 {
     su_npc = gml_Script_instance_create(su_actor.x, su_actor.y, obj_npc_facing)
-    var _temp_local_var_4 = su_actor
-    instance_destroy()
+    with (su_actor)
+        instance_destroy()
+    ra_npc = gml_Script_instance_create(ra_actor.x, ra_actor.y, obj_npc_facing)
+    with (ra_actor)
+        instance_destroy()
+    qu_npc = gml_Script_instance_create(qu_actor.x, qu_actor.y, obj_npc_facing)
+    with (qu_actor)
+        instance_destroy()
+    ar_npc = gml_Script_instance_create(ar_actor.x, ar_actor.y, obj_npc_sign)
+    ar_npc.sprite_index = spr_cutscene_10_arcade_on
+    ar_npc.depthbonus = ar_actor.depthbonus
+    ar_npc.image_yscale = ar_actor.image_yscale
+    ar_npc.image_xscale = ar_actor.image_xscale
+    ar_npc.depth = ar_actor.depth
+    with (ar_actor)
+        instance_destroy()
+    pb_marker = gml_Script_instance_create(pb_actor.x, pb_actor.y, obj_marker)
+    pb_marker.image_yscale = 2
+    pb_marker.image_xscale = 2
+    pb_marker.sprite_index = pb_actor.sprite_index
+    pb_marker.depth = pb_actor.depth
+    customcon = 0
+    gml_Script_c_waitcustom_end()
 }
 if (con == 2)
 {
@@ -468,8 +489,191 @@ if (con == 4)
     cutscene_master = gml_Script_scr_cutscene_make()
     with (obj_mainchara)
         visible = false
-    var _temp_local_var_8 = su_npc
-    visible = false
+    with (su_npc)
+        visible = false
+    with (ra_npc)
+        visible = false
+    with (qu_npc)
+        visible = false
+    kr = 0
+    kr_actor = gml_Script_instance_create(obj_mainchara.x, obj_mainchara.y, obj_actor)
+    gml_Script_scr_actor_setup(kr, kr_actor, "kris")
+    kr_actor.sprite_index = spr_krisu_dark
+    su = 1
+    su_actor = gml_Script_instance_create(su_npc.x, su_npc.y, obj_actor)
+    gml_Script_scr_actor_setup(su, su_actor, "susie")
+    su_actor.sprite_index = spr_susie_walk_up_dw
+    ra = 2
+    ra_actor = gml_Script_instance_create(ra_npc.x, ra_npc.y, obj_actor)
+    gml_Script_scr_actor_setup(ra, ra_actor, "ralsei")
+    ra_actor.sprite_index = spr_ralsei_walk_up
+    qu = 3
+    qu_actor = gml_Script_instance_create(qu_npc.x, qu_npc.y, obj_actor)
+    gml_Script_scr_actor_setup(qu, qu_actor, "queen")
+    qu_actor.sprite_index = spr_queen_walk_left
+    gml_Script_c_sel(kr)
+    gml_Script_c_walkdirect_wait(271, 144, 10)
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(5)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_speaker("no_name")
+    gml_Script_c_msgsetloc(0, "* You tried to use the arcade machine./%", "obj_ch2_scene10_slash_Step_0_gml_586_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(kr)
+    gml_Script_c_sprite(1412)
+    gml_Script_c_halt()
+    gml_Script_c_shakeobj()
+    gml_Script_c_soundplay(60)
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("no_name")
+    gml_Script_c_msgsetloc(0, "* (You weren't tall or strong enough to use the controls...)/%", "obj_ch2_scene10_slash_Step_0_gml_595_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_wait(20)
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("r")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("r")
+    gml_Script_c_speaker("queen")
+    gml_Script_c_msgsetloc(0, "\\EC* Self-Esteem Eradication Complete/", "obj_ch2_scene10_slash_Step_0_gml_611_0")
+    gml_Script_c_msgnextloc("\\EC* Running Laughing Protocol/%", "obj_ch2_scene10_slash_Step_0_gml_612_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(qu)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(62)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_soundplay(282)
+    gml_Script_c_speaker("queen")
+    gml_Script_c_msgsetloc(0, "\\EP* Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha/%", "obj_ch2_scene10_slash_Step_0_gml_620_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("u")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("u")
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("ralsei")
+    gml_Script_c_msgsetloc(0, "\\EQ* Uh..^1. ummm..^1. it's ok^1, Kris..^1. err..^1. I'm short^1, too.../", "obj_ch2_scene10_slash_Step_0_gml_630_0")
+    gml_Script_c_msgnextloc("\\EK* K..^1. Kris...!^1! Wait^1, I have an idea!!/%", "obj_ch2_scene10_slash_Step_0_gml_631_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("l")
+    gml_Script_c_sel(ra)
+    gml_Script_c_sel(2)
+    gml_Script_c_walk("u", 8, 9)
+    gml_Script_c_wait(4)
+    gml_Script_c_sel(kr)
+    gml_Script_c_autowalk(1)
+    gml_Script_c_autofacing(0)
+    gml_Script_c_walk("r", 8, 6)
+    gml_Script_c_wait(10.875)
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("r")
+    gml_Script_c_sel(kr)
+    gml_Script_c_autowalk(1)
+    gml_Script_c_facing("l")
+    gml_Script_c_speaker("ralsei")
+    gml_Script_c_msgsetloc(0, "\\EJ* Kris^1, if we can combine our powers^1, then.../", "obj_ch2_scene10_slash_Step_0_gml_653_0")
+    gml_Script_c_msgnextloc("\\EH* Look!^1! I'll show you what I've been practicing!!/%", "obj_ch2_scene10_slash_Step_0_gml_654_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_delaycmd4(20, "fadeout", 20, 16777215, 0, 0)
+    gml_Script_c_soundplay(225)
+    gml_Script_c_waitcustom()
+    gml_Script_c_sel(kr)
+    gml_Script_c_setxy(335, 141)
+    gml_Script_c_sel(ra)
+    gml_Script_c_sprite(53)
+    gml_Script_c_setxy(275, 139)
+    gml_Script_c_fadein(15)
+    gml_Script_c_wait(2)
+    gml_Script_c_soundplay(188)
+    gml_Script_c_speaker("ralsei")
+    gml_Script_c_msgsetloc(0, "\\EH* \\cYMagical Stool Forme R\\cW!!/", "obj_ch2_scene10_slash_Step_0_gml_670_0")
+    gml_Script_c_facenext("susie", "2")
+    gml_Script_c_msgnextloc("\\E2* Now we're talking!^1! Arright Kris^1, leave it to me!!/%", "obj_ch2_scene10_slash_Step_0_gml_672_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_sel(su)
+    gml_Script_c_walkdirect_wait(385, 125, 15)
+    gml_Script_c_facing("l")
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("r")
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\E2* Put your arms out!!/%", "obj_ch2_scene10_slash_Step_0_gml_683_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_autodepth(0)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(51)
+    gml_Script_c_waitcustom()
+    gml_Script_c_walkdirect_wait(282, 180, 15)
+    gml_Script_c_wait(30)
+    gml_Script_c_sel(su)
+    gml_Script_c_script_instance(su_actor, gml_Script_scr_afterimage, 3)
+    gml_Script_c_autodepth(0)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_setxy(272, -100)
+    gml_Script_c_depth(16)
+    gml_Script_c_sprite(60)
+    gml_Script_c_walkdirect_wait(272, 160, 30)
+    gml_Script_c_wait(5)
+    gml_Script_c_soundplay(149)
+    gml_Script_c_wait(30)
+    gml_Script_c_script_instance_stop(su_actor, gml_Script_scr_afterimage)
+    gml_Script_c_sel(kr)
+    gml_Script_c_visible(0)
+    gml_Script_c_sel(su)
+    gml_Script_c_sprite(59)
+    gml_Script_c_wait(1)
+    gml_Script_c_imageindex(1)
+    gml_Script_c_soundplay(60)
+    gml_Script_c_wait(30)
+    gml_Script_c_imageindex(2)
+    gml_Script_c_soundplay(152)
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\E2* \\cYPower Beast Forme S\\c0!!/%", "obj_ch2_scene10_slash_Step_0_gml_715_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\E2* Move your arms and I'll move 'em with ya!/", "obj_ch2_scene10_slash_Step_0_gml_720_0")
+    gml_Script_c_msgnextloc("\\E2* Let's go!!/%", "obj_ch2_scene10_slash_Step_0_gml_721_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(qu)
+    gml_Script_c_setxy(335, 94)
+    gml_Script_c_autowalk(1)
+    gml_Script_c_sprite(767)
+    gml_Script_c_wait(5)
+    gml_Script_c_waitcustom()
+    gml_Script_c_sel(su)
+    gml_Script_c_sprite(54)
+    gml_Script_c_jump(255, 113, 20, 15)
+    gml_Script_c_wait(15)
+    gml_Script_c_soundplay(40)
+    gml_Script_c_sel(ra)
+    gml_Script_c_autodepth(0)
+    gml_Script_c_sprite(52)
+    gml_Script_c_setxy(245, 183)
+    gml_Script_c_wait(15)
+    gml_Script_c_speaker("queen")
+    gml_Script_c_msgsetloc(0, "* Incredible/", "obj_ch2_scene10_slash_Step_0_gml_741_0")
+    gml_Script_c_msgnextloc("\\ED* Your Transformation Is Combining All Your Weak Points/", "obj_ch2_scene10_slash_Step_0_gml_742_0")
+    gml_Script_c_msgnextloc("\\E1* Self-Esteem Crushing Efficiency 300`% And Rising/%", "obj_ch2_scene10_slash_Step_0_gml_743_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_sel(qu)
+    gml_Script_c_facing("u")
+    gml_Script_c_speaker("queen")
+    gml_Script_c_msgsetloc(0, "\\E7* Commence Virtual Combat/%", "obj_ch2_scene10_slash_Step_0_gml_748_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_mus2("volume", 0, 15)
+    gml_Script_c_wait(15)
+    gml_Script_c_mus("free")
+    gml_Script_c_actortokris()
+    gml_Script_c_terminatekillactors()
 }
 if (con == 10)
 {
@@ -483,8 +687,72 @@ if (con == 10)
     cutscene_master = gml_Script_scr_cutscene_make()
     with (obj_mainchara)
         visible = false
-    var _temp_local_var_11 = global.cinstance[0]
-    visible = false
+    with (global.cinstance[0])
+        visible = false
+    with (global.cinstance[1])
+        visible = false
+    kr = 0
+    kr_actor = gml_Script_instance_create(261, 143, obj_actor)
+    gml_Script_scr_actor_setup(kr, kr_actor, "kris")
+    kr_actor.sprite_index = spr_krisu_dark
+    su = 1
+    su_actor = gml_Script_instance_create(282, 143, obj_actor)
+    gml_Script_scr_actor_setup(su, su_actor, "susie")
+    su_actor.sprite_index = spr_susie_walk_up_dw
+    ra = 2
+    ra_actor = gml_Script_instance_create(231, 147, obj_actor)
+    gml_Script_scr_actor_setup(ra, ra_actor, "ralsei")
+    ra_actor.sprite_index = spr_ralsei_walk_up
+    qu = 3
+    qu_actor = gml_Script_instance_create(325, 90, obj_actor)
+    gml_Script_scr_actor_setup(qu, qu_actor, "queen")
+    qu_actor.sprite_index = spr_queen_walk_up
+    ar_npc = gml_Script_instance_create(322, 190, obj_npc_sign)
+    ar_npc.sprite_index = spr_cutscene_10_arcade_on
+    ar_npc.depthbonus = 2000
+    ar_npc.image_yscale = 2
+    ar_npc.image_xscale = 2
+    ar_npc.depth = (kr_actor.depth + 5)
+    pb_marker = gml_Script_instance_create(290, 145, obj_marker)
+    pb_marker.image_yscale = 2
+    pb_marker.image_xscale = 2
+    pb_marker.sprite_index = spr_cutscene_10_platter_bottom
+    pb_marker.depth = (ar_npc.depth + 5000)
+    gml_Script_c_wait(30)
+    gml_Script_c_soundplay(96)
+    gml_Script_c_waitcustom()
+    gml_Script_c_sel(kr)
+    gml_Script_c_autofacing(0)
+    gml_Script_c_walk("d", 16, 2)
+    gml_Script_c_sel(ra)
+    gml_Script_c_autofacing(0)
+    gml_Script_c_walk("d", 16, 2)
+    gml_Script_c_sel(su)
+    gml_Script_c_autofacing(0)
+    gml_Script_c_walk("d", 16, 2)
+    gml_Script_c_sel(qu)
+    gml_Script_c_autofacing(0)
+    gml_Script_c_walk("d", 22, 2)
+    gml_Script_c_wait(30)
+    gml_Script_c_sel(kr)
+    gml_Script_c_facing("r")
+    gml_Script_c_sel(ra)
+    gml_Script_c_facing("r")
+    gml_Script_c_sel(su)
+    gml_Script_c_facing("r")
+    gml_Script_c_wait(15)
+    gml_Script_c_speaker("susie")
+    gml_Script_c_msgsetloc(0, "\\EQ* Heh^1, thought you could beat US!?/%", "obj_ch2_scene10_slash_Step_0_gml_845_0")
+    gml_Script_c_talk_wait()
+    gml_Script_c_wait(5)
+    gml_Script_c_mus2("initloop", "queen.ogg", 0)
+    gml_Script_c_sel(qu)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(62)
+    gml_Script_c_imagespeed(0.25)
+    gml_Script_c_arg_objectxy(qu_actor, 20, 0)
+    gml_Script_c_setxy(x, y)
+    gml_Script_c_waitcustom()
 }
 if (con == 13 && customcon == 0)
 {
@@ -596,26 +864,23 @@ if (con == 6 && customcon == 1)
         gml_Script_c_waitcustom_end()
     }
     else
-    {
-        _temp_local_var_12.image_alpha = (animeBG.image_alpha + 0.05)
-        var _temp_local_var_36 = global.cinstance[0]
-        var _temp_local_var_37 = 
-        var _temp_local_var_38 = -9
-        var _temp_local_var_39 = animeBG
-    }
+        animeBG.image_alpha += 0.05
 }
 if (con == 7 && customcon == 1)
 {
     bgAlpha = clamp((bgAlpha - 0.1), 0, 1)
-    _temp_local_var_12.image_alpha = (animeBG.image_alpha - 0.1)
-    var _temp_local_var_17 = global.cinstance[0]
-    var _temp_local_var_18 = 
-    var _temp_local_var_19 = -9
-    var _temp_local_var_20 = animeBG
+    animeBG.image_alpha -= 0.1
     if (animeBG.image_alpha <= 0)
     {
-        var _temp_local_var_21 = animeBG
-        instance_destroy()
+        with (animeBG)
+            instance_destroy()
+        ar_npc.depthbonus = 3000
+        pb_marker.depth = 99999
+        ra_actor.depthbonus = 450
+        customcon = 0
+        specialTimer = 0
+        con = 8
+        gml_Script_c_waitcustom_end()
     }
 }
 if (con == 8 && customcon == 0)
@@ -641,8 +906,29 @@ if (con == 20)
     con = 9
     with (obj_mainchara)
         visible = false
-    var _temp_local_var_23 = global.cinstance[0]
-    visible = false
+    with (global.cinstance[0])
+        visible = false
+    with (global.cinstance[1])
+        visible = false
+    ra_actor = gml_Script_instance_create(ra_x_save, ra_y_save, obj_marker)
+    ra_actor.sprite_index = spr_cutscene_10_ralsei_splat
+    ra_actor.image_xscale = 2
+    ra_actor.image_yscale = 2
+    kr_actor = gml_Script_instance_create(su_x_save, su_y_save, obj_marker)
+    kr_actor.sprite_index = spr_cutscene_10_susie_kris_t_pose_back
+    kr_actor.image_xscale = 2
+    kr_actor.image_yscale = 2
+    su_actor = gml_Script_instance_create(su_x_save, su_y_save, obj_marker)
+    su_actor.sprite_index = spr_cutscene_10_susie_kris_t_pose_back
+    su_actor.image_xscale = 2
+    su_actor.image_yscale = 2
+    ra_actor.depth = (su_actor.depth + 1)
+    qu_actor = gml_Script_instance_create(335, 90, obj_marker)
+    qu_actor.sprite_index = spr_queen_walk_up
+    qu_actor.image_xscale = 2
+    qu_actor.image_yscale = 2
+    qu_actor.image_speed = 0
+    gml_Script_instance_create(x, y, obj_ch2_scene10_arcade_bg)
 }
 if (con == 11 && customcon == 1 && (!gml_Script_i_ex(355)))
 {
@@ -686,8 +972,9 @@ if (specialDraw == 69)
     explosiontimer++
     if (explosiontimer == 32)
     {
-        var _temp_local_var_28 = explosion_marker
-        instance_destroy()
+        with (explosion_marker)
+            instance_destroy()
+        specialDraw = 70
     }
 }
 if (con == 15)

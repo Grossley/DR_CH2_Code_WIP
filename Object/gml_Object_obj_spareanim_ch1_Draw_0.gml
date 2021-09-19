@@ -19,31 +19,34 @@ if (t < 6)
 }
 if (t >= 1 && t <= 5)
 {
-    i = 0
-    while (i < 2)
+    for (i = 0; i < 2; i += 1)
     {
         star[starcount] = gml_Script_instance_create_ch1((x + random(sprite_width)), (y + random(sprite_height)), 1403)
-        var _temp_local_var_3 = star[starcount]
-        image_xscale = 2
-        image_yscale = 2
-        sprite_index = spr_sparestar_anim_ch1
-        image_alpha = 2
-        image_speed = 0.25
-        hspeed = -3
-        gravity = 0.5
-        gravity_direction = 0
+        with (star[starcount])
+        {
+            image_xscale = 2
+            image_yscale = 2
+            sprite_index = spr_sparestar_anim_ch1
+            image_alpha = 2
+            image_speed = 0.25
+            hspeed = -3
+            gravity = 0.5
+            gravity_direction = 0
+        }
+        starcount += 1
     }
 }
 if (t >= 5 && t <= 30)
 {
-    i = 0
-    while (i < starcount)
+    for (i = 0; i < starcount; i += 1)
     {
-        var _temp_local_var_5 = star[i]
-        image_angle += 10
-        image_alpha -= 0.1
-        if (image_alpha <= 0)
-            instance_destroy()
+        with (star[i])
+        {
+            image_angle += 10
+            image_alpha -= 0.1
+            if (image_alpha <= 0)
+                instance_destroy()
+        }
     }
 }
 if (t >= 5 && t < 10)
@@ -53,11 +56,10 @@ if (t >= 9)
     neotone += 1
     if (neotone >= 30)
     {
-        i = 0
-        while (i < starcount)
+        for (i = 0; i < starcount; i += 1)
         {
-            var _temp_local_var_7 = star[i]
-            instance_destroy()
+            with (star[i])
+                instance_destroy()
         }
         instance_destroy()
     }

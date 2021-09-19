@@ -176,7 +176,7 @@ if (my_method == 2)
                 if (i == 2)
                 {
                     if (boltframe[i][2] == boltframe[i][0] && boltframe[i][2] == boltframe[i][1])
-                        boltframe[i][2] += 10
+                        boltframe[i][2][2] += 10
                 }
             }
         }

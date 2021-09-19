@@ -57,8 +57,34 @@ if (con == -1)
     beam.visible = false
     beamunder = gml_Script_scr_marker(420, 156, 436)
     beamunder.visible = false
-    var _temp_local_var_1 = beamunder
-    gml_Script_scr_depth()
+    with (beamunder)
+        gml_Script_scr_depth()
+    crater = gml_Script_scr_marker(430, 165, 442)
+    crater.visible = false
+    with (crater)
+        gml_Script_scr_depth()
+    black_bar = gml_Script_scr_marker(400, 200, 2529)
+    black_bar.image_xscale = (gml_Script_camerax() + view_wport[0])
+    black_bar.image_yscale = 80
+    black_bar.depth = 100
+    black_bar.image_blend = c_black
+    room_flash = gml_Script_scr_marker(0, 0, 488)
+    room_flash.depth = 900000
+    room_flash.image_alpha = 0
+    fountainkris = gml_Script_instance_create(500, 240, obj_kris_fountain)
+    fadebg = 0
+    if (debug_skip == 1)
+    {
+        con = 10
+        with (blackall)
+            instance_destroy()
+        obj_mainchara.cutscene = true
+        obj_mainchara.x = 500
+        with (to_actor)
+            instance_destroy()
+        gml_Script_snd_free_all()
+        gml_Script_camerax_set((room_width - 320))
+    }
 }
 if (con == 1)
 {
@@ -718,9 +744,11 @@ if show_door_open
 {
     show_door_open = 0
     var door_open = gml_Script_scr_marker(588, 98, 491)
-    var _temp_local_var_11 = door_open
-    image_index = 1
-    depth = 4900000
+    with (door_open)
+    {
+        image_index = 1
+        depth = 4900000
+    }
 }
 if align_susie
 {

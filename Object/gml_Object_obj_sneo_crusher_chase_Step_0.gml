@@ -23,18 +23,26 @@ shoottimer++
 if (shoottimer >= 54)
 {
     var b = 0
-    var _temp_local_var_2 = 3
-    if (3 <= 0)
+    repeat (3)
     {
-    }
-    else
-    {
-        while (true)
-        {
-            radialshot = gml_Script_instance_create(x, y, obj_collidebullet)
-            var _temp_local_var_3 = radialshot
+        radialshot = gml_Script_instance_create(x, y, obj_collidebullet)
+        with (radialshot)
             gml_Script_scr_bullet_init()
-        }
-        gml_Script_scr_bullet_init()
+        radialshot.sprite_index = spr_diamondbullet
+        radialshot.direction = point_direction(radialshot.x, radialshot.y, (obj_heart.x + 10), (obj_heart.y + 10))
+        radialshot.image_angle = radialshot.direction
+        radialshot.image_xscale = 1
+        radialshot.image_yscale = 1
+        radialshot.image_blend = c_red
+        radialshot.active = true
+        radialshot.speed = 3.5
+        radialshot.friction = (-0.33 + b)
+        radialshot.depth = (depth - 1)
+        radialshot.target = target
+        radialshot.damage = damage
+        radialshot.grazed = 0
+        radialshot.element = 6
+        shoottimer = 0
+        b += 0.07
     }
 }

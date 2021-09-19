@@ -21,13 +21,40 @@ if (extflag == 2 && tasquespawn == 1)
         tasquemarker1.depth = (depth - 10)
         gml_Script_snd_play(159)
         tasquemarker1.remid = id
-        var _temp_local_var_4 = tasquemarker1
-        remjump = gml_Script_scr_jump_to_point(other.x, 610, 15, 24)
-        remid.remjump = remjump
+        with (tasquemarker1)
+        {
+            remjump = gml_Script_scr_jump_to_point(other.x, 610, 15, 24)
+            remid.remjump = remjump
+        }
+        with (tasquemarker_head1)
+            gml_Script_scr_jump_to_point(other.x, 610, 15, 24)
+        remjump.image_alpha = 0
+        with (tasquemarker1)
+            gml_Script_scr_depth()
+        tasquemarker_head1.depth = (tasquemarker1 - 1)
     }
     if (tasquecon == 2)
     {
-        var _temp_local_var_7 = remjump
-        image_alpha += 0.05
+        with (remjump)
+            image_alpha += 0.05
+        tasquetimer++
+        with (tasquemarker1)
+            gml_Script_scr_depth()
+        tasquemarker_head1.depth = (tasquemarker1 - 1)
+        if (tasquetimer >= 24)
+        {
+            image_index = 1
+            obj_npc_tasquemanager.marker2 = gml_Script_instance_create(tasquemarker1.x, tasquemarker1.y, obj_npc_room)
+            obj_npc_tasquemanager.marker2.sprite_index = spr_tasque_idle
+            with (obj_npc_tasquemanager.marker2)
+                gml_Script_scr_depth()
+            with (tasquemarker1)
+                instance_destroy()
+            with (tasquemarker_head1)
+                instance_destroy()
+            tasquespawn = 0
+            tasquecon++
+            tasquetimer = 0
+        }
     }
 }

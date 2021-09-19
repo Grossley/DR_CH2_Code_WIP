@@ -147,8 +147,11 @@ if (con == 2 && (!instance_exists(obj_cutscene_master)))
     if (global.plot < 20)
         global.plot = 20
     trans = gml_Script_instance_create(0, 0, obj_dw_transition)
-    var _temp_local_var_3 = trans
-    finaly = 60
-    skiprunback = 1
-    nextroom = 83
+    with (trans)
+    {
+        finaly = 60
+        skiprunback = 1
+        nextroom = 83
+    }
+    con = 3
 }

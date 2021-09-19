@@ -31,4 +31,7 @@ else
     t = gml_Script_scr_marker_ch1(195, 240, 3465)
     with (t)
         depth = 400000
+    c = gml_Script_scr_marker_ch1(131, 240, 3452)
+    with (c)
+        depth = 500000
 }

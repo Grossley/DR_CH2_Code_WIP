@@ -53,8 +53,9 @@ if (room == room_dw_mansion_fire_paintings)
         if (global.flag[399] == 1)
         {
             my_new = gml_Script_scr_dark_marker(x, y, 2922)
-            var _temp_local_var_3 = my_new
-            gml_Script_scr_depth()
+            with (my_new)
+                gml_Script_scr_depth()
+            instance_destroy()
         }
     }
 }

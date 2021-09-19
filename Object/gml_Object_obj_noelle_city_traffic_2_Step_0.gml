@@ -1,4 +1,4 @@
-if (mycater == 0)
+if (mycater == obj_sneo_friedpipis)
 {
     with (obj_caterpillarchara)
     {
@@ -79,11 +79,14 @@ if (stickToKris == 0)
     }
     else
     {
-        var _temp_local_var_1 = mycater
-        x = other.x
-        y = other.y
-        visible = true
-        gml_Script_scr_caterpillar_interpolate()
+        with (mycater)
+        {
+            x = other.x
+            y = other.y
+            visible = true
+            gml_Script_scr_caterpillar_interpolate()
+        }
+        instance_destroy()
     }
 }
 gml_Script_scr_depth()

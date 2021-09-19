@@ -35,6 +35,8 @@ if (encountered == 0)
     newme.eraser = eraser
     newme.washit = washit
     newme.whichmonster = whichmonster
-    var _temp_local_var_1 = newme
-    event_user(0)
+    with (newme)
+        event_user(0)
+    global.encounterno = myencounter
+    instance_destroy()
 }

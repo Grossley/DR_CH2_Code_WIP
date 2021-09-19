@@ -10,17 +10,7 @@ if auto_scroll_y
     if (auto_scroll_y_timer >= 30)
         auto_scroll_y = 0
 }
-2869
-var _temp_local_var_2 = 0
-var _temp_local_var_3 = (drawx + x_offset)
-var _temp_local_var_4 = (drawy + y_offset)
-var _temp_local_var_5 = (drawx + x_offset)
-var _temp_local_var_6 = drawy
-var _temp_local_var_7 = ((drawy + y_offset) + view_hport[0]).room_width
-var _temp_local_var_8 = 1
-var _temp_local_var_9 = 1
-var _temp_local_var_10 = 16777215
-var _temp_local_var_11 = 1
+gml_Script_scr_draw_sprite_tiled_area(2869, 0, (drawx + x_offset), (drawy + y_offset), (drawx + x_offset), drawy, room_width, ((drawy + y_offset) + view_hport[0]), 1, 1, 16777215, 1)
 if show_laser_outline
 {
     if (reveal_pos < 0)
@@ -39,12 +29,12 @@ if show_laser_outline
         gpu_set_colorwriteenable(1, 1, 1, 1)
         gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
         gpu_set_alphatestenable(1)
-        gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, (obj_pipis_bullet_cone).room_height.room_width, 1, 16777215, 1, 0, (drawx + x_offset))
+        gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, 1)
         gpu_set_alphatestenable(0)
         gpu_set_blendmode(bm_normal)
     }
     else
-        gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, (obj_pipis_bullet_cone).room_height.room_width, 1, 16777215, main_alpha, 0, (drawx + x_offset))
+        gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
 }
 if show_laser_beam
 {
@@ -57,7 +47,7 @@ if show_laser_beam
     gpu_set_blendenable(0)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
-    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, (obj_pipis_bullet_cone).room_height.room_width, 1, 16777215, main_alpha, (drawy + y_offset), (drawx + x_offset))
+    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
     draw_set_alpha(1)
     gpu_set_blendenable(1)
     gpu_set_colorwriteenable(1, 1, 1, 1)
@@ -72,11 +62,11 @@ if show_mini_fountains
 {
     if (mini_alpha < 1)
         mini_alpha += 0.1
-    gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, (obj_pipis_bullet_cone).room_height.room_width, 1, 16777215, mini_alpha, drawy, ((drawy + y_offset) + view_hport[0]).room_width)
+    gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, mini_alpha)
     gpu_set_blendenable(0)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
-    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, (obj_pipis_bullet_cone).room_height.room_width, 1, 16777215, mini_alpha, 1, 1)
+    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, mini_alpha)
     draw_set_alpha(1)
     gpu_set_blendenable(1)
     gpu_set_colorwriteenable(1, 1, 1, 1)
@@ -90,7 +80,7 @@ if show_mini_fountains
     gpu_set_blendmode(bm_normal)
 }
 if mini_cityscape
-    gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, (obj_pipis_bullet_cone).room_height.room_width, 1, 16777215, main_alpha, 16777215, 1)
+    gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
 if tender_goodbye
 {
     siner++
@@ -167,7 +157,7 @@ if show_hands
     gpu_set_blendenable(0)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
-    302
+    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, knife_alpha)
     draw_set_alpha(1)
     gpu_set_blendenable(1)
     gpu_set_colorwriteenable(1, 1, 1, 1)
@@ -177,13 +167,4 @@ if show_hands
     gml_Script_d3d_set_fog(false, c_black, 0, 0)
     gpu_set_alphatestenable(0)
     gpu_set_blendmode(bm_normal)
-    var _temp_local_var_13 = 0
-    var _temp_local_var_14 = drawx
-    var _temp_local_var_15 = drawy
-    var _temp_local_var_16 = drawx
-    var _temp_local_var_17 = drawy
-    var _temp_local_var_18 = (obj_pipis_bullet_cone).room_height.room_width
-    var _temp_local_var_19 = 1
-    var _temp_local_var_20 = 16777215
-    var _temp_local_var_21 = knife_alpha
 }

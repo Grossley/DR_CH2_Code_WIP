@@ -375,15 +375,19 @@ if (con >= 20 && con < 80)
         hspeed = 10
         treecon = 1
         sprite_index = spr_lancer_rt_ch1
-        var _temp_local_var_15 = s
-        sprite_index = spr_susier_dark_ch1
-        gml_Script_scr_move_to_point_over_time_ch1(pointx, (pointy - 10), 60)
-        image_speed = 0.25
+        with (s)
+        {
+            sprite_index = spr_susier_dark_ch1
+            gml_Script_scr_move_to_point_over_time_ch1(pointx, (pointy - 10), 60)
+            image_speed = 0.25
+        }
+        con = 21
+        alarm[4] = 60
     }
     if (con == 21)
     {
-        var _temp_local_var_16 = s
-        gml_Script_scr_depth_ch1()
+        with (s)
+            gml_Script_scr_depth_ch1()
     }
     if (treecon == 1)
     {
@@ -417,17 +421,25 @@ if (con >= 20 && con < 80)
     if (con == 22)
     {
         sprite_index = spr_lancer_lt_ch1
-        var _temp_local_var_17 = s
-        gml_Script_scr_halt_ch1()
-        sprite_index = spr_susieu_dark_jump_ch1
+        with (s)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_susieu_dark_jump_ch1
+        }
+        con = 23
+        jumps = 0
+        jsy = s.y
+        alarm[4] = 15
     }
     if (con == 24)
     {
         con = 25
-        var _temp_local_var_18 = s
-        y -= 3
-        vspeed = -6
-        gravity = 1
+        with (s)
+        {
+            y -= 3
+            vspeed = -6
+            gravity = 1
+        }
     }
     if (con == 25)
     {
@@ -445,16 +457,33 @@ if (con >= 20 && con < 80)
             {
                 con = 26
                 alarm[4] = 20
-                var _temp_local_var_77 = s
-                gravity = 0
-                vspeed = 0
+                with (s)
+                {
+                    gravity = 0
+                    vspeed = 0
+                }
+                s.y = jsy
             }
         }
     }
     if (con == 27)
     {
-        var _temp_local_var_19 = s
-        sprite_index = spr_susier_dark_ch1
+        with (s)
+            sprite_index = spr_susier_dark_ch1
+        global.typer = 30
+        global.fc = 1
+        global.fe = 0
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_545_0")
+        gml_Script_scr_lanface_ch1(1, 3)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_547_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_548_0")
+        gml_Script_scr_susface_ch1(4, 6)
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_550_0")
+        gml_Script_scr_lanface_ch1(6, 2)
+        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_552_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 28
+        blender = 0
     }
     if (con == 28 && (!gml_Script_d_ex_ch1()))
     {
@@ -484,8 +513,15 @@ if (con >= 20 && con < 80)
     if (con == 32)
     {
         sprite_index = spr_lancer_lt_stool_ch1
-        var _temp_local_var_21 = wh
-        instance_destroy()
+        with (wh)
+            instance_destroy()
+        wh = gml_Script_instance_create_ch1(0, 0, 1461)
+        wh.fadespeed = -0.03
+        wh.image_blend = c_white
+        con = 33
+        alarm[4] = 40
+        with (flash)
+            instance_destroy()
     }
     if (con == 34)
     {
@@ -501,56 +537,73 @@ if (con >= 20 && con < 80)
     if (con == 35 && (!gml_Script_d_ex_ch1()))
     {
         iy = (s.y - 40)
-        var _temp_local_var_24 = s
-        image_index = 1
-        hspeed = 6
-        y -= 6
-        vspeed = -9
-        gravity = 1
+        with (s)
+        {
+            image_index = 1
+            hspeed = 6
+            y -= 6
+            vspeed = -9
+            gravity = 1
+        }
+        con = 36
     }
     if (con == 36)
     {
         if (s.y >= iy && s.vspeed >= 0)
         {
-            var _temp_local_var_26 = s
-            vspeed = 0
-            gravity = 0
-            hspeed = 0
-            image_index = 0
+            with (s)
+            {
+                vspeed = 0
+                gravity = 0
+                hspeed = 0
+                image_index = 0
+            }
+            con = 37
+            alarm[4] = 5
         }
     }
     if (con == 38)
     {
         iy = s.y
-        var _temp_local_var_27 = s
-        sprite_index = spr_susieu_dark_jump_ch1
-        y -= 5
-        vspeed = -11
-        gravity = 1
+        with (s)
+        {
+            sprite_index = spr_susieu_dark_jump_ch1
+            y -= 5
+            vspeed = -11
+            gravity = 1
+        }
+        con = 39
     }
     if (con == 39)
     {
         if (s.vspeed >= 0)
         {
-            var _temp_local_var_28 = tree
-            image_index = 1
+            with (tree)
+                image_index = 1
         }
         if (s.y >= (iy - 4))
         {
-            var _temp_local_var_29 = s
-            vspeed = 0
-            gravity = 0
+            with (s)
+            {
+                vspeed = 0
+                gravity = 0
+            }
+            con = 39.1
+            alarm[4] = 5
         }
     }
     if (con == 40.1)
     {
-        var _temp_local_var_30 = s
-        sprite_index = spr_susiel_dark_ch1
-        image_index = 1
-        hspeed = -4
-        y -= 6
-        vspeed = -6
-        gravity = 1
+        with (s)
+        {
+            sprite_index = spr_susiel_dark_ch1
+            image_index = 1
+            hspeed = -4
+            y -= 6
+            vspeed = -6
+            gravity = 1
+        }
+        con = 41
     }
     if (con == 41)
     {
@@ -558,11 +611,14 @@ if (con >= 20 && con < 80)
         {
             s.y = jsy
             sprite_index = spr_lancer_lt_ch1
-            var _temp_local_var_31 = s
-            image_index = 0
-            hspeed = 0
-            gravity = 0
-            vspeed = 0
+            with (s)
+            {
+                image_index = 0
+                hspeed = 0
+                gravity = 0
+                vspeed = 0
+            }
+            con = 42
         }
     }
     if (con == 42)
@@ -583,8 +639,10 @@ if (con >= 20 && con < 80)
     }
     if (con == 45 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_33 = s
-        sprite_index = spr_susier_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susier_dark_unhappy_ch1
+        con = 46
+        alarm[4] = 15
     }
     if (con == 47)
     {
@@ -602,13 +660,17 @@ if (con >= 20 && con < 80)
     }
     if (con == 48 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_35 = s
-        hspeed = 4
+        with (s)
+            hspeed = 4
+        con = 49
+        alarm[4] = 5
     }
     if (con == 50)
     {
-        var _temp_local_var_36 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 51
+        alarm[4] = 10
     }
     if (con == 52)
     {
@@ -621,15 +683,21 @@ if (con >= 20 && con < 80)
     }
     if (con == 53 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_38 = s
-        hspeed = -4
-        image_speed = 0.25
-        sprite_index = spr_susiel_dark_unhappy_ch1
+        with (s)
+        {
+            hspeed = -4
+            image_speed = 0.25
+            sprite_index = spr_susiel_dark_unhappy_ch1
+        }
+        con = 54
+        alarm[4] = 10
     }
     if (con == 55)
     {
-        var _temp_local_var_39 = s
-        gml_Script_scr_halt_ch1()
+        with (s)
+            gml_Script_scr_halt_ch1()
+        con = 56
+        alarm[4] = 15
     }
     if (con == 57)
     {
@@ -678,16 +746,28 @@ if (con >= 20 && con < 80)
     {
         s.susx = susx
         s.susy = susy
-        var _temp_local_var_42 = s
-        sprite_index = spr_susiel_dark_ch1
-        gml_Script_scr_move_to_point_over_time_ch1(susx, susy, 40)
-        image_speed = 0.25
+        with (s)
+        {
+            sprite_index = spr_susiel_dark_ch1
+            gml_Script_scr_move_to_point_over_time_ch1(susx, susy, 40)
+            image_speed = 0.25
+        }
+        treecon = 10
+        con = 66
+        alarm[4] = 40
     }
     if (con == 67)
     {
         global.facing = 1
-        var _temp_local_var_43 = s
-        instance_destroy()
+        with (s)
+            instance_destroy()
+        with (r)
+            instance_destroy()
+        with (obj_caterpillarchara_ch1)
+            visible = true
+        global.interact = 0
+        followcon = 1
+        con = 2
     }
     if (treecon == 10)
     {
@@ -723,8 +803,13 @@ if (con >= 100 && con <= 150)
         global.facing = 1
         gml_Script_scr_caterpillar_facing_ch1(global.facing)
         gml_Script_scr_markify_caterpillar_ch1()
-        var _temp_local_var_47 = s
-        sprite_index = spr_susier_dark_ch1
+        with (s)
+            sprite_index = spr_susier_dark_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        sprite_index = spr_lancer_rt_unhappy_ch1
+        hspeed = 6
+        con = 101
     }
     if (con == 101 && x >= (obj_mainchara_ch1.x + 40))
     {
@@ -780,8 +865,16 @@ if (con >= 100 && con <= 150)
     }
     if (con == 111)
     {
-        var _temp_local_var_52 = s
-        sprite_index = spr_susier_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susier_dark_unhappy_ch1
+        gml_Script_snd_free_all_ch1()
+        global.fc = 5
+        global.typer = 32
+        global.fe = 5
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_991_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_992_0")
+        con = 112
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 112 && (!gml_Script_d_ex_ch1()))
     {
@@ -794,15 +887,26 @@ if (con >= 100 && con <= 150)
     }
     if (con == 114)
     {
-        var _temp_local_var_54 = exc
-        instance_destroy()
+        with (exc)
+            instance_destroy()
+        global.fc = 1
+        global.typer = 30
+        global.fe = 9
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_1013_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_1014_0")
+        con = 115
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 115 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_56 = s
-        gml_Script_scr_depth_ch1()
-        hspeed = 12
-        image_speed = 0.25
+        with (s)
+        {
+            gml_Script_scr_depth_ch1()
+            hspeed = 12
+            image_speed = 0.25
+        }
+        con = 116
+        alarm[4] = 30
     }
     if (con == 117 && (!gml_Script_d_ex_ch1()))
     {
@@ -815,10 +919,14 @@ if (con >= 100 && con <= 150)
     }
     if (con == 118 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_59 = r
-        gml_Script_scr_depth_ch1()
-        hspeed = 12
-        image_speed = 0.25
+        with (r)
+        {
+            gml_Script_scr_depth_ch1()
+            hspeed = 12
+            image_speed = 0.25
+        }
+        con = 119
+        alarm[4] = 30
     }
     if (con == 120)
     {

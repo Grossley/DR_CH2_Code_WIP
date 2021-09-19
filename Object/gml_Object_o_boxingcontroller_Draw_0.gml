@@ -293,12 +293,21 @@ if (specialcon == 6 && wireframe_boxing == 0)
     if (specialcontimer == 1)
     {
         dmgwr = gml_Script_instance_create((x - 30), (y - 75), obj_dmgwriter)
-        var _temp_local_var_16 = dmgwr
-        delay = 8
-        type = 3
-        damage = 100
-        if ((global.hp[1] + 100) > global.maxhp[1])
-            damage = (global.maxhp[1] - global.hp[1])
+        with (dmgwr)
+        {
+            delay = 8
+            type = 3
+            damage = 100
+            if ((global.hp[1] + 100) > global.maxhp[1])
+                damage = (global.maxhp[1] - global.hp[1])
+        }
+        health_count += 100
+        if (health_count > health_count_max)
+            health_count = health_count_max
+        global.hp[1] += 100
+        if (global.hp[1] > global.maxhp[1])
+            global.hp[1] = global.maxhp[1]
+        gml_Script_snd_play(162)
     }
     flameframe = ((specialcontimer / 4) % 2)
     flamealpha = (specialcontimer / 15)

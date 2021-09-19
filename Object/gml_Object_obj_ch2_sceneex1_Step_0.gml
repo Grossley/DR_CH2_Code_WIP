@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_11;
 if (obj_mainchara.x >= 970 && obj_mainchara.x <= 1020 && obj_mainchara.y < 180 && con == -1 && global.flag[309] < 9 && gml_Script_scr_havechar(2) && gml_Script_scr_havechar(3))
 {
     instance_deactivate_object(obj_doorW)
@@ -51,8 +52,8 @@ if (con == 2)
     else
     {
         global.flag[358]
-        obj_bulletparent.flag[global.flag[obj_bulletparent]] = (global.flag[obj_bulletparent] + 1)
-        global
+        var _temp_local_var_11 = global.flag[358]
+        global.flag[358] = (global.flag[358] + 1)
     }
     gml_Script_c_waitcustom()
 }
@@ -91,8 +92,34 @@ if (con == 10)
     with (obj_caterpillarchara)
         visible = false
     cutscene_master = gml_Script_scr_cutscene_make()
-    var _temp_local_var_5 = nise_susie
-    visible = false
+    with (nise_susie)
+        visible = false
+    with (nise_ralsei)
+        visible = false
+    kr = 0
+    kr_actor = gml_Script_instance_create(obj_mainchara.x, obj_mainchara.y, obj_actor)
+    gml_Script_scr_actor_setup(kr, kr_actor, "kris")
+    kr_actor.sprite_index = spr_krisl_dark
+    su = 1
+    su_actor = gml_Script_instance_create(nise_susie.x, nise_susie.y, obj_actor)
+    gml_Script_scr_actor_setup(su, su_actor, "susie")
+    su_actor.sprite_index = nise_susie.sprite_index
+    su_actor.image_speed = nise_susie.image_speed
+    ra = 2
+    ra_actor = gml_Script_instance_create(nise_ralsei.x, nise_ralsei.y, obj_actor)
+    gml_Script_scr_actor_setup(ra, ra_actor, "ralsei")
+    ra_actor.sprite_index = nise_ralsei.sprite_index
+    ra_actor.image_speed = nise_ralsei.image_speed
+    gml_Script_c_sel(ra)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(494)
+    gml_Script_c_imageindex(0)
+    gml_Script_c_imagespeed(0.2)
+    gml_Script_c_sel(su)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_sprite(496)
+    gml_Script_c_imageindex(0)
+    gml_Script_c_imagespeed(0.2)
 }
 if (con == 11)
 {

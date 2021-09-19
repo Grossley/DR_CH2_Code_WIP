@@ -1,4 +1,3 @@
-var _cut, _temp_local_var_1, _temp_local_var_12;
 if (ambushed == false)
 {
     gml_Script_scr_ambush()
@@ -198,9 +197,20 @@ if (global.myfight == 3)
     if (actcon == 2 && (!instance_exists(obj_writer)))
     {
         actcon = 3
-        var _temp_local_var_12 = shavesprite
-        sprite_index = spr_krisb_attack
-        gml_Script_scr_animate(0, 0, 1)
+        with (shavesprite)
+        {
+            sprite_index = spr_krisb_attack
+            gml_Script_scr_animate(0, 0, 1)
+        }
+        alarm[2] = 20
+        gml_Script_snd_play_pitch(174, 1.5)
+        image_speed = 0
+        var _cut = gml_Script_instance_create((x + 34), (y + 38), obj_animation)
+        _cut.sprite_index = spr_attack_cut1
+        _cut.image_xscale = 0.25
+        _cut.image_yscale = 0.25
+        _cut.depth = (depth - 1)
+        _cut.image_speed = (1/3)
     }
     if (actcon == 1 && (!instance_exists(obj_writer)))
         gml_Script_scr_nextact()

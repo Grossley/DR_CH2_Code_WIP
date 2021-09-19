@@ -163,18 +163,33 @@ if (scon == 1.7)
         yy = 240
     gml_Script_snd_play(145)
     milk = gml_Script_scr_dark_marker((x - 100), (gml_Script_cameray() + yy), 1781)
-    var _temp_local_var_7 = milk
-    image_speed = 0
-    image_xscale = 4
-    image_yscale = 4
-    image_alpha = 0
+    with (milk)
+    {
+        image_speed = 0
+        image_xscale = 4
+        image_yscale = 4
+        image_alpha = 0
+    }
+    milk.depth = (depth - 1)
+    milktimer = 0
+    scon = 2
 }
 if (scon == 2)
 {
-    var _temp_local_var_8 = milk
-    image_xscale -= 0.2
-    image_yscale -= 0.2
-    image_alpha += 0.1
+    with (milk)
+    {
+        image_xscale -= 0.2
+        image_yscale -= 0.2
+        image_alpha += 0.1
+    }
+    milktimer += 1
+    if (milktimer >= 10)
+    {
+        scon = 3
+        milktimer = 0
+        with (milk)
+            image_alpha = 1.4
+    }
 }
 if (scon == 3)
 {
@@ -187,9 +202,73 @@ if (scon == 3)
 }
 if (scon == 4)
 {
-    var _temp_local_var_10 = milk
-    hspeed += 2
-    image_alpha -= 0.1
+    with (milk)
+    {
+        hspeed += 2
+        image_alpha -= 0.1
+    }
+    milktimer += 1
+    if (milktimer == 10)
+    {
+        if (whohealed == 1 || whohealed == 4 || whohealed == 5 || whohealed == 7)
+        {
+            with (obj_sweet_enemy)
+            {
+                global.monsterhp[myself] = global.monstermaxhp[myself]
+                healamt = gml_Script_instance_create(global.monsterx[myself], global.monstery[myself], obj_dmgwriter)
+                with (healamt)
+                {
+                    delay = 8
+                    type = 3
+                    damage = global.monstermaxhp[obj_sweet_enemy.myself]
+                    specialmessage = 3
+                }
+                hanim = gml_Script_instance_create(x, y, obj_healanim)
+                hanim.target = id
+            }
+        }
+        if (whohealed == 2 || whohealed == 4 || whohealed == 6 || whohealed == 7)
+        {
+            with (obj_kk_enemy)
+            {
+                global.monsterhp[myself] = global.monstermaxhp[myself]
+                healamt = gml_Script_instance_create(global.monsterx[myself], global.monstery[myself], obj_dmgwriter)
+                with (healamt)
+                {
+                    delay = 8
+                    type = 3
+                    damage = global.monstermaxhp[obj_kk_enemy.myself]
+                    specialmessage = 3
+                }
+                hanim = gml_Script_instance_create(x, y, obj_healanim)
+                hanim.target = id
+            }
+        }
+        if (whohealed == 3 || whohealed == 5 || whohealed == 6 || whohealed == 7)
+        {
+            with (obj_hatguy_enemy)
+            {
+                global.monsterhp[myself] = global.monstermaxhp[myself]
+                healamt = gml_Script_instance_create(global.monsterx[myself], global.monstery[myself], obj_dmgwriter)
+                with (healamt)
+                {
+                    delay = 8
+                    type = 3
+                    damage = global.monstermaxhp[obj_hatguy_enemy.myself]
+                    specialmessage = 3
+                }
+                hanim = gml_Script_instance_create(x, y, obj_healanim)
+                hanim.target = id
+            }
+        }
+    }
+    if (milktimer >= 15)
+    {
+        with (milk)
+            instance_destroy()
+        scon = 5
+        milktimer = 0
+    }
 }
 if (scon == 5)
 {

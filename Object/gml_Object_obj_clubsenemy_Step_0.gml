@@ -187,7 +187,7 @@ if (global.myfight == 3)
             topic_timeup = 0
             gml_Script_snd_play(143)
             gml_Script_scr_miniface_init_clover()
-            gml_Script_msgsetloc(0, "\\m1*        Time's up!&\\m2    TOO SLOW!&\\m3    (Sorry...)/%", "obj_clubsenemy_slash_Step_0_gml_286_0")
+            gml_Script_msgsetloc(0, "\\m1*		Time's up!&\\m2	TOO SLOW!&\\m3	(Sorry...)/%", "obj_clubsenemy_slash_Step_0_gml_286_0")
         }
         else if (global.choice == right_answer)
         {
@@ -198,13 +198,13 @@ if (global.myfight == 3)
                 gml_Script_scr_mercyadd(myself, mercytotal)
             }
             gml_Script_scr_miniface_init_clover()
-            gml_Script_msgsetloc(0, "\\m1*        That's right^2!&\\m2    Not bad^2!&\\m3    (It's OK...^2)/%", "obj_clubsenemy_slash_Step_0_gml_293_0")
+            gml_Script_msgsetloc(0, "\\m1*		That's right^2!&\\m2	Not bad^2!&\\m3	(It's OK...^2)/%", "obj_clubsenemy_slash_Step_0_gml_293_0")
         }
         else
         {
             gml_Script_snd_play(143)
             gml_Script_scr_miniface_init_clover()
-            gml_Script_msgsetloc(0, "\\m1*        No thanks!&\\m2    WRONG!&\\m3    (Is it that bad?)/%", "obj_clubsenemy_slash_Step_0_gml_296_0_b")
+            gml_Script_msgsetloc(0, "\\m1*		No thanks!&\\m2	WRONG!&\\m3	(Is it that bad?)/%", "obj_clubsenemy_slash_Step_0_gml_296_0_b")
         }
         actcon = 1
         gml_Script_scr_battletext_default()

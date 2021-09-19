@@ -22,7 +22,7 @@ tile_fade = false
 tile_layer_choice = 222222
 if (room == room_forest_area2)
 {
-    if (x.room_width / 2)
+    if (x >= (room_width / 2))
     {
         rotspeed = -4
         rot = 180

@@ -45,20 +45,24 @@ if (init == 0)
             {
                 monsterx[i] = ((gml_Script_camerax() + (gml_Script_camerawidth() / 2)) + (sprite_width / 2))
                 mymonster[i].__monsterx = (monsterx[i] - (sin((monstersiner[i] / 7)) * magnitude))
-                var _temp_local_var_3 = mymonster[i]
-                gml_Script_scr_rememberxy()
-                if instance_exists(obj_mauswheel_enemy)
-                    gml_Script_scr_move_to_point_over_time(__monsterx, y, 15)
-                else
-                    gml_Script_scr_move_to_point_over_time(__monsterx, __baskety, 15)
+                with (mymonster[i])
+                {
+                    gml_Script_scr_rememberxy()
+                    if instance_exists(obj_mauswheel_enemy)
+                        gml_Script_scr_move_to_point_over_time(__monsterx, y, 15)
+                    else
+                        gml_Script_scr_move_to_point_over_time(__monsterx, __baskety, 15)
+                }
             }
             if (cancatch[i] == 0)
             {
                 monsterx[i] = ((gml_Script_camerax() + gml_Script_camerawidth()) + 200)
-                var _temp_local_var_4 = mymonster[i]
-                gml_Script_scr_rememberxy()
-                var xx = ((gml_Script_camerax() + gml_Script_camerawidth()) + sprite_width)
-                gml_Script_scr_move_to_point_over_time(xx, y, 15)
+                with (mymonster[i])
+                {
+                    gml_Script_scr_rememberxy()
+                    var xx = ((gml_Script_camerax() + gml_Script_camerawidth()) + sprite_width)
+                    gml_Script_scr_move_to_point_over_time(xx, y, 15)
+                }
             }
             monsterhitbox[i] = gml_Script_instance_create(((mymonster[i].x + (sprite_width / 2)) - 20), (mymonster[i].y + sprite_height), obj_act_hitbox)
             monsterhitbox[i].image_xscale = 2
@@ -148,27 +152,39 @@ if (con == 5)
     caughttotal = 0
     for (i = 0; i < 3; i++)
     {
-        if (mymonster[i] > 0)
+        if (mymonster[i] > obj_sneo_friedpipis)
         {
-            var _temp_local_var_5 = mymonster[i]
-            gml_Script_scr_move_to_rememberxy(15)
+            with (mymonster[i])
+                gml_Script_scr_move_to_rememberxy(15)
+            if (monsterhit[i] == 1)
+            {
+                caughttotal++
+                if instance_exists(obj_mauswheel_enemy)
+                    gml_Script_scr_mercyadd(i, 5)
+                else
+                    gml_Script_scr_mercyadd(i, 100)
+            }
         }
     }
     if (caughttotal == 0)
     {
-        var _temp_local_var_6 = maker
-        actfailure = 1
+        with (maker)
+            actfailure = 1
     }
     if trappingX
     {
         if (caughttotal < gml_Script_scr_monsterpop())
         {
-            var _temp_local_var_7 = maker
-            actfailure = 1
+            with (maker)
+                actfailure = 1
         }
     }
-    var _temp_local_var_8 = maker
-    actcon = 12
+    with (maker)
+        actcon = 12
+    with (obj_act_hitbox)
+        instance_destroy()
+    vspeed = -16
+    con = 6
 }
 if (con == 6)
 {

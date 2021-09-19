@@ -16,12 +16,14 @@ else
 {
     if (global.tempflag[27] == 1)
         shortened = 1
-    nisesweet = (gml_Script_camerax() + 700)
+    nisesweet = gml_Script_scr_dark_marker((gml_Script_camerax() + 700), ((room_height / 2) - 80), 1774)
     nisesweet.image_speed = 0.25
     nisehatguy = gml_Script_scr_dark_marker(0, (gml_Script_cameray() - 200), 1754)
     nisehatguy.image_speed = 0
     nisekk = gml_Script_instance_create(0, (gml_Script_cameray() - 200), obj_kk_npc)
-    var _temp_local_var_2 = nisekk
-    var _temp_local_var_3 = (((1774).room_height / 2) - 80)
-    gml_Script_scr_depth()
+    with (nisekk)
+        gml_Script_scr_depth()
+    djtable = gml_Script_scr_dark_marker((nisesweet.x - 40), (nisesweet.y + 64), 498)
+    djtable.image_speed = 0.25
+    targy = ((room_height / 2) - 80)
 }

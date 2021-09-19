@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2;
 gml_Script_scr_enemy_object_init()
 var tensionbonus = (((global.flag[458] / 7) * global.maxtension) * 0.3)
 gml_Script_scr_tensionheal(tensionbonus)
@@ -36,8 +37,9 @@ puddle.image_xscale = 2
 puddle.image_yscale = 2
 puddle.image_speed = 0
 var _temp_local_var_1 = thrash
-puddle.image_index = (part[0] == 2 ? obj_84_lang_helper : obj_sneo_friedpipis)
+puddle.image_index = (part[0] == 2 ? 2 : 0)
 var turretbody = part[0] == 2
+var _temp_local_var_2 = thrash
 puddle.x = (remx + (turretbody ? 18 : 34))
 puddle.y = ((remy + 173) + ((thrash.s * cos(((thrash.wsiner + thrash.wsinerrate) / 3))) / 4))
 puddle.image_index = (turretbody ? 2 : 0)
@@ -50,7 +52,7 @@ buildedblocks = 0
 buildedblockstimer = 0
 did_kris_win_simcity = 0
 HouseCount = 1
-if (thrash.room != room_dw_mansion_acid_tunnel_loop_rouxls)
+if (room != room_dw_mansion_acid_tunnel_loop_rouxls)
 {
     tile6 = gml_Script_instance_create((gml_Script_camerax() + 0), (gml_Script_cameray() + 80), obj_simtown_acidmaker)
     tile6.image_xscale = 16
@@ -68,11 +70,7 @@ if (thrash.room != room_dw_mansion_acid_tunnel_loop_rouxls)
     tile6 = gml_Script_instance_create((gml_Script_camerax() + 160), (gml_Script_cameray() + 280), obj_simtown_landmaker)
     tile6.image_xscale = 8
 }
-if (!gml_Script_scr_debug())
-    var _temp_local_var_6 = 1
-else
-    _temp_local_var_1 = thrash.room == room_dw_mansion_acid_tunnel_loop_rouxls
-if 1
+if ((!gml_Script_scr_debug()) || room == room_dw_mansion_acid_tunnel_loop_rouxls)
 {
     with (obj_simtown_landmaker)
         visible = false

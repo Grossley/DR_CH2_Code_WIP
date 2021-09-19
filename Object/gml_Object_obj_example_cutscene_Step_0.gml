@@ -1,3 +1,4 @@
+var _temp_local_var_3;
 if (bon == 0 && obj_mainchara.x >= (x - 100) && global.interact == 0)
     bon = 1
 if (con == 0 && obj_mainchara.x >= x && global.interact == 0)
@@ -20,8 +21,7 @@ if (con == 1)
     gml_Script_scr_actor_setup(su, su_actor, "susie")
     su_actor.sprite_index = spr_susiel_dark
     specialsprite[6] = su_actor
-    var _temp_local_var_3 = kr_actor
-    var _temp_local_var_4 = 21
+    var _temp_local_var_3 = 21
     gml_Script_scr_emote("!", 30)
 }
 if (con == 2)
@@ -39,6 +39,6 @@ if (honkcon == 1)
         honkcon = 2
     else
         gml_Script_snd_play(151)
-    var _temp_local_var_5 = su_actor
-    gml_Script_scr_flip(choose("x", "y"))
+    with (su_actor)
+        gml_Script_scr_flip(choose("x", "y"))
 }

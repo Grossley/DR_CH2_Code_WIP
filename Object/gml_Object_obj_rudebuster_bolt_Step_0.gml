@@ -96,14 +96,24 @@ if (explode == 1)
                 gml_Script_scr_damage_enemy(star, damage)
             if (global.monstertype[0] != 20)
             {
-                var _temp_local_var_3 = target
-                __of = gml_Script_scr_oflash()
+                with (target)
+                    __of = gml_Script_scr_oflash()
+                if (red == 1)
+                {
+                    with (target)
+                        __of.flashcolor = c_red
+                }
             }
         }
         else
         {
-            _temp_local_var_3 = target
-            __of = gml_Script_scr_oflash()
+            with (target)
+                __of = gml_Script_scr_oflash()
+            if (red == 1)
+            {
+                with (target)
+                    __of.flashcolor = c_red
+            }
         }
         gml_Script_snd_play(107)
         for (i = 0; i < 4; i += 1)
@@ -131,19 +141,21 @@ if (explode == 1)
     }
     if (t >= 2)
     {
-        i = 0
-        while (i < 4)
+        for (i = 0; i < 4; i += 1)
         {
-            var _temp_local_var_5 = burst[i]
-            speed *= 0.75
-            image_xscale *= 0.8
+            with (burst[i])
+            {
+                speed *= 0.75
+                image_xscale *= 0.8
+            }
         }
-        i = 4
-        while (i < 8)
+        for (i = 4; i < 8; i += 1)
         {
-            var _temp_local_var_6 = burst[i]
-            speed *= 0.8
-            image_xscale *= 0.8
+            with (burst[i])
+            {
+                speed *= 0.8
+                image_xscale *= 0.8
+            }
         }
     }
     if (t >= 18)
@@ -159,13 +171,24 @@ if (explode == 0)
     aft[maxaft].image_alpha = (image_alpha - 0.2)
     maxaft += 1
 }
-i = 0
-while (i < maxaft)
+for (i = 0; i < maxaft; i += 1)
 {
-    var _temp_local_var_7 = aft[i]
-    image_yscale -= 0.1
-    if (image_yscale <= 0.1)
-        instance_destroy()
+    with (aft[i])
+    {
+        image_yscale -= 0.1
+        if (image_yscale <= 0.1)
+            instance_destroy()
+    }
+    if (explode == 1)
+    {
+        with (aft[i])
+        {
+            image_alpha -= 0.07
+            image_yscale *= 0.9
+            if (image_yscale <= 0.1)
+                instance_destroy()
+        }
+    }
 }
 a += 1
 t += 1

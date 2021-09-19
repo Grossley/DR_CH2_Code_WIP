@@ -2,63 +2,97 @@ if (con > 0 && con < 50)
 {
     if (con == 1 && instance_exists(obj_dialoguer_ch1) == 0)
     {
-        var _temp_local_var_3 = t
-        image_index = 0
-        image_speed = 0.25
-        vspeed = -2
-        sprite_index = spr_toriel_u_ch1
+        with (t)
+        {
+            image_index = 0
+            image_speed = 0.25
+            vspeed = -2
+            sprite_index = spr_toriel_u_ch1
+        }
+        alarm[4] = 20
+        con = 2
     }
     if (con == 3)
     {
-        var _temp_local_var_4 = t
-        image_index = 0
-        image_speed = 0
-        vspeed = 0
+        with (t)
+        {
+            image_index = 0
+            image_speed = 0
+            vspeed = 0
+        }
+        alarm[4] = 10
+        con = 4
     }
     if (con == 5)
     {
-        var _temp_local_var_5 = t
-        image_speed = 0.25
-        sprite_index = spr_toriel_windowopen_ch1
+        with (t)
+        {
+            image_speed = 0.25
+            sprite_index = spr_toriel_windowopen_ch1
+        }
+        alarm[4] = 10
+        con = 6
+        with (wallwindow)
+            image_index = 1
+        gml_Script_snd_play_ch1(368)
     }
     if (con == 7)
     {
-        var _temp_local_var_7 = t
-        image_speed = 0
+        with (t)
+            image_speed = 0
+        con = 8
+        alarm[4] = 20
     }
     if (con == 9)
     {
-        var _temp_local_var_8 = t
-        sprite_index = spr_toriel_d_ch1
-        image_index = 0
-        image_speed = 0.25
-        vspeed = 2
+        with (t)
+        {
+            sprite_index = spr_toriel_d_ch1
+            image_index = 0
+            image_speed = 0.25
+            vspeed = 2
+        }
+        alarm[4] = 20
+        con = 10
     }
     if (con == 11)
     {
-        var _temp_local_var_9 = t
-        image_index = 0
-        image_speed = 0
-        vspeed = 0
+        with (t)
+        {
+            image_index = 0
+            image_speed = 0
+            vspeed = 0
+        }
+        alarm[4] = 20
+        con = 12
     }
     if (con == 13)
     {
-        var _temp_local_var_10 = t
-        sprite_index = spr_toriel_rt_ch1
+        with (t)
+            sprite_index = spr_toriel_rt_ch1
+        alarm[4] = 20
+        con = 14
     }
     if (con == 15)
     {
         global.fe = 0
-        var _temp_local_var_11 = t
-        image_speed = 0.25
+        with (t)
+            image_speed = 0.25
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_krisroom_slash_Step_0_gml_92_0")
+        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 20
     }
     if (con == 20 && instance_exists(obj_dialoguer_ch1) == 0)
     {
-        var _temp_local_var_13 = t
-        image_index = 0
-        sprite_index = spr_toriel_d_ch1
-        image_speed = 0.25
-        vspeed = 3
+        with (t)
+        {
+            image_index = 0
+            sprite_index = spr_toriel_d_ch1
+            image_speed = 0.25
+            vspeed = 3
+        }
+        alarm[4] = 90
+        con = 21
     }
     if (con == 22)
     {
@@ -137,8 +171,10 @@ if (con >= 50 && con < 100)
         global.filechoice = _remfilechoice
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 100)
         fade = gml_Script_instance_create_ch1(0, 0, 1460)
-        var _temp_local_var_16 = fade
-        fadespeed = 0.01
+        with (fade)
+            fadespeed = 0.01
+        con = 51
+        alarm[4] = 100
     }
     if (con == 52)
     {
@@ -160,9 +196,13 @@ if (con >= 100 && con < 150)
     {
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 50)
         fade = gml_Script_instance_create_ch1(0, 0, 1460)
-        var _temp_local_var_19 = fade
-        fadespeed = 0.02
-        depth = 10000
+        with (fade)
+        {
+            fadespeed = 0.02
+            depth = 10000
+        }
+        con = 101
+        alarm[4] = 50
     }
     if (con == 102)
     {

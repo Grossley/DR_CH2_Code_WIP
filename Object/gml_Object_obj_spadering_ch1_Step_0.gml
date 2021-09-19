@@ -24,22 +24,24 @@ if (t == 0)
 }
 if (t >= 1 && t < 15)
 {
-    i = 0
-    while (i < maxspade)
+    for (i = 0; i < maxspade; i += 1)
     {
-        var _temp_local_var_2 = spade[i]
-        speed *= 0.87
-        image_alpha += 0.1
+        with (spade[i])
+        {
+            speed *= 0.87
+            image_alpha += 0.1
+        }
     }
 }
 if (t == 15)
 {
-    i = 0
-    while (i < maxspade)
+    for (i = 0; i < maxspade; i += 1)
     {
-        var _temp_local_var_3 = spade[i]
-        speed = 0
-        image_alpha += 0.1
+        with (spade[i])
+        {
+            speed = 0
+            image_alpha += 0.1
+        }
     }
 }
 if (t >= 15 && con == 0)
@@ -49,10 +51,20 @@ if (t >= 15 && con == 0)
         spadet += 6
     if (spadet >= 4)
     {
-        var _temp_local_var_5 = spade[startspade]
-        image_blend = c_white
-        gravity_direction = direction
-        speed = -3.4
+        with (spade[startspade])
+        {
+            image_blend = c_white
+            gravity_direction = direction
+            speed = -3.4
+        }
+        spade[startspade].gravity = grav
+        startspade += 1
+        if (startspade >= maxspade)
+        {
+            con = 1
+            instance_destroy()
+        }
+        spadet = 0
     }
 }
 t += 1

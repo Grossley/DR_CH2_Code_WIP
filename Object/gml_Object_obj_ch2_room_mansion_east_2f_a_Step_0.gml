@@ -2,8 +2,9 @@ if (global.flag[344] == 0)
 {
     if (key != self)
     {
-        var _temp_local_var_1 = key
-        gml_Script_scr_depth()
+        with (key)
+            gml_Script_scr_depth()
+        doorlocked.depth = (key.depth + 10)
     }
     if (con == 1)
     {
@@ -86,11 +87,10 @@ if (global.flag[344] == 0)
         instance_destroy(key)
         instance_destroy(exitcollider)
         instance_destroy(doorlocked)
-        i = 0
-        while (i < array_length_1d(sparkle))
+        for (i = 0; i < array_length_1d(sparkle); i++)
         {
-            var _temp_local_var_4 = sparkle[i]
-            instance_destroy()
+            with (sparkle[i])
+                instance_destroy()
         }
         with (obj_saucer_monty)
             instance_destroy()
@@ -102,7 +102,8 @@ if (global.flag[344] == 0)
                 instance_destroy()
             }
         }
-        var _temp_local_var_5 = forcefield
+        with (forcefield)
+            instance_destroy()
         instance_destroy()
     }
     if make_forcefield

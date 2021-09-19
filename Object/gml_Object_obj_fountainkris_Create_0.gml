@@ -18,11 +18,11 @@ with (obj_mainchara)
 fin = gml_Script_instance_create(0, 0, obj_fadein)
 if (global.chapter == 1)
 {
-    var _temp_local_var_1 = fin
-    fadespeed = -0.01
+    with (fin)
+        fadespeed = -0.01
 }
 else
 {
-    var _temp_local_var_2 = fin
-    fadespeed = -0.005
+    with (fin)
+        fadespeed = -0.005
 }

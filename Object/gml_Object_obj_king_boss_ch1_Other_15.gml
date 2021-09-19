@@ -24,8 +24,11 @@ if (attacked == false)
         box.sprite_index = spr_battlebg_wavechain_ch1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_1 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
+        chainking.damage = ((global.monsterat[myself] * 4) * tempattack)
+        chainking.target = 3
+        global.turntimer = 999
     }
     if (attack == 3)
     {
@@ -46,8 +49,13 @@ if (attacked == false)
         box.keep = 1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_2 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
+        damagebox = gml_Script_instance_create_ch1(box.x, box.y, 1570)
+        damagebox.type = 5
+        damagebox.damage = ((global.monsterat[myself] * 5) * tempattack)
+        damagebox.target = mytarget
+        global.turntimer = 999
     }
     if (attack == 5)
     {
@@ -63,8 +71,8 @@ if (attacked == false)
         global.turntimer = 999
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_3 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
     }
     if (attack == 6)
     {
@@ -84,8 +92,8 @@ if (attacked == false)
         global.turntimer = 999
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_4 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
     }
     if (attack == 7)
     {
@@ -106,8 +114,13 @@ if (attacked == false)
         box.keep = 1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_5 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
+        damagebox = gml_Script_instance_create_ch1(box.x, box.y, 1570)
+        damagebox.type = 3
+        damagebox.damage = ((global.monsterat[myself] * 5) * tempattack)
+        damagebox.target = mytarget
+        global.turntimer = 999
     }
     if (attack == 9)
     {
@@ -132,8 +145,11 @@ if (attacked == false)
         box.sprite_index = spr_battlebg_wavechain_ch1
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_6 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
+        chainking.damage = ((global.monsterat[myself] * 4) * tempattack)
+        chainking.target = 3
+        global.turntimer = 999
     }
     if (attack == 11)
     {
@@ -150,8 +166,8 @@ if (attacked == false)
         global.turntimer = 999
         hm = gml_Script_instance_create_ch1((box.x - 10), (box.y - 10), 1527)
         gml_Script_scr_moveheart_ch1()
-        var _temp_local_var_7 = hm
-        instance_destroy()
+        with (hm)
+            instance_destroy()
     }
     tempattack = 1
     attacked = true

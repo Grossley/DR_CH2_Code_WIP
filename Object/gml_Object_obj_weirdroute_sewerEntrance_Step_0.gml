@@ -23,7 +23,7 @@ if (con == 2)
     {
         with (obj_doorAny)
         {
-            if x.room_width
+            if (x > room_width)
                 event_user(9)
         }
     }

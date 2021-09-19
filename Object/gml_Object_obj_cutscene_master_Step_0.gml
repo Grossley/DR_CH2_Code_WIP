@@ -65,11 +65,10 @@ if (terminate_this_frame == 1)
 {
     if (kill_actors == 1)
     {
-        jj = 0
-        while (jj < 20)
+        for (jj = 0; jj < 20; jj++)
         {
-            var _temp_local_var_1 = actor_id[jj]
-            instance_destroy()
+            with (actor_id[jj])
+                instance_destroy()
         }
     }
     instance_destroy()

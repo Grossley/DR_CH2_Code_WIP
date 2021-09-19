@@ -1,4 +1,3 @@
-var icewolf_npc, table_bottom, _temp_local_var_1;
 con = -1
 if (global.chapter != 2)
     instance_destroy()
@@ -11,6 +10,11 @@ else
     napkins.depth = (burgerpants_npc.depth - 10)
     var nicecream_npc = gml_Script_instance_create(77, 52, obj_npc_room)
     nicecream_npc.sprite_index = spr_npc_nicecream_mop
-    var _temp_local_var_1 = nicecream_npc
-    gml_Script_scr_depth()
+    with (nicecream_npc)
+        gml_Script_scr_depth()
+    var icewolf_npc = gml_Script_instance_create(73, 133, obj_npc_room)
+    icewolf_npc.sprite_index = spr_npc_icewolf
+    icewolf_npc.depth = 95000
+    var table_bottom = gml_Script_scr_marker(36, 118, 2955)
+    table_bottom.depth = (icewolf_npc.depth - 10)
 }

@@ -6,8 +6,8 @@ if (room == room_dw_castle_dojo)
     bgtype = 1
 draw_set_alpha(image_alpha)
 draw_set_color(c_black)
+draw_rectangle(-10, -10, (room_width + 10), (room_height + 10), false)
 draw_set_alpha(1)
-draw_rectangle(-10, -10, (self.room_width + 10), (self.room_height + 10), 0)
 if (destroy == 0)
 {
     if (image_alpha <= 1)

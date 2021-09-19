@@ -10,9 +10,15 @@ for (xyz = 0; xyz < 3; xyz += 1)
         gotspell[xyz] = 1
         if (castyet == 0)
         {
-            var _temp_local_var_1 = global.charinstance[xyz]
-            state = 2
-            attacktimer = 0
+            with (global.charinstance[xyz])
+            {
+                state = 2
+                attacktimer = 0
+            }
+            castyet = 1
+            char = (xyz + 1)
+            gml_Script_scr_spelltext(global.charspecial[xyz], xyz)
+            spellwriter = gml_Script_scr_battletext_default()
         }
     }
     if (global.charaction[xyz] == 4)
@@ -22,9 +28,15 @@ for (xyz = 0; xyz < 3; xyz += 1)
         gotitem[xyz] = 1
         if (castyet == 0)
         {
-            var _temp_local_var_2 = global.charinstance[xyz]
-            state = 4
-            attacktimer = 0
+            with (global.charinstance[xyz])
+            {
+                state = 4
+                attacktimer = 0
+            }
+            castyet = 1
+            char = (xyz + 1)
+            gml_Script_scr_spelltext(global.charspecial[xyz], xyz)
+            spellwriter = gml_Script_scr_battletext_default()
         }
     }
 }

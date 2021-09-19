@@ -37,8 +37,10 @@ if (con == 3)
     timer++
     if (timer == 1)
     {
-        var _temp_local_var_2 = coverup
-        instance_destroy()
+        with (coverup)
+            instance_destroy()
+        timer = 0
+        con++
     }
 }
 if (con == 4)
@@ -49,8 +51,12 @@ if (con == 4)
 }
 if (con == 5)
 {
-    var _temp_local_var_3 = hand1
-    gml_Script_scr_move_to_point_over_time((x - 64), y, 14)
+    with (hand1)
+        gml_Script_scr_move_to_point_over_time((x - 64), y, 14)
+    with (hand2)
+        gml_Script_scr_move_to_point_over_time((x + 64), y, 14)
+    timer = 0
+    con++
 }
 if (con == 6)
 {
@@ -60,16 +66,22 @@ if (con == 6)
 }
 if (con == 7)
 {
-    var _temp_local_var_5 = hand1
-    gml_Script_scr_move_to_point_over_time((x + 164), y, 8)
+    with (hand1)
+        gml_Script_scr_move_to_point_over_time((x + 164), y, 8)
+    with (hand2)
+        gml_Script_scr_move_to_point_over_time((x - 164), y, 8)
+    timer = 0
+    con++
 }
 if (con == 8)
 {
     timer++
     if (timer < 8 && (timer % 2) == 0)
     {
-        var _temp_local_var_8 = hand1
-        gml_Script_scr_afterimagefast()
+        with (hand1)
+            gml_Script_scr_afterimagefast()
+        with (hand2)
+            gml_Script_scr_afterimagefast()
     }
     if (timer == 8)
     {
@@ -78,8 +90,14 @@ if (con == 8)
     }
     if (timer == 9)
     {
-        var _temp_local_var_10 = hand1
-        gml_Script_scr_move_to_point_over_time((x - 100), y, 16)
+        with (hand1)
+            gml_Script_scr_move_to_point_over_time((x - 100), y, 16)
+        with (hand2)
+            gml_Script_scr_move_to_point_over_time((x + 100), y, 16)
+        timer = 0
+        with (obj_bridgeSwapper)
+            alarm[0] = 1
+        con++
     }
 }
 if (con == 9)
@@ -111,12 +129,12 @@ if (con > 3)
 {
     if gml_Script_i_ex(bubbles2)
     {
-        var _temp_local_var_13 = bubbles2
-        x = (other.hand2.x - 82)
+        with (bubbles2)
+            x = (other.hand2.x - 82)
     }
 }
 if gml_Script_i_ex(bubbles1)
 {
-    var _temp_local_var_14 = bubbles1
-    x = (other.hand1.x - 82)
+    with (bubbles1)
+        x = (other.hand1.x - 82)
 }

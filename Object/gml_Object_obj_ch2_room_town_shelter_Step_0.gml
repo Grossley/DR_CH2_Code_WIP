@@ -2,16 +2,16 @@ if (con > -1)
 {
     if gml_Script_i_ex(snowy)
     {
-        var _temp_local_var_1 = snowy
-        gml_Script_scr_depth()
+        with (snowy)
+            gml_Script_scr_depth()
     }
     if gml_Script_i_ex(monsterkid)
     {
-        var _temp_local_var_2 = monsterkid
-        gml_Script_scr_depth()
+        with (monsterkid)
+            gml_Script_scr_depth()
     }
 }
-if (obj_mainchara.y >= 1130 && obj_mainchara.x > obj_mainchara && obj_mainchara.x < obj_darkfountain && con == -1)
+if (obj_mainchara.y >= 1130 && obj_mainchara.x > 80 && obj_mainchara.x < 230 && con == -1)
 {
     con = 1
     global.interact = 1
@@ -19,9 +19,9 @@ if (obj_mainchara.y >= 1130 && obj_mainchara.x > obj_mainchara && obj_mainchara.
     monsterkid.visible = false
     cutscene_master = gml_Script_scr_cutscene_make()
     gml_Script_scr_maincharacters_actors()
-    susiegox = (monsterkid > (obj_mainchara.x.room_width / 2) ? (obj_mainchara.x - 30) : (obj_mainchara.x + 30))
+    susiegox = (obj_mainchara.x > (room_width / 2) ? (obj_mainchara.x - 30) : (obj_mainchara.x + 30))
     gml_Script_c_sel(kr)
-    var facing = (snowy > (obj_mainchara.x.room_width / 2) ? "l" : "r")
+    var facing = (obj_mainchara.x > (room_width / 2) ? "l" : "r")
     gml_Script_c_facing(facing)
     sux = su_actor.x
     suy = su_actor.y
@@ -171,34 +171,40 @@ if (con == 1)
 if (con == 2 && customcon == 1)
 {
     con = 5
-    var _temp_local_var_9 = sn_actor
-    path_start(path_snowy, 8, path_action_stop, 0)
+    with (sn_actor)
+        path_start(path_snowy, 8, path_action_stop, 0)
+    with (mk_actor)
+        path_start(path_monsterkid, 8, path_action_stop, 0)
 }
 if (con == 5)
 {
     if gml_Script_i_ex(sn_actor)
     {
-        var _temp_local_var_11 = sn_actor
-        if (direction >= 136 && direction <= 225)
-            sprite_index = spr_snowy_ut_l
-        if (direction >= 46 && direction <= 135)
-            sprite_index = spr_snowy_ut
-        if (direction >= 306 || direction <= 45)
-            sprite_index = spr_snowy_ut_r
-        if (y <= (gml_Script_cameray() - 20))
-            instance_destroy()
+        with (sn_actor)
+        {
+            if (direction >= 136 && direction <= 225)
+                sprite_index = spr_snowy_ut_l
+            if (direction >= 46 && direction <= 135)
+                sprite_index = spr_snowy_ut
+            if (direction >= 306 || direction <= 45)
+                sprite_index = spr_snowy_ut_r
+            if (y <= (gml_Script_cameray() - 20))
+                instance_destroy()
+        }
     }
     if gml_Script_i_ex(mk_actor)
     {
-        var _temp_local_var_15 = mk_actor
-        if (direction >= 136 && direction <= 225)
-            sprite_index = spr_mkid_ut_l
-        if (direction >= 46 && direction <= 135)
-            sprite_index = spr_mkid_ut
-        if (direction >= 306 || direction <= 45)
-            sprite_index = spr_mkid_ut_r
-        if (y <= (gml_Script_cameray() - 20))
-            instance_destroy()
+        with (mk_actor)
+        {
+            if (direction >= 136 && direction <= 225)
+                sprite_index = spr_mkid_ut_l
+            if (direction >= 46 && direction <= 135)
+                sprite_index = spr_mkid_ut
+            if (direction >= 306 || direction <= 45)
+                sprite_index = spr_mkid_ut_r
+            if (y <= (gml_Script_cameray() - 20))
+                instance_destroy()
+        }
     }
     if ((!gml_Script_i_ex(sn_actor)) && (!gml_Script_i_ex(mk_actor)) && (!gml_Script_d_ex()))
     {

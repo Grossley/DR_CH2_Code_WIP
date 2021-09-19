@@ -15,11 +15,15 @@ if (state == 3)
             gml_Script_snd_play_ch1(383)
             with (obj_susieandlancer_event_ch1)
             {
-                var _temp_local_var_1 = s
-                visible = true
-                sprite_index = spr_susie_enemy_defeat_ch1
-                depth = 100
+                with (s)
+                {
+                    visible = true
+                    sprite_index = spr_susie_enemy_defeat_ch1
+                    depth = 100
+                }
             }
+            visible = false
+            instance_destroy()
         }
         hurtshake += 1
         if (hurtshake > 1)

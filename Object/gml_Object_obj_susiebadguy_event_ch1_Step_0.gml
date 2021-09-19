@@ -14,8 +14,12 @@ if (con == 1)
             cutscene = true
         global.interact = 1
         sprite_index = spr_lancer_lt_ch1
-        var _temp_local_var_2 = s
-        sprite_index = spr_susiel_dark_ch1
+        with (s)
+            sprite_index = spr_susiel_dark_ch1
+        exc = gml_Script_instance_create_ch1((x + 30), (y - 20), 1486)
+        con = 2
+        gml_Script_scr_pan_ch1(4, 0, 30)
+        alarm[4] = 30
     }
 }
 if (con == 3)
@@ -58,8 +62,12 @@ if (con == 6)
 }
 if (con == 7 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_5 = s
-    sprite_index = spr_susied_dark_ch1
+    with (s)
+        sprite_index = spr_susied_dark_ch1
+    gml_Script_snd_play_ch1(378)
+    gml_Script_instance_create_ch1(0, 0, 1464)
+    con = 8
+    alarm[4] = 5
 }
 if (con == 9 && (!gml_Script_d_ex_ch1()))
 {
@@ -73,8 +81,10 @@ if (con == 9 && (!gml_Script_d_ex_ch1()))
 if (con == 10 && (!gml_Script_d_ex_ch1()))
 {
     sprite_index = spr_lancer_rt_ch1
-    var _temp_local_var_8 = s
-    sprite_index = spr_susiel_dark_ch1
+    with (s)
+        sprite_index = spr_susiel_dark_ch1
+    con = 11
+    alarm[4] = 5
 }
 if (con == 12)
 {
@@ -89,35 +99,46 @@ if (con == 13 && (!gml_Script_d_ex_ch1()))
 {
     gml_Script_snd_play_ch1(413)
     whitefade = gml_Script_scr_dark_marker_ch1(-10, -10, 4277)
-    var _temp_local_var_10 = whitefade
-    image_alpha = 0
-    image_xscale = 1000
-    image_yscale = 1000
-    depth = -100
+    with (whitefade)
+    {
+        image_alpha = 0
+        image_xscale = 1000
+        image_yscale = 1000
+        depth = -100
+    }
+    wtimer = 0
+    con = 14
 }
 if (con == 14)
 {
     wtimer += 1
     if (wtimer <= 25)
     {
-        var _temp_local_var_11 = whitefade
-        image_alpha += 0.04
+        with (whitefade)
+            image_alpha += 0.04
     }
     if (wtimer == 26)
     {
         sprite_index = spr_lancer_pose_ch1
-        var _temp_local_var_12 = s
-        sprite_index = spr_susieb_spellready_ch1
+        with (s)
+            sprite_index = spr_susieb_spellready_ch1
+        with (s)
+            image_xscale = -2
+        with (s)
+            image_speed = 0.2
+        with (s)
+            x += 60
     }
     if (wtimer > 28)
     {
-        var _temp_local_var_16 = whitefade
-        image_alpha -= 0.04
+        with (whitefade)
+            image_alpha -= 0.04
     }
     if (wtimer >= 60)
     {
-        var _temp_local_var_17 = whitefade
-        instance_destroy()
+        with (whitefade)
+            instance_destroy()
+        con = 15
     }
 }
 if (con == 15 && (!gml_Script_d_ex_ch1()))
@@ -150,23 +171,53 @@ if (con == 18)
 }
 if (con == 19 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_21 = s
-    image_speed = 0
-    image_index = 0
-    sprite_index = spr_susiel_dark_unhappy_ch1
-    image_xscale = 2
-    x -= 60
+    with (s)
+    {
+        image_speed = 0
+        image_index = 0
+        sprite_index = spr_susiel_dark_unhappy_ch1
+        image_xscale = 2
+        x -= 60
+    }
+    sprite_index = spr_lancer_lt_unhappy_ch1
+    global.typer = 30
+    global.fc = 1
+    global.fe = 6
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_205_0")
+    global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_206_0")
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_207_0")
+    gml_Script_scr_lanface_ch1(3, 6)
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_209_0")
+    gml_Script_scr_ralface_ch1(5, 1)
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_211_0")
+    global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_212_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 20
 }
 if (con == 20 && (!gml_Script_d_ex_ch1()))
 {
     sprite_index = spr_lancer_lt_ch1
-    var _temp_local_var_23 = s
-    sprite_index = spr_susiel_dark_ch1
+    with (s)
+        sprite_index = spr_susiel_dark_ch1
+    global.typer = 30
+    global.fc = 1
+    global.fe = 1
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_224_0")
+    gml_Script_scr_lanface_ch1(1, 2)
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_226_0")
+    gml_Script_scr_susface_ch1(3, 2)
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_228_0")
+    gml_Script_scr_lanface_ch1(5, 2)
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_susiebadguy_event_slash_Step_0_gml_230_0")
+    gml_Script_instance_create_ch1(0, 0, 1326)
+    con = 21
 }
 if (con == 21 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_25 = s
-    sprite_index = spr_susier_dark_ch1
+    with (s)
+        sprite_index = spr_susier_dark_ch1
+    con = 22
+    alarm[4] = 30
 }
 if (con == 23)
 {
@@ -196,10 +247,14 @@ if (con == 27 && (!gml_Script_d_ex_ch1()))
 {
     sprite_index = spr_lancer_dt_ch1
     vspeed = 16
-    var _temp_local_var_28 = s
-    sprite_index = spr_susied_dark_ch1
-    image_speed = 0.5
-    vspeed = 16
+    with (s)
+    {
+        sprite_index = spr_susied_dark_ch1
+        image_speed = 0.5
+        vspeed = 16
+    }
+    con = 27.1
+    alarm[4] = 30
 }
 if (con == 28.1)
 {

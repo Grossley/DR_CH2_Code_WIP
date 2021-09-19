@@ -1,4 +1,3 @@
-var catty_dad, catti, jo, ficus, diner_table, seat_back, _temp_local_var_1;
 if (global.chapter == 2)
 {
     with (obj_caterpillarchara)
@@ -12,8 +11,21 @@ if (global.chapter == 2)
     aaron.sprite_index = spr_npc_aaron
     var catti_mom = gml_Script_instance_create(36, 74, obj_npc_room_animated)
     catti_mom.sprite_index = spr_npc_catti_mom_no1
-    var _temp_local_var_1 = catti_mom
-    gml_Script_scr_depth()
+    with (catti_mom)
+        gml_Script_scr_depth()
+    var catty_dad = gml_Script_instance_create(42, 120, obj_npc_room)
+    catty_dad.sprite_index = spr_npc_catti_dad_diner
+    var catti = gml_Script_instance_create(240, 152, obj_npc_room_animated)
+    catti.sprite_index = spr_npc_catty_ukelele
+    catti.depth = 4000
+    var jo = gml_Script_instance_create(240, 175, obj_npc_room)
+    jo.sprite_index = spr_jockington_lt
+    var ficus = gml_Script_instance_create(55, 160, obj_npc_room)
+    ficus.sprite_index = spr_npc_ficus
+    var diner_table = gml_Script_scr_marker(7, 172, 2776)
+    diner_table.depth = (ficus.depth - 100)
+    var seat_back = gml_Script_scr_marker(236, 212, 2777)
+    seat_back.depth = (jo.depth - 100)
 }
 else
     instance_destroy()

@@ -11,18 +11,28 @@ if (global.plot < 5)
     k = gml_Script_scr_marker_ch1(290, 198, 4207)
     s = gml_Script_scr_marker_ch1(310, 190, 3537)
     global.interact = 1
-    var _temp_local_var_1 = s
-    vspeed = -1
-    image_speed = 0.2
+    with (s)
+    {
+        vspeed = -1
+        image_speed = 0.2
+    }
+    with (k)
+    {
+        vspeed = -1
+        image_speed = 0.2
+    }
+    alarm[4] = 90
 }
 else
 {
     block = gml_Script_instance_create_ch1(280, 100, 1334)
     block.image_xscale = 4
     sunset = gml_Script_scr_marker_ch1(0, 0, 3468)
-    var _temp_local_var_3 = sunset
-    image_alpha = 0.4
-    depth = 2000
+    with (sunset)
+    {
+        image_alpha = 0.4
+        depth = 2000
+    }
 }
 if (global.plot == 250)
 {

@@ -31,15 +31,13 @@ for (i = 0; i < 10; i++)
         _aey = actor_endy[i][step_current]
         draw_sprite_ext(actor_endsprite[i][step_current], 0, actor_startx[i][step_current], actor_starty[i][step_current], (1 + global.darkzone), (1 + global.darkzone), 0, c_white, 1)
         draw_sprite_ext(actor_endsprite[i][step_current], 0, hover_x, hover_y, (1 + global.darkzone), (1 + global.darkzone), 0, c_white, 1)
-        877
+        draw_sprite(spr_pie, 0, mouse_x, mouse_y)
         draw_set_color(c_yellow)
         draw_line(actor_startx[i][step_current], actor_starty[i][step_current], actor_endx[i][step_current], actor_endy[i][step_current])
         draw_set_color(c_fuchsia)
         draw_ellipse((_asx - 10), (_asy - 5), (_asx + 10), (_asy + 5), 0)
         draw_set_color(c_aqua)
         draw_ellipse((_aex - 10), (_aey - 5), (_aex + 10), (_aey + 5), 0)
-        var _temp_local_var_3 = 0
-        var _temp_local_var_4 = mouse_y.mouse_x
     }
 }
 for (j = 0; j <= step_max; j++)

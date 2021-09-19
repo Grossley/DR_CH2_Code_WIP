@@ -30,7 +30,7 @@ if (init == 1)
     for (i = 0; i < 19; i++)
     {
         draw_set_color(merge_color(c_navy, c_black, (i * 0.05)))
-        draw_rectangle(-100, (yy - 50), room_width + 100, ((yy - 50) + (i * 15)), 0)
+        draw_rectangle(-100, (yy - 50), (room_width + 100), ((yy - 50) + (i * 15)), false)
     }
     draw_set_alpha((0.5 + (sin((linesiner / 12)) * 0.1)))
     draw_set_color(c_lime)
@@ -50,6 +50,6 @@ if (init == 1)
     }
     draw_set_alpha(1)
     draw_set_color(c_black)
-    draw_rectangle(-100, room_height - 240, room_width + 100, room_height + 2, 0)
+    draw_rectangle(-100, (room_height - 240), (room_width + 100), (room_height + 2), false)
 }
 draw_set_alpha(1)

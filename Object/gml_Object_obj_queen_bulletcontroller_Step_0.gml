@@ -310,28 +310,50 @@ else if (type == 2 || type == 2.1 || type == 2.2)
         if ((btimer >= (threshold + (wineadded / 12)) && winedebug == 0) || (winedebug == 1 && gml_Script_button1_p()))
         {
             droplet[dropletcount] = gml_Script_instance_create(x, y, obj_queen_wine_attack_droplet)
-            var _temp_local_var_46 = droplet[dropletcount]
-            gml_Script_scr_bullet_init()
-            destroyonhit = 0
-        }
-        i = 0
-        while (i < dropletcount)
-        {
-            var _temp_local_var_48 = droplet[i]
-            fakespeed += 0.2
-            timefrommade += fakespeed
-            image_angle = obj_queen_wineglass.image_angle
-            x2 = (obj_queen_wineglass.x + lengthdir_x((ydist - timefrommade), (image_angle + 90)))
-            y2 = (obj_queen_wineglass.y + lengthdir_y((ydist - timefrommade), (image_angle + 90)))
-            x3 = (x2 + lengthdir_x(xdist, image_angle))
-            y3 = (y2 + lengthdir_y(xdist, image_angle))
-            y = y3
-            x = x3
-            if (y3 >= ((obj_queen_wineglass.y + 70) + ((75 - abs(xdist)) / 1.7)))
+            with (droplet[dropletcount])
             {
-                obj_queen_wineglass.prefill += obj_queen_bulletcontroller.wineadd
-                obj_queen_bulletcontroller.wineadded += 1
-                instance_destroy()
+                gml_Script_scr_bullet_init()
+                destroyonhit = 0
+            }
+            if instance_exists(obj_heart)
+                droplet[dropletcount].depth = obj_heart.depth
+            droplet[dropletcount].sprite_index = spr_dropletbullet
+            droplet[dropletcount].ydist = 280
+            droplet[dropletcount].active = true
+            droplet[dropletcount].xdist = (-65 + random(130))
+            droplet[dropletcount].timefrommade = 0
+            droplet[dropletcount].fakespeed = 2
+            droplet[dropletcount].boss = obj_queen_wineglass.id
+            with (droplet[dropletcount])
+            {
+                if instance_exists(obj_queen_enemy)
+                    damage = (global.monsterat[obj_queen_enemy.myself] * 5)
+                if instance_exists(obj_queen_bulletcontroller)
+                    target = obj_queen_bulletcontroller.target
+                grazepoints = 4
+            }
+            dropletcount++
+            btimer = 0
+        }
+        for (i = 0; i < dropletcount; i++)
+        {
+            with (droplet[i])
+            {
+                fakespeed += 0.2
+                timefrommade += fakespeed
+                image_angle = obj_queen_wineglass.image_angle
+                x2 = (obj_queen_wineglass.x + lengthdir_x((ydist - timefrommade), (image_angle + 90)))
+                y2 = (obj_queen_wineglass.y + lengthdir_y((ydist - timefrommade), (image_angle + 90)))
+                x3 = (x2 + lengthdir_x(xdist, image_angle))
+                y3 = (y2 + lengthdir_y(xdist, image_angle))
+                y = y3
+                x = x3
+                if (y3 >= ((obj_queen_wineglass.y + 70) + ((75 - abs(xdist)) / 1.7)))
+                {
+                    obj_queen_wineglass.prefill += obj_queen_bulletcontroller.wineadd
+                    obj_queen_bulletcontroller.wineadded += 1
+                    instance_destroy()
+                }
             }
         }
         ctimer++

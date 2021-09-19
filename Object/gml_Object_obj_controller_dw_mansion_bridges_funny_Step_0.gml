@@ -1,50 +1,52 @@
 if (saved == 1)
 {
-    var _temp_local_var_1 = swatchfriend
-    gml_Script_scr_depth()
-    if (con == 0)
+    with (swatchfriend)
     {
-        global.interact = 1
-        image_speed = 0.25
-        if (x > 1376)
-            x -= 8
-        else
+        gml_Script_scr_depth()
+        if (con == 0)
         {
-            x = 1376
-            con++
+            global.interact = 1
+            image_speed = 0.25
+            if (x > 1376)
+                x -= 8
+            else
+            {
+                x = 1376
+                con++
+            }
         }
-    }
-    if (con == 1)
-    {
-        if (y < 140)
-            y += 8
-        else
+        if (con == 1)
         {
-            y = 140
-            con++
+            if (y < 140)
+                y += 8
+            else
+            {
+                y = 140
+                con++
+            }
         }
-    }
-    if (con == 2)
-    {
-        if (x > 1280)
-            x -= 8
-        else
+        if (con == 2)
         {
-            x = 1280
-            global.flag[376] = 1
-            con++
+            if (x > 1280)
+                x -= 8
+            else
+            {
+                x = 1280
+                global.flag[376] = 1
+                con++
+            }
         }
-    }
-    if (con == 3)
-    {
-        friendlySwatch = gml_Script_instance_create(x, y, obj_npc_room)
-        friendlySwatch.sprite_index = sprite_index
-        friendlySwatch.image_index = image_index
-        friendlySwatch.image_speed = 0
-        friendlySwatch.image_xscale = image_xscale
-        friendlySwatch.image_yscale = image_yscale
-        global.interact = 0
-        instance_destroy()
+        if (con == 3)
+        {
+            friendlySwatch = gml_Script_instance_create(x, y, obj_npc_room)
+            friendlySwatch.sprite_index = sprite_index
+            friendlySwatch.image_index = image_index
+            friendlySwatch.image_speed = 0
+            friendlySwatch.image_xscale = image_xscale
+            friendlySwatch.image_yscale = image_yscale
+            global.interact = 0
+            instance_destroy()
+        }
     }
 }
 if (vaseSpawned == 0 && spawnVaseTrig == 1)
@@ -61,19 +63,21 @@ if (vaseSpawned == 0 && spawnVaseTrig == 1)
 }
 if gml_Script_i_ex(vase)
 {
-    var _temp_local_var_3 = vase
-    other.swatchLines = 1
-    if (con == 0)
+    with (vase)
     {
-        newspeed *= 1.5
-        newspeed = clamp(newspeed, 0, 12)
-        if (y <= 294)
-            y += newspeed
-        if (y >= 294)
+        other.swatchLines = 1
+        if (con == 0)
         {
-            y = 294
-            con = 1
-            global.interact = 0
+            newspeed *= 1.5
+            newspeed = clamp(newspeed, 0, 12)
+            if (y <= 294)
+                y += newspeed
+            if (y >= 294)
+            {
+                y = 294
+                con = 1
+                global.interact = 0
+            }
         }
     }
 }
@@ -97,12 +101,17 @@ if (vaseCracked == 1 && instance_exists(obj_npc_room))
         enemySwatch.image_yscale = obj_npc_room.image_yscale
         enemySwatch.sprite_index = spr_npc_swatchling_sweep_walk
         enemySwatch.image_speed = 0.25
-        var _temp_local_var_5 = enemySwatch
-        myencounter = 64
-        radius = 100000
-        ignoresolid = true
-        alertcon = 0
-        chasetype = 4
+        with (enemySwatch)
+        {
+            myencounter = 64
+            radius = 100000
+            ignoresolid = true
+            alertcon = 0
+            chasetype = 4
+        }
+        with (obj_npc_room)
+            instance_destroy()
+        vaseCrackedCon++
     }
 }
 if (vaseCrackedCon == 0)
@@ -133,8 +142,12 @@ if (vaseCrackedCon == 1)
     friendlySwatch.image_index = 0
     friendlySwatch.image_yscale = enemySwatch.image_yscale
     friendlySwatch.image_speed = 0
-    var _temp_local_var_7 = friendlySwatch
-    gml_Script_scr_depth()
+    with (friendlySwatch)
+        gml_Script_scr_depth()
+    with (enemySwatch)
+        instance_destroy()
+    timer = 0
+    vaseCrackedCon++
 }
 if (vaseCrackedCon == 2)
 {
@@ -172,11 +185,35 @@ if (vaseCrackedCon == 4)
     friendlySwatch.sprite_index = spr_npc_butler
     friendlySwatch.y = 188
     friendlySwatch.image_speed = 0.25
-    _temp_local_var_8.x = (friendlySwatch.x - 8)
-    var _temp_local_var_9 = friendlySwatch
-    var _temp_local_var_10 = friendlySwatch
-    var _temp_local_var_11 = enemySwatch
-    var _temp_local_var_12 = -9
-    var _temp_local_var_13 = friendlySwatch
-    gml_Script_scr_depth()
+    friendlySwatch.x -= 8
+    with (friendlySwatch)
+        gml_Script_scr_depth()
+    if instance_exists(obj_caterpillarchara)
+    {
+        with (obj_caterpillarchara)
+        {
+            if ((other.friendlySwatch.x + (other.friendlySwatch.sprite_width / 2)) < x)
+                fun = true
+            _remsprite = sprite_index
+            sprite_index = lsprite
+            image_index = 0
+        }
+    }
+    if (friendlySwatch.x < obj_mainchara.x)
+        global.facing = 3
+    if (friendlySwatch.x < (gml_Script_camerax() - friendlySwatch.sprite_width))
+    {
+        with (friendlySwatch)
+            instance_destroy()
+        global.interact = 0
+        if instance_exists(obj_caterpillarchara)
+        {
+            with (obj_caterpillarchara)
+            {
+                fun = false
+                image_index = 0
+            }
+        }
+        vaseCrackedCon++
+    }
 }

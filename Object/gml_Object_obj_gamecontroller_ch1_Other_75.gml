@@ -1,8 +1,10 @@
-show_debug_message(ds_map_find_value(("event_type").async_load, "***** Event = "))
-switch ("event_type").async_load
+var _temp_local_var_1;
+show_debug_message(("***** Event = " + ds_map_find_value(async_load, "event_type")))
+var _temp_local_var_1 = ds_map_find_value(async_load, "event_type")
+switch ds_map_find_value(async_load, "event_type")
 {
     case "gamepad discovered":
-        var pad = ds_map_find_value(("pad_index").async_load, null)
+        var pad = ds_map_find_value(async_load, "pad_index")
         if gamepad_is_connected(pad)
         {
             gamepad_active = 1
@@ -12,7 +14,7 @@ switch ("event_type").async_load
         break
     case "gamepad lost":
         gamepad_active = 0
-        if (null.os_type == os_switch)
+        if (os_type == os_switch)
         {
             if (switch_controller_support_show() == 0)
             {
@@ -23,4 +25,3 @@ switch ("event_type").async_load
         break
 }
 
-// WARNING: Popz'd an empty stack.

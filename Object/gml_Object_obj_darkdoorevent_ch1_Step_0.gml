@@ -53,19 +53,31 @@ if (con == 3)
 if (con == 4)
 {
     r = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3567)
-    var _temp_local_var_3 = global.cinstance[0]
-    instance_destroy()
+    with (global.cinstance[0])
+        instance_destroy()
+    with (r)
+    {
+        image_speed = 0.25
+        gml_Script_scr_move_to_point_over_time_ch1(420, (obj_mainchara_ch1.y - 10), 20)
+    }
+    con = 5
+    alarm[4] = 20
 }
 if (con == 6)
 {
-    var _temp_local_var_5 = r
-    gml_Script_scr_halt_ch1()
-    sprite_index = spr_ralseid_ch1
+    with (r)
+    {
+        gml_Script_scr_halt_ch1()
+        sprite_index = spr_ralseid_ch1
+    }
+    con = 7
+    alarm[4] = 40
 }
 if (con == 8)
 {
-    var _temp_local_var_6 = r
-    visible = false
+    with (r)
+        visible = false
+    con = 20
 }
 if (con == 20)
 {

@@ -14,7 +14,7 @@ if instance_exists(obj_dialoguer_ch1)
 d_add = 0
 if (d == -1)
 {
-    if (gml_Script___view_get(1, obj_mainchara_ch1.y.view_current) + (130 * dar))
+    if (obj_mainchara_ch1.y <= (gml_Script___view_get(1, view_current) + (130 * dar)))
         d_add = 155
 }
 else if (d != 0)

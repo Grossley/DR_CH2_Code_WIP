@@ -10,21 +10,25 @@ if instance_exists(obj_mainchara)
 }
 if gml_Script_i_ex(ralsei)
 {
-    var _temp_local_var_2 = ralsei
-    image_blend = make_color_rgb(100, 100, 100)
-    depth = (obj_cityEntrance_event.depth + 1)
-    image_speed = 0.25
-    hspeed = 4
-    if (x > 640)
-        instance_destroy()
+    with (ralsei)
+    {
+        image_blend = make_color_rgb(100, 100, 100)
+        depth = (obj_cityEntrance_event.depth + 1)
+        image_speed = 0.25
+        hspeed = 4
+        if (x > 640)
+            instance_destroy()
+    }
 }
 if gml_Script_i_ex(susie)
 {
-    var _temp_local_var_3 = susie
-    image_blend = make_color_rgb(100, 100, 100)
-    depth = (obj_cityEntrance_event.depth + 1)
-    image_speed = 0.25
-    hspeed = 4
-    if (x > 640)
-        instance_destroy()
+    with (susie)
+    {
+        image_blend = make_color_rgb(100, 100, 100)
+        depth = (obj_cityEntrance_event.depth + 1)
+        image_speed = 0.25
+        hspeed = 4
+        if (x > 640)
+            instance_destroy()
+    }
 }

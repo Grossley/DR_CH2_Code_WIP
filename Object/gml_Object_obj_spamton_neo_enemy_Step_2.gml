@@ -1,3 +1,4 @@
+var _temp_local_var_2, _temp_local_var_6;
 if (obj_spamton_neo_enemy.singleshotmercy > 9)
 {
     with (obj_spamton_neo_enemy)
@@ -8,8 +9,8 @@ if (obj_spamton_neo_enemy.singleshotmercy > 9)
             __mercydmgwriter = gml_Script_instance_create(global.monsterx[myself], ((global.monstery[myself] + 20) - (global.hittarget[myself] * 20)), obj_dmgwriter)
             __mercydmgwriter.damage = 1
             __mercydmgwriter.type = 5
-            myself.hittarget[global.hittarget[myself]] = (global.hittarget[myself] + 1)
-            global
+            var _temp_local_var_2 = global.hittarget[myself]
+            global.hittarget[myself] = (global.hittarget[myself] + 1)
         }
         else
             gml_Script_scr_mercyadd(myself, 1)
@@ -40,7 +41,7 @@ if (global.fighting == true)
                 var i = irandom(5)
                 var a = -1
                 var maxv = 0
-                var _temp_local_var_5 = 6
+                var _temp_local_var_6 = 6
                 if (6 <= 0)
                 {
                 }
@@ -57,7 +58,7 @@ if (global.fighting == true)
                                 i = 0
                             if (partvisible[i] == 1)
                                 maxv++
-                            _temp_local_var_5 = (6 - 1)
+                            _temp_local_var_6 = (6 - 1)
                             if (6 - 1)
                                 continue
                         }

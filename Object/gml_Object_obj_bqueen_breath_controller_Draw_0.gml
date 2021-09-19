@@ -44,6 +44,13 @@ if (timer > 9)
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
         with (d)
             gml_Script_scr_afterimage_grow()
+        d.damage = damage
+        d.target = target
+        d.type = 1
+        d.image_angle = obj_bqueen_breath_controller.place1
+        d.depth = bulletdepth
+        d.rotator_target = id
+        timer = 5
     }
 }
 if (timer2 > 9 && difficulty == 1)
@@ -66,6 +73,13 @@ if (timer2 > 9 && difficulty == 1)
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
         with (d)
             gml_Script_scr_afterimage_grow()
+        d.damage = damage
+        d.target = target
+        d.type = 2
+        d.image_angle = obj_bqueen_breath_controller.place2
+        d.depth = bulletdepth
+        d.rotator_target = id
+        timer2 = 5
     }
 }
 if (global.turntimer < 3)

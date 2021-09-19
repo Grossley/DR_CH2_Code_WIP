@@ -4,10 +4,18 @@ gml_Script_scr_depth()
 if (room == room_flowershop_1f)
 {
     counter = gml_Script_scr_marker(20, 103, 1054)
-    var _temp_local_var_1 = counter
-    gml_Script_scr_depth()
+    with (counter)
+        gml_Script_scr_depth()
+    flowera = gml_Script_scr_marker(177, 136, 1055)
+    flowerb = gml_Script_scr_marker(177, 82, 1055)
+    with (flowera)
+        gml_Script_scr_depth()
+    with (flowerb)
+        gml_Script_scr_depth()
+    con = 1
+    gml_Script_instance_create(x, (y + sprite_height), obj_npc_facing)
 }
-if (null.room == room_flowershop_1f)
+if (room == room_flowershop_1f)
 {
     if (global.entrance == 2)
     {
@@ -17,7 +25,7 @@ if (null.room == room_flowershop_1f)
             x = global.flag[264]
     }
 }
-if (null.room == room_flowershop_2f)
+if (room == room_flowershop_2f)
 {
     visible = false
     if (global.entrance == 1)
@@ -38,7 +46,7 @@ if (global.chapter == 1)
     gml_Script_instance_create(x, (y + sprite_height), obj_npc_facing)
 else if (global.chapter == 2)
 {
-    if (counter.room == room_flowershop_1f)
+    if (room == room_flowershop_1f)
         instance_destroy()
 }
 else

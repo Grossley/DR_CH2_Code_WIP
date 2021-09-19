@@ -36,7 +36,13 @@ if (con == 1)
 if (con == 2)
 {
     left = gml_Script_instance_create(x, (y - (sprite_height / 2)), obj_hangplug_sparkwave)
-    var _temp_local_var_1 = left
-    dir = "left"
+    with (left)
+        dir = "left"
+    right = gml_Script_instance_create(x, (y - (sprite_height / 2)), obj_hangplug_sparkwave)
+    with (right)
+        dir = "right"
+    drop = gml_Script_snd_play_pitch(140, 1.5)
+    gml_Script_snd_volume(drop, 0.3, 0)
+    instance_destroy()
 }
 gml_Script_scr_depth_alt()

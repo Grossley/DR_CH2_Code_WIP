@@ -107,8 +107,8 @@ if (bodymode == 1)
             bodyadvance = 0
             bodytimer = 16
             bodycon = 3
-            var _temp_local_var_3 = headpiece
-            x = -999
+            with (headpiece)
+                x = -999
         }
         else
         {

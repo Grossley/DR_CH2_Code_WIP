@@ -57,14 +57,20 @@ if (type == 0)
     {
         hitnoise = gml_Script_snd_play_ch1(451)
         gml_Script_snd_pitch_ch1(hitnoise, (1 + (warnpitch / 16)))
-        var _temp_local_var_2 = l
-        sprite_index = spr_lancer_lt_ch1
-        hspeed = -10
+        with (l)
+        {
+            sprite_index = spr_lancer_lt_ch1
+            hspeed = -10
+        }
+        con = -45
+        alarm[4] = 3
     }
     if (con == -44)
     {
-        var _temp_local_var_3 = l
-        gml_Script_scr_halt_ch1()
+        with (l)
+            gml_Script_scr_halt_ch1()
+        con = -43
+        alarm[4] = 15
     }
     if (con == -42)
     {
@@ -116,8 +122,8 @@ if (type == 0)
         ltimer += 1
         if (ltimer >= 20)
         {
-            var _temp_local_var_5 = l
-            gml_Script_scr_halt_ch1()
+            with (l)
+                gml_Script_scr_halt_ch1()
         }
         if (k.x >= 140)
             obj_mainchara_ch1.x = k.x
@@ -133,8 +139,12 @@ if (type == 0)
         obj_mainchara_ch1.x = k.x
         obj_mainchara_ch1.visible = true
         obj_mainchara_ch1.cutscene = true
-        var _temp_local_var_6 = l
-        sprite_index = spr_lancer_rt_ch1
+        with (l)
+            sprite_index = spr_lancer_rt_ch1
+        with (k)
+            instance_destroy()
+        alarm[4] = 16
+        gml_Script_scr_pan_ch1(5, 0, 16)
     }
     if (con == -7)
     {
@@ -189,32 +199,16 @@ if (type == 0)
     }
     if (con == 2.2)
     {
-        j = 0
-        while (j < 3)
-        {
-            _temp_local_var_7.image_alpha = (tile[j].image_alpha + 0.1)
-            j += 1
-            var _temp_local_var_9 = l
-            var _temp_local_var_10 = l
-            var _temp_local_var_11 = -9
-            var _temp_local_var_12 = tile[j]
-        }
+        for (j = 0; j < 3; j += 1)
+            tile[j].image_alpha += 0.1
         ttimer += 1
         if (ttimer >= 10)
             con = 2.3
     }
     if (con == 2.3)
     {
-        j = 0
-        while (j < 3)
-        {
-            _temp_local_var_7.image_alpha = (tile[j].image_alpha - 0.1)
-            j += 1
-            var _temp_local_var_13 = l
-            var _temp_local_var_14 = l
-            var _temp_local_var_15 = -9
-            var _temp_local_var_16 = tile[j]
-        }
+        for (j = 0; j < 3; j += 1)
+            tile[j].image_alpha -= 0.1
         ttimer += 1
         if (ttimer >= 30)
             con = 3.1
@@ -241,8 +235,10 @@ if (type == 0)
             sprite_index = spr_smallchecker_transform_ch1
             y += 2
             gml_Script_snd_play_ch1(420)
-            var _temp_local_var_17 = crown
-            instance_destroy()
+            with (crown)
+                instance_destroy()
+            con = 6
+            alarm[4] = 50
         }
     }
     if (con == 7)
@@ -284,13 +280,27 @@ if (type == 0)
         x -= 18
         y -= 90
         gml_Script_snd_play_ch1(378)
-        var _temp_local_var_18 = s
-        sprite_index = spr_susie_shock_r_ch1
+        with (s)
+            sprite_index = spr_susie_shock_r_ch1
+        with (r)
+            sprite_index = spr_ralsei_shock_overworld_ch1
+        gml_Script_instance_create_ch1(0, 0, 1464)
+        sprite_index = spr_checkers_idle_ch1
+        image_speed = 0
+        image_index = 0
+        con = 16
+        alarm[4] = 30
     }
     if (con == 17)
     {
-        var _temp_local_var_20 = r
-        sprite_index = spr_ralseir_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        with (s)
+            sprite_index = spr_susier_dark_ch1
+        global.fe = 6
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_356_0")
+        con = 18
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 18 && (!gml_Script_d_ex_ch1()))
     {
@@ -347,39 +357,30 @@ if (type == 1)
             windsound = true
         }
         if (secondtime == false)
-        {
-            _temp_local_var_21.hspeed = (crown.hspeed + 0.2)
-            var _temp_local_var_23 = r
-            var _temp_local_var_24 = 
-            var _temp_local_var_25 = -9
-            var _temp_local_var_26 = crown
-        }
+            crown.hspeed += 0.2
         else
-        {
-            _temp_local_var_21.hspeed = (crown.hspeed + 0.4)
-            _temp_local_var_23 = r
-            _temp_local_var_24 = 
-            _temp_local_var_25 = -9
-            _temp_local_var_26 = crown
-        }
+            crown.hspeed += 0.4
         if (crown.hspeed >= 3)
             con = 1.5
     }
     if (con == 1.5)
     {
-        var _temp_local_var_27 = crown
-        maxy = (obj_checker_animtest_ch1.y + obj_checker_animtest_ch1.sprite_height)
-        image_angle = -45
-        y -= 10
-        gravity = 0.5
-        hspeed = 5
-        friction = 0.2
+        with (crown)
+        {
+            maxy = (obj_checker_animtest_ch1.y + obj_checker_animtest_ch1.sprite_height)
+            image_angle = -45
+            y -= 10
+            gravity = 0.5
+            hspeed = 5
+            friction = 0.2
+        }
+        con = 1.6
     }
     if (con == 1.6)
     {
         if (crown.y >= ((crown.maxy - crown.sprite_height) - 10))
         {
-            _temp_local_var_27.y = (crown.y + 10)
+            crown.y += 10
             crown.image_angle = 0
             crown.gravity = 0
             crown.vspeed = 0
@@ -387,10 +388,6 @@ if (type == 1)
             crown.hspeed = 1
             con = 0.9
             alarm[4] = 30
-            var _temp_local_var_28 = r
-            var _temp_local_var_29 = _temp_local_var_24
-            var _temp_local_var_30 = -9
-            var _temp_local_var_31 = crown
             if (secondtime == true)
             {
                 alarm[4] = 10
@@ -508,14 +505,20 @@ if (type == 2)
     }
     if (con == 3 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_33 = l
-        hspeed = 18
+        with (l)
+            hspeed = 18
+        con = 4
+        alarm[4] = 20
     }
     if (con == 5)
     {
-        var _temp_local_var_34 = l
-        gml_Script_scr_halt_ch1()
-        sprite_index = spr_lancer_lt_ch1
+        with (l)
+        {
+            gml_Script_scr_halt_ch1()
+            sprite_index = spr_lancer_lt_ch1
+        }
+        con = 6
+        alarm[4] = 15
     }
     if (con == 7)
     {
@@ -532,38 +535,92 @@ if (type == 2)
     if (con == 7.1 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_play_ch1(382)
-        var _temp_local_var_36 = s
-        image_speed = 0.2
+        with (s)
+            image_speed = 0.2
+        con = 6.2
+        alarm[4] = 60
     }
     if (con == 7.2 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_38 = global.cinstance[0]
-        visible = false
+        with (global.cinstance[0])
+            visible = false
+        with (global.cinstance[1])
+            visible = false
+        with (obj_mainchara_ch1)
+            visible = false
+        r = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3568)
+        s = gml_Script_scr_dark_marker_ch1(global.cinstance[1].x, global.cinstance[1].y, 3544)
+        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4199)
+        global.typer = 31
+        global.fc = 2
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_657_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_658_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_659_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_660_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_661_0")
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_662_0")
+        gml_Script_scr_susface_ch1(6, 6)
+        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_664_0")
+        global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_665_0")
+        global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_666_0")
+        con = 50
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 50 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_41 = r
-        sprite_index = spr_ralseid_ch1
+        with (r)
+            sprite_index = spr_ralseid_ch1
+        con = 51
+        alarm[4] = 30
     }
     if (con == 52)
     {
-        var _temp_local_var_42 = r
-        sprite_index = spr_ralseil_ch1
+        with (r)
+            sprite_index = spr_ralseil_ch1
+        global.fc = 2
+        global.fe = 6
+        global.typer = 31
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_685_0")
+        gml_Script_scr_susface_ch1(1, 0)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_687_0")
+        gml_Script_scr_lanface_ch1(3, 3)
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_689_0")
+        gml_Script_scr_ralface_ch1(5, 1)
+        global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_691_0")
+        con = 53
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 53 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_44 = s
-        sprite_index = spr_susied_dark_ch1
+        with (s)
+            sprite_index = spr_susied_dark_ch1
+        con = 54
+        alarm[4] = 30
     }
     if (con == 55)
     {
-        var _temp_local_var_45 = s
-        sprite_index = spr_susier_dark_ch1
+        with (s)
+            sprite_index = spr_susier_dark_ch1
+        global.fc = 1
+        global.fe = 2
+        global.typer = 30
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_709_0")
+        gml_Script_scr_ralface_ch1(1, "C")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_711_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_712_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_713_0")
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_714_0")
+        global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_715_0")
+        con = 56
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 56 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_47 = s
-        sprite_index = spr_susiel_dark_unhappy_ch1
+        with (s)
+            sprite_index = spr_susiel_dark_unhappy_ch1
+        con = 57
+        alarm[4] = 60
     }
     if (con == 58)
     {
@@ -578,15 +635,28 @@ if (type == 2)
     }
     if (con == 59 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_49 = s
-        vspeed = 2
-        image_speed = 0.2
-        sprite_index = spr_susied_dark_unhappy_ch1
+        with (s)
+        {
+            vspeed = 2
+            image_speed = 0.2
+            sprite_index = spr_susied_dark_unhappy_ch1
+        }
+        con = 60
+        alarm[4] = 10
     }
     if (con == 61)
     {
-        var _temp_local_var_50 = k
-        gml_Script_scr_depth_ch1()
+        with (k)
+            gml_Script_scr_depth_ch1()
+        with (r)
+            gml_Script_scr_depth_ch1()
+        with (s)
+        {
+            gml_Script_scr_halt_ch1()
+            gml_Script_scr_depth_ch1()
+        }
+        con = 62
+        alarm[4] = 30
     }
     if (con == 63)
     {
@@ -597,17 +667,27 @@ if (type == 2)
     }
     if (con == 64 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_54 = s
-        hspeed = 12
-        sprite_index = spr_susier_dark_ch1
-        image_speed = 0.5
+        with (s)
+        {
+            hspeed = 12
+            sprite_index = spr_susier_dark_ch1
+            image_speed = 0.5
+        }
+        con = 65
     }
     if (con == 65)
     {
         if (s.x >= (gml_Script___view_get(0, 0) + 460))
         {
-            var _temp_local_var_55 = s
-            gml_Script_scr_halt_ch1()
+            with (s)
+                gml_Script_scr_halt_ch1()
+            with (s)
+                sprite_index = spr_susiel_dark_ch1
+            with (k)
+                sprite_index = spr_krisr_dark_ch1
+            with (r)
+                sprite_index = spr_ralseir_ch1
+            con = 66
         }
     }
     if (con == 66)
@@ -621,45 +701,109 @@ if (type == 2)
     }
     if (con == 67 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_60 = r
-        sprite_index = spr_ralsei_shock_overworld_ch1
+        with (r)
+            sprite_index = spr_ralsei_shock_overworld_ch1
+        con = 68
+        alarm[4] = 20
     }
     if (con == 69)
     {
         global.currentsong[0] = gml_Script_snd_init_ch1("lancer.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.6, 1)
-        var _temp_local_var_61 = r
-        sprite_index = spr_ralseir_ch1
+        with (r)
+            sprite_index = spr_ralseir_ch1
+        global.fc = 5
+        global.typer = 32
+        global.fe = 2
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_820_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_821_0")
+        gml_Script_scr_susface_ch1(2, 2)
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_823_0")
+        gml_Script_scr_ralface_ch1(4, 3)
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_825_0")
+        gml_Script_scr_lanface_ch1(6, 1)
+        global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_827_0")
+        gml_Script_scr_susface_ch1(8, 2)
+        global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_829_0")
+        gml_Script_scr_lanface_ch1(10, 3)
+        global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_831_0")
+        gml_Script_scr_susface_ch1(12, 2)
+        global.msg[13] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_833_0")
+        gml_Script_scr_lanface_ch1(14, 1)
+        global.msg[15] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_835_0")
+        gml_Script_scr_susface_ch1(16, 6)
+        global.msg[17] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_837_0")
+        global.msg[18] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_838_0")
+        gml_Script_scr_lanface_ch1(19, 3)
+        global.msg[20] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_840_0")
+        gml_Script_instance_create_ch1(0, 0, 1326)
+        con = 70
     }
     if (con == 70 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_volume_ch1(global.currentsong[1], 0, 50)
         gml_Script_snd_play_ch1(454)
-        var _temp_local_var_63 = l
-        sprite_index = spr_lancer_lt_laugh_ch1
-        image_speed = 0.2
-        hspeed = 12
+        with (l)
+        {
+            sprite_index = spr_lancer_lt_laugh_ch1
+            image_speed = 0.2
+            hspeed = 12
+        }
+        with (s)
+        {
+            sprite_index = spr_susier_dark_ch1
+            image_speed = 0.5
+            hspeed = 12
+        }
+        con = 71
+        alarm[4] = 70
     }
     if (con == 72)
         con = 22
     if (con == 22 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_66 = r
-        hspeed = 6
-        image_speed = 0.25
+        with (r)
+        {
+            hspeed = 6
+            image_speed = 0.25
+        }
+        con = 23
+        alarm[4] = 20
     }
     if (con == 24)
     {
         gml_Script_snd_free_all_ch1()
         global.facing = 2
-        var _temp_local_var_67 = r
-        gml_Script_scr_halt_ch1()
+        with (r)
+            gml_Script_scr_halt_ch1()
+        global.fc = 2
+        global.typer = 31
+        global.fe = 1
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_893_0")
+        global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_894_0")
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_895_0")
+        global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_896_0")
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_897_0")
+        global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_898_0")
+        global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_checker_animtest_slash_Step_0_gml_899_0")
+        con = 28
+        gml_Script_instance_create_ch1(0, 0, 1326)
     }
     if (con == 28 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_69 = k
-        hspeed = 8
-        image_speed = 0.25
+        with (k)
+        {
+            hspeed = 8
+            image_speed = 0.25
+        }
+        with (r)
+        {
+            hspeed = 8
+            image_speed = 0.25
+            sprite_index = spr_ralseir_ch1
+        }
+        con = 29
+        alarm[4] = 10
     }
     if (con == 30)
     {

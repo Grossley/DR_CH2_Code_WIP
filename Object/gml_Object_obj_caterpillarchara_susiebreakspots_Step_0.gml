@@ -66,6 +66,7 @@ if (con == 1.1)
         kick.image_speed = 0.25
         with (kick)
             gml_Script_scr_depth()
+        susid.visible = false
     }
     if (kick.image_index == 2)
         susid.active = true
@@ -75,6 +76,7 @@ if (con == 1.1)
         susid.visible = true
         with (kick)
             instance_destroy()
+        con = 1
     }
 }
 if (con == 2)
@@ -87,6 +89,14 @@ if (con == 2)
             direction = point_direction(x, y, caid.x, caid.y)
             fake_direction = direction
             fake_speed = gml_Script_scr_move_step_solids_direction(8, direction)
+        }
+        if ((abs((susid.x - caterpillarid.x)) + abs((susid.y - caterpillarid.y))) < 12)
+        {
+            with (susid)
+                instance_destroy()
+            caterpillarid.visible = true
+            con = 0
+            instance_destroy()
         }
     }
     else

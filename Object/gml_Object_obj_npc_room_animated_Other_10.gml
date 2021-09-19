@@ -235,25 +235,25 @@ if (room == room_dw_city_savepoint)
         if (talked == 0)
         {
             gml_Script_scr_miniface_init_sweet()
-            gml_Script_msgsetloc(0, "\\m1        *Yo^1! How's it hangin'?/", "obj_npc_room_animated_slash_Other_10_gml_270_0")
-            gml_Script_msgnextloc("\\m1        *We're making some extra& money by selling in the city!/", "obj_npc_room_animated_slash_Other_10_gml_271_0")
-            gml_Script_msgnextloc("\\m3        *We gotta make those& bucks somehow!^1! Heheh!!/", "obj_npc_room_animated_slash_Other_10_gml_272_0")
-            gml_Script_msgnextloc("\\m1        *Gotta buy new gear!^2!&\\m3    Gotta get new kicks!^2!&\\m2    I wanna be a car^2./", "obj_npc_room_animated_slash_Other_10_gml_273_0")
-            gml_Script_msgnextloc("\\m1        *Good thinkin'^1, K_K^1! Gotta&    have a way to get around^2!&\\m2    Honk^1! Honk^2!/%", "obj_npc_room_animated_slash_Other_10_gml_274_0")
+            gml_Script_msgsetloc(0, "\\m1		*Yo^1! How's it hangin'?/", "obj_npc_room_animated_slash_Other_10_gml_270_0")
+            gml_Script_msgnextloc("\\m1		*We're making some extra& money by selling in the city!/", "obj_npc_room_animated_slash_Other_10_gml_271_0")
+            gml_Script_msgnextloc("\\m3		*We gotta make those& bucks somehow!^1! Heheh!!/", "obj_npc_room_animated_slash_Other_10_gml_272_0")
+            gml_Script_msgnextloc("\\m1		*Gotta buy new gear!^2!&\\m3	Gotta get new kicks!^2!&\\m2	I wanna be a car^2./", "obj_npc_room_animated_slash_Other_10_gml_273_0")
+            gml_Script_msgnextloc("\\m1		*Good thinkin'^1, K_K^1! Gotta&	have a way to get around^2!&\\m2	Honk^1! Honk^2!/%", "obj_npc_room_animated_slash_Other_10_gml_274_0")
         }
         else
         {
             gml_Script_scr_miniface_init_sweet()
-            gml_Script_msgsetloc(0, "\\m1        *K_K's always got it right^2!&\\m3    That's why he's& second-in-command^2!/", "obj_npc_room_animated_slash_Other_10_gml_278_0")
-            gml_Script_msgnextloc("\\m1        *..^1. who's first^2?&\\m3    Huh? I'm not the leader^2?&\\m2    Can I be third^2?/%", "obj_npc_room_animated_slash_Other_10_gml_279_0")
+            gml_Script_msgsetloc(0, "\\m1		*K_K's always got it right^2!&\\m3	That's why he's& second-in-command^2!/", "obj_npc_room_animated_slash_Other_10_gml_278_0")
+            gml_Script_msgnextloc("\\m1		*..^1. who's first^2?&\\m3	Huh? I'm not the leader^2?&\\m2	Can I be third^2?/%", "obj_npc_room_animated_slash_Other_10_gml_279_0")
         }
     }
     if (sprite_index == spr_npc_kk || sprite_index == spr_npc_kk_music)
     {
         gml_Script_scr_miniface_init_sweet()
-        gml_Script_msgsetloc(0, "\\m2        *Did you like the big statue^2?&\\m3    Building it sucked^2!&\\m1    Took a lot of scrap^2./", "obj_npc_room_animated_slash_Other_10_gml_286_0")
-        gml_Script_msgnextloc("\\m1        *The other job we did was&    way better^2!&\\m2    It was big^2./", "obj_npc_room_animated_slash_Other_10_gml_287_0")
-        gml_Script_msgnextloc("\\m3        *It's gonna blow your mind^2!&\\m2    It was big^2./%", "obj_npc_room_animated_slash_Other_10_gml_288_0")
+        gml_Script_msgsetloc(0, "\\m2		*Did you like the big statue^2?&\\m3	Building it sucked^2!&\\m1	Took a lot of scrap^2./", "obj_npc_room_animated_slash_Other_10_gml_286_0")
+        gml_Script_msgnextloc("\\m1		*The other job we did was&	way better^2!&\\m2	It was big^2./", "obj_npc_room_animated_slash_Other_10_gml_287_0")
+        gml_Script_msgnextloc("\\m3		*It's gonna blow your mind^2!&\\m2	It was big^2./%", "obj_npc_room_animated_slash_Other_10_gml_288_0")
     }
     if (sprite_index == spr_npc_hatguy)
     {
@@ -310,14 +310,14 @@ if (room == room_dw_cyber_musical_door)
             {
                 gml_Script_scr_miniface_init_sweet()
                 gml_Script_scr_speaker("kk")
-                gml_Script_msgsetloc(0, "\\m2        *Sorry^1, I'm out of bagels.&\\m3    Don't you have 400!?&\\m2    I had 406./", "obj_npc_room_animated_slash_Other_10_gml_352_0")
-                gml_Script_msgnextloc("\\m3        *Then why can't you sell&    anymore?!/", "obj_npc_room_animated_slash_Other_10_gml_353_0")
-                gml_Script_msgnextloc("\\m2        *What if someone asked for&    400 bagels?/%", "obj_npc_room_animated_slash_Other_10_gml_354_0")
+                gml_Script_msgsetloc(0, "\\m2		*Sorry^1, I'm out of bagels.&\\m3	Don't you have 400!?&\\m2	I had 406./", "obj_npc_room_animated_slash_Other_10_gml_352_0")
+                gml_Script_msgnextloc("\\m3		*Then why can't you sell&	anymore?!/", "obj_npc_room_animated_slash_Other_10_gml_353_0")
+                gml_Script_msgnextloc("\\m2		*What if someone asked for&	400 bagels?/%", "obj_npc_room_animated_slash_Other_10_gml_354_0")
             }
             else
             {
                 gml_Script_scr_speaker("kk")
-                gml_Script_msgsetloc(0, "\\m2        *Sorry^1, I'm out of bagels./%", "obj_npc_room_animated_slash_Other_10_gml_358_0")
+                gml_Script_msgsetloc(0, "\\m2		*Sorry^1, I'm out of bagels./%", "obj_npc_room_animated_slash_Other_10_gml_358_0")
             }
         }
         else
@@ -575,8 +575,8 @@ if (room == room_castle_tutorial)
     {
         gml_Script_scr_miniface_init_sweet()
         gml_Script_scr_speaker("no_name")
-        gml_Script_msgsetloc(0, "\\m1        *This town's great!/", "obj_npc_room_animated_slash_Other_10_gml_611_0")
-        gml_Script_msgnextloc("\\m1        *Just^1, wish everyone else was&    here^1, too.../%", "obj_npc_room_animated_slash_Other_10_gml_612_0_b")
+        gml_Script_msgsetloc(0, "\\m1		*This town's great!/", "obj_npc_room_animated_slash_Other_10_gml_611_0")
+        gml_Script_msgnextloc("\\m1		*Just^1, wish everyone else was&	here^1, too.../%", "obj_npc_room_animated_slash_Other_10_gml_612_0_b")
     }
     if (sprite_index == spr_npc_hatguy)
     {
@@ -584,22 +584,22 @@ if (room == room_castle_tutorial)
         {
             gml_Script_scr_miniface_init_sweet()
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3        *Yo^1, chief. If you \\cYrecruit\\cW&    enough fans for us^1,/", "obj_npc_room_animated_slash_Other_10_gml_622_0")
-            gml_Script_msgnextloc("\\m3        *We might be able to make our&    music shop again.../", "obj_npc_room_animated_slash_Other_10_gml_623_0")
-            gml_Script_msgnextloc("\\m3        *Hey^1, we might even give you a&    \\cYdiscount\\cW!/%", "obj_npc_room_animated_slash_Other_10_gml_624_0")
+            gml_Script_msgsetloc(0, "\\m3		*Yo^1, chief. If you \\cYrecruit\\cW&	enough fans for us^1,/", "obj_npc_room_animated_slash_Other_10_gml_622_0")
+            gml_Script_msgnextloc("\\m3		*We might be able to make our&	music shop again.../", "obj_npc_room_animated_slash_Other_10_gml_623_0")
+            gml_Script_msgnextloc("\\m3		*Hey^1, we might even give you a&	\\cYdiscount\\cW!/%", "obj_npc_room_animated_slash_Other_10_gml_624_0")
         }
         else
         {
             gml_Script_scr_miniface_init_sweet()
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3        *Ya hear that^1, chief? Keep up&    the recruiting.../%", "obj_npc_room_animated_slash_Other_10_gml_630_0")
+            gml_Script_msgsetloc(0, "\\m3		*Ya hear that^1, chief? Keep up&	the recruiting.../%", "obj_npc_room_animated_slash_Other_10_gml_630_0")
         }
     }
     if (sprite_index == spr_npc_kk)
     {
         gml_Script_scr_miniface_init_sweet()
         gml_Script_scr_speaker("no_name")
-        gml_Script_msgsetloc(0, "\\m2        *I got to keep my box./%", "obj_npc_room_animated_slash_Other_10_gml_639_0")
+        gml_Script_msgsetloc(0, "\\m2		*I got to keep my box./%", "obj_npc_room_animated_slash_Other_10_gml_639_0")
     }
 }
 myinteract = 3

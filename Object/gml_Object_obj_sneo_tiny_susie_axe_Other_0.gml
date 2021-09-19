@@ -1,2 +1,3 @@
-var _temp_local_var_1 = other
+with (other)
+    instance_destroy()
 instance_destroy()

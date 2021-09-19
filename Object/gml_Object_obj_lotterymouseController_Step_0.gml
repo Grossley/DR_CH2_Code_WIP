@@ -32,6 +32,8 @@ if (victory == true)
 if (victory == 2 && (!gml_Script_d_ex()))
 {
     var hints = gml_Script_instance_create(x, y, obj_mouseLotteryCompleteHint)
-    var _temp_local_var_3 = hints
-    gml_Script_scr_depth()
+    with (hints)
+        gml_Script_scr_depth()
+    global.interact = 0
+    instance_destroy()
 }

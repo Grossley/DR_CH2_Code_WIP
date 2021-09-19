@@ -11,5 +11,5 @@ if (bulletid.big == 0)
     hspeed += 2
     vspeed *= 1.2
 }
-var _temp_local_var_1 = bulletid
-instance_destroy()
+with (bulletid)
+    instance_destroy()

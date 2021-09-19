@@ -22,17 +22,24 @@ if (other.collided == 0)
     {
         global.msg[0] = gml_Script_stringsetloc("* The wire was cut!/%", "obj_queen_kristhrown_slash_Collision_7a76bce8_f6fc_4158_8ce1_58bb74085511_gml_23_0")
         gml_Script_snd_play(148)
-        var _temp_local_var_1 = other
-        if (offing == 1)
-            con = 1
-        else
-            con = 5
+        with (other)
+        {
+            if (offing == 1)
+                con = 1
+            else
+                con = 5
+        }
     }
     else
     {
         gml_Script_snd_play(64)
-        _temp_local_var_1 = other
-        con = 7
+        with (other)
+            con = 7
+        global.msg[0] = gml_Script_stringsetloc("* The wire was cut!/%", "obj_queen_kristhrown_slash_Collision_7a76bce8_f6fc_4158_8ce1_58bb74085511_gml_42_0")
+        hspeed = -12
+        vspeed = -4
+        gravity = 0.5
+        con = 2
     }
     gml_Script_scr_battletext_default()
     other.collided = 1

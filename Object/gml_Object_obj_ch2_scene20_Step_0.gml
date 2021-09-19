@@ -1,7 +1,7 @@
 if (stonelancer != self)
 {
-    var _temp_local_var_1 = stonelancer
-    gml_Script_scr_depth()
+    with (stonelancer)
+        gml_Script_scr_depth()
 }
 if (obj_mainchara.x > x && con == -1)
 {
@@ -493,6 +493,7 @@ if (con == 4 && (!gml_Script_i_ex(895)))
     global.facing = 0
     global.plot = 120
     lancernpc = gml_Script_instance_create(stonelancer.x, stonelancer.y, obj_pushable_lancer)
-    var _temp_local_var_6 = stonelancer
+    with (stonelancer)
+        instance_destroy()
     instance_destroy()
 }

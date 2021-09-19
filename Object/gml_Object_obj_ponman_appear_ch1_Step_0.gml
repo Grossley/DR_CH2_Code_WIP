@@ -83,9 +83,15 @@ if (con == 7)
             newme.slidesprite = spr_ponman_touched_ch1
             newme.image_index = 5
             newme.image_speed = 0
-            var _temp_local_var_2 = newme
-            event_user(0)
-            gml_Script_scr_depth_ch1()
+            with (newme)
+            {
+                event_user(0)
+                gml_Script_scr_depth_ch1()
+            }
+            global.encounterno = myencounter
+            with (obj_ponman_appear_ch1)
+                fadecon = 1
+            instance_destroy()
         }
     }
     if (global.interact != 0)

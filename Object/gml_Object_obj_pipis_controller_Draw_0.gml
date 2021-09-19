@@ -330,8 +330,8 @@ if (variant == 1)
             {
                 con = 0
                 timer = -40
-                var _temp_local_var_13 = wall
-                con = 1
+                with (wall)
+                    con = 1
             }
             else
                 instance_destroy()
@@ -372,8 +372,8 @@ if (variant == 1)
             {
                 con2 = 0
                 timer2 = 0
-                var _temp_local_var_14 = wall2
-                con = 1
+                with (wall2)
+                    con = 1
             }
             else
                 instance_destroy()

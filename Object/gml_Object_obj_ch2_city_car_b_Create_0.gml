@@ -8,5 +8,55 @@ else
 var traffic_switch = gml_Script_instance_create(3103, 250, obj_npc_sign)
 traffic_switch.sprite_index = spr_trafficswitch
 traffic_switch.image_index = (global.plot >= 90 ? 0 : 1)
-var _temp_local_var_2 = traffic_switch
-gml_Script_scr_depth()
+with (traffic_switch)
+    gml_Script_scr_depth()
+cityscape = layer_create(9005000, "BG_Cityscape")
+layerid = layer_background_create(cityscape, 3141)
+layer_background_htiled(layerid, 1)
+layer_background_vtiled(layerid, 1)
+layer_x(cityscape, 3080)
+layer_y(cityscape, (gml_Script_cameray() + 80))
+cityscape_init_x = 0
+if (global.chapter != 2 || global.plot < 85 || global.plot >= 90)
+{
+    cityscape_init_x = 3080
+    cityscape_parallax = 1
+}
+else
+{
+    gml_Script_scr_losechar()
+    if instance_exists(obj_caterpillarchara)
+        instance_destroy(obj_caterpillarchara)
+    queencar = gml_Script_instance_create((gml_Script_camerax() - 200), 97, obj_queencar)
+    with (queencar)
+        gml_Script_scr_depth()
+    release_car = 0
+    loop_road = 0
+    shift_road = 0
+    car_convo = 0
+    talk_timer = 0
+    realign = 0
+    explosion = 0
+    explodetimer = 0
+    traffic_collider_left = gml_Script_instance_create(2020, 120, obj_solidblock)
+    traffic_collider_left.image_yscale = 20
+    tile_1_lay_id = layer_get_id("TILES_Right_Sidewalk")
+    tile_1_map_id = layer_tilemap_get_id(tile_1_lay_id)
+    tile_2_lay_id = layer_get_id("TILES_Right_Lights")
+    tile_2_map_id = layer_tilemap_get_id(tile_2_lay_id)
+    tile_3_lay_id = layer_get_id("TILES_Right_Buildings")
+    tile_3_map_id = layer_tilemap_get_id(tile_3_lay_id)
+    tile_4_lay_id = layer_get_id("TILES_Right_BG")
+    tile_4_map_id = layer_tilemap_get_id(tile_4_lay_id)
+    car_park_timer = 0
+    queen_beam = gml_Script_instance_create(0, 0, obj_car_queen_beam)
+    queen_beam.visible = false
+    crank_volume = 0
+    cityscape_parallax = 0
+    girder_marker = gml_Script_scr_marker(3300, 0, 3091)
+    girder_marker.depth = 10000
+    girder_marker_2 = gml_Script_scr_marker(3480, 0, 3090)
+    girder_marker_2.depth = 10000
+    island_collider = gml_Script_instance_create(3080, 280, obj_soliddark)
+    island_collider.image_xscale = 6
+}

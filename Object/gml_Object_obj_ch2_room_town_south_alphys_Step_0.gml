@@ -8,8 +8,10 @@ if (gml_Script_scr_havechar(2) && obj_mainchara.x < x && con == -1 && global.fla
     susxpos = obj_caterpillarchara.x
     susypos = obj_caterpillarchara.y
     nisesusie = gml_Script_scr_marker(susxpos, susypos, 849)
-    var _temp_local_var_2 = nisesusie
-    gml_Script_scr_depth()
+    with (nisesusie)
+        gml_Script_scr_depth()
+    with (obj_caterpillarchara)
+        instance_destroy()
 }
 if (con == 1)
 {
@@ -59,8 +61,9 @@ if (con == 4)
         nisesusie.sprite_index = obj_caterpillarchara.sprite_index
         with (obj_caterpillarchara)
             visible = true
-        var _temp_local_var_7 = nisesusie
-        instance_destroy()
+        with (nisesusie)
+            instance_destroy()
+        con = 5
     }
 }
 if (con == 5)

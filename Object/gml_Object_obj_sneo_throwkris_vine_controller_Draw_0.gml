@@ -22,13 +22,16 @@ if (con == 0)
                 target.y1 = y1[i]
                 target.y2 = y2[i]
                 target.vineid = i
-                var _temp_local_var_2 = target
-                path = path_add()
-                path_set_kind(path, 0)
-                path_set_closed(path, 0)
-                path_add_point(path, x1, y1, 100)
-                path_add_point(path, (x2 - 3), y2, 100)
-                path_start(path, 4, path_action_stop, 1)
+                with (target)
+                {
+                    path = path_add()
+                    path_set_kind(path, 0)
+                    path_set_closed(path, 0)
+                    path_add_point(path, x1, y1, 100)
+                    path_add_point(path, (x2 - 3), y2, 100)
+                    path_start(path, 4, path_action_stop, 1)
+                }
+                target.image_angle = (point_direction(x1[i], y1[i], x2[i], y2[i]) + 282)
             }
         }
         timer = 0

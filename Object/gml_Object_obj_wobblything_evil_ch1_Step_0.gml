@@ -20,16 +20,19 @@ if (wobbled == 0)
             gml_Script_snd_pitch_ch1(s2, (0.9 + random(0.2)))
             image_speed = 0.2
             wobbled = 1
-            i = 0
-            while (i < 3)
+            for (i = 0; i < 3; i += 1)
             {
                 dbullet = gml_Script_instance_create_ch1(x, y, 1507)
-                var _temp_local_var_3 = dbullet
-                damage = 15
-                sprite_index = spr_wobblebullet_ch1
-                image_alpha = 0.7
-                image_xscale = 2
-                image_yscale = 2
+                with (dbullet)
+                {
+                    damage = 15
+                    sprite_index = spr_wobblebullet_ch1
+                    image_alpha = 0.7
+                    image_xscale = 2
+                    image_yscale = 2
+                }
+                dbullet.speed = 10
+                dbullet.direction = (250 + (i * 20))
             }
         }
     }

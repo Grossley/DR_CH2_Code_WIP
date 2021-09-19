@@ -1,4 +1,3 @@
-var ballY, ballX, _temp_local_var_2, _temp_local_var_4;
 if (init == 0)
 {
     idealLength = string_length(idealString)
@@ -21,16 +20,33 @@ if (con == 11)
         gml_Script_snd_play(151)
     if (timer == 60)
     {
-        var _temp_local_var_2 = lastPressedTile
-        bouncecon = 1
+        with (lastPressedTile)
+            bouncecon = 1
+        gml_Script_snd_play(159)
+        ball = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 544)
+        ball.image_speed = 0.5
+        ball.depth = 100
+        var ballY = krisStartY
+        var ballX = krisStartX
+        with (ball)
+            gml_Script_scr_jump_to_point(ballX, ballY, 30, 20)
+        with (obj_mainchara)
+            visible = false
+        letterCount = 0
+        addString = ""
+        currentString = ""
+        lost = 0
     }
     if (timer == 80)
     {
         obj_mainchara.x = krisStartX
         obj_mainchara.y = krisStartY
         global.facing = 0
-        var _temp_local_var_4 = ball
-        instance_destroy()
+        with (ball)
+            instance_destroy()
+        with (obj_mainchara)
+            visible = true
+        global.interact = 0
     }
 }
 if (con == 20 && global.interact == 0)

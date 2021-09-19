@@ -1,6 +1,6 @@
 if (!input_enabled)
     return;
-if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_NO == obj_spamtonpainting || MENU_NO == obj_growtangle_spark || MENU_NO == obj_berdlyb_tornado_old)
+if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 11)
 {
     if gml_Script_left_p()
     {
@@ -25,18 +25,18 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
         SELNOISE = 1
         if (MENUCOORD[MENU_NO] == 0)
         {
-            if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_berdlyb_tornado_old)
+            if (MENU_NO == 1 || MENU_NO == 11)
             {
                 var FILECHECK = 0
                 var FILESLOT = 0
                 var DONAMING = 0
-                if (MENU_NO == obj_pipis_bullet_cone)
+                if (MENU_NO == 1)
                     FILESLOT = MENUCOORD[0]
-                if (MENU_NO == obj_berdlyb_tornado_old)
+                if (MENU_NO == 11)
                     FILESLOT = MENUCOORD[10]
-                if (MENU_NO == obj_pipis_bullet_cone && FILE[MENUCOORD[0]] == 1)
+                if (MENU_NO == 1 && FILE[MENUCOORD[0]] == 1)
                     FILECHECK = 1
-                if (MENU_NO == obj_berdlyb_tornado_old)
+                if (MENU_NO == 11)
                 {
                     if INCOMPLETE_LOAD
                     {
@@ -89,12 +89,12 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
                             gml_Script_ossafe_savedata_save()
                         }
                     }
-                    if (MENU_NO == obj_pipis_bullet_cone)
+                    if (MENU_NO == 1)
                     {
                         gml_Script_scr_load()
                         return;
                     }
-                    if (MENU_NO == obj_berdlyb_tornado_old)
+                    if (MENU_NO == 11)
                     {
                         if (INCOMPLETE_LOAD == 0)
                         {
@@ -116,12 +116,12 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
                     var namer = gml_Script_instance_create(0, 0, DEVICE_NAMER)
                     namer.REMMENU = MENU_NO
                     REMMENU = MENU_NO
-                    MENU_NO = self
+                    MENU_NO = -1
                 }
                 if (FILECHECK == -1)
                     gml_Script_snd_play(143)
             }
-            if (MENU_NO == obj_afterimage_anim)
+            if (MENU_NO == 4)
             {
                 var temp_comment_is_interesting = 0
                 if (TYPE == 0)
@@ -156,9 +156,9 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
                 MESSAGETIMER = 90
                 SELNOISE = 0
                 DEATHNOISE = true
-                MENU_NO = obj_sneo_friedpipis
+                MENU_NO = 0
             }
-            if (MENU_NO == obj_growtangle_spark)
+            if (MENU_NO == 7)
             {
                 FILE[MENUCOORD[5]] = 0
                 NAME[MENUCOORD[5]] = gml_Script_stringsetloc("[EMPTY]", "DEVICE_MENU_slash_Step_0_gml_105_0")
@@ -185,25 +185,25 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
                 MESSAGETIMER = 90
                 SELNOISE = 0
                 DEATHNOISE = true
-                MENU_NO = obj_sneo_friedpipis
+                MENU_NO = 0
             }
-            if (MENU_NO == obj_spamtonpainting)
+            if (MENU_NO == 6)
             {
                 THREAT += 1
-                MENU_NO = obj_growtangle_spark
+                MENU_NO = 7
                 MENUCOORD[7] = 0
             }
         }
-        if (MENU_NO >= obj_sneo_friedpipis)
+        if (MENU_NO >= 0)
         {
             if (MENUCOORD[MENU_NO] == 1)
             {
-                if (MENU_NO == obj_afterimage_anim && TYPE == 0)
+                if (MENU_NO == 4 && TYPE == 0)
                 {
                     TEMPCOMMENT = gml_Script_stringsetloc("IT RETAINED ITS ORIGINAL SHAPE.", "DEVICE_MENU_slash_Step_0_gml_149_0")
                     MESSAGETIMER = 90
                 }
-                if (MENU_NO == obj_spamtonpainting || MENU_NO == obj_growtangle_spark)
+                if (MENU_NO == 6 || MENU_NO == 7)
                 {
                     if (TYPE == 0)
                     {
@@ -216,10 +216,10 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
                         MESSAGETIMER = 90
                     }
                 }
-                if (MENU_NO == obj_berdlyb_tornado_old)
-                    MENU_NO = obj_gigaqueen_intro_fight
+                if (MENU_NO == 11)
+                    MENU_NO = 10
                 else
-                    MENU_NO = obj_sneo_friedpipis
+                    MENU_NO = 0
             }
         }
     }
@@ -227,21 +227,21 @@ if (MENU_NO == obj_pipis_bullet_cone || MENU_NO == obj_afterimage_anim || MENU_N
     {
         ONEBUFFER = 1
         TWOBUFFER = 1
-        if (MENU_NO != obj_sneo_friedpipis)
+        if (MENU_NO != 0)
             BACKNOISE = true
-        if (MENU_NO == obj_pipis_bullet_cone)
-            MENU_NO = obj_sneo_friedpipis
-        else if (MENU_NO == obj_afterimage_anim)
-            MENU_NO = obj_84_lang_helper
-        else if (MENU_NO == obj_spamtonpainting)
-            MENU_NO = obj_ch2_scene26_henshin_flash
-        else if (MENU_NO == obj_growtangle_spark)
-            MENU_NO = obj_ch2_scene26_henshin_flash
-        else if (MENU_NO == obj_berdlyb_tornado_old)
-            MENU_NO = obj_gigaqueen_intro_fight
+        if (MENU_NO == 1)
+            MENU_NO = 0
+        else if (MENU_NO == 4)
+            MENU_NO = 2
+        else if (MENU_NO == 6)
+            MENU_NO = 5
+        else if (MENU_NO == 7)
+            MENU_NO = 5
+        else if (MENU_NO == 11)
+            MENU_NO = 10
     }
 }
-if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || MENU_NO == obj_ch2_scene26_henshin_flash)
+if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
 {
     if gml_Script_down_p()
     {
@@ -263,7 +263,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
     {
         if (MENUCOORD[MENU_NO] < 3)
         {
-            if (MENU_NO == obj_pipisFireworkGenerator)
+            if (MENU_NO == 3)
             {
                 if (MENUCOORD[2] != MENUCOORD[3])
                 {
@@ -273,7 +273,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
                         ONEBUFFER = 2
                         SELNOISE = 1
                         MENUCOORD[4] = 0
-                        MENU_NO = obj_afterimage_anim
+                        MENU_NO = 4
                     }
                     else
                     {
@@ -282,7 +282,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
                         if (TYPE == 1)
                             TEMPCOMMENT = gml_Script_stringsetloc("Copy complete.", "DEVICE_MENU_slash_Step_0_gml_227_0")
                         DEATHNOISE = true
-                        MENU_NO = obj_sneo_friedpipis
+                        MENU_NO = 0
                         ONEBUFFER = 2
                         TWOBUFFER = 2
                         event_user(5)
@@ -299,7 +299,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
                     BACKNOISE = true
                 }
             }
-            if (MENU_NO == obj_84_lang_helper)
+            if (MENU_NO == 2)
             {
                 if (FILE[MENUCOORD[MENU_NO]] == 1)
                 {
@@ -307,7 +307,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
                     ONEBUFFER = 2
                     SELNOISE = 1
                     MENUCOORD[3] = 0
-                    MENU_NO = obj_pipisFireworkGenerator
+                    MENU_NO = 3
                 }
                 else
                 {
@@ -322,7 +322,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
                     ONEBUFFER = 2
                 }
             }
-            if (MENU_NO == obj_ch2_scene26_henshin_flash)
+            if (MENU_NO == 5)
             {
                 if (FILE[MENUCOORD[MENU_NO]] == 1)
                 {
@@ -330,7 +330,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
                     ONEBUFFER = 2
                     SELNOISE = 1
                     MENUCOORD[6] = 0
-                    MENU_NO = obj_spamtonpainting
+                    MENU_NO = 6
                 }
                 else
                 {
@@ -351,7 +351,7 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
             TWOBUFFER = 2
             ONEBUFFER = 2
             SELNOISE = 1
-            MENU_NO = obj_sneo_friedpipis
+            MENU_NO = 0
         }
     }
     if (gml_Script_button2_p() && TWOBUFFER < 0)
@@ -359,17 +359,17 @@ if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_pipisFireworkGenerator || ME
         TWOBUFFER = 2
         ONEBUFFER = 2
         BACKNOISE = true
-        if (MENU_NO == obj_84_lang_helper || MENU_NO == obj_ch2_scene26_henshin_flash)
-            MENU_NO = obj_sneo_friedpipis
-        if (MENU_NO == obj_pipisFireworkGenerator)
-            MENU_NO = obj_84_lang_helper
+        if (MENU_NO == 2 || MENU_NO == 5)
+            MENU_NO = 0
+        if (MENU_NO == 3)
+            MENU_NO = 2
     }
 }
-if (MENU_NO == obj_sneo_friedpipis || MENU_NO == obj_gigaqueen_intro_fight)
+if (MENU_NO == 0 || MENU_NO == 10)
 {
     var M = MENU_NO
     var MAXY = 8
-    if (M == obj_gigaqueen_intro_fight)
+    if (M == 10)
         MAXY = 3
     if gml_Script_down_p()
     {
@@ -412,9 +412,7 @@ if (MENU_NO == obj_sneo_friedpipis || MENU_NO == obj_gigaqueen_intro_fight)
                 MENUCOORD[M] = 8
             else
             {
-                MENUCOORD[M]
-                M.MENUCOORD[MENUCOORD[M]]++
-                self
+                MENUCOORD[M]++
             }
         }
     }
@@ -428,9 +426,7 @@ if (MENU_NO == obj_sneo_friedpipis || MENU_NO == obj_gigaqueen_intro_fight)
                 MENUCOORD[M] = 6
             else
             {
-                MENUCOORD[M]
-                M.MENUCOORD[MENUCOORD[M]]--
-                self
+                MENUCOORD[M]--
             }
             MOVENOISE = 1
         }

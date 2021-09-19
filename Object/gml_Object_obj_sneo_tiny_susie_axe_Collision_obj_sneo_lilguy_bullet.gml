@@ -1,3 +1,4 @@
 instance_destroy()
-var _temp_local_var_1 = other
-instance_destroy()
+with (other)
+    instance_destroy()
+gml_Script_snd_play(166)

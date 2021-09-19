@@ -18,11 +18,15 @@ if (papefall == 1)
         {
             gml_Script_snd_stop_ch1(486)
             gml_Script_snd_play_ch1(486)
-            var _temp_local_var_1 = pape[papei]
-            sprite_index = spr_paperfly_ch1
-            vspeed = 1
-            image_speed = 0.5
-            gravity = 0.5
+            with (pape[papei])
+            {
+                sprite_index = spr_paperfly_ch1
+                vspeed = 1
+                image_speed = 0.5
+                gravity = 0.5
+            }
+            papetimer = 0
+            papei += 1
         }
     }
 }
@@ -280,9 +284,19 @@ if (instance_exists(obj_dialoguer_ch1) == 0 && con == 70)
     with (obj_mainchara_ch1)
         visible = false
     k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4206)
-    var _temp_local_var_16 = k
+    with (k)
+    {
+        vspeed = 1
+        gravity = 0.5
+    }
+    image_speed = 0
+    image_index = 0
     vspeed = 1
     gravity = 0.5
+    sprite_index = spr_susie_fall_ch1
+    gml_Script_snd_play_ch1(383)
+    con = 21
+    alarm[4] = 50
 }
 if (con == 22)
 {

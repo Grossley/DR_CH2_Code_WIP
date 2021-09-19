@@ -26,19 +26,23 @@ if (lcon >= 6 && lcon < 10)
         yoff = lengthdir_y(40, (image_angle - 20))
         gml_Script_snd_play(45)
         bullet = gml_Script_instance_create((x - xoff), (y - yoff), obj_regularbullet)
-        var _temp_local_var_2 = bullet
-        target = obj_lancerbike.target
-        damage = obj_lancerbike.damage
-        if (target == 0)
+        with (bullet)
         {
-            if (global.hp[1] <= (global.maxhp[1] / 2))
-                damage = ceil((global.hp[1] / 3))
+            target = obj_lancerbike.target
+            damage = obj_lancerbike.damage
+            if (target == 0)
+            {
+                if (global.hp[1] <= (global.maxhp[1] / 2))
+                    damage = ceil((global.hp[1] / 3))
+            }
+            timepoints = 0
+            sprite_index = spr_spadebullet
+            move_towards_point((obj_heart.x + 8), (obj_heart.y + 8), 4)
+            image_angle = direction
+            friction = -0.4
         }
-        timepoints = 0
-        sprite_index = spr_spadebullet
-        move_towards_point((obj_heart.x + 8), (obj_heart.y + 8), 4)
-        image_angle = direction
-        friction = -0.4
+        bullet.depth = (depth + 1)
+        btimer = 0
     }
 }
 if (lcon == 2)
@@ -192,11 +196,7 @@ if (racecon == 2)
     if (s_moveup == 1)
     {
         if (s.y > -20)
-        {
-            _temp_local_var_2.y = (s.y - 10)
-            var _temp_local_var_4 = -9
-            var _temp_local_var_5 = s
-        }
+            s.y -= 10
     }
     if (y < (topy + 10))
         vspeed = 12
@@ -217,8 +217,8 @@ if (racecon == 3)
     {
         gml_Script_snd_play(173)
         honkimg = gml_Script_instance_create((x - 60), (y - 40), obj_afterimage_grow)
-        var _temp_local_var_7 = honkimg
-        sprite_index = spr_lancernoise
+        with (honkimg)
+            sprite_index = spr_lancernoise
     }
     if (rtimer >= 25)
     {
@@ -233,11 +233,7 @@ if (racecon == 4)
 {
     if (s_moveup == 1)
     {
-        _temp_local_var_7.y = (s.y + 10)
-        var _temp_local_var_8 = -9
-        var _temp_local_var_9 = s
-        var _temp_local_var_10 = -9
-        var _temp_local_var_11 = s
+        s.y += 10
         if (s.y >= sy)
         {
             s.y = sy
@@ -272,18 +268,25 @@ if (racecon == 5)
 if (endcon == 1)
 {
     global.turntimer = 2
-    var _temp_local_var_12 = obj_lancerboss
-    visible = true
-    if (turns >= 4)
+    with (obj_lancerboss)
     {
-        con = 1
-        with (obj_battlecontroller)
-            noreturn = true
+        visible = true
+        if (turns >= 4)
+        {
+            con = 1
+            with (obj_battlecontroller)
+                noreturn = true
+        }
     }
+    with (obj_lancerboss3)
+        visible = true
+    instance_destroy()
 }
-var _temp_local_var_14 = obj_lancerboss
-if (compliment >= 3)
+with (obj_lancerboss)
 {
-    with (obj_dmgwriter)
-        spec = 1
+    if (compliment >= 3)
+    {
+        with (obj_dmgwriter)
+            spec = 1
+    }
 }

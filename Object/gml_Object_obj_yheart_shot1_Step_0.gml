@@ -6,5 +6,5 @@ if (big == 1)
     if (image_yscale > 1)
         image_yscale -= (0.1 * f)
 }
-if (x.room_width + 80)
+if (x >= (room_width + 80))
     instance_destroy()

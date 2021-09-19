@@ -197,6 +197,7 @@ if (con == 12 && (!gml_Script_i_ex(895)))
     con = 99
     gml_Script_scr_tempsave()
     var savepoint = gml_Script_instance_create(460, 720, obj_savepoint)
-    var _temp_local_var_4 = savepoint
-    gml_Script_scr_depth()
+    with (savepoint)
+        gml_Script_scr_depth()
+    instance_destroy()
 }

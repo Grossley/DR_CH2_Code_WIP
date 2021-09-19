@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 gml_Script_scr_depth()
 global.currentroom = room
 gml_Script_scr_initialize_charnames()
@@ -94,6 +95,7 @@ if (global.interact == 3)
             global.flag[21] = -10
             roomenterfreezeend = 1
         }
+        var _temp_local_var_1 = global.entrance
         switch global.entrance
         {
             case 1:
@@ -193,7 +195,7 @@ if (global.interact == 3)
             }
             else
             {
-                ((room_height / 2).room_width / 2)
+                gml_Script_setxy((room_width / 2), (room_height / 2))
                 gml_Script_debug_message("entrance not found, setting to center of room")
                 gml_Script_debug_message(("entrance requested was global.entrance=" + string(global.entrance)))
             }

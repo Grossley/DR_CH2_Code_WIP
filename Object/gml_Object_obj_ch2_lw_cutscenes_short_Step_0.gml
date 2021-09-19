@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12;
 if (room == room_town_krisyard)
 {
     if (con == 1)
@@ -139,11 +140,13 @@ if (room == room_schoollobby)
     }
     if (con == 50)
     {
-        var _temp_local_var_5 = toriel
-        if (global.flag[20] == 1)
-            sprite_index = spr_toriel_ut
-        else
-            sprite_index = spr_toriel_l
+        with (toriel)
+        {
+            if (global.flag[20] == 1)
+                sprite_index = spr_toriel_ut
+            else
+                sprite_index = spr_toriel_l
+        }
     }
     if (con == 50 && obj_mainchara.y >= 150 && global.interact == 0)
     {
@@ -175,13 +178,30 @@ if (room == room_schoollobby)
     }
     if (con == 51 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_8 = alphys
-        sprite_index = spr_alphysu
+        with (alphys)
+            sprite_index = spr_alphysu
+        con = 52
+        alarm[4] = 50
     }
     if (con == 53)
     {
-        var _temp_local_var_9 = alphys
-        sprite_index = spr_alphysr
+        with (alphys)
+            sprite_index = spr_alphysr
+        gml_Script_scr_speaker("alphys")
+        gml_Script_msgsetloc(0, "\\E6* They're normal./", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_222_0")
+        gml_Script_scr_anyface_next("toriel", 0)
+        gml_Script_msgnextloc("\\E0* Well^1, that is relieving. I have just been.../", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_224_0")
+        gml_Script_msgnextloc("\\E1* A little concerned lately./", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_225_0")
+        gml_Script_scr_anyface_next("alphys", 10)
+        gml_Script_msgnextloc("* (Just lately?)/", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_227_0")
+        gml_Script_scr_anyface_next("toriel", 1)
+        gml_Script_msgnextloc("\\E1* ..^1. You take it easy too^1, Alphys./", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_230_0")
+        gml_Script_msgnextloc("\\E9* I am always cheering you on^1, alright?/", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_231_0")
+        gml_Script_scr_anyface_next("alphys", 11)
+        gml_Script_msgnextloc("\\EB* Uhhh..^1. th..^1. th..^1. th..^1. thanks!!/%", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_233_0")
+        d = gml_Script_d_make()
+        d.side = 0
+        con = 55
     }
     if (con == 55 && (!gml_Script_d_ex()))
     {
@@ -191,7 +211,7 @@ if (room == room_schoollobby)
         con = 50
     }
 }
-if (alphys.room == room_schooldoor)
+if (room == room_schooldoor)
 {
     if (con == 1)
     {
@@ -315,11 +335,11 @@ if (alphys.room == room_schooldoor)
         gml_Script_c_msgsetloc(0, "\\E9* (Kris^1, if you could bring her by later...)/", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_378_0")
         gml_Script_c_msgnextloc("\\EQ* (It would mean a lot to me...!)/%", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_379_0")
         gml_Script_c_talk_wait()
-        var _temp_local_var_11 = 18
-        var _temp_local_var_12 = 17
-        var _temp_local_var_13 = 21
-        var _temp_local_var_14 = 21
-        var _temp_local_var_15 = 20
+        var _temp_local_var_8 = 18
+        var _temp_local_var_9 = 17
+        var _temp_local_var_10 = 21
+        var _temp_local_var_11 = 21
+        var _temp_local_var_12 = 20
         if (noelle_chalk == 1)
         {
             gml_Script_c_wait(30)

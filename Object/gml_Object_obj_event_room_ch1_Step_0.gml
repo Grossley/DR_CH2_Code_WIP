@@ -43,12 +43,13 @@ if (room == room_field2A_ch1 || room == room_field_puzzle1_ch1)
         candytree.image_index = global.flag[candyflag]
         if (global.flag[candyflag] >= 2)
         {
-            var _temp_local_var_4 = candytree
+            with (candytree)
+                instance_destroy()
             instance_destroy()
         }
     }
 }
-if (candytree.room == room_krishallway_ch1)
+if (room == room_krishallway_ch1)
     event_user(3)
 if (room == room_town_krisyard_ch1)
     event_user(3)
@@ -124,16 +125,24 @@ if (room == room_cc_prison_prejoker_ch1)
     if (con == 5 && (!gml_Script_d_ex_ch1()))
     {
         doorimg2 = gml_Script_scr_dark_marker_ch1(doorimg.x, doorimg.y, 3702)
-        var _temp_local_var_9 = doorimg2
-        depth = 400000
-        image_alpha = 0
-        image_index = 1
+        with (doorimg2)
+        {
+            depth = 400000
+            image_alpha = 0
+            image_index = 1
+        }
+        con = 6
+        timer = 0
+        gml_Script_snd_play_ch1(413)
     }
     if (con == 6)
     {
         global.interact = 1
-        var _temp_local_var_10 = doorimg2
-        image_alpha += 0.03
+        with (doorimg2)
+            image_alpha += 0.03
+        timer += 1
+        if (timer >= 80)
+            con = 7
     }
     if (con == 7)
     {
@@ -146,13 +155,25 @@ if (room == room_cc_prison_prejoker_ch1)
     }
     if (con == 8 && (!gml_Script_d_ex_ch1()))
     {
-        var _temp_local_var_12 = doorimg
-        image_index = 2
+        with (doorimg)
+            image_index = 2
+        with (doorimg2)
+            instance_destroy()
+        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(380)
+        gml_Script_snd_play_ch1(376)
+        con = 9
+        alarm[4] = 60
     }
     if (con == 10)
     {
-        var _temp_local_var_14 = doorsolid
-        instance_destroy()
+        with (doorsolid)
+            instance_destroy()
+        with (doorevent)
+            instance_destroy()
+        door_door = gml_Script_instance_create_ch1((x + 15), y, 1414)
+        global.interact = 0
+        con = 11
     }
     if (con == 20 && (!gml_Script_d_ex_ch1()))
     {
@@ -160,7 +181,7 @@ if (room == room_cc_prison_prejoker_ch1)
         con = 21
     }
 }
-if (null.room == room_cc_prefountain_ch1)
+if (room == room_cc_prefountain_ch1)
 {
     timer += 1
     if (global.flag[248] == 1)
@@ -266,7 +287,7 @@ if (null.room == room_cc_prefountain_ch1)
         }
     }
 }
-if (doorsolid.room == room_forest_savepoint3_ch1)
+if (room == room_forest_savepoint3_ch1)
 {
     if (con == 10)
     {
@@ -286,18 +307,27 @@ if (doorsolid.room == room_forest_savepoint3_ch1)
     if (con == 13)
     {
         gml_Script_instance_create_ch1(0, 0, 1461)
-        var _temp_local_var_25 = blackmarker
+        with (blackmarker)
+            instance_destroy()
+        global.interact = 0
+        con = 13
         instance_destroy()
     }
 }
-if (blackmarker.room == room_field_secret1_ch1)
+if (room == room_field_secret1_ch1)
 {
     if (pcon == 0 && global.interact == 0)
     {
         if (puzzle.won == 1 && pcon == 0)
         {
-            var _temp_local_var_28 = spike_solid
-            instance_destroy()
+            with (spike_solid)
+                instance_destroy()
+            global.interact = 1
+            pcon = 1
+            with (spikee[0])
+                image_index = 1
+            with (spikee[1])
+                image_index = 1
         }
     }
     if (pcon == 1)
@@ -318,14 +348,20 @@ if (blackmarker.room == room_field_secret1_ch1)
         }
     }
 }
-if (null.room == room_forest_beforeclover_ch1)
+if (room == room_forest_beforeclover_ch1)
 {
     if (pcon == 0 && global.interact == 0)
     {
         if (puzzle.won == 1 && pcon == 0 && global.flag[290] == 0)
         {
-            var _temp_local_var_33 = spike_solid
-            instance_destroy()
+            with (spike_solid)
+                instance_destroy()
+            global.interact = 1
+            pcon = 1
+            with (spikee[0])
+                image_index = 1
+            with (spikee[1])
+                image_index = 1
         }
     }
     if (pcon == 1)
@@ -347,7 +383,7 @@ if (null.room == room_forest_beforeclover_ch1)
         }
     }
 }
-if (null.room == room_forest_savepoint_relax_ch1)
+if (room == room_forest_savepoint_relax_ch1)
 {
     if (obj_mainchara_ch1.y <= 40 && global.plot < 85 && global.interact == 0 && con == 1)
     {
@@ -371,7 +407,7 @@ if (null.room == room_forest_savepoint_relax_ch1)
         con = 3
     }
 }
-if (null.room == room_forest_maze_susie_ch1)
+if (room == room_forest_maze_susie_ch1)
 {
     if (con == 1 && obj_mainchara_ch1.y <= (y + 120) && global.interact == 0)
     {

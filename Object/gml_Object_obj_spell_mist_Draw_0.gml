@@ -28,10 +28,12 @@ if (initdelay <= 0)
     {
         if (success == 1)
         {
-            var _temp_local_var_1 = target
-            global.flag[(51 + myself)] = 3
-            event_user(10)
-            gml_Script_scr_monsterdefeat()
+            with (target)
+            {
+                global.flag[(51 + myself)] = 3
+                event_user(10)
+                gml_Script_scr_monsterdefeat()
+            }
         }
     }
     if (stimer >= 3 && siner <= 24)

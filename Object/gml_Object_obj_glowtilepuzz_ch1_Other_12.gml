@@ -59,7 +59,19 @@ if (wonamt < wonmax)
             funtotal = 3
         }
     }
-    var _temp_local_var_1 = tileid[choice1]
-    active = true
-    sprite_index = spr_glowtile_step_ch1
+    with (tileid[choice1])
+    {
+        active = true
+        sprite_index = spr_glowtile_step_ch1
+    }
+    with (tileid[choice2])
+    {
+        active = true
+        sprite_index = spr_glowtile_step_ch1
+    }
+    with (tileid[choice3])
+    {
+        active = true
+        sprite_index = spr_glowtile_step_ch1
+    }
 }

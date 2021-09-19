@@ -63,8 +63,10 @@ if static_start
     pilot_alpha = 0
     static_happened = 1
     my_static = gml_Script_instance_create(252, 123, obj_ch2_queen_static)
-    var _temp_local_var_2 = my_static
-    gml_Script_scr_depth()
+    with (my_static)
+        gml_Script_scr_depth()
+    crack = gml_Script_scr_dark_marker(my_static.x, my_static.y, 351)
+    crack.depth = (my_static.depth - 100)
 }
 if static_stop
 {

@@ -8,8 +8,8 @@ if (other.baseball == 1 && invincible == 1)
     return;
 if (other.baseball == 1 && other.graze_only == 0)
 {
-    var _temp_local_var_5 = other
-    instance_destroy()
+    with (other)
+        instance_destroy()
 }
 if (other.graze_only == 0)
 {
@@ -109,7 +109,20 @@ if (other.graze_only == 0)
             d.shakey = ceil(2)
         }
         hit_fx = gml_Script_instance_create(((x - 20) + irandom(40)), ((y - 80) - irandom(40)), obj_boxing_hit_fx)
-        var _temp_local_var_12 = hit_fx
-        event_user(0)
+        with (hit_fx)
+            event_user(0)
+        hit_fx = gml_Script_instance_create(((x - 20) + irandom(40)), ((y - 80) - irandom(40)), obj_boxing_hit_fx)
+        with (hit_fx)
+            event_user(0)
+        hit_fx = gml_Script_instance_create(((x - 20) + irandom(40)), ((y - 80) - irandom(40)), obj_boxing_hit_fx)
+        with (hit_fx)
+            event_user(0)
+        if (other.give_hurt > 0)
+            hurt_length = other.give_hurt
+        if (other.give_invincibility > 0)
+        {
+            invincible = 1
+            invincibility_timer = (-other.give_invincibility)
+        }
     }
 }

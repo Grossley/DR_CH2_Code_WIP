@@ -15,8 +15,16 @@ introcon = 0
 introtimer = 0
 shadowy = (y + 160)
 shadow = gml_Script_scr_dark_marker_ch1(x, shadowy, sprite_index)
-var _temp_local_var_1 = shadow
-sprite_index = spr_starwalker_wings_ch1
-image_yscale = 0.25
-image_blend = c_black
-depth = 600000
+with (shadow)
+{
+    sprite_index = spr_starwalker_wings_ch1
+    image_yscale = 0.25
+    image_blend = c_black
+    depth = 600000
+}
+depth = shadow.depth
+for (i = 0; i < 6; i += 1)
+{
+    char_xcheck[i] = obj_mainchara_ch1.x
+    char_ycheck[i] = obj_mainchara_ch1.y
+}

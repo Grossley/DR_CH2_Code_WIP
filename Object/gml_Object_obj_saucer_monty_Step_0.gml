@@ -74,11 +74,10 @@ if (con == 3)
     timer += (1 * multiplier)
     if (timer == 30)
     {
-        i = 0
-        while (i < saucercount)
+        for (i = 0; i < saucercount; i += 1)
         {
-            var _temp_local_var_2 = saucer[i]
-            myinteract = 1
+            with (saucer[i])
+                myinteract = 1
         }
     }
     if (timer >= 100)
@@ -176,7 +175,18 @@ if (con == 7)
 {
     if (fakeme.y >= (y - 15))
     {
-        var _temp_local_var_3 = fakeme
-        instance_destroy()
+        with (fakeme)
+            instance_destroy()
+        with (shadow)
+            instance_destroy()
+        with (fakeblock)
+            instance_destroy()
+        visible = true
+        con = 0
+        timer = 0
+        myinteract = 0
+        collider = gml_Script_instance_create((x + 8), (y + 22), obj_solidblock)
+        collider.image_xscale = 4.2
+        collider.image_yscale = 3
     }
 }

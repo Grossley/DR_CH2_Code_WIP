@@ -1,7 +1,6 @@
 if (prepopulate == 1)
 {
-    var i = 0
-    while (i < 6)
+    for (var i = 0; i < 6; i++)
     {
         car = gml_Script_instance_create(x, (y + ((gen_speed * gen_rate) * i)), obj_traffic_car)
         car.walkdir = cartype
@@ -12,8 +11,8 @@ if (prepopulate == 1)
         car.walking = walking
         car.alwayswalking = alwayswalking
         car.speedadjust = speedadjust
-        var _temp_local_var_1 = car
-        gml_Script_scr_depth()
+        with (car)
+            gml_Script_scr_depth()
     }
     prepopulate = 0
 }
@@ -47,8 +46,9 @@ if (timer >= gen_rate)
         car.walking = walking
         car.alwayswalking = alwayswalking
         car.speedadjust = speedadjust
-        var _temp_local_var_3 = car
-        gml_Script_scr_depth()
+        with (car)
+            gml_Script_scr_depth()
+        makeCar = 0
     }
     timer = 0
 }

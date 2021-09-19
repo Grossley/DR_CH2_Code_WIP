@@ -3,7 +3,7 @@ if (loc_check == 0)
     loc_check = 1
     if (room == room_forest_starwalker_ch1)
     {
-        if (obj_mainchara_ch1.x.room_width / 2)
+        if (obj_mainchara_ch1.x >= (room_width / 2))
             x = 240
     }
 }

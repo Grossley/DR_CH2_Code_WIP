@@ -35,9 +35,12 @@ if instance_exists(writergod)
 {
     if (finished == 1 && getrid == 0)
     {
-        var _temp_local_var_5 = writergod
-        if (halt == 0)
-            halt = 1
+        with (writergod)
+        {
+            if (halt == 0)
+                halt = 1
+        }
+        finished = 2
     }
 }
 else

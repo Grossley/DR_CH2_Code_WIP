@@ -2,7 +2,7 @@ called = 0
 extra = 0
 if (room == room_dw_mansion_east_teacup_4)
     extra = (room_height + 1500)
-modifier = (((gml_Script_cameray() - autoamount).room_height + extra) * 1000)
+modifier = (((gml_Script_cameray() - autoamount) / (room_height + extra)) * 1000)
 var yy_top = max(0, (gml_Script_cameray() - 180))
 var yy_bottom = (gml_Script_cameray() + 580)
 var bigi = 0

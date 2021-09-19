@@ -77,9 +77,11 @@ if (con == 5)
                 copy[cc] = gml_Script_scr_dark_marker_ch1((global.monstermakex[(cc + 1)] + 200), global.monstermakey[(cc + 1)], object_get_sprite(global.monsterinstancetype[(cc + 1)]))
                 copy[cc].cc = cc
                 copy[cc].depth = ((depth - 1) - cc)
-                var _temp_local_var_1 = copy[cc]
-                direction = point_direction(x, y, global.monstermakex[(cc + 1)], global.monstermakey[(cc + 1)])
-                speed = (point_distance(x, y, global.monstermakex[(cc + 1)], global.monstermakey[(cc + 1)]) / 10)
+                with (copy[cc])
+                {
+                    direction = point_direction(x, y, global.monstermakex[(cc + 1)], global.monstermakey[(cc + 1)])
+                    speed = (point_distance(x, y, global.monstermakex[(cc + 1)], global.monstermakey[(cc + 1)]) / 10)
+                }
             }
         }
     }
@@ -89,11 +91,10 @@ if (con == 7)
 {
     if (copyhave > 0)
     {
-        c = 0
-        while (c < copyhave)
+        for (c = 0; c < copyhave; c += 1)
         {
-            var _temp_local_var_2 = copy[c]
-            speed = 0
+            with (copy[c])
+                speed = 0
         }
     }
     speed = 0
@@ -107,11 +108,10 @@ if (con == 7)
         instance_destroy()
         if (copyhave > 0)
         {
-            c = 0
-            while (c < copyhave)
+            for (c = 0; c < copyhave; c += 1)
             {
-                var _temp_local_var_3 = copy[c]
-                instance_destroy()
+                with (copy[c])
+                    instance_destroy()
             }
         }
     }

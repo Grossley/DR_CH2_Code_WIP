@@ -28,16 +28,35 @@ if (con == 8)
             alarm[4] = 60
             gml_Script_snd_play(170)
             gml_Script_snd_play(166)
-            var _temp_local_var_5 = sneo
-            gravity = 0
-            vspeed = 0
+            with (sneo)
+            {
+                gravity = 0
+                vspeed = 0
+            }
+            draw_kris = 0
+            with (obj_mainchara)
+            {
+                visible = true
+                fun = true
+                sprite_index = spr_kris_dw_landed
+                image_speed = 0
+                hspeed = -18
+                friction = 0.6
+            }
         }
     }
 }
 if (con == 10)
 {
-    var _temp_local_var_6 = sneo
-    gravity = -2
+    with (sneo)
+        gravity = -2
+    if (sneo.y <= (gml_Script_cameray() - 200))
+    {
+        con = 11
+        sneo.gravity = 0
+        sneo.x = 460
+        sneo.y = (gml_Script_cameray() - 200)
+    }
 }
 if (con == 11)
 {
@@ -46,9 +65,13 @@ if (con == 11)
     {
         con = 12
         alarm[4] = 60
-        var _temp_local_var_7 = sneo
-        gravity = 0
-        vspeed = 0
+        with (sneo)
+        {
+            gravity = 0
+            vspeed = 0
+        }
+        sneo.partmode = 33
+        gml_Script_scr_lerpvar_instance(sneo, "shadow_amount", 1, 0, 30)
     }
 }
 if (con == 13)

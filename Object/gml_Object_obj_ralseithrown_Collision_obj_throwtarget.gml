@@ -6,20 +6,29 @@ if (collided == 0)
             crown += 35
         global.msg[0] = gml_Script_stringsetloc("* The crown greatly loosened!/%", "obj_ralseithrown_slash_Collision_ac806612_bd9d_43f5_86b2_61306f514c9f_gml_6_0")
         gml_Script_snd_play(148)
-        var _temp_local_var_1 = other
-        if (offing == 1)
+        with (other)
         {
-            con = 1
-            vspeed = -8
+            if (offing == 1)
+            {
+                con = 1
+                vspeed = -8
+            }
+            else
+                con = 5
         }
-        else
-            con = 5
     }
     else
     {
         gml_Script_snd_play(64)
-        _temp_local_var_1 = other
-        con = 7
+        with (other)
+            con = 7
+        with (obj_checkers_enemy)
+            crown += 20
+        global.msg[0] = gml_Script_stringsetloc("* The crown loosened a little!/%", "obj_ralseithrown_slash_Collision_ac806612_bd9d_43f5_86b2_61306f514c9f_gml_29_0")
+        hspeed = -12
+        vspeed = -4
+        gravity = 0.5
+        con = 2
     }
     gml_Script_scr_battletext_default()
     collided = 1

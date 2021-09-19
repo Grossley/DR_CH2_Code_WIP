@@ -11,5 +11,13 @@ path_add_point(path, (x + 112), (y - 48), 100)
 path_add_point(path, (x + 160), y, 100)
 trajectory = gml_Script_instance_create(x, y, obj_musical_path_trajectory)
 trajectory.parent = id
-var _temp_local_var_1 = trajectory
-path_start(parent.path, 10, path_action_stop, 0)
+with (trajectory)
+    path_start(parent.path, 10, path_action_stop, 0)
+circle1alpha = 0
+circle1radius = 31
+circle1width = 2
+circle1color = 65280
+circle2alpha = 0
+circle2radius = 75
+circle2width = 4
+depth = (obj_heart.depth + 1)

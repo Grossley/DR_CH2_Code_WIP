@@ -49,9 +49,15 @@ if (con == 2)
         btimer++
         if (btimer >= 30)
         {
-            var _temp_local_var_1 = creator
-            if (mcon == 2)
-                mcon = 3
+            with (creator)
+            {
+                if (mcon == 2)
+                    mcon = 3
+            }
+            image_xscale -= 0.2
+            image_yscale -= 0.2
+            if (image_xscale <= 0)
+                instance_destroy()
         }
     }
 }

@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 gml_Script_scr_enemy_object_init()
 talkmax = 90
 image_speed = 0.16666666666666666

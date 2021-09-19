@@ -38,30 +38,33 @@ if (state == 1)
     if gml_Script_i_ex(global.cinstance[1])
         partySize++
     gml_Script_snd_play(159)
-    var i = 0
-    while (i < partySize)
+    for (var i = 0; i < partySize; i++)
     {
-        var _character = (i == 0 ? 80 : global.cinstance[(i - 1)])
+        var _character = (i == 0 ? obj_mainchara : global.cinstance[(i - 1)])
         var _cup = cup_char[i]
         var _jumpInDuration = jumpInDuration
         var _rollSprites = [544, 544, 542, 3338]
         var _rideToRide = rideToRide
         _rideToRide = 1
-        var _temp_local_var_4 = _character
-        var _spr = sprite_index
-        if _rideToRide
-            _spr = _rollSprites[global.char[i]]
-        image_alpha = 0
-        facing[0] = 0
-        global.facing = 0
-        var _temp_local_var_5 = gml_Script_scr_dark_marker(x, y, _spr)
-        if _rideToRide
-            image_speed = 0.5
-        var _xx = _cup.x
-        var _yy = (_cup.y - 10)
-        gml_Script_scr_depth()
-        gml_Script_scr_jump_to_point(_xx, _yy, (_rideToRide ? 16 : 8), _jumpInDuration)
-        gml_Script_scr_doom(id, _jumpInDuration)
+        with (_character)
+        {
+            var _spr = sprite_index
+            if _rideToRide
+                _spr = _rollSprites[global.char[i]]
+            image_alpha = 0
+            facing[0] = 0
+            global.facing = 0
+            with (gml_Script_scr_dark_marker(x, y, _spr))
+            {
+                if _rideToRide
+                    image_speed = 0.5
+                var _xx = _cup.x
+                var _yy = (_cup.y - 10)
+                gml_Script_scr_depth()
+                gml_Script_scr_jump_to_point(_xx, _yy, (_rideToRide ? 16 : 8), _jumpInDuration)
+                gml_Script_scr_doom(id, _jumpInDuration)
+            }
+        }
     }
     state = 2
     waitingAround = jumpInDuration
@@ -69,9 +72,9 @@ if (state == 1)
 if (state == 999 && global.interact == 0)
 {
     var nearobj = instance_nearest(x, y, obj_readable_room1)
-    if (nearobj > 100)
+    if (nearobj > obj_npc_rudy)
     {
-        var _temp_local_var_11 = nearobj
-        event_user(0)
+        with (nearobj)
+            event_user(0)
     }
 }

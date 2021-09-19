@@ -69,8 +69,12 @@ if (type == 3)
         d.friction = 1
         d.damage = damage
         d.target = target
-        var _temp_local_var_1 = d
-        image_angle = direction
+        with (d)
+            image_angle = direction
+        if (side == 1)
+            side = -1
+        else
+            side = 1
     }
 }
 if (type == 4)
@@ -91,8 +95,12 @@ if (type == 4)
         d.direction = (dir + 180)
         d.speed = 20
         d.friction = 1
-        var _temp_local_var_2 = d
-        image_angle = direction
+        with (d)
+            image_angle = direction
+        if (side == 1)
+            side = -1
+        else
+            side = 1
     }
 }
 if (type == 6)
@@ -139,13 +147,16 @@ if (type == 8)
         mine = gml_Script_instance_create_ch1((300 + xx), (yy - 40), 1550)
         mine.damage = damage
         mine.target = target
-        var _temp_local_var_5 = mine
-        hspeed = (1.2 + random(1.2))
-        hspeed *= choose(-1, 1)
-        gravbonus = random(0.1)
-        gravity = (0.15 + gravbonus)
-        image_xscale = 0.7
-        image_yscale = 0.7
+        with (mine)
+        {
+            hspeed = (1.2 + random(1.2))
+            hspeed *= choose(-1, 1)
+            gravbonus = random(0.1)
+            gravity = (0.15 + gravbonus)
+            image_xscale = 0.7
+            image_yscale = 0.7
+        }
+        made += 1
     }
 }
 if (type == 10)
@@ -158,14 +169,16 @@ if (type == 10)
         dicecomet = gml_Script_instance_create_ch1(choose((xx + 680), (xx - 100)), (0 - random(100)), 1550)
         dicecomet.damage = damage
         dicecomet.target = target
-        var _temp_local_var_6 = dicecomet
-        image_xscale = 2
-        image_yscale = 2
-        if (x > (gml_Script___view_get(0, 0) + 320))
-            hspeed = (-6 - random(1))
-        else
-            hspeed = (6 + random(1))
-        vspeed = (2 + random(2))
+        with (dicecomet)
+        {
+            image_xscale = 2
+            image_yscale = 2
+            if (x > (gml_Script___view_get(0, 0) + 320))
+                hspeed = (-6 - random(1))
+            else
+                hspeed = (6 + random(1))
+            vspeed = (2 + random(2))
+        }
     }
 }
 if (type == 11)
@@ -186,9 +199,11 @@ if (type == 11)
         }
         if (made == 3)
         {
-            var _temp_local_var_8 = bb
-            green = 1
-            image_blend = c_lime
+            with (bb)
+            {
+                green = 1
+                image_blend = c_lime
+            }
         }
         made += 1
     }
@@ -220,9 +235,12 @@ if (type == 13)
         db[made].target = target
         if (made == 1)
         {
-            var _temp_local_var_10 = db[1]
-            green = 1
-            image_blend = c_lime
+            with (db[1])
+            {
+                green = 1
+                image_blend = c_lime
+            }
+            db[1].hspeed = (-db[0].hspeed)
         }
         made += 1
     }
@@ -281,13 +299,20 @@ if (type == 20 || type == 22)
         fallspade = gml_Script_instance_create_ch1((obj_heart_ch1.x + radius), (gml_Script___view_get(1, 0) - 20), 1520)
         fallspade.damage = damage
         fallspade.target = target
-        var _temp_local_var_12 = fallspade
-        sprite_index = spr_spadebullet_ch1
-        image_angle = 270
-        gravity = 0.3
-        speed = 0
-        vspeed = 3
-        hspeed = (-0.6 + random(1.2))
+        with (fallspade)
+        {
+            sprite_index = spr_spadebullet_ch1
+            image_angle = 270
+            gravity = 0.3
+            speed = 0
+            vspeed = 3
+            hspeed = (-0.6 + random(1.2))
+        }
+        if (side == 1)
+            side = -1
+        else
+            side = 1
+        btimer = 0
     }
 }
 if (type == 21 || type == 23 || type == 25)
@@ -314,11 +339,18 @@ if (type == 21 || type == 23 || type == 25)
         sidespade[side].image_alpha = 0
         sidespade[side].damage = damage
         sidespade[side].target = target
-        var _temp_local_var_14 = sidespade[side]
-        sprite_index = spr_spadebullet_ch1
-        speed = 5
-        friction = -0.1
-        image_angle = direction
+        with (sidespade[side])
+        {
+            sprite_index = spr_spadebullet_ch1
+            speed = 5
+            friction = -0.1
+            image_angle = direction
+        }
+        if (side == 1)
+            side = 0
+        else
+            side = 1
+        btimer = 0
     }
 }
 if (type == 24)
@@ -380,13 +412,20 @@ if (type == 24)
         fallspade = gml_Script_instance_create_ch1((obj_heart_ch1.x + radius), -20, 1520)
         fallspade.damage = damage
         fallspade.target = target
-        var _temp_local_var_18 = fallspade
-        sprite_index = spr_spadebullet_ch1
-        image_angle = 270
-        gravity = 0.3
-        speed = 0
-        vspeed = 3
-        hspeed = (-0.6 + random(1.2))
+        with (fallspade)
+        {
+            sprite_index = spr_spadebullet_ch1
+            image_angle = 270
+            gravity = 0.3
+            speed = 0
+            vspeed = 3
+            hspeed = (-0.6 + random(1.2))
+        }
+        if (side == 1)
+            side = -1
+        else
+            side = 1
+        btimer = 0
     }
 }
 if (type == 26)
@@ -420,21 +459,11 @@ if (type == 26)
                 bul[i][j] = gml_Script_instance_create_ch1(((x_c + x_o) + (i * 80)), ((y_c + y_o) + (j * 80)), 1520)
                 gml_Script_scr_bullet_inherit_ch1(bul[i][j])
                 if (j == upallow)
-                {
-                    _temp_local_var_18.y = (bul[i][j].y + choose(0, 40))
-                    var _temp_local_var_19 = sidespade[side]
-                    var _temp_local_var_20 = fallspade
-                    var _temp_local_var_21 = -9
-                    var _temp_local_var_22 = bul[i][j]
-                }
+                    bul[i][j].y += choose(0, 40)
                 if (i == 1 && j == 1)
                 {
-                    _temp_local_var_19.x = (bul[i][j].x + choose(0, -40))
+                    bul[i][j].x += choose(0, -40)
                     bul[i][j].y = (((y_c + y_o) + choose(0, 40)) + (j * 80))
-                    var _temp_local_var_24 = fallspade
-                    var _temp_local_var_25 = -9
-                    var _temp_local_var_26 = -9
-                    var _temp_local_var_27 = bul[i][j]
                 }
                 bul[i][j].hspeed = h_s
                 bul[i][j].vspeed = v_s
@@ -472,8 +501,8 @@ if (type == 27)
         {
             if (testblock.halt == 1)
             {
-                var _temp_local_var_29 = block
-                instance_destroy()
+                with (block)
+                    instance_destroy()
             }
         }
     }
@@ -481,10 +510,16 @@ if (type == 27)
     legob = collision_point(((lx + 15) + 34), ly, obj_blockbullet_fall_ch1, 0, 1)
     legoc = collision_point(((lx + 15) + 68), ly, obj_blockbullet_fall_ch1, 0, 1)
     legod = collision_point(((lx + 15) + 102), ly, obj_blockbullet_fall_ch1, 0, 1)
-    if (legoa > 1 && legob > 1 && legoc > 1 && legod > 1)
+    if (legoa > obj_pipis_bullet_cone && legob > obj_pipis_bullet_cone && legoc > obj_pipis_bullet_cone && legod > obj_pipis_bullet_cone)
     {
-        var _temp_local_var_31 = legoa
-        con = 3
+        with (legoa)
+            con = 3
+        with (legob)
+            con = 3
+        with (legoc)
+            con = 3
+        with (legod)
+            con = 3
     }
 }
 if (type == 30)
@@ -690,14 +725,27 @@ if (type == 85)
         with (obj_lancerboss3_ch1)
             visible = false
         fakelan = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 580), (obj_battlesolid_ch1.y + 160), 1516)
-        var _temp_local_var_43 = fakelan
-        depth += 1
-        image_xscale = 2
-        image_yscale = 2
-        visible = true
-        sprite_index = spr_lancerbike_ch1
-        active = false
-        image_speed = 0.2
+        with (fakelan)
+        {
+            depth += 1
+            image_xscale = 2
+            image_yscale = 2
+            visible = true
+            sprite_index = spr_lancerbike_ch1
+            active = false
+            image_speed = 0.2
+        }
+        fakesus = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 530), (obj_battlesolid_ch1.y - 40), 1516)
+        with (fakesus)
+        {
+            image_xscale = 2
+            image_yscale = 2
+            visible = true
+            sprite_index = spr_susie_enemy_attack_ch1
+            active = false
+            image_speed = 0
+        }
+        made = 1
     }
     if (made == 1)
     {
@@ -709,8 +757,8 @@ if (type == 85)
                 {
                     cheer = 1
                     gml_Script_snd_play_ch1(453)
-                    var _temp_local_var_45 = fakelan
-                    sprite_index = spr_lancerbike_l_ch1
+                    with (fakelan)
+                        sprite_index = spr_lancerbike_l_ch1
                 }
             }
             if (cheer == 1)
@@ -719,28 +767,45 @@ if (type == 85)
                 if (cheertimer >= 30)
                 {
                     cheertimer = 0
-                    var _temp_local_var_46 = fakelan
-                    sprite_index = spr_lancerbike_ch1
+                    with (fakelan)
+                        sprite_index = spr_lancerbike_ch1
+                    cheer = 0
                 }
             }
         }
         if instance_exists(fakesus)
         {
-            var _temp_local_var_47 = fakesus
-            if (image_index < 5)
-                image_index += 0.334
+            with (fakesus)
+            {
+                if (image_index < 5)
+                    image_index += 0.334
+            }
         }
     }
     if (made == 1 && global.turntimer <= 10)
     {
-        var _temp_local_var_49 = fakesus
-        visible = false
+        with (fakesus)
+            visible = false
+        with (fakelan)
+            visible = false
+        with (obj_susieenemy_ch1)
+            visible = true
+        with (obj_lancerboss3_ch1)
+            visible = true
     }
     if (btimer >= 27 && instance_exists(obj_battlesolid_ch1) && global.turntimer > 10)
     {
-        var _temp_local_var_52 = fakesus
-        image_index = 0
-        gml_Script_snd_play_ch1(442)
+        with (fakesus)
+        {
+            image_index = 0
+            gml_Script_snd_play_ch1(442)
+        }
+        for (i = 0; i < 1; i += 1)
+        {
+            axe[i] = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 540), obj_battlesolid_ch1.y, 1602)
+            gml_Script_scr_bullet_inherit_ch1(axe[i])
+        }
+        btimer = 0
     }
 }
 if (joker == 1)
@@ -1074,8 +1139,12 @@ if (joker == 1)
             d.type = 2
             d.damage = damage
             d.target = target
-            var _temp_local_var_62 = d
-            image_angle = direction
+            with (d)
+                image_angle = direction
+            if (side == 1)
+                side = -1
+            else
+                side = 1
         }
     }
     if (type == 73)
@@ -1092,8 +1161,11 @@ if (joker == 1)
             if instance_exists(obj_battlesolid_ch1)
             {
                 db = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), (obj_battlesolid_ch1.y + 100), 1555)
-                var _temp_local_var_63 = db
-                type = 1
+                with (db)
+                    type = 1
+                db.damage = damage
+                db.target = target
+                db.timepoints = 2
             }
         }
     }
@@ -1148,17 +1220,26 @@ if (joker == 1)
             amount = 0
             jokertimer = 0
             darkfader = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 10), 3938)
-            var _temp_local_var_66 = darkfader
-            depth = 2
-            image_alpha = 0
-            image_blend = c_black
-            image_xscale = 200
-            image_yscale = 2
+            with (darkfader)
+            {
+                depth = 2
+                image_alpha = 0
+                image_blend = c_black
+                image_xscale = 200
+                image_yscale = 2
+            }
         }
         if (realtimer >= 0 && realtimer < 10)
         {
-            var _temp_local_var_68 = darkfader
-            image_alpha += 0.1
+            with (darkfader)
+                image_alpha += 0.1
+            with (obj_battlesolid_ch1)
+                image_alpha -= 0.1
+            with (obj_heart_ch1)
+            {
+                y += 16
+                boundaryup = 160
+            }
         }
         if (realtimer == 10)
         {
@@ -1198,9 +1279,13 @@ if (joker == 1)
         {
             jokertimer = 0
             jokerin = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 100), 1593)
-            var _temp_local_var_71 = jokerin
-            type = 66
-            depth = -30
+            with (jokerin)
+            {
+                type = 66
+                depth = -30
+            }
+            special = 2
+            which2 = 0
         }
         if (special == 2)
         {
@@ -1231,20 +1316,40 @@ if (joker == 1)
                 vol = 0
                 vol2 = 1
                 rumnoise = audio_play_sound(snd_rumble_ch1, 50, true)
-                var _temp_local_var_76 = lastscythe
-                vspeed = 1
-                gravity = 0.02
-                image_xscale = 16
-                image_yscale = 16
-                scale = 16
-                rotspeed = 0
-                remrot = 160
-                image_angle = 160
+                with (lastscythe)
+                {
+                    vspeed = 1
+                    gravity = 0.02
+                    image_xscale = 16
+                    image_yscale = 16
+                    scale = 16
+                    rotspeed = 0
+                    remrot = 160
+                    image_angle = 160
+                }
+                fadewhite = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 40), 1403)
+                fadewhite.sprite_index = spr_tallpx_ch1
+                fadewhite.image_xscale = 400
+                fadewhite.image_yscale = 2
+                fadewhite.depth = -100
+                fadewhite.image_alpha = -0.3
             }
             if (jokertimer >= 131)
             {
-                var _temp_local_var_77 = lastscythe
-                x = (xstart + random(8))
+                with (lastscythe)
+                    x = (xstart + random(8))
+                with (fadewhite)
+                    image_alpha += 0.01
+                vol += 0.01
+                if (fadewhite.image_alpha >= 1)
+                {
+                    with (darkfader)
+                        instance_destroy()
+                    with (lastscythe)
+                        instance_destroy()
+                }
+                if (fadewhite.image_alpha >= 1.3)
+                    special = 3
             }
         }
         if (special == 3)
@@ -1256,8 +1361,14 @@ if (joker == 1)
             }
             vol -= 0.1
             audio_sound_gain(rumnoise, vol, 0)
-            var _temp_local_var_81 = fadewhite
-            image_alpha -= 0.1
+            with (fadewhite)
+                image_alpha -= 0.1
+            if (fadewhite.image_alpha <= 0)
+            {
+                audio_stop_sound(rumnoise)
+                global.turntimer = 11
+                special = 4
+            }
         }
         realtimer += 1
     }

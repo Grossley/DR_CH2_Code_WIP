@@ -120,7 +120,7 @@ if (room == room_forest_area4_ch1)
     sprite_index = spr_blockguy_overworld_ch1
     touchsprite = spr_blockguy_overworld_ch1
     pacetype = 7
-    if (x.room_width / 2)
+    if (x < (room_width / 2))
         pacetype = 7.5
     eraser = true
     touchflag = 506
@@ -151,7 +151,7 @@ if (room == room_cc_3f_ch1)
     pacetype = 9
     radius = 165
     moveradius = 160
-    if (x.room_width / 2)
+    if (x >= (room_width / 2))
         moveradius = -160
     sprite_index = spr_hathyx_overworld_ch1
     myencounter = 30

@@ -39,6 +39,13 @@ if (blocktimer == 20)
         image_alpha = 0
         friction = -0.1
     }
+    block.depth = (depth - 1)
+    block.image_blend = merge_color(c_white, c_black, oo)
+    if (oo >= 0.8)
+    {
+        with (block)
+            instance_destroy()
+    }
 }
 if (blocktimer >= 20 && blocktimer <= 30)
 {

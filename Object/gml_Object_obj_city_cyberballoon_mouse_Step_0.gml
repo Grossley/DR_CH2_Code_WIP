@@ -70,6 +70,8 @@ if (falling == 1)
             obj_kris_headobj.mousefailcon = 1
         gml_Script_snd_play(176)
         jumper = gml_Script_scr_afterimage()
-        gml_Script_scr_jump_to_point((x + random_range(-40, 40)), ((obj_fountainkris_ch2_sideb).room_height + (sprite_height * 2)), 16, jumper)
+        with (jumper)
+            gml_Script_scr_jump_to_point((x + random_range(-40, 40)), (room_height + (sprite_height * 2)), 20, 16)
+        instance_destroy()
     }
 }

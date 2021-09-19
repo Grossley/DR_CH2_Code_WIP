@@ -27,9 +27,14 @@ if talking
                 suballoon3 = gml_Script_scr_enemyblcon((obj_ch2_scene10.su_actor.x + 0), (obj_ch2_scene10.su_actor.y + 20), 10)
                 talktimer = 0
                 talking = 1
-                var _temp_local_var_3 = suballoon3
-                depth = (obj_ch2_scene10.su_actor.depth - 1)
-                auto_length = 1
+                with (suballoon3)
+                {
+                    depth = (obj_ch2_scene10.su_actor.depth - 1)
+                    auto_length = 1
+                }
+                with (obj_writer)
+                    depth = (obj_ch2_scene10.su_actor.depth - 2)
+                talktype = 0
             }
         }
         talktype = 0

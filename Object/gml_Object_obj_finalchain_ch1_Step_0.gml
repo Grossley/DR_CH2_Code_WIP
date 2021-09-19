@@ -193,8 +193,10 @@ if (chaincon == 3)
         movetimer += 1
         if (movetimer >= maxmove)
         {
-            var _temp_local_var_7 = target
-            instance_destroy()
+            with (target)
+                instance_destroy()
+            movecon = 0
+            gml_Script_snd_stop_ch1(chainnoise)
         }
     }
 }
@@ -260,20 +262,14 @@ if (bulletpoint == 1)
 }
 if (spikemake == 1)
 {
-    _temp_local_var_7.image_alpha = (spike.image_alpha + 0.04)
+    spike.image_alpha += 0.04
     spike.x = box.x
     spike.y = box.y
-    var _temp_local_var_9 = stacktop
-    var _temp_local_var_10 = spike
     if (ended == 1)
     {
         if (spike.image_alpha >= 1)
             spike.image_alpha = 1
-        _temp_local_var_9.image_alpha = (spike.image_alpha - 0.14)
-        var _temp_local_var_11 = spike
-        var _temp_local_var_12 = target
-        var _temp_local_var_13 = -9
-        var _temp_local_var_14 = spike
+        spike.image_alpha -= 0.14
     }
 }
 if (ended == 1)

@@ -6,8 +6,8 @@ if (offset > offsetCap)
         return;
     else
     {
-        var _temp_local_var_1 = other
-        event_user(0)
+        with (other)
+            event_user(0)
     }
 }
 else if (abs(((y - 8) - other.y)) <= (24 * image_xscale) && destroyable == 1)
@@ -19,8 +19,8 @@ else if (abs(((y - 8) - other.y)) <= (24 * image_xscale) && destroyable == 1)
     }
     else
     {
-        var _temp_local_var_6 = other
-        event_user(0)
+        with (other)
+            event_user(0)
     }
     if (new_movement == 0)
     {

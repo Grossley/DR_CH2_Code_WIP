@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 var redscreen = 27
 if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen(other) && active == true && other.aligned == 1 && other.image_index != redscreen && other.image_index != 9 && other.sprite_index != spr_queenscreen_red)
 {
@@ -23,13 +24,16 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen(other) && active == t
         alarm[0] = b
         b.image_xscale = 2
         b.image_yscale = 2
-        var _temp_local_var_2 = b
-        var _temp_local_var_3 = -10
+        var _temp_local_var_2 = -10
         move_towards_point((obj_mainchara.x + 2), (obj_mainchara.y + 4), 4)
     }
-    var _temp_local_var_4 = other
-    dance_active = 0
-    sprite_index = spr_queenscreen_red
-    image_speed = 0
-    image_index = redscreen
+    with (other)
+    {
+        dance_active = 0
+        sprite_index = spr_queenscreen_red
+        image_speed = 0
+        image_index = redscreen
+    }
+    active = false
+    gml_Script_snd_play_pitch(159, 2.5)
 }

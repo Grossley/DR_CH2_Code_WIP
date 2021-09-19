@@ -8,9 +8,9 @@ global.interact = 1
 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_npc_sign_slash_Other_10_gml_8_0")
 if (room == room_field1_ch1)
 {
-    if (x.room_width / 2)
+    if (x < (room_width / 2))
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_npc_sign_slash_Other_10_gml_12_0")
-    if (x.room_width / 2)
+    if (x > (room_width / 2))
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_npc_sign_slash_Other_10_gml_13_0")
 }
 if (room == room_field2_ch1)

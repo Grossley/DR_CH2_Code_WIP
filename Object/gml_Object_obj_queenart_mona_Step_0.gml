@@ -62,8 +62,8 @@ if (con == 2)
         {
             if (type != 4)
             {
-                var _temp_local_var_3 = bossid
-                flamesfx = 1
+                with (bossid)
+                    flamesfx = 1
             }
         }
         flame = gml_Script_instance_create((x + 34), (y + 40), obj_queenartfire)
@@ -75,36 +75,18 @@ if (con == 2)
         flame.direction = (270 + flameangle)
         flame.speed = 15
         flame.friction = 1
-        _temp_local_var_3.vspeed = (flame.vspeed + 8)
-        var _temp_local_var_4 = stacktop
-        var _temp_local_var_5 = flame
+        flame.vspeed += 8
         if (type == 2)
         {
             flame.fadespeed = 0.15
-            _temp_local_var_4.vspeed = (flame.vspeed - 6)
-            _temp_local_var_5.speed = (flame.speed + 5)
-            var _temp_local_var_6 = bossid
-            var _temp_local_var_7 = stacktop
-            var _temp_local_var_8 = -9
-            var _temp_local_var_9 = flame
-            var _temp_local_var_10 = flame
-            var _temp_local_var_11 = bossid
-            var _temp_local_var_12 = stacktop
-            var _temp_local_var_13 = flame
+            flame.vspeed -= 6
+            flame.speed += 5
         }
         if (type == 3)
         {
-            _temp_local_var_6.vspeed = (flame.vspeed - 6)
-            _temp_local_var_7.speed = (flame.speed + 3)
+            flame.vspeed -= 6
+            flame.speed += 3
             flame.fadespeed = 0.16
-            var _temp_local_var_14 = -9
-            var _temp_local_var_15 = -9
-            var _temp_local_var_16 = -9
-            var _temp_local_var_17 = flame
-            var _temp_local_var_18 = stacktop
-            var _temp_local_var_19 = -9
-            var _temp_local_var_20 = -9
-            var _temp_local_var_21 = flame
         }
         if (type == 4)
         {

@@ -5,8 +5,8 @@ if (image_index < 3)
 gml_Script_snd_play(166)
 if (other.big == 0)
 {
-    var _temp_local_var_1 = other
-    event_user(0)
+    with (other)
+        event_user(0)
 }
 if (hp < 1)
 {

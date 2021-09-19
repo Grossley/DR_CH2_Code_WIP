@@ -659,9 +659,23 @@ if (punchcon >= 1 && arcade_end == 0)
                             {
                                 health_count += healoverride
                                 dmgwr = gml_Script_instance_create((x - 30), (y - 75), obj_dmgwriter)
-                                var _temp_local_var_128 = dmgwr
-                                delay = 8
-                                type = 3
+                                with (dmgwr)
+                                {
+                                    delay = 8
+                                    type = 3
+                                }
+                                dmgwr.damage = healoverride
+                                if ((global.hp[1] + healoverride) > global.maxhp[1])
+                                    damage = (global.maxhp[1] - global.hp[1])
+                                if (health_count > health_count_max)
+                                    health_count = health_count_max
+                                global.hp[1] += healoverride
+                                if (global.hp[1] > global.maxhp[1])
+                                    global.hp[1] = global.maxhp[1]
+                                if arcade
+                                    gml_Script_snd_play(snd_power_bc)
+                                else
+                                    gml_Script_snd_play(162)
                             }
                         }
                         else if (o_boxingqueen.sprite_index == spr_bqueen_hurt)
@@ -881,8 +895,47 @@ if (punchcon >= 1 && arcade_end == 0)
                     punchcon = 4.5
                     punchtimer = 0
                     hit_fx = gml_Script_instance_create(x, y, obj_boxing_hit_fx)
-                    var _temp_local_var_144 = hit_fx
-                    event_user(1)
+                    with (hit_fx)
+                        event_user(1)
+                    if (flameactive == 1)
+                    {
+                        if arcade
+                            gml_Script_snd_play(321)
+                        else
+                            gml_Script_snd_play(115)
+                        flamepunch = 1
+                        flametimer = 10
+                    }
+                    if (laseractive == 1)
+                    {
+                        if arcade
+                            gml_Script_snd_play(321)
+                        else
+                            gml_Script_snd_play(115)
+                        laserpunch = 1
+                        lasertimer = 10
+                    }
+                    if (duckactive == 1)
+                    {
+                        if arcade
+                        {
+                            gml_Script_snd_pitch(308, (0.75 + random(0.5)))
+                            gml_Script_snd_play(308)
+                        }
+                        else
+                        {
+                            gml_Script_snd_pitch(56, (0.75 + random(0.5)))
+                            gml_Script_snd_play(56)
+                        }
+                        color_fade_alpha = 1
+                        if (healoverride == 0)
+                        {
+                            global.hp[1] += 2
+                            if (global.hp[1] > global.maxhp[1])
+                                global.hp[1] = global.maxhp[1]
+                        }
+                        healoverride = 0
+                    }
                 }
             }
         }

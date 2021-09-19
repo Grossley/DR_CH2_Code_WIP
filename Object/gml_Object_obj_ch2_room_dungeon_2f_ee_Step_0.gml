@@ -302,33 +302,37 @@ if gml_Script_i_ex(ki_actor)
 {
     if king_drink
     {
-        var _temp_local_var_2 = ki_actor
-        if (x < 1380)
+        with (ki_actor)
         {
-            if (hspeed < 3)
-                hspeed = 3
-            hspeed += 1
-            if (y >= (ystart - 60))
-                y -= 4
+            if (x < 1380)
+            {
+                if (hspeed < 3)
+                    hspeed = 3
+                hspeed += 1
+                if (y >= (ystart - 60))
+                    y -= 4
+            }
+            else
+                hspeed = 0
         }
-        else
-            hspeed = 0
     }
     else
     {
         var xpos = obj_npc_king.xstart
         var ypos = obj_npc_king.ystart
-        var _temp_local_var_3 = ki_actor
-        if (x > xpos)
+        with (ki_actor)
         {
-            if (y <= ypos)
-                y = clamp((y + 4), 0, ypos)
-            hspeed -= 1
-        }
-        else
-        {
-            hspeed = 0
-            x = xpos
+            if (x > xpos)
+            {
+                if (y <= ypos)
+                    y = clamp((y + 4), 0, ypos)
+                hspeed -= 1
+            }
+            else
+            {
+                hspeed = 0
+                x = xpos
+            }
         }
     }
 }

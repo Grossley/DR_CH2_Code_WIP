@@ -9,8 +9,12 @@ if (global.monster[myself] == true)
         global.typer = 50
         global.msg[0] = " "
         g = gml_Script_scr_enemyblcon_ch1((x - 160), y, 3)
-        var _temp_local_var_2 = g.mywriter
-        instance_destroy()
+        with (g.mywriter)
+            instance_destroy()
+        with (g)
+            instance_destroy()
+        talked = 1
+        talktimer = 0
     }
     if (talked == 1 && global.mnfight == 1)
     {
@@ -120,21 +124,24 @@ if (global.myfight == 3)
         if (lullabied == 0)
         {
             singy = gml_Script_snd_play_ch1(393)
-            var _temp_local_var_11 = object_index
-            lullabied = 1
+            with (object_index)
+                lullabied = 1
         }
         else
         {
             singy = gml_Script_snd_play_ch1(394)
-            _temp_local_var_11 = object_index
-            lullabied = 0
+            with (object_index)
+                lullabied = 0
         }
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_134_0")
         with (obj_heroralsei_ch1)
             visible = false
         ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3848)
-        var _temp_local_var_12 = ralsing
-        image_speed = 0.2
+        with (ralsing)
+            image_speed = 0.2
+        lullatimer = 0
+        gml_Script_scr_battletext_default_ch1()
+        actcon = 10
     }
     if (acting == 4 && actcon == 0)
     {
@@ -162,8 +169,38 @@ if (global.myfight == 3)
     }
     if (actcon == 11 && instance_exists(obj_writer_ch1) == 0)
     {
-        var _temp_local_var_16 = ralsing
-        instance_destroy()
+        with (ralsing)
+            instance_destroy()
+        with (obj_heroralsei_ch1)
+            visible = true
+        gml_Script_snd_stop_ch1(singy)
+        gml_Script_snd_resume_ch1(global.batmusic[1])
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_186_0")
+        if (gml_Script_scr_monsterpop_ch1() > 1 && gml_Script_scr_havechar_ch1(2))
+        {
+            for (dx = 0; dx < 3; dx += 1)
+            {
+                if (global.char[dx] == 2)
+                {
+                    if (global.charcond[dx] != 5)
+                    {
+                        global.charcond[dx] = 5
+                        global.faceaction[dx] = 9
+                        global.charmove[dx] = false
+                        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_198_0")
+                    }
+                }
+            }
+        }
+        sleeping = true
+        gml_Script_scr_mercyadd_ch1(myself, 100)
+        with (obj_monsterparent_ch1)
+        {
+            global.monstercomment[myself] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_208_0")
+            global.monsterstatus[myself] = true
+        }
+        gml_Script_scr_battletext_default_ch1()
+        actcon = 1
     }
 }
 if (global.myfight == 7)
@@ -258,9 +295,11 @@ if (eyecon == 20)
             if (pontotal == 1)
                 bul.friction = -0.12
             bul.direction = eye_angle
-            var _temp_local_var_20 = bul
-            sprite_index = spr_diamondbullet_ch1
-            image_angle = direction
+            with (bul)
+            {
+                sprite_index = spr_diamondbullet_ch1
+                image_angle = direction
+            }
         }
     }
     if (maxtimer > 0)

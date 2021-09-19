@@ -16,8 +16,8 @@ if (obj_mainchara.x >= 1246 && (!gml_Script_i_ex(carGen)) && victory == false)
 }
 if (obj_mainchara.x < 1246 && gml_Script_i_ex(carGen))
 {
-    var _temp_local_var_3 = carGen
-    instance_destroy()
+    with (carGen)
+        instance_destroy()
 }
 if (victory == true)
 {
@@ -60,8 +60,10 @@ if (victory == true)
         if (timer == 1)
         {
             hole = gml_Script_scr_dark_marker(1400, 1360, 2681)
-            var _temp_local_var_6 = hole
-            gml_Script_scr_depth()
+            with (hole)
+                gml_Script_scr_depth()
+            hole.image_index = 5
+            hole.image_speed = 0
         }
         if (timer == 2)
             hole.image_index = 4
@@ -78,8 +80,12 @@ if (victory == true)
             mousetail = gml_Script_scr_dark_marker(1420, 1380, 2692)
             mousetail.image_angle = -90
             mousetail.image_speed = 0
-            var _temp_local_var_7 = mousetail
-            gml_Script_scr_depth()
+            with (mousetail)
+                gml_Script_scr_depth()
+            mouse1 = gml_Script_scr_dark_marker(1418, 1380, 2687)
+            with (mouse1)
+                gml_Script_scr_depth()
+            gml_Script_snd_play(176)
         }
         if (timer == 30)
             gml_Script_instance_create(1420, 1390, obj_mouse_traffic)
@@ -90,53 +96,25 @@ if (victory == true)
         }
         if (timer == 30)
         {
-            var _temp_local_var_10 = mouse1
-            instance_destroy()
+            with (mouse1)
+                instance_destroy()
+            with (mousetail)
+                instance_destroy()
         }
         if (timer == 50)
-        {
-            _temp_local_var_11.image_index++
-            var _temp_local_var_12 = mouse1
-            var _temp_local_var_13 = 
-            var _temp_local_var_14 = stacktop
-            var _temp_local_var_15 = hole
-        }
+            hole.image_index++
         if (timer == 51)
-        {
-            _temp_local_var_12.image_index++
-            var _temp_local_var_16 = _temp_local_var_13
-            var _temp_local_var_17 = stacktop
-            var _temp_local_var_18 = stacktop
-            var _temp_local_var_19 = hole
-        }
+            hole.image_index++
         if (timer == 52)
-        {
-            _temp_local_var_16.image_index++
-            var _temp_local_var_20 = stacktop
-            var _temp_local_var_21 = stacktop
-            var _temp_local_var_22 = stacktop
-            var _temp_local_var_23 = hole
-        }
+            hole.image_index++
         if (timer == 53)
-        {
-            _temp_local_var_20.image_index++
-            var _temp_local_var_24 = stacktop
-            var _temp_local_var_25 = stacktop
-            var _temp_local_var_26 = -9
-            var _temp_local_var_27 = hole
-        }
+            hole.image_index++
         if (timer == 54)
-        {
-            _temp_local_var_24.image_index++
-            var _temp_local_var_28 = stacktop
-            var _temp_local_var_29 = -9
-            var _temp_local_var_30 = -9
-            var _temp_local_var_31 = hole
-        }
+            hole.image_index++
         if (timer == 55)
         {
-            var _temp_local_var_32 = hole
-            instance_destroy()
+            with (hole)
+                instance_destroy()
         }
         if (timer > 50 && (!instance_exists(obj_mouse_traffic)))
             con++
@@ -147,7 +125,7 @@ if (victory == true)
         {
             with (obj_traffic_road_trigger)
             {
-                x = (hole.room_width * 2)
+                x = (room_width * 2)
                 y = (room_height * 2)
             }
         }

@@ -5,12 +5,13 @@ if (fightcon == 1)
     counttimer += 1
     if (counttimer < 10)
     {
-        i = 0
-        while (i < (count + 1))
+        for (i = 0; i < (count + 1); i += 1)
         {
-            var _temp_local_var_1 = c[i]
-            af = gml_Script_scr_afterimage_ch1()
-            af.image_alpha = 0.5
+            with (c[i])
+            {
+                af = gml_Script_scr_afterimage_ch1()
+                af.image_alpha = 0.5
+            }
         }
     }
     if (counttimer >= 10)
@@ -46,11 +47,10 @@ if (fightcon == 2)
     {
         counttimer = 0
         fightcon = 3
-        i = 0
-        while (i < (count + 1))
+        for (i = 0; i < (count + 1); i += 1)
         {
-            var _temp_local_var_2 = c[i]
-            instance_destroy()
+            with (c[i])
+                instance_destroy()
         }
         gml_Script_instance_create_ch1(0, 0, 1513)
         instance_destroy()

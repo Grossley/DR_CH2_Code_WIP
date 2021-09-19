@@ -1,6 +1,6 @@
 if (writedisplay == 1)
 {
-    (1 + string("instance_count=".instance_count))
+    gml_Script_debug_printline(("instance_count=" + string(instance_count)), 1)
     if (instance_count > 150)
         gml_Script_debug_printline("THAT'S A LOT OF INSTANCES", 2)
 }

@@ -1,3 +1,4 @@
+var _temp_local_var_9;
 button1 = 0
 button2 = 0
 button3 = 0
@@ -665,17 +666,21 @@ if (halt != 0 && button1 == 1 && siner > 0)
         gml_Script_scr_nextmsg_ch1()
         if (faced == 1)
         {
-            var _temp_local_var_21 = smallface
-            if (getrid == 0)
-                getrid = 1
+            with (smallface)
+            {
+                if (getrid == 0)
+                    getrid = 1
+            }
+            faced = 0
         }
     }
     if (halt == 2)
     {
         if (faced == 1)
         {
-            var _temp_local_var_22 = smallface
-            instance_destroy()
+            with (smallface)
+                instance_destroy()
+            faced = 0
         }
         if (facer == 1)
         {

@@ -12,16 +12,23 @@ if (con > 0 && con < 50)
     {
         global.facing = 2
         k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4207)
-        var _temp_local_var_2 = k
-        vspeed = -1
-        image_speed = 0.1
+        with (k)
+        {
+            vspeed = -1
+            image_speed = 0.1
+        }
+        obj_mainchara_ch1.visible = false
+        con = 1.2
+        alarm[4] = 70
     }
     if (con == 2.2)
     {
         obj_mainchara_ch1.y = k.y
         obj_mainchara_ch1.visible = true
-        var _temp_local_var_3 = k
-        instance_destroy()
+        with (k)
+            instance_destroy()
+        con = 2
+        alarm[4] = 30
     }
     if (con == 3)
     {

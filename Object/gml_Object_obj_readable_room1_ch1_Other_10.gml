@@ -11,14 +11,14 @@ with (obj_darkcontroller_ch1)
 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_11_0")
 if (room == room_krisroom_ch1)
 {
-    if (y < obj_doorX)
+    if (y < 150)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_17_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_18_0")
     }
     else
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_22_0")
-    if (x > obj_npc_rudy)
+    if (x > 100)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_28_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_29_0")
@@ -32,11 +32,11 @@ if (room == room_krisroom_ch1)
         if (read > 0)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_38_0")
     }
-    if (x > obj_event_room)
+    if (x > 136)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_45_0")
-    if (x > obj_circlezoom)
+    if (x > 192)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_50_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_55_0")
         if (global.tempflag[10] == 1 && global.plot < 10)
@@ -50,19 +50,19 @@ if (room == room_krisroom_ch1)
             gml_Script_scr_text_ch1(global.msc)
         }
     }
-    if (x > obj_dancer_gen)
+    if (x > 250)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_71_0")
 }
 if (room == room_krishallway_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_79_0")
-    if (x > obj_npc_musical_door)
+    if (x > 120)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_83_0")
-    if (x > obj_markerr)
+    if (x > 160)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_87_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_91_0")
-    if (x > obj_city_trashbag)
+    if (x > 320)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_96_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_97_0")
@@ -75,44 +75,44 @@ if (room == room_krishallway_ch1)
 }
 if (room == room_torhouse_ch1)
 {
-    if (x > obj_persistentfadein)
+    if (x > 190)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_113_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_118_0")
-    if (x > obj_saucer_ufo_bullet)
+    if (x > 260)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_123_0")
         if (global.plot >= 250)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_126_0")
     }
-    if (x > obj_queenmansion_bg)
+    if (x > 300)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_132_0")
-    if (x > obj_cyber_tree_spin)
+    if (x > 340)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_137_0")
         if (global.flag[262] >= 4)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_140_0")
     }
-    if (x > obj_heroparent)
+    if (x > 369)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_146_0")
-    if (x > obj_swatchling_candy)
+    if (x > 440)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_151_0")
-    if (x > obj_bulletdeleter)
+    if (x > 560)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_157_0")
 }
 if (room == room_torbathroom_ch1)
 {
-    if (x >= obj_npc_rudy)
+    if (x >= 100)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_167_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_168_0")
     }
-    if (x >= obj_markerr && x <= obj_persistentfadein)
+    if (x >= 160 && x <= 190)
     {
         global.msc = 355
         gml_Script_scr_text_ch1(global.msc)
     }
-    if (x >= obj_persistentfadein)
+    if (x >= 190)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_177_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_178_0")
@@ -121,7 +121,7 @@ if (room == room_torbathroom_ch1)
 }
 if (room == room_schoollobby_ch1)
 {
-    if (x >= obj_doorA && x < obj_sneo_heart_laser)
+    if (x >= 140 && x < 240)
     {
         if (tempvar == 0)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_190_0")
@@ -136,20 +136,20 @@ if (room == room_schoollobby_ch1)
         with (obj_readable_room1_ch1)
             tempvar += 1
     }
-    if (x == obj_sneo_heart_laser)
+    if (x == 240)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_199_0")
-    if (x >= obj_npc_cafe)
+    if (x >= 280)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_204_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_205_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_206_0")
     }
-    if (x < obj_doorA)
+    if (x < 140)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_211_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_212_0")
     }
-    if (x >= obj_queen_wine_attack_bottom_hurtbox)
+    if (x >= 520)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_217_0")
         if (read == 1)
@@ -168,17 +168,17 @@ if (room == room_schoollobby_ch1)
             }
         }
     }
-    if (x >= obj_bulletdeleter)
+    if (x >= 560)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_237_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_238_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_239_0")
     }
-    if (x >= o_coaster_controller_sneo)
+    if (x >= 690)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_245_0")
-    if (x == obj_mauswheel_cursor)
+    if (x == 760)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_251_0")
-    if (x == obj_bq_laser)
+    if (x == 780)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_255_0")
 }
 if (room == room_alphysclass_ch1)
@@ -190,7 +190,7 @@ if (room == room_alphysclass_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_269_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_270_0")
     }
-    if (x > obj_sneo_heart_laser)
+    if (x > 240)
     {
         global.fe = 1
         global.fc = 11
@@ -198,7 +198,7 @@ if (room == room_alphysclass_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_278_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_279_0")
     }
-    if (x < obj_power_up_fx)
+    if (x < 200)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_284_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_285_0")
@@ -208,9 +208,9 @@ if (room == room_alphysclass_ch1)
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_290_0")
         }
     }
-    if (x < obj_doorX)
+    if (x < 150)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_298_0")
-    if (x < obj_mainchara)
+    if (x < 80)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_304_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_305_0")
@@ -219,36 +219,36 @@ if (room == room_alphysclass_ch1)
 }
 if (room == room_torielclass_ch1)
 {
-    if (y.room_height / 2)
+    if (y <= (room_height / 2))
     {
-        if (x >= obj_npc_rudy)
+        if (x >= 100)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_318_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_319_0")
         }
-        if (x >= obj_readable)
+        if (x >= 130)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_323_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_324_0")
         }
-        if (x >= obj_musicer_mansion)
+        if (x >= 170)
         {
             global.msc = 350
             gml_Script_scr_text_ch1(global.msc)
         }
-        if (x >= obj_parallaxer_fountain)
+        if (x >= 198)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_333_0")
-        if (x >= obj_background_cyberlines)
+        if (x >= 204)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_338_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_339_0")
         }
-        if (x >= obj_darkfountain)
+        if (x >= 230)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_343_0")
-        if (x >= obj_overworld_spade)
+        if (x >= 256)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_347_0")
     }
-    else if (x.room_width / 2)
+    else if (x <= (room_width / 2))
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_354_0")
     else
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_358_0")
@@ -257,17 +257,17 @@ if (room == room_schooldoor_ch1)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_366_0")
 if (room == room_school_unusedroom_ch1)
 {
-    if (x < obj_mainchara)
+    if (x < 80)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_371_0")
-    if (x > obj_npc_rudy)
+    if (x > 100)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_372_0")
-    if (x > obj_markerr && y < obj_npc_rudy)
+    if (x > 160 && y < 100)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_373_0")
-    if (x > obj_markerr && y > obj_npc_rudy)
+    if (x > 160 && y > 100)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_374_0")
-    if (x > obj_cauldron_cake)
+    if (x > 220)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_375_0")
-    if (x > obj_dancer_gen)
+    if (x > 250)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_378_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_379_0")
@@ -275,12 +275,12 @@ if (room == room_school_unusedroom_ch1)
 }
 if (room == room_hospital_lobby_ch1)
 {
-    if (x <= obj_markerr)
+    if (x <= 160)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_388_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_389_0")
     }
-    if (x >= obj_markerr)
+    if (x >= 160)
     {
         global.msc = 360
         gml_Script_scr_text_ch1(global.msc)
@@ -349,9 +349,9 @@ if (room == room_forest_area3_ch1)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_483_0")
     if (read >= 1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_486_0")
-    if (y >= obj_ralseithrown)
+    if (y >= 400)
     {
-        if (x < obj_sneo_lilguy)
+        if (x < 600)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_493_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_494_0")
@@ -365,7 +365,7 @@ if (room == room_forest_area3_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_504_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_505_0")
             global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_506_0")
-            if (x >= obj_beatbullet_2)
+            if (x >= 1100)
             {
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_510_0")
                 global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_511_0")
@@ -381,12 +381,12 @@ if (room == room_forest_area3_ch1)
 }
 if (room == room_forest_area5_ch1)
 {
-    if (x <= obj_cyber_tree_spin)
+    if (x <= 340)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_530_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_531_0")
     }
-    if (x >= obj_sneo_lilguy && x <= obj_following_silhouette)
+    if (x >= 600 && x <= 1300)
     {
         if (global.flag[237] == 0)
         {
@@ -405,22 +405,24 @@ if (room == room_forest_area5_ch1)
             }
             with (obj_tempblock_room_ch1)
             {
-                var _temp_local_var_9 = tree
-                instance_destroy()
+                with (tree)
+                    instance_destroy()
+                with (block)
+                    instance_destroy()
+                with (talkto)
+                    instance_destroy()
             }
-            var _temp_local_var_10 = block
-            instance_destroy()
         }
         else
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_559_0")
     }
-    if (x >= obj_hallway_mirror_ch1)
+    if (x >= 1350)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_564_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_565_0")
     }
 }
-if (null.room == room_forest_starwalker_ch1)
+if (room == room_forest_starwalker_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_571_0")
     if (read == 0)
@@ -431,10 +433,10 @@ if (null.room == room_forest_starwalker_ch1)
     }
     read += 1
 }
-if (block.room == room_cc_prison_cells_ch1)
+if (room == room_cc_prison_cells_ch1)
 {
     global.flag[231] += 1
-    if (x < obj_ralseithrown)
+    if (x < 400)
     {
         global.fc = 2
         global.typer = 31
@@ -443,14 +445,14 @@ if (block.room == room_cc_prison_cells_ch1)
         gml_Script_scr_susface_ch1(1, 7)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_593_0")
     }
-    if (x >= obj_sneo_lilguy && y < obj_power_up_fx)
+    if (x >= 600 && y < 200)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_598_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_599_0")
         if (read >= 1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_602_0")
     }
-    if (x >= obj_sneo_lilguy && y > obj_power_up_fx)
+    if (x >= 600 && y > 200)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_608_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_609_0")
@@ -459,7 +461,7 @@ if (block.room == room_cc_prison_cells_ch1)
         if (global.plot >= 155)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_613_0")
     }
-    if (x >= obj_musical_note_bullet)
+    if (x >= 720)
     {
         global.msc = 295
         gml_Script_scr_text_ch1(global.msc)
@@ -475,7 +477,7 @@ if (block.room == room_cc_prison_cells_ch1)
         }
     }
 }
-if (tree.room == room_field_boxpuzzle_ch1)
+if (room == room_field_boxpuzzle_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_636_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_637_0")
@@ -503,7 +505,7 @@ if (room == room_forest_area1_ch1)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_666_0")
 if (room == room_man_ch1)
 {
-    if (y >= obj_cauldron_cake)
+    if (y >= 220)
     {
         if (global.flag[910] < 2)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_673_0")
@@ -521,7 +523,7 @@ if (room == room_man_ch1)
 if (room == room_cc_throneroom_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_695_0")
-    if (y >= obj_saucer_ufo_bullet)
+    if (y >= 260)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_698_0")
 }
 if (room == room_cc_prison_prejoker_ch1)
@@ -540,9 +542,9 @@ if (room == room_cc_prison_prejoker_ch1)
 }
 if (room == room_cc_1f_ch1)
 {
-    if (x < o_coaster_controller)
+    if (x < 500)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_721_0")
-    if (x < obj_following_silhouette && x > o_coaster_controller)
+    if (x < 1300 && x > 500)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_726_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_727_0")
@@ -552,7 +554,7 @@ if (room == room_cc_1f_ch1)
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_731_0")
         }
     }
-    if (x > obj_following_silhouette)
+    if (x > 1300)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_738_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_739_0")
@@ -561,13 +563,13 @@ if (room == room_cc_1f_ch1)
 if (room == room_cc_rudinn_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_746_0")
-    if (y < obj_readable)
+    if (y < 130)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_749_0")
 }
 if (room == room_cc_2f_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_755_0")
-    if (y < obj_dancer_gen)
+    if (y < 250)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_758_0")
 }
 if (room == room_cc_rurus1_ch1)
@@ -626,9 +628,9 @@ if (room == room_cc_hathy_ch1)
 if (room == room_cc_clover_ch1)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_824_0")
-    if (x.room_width / 2)
+    if (x > (room_width / 2))
     {
-        if (y.room_height / 2)
+        if (y < (room_height / 2))
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_829_0")
             if (read >= 1)

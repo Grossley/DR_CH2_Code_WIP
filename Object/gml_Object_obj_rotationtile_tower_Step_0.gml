@@ -45,8 +45,8 @@ if (init == 0)
         patidealy = (220 + (40 * choose(0, 1, 2)))
         if instance_exists(obj_masterPlatformController)
         {
-            var _temp_local_var_1 = obj_masterPlatformController.noelle
-            idealy = other.patidealy
+            with (obj_masterPlatformController.noelle)
+                idealy = other.patidealy
         }
         puzSwitch = gml_Script_instance_create((x + 120), (((y + patidealy) - 220) + 40), obj_mice3_platSwitch)
     }
@@ -64,8 +64,8 @@ if (init == 0)
         patidealy = (220 + (40 * choose(1, 2)))
         if instance_exists(obj_masterPlatformController)
         {
-            var _temp_local_var_2 = obj_masterPlatformController.noelle
-            idealy = other.patidealy
+            with (obj_masterPlatformController.noelle)
+                idealy = other.patidealy
         }
         puzSwitch = gml_Script_instance_create((x + 120), (((y + patidealy) - 220) + 40), obj_mice3_platSwitch)
         hole = gml_Script_instance_create((x + 0), (y + 0), obj_holemouse_generator)
@@ -89,8 +89,8 @@ if (init == 0)
         patidealy = (220 + (40 * choose(0, 2)))
         if instance_exists(obj_masterPlatformController)
         {
-            var _temp_local_var_3 = obj_masterPlatformController.noelle
-            idealy = other.patidealy
+            with (obj_masterPlatformController.noelle)
+                idealy = other.patidealy
         }
         puzSwitch = gml_Script_instance_create((x + 120), (((y + patidealy) - 220) + 40), obj_mice3_platSwitch)
         hole = gml_Script_instance_create((x + 0), (y + 0), obj_holemouse_generator)
@@ -115,8 +115,8 @@ if (init == 0)
         patidealy = 260
         if instance_exists(obj_masterPlatformController)
         {
-            var _temp_local_var_4 = obj_masterPlatformController.noelle
-            idealy = other.patidealy
+            with (obj_masterPlatformController.noelle)
+                idealy = other.patidealy
         }
         puzSwitch = gml_Script_instance_create((x + 120), (((y + patidealy) - 220) + 40), obj_mice3_platSwitch)
         hole = gml_Script_instance_create((x + 40), (y + 0), obj_holemouse_generator)
@@ -130,13 +130,16 @@ if (init == 0)
     {
         tilemax = 7
         randomseed = floor(random(tilemax))
-        i = 0
-        while (i <= tilemax)
+        for (i = 0; i <= tilemax; i++)
         {
             ishole[i] = 0
             tile[i] = gml_Script_instance_create(x, (y + 40), tiletype[i])
-            var _temp_local_var_5 = tile[i]
-            gml_Script_scr_mouse_tile_rotation_init()
+            with (tile[i])
+                gml_Script_scr_mouse_tile_rotation_init()
+            randompos = (i + randomseed)
+            if (randompos > tilemax)
+                randompos -= (tilemax + 1)
+            tile[i].__currentposition = randompos
         }
         tilemax++
         tile[tilemax] = gml_Script_instance_create((x + 40), y, obj_marker)
@@ -146,12 +149,31 @@ if (init == 0)
     {
         tilemax = 5
         randomseed = floor(random(tilemax))
-        i = 0
-        while (i <= tilemax)
+        for (i = 0; i <= tilemax; i++)
         {
             tile[i] = gml_Script_instance_create(x, (y + 80), tiletype[i])
-            var _temp_local_var_6 = tile[i]
-            gml_Script_scr_mouse_tile_rotation_init()
+            with (tile[i])
+                gml_Script_scr_mouse_tile_rotation_init()
+            randompos = (i + randomseed)
+            if (randompos > tilemax)
+                randompos -= (tilemax + 1)
+            tile[i].__currentposition = randompos
+            tile[i].__positionmax = 5
+            with (tile[i])
+            {
+                __positionx[0] = 0
+                __positiony[0] = 0
+                __positionx[1] = 40
+                __positiony[1] = 0
+                __positionx[2] = 80
+                __positiony[2] = 0
+                __positionx[3] = 80
+                __positiony[3] = 40
+                __positionx[4] = 40
+                __positiony[4] = 40
+                __positionx[5] = 0
+                __positiony[5] = 40
+            }
         }
         tilemax++
         tile[tilemax] = gml_Script_instance_create((x + 40), y, obj_marker)
@@ -166,8 +188,8 @@ for (i = 0; i <= tilemax; i++)
 {
     if (ishole[i] == 0)
     {
-        var _temp_local_var_8 = tile[i]
-        gml_Script_scr_mouse_tile_rotation_step()
+        with (tile[i])
+            gml_Script_scr_mouse_tile_rotation_step()
     }
 }
 if (phase == 0)
@@ -234,10 +256,11 @@ if (phase == 3.5)
         with (obj_holemouse)
         {
             jumper = gml_Script_scr_afterimage()
-            gml_Script_scr_jump_to_point((x + random_range(-40, 40)), ((obj_fountainkris_ch2_sideb).room_height + (sprite_height * 2)), 16, jumper)
+            with (jumper)
+                gml_Script_scr_jump_to_point((x + random_range(-40, 40)), (room_height + (sprite_height * 2)), 20, 16)
+            jumper.sprite_index = spr_holemouse_emerge
+            instance_destroy()
         }
-        jumper.sprite_index = spr_holemouse_emerge
-        instance_destroy()
     }
     phase = 4
 }
@@ -275,8 +298,8 @@ for (i = 0; i <= tilemax; i++)
             tile[i].__move = move
         if gml_Script_i_ex(tile[i])
         {
-            var _temp_local_var_12 = tile[i]
-            gml_Script_scr_mouse_tile_rotation_step()
+            with (tile[i])
+                gml_Script_scr_mouse_tile_rotation_step()
         }
         if gml_Script_i_ex(tile[i])
             tilecon = tile[i].__con

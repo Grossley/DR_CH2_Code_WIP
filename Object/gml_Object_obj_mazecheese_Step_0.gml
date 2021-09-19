@@ -30,8 +30,18 @@ if (con == 1 && myinteract == 3 && (!gml_Script_d_ex()))
 }
 if (con == 3)
 {
-    var _temp_local_var_2 = mousemarker
-    speed = 0
+    with (mousemarker)
+        speed = 0
+    with (obj_caterpillarchara)
+    {
+        if (name == "noelle")
+        {
+            fun = false
+            sprite_index = spr_noelle_walk_right_dw
+        }
+    }
+    con = 4
+    alarm[4] = 10
 }
 if (con == 5 && (!gml_Script_d_ex()))
 {
@@ -44,7 +54,7 @@ if (con == 5 && (!gml_Script_d_ex()))
         gml_Script_scr_battle(66, 0, mousemarker, 0, 0)
     if (type == 2)
     {
-        if (mousemarker.room == room_dw_city_postbaseball_2)
+        if (room == room_dw_city_postbaseball_2)
             gml_Script_scr_battle(79, 0, mousemarker, 0, 0)
         else
             gml_Script_scr_battle(54, 0, mousemarker, 0, 0)

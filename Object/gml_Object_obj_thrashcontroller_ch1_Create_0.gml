@@ -94,5 +94,5 @@ yy = gml_Script___view_get(1, 0)
 ww = gml_Script___view_get(2, 0)
 hh = gml_Script___view_get(3, 0)
 thrash = gml_Script_instance_create_ch1((xx + (ww / 2.5)), (yy + (hh / 3)), 1364)
-var _temp_local_var_1 = thrash
-a = 0
+with (thrash)
+    a = 0

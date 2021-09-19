@@ -43,7 +43,7 @@ if (room == room_forest_savepoint_relax_ch1)
 }
 if (room == room_forest_maze_susie_ch1)
 {
-    if (y.room_height / 2)
+    if (y >= (room_height / 2))
     {
         global.flag[292] = 0
         global.flag[291] = 0
@@ -68,7 +68,7 @@ if (room == room_forest_fightsusie_ch1)
 }
 if (room == room_forest_maze1_ch1 || room == room_forest_maze2_ch1)
 {
-    if (y.room_width / 2)
+    if (y >= (room_width / 2))
     {
         global.flag[292] = 0
         if (room == room_forest_maze1_ch1)

@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_15;
 global.msc = 0
 global.typer = 5
 if (global.darkzone == true)
@@ -672,8 +673,8 @@ if (room == room_dw_city_queen_drunk)
     }
     else
     {
-        obj_room_dw_city_postbaseball.flag[global.flag[obj_room_dw_city_postbaseball]] = (global.flag[obj_room_dw_city_postbaseball] + 1)
-        global
+        var _temp_local_var_15 = global.flag[347]
+        global.flag[347] = (global.flag[347] + 1)
         if (global.flag[347] == 1)
         {
             gml_Script_scr_speaker("noelle")

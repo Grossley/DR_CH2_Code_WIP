@@ -1,3 +1,4 @@
+var _temp_local_var_8, _temp_local_var_82;
 if (partmode == 10)
     partmode = 9
 if (room != room_dw_mansion_b_east_a)
@@ -437,8 +438,8 @@ for (i = 0; i < 8; i += 1)
             {
                 if (shake_head == 1)
                 {
-                    obj_ch2_scene26_henshin_flash.partframe[partframe[obj_ch2_scene26_henshin_flash]]++
-                    self
+                    var _temp_local_var_82 = partframe[5]
+                    partframe[5]++
                     gml_Script_snd_play(179)
                 }
                 partrot[5] = ((sin((shake_head * 2)) * 8) + random(4))
@@ -958,8 +959,16 @@ for (i = 0; i < 8; i += 1)
             {
                 var smokey = gml_Script_instance_create((x + 50), (y + 80), obj_afterimage_grow)
                 smokey.visible = false
-                var _temp_local_var_40 = smokey
-                gml_Script_scr_script_delayed(gml_Script_scr_var, 1, "visible", 1)
+                with (smokey)
+                    gml_Script_scr_script_delayed(gml_Script_scr_var, 1, "visible", 1)
+                smokey.depth = (depth + 10)
+                smokey.image_alpha = 2.5
+                smokey.sprite_index = spr_cakesmoke
+                smokey.hspeed = random_range(2, 8)
+                smokey.gravity = -0.5
+                smokey.friction = 0.2
+                smokey.vspeed = random_range(-1, -2)
+                smoketimer = 0
             }
         }
         if (shockthreshold <= 8 && hurttimer2 == 0 && global.flag[8] == 0)

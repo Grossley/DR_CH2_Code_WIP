@@ -103,8 +103,17 @@ if (con == 2)
         plate.image_angle = 15
         plate.sprite_index = spr_plate
     }
-    var _temp_local_var_3 = plate
-    gml_Script_scr_depth()
+    with (plate)
+        gml_Script_scr_depth()
+    if (plate.y >= 286)
+    {
+        gml_Script_snd_play(172)
+        plate.y = 294
+        plate.speed = 0
+        plate.image_angle = 0
+        plate.direction = 0
+        con = 3
+    }
 }
 if (con == 3)
 {
@@ -112,20 +121,19 @@ if (con == 3)
     {
         spawnfood = 1
         food = gml_Script_instance_create(1018, -28, obj_marker)
-        var _temp_local_var_4 = food
-        visible = true
-        direction = 270
-        speed = 12
-        image_xscale = 2
-        image_yscale = 2
-        image_angle = -15
-        sprite_index = spr_food
-        depth = (other.plate.depth - 10)
+        with (food)
+        {
+            visible = true
+            direction = 270
+            speed = 12
+            image_xscale = 2
+            image_yscale = 2
+            image_angle = -15
+            sprite_index = spr_food
+            depth = (other.plate.depth - 10)
+        }
     }
-    _temp_local_var_4.image_angle = (food.image_angle - 12)
-    var _temp_local_var_5 = plate
-    var _temp_local_var_6 = -9
-    var _temp_local_var_7 = food
+    food.image_angle -= 12
     if (food.y >= 294)
     {
         gml_Script_snd_play(40)
@@ -142,24 +150,27 @@ if (con == 4)
     {
         spawnbib = 1
         bib = gml_Script_instance_create(((interactablelancer.x + 20) + 16), -36, obj_marker)
-        var _temp_local_var_8 = bib
-        visible = true
-        direction = 270
-        speed = 12
-        image_xscale = 2
-        image_yscale = 2
-        image_angle = 150
-        sprite_index = spr_bib
+        with (bib)
+        {
+            visible = true
+            direction = 270
+            speed = 12
+            image_xscale = 2
+            image_yscale = 2
+            image_angle = 150
+            sprite_index = spr_bib
+        }
     }
-    _temp_local_var_8.image_angle = (bib.image_angle + 8)
+    bib.image_angle += 8
     bib.depth = (interactablelancer.depth - 50)
-    var _temp_local_var_9 = plate
-    var _temp_local_var_10 = -9
-    var _temp_local_var_11 = -9
-    var _temp_local_var_12 = bib
     if (bib.y >= 288)
     {
-        var _temp_local_var_13 = bib
+        with (bib)
+            instance_destroy()
+        interactablelancer.sprite_index = spr_cutscene_20_lancer_stone_bib
+        global.flag[356] = 1
+        global.interact = 0
+        gml_Script_snd_play(149)
         instance_destroy()
     }
 }

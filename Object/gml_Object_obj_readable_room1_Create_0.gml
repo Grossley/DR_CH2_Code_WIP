@@ -56,7 +56,7 @@ if (global.chapter == 2)
     if (room == room_dw_mansion_darkbulb_1 || room == room_dw_mansion_darkbulb_2 || room == room_dw_mansion_darkbulb_3)
     {
         var plaque = gml_Script_scr_dark_marker(115, 110, 2901)
-        var _temp_local_var_5 = plaque
-        gml_Script_scr_depth()
+        with (plaque)
+            gml_Script_scr_depth()
     }
 }

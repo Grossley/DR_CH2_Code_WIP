@@ -9,19 +9,19 @@ if gml_Script_i_ex(bars)
     }
     else
     {
-        var _temp_local_var_184 = bars
-        gml_Script_scr_depth()
+        with (bars)
+            gml_Script_scr_depth()
     }
 }
 if gml_Script_i_ex(undynedesk)
 {
-    var _temp_local_var_1 = undynedesk
-    gml_Script_scr_depth()
+    with (undynedesk)
+        gml_Script_scr_depth()
 }
 if gml_Script_i_ex(boombox)
 {
-    var _temp_local_var_2 = boombox
-    gml_Script_scr_depth()
+    with (boombox)
+        gml_Script_scr_depth()
 }
 if (con < 5)
 {
@@ -89,8 +89,8 @@ if (keycon == 1)
     if gml_Script_i_ex(keys)
     {
         keycon = 2
-        var _temp_local_var_5 = keys
-        gml_Script_scr_jump_to_point(250, 75, 10, 25)
+        with (keys)
+            gml_Script_scr_jump_to_point(250, 75, 10, 25)
     }
 }
 if (keycon == 2)
@@ -99,14 +99,15 @@ if (keycon == 2)
     if (key_turn_timer >= 25 && keys.image_index == 0)
     {
         gml_Script_snd_play(64)
-        var _temp_local_var_7 = keys
-        image_index = 1
+        with (keys)
+            image_index = 1
+        undynedesk.image_index = 1
     }
     if (key_turn_timer >= 65 && keys.image_index == 1)
     {
         gml_Script_snd_play(64)
-        var _temp_local_var_9 = keys
-        image_index = 2
+        with (keys)
+            image_index = 2
     }
     if (key_turn_timer >= 90 && keys.image_index == 2)
         keycon = 3
@@ -159,46 +160,18 @@ if (con >= 12 && gml_Script_i_ex(doge))
     doge.image_speed = 0.5
     doge.depth = 0
     if (doge.y < 90)
-    {
-        _temp_local_var_9.y = (doge.y + runspeed)
-        var _temp_local_var_14 = keys
-        var _temp_local_var_15 = keys
-        var _temp_local_var_16 = stacktop
-        var _temp_local_var_17 = doge
-    }
+        doge.y += runspeed
     else if (doge.x > 215)
-    {
-        _temp_local_var_9.x = (doge.x - runspeed)
-        _temp_local_var_14 = keys
-        _temp_local_var_15 = keys
-        _temp_local_var_16 = stacktop
-        _temp_local_var_17 = doge
-    }
+        doge.x -= runspeed
     else if (doge.y < 135)
-    {
-        _temp_local_var_9.y = (doge.y + runspeed)
-        _temp_local_var_14 = keys
-        _temp_local_var_15 = keys
-        _temp_local_var_16 = stacktop
-        _temp_local_var_17 = doge
-    }
+        doge.y += runspeed
     else if (doge.x > 155)
     {
-        _temp_local_var_9.x = (doge.x - runspeed)
+        doge.x -= runspeed
         kriscon = 1
-        _temp_local_var_14 = keys
-        _temp_local_var_15 = keys
-        _temp_local_var_16 = stacktop
-        _temp_local_var_17 = doge
     }
     else if (doge.y < 250)
-    {
-        _temp_local_var_9.y = (doge.y + runspeed)
-        _temp_local_var_14 = keys
-        _temp_local_var_15 = keys
-        _temp_local_var_16 = stacktop
-        _temp_local_var_17 = doge
-    }
+        doge.y += runspeed
     else
         instance_destroy(doge)
 }
@@ -207,56 +180,20 @@ if (con >= 13 && gml_Script_i_ex(dogc))
     runspeed = 8
     dogc.image_speed = 0.5
     if (dogc.x < 220 && dogc.y < 65)
-    {
-        _temp_local_var_14.x = (dogc.x + runspeed)
-        var _temp_local_var_20 = keys
-        var _temp_local_var_21 = stacktop
-        var _temp_local_var_22 = stacktop
-        var _temp_local_var_23 = dogc
-    }
+        dogc.x += runspeed
     else
     {
         dogc.depth = 0
         if (dogc.y < 65)
-        {
-            _temp_local_var_14.y = (dogc.y + runspeed)
-            _temp_local_var_20 = keys
-            _temp_local_var_21 = stacktop
-            _temp_local_var_22 = stacktop
-            _temp_local_var_23 = dogc
-        }
+            dogc.y += runspeed
         else if (dogc.x > 195)
-        {
-            _temp_local_var_14.x = (dogc.x - runspeed)
-            _temp_local_var_20 = keys
-            _temp_local_var_21 = stacktop
-            _temp_local_var_22 = stacktop
-            _temp_local_var_23 = dogc
-        }
+            dogc.x -= runspeed
         else if (dogc.y < 120)
-        {
-            _temp_local_var_14.y = (dogc.y + runspeed)
-            _temp_local_var_20 = keys
-            _temp_local_var_21 = stacktop
-            _temp_local_var_22 = stacktop
-            _temp_local_var_23 = dogc
-        }
+            dogc.y += runspeed
         else if (dogc.x > 145)
-        {
-            _temp_local_var_14.x = (dogc.x - runspeed)
-            _temp_local_var_20 = keys
-            _temp_local_var_21 = stacktop
-            _temp_local_var_22 = stacktop
-            _temp_local_var_23 = dogc
-        }
+            dogc.x -= runspeed
         else if (dogc.y < 250)
-        {
-            _temp_local_var_14.y = (dogc.y + runspeed)
-            _temp_local_var_20 = keys
-            _temp_local_var_21 = stacktop
-            _temp_local_var_22 = stacktop
-            _temp_local_var_23 = dogc
-        }
+            dogc.y += runspeed
         else
             instance_destroy(dogc)
     }
@@ -266,59 +203,23 @@ if (con >= 14 && gml_Script_i_ex(dogd))
     runspeed = 8
     dogd.image_speed = 0.5
     if (dogd.x < 230 && dogd.y < 80)
-    {
-        _temp_local_var_20.x = (dogd.x + runspeed)
-        var _temp_local_var_26 = stacktop
-        var _temp_local_var_27 = stacktop
-        var _temp_local_var_28 = stacktop
-        var _temp_local_var_29 = dogd
-    }
+        dogd.x += runspeed
     else
     {
         dogd.depth = 0
         if (dogd.y < 80)
-        {
-            _temp_local_var_20.y = (dogd.y + runspeed)
-            _temp_local_var_26 = stacktop
-            _temp_local_var_27 = stacktop
-            _temp_local_var_28 = stacktop
-            _temp_local_var_29 = dogd
-        }
+            dogd.y += runspeed
         else
         {
             dogd.depth = 0
             if (dogd.x > 205)
-            {
-                _temp_local_var_20.x = (dogd.x - runspeed)
-                _temp_local_var_26 = stacktop
-                _temp_local_var_27 = stacktop
-                _temp_local_var_28 = stacktop
-                _temp_local_var_29 = dogd
-            }
+                dogd.x -= runspeed
             else if (dogd.y < 130)
-            {
-                _temp_local_var_20.y = (dogd.y + runspeed)
-                _temp_local_var_26 = stacktop
-                _temp_local_var_27 = stacktop
-                _temp_local_var_28 = stacktop
-                _temp_local_var_29 = dogd
-            }
+                dogd.y += runspeed
             else if (dogd.x > 160)
-            {
-                _temp_local_var_20.x = (dogd.x - runspeed)
-                _temp_local_var_26 = stacktop
-                _temp_local_var_27 = stacktop
-                _temp_local_var_28 = stacktop
-                _temp_local_var_29 = dogd
-            }
+                dogd.x -= runspeed
             else if (dogd.y < 250)
-            {
-                _temp_local_var_20.y = (dogd.y + runspeed)
-                _temp_local_var_26 = stacktop
-                _temp_local_var_27 = stacktop
-                _temp_local_var_28 = stacktop
-                _temp_local_var_29 = dogd
-            }
+                dogd.y += runspeed
             else
                 instance_destroy(dogd)
         }
@@ -329,59 +230,23 @@ if (con >= 15 && gml_Script_i_ex(dogb))
     runspeed = 8
     dogb.image_speed = 0.5
     if (dogb.x < 230 && dogb.y < 80)
-    {
-        _temp_local_var_26.x = (dogb.x + runspeed)
-        var _temp_local_var_32 = stacktop
-        var _temp_local_var_33 = stacktop
-        var _temp_local_var_34 = -9
-        var _temp_local_var_35 = dogb
-    }
+        dogb.x += runspeed
     else
     {
         dogb.depth = 0
         if (dogb.y < 80)
-        {
-            _temp_local_var_26.y = (dogb.y + runspeed)
-            _temp_local_var_32 = stacktop
-            _temp_local_var_33 = stacktop
-            _temp_local_var_34 = -9
-            _temp_local_var_35 = dogb
-        }
+            dogb.y += runspeed
         else if (dogb.x > 205)
-        {
-            _temp_local_var_26.x = (dogb.x - runspeed)
-            _temp_local_var_32 = stacktop
-            _temp_local_var_33 = stacktop
-            _temp_local_var_34 = -9
-            _temp_local_var_35 = dogb
-        }
+            dogb.x -= runspeed
         else
         {
             dogb.depth = 0
             if (dogb.y < 130)
-            {
-                _temp_local_var_26.y = (dogb.y + runspeed)
-                _temp_local_var_32 = stacktop
-                _temp_local_var_33 = stacktop
-                _temp_local_var_34 = -9
-                _temp_local_var_35 = dogb
-            }
+                dogb.y += runspeed
             else if (dogb.x > 160)
-            {
-                _temp_local_var_26.x = (dogb.x - runspeed)
-                _temp_local_var_32 = stacktop
-                _temp_local_var_33 = stacktop
-                _temp_local_var_34 = -9
-                _temp_local_var_35 = dogb
-            }
+                dogb.x -= runspeed
             else if (dogb.y < 250)
-            {
-                _temp_local_var_26.y = (dogb.y + runspeed)
-                _temp_local_var_32 = stacktop
-                _temp_local_var_33 = stacktop
-                _temp_local_var_34 = -9
-                _temp_local_var_35 = dogb
-            }
+                dogb.y += runspeed
             else
                 instance_destroy(dogb)
         }
@@ -392,59 +257,23 @@ if (con >= 16 && gml_Script_i_ex(doga))
     runspeed = 8
     doga.image_speed = 0.5
     if (doga.x < 230 && doga.y < 80)
-    {
-        _temp_local_var_32.x = (doga.x + runspeed)
-        var _temp_local_var_38 = stacktop
-        var _temp_local_var_39 = -9
-        var _temp_local_var_40 = -9
-        var _temp_local_var_41 = doga
-    }
+        doga.x += runspeed
     else
     {
         doga.depth = 0
         if (doga.y < 80)
-        {
-            _temp_local_var_32.y = (doga.y + runspeed)
-            _temp_local_var_38 = stacktop
-            _temp_local_var_39 = -9
-            _temp_local_var_40 = -9
-            _temp_local_var_41 = doga
-        }
+            doga.y += runspeed
         else if (doga.x > 205)
-        {
-            _temp_local_var_32.x = (doga.x - runspeed)
-            _temp_local_var_38 = stacktop
-            _temp_local_var_39 = -9
-            _temp_local_var_40 = -9
-            _temp_local_var_41 = doga
-        }
+            doga.x -= runspeed
         else
         {
             doga.depth = 0
             if (doga.y < 130)
-            {
-                _temp_local_var_32.y = (doga.y + runspeed)
-                _temp_local_var_38 = stacktop
-                _temp_local_var_39 = -9
-                _temp_local_var_40 = -9
-                _temp_local_var_41 = doga
-            }
+                doga.y += runspeed
             else if (doga.x > 160)
-            {
-                _temp_local_var_32.x = (doga.x - runspeed)
-                _temp_local_var_38 = stacktop
-                _temp_local_var_39 = -9
-                _temp_local_var_40 = -9
-                _temp_local_var_41 = doga
-            }
+                doga.x -= runspeed
             else if (doga.y < 250)
-            {
-                _temp_local_var_32.y = (doga.y + runspeed)
-                _temp_local_var_38 = stacktop
-                _temp_local_var_39 = -9
-                _temp_local_var_40 = -9
-                _temp_local_var_41 = doga
-            }
+                doga.y += runspeed
             else
                 instance_destroy(doga)
         }
@@ -482,11 +311,7 @@ if (con == 21)
     if (undyne.x < 200 && undyne.y < 125)
     {
         undyne.sprite_index = spr_undyne_walk_right
-        _temp_local_var_38.x = (undyne.x + 7)
-        var _temp_local_var_43 = -9
-        var _temp_local_var_44 = -9
-        var _temp_local_var_45 = -9
-        var _temp_local_var_46 = undyne
+        undyne.x += 7
     }
     else if (undyne.y < 125)
     {
@@ -494,29 +319,17 @@ if (con == 21)
         if (deskchairless.visible == true)
             deskchairless.visible = false
         undyne.sprite_index = spr_undyne_walk_down
-        _temp_local_var_38.y = (undyne.y + 7)
-        _temp_local_var_43 = -9
-        _temp_local_var_44 = -9
-        _temp_local_var_45 = -9
-        _temp_local_var_46 = undyne
+        undyne.y += 7
     }
     else if (undyne.x > 150)
     {
         undyne.sprite_index = spr_undyne_walk_left
-        _temp_local_var_38.x = (undyne.x - 7)
-        _temp_local_var_43 = -9
-        _temp_local_var_44 = -9
-        _temp_local_var_45 = -9
-        _temp_local_var_46 = undyne
+        undyne.x -= 7
     }
     else if (undyne.y < 180)
     {
         undyne.sprite_index = spr_undyne_walk_down
-        _temp_local_var_38.y = (undyne.y + 7)
-        _temp_local_var_43 = -9
-        _temp_local_var_44 = -9
-        _temp_local_var_45 = -9
-        _temp_local_var_46 = undyne
+        undyne.y += 7
     }
     else
     {
@@ -586,8 +399,14 @@ if (con == 50 && (!gml_Script_i_ex(895)))
     global.interact = 0
     global.facing = 0
     global.flag[317] = 1
-    var _temp_local_var_49 = jail_collider
-    instance_destroy()
+    with (jail_collider)
+        instance_destroy()
+    jail_collider_bottom = gml_Script_instance_create(180, 98, obj_solidblock)
+    jail_collider_bottom.image_xscale = 2
+    jail_collider_bottom.image_yscale = 0.35
+    jail_collider_side = gml_Script_instance_create(255, 98, obj_solidblock)
+    jail_collider_side.image_xscale = 1
+    jail_collider_side.image_yscale = 0.35
 }
 if (napstacon == 10 && global.flag[317] == 1)
 {
@@ -620,6 +439,8 @@ if (napstacon == 10 && global.flag[317] == 1)
 }
 if (napstacon == 20 && (!gml_Script_i_ex(895)))
 {
-    var _temp_local_var_52 = napstablook
-    con = -1
+    with (napstablook)
+        con = -1
+    napstacon = -1
+    global.interact = 0
 }

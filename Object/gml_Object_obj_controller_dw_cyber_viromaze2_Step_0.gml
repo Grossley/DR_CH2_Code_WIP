@@ -16,13 +16,13 @@ if (con == 1)
         obj_ow_viromaze2_viro.con = 3
     if gml_Script_i_ex(noleavefield)
     {
-        var _temp_local_var_2 = noleavefield
-        instance_destroy()
+        with (noleavefield)
+            instance_destroy()
     }
     global.flag[352] = 1
     if instance_exists(obj_overworld_bulletarea)
     {
-        obj_overworld_bulletarea.x = (noleavefield.room_width * 5)
+        obj_overworld_bulletarea.x = (room_width * 5)
         obj_overworld_bulletarea.y = (room_height * 5)
     }
     if instance_exists(obj_forcefield)

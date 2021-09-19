@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (con == -1)
 {
     con = 1
@@ -330,6 +331,6 @@ if release_berdly
 if hide_berdly
 {
     hide_berdly = 0
-    var _temp_local_var_3 = berdly_glide
-    instance_destroy()
+    with (berdly_glide)
+        instance_destroy()
 }

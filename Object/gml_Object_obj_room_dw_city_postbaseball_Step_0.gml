@@ -1,8 +1,9 @@
+var _temp_local_var_1, _temp_local_var_10;
 var makeballoons = 0
 if (room == room_dw_city_postbaseball_1)
 {
     balloonthreshold = 10
-    if (gml_Script_i_ex(80) ? (obj_mainchara.y.room_height - 320) : 0)
+    if (gml_Script_i_ex(80) && obj_mainchara.y <= (room_height - 320))
         makeballoons = 1
 }
 if makeballoons
@@ -207,14 +208,19 @@ if (room == room_dw_city_postbaseball_1)
     if (switchcon == 1)
     {
         gml_Script_snd_play(59)
-        var _temp_local_var_5 = forcefieldtopright
-        instance_destroy()
+        with (forcefieldtopright)
+            instance_destroy()
+        switchcon = 0
     }
     if (switch2con == 1)
     {
         gml_Script_snd_play(59)
-        var _temp_local_var_6 = forcefieldright
-        instance_destroy()
+        with (forcefieldright)
+            instance_destroy()
+        global.flag[448] = 1
+        switch2con = 2
+        if (con < 10)
+            con = 10
     }
     if (rodeteacup == -3 && global.interact == 1)
         rodeteacup = -2
@@ -244,11 +250,12 @@ if (room == room_dw_city_postbaseball_1)
     }
     if (rodeteacup == 1)
     {
-        var _temp_local_var_9 = forcefieldtopleft
-        instance_destroy()
+        with (forcefieldtopleft)
+            instance_destroy()
+        rodeteacup = 2
     }
 }
-if (forcefieldtopleft.room == room_dw_city_postbaseball_2)
+if (room == room_dw_city_postbaseball_2)
 {
     if (con == 0 && obj_mainchara.x >= 640 && global.flag[447] == 0)
     {
@@ -425,17 +432,21 @@ if (forcefieldtopleft.room == room_dw_city_postbaseball_2)
             }
             else
             {
-                var _temp_local_var_49 = forcefield1
-                if (image_alpha < 3)
-                    image_alpha += 0.5
+                with (forcefield1)
+                {
+                    if (image_alpha < 3)
+                        image_alpha += 0.5
+                }
             }
         }
         else
         {
-            var _temp_local_var_50 = forcefield1
-            image_alpha -= 0.2
-            if (image_alpha <= 0)
-                instance_destroy()
+            with (forcefield1)
+            {
+                image_alpha -= 0.2
+                if (image_alpha <= 0)
+                    instance_destroy()
+            }
         }
     }
     if (switch2con >= 0)
@@ -454,17 +465,21 @@ if (forcefieldtopleft.room == room_dw_city_postbaseball_2)
             }
             else
             {
-                var _temp_local_var_47 = forcefield2
-                if (image_alpha < 3)
-                    image_alpha += 0.5
+                with (forcefield2)
+                {
+                    if (image_alpha < 3)
+                        image_alpha += 0.5
+                }
             }
         }
         else
         {
-            var _temp_local_var_48 = forcefield2
-            image_alpha -= 0.2
-            if (image_alpha <= 0)
-                instance_destroy()
+            with (forcefield2)
+            {
+                image_alpha -= 0.2
+                if (image_alpha <= 0)
+                    instance_destroy()
+            }
         }
     }
     if (switch3con >= 0)
@@ -480,21 +495,25 @@ if (forcefieldtopleft.room == room_dw_city_postbaseball_2)
             }
             else
             {
-                var _temp_local_var_45 = forcefield3
-                if (image_alpha < 3)
-                    image_alpha += 0.5
+                with (forcefield3)
+                {
+                    if (image_alpha < 3)
+                        image_alpha += 0.5
+                }
             }
         }
         else
         {
-            var _temp_local_var_46 = forcefield3
-            image_alpha -= 0.2
-            if (image_alpha <= 0)
-                instance_destroy()
+            with (forcefield3)
+            {
+                image_alpha -= 0.2
+                if (image_alpha <= 0)
+                    instance_destroy()
+            }
         }
     }
 }
-if (forcefieldright.room == room_dw_city_postbaseball_3)
+if (room == room_dw_city_postbaseball_3)
 {
     if (obj_mainchara.x > 420 && blockleft == 0)
     {
@@ -507,11 +526,493 @@ if (forcefieldright.room == room_dw_city_postbaseball_3)
         {
             balloon[0] = gml_Script_instance_create(ballremx[0], (gml_Script_cameray() - 120), obj_cybercity_balloon)
             balloon[0].balloonid = 0
-            var _temp_local_var_13 = balloon[0]
-            event_user(0)
-            gml_Script_scr_lerpvar("y", y, ballremy[0], other, 15, 2)
-            var _temp_local_var_14 = "out"
-            balloondestroyed[0] = 0
+            with (balloon[0])
+            {
+                event_user(0)
+                gml_Script_scr_lerpvar("y", y, ballremy[0], other, 15, 2)
+                var _temp_local_var_10 = "out"
+                balloondestroyed[0] = 0
+            }
+            if (switch1con >= 0)
+            {
+                with (obj_cybercity_balloon)
+                    breakable = 1
+                if (switch1con == 1)
+                {
+                    if (!gml_Script_i_ex(forcefield1))
+                    {
+                        forcefield1 = gml_Script_scr_forcefield(580, 80, 8, 2, 1, 1)
+                        forcefield1.ignorealpha = 1
+                    }
+                    else
+                    {
+                        with (forcefield1)
+                        {
+                            if (image_alpha < 3)
+                                image_alpha += 0.5
+                        }
+                    }
+                }
+                else
+                {
+                    with (forcefield1)
+                    {
+                        image_alpha -= 0.2
+                        if (image_alpha <= 0)
+                            instance_destroy()
+                    }
+                }
+            }
+            if (switch2con >= 0)
+            {
+                with (obj_cybercity_balloon)
+                    breakable = 1
+                if (switch2con == 1)
+                {
+                    if (!gml_Script_i_ex(forcefield2))
+                    {
+                        forcefield2 = gml_Script_scr_forcefield(980, 40, 16, 2, 1, 1)
+                        forcefield2.ignorealpha = 1
+                    }
+                    else
+                    {
+                        with (forcefield2)
+                        {
+                            if (image_alpha < 3)
+                                image_alpha += 0.5
+                        }
+                    }
+                }
+                else
+                {
+                    with (forcefield2)
+                    {
+                        image_alpha -= 0.2
+                        if (image_alpha <= 0)
+                            instance_destroy()
+                    }
+                }
+            }
+            if gml_Script_i_ex(blockforcefield)
+            {
+                if (pillar1.completed == 1)
+                {
+                    gml_Script_safe_delete(blockforcefield)
+                    layer_set_visible("TILE_BLOCKLAYER1", 0)
+                }
+            }
+            if gml_Script_i_ex(blockforcefield2)
+            {
+                if (pillar2.completed == 1)
+                {
+                    gml_Script_safe_delete(blockforcefield2)
+                    layer_set_visible("TILE_BLOCKLAYER2", 0)
+                }
+            }
+            if gml_Script_i_ex(blockforcefield3)
+            {
+                if (pillar3.completed == 1)
+                {
+                    gml_Script_safe_delete(blockforcefield3)
+                    layer_set_visible("TILE_BLOCKLAYER3", 0)
+                }
+            }
+            if gml_Script_i_ex(blockforcefield4)
+            {
+                if (bucketpillar.completed == 1)
+                {
+                    gml_Script_safe_delete(blockforcefield4)
+                    layer_set_visible("TILE_BLOCKLAYER4", 0)
+                }
+            }
+            if (minigamestartcon == 0)
+            {
+                if (!gml_Script_i_ex(blockforcefield2))
+                {
+                    global.flag[7] = 1
+                    gml_Script_mus_volume(global.currentsong[1], 0, 30)
+                    global.interact = 1
+                    timer = 0
+                    minigamestartcon = 0.5
+                }
+            }
+            if (minigamestartcon == 0.5)
+            {
+                timer++
+                global.interact = 1
+                if (timer == 30)
+                {
+                    cutscene_master = gml_Script_scr_cutscene_make()
+                    gml_Script_scr_maincharacters_actors()
+                    minigamestartcon = 1
+                }
+            }
+            if (minigamestartcon == 1)
+            {
+                minigamestartcon = -999
+                gml_Script_c_pannable(1)
+                gml_Script_c_pan(1380, 0, 25)
+                gml_Script_c_sel(kr)
+                gml_Script_c_facing("r")
+                gml_Script_c_sel(su)
+                gml_Script_c_facing("r")
+                gml_Script_c_walkdirect(1460, 263, 12)
+                gml_Script_c_sel(no)
+                gml_Script_c_facing("r")
+                gml_Script_c_walkdirect(1416, 264, 14)
+                gml_Script_c_sel(ra)
+                gml_Script_c_facing("r")
+                gml_Script_c_walkdirect(1374, 258, 16)
+                gml_Script_c_wait(17)
+                gml_Script_c_sel(kr)
+                gml_Script_c_facing("r")
+                gml_Script_c_sel(su)
+                gml_Script_c_facing("r")
+                gml_Script_c_sel(no)
+                gml_Script_c_facing("r")
+                gml_Script_c_sel(ra)
+                gml_Script_c_facing("r")
+                gml_Script_c_wait(23)
+                gml_Script_c_speaker("susie")
+                gml_Script_c_msgsetloc(0, "\\E5* 20 more!? Damn^1, we're gonna be here forever!/", "obj_room_dw_city_postbaseball_slash_Step_0_gml_708_0")
+                gml_Script_c_facenext("noelle", "2")
+                gml_Script_c_msgnextloc("\\E2* M..^1. maybe if we..^1. um^1, split up the work?/", "obj_room_dw_city_postbaseball_slash_Step_0_gml_710_0")
+                gml_Script_c_facenext("susie", "K")
+                gml_Script_c_msgnextloc("\\EK* Huh?/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_712_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_wait(15)
+                gml_Script_c_fadeout(15)
+                gml_Script_c_wait(30)
+                gml_Script_c_wait(1)
+                gml_Script_c_sel(kr)
+                gml_Script_c_setxy((pillaremerge.x + 280), 275)
+                gml_Script_c_actortokris()
+                gml_Script_c_actortocaterpillar()
+                gml_Script_c_var_instance(id, "minigame", 1)
+                gml_Script_c_terminatekillactors()
+            }
+            if (keyboard_check_pressed(ord("M")) && gml_Script_scr_debug())
+                obj_kris_headobj.miceheld = (pillar3.micerequired - 2)
+            if (minigame == 1)
+            {
+                if (minigamecon == 0)
+                {
+                    global.interact = 1
+                    with (obj_caterpillarchara)
+                        instance_destroy()
+                    minigametimer = 0
+                    noelletimer = 0
+                    switchtimer = 20
+                    susieactor = gml_Script_instance_create(1380, 260, obj_actor)
+                    susieactor.sprite_index = spr_susie_walk_left_dw
+                    with (susieactor)
+                        gml_Script_scr_set_facing_sprites("susie")
+                    ralseiactor = gml_Script_instance_create(1290, 260, obj_actor)
+                    ralseiactor.sprite_index = spr_ralsei_walk_right
+                    with (ralseiactor)
+                        gml_Script_scr_set_facing_sprites("ralsei")
+                    noelleactor = gml_Script_instance_create(pillaremerge.x, (pillaremerge.y + 60), obj_actor)
+                    noelleactor.sprite_index = spr_noelle_walk_right_dw
+                    with (noelleactor)
+                        gml_Script_scr_set_facing_sprites("noelle")
+                    with (obj_actor)
+                    {
+                        mysolid = gml_Script_instance_create(x, y, obj_npc_sign)
+                        mysolid.sprite_index = sprite_index
+                        mysolid.visible = false
+                        gml_Script_scr_darksize(mysolid)
+                    }
+                    obj_mainchara.cutscene = true
+                    gml_Script_camerax_set((pillaremerge.x - 80))
+                    gml_Script_safe_delete(188)
+                    gml_Script_scr_fadein(15)
+                    minigamecon = 0.1
+                }
+                if (minigamecon == 0.1)
+                {
+                    global.interact = 1
+                    gml_Script_scr_speaker("noelle")
+                    gml_Script_msgsetloc(0, "\\E0* I'll release the mice.../", "obj_room_dw_city_postbaseball_slash_Step_0_gml_781_0")
+                    gml_Script_msgnextloc("\\E4* Susie will break the balloons when they reach the top.../", "obj_room_dw_city_postbaseball_slash_Step_0_gml_782_0")
+                    gml_Script_msgnextloc("\\E8* And Kris^1, you catch them^1! Umm^1, if that's ok./", "obj_room_dw_city_postbaseball_slash_Step_0_gml_783_0")
+                    gml_Script_msgnextloc("\\E0* Ready...?/", "obj_room_dw_city_postbaseball_slash_Step_0_gml_784_0")
+                    gml_Script_msgnextloc("\\E4* Go!/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_785_0")
+                    gml_Script_d_make()
+                    minigamecon = 0.2
+                }
+                if (minigamecon == 0.2 && (!gml_Script_d_ex()))
+                {
+                    global.interact = 0
+                    global.currentsong[0] = gml_Script_snd_init("boxing_game.ogg")
+                    global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 1)
+                    gml_Script_snd_pitch(global.currentsong[1], 1.2)
+                    minigamecon = 1
+                }
+                if (minigamecon == 1)
+                {
+                    var failstate = 0
+                    var howmanymice = 0
+                    howmanymice = (obj_kris_headobj.miceheld + instance_number(obj_cybercity_balloon))
+                    if (obj_kris_headobj.mousefailcon != 0)
+                        failstate = 1
+                    noelletimer++
+                    if (noelletimer < 15)
+                    {
+                        if gml_Script_d_ex()
+                            noelletimer = -6
+                        if (howmanymice >= (pillar3.micerequired - 1))
+                        {
+                            noelletimer = -6
+                            if (howmanymice >= pillar3.micerequired)
+                                noelleactor.sprite_index = spr_noelle_walk_right_smile_dw
+                        }
+                        if failstate
+                        {
+                            noelletimer = -6
+                            noelleactor.sprite_index = spr_noelle_shocked_dw
+                        }
+                    }
+                    if (noelletimer == 15)
+                    {
+                        gml_Script_scr_actor_facing(noelleactor, "u")
+                        with (noelleactor)
+                            gml_Script_scr_jump_in_place(12, 16)
+                    }
+                    if (noelletimer == 23)
+                    {
+                        if (failstate == 0)
+                            obj_mouseballoon_pillar_release.ballooncon = 1
+                    }
+                    if (noelletimer == 32)
+                    {
+                        gml_Script_scr_actor_facing(noelleactor, "r")
+                        noelletimer = -6
+                    }
+                    switchtimer++
+                    var done = 0
+                    if (obj_kris_headobj.miceheld == pillar3.micerequired)
+                        done = 1
+                    if ((switchtimer == 59 && done) || (switchtimer == 106 && done))
+                    {
+                        switchtimer = 0
+                        minigame = 2
+                    }
+                    if (switchtimer == 60 && done == 0)
+                    {
+                        with (susieactor)
+                            gml_Script_scr_jump_to_point((xstart - 40), ystart, 12, 14)
+                    }
+                    if (switchtimer == 90)
+                    {
+                        with (susieactor)
+                        {
+                            auto_facing = 0
+                            gml_Script_scr_move_to_point_over_time(xstart, ystart, 15)
+                        }
+                    }
+                    if (switchtimer == 100 && done == 0)
+                    {
+                        with (ralseiactor)
+                            gml_Script_scr_jump_to_point((xstart + 40), ystart, 12, 14)
+                    }
+                    if (switchtimer >= 130)
+                    {
+                        with (ralseiactor)
+                        {
+                            auto_facing = 0
+                            gml_Script_scr_move_to_point_over_time(xstart, ystart, 15)
+                        }
+                        switchtimer = 50
+                    }
+                }
+            }
+            if (minigame == 2)
+            {
+                gml_Script_mus_volume(global.currentsong[1], 0, 30)
+                global.interact = 1
+                gml_Script_snd_play(57)
+                gml_Script_scr_fadeout(15)
+                timer = 0
+                minigame = 3
+            }
+            if (minigame == 3)
+            {
+                timer++
+                if (timer == 30)
+                {
+                    obj_mainchara.x = (pillaremerge.x + 280)
+                    obj_mainchara.cutscene = false
+                    with (obj_caterpillarchara)
+                        instance_destroy()
+                    with (obj_actor)
+                        instance_destroy()
+                    caterpillarsus = gml_Script_scr_makecaterpillar((obj_mainchara.x - 60), ((obj_mainchara.y - 16) + 2), 2, 0)
+                    caterpillarral = gml_Script_scr_makecaterpillar((obj_mainchara.x - 180), ((obj_mainchara.y - 12) - 2), 3, 1)
+                    caterpillarnoe = gml_Script_scr_makecaterpillar(((obj_mainchara.x - 4) - 120), ((obj_mainchara.y - 20) + 2), 4, 2)
+                    with (obj_caterpillarchara)
+                        gml_Script_scr_caterpillar_interpolate()
+                    timer = 0
+                    minigame = 4
+                    global.interact = 1
+                }
+            }
+            if (minigame == 4)
+            {
+                timer++
+                if (timer == 3)
+                {
+                    cutscene_master = gml_Script_scr_cutscene_make()
+                    gml_Script_scr_maincharacters_actors()
+                    minigame++
+                }
+            }
+            if (minigame == 5)
+            {
+                minigame = -999
+                gml_Script_c_fadein(15)
+                gml_Script_c_wait(45)
+                gml_Script_c_sel(su)
+                gml_Script_c_sprite(832)
+                gml_Script_c_wait(10)
+                gml_Script_c_speaker("susie")
+                gml_Script_c_msgsetloc(0, "\\E5* Hell yeah^1! Take that^1, you stupid mice!/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_936_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_sel(ra)
+                gml_Script_c_sprite(812)
+                gml_Script_c_addxy(0, 6)
+                gml_Script_c_wait(10)
+                gml_Script_c_speaker("ralsei")
+                gml_Script_c_msgsetloc(0, "\\E2* It's nice seeing you enjoy a puzzle^1, Susie./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_944_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_facing("r")
+                gml_Script_c_addxy(0, -6)
+                gml_Script_c_sel(su)
+                gml_Script_c_sprite(80)
+                gml_Script_c_addxy(0, -6)
+                gml_Script_c_autowalk(0)
+                gml_Script_c_imagespeed(0.25)
+                gml_Script_c_wait(5)
+                gml_Script_c_speaker("susie")
+                gml_Script_c_msgsetloc(0, "\\EK* Well. Maybe they aren't awful if you do 'em like that./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_957_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_wait(2)
+                gml_Script_c_autowalk(1)
+                gml_Script_c_facing("l")
+                gml_Script_c_addxy(0, 6)
+                gml_Script_c_wait(2)
+                gml_Script_c_msgsetloc(0, "\\EL* ..^1. not bad^1, Noelle. That was kinda smart./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_966_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_sel(no)
+                gml_Script_c_sprite(737)
+                gml_Script_c_speaker("noelle")
+                gml_Script_c_msgsetloc(0, "\\EM* H-Huh? Th..^1. thanks.../%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_972_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_speaker("susie")
+                gml_Script_c_msgsetloc(0, "\\EY* Heh^1, maybe next time I'll let you do my homework./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_977_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_sel(su)
+                gml_Script_c_sprite(846)
+                gml_Script_c_addxy(4, 2)
+                gml_Script_c_autowalk(0)
+                gml_Script_c_imagespeed(0.25)
+                gml_Script_c_soundplay_wait(65)
+                gml_Script_c_halt()
+                gml_Script_c_autowalk(1)
+                gml_Script_c_facing("l")
+                gml_Script_c_addxy(-4, -2)
+                gml_Script_c_speaker("noelle")
+                gml_Script_c_msgsetloc(0, "\\E6* (Can I?)/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_992_0")
+                gml_Script_c_talk_wait()
+                gml_Script_c_var_instance(id, "minigame", 6)
+                gml_Script_c_var_instance(id, "timer", 0)
+                gml_Script_c_actortokris()
+                gml_Script_c_var_instance(id, "makecaters", 1)
+                gml_Script_c_terminatekillactors()
+            }
+            if (makecaters == 1)
+            {
+                with (obj_caterpillarchara)
+                    instance_destroy()
+                caterpillarsus = gml_Script_scr_makecaterpillar((obj_mainchara.x - 60), ((obj_mainchara.y - 16) + 2), 2, 0)
+                caterpillarral = gml_Script_scr_makecaterpillar((obj_mainchara.x - 180), ((obj_mainchara.y - 12) - 2), 3, 1)
+                caterpillarnoe = gml_Script_scr_makecaterpillar(((obj_mainchara.x - 4) - 120), ((obj_mainchara.y - 20) + 2), 4, 2)
+                with (obj_interactablesolid)
+                {
+                    if (visible == false)
+                        instance_destroy()
+                }
+                with (obj_actor)
+                    instance_destroy()
+                var remtarget = caterpillarral.target
+                caterpillarral.target = caterpillarnoe.target
+                caterpillarnoe.target = remtarget
+                with (obj_caterpillarchara)
+                {
+                    visible = true
+                    gml_Script_scr_caterpillar_interpolate()
+                }
+                global.currentsong[0] = gml_Script_snd_init("cybercity.ogg")
+                global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.8, 0.97)
+                makecaters = 0
+            }
+            if (minigame == 6)
+            {
+                timer++
+                if (timer == 15)
+                {
+                    global.facing = 0
+                    global.flag[7] = 0
+                    global.interact = 0
+                    minigame++
+                }
+            }
+            if (minigame == 7)
+            {
+                if (obj_mainchara.x < (pillaremerge.x + 80))
+                {
+                    if (obj_kris_headobj.miceheld == 0)
+                    {
+                        gml_Script_scr_speaker("noelle")
+                        gml_Script_msgsetloc(0, "\\E8* I think we're done with the mice for now^1, Kris./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_1047_0")
+                    }
+                    else
+                    {
+                        gml_Script_scr_speaker("susie")
+                        gml_Script_msgsetloc(0, "\\EK* Hey^1, the hell are you doing with our mice?!/", "obj_room_dw_city_postbaseball_slash_Step_0_gml_1052_0")
+                        gml_Script_msgnextloc("\\EK* We worked on getting those together!/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_1053_0")
+                    }
+                    global.interact = 1
+                    global.facing = 1
+                    gml_Script_d_make()
+                    minigame = 8
+                }
+                if (bucketpillar.completed == 1)
+                    minigame = 9
+            }
+            if (minigame == 8 && (!gml_Script_d_ex()))
+            {
+                obj_mainchara.x = (pillaremerge.x + 82)
+                global.interact = 0
+                minigame = 7
+            }
+            if (minigame == 9)
+            {
+                if (obj_mainchara.x < (bucketpillar.x - 120))
+                {
+                    gml_Script_scr_speaker("susie")
+                    gml_Script_msgsetloc(0, "\\EK* What are you doing? The path is open!/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_1076_0")
+                    global.interact = 1
+                    global.facing = 1
+                    gml_Script_d_make()
+                    minigame = 10
+                }
+            }
+            if (minigame == 10 && (!gml_Script_d_ex()))
+            {
+                obj_mainchara.x = ((bucketpillar.x - 120) + 2)
+                global.interact = 0
+                minigame = 9
+            }
         }
         else
             balloondestroyed[0] = 0
@@ -529,17 +1030,21 @@ if (forcefieldright.room == room_dw_city_postbaseball_3)
             }
             else
             {
-                var _temp_local_var_42 = forcefield1
-                if (image_alpha < 3)
-                    image_alpha += 0.5
+                with (forcefield1)
+                {
+                    if (image_alpha < 3)
+                        image_alpha += 0.5
+                }
             }
         }
         else
         {
-            var _temp_local_var_43 = forcefield1
-            image_alpha -= 0.2
-            if (image_alpha <= 0)
-                instance_destroy()
+            with (forcefield1)
+            {
+                image_alpha -= 0.2
+                if (image_alpha <= 0)
+                    instance_destroy()
+            }
         }
     }
     if (switch2con >= 0)
@@ -555,17 +1060,21 @@ if (forcefieldright.room == room_dw_city_postbaseball_3)
             }
             else
             {
-                var _temp_local_var_40 = forcefield2
-                if (image_alpha < 3)
-                    image_alpha += 0.5
+                with (forcefield2)
+                {
+                    if (image_alpha < 3)
+                        image_alpha += 0.5
+                }
             }
         }
         else
         {
-            var _temp_local_var_41 = forcefield2
-            image_alpha -= 0.2
-            if (image_alpha <= 0)
-                instance_destroy()
+            with (forcefield2)
+            {
+                image_alpha -= 0.2
+                if (image_alpha <= 0)
+                    instance_destroy()
+            }
         }
     }
     if gml_Script_i_ex(blockforcefield)
@@ -680,8 +1189,28 @@ if (forcefieldright.room == room_dw_city_postbaseball_3)
             switchtimer = 20
             susieactor = gml_Script_instance_create(1380, 260, obj_actor)
             susieactor.sprite_index = spr_susie_walk_left_dw
-            var _temp_local_var_16 = susieactor
-            gml_Script_scr_set_facing_sprites("susie")
+            with (susieactor)
+                gml_Script_scr_set_facing_sprites("susie")
+            ralseiactor = gml_Script_instance_create(1290, 260, obj_actor)
+            ralseiactor.sprite_index = spr_ralsei_walk_right
+            with (ralseiactor)
+                gml_Script_scr_set_facing_sprites("ralsei")
+            noelleactor = gml_Script_instance_create(pillaremerge.x, (pillaremerge.y + 60), obj_actor)
+            noelleactor.sprite_index = spr_noelle_walk_right_dw
+            with (noelleactor)
+                gml_Script_scr_set_facing_sprites("noelle")
+            with (obj_actor)
+            {
+                mysolid = gml_Script_instance_create(x, y, obj_npc_sign)
+                mysolid.sprite_index = sprite_index
+                mysolid.visible = false
+                gml_Script_scr_darksize(mysolid)
+            }
+            obj_mainchara.cutscene = true
+            gml_Script_camerax_set((pillaremerge.x - 80))
+            gml_Script_safe_delete(188)
+            gml_Script_scr_fadein(15)
+            minigamecon = 0.1
         }
         if (minigamecon == 0.1)
         {
@@ -730,8 +1259,8 @@ if (forcefieldright.room == room_dw_city_postbaseball_3)
             if (noelletimer == 15)
             {
                 gml_Script_scr_actor_facing(noelleactor, "u")
-                var _temp_local_var_20 = noelleactor
-                gml_Script_scr_jump_in_place(12, 16)
+                with (noelleactor)
+                    gml_Script_scr_jump_in_place(12, 16)
             }
             if (noelletimer == 23)
             {
@@ -754,25 +1283,30 @@ if (forcefieldright.room == room_dw_city_postbaseball_3)
             }
             if (switchtimer == 60 && done == 0)
             {
-                var _temp_local_var_24 = susieactor
-                gml_Script_scr_jump_to_point((xstart - 40), ystart, 12, 14)
+                with (susieactor)
+                    gml_Script_scr_jump_to_point((xstart - 40), ystart, 12, 14)
             }
             if (switchtimer == 90)
             {
-                var _temp_local_var_25 = susieactor
-                auto_facing = 0
-                gml_Script_scr_move_to_point_over_time(xstart, ystart, 15)
+                with (susieactor)
+                {
+                    auto_facing = 0
+                    gml_Script_scr_move_to_point_over_time(xstart, ystart, 15)
+                }
             }
             if (switchtimer == 100 && done == 0)
             {
-                var _temp_local_var_27 = ralseiactor
-                gml_Script_scr_jump_to_point((xstart + 40), ystart, 12, 14)
+                with (ralseiactor)
+                    gml_Script_scr_jump_to_point((xstart + 40), ystart, 12, 14)
             }
             if (switchtimer >= 130)
             {
-                var _temp_local_var_28 = ralseiactor
-                auto_facing = 0
-                gml_Script_scr_move_to_point_over_time(xstart, ystart, 15)
+                with (ralseiactor)
+                {
+                    auto_facing = 0
+                    gml_Script_scr_move_to_point_over_time(xstart, ystart, 15)
+                }
+                switchtimer = 50
             }
         }
     }

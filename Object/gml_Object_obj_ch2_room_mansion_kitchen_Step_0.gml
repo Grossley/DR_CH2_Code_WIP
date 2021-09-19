@@ -7,9 +7,21 @@ if (global.flag[362] == 0)
         alarm[0] = 15
         global.interact = 1
         gml_Script_snd_play(176)
-        var _temp_local_var_2 = mouse_a
-        gml_Script_scr_emote("!", 20)
-        gml_Script_scr_flip("x")
+        with (mouse_a)
+        {
+            gml_Script_scr_emote("!", 20)
+            gml_Script_scr_flip("x")
+        }
+        with (mouse_b)
+        {
+            gml_Script_scr_emote("!", 20)
+            gml_Script_scr_flip("x")
+        }
+        with (mouse_c)
+        {
+            gml_Script_scr_emote("!", 20)
+            gml_Script_scr_flip("x")
+        }
     }
     if (con == 2)
     {
@@ -34,8 +46,12 @@ if (global.flag[362] == 0)
                 turnspeed = lerp(turnspeed, 3, 0.1)
             if (turnspeed < 10)
             {
-                var _temp_local_var_5 = mouse_a
-                gml_Script_scr_afterimage()
+                with (mouse_a)
+                    gml_Script_scr_afterimage()
+                with (mouse_b)
+                    gml_Script_scr_afterimage()
+                with (mouse_c)
+                    gml_Script_scr_afterimage()
             }
             if (turnspeed < 6)
             {
@@ -52,11 +68,7 @@ if (global.flag[362] == 0)
             {
                 if (whiteall.image_alpha == 0)
                     whiteall.image_alpha = 0.03
-                _temp_local_var_7.image_alpha = (whiteall.image_alpha * 1.2)
-                var _temp_local_var_8 = 
-                var _temp_local_var_9 = mouse_a
-                var _temp_local_var_10 = -9
-                var _temp_local_var_11 = whiteall
+                whiteall.image_alpha *= 1.2
             }
             mouse_a.x = (cx + (sin((timer / turnspeed)) * radius))
             mouse_a.y = (cy + (cos((timer / turnspeed)) * radius))
@@ -68,11 +80,7 @@ if (global.flag[362] == 0)
     }
     if (con == 2.1)
     {
-        _temp_local_var_8.image_alpha = (whiteall.image_alpha * 1.2)
-        var _temp_local_var_12 = mouse_a
-        var _temp_local_var_13 = -9
-        var _temp_local_var_14 = -9
-        var _temp_local_var_15 = whiteall
+        whiteall.image_alpha *= 1.2
         if (whiteall.image_alpha >= 1)
         {
             timer = 0
@@ -83,23 +91,34 @@ if (global.flag[362] == 0)
     {
         if (timer == 0)
         {
-            var _temp_local_var_16 = mouse_a
-            visible = false
+            with (mouse_a)
+                visible = false
+            with (mouse_b)
+                visible = false
+            with (mouse_c)
+                visible = false
+            with (cheese_a)
+                visible = false
+            with (cheese_b)
+                visible = false
+            with (cheese_c)
+                visible = false
+            if (mauswheel == noone)
+            {
+                mauswheel = gml_Script_scr_dark_marker(20, 160, 2082)
+                mauswheel.image_speed = 0.5
+            }
         }
         timer++
         if (timer > 15)
-        {
-            _temp_local_var_21.image_alpha = (whiteall.image_alpha * 0.9)
-            var _temp_local_var_22 = 
-            var _temp_local_var_23 = 
-            var _temp_local_var_24 = -9
-            var _temp_local_var_25 = whiteall
-        }
+            whiteall.image_alpha *= 0.9
         if (whiteall.image_alpha <= 0.01)
         {
-            var _temp_local_var_26 = whiteall
-            instance_destroy()
-            other.con = 3
+            with (whiteall)
+            {
+                instance_destroy()
+                other.con = 3
+            }
         }
     }
     if (con == 3)
@@ -121,7 +140,22 @@ if (global.flag[362] == 0)
         global.flag[362] = 1
         global.flag[9] = 0
         gml_Script_scr_tempsave()
-        var _temp_local_var_28 = swatchling_npc_a
-        sprite_index = spr_npc_swatchling_down
+        with (swatchling_npc_a)
+            sprite_index = spr_npc_swatchling_down
+        with (cheese_a)
+        {
+            image_index = 1
+            visible = true
+        }
+        with (cheese_b)
+        {
+            image_index = 1
+            visible = true
+        }
+        with (cheese_c)
+        {
+            image_index = 1
+            visible = true
+        }
     }
 }

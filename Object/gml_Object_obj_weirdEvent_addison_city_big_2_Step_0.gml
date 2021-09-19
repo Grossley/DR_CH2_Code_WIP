@@ -85,8 +85,9 @@ if (con == 7 && (!gml_Script_d_ex()))
     timer++
     if (timer == 15)
     {
-        var _temp_local_var_5 = fade
-        instance_destroy()
+        with (fade)
+            instance_destroy()
+        gml_Script_scr_fadein(30)
     }
     if (timer == 60)
     {

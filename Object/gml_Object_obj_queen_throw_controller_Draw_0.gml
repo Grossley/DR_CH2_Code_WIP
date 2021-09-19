@@ -28,13 +28,23 @@ if (con == 0)
                 target.y2 = y2[i]
                 target.vineid = i
                 target.x_offset = x_offset[i]
-                var _temp_local_var_3 = target
-                path = path_add()
-                path_set_kind(path, 0)
-                path_set_closed(path, 0)
-                path_add_point(path, x1, y1, 100)
-                path_add_point(path, x2, y2, 100)
-                path_start(path, 4, path_action_stop, 1)
+                with (target)
+                {
+                    path = path_add()
+                    path_set_kind(path, 0)
+                    path_set_closed(path, 0)
+                    path_add_point(path, x1, y1, 100)
+                    path_add_point(path, x2, y2, 100)
+                    path_start(path, 4, path_action_stop, 1)
+                }
+                if (difficulty == 1)
+                {
+                    if (i == 0)
+                        target.siner = 0
+                    if (i == 1)
+                        target.siner = 110
+                    target.n = 0.05
+                }
             }
         }
     }

@@ -95,9 +95,11 @@ if (con == 5)
                 copy[cc] = gml_Script_scr_dark_marker((global.monstermakex[cc] + 200), global.monstermakey[cc], object_get_sprite(global.monsterinstancetype[cc]))
                 copy[cc].cc = cc
                 copy[cc].depth = ((depth - 1) - cc)
-                var _temp_local_var_5 = copy[cc]
-                direction = point_direction(x, y, global.monstermakex[cc], global.monstermakey[cc])
-                speed = (point_distance(x, y, global.monstermakex[cc], global.monstermakey[cc]) / 10)
+                with (copy[cc])
+                {
+                    direction = point_direction(x, y, global.monstermakex[cc], global.monstermakey[cc])
+                    speed = (point_distance(x, y, global.monstermakex[cc], global.monstermakey[cc]) / 10)
+                }
             }
         }
     }
@@ -109,11 +111,10 @@ if (con == 6)
 }
 if (con == 7)
 {
-    c = 0
-    while (c < 3)
+    for (c = 0; c < 3; c += 1)
     {
-        var _temp_local_var_7 = copy[c]
-        speed = 0
+        with (copy[c])
+            speed = 0
     }
     speed = 0
     if instance_exists(obj_battlecontroller)
@@ -132,11 +133,10 @@ if (con == 7)
             }
         }
         instance_destroy()
-        c = 0
-        while (c < 3)
+        for (c = 0; c < 3; c += 1)
         {
-            var _temp_local_var_8 = copy[c]
-            instance_destroy()
+            with (copy[c])
+                instance_destroy()
         }
     }
 }

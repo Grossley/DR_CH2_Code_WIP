@@ -1,4 +1,4 @@
-var queen_marker, new_berdly, _temp_local_var_1, _temp_local_var_2, _temp_local_var_9, _temp_local_var_19;
+var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5;
 if (obj_mainchara.x > 650 && con == -1)
 {
     con = 1
@@ -6,8 +6,39 @@ if (obj_mainchara.x > 650 && con == -1)
     global.facing = 1
     cutscene_master = gml_Script_scr_cutscene_make()
     gml_Script_scr_maincharacters_actors()
-    var _temp_local_var_2 = su_actor
-    gml_Script_scr_set_facing_sprites("susieunhappy")
+    with (su_actor)
+        gml_Script_scr_set_facing_sprites("susieunhappy")
+    with (ra_actor)
+        gml_Script_scr_set_facing_sprites("ralseiunhappy")
+    berdly_wire = gml_Script_instance_create(900, -100, obj_berdly_wire)
+    berdly_wire2 = gml_Script_instance_create(900, -100, obj_berdly_wire_release_example_2)
+    berdly_plug = gml_Script_scr_dark_marker(810, (gml_Script_cameray() - 200), 249)
+    save_object[0] = cutscene_master
+    save_object[1] = cutscene_master
+    save_object[2] = cutscene_master
+    save_object[3] = cutscene_master
+    qu = (actor_count + 1)
+    qu_actor = gml_Script_instance_create(1058, 125, obj_actor)
+    gml_Script_scr_actor_setup(qu, qu_actor, "queen")
+    qu_actor.sprite_index = spr_queen_chair_2_right
+    gml_Script_c_sel(qu)
+    gml_Script_c_autowalk(0)
+    gml_Script_c_imagespeed(0.25)
+    be = (actor_count + 2)
+    be_actor = gml_Script_instance_create(970, (gml_Script_cameray() - 200), obj_actor)
+    gml_Script_scr_actor_setup(be, be_actor, "berdly")
+    be_actor.sprite_index = spr_cutscene_25_berdly_plug_removed
+    qu_flame = (actor_count + 3)
+    qu_flame_actor = gml_Script_scr_dark_marker(1058, 125, 764)
+    gml_Script_scr_actor_setup_nofacing(qu_flame, qu_flame_actor, "qu_flame")
+    qu_flame_actor.depth = (qu_actor.depth + 100)
+    gml_Script_c_sel(qu_flame)
+    gml_Script_c_flip("x")
+    gml_Script_c_imagespeed(0.25)
+    var _temp_local_var_2 = berdly_wire2
+    var _temp_local_var_3 = id
+    var _temp_local_var_4 = berdly_plug
+    var _temp_local_var_5 = berdly_wire
 }
 if (con == 1)
 {
@@ -222,8 +253,21 @@ if (con == 10 && customcon == 1)
     alarm[0] = 30
     if (global.tempflag[31] == 0)
         global.tempflag[31] = 1
-    var _temp_local_var_9 = qu_actor
-    visible = false
+    with (qu_actor)
+        visible = false
+    with (qu_flame_actor)
+        visible = false
+    var queen_marker = gml_Script_scr_dark_marker(qu_actor.x, qu_actor.y, qu_actor.sprite_index)
+    berdly_wire.visible = false
+    var new_berdly = gml_Script_instance_create(berdly_wire.x, berdly_wire.y, obj_berdlyplug_enemy)
+    global.flag[9] = 2
+    global.batmusic[0] = gml_Script_snd_init("queen_boss.ogg")
+    encounterflag = 548
+    global.flag[54] = encounterflag
+    gml_Script_scr_battle(59, 1, queen_marker, new_berdly, 0)
+    if gml_Script_i_ex(865)
+        instance_destroy(obj_battleback)
+    global.flag[9] = 1
 }
 if (con == 20 && gml_Script_i_ex(355))
 {
@@ -815,8 +859,18 @@ if (con == 60 && (!gml_Script_i_ex(895)))
     global.interact = 0
     global.facing = 0
     var savepoint = gml_Script_instance_create(905, 40, obj_savepoint)
-    var _temp_local_var_19 = savepoint
-    gml_Script_scr_depth()
+    with (savepoint)
+        gml_Script_scr_depth()
+    with (obj_mainchara)
+        cutscene = false
+    with (obj_caterpillarchara)
+    {
+        if (name == "susie")
+        {
+            follow = 0
+            visible = false
+        }
+    }
 }
 if (con > 0 && berdly_npc_realign)
 {

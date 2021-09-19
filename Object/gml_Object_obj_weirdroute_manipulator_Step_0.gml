@@ -15,7 +15,7 @@ if (room == room_dw_city_intro)
         {
             if gml_Script_i_ex(80)
             {
-                if ((obj_mainchara.x.room_width / 2) && global.interact == 0)
+                if (obj_mainchara.x < (room_width / 2) && global.interact == 0)
                 {
                     global.interact = 1
                     trashcon = 1

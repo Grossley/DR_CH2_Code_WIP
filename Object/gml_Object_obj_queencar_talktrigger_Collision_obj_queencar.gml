@@ -1,8 +1,10 @@
 if (specialtalkcon == 0)
 {
-    var _temp_local_var_1 = other
-    dotalk = 1
-    talkcon++
+    with (other)
+    {
+        dotalk = 1
+        talkcon++
+    }
 }
 else
 {

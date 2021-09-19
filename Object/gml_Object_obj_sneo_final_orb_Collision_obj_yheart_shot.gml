@@ -22,5 +22,5 @@ if (destroyable == 1)
         gml_Script_snd_play(166)
     }
 }
-var _temp_local_var_1 = other
-event_user(0)
+with (other)
+    event_user(0)

@@ -1,3 +1,4 @@
+var _temp_local_var_2;
 d = gml_Script_instance_create(gml_Script_camerax(), gml_Script_cameray(), obj_fadein)
 with (obj_fadeout)
     instance_destroy()
@@ -20,8 +21,8 @@ if (sprite_index == spr_sneo_bigshot_l)
                 __mercydmgwriter = gml_Script_instance_create(global.monsterx[myself], ((global.monstery[myself] + 20) - (global.hittarget[myself] * 20)), obj_dmgwriter)
                 __mercydmgwriter.damage = 5
                 __mercydmgwriter.type = 5
-                myself.hittarget[global.hittarget[myself]] = (global.hittarget[myself] + 1)
-                global
+                var _temp_local_var_2 = global.hittarget[myself]
+                global.hittarget[myself] = (global.hittarget[myself] + 1)
             }
         }
         else

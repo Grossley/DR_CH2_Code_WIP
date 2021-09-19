@@ -1,4 +1,4 @@
-if (active == false ? (x.mouse_x ? 1 : y.mouse_y) : 0)
+if (active == false && (x != mouse_x || y != mouse_y))
 {
     active = true
     if (!useSprite)

@@ -1,3 +1,4 @@
+var _temp_local_var_3, _temp_local_var_4;
 if (con == 1 && obj_mainchara.x >= 540)
 {
     con = 99
@@ -24,9 +25,8 @@ if (con == 99 && obj_mainchara.x >= 540)
     qu_actor.shadow = 0
     qu_actor.auto_depth = 0
     qu_actor.depth = 1000300
-    var _temp_local_var_3 = qu_actor
-    var _temp_local_var_4 = 716
-    var _temp_local_var_5 = 713
+    var _temp_local_var_3 = 716
+    var _temp_local_var_4 = 713
     fakeshadow.visible = false
 }
 if (screencon == 1)
@@ -47,9 +47,13 @@ if (customcon == 1 && con == 2)
     if (ca_actor.x <= (no_actor.x - 12))
     {
         ca_actor.x = (no_actor.x - 16)
-        var _temp_local_var_9 = ca_actor
-        hspeed = 0
-        con = 1
+        with (ca_actor)
+        {
+            hspeed = 0
+            con = 1
+        }
+        customtimer = 0
+        customcon = 2
     }
 }
 if (customcon == 2 && con == 2)
@@ -57,14 +61,20 @@ if (customcon == 2 && con == 2)
     customtimer++
     if (customtimer == 14)
     {
-        var _temp_local_var_11 = su_actor
-        sprite_index = spr_susie_shock_r
+        with (su_actor)
+            sprite_index = spr_susie_shock_r
+        with (no_actor)
+            sprite_index = spr_noelle_shocked_dw
     }
     if (customtimer == 49)
     {
         gml_Script_snd_play(46)
-        var _temp_local_var_13 = ca_actor
-        gravity = -1
+        with (ca_actor)
+            gravity = -1
+        with (no_actor)
+            gravity = -1
+        gml_Script_c_waitcustom_end()
+        customcon = 3
     }
 }
 if (funcon == 1)
@@ -87,9 +97,17 @@ if (wirecon == 1)
     wire1_actor.y = (npc1_actor.y - 300)
     wire2_actor.x = (npc2_actor.x + 20)
     wire2_actor.y = (npc2_actor.y - 300)
-    var _temp_local_var_15 = wire1_actor
-    gravity = 1
-    depth = -400
+    with (wire1_actor)
+    {
+        gravity = 1
+        depth = -400
+    }
+    with (wire2_actor)
+    {
+        gravity = 1
+        depth = -400
+    }
+    wirecon = 2
 }
 if (wirecon == 2)
 {
@@ -102,8 +120,12 @@ if (wirecon == 2)
         wire1_actor.y = (npc1_actor.y + 20)
         wire2_actor.y = (npc2_actor.y + 20)
         gml_Script_snd_play(60)
-        var _temp_local_var_17 = npc1_actor
-        gml_Script_scr_shakeobj()
+        with (npc1_actor)
+            gml_Script_scr_shakeobj()
+        with (npc2_actor)
+            gml_Script_scr_shakeobj()
+        wirecon = 3
+        wiretimer = 0
     }
 }
 if (wirecon == 3)
@@ -163,10 +185,30 @@ if (con == 2 && (!instance_exists(obj_cutscene_master)))
             hspeed = 6
         }
     }
-    var _temp_local_var_20 = npc1_actor
-    depth = -100
-    gml_Script_scr_move_to_point_over_time((global.monstermakex[0] - 2), (global.monstermakey[0] - 34), 15)
-    depth += 20
+    with (npc1_actor)
+    {
+        depth = -100
+        gml_Script_scr_move_to_point_over_time((global.monstermakex[0] - 2), (global.monstermakey[0] - 34), 15)
+        depth += 20
+    }
+    with (wire1_actor)
+    {
+        depth = -200
+        gml_Script_scr_move_to_point_over_time((global.monstermakex[0] - 2), (global.monstermakey[0] - 34), 15)
+        depth += 20
+    }
+    with (npc2_actor)
+    {
+        depth = -100
+        gml_Script_scr_move_to_point_over_time((global.monstermakex[1] - 2), (global.monstermakey[1] - 34), 15)
+    }
+    with (wire2_actor)
+    {
+        depth = -200
+        gml_Script_scr_move_to_point_over_time((global.monstermakex[1] - 2), (global.monstermakey[1] - 34), 15)
+    }
+    con = 3
+    alarm[4] = 25
 }
 if (con == 4)
 {
@@ -349,8 +391,22 @@ if (wirecon == 10)
     monster1.x = ((xx + 480) - 200)
     monster1.y = -280
     monster1.myself = 0
-    var _temp_local_var_26 = monster1
-    event_user(12)
+    with (monster1)
+        event_user(12)
+    monster2 = gml_Script_instance_create(global.monstermakex[0], global.monstermakey[0], obj_werewire_enemy)
+    monster2.x = ((xx + 640) - 200)
+    monster2.y = -160
+    monster2.myself = 1
+    with (monster2)
+        event_user(12)
+    with (obj_monsterparent)
+    {
+        myself = 0
+        gravity = 2
+    }
+    wirecon = 11
+    landeda = 0
+    landedb = 0
 }
 if (wirecon == 11)
 {

@@ -2,7 +2,7 @@ con = -1
 cutscene_master = -4
 leaveCounter = 0
 susiewaiting = 0
-nisesusie = -1
+nisesusie = self
 susxpos = 0
 susypos = 0
 if (global.chapter != 2)
@@ -16,7 +16,7 @@ else
     if (global.flag[336] == 1)
     {
         nisesusie = gml_Script_scr_marker(310, 125, 849)
-        var _temp_local_var_1 = nisesusie
-        gml_Script_scr_depth()
+        with (nisesusie)
+            gml_Script_scr_depth()
     }
 }

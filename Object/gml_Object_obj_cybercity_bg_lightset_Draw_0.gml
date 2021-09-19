@@ -1,8 +1,9 @@
+var _temp_local_var_2;
 timer++
 minitimer++
 minitimerthreshold = 2
 timerthreshold = 12
-for (i = obj_sneo_friedpipis; i < l; i++)
+for (i = 0; i < l; i++)
 {
     if (mode < 2)
     {
@@ -12,8 +13,8 @@ for (i = obj_sneo_friedpipis; i < l; i++)
     }
     if (mode == 2 && minitimer >= minitimerthreshold)
     {
-        i.barsiner[barsiner[i]]++
-        self
+        var _temp_local_var_2 = barsiner[i]
+        barsiner[i]++
         yscale[i] = (((0.6 * h) + ((sin((barsiner[i] / 2)) * 0.3) * h)) + ((sin((barsiner[i] / 3)) * 0.1) * h))
     }
     if (mode == 0)

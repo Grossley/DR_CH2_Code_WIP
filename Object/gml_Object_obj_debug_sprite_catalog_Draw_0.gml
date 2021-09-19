@@ -43,15 +43,12 @@ if oldway
         {
             if ((yy + sy) > (cy - 200) && (yy + sy) < (cy + 700))
             {
-                for (j = obj_sneo_friedpipis; j < 3; j++)
+                for (j = 0; j < 3; j++)
                 {
                     if (i < (myLastSprite - 1))
                         i++
                     draw_sprite_ext(mySprite[i], (siner / 5), (100 + (j * 130)), (((yy + topy) + sy) + 5), 2, 2, 0, c_white, 1)
-                    var _temp_local_var_3 = (((yy + topy) + sy) + 5)
-                    var _temp_local_var_4 = ((j * 130) + 200)
-                    var _temp_local_var_5 = ((((yy + topy) + sy) + 5) + 80)
-                    if ((j * 130) + 100).mouse_y.mouse_x
+                    if point_in_rectangle(mouse_x, mouse_y, ((j * 130) + 100), (((yy + topy) + sy) + 5), ((j * 130) + 200), ((((yy + topy) + sy) + 5) + 80))
                     {
                         draw_set_color(c_red)
                         draw_text(((j * 130) + 100), (((yy + topy) + sy) - 15), mySpriteName[i])
@@ -68,9 +65,7 @@ if oldway
             else
                 continue
         }
-        1746
-        var _temp_local_var_6 = 0
-        var _temp_local_var_7 = mouse_y.mouse_x
+        draw_sprite(spr_maus_cursor, 0, mouse_x, mouse_y)
     }
     draw_text(0, 0, ((((string(sy) + " ") + string(yy)) + " ") + string((sy + yy))))
     if keyboard_check(vk_down)

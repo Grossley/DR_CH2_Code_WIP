@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (!ds_map_exists(global.firework_sprite_pixel_data, sprite_index))
 {
     show_debug_message((("[WARNING] obj_fireworks_manager hasn't cached " + sprite_get_name(sprite_index)) + " in its create event. It will be added now, game may stutter."))
@@ -31,6 +32,7 @@ for (var i = 0; i < pixels; i++)
     pixelspritechangealarm[i] = (20 + random(20))
     pixelalpha[i] = random_range(0.5, 1)
     pixelexpandspd[i] = random_range(0.04, 0.06)
+    var _temp_local_var_1 = colorProfile
     switch colorProfile
     {
         case 2:

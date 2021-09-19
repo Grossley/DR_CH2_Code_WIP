@@ -4,8 +4,12 @@ if (con > 0 && con < 40)
         global.interact = 1
     if (con == 2)
     {
-        var _temp_local_var_2 = k
-        gml_Script_scr_halt()
+        with (k)
+            gml_Script_scr_halt()
+        with (s)
+            gml_Script_scr_halt()
+        con = 3
+        alarm[4] = 30
     }
     if (con == 4)
     {
@@ -34,14 +38,27 @@ if (con > 0 && con < 40)
     }
     if (con == 7)
     {
-        var _temp_local_var_5 = s
-        vspeed = 0.5
-        image_speed = 0.1
+        with (s)
+        {
+            vspeed = 0.5
+            image_speed = 0.1
+        }
+        with (k)
+        {
+            vspeed = 0.5
+            image_speed = 0.1
+        }
+        con = 8
+        alarm[4] = 30
     }
     if (con == 9)
     {
-        var _temp_local_var_7 = s
-        gml_Script_scr_halt()
+        with (s)
+            gml_Script_scr_halt()
+        with (k)
+            gml_Script_scr_halt()
+        con = 10
+        alarm[4] = 30
     }
     if (con == 11)
     {
@@ -50,57 +67,88 @@ if (con > 0 && con < 40)
         global.msg[1] = gml_Script_stringsetloc("* Hey^1, Kris^1, is it me^1, or.../", "obj_darkdoor_slash_Step_0_gml_73_0")
         global.msg[2] = gml_Script_stringsetloc("\\E6* Is it REALLY dark in there?/%", "obj_darkdoor_slash_Step_0_gml_74_0")
         gml_Script_instance_create(0, 0, obj_dialoguer)
-        var _temp_local_var_9 = s
-        sprite_index = spr_susiel
+        with (s)
+            sprite_index = spr_susiel
+        con = 12
     }
     if (con == 12 && instance_exists(obj_dialoguer) == 0)
     {
-        var _temp_local_var_11 = s
-        sprite_index = spr_susieu
+        with (s)
+            sprite_index = spr_susieu
+        con = 13
+        alarm[4] = 90
     }
     if (con == 14)
     {
-        var _temp_local_var_12 = s
-        sprite_index = spr_susiel
+        with (s)
+            sprite_index = spr_susiel
+        global.msg[0] = gml_Script_stringsetloc("\\E6* What's the holdup^1, Kris^1?&* Are you gonna go in or what?/%", "obj_darkdoor_slash_Step_0_gml_90_0")
+        gml_Script_instance_create(0, 0, obj_dialoguer)
+        con = 15
     }
     if (con == 15 && instance_exists(obj_dialoguer) == 0)
     {
-        var _temp_local_var_14 = k
-        vspeed = 0.5
-        image_speed = 0.1
+        with (k)
+        {
+            vspeed = 0.5
+            image_speed = 0.1
+        }
+        con = 14.5
+        alarm[4] = 30
     }
     if (con == 15.5)
     {
-        var _temp_local_var_15 = k
-        gml_Script_scr_halt()
+        with (k)
+            gml_Script_scr_halt()
+        con = 16
+        alarm[4] = 60
     }
     if (con == 17)
     {
-        var _temp_local_var_16 = s
-        sprite_index = spr_susiel
+        with (s)
+            sprite_index = spr_susiel
+        global.msg[0] = gml_Script_stringsetloc("\\E7* Fine^1!&* If you're gonna be a WIMP^1, then I'll.../%", "obj_darkdoor_slash_Step_0_gml_117_0")
+        gml_Script_instance_create(0, 0, obj_dialoguer)
+        con = 18
     }
     if (con == 18 && instance_exists(obj_dialoguer) == 0)
     {
-        var _temp_local_var_18 = s
-        sprite_index = spr_susieu
+        with (s)
+            sprite_index = spr_susieu
+        con = 19
+        alarm[4] = 90
     }
     if (con == 20)
     {
-        var _temp_local_var_19 = s
-        sprite_index = spr_susiel
+        with (s)
+            sprite_index = spr_susiel
+        global.msg[0] = gml_Script_stringsetloc("\\E7* We'll both go in at the same time!!/%", "obj_darkdoor_slash_Step_0_gml_132_0")
+        gml_Script_instance_create(0, 0, obj_dialoguer)
+        con = 21
     }
     if (con == 21 && instance_exists(obj_dialoguer) == 0)
     {
-        var _temp_local_var_21 = s
-        sprite_index = spr_susieu
-        vspeed = -0.5
-        image_speed = 0.1
+        with (s)
+        {
+            sprite_index = spr_susieu
+            vspeed = -0.5
+            image_speed = 0.1
+        }
+        with (k)
+        {
+            vspeed = -0.5
+            image_speed = 0.1
+        }
+        con = 22
+        alarm[4] = 30
     }
     if (con == 23)
     {
         fade = gml_Script_instance_create(0, 0, obj_fadeout)
-        var _temp_local_var_23 = fade
-        fadespeed = 0.03
+        with (fade)
+            fadespeed = 0.03
+        con = 24
+        alarm[4] = 34
     }
     if (con == 25)
     {
@@ -119,8 +167,15 @@ if (con >= 40)
         global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.6, 0.7)
         global.interact = 1
         s = gml_Script_scr_marker(479, 92, 975)
-        var _temp_local_var_24 = s
-        gml_Script_scr_depth()
+        with (s)
+            gml_Script_scr_depth()
+        with (obj_mainchara)
+        {
+            x = obj_markerD.x
+            y = obj_markerD.y
+        }
+        con = 41
+        alarm[4] = 45
     }
     if (con == 42)
     {
@@ -136,8 +191,14 @@ if (con >= 40)
     if (con == 43 && (!gml_Script_d_ex()))
     {
         k = gml_Script_scr_marker(obj_mainchara.x, obj_mainchara.y, 659)
-        var _temp_local_var_26 = k
-        gml_Script_scr_depth()
+        with (k)
+            gml_Script_scr_depth()
+        with (obj_mainchara)
+            visible = false
+        with (s)
+            sprite_index = spr_susier
+        con = 44
+        alarm[4] = 30
     }
     if (con == 45)
     {
@@ -148,15 +209,36 @@ if (con >= 40)
     }
     if (con == 50 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_29 = s
-        hspeed = -2
-        image_speed = 0.2
-        sprite_index = spr_susiel
+        with (s)
+        {
+            hspeed = -2
+            image_speed = 0.2
+            sprite_index = spr_susiel
+        }
+        with (k)
+        {
+            hspeed = -2
+            image_speed = 0.2
+        }
+        with (obj_mainchara)
+            hspeed = -2
+        con = 51
+        alarm[4] = 100
     }
     if (con == 52)
     {
-        var _temp_local_var_31 = s
-        gml_Script_scr_halt()
+        with (s)
+            gml_Script_scr_halt()
+        with (k)
+            gml_Script_scr_halt()
+        with (obj_mainchara)
+            gml_Script_scr_halt()
+        with (s)
+            sprite_index = spr_susieu
+        with (k)
+            sprite_index = spr_krisu
+        con = 51.1
+        alarm[4] = 60
     }
     if (con == 52.1)
     {
@@ -172,18 +254,36 @@ if (con >= 40)
     }
     if (con == 54)
     {
-        var _temp_local_var_36 = s
-        sprite_index = spr_susier_plain
+        with (s)
+            sprite_index = spr_susier_plain
+        with (k)
+            sprite_index = spr_krisl
+        global.fe = 1
+        global.msg[0] = gml_Script_stringsetloc("\\E1* Well^1, guess we should go./", "obj_darkdoor_slash_Step_0_gml_268_0")
+        global.msg[1] = gml_Script_stringsetloc("\\E0* .../", "obj_darkdoor_slash_Step_0_gml_269_0")
+        global.msg[2] = gml_Script_stringsetloc("\\E1* See ya later^1, I guess./%", "obj_darkdoor_slash_Step_0_gml_270_0")
+        gml_Script_instance_create(0, 0, obj_dialoguer)
+        con = 55
     }
     if (con == 55 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_39 = k
-        sprite_index = spr_krisd
+        with (k)
+            sprite_index = spr_krisd
+        with (s)
+        {
+            sprite_index = spr_susied_plain
+            image_speed = 0.1
+            vspeed = 0.5
+        }
+        con = 56
+        alarm[4] = 60
     }
     if (con == 57)
     {
-        var _temp_local_var_41 = s
-        gml_Script_scr_halt()
+        with (s)
+            gml_Script_scr_halt()
+        con = 58
+        alarm[4] = 30
     }
     if (con == 59)
     {
@@ -193,37 +293,58 @@ if (con >= 40)
         global.msg[2] = gml_Script_stringsetloc("\\E0* ... Kris?/%", "obj_darkdoor_slash_Step_0_gml_300_0")
         con = 60
         d = gml_Script_instance_create(0, 0, obj_dialoguer)
-        var _temp_local_var_42 = d
-        side = 0
+        with (d)
+            side = 0
     }
     if (con == 60 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_44 = s
-        sprite_index = spr_susier_plain
+        with (s)
+            sprite_index = spr_susier_plain
+        con = 61
+        alarm[4] = 30
     }
     if (con == 62)
     {
-        var _temp_local_var_45 = s
-        vspeed = -2
-        hspeed = 0.75
-        image_speed = 0.25
-        sprite_index = spr_susieu
+        with (s)
+        {
+            vspeed = -2
+            hspeed = 0.75
+            image_speed = 0.25
+            sprite_index = spr_susieu
+        }
+        with (k)
+            sprite_index = spr_krisl
+        con = 63
+        alarm[4] = 15
     }
     if (con == 64)
     {
-        var _temp_local_var_47 = s
-        gml_Script_scr_halt()
-        sprite_index = spr_susier_plain
+        with (s)
+        {
+            gml_Script_scr_halt()
+            sprite_index = spr_susier_plain
+        }
+        con = 65
+        alarm[4] = 20
     }
     if (con == 66)
     {
-        var _temp_local_var_48 = k
-        visible = false
+        with (k)
+            visible = false
+        with (s)
+        {
+            sprite_index = spr_susie_krisshoulder_r
+            image_speed = 0.2
+        }
+        con = 67
+        alarm[4] = 20
     }
     if (con == 68)
     {
-        var _temp_local_var_50 = s
-        image_speed = 0
+        with (s)
+            image_speed = 0
+        con = 69
+        alarm[4] = 60
     }
     if (con == 70)
     {
@@ -233,8 +354,11 @@ if (con >= 40)
         d = gml_Script_instance_create(0, 0, obj_dialoguer)
         with (obj_writer)
             skippable = false
-        var _temp_local_var_51 = d
-        skippable = false
+        with (d)
+            skippable = false
+        with (d)
+            side = 0
+        con = 70.1
     }
     if (con == 70.1 && (!gml_Script_d_ex()))
     {
@@ -243,19 +367,33 @@ if (con >= 40)
     }
     if (con == 70.2 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_55 = s
-        image_speed = -0.24
+        with (s)
+            image_speed = -0.24
+        con = 69.3
+        alarm[4] = 16
     }
     if (con == 70.3)
     {
-        var _temp_local_var_56 = s
-        gml_Script_scr_halt()
+        with (s)
+            gml_Script_scr_halt()
+        con = 72
+        alarm[4] = 30
     }
     if (con == 73 && (!gml_Script_d_ex()))
     {
-        var _temp_local_var_58 = k
-        visible = true
-        sprite_index = spr_krisd
+        with (k)
+        {
+            visible = true
+            sprite_index = spr_krisd
+        }
+        with (s)
+        {
+            sprite_index = spr_susied
+            image_speed = 0.2
+            vspeed = 3
+        }
+        con = 74
+        alarm[4] = 30
     }
     if (con == 75)
     {
@@ -266,7 +404,7 @@ if (con >= 40)
         global.interact = 0
         with (obj_mainchara)
             visible = true
-        var _temp_local_var_60 = k
-        instance_destroy()
+        with (k)
+            instance_destroy()
     }
 }

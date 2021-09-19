@@ -37,13 +37,14 @@ if (global.chapter == 2)
         }
         else
         {
-            var _temp_local_var_2 = pb_marker
-            gml_Script_scr_depth()
+            with (pb_marker)
+                gml_Script_scr_depth()
         }
         sw_npc = gml_Script_instance_create(300, 110, obj_npc_room_animated)
         sw_npc.sprite_index = spr_npc_swatchling_sweep
         sw_npc.image_speed = 0.1
-        var _temp_local_var_1 = sw_npc
-        gml_Script_scr_depth()
+        with (sw_npc)
+            gml_Script_scr_depth()
+        instance_destroy()
     }
 }

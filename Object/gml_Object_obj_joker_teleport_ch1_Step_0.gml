@@ -35,28 +35,31 @@ if (con == 1)
             bullet.sprite_index = spr_diamondbullet_ch1
             bullet.active = true
             gml_Script_scr_bullet_inherit_ch1(bullet)
-            var _temp_local_var_2 = bullet
-            move_towards_point((obj_heart_ch1.x + 10), (obj_heart_ch1.y + 10), 8)
-            image_angle = direction
-            image_xscale = 0.7
-            image_yscale = 0.7
+            with (bullet)
+            {
+                move_towards_point((obj_heart_ch1.x + 10), (obj_heart_ch1.y + 10), 8)
+                image_angle = direction
+                image_xscale = 0.7
+                image_yscale = 0.7
+            }
         }
         if (type == 1)
         {
-            i = 0
-            while (i < 5)
+            for (i = 0; i < 5; i += 1)
             {
                 bullet = gml_Script_instance_create_ch1(x, y, 1518)
                 bullet.sprite_index = spr_spadebullet_ch1
                 bullet.active = true
                 bullet.offset = (18 * i)
                 gml_Script_scr_bullet_inherit_ch1(bullet)
-                var _temp_local_var_3 = bullet
-                move_towards_point((obj_heart_ch1.x + 10), (obj_heart_ch1.y + 10), 4.5)
-                direction = ((direction - 36) + offset)
-                image_angle = direction
-                image_xscale = 0.4
-                image_yscale = 0.4
+                with (bullet)
+                {
+                    move_towards_point((obj_heart_ch1.x + 10), (obj_heart_ch1.y + 10), 4.5)
+                    direction = ((direction - 36) + offset)
+                    image_angle = direction
+                    image_xscale = 0.4
+                    image_yscale = 0.4
+                }
             }
         }
     }

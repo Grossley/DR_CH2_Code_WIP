@@ -20,14 +20,26 @@ if (room == room_field_puzzle1_ch1)
     failmax = 240
     wonmax = 3
     plotamt = 35
-    i = 0
-    while (i < wonmax)
+    for (i = 0; i < wonmax; i += 1)
     {
         block[i] = gml_Script_instance_create_ch1((1280 + (i * 40)), 280, 1656)
         block[i].image_yscale = 2
         spike1[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 280, 3607)
-        var _temp_local_var_1 = spike1[i]
-        depth = 900000
+        with (spike1[i])
+            depth = 900000
+        spike2[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 320, 3607)
+        with (spike2[i])
+            depth = 900000
+        if (global.plot >= 35)
+        {
+            active = 2
+            with (spike1[i])
+                image_index = 1
+            with (spike2[i])
+                image_index = 1
+            with (block[i])
+                instance_destroy()
+        }
     }
 }
 if (room == room_field_puzzle2_ch1)

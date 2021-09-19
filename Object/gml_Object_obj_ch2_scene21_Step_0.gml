@@ -63,19 +63,16 @@ if release_swan
     }
     if (lever_timer == 0)
     {
-        var _temp_local_var_3 = lever
-        image_index = 1
+        with (lever)
+            image_index = 1
     }
     if (lever_timer == 3)
     {
-        var _temp_local_var_4 = lever
-        image_index = 2
+        with (lever)
+            image_index = 2
     }
     lever_timer++
-    _temp_local_var_4.y = (swanboat.y - 5)
-    var _temp_local_var_5 = lever
-    var _temp_local_var_6 = -9
-    var _temp_local_var_7 = swanboat
+    swanboat.y -= 5
     if (swanboat.y <= 177)
     {
         swanboat_init_y = swanboat.y
@@ -107,9 +104,13 @@ if (con == 6)
     if (swanboat_talk && abs((swanboat.x - monitor[queen_heckle_index].x)) <= 500)
     {
         swanboat_talk = 0
-        var _temp_local_var_10 = swanboat
-        dotalk = 1
-        talkcon++
+        with (swanboat)
+        {
+            dotalk = 1
+            talkcon++
+        }
+        if (queen_heckle_index == 3)
+            queen_heckle = 1
     }
 }
 if queen_heckle_start

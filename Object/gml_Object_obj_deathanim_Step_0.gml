@@ -29,13 +29,12 @@ if (t >= 1)
     image_blend = merge_color(c_white, c_red, (redup / 10))
     for (i = 0; i <= xs; i += 1)
     {
-        j = 0
-        while (j <= ys)
+        for (j = 0; j <= ys; j += 1)
         {
             if (bsin[i][j] <= 0)
-                var _temp_local_var_3 = bspeed[i][j]
-            j += 1
-            _temp_local_var_3 = bsin[i][j]
+                bspeed[i][j][j] += 1
+            bx[i][j][j] += bspeed[i][j]
+            bsin[i][j][j] -= 1
         }
     }
 }

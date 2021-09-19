@@ -65,6 +65,8 @@ else if remove_collider
 {
     global.facing = 1
     remove_collider = 0
-    var _temp_local_var_7 = left_collider
-    instance_destroy()
+    with (left_collider)
+        instance_destroy()
+    with (right_collider)
+        instance_destroy()
 }

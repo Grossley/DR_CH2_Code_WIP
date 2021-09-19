@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 if (caught[other.which] == 0)
 {
     caught[other.which] = 1

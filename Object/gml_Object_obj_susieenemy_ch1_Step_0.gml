@@ -30,8 +30,8 @@ if (global.monster[myself] == true && defeated == 0)
                 dc.grazepoints = 5
                 if (sleeping == true)
                 {
-                    var _temp_local_var_4 = dc
-                    instance_destroy()
+                    with (dc)
+                        instance_destroy()
                 }
             }
             if (attacktype == 1)
@@ -44,8 +44,8 @@ if (global.monster[myself] == true && defeated == 0)
                 dc.grazepoints = 3
                 if (sleeping == true)
                 {
-                    var _temp_local_var_5 = dc
-                    instance_destroy()
+                    with (dc)
+                        instance_destroy()
                 }
             }
             if (attacktype == 0 && sleeping == false)
@@ -166,21 +166,24 @@ if (global.myfight == 3)
         if (lullabied == 0)
         {
             singy = gml_Script_snd_play_ch1(393)
-            var _temp_local_var_11 = object_index
-            lullabied = 1
+            with (object_index)
+                lullabied = 1
         }
         else
         {
             singy = gml_Script_snd_play_ch1(394)
-            _temp_local_var_11 = object_index
-            lullabied = 0
+            with (object_index)
+                lullabied = 0
         }
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_197_0")
         with (obj_heroralsei_ch1)
             visible = false
         ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3848)
-        var _temp_local_var_12 = ralsing
-        image_speed = 0.2
+        with (ralsing)
+            image_speed = 0.2
+        lullatimer = 0
+        gml_Script_scr_battletext_default_ch1()
+        actcon = 10
     }
     if (actcon == 10)
     {
@@ -190,8 +193,22 @@ if (global.myfight == 3)
     }
     if (actcon == 11 && instance_exists(obj_writer_ch1) == 0)
     {
-        var _temp_local_var_14 = ralsing
-        instance_destroy()
+        with (ralsing)
+            instance_destroy()
+        with (obj_heroralsei_ch1)
+            visible = true
+        gml_Script_snd_stop_ch1(singy)
+        gml_Script_snd_resume_ch1(global.batmusic[1])
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_223_0")
+        if (sleeping == true)
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_224_0")
+        idlesprite = spr_susie_enemy_defeat_ch1
+        sleepcounter = 0
+        sleeping = true
+        global.monstercomment[myself] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_228_0")
+        global.monsterstatus[myself] = true
+        gml_Script_scr_battletext_default_ch1()
+        actcon = 1
     }
     if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
@@ -223,17 +240,46 @@ if (pacifycon == 1)
 if (pacifycon == 2)
 {
     gml_Script_snd_play_ch1(453)
-    var _temp_local_var_16 = temp_l
-    o = gml_Script_scr_oflash_ch1()
-    o.flashcolor = c_blue
+    with (temp_l)
+    {
+        o = gml_Script_scr_oflash_ch1()
+        o.flashcolor = c_blue
+    }
+    pacifycon = 3
 }
 if (pacifycon == 3)
 {
     pacifytimer += 1
     if (pacifytimer >= 30 && (!instance_exists(obj_writer_ch1)))
     {
-        var _temp_local_var_18 = temp_l
-        instance_destroy()
+        with (temp_l)
+            instance_destroy()
+        with (obj_lancerboss3_ch1)
+            visible = true
+        pacifycon = 4
+        with (obj_monsterparent_ch1)
+            susie_act = 9
+        global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_283_0")
+        gml_Script_scr_lanface_ch1(1, 3)
+        global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_285_0")
+        gml_Script_scr_noface_ch1(3)
+        global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_287_0")
+        if (tirespare == 1)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_290_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_291_0")
+            global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_292_0")
+            global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_293_0")
+            global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_294_0")
+        }
+        if (tirespare >= 2)
+        {
+            global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_298_0")
+            global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_299_0")
+        }
+        gml_Script_scr_battletext_default_ch1()
+        pacifycon = 5
+        tirespare += 1
     }
 }
 if (pacifycon == 5 && (!instance_exists(obj_writer_ch1)))

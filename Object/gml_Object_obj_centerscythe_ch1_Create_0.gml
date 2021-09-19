@@ -57,5 +57,30 @@ if (instance_number(obj_centerscythe_ch1) == 1)
         dir = 180
         un = 1
     }
+    s3 = gml_Script_instance_create_ch1(centerx, (centery - radius), 1589)
+    with (s3)
+    {
+        sine = 0
+        dir = 90
+        un = 0
+    }
+    s4 = gml_Script_instance_create_ch1(centerx, (centery + radius), 1589)
+    with (s4)
+    {
+        sine = 0
+        dir = 270
+        un = 1
+    }
+    obj_centerscythe_ch1.mydir = dir
+    obj_centerscythe_ch1.sinespeed = sinespeed
+    obj_centerscythe_ch1.dirspeed = dirspeed
+    obj_centerscythe_ch1.insanity = insanity
+    with (obj_centerscythe_ch1)
+    {
+        if (dir != mydir)
+            dir += mydir
+        x = (centerx - lengthdir_x(radius, dir))
+        y = (centery - lengthdir_y(radius, dir))
+    }
 }
 wall_destroy = 0

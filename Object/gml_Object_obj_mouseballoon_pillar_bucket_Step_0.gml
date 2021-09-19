@@ -27,8 +27,17 @@ if (con == 1)
         var _x = (x + 46)
         var _y = (y + 36)
         mouse.image_alpha = 2
-        var _temp_local_var_2 = mouse
-        gml_Script_scr_lerpvar("x", x, _x, 15, 2, "out")
+        with (mouse)
+            gml_Script_scr_lerpvar("x", x, _x, 15, 2, "out")
+        with (mouse)
+            gml_Script_scr_lerpvar("y", y, _y, 15, 2, "out")
+        with (mouse)
+            gml_Script_scr_lerpvar("image_alpha", 4, 0, 25, 2, "out")
+        gml_Script_scr_doom(mouse, 25)
+        timer = 0
+        micerequired--
+        con = 2
+        timer = 0
     }
 }
 if (con == 2)

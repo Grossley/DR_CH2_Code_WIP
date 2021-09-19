@@ -1,3 +1,4 @@
+var _temp_local_var_1, _temp_local_var_10;
 if (global.hp[global.char[myself]] > 0)
 {
     if (global.myfight == 3 && global.faceaction[myself] == 6)
@@ -248,8 +249,8 @@ if (poisonamount > 0)
     {
         if (global.hp[global.char[myself]] > 1)
         {
-            global.char[myself].hp[global.hp[global.char[myself]]] = (global.hp[global.char[myself]] - 1)
-            global
+            var _temp_local_var_10 = global.hp[global.char[myself]]
+            global.hp[global.char[myself]] = (global.hp[global.char[myself]] - 1)
             poisonamount--
         }
         else

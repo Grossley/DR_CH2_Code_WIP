@@ -16,6 +16,7 @@ else
     blackall.image_blend = c_black
     blackall.image_alpha = 1
     ferris_wheel = gml_Script_instance_create(-100, 180, obj_ferriswheel)
-    var _temp_local_var_2 = ferris_wheel
-    gml_Script_scr_depth()
+    with (ferris_wheel)
+        gml_Script_scr_depth()
+    layer_hspeed("BG_Ferris_Wheel_Loop", -0.3)
 }

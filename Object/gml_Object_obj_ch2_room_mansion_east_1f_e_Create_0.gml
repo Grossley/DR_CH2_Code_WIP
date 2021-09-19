@@ -8,8 +8,8 @@ else if (global.flag[339] == 1)
     {
         hacker_npc = gml_Script_instance_create(1650, 215, obj_npc_room)
         hacker_npc.sprite_index = spr_npc_cursor_walk_left
-        var _temp_local_var_1 = hacker_npc
-        gml_Script_scr_depth()
+        with (hacker_npc)
+            gml_Script_scr_depth()
     }
     layer_set_visible("TILES_Secret", 0)
     layer_set_visible("TILES_Secret_BG", 0)
@@ -26,7 +26,17 @@ else
         hacker.sprite_index = spr_npc_cursor_walk_right
         hacker.image_xscale = 2
         hacker.image_yscale = 2
-        var _temp_local_var_2 = hacker
-        gml_Script_scr_depth()
+        with (hacker)
+            gml_Script_scr_depth()
+        hacker_init_path = 0
+        pause_timer = 0
+        hacker_pause = 0
+        hacker_can_pause = 1
+        with (hacker)
+        {
+            pathpause = 0
+            currentspeed = 2
+            path_start(path_hacker, 2, path_action_stop, 1)
+        }
     }
 }

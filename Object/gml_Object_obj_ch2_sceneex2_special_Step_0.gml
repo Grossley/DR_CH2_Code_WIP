@@ -32,11 +32,14 @@ if (con == 1)
         hspeed = -20
         _cutsceneremy = y
     }
-    var _temp_local_var_1 = enemyrow[1][0]
-    image_xscale *= 2
-    image_yscale *= 2
-    x -= 40
-    bighead = 1
+    with (enemyrow[1][0])
+    {
+        image_xscale *= 2
+        image_yscale *= 2
+        x -= 40
+        bighead = 1
+    }
+    con = 2
 }
 if (con == 2)
 {
@@ -83,8 +86,11 @@ if (con == 4)
     heart.sprite_index = spr_dodgeheart_centered_white
     heart.image_blend = c_red
     heart.depth = -10
-    var _temp_local_var_2 = heart
-    gml_Script_scr_oflash()
+    with (heart)
+        gml_Script_scr_oflash()
+    heart.canmove = 0
+    con = 5
+    alarm[4] = 60
 }
 if (con == 6)
 {
@@ -103,82 +109,106 @@ if (con == 8)
 if (con == 10)
 {
     heart.image_blend = c_yellow
-    var _temp_local_var_3 = heart
-    for (i = 0; i < 3; i++)
+    with (heart)
     {
-        afterimage = gml_Script_instance_create(x, y, obj_afterimage_grow)
-        afterimage.sprite_index = sprite_index
-        afterimage.image_blend = image_blend
-        afterimage.image_angle = image_angle
-        afterimage.xrate = (0.2 * i)
-        afterimage.yrate = (0.2 * i)
-        afterimage.image_alpha = (1 * i)
-        afterimage.depth = (depth + 1)
+        for (i = 0; i < 3; i++)
+        {
+            afterimage = gml_Script_instance_create(x, y, obj_afterimage_grow)
+            afterimage.sprite_index = sprite_index
+            afterimage.image_blend = image_blend
+            afterimage.image_angle = image_angle
+            afterimage.xrate = (0.2 * i)
+            afterimage.yrate = (0.2 * i)
+            afterimage.image_alpha = (1 * i)
+            afterimage.depth = (depth + 1)
+        }
+        sprite_index = spr_yellowheart
+        image_blend = c_white
+        image_angle = 0
+        x -= 10
+        y -= 10
+        gml_Script_scr_oflash()
     }
-    sprite_index = spr_yellowheart
-    image_blend = c_white
-    image_angle = 0
-    x -= 10
-    y -= 10
-    gml_Script_scr_oflash()
+    heart.canmove = 0
+    con = 11
+    alarm[4] = 60
+    gml_Script_snd_play_pitch(225, 0.8)
+    gml_Script_snd_play_pitch(225, 1)
+    gml_Script_snd_play_pitch(235, 1.5)
+    gml_Script_instance_create(0, 0, obj_shake)
 }
 if (con == 12)
 {
     gml_Script_snd_play_pitch(154, 0.5)
     var goenemy = enemyrow[0][0]
-    var _temp_local_var_4 = heart
-    gml_Script_scr_move_to_point_over_time((goenemy.x - 80), (goenemy.y - 10), 10)
+    with (heart)
+        gml_Script_scr_move_to_point_over_time((goenemy.x - 80), (goenemy.y - 10), 10)
+    con = 13
+    alarm[4] = 10
 }
 if (con == 13)
 {
-    var _temp_local_var_5 = heart
-    gml_Script_scr_afterimage()
+    with (heart)
+        gml_Script_scr_afterimage()
 }
 if (con == 14)
 {
     gml_Script_snd_play(61)
-    var _temp_local_var_6 = heart
-    color = 0x000001
+    with (heart)
+        color = 0x000001
+    con = 15
 }
 if (con == 15)
 {
     if (!gml_Script_i_ex(enemyrow[0][2]))
     {
         con = 16
-        var _temp_local_var_7 = heart
-        color = c_black
+        with (heart)
+            color = c_black
+        gml_Script_snd_play_pitch(154, 0.5)
+        goenemy = enemyrow[2][0]
+        with (heart)
+            gml_Script_scr_move_to_point_over_time((goenemy.x - 80), (goenemy.y - 10), 10)
+        alarm[4] = 10
     }
 }
 if (con == 16)
 {
-    var _temp_local_var_9 = heart
-    gml_Script_scr_afterimage()
+    with (heart)
+        gml_Script_scr_afterimage()
 }
 if (con == 17)
 {
     gml_Script_snd_play(61)
-    var _temp_local_var_10 = heart
-    color = 0x000001
+    with (heart)
+        color = 0x000001
+    con = 18
 }
 if (con == 18)
 {
     if (!gml_Script_i_ex(enemyrow[2][2]))
     {
         con = 19
-        var _temp_local_var_11 = heart
-        color = c_black
+        with (heart)
+            color = c_black
+        gml_Script_snd_play_pitch(154, 0.5)
+        goenemy = enemyrow[1][0]
+        with (heart)
+            gml_Script_scr_move_to_point_over_time((goenemy.x - 110), (goenemy.y - 10), 10)
+        alarm[4] = 10
     }
 }
 if (con == 19)
 {
-    var _temp_local_var_13 = heart
-    gml_Script_scr_afterimage()
+    with (heart)
+        gml_Script_scr_afterimage()
 }
 if (con == 20)
 {
     gml_Script_snd_play(61)
-    var _temp_local_var_14 = heart
-    color = 0x000001
+    with (heart)
+        color = 0x000001
+    con = 22
 }
 if (con == 22)
 {
@@ -186,8 +216,8 @@ if (con == 22)
     {
         alarm[4] = 15
         con = 29
-        var _temp_local_var_15 = heart
-        color = c_black
+        with (heart)
+            color = c_black
     }
 }
 if (con == 30)
@@ -203,6 +233,14 @@ if (con == 30)
         speed = 0
     }
     gml_Script_snd_play(64)
-    var _temp_local_var_16 = heart
+    with (heart)
+        instance_destroy()
+    with (obj_yheart_shot)
+        instance_destroy()
+    with (blackall)
+        instance_destroy()
+    with (obj_ch2_sceneex2)
+        drawtrack = 1
+    con = 40
     instance_destroy()
 }

@@ -79,6 +79,11 @@ if (king == 1)
         {
             with (sbul)
                 instance_destroy()
+            if (scythesidex == -1)
+                scythesidex = 1
+            else
+                scythesidex = -1
+            scythetimer = 59
         }
     }
 }

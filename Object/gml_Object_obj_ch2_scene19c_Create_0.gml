@@ -39,7 +39,11 @@ else
     sb_crowd_hide = 0
     sb_crowd_siner = random(400)
     sb_crowd = gml_Script_scr_dark_marker(0, 0, 182)
-    var _temp_local_var_2 = sb_crowd
-    image_alpha = 0
-    depth = 20
+    with (sb_crowd)
+    {
+        image_alpha = 0
+        depth = 20
+    }
+    berdly_applause_start = 0
+    berdly_applause_stop = 0
 }

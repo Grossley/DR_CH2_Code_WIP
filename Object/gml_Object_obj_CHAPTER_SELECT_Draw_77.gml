@@ -13,15 +13,9 @@ if (os_type == os_switch || os_type == os_ps4)
     else
         gml_Script_texture_set_interpolation(false)
     gml_Script_draw_enable_alphablend(0)
-    xx.application_surface
+    draw_surface_ext(application_surface, xx, yy, global.window_scale, global.window_scale, 0, c_white, 1)
     gml_Script_draw_enable_alphablend(1)
     gml_Script_texture_set_interpolation(false)
-    var _temp_local_var_3 = yy
-    var _temp_local_var_4 = global.window_scale
-    var _temp_local_var_5 = global.window_scale
-    var _temp_local_var_6 = 0
-    var _temp_local_var_7 = 16777215
-    var _temp_local_var_8 = 1
 }
 else
 {

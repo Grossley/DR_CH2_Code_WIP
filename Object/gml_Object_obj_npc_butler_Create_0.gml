@@ -1,3 +1,4 @@
+var _temp_local_var_1;
 event_inherited()
 con = 0
 closetimer = 0
@@ -10,6 +11,7 @@ red = 5
 current_pal = red
 if (swatch_color != "")
 {
+    var _temp_local_var_1 = swatch_color
     switch swatch_color
     {
         case "blue":

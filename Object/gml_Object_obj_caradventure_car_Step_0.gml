@@ -46,6 +46,14 @@ if active
         car = gml_Script_instance_create((gml_Script_camerax() + 700), y_pos, obj_caradventure_car_enemy)
         with (car)
             gml_Script_scr_depth()
+        if (hits < 4)
+        {
+            car.hspeed = (car.hspeed - 1)
+            car.hspeed -= 6
+            car.image_xscale *= -1
+        }
+        cartimer = 0
+        carcount++
     }
     if (triggertalk == 1)
     {
@@ -63,7 +71,7 @@ if active
             if (global.is_console || obj_gamecontroller.gamepad_active)
             {
                 gml_Script_msgsetloc(0, "\\E0* Kris Press Directional Buttons To Steer/%", "obj_caradventure_car_slash_Step_0_gml_80_0_b")
-                if (null.os_type == os_ps4)
+                if (os_type == os_ps4)
                 {
                     if (global.lang == "ja")
                         gml_Script_msgsetloc(0, "\\E0* Kris Press Directions To Steer/%", "obj_caradventure_car_slash_Step_0_gml_57_0")

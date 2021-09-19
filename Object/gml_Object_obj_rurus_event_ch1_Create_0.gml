@@ -32,9 +32,11 @@ if (room == room_cc_rurus1_ch1 || room == room_cc_rurus2_ch1)
         else
         {
             flashobj = gml_Script_scr_dark_marker_ch1(520, 260, 4229)
-            var _temp_local_var_3 = flashobj
-            image_speed = 0.1
-            depth = 90000
+            with (flashobj)
+            {
+                image_speed = 0.1
+                depth = 90000
+            }
         }
     }
     if (room == room_cc_rurus2_ch1)
@@ -47,9 +49,11 @@ if (room == room_cc_rurus1_ch1 || room == room_cc_rurus2_ch1)
         else
         {
             flashobj = gml_Script_scr_dark_marker_ch1(520, 260, 4229)
-            var _temp_local_var_2 = flashobj
-            image_speed = 0.1
-            depth = 90000
+            with (flashobj)
+            {
+                image_speed = 0.1
+                depth = 90000
+            }
         }
     }
     visible = false

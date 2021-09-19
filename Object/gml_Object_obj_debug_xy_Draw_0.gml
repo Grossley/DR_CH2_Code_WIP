@@ -90,8 +90,9 @@ if keyboard_check_pressed(vk_delete)
 {
     if gml_Script_i_ex(selected_object)
     {
-        var _temp_local_var_7 = selected_object
-        instance_destroy()
+        with (selected_object)
+            instance_destroy()
+        selected_object = -999
     }
 }
 if keyboard_check_pressed(ord("V"))
@@ -109,8 +110,7 @@ if (siner >= 5 && mouse_check_button_pressed(mb_middle))
 }
 if (show_all_object_xy == 1)
 {
-    i = obj_sneo_friedpipis
-    while (selected_object < i.instance_count)
+    for (i = 0; i < instance_count; i++)
     {
         findo = instance_id_get(i)
         if gml_Script_i_ex(findo)
@@ -154,7 +154,6 @@ if (show_all_object_xy == 1)
                 }
             }
         }
-        i++
     }
 }
 if (show_all_object_xy == 1)
@@ -212,15 +211,17 @@ if gml_Script_i_ex(selected_object)
         {
             if (mouse_wheel_up() || mouse_wheel_down())
             {
-                var _temp_local_var_12 = so
-                if (state == 0)
+                with (so)
                 {
-                    state = 3
-                    shakex = 2
-                    hurttimer = 10
+                    if (state == 0)
+                    {
+                        state = 3
+                        shakex = 2
+                        hurttimer = 10
+                    }
+                    else
+                        state = 0
                 }
-                else
-                    state = 0
             }
         }
     }
@@ -228,30 +229,34 @@ if gml_Script_i_ex(selected_object)
     {
         if (mouse_wheel_up() && enable_mouse_wheel)
         {
-            var _temp_local_var_14 = so
-            if (specialspriteno < 9)
+            with (so)
             {
-                specialspriteno++
-                sprite_index = specialsprite[specialspriteno]
-            }
-            else
-            {
-                specialspriteno = 0
-                sprite_index = dsprite
+                if (specialspriteno < 9)
+                {
+                    specialspriteno++
+                    sprite_index = specialsprite[specialspriteno]
+                }
+                else
+                {
+                    specialspriteno = 0
+                    sprite_index = dsprite
+                }
             }
         }
         if (mouse_wheel_down() && enable_mouse_wheel)
         {
-            var _temp_local_var_16 = so
-            if (specialspriteno > 0)
+            with (so)
             {
-                specialspriteno--
-                sprite_index = specialsprite[specialspriteno]
-            }
-            else
-            {
-                specialspriteno = 9
-                sprite_index = specialsprite[specialspriteno]
+                if (specialspriteno > 0)
+                {
+                    specialspriteno--
+                    sprite_index = specialsprite[specialspriteno]
+                }
+                else
+                {
+                    specialspriteno = 9
+                    sprite_index = specialsprite[specialspriteno]
+                }
             }
         }
         if gml_Script_button2_h()

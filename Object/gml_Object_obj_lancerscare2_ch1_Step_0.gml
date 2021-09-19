@@ -39,8 +39,9 @@ if (con == 3)
         gml_Script_scr_halt_ch1()
     obj_mainchara_ch1.x = k.x
     obj_mainchara_ch1.visible = true
-    var _temp_local_var_1 = k
-    instance_destroy()
+    with (k)
+        instance_destroy()
+    alarm[4] = 30
 }
 if (con == 5)
 {
@@ -97,8 +98,19 @@ if (con == 12)
     else
         mm = 0
     image_blend = merge_color(c_white, c_black, mm)
-    var _temp_local_var_4 = lightning
-    image_alpha -= 0.1
+    with (lightning)
+        image_alpha -= 0.1
+    ctimer += 1
+    if (ctimer >= 20)
+        bucket.hspeed = 0
+    if (ctimer >= 60 && gml_Script_d_ex_ch1() == 0)
+    {
+        sprite_index = spr_lancer_lt_ch1
+        image_speed = 0
+        image_index = 0
+        con = 13
+        alarm[4] = 60
+    }
 }
 if (con == 15)
 {
@@ -120,20 +132,49 @@ if (con == 14)
 }
 if (con == 16 && gml_Script_d_ex_ch1() == 0)
 {
-    var _temp_local_var_7 = sus
-    sprite_index = spr_susiel_dark_ch1
+    with (sus)
+        sprite_index = spr_susiel_dark_ch1
+    con = 17
+    alarm[4] = 40
 }
 if (con == 18)
 {
-    var _temp_local_var_8 = sus
-    sprite_index = spr_susier_dark_ch1
-    hspeed = 6
-    image_speed = 0.25
+    with (sus)
+    {
+        sprite_index = spr_susier_dark_ch1
+        hspeed = 6
+        image_speed = 0.25
+    }
+    con = 19
+    alarm[4] = 30
 }
 if (con == 20)
 {
-    var _temp_local_var_9 = sus
-    gml_Script_scr_halt_ch1()
+    with (sus)
+        gml_Script_scr_halt_ch1()
+    global.fc = 1
+    global.typer = 30
+    global.fe = 6
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_181_0")
+    gml_Script_scr_lanface_ch1(1, 2)
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_183_0")
+    gml_Script_scr_susface_ch1(3, 2)
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_185_0")
+    global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_186_0")
+    global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_187_0")
+    global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_188_0")
+    global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_189_0")
+    gml_Script_scr_lanface_ch1(9, 2)
+    global.msg[10] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_191_0")
+    gml_Script_scr_susface_ch1(11, 0)
+    global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_193_0")
+    gml_Script_scr_lanface_ch1(13, 6)
+    global.msg[14] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_195_0")
+    global.msg[15] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_196_0")
+    gml_Script_scr_susface_ch1(16, 2)
+    global.msg[17] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_198_0")
+    con = 25
+    gml_Script_instance_create_ch1(0, 0, 1326)
 }
 if (con == 25)
 {
@@ -141,35 +182,45 @@ if (con == 25)
     {
         if (obj_writer_ch1.msgno == 4)
         {
-            var _temp_local_var_10 = sus
-            sprite_index = spr_susied_dark_ch1
+            with (sus)
+                sprite_index = spr_susied_dark_ch1
         }
         if (obj_writer_ch1.msgno == 5)
         {
-            var _temp_local_var_11 = sus
-            sprite_index = spr_susier_dark_ch1
+            with (sus)
+                sprite_index = spr_susier_dark_ch1
         }
         if (obj_writer_ch1.msgno == 6)
         {
-            var _temp_local_var_12 = sus
-            sprite_index = spr_susied_dark_ch1
+            with (sus)
+                sprite_index = spr_susied_dark_ch1
         }
         if (obj_writer_ch1.msgno == 8)
         {
-            var _temp_local_var_13 = sus
-            sprite_index = spr_susier_dark_ch1
+            with (sus)
+                sprite_index = spr_susier_dark_ch1
         }
     }
 }
 if (con == 25 && gml_Script_d_ex_ch1() == 0)
 {
-    var _temp_local_var_15 = sus
-    sprite_index = spr_susied_dark_ch1
+    with (sus)
+        sprite_index = spr_susied_dark_ch1
+    con = 26
+    alarm[4] = 30
 }
 if (con == 27)
 {
-    var _temp_local_var_16 = sus
-    sprite_index = spr_susier_dark_ch1
+    with (sus)
+        sprite_index = spr_susier_dark_ch1
+    global.fe = 0
+    global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_226_0")
+    gml_Script_scr_lanface_ch1(1, 2)
+    global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_228_0")
+    global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_229_0")
+    global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerscare2_slash_Step_0_gml_231_0")
+    con = 60
+    gml_Script_instance_create_ch1(0, 0, 1326)
 }
 if (con == 60 && gml_Script_d_ex_ch1() == 0)
 {
@@ -207,8 +258,11 @@ if (con == 65)
 }
 if (con == 66)
 {
-    var _temp_local_var_19 = fd
-    instance_destroy()
+    with (fd)
+        instance_destroy()
+    fi = gml_Script_instance_create_ch1(0, 0, 1461)
+    con = 67
+    alarm[4] = 30
 }
 if (con == 68)
 {
@@ -223,8 +277,12 @@ if (con == 28 && gml_Script_d_ex_ch1() == 0)
     gml_Script_mus_volume_ch1(global.currentsong[1], 0, 30)
     hspeed = 16
     image_speed = 0.5
-    var _temp_local_var_21 = bucket
-    hspeed = 16
+    with (bucket)
+        hspeed = 16
+    gml_Script_snd_play_ch1(454)
+    sprite_index = spr_lancer_lt_laugh_ch1
+    con = 36
+    alarm[4] = 60
 }
 if (con == 30)
 {
@@ -238,16 +296,24 @@ if (con == 30)
 }
 if (con == 31 && (!gml_Script_d_ex_ch1()))
 {
-    var _temp_local_var_23 = sus
-    sprite_index = spr_susiel_dark_ch1
-    hspeed = -6
-    image_speed = 0.25
+    with (sus)
+    {
+        sprite_index = spr_susiel_dark_ch1
+        hspeed = -6
+        image_speed = 0.25
+    }
+    con = 32
+    alarm[4] = 30
 }
 if (con == 33)
 {
-    var _temp_local_var_24 = sus
-    sprite_index = spr_susier_dark_ch1
-    gml_Script_scr_halt_ch1()
+    with (sus)
+    {
+        sprite_index = spr_susier_dark_ch1
+        gml_Script_scr_halt_ch1()
+    }
+    con = 34
+    alarm[4] = 30
 }
 if (con == 35)
 {

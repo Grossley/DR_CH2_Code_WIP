@@ -29,10 +29,12 @@ if gml_Script_i_ex(target)
             target.fun = false
         if (charmarker == 2)
         {
-            var _temp_local_var_1 = target
-            follow = 1
-            fun = false
-            gml_Script_scr_caterpillar_interpolate()
+            with (target)
+            {
+                follow = 1
+                fun = false
+                gml_Script_scr_caterpillar_interpolate()
+            }
         }
         instance_destroy()
     }

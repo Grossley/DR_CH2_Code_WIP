@@ -1,8 +1,8 @@
 if (room == room_forest_maze1_ch1)
 {
-    if (obj_mainchara_ch1.x.room_width / 2)
+    if (obj_mainchara_ch1.x <= (room_width / 2))
         sidechoice = 0
-    if (obj_mainchara_ch1.x.room_width / 2)
+    if (obj_mainchara_ch1.x >= (room_width / 2))
         sidechoice = 1
 }
 if (room == room_forest_maze2_ch1)

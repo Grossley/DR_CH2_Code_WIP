@@ -15,8 +15,11 @@ if (con >= 5)
 {
     if (con == 50)
     {
-        var _temp_local_var_2 = weirdlight
-        instance_destroy()
+        with (weirdlight)
+            instance_destroy()
+        con = 51
+        gml_Script_snd_play_ch1(380)
+        image_index = 1
     }
     if (con == 51)
         global.interact = 1
@@ -34,11 +37,15 @@ if (con >= 5)
             gml_Script_snd_free_all_ch1()
             gml_Script_snd_play_ch1(379)
             dark_marker = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 10), (gml_Script___view_get(1, 0) - 10), 4277)
-            var _temp_local_var_4 = dark_marker
-            image_xscale = 700
-            image_yscale = 700
-            depth = -100
-            image_blend = c_black
+            with (dark_marker)
+            {
+                image_xscale = 700
+                image_yscale = 700
+                depth = -100
+                image_blend = c_black
+            }
+            con = 53
+            doortimer = 0
         }
     }
     if (con == 53)

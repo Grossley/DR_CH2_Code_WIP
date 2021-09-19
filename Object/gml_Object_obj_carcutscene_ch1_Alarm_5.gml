@@ -6,3 +6,6 @@ global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_carcutscene_slash_Ala
 myd = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 40), (gml_Script___view_get(1, 0) + 40), 1327)
 with (myd)
     skippable = false
+with (myd)
+    persistent = true
+dhaver = true
