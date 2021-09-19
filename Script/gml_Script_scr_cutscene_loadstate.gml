@@ -5,8 +5,8 @@ for (var i = 0; i < 20; i++)
     {
         if (actorSaved[i] == 1)
         {
-            var _temp_local_var_1 = actor_id[i]
-            gml_Script_scr_instance_load_local_vars()
+            with (actor_id[i])
+				gml_Script_scr_instance_load_local_vars()
         }
     }
 }
@@ -16,8 +16,8 @@ for (i = 0; i < 10; i++)
     {
         if (objectSaved[i] == 1)
         {
-            var _temp_local_var_2 = save_object[i]
-            gml_Script_scr_instance_load_local_vars()
+            with (save_object[i])
+				gml_Script_scr_instance_load_local_vars()
         }
     }
 }
