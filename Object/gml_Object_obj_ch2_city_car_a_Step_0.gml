@@ -17,9 +17,8 @@ if (obj_mainchara.x > x && con == -1)
     be_actor = gml_Script_instance_create((gml_Script_camerax() + 1000), 200, obj_actor)
     gml_Script_scr_actor_setup(be, be_actor, "berdly")
     be_actor.sprite_index = spr_berdly_walk_left_dw
-    save_object[0] = cutscene_master
+    cutscene_master.save_object[0] = id
     instance_deactivate_object(traffic_collider_left)
-    var _temp_local_var_2 = id
 }
 if realign
 {

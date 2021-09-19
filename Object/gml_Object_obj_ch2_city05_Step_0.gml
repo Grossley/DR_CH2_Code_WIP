@@ -23,11 +23,10 @@ if (con == 1.2)
     gml_Script_c_depth(6000)
     gml_Script_c_visible(1)
     dumpster.visible = false
-    save_object[0] = cutscene_master
+    cutscene_master.save_object[0] = id
     gml_Script_c_sel(sp)
     gml_Script_c_autowalk(0)
     gml_Script_c_imagespeed(0)
-    var _temp_local_var_2 = id
 }
 if (con == 1 || gml_Script_scr_cutscene_loaded())
 {

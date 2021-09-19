@@ -1151,9 +1151,7 @@ if hit_bottles
             bottle[i].gravity += 2
             bottle[i].gravity_direction = random_range(60, 150)
         }
-        var _temp_local_var_14 = stacktop
-        var _temp_local_var_15 = bottle[i]
-        _temp_local_var_14.image_angle = (bottle[i].image_angle + (bottle[i].x <= 1390 ? 50 : -50))
+        bottle[i].image_angle = (bottle[i].image_angle + (bottle[i].x <= 1390 ? 50 : -50))
     }
     if (hit_timer >= 30)
         hit_bottles = 0
