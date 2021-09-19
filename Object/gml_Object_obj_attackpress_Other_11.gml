@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (gml_Script_scr_monsterpop() > 0)
 {
     for (i = 0; i < 3; i += 1)
@@ -18,9 +17,11 @@ if (gml_Script_scr_monsterpop() > 0)
             else if gml_Script_i_ex(global.charinstance[i])
             {
                 global.charinstance[i].points = points[i]
-                var _temp_local_var_4 = global.charinstance[i]
-                state = 1
-                attacktimer = 0
+                with (global.charinstance[i])
+				{
+					state = 1
+					attacktimer = 0
+				}
             }
         }
     }

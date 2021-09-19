@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_10, _temp_local_var_21;
 maxdelaytimer += 1
 if (spelluse == 1)
 {
@@ -10,13 +9,13 @@ if (spelluse == 1)
             {
                 if (charitem[xyz] == 1)
                 {
-                    var _temp_local_var_1 = global.charinstance[xyz]
-                    state = 4
+                    with (global.charinstance[xyz])
+						state = 4
                 }
                 if (charspell[xyz] == 1)
                 {
-                    var _temp_local_var_2 = global.charinstance[xyz]
-                    state = 2
+                    with (global.charinstance[xyz])
+						state = 2
                 }
             }
         }
@@ -89,9 +88,11 @@ if (active == true)
             else if (imagetimer == 0 && boltalive[i] == 1)
             {
                 img = gml_Script_instance_create((((x + 80) + (boltframe[i] * boltspeed)) - (boltx * boltspeed)), (y + (38 * offset)), obj_afterimage)
-                var _temp_local_var_10 = img
-                sprite_index = spr_attackspot
-                image_alpha = 0.4
+                with (img)
+				{
+					sprite_index = spr_attackspot
+					image_alpha = 0.4
+				}
             }
             if (boltalive[i] == 1)
             {
@@ -155,10 +156,12 @@ if (active == true)
             global.charinstance[sus].points = 160
             if (global.automiss[global.chartarget[sus]] == true)
                 global.charinstance[sus].points = 0
-            var _temp_local_var_21 = global.charinstance[sus]
-            state = 1
-            attacktimer = 0
-            is_auto_susie = true
+            with (global.charinstance[sus])
+			{
+				state = 1
+				attacktimer = 0
+				is_auto_susie = true
+			}
         }
         if (posttimer > timermax)
         {
