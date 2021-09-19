@@ -55,7 +55,6 @@ if (init == 1)
     }
     draw_set_alpha(1)
     draw_set_color(c_black)
-    -100
-    var _temp_local_var_4 = ((((obj_sneo_friedpipis).room_height + 2).room_width + 100).room_height - 240)
+    draw_rectangle(-100, room_height - 240, room_width + 100, room_height + 2, 0)
 }
 draw_set_alpha(1)

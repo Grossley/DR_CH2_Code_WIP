@@ -4,10 +4,8 @@ siner += 0.5
 siner2 += 1
 draw_set_alpha(image_alpha)
 draw_set_color(c_black)
--10
 draw_set_alpha(1)
-var _temp_local_var_1 = -10
-var _temp_local_var_2 = (((obj_sneo_friedpipis).room_height + 10).room_width + 10)
+draw_rectangle(-10, -10, (self.room_width + 10), (self.room_height + 10), 0)
 if (destroy == 0)
 {
     if (image_alpha <= 1)
