@@ -19,8 +19,7 @@ if (con == -1)
     be_actor = gml_Script_instance_create(380, (gml_Script_cameray() - 200), obj_actor)
     gml_Script_scr_actor_setup(be, be_actor, "berdly")
     be_actor.sprite_index = spr_berdly_walk_left_dw
-    save_object[0] = cutscene_master
-    var _temp_local_var_1 = id
+    cutscene_master.save_object[0] = id
 }
 if (con == 1)
 {

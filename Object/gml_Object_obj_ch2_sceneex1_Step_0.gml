@@ -49,11 +49,7 @@ if (con == 2)
         gml_Script_c_facing("u")
     }
     else
-    {
-        global.flag[358]
-        var _temp_local_var_11 = global.flag[358]
-        global.flag[358] = (global.flag[358] + 1)
-    }
+        global.flag[358] += 1
     gml_Script_c_waitcustom()
 }
 if (con == 3 && customcon == 1)

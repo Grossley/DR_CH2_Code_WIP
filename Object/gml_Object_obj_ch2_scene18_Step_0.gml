@@ -7,8 +7,7 @@ if (con == 1)
 {
     con = 1.5
     cutscene_master = gml_Script_scr_cutscene_make()
-    save_object[0] = cutscene_master
-    var _temp_local_var_1 = id
+    cutscene_master.save_object[0] = id
     visible = false
 }
 if (con == 1.5)

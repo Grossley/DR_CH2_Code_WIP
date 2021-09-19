@@ -34,8 +34,7 @@ if (con == -1)
     queenfistleft = gml_Script_scr_dark_marker(78, ((gml_Script_cameray() + view_hport[0]) + 100), 324)
     queenfistleft.depth = 1000100
     queenfistleft.image_speed = 0.15
-    save_object[0] = cutscene_master
-    var _temp_local_var_1 = id
+    cutscene_master.save_object[0] = id
 }
 if (con == 1)
 {

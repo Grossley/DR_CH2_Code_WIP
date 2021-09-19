@@ -429,8 +429,8 @@ if (con == 23 && customcon == 1)
             djtableb.depth = 500000
             djtableb.image_speed = 0.25
         }
-        save_object[1] = cutscene_master
-        save_object[2] = cutscene_master
+        cutscene_master.save_object[1] = nisekk
+        cutscene_master.save_object[2] = djtableb
         gml_Script_c_sel(kr)
         gml_Script_c_autowalk(0)
         gml_Script_c_walkdirect(1960, 116, 15)
@@ -556,8 +556,6 @@ if (con == 23 && customcon == 1)
         gml_Script_c_actortokris()
         gml_Script_c_actortocaterpillar()
         gml_Script_c_terminatekillactors()
-        var _temp_local_var_9 = djtableb
-        var _temp_local_var_10 = nisekk
     }
     if (con == 50 && (!gml_Script_i_ex(895)))
     {
@@ -658,8 +656,8 @@ if (con == 35)
         djtableb.depth = 500000
         djtableb.image_speed = 0.25
     }
-    save_object[1] = cutscene_master
-    save_object[2] = cutscene_master
+    cutscene_master.save_object[1] = nisekk
+    cutscene_master.save_object[2] = djtableb
     gml_Script_c_sel(kr)
     gml_Script_c_autowalk(0)
     gml_Script_c_walkdirect(1960, 116, 15)
@@ -785,8 +783,6 @@ if (con == 35)
     gml_Script_c_actortokris()
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
-    var _temp_local_var_9 = djtableb
-    var _temp_local_var_10 = nisekk
 }
 if (con == 50 && (!gml_Script_i_ex(895)))
 {

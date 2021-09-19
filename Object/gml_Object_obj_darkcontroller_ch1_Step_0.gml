@@ -347,8 +347,7 @@ if (global.interact == 5)
         }
         if (global.submenu == 34)
         {
-            var _temp_local_var_17 = global.submenucoord[34]
-            global.submenucoord[34] = (global.submenucoord[34] + 1)
+            global.submenucoord[34] += 1
             if (global.submenucoord[34] == 1)
             {
                 global.chapter_return = 1

@@ -12,7 +12,6 @@ for (i = 0; i < l; i++)
     }
     if (mode == 2 && minitimer >= minitimerthreshold)
     {
-        var _temp_local_var_2 = barsiner[i]
         barsiner[i]++
         yscale[i] = (((0.6 * h) + ((sin((barsiner[i] / 2)) * 0.3) * h)) + ((sin((barsiner[i] / 3)) * 0.1) * h))
     }

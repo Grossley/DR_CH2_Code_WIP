@@ -4,7 +4,7 @@ if (obj_mainchara.x > 440 && obj_mainchara.y < 300 && con == -1)
     global.interact = 1
     global.facing = 1
     cutscene_master = gml_Script_scr_cutscene_make()
-    save_object[0] = cutscene_master
+    cutscene_master.save_object[0] = id
     gml_Script_scr_maincharacters_actors()
     qu = (actor_count + 1)
     qu_actor = gml_Script_instance_create((gml_Script_camerax() + 700), 120, obj_actor)
@@ -35,7 +35,6 @@ if (obj_mainchara.x > 440 && obj_mainchara.y < 300 && con == -1)
     capsule2.visible = false
     capsule3 = gml_Script_instance_create(649, (gml_Script_cameray() - 200), obj_ch2_capsule)
     capsule3.visible = false
-    var _temp_local_var_2 = id
 }
 if (auto_text && customcon == 1)
 {

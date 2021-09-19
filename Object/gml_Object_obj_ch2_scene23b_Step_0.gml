@@ -19,8 +19,7 @@ if (global.flag[319] == 0)
         no_actor = gml_Script_instance_create(618, 120, obj_actor)
         gml_Script_scr_actor_setup(no, no_actor, "noelle")
         no_actor.sprite_index = spr_cutscene_23b_noelle_kneel_forward
-        save_object[0] = cutscene_master
-        var _temp_local_var_1 = id
+        cutscene_master.save_object[0] = id
     }
     if (con == 1)
     {
