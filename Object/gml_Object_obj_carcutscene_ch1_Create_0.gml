@@ -29,6 +29,6 @@ else
     global.interact = 1
     k = 1347
     t = gml_Script_scr_marker_ch1(195, 240, 3465)
-    var _temp_local_var_1 = t
-    depth = 400000
+    with (t)
+        depth = 400000
 }
