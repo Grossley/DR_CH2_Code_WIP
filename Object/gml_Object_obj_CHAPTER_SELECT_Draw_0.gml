@@ -451,11 +451,9 @@ if (con == "gameload")
 {
     if (spr_aftereffect == IMAGE_LOGO)
     {
-        spr_aftereffect = (obj_sneo_friedpipis).application_surface
-        sprite_set_offset(spr_aftereffect, (((obj_sneo_friedpipis).room_height / 2).room_width / 2), (obj_sneo_friedpipis).room_height.room_width)
-        yy = ((obj_sneo_friedpipis).room_height / 2)
-        var _temp_local_var_17 = 0
-        var _temp_local_var_18 = 0
+        spr_aftereffect = sprite_create_from_surface(application_surface, 0, 0, room_width, room_height, 0, 0, 0, 0)
+        sprite_set_offset(spr_aftereffect, (room_width / 2), (room_height / 2))
+        yy = (room_height / 2)
     }
     if (chaptertoload != 0)
     {

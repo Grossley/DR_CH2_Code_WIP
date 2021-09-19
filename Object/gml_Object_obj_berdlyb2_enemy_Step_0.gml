@@ -726,11 +726,7 @@ if (sidebcon > 0)
     if (sidebcon == 29)
     {
         fntimer++
-        _temp_local_var_24.x = (fn.x + (sin((fntimer / 2)) * 0.7))
-        var _temp_local_var_26 = fn
-        var _temp_local_var_27 = spellwriter
-        var _temp_local_var_28 = -9
-        var _temp_local_var_29 = fn
+        fn.x += (sin((fntimer / 2)) * 0.7)
     }
     if (sidebcon == 30 && (!gml_Script_i_ex(62)))
     {

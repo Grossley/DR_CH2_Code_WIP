@@ -47,7 +47,7 @@ draw_set_color(c_white)
 gpu_set_blendenable(0)
 gpu_set_colorwriteenable(0, 0, 0, 1)
 draw_set_alpha(0)
-0
+draw_rectangle(0, 0, room_width, room_height, 0)
 draw_set_alpha(1)
 draw_rectangle((300 - (gml_Script_camerax() / 4)), 0, (400 - (gml_Script_camerax() / 4)), 480, false)
 draw_rectangle((600 - (gml_Script_camerax() / 4)), 0, (700 - (gml_Script_camerax() / 4)), 480, false)
@@ -55,8 +55,6 @@ gpu_set_blendenable(1)
 gpu_set_colorwriteenable(1, 1, 1, 1)
 gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
 gpu_set_alphatestenable(1)
-var _temp_local_var_1 = 0
-var _temp_local_var_2 = (obj_sneo_friedpipis).room_height.room_width
 if ((!gml_Script_i_ex(second_char)) || (target_char.y - 18) < second_char.y)
 {
     gml_Script_d3d_set_fog(true, color, 0, 1)

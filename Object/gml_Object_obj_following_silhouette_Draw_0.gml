@@ -46,12 +46,10 @@ depth = 4000
 gpu_set_blendenable(0)
 gpu_set_colorwriteenable(0, 0, 0, 1)
 draw_set_alpha(0)
-0
+draw_rectangle(0, 0, room_width, room_height, 0)
 draw_set_alpha(1)
 gpu_set_alphatestenable(1)
 gpu_set_blendenable(1)
-var _temp_local_var_1 = 0
-var _temp_local_var_2 = (obj_sneo_friedpipis).room_height.room_width
 if (instance_number(obj_silhouette_cover) > 0)
 {
     for (i = 0; i < instance_number(obj_silhouette_cover); i++)
