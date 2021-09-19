@@ -71,28 +71,33 @@ if (y > 375 && create_hitbox == 0)
     {
         create_hitbox = 1
         kick_hitbox = gml_Script_instance_create(x, (y - 120), o_boxing_hitbox)
-        var _temp_local_var_9 = kick_hitbox
-        give_hurt = (22 / f)
-        timer = (400 / f)
-        damage = 25
-        hit_dodging = 1
-        hit_jumping = 1
-        hit_ducking = 1
-        image_yscale = 20
-        image_xscale = 5
+		with (kick_hitbox)
+		{
+			var _temp_local_var_9 = kick_hitbox
+			give_hurt = (22 / f)
+			timer = (400 / f)
+			damage = 25
+			hit_dodging = 1
+			hit_jumping = 1
+			hit_ducking = 1
+			image_yscale = 20
+			image_xscale = 5
+		}
     }
     if (sprite_index == spr_bqueen_leggy_tall && visible == true)
     {
         create_hitbox = 2
         leggy_hitbox = gml_Script_instance_create(x, (y - 110), o_boxing_hitbox)
-        var _temp_local_var_11 = leggy_hitbox
-        give_hurt = (22 / f)
-        timer = (400 / f)
-        damage = 25
-        hit_dodging = 1
-        hit_jumping = 1
-        image_yscale = 10
-        image_xscale = 5
+		with (leggy_hitbox)
+		{
+			give_hurt = (22 / f)
+			timer = (400 / f)
+			damage = 25
+			hit_dodging = 1
+			hit_jumping = 1
+			image_yscale = 10
+			image_xscale = 5
+		}
     }
 }
 if (y > 375 && y < 390 && visible == true)
@@ -106,13 +111,13 @@ if (y > 390 && visible == true)
 {
     if (create_hitbox == 1)
     {
-        var _temp_local_var_14 = kick_hitbox
-        instance_destroy()
+        with (kick_hitbox)
+			instance_destroy()
     }
     if (create_hitbox == 2)
     {
-        var _temp_local_var_15 = leggy_hitbox
-        instance_destroy()
+        with (leggy_hitbox)
+			instance_destroy()
     }
     create_hitbox = 3
 }

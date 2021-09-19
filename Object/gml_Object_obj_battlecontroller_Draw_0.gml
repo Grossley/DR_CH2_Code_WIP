@@ -1,4 +1,4 @@
-var __drawstatus, __actname, __plainactname, mercypercent, mercywidth, __actnamestring, __actnamestringwidth, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_46, _temp_local_var_48, _temp_local_var_51;
+var __drawstatus, __actname, __plainactname, mercypercent, mercywidth, __actnamestring, __actnamestringwidth;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 if (global.chapter == 2 && instance_exists(obj_gigaqueen_enemy))
