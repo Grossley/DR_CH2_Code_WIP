@@ -17,6 +17,6 @@ if (!instance_exists(obj_camera_advanced))
     advancedcamera = gml_Script_instance_create(0, 0, obj_camera_advanced)
     event_user(0)
     event_user(1)
-    var _temp_local_var_1 = advancedcamera
-    event_user(1)
+    with (advancedcamera)
+        event_user(1)
 }

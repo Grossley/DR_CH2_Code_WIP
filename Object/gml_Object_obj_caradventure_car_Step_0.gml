@@ -44,8 +44,8 @@ if active
             y_pos = (100 + random(180))
         y_pos = clamp(y_pos, 140, 366)
         car = gml_Script_instance_create((gml_Script_camerax() + 700), y_pos, obj_caradventure_car_enemy)
-        var _temp_local_var_7 = car
-        gml_Script_scr_depth()
+        with (car)
+            gml_Script_scr_depth()
     }
     if (triggertalk == 1)
     {

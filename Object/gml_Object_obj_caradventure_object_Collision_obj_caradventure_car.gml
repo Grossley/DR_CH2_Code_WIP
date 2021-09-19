@@ -2,9 +2,11 @@ if (type == "banana")
 {
     gml_Script_snd_play(172)
     gml_Script_snd_play(179)
-    var _temp_local_var_1 = other
-    triggertalk = 1
-    bananahit = 1
+    with (other)
+    {
+        triggertalk = 1
+        bananahit = 1
+    }
     if instance_exists(obj_writer)
     {
         if (obj_writer.halt != 0)
