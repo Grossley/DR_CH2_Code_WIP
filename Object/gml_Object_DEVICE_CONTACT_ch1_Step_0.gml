@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_7, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_14, _temp_local_var_15, _temp_local_var_16, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_24, _temp_local_var_25, _temp_local_var_26, _temp_local_var_27, _temp_local_var_28, _temp_local_var_29, _temp_local_var_31, _temp_local_var_36;
 if (EVENT == 0)
 {
     global.typer = 666
@@ -191,8 +190,8 @@ if (EVENT == 32)
         EVENT = 33
         if (global.choice == 1)
         {
-            var _temp_local_var_7 = GM
-            FINISH = true
+            with (GM)
+                FINISH = true
         }
     }
 }
@@ -225,40 +224,42 @@ if (EVENT == 36 && (!instance_exists(obj_writer_ch1)))
 if (EVENT == 37)
 {
     GMSINE += 1
-    _temp_local_var_7.initx = (GM.initx + (sin((GMSINE / 14)) * 1))
-    var _temp_local_var_9 = -9
-    var _temp_local_var_10 = GM
+    GM.initx = (GM.initx + (sin((GMSINE / 14)) * 1))
 }
 if (EVENT == 38)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 39
-    var _temp_local_var_11 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 6; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        if (global.lang == "ja")
+        TYPE = 2
+        for (i = 0; i <= 6; i += 1)
         {
-            var _temp_local_var_12 = GM
-            var _temp_local_var_13 = NAMEX[0][i]
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            if (global.lang == "ja")
+            {
+                with (GM)
+                {
+                    NAMEX[0][i] -= 16;
+                }
+            }
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
         }
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_288_0")
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_289_0")
+        NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_290_0")
+        NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_291_0")
+        NAME[0][4] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_292_0")
+        NAME[0][5] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_293_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 5
+        xoff = -20
     }
-    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_288_0")
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_289_0")
-    NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_290_0")
-    NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_291_0")
-    NAME[0][4] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_292_0")
-    NAME[0][5] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_293_0")
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 5
-    xoff = -20
 }
 if (EVENT == 39)
 {
@@ -284,26 +285,28 @@ if (EVENT == 43)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 44
-    var _temp_local_var_14 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 5; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        TYPE = 2
+        for (i = 0; i <= 5; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = "A"
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_344_0")
+        NAME[0][2] = "B"
+        NAME[0][3] = "C"
+        NAME[0][4] = "D"
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 4
+        xoff = -20
     }
-    NAME[0][0] = "A"
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_344_0")
-    NAME[0][2] = "B"
-    NAME[0][3] = "C"
-    NAME[0][4] = "D"
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 4
-    xoff = -20
 }
 if (EVENT == 44)
 {
@@ -329,30 +332,31 @@ if (EVENT == 48)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 49
-    var _temp_local_var_15 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 3; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        if (global.lang == "ja")
+        TYPE = 2
+        for (i = 0; i <= 3; i += 1)
         {
-            var _temp_local_var_16 = CHOICE
-            var _temp_local_var_17 = NAMEX[0][i]
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            if (global.lang == "ja")
+            {
+                CHOICE.NAMEX[0][i] -= 16
+            }
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
         }
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_401_0")
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_402_0")
+        NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_403_0")
+        NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_404_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 3
+        xoff = -20
     }
-    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_401_0")
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_402_0")
-    NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_403_0")
-    NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_404_0")
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 3
-    xoff = -20
 }
 if (EVENT == 49)
 {
@@ -381,26 +385,28 @@ if (EVENT == 53.5)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 54.5
-    var _temp_local_var_18 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 4; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        TYPE = 2
+        for (i = 0; i <= 4; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_459_0")
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_460_0")
+        NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_461_0")
+        NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_462_0")
+        NAME[0][4] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_463_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 4
+        xoff = -20
     }
-    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_459_0")
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_460_0")
-    NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_461_0")
-    NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_462_0")
-    NAME[0][4] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_463_0")
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 4
-    xoff = -20
 }
 if (EVENT == 54.5)
 {
@@ -426,25 +432,27 @@ if (EVENT == 53)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 54
-    var _temp_local_var_19 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 3; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        TYPE = 2
+        for (i = 0; i <= 3; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_518_0")
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_519_0")
+        NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_520_0")
+        NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_521_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 3
+        xoff = -20
     }
-    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_518_0")
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_519_0")
-    NAME[0][2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_520_0")
-    NAME[0][3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_521_0")
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 3
-    xoff = -20
 }
 if (EVENT == 54)
 {
@@ -470,23 +478,25 @@ if (EVENT == 57)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 58
-    var _temp_local_var_20 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 1; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        TYPE = 2
+        for (i = 0; i <= 1; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_575_0")
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_576_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 1
+        xoff = -20
     }
-    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_575_0")
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_576_0")
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 1
-    xoff = -20
 }
 if (EVENT == 58)
 {
@@ -512,23 +522,25 @@ if (EVENT == 62)
 {
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 63
-    var _temp_local_var_21 = CHOICE
-    TYPE = 2
-    for (i = 0; i <= 1; i += 1)
+    with (CHOICE)
     {
-        NAME[0][i] = string((1 + i))
-        NAMEX[0][i] = 80
-        NAMEY[0][i] = (100 + (i * 16))
-        YMAX += 1
+        TYPE = 2
+        for (i = 0; i <= 1; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_631_0")
+        NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_632_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 1
+        xoff = -20
     }
-    NAME[0][0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_631_0")
-    NAME[0][1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_632_0")
-    CURX = 0
-    HEARTX = (NAMEX[0][0] - 20)
-    HEARTY = NAMEY[0][0]
-    XMAX = 0
-    YMAX = 1
-    xoff = -20
 }
 if (EVENT == 63)
 {
@@ -559,19 +571,11 @@ if (EVENT == 65.5)
     {
         if (GM.initx > (gmx - 24))
         {
-            _temp_local_var_21.initx = (GM.initx - 1)
-            var _temp_local_var_22 = CHOICE
-            var _temp_local_var_23 = CHOICE
-            var _temp_local_var_24 = -9
-            var _temp_local_var_25 = GM
+            GM.initx = (GM.initx - 1)
         }
         if (GM.inity < (gmy + 56))
         {
-            _temp_local_var_22.inity = (GM.inity + 2)
-            var _temp_local_var_26 = CHOICE
-            var _temp_local_var_27 = -9
-            var _temp_local_var_28 = -9
-            var _temp_local_var_29 = GM
+            GM.inity = (GM.inity + 2)
         }
     }
 }
@@ -587,8 +591,10 @@ if (EVENT == 66.5 && instance_exists(obj_writer_ch1) == 0)
     W = gml_Script_instance_create_ch1((68 + JA_XOFF), 20, 1327)
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 67
-    var _temp_local_var_31 = CHOICE
-    event_user(0)
+    with (CHOICE)
+    {
+        event_user(0)
+    }
 }
 if (EVENT == 67)
 {
@@ -638,8 +644,8 @@ if (EVENT == 70 && instance_exists(obj_writer_ch1) == 0)
     W = gml_Script_instance_create_ch1((88 + JA_XOFF), 20, 1327)
     CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
     EVENT = 71
-    var _temp_local_var_36 = CHOICE
-    event_user(0)
+    with (CHOICE)
+        event_user(0)
 }
 if (EVENT == 71)
 {
