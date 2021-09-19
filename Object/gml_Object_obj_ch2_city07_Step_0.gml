@@ -44,17 +44,12 @@ if (obj_mainchara.x > (x - 60) && con == -1)
     if (havewalker == 1)
     {
         starwalker = gml_Script_scr_dark_marker((gml_Script_camerax() - 500), 239, 1208)
-        save_object[4] = cutscene_master
-        var _temp_local_var_2 = starwalker
+        cutscene_master.save_object[4] = starwalker
     }
-    save_object[0] = cutscene_master
-    save_object[1] = cutscene_master
-    save_object[2] = cutscene_master
-    save_object[3] = cutscene_master
-    var _temp_local_var_3 = ralsei_ball
-    var _temp_local_var_4 = boxhead
-    var _temp_local_var_5 = healimpact
-    var _temp_local_var_6 = gift
+    cutscene_master.save_object[0] = gift
+    cutscene_master.save_object[1] = healimpact
+    cutscene_master.save_object[2] = boxhead
+    cutscene_master.save_object[3] = ralsei_ball
 }
 if (con == 1)
 {
