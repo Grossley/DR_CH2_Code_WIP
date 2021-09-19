@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_6;
 if (hacker != noone)
 {
     if ((!hacker_init_path) && hacker.path_position == 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_9, _temp_local_var_10;
 if (con == 1)
 {
     waketimer += 1

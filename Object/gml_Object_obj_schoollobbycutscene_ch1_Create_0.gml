@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4;
 ran = 0
 dex = 0
 tsouth = 0

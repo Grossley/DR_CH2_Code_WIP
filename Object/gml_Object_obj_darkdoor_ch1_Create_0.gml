@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3;
 image_speed = 0
 open = 0
 siner = 0

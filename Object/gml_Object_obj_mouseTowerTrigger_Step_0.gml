@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_8, _temp_local_var_10;
 if (global.flag[379] == 0)
 {
     timer++

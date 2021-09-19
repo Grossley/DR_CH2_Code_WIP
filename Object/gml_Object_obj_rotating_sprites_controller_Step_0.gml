@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_9;
 if (state == 0 && o_boxingcontroller.dead == 1)
     state = 1
 if (state == 1)

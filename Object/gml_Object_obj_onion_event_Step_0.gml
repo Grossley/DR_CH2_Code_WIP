@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_5, _temp_local_var_6, _temp_local_var_14;
 if (global.chapter == 2 && global.flag[424] > 0)
 {
     if instance_exists(obj_ch2_room_beach)

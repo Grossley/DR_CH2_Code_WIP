@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_4;
 if (con == 1 && obj_mainchara_ch1.x >= 1300 && obj_mainchara_ch1.y > 900 && global.interact == 0)
 {
     global.interact = 1

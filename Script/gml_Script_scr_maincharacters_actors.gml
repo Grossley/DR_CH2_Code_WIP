@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3;
 actor_count = 0
 kr = 0
 kr_actor = gml_Script_instance_create(obj_mainchara.x, obj_mainchara.y, obj_actor)

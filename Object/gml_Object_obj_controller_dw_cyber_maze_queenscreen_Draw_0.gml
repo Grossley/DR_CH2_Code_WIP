@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (hatinit == 0)
 {
     hat = (2705).room_height.room_width

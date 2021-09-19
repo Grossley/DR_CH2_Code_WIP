@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_7;
 if (gml_Script_scr_havechar(2) && obj_mainchara.x < x && con == -1 && global.flag[336] == 0)
 {
     con = 1

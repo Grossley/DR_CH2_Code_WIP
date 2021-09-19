@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5;
 if (y < (gml_Script_cameray() + 110))
     return;
 if (y > (gml_Script_cameray() + 233))

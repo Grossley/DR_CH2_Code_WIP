@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3;
 if (prepopulate == 1)
 {
     var i = 0

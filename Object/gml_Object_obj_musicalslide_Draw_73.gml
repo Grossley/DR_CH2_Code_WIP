@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if fadingOut
 {
     var _fadeAmt = gml_Script_ease_out_quad(fadeToWhite, 0, 1, 1)

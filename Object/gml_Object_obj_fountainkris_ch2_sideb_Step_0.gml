@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_4, _temp_local_var_5;
 if (con == 0)
 {
     if (!shortened)

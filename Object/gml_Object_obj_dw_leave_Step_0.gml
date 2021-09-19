@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5;
 if (con == 10)
 {
     gml_Script_mus_volume(global.currentsong[1], 0, 30)

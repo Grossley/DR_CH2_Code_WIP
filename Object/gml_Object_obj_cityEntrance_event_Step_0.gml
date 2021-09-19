@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 if instance_exists(obj_mainchara)
 {
     if (obj_mainchara.x >= triggerPoint && spawned == 0)

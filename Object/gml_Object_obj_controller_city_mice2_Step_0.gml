@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_8, _temp_local_var_10, _temp_local_var_12, _temp_local_var_16, _temp_local_var_19, _temp_local_var_22, _temp_local_var_23, _temp_local_var_25, _temp_local_var_27, _temp_local_var_29, _temp_local_var_30;
 if (victory == false)
 {
     if (weird == 0)

@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 if (con == 1)
 {
     s = gml_Script_scr_dark_marker_ch1(400, 200, 3546)

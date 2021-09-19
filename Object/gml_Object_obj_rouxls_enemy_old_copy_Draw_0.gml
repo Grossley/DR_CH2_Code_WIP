@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_16, _temp_local_var_17, _temp_local_var_24, _temp_local_var_25, _temp_local_var_26, _temp_local_var_27, _temp_local_var_28, _temp_local_var_29, _temp_local_var_30, _temp_local_var_31, _temp_local_var_33, _temp_local_var_34, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_38, _temp_local_var_39, _temp_local_var_40, _temp_local_var_44, _temp_local_var_45, _temp_local_var_46, _temp_local_var_47;
 if (state == 3)
 {
     gml_Script_scr_enemyhurt_tired_after_damage(0.5)

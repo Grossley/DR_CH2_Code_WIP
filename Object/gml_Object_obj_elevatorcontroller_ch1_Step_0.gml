@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8, _temp_local_var_10, _temp_local_var_11, _temp_local_var_13, _temp_local_var_14, _temp_local_var_15, _temp_local_var_18, _temp_local_var_20, _temp_local_var_21, _temp_local_var_23, _temp_local_var_24, _temp_local_var_26, _temp_local_var_28, _temp_local_var_30, _temp_local_var_34, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_39, _temp_local_var_43, _temp_local_var_44, _temp_local_var_46, _temp_local_var_48, _temp_local_var_49, _temp_local_var_51, _temp_local_var_52, _temp_local_var_53, _temp_local_var_54, _temp_local_var_56;
 if gml_Script_scr_debug_ch1()
 {
     if keyboard_check_pressed(ord("2"))

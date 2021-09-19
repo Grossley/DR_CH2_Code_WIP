@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 gml_Script_scr_depth()
 if (con == 0 && myinteract == 1)
 {

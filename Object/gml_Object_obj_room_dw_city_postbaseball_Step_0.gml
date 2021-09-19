@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_9, _temp_local_var_13, _temp_local_var_14, _temp_local_var_16, _temp_local_var_20, _temp_local_var_24, _temp_local_var_25, _temp_local_var_27, _temp_local_var_28, _temp_local_var_40, _temp_local_var_41, _temp_local_var_42, _temp_local_var_43, _temp_local_var_45, _temp_local_var_46, _temp_local_var_47, _temp_local_var_48, _temp_local_var_49, _temp_local_var_50;
 var makeballoons = 0
 if (room == room_dw_city_postbaseball_1)
 {

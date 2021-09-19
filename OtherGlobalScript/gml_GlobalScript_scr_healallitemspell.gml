@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 gml_Script_scr_healall(argument0)
 i = 0
 while (i < 3)

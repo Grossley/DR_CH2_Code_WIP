@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6;
 if (obj_mainchara.x > x && (!gml_Script_i_ex(carGen)) && victory == false)
 {
     carGen = gml_Script_instance_create(1120, 262, obj_traffic_car_generator)

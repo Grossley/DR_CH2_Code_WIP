@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_10, _temp_local_var_13, _temp_local_var_14, _temp_local_var_16;
 if (pcon == 0 && global.interact == 0)
 {
     var _temp_local_var_2 = puzzle

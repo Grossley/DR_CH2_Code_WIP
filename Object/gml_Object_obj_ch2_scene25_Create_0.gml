@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4;
 con = -1
 customcon = 0
 timer = 0

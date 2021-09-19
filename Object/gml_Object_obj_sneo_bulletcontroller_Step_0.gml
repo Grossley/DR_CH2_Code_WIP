@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_6, _temp_local_var_24, _temp_local_var_63, _temp_local_var_64, _temp_local_var_65, _temp_local_var_66, _temp_local_var_67;
 if (global.mercymod[obj_spamton_neo_enemy.myself] > 99 && global.turntimer > 1)
     global.turntimer = 1
 if (init == 0)

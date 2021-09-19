@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 global.specialbattle = argument1
 global.encounterno = argument0
 if (global.flag[9] != 2)

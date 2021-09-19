@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4;
 if (global.interact == 0)
 {
     if instance_exists(obj_starwalker_overworld)

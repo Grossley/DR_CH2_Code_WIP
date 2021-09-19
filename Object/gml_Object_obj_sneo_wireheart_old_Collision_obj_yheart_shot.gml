@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4;
 if (invincibility_timer > 0 && other.big == 0)
 {
     var _temp_local_var_2 = other

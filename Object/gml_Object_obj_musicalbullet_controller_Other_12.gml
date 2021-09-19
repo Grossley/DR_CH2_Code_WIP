@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 var a = choose(0, 1)
 if (a == 0)
 {

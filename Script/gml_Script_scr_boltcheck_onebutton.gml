@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_5;
 dualbolt = -1
 dualboltid = -1
 pressbuffer[0] = 5

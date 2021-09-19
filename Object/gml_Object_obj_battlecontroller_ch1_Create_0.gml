@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (global.flag[9] == 1)
     global.batmusic[1] = gml_Script_mus_loop_ext_ch1(global.batmusic[0], 0.7, 1)
 victory = false

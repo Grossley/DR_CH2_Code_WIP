@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7;
 oldway = 1
 yy = 0
 topy = 100

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_15, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20;
 if (init == 0)
 {
     if (room == room_dw_cyber_battle_maze_2 || room == room_dw_cyber_keyboard_puzzle_3)

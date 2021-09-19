@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_12;
 if (room == room_town_mid_ch1)
 {
     if (con == 20 && (!gml_Script_d_ex_ch1()))

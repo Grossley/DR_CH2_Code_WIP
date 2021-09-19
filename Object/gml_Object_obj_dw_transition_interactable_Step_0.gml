@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (talking == 2)
 {
     if (!gml_Script_d_ex())

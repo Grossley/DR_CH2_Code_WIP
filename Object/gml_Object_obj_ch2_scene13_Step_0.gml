@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_11;
 if (obj_mainchara.x > x && con == -1)
 {
     con = 1

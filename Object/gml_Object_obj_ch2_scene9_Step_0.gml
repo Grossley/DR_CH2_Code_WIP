@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_9, _temp_local_var_11, _temp_local_var_13, _temp_local_var_15, _temp_local_var_17, _temp_local_var_20, _temp_local_var_26;
 if (con == 1 && obj_mainchara.x >= 540)
 {
     con = 99

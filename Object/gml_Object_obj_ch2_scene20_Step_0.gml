@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_6;
 if (stonelancer != self)
 {
     var _temp_local_var_1 = stonelancer

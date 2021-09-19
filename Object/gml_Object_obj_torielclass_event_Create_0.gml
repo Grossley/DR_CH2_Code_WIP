@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 global.facing = 0
 var fruit = 2970
 if (global.chapter == 2)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5, _temp_local_var_11;
 if (uniqueRideExperience == 1 && (!reverse))
 {
     if (global.flag[373] != 1)

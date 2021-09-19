@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_9, _temp_local_var_14, _temp_local_var_16, _temp_local_var_17, _temp_local_var_18, _temp_local_var_20;
 if (con == 1 && obj_mainchara.x >= 1060 && global.interact == 0)
 {
     global.flag[7] = 1

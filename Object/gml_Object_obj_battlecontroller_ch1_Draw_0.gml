@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_32, _temp_local_var_34;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 tpoff = ((tp - tpy) + yy)

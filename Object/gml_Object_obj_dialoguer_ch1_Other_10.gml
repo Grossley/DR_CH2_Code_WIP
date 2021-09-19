@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4;
 active = true
 xx = ((19 * f) + gml_Script___view_get(0, 0))
 yy = ((20 * f) + gml_Script___view_get(1, 0))

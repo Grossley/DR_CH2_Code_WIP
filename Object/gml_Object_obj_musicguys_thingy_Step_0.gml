@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_7, _temp_local_var_10;
 timer++
 image_alpha = 0.25
 if instance_exists(obj_growtangle)

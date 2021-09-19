@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (global.inv < 0)
 {
     if (target == 4)

@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 if (con == -1)
 {
     con = 1

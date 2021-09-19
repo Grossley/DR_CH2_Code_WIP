@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_31, _temp_local_var_32, _temp_local_var_35, _temp_local_var_36, _temp_local_var_38, _temp_local_var_39;
 if (weird == 1)
 {
     layer_set_visible("TILES_Doorway", 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4;
 if (instance_exists(obj_mainchara) && triggered == 0)
 {
     if point_in_rectangle((obj_mainchara.x + 9), (obj_mainchara.y + 18), 592, 423, 672, 503)

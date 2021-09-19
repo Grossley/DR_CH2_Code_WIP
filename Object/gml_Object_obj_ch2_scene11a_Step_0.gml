@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_10, _temp_local_var_13, _temp_local_var_18, _temp_local_var_20;
 if (obj_mainchara.x > 440 && obj_mainchara.y < 300 && con == -1)
 {
     con = 1

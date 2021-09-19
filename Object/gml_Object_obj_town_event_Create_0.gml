@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 choicetimer = 0
 flush = 0
 con = 0

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5;
 if (destroyable == 1)
 {
     if (other.big == 0)

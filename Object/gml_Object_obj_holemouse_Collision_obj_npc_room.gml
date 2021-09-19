@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (room == room_dw_city_mice2)
 {
     var _temp_local_var_1 = other

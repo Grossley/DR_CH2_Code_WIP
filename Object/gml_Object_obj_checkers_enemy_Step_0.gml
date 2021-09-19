@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_8, _temp_local_var_13, _temp_local_var_15, _temp_local_var_19, _temp_local_var_22, _temp_local_var_25, _temp_local_var_28, _temp_local_var_32;
 if (global.monstertype[myself] == 21)
     secondtime = true
 if (global.monster[myself] == true)

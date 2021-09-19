@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_9;
 __simulcount = 0
 for (__ii = global.currentactingchar; __ii < 3; __ii++)
 {

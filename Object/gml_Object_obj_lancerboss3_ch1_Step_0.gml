@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_16;
 if (defeated == 1 && global.mnfight == 1)
 {
     global.mnfight = 99

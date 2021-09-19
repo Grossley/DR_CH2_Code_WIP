@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_40;
 if (partmode == 10)
     partmode = 9
 if (room != room_dw_mansion_b_east_a)

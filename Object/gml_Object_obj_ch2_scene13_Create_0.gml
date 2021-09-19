@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4;
 con = -1
 customcon = 0
 explodetimer = 0

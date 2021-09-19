@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_5;
 if (init == 0)
 {
     var _temp_local_var_1 = tasque

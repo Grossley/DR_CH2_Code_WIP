@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_13, _temp_local_var_18, _temp_local_var_20, _temp_local_var_21, _temp_local_var_24, _temp_local_var_26, _temp_local_var_28;
 if (ambushed == false)
 {
     gml_Script_scr_ambush()

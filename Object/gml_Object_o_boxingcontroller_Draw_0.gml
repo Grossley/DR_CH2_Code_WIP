@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_16;
 if (instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
 if (jumping == 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_7, _temp_local_var_12, _temp_local_var_15;
 if (global.monster[myself] == true)
 {
     if (global.monsterstatus[myself] == false)

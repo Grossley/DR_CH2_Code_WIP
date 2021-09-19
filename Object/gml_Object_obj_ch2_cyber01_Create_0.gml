@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 con = -1
 shortened = 0
 tempcon = -1

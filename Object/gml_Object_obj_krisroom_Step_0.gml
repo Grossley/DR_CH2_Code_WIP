@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_13, _temp_local_var_16, _temp_local_var_19, _temp_local_var_24;
 if (global.chapter == 1)
 {
     if (con > 0 && con < 50)

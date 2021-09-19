@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_5, _temp_local_var_12;
 if (dead == 1)
     return;
 if (dead > 0 && o_boxingcontroller.wireframe_boxing == 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_12;
 if (con == 1)
 {
     var _temp_local_var_1 = blackscreen

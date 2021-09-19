@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_5, _temp_local_var_7;
 if (moon != noone)
     moon.x = ((gml_Script___view_get(0, 0) * 0.5) + moon.xstart)
 if (global.flag[319] == 0)

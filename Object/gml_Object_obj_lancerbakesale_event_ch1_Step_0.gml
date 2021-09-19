@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9, _temp_local_var_12, _temp_local_var_14, _temp_local_var_17, _temp_local_var_19, _temp_local_var_21, _temp_local_var_23, _temp_local_var_25, _temp_local_var_28;
 if (con == 10 && (!gml_Script_d_ex_ch1()))
 {
     var _temp_local_var_2 = s

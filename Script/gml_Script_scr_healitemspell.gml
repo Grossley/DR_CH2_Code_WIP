@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3;
 gml_Script_scr_heal(star, argument0)
 global.spelldelay = 15
 var _temp_local_var_1 = global.charinstance[star]

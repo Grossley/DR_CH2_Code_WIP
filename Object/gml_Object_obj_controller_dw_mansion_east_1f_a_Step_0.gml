@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_10, _temp_local_var_11;
 if gml_Script_i_ex(enemy1)
 {
     var _temp_local_var_1 = enemy1

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 gml_Script_scr_debug_print("Cutscene Loaded")
 for (var i = 0; i < 20; i++)
 {

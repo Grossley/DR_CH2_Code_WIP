@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_11, _temp_local_var_15, _temp_local_var_17, _temp_local_var_22;
 gml_Script_scr_depth()
 if (mode == 0 || mode == 3)
 {

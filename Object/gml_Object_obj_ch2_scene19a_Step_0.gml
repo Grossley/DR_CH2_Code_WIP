@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_6;
 if gml_Script_i_ex(nisesusie)
 {
     var _temp_local_var_1 = nisesusie

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4;
 with (obj_dmgwriter)
 {
     if (delaytimer >= 1)

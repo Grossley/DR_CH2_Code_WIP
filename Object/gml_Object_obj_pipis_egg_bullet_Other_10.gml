@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 fx = gml_Script_instance_create(x, y, obj_pipis_destroy_fx)
 fx.image_xscale = 1.5
 fx.image_yscale = 1.5

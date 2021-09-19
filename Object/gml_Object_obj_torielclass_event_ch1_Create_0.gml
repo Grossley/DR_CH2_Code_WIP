@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 global.facing = 0
 obj[0] = gml_Script_scr_marker_ch1(126, 63, 3475)
 obj[1] = gml_Script_scr_marker_ch1(107, 116, 3474)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_13, _temp_local_var_14;
 siner += 0.25
 var xx = ((gml_Script_camerax() + gml_Script_camerawidth()) - 10)
 var yy = (((gml_Script_cameray() + gml_Script_cameraheight()) - 230) + (sin((siner / 6)) * 21))

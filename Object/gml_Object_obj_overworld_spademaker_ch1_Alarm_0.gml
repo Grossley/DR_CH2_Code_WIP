@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5;
 if (homing == 1)
 {
     dir = random(360)

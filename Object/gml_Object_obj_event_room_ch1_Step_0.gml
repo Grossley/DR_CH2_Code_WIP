@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_9, _temp_local_var_10, _temp_local_var_12, _temp_local_var_14, _temp_local_var_25, _temp_local_var_28, _temp_local_var_33;
 if (room == room_field2_ch1)
 {
     if (obj_mainchara_ch1.x >= x && global.interact == 0 && con == 0)

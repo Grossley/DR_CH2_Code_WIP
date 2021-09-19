@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_27;
 siner += 1
 if instance_exists(obj_rouxls_enemy)
 {

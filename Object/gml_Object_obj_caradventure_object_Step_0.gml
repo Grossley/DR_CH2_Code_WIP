@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (type == "banana")
 {
     var objcheck1 = place_meeting(x, y, obj_caradventure_car_enemy)

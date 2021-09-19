@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7;
 if (obj_mainchara.x >= 415 && con == -1)
 {
     con = 1

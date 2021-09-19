@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 var debug_inv = 0
 if variable_global_exists("chemg_god_mode")
     debug_inv = global.chemg_god_mode

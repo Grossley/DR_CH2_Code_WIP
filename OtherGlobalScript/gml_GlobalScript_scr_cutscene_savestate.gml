@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 gml_Script_scr_debug_print("Cutscene Saved")
 masterArray = variable_instance_get_names(id)
 for (var i = 0; i < array_length_1d(masterArray); i++)

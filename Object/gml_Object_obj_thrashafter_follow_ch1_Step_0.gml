@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_7, _temp_local_var_15, _temp_local_var_16, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_21, _temp_local_var_24, _temp_local_var_26, _temp_local_var_27, _temp_local_var_28, _temp_local_var_29, _temp_local_var_30, _temp_local_var_31, _temp_local_var_33, _temp_local_var_35, _temp_local_var_36, _temp_local_var_38, _temp_local_var_39, _temp_local_var_42, _temp_local_var_43, _temp_local_var_47, _temp_local_var_52, _temp_local_var_54, _temp_local_var_56, _temp_local_var_59, _temp_local_var_77;
 if (followcon == 1)
 {
     if (obj_mainchara_ch1.x >= (x + 100))

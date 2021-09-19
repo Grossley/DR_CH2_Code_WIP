@@ -1,4 +1,3 @@
-var _temp_local_var_5, _temp_local_var_8;
 canrepeat = 0
 if (global.encounterno == 89 && global.inv > 0 && hit == 0)
 {

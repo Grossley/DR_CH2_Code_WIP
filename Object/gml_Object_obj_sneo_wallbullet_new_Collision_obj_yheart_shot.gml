@@ -1,4 +1,3 @@
-var _temp_local_var_5, _temp_local_var_6;
 if (destroyable == 0 && other.big == 1)
 {
     if ((other.y < y && instance_place(x, (y - 40), obj_sneo_wallbullet_new) && instance_nearest(x, (y - 40), obj_sneo_wallbullet_new).sprite_index == spr_sneo_mail) || (other.y > y && instance_place(x, (y + 40), obj_sneo_wallbullet_new) && instance_nearest(x, (y + 40), obj_sneo_wallbullet_new).sprite_index == spr_sneo_mail))

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 draw_set_color(c_black)
 draw_set_alpha(0.75)
 -10

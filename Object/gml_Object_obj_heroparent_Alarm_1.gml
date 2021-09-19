@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_6, _temp_local_var_14, _temp_local_var_16, _temp_local_var_26;
 global.faceaction[myself] = 0
 gml_Script_scr_retarget(myself)
 if (cancelattack == false)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_10, _temp_local_var_11, _temp_local_var_13;
 gml_Script_scr_depth()
 if (walkdir == "down" ? (y.room_height + 30) : 0)
     endme = 1

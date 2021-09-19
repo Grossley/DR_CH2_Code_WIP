@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_20, _temp_local_var_24, _temp_local_var_36;
 myinteract = 0
 talked = 0
 tempvar = 0

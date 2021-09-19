@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_7, _temp_local_var_12, _temp_local_var_14, _temp_local_var_16;
 x = round(mouse_x)
 y = round(mouse_y)
 siner++

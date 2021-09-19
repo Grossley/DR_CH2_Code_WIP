@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_7;
 if (myinteract == 1 && (!gml_Script_d_ex()))
 {
     myinteract = 0

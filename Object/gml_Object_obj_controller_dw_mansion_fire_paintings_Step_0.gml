@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8;
 if (suppress == 1)
 {
     with (obj_queenart_mona)

@@ -1,4 +1,3 @@
-var _temp_local_var_5, _temp_local_var_6, _temp_local_var_7;
 if (con == 5 && (!instance_exists(obj_writer)))
 {
     con = 7

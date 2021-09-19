@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 idletimer = 0
 drawtutorialarrows = 0
 drawtutorialarrows_alpha = 0

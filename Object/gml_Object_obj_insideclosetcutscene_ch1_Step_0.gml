@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_16;
 if (papeshake == 1)
 {
     with (obj_fallpaper_ch1)

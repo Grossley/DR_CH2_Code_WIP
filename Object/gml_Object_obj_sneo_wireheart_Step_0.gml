@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_9, _temp_local_var_13, _temp_local_var_16;
 if (init == 0)
 {
     image_xscale = 0.5

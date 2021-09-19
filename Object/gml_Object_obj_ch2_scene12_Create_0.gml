@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4;
 con = 0
 customcon = 0
 if (global.chapter != 2)

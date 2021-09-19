@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_21, _temp_local_var_24;
 if (encounterflag > 0 && init == 0)
 {
     if (global.flag[encounterflag] == 1)

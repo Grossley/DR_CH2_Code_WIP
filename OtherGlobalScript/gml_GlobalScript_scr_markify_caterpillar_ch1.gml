@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 s = 4378473
 r = 4387437
 for (i = 0; i < 2; i += 1)

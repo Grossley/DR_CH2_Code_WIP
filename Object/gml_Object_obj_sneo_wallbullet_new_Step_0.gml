@@ -1,4 +1,3 @@
-var _temp_local_var_5, _temp_local_var_6;
 if (global.turntimer < 1)
     instance_destroy()
 if gml_Script_i_ex(50)

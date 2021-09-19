@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_12, _temp_local_var_14, _temp_local_var_15, _temp_local_var_16, _temp_local_var_17, _temp_local_var_44, _temp_local_var_55, _temp_local_var_56, _temp_local_var_57, _temp_local_var_60, _temp_local_var_65;
 switch argument0
 {
     case obj_sneo_friedpipis:

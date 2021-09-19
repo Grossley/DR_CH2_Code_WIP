@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5;
 if (t == 0)
 {
     if (size > 1)

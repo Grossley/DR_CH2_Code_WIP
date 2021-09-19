@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_15, _temp_local_var_31, _temp_local_var_32, _temp_local_var_55, _temp_local_var_59, _temp_local_var_68, _temp_local_var_76, _temp_local_var_86, _temp_local_var_90, _temp_local_var_91, _temp_local_var_94, _temp_local_var_97, _temp_local_var_103, _temp_local_var_104, _temp_local_var_105, _temp_local_var_106, _temp_local_var_157;
 if (instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
 if (phase_transition > 0 && state != 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_7, _temp_local_var_9, _temp_local_var_13, _temp_local_var_22, _temp_local_var_26;
 repeat (reverse ? reversespeed : 1)
 {
     if reverse

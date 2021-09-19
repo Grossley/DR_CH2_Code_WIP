@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (con == 0)
 {
     with (obj_camera_area)

@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_5, _temp_local_var_7;
 if (t >= 6 && t <= 26)
 {
     afterimage += 1

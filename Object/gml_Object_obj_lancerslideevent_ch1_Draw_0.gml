@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (block1 != -4)
 {
     draw_set_alpha(0)

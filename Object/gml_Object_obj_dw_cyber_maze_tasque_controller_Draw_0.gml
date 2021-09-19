@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 if (global.flag[367] == 1 && screenChangeTrigger == 0)
     screenChangeTrigger = 1
 if (screenChangeTrigger == 1)

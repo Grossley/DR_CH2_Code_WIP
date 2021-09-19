@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8;
 bg_y_pos = ((gml_Script_cameray() * 0.92) + 680)
 bg_x_pos = (gml_Script_camerax() * 0.95)
 siner++

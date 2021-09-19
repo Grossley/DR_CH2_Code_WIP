@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3;
 if (global.flag[394] == 1)
 {
     icee_cushion = gml_Script_instance_create(128, 224, obj_npc_sign)

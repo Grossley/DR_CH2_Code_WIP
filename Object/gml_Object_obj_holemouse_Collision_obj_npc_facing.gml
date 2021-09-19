@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6;
 if (other.lifetimer > 20)
 {
     if (room == room_dw_city_mice && con == 1)

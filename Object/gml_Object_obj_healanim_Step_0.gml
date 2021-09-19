@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_6, _temp_local_var_9, _temp_local_var_14;
 t += 1
 if gml_Script_i_ex(target)
 {

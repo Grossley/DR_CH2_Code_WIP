@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_11, _temp_local_var_13, _temp_local_var_15, _temp_local_var_17;
 if (con == 0)
 {
     if (obj_mainchara.y > obj_musical_path_bullet2 && obj_mainchara.x > 1900 && global.flag[408] == 0)

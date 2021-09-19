@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_8, _temp_local_var_12;
 drawx = x
 drawy = y
 image_blend = merge_color(c_white, c_black, max(0, ((y - 240) / 240)))

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_12, _temp_local_var_14, _temp_local_var_128, _temp_local_var_144;
 with (obj_heroparent)
 {
     x = -1000

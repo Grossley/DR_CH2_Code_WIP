@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_8, _temp_local_var_11, _temp_local_var_15, _temp_local_var_18, _temp_local_var_20, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_27;
 if (con == 1)
 {
     if (obj_mainchara_ch1.x >= x && global.interact == 0)

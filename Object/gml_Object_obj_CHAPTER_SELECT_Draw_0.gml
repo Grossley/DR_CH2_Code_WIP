@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_17, _temp_local_var_18;
 if (!audio_group_is_loaded(1))
     return;
 if (!init_loaded)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_7, _temp_local_var_8;
 trackpos = audio_sound_get_track_position(global.currentsong[1])
 if keyboard_check_pressed(ord("R"))
     room_restart()

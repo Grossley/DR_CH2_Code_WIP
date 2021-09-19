@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5;
 if (wall_con == 1)
 {
     var _temp_local_var_1 = looping_coaster_top

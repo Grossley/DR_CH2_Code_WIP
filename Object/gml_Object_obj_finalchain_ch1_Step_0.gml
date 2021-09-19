@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_7, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_13, _temp_local_var_14;
 if (chaincon == 0)
 {
     if (chain_noise == 0)

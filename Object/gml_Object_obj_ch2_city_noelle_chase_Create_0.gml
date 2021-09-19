@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 leavecon = 0
 leavetimer = 0
 noellemarker = obj_sneo_friedpipis

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_13;
 if (con == 0 && global.plot == 7)
 {
     with (obj_caterpillarchara)

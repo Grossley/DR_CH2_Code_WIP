@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7;
 if (image_alpha < 1)
     image_alpha += 0.25
 else

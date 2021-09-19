@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_17;
 gml_Script_scr_84_set_draw_font_ch1("mainbig")
 draw_set_valign(fa_bottom)
 if (!visit_shop)

@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_4;
 make_effect_timer++
 if (make_effect_timer >= 10)
 {

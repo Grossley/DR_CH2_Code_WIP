@@ -1,4 +1,3 @@
-var readable_cars, readable_cars_2, _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6;
 con = -1
 customcon = 0
 release_timer = 0

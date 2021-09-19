@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_6;
 if destroying
     return;
 if (offset > offsetCap)

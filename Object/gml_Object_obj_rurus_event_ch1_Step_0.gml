@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_9, _temp_local_var_10, _temp_local_var_12, _temp_local_var_13, _temp_local_var_15, _temp_local_var_17, _temp_local_var_26, _temp_local_var_28, _temp_local_var_30, _temp_local_var_31, _temp_local_var_33, _temp_local_var_35;
 if (room == room_cc_rurus1_ch1)
 {
     if (con == 0 && global.interact == 0)

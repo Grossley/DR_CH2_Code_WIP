@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3;
 if (sprite_index == spr_sneo_bullet_box)
     return;
 if (destroyable == 1)

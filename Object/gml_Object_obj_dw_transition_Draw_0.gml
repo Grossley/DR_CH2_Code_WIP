@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_6, _temp_local_var_14, _temp_local_var_16;
 index += 1
 if (rect_draw == 1)
 {

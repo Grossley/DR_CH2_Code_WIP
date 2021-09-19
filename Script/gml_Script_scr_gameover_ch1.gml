@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7;
 audio_stop_all()
 gml_Script_snd_play_ch1(438)
 if (room != room_forest_fightsusie_ch1)

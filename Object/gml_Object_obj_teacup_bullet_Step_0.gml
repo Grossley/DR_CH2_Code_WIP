@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_4, _temp_local_var_8, _temp_local_var_9;
 if (cupDistanceFromCenter == 0)
     cupDistanceFromCenter = master.cupDistanceFromCenter
 circleX = lengthdir_x(cupDistanceFromCenter, spin)

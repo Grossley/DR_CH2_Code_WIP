@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_9, _temp_local_var_11, _temp_local_var_12;
 if (con == 0)
 {
     gml_Script_scr_windowcaption(" ")

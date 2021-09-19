@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_6, _temp_local_var_8, _temp_local_var_9, _temp_local_var_11, _temp_local_var_13, _temp_local_var_15, _temp_local_var_16, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_31, _temp_local_var_33;
 if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4

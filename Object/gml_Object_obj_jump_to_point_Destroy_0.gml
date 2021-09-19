@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (init == 1)
 {
     if gml_Script_i_ex(body_obj)

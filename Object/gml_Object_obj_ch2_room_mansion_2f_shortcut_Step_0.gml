@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4;
 if (global.flag[346] == 0)
 {
     if gml_Script_i_ex(key)

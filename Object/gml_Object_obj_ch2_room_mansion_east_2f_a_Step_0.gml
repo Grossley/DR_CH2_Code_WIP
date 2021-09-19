@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_5;
 if (global.flag[344] == 0)
 {
     if (key != self)

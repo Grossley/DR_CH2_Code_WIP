@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_7, _temp_local_var_8, _temp_local_var_10;
 if (theystoppeddancing == 2 && (!instance_exists(obj_writer)))
 {
     gml_Script_scr_speaker("none")

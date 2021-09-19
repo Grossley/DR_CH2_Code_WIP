@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3;
 if (destroyable == 1)
 {
     if (bighead && hitshot.big == 0)

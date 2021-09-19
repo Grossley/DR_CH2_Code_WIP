@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 timer += 1
 if (timer == 1)
     gml_Script_snd_free_all()

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_10, _temp_local_var_12, _temp_local_var_14, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_21, _temp_local_var_22, _temp_local_var_24, _temp_local_var_25, _temp_local_var_26, _temp_local_var_27, _temp_local_var_29, _temp_local_var_31, _temp_local_var_43, _temp_local_var_45, _temp_local_var_46, _temp_local_var_47, _temp_local_var_49, _temp_local_var_52, _temp_local_var_62, _temp_local_var_63, _temp_local_var_66, _temp_local_var_68, _temp_local_var_71, _temp_local_var_76, _temp_local_var_77, _temp_local_var_81;
 btimer += 1
 if (type == 0)
 {

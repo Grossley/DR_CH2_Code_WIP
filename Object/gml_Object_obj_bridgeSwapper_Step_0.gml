@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_4;
 if (con == 1)
 {
     global.interact = 1

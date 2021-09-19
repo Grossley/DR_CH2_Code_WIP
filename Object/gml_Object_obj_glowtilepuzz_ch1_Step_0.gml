@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_17, _temp_local_var_18;
 curtotal = 0
 funbuffer -= 1
 for (i = 0; i < tiletotal; i += 1)

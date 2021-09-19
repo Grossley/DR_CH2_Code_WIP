@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4;
 depth = 1005400
 xx = (gml_Script_camerax() * 0.95)
 yy = gml_Script_cameray()

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3;
 image_xscale = 2
 image_yscale = 2
 roomno = global.flag[291]

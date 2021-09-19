@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3;
 if (abs(angle_difference(point_direction(x, y, other.x, other.y), opening)) <= openingsize)
     return;
 if (destroyable == 1)

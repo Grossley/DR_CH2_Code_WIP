@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_12, _temp_local_var_14, _temp_local_var_15, _temp_local_var_19, _temp_local_var_31, _temp_local_var_33;
 con = 0
 timer = 0
 entrance = global.entrance

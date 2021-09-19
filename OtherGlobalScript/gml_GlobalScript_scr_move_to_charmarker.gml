@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_12;
 var __myid = id
 __arg0 = argument0
 if (argument0 == "last" || argument0 == -1)

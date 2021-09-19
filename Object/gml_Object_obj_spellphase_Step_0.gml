@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9;
 if (global.encounterno == 92)
     funny = 1
 if (active == true)

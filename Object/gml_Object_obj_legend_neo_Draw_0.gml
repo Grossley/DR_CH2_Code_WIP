@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_4, _temp_local_var_6, _temp_local_var_9, _temp_local_var_10, _temp_local_var_12, _temp_local_var_14, _temp_local_var_16;
 if keyboard_check_pressed(vk_backspace)
 {
     gml_Script_snd_free_all()

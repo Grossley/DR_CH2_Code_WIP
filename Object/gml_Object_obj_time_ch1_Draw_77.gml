@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11;
 if (os_type == os_switch || os_type == os_ps4)
 {
     var ww = window_get_width()

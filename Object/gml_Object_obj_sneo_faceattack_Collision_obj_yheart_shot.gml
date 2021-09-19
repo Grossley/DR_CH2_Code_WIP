@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4, _temp_local_var_7;
 if (type == 0 || image_alpha < 0.9)
     return;
 if (broken == 1)

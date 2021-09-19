@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_6, _temp_local_var_8;
 if (global.flag[60] == 0 || global.flag[36] == 1)
 {
     global.myfight = 7

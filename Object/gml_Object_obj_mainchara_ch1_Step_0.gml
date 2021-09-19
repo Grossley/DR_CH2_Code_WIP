@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_18, _temp_local_var_20, _temp_local_var_22, _temp_local_var_24, _temp_local_var_26;
 gml_Script_scr_depth_ch1()
 wallcheck = 0
 nowx = x

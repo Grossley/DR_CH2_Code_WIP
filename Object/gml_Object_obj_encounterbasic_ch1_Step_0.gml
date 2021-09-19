@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (fightcon == 1)
 {
     if (global.flag[9] == 1)

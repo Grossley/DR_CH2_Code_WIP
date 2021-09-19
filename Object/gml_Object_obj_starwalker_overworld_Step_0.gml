@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_9, _temp_local_var_12;
 if instance_exists(obj_mainchara)
 {
     if (loc_check == 0)

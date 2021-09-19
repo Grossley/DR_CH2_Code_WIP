@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_10, _temp_local_var_11, _temp_local_var_12, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_38, _temp_local_var_39, _temp_local_var_40, _temp_local_var_41;
 if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot < 72)
 {
     pressed = 1

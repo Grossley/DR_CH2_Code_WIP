@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_9, _temp_local_var_11, _temp_local_var_15;
 if (con > -1)
 {
     if gml_Script_i_ex(snowy)

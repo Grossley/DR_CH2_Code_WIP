@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_11, _temp_local_var_13;
 if (susinit == 0)
 {
     with (obj_herosusie_ch1)

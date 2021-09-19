@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_4;
 if (init == 0)
 {
     tiletype[0] = obj_marker

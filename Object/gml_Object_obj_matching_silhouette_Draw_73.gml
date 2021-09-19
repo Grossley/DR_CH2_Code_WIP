@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if (target_char == noone)
     return;
 if (init == 0)

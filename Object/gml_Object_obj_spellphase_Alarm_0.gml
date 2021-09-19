@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 for (xyz = 0; xyz < 3; xyz += 1)
 {
     using[xyz] = 0

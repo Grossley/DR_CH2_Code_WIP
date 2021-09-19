@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4;
 if (myinteract == 3)
 {
 }

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 if auto_scroll_start
 {
     auto_scroll_start = 0

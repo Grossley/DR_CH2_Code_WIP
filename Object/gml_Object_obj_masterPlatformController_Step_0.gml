@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_4, _temp_local_var_6;
 if (init == 1)
 {
     noelle = gml_Script_instance_create((obj_controller_city_mice3.noelle.x + 4), obj_controller_city_mice3.noelle.y, obj_noelle_scared)

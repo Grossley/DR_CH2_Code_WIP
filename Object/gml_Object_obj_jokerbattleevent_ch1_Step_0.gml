@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_7, _temp_local_var_9, _temp_local_var_10, _temp_local_var_11, _temp_local_var_14, _temp_local_var_17, _temp_local_var_22, _temp_local_var_29;
 if (con == 1)
 {
     gml_Script_scr_encountersetup_ch1(25)

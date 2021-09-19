@@ -1,4 +1,3 @@
-var _temp_local_var_3, _temp_local_var_34, _temp_local_var_37;
 if (!instance_exists(obj_sneo_final_forme_hitbox))
     gml_Script_instance_create(x, y, obj_sneo_final_forme_hitbox)
 if (intro == 1)

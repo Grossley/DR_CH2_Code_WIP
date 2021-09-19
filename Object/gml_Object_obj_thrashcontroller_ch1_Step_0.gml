@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_14;
 if (con == 0)
 {
     if (logocon == 2)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_8, _temp_local_var_9, _temp_local_var_11;
 spell = argument0
 caster = argument1
 star = global.chartarget[argument1]

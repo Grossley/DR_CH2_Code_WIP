@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_9, _temp_local_var_10;
 myinteract = 3
 global.msc = 0
 global.typer = 5

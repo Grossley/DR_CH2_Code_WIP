@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_5, _temp_local_var_8, _temp_local_var_13;
 for (i = 0; i < 2; i += 1)
 {
     if gml_Script_i_ex(global.cinstance[i])

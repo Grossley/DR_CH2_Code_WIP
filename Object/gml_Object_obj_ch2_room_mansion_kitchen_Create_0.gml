@@ -8,8 +8,10 @@ for (var i = 0; i < 26; i++)
     timer.depth = 900000
 }
 swatchling_npc_a = gml_Script_instance_create(790, 93, obj_npc_swatchling_scared)
-var _temp_local_var_3 = swatchling_npc_a
-gml_Script_scr_depth()
-sprite_index = (global.flag[362] == 0 ? spr_npc_swatchling_scared : spr_npc_swatchling_down)
-image_speed = 0.25
-current_pal = yellow
+with (swatchling_npc_a)
+{
+	gml_Script_scr_depth()
+	sprite_index = (global.flag[362] == 0 ? spr_npc_swatchling_scared : spr_npc_swatchling_down)
+	image_speed = 0.25
+	current_pal = yellow
+}

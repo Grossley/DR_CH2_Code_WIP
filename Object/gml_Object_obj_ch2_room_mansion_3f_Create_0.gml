@@ -1,4 +1,4 @@
-var floor_dir_1f, sign_4f, floor_dir_4f, _temp_local_var_1, _temp_local_var_5, _temp_local_var_12;
+var floor_dir_1f, sign_4f, floor_dir_4f;
 if (gml_Script_scr_sideb_get_phase() != 3)
 {
     con = -1

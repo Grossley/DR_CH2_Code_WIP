@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_9, _temp_local_var_11, _temp_local_var_12, _temp_local_var_14, _temp_local_var_16, _temp_local_var_17, _temp_local_var_22, _temp_local_var_25, _temp_local_var_27;
 gml_Script_scr_depth_ch1()
 siner += 1
 if (con == 1 && gml_Script___view_get(0, 0) >= 280 && obj_mainchara_ch1.y > 535)

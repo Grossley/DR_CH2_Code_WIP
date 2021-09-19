@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_6, _temp_local_var_7, _temp_local_var_12, _temp_local_var_13, _temp_local_var_14, _temp_local_var_17, _temp_local_var_18, _temp_local_var_19, _temp_local_var_20, _temp_local_var_21;
 if (global.plot >= 85 && global.plot < 90)
 {
     if (con == 0)

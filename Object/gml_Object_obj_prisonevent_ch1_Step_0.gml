@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_10, _temp_local_var_13, _temp_local_var_14, _temp_local_var_17, _temp_local_var_22, _temp_local_var_24, _temp_local_var_27, _temp_local_var_30, _temp_local_var_31, _temp_local_var_33, _temp_local_var_34, _temp_local_var_36, _temp_local_var_45, _temp_local_var_46, _temp_local_var_47, _temp_local_var_49, _temp_local_var_50, _temp_local_var_55, _temp_local_var_58, _temp_local_var_60, _temp_local_var_62, _temp_local_var_64, _temp_local_var_78;
 if (con == 1)
 {
     doorblock = gml_Script_instance_create_ch1(640, 360, 1656)
