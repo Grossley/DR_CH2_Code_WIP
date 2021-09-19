@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.inv < 0)
 {
     remdamage = damage
@@ -16,9 +15,14 @@ if (global.inv < 0)
         damage = remdamage
         target = ti
         tdamage = damage
-        var _temp_local_var_1 = global.charinstance[target]
-        hurt = true
-        hurttimer = 0
+        with (global.charinstance[target])
+		{
+			hurt = true
+			hurttimer = 0
+		}
+			hurt = true
+			hurttimer = 0
+		}
     }
     gameover = 1
     if (global.char[0] != 0 && global.hp[global.char[0]] > 2)
