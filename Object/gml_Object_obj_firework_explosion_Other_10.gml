@@ -31,7 +31,6 @@ for (var i = 0; i < pixels; i++)
     pixelspritechangealarm[i] = (20 + random(20))
     pixelalpha[i] = random_range(0.5, 1)
     pixelexpandspd[i] = random_range(0.04, 0.06)
-    var _temp_local_var_1 = colorProfile
     switch colorProfile
     {
         case 2:

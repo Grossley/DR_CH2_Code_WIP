@@ -248,7 +248,6 @@ if (poisonamount > 0)
     {
         if (global.hp[global.char[myself]] > 1)
         {
-            var _temp_local_var_10 = global.hp[global.char[myself]]
             global.hp[global.char[myself]] = (global.hp[global.char[myself]] - 1)
             poisonamount--
         }

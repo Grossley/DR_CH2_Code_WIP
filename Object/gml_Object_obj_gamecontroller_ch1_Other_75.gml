@@ -1,5 +1,4 @@
 show_debug_message(("***** Event = " + ds_map_find_value(async_load, "event_type")))
-var _temp_local_var_1 = ds_map_find_value(async_load, "event_type")
 switch ds_map_find_value(async_load, "event_type")
 {
     case "gamepad discovered":

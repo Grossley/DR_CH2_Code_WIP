@@ -9,7 +9,6 @@ else if (spintimer == 10)
     sprite_index = spr_lancer_ut
 else if (spintimer == 15)
     sprite_index = spr_lancer_rt
-var _temp_local_var_1 = mode
 switch mode
 {
     case 0:

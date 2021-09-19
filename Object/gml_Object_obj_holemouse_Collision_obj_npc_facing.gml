@@ -8,10 +8,9 @@ if (other.lifetimer > 20)
             noelle.con = 0
             noelle.targetx = x
             noelle.targety = y
-            alarm[0] = noelle
+            noelle.alarm[0] = 1
             noelle.extflag = "mice1Scare"
             instance_destroy()
-            var _temp_local_var_2 = 1
             if instance_exists(obj_controller_dw_city_mice)
                 obj_controller_dw_city_mice.scaredAgain = 0
         }
@@ -23,9 +22,8 @@ if (other.lifetimer > 20)
                 scaredNoelle.con = 0
                 scaredNoelle.targetx = x
                 scaredNoelle.targety = y
-                alarm[0] = scaredNoelle
+                scaredNoelle.alarm[0] = 1
                 instance_destroy()
-                var _temp_local_var_4 = 1
                 if instance_exists(obj_controller_city_mice2)
                     obj_controller_city_mice2.scared = 0
             }
@@ -39,9 +37,8 @@ if (other.lifetimer > 20)
             scaredNoelle.con = 0
             scaredNoelle.targetx = x
             scaredNoelle.targety = y
-            alarm[0] = scaredNoelle
+            scaredNoelle.alarm[0] = 1
             instance_destroy()
-            var _temp_local_var_4 = 1
             if instance_exists(obj_controller_city_mice2)
                 obj_controller_city_mice2.scared = 0
         }

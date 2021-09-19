@@ -11,8 +11,7 @@ if (con == 1)
         }
         if (room == room_dw_city_mice2)
         {
-            alarm[0] = scaredNoelle
-            var _temp_local_var_2 = 1
+            scaredNoelle.alarm[0] = 1
         }
     }
 }

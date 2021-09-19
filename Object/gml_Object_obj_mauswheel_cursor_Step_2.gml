@@ -11,10 +11,8 @@ if (timer <= 90)
     else if (timer > 60)
     {
         var easedlerp = gml_Script_scr_ease_inout(((timer - 60) / 30), 2)
-        x = lerp(maxx, xpos[followindex], memory)
-        y = lerp(maxy, ypos[followindex], memory)
-        var _temp_local_var_1 = easedlerp
-        var _temp_local_var_2 = easedlerp
+        easedlerp.x = lerp(maxx, xpos[followindex], memory)
+        easedlerp.y = lerp(maxy, ypos[followindex], memory)
         if instance_exists(obj_maus_holes)
             obj_maus_holes.dontcreatemouse = 0
     }

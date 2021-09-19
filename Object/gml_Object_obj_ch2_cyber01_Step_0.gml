@@ -51,7 +51,7 @@ if (con == 20)
     global.interact = 1
     global.facing = 1
     cutscene_master = gml_Script_scr_cutscene_make()
-    save_object[0] = cutscene_master
+    cutscene_master.save_object[0] = id
     gml_Script_scr_maincharacters_actors()
     sw = 5
     sw_actor = gml_Script_instance_create(nisesweet.x, nisesweet.y, obj_actor)
@@ -69,7 +69,6 @@ if (con == 20)
     gml_Script_c_autowalk(0)
     nisekk.x = 2200
     nisekk.y = (gml_Script_cameray() - 400)
-    var _temp_local_var_3 = id
     depth = 95000
 }
 if (con == 21)

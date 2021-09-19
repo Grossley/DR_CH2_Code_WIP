@@ -18,7 +18,6 @@ if (!roomenterfreezeend)
     {
         if (global.flag[21] > 0)
         {
-            var _temp_local_var_2 = global.flag[21]
             global.flag[21] = (global.flag[21] - 1)
         }
         else

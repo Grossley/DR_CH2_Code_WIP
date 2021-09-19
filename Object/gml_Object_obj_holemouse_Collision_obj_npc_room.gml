@@ -4,9 +4,8 @@ if (room == room_dw_city_mice2)
     {
         scaredNoelle = gml_Script_instance_create(x, y, obj_noelle_scared)
         scaredNoelle.con = 0
-        alarm[0] = scaredNoelle
+        scaredNoelle.alarm[0] = 1
         instance_destroy()
-        var _temp_local_var_1 = 1
         if instance_exists(obj_controller_city_mice2)
             obj_controller_city_mice2.scared = 0
     }

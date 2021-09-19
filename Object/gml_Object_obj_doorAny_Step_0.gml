@@ -1,6 +1,5 @@
 if (init == 0)
 {
-    var _temp_local_var_1 = image_index
     switch image_index
     {
         case 1:
