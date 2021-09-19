@@ -9,9 +9,11 @@ if (con == 0 && global.interact == 0 && susiestart == 1)
             visible = false
             bossid.caterpillarid = id
             bossid.susid = gml_Script_instance_create(x, y, obj_actor)
-            var _temp_local_var_2 = bossid.susid
-            gml_Script_scr_set_facing_sprites("susie")
-            sprite_index = rsprite
+            with (bossid.susid)
+            {
+                gml_Script_scr_set_facing_sprites("susie")
+                sprite_index = rsprite
+            }
         }
     }
     if (susid == noone)
@@ -25,23 +27,25 @@ if (con == 1)
     {
         if instance_exists(obj_queenvase)
         {
-            var _temp_local_var_3 = susid
-            gml_Script_scr_depth()
-            nearestpot = instance_nearest((x + (sprite_width / 2)), ((y + sprite_height) - 2), obj_queenvase)
-            if (collision_line((x + (sprite_width / 2)), ((y + sprite_height) - 2), (nearestpot.x + 20), (nearestpot.y + 52), obj_solidblock, true, false) == -4)
+            with (susid)
             {
-                direction = point_direction((x + (sprite_width / 2)), ((y + sprite_height) - 2), (nearestpot.x + 20), ((nearestpot.y + 52) - 10))
-                fake_speed = gml_Script_scr_move_step_solids_direction(8, direction)
-                fake_direction = direction
-            }
-            else
-                other.con = 2
-            if place_meeting(x, y, obj_queenvase)
-            {
-                other.timer = 0
-                other.con = 1.1
-                image_index = 0
-                sprite_index = spr_susie_right_diagonal_kick_dw
+                gml_Script_scr_depth()
+                nearestpot = instance_nearest((x + (sprite_width / 2)), ((y + sprite_height) - 2), obj_queenvase)
+                if (collision_line((x + (sprite_width / 2)), ((y + sprite_height) - 2), (nearestpot.x + 20), (nearestpot.y + 52), obj_solidblock, true, false) == -4)
+                {
+                    direction = point_direction((x + (sprite_width / 2)), ((y + sprite_height) - 2), (nearestpot.x + 20), ((nearestpot.y + 52) - 10))
+                    fake_speed = gml_Script_scr_move_step_solids_direction(8, direction)
+                    fake_direction = direction
+                }
+                else
+                    other.con = 2
+                if place_meeting(x, y, obj_queenvase)
+                {
+                    other.timer = 0
+                    other.con = 1.1
+                    image_index = 0
+                    sprite_index = spr_susie_right_diagonal_kick_dw
+                }
             }
         }
         else

@@ -108,23 +108,23 @@ if (global.myfight == 0)
             movenoise = true
             gml_Script_scr_prevhero()
         }
-        var _temp_local_var_20 = battlewriter
-        depth = 3
+        with (battlewriter)
+            depth = 3
     }
     if (global.bmenuno == 2 && global.flag[34] == 1)
     {
-        var _temp_local_var_22 = battlewriter
-        skipme = true
+        with (battlewriter)
+            skipme = true
     }
     if (global.bmenuno == 2 && global.flag[34] == 0)
     {
-        var _temp_local_var_37 = battlewriter
-        skipme = true
+        with (battlewriter)
+            skipme = true
     }
     if (global.bmenuno == 4)
     {
-        var _temp_local_var_52 = battlewriter
-        skipme = true
+        with (battlewriter)
+            skipme = true
     }
     if (global.bmenuno == 9)
     {
@@ -259,8 +259,8 @@ if (global.myfight == 0)
     }
     if (global.bmenuno == 7 || global.bmenuno == 1 || global.bmenuno == 8 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13)
     {
-        var _temp_local_var_92 = battlewriter
-        skipme = true
+        with (battlewriter)
+            skipme = true
     }
 }
 if (movenoise == true)
@@ -345,8 +345,8 @@ if (global.myfight == 5)
         }
         with (obj_spellphase)
         {
-            var _temp_local_var_118 = spellwriter
-            instance_destroy()
+            with (spellwriter)
+                instance_destroy()
         }
         instance_destroy()
     }

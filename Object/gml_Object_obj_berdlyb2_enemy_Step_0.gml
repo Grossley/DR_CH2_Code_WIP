@@ -304,13 +304,15 @@ if (global.monster[myself] == true)
                 while (true)
                 {
                     var _newwerewire = gml_Script_scr_monster_add(33, 474)
-                    var _temp_local_var_63 = global.monsterinstance[_newwerewire]
-                    skiptext = 1
-                    x = (gml_Script_camerax() + 740)
-                    y = global.monstermakey[myself]
-                    rtimer = 0
-                    talkwait = 1
-                    gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
+                    with (global.monsterinstance[_newwerewire])
+                    {
+                        skiptext = 1
+                        x = (gml_Script_camerax() + 740)
+                        y = global.monstermakey[myself]
+                        rtimer = 0
+                        talkwait = 1
+                        gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 20)
+                    }
                 }
                 skiptext = 1
                 x = (gml_Script_camerax() + 740)
@@ -683,8 +685,8 @@ if (sidebcon > 0)
     {
         with (obj_spellphase)
         {
-            var _temp_local_var_20 = spellwriter
-            instance_destroy()
+            with (spellwriter)
+                instance_destroy()
         }
         instance_destroy()
     }
@@ -698,13 +700,13 @@ if (sidebcon > 0)
     }
     if (sidebcon == 6 && (!gml_Script_i_ex(62)))
     {
-        var _temp_local_var_22 = fn
-        gml_Script_scr_flip("h")
+        with (fn)
+            gml_Script_scr_flip("h")
     }
     if (sidebcon == 7 && (!gml_Script_i_ex(62)))
     {
-        var _temp_local_var_24 = fn
-        gml_Script_scr_flip("h")
+        with (fn)
+            gml_Script_scr_flip("h")
     }
     if (sidebcon == 9)
     {
@@ -738,7 +740,7 @@ if (sidebcon > 0)
         global.monsterexp[3] = 0
         berdlysign = gml_Script_instance_create(607, 97, obj_npc_sign)
         berdlysign.sprite_index = spr_berdly_ice
-        var _temp_local_var_31 = fn
-        instance_destroy()
+        with (fn)
+            instance_destroy()
     }
 }
