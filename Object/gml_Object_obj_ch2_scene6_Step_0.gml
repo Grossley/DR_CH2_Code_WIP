@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_12;
 if (con == 0 && obj_mainchara.y >= (y - 26) && global.interact == 0)
 {
     if (global.plot < 14)

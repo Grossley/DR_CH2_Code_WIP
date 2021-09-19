@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_12, _temp_local_var_17, _temp_local_var_120, _temp_local_var_121, _temp_local_var_126, _temp_local_var_127, _temp_local_var_128, _temp_local_var_129, _temp_local_var_171;
 if (init == 0)
 {
     sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])

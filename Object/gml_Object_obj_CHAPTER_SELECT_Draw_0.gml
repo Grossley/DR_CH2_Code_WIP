@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_7, _temp_local_var_11, _temp_local_var_15, _temp_local_var_20;
 if (!audio_group_is_loaded(1))
     return;
 if (!init_loaded)
@@ -101,7 +100,6 @@ if (con == "nofile")
     if (gml_Script_button1_p() && timer > 10)
     {
         select_noise = 1
-        var _temp_local_var_7 = mpos
         switch mpos
         {
             case 0:
@@ -180,7 +178,6 @@ if (con == "startNextChapter")
     if (gml_Script_button1_p() && timer > 10)
     {
         select_noise = 1
-        var _temp_local_var_11 = mpos
         switch mpos
         {
             case 0:
@@ -248,7 +245,6 @@ if (con == "continueChapter")
     {
         timer = 0
         select_noise = 1
-        var _temp_local_var_15 = mpos
         switch mpos
         {
             case 0:
@@ -462,7 +458,6 @@ if (con == "gameload")
     if (chaptertoload != 0)
     {
         audio_sound_gain(loop, 0, 500)
-        var _temp_local_var_20 = chaptertoload
         switch chaptertoload
         {
             case 1:

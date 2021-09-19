@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_11;
 if (obj_mainchara.x >= 970 && obj_mainchara.x <= 1020 && obj_mainchara.y < 180 && con == -1 && global.flag[309] < 9 && gml_Script_scr_havechar(2) && gml_Script_scr_havechar(3))
 {
     instance_deactivate_object(obj_doorW)

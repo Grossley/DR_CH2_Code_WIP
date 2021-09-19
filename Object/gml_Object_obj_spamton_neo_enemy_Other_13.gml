@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 global.monstergold[3] += global.monstergold[myself]
 global.monsterexp[3] += global.monsterexp[myself]
 if (global.flag[(51 + myself)] == 0)

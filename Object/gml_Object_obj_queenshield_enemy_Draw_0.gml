@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_5;
 depth = (obj_queen_enemy.depth - 1)
 shieldsiner++
 y += (sin((shieldsiner / 6)) * 0.5)

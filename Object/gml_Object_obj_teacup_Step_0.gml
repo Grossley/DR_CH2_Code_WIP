@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_7, _temp_local_var_15, _temp_local_var_72;
 camTargetHeight = (reverse ? camTargetHeightReverse : camTargetHeightNormal)
 var _tempLock = 0
 riseSpeedBoost = min(riseSpeedBoost, riseSpeedBoostMax)

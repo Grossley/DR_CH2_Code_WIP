@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2;
 gml_Script_scr_enemy_object_init()
 var tensionbonus = (((global.flag[458] / 7) * global.maxtension) * 0.3)
 gml_Script_scr_tensionheal(tensionbonus)

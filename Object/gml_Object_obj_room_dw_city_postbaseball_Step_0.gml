@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_10;
 var makeballoons = 0
 if (room == room_dw_city_postbaseball_1)
 {

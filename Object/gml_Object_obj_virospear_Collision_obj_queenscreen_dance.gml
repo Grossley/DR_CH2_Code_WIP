@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 var redscreen = 27
 if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen(other) && active == true && other.aligned == 1 && other.image_index != redscreen && other.image_index != 9 && other.sprite_index != spr_queenscreen_red)
 {

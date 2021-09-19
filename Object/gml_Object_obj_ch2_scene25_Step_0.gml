@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5;
 if (obj_mainchara.x > 650 && con == -1)
 {
     con = 1
@@ -35,10 +34,6 @@ if (obj_mainchara.x > 650 && con == -1)
     gml_Script_c_sel(qu_flame)
     gml_Script_c_flip("x")
     gml_Script_c_imagespeed(0.25)
-    var _temp_local_var_2 = berdly_wire2
-    var _temp_local_var_3 = id
-    var _temp_local_var_4 = berdly_plug
-    var _temp_local_var_5 = berdly_wire
 }
 if (con == 1)
 {

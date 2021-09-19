@@ -1,21 +1,6 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5;
 if (pcon == 0 && global.interact == 0)
 {
-    var _temp_local_var_2 = puzzle
-    if (suit[0] == 4)
-    {
-        var _temp_local_var_3 = puzzle
-        if (suit[1] == 1)
-        {
-            var _temp_local_var_4 = puzzle
-            var _temp_local_var_5 = (suit[2] == 2 && global.flag[234] == 0)
-        }
-        else
-            _temp_local_var_5 = 0
-    }
-    else
-        _temp_local_var_5 = 0
-    if 0
+    if ((puzzle.suit[0] == 4) && ((puzzle.suit[1] == 1) && ((puzzle.suit[2] == 2) && (global.flag[234] == 0))))
     {
         with (blockn)
             instance_destroy()

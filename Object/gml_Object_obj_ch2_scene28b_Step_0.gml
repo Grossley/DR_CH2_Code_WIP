@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (gml_Script_i_ex(desk_marker) && desk_marker.visible == true)
 {
     if (standing == 0)

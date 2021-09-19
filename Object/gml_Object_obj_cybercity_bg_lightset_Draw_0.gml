@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 timer++
 minitimer++
 minitimerthreshold = 2

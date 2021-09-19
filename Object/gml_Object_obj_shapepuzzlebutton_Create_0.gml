@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 active = false
 moveAmount = 10
 holdDelayMax = 3

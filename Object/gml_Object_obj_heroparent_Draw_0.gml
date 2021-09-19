@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_10;
 if (global.hp[global.char[myself]] > 0)
 {
     if (global.myfight == 3 && global.faceaction[myself] == 6)

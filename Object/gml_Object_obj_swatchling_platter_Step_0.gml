@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_3, _temp_local_var_4;
 if (init == 0)
 {
     gml_Script_scr_bullet_inherit(platterLid)

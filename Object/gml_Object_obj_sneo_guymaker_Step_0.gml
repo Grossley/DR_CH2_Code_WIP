@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_4, _temp_local_var_6, _temp_local_var_7, _temp_local_var_8, _temp_local_var_9, _temp_local_var_11, _temp_local_var_15, _temp_local_var_16, _temp_local_var_17, _temp_local_var_19, _temp_local_var_21, _temp_local_var_22, _temp_local_var_23, _temp_local_var_35, _temp_local_var_36, _temp_local_var_37, _temp_local_var_38, _temp_local_var_39, _temp_local_var_40;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 timer++

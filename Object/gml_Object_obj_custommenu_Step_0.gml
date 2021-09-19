@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_2, _temp_local_var_3, _temp_local_var_8, _temp_local_var_9, _temp_local_var_18, _temp_local_var_26, _temp_local_var_30;
 global.interact = reminteract
 move_d = 0
 move_r = 0
@@ -208,11 +207,7 @@ if (hpageturn != 0 || vpageturn != 0)
     if (menuWidth[menu] == 1)
     {
         while ((menuScrollCurrent[menu] % menuHeight[menu]) != 0)
-        {
-            menuScrollCurrent[menu]
-            var _temp_local_var_9 = menuScrollCurrent[menu]
             menuScrollCurrent[menu]++
-        }
     }
 }
 if (menuCoord[menu] > menuMaximumID[menu])

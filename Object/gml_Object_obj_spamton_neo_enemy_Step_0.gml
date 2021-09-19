@@ -1,4 +1,3 @@
-var _temp_local_var_5, _temp_local_var_6, _temp_local_var_57, _temp_local_var_61;
 if (bigshot == 1)
     global.sp = 5
 if (cantspareinit == 0 && gml_Script_scr_sideb_get_phase() > 2 && gml_Script_i_ex(355))

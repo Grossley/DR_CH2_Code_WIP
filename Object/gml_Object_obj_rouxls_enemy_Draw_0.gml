@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_4, _temp_local_var_22, _temp_local_var_42;
 if (state == 3)
 {
     gml_Script_scr_enemyhurt_tired_after_damage(0)

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 event_inherited()
 con = 0
 closetimer = 0

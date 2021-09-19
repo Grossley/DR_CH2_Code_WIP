@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 siner += image_xscale
 if (mode == 0)
     y += (sin((siner / 12)) * 5)

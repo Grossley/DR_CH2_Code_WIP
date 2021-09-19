@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_17;
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 if (global.interact == 5)

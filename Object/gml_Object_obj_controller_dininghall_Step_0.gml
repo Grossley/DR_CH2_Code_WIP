@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (con == 0)
 {
     with (obj_camera_area)
@@ -58,7 +57,6 @@ if (con == 2)
     memy = dog.y
     save_object[0] = cutscene_master
     con++
-    var _temp_local_var_1 = dog
 }
 if (con == 3)
 {

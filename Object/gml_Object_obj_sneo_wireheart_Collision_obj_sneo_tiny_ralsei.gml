@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 if (other.active == false)
     return;
 if (invincibility_timer > 0)

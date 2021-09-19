@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (bon == 0 && obj_mainchara.x >= (x - 100) && global.interact == 0)
     bon = 1
 if (con == 0 && obj_mainchara.x >= x && global.interact == 0)

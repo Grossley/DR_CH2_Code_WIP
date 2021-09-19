@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 spintimer++
 if (spintimer == 20)
     spintimer = 0

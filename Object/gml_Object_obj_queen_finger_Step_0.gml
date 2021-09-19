@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 timer--
 xx = (obj_growtangle.x + 80)
 if (state == 0)

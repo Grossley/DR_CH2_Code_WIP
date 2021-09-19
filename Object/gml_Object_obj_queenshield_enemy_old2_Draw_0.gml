@@ -1,4 +1,3 @@
-var _temp_local_var_4, _temp_local_var_5;
 shieldsiner++
 y += (sin((shieldsiner / 6)) * 0.5)
 if ((obj_queen_enemy.shieldhp / obj_queen_enemy.shieldmaxhp) <= (obj_queen_enemy.shieldacthp / obj_queen_enemy.shieldactmaxhp))

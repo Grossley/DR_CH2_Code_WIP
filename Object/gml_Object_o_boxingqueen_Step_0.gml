@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_14, _temp_local_var_31, _temp_local_var_32, _temp_local_var_141;
 if (instance_exists(obj_thrash_intro) || instance_exists(obj_thrash_transformation_transition))
     return;
 if (phase_transition > 0 && state != 1)

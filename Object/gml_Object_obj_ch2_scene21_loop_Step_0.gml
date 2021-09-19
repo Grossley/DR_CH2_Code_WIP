@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_10;
 if (global.plot < 150)
 {
     if (swanboat.x < 540)

@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_3, _temp_local_var_4, _temp_local_var_5;
 if gml_Script_snd_is_playing(global.currentsong[1])
     siner++
 for (i = 0; i < 3; i++)

@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_21;
 if (encounterflag > 0 && init == 0)
 {
     if (global.flag[encounterflag] == 1)
@@ -502,7 +501,6 @@ if (frozen == false)
             excl = gml_Script_instance_create((x + (sprite_width / 2)), (y - 20), obj_excblcon)
             alarm[0] = excl
             alarm[4] = targalarm
-            var _temp_local_var_21 = targalarm
         }
         else
             alertcon = 2

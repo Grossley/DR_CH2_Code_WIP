@@ -1,4 +1,3 @@
-var _temp_local_var_2, _temp_local_var_25;
 if (global.monster[myself] == true)
 {
     if (actcon == 36 && alarm[4] > 17)

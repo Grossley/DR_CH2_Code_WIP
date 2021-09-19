@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 d = gml_Script_instance_create(gml_Script_camerax(), gml_Script_cameray(), obj_fadein)
 with (obj_fadeout)
     instance_destroy()

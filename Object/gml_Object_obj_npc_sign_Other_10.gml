@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_15;
 global.msc = 0
 global.typer = 5
 if (global.darkzone == true)

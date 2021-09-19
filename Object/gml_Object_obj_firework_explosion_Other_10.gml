@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (!ds_map_exists(global.firework_sprite_pixel_data, sprite_index))
 {
     show_debug_message((("[WARNING] obj_fireworks_manager hasn't cached " + sprite_get_name(sprite_index)) + " in its create event. It will be added now, game may stutter."))

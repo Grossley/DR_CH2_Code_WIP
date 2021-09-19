@@ -1,4 +1,3 @@
-var _temp_local_var_9;
 button1 = 0
 button2 = 0
 button3 = 0

@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (con == 1)
 {
     if (other.name == "noelle" && other.visible == true)

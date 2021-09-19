@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 gml_Script_scr_depth()
 wallcheck = 0
 nowx = x

@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 draw_set_color(c_black)
 draw_rectangle((xx - 10), (yy - 10), (xx + 999), (yy + 999), false)
 if (con == 0)

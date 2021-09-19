@@ -1,4 +1,3 @@
-var _temp_local_var_1, _temp_local_var_16;
 if (global.chapter == 1)
 {
     if (con == 1)

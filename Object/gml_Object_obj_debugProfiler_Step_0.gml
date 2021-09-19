@@ -1,4 +1,3 @@
-var _temp_local_var_7;
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("C")))
 {
     gml_Script_snd_play_pitch(55, 1.2)

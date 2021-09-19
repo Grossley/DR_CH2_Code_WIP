@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 audio_stop_all()
 global.lang_loaded = ""
 var _temp_local_var_1 = chaptertoload_temp

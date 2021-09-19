@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 rot += rotspeed
 xx = (lengthdir_x(eyer, rot) + offx)
 yy = (lengthdir_y(eyer, rot) + offy)

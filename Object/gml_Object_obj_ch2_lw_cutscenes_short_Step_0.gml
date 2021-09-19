@@ -125,8 +125,6 @@ if (room == room_schoollobby)
         gml_Script_c_waittalk()
         gml_Script_c_wait(30)
         con = 2
-        var _temp_local_var_2 = 15
-        var _temp_local_var_3 = 14
     }
     if (con == 2 && (!instance_exists(obj_cutscene_master)))
     {
@@ -334,11 +332,6 @@ if (room == room_schooldoor)
         gml_Script_c_msgsetloc(0, "\\E9* (Kris^1, if you could bring her by later...)/", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_378_0")
         gml_Script_c_msgnextloc("\\EQ* (It would mean a lot to me...!)/%", "obj_ch2_lw_cutscenes_short_slash_Step_0_gml_379_0")
         gml_Script_c_talk_wait()
-        var _temp_local_var_8 = 18
-        var _temp_local_var_9 = 17
-        var _temp_local_var_10 = 21
-        var _temp_local_var_11 = 21
-        var _temp_local_var_12 = 20
         if (noelle_chalk == 1)
         {
             gml_Script_c_wait(30)

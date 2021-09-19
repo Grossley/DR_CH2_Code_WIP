@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 gml_Script_scr_depth()
 global.currentroom = room
 gml_Script_scr_initialize_charnames()
