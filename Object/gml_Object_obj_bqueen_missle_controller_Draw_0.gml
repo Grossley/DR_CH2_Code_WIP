@@ -70,10 +70,12 @@ if (!oldmode)
             d.damage = damage
             d.target = target
             d.depth = bulletdepth
-            var _temp_local_var_3 = d
-            image_angle = (direction - 90)
-            var cloud = gml_Script_scr_afterimage_grow()
-            cloud.sprite_index = spr_cakesmoke_white
+            with (d)
+			{
+				image_angle = (direction - 90)
+				var cloud = gml_Script_scr_afterimage_grow()
+				cloud.sprite_index = spr_cakesmoke_white
+			}
         }
     }
     if (global.turntimer < 3)

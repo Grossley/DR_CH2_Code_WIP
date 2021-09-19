@@ -42,8 +42,8 @@ if (timer > 9)
         gml_Script_snd_volume(220, 1, 0)
         gml_Script_snd_play_pitch(220, (0.5 + random(1)))
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
-        var _temp_local_var_6 = d
-        gml_Script_scr_afterimage_grow()
+        with (d)
+			gml_Script_scr_afterimage_grow()
     }
 }
 if (timer2 > 9 && difficulty == 1)
@@ -64,8 +64,8 @@ if (timer2 > 9 && difficulty == 1)
         gml_Script_snd_volume(220, 1, 0)
         gml_Script_snd_play_pitch(220, (0.5 + random(1)))
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
-        var _temp_local_var_4 = d
-        gml_Script_scr_afterimage_grow()
+        with (d)
+			gml_Script_scr_afterimage_grow()
     }
 }
 if (global.turntimer < 3)

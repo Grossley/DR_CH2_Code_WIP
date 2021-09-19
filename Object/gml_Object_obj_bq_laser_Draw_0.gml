@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (o_boxingqueen.drawflip == 1)
 {
     x = (o_boxingqueen.x + 13)
@@ -51,26 +50,30 @@ if (state == 0)
         if (horizontal == 1)
         {
             laser_hitbox = gml_Script_instance_create(320, y, o_boxing_hitbox)
-            var _temp_local_var_1 = laser_hitbox
-            hit_dodging = 1
-            give_hurt = (50 / f)
-            give_invincibility = (40 / f)
-            timer = 3
-            damage = 20
-            image_yscale = 10
-            image_xscale = 30
+            with (laser_hitbox)
+			{
+				hit_dodging = 1
+				give_hurt = (50 / f)
+				give_invincibility = (40 / f)
+				timer = 3
+				damage = 20
+				image_yscale = 10
+				image_xscale = 30
+			}
         }
         else
         {
             laser_hitbox = gml_Script_instance_create(x, (y + 120), o_boxing_hitbox)
-            _temp_local_var_1 = laser_hitbox
-            hit_ducking = 1
-            give_hurt = (30 / f)
-            give_invincibility = (40 / f)
-            timer = 3
-            damage = 20
-            image_yscale = 20
-            image_xscale = 3
+			with (laser_hitbox)
+			{
+				hit_ducking = 1
+				give_hurt = (30 / f)
+				give_invincibility = (40 / f)
+				timer = 3
+				damage = 20
+				image_yscale = 20
+				image_xscale = 3
+			}
         }
     }
     if (timer > 99)

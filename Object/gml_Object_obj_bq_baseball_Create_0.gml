@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (room == room_dw_cyber_queen_boxing)
     arcade = 1
 else
