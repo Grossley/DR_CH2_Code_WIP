@@ -16,13 +16,13 @@ if (global.inv < 0)
         target = ti
         tdamage = damage
         with (global.charinstance[target])
-		{
-			hurt = true
-			hurttimer = 0
-		}
-			hurt = true
-			hurttimer = 0
-		}
+        {
+            hurt = true
+            hurttimer = 0
+        }
+            hurt = true
+            hurttimer = 0
+        }
     }
     gameover = 1
     if (global.char[0] != 0 && global.hp[global.char[0]] > 2)

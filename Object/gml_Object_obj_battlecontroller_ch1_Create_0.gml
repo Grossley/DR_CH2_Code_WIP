@@ -92,8 +92,8 @@ for (i = 0; i < 3; i += 1)
         global.monster[i] = true
         global.monsterinstance[i] = gml_Script_instance_create_ch1(global.monstermakex[i], global.monstermakey[i], global.monsterinstancetype[i])
         global.monsterinstance[i].myself = i
-		with (global.monsterinstance[i])
-			event_user(12)
+        with (global.monsterinstance[i])
+            event_user(12)
     }
 }
 global.charturn = 0
@@ -138,4 +138,4 @@ global.charinstance[0] = 12129292
 global.charinstance[1] = 12129292
 global.charinstance[2] = 12129292
 with (global.charinstance[0])
-	myself = 0
+    myself = 0

@@ -23,11 +23,11 @@ for (i = 0; i < 3; i++)
             var __hpdiff = max(0, (global.hp[_chartarget] - 1))
             if (__hpdiff > 0)
             {
-				with (global.charinstance[i])
-				{
-					hurt = true
-					hurttimer = 0
-				}
+                with (global.charinstance[i])
+                {
+                    hurt = true
+                    hurttimer = 0
+                }
             }
             dmgwriter = gml_Script_instance_create(global.charinstance[i].x, ((global.charinstance[i].y + global.charinstance[i].myheight) - 24), obj_dmgwriter)
             dmgwriter.damage = __hpdiff

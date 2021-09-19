@@ -7,7 +7,7 @@ for (i = 0; i < 3; i += 1)
     if (global.monster[i] == true && instance_exists(global.monsterinstance[i]))
     {
         with (global.monsterinstance[i])
-			gml_Script_scr_monsterdefeat_ch1()
+            gml_Script_scr_monsterdefeat_ch1()
     }
 }
 return;

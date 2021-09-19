@@ -9,7 +9,7 @@ if (global.flag[60] == 0 || global.flag[36] == 1)
         if (global.monster[i] == true && gml_Script_i_ex(global.monsterinstance[i]))
         {
             with (global.monsterinstance[i])
-				gml_Script_scr_monsterdefeat()
+                gml_Script_scr_monsterdefeat()
         }
     }
 }
@@ -20,7 +20,7 @@ else
         if (global.monster[i] == true && gml_Script_i_ex(global.monsterinstance[i]))
         {
             with (global.monsterinstance[i])
-				gml_Script_scr_monsterdefeat()
+                gml_Script_scr_monsterdefeat()
         }
     }
     global.encounterno = global.flag[60]
@@ -34,7 +34,7 @@ else
             global.monsterinstance[_newmonster].x = (gml_Script_camerax() + 800)
             global.monsterinstance[_newmonster].y = global.monstermakey[__j]
             with (global.monsterinstance[_newmonster])
-				gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 10)
+                gml_Script_scr_move_to_point_over_time(global.monstermakex[myself], global.monstermakey[myself], 10)
         }
     }
     global.myfight = 5

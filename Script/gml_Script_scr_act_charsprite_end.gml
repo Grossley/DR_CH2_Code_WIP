@@ -2,7 +2,7 @@ i = 0
 while (i < 10)
 {
     with (_charactsprite[i])
-		instance_destroy()
+        instance_destroy()
 }
 with (obj_heroparent)
 {

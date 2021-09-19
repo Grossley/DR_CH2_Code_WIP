@@ -80,18 +80,18 @@ if (EVENT == 4 && (!instance_exists(obj_writer)))
         if (global.chapter > 1)
         {
             with (choice)
-			{
-				NAME[0][0] = gml_Script_stringsetloc("CONTINUE", "DEVICE_FAILURE_slash_Step_0_gml_103_0_b")
-				NAME[1][0] = gml_Script_stringsetloc("GIVE UP", "DEVICE_FAILURE_slash_Step_0_gml_104_0")
-				NAMEX[0][0] = 80
-				NAMEX[1][0] = 190
-				NAMEY[0][0] = 180
-				NAMEY[1][0] = 180
-				XMAX = 1
-				CURX = -1
-				IDEALX = 190
-				IDEALY = 180
-			}
+            {
+                NAME[0][0] = gml_Script_stringsetloc("CONTINUE", "DEVICE_FAILURE_slash_Step_0_gml_103_0_b")
+                NAME[1][0] = gml_Script_stringsetloc("GIVE UP", "DEVICE_FAILURE_slash_Step_0_gml_104_0")
+                NAMEX[0][0] = 80
+                NAMEX[1][0] = 190
+                NAMEY[0][0] = 180
+                NAMEY[1][0] = 180
+                XMAX = 1
+                CURX = -1
+                IDEALX = 190
+                IDEALY = 180
+            }
         }
         EVENT = 5
     }

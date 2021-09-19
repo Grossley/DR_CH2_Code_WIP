@@ -29,7 +29,7 @@ if (techwon == false)
     {
         global.hittarget[i] = 0
         with (global.charinstance[i])
-			tu = 0
+            tu = 0
     }
     if (global.charmove[0] == false || global.charauto[global.char[0]] == 1)
         global.charturn = 1

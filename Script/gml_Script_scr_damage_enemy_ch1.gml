@@ -5,28 +5,28 @@ global.monsterhp[argument0] -= argument1
 if (argument1 > 0)
 {
     with (global.monsterinstance[argument0])
-	{
-		shakex = 9
-		state = 3
-		hurttimer = 30
-	}
+    {
+        shakex = 9
+        state = 3
+        hurttimer = 30
+    }
 }
 global.hittarget[argument0] += 1
 if (argument1 == 0)
 {
     with (global.monsterinstance[argument0])
-	{
-		hurtamt = 0
-		if (hurttimer <= 15 && candodge == true)
-		{
-			dodgetimer = 0
-			state = 4
-		}
-	}
+    {
+        hurtamt = 0
+        if (hurttimer <= 15 && candodge == true)
+        {
+            dodgetimer = 0
+            state = 4
+        }
+    }
 }
 if (global.monsterhp[argument0] <= 0)
 {
     with (global.monsterinstance[argument0])
-		gml_Script_scr_monsterdefeat_ch1()
+        gml_Script_scr_monsterdefeat_ch1()
 }
 return;

@@ -6,9 +6,9 @@ global.actingsingle[global.currentactingchar] = 0
 __minstance = global.monsterinstance[global.actingtarget[global.currentactingchar]]
 with (__minstance)
 {
-	acting = 0
-	actcon = 0
-	actconsus = 0
-	actconral = 0
-	actconnoe = 0
+    acting = 0
+    actcon = 0
+    actconsus = 0
+    actconral = 0
+    actconnoe = 0
 }

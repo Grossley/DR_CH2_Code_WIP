@@ -51,11 +51,11 @@ if (instance_number(obj_centerscythe_ch1) == 1)
     x = (centerx - radius)
     y = centery
     s2 = gml_Script_instance_create_ch1((centerx + radius), centery, 1589)
-	with (s2)
-	{
-		sine = 0
-		dir = 180
-		un = 1
-	}
+    with (s2)
+    {
+        sine = 0
+        dir = 180
+        un = 1
+    }
 }
 wall_destroy = 0

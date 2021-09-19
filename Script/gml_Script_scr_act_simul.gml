@@ -8,25 +8,25 @@ for (__ii = global.currentactingchar; __ii < 3; __ii++)
         {
             obj_monsterparent.simulorderkri = __simulcount
             with (global.monsterinstance[global.actingtarget[__ii]])
-				actcon = 0
+                actcon = 0
         }
         if (global.char[__ii] == 2 && global.actsimulsus[global.actingtarget[__ii]][global.actingchoice[__ii]] == 1)
         {
             obj_monsterparent.simulordersus = __simulcount
             with (global.monsterinstance[global.actingtarget[__ii]])
-				actconsus = 1
+                actconsus = 1
         }
         if (global.char[__ii] == 3 && global.actsimulral[global.actingtarget[__ii]][global.actingchoice[__ii]] == 1)
         {
             obj_monsterparent.simulorderral = __simulcount
             with (global.monsterinstance[global.actingtarget[__ii]])
-				actconral = 1
+                actconral = 1
         }
         if (global.char[__ii] == 4 && global.actsimulnoe[global.actingtarget[__ii]][global.actingchoice[__ii]] == 1)
         {
             obj_monsterparent.simulordernoe = __simulcount
             with (global.monsterinstance[global.actingtarget[__ii]]
-				actconnoe = 1
+                actconnoe = 1
         }
         if __foundsimul
         {

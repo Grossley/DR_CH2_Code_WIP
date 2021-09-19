@@ -18,10 +18,10 @@ if (gml_Script_scr_monsterpop() > 0)
             {
                 global.charinstance[i].points = points[i]
                 with (global.charinstance[i])
-				{
-					state = 1
-					attacktimer = 0
-				}
+                {
+                    state = 1
+                    attacktimer = 0
+                }
             }
         }
     }

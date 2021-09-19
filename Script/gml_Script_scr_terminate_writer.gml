@@ -9,7 +9,7 @@ if instance_exists(obj_writer)
         if (reachedend == 1)
         {
             with (__endcheckid)
-				__writerended++
+                __writerended++
         }
     }
     if (__writerended == instance_number(obj_writer))

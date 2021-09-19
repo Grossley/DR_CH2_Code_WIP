@@ -188,7 +188,7 @@ if (EVENT == 32)
         if (global.choice == 1)
         {
             with (GM)
-				FINISH = true
+                FINISH = true
         }
     }
 }
@@ -228,28 +228,28 @@ if (EVENT == 38)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 39
     with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 6; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("SWEET", "DEVICE_CONTACT_slash_Step_0_gml_288_0")
-		NAME[0][1] = gml_Script_stringsetloc("SOFT", "DEVICE_CONTACT_slash_Step_0_gml_289_0")
-		NAME[0][2] = gml_Script_stringsetloc("SOUR", "DEVICE_CONTACT_slash_Step_0_gml_290_0")
-		NAME[0][3] = gml_Script_stringsetloc("SALTY", "DEVICE_CONTACT_slash_Step_0_gml_291_0")
-		NAME[0][4] = gml_Script_stringsetloc("PAIN", "DEVICE_CONTACT_slash_Step_0_gml_292_0")
-		NAME[0][5] = gml_Script_stringsetloc("COLD", "DEVICE_CONTACT_slash_Step_0_gml_293_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 5
-		xoff = -20
-	}
+    {
+        TYPE = 2
+        for (i = 0; i <= 6; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("SWEET", "DEVICE_CONTACT_slash_Step_0_gml_288_0")
+        NAME[0][1] = gml_Script_stringsetloc("SOFT", "DEVICE_CONTACT_slash_Step_0_gml_289_0")
+        NAME[0][2] = gml_Script_stringsetloc("SOUR", "DEVICE_CONTACT_slash_Step_0_gml_290_0")
+        NAME[0][3] = gml_Script_stringsetloc("SALTY", "DEVICE_CONTACT_slash_Step_0_gml_291_0")
+        NAME[0][4] = gml_Script_stringsetloc("PAIN", "DEVICE_CONTACT_slash_Step_0_gml_292_0")
+        NAME[0][5] = gml_Script_stringsetloc("COLD", "DEVICE_CONTACT_slash_Step_0_gml_293_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 5
+        xoff = -20
+    }
 }
 if (EVENT == 39)
 {
@@ -275,28 +275,28 @@ if (EVENT == 43)
 {
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 44
-	with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 5; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("A", "DEVICE_CONTACT_slash_Step_0_gml_343_0")
-		NAME[0][1] = gml_Script_stringsetloc("AB", "DEVICE_CONTACT_slash_Step_0_gml_344_0")
-		NAME[0][2] = gml_Script_stringsetloc("B", "DEVICE_CONTACT_slash_Step_0_gml_345_0")
-		NAME[0][3] = gml_Script_stringsetloc("C", "DEVICE_CONTACT_slash_Step_0_gml_346_0")
-		NAME[0][4] = gml_Script_stringsetloc("D", "DEVICE_CONTACT_slash_Step_0_gml_347_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 4
-		xoff = -20
-	}
+    with (CHOICE)
+    {
+        TYPE = 2
+        for (i = 0; i <= 5; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("A", "DEVICE_CONTACT_slash_Step_0_gml_343_0")
+        NAME[0][1] = gml_Script_stringsetloc("AB", "DEVICE_CONTACT_slash_Step_0_gml_344_0")
+        NAME[0][2] = gml_Script_stringsetloc("B", "DEVICE_CONTACT_slash_Step_0_gml_345_0")
+        NAME[0][3] = gml_Script_stringsetloc("C", "DEVICE_CONTACT_slash_Step_0_gml_346_0")
+        NAME[0][4] = gml_Script_stringsetloc("D", "DEVICE_CONTACT_slash_Step_0_gml_347_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 4
+        xoff = -20
+    }
 }
 if (EVENT == 44)
 {
@@ -323,26 +323,26 @@ if (EVENT == 48)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 49
     with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 3; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("RED", "DEVICE_CONTACT_slash_Step_0_gml_401_0")
-		NAME[0][1] = gml_Script_stringsetloc("BLUE", "DEVICE_CONTACT_slash_Step_0_gml_402_0")
-		NAME[0][2] = gml_Script_stringsetloc("GREEN", "DEVICE_CONTACT_slash_Step_0_gml_403_0")
-		NAME[0][3] = gml_Script_stringsetloc("CYAN", "DEVICE_CONTACT_slash_Step_0_gml_404_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 3
-		xoff = -20
-	}
+    {
+        TYPE = 2
+        for (i = 0; i <= 3; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("RED", "DEVICE_CONTACT_slash_Step_0_gml_401_0")
+        NAME[0][1] = gml_Script_stringsetloc("BLUE", "DEVICE_CONTACT_slash_Step_0_gml_402_0")
+        NAME[0][2] = gml_Script_stringsetloc("GREEN", "DEVICE_CONTACT_slash_Step_0_gml_403_0")
+        NAME[0][3] = gml_Script_stringsetloc("CYAN", "DEVICE_CONTACT_slash_Step_0_gml_404_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 3
+        xoff = -20
+    }
 }
 if (EVENT == 49)
 {
@@ -369,27 +369,27 @@ if (EVENT == 53.5)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 54.5
     with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 4; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("KINDNESS", "DEVICE_CONTACT_slash_Step_0_gml_459_0")
-		NAME[0][1] = gml_Script_stringsetloc("MIND", "DEVICE_CONTACT_slash_Step_0_gml_460_0")
-		NAME[0][2] = gml_Script_stringsetloc("AMBITION", "DEVICE_CONTACT_slash_Step_0_gml_461_0")
-		NAME[0][3] = gml_Script_stringsetloc("BRAVERY", "DEVICE_CONTACT_slash_Step_0_gml_462_0")
-		NAME[0][4] = gml_Script_stringsetloc("VOICE", "DEVICE_CONTACT_slash_Step_0_gml_463_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 4
-		xoff = -20
-	}
+    {
+        TYPE = 2
+        for (i = 0; i <= 4; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("KINDNESS", "DEVICE_CONTACT_slash_Step_0_gml_459_0")
+        NAME[0][1] = gml_Script_stringsetloc("MIND", "DEVICE_CONTACT_slash_Step_0_gml_460_0")
+        NAME[0][2] = gml_Script_stringsetloc("AMBITION", "DEVICE_CONTACT_slash_Step_0_gml_461_0")
+        NAME[0][3] = gml_Script_stringsetloc("BRAVERY", "DEVICE_CONTACT_slash_Step_0_gml_462_0")
+        NAME[0][4] = gml_Script_stringsetloc("VOICE", "DEVICE_CONTACT_slash_Step_0_gml_463_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 4
+        xoff = -20
+    }
 }
 if (EVENT == 54.5)
 {
@@ -416,26 +416,26 @@ if (EVENT == 53)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 54
     with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 3; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("LOVE", "DEVICE_CONTACT_slash_Step_0_gml_518_0")
-		NAME[0][1] = gml_Script_stringsetloc("HOPE", "DEVICE_CONTACT_slash_Step_0_gml_519_0")
-		NAME[0][2] = gml_Script_stringsetloc("DISGUST", "DEVICE_CONTACT_slash_Step_0_gml_520_0")
-		NAME[0][3] = gml_Script_stringsetloc("FEAR", "DEVICE_CONTACT_slash_Step_0_gml_521_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 3
-		xoff = -20
-	}
+    {
+        TYPE = 2
+        for (i = 0; i <= 3; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("LOVE", "DEVICE_CONTACT_slash_Step_0_gml_518_0")
+        NAME[0][1] = gml_Script_stringsetloc("HOPE", "DEVICE_CONTACT_slash_Step_0_gml_519_0")
+        NAME[0][2] = gml_Script_stringsetloc("DISGUST", "DEVICE_CONTACT_slash_Step_0_gml_520_0")
+        NAME[0][3] = gml_Script_stringsetloc("FEAR", "DEVICE_CONTACT_slash_Step_0_gml_521_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 3
+        xoff = -20
+    }
 }
 if (EVENT == 54)
 {
@@ -462,24 +462,24 @@ if (EVENT == 57)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 58
     with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 1; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("YES", "DEVICE_CONTACT_slash_Step_0_gml_575_0")
-		NAME[0][1] = gml_Script_stringsetloc("NO", "DEVICE_CONTACT_slash_Step_0_gml_576_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 1
-		xoff = -20
-	}
+    {
+        TYPE = 2
+        for (i = 0; i <= 1; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("YES", "DEVICE_CONTACT_slash_Step_0_gml_575_0")
+        NAME[0][1] = gml_Script_stringsetloc("NO", "DEVICE_CONTACT_slash_Step_0_gml_576_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 1
+        xoff = -20
+    }
 }
 if (EVENT == 58)
 {
@@ -506,24 +506,24 @@ if (EVENT == 62)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 63
     with (CHOICE)
-	{
-		TYPE = 2
-		for (i = 0; i <= 1; i += 1)
-		{
-			NAME[0][i] = string((1 + i))
-			NAMEX[0][i] = 80
-			NAMEY[0][i] = (100 + (i * 16))
-			YMAX += 1
-		}
-		NAME[0][0] = gml_Script_stringsetloc("YES", "DEVICE_CONTACT_slash_Step_0_gml_631_0")
-		NAME[0][1] = gml_Script_stringsetloc("NO", "DEVICE_CONTACT_slash_Step_0_gml_632_0")
-		CURX = 0
-		HEARTX = (NAMEX[0][0] - 20)
-		HEARTY = NAMEY[0][0]
-		XMAX = 0
-		YMAX = 1
-		xoff = -20
-	}
+    {
+        TYPE = 2
+        for (i = 0; i <= 1; i += 1)
+        {
+            NAME[0][i] = string((1 + i))
+            NAMEX[0][i] = 80
+            NAMEY[0][i] = (100 + (i * 16))
+            YMAX += 1
+        }
+        NAME[0][0] = gml_Script_stringsetloc("YES", "DEVICE_CONTACT_slash_Step_0_gml_631_0")
+        NAME[0][1] = gml_Script_stringsetloc("NO", "DEVICE_CONTACT_slash_Step_0_gml_632_0")
+        CURX = 0
+        HEARTX = (NAMEX[0][0] - 20)
+        HEARTY = NAMEY[0][0]
+        XMAX = 0
+        YMAX = 1
+        xoff = -20
+    }
 }
 if (EVENT == 63)
 {
@@ -572,7 +572,7 @@ if (EVENT == 66.5 && instance_exists(obj_writer) == 0)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 67
     with (CHOICE)
-		event_user(0)
+        event_user(0)
 }
 if (EVENT == 67)
 {
@@ -616,7 +616,7 @@ if (EVENT == 70 && instance_exists(obj_writer) == 0)
     CHOICE = gml_Script_instance_create(0, 0, DEVICE_CHOICE)
     EVENT = 71
     with (CHOICE)
-		event_user(0)
+        event_user(0)
 }
 if (EVENT == 71)
 {

@@ -8,27 +8,27 @@ if (argument_count > 6)
     _yBottom = argument[6]
 with (instance_create_depth(argument[0], _yTop, 0, obj_beatbullet))
 {
-	endY = _yBottom
-	targetX = argument[0]
-	follow = argument[4]
-	bpm = argument[3]
-	framesAway = 999
-	frames = _frames
-	image_alpha = 0
-	bps = (bpm / 60)
-	spb = (1 / bps)
-	bpf = (bps / game_get_speed(gamespeed_fps))
-	if gml_Script_snd_is_playing(global.currentsong[1])
-	{
-		soundTimeStep = audio_sound_get_track_position(global.currentsong[1])
-		beats = (soundTimeStep / spb)
-		beatsPrev = beats
-		targetBeat = floor((beats + _targetBeat))
-		inSync = 1
-	}
-	else
-	{
-		targetBeat = _targetBeat
-		inSync = 0
-	}
+    endY = _yBottom
+    targetX = argument[0]
+    follow = argument[4]
+    bpm = argument[3]
+    framesAway = 999
+    frames = _frames
+    image_alpha = 0
+    bps = (bpm / 60)
+    spb = (1 / bps)
+    bpf = (bps / game_get_speed(gamespeed_fps))
+    if gml_Script_snd_is_playing(global.currentsong[1])
+    {
+        soundTimeStep = audio_sound_get_track_position(global.currentsong[1])
+        beats = (soundTimeStep / spb)
+        beatsPrev = beats
+        targetBeat = floor((beats + _targetBeat))
+        inSync = 1
+    }
+    else
+    {
+        targetBeat = _targetBeat
+        inSync = 0
+    }
 }

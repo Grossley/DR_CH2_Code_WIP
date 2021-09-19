@@ -5,6 +5,6 @@ itemcomment.who = argument0
 if (global.flag[32] == 1)
 {
     with (itemcomment)
-		instance_destroy()
+        instance_destroy()
 }
 return;

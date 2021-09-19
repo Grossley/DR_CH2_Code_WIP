@@ -20,39 +20,39 @@ for (var i = 0; i < _lanes; i++)
         if (_laneSelected[i] == 2)
             _bullet.varianty = 300
         with (_bullet)
-		{
-			bulletType = _laneType[i]
-			image_index = bulletType
-			if (bulletType == 1)
-			{
-				image_yscale *= 0.5
-				image_alpha *= 0.7
-			}
-			yTarget = _yLanes[i]
-			soundTimeStep = audio_sound_get_track_position(global.batmusic[1])
-			beats = (soundTimeStep / _spb)
-			var _length = audio_sound_length(global.batmusic[1])
-			beatMax = (_length / _spb)
-			bpf = _bpf
-			spb = _spb
-			beats = (soundTimeStep / _spb)
-			targetBeat = (ceil(beats) + argument1)
-			var _measure = ((targetBeat div 2) % 2)
-			if _measure
-				instrument = _instrumentsB[irandom(6)]
-			else
-				instrument = _instruments[irandom(6)]
-			if (i == 1)
-				instrument = _instrumentsAlt[0]
-			if (i == 6)
-				instrument = _instrumentsAlt[1]
-			if (i == 7)
-				instrument = _instrumentsAlt[2]
-			frames = argument2
-			framesAway = ((targetBeat - beats) / _bpf)
-			if (framesAway < frames)
-				show_debug_message("not enough time for this bullet!!")
-		}
+        {
+            bulletType = _laneType[i]
+            image_index = bulletType
+            if (bulletType == 1)
+            {
+                image_yscale *= 0.5
+                image_alpha *= 0.7
+            }
+            yTarget = _yLanes[i]
+            soundTimeStep = audio_sound_get_track_position(global.batmusic[1])
+            beats = (soundTimeStep / _spb)
+            var _length = audio_sound_length(global.batmusic[1])
+            beatMax = (_length / _spb)
+            bpf = _bpf
+            spb = _spb
+            beats = (soundTimeStep / _spb)
+            targetBeat = (ceil(beats) + argument1)
+            var _measure = ((targetBeat div 2) % 2)
+            if _measure
+                instrument = _instrumentsB[irandom(6)]
+            else
+                instrument = _instruments[irandom(6)]
+            if (i == 1)
+                instrument = _instrumentsAlt[0]
+            if (i == 6)
+                instrument = _instrumentsAlt[1]
+            if (i == 7)
+                instrument = _instrumentsAlt[2]
+            frames = argument2
+            framesAway = ((targetBeat - beats) / _bpf)
+            if (framesAway < frames)
+                show_debug_message("not enough time for this bullet!!")
+        }
     }
 }
 return;

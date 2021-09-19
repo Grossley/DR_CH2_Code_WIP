@@ -17,7 +17,7 @@ if (victory == true && victoried == 0)
     global.mnfight = -1
     global.myfight = 7
     with (battlewriter)
-		instance_destroy()
+        instance_destroy()
 }
 if (victoried == 1)
 {

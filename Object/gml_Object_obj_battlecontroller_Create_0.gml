@@ -165,4 +165,4 @@ global.charinstance[0] = 12129292
 global.charinstance[1] = 12129292
 global.charinstance[2] = 12129292
 with (global.charinstance[0])
-	myself = 0
+    myself = 0

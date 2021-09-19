@@ -14,5 +14,5 @@ if (!crash)
     explosion.image_xscale = 2
     explosion.image_yscale = 2
     with (explosion)
-		gml_Script_scr_depth()
+        gml_Script_scr_depth()
 }

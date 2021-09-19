@@ -8,4 +8,4 @@ pitchthing.sndtarget = argument0
 pitchthing.targetpitch = argument1
 pitchthing.maxframes = argument2
 with (pitchthing)
-	event_user(0)
+    event_user(0)

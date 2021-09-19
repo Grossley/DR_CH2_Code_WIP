@@ -34,8 +34,8 @@ if (qualifybolt != -1)
     if (p == 0)
     {
         points[bc] += 150
-		with (burstbolt)
-			image_blend = c_yellow
+        with (burstbolt)
+            image_blend = c_yellow
     }
     if (p == 1)
         points[bc] += 120
@@ -58,7 +58,7 @@ if (qualifybolt != -1)
         {
             points[bc] += 150
             with (burstbolt)
-				image_blend = c_yellow
+                image_blend = c_yellow
         }
         if (p == 1)
             points[bc] += 120

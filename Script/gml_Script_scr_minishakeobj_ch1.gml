@@ -3,4 +3,4 @@ shakeobj.target = id
 shakeobj.shakeamt = 4
 shakeobj.shakereduct = 1
 with (shakeobj)
-	event_user(0)
+    event_user(0)

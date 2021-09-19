@@ -96,7 +96,7 @@ switch argument0
             with (obj_readable_room1_ch1)
             {
                 with (shine)
-					instance_destroy()
+                    instance_destroy()
             }
         }
         else

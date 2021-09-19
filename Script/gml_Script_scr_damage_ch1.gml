@@ -10,10 +10,10 @@ if (global.inv < 0 && debug_inv == 0)
             gml_Script_scr_randomtarget_ch1()
             target = mytarget
             with (global.charinstance[target])
-			{
-				image_blend = c_white
-				darkify = false
-			}
+            {
+                image_blend = c_white
+                darkify = false
+            }
         }
     }
     chartarget = 3
@@ -30,9 +30,9 @@ if (global.inv < 0 && debug_inv == 0)
     if (!instance_exists(obj_shake_ch1))
         gml_Script_instance_create_ch1(0, 0, 1464)
     with (global.charinstance[target])
-	{
-		hurt = true
-		hurttimer = 0
-	}
+    {
+        hurt = true
+        hurttimer = 0
+    }
 }
 return;

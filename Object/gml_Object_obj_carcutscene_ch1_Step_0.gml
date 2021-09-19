@@ -5,41 +5,41 @@ if (con > 0)
         persistent = true
         gml_Script___view_set(9, 0, -4)
         with (k)
-		{
-			fun = true
-			cutscene = true
-		}
+        {
+            fun = true
+            cutscene = true
+        }
     }
     if (con == 3 && instance_exists(obj_dialoguer_ch1) == 0)
     {
         gml_Script_mus_play_ch1(global.currentsong[0])
         alarm[5] = 20
         with (t)
-		{
-			image_speed = 0
-			image_index = 0
-		}
+        {
+            image_speed = 0
+            image_index = 0
+        }
     }
     if (con == 3.1)
     {
         with (t)
-		{
-			sprite_index = spr_toriel_l_ch1
-		}
+        {
+            sprite_index = spr_toriel_l_ch1
+        }
     }
     if (con == 5)
     {
         with (t)
-		{
-			sprite_index = spr_toriel_l_ch1
-		}
+        {
+            sprite_index = spr_toriel_l_ch1
+        }
     }
     if (con == 9)
     {
         with (c)
-		{
-			depth = 6000
-		}
+        {
+            depth = 6000
+        }
     }
     if (con == 11)
     {
@@ -50,43 +50,43 @@ if (con > 0)
         ctx = (c.x - t.x)
         cty = (c.y - t.y)
         with (t)
-		{
-			visible = false
-		}
+        {
+            visible = false
+        }
     }
     if (con == 13)
     {
         with (c)
-		{
-			sprite_index = spr_torcar_l_ch1
-			hspeed = 1
-			image_speed = 0.25
-		}
+        {
+            sprite_index = spr_torcar_l_ch1
+            hspeed = 1
+            image_speed = 0.25
+        }
     }
     if (con == 15)
     {
         with (c)
-		{
-			gml_Script_scr_halt_ch1()
-		}
+        {
+            gml_Script_scr_halt_ch1()
+        }
     }
     if (con == 17)
     {
         with (c)
-		{
-			hspeed = -1
-			image_speed = 0.25
-		}
+        {
+            hspeed = -1
+            image_speed = 0.25
+        }
     }
     if (con == 19)
     {
         gml_Script_scr_pan_ch1(0, 0.5, 100)
         with (c)
-		{
-			sprite_index = spr_torcar_d_ch1
-			hspeed = 0
-			vspeed = 2
-		}
+        {
+            sprite_index = spr_torcar_d_ch1
+            hspeed = 0
+            vspeed = 2
+        }
     }
     if (con == 21)
     {
@@ -101,12 +101,12 @@ if (con > 0)
     if (con == 23.1)
     {
         car = gml_Script_scr_marker_ch1(390, 0, 3452)
-		with (car)
-		{
-			gml_Script_scr_depth_ch1()
-			image_speed = 0.25
-			vspeed = 3
-		}
+        with (car)
+        {
+            gml_Script_scr_depth_ch1()
+            image_speed = 0.25
+            vspeed = 3
+        }
     }
     if (con == 23)
     {
@@ -121,20 +121,20 @@ if (con > 0)
     {
         if (car.y >= 100)
         {
-			with (catty)
-			{
-				var _temp_local_var_25 = catty
-				sprite_index = spr_npc_catty_wave_ch1
-				image_speed = 0.2
-			}
+            with (catty)
+            {
+                var _temp_local_var_25 = catty
+                sprite_index = spr_npc_catty_wave_ch1
+                image_speed = 0.2
+            }
         }
         if (car.x >= 550)
         {
-			with (cattydad)
-			{
-				sprite_index = spr_npc_cattydad_wave_ch1
-				image_speed = 0.2
-			}
+            with (cattydad)
+            {
+                sprite_index = spr_npc_cattydad_wave_ch1
+                image_speed = 0.2
+            }
         }
     }
     if (con == 24)
@@ -142,30 +142,30 @@ if (con > 0)
     if (con == 25)
     {
         with (car)
-		{
-			sprite_index = spr_torcar_r_ch1
-			vspeed = 0
-			hspeed = 3
-		}
+        {
+            sprite_index = spr_torcar_r_ch1
+            vspeed = 0
+            hspeed = 3
+        }
     }
     if (con == 27)
     {
         with (car)
-		{
-			sprite_index = spr_torcar_d_ch1
-			hspeed = 0
-			vspeed = 3
-		}
+        {
+            sprite_index = spr_torcar_d_ch1
+            hspeed = 0
+            vspeed = 3
+        }
     }
     if (con == 130)
     {
         car = gml_Script_scr_marker_ch1(790, -60, 3452)
         with (car)
-		{
-			gml_Script_scr_depth_ch1()
-			image_speed = 0.25
-			vspeed = 3
-		}
+        {
+            gml_Script_scr_depth_ch1()
+            image_speed = 0.25
+            vspeed = 3
+        }
     }
     if (con == 29)
     {
@@ -185,11 +185,11 @@ if (con > 0)
     {
         car = gml_Script_scr_marker_ch1(810, 0, 3452)
         with (car)
-		{
-			gml_Script_scr_depth_ch1()
-			image_speed = 0.25
-			vspeed = 3
-		}
+        {
+            gml_Script_scr_depth_ch1()
+            image_speed = 0.25
+            vspeed = 3
+        }
     }
     if (con == 134)
     {
@@ -201,12 +201,12 @@ if (con > 0)
     {
         if (car.y >= 100)
         {
-			with (car)
-			{
-				var _temp_local_var_34 = qc
-				sprite_index = spr_npc_qc_wave_ch1
-				image_speed = 0.2
-			}
+            with (car)
+            {
+                var _temp_local_var_34 = qc
+                sprite_index = spr_npc_qc_wave_ch1
+                image_speed = 0.2
+            }
         }
         if (car.x >= 1000)
         {
@@ -217,11 +217,11 @@ if (con > 0)
     if (con == 142)
     {
         with (car)
-		{
-			vspeed = 0
-			hspeed = 3
-			sprite_index = spr_torcar_r_ch1
-		}
+        {
+            vspeed = 0
+            hspeed = 3
+            sprite_index = spr_torcar_r_ch1
+        }
     }
     if (con == 144)
     {
@@ -234,11 +234,11 @@ if (con > 0)
     {
         car = gml_Script_scr_marker_ch1(0, 220, 3450)
         with (car)
-		{
-			gml_Script_scr_depth_ch1()
-			image_speed = 0.25
-			hspeed = 2
-		}
+        {
+            gml_Script_scr_depth_ch1()
+            image_speed = 0.25
+            hspeed = 2
+        }
     }
     if (con == 146)
     {
@@ -251,93 +251,93 @@ if (con > 0)
     if (con == 163)
     {
         with (car)
-		{
-			vspeed = -2
-			hspeed = 0
-			sprite_index = spr_torcar_u_ch1
-		}
+        {
+            vspeed = -2
+            hspeed = 0
+            sprite_index = spr_torcar_u_ch1
+        }
     }
     if (con == 165)
     {
         with (car)
-		{
-			gml_Script_scr_halt_ch1()
-		}
+        {
+            gml_Script_scr_halt_ch1()
+        }
     }
     if (con == 37)
     {
         v = 0
         with (car)
-		{
-			speed = 0
-			image_speed = 0
-		}
+        {
+            speed = 0
+            image_speed = 0
+        }
     }
     if (con == 39)
     {
         gml_Script_scr_pan_ch1(1, -0.334, 100)
         with (car)
-		{
-			depth = 500
-		}
+        {
+            depth = 500
+        }
     }
     if (con == 41)
     {
         with (car)
-		{
-			depth = 600000
-		}
+        {
+            depth = 600000
+        }
     }
     if (con == 43)
     {
         with (t)
-		{
-			sprite_index = spr_toriel_r_ch1
-			vspeed = 0
-			hspeed = 2
-		}
+        {
+            sprite_index = spr_toriel_r_ch1
+            vspeed = 0
+            hspeed = 2
+        }
     }
     if (con == 45)
     {
         with (k)
-		{
-			sprite_index = spr_krisr_ch1
-		}
+        {
+            sprite_index = spr_krisr_ch1
+        }
     }
     if (con == 47)
     {
         with (t)
-		{
-			speed = 0
-			sprite_index = spr_toriel_l_ch1
-			image_speed = 0
-			image_index = 0
-		}
+        {
+            speed = 0
+            sprite_index = spr_toriel_l_ch1
+            image_speed = 0
+            image_index = 0
+        }
     }
     if (con == 49)
     {
         with (k)
-		{
-			visible = false
-		}
+        {
+            visible = false
+        }
     }
     if (con == 51)
     {
         with (t)
-		{
-			hspeed = 1
-			image_speed = 0.1
-		}
+        {
+            hspeed = 1
+            image_speed = 0.1
+        }
     }
     if (con == 53)
     {
         gml_Script_scr_pan_ch1(0, -0.5, 999)
         with (t)
-		{
-			vspeed = -0.25
-			hspeed = 0
-			sprite_index = spr_toriel_handhold_u_ch1
-		}
+        {
+            vspeed = -0.25
+            hspeed = 0
+            sprite_index = spr_toriel_handhold_u_ch1
+        }
     }
     if (con == 55)
         alarm[4] = 40
@@ -347,6 +347,6 @@ if (con > 0)
     {
         pf = gml_Script_instance_create_ch1(0, 0, 1462)
         with (pf)
-			image_alpha = 1.2
+            image_alpha = 1.2
     }
 }

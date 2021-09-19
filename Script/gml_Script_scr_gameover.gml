@@ -37,7 +37,7 @@ if (global.flag[35] == 2)
     if (global.chapter == 2)
     {
         with (gml_Script_instance_create(0, 0, obj_persistentfadein))
-			image_alpha = 1.2
+            image_alpha = 1.2
     }
     room_goto(__room)
 }

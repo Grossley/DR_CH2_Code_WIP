@@ -90,12 +90,12 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
         while (i < 3)
         {
             with (global.monsterinstance[global.bmenucoord[global.bmenuno][global.charturn]])
-			{
-				if (flash == false)
-					fsiner = 0
-				flash = true
-				becomeflash = true
-			}
+            {
+                if (flash == false)
+                    fsiner = 0
+                flash = true
+                becomeflash = true
+            }
         }
     }
 }
@@ -394,13 +394,13 @@ if (global.bmenuno == 9 && global.myfight == 0)
         draw_set_color(c_orange)
         draw_text((xx + 500), (yy + 440), string_hash_to_newline((string(thiscost) + "% TP")))
     }
-	with (global.monsterinstance[global.bmenucoord[11][global.charturn]])
-	{
-		if (flash == false)
-			fsiner = 0
-		flash = true
-		becomeflash = true
-	}
+    with (global.monsterinstance[global.bmenucoord[11][global.charturn]])
+    {
+        if (flash == false)
+            fsiner = 0
+        flash = true
+        becomeflash = true
+    }
 }
 if (global.bmenuno == 7 || global.bmenuno == 8)
 {
@@ -413,12 +413,12 @@ if (global.bmenuno == 7 || global.bmenuno == 8)
             if (global.char[i] != 0)
             {
                 with (global.charinstance[global.bmenucoord[global.bmenuno][global.charturn]])
-				{
-					if (flash == false)
-						fsiner = 0
-					flash = true
-					becomeflash = true
-				}
+                {
+                    if (flash == false)
+                        fsiner = 0
+                    flash = true
+                    becomeflash = true
+                }
             }
         }
     }
@@ -439,10 +439,10 @@ if keyboard_check(ord("A"))
                 if global.monster[i]
                 {
                     with (global.monsterinstance[i])
-					{
-						__offsetx = sactionboxx
-						__offsety = sactionboxy
-					}
+                    {
+                        __offsetx = sactionboxx
+                        __offsety = sactionboxy
+                    }
                 }
             }
             draw_set_font(remfont)

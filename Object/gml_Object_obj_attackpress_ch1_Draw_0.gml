@@ -10,12 +10,12 @@ if (spelluse == 1)
                 if (charitem[xyz] == 1)
                 {
                     with (global.charinstance[xyz])
-						state = 4
+                        state = 4
                 }
                 if (charspell[xyz] == 1)
                 {
                     with (global.charinstance[xyz])
-						state = 2
+                        state = 2
                 }
             }
         }
@@ -79,10 +79,10 @@ if (active == true)
             {
                 img = gml_Script_instance_create_ch1((((x + 80) + (boltframe[i] * boltspeed)) - (boltx * boltspeed)), (y + (38 * offset)), 1509)
                 with (img)
-				{
-					sprite_index = spr_attackspot_ch1
-					image_alpha = 0.4
-				}
+                {
+                    sprite_index = spr_attackspot_ch1
+                    image_alpha = 0.4
+                }
             }
             if (boltalive[i] == 1)
             {
@@ -147,11 +147,11 @@ if (active == true)
             if (global.automiss[global.chartarget[sus]] == true)
                 global.charinstance[sus].points = 0
             with (global.charinstance[sus])
-			{
-				state = 1
-				attacktimer = 0
-				is_auto_susie = true
-			}
+            {
+                state = 1
+                attacktimer = 0
+                is_auto_susie = true
+            }
         }
         if (posttimer > timermax)
         {

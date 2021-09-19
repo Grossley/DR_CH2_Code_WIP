@@ -8,4 +8,4 @@ afterimage.image_xscale = image_xscale
 afterimage.image_yscale = image_yscale
 afterimage.image_angle = image_angle
 with (afterimage)
-	event_user(0)
+    event_user(0)

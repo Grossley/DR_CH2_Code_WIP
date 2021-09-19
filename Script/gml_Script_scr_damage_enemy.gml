@@ -12,24 +12,24 @@ global.monsterhp[argument0] -= argument1
 if (argument1 > 0)
 {
     with (global.monsterinstance[argument0])
-	{
-		shakex = 9
-		state = 3
-		hurttimer = 30
-	}
+    {
+        shakex = 9
+        state = 3
+        hurttimer = 30
+    }
 }
 global.hittarget[argument0] += 1
 if (argument1 == 0)
 {
     with (global.monsterinstance[argument0])
-	{
-		hurtamt = 0
-		if (hurttimer <= 15 && candodge == true)
-		{
-			dodgetimer = 0
-			state = 4
-		}
-	}
+    {
+        hurtamt = 0
+        if (hurttimer <= 15 && candodge == true)
+        {
+            dodgetimer = 0
+            state = 4
+        }
+    }
 }
 if (global.chapter == 2 && gml_Script_i_ex(707) && global.monsterhp[argument0] <= 0)
     global.monsterhp[argument0] = 1
@@ -43,11 +43,11 @@ if (global.chapter == 2 && gml_Script_i_ex(482))
 if (global.monsterhp[argument0] <= 0 && a == 0)
 {
     with (global.monsterinstance[argument0])
-		gml_Script_scr_monsterdefeat()
+        gml_Script_scr_monsterdefeat()
 }
 if (global.chapter == 2 && global.monsterhp[argument0] <= 0 && a == 3)
 {
     with (global.monsterinstance[argument0])
-		endcon = 1
+        endcon = 1
 }
 return;

@@ -1,2 +1,2 @@
 with (baseball_hitbox)
-	instance_destroy()
+    instance_destroy()

@@ -4,4 +4,4 @@ field.image_yscale = argument3
 field.skip = argument4
 field.stayVisible = argument5
 with (field)
-	gml_Script_scr_depth()
+    gml_Script_scr_depth()

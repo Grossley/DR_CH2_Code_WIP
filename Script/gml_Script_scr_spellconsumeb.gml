@@ -8,19 +8,19 @@ if (global.flag[34] == 0)
 global.tensionselect = 0
 if (spellanim == 1)
 {
-	with (global.charinstance[global.charturn])
-	{
-		spellframes = 0
-		spellsprite = spellreadysprite
-	}
+    with (global.charinstance[global.charturn])
+    {
+        spellframes = 0
+        spellsprite = spellreadysprite
+    }
 }
 else
 {
     with (global.charinstance[global.charturn])
-	{
-		spellframes = remspellframes
-		spellsprite = remspellsprite
-	}
+    {
+        spellframes = remspellframes
+        spellsprite = remspellsprite
+    }
 }
 gml_Script_scr_nexthero()
 return;

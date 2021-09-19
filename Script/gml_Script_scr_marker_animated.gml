@@ -5,7 +5,7 @@ var anim_speed = (argument_count > 3 ? argument[3] : 0.2)
 thismarker = gml_Script_instance_create(x_pos, y_pos, obj_marker)
 with (thismarker)
 {
-	sprite_index = sprite
-	image_speed = anim_speed
-	gml_Script_scr_depth()
+    sprite_index = sprite
+    image_speed = anim_speed
+    gml_Script_scr_depth()
 }

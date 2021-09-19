@@ -139,17 +139,17 @@ if (menu == 0)
     if (instance_exists(obj_writer) == 0)
     {
         global.typer = 6
-        gml_Script_msgsetloc(0, "\\m3		*Don't forget to&	buy something!&\\m1	If you want!&\\m2	Can I buy&	something too?", "obj_shop_ch2_music_slash_Draw_0_gml_168_0")
+        gml_Script_msgsetloc(0, "\\m3        *Don't forget to&    buy something!&\\m1    If you want!&\\m2    Can I buy&    something too?", "obj_shop_ch2_music_slash_Draw_0_gml_168_0")
         if (mainmessage == 0)
-            gml_Script_msgsetloc(0, "\\m1		*Yo!&\\m3	What's up?&\\m2	Hey!", "obj_shop_ch2_music_slash_Draw_0_gml_170_0")
+            gml_Script_msgsetloc(0, "\\m1        *Yo!&\\m3    What's up?&\\m2    Hey!", "obj_shop_ch2_music_slash_Draw_0_gml_170_0")
         if (canUseJukebox == 1)
         {
             if (mainmessage == 0)
-                gml_Script_msgsetloc(0, "\\m1		*Welcome to...&\\m3	The Music Room!&\\m2	We don't sell&	anything!", "obj_shop_ch2_music_slash_Draw_0_gml_174_0")
+                gml_Script_msgsetloc(0, "\\m1        *Welcome to...&\\m3    The Music Room!&\\m2    We don't sell&    anything!", "obj_shop_ch2_music_slash_Draw_0_gml_174_0")
             else
-                gml_Script_msgsetloc(0, "\\m1		*Crash!&\\m3	Bang!&\\m2	Boom!", "obj_shop_ch2_music_slash_Draw_0_gml_175_0")
+                gml_Script_msgsetloc(0, "\\m1        *Crash!&\\m3    Bang!&\\m2    Boom!", "obj_shop_ch2_music_slash_Draw_0_gml_175_0")
             if (mainmessage == 2)
-                gml_Script_msgsetloc(0, "\\m2		*Good song.", "obj_shop_ch2_music_slash_Draw_0_gml_176_0")
+                gml_Script_msgsetloc(0, "\\m2        *Good song.", "obj_shop_ch2_music_slash_Draw_0_gml_176_0")
         }
         global.typer = 78
         gml_Script_instance_create(30, 270, obj_writer)
@@ -237,22 +237,22 @@ if (menu == 1 || menu == 2)
         if (instance_exists(obj_writer) == 0)
         {
             if (sidemessage == 0)
-                gml_Script_msgsetloc(0, "\\m3		*Take&	your&	pick!", "obj_shop_ch2_music_slash_Draw_0_gml_262_0")
+                gml_Script_msgsetloc(0, "\\m3        *Take&    your&    pick!", "obj_shop_ch2_music_slash_Draw_0_gml_262_0")
             if (sidemessage == 1)
             {
                 _rr = floor(random(10))
-                gml_Script_msgsetloc(0, "\\m1		*Thanks,&	guys!", "obj_shop_ch2_music_slash_Draw_0_gml_266_0")
+                gml_Script_msgsetloc(0, "\\m1        *Thanks,&    guys!", "obj_shop_ch2_music_slash_Draw_0_gml_266_0")
                 if (_rr == 0)
-                    gml_Script_msgsetloc(0, "\\m2		*I can't&	see.", "obj_shop_ch2_music_slash_Draw_0_gml_267_0")
+                    gml_Script_msgsetloc(0, "\\m2        *I can't&    see.", "obj_shop_ch2_music_slash_Draw_0_gml_267_0")
             }
             if (sidemessage == 2)
-                gml_Script_msgsetloc(0, "\\m3		*Don't&	chicken&	out!", "obj_shop_ch2_music_slash_Draw_0_gml_270_0")
+                gml_Script_msgsetloc(0, "\\m3        *Don't&    chicken&    out!", "obj_shop_ch2_music_slash_Draw_0_gml_270_0")
             if (sidemessage == 3)
-                gml_Script_msgsetloc(0, "\\m3		*Not&	enough&	cash!", "obj_shop_ch2_music_slash_Draw_0_gml_271_0")
+                gml_Script_msgsetloc(0, "\\m3        *Not&    enough&    cash!", "obj_shop_ch2_music_slash_Draw_0_gml_271_0")
             if (sidemessage == 4)
-                gml_Script_msgsetloc(0, "\\m3		*Your&	pockets&	are&	full.", "obj_shop_ch2_music_slash_Draw_0_gml_272_0")
+                gml_Script_msgsetloc(0, "\\m3        *Your&    pockets&    are&    full.", "obj_shop_ch2_music_slash_Draw_0_gml_272_0")
             if (sidemessage == 5)
-                gml_Script_msgsetloc(0, "\\m3		*Cool!&	It's in&	your&	STORAGE.", "obj_shop_ch2_music_slash_Draw_0_gml_273_0")
+                gml_Script_msgsetloc(0, "\\m3        *Cool!&    It's in&    your&    STORAGE.", "obj_shop_ch2_music_slash_Draw_0_gml_273_0")
             if (murder == 1)
                 global.msg[0] = gml_Script_stringsetloc("/*", "obj_shop1_slash_Draw_0_gml_153_0")
             global.typer = 78
@@ -364,7 +364,7 @@ if (menu == 3)
     draw_text(80, 420, string_hash_to_newline(gml_Script_stringsetloc("Exit", "obj_shop1_slash_Draw_0_gml_240_0")))
     if (instance_exists(obj_writer) == 0)
     {
-        global.msg[0] = gml_Script_stringsetloc("\\m1		*Let's&	trade&	info!", "obj_shop_ch2_music_slash_Draw_0_gml_357_0")
+        global.msg[0] = gml_Script_stringsetloc("\\m1        *Let's&    trade&    info!", "obj_shop_ch2_music_slash_Draw_0_gml_357_0")
         global.typer = 78
         gml_Script_instance_create(440, 260, obj_writer)
     }
@@ -406,11 +406,11 @@ if (menu == 10)
     if (instance_exists(obj_writer) == 0)
     {
         if (sidemessage == 0)
-            gml_Script_msgsetloc(0, "\\m1		*We'll&	take&	it for&	you!", "obj_shop_ch2_music_slash_Draw_0_gml_399_0")
+            gml_Script_msgsetloc(0, "\\m1        *We'll&    take&    it for&    you!", "obj_shop_ch2_music_slash_Draw_0_gml_399_0")
         if (sidemessage == 1)
-            gml_Script_msgsetloc(0, "\\m2		*That's&	all you&	had?", "obj_shop_ch2_music_slash_Draw_0_gml_400_0")
+            gml_Script_msgsetloc(0, "\\m2        *That's&    all you&    had?", "obj_shop_ch2_music_slash_Draw_0_gml_400_0")
         if (sidemessage == 2)
-            gml_Script_msgsetloc(0, "\\m2		*You&	got&	nothin!", "obj_shop_ch2_music_slash_Draw_0_gml_401_0")
+            gml_Script_msgsetloc(0, "\\m2        *You&    got&    nothin!", "obj_shop_ch2_music_slash_Draw_0_gml_401_0")
         global.typer = 78
         gml_Script_instance_create(460, 260, obj_writer)
     }
@@ -505,19 +505,19 @@ if (menu == 11 || menu == 12 || menu == 13)
     if (instance_exists(obj_writer) == 0)
     {
         if (sidemessage2 == 0 && menu == 11)
-            gml_Script_msgsetloc(0, "\\m1		*OK,&	hit us&	with an&	ITEM!", "obj_shop_ch2_music_slash_Draw_0_gml_487_0")
+            gml_Script_msgsetloc(0, "\\m1        *OK,&    hit us&    with an&    ITEM!", "obj_shop_ch2_music_slash_Draw_0_gml_487_0")
         if (sidemessage2 == 0 && menu == 12)
-            gml_Script_msgsetloc(0, "\\m1		*OK,&	show us&	your&	WEAPON!", "obj_shop_ch2_music_slash_Draw_0_gml_488_0")
+            gml_Script_msgsetloc(0, "\\m1        *OK,&    show us&    your&    WEAPON!", "obj_shop_ch2_music_slash_Draw_0_gml_488_0")
         if (sidemessage2 == 0 && menu == 13)
-            gml_Script_msgsetloc(0, "\\m1		*OK,&	hit us&	with an&	ARMOR!", "obj_shop_ch2_music_slash_Draw_0_gml_489_0")
+            gml_Script_msgsetloc(0, "\\m1        *OK,&    hit us&    with an&    ARMOR!", "obj_shop_ch2_music_slash_Draw_0_gml_489_0")
         if (sidemessage2 == 1)
-            gml_Script_msgsetloc(0, "\\m1		*Sweet!&	This'll&	be great&	scrap!", "obj_shop_ch2_music_slash_Draw_0_gml_490_0")
+            gml_Script_msgsetloc(0, "\\m1        *Sweet!&    This'll&    be great&    scrap!", "obj_shop_ch2_music_slash_Draw_0_gml_490_0")
         if (sidemessage2 == 2)
-            gml_Script_msgsetloc(0, "\\m1		*OK,&	hold&	onto&	that.", "obj_shop_ch2_music_slash_Draw_0_gml_491_0")
+            gml_Script_msgsetloc(0, "\\m1        *OK,&    hold&    onto&    that.", "obj_shop_ch2_music_slash_Draw_0_gml_491_0")
         if (sidemessage2 == 3)
-            gml_Script_msgsetloc(0, "\\m1		*Maybe&	better&	keep&	that.", "obj_shop_ch2_music_slash_Draw_0_gml_492_0")
+            gml_Script_msgsetloc(0, "\\m1        *Maybe&    better&    keep&    that.", "obj_shop_ch2_music_slash_Draw_0_gml_492_0")
         if (sidemessage2 == 4)
-            gml_Script_msgsetloc(0, "\\m3		*That's&	nothin!", "obj_shop_ch2_music_slash_Draw_0_gml_493_0")
+            gml_Script_msgsetloc(0, "\\m3        *That's&    nothin!", "obj_shop_ch2_music_slash_Draw_0_gml_493_0")
         global.typer = 78
         gml_Script_instance_create(450, 260, obj_writer)
     }
@@ -546,45 +546,45 @@ if (menu == 4)
         selling = 1
         if (sell == 1)
         {
-            gml_Script_msgsetloc(0, "\\m3		*Nice town^1, chief.&\\m1	I think we're gonna like it&	here!&\\m2	Cool city./", "obj_shop_ch2_music_slash_Draw_0_gml_532_0")
-            gml_Script_msgnextloc("\\m1		*As thanks^1, you can listen to&	all sorts of songs here./", "obj_shop_ch2_music_slash_Draw_0_gml_533_0")
-            gml_Script_msgnextloc("\\m3		*Don't think it'll be cheap^1,&	though!&\\m2	It's free.&\\m3	What!?/%", "obj_shop_ch2_music_slash_Draw_0_gml_534_0")
+            gml_Script_msgsetloc(0, "\\m3        *Nice town^1, chief.&\\m1    I think we're gonna like it&    here!&\\m2    Cool city./", "obj_shop_ch2_music_slash_Draw_0_gml_532_0")
+            gml_Script_msgnextloc("\\m1        *As thanks^1, you can listen to&    all sorts of songs here./", "obj_shop_ch2_music_slash_Draw_0_gml_533_0")
+            gml_Script_msgnextloc("\\m3        *Don't think it'll be cheap^1,&    though!&\\m2    It's free.&\\m3    What!?/%", "obj_shop_ch2_music_slash_Draw_0_gml_534_0")
         }
         if (sell == 2)
-            gml_Script_msgsetloc(0, "\\m1		*See ya!&\\m3	Smell ya!&\\m2	Hear ya!/%", "obj_shop_ch2_music_slash_Draw_0_gml_540_0")
+            gml_Script_msgsetloc(0, "\\m1        *See ya!&\\m3    Smell ya!&\\m2    Hear ya!/%", "obj_shop_ch2_music_slash_Draw_0_gml_540_0")
         if (sell == 3)
         {
-            gml_Script_msgsetloc(0, "\\m1		*I'm Sweet.&\\m3	The ladies call me Cap'n!&\\m2	K_K!/", "obj_shop_ch2_music_slash_Draw_0_gml_546_0")
-            gml_Script_msgnextloc("\\m1		*We used to work the sound in&	this town.&\\m3	... until Queen came around.&\\m2	(K_K is short for Cakes.)/", "obj_shop_ch2_music_slash_Draw_0_gml_547_0")
-            gml_Script_msgnextloc("\\m1		*She made music against the law.&\\m2	Unless you make a song she likes.&\\m3	But the only JUNK she enjoys.../", "obj_shop_ch2_music_slash_Draw_0_gml_548_0")
-            gml_Script_msgnextloc("\\m1		*Are reverse diss-tracks, where&	the vocalist puts themselves&	down, and praises Queen...&\\m3	Or noise music./", "obj_shop_ch2_music_slash_Draw_0_gml_549_0")
-            gml_Script_msgnextloc("\\m1		*But even if Queenie tries to put&	a limiter on us.../", "obj_shop_ch2_music_slash_Draw_0_gml_550_0")
-            gml_Script_msgnextloc("\\m1		*You can't STOP ! THE ! MUSIC!&\\m3	Hear that!? We'll just go&	underground!!&\\m2	Crash! Boom! Bang!/", "obj_shop_ch2_music_slash_Draw_0_gml_551_0")
-            gml_Script_msgnextloc("\\m1		*That's why we made this junk&	shop!&\\m3	We'll fund our musical rebellion!&\\m2	Can we make noise music, too?/%", "obj_shop_ch2_music_slash_Draw_0_gml_552_0")
+            gml_Script_msgsetloc(0, "\\m1        *I'm Sweet.&\\m3    The ladies call me Cap'n!&\\m2    K_K!/", "obj_shop_ch2_music_slash_Draw_0_gml_546_0")
+            gml_Script_msgnextloc("\\m1        *We used to work the sound in&    this town.&\\m3    ... until Queen came around.&\\m2    (K_K is short for Cakes.)/", "obj_shop_ch2_music_slash_Draw_0_gml_547_0")
+            gml_Script_msgnextloc("\\m1        *She made music against the law.&\\m2    Unless you make a song she likes.&\\m3    But the only JUNK she enjoys.../", "obj_shop_ch2_music_slash_Draw_0_gml_548_0")
+            gml_Script_msgnextloc("\\m1        *Are reverse diss-tracks, where&    the vocalist puts themselves&    down, and praises Queen...&\\m3    Or noise music./", "obj_shop_ch2_music_slash_Draw_0_gml_549_0")
+            gml_Script_msgnextloc("\\m1        *But even if Queenie tries to put&    a limiter on us.../", "obj_shop_ch2_music_slash_Draw_0_gml_550_0")
+            gml_Script_msgnextloc("\\m1        *You can't STOP ! THE ! MUSIC!&\\m3    Hear that!? We'll just go&    underground!!&\\m2    Crash! Boom! Bang!/", "obj_shop_ch2_music_slash_Draw_0_gml_551_0")
+            gml_Script_msgnextloc("\\m1        *That's why we made this junk&    shop!&\\m3    We'll fund our musical rebellion!&\\m2    Can we make noise music, too?/%", "obj_shop_ch2_music_slash_Draw_0_gml_552_0")
         }
         if (sell == 4)
         {
             selling = 3
             dancetimerb = 0
-            gml_Script_msgsetloc(0, "\\m1		*What, wanna see what we got!?&\\m3	Yo, yo, can you handle this!?&\\m2	Hold onto your antennas!!/%", "obj_shop_ch2_music_slash_Draw_0_gml_565_0")
+            gml_Script_msgsetloc(0, "\\m1        *What, wanna see what we got!?&\\m3    Yo, yo, can you handle this!?&\\m2    Hold onto your antennas!!/%", "obj_shop_ch2_music_slash_Draw_0_gml_565_0")
         }
         if (sell == 5)
         {
-            gml_Script_msgsetloc(0, "\\m1		*Queen wasn't always so... harsh.&\\m3	No, she WAS! She just got WORSE&	somehow!/", "obj_shop_ch2_music_slash_Draw_0_gml_571_0")
-            gml_Script_msgnextloc("\\m1		*It wasn't 'til that DARK FOUNTAIN&	showed up,&\\m3	That she started going into&	overdrive./", "obj_shop_ch2_music_slash_Draw_0_gml_572_0")
-            gml_Script_msgnextloc("\\m1		*\"Knight\" this^1, \"Knight\" that^1,&	\"Fountain\" that...&\\m3	Like, what does that Knight&	even have going for it that I&	don't!? C'mon!!/", "obj_shop_ch2_music_slash_Draw_0_gml_573_0")
-            gml_Script_msgnextloc("\\m1		*But like I said. She wasn't&	ALWAYS so bad. She used to&	give me sweets. For being so&	sweet!&\\m3	H... huh!? I never got candy!!/", "obj_shop_ch2_music_slash_Draw_0_gml_574_0")
-            gml_Script_msgnextloc("\\m1		*You kept calling her a&	\"hot mama^1,\" Cap.&\\m3	Yeah!? Is that wrong!? She&	looks like a mom and tends to&	overheat!!/", "obj_shop_ch2_music_slash_Draw_0_gml_575_0")
-            gml_Script_msgnextloc("\\m3		*K_K! Help me out here!!&\\m1	K_K! What do you think?&\\m2	Huh? Me?/", "obj_shop_ch2_music_slash_Draw_0_gml_576_0")
-            gml_Script_msgnextloc("\\m2		*... I like candy./", "obj_shop_ch2_music_slash_Draw_0_gml_577_0")
-            gml_Script_msgnextloc("\\m1		*Yeah, you're right, K_K! We gotta&	focus on what's important!&\\m3	If the band fights, we'll get&	outta tune!&\\m2	Anyone have any lemon drops?/%", "obj_shop_ch2_music_slash_Draw_0_gml_578_0")
+            gml_Script_msgsetloc(0, "\\m1        *Queen wasn't always so... harsh.&\\m3    No, she WAS! She just got WORSE&    somehow!/", "obj_shop_ch2_music_slash_Draw_0_gml_571_0")
+            gml_Script_msgnextloc("\\m1        *It wasn't 'til that DARK FOUNTAIN&    showed up,&\\m3    That she started going into&    overdrive./", "obj_shop_ch2_music_slash_Draw_0_gml_572_0")
+            gml_Script_msgnextloc("\\m1        *\"Knight\" this^1, \"Knight\" that^1,&    \"Fountain\" that...&\\m3    Like, what does that Knight&    even have going for it that I&    don't!? C'mon!!/", "obj_shop_ch2_music_slash_Draw_0_gml_573_0")
+            gml_Script_msgnextloc("\\m1        *But like I said. She wasn't&    ALWAYS so bad. She used to&    give me sweets. For being so&    sweet!&\\m3    H... huh!? I never got candy!!/", "obj_shop_ch2_music_slash_Draw_0_gml_574_0")
+            gml_Script_msgnextloc("\\m1        *You kept calling her a&    \"hot mama^1,\" Cap.&\\m3    Yeah!? Is that wrong!? She&    looks like a mom and tends to&    overheat!!/", "obj_shop_ch2_music_slash_Draw_0_gml_575_0")
+            gml_Script_msgnextloc("\\m3        *K_K! Help me out here!!&\\m1    K_K! What do you think?&\\m2    Huh? Me?/", "obj_shop_ch2_music_slash_Draw_0_gml_576_0")
+            gml_Script_msgnextloc("\\m2        *... I like candy./", "obj_shop_ch2_music_slash_Draw_0_gml_577_0")
+            gml_Script_msgnextloc("\\m1        *Yeah, you're right, K_K! We gotta&    focus on what's important!&\\m3    If the band fights, we'll get&    outta tune!&\\m2    Anyone have any lemon drops?/%", "obj_shop_ch2_music_slash_Draw_0_gml_578_0")
         }
         if (sell == 6)
         {
-            gml_Script_msgsetloc(0, "\\m1		*Our main gig is making scrap&	into machines.&\\m3	Our clients are sometimes a&	bit off-key though.&\\m2	They smell off-key too!!/", "obj_shop_ch2_music_slash_Draw_0_gml_584_0")
-            gml_Script_msgnextloc("\\m1		*Like some... little weird guy.&\\m3	He wanted us to sneak into&	Queen's mansion...&\\m2	We're just rebels, we don't&	wanna get in trouble!/", "obj_shop_ch2_music_slash_Draw_0_gml_585_0")
-            gml_Script_msgnextloc("\\m1		*But recently we got a&	real-high-class-client.&\\m3	A man of TASTE! He had a way&	with words!!&\\m2	I couldn't even understand him!/", "obj_shop_ch2_music_slash_Draw_0_gml_586_0")
-            gml_Script_msgnextloc("\\m1		*Now, all we gotta do is follow&	the blueprints, right?&\\m3	It'll be our big time break!!&\\m2	Yeah!! Haha!! It's gonna break&	apart!! Big time!!/%", "obj_shop_ch2_music_slash_Draw_0_gml_587_0")
+            gml_Script_msgsetloc(0, "\\m1        *Our main gig is making scrap&    into machines.&\\m3    Our clients are sometimes a&    bit off-key though.&\\m2    They smell off-key too!!/", "obj_shop_ch2_music_slash_Draw_0_gml_584_0")
+            gml_Script_msgnextloc("\\m1        *Like some... little weird guy.&\\m3    He wanted us to sneak into&    Queen's mansion...&\\m2    We're just rebels, we don't&    wanna get in trouble!/", "obj_shop_ch2_music_slash_Draw_0_gml_585_0")
+            gml_Script_msgnextloc("\\m1        *But recently we got a&    real-high-class-client.&\\m3    A man of TASTE! He had a way&    with words!!&\\m2    I couldn't even understand him!/", "obj_shop_ch2_music_slash_Draw_0_gml_586_0")
+            gml_Script_msgnextloc("\\m1        *Now, all we gotta do is follow&    the blueprints, right?&\\m3    It'll be our big time break!!&\\m2    Yeah!! Haha!! It's gonna break&    apart!! Big time!!/%", "obj_shop_ch2_music_slash_Draw_0_gml_587_0")
         }
         global.typer = 78
         gml_Script_instance_create(30, 270, obj_writer)
@@ -609,7 +609,7 @@ if (menu == 4)
         if (dancetimerb == 90)
         {
             gml_Script_snd_resume(global.currentsong[1])
-            gml_Script_msgsetloc(0, "\\m3		*Yo, how was that!?&\\m1	Did you get rocked?!&\\m2	All our songs are only 4 seconds&	long!!/%", "obj_shop_ch2_music_slash_Draw_0_gml_616_0")
+            gml_Script_msgsetloc(0, "\\m3        *Yo, how was that!?&\\m1    Did you get rocked?!&\\m2    All our songs are only 4 seconds&    long!!/%", "obj_shop_ch2_music_slash_Draw_0_gml_616_0")
             global.typer = 78
             gml_Script_instance_create(30, 270, obj_writer)
             selling = 1

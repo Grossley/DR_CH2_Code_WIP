@@ -20,16 +20,16 @@ if (con == 1)
     {
         star = gml_Script_instance_create(((x + 30) + random((sprite_width - 30))), ((y + 20) + random((sprite_height - 40))), obj_marker)
         with (star)
-		{
-			image_xscale = 1
-			image_yscale = 1
-			sprite_index = spr_sparestar_anim
-			image_alpha = 1
-			image_speed = 0.25
-			hspeed = 1
-			gravity = -0.2
-			friction = 0.1
-		}
+        {
+            image_xscale = 1
+            image_yscale = 1
+            sprite_index = spr_sparestar_anim
+            image_alpha = 1
+            image_speed = 0.25
+            hspeed = 1
+            gravity = -0.2
+            friction = 0.1
+        }
     }
     x = lerp(startx, finalx, (siner / finaltime))
     y = lerp(starty, finaly, (siner / finaltime))

@@ -1676,24 +1676,24 @@ if (room == room_dw_castle_dojo)
             if (talked == 0)
             {
                 gml_Script_scr_miniface_init_clover()
-                gml_Script_msgsetloc(0, "\\m1*		Wow^1, our house is a dojo?!&\\m2	Makes me wanna FIGHT...&\\m3	(Can't we go to sleep?)/%", "obj_npc_room_slash_Other_10_gml_1848_0")
+                gml_Script_msgsetloc(0, "\\m1*        Wow^1, our house is a dojo?!&\\m2    Makes me wanna FIGHT...&\\m3    (Can't we go to sleep?)/%", "obj_npc_room_slash_Other_10_gml_1848_0")
             }
             else
             {
                 gml_Script_scr_miniface_init_clover()
-                gml_Script_msgsetloc(0, "\\m1*		It's a PARTY every day!&\\m2	And I'M the oldest!&\\m3	(We're the same age...)/%", "obj_npc_room_slash_Other_10_gml_1852_0")
+                gml_Script_msgsetloc(0, "\\m1*        It's a PARTY every day!&\\m2    And I'M the oldest!&\\m3    (We're the same age...)/%", "obj_npc_room_slash_Other_10_gml_1852_0")
             }
         }
         else if (talked == 0)
         {
             gml_Script_scr_miniface_init_clover()
-            gml_Script_msgsetloc(0, "\\m1*		Who's that tall-dark-and...&\\m2	Kinda creepy person!?&\\m3	You mean the... Werewire?/%", "obj_npc_room_slash_Other_10_gml_1860_0")
+            gml_Script_msgsetloc(0, "\\m1*        Who's that tall-dark-and...&\\m2    Kinda creepy person!?&\\m3    You mean the... Werewire?/%", "obj_npc_room_slash_Other_10_gml_1860_0")
         }
         else
         {
             gml_Script_scr_miniface_init_clover()
-            gml_Script_msgsetloc(0, "\\m1*		Their neck just&	looks so...fluffy~&\\m2	So!? Like I care!?/", "obj_npc_room_slash_Other_10_gml_1864_0")
-            gml_Script_msgnextloc("\\m3*		(She wants to rub her face&	in it...)/%", "obj_npc_room_slash_Other_10_gml_1865_0")
+            gml_Script_msgsetloc(0, "\\m1*        Their neck just&    looks so...fluffy~&\\m2    So!? Like I care!?/", "obj_npc_room_slash_Other_10_gml_1864_0")
+            gml_Script_msgnextloc("\\m3*        (She wants to rub her face&    in it...)/%", "obj_npc_room_slash_Other_10_gml_1865_0")
         }
     }
     if (sprite_index == spr_npc_pippins)
@@ -2196,7 +2196,7 @@ if (room == room_dw_cyber_musical_door)
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* Bagels^1, doughnuts .../", "obj_npc_room_slash_Other_10_gml_2399_0")
             gml_Script_msgnextloc("* Why is it round dough is always so overpriced?/", "obj_npc_room_slash_Other_10_gml_2400_0")
-            gml_Script_msgnextloc("\\m2		*The hole is expensive!/%", "obj_npc_room_slash_Other_10_gml_2401_0")
+            gml_Script_msgnextloc("\\m2        *The hole is expensive!/%", "obj_npc_room_slash_Other_10_gml_2401_0")
         }
     }
     if (sprite_index == spr_npc_plugboy_static)

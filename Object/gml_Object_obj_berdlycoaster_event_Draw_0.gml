@@ -33,10 +33,10 @@ if (con == 0)
     fallmarker[1].sprite_index = spr_susie_dw_fall_d
     fallmarker[2].sprite_index = spr_ralsei_jump
     with (fallmarker[0])
-	{
-		x = kris_x
-		y = kris_y
-	}
+    {
+        x = kris_x
+        y = kris_y
+    }
 }
 if (con == 0.1)
 {
@@ -57,7 +57,7 @@ if (con == 1)
         while (i < 3)
         {
             with (fallmarker[i])
-				instance_destroy()
+                instance_destroy()
         }
         timer = 0
         con = 2

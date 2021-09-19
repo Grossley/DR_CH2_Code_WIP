@@ -7,8 +7,8 @@ if (global.fc == 0)
 myface = gml_Script_instance_create((xx + 26), (yy + 380), obj_face)
 with (battlewriter)
 {
-	dialoguer = 1
-	facer = 1
-	if (global.fc == 0 && originalcharline == 33)
-		charline = 26
+    dialoguer = 1
+    facer = 1
+    if (global.fc == 0 && originalcharline == 33)
+        charline = 26
 }

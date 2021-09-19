@@ -6,6 +6,6 @@ obj_cutscene_master.actor_id[_actorid] = _actorinstance
 obj_cutscene_master.actor_name[_actorid] = _actorname
 with (_actorinstance)
 {
-	number = argument0
-	gml_Script_scr_set_facing_sprites(argument2)
+    number = argument0
+    gml_Script_scr_set_facing_sprites(argument2)
 }

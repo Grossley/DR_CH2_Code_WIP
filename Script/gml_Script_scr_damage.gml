@@ -13,10 +13,10 @@ if (global.inv < 0)
             gml_Script_scr_randomtarget_old()
             target = mytarget
             with (global.charinstance[target])
-			{
-				image_blend = c_white
-				darkify = false
-			}
+            {
+                image_blend = c_white
+                darkify = false
+            }
         }
     }
     var __remtarget = -1
@@ -41,10 +41,10 @@ if (global.inv < 0)
             target = mytarget
         }
         with (global.charinstance[target])
-		{
-			image_blend = c_white
-			darkify = false
-		}
+        {
+            image_blend = c_white
+            darkify = false
+        }
     }
     chartarget = 3
     tdamage = damage
@@ -66,9 +66,9 @@ if (global.inv < 0)
     if (!instance_exists(obj_shake))
         gml_Script_instance_create(0, 0, obj_shake)
     with (global.charinstance[target])
-	{
-		hurt = true
-		hurttimer = 0
-	}
+    {
+        hurt = true
+        hurttimer = 0
+    }
 }
 return;

@@ -142,14 +142,14 @@ switch spell
                     spec_shard = 1
                     shardtest[_en] = 3
                     with (global.monsterinstance[_en])
-					{
-						battlecancel = 1
-						if (manual == 0)
-						{
-							manual = 1
-							gml_Script_scr_mercyadd(myself, 50)
-						}
-					}
+                    {
+                        battlecancel = 1
+                        if (manual == 0)
+                        {
+                            manual = 1
+                            gml_Script_scr_mercyadd(myself, 50)
+                        }
+                    }
                 }
             }
         }

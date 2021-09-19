@@ -48,12 +48,12 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
         while (i < 3)
         {
             with (global.monsterinstance[global.bmenucoord[global.bmenuno][global.charturn]])
-			{
-				if (flash == false)
-					fsiner = 0
-				flash = true
-				becomeflash = true
-			}
+            {
+                if (flash == false)
+                    fsiner = 0
+                flash = true
+                becomeflash = true
+            }
         }
     }
 }
@@ -259,12 +259,12 @@ if (global.bmenuno == 9 && global.myfight == 0)
         draw_text((xx + 500), (yy + 440), string_hash_to_newline((string(thiscost) + gml_Script_scr_84_get_lang_string_ch1("obj_battlecontroller_slash_Draw_0_gml_280_0"))))
     }
     with (global.monsterinstance[global.bmenucoord[11][global.charturn]])
-	{
-		if (flash == false)
-			fsiner = 0
-		flash = true
-		becomeflash = true
-	}
+    {
+        if (flash == false)
+            fsiner = 0
+        flash = true
+        becomeflash = true
+    }
 }
 if (global.bmenuno == 7 || global.bmenuno == 8)
 {
@@ -277,12 +277,12 @@ if (global.bmenuno == 7 || global.bmenuno == 8)
             if (global.char[i] != 0)
             {
                 with (global.charinstance[global.bmenucoord[global.bmenuno][global.charturn]])
-				{
-					if (flash == false)
-						fsiner = 0
-					flash = true
-					becomeflash = true
-				}
+                {
+                    if (flash == false)
+                        fsiner = 0
+                    flash = true
+                    becomeflash = true
+                }
             }
         }
     }

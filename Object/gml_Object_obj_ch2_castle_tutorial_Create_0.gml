@@ -6,7 +6,7 @@ if (global.chapter == 2 && global.plot >= 9)
     coody.sprite_index = spr_npc_coody
     coody.image_xscale = -2
     with (coody)
-		gml_Script_scr_depth()
+        gml_Script_scr_depth()
 }
 else
     instance_destroy()

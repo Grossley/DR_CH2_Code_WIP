@@ -3832,7 +3832,7 @@ switch argument0
         global.choicemsg[3] = gml_Script_stringsetloc(" ", "scr_text_slash_scr_text_gml_4344_0")
         gml_Script_scr_miniface_init_sweet()
         gml_Script_instance_create(0, 0, obj_moneydisplay)
-        gml_Script_msgsetloc(0, "\\m3		*What'll it be^1, chief?&	I got CD Bagels^1, $80 a pop!/", "scr_text_slash_scr_text_gml_4346_0")
+        gml_Script_msgsetloc(0, "\\m3        *What'll it be^1, chief?&    I got CD Bagels^1, $80 a pop!/", "scr_text_slash_scr_text_gml_4346_0")
         gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_4347_0")
         break
     case obj_anime_bg_dot:
@@ -3846,20 +3846,20 @@ switch argument0
                 {
                     global.gold -= 80
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3		*Good eye for music^1!/", "scr_text_slash_scr_text_gml_4360_0")
+                    gml_Script_msgsetloc(0, "\\m3        *Good eye for music^1!/", "scr_text_slash_scr_text_gml_4360_0")
                     gml_Script_snd_play(149)
                     gml_Script_msgnext(itemgetstring)
                 }
                 else
                 {
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3		*Too much stuff^1, chief^1!&	It won't fit^2!&\\m2	I can't fit either^2./%", "scr_text_slash_scr_text_gml_4366_0")
+                    gml_Script_msgsetloc(0, "\\m3        *Too much stuff^1, chief^1!&    It won't fit^2!&\\m2    I can't fit either^2./%", "scr_text_slash_scr_text_gml_4366_0")
                 }
             }
             else
             {
                 gml_Script_scr_miniface_init_sweet()
-                gml_Script_msgsetloc(0, "\\m3		*Hey^1, you can't&	shortchange me^2!&\\m2	Only me^2./%", "scr_text_slash_scr_text_gml_4372_0")
+                gml_Script_msgsetloc(0, "\\m3        *Hey^1, you can't&    shortchange me^2!&\\m2    Only me^2./%", "scr_text_slash_scr_text_gml_4372_0")
             }
         }
         if (global.choice == 1)
@@ -3875,17 +3875,17 @@ switch argument0
                 if gml_Script_scr_havechar(4)
                 {
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3		*And who is that^1, ahem^1,& madimoyzel^2?&\\m1	Leave her alone^1, Cap^2!/", "scr_text_slash_scr_text_gml_4392_0")
-                    gml_Script_msgnextloc("\\m3		*Nice radio antenna you& got there..^2.&\\m1	Those are antlers^1, Cap^2!/", "scr_text_slash_scr_text_gml_4393_0")
-                    gml_Script_msgnextloc("\\m3		*H-huh!? I^1, uhh..^1. hmm^2.&\\m3	.../", "scr_text_slash_scr_text_gml_4394_0")
-                    gml_Script_msgnextloc("\\m2		*Let's play her a song!/%", "scr_text_slash_scr_text_gml_4395_0")
+                    gml_Script_msgsetloc(0, "\\m3        *And who is that^1, ahem^1,& madimoyzel^2?&\\m1    Leave her alone^1, Cap^2!/", "scr_text_slash_scr_text_gml_4392_0")
+                    gml_Script_msgnextloc("\\m3        *Nice radio antenna you& got there..^2.&\\m1    Those are antlers^1, Cap^2!/", "scr_text_slash_scr_text_gml_4393_0")
+                    gml_Script_msgnextloc("\\m3        *H-huh!? I^1, uhh..^1. hmm^2.&\\m3    .../", "scr_text_slash_scr_text_gml_4394_0")
+                    gml_Script_msgnextloc("\\m2        *Let's play her a song!/%", "scr_text_slash_scr_text_gml_4395_0")
                 }
                 else
                 {
                     gml_Script_scr_miniface_init_sweet()
-                    gml_Script_msgsetloc(0, "\\m3		*..^1. so where's the moyzel^2?&\\m1	Huh!? She's kidnapped!/", "scr_text_slash_scr_text_gml_4399_0")
-                    gml_Script_msgnextloc("\\m1		*That's awful..^2.&\\m3	That sucks..^2.&\\m2	.../", "scr_text_slash_scr_text_gml_4400_0")
-                    gml_Script_msgnextloc("\\m2		*Let's cheer up!/%", "scr_text_slash_scr_text_gml_4401_0")
+                    gml_Script_msgsetloc(0, "\\m3        *..^1. so where's the moyzel^2?&\\m1    Huh!? She's kidnapped!/", "scr_text_slash_scr_text_gml_4399_0")
+                    gml_Script_msgnextloc("\\m1        *That's awful..^2.&\\m3    That sucks..^2.&\\m2    .../", "scr_text_slash_scr_text_gml_4400_0")
+                    gml_Script_msgnextloc("\\m2        *Let's cheer up!/%", "scr_text_slash_scr_text_gml_4401_0")
                 }
                 with (obj_ch2_room_city_savepoint)
                     con = 10
@@ -3893,7 +3893,7 @@ switch argument0
             else
             {
                 gml_Script_scr_miniface_init_sweet()
-                gml_Script_msgsetloc(0, "\\m3		*This music^1, it's nice music^2.&\\m2	That's my favorite genre^2./%", "scr_text_slash_scr_text_gml_4408_0")
+                gml_Script_msgsetloc(0, "\\m3        *This music^1, it's nice music^2.&\\m2    That's my favorite genre^2./%", "scr_text_slash_scr_text_gml_4408_0")
             }
         }
         if (global.choice == 2)
@@ -5159,15 +5159,15 @@ switch argument0
         if (!capntalked)
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3		*Yo^1, (snicker)^1, it's hard work&	being Queen's minion^1,&	ain't it?/", "scr_text_slash_scr_text_gml_5935_0")
-            gml_Script_msgnextloc("\\m3		*Why don't you take a break and&	grab a snack?/", "scr_text_slash_scr_text_gml_5936_0")
-            gml_Script_msgnextloc("\\m3		*Ultra seedy CD Bagels^1, only&	$400 each!/", "scr_text_slash_scr_text_gml_5937_0")
+            gml_Script_msgsetloc(0, "\\m3        *Yo^1, (snicker)^1, it's hard work&    being Queen's minion^1,&    ain't it?/", "scr_text_slash_scr_text_gml_5935_0")
+            gml_Script_msgnextloc("\\m3        *Why don't you take a break and&    grab a snack?/", "scr_text_slash_scr_text_gml_5936_0")
+            gml_Script_msgnextloc("\\m3        *Ultra seedy CD Bagels^1, only&    $400 each!/", "scr_text_slash_scr_text_gml_5937_0")
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5938_0")
         }
         else
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3		*Wanna buy a CD bagel!? Only&	$400 each!/", "scr_text_slash_scr_text_gml_5942_0")
+            gml_Script_msgsetloc(0, "\\m3        *Wanna buy a CD bagel!? Only&    $400 each!/", "scr_text_slash_scr_text_gml_5942_0")
             gml_Script_msgnextloc("\\C2 ", "scr_text_slash_scr_text_gml_5943_0")
         }
         break
@@ -5183,30 +5183,30 @@ switch argument0
                     global.gold -= 400
                     gml_Script_scr_miniface_init_sweet()
                     gml_Script_scr_speaker("no_name")
-                    gml_Script_msgsetloc(0, "\\m3		*Pleasure doin' business with&	ya^1! ..^1. (snicker)/", "scr_text_slash_scr_text_gml_5959_0")
+                    gml_Script_msgsetloc(0, "\\m3        *Pleasure doin' business with&    ya^1! ..^1. (snicker)/", "scr_text_slash_scr_text_gml_5959_0")
                     gml_Script_snd_play(149)
                     gml_Script_msgnext(itemgetstring)
                 }
                 else
                 {
                     gml_Script_scr_speaker("no_name")
-                    gml_Script_msgsetloc(0, "\\m3		*Hey^1, you don't have any room./", "scr_text_slash_scr_text_gml_5965_0")
-                    gml_Script_msgnextloc("\\m3		*What^1, took too many bribes?/%", "scr_text_slash_scr_text_gml_5966_0")
+                    gml_Script_msgsetloc(0, "\\m3        *Hey^1, you don't have any room./", "scr_text_slash_scr_text_gml_5965_0")
+                    gml_Script_msgnextloc("\\m3        *What^1, took too many bribes?/%", "scr_text_slash_scr_text_gml_5966_0")
                 }
             }
             else
             {
                 gml_Script_scr_miniface_init_sweet()
                 gml_Script_scr_speaker("no_name")
-                gml_Script_msgsetloc(0, "\\m3		*What!? Too expensive!?/", "scr_text_slash_scr_text_gml_5972_0")
-                gml_Script_msgnextloc("\\m3		*Well too bad^1! You're not gonna&	get a better deal anywhere&	else!/%", "scr_text_slash_scr_text_gml_5973_0")
+                gml_Script_msgsetloc(0, "\\m3        *What!? Too expensive!?/", "scr_text_slash_scr_text_gml_5972_0")
+                gml_Script_msgnextloc("\\m3        *Well too bad^1! You're not gonna&    get a better deal anywhere&    else!/%", "scr_text_slash_scr_text_gml_5973_0")
             }
         }
         if (global.choice == 1)
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m3		*Huh? C'mon^1, you can't survive&	off the air she breathes!/", "scr_text_slash_scr_text_gml_5980_0")
-            gml_Script_msgnextloc("\\m3		*Believe me^1, I've tried^1!&	..^1. what?/%", "scr_text_slash_scr_text_gml_5981_0")
+            gml_Script_msgsetloc(0, "\\m3        *Huh? C'mon^1, you can't survive&    off the air she breathes!/", "scr_text_slash_scr_text_gml_5980_0")
+            gml_Script_msgnextloc("\\m3        *Believe me^1, I've tried^1!&    ..^1. what?/%", "scr_text_slash_scr_text_gml_5981_0")
         }
         break
     case obj_solidblock_destructable:
@@ -5225,15 +5225,15 @@ switch argument0
         if (!kktalked)
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m2		*Want to buy a bagel? Only $80.&\\m3	K_K^1, no^1! It's 400^1! 400!/", "scr_text_slash_scr_text_gml_6006_0")
-            gml_Script_msgnextloc("\\m2		*Got it./", "scr_text_slash_scr_text_gml_6007_0")
-            gml_Script_msgnextloc("\\m2		*Want to buy 400 bagels?&	Only $80./", "scr_text_slash_scr_text_gml_6008_0")
+            gml_Script_msgsetloc(0, "\\m2        *Want to buy a bagel? Only $80.&\\m3    K_K^1, no^1! It's 400^1! 400!/", "scr_text_slash_scr_text_gml_6006_0")
+            gml_Script_msgnextloc("\\m2        *Got it./", "scr_text_slash_scr_text_gml_6007_0")
+            gml_Script_msgnextloc("\\m2        *Want to buy 400 bagels?&    Only $80./", "scr_text_slash_scr_text_gml_6008_0")
             gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_6009_0")
         }
         else
         {
             gml_Script_scr_speaker("no_name")
-            gml_Script_msgsetloc(0, "\\m2		*One bagel^1, $80. 400 bagels^1,&	$80./", "scr_text_slash_scr_text_gml_6013_0")
+            gml_Script_msgsetloc(0, "\\m2        *One bagel^1, $80. 400 bagels^1,&    $80./", "scr_text_slash_scr_text_gml_6013_0")
             gml_Script_msgnextloc("\\C3 ", "scr_text_slash_scr_text_gml_6014_0")
         }
         break
@@ -5257,12 +5257,12 @@ switch argument0
                     gml_Script_snd_play(149)
                     gml_Script_scr_speaker("no_name")
                     gml_Script_msgsetloc(0, "* (You paid $80 for a bagel.)/", "scr_text_slash_scr_text_gml_6043_0")
-                    gml_Script_msgnextloc("\\m2		*Can I have one^1, too?&\\m3	You're selling them!/%", "scr_text_slash_scr_text_gml_6044_0")
+                    gml_Script_msgnextloc("\\m2        *Can I have one^1, too?&\\m3    You're selling them!/%", "scr_text_slash_scr_text_gml_6044_0")
                 }
                 else
                 {
                     gml_Script_scr_speaker("k_k")
-                    gml_Script_msgsetloc(0, "\\m2		*You can't afford it? Don't&	worry^1, this one's on me!/", "scr_text_slash_scr_text_gml_6049_0")
+                    gml_Script_msgsetloc(0, "\\m2        *You can't afford it? Don't&    worry^1, this one's on me!/", "scr_text_slash_scr_text_gml_6049_0")
                     gml_Script_scr_anyface_next("no_name", 0)
                     gml_Script_msgnextloc("* (You got a bagel.)/%", "scr_text_slash_scr_text_gml_6051_0")
                     gml_Script_snd_play(149)
@@ -5271,13 +5271,13 @@ switch argument0
             else
             {
                 gml_Script_scr_speaker("no_name")
-                gml_Script_msgsetloc(0, "\\m3		*No room for a bagel!&\\m2	What about the hole?/%", "scr_text_slash_scr_text_gml_6056_0")
+                gml_Script_msgsetloc(0, "\\m3        *No room for a bagel!&\\m2    What about the hole?/%", "scr_text_slash_scr_text_gml_6056_0")
             }
         }
         if (global.choice == 2)
         {
             gml_Script_scr_speaker("k_k")
-            gml_Script_msgsetloc(0, "\\m2		*That's OK. I haven't bought&	one either./%", "scr_text_slash_scr_text_gml_6063_0")
+            gml_Script_msgsetloc(0, "\\m2        *That's OK. I haven't bought&    one either./%", "scr_text_slash_scr_text_gml_6063_0")
         }
         break
     case obj_solidlong:

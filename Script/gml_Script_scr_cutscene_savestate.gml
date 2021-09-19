@@ -11,7 +11,7 @@ for (i = 0; i < 20; i++)
     {
         actorSaved[i] = 1
         with (actor_id[i])
-			gml_Script_scr_instance_save_local_vars()
+            gml_Script_scr_instance_save_local_vars()
     }
 }
 for (i = 0; i < 10; i++)
@@ -21,7 +21,7 @@ for (i = 0; i < 10; i++)
     {
         objectSaved[i] = 1
         with (save_object[i])
-			gml_Script_scr_instance_save_local_vars()
+            gml_Script_scr_instance_save_local_vars()
     }
 }
 return;

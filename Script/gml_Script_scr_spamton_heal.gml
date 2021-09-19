@@ -22,23 +22,23 @@ for (i = 0; i < 3; i++)
             _healpower = 0
         gml_Script_scr_heal(i, _healpower)
         with (global.charinstance[i])
-		{
-			ha = gml_Script_instance_create(x, y, obj_healanim)
-			ha.target = id
-		}
+        {
+            ha = gml_Script_instance_create(x, y, obj_healanim)
+            ha.target = id
+        }
         dmgwr = gml_Script_scr_dmgwriter_selfchar()
-		with (dmgwr)
-		{
-			delay = 8
-			type = 3
-		}
-		damage = _healpower
+        with (dmgwr)
+        {
+            delay = 8
+            type = 3
+        }
+        damage = _healpower
     }
 }
 i = 0
 while (i < 3)
 {
     with (global.charinstance[i])
-		tu--
+        tu--
 }
 return;

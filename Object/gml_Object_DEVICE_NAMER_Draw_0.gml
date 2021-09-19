@@ -19,10 +19,10 @@ if (EVENT == 70 && instance_exists(obj_writer) == 0)
     gml_Script_msgsetloc(0, "ENTER YOUR OWN NAME.", "DEVICE_NAMER_slash_Draw_0_gml_18_0")
     W = gml_Script_instance_create((80 + JA_XOFF), (20 + JA_YOFF), obj_writer)
     with (W)
-	{
-		hspace *= 0.8
-		skipme = true
-	}
+    {
+        hspace *= 0.8
+        skipme = true
+    }
 }
 if (EVENT == 71)
 {
@@ -39,7 +39,7 @@ if (EVENT == 71)
         {
             CANCELMENU = 1
             with (CHOICE)
-				instance_destroy()
+                instance_destroy()
         }
     }
     else
@@ -57,10 +57,10 @@ if (EVENT == 73)
         JA_XOFF = -30
     W = gml_Script_instance_create((78 + JA_XOFF), (20 + JA_YOFF), obj_writer)
     with (W)
-	{
-		hspace *= 0.8
-		skipme = true
-	}
+    {
+        hspace *= 0.8
+        skipme = true
+    }
 }
 if (EVENT == 74)
 {

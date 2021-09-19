@@ -20,7 +20,7 @@ if (fightcon == 2)
         with (obj_mainchara)
             visible = false
         with (global.cinstance[0])
-			visible = false
+            visible = false
     }
     if (counttimer >= 20)
     {

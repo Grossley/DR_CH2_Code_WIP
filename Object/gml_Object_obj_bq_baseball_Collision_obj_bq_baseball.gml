@@ -1,7 +1,7 @@
 if (baseball_combo_timer > 0)
 {
     with (other)
-		hit = 1
+        hit = 1
     o_boxingcontroller.hit_baseball += 1
     o_boxingcontroller.hit_baseball_check = 1
     y = (o_boxingcontroller.y - 184)

@@ -10,10 +10,10 @@ if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbatt
             y = global.charinstance[0].y
         }
         with (global.cinstance[0])
-		{
-			x = global.charinstance[1].x
-			y = global.charinstance[1].y
-		}
+        {
+            x = global.charinstance[1].x
+            y = global.charinstance[1].y
+        }
     }
     gml_Script_instance_create_ch1(0, 0, 1627)
     with (obj_monsterparent_ch1)

@@ -71,11 +71,11 @@ if (!oldmode)
             d.target = target
             d.depth = bulletdepth
             with (d)
-			{
-				image_angle = (direction - 90)
-				var cloud = gml_Script_scr_afterimage_grow()
-				cloud.sprite_index = spr_cakesmoke_white
-			}
+            {
+                image_angle = (direction - 90)
+                var cloud = gml_Script_scr_afterimage_grow()
+                cloud.sprite_index = spr_cakesmoke_white
+            }
         }
     }
     if (global.turntimer < 3)

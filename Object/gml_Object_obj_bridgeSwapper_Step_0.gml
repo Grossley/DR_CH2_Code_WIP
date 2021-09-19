@@ -86,14 +86,14 @@ if (con == 3)
         krisface = "l"
     }
     panpoint = gml_Script_scr_dark_marker(mtx, mty, kr_actor.sprite_index)
-    var _temp_local_var_3 = panpoint
-    visible = false
+    with (panpoint)
+        visible = false
 }
 if (con == 98)
 {
     con = 99
-    var _temp_local_var_4 = panpoint
-    instance_destroy()
+    with (panpoint)
+        instance_destroy()
 }
 if (con == 99)
 {

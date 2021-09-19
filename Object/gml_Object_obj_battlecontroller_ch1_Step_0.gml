@@ -7,7 +7,7 @@ if (victory == true && victoried == 0)
     global.mnfight = -1
     global.myfight = 7
     with (battlewriter)
-		instance_destroy()
+        instance_destroy()
 }
 if (victoried == 1)
 {
@@ -94,17 +94,17 @@ if (global.myfight == 0)
             gml_Script_scr_prevhero_ch1()
         }
         with (battlewriter)
-			depth = 3
+            depth = 3
     }
     if (global.bmenuno == 2)
     {
         with (battlewriter)
-			skipme = true
+            skipme = true
     }
     if (global.bmenuno == 4)
     {
         with (battlewriter)
-			skipme = true
+            skipme = true
     }
     if (global.bmenuno == 9)
     {
@@ -239,7 +239,7 @@ if (global.myfight == 0)
     if (global.bmenuno == 7 || global.bmenuno == 1 || global.bmenuno == 8 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12)
     {
         with (battlewriter)
-			skipme = true
+            skipme = true
     }
 }
 if (movenoise == true)

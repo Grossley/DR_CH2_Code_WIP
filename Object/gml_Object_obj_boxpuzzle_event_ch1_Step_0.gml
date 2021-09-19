@@ -26,7 +26,7 @@ if (con == 3)
     obj_mainchara_ch1.x = k.x
     obj_mainchara_ch1.visible = true
     with (k)
-		instance_destroy()
+        instance_destroy()
 }
 if (con == 5)
 {
@@ -44,7 +44,7 @@ if (con == 5)
 if (con == 6 && gml_Script_d_ex_ch1() == 0)
 {
     with (sus)
-		sprite_index = spr_susieu_dark_ch1
+        sprite_index = spr_susieu_dark_ch1
 }
 if (con == 12)
 {
@@ -52,7 +52,7 @@ if (con == 12)
     if (ral.y <= obj_npc_rudy)
     {
         with (ral)
-			gml_Script_scr_halt_ch1()
+            gml_Script_scr_halt_ch1()
     }
 }
 if (con == 14)
@@ -72,12 +72,12 @@ if (con == 14)
 if (con == 5.5 && gml_Script_d_ex_ch1() == 0)
 {
     global.facing = 1
-	with (sus)
-	{
-		sprite_index = spr_susier_dark_ch1
-		hspeed = 12
-		image_speed = 0.334
-	}
+    with (sus)
+    {
+        sprite_index = spr_susier_dark_ch1
+        hspeed = 12
+        image_speed = 0.334
+    }
 }
 if (con == 6.5)
 {
@@ -94,13 +94,13 @@ if (con == 7.5)
     if (sus.y <= obj_npc_rudy)
     {
         with (sus)
-			gml_Script_scr_halt_ch1()
+            gml_Script_scr_halt_ch1()
     }
 }
 if (con == 9.5)
 {
     with (sus)
-		sprite_index = spr_susied_dark_ch1
+        sprite_index = spr_susied_dark_ch1
 }
 if (con == 15 && gml_Script_d_ex_ch1() == 0)
 {
@@ -110,7 +110,7 @@ if (con == 15 && gml_Script_d_ex_ch1() == 0)
     sus2 = gml_Script_instance_create_ch1(sus.x, sus.y, 1407)
     ral2 = gml_Script_instance_create_ch1(ral.x, ral.y, 1407)
     with (sus)
-		instance_destroy()
+        instance_destroy()
 }
 if (leavecon == 1 && global.interact == 0)
 {
@@ -184,7 +184,7 @@ if (con == 20)
     {
         image_index = 1
         with (groundblock)
-			instance_destroy()
+            instance_destroy()
     }
     else if (tilecount == 2 && boxcount == 1 && global.interact == 0 && boxcon == 1)
     {
@@ -249,7 +249,7 @@ if (con == 27)
         ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, 3570)
         sus3 = gml_Script_scr_dark_marker_ch1(sus2.x, sus2.y, 3541)
         with (ral2)
-			instance_destroy()
+            instance_destroy()
     }
 }
 if (con == 28)
@@ -258,30 +258,30 @@ if (con == 28)
     if ( <= ((sus3.x.room_width / 2) - 20) && gml_Script_d_ex_ch1() == 0)
     {
         with (sus3)
-		{
-			image_speed = 0.334
-			vspeed = -8
-			hspeed = 0
-			sprite_index = spr_susieu_dark_ch1
-		}
+        {
+            image_speed = 0.334
+            vspeed = -8
+            hspeed = 0
+            sprite_index = spr_susieu_dark_ch1
+        }
     }
 }
 if (con == 30)
 {
     with (ral3)
-		sprite_index = spr_ralseid_ch1
+        sprite_index = spr_ralseid_ch1
 }
 if (con == 31)
 {
     if (gml_Script_d_ex_ch1() == 0)
     {
         with (ral3)
-		{
-			gml_Script_scr_depth_ch1()
-			sprite_index = spr_ralseir_ch1
-			hspeed = 6
-			image_speed = 0.25
-		}
+        {
+            gml_Script_scr_depth_ch1()
+            sprite_index = spr_ralseir_ch1
+            hspeed = 6
+            image_speed = 0.25
+        }
     }
 }
 if (con == 32)
@@ -289,11 +289,11 @@ if (con == 32)
     if (ral3 >= ((ral3.x.room_width / 2) - 20))
     {
         with (ral3)
-		{
-			vspeed = -6
-			hspeed = 0
-			sprite_index = spr_ralseiu_ch1
-		}
+        {
+            vspeed = -6
+            hspeed = 0
+            sprite_index = spr_ralseiu_ch1
+        }
     }
 }
 if (con == 34)
@@ -324,13 +324,13 @@ if (con == 52)
     gml_Script_instance_create_ch1(460, 370, 1408)
     ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, 3570)
     with (ral3)
-		gml_Script_scr_depth_ch1()
+        gml_Script_scr_depth_ch1()
 }
 if (con == 54)
 {
     image_index = 2
     with (groundblock)
-		instance_destroy()
+        instance_destroy()
 }
 if (con == 56)
 {

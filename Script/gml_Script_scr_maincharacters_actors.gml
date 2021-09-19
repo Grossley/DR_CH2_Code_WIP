@@ -19,7 +19,7 @@ for (__jj = 0; __jj < array_length_1d(global.cinstance); __jj++)
             su_actor.sprite_index = global.cinstance[__jj].sprite_index
             su_actor.depth = global.cinstance[__jj].depth
             with (global.cinstance[__jj])
-				visible = false
+                visible = false
         }
         if (global.cinstance[__jj].name == "ralsei")
         {
@@ -30,7 +30,7 @@ for (__jj = 0; __jj < array_length_1d(global.cinstance); __jj++)
             ra_actor.sprite_index = global.cinstance[__jj].sprite_index
             ra_actor.depth = global.cinstance[__jj].depth
             with (global.cinstance[__jj])
-				visible = false
+                visible = false
         }
         if (global.cinstance[__jj].name == "noelle")
         {
@@ -41,7 +41,7 @@ for (__jj = 0; __jj < array_length_1d(global.cinstance); __jj++)
             no_actor.sprite_index = global.cinstance[__jj].sprite_index
             no_actor.depth = global.cinstance[__jj].depth
             with (global.cinstance[__jj])
-				visible = false
+                visible = false
         }
     }
 }

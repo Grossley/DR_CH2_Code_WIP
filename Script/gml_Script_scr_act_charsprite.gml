@@ -24,10 +24,10 @@ __returnvalue = _charactsprite[_charnum]
 if gml_Script_i_ex(_charinstance)
 {
     with (_charinstance)
-	{
-		image_alpha = 0
-		state = 0
-		global.faceaction[myself] = 0
-	}
+    {
+        image_alpha = 0
+        state = 0
+        global.faceaction[myself] = 0
+    }
 }
 return __returnvalue;

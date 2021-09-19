@@ -17,7 +17,7 @@ else if (global.plot < 70)
     alleyoverlay.image_blend = c_black
     alleyoverlay.image_alpha = 0.5
     with (alleyoverlay)
-		gml_Script_scr_depth()
+        gml_Script_scr_depth()
 }
 else
 {
