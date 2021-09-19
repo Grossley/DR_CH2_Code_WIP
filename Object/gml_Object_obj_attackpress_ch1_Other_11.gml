@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (gml_Script_scr_monsterpop_ch1() > 0)
 {
     for (i = 0; i < 3; i += 1)
