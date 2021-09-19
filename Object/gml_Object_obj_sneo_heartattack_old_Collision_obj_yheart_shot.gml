@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (con == 3)
     return;
 shakex = 6

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var _lane = argument0
 var _frames = argument1
 var _targetBeat = argument2

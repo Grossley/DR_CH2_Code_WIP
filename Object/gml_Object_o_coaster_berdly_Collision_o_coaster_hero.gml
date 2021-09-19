@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (damagecon == 0)
 {
     damagecon = 1

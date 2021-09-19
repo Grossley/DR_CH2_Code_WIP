@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 con = 0
 key = 0
 dooropen = -1

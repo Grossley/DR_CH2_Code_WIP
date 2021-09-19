@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 gml_Script_debug_message("I was born today")
 gml_Script_debug_message(("x:" + string(x)))
 gml_Script_debug_message(("y:" + string(y)))

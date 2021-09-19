@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 with (obj_npc_room)
     instance_destroy()
 wirecon = 0

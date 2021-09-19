@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 image_speed = 0
 sndcon = 0
 sndtimer = 0

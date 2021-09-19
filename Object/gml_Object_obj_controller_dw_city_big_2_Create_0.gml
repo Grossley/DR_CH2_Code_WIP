@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 forcefield = gml_Script_scr_forcefield(680, 1040, 2, 8, 1, 1)
 toggle = 0
 hasToggled = 0

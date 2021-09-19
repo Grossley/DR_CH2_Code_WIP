@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (con == 1 && (!gml_Script_d_ex()))
 {
     if instance_exists(obj_controller_dining3)

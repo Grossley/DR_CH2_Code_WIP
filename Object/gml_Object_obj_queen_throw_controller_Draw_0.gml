@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (lerpintimer < 16 && con == 0)
 {
     y = lerp((ystart - 200), (ystart + 160), (lerpintimer / 15))

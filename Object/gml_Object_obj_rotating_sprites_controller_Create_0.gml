@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 x = (o_boxingcontroller.x + 38)
 y = (o_boxingcontroller.y - 96)
 f = 2

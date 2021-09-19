@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (con == 0 && obj_mainchara.x >= x)
 {
     gml_Script_instance_create((gml_Script___view_get(0, 0) + 700), obj_mainchara.y, obj_dogcar)

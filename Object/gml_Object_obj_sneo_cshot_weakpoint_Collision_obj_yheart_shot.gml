@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (deathtimer > 0)
     return;
 if (destroyable == 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if instance_exists(obj_controller_dw_mansion_east_1f_a)
     obj_controller_dw_mansion_east_1f_a.triggered = 1
 image_index = 1

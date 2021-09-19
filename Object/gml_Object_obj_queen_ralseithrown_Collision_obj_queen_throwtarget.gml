@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (other.collided == 0)
 {
     slash = gml_Script_instance_create(other.x, other.y, obj_slashEffect)

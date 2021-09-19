@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 bspace = 30
 padding = 5
 wd = 160

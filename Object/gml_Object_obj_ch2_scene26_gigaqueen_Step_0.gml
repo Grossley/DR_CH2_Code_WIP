@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if release
 {
     if (!head_init)

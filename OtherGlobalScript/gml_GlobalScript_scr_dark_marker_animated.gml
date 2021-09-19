@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var x_pos = argument[0]
 var y_pos = argument[1]
 var sprite = argument[2]

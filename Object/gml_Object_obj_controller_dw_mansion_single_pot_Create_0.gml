@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 con = 0
 drawtimer = 0
 visible = true

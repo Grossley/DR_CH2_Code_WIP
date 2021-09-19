@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 siner += 1
 if (mode == 0)
     y = (ystart + (sin((siner / 16)) * 5))

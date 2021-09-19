@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (flippable == 1)
     flip = 1
 if (isswitch == 1)

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (initialized == 0)
     initialized = 1
 if (waiting == 0)

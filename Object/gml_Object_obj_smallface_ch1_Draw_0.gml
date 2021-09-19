@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 if (facealpha < 1)
     facealpha += 0.2
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, facealpha)

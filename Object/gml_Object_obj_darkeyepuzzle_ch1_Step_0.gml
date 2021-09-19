@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (eye[0] == 1 && eye[1] == 1 && eye[2] == 1)
 {
     if (con == 0 && global.interact == 0)

@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 drawblack = 2
 drawtrack = 1
 trackx = 0

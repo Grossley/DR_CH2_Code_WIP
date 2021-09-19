@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 global.flag[220] = -1
 global.flag[221] = -1
 global.flag[222] = -1

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 timer = random(900)
 c_rainbow = (((obj_overworld_spade_homing).room_speed / 50) % 255)
 var _temp_local_var_1 = 255

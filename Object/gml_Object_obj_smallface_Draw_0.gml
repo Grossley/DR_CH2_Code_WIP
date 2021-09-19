@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 if (global.darkzone == true)
 {
     if (facealpha < 1)

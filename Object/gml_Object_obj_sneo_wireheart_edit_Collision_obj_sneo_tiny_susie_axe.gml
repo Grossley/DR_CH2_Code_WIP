@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (global.turntimer < 150)
 {
     hp = 0

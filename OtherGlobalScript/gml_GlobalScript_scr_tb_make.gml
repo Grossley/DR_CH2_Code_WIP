@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var _mytbullet = gml_Script_instance_create(x, (y - argument0), obj_teacup_bullet)
 var _temp_local_var_1 = _mytbullet
 spin = argument1

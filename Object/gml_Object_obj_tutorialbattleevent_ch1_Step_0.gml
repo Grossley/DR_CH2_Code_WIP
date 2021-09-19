@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (con < 400)
 {
     if (con == 1 && gml_Script___view_get(0, 0) >= (xx - 13) && gml_Script___view_get(0, 0) <= (xx + 20) && global.interact == 0)

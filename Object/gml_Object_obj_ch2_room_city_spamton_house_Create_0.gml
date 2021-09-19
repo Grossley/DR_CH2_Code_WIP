@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.flag[309] == 9)
 {
     with (obj_queenscreen)

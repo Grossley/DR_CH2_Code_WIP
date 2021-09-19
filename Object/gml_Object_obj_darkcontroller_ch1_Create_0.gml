@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 cur_jewel = 0
 alarm[0] = 1
 charcon = 0

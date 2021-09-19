@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 afterimage = gml_Script_instance_create(x, y, obj_afterimage_cut)
 afterimage.sprite_index = sprite_index
 afterimage.image_index = image_index

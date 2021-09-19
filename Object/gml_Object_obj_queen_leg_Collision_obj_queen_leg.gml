@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (direction == 270 && other.direction == 180)
 {
     hurttimer = 20

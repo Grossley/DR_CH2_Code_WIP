@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (weird == 0)
 {
     if (obj_mainchara.x >= x && con == -1)

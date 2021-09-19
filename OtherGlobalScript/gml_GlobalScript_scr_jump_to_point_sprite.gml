@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 __jump_to_point = gml_Script_instance_create(x, y, obj_jump_to_point)
 __jump_to_point.target = id
 var _temp_local_var_1 = __jump_to_point

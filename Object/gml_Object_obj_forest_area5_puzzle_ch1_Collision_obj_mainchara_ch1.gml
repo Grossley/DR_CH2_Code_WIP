@@ -1,4 +1,3 @@
-var _temp_local_var_6;
 qualify = 0
 if (type == 0)
 {

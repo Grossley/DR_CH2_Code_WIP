@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 con = 1
 npc = gml_Script_instance_create_ch1(x, y, 1408)
 if (global.plot >= 80 || global.flag[238] == 1)

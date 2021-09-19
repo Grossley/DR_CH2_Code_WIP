@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (!init_forcefields)
 {
     init_forcefields = 1

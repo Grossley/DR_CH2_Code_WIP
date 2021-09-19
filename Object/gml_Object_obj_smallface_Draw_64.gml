@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 if (global.darkzone == false)
 {
     cx = gml_Script_camerax()

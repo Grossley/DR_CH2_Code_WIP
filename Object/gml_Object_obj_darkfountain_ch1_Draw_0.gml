@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 siner += 1
 hscroll += 1
 if (hscroll > 240)

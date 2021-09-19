@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 tcon = 0
 image_speed = 0.05
 gml_Script_scr_depth()

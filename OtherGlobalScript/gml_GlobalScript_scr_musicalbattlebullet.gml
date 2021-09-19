@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 var _bulletDepth = 0
 var _bpm = 60
 var _yTop = -40

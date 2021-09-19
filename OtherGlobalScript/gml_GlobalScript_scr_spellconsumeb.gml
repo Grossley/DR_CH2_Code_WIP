@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 global.tension -= cost
 global.faceaction[global.charturn] = 2
 global.charaction[global.charturn] = 2

@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 f = 2
 image_xscale = 2
 image_yscale = 2

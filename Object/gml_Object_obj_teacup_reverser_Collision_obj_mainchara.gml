@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var _teacups = 1088
 if (!is_undefined(specificTeacup))
     _teacups = specificTeacup

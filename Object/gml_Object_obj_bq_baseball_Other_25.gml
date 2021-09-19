@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (o_boxingcontroller.punchcon > 0 && o_boxingcontroller.punchcon <= 4)
     return;
 if (o_boxingcontroller.invincible == 1)

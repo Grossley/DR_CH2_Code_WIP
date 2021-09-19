@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 buffer++
 if (buffer < 60)
     return;

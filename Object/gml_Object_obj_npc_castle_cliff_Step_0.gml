@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (con == 1 && (!gml_Script_d_ex()) && gml_Script_i_ex(101))
 {
     if (!sfx)

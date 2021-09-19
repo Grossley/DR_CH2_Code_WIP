@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if gml_Script_scr_debug()
 {
     if (keyboard_check_pressed(ord("G")) && (!keyboard_check(vk_control)) && gif_recording == 0)

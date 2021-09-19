@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (active == true)
 {
     if (global.interact == 0)

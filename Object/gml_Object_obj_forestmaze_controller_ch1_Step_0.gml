@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (lancercon == 1)
 {
     if (obj_mainchara_ch1.y <= 480)

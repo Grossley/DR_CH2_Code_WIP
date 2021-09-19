@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 image_speed = 0
 image_index = 0
 tiltAmount = 0

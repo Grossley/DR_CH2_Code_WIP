@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 gml_Script_scr_bullet_init()
 timer = 0
 con = 0

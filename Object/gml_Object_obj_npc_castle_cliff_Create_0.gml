@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 con = -1
 sinerx = 0
 sinery = 0

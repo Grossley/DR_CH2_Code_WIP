@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (init == 0)
 {
     xx = gml_Script___view_get(0, 0)

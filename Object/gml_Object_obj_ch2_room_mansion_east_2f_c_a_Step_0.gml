@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (dothis == 1)
 {
     saucerCount = 0

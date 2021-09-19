@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 shake = 8
 hp -= other.damage
 if (image_index < 3)

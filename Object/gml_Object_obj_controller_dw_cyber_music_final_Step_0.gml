@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 timer++
 if gml_Script_i_ex(movingwall1)
     movingwall1.x = obj_MovingPlat_dw_cyber_music_final.x

@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if instance_exists(obj_controller_dining3)
 {
     if (obj_controller_dining3.dogcon == 4.1 || obj_controller_dining3.dogcon == 3.1 || obj_controller_dining3.dogcon == 42069)

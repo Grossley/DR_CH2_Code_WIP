@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (room == room_dw_mansion_dininghall)
 {
     if (gml_Script_scr_sideb_get_phase() == 3)

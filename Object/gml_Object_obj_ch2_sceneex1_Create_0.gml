@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 con = -1
 customcon = 0
 su_actor = -1

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 for (i = 0; i < 20; i += 1)
 {
     prevalpha[i] = 0

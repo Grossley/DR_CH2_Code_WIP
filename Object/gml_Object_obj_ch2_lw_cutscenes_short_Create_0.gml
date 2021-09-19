@@ -1,4 +1,3 @@
-var _temp_local_var_6;
 con = 0
 destroyme = 0
 if (global.chapter != 2)

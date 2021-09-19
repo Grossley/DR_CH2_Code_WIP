@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.chapter != 2)
     instance_destroy()
 else

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 _charactor = argument0
 _charinstance = obj_herokris
 if (_charactor == "noelle")

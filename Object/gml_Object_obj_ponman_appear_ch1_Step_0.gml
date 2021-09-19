@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (con == 0)
 {
     if (obj_mainchara_ch1.x >= (x - 60) && obj_mainchara_ch1.x <= (x + 60))

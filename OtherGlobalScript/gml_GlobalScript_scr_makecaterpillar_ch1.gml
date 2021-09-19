@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 global.cinstance[argument3] = gml_Script_instance_create_ch1(argument0, argument1, 1489)
 global.cinstance[argument3].target = (12 + (argument3 * 12))
 if (argument2 == 3)

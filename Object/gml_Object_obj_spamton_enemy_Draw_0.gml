@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (bodymode == 0)
 {
     if (state == 3)

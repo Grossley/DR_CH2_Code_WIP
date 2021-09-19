@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 _actorid = argument0
 _actorinstance = argument1
 _actorname = argument2

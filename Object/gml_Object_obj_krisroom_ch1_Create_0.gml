@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.plot <= 10)
     gml_Script_snd_free_all_ch1()
 con = 0

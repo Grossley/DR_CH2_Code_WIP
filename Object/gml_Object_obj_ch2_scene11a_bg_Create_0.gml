@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 cityscape_bg_0 = gml_Script_instance_create(0, 0, obj_looping_tiled_area)
 cityscape_bg_0.sprite_index = spr_cyber_coaster_bg_tile
 cityscape_bg_0.width = ((sprite_get_width(spr_cyber_coaster_bg_cityscape) * 2) * 3)

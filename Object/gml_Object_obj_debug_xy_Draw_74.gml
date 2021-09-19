@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 _selected_string = "No object!#MouseL:Choose&Drag#MouseR:Drag From Anchor"
 if gml_Script_i_ex(selected_object)
 {

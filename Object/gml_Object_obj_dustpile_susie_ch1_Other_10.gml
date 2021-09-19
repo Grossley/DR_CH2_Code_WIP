@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (bust == 0)
 {
     gml_Script_snd_free_ch1(global.currentsong[0])

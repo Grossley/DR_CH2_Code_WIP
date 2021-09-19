@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (leapmode == 0)
 {
     if (jumpcon == 1)

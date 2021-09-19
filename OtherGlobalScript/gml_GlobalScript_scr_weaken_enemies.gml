@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 for (i = 0; i < 3; i++)
 {
     if (!global.monster[i])

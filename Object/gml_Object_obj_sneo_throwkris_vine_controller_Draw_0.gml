@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 for (i = 0; i < 6; i += 1)
 {
     x1[i] = ((((obj_spamton_neo_enemy.x + obj_spamton_neo_enemy.partx[i]) + (obj_spamton_neo_enemy.partxoff[i] / 1.2)) + (i * 5)) + (sin((obj_spamton_neo_enemy.partsiner[i] / 30)) * 2))

@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 var solidcheck = 0
 cancollide = false
 if (sliding == 0 && global.interact == 0)

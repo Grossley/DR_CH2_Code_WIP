@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var i = 0
 while (i < argument3)
 {

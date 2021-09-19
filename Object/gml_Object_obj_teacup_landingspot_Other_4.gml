@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (teacupTarget == -1)
     teacupTarget = 1088
 var _temp_local_var_1 = teacupTarget

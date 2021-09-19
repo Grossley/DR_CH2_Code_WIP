@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var _layer_index = argument0
 if (!layer_exists(_layer_index))
     return;

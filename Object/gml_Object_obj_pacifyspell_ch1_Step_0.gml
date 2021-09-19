@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (instance_exists(target) == 0)
 {
     con = 99

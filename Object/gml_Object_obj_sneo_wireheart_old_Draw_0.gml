@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if gml_Script_i_ex(boss)
 {
     var xx = (50 - (boss.heart_release_con * 100))

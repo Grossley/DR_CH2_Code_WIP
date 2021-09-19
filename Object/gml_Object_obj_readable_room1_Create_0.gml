@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 myinteract = 0
 image_speed = 0
 read = 0

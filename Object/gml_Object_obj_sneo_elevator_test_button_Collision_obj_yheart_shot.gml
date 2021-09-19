@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (invincible <= 0)
 {
     invincible = 4

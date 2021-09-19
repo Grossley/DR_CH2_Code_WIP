@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 futuredir = point_direction(x, y, (obj_heart.x + 8), (obj_heart.y + 8))
 if (active == false)
 {

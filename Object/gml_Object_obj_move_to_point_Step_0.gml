@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if gml_Script_i_ex(target)
 {
     if (moved == 0)

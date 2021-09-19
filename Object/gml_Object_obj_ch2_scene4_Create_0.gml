@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 con = 0
 ra_npc = pointer_null
 su_npc = pointer_null

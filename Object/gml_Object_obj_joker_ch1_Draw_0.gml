@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (state == 3)
 {
     if (hurttimer > 0)

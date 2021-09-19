@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 bossid = 999
 bossid = instance_find(object_index, 0)
 flamesfx = 0

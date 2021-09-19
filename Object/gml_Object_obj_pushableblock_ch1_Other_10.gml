@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (global.interact == 0 && event == 0)
 {
     movedir = global.facing

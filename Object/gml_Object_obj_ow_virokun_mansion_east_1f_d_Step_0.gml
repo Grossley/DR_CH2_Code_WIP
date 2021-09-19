@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 gentimer += 1
 if (con == 0)
 {

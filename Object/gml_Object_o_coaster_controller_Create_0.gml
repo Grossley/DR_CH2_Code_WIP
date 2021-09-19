@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 timer = 0
 timermax = 180
 playerinput = 0

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if fade_away
 {
     if (main_alpha > 0)

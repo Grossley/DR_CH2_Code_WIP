@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (t == 0)
 {
     truew = sprite_get_width(sprite_index)

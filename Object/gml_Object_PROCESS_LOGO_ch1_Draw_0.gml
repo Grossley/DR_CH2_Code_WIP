@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (os_type == os_macosx)
     draw_screen = skiptimer < 29
 if draw_screen

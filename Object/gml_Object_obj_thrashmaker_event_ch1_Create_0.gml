@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 con = 1
 x = 400
 y = 300

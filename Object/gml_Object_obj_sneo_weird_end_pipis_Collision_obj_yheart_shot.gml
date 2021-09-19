@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 event_user(0)
 gml_Script_snd_play(166)
 if (other.big == 0)

@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 buffer += 1
 if (buffer == 19)
 {

@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 pressbuffer[global.char[argument0]] = 5
 qualifybolt = -1
 close = 99

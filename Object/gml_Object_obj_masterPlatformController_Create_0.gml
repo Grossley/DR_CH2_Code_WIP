@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 freeze = 0
 mouseSpawn = 0
 freezespawn = -1

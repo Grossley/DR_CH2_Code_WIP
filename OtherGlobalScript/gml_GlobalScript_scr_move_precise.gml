@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 _moveprecise = gml_Script_instance_create(x, y, obj_move_precise)
 _moveprecise.target = id
 _moveprecise.type = argument0

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (con == 0)
 {
     if instance_exists(obj_ow_virokun_mansion_east_1f_d)

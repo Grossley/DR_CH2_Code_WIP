@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (con == -1 && (!instance_exists(obj_ch2_scene23a)))
 {
     con = 1

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 hp--
 if (x <= (gml_Script_camerax() + 480))
 {

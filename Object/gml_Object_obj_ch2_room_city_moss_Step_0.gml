@@ -1,4 +1,3 @@
-var _temp_local_var_7;
 if (con == 0 && (!gml_Script_d_ex()))
 {
     con = 1

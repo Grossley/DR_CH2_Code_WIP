@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (x > (o_boxingcontroller.basex - 120) && x < (o_boxingcontroller.basex + 120) && speedup == 0 && o_boxingqueen.firstwheelattack == 0)
 {
     speedup = 2

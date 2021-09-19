@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 con = -1
 customcon = 0
 if (global.chapter != 2 || global.flag[315] == 1)

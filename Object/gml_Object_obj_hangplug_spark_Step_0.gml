@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 timer += 1
 if (timer <= 15)
 {

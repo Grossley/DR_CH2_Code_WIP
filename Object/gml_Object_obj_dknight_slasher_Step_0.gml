@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (con == 0)
 {
     throwernumber = instance_number(object_index)

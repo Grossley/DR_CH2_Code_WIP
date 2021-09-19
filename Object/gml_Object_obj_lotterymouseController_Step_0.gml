@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (victory == false)
 {
     if (global.flag[378] == 1 && global.flag[377] == 1)

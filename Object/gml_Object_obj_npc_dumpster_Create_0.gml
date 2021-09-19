@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 event_inherited()
 con = -1
 moss_con = -1

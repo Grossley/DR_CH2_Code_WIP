@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 depth = 96850
 laserx = (x + (27 * image_xscale))
 lasery = (y - (12 * image_yscale))

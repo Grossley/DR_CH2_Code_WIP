@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 __writerkilled = 0
 __writerkillable = 0
 __writerended = 0

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var __scriptdelay = gml_Script_instance_create(0, 0, obj_script_delayed)
 __scriptdelay.script = argument[0]
 alarm[0] = __scriptdelay

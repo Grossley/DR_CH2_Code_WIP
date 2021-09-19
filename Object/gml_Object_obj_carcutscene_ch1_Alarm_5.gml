@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 global.typer = 8
 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_carcutscene_slash_Alarm_5_gml_2_0")
 global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_carcutscene_slash_Alarm_5_gml_3_0")

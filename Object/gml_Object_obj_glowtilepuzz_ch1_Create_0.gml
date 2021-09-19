@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 record = 0
 tiletotal = 0
 image_xscale = 2

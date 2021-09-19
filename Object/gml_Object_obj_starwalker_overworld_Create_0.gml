@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 siner = 0
 targetx = 0
 wing_index = 0

@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 objanim = gml_Script_instance_create(x, y, obj_anim)
 objanim.target = id
 objanim.sprite_index = argument0

@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 global.fighting = false
 if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbattle == 3)
 {

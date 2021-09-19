@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 depth = (other.depth + 1)
 if (built == 0)
 {

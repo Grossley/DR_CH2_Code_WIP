@@ -1,4 +1,3 @@
-var _temp_local_var_6;
 if (obj_mainchara.x > 120 && con == 0)
     con = 1
 if (con == 1 && (!gml_Script_d_ex()))

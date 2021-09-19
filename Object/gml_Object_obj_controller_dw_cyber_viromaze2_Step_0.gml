@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (noleavefield == obj_sneo_friedpipis && global.flag[352] != 1)
 {
     if (obj_mainchara.x >= 240)

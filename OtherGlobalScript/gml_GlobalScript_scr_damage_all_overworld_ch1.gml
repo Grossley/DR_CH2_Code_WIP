@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.inv < 0)
 {
     remdamage = damage

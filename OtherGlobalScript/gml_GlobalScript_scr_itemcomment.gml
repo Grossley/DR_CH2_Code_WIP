@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 talkx = gml_Script_scr_charbox_x(argument0)
 itemcomment = gml_Script_instance_create((talkx + xx), (yy + 460), obj_menuwriter)
 itemcomment.msg = argument1

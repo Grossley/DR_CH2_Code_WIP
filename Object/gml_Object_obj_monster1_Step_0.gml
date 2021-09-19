@@ -1,4 +1,3 @@
-var _temp_local_var_7;
 if (global.monster[myself] == true)
 {
     if (global.mnfight == 1 && talked == 0)

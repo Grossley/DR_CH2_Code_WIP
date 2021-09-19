@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 visible = true
 image_alpha = 0
 con = 0

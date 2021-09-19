@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 xx = gml_Script_camerax()
 yy = gml_Script_cameray()
 if (con == 0)

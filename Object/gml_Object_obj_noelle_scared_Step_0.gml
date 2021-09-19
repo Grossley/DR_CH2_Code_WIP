@@ -1,4 +1,3 @@
-var _temp_local_var_9;
 graceperiod--
 if (con == 1 && graceperiod < 0)
 {

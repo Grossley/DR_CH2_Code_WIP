@@ -1,4 +1,3 @@
-var _temp_local_var_7;
 if (global.plot < 140)
 {
     if (con == -1 && swanboat.x >= 40)

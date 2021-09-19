@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (!other.active)
     return;
 var _grazetpfactor = grazetpfactor

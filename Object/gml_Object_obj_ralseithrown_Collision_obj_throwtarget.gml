@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (collided == 0)
 {
     if (other.good == 1)

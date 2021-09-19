@@ -1,4 +1,3 @@
-var _temp_local_var_7;
 if active
 {
     gml_Script_scr_depth()

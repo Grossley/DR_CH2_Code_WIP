@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 dustparticle = gml_Script_instance_create_ch1(((x + random((sprite_width - 10))) + 10), ((y + 20) + random((sprite_height - 20))), 1402)
 var _temp_local_var_1 = dustparticle
 sprite_index = spr_rabbick_dustorb_ch1

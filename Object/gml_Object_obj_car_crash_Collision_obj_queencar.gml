@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (!crash)
 {
     if gml_Script_i_ex(1011)

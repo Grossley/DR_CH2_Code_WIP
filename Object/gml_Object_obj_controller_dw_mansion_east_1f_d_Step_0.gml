@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (instance_exists(obj_mainchara) && obj_mainchara.x >= 320 && global.flag[354] == 0 && spawnedGates == 0 && spawnedViro == 0)
 {
     spawnedGates = 1

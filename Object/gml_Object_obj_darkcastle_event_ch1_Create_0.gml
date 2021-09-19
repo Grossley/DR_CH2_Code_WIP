@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 con = 0
 rflip = 0
 if (global.plot >= 20)

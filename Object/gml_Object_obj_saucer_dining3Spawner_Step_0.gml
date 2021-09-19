@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 timer++
 if (dontalpha == 0)
     image_alpha += 0.2

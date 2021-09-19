@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 if (wobbled == 0)
 {
     if (instance_exists(obj_mainchara_ch1) && global.interact == 0)

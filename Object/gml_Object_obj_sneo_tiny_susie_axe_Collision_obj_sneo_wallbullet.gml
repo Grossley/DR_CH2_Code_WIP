@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (other.active == false)
     return;
 if (other.destroyable == 1)

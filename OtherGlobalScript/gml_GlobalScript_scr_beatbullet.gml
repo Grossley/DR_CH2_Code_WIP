@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var _frames = argument[1]
 var _targetBeat = argument[2]
 var _yTop = gml_Script_cameray()

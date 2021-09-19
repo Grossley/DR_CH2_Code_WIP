@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (myinteract == 3)
 {
     if (global.flag[20] == 0)

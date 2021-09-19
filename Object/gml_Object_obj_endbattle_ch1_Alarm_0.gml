@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 with (obj_mainchara_ch1)
 {
     if (global.specialbattle != 3)

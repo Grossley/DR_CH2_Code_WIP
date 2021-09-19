@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (y < (gml_Script_cameray() + 290))
     depth = (obj_heart.depth - 2)
 if (y > (gml_Script_cameray() + 290))

@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 cancollide = false
 if (global.interact == 0 || collide == 1)
     cancollide = true

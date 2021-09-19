@@ -1,4 +1,3 @@
-var _temp_local_var_6;
 if (dir == "left")
 {
     if (target.going == "left")

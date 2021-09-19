@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 var _temp_local_var_1 = shadow
 x = obj_mainchara.x
 sprite_index = obj_mainchara.sprite_index

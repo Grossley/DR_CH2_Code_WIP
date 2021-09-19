@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 if (myinteract == 3)
 {
     if (!gml_Script_i_ex(mydialoguer))

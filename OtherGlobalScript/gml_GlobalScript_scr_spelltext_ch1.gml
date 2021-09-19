@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 spell = argument0
 caster = argument1
 star = global.chartarget[argument1]

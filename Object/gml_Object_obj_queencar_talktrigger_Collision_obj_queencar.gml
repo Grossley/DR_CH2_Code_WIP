@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (specialtalkcon == 0)
 {
     var _temp_local_var_1 = other

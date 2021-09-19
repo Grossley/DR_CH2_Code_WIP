@@ -1,4 +1,3 @@
-var _temp_local_var_2;
 switch argument0
 {
     case 0:

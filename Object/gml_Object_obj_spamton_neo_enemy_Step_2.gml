@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 if (obj_spamton_neo_enemy.singleshotmercy > 9)
 {
     with (obj_spamton_neo_enemy)

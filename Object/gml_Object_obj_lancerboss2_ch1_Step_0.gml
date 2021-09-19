@@ -1,4 +1,3 @@
-var _temp_local_var_9;
 if (firstskip == 1)
 {
     global.acting[0] = 1

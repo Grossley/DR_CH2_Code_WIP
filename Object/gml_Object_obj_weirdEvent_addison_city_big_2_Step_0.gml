@@ -1,4 +1,3 @@
-var _temp_local_var_5;
 if (con == 0)
 {
     if (global.flag[915] == 2 && global.flag[916] == 0)

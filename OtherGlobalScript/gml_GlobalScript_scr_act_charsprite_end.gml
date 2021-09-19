@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 i = 0
 while (i < 10)
 {

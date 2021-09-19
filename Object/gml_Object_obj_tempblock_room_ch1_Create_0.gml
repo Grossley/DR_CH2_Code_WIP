@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 block = gml_Script_instance_create_ch1(x, y, 1656)
 block.image_xscale = image_xscale
 block.image_yscale = image_yscale

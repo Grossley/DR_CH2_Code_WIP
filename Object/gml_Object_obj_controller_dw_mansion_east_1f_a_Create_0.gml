@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 enemy1 = 0
 enemy3 = 0
 enemy2 = gml_Script_instance_create(x, y, obj_chaseenemy)

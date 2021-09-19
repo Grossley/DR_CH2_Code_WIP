@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 layer_set_visible("reference", 0)
 init = 0
 if (global.flag[542] != 0)

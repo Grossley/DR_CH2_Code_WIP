@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (global.flag[317] == 0)
 {
     dogd = gml_Script_instance_create(186, 56, obj_npc_sign)

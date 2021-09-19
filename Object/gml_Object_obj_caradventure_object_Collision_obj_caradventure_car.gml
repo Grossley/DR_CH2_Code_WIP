@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (type == "banana")
 {
     gml_Script_snd_play(172)

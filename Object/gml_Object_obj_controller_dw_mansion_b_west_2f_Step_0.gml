@@ -1,4 +1,3 @@
-var _temp_local_var_4;
 if (instance_exists(obj_mainchara) && obj_mainchara.x <= 1920 && global.flag[373] == 0 && con == 0)
 {
     forcefield = gml_Script_instance_create(2280, 400, obj_forcefield)

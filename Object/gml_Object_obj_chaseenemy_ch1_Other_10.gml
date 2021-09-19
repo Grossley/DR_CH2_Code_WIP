@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (touchflag > 0)
     global.flag[touchflag] = 1
 newme = gml_Script_instance_create_ch1(x, y, 1487)

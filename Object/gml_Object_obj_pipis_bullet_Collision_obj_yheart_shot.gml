@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (obj_spamton_neo_enemy.difficulty == 2)
 {
     var _temp_local_var_1 = other

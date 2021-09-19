@@ -1,4 +1,3 @@
-var _temp_local_var_1;
 if (noleave == 0)
 {
     with (obj_mainchara)

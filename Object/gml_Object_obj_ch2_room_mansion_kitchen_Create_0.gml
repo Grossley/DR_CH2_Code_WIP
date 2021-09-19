@@ -1,4 +1,3 @@
-var _temp_local_var_3;
 con = -1
 for (var i = 0; i < 26; i++)
 {
