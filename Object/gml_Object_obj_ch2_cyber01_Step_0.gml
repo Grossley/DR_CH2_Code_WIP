@@ -69,7 +69,11 @@ if (con == 20)
     gml_Script_c_autowalk(0)
     nisekk.x = 2200
     nisekk.y = (gml_Script_cameray() - 400)
-    depth = 95000
+    with (nisekk)
+        depth = 95000
+    djtableb = gml_Script_scr_dark_marker((room_width + 120), 300, 499)
+    djtableb.depth = 500000
+    djtableb.image_speed = 0.25
 }
 if (con == 21)
 {

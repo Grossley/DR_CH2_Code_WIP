@@ -945,7 +945,7 @@ if (global.charweapon[4] == 13)
     if ((t_siner % 6) == 0)
     {
         if (global.hp[4] > round((global.maxhp[4] / 3)))
-            global.hp[4] -= 1
+            global.hp[4] = (global.hp[4] - 1)
     }
 }
 t_siner++

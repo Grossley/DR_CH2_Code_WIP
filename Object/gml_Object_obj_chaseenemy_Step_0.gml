@@ -499,7 +499,7 @@ if (frozen == false)
             if (chasetype == 8)
                 targalarm = 8
             excl = gml_Script_instance_create((x + (sprite_width / 2)), (y - 20), obj_excblcon)
-            alarm[0] = excl
+            excl.alarm[0] = targalarm
             alarm[4] = targalarm
         }
         else

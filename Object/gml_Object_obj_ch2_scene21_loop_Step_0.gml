@@ -266,7 +266,7 @@ if (global.plot < 150)
         puddle.image_yscale = 2
         puddle.depth = (thrash.depth + 1)
         puddle.image_speed = 0
-        puddle.image_index = thrash = (part[0] == 2 ? 2 : 0)
+        puddle.image_index = (thrash.part[0] == 2 ? 2 : 0)
         puddle.visible = false
         var rouxls_ypos = (global.flag[221] == 3 ? (thrash.y + 45) : (thrash.y + 19))
         if (global.flag[221] == 2)

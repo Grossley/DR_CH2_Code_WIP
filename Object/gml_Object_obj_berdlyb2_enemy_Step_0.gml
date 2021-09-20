@@ -644,7 +644,7 @@ if (global.bmenuno == 99)
             gml_Script_scr_anyface_next("none", 0)
             gml_Script_msgnextloc("%%", "obj_berdlyb2_enemy_slash_Step_0_gml_726_0")
         }
-        global.flag[924] += 1
+        global.flag[924] = (global.flag[924] + 1)
         with (obj_writer)
             instance_destroy()
         gml_Script_scr_battletext()

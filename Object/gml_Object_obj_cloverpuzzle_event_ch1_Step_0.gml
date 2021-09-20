@@ -1,6 +1,6 @@
 if (pcon == 0 && global.interact == 0)
 {
-    if ((puzzle.suit[0] == 4) && ((puzzle.suit[1] == 1) && ((puzzle.suit[2] == 2) && (global.flag[234] == 0))))
+    if (puzzle.suit[0] == 4 && puzzle.suit[1] == 1 && puzzle.suit[2] == 2 && global.flag[234] == 0)
     {
         with (blockn)
             instance_destroy()

@@ -12,10 +12,10 @@ if (obj_mainchara.x > 650 && con == -1)
     berdly_wire = gml_Script_instance_create(900, -100, obj_berdly_wire)
     berdly_wire2 = gml_Script_instance_create(900, -100, obj_berdly_wire_release_example_2)
     berdly_plug = gml_Script_scr_dark_marker(810, (gml_Script_cameray() - 200), 249)
-    save_object[0] = cutscene_master
-    save_object[1] = cutscene_master
-    save_object[2] = cutscene_master
-    save_object[3] = cutscene_master
+    cutscene_master.save_object[0] = berdly_wire
+    cutscene_master.save_object[1] = berdly_plug
+    cutscene_master.save_object[2] = id
+    cutscene_master.save_object[3] = berdly_wire2
     qu = (actor_count + 1)
     qu_actor = gml_Script_instance_create(1058, 125, obj_actor)
     gml_Script_scr_actor_setup(qu, qu_actor, "queen")

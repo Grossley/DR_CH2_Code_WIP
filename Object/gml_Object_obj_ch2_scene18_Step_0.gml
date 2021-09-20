@@ -8,7 +8,30 @@ if (con == 1)
     con = 1.5
     cutscene_master = gml_Script_scr_cutscene_make()
     cutscene_master.save_object[0] = id
-    visible = false
+    with (obj_mainchara)
+        visible = false
+    with (obj_caterpillarchara)
+        visible = false
+    kr = 0
+    kr_actor = gml_Script_instance_create(243, 225, obj_actor)
+    gml_Script_scr_actor_setup(kr, kr_actor, "kris")
+    kr_actor.sprite_index = spr_krisd_dark
+    su = 2
+    su_actor = gml_Script_instance_create(440, 266, obj_actor)
+    gml_Script_scr_actor_setup(su, su_actor, "susie")
+    su_actor.sprite_index = spr_susie_walk_left_dw
+    la = 3
+    la_actor = gml_Script_instance_create(350, 288, obj_actor)
+    gml_Script_scr_actor_setup(la, la_actor, "lancer")
+    la_actor.sprite_index = spr_lancer_rt
+    la_actor.sprite_palette = 1307
+    be = 4
+    be_actor = gml_Script_instance_create(804, 200, obj_actor)
+    gml_Script_scr_actor_setup(be, be_actor, "berdly")
+    be_actor.sprite_index = spr_berdly_walk_down_dw_unhappy
+    be_actor.rsprite = spr_berdly_walk_right_dw_unhappy
+    be_actor.lsprite = spr_berdly_walk_left_dw_unhappy
+    be_actor.dsprite = spr_berdly_walk_down_dw_unhappy
 }
 if (con == 1.5)
 {

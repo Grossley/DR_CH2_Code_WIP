@@ -9,7 +9,7 @@ if (other.block == 0)
         hitted = 1
         hspeed = 12
         vspeed = -12
-        global.flag[462] += 1
+        global.flag[462] = (global.flag[462] + 1)
         if (small == 1)
         {
             audio_play_sound(snd_smallcar_yelp, 0, false)

@@ -55,7 +55,7 @@ if (con == 2)
     dog = remdog
     memx = dog.x
     memy = dog.y
-    save_object[0] = cutscene_master
+    cutscene_master.save_object[0] = dog
     con++
 }
 if (con == 3)

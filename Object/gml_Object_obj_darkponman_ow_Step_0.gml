@@ -17,8 +17,7 @@ if (con == 0)
 {
     if (made == 0)
     {
-        i = 0
-        while (i < bmax)
+        for (i = 0; i < bmax; i += 1)
         {
             xa = (lengthdir_x((eyer * (2 + (i * 2))), (rot - (i * 2))) + offx)
             ya = (lengthdir_y((eyer * (2 + (i * 2))), (rot - (i * 2))) + offy)
@@ -32,7 +31,6 @@ if (con == 0)
             fb[i].alarm[0] = -10
             fb[i].image_alpha = 0
             fb[i].image_xscale = 0.7
-            i += 1
         }
         made = 1
     }
