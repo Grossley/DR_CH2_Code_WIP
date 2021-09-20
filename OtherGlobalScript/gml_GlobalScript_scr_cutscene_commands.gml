@@ -296,7 +296,7 @@ if (_c == "sprite")
     command_actor[i].sprite_index = command_arg1[i]
 if (_c == "specialsprite")
 {
-    command_actor[i].sprite_index = specialsprite[command_arg1[i]]
+    command_actor[i].sprite_index = command_actor[i].specialsprite[command_arg1[i]]
     command_actor[i].specialspriteno = command_arg1[i]
 }
 if (_c == "visible")
