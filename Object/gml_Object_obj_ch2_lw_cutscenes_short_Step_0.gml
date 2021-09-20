@@ -68,8 +68,8 @@ if (room == room_schoollobby)
         su_actor.sprite_index = spr_cutscene_03a_susie_leaning_down
         su_actor.x = 237
         su_actor.y = 183
-        specialsprite[0] = su_actor
-        specialsprite[1] = su_actor
+        su_actor.specialsprite[0] = 14
+        su_actor.specialsprite[1] = 15
         gml_Script_c_sel(0)
         gml_Script_c_walk_wait("d", 1, 10)
         gml_Script_c_wait(30)
@@ -225,17 +225,17 @@ if (room == room_schooldoor)
         su_actor.sprite_index = spr_susie_walk_up_lw
         su_actor.x = 313
         su_actor.y = 246
-        specialsprite[0] = su_actor
-        specialsprite[1] = su_actor
-        specialsprite[1] = su_actor
+        su_actor.specialsprite[0] = 20
+        su_actor.specialsprite[1] = 21
+        su_actor.specialsprite[1] = 21
         no = (actor_count + 2)
         no_actor = gml_Script_instance_create(x, y, obj_actor)
         gml_Script_scr_actor_setup(no, no_actor, "noelle")
         no_actor.sprite_index = spr_noelle_walk_up_lw
         no_actor.x = su_actor.x
         no_actor.y = 252
-        specialsprite[0] = no_actor
-        specialsprite[1] = no_actor
+        no_actor.specialsprite[0] = 17
+        no_actor.specialsprite[1] = 18
         gml_Script_c_mus2("initloop", "creepydoor.ogg", 0)
         gml_Script_c_sel(kr)
         gml_Script_c_walk("u", 2, 60)

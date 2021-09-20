@@ -232,9 +232,7 @@ if (global.myfight == 3)
             basket.cancatch[2] = true
         }
         else
-        {
             basket.cancatch[myself] = true
-        }
         basket.trappingX = trappingX
         actcon = 11
         caught[0] = 0

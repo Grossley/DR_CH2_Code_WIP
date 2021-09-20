@@ -18,7 +18,7 @@ with (myPiece)
     sprite_index = obj_shapepuzzle.sprite_index
     _count = instance_number(obj_shapepuzzlepiece)
     image_index = (1 + _count)
-    image_blend = pieceColours[(_count - 1)]
+    image_blend = other.pieceColours[(_count - 1)]
     image_xscale = 2
     image_yscale = 2
     if (room == room_dw_mansion_darkbulb_2 && image_index == 5)

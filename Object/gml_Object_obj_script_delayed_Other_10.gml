@@ -1,13 +1,8 @@
 if gml_Script_i_ex(target)
 {
     target.__scipt = script
-    i = 0
-    while (i < 10)
-    {
-        __scipt_arg[i] = target
-        i++
-        var _temp_local_var_1 = script_arg[i]
-    }
+    for (i = 0; i < 10; i++)
+        target.__scipt_arg[i] = script_arg[i]
     if (arg_count == 0)
     {
         with (target)

@@ -259,6 +259,16 @@ if (global.myfight == 3)
     {
         with (obj_poppup_enemy)
         {
+            for (var __i = 1; __i < 3; __i++)
+            {
+                if (global.actingtarget[__i] == myself && global.char[__i] > 0)
+                {
+                    global.acting[__i] = 0
+                    global.actingsimul[__i] = 0
+                    global.actingsingle[__i] = 0
+                    global.faceaction[__i] = 0
+                }
+            }
             gml_Script_scr_mercyadd(myself, 100)
             gml_Script_scr_spare(myself)
         }

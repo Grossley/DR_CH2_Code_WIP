@@ -789,7 +789,7 @@ if (menu == 4)
 }
 if gml_Script_down_p()
 {
-    if (menu != 11 && menu != 12 && menu != 13)
+    if (menu != 11 && menu != 12 && menu != 13 && greybg != 1)
     {
         menuc[menu] += 1
         if (menuc[menu] > menumax)
@@ -798,7 +798,7 @@ if gml_Script_down_p()
 }
 if gml_Script_up_p()
 {
-    if (menu != 11 && menu != 12 && menu != 13)
+    if (menu != 11 && menu != 12 && menu != 13 && greybg != 1)
     {
         menuc[menu] -= 1
         if (menuc[menu] < 0)

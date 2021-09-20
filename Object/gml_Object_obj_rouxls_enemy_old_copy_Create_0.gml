@@ -31,7 +31,7 @@ puddle.image_xscale = 2
 puddle.image_yscale = 2
 puddle.depth = (thrash.depth + 1)
 puddle.image_speed = 0
-puddle.image_index = thrash = (part[0] == 2 ? 2 : 0)
+puddle.image_index = (thrash.part[0] == 2 ? 2 : 0)
 submerged = 1
 keytestmode = 0
 saberanim = 0

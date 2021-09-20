@@ -35,8 +35,8 @@ puddle.sprite_index = spr_rouxls_puddle
 puddle.image_xscale = 2
 puddle.image_yscale = 2
 puddle.image_speed = 0
-puddle.image_index = thrash = (part[0] == 2 ? 2 : 0)
-var turretbody = thrash = (part[0] == 2)
+puddle.image_index = (thrash.part[0] == 2 ? 2 : 0)
+var turretbody = thrash.part[0] == 2
 puddle.x = (remx + (turretbody ? 18 : 34))
 puddle.y = ((remy + 173) + ((thrash.s * cos(((thrash.wsiner + thrash.wsinerrate) / 3))) / 4))
 puddle.image_index = (turretbody ? 2 : 0)

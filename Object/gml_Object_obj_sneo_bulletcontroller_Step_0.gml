@@ -37,8 +37,8 @@ if (type == 0)
     {
         if (btimer == 40 || btimer == 150 || btimer == 260)
         {
-            sneoarm_x = sneo.x = (sneo + partxoff[1])
-            sneoarm_y = sneo.y = (sneo + partyoff[1])
+            sneoarm_x = (sneo.x + sneo.partxoff[1])
+            sneoarm_y = (sneo.y + sneo.partyoff[1])
             armangle = (-68 - random(32))
             side = armangle
             d = gml_Script_instance_create((sneoarm_x + lengthdir_x(60, (armangle - 90))), (sneoarm_y + lengthdir_y(60, (armangle - 90))), obj_sneo_biglaser)

@@ -90,7 +90,9 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
         b.alarm[0] = -10
         b.image_xscale = 2
         b.image_yscale = 2
-        move_towards_point((obj_mainchara.x + 2), (obj_mainchara.y + 4), 4)
+        with (b)
+            move_towards_point((obj_mainchara.x + 2), (obj_mainchara.y + 4), 4)
+        b.friction = -0.2
     }
     if (cause_explosion == 1)
     {

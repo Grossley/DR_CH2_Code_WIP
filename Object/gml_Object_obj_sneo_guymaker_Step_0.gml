@@ -97,8 +97,7 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
         }
         if (row == 3 && timer != 20)
         {
-            guyi = 0
-            while (guyi < 2)
+            for (guyi = 0; guyi < 2; guyi++)
             {
                 guy[guyi] = gml_Script_instance_create((xx + 300), ((yy - 40) + (400 * guyi)), obj_sneo_lilguy)
                 guy[guyi].vspeed = (18 - (36 * guyi))
@@ -108,41 +107,31 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
                 guy[guyi].gravity = (0.8 - (1.6 * guyi))
                 guy[guyi].gravity_direction = 90
                 guy[guyi].destroyable = 1
-                guyi++
             }
         }
         if (row == 6 && timer == 5)
         {
             spawncount = 2
             var a = 0
-            var _temp_local_var_19 = spawncount
-            if (spawncount <= 0)
+            repeat spawncount
             {
-            }
-            else
-            {
-                while (true)
-                {
-                    guy = gml_Script_instance_create(((xx + 410) + (a * 70)), ((yy - 20) + 0), obj_sneo_lilguy)
-                    guy.vspeed = 15
-                    guy.alarm[0] = 44
-                    guy.alarm[1] = 30
-                    guy.alarm[2] = 32
-                    guy.gravity = 0.53
-                    guy.gravity_direction = 90
-                    guy.destroyable = 1
-                    guy = gml_Script_instance_create(((xx + 445) + (a * 70)), ((yy - 20) + 400), obj_sneo_lilguy)
-                    guy.vspeed = -15
-                    guy.alarm[0] = 44
-                    guy.alarm[1] = 40
-                    guy.alarm[2] = (32 - 1)
-                    guy.gravity = -0.53
-                    guy.gravity_direction = 90
-                    guy.destroyable = 1
-                    a++
-                    if (32 - 1)
-                        continue
-                }
+                guy = gml_Script_instance_create(((xx + 410) + (a * 70)), ((yy - 20) + 0), obj_sneo_lilguy)
+                guy.vspeed = 15
+                guy.alarm[0] = 44
+                guy.alarm[1] = 30
+                guy.alarm[2] = 32
+                guy.gravity = 0.53
+                guy.gravity_direction = 90
+                guy.destroyable = 1
+                guy = gml_Script_instance_create(((xx + 445) + (a * 70)), ((yy - 20) + 400), obj_sneo_lilguy)
+                guy.vspeed = -15
+                guy.alarm[0] = 44
+                guy.alarm[1] = 40
+                guy.alarm[2] = 32
+                guy.gravity = -0.53
+                guy.gravity_direction = 90
+                guy.destroyable = 1
+                a++
             }
         }
         if (row == 7 && timer != 20)
@@ -152,7 +141,8 @@ if (type == 1 || type == 2 || type == 3 || type == 4 || type == 5 || type == 6 |
             guy.alarm[1] = 40
             guy.alarm[2] = 32
             guy.destroyable = 1
-            path_start(path_sneo_head_path1, 11, path_action_stop, 0)
+            with (guy)
+                path_start(path_sneo_head_path1, 11, path_action_stop, 0)
         }
     }
     if (type == 2 && timer >= 41)

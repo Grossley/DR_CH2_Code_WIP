@@ -47,7 +47,7 @@ if (ripple_effect == 0 && flashtimer >= (flashspeed / 2))
         ripple.use_pivot = 1
         ripple.maxsize = clamp((1 - ((y - 90) / 45)), 0.1, 2)
         ripple.image_speed = 0
-        ripple.image_index = obj_ch2_scene21_loop.thrash = (part[0] == 2)
+        ripple.image_index = obj_ch2_scene21_loop.thrash.part[0] == 2
         ripple.depth = (depth - 1)
     }
 }

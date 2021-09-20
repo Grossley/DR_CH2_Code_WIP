@@ -11,8 +11,8 @@ if (timer <= 90)
     else if (timer > 60)
     {
         var easedlerp = gml_Script_scr_ease_inout(((timer - 60) / 30), 2)
-        easedlerp.x = lerp(maxx, xpos[followindex], memory)
-        easedlerp.y = lerp(maxy, ypos[followindex], memory)
+        x = lerp(maxx, memory.xpos[followindex], easedlerp)
+        y = lerp(maxy, memory.ypos[followindex], easedlerp)
         if instance_exists(obj_maus_holes)
             obj_maus_holes.dontcreatemouse = 0
     }
@@ -20,8 +20,8 @@ if (timer <= 90)
 }
 else
 {
-    memory.x = xpos[followindex]
-    memory.y = ypos[followindex]
+    x = memory.xpos[followindex]
+    y = memory.ypos[followindex]
     followindex++
 }
 d = gml_Script_instance_create(x, y, obj_maus_cursor_trail)

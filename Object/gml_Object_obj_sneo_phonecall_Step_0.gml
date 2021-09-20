@@ -49,19 +49,13 @@ if (state == 6)
             {
                 with (obj_sneo_bulletcontroller)
                     instance_destroy()
-                var _temp_local_var_9 = sneo
-                var _temp_local_var_10 = (secondtime ? 30 : 70)
-                var xx = (sneo + partxoff[1])
-                var _temp_local_var_12 = sneo
-                var _temp_local_var_8 = (gml_Script_scr_orbitx(0, 0, -26, (sneo + partx[1]), partrot[1]) + sneo.x)
-                var _temp_local_var_13 = (secondtime ? 30 : 70)
-                var yy = (sneo + partyoff[1])
+                var xx = (((gml_Script_scr_orbitx(0, 0, -26, (secondtime ? 30 : 70), sneo.partrot[1]) + sneo.x) + sneo.partx[1]) + sneo.partxoff[1])
+                var yy = (((gml_Script_scr_orbity(0, 0, -26, (secondtime ? 30 : 70), sneo.partrot[1]) + sneo.y) + sneo.party[1]) + sneo.partyoff[1])
                 global.monsterattackname[obj_spamton_neo_enemy.myself] = "FootballPipis"
                 d = gml_Script_instance_create(xx, yy, obj_sneo_bulletcontroller)
                 d.type = 1
                 d.damage = (global.monsterat[obj_spamton_neo_enemy.myself] * 5)
                 d.target = target
-                var _temp_local_var_11 = (gml_Script_scr_orbity(0, 0, -26, (sneo + party[1]), partrot[1]) + sneo.y)
             }
         }
         state = 7

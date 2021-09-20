@@ -3,8 +3,11 @@ if (myinteract == 1 && (!gml_Script_d_ex()))
     myinteract = 0
     global.interact = 0
 }
-if keyboard_check_pressed(vk_space)
-    tasquespawn = 1
+if gml_Script_scr_debug()
+{
+    if keyboard_check_pressed(vk_space)
+        tasquespawn = 1
+}
 if (extflag == 2 && tasquespawn == 1)
 {
     if (tasquecon == 0 && tasqueTrig == 0)

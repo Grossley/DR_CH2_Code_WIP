@@ -10,8 +10,6 @@ if (con == 1)
             scaredNoelle.targety = 225
         }
         if (room == room_dw_city_mice2)
-        {
             scaredNoelle.alarm[0] = 1
-        }
     }
 }

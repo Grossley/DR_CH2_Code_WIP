@@ -35,12 +35,8 @@ if (whitetimer >= 20 && whitecon == 1)
     if gml_Script_i_ex(global.cinstance[0])
     {
         global.cinstance[0].x -= xdiff
-        i = 25
-        while (i >= 0)
-        {
+        for (i = 25; i >= 0; i -= 1)
             global.cinstance[0].remx[i] -= xdiff
-            i -= 1
-        }
     }
     if gml_Script_i_ex(global.cinstance[1])
     {

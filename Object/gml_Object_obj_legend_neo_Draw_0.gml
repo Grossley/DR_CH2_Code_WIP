@@ -1,7 +1,10 @@
-if keyboard_check_pressed(vk_backspace)
+if gml_Script_scr_debug()
 {
-    gml_Script_snd_free_all()
-    room_restart()
+    if keyboard_check_pressed(vk_backspace)
+    {
+        gml_Script_snd_free_all()
+        room_restart()
+    }
 }
 if (drawpic == 1)
 {

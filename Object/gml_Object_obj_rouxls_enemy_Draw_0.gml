@@ -58,7 +58,7 @@ becomeflash = false
 if gml_Script_scr_debug()
 {
 }
-var turretbody = thrash = part[0] == 2
+var turretbody = thrash.part[0] == 2
 thrash.s = 3
 var puddx = (remx + (turretbody ? 18 : 34))
 var puddy = ((remy + 173) + ((thrash.s * thrash.walkc) / 4))

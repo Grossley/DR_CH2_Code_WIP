@@ -41,12 +41,8 @@ if (whitetimer >= 20 && whitecon == 1)
     if instance_exists(global.cinstance[1])
     {
         global.cinstance[1].x -= xdiff
-        i = 25
-        while (i >= 0)
-        {
+        for (i = 25; i >= 0; i -= 1)
             global.cinstance[1].remx[i] -= xdiff
-            i -= 1
-        }
     }
     whitecon = 2
 }

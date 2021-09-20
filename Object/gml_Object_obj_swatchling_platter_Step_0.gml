@@ -54,13 +54,10 @@ if (!lidOff)
                     if (side == 1)
                         d.image_xscale *= -1
                     d.platter_spawn = 1
-                    d.image_blend = bird_color[i]
-                    d.damage = red_damage[i]
-                    d.target = red_target[i]
+                    d.image_blend = swatchbc.bird_color[i]
+                    d.damage = swatchbc.red_damage[i]
+                    d.target = swatchbc.red_target[i]
                     d.grazepoints = 4
-                    var _temp_local_var_2 = swatchbc
-                    var _temp_local_var_3 = swatchbc
-                    var _temp_local_var_4 = swatchbc
                     if (i == offbird)
                         d.fixed_angle = 1
                     i++

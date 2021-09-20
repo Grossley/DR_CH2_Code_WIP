@@ -16,4 +16,5 @@ if (caught[other.which] == 0)
 }
 monsterhit[other.which] = 1
 maker.caught[other.which] = 1
-actfailure = 0
+with (obj_mauswheel_enemy)
+    actfailure = 0

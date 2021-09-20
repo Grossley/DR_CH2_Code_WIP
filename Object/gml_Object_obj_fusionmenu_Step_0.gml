@@ -254,7 +254,7 @@ if (init == 0)
         if (subtype == 2 || subtype == 1)
         {
             if (subtype == 1)
-                gml_Script_scr_recruit_info_all("either")
+                gml_Script_scr_recruit_info_all("total")
             if (subtype == 2)
                 gml_Script_scr_recruit_info_all("either", 2)
             alternateMenu = 1

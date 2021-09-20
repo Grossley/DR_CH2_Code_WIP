@@ -90,8 +90,7 @@ if (state == 0)
         var offset = 36
         var xx = ((x + 80) + lengthdir_x(offset, targetDirection))
         var yy = ((y + 40) + lengthdir_y(offset, targetDirection))
-        i = 0
-        while (i < 2)
+        for (i = 0; i < 2; i++)
         {
             temp = gml_Script_instance_create(xx, yy, obj_tm_quizletter)
             temp.sprite_index = spr_tm_letters
@@ -108,7 +107,6 @@ if (state == 0)
                 temp.depth++
             }
             temp.alarm[0] = ((20 * (turns - currentturn)) - (((turns - 1) - currentturn) * 2))
-            i++
         }
         currentturn++
         gml_Script_snd_play(voiceclips[_letter])
