@@ -32,9 +32,9 @@ if (t >= 1)
         for (j = 0; j <= ys; j += 1)
         {
             if (bsin[i][j] <= 0)
-                bspeed[i][j][j] += 1
-            bx[i][j][j] += bspeed[i][j]
-            bsin[i][j][j] -= 1
+                bspeed[i][j] += 1
+            bx[i][j] += bspeed[i][j]
+            bsin[i][j] -= 1
         }
     }
 }

@@ -85,7 +85,7 @@ if (global.myfight == 0)
             if (global.bmenucoord[0][global.charturn] == 0)
                 global.bmenucoord[0][global.charturn] = 4
             else
-                global.bmenucoord[0][global.charturn][global.charturn] -= 1
+                global.bmenucoord[0][global.charturn] -= 1
             movenoise = true
             rbuffer = 1
         }
@@ -94,7 +94,7 @@ if (global.myfight == 0)
             if (global.bmenucoord[0][global.charturn] == 4)
                 global.bmenucoord[0][global.charturn] = 0
             else
-                global.bmenucoord[0][global.charturn][global.charturn] += 1
+                global.bmenucoord[0][global.charturn] += 1
             movenoise = true
             lbuffer = 1
         }
@@ -122,7 +122,7 @@ if (global.myfight == 0)
                 for (i = 0; i < 12; i += 1)
                 {
                     if (tempitem[global.bmenucoord[4][global.charturn]][global.charturn] == 0 && global.bmenucoord[4][global.charturn] > 0)
-                        global.bmenucoord[4][global.charturn][global.charturn] -= 1
+                        global.bmenucoord[4][global.charturn] -= 1
                 }
             }
             if (global.bmenucoord[0][global.charturn] == 3)
@@ -172,20 +172,20 @@ if (global.myfight == 0)
                 {
                     cango = false
                     if ((spellcoord % 2) == 1 && spellcoord > 0)
-                        global.bmenucoord[2][global.charturn][global.charturn] -= 1
+                        global.bmenucoord[2][global.charturn] -= 1
                 }
             }
             else
             {
-                global.bmenucoord[2][global.charturn][global.charturn] -= 1
+                global.bmenucoord[2][global.charturn] -= 1
                 cango = false
             }
             if (cango == true)
             {
                 if ((spellcoord % 2) == 0)
-                    global.bmenucoord[2][global.charturn][global.charturn] += 1
+                    global.bmenucoord[2][global.charturn] += 1
                 else
-                    global.bmenucoord[2][global.charturn][global.charturn] -= 1
+                    global.bmenucoord[2][global.charturn] -= 1
             }
         }
         if gml_Script_left_p_ch1()
@@ -195,9 +195,9 @@ if (global.myfight == 0)
             if (global.spell[thischar][1] != 0)
             {
                 if ((spellcoord % 2) == 0)
-                    global.bmenucoord[2][global.charturn][global.charturn] += 1
+                    global.bmenucoord[2][global.charturn] += 1
                 else
-                    global.bmenucoord[2][global.charturn][global.charturn] -= 1
+                    global.bmenucoord[2][global.charturn] -= 1
             }
         }
         if gml_Script_down_p_ch1()
@@ -216,7 +216,7 @@ if (global.myfight == 0)
             if (cango != false)
             {
                 if (cango == true)
-                    global.bmenucoord[2][global.charturn][global.charturn] += 2
+                    global.bmenucoord[2][global.charturn] += 2
                 if (cango == 2)
                     global.bmenucoord[2][global.charturn] = 6
             }
@@ -228,7 +228,7 @@ if (global.myfight == 0)
             if (spellcoord <= 1)
                 cango = false
             if (cango == true)
-                global.bmenucoord[2][global.charturn][global.charturn] -= 2
+                global.bmenucoord[2][global.charturn] -= 2
         }
         global.tensionselect = global.spellcost[thischar][global.bmenucoord[2][global.charturn]]
         if (gml_Script_button1_p_ch1() && global.spell[thischar][global.bmenucoord[2][global.charturn]] != 0 && onebuffer < 0)
@@ -266,7 +266,7 @@ if (global.myfight == 0)
         with (obj_smallface_ch1)
             depth = 10
         if (tempitem[global.bmenucoord[4][global.charturn]][global.charturn] == 0)
-            global.bmenucoord[4][global.charturn][global.charturn] -= 1
+            global.bmenucoord[4][global.charturn] -= 1
         if gml_Script_right_p_ch1()
         {
             cango = true
@@ -277,20 +277,20 @@ if (global.myfight == 0)
                 {
                     cango = false
                     if ((itemcoord % 2) == 1 && itemcoord > 0)
-                        global.bmenucoord[4][global.charturn][global.charturn] -= 1
+                        global.bmenucoord[4][global.charturn] -= 1
                 }
             }
             else
             {
-                global.bmenucoord[4][global.charturn][global.charturn] -= 1
+                global.bmenucoord[4][global.charturn] -= 1
                 cango = false
             }
             if (cango == true)
             {
                 if ((itemcoord % 2) == 0)
-                    global.bmenucoord[4][global.charturn][global.charturn] += 1
+                    global.bmenucoord[4][global.charturn] += 1
                 else
-                    global.bmenucoord[4][global.charturn][global.charturn] -= 1
+                    global.bmenucoord[4][global.charturn] -= 1
             }
         }
         if gml_Script_left_p_ch1()
@@ -300,9 +300,9 @@ if (global.myfight == 0)
             if (tempitem[1][global.charturn] != 0)
             {
                 if ((itemcoord % 2) == 0)
-                    global.bmenucoord[4][global.charturn][global.charturn] += 1
+                    global.bmenucoord[4][global.charturn] += 1
                 else
-                    global.bmenucoord[4][global.charturn][global.charturn] -= 1
+                    global.bmenucoord[4][global.charturn] -= 1
             }
         }
         if gml_Script_down_p_ch1()
@@ -321,7 +321,7 @@ if (global.myfight == 0)
             if (cango != false)
             {
                 if (cango == true)
-                    global.bmenucoord[4][global.charturn][global.charturn] += 2
+                    global.bmenucoord[4][global.charturn] += 2
                 if (cango == 2)
                     global.bmenucoord[4][global.charturn] = 6
             }
@@ -333,10 +333,10 @@ if (global.myfight == 0)
             if (itemcoord <= 1)
                 cango = false
             if (cango == true)
-                global.bmenucoord[4][global.charturn][global.charturn] -= 2
+                global.bmenucoord[4][global.charturn] -= 2
         }
         if (tempitem[global.bmenucoord[4][global.charturn]][global.charturn] == 0)
-            global.bmenucoord[4][global.charturn][global.charturn] -= 1
+            global.bmenucoord[4][global.charturn] -= 1
         if (gml_Script_button1_p_ch1() && tempitem[global.bmenucoord[4][global.charturn]][global.charturn] != 0 && onebuffer < 0)
         {
             onebuffer = 2
@@ -368,20 +368,20 @@ if (global.myfight == 0)
                 {
                     cango = false
                     if ((actcoord % 2) == 1 && actcoord > 0)
-                        global.bmenucoord[9][global.charturn][global.charturn] -= 1
+                        global.bmenucoord[9][global.charturn] -= 1
                 }
             }
             else
             {
-                global.bmenucoord[9][global.charturn][global.charturn] -= 1
+                global.bmenucoord[9][global.charturn] -= 1
                 cango = false
             }
             if (cango == true)
             {
                 if ((actcoord % 2) == 0)
-                    global.bmenucoord[9][global.charturn][global.charturn] += 1
+                    global.bmenucoord[9][global.charturn] += 1
                 else
-                    global.bmenucoord[9][global.charturn][global.charturn] -= 1
+                    global.bmenucoord[9][global.charturn] -= 1
             }
         }
         if gml_Script_left_p_ch1()
@@ -391,10 +391,10 @@ if (global.myfight == 0)
             if ((actcoord % 2) == 0)
             {
                 if (global.canact[thisenemy][(actcoord + 1)] != false)
-                    global.bmenucoord[9][global.charturn][global.charturn] += 1
+                    global.bmenucoord[9][global.charturn] += 1
             }
             else
-                global.bmenucoord[9][global.charturn][global.charturn] -= 1
+                global.bmenucoord[9][global.charturn] -= 1
         }
         if gml_Script_down_p_ch1()
         {
@@ -407,7 +407,7 @@ if (global.myfight == 0)
             if (cango != false)
             {
                 if (cango == true)
-                    global.bmenucoord[9][global.charturn][global.charturn] += 2
+                    global.bmenucoord[9][global.charturn] += 2
             }
         }
         if gml_Script_up_p_ch1()
@@ -417,7 +417,7 @@ if (global.myfight == 0)
             if (actcoord <= 1)
                 cango = false
             if (cango == true)
-                global.bmenucoord[9][global.charturn][global.charturn] -= 2
+                global.bmenucoord[9][global.charturn] -= 2
         }
         global.tensionselect = global.actcost[thisenemy][global.bmenucoord[9][global.charturn]]
         canpress = true
@@ -632,7 +632,7 @@ if (global.myfight == 0)
                         {
                             if (actcoord > 0)
                             {
-                                global.bmenucoord[9][global.charturn][global.charturn] -= 1
+                                global.bmenucoord[9][global.charturn] -= 1
                                 actcoord -= 1
                             }
                         }

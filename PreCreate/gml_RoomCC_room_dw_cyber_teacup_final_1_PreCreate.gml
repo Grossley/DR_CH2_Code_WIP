@@ -1,6 +1,6 @@
 uniqueRideExperience = 2
-endY = 2305.y
-jumpToRide = 102305
+endY = instance_id[102305].y
+jumpToRide = instance_id[102304]
 riseSpeed = 5
 spinSpeed = 7
 uniqueBulletPattern = 3

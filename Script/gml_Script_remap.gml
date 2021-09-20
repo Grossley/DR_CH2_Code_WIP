@@ -1,6 +1,2 @@
-scr_remapvalue = method(-1, gml_Script_scr_remapvalue)
-method(-1, gml_Script_scr_remapvalue)
-remap = method(-1, gml_Script_remap)
-method(-1, gml_Script_remap)
-remap_clamped = method(-1, gml_Script_remap_clamped)
-method(-1, gml_Script_remap_clamped)
+__invLerp = gml_Script_scr_inverselerp(argument1, argument2, argument0)
+return lerp(argument3, argument4, __invLerp);

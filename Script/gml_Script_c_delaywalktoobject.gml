@@ -1,8 +1,4 @@
-c_walktoobject = method(-1, gml_Script_c_walktoobject)
-method(-1, gml_Script_c_walktoobject)
-c_delaywalktoobject = method(-1, gml_Script_c_delaywalktoobject)
-method(-1, gml_Script_c_delaywalktoobject)
-c_walktoobject_wait = method(-1, gml_Script_c_walktoobject_wait)
-method(-1, gml_Script_c_walktoobject_wait)
-c_delaywalktoobject_wait = method(-1, gml_Script_c_delaywalktoobject_wait)
-method(-1, gml_Script_c_delaywalktoobject_wait)
+_targetx = (argument1.x + argument2)
+_targety = (argument1.y + argument3)
+gml_Script_c_cmd_x("delaycmd", argument0, "walkdirect", _targetx, _targety, argument4, 0)
+return;

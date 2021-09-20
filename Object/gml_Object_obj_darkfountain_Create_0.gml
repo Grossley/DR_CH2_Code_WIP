@@ -17,5 +17,3 @@ if (global.chapter == 2)
         fountainbg.depth = 2000000
     }
 }
-change_fountain_color = method(-1, gml_Script_change_fountain_color_gml_Object_obj_darkfountain_Create_0)
-method(-1, gml_Script_change_fountain_color_gml_Object_obj_darkfountain_Create_0)

@@ -240,7 +240,7 @@ if (EVENT == 38)
             NAME[0][i] = string((1 + i))
             NAMEX[0][i] = 80
             if (global.lang == "ja")
-                NAMEX[0][i][i] -= 16
+                NAMEX[0][i] -= 16
             NAMEY[0][i] = (100 + (i * 16))
             YMAX += 1
         }

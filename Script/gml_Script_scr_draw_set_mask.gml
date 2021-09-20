@@ -1,4 +1,10 @@
-scr_draw_set_mask = method(-1, gml_Script_scr_draw_set_mask)
-method(-1, gml_Script_scr_draw_set_mask)
-scr_draw_in_mask_begin = method(-1, gml_Script_scr_draw_in_mask_begin)
-method(-1, gml_Script_scr_draw_in_mask_begin)
+if (!instance_exists(obj_growtangle))
+    return;
+gpu_set_blendenable(0)
+gpu_set_colorwriteenable(0, 0, 0, 1)
+draw_set_alpha(0)
+if argument0
+{
+    draw_rectangle(gml_Script_camerax(), gml_Script_cameray(), (gml_Script_camerax() + 640), (gml_Script_cameray() + 480), false)
+    draw_set_alpha(1)
+}

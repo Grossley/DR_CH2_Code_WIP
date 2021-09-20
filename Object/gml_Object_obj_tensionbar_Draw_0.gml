@@ -73,10 +73,15 @@ if (current > 0)
     }
 }
 shit = 0
-@@try_hook@@(2224, 2272)
-if (global.tensionselect >= 0)
-    shit = 1
-@@try_unhook@@()
+try
+{
+    if (global.tensionselect >= 0)
+        shit = 1
+}
+catch (e)
+{
+    shit = 2
+}
 if (shit == 2)
     gml_Script_snd_play(40)
 if (global.tensionselect > 0)

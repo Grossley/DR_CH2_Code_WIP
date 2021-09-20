@@ -1,6 +1,2 @@
-scr_remapvalue = method(-1, gml_Script_scr_remapvalue)
-method(-1, gml_Script_scr_remapvalue)
-remap = method(-1, gml_Script_remap)
-method(-1, gml_Script_remap)
-remap_clamped = method(-1, gml_Script_remap_clamped)
-method(-1, gml_Script_remap_clamped)
+__remapped_value = gml_Script_remap(argument0, argument1, argument2, argument3, argument4)
+return clamp(__remapped_value, argument3, argument4);

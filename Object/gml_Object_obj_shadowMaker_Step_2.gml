@@ -56,17 +56,17 @@ if (type == 1)
         instancemax = 0
         with (obj_mainchara)
         {
-            @@Other@@().listinstance[other.instancemax] = id
+            other.listinstance[other.instancemax] = id
             other.instancemax++
         }
         with (obj_npc_butler)
         {
-            @@Other@@().listinstance[other.instancemax] = id
+            other.listinstance[other.instancemax] = id
             other.instancemax++
         }
         with (obj_caterpillarchara)
         {
-            @@Other@@().listinstance[other.instancemax] = id
+            other.listinstance[other.instancemax] = id
             other.instancemax++
         }
         init = 1

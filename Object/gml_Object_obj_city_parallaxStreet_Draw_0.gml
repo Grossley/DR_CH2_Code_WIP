@@ -9,7 +9,7 @@ for (var i = 0; i < max_cars; i++)
         if (room == room_dw_city_traffic_2 || room == room_dw_city_big_2)
             y_offset = -20
         var ypos = (j == 1 ? (404 + y_offset) : 444)
-        car_timer[i][j][j] += 5
+        car_timer[i][j] += 5
         if ((car_pos[i][j] + car_timer[i][j]) > ((room_width * 2) + 50))
         {
             car_pos[i][j] = -50

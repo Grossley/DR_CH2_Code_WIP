@@ -1,4 +1,2 @@
-scr_rotatetowards = method(-1, gml_Script_scr_rotatetowards)
-method(-1, gml_Script_scr_rotatetowards)
-scr_angle_lerp = method(-1, gml_Script_scr_angle_lerp)
-method(-1, gml_Script_scr_angle_lerp)
+__diff = angle_difference(argument1, argument0)
+return (argument0 + lerp(0, __diff, argument2));

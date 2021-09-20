@@ -5,12 +5,12 @@ if (hscroll > 240)
 if (adjust == 0)
 {
     colcol = gml_Script_scr_make_color_hsv((siner / 4), (160 + (sin((siner / 32)) * 60)), 255)
-    change_fountain_color = gml_Script_scr_make_color_hsv((siner / 4), 255, ((sin((siner / 16)) * 40) + 60))
+    gml_Script_change_fountain_color_gml_Object_obj_darkfountain_Create_0(gml_Script_scr_make_color_hsv((siner / 4), 255, ((sin((siner / 16)) * 40) + 60)))
 }
 if (adjust == 1)
 {
     colcol = merge_color(colcol, c_white, 0.06)
-    change_fountain_color = merge_color(nowcolor, c_black, 0.06)
+    gml_Script_change_fountain_color_gml_Object_obj_darkfountain_Create_0(merge_color(nowcolor, c_black, 0.06))
 }
 if (adjust == 2)
 {
@@ -18,7 +18,7 @@ if (adjust == 2)
         slowdown += 0.02
     siner -= slowdown
     bgsiner -= (slowdown / 16)
-    change_fountain_color = merge_color(nowcolor, c_white, 0.03)
+    gml_Script_change_fountain_color_gml_Object_obj_darkfountain_Create_0(merge_color(nowcolor, c_white, 0.03))
 }
 if (adjust == 3)
 {
@@ -28,7 +28,7 @@ if (adjust == 3)
     bgsiner -= (slowdown / 24)
     hscroll -= (slowdown * 0.8)
     colcol = merge_color(nowcolor, gml_Script_scr_make_color_hsv((siner / 16), (160 + (sin((siner / 128)) * 60)), 255), slowdown)
-    change_fountain_color = merge_color(nowcolor, gml_Script_scr_make_color_hsv((siner / 16), 255, ((sin((siner / 64)) * 40) + 60)), slowdown)
+    gml_Script_change_fountain_color_gml_Object_obj_darkfountain_Create_0(merge_color(nowcolor, gml_Script_scr_make_color_hsv((siner / 16), 255, ((sin((siner / 64)) * 40) + 60)), slowdown))
 }
 bgsiner += 0.0625
 if (bgsiner > 7)

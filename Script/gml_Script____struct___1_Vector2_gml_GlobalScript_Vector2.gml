@@ -1,2 +1,4 @@
-Vector2 = method(-1, gml_Script_Vector2)
-method(-1, gml_Script_Vector2)
+_tempVector = instance_create(obj_84_lang_helper)
+_tempVector.x = argument[0]
+_tempVector.y = argument[1]
+return _tempVector;

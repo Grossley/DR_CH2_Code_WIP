@@ -108,10 +108,10 @@ else
     specialCursor.y = -999
 if (flyaway == 1)
 {
-    tileHouseY[6][2][2] -= 16
-    tileHouseY[7][2][2] -= 17
-    tileHouseY[8][2][2] -= 16
-    tileHouseY[7][3][3] -= 18
-    tileHouseY[8][3][3] -= 15
-    tileHouseY[9][3][3] -= 19
+    tileHouseY[6][2] -= 16
+    tileHouseY[7][2] -= 17
+    tileHouseY[8][2] -= 16
+    tileHouseY[7][3] -= 18
+    tileHouseY[8][3] -= 15
+    tileHouseY[9][3] -= 19
 }
