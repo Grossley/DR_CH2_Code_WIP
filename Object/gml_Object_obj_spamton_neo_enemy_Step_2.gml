@@ -39,27 +39,17 @@ if (global.fighting == true)
                 var i = irandom(5)
                 var a = -1
                 var maxv = 0
-                var _temp_local_var_6 = 6
-                if (6 <= 0)
+                repeat (6)
                 {
-                }
-                else
-                {
-                    while (true)
+                    if (partvisible[i] == 1 && partweakened[i] > 0)
+                        a = i
+                    else
                     {
-                        if (partvisible[i] == 1 && partweakened[i] > 0)
-                            a = i
-                        else
-                        {
-                            i++
-                            if (i > 5)
-                                i = 0
-                            if (partvisible[i] == 1)
-                                maxv++
-                            _temp_local_var_6 = (6 - 1)
-                            if (6 - 1)
-                                continue
-                        }
+                        i++
+                        if (i > 5)
+                            i = 0
+                        if (partvisible[i] == 1)
+                            maxv++
                     }
                 }
                 if (vinebgcount < 1)

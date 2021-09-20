@@ -1331,27 +1331,17 @@ if (global.fighting == true)
             i = irandom(5)
             a = -1
             maxv = 0
-            var _temp_local_var_57 = 6
-            if (6 <= 0)
+            repeat (6)
             {
-            }
-            else
-            {
-                while (true)
+                if (partvisible[i] == 1 && partweakened[i] > 0)
+                    a = i
+                else
                 {
-                    if (partvisible[i] == 1 && partweakened[i] > 0)
-                        a = i
-                    else
-                    {
-                        i++
-                        if (i > 5)
-                            i = 0
-                        if (partvisible[i] == 1)
-                            maxv++
-                        _temp_local_var_57 = (6 - 1)
-                        if (6 - 1)
-                            continue
-                    }
+                    i++
+                    if (i > 5)
+                        i = 0
+                    if (partvisible[i] == 1)
+                        maxv++
                 }
             }
             if (vinebgcount < 1)
@@ -1415,27 +1405,17 @@ if (global.fighting == true)
             i = irandom(5)
             a = -1
             maxv = 0
-            var _temp_local_var_61 = 6
-            if (6 <= 0)
+            repeat (6)
             {
-            }
-            else
-            {
-                while (true)
+                if (partvisible[i] == 1 && partweakened[i] > 0)
+                    a = i
+                else
                 {
-                    if (partvisible[i] == 1 && partweakened[i] > 0)
-                        a = i
-                    else
-                    {
-                        i++
-                        if (i > 5)
-                            i = 0
-                        if (partvisible[i] == 1)
-                            maxv++
-                        _temp_local_var_61 = (6 - 1)
-                        if (6 - 1)
-                            continue
-                    }
+                    i++
+                    if (i > 5)
+                        i = 0
+                    if (partvisible[i] == 1)
+                        maxv++
                 }
             }
             if (vinebgcount < 1)
