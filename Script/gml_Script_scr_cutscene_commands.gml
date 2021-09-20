@@ -11,7 +11,7 @@ if (_c == "delaycmd")
     delaycmd.command_arg4[0] = command_arg6[i]
     if instant
     {
-        alarm[0] = delaycmd
+        delaycmd.alarm[0] = 0
         delaycmd.instant = 1
         with (delaycmd)
             event_user(0)

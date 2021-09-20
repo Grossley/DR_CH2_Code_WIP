@@ -191,7 +191,7 @@ switch spell
             gml_Script_scr_retarget_spell()
         if (cancelattack == false)
         {
-            global.flag[925] += 1
+            global.flag[925] = (global.flag[925] + 1)
             var minbattlemag = clamp((global.battlemag[argument1] - 10), 1, 999)
             global.spelldelay = 40
             damage = ceil((((minbattlemag * 30) + 90) + random(10)))

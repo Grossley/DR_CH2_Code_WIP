@@ -1,6 +1,6 @@
 __dmult = (1 + global.darkzone)
 __emotebubble = gml_Script_instance_create(x, (y - 15), obj_excblcon)
-alarm[0] = __emotebubble
+__emotebubble.alarm[0] = argument[1]
 __emotebubble.image_xscale = __dmult
 __emotebubble.image_yscale = __dmult
 __emotexoff = 0

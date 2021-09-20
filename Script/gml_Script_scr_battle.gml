@@ -27,7 +27,6 @@ for (__ien = 0; __ien < 3; __ien++)
             __doom.target = id
             __doom.alarm[0] = 25
         }
-        continue
     }
 }
 return;
