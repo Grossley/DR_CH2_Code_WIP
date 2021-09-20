@@ -13,7 +13,7 @@ if (global.monster[myself] == true)
     {
         global.flag[40] += 1
         if (fatal == 1)
-            global.flag[44] += 1
+            global.flag[44] = (global.flag[44] + 1)
     }
     if (global.flag[(51 + myself)] == 2)
         global.flag[41] += 1
@@ -55,7 +55,7 @@ if (global.monster[myself] == true)
         if (_violenced > 0)
             global.flag[50] = 1
         if (global.flag[50] == 6)
-            global.flag[926] += 1
+            global.flag[926] = (global.flag[926] + 1)
         if (global.flag[54] != 0)
         {
             global.flag[global.flag[54]] = global.flag[50]

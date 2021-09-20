@@ -1,7 +1,7 @@
 if (global.chapter == 2)
 {
     if (room == room_dw_mansion_b_west_2f)
-        global.tempflag[33] += 1
+        global.tempflag[33] = (global.tempflag[33] + 1)
 }
 if (global.flag[35] == 0)
 {

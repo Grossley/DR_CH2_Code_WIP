@@ -3489,7 +3489,7 @@ switch argument0
         if (global.choice == 0)
         {
             if (global.flag[337] < 2)
-                global.flag[337] += 1
+                global.flag[337] = (global.flag[337] + 1)
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* It's been a few years since my father passed on.../", "scr_text_slash_scr_text_gml_3955_0")
             gml_Script_msgnextloc("* Fans of his famous book series^1, Lord of the Hammer.../", "scr_text_slash_scr_text_gml_3956_0")
@@ -3502,7 +3502,7 @@ switch argument0
         else if (global.choice == 1)
         {
             if (global.flag[337] < 2)
-                global.flag[337] += 1
+                global.flag[337] = (global.flag[337] + 1)
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* As per the ritual^1, a hammer is buried in the earth here./", "scr_text_slash_scr_text_gml_3970_0")
             gml_Script_msgnextloc("* To symbolize his existence./", "scr_text_slash_scr_text_gml_3971_0")
@@ -5269,7 +5269,7 @@ switch argument0
             gml_Script_scr_itemget(16)
             if (noroom == false)
             {
-                global.flag[354] += 1
+                global.flag[354] = (global.flag[354] + 1)
                 if (global.gold >= 80)
                 {
                     global.gold -= 80
@@ -6340,7 +6340,7 @@ switch argument0
                 gml_Script_snd_play(149)
                 itemgetstring = gml_Script_scr_itemget_anytype_text(16, "item")
                 if (noroom == false)
-                    global.flag[423] += 1
+                    global.flag[423] = (global.flag[423] + 1)
                 gml_Script_scr_speaker("no_name")
                 gml_Script_msgset(0, itemgetstring)
             }
