@@ -23,7 +23,7 @@ if (global.monster[myself] == true)
         actcon = 0
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         talked = 1
         talktimer = 0
     }
@@ -39,7 +39,7 @@ if (global.monster[myself] == true)
                 hmake = 1
             }
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -50,7 +50,7 @@ if (global.monster[myself] == true)
             global.turntimer = 140
             if (turns == 0 || turns == 2)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 20
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -60,7 +60,7 @@ if (global.monster[myself] == true)
             }
             if (turns == 1)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 21
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -70,7 +70,7 @@ if (global.monster[myself] == true)
             }
             if (turns >= 3)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.difficulty = (turns * 2)
                 if (turns == 6)
                     dc.difficulty = 30
@@ -159,8 +159,8 @@ if (global.myfight == 3)
     if (actcon == 2 && (!instance_exists(obj_writer_ch1)))
     {
         gml_Script_snd_free_all_ch1()
-        gml_Script_snd_play_ch1(442)
-        black = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 20), (gml_Script___view_get(1, 0) - 20), 4277)
+        gml_Script_snd_play_ch1(snd_laz_c_ch1)
+        black = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 20), (gml_Script___view_get(1, 0) - 20), spr_pixel_white_ch1)
         with (black)
         {
             image_blend = c_black

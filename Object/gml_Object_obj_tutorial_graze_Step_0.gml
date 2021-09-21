@@ -36,7 +36,7 @@ if (!gml_Script_d_ex())
 {
     with (puzboy)
         fade = 1
-    if gml_Script_i_ex(1319)
+    if gml_Script_i_ex(obj_tutorial_bullet)
     {
         with (obj_tutorial_bullet)
             fade = 1

@@ -19,7 +19,7 @@ if gml_Script_scr_debug()
 {
     if (quicksaved != 2)
     {
-        if gml_Script_scr_84_debug(1)
+        if gml_Script_scr_84_debug(true)
             return;
     }
     if (keyboard_check_pressed(vk_f6) && quicksaved == 22)
@@ -171,7 +171,7 @@ if (obj_gamecontroller.gamepad_active == 1 && quicksaved != 2)
 {
     for (i = 0; i < 4; i += 1)
     {
-        if (keyboard_check(global.input_k[i]) || (gml_Script_i_ex(1109) && (gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[i]) || gml_Script_scr_gamepad_axis_check(obj_gamecontroller.gamepad_id, i))))
+        if (keyboard_check(global.input_k[i]) || (gml_Script_i_ex(obj_gamecontroller) && (gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[i]) || gml_Script_scr_gamepad_axis_check(obj_gamecontroller.gamepad_id, i))))
         {
             if (global.input_held[i] == 0)
                 global.input_pressed[i] = 1
@@ -186,7 +186,7 @@ if (obj_gamecontroller.gamepad_active == 1 && quicksaved != 2)
     }
     for (i = 4; i < 10; i += 1)
     {
-        if (keyboard_check(global.input_k[i]) || (gml_Script_i_ex(1109) && gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[i])))
+        if (keyboard_check(global.input_k[i]) || (gml_Script_i_ex(obj_gamecontroller) && gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[i])))
         {
             if (global.input_held[i] == 0)
                 global.input_pressed[i] = 1

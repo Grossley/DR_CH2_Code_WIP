@@ -22,7 +22,7 @@ if (type == 2)
             event_user(4)
     }
 }
-gml_Script_snd_play_ch1(381)
+gml_Script_snd_play_ch1(snd_noise_ch1)
 press_timer = 2
 with (obj_mainchara_ch1)
     onebuffer = 3

@@ -17,7 +17,7 @@ else
     gml_Script_scr_losechar()
     if instance_exists(obj_caterpillarchara)
         instance_destroy(obj_caterpillarchara)
-    susienpc = gml_Script_scr_dark_marker(1184, 231, 174)
+    susienpc = gml_Script_scr_dark_marker(1184, 231, spr_cutscene_18_susie_lancer_carry_walk_right)
     susienpc.image_speed = 0
     lancer_stone = 0
 }

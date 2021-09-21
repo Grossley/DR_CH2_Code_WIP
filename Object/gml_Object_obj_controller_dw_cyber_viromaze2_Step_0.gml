@@ -6,7 +6,7 @@ if (noleavefield == obj_sneo_friedpipis && global.flag[352] != 1)
 if (con == 1)
 {
     gml_Script_instance_create(0, 0, obj_shake)
-    gml_Script_snd_play(59)
+    gml_Script_snd_play(snd_locker)
     global.interact = 1
     gml_Script_scr_speaker("no_name")
     gml_Script_msgsetloc(0, "* Sounded like a forcefield deactivating./%", "obj_controller_dw_cyber_viromaze2_slash_Step_0_gml_9_0")

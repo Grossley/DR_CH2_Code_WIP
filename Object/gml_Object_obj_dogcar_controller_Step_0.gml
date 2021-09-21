@@ -21,7 +21,7 @@ if (con == 2)
     timer = 0
     remy = obj_mainchara.y
     remx = obj_mainchara.x
-    fellkris = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 2426)
+    fellkris = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, spr_kris_fell)
     fellkris.depth = -200
 }
 if (con == 3)

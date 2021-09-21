@@ -86,7 +86,7 @@ if (global.interact == 5)
         }
         if (gml_Script_button1_p_ch1() && onebuffer < 0 && global.submenu == 7)
         {
-            gml_Script_snd_play_ch1(425)
+            gml_Script_snd_play_ch1(snd_ultraswing_ch1)
             onebuffer = 2
             global.faceaction[0] = 0
             global.faceaction[1] = 0
@@ -132,7 +132,7 @@ if (global.interact == 5)
                         gml_Script_scr_itemget_ch1(4)
                         global.flag[207] = 1
                     }
-                    dl = gml_Script_instance_create_ch1(0, 0, 1326)
+                    dl = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
                     dl.free = 1
                 }
             }
@@ -319,7 +319,7 @@ if (global.interact == 5)
             if (sndchange == true && sndbuffer < 0)
             {
                 audio_group_set_gain(1, global.flag[15], 0)
-                gml_Script_snd_play_ch1(381)
+                gml_Script_snd_play_ch1(snd_noise_ch1)
                 sndbuffer = 2
             }
             if (muschange == true)
@@ -329,7 +329,7 @@ if (global.interact == 5)
             }
             if (audchange == true && sndbuffer < 0)
             {
-                gml_Script_snd_play_ch1(381)
+                gml_Script_snd_play_ch1(snd_noise_ch1)
                 sndbuffer = 2
                 audio_set_master_gain(0, global.flag[17])
             }
@@ -352,7 +352,7 @@ if (global.interact == 5)
             {
                 global.chapter_return = 1
                 gml_Script_snd_free_all_ch1()
-                var lastfade = gml_Script_instance_create_ch1(gml_Script___view_get(0, 0), gml_Script___view_get(1, 0), 1460)
+                var lastfade = gml_Script_instance_create_ch1(gml_Script___view_get(0, 0), gml_Script___view_get(1, 0), obj_fadeout_ch1)
                 lastfade.fadespeed = 0.05
                 lastfade.x = (gml_Script___view_get(0, 0) - 20)
                 lastfade.y = (gml_Script___view_get(1, 0) - 20)
@@ -524,7 +524,7 @@ if (global.interact == 5)
                 }
                 if (global.submenucoord[35] == 7)
                 {
-                    gml_Script_snd_play_ch1(443)
+                    gml_Script_snd_play_ch1(snd_levelup_ch1)
                     gml_Script_scr_controls_default_ch1()
                     control_flash_timer = 10
                 }
@@ -909,7 +909,7 @@ if (global.interact == 5)
                     gml_Script_scr_itemuse_ch1((global.keyitem[sm] + 300))
                 }
                 else
-                    gml_Script_snd_play_ch1(419)
+                    gml_Script_snd_play_ch1(snd_cantselect_ch1)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
@@ -1144,7 +1144,7 @@ if (global.interact == 5)
                 {
                     hold_up = 0
                     hold_down = 0
-                    gml_Script_snd_play_ch1(418)
+                    gml_Script_snd_play_ch1(snd_equip_ch1)
                     if (global.submenu == 12)
                     {
                         oldequip = global.charweapon[wwho]
@@ -1176,7 +1176,7 @@ if (global.interact == 5)
                     }
                 }
                 else
-                    gml_Script_snd_play_ch1(419)
+                    gml_Script_snd_play_ch1(snd_cantselect_ch1)
                 gml_Script_scr_itemcomment_ch1(global.submenucoord[10], wmsg)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
@@ -1408,17 +1408,17 @@ if (charcon == 0)
 }
 if (movenoise == true)
 {
-    gml_Script_snd_play_ch1(492)
+    gml_Script_snd_play_ch1(snd_menumove_ch1)
     movenoise = false
 }
 if (selectnoise == true)
 {
-    gml_Script_snd_play_ch1(493)
+    gml_Script_snd_play_ch1(snd_select_ch1)
     selectnoise = false
 }
 if (cancelnoise == 1)
 {
-    gml_Script_snd_play_ch1(423)
+    gml_Script_snd_play_ch1(snd_smallswing_ch1)
     cancelnoise = 0
 }
 onebuffer -= 1
@@ -1429,7 +1429,7 @@ downbuffer -= 1
 if gml_Script_scr_debug_ch1()
 {
     if keyboard_check_pressed(ord("S"))
-        gml_Script_instance_create_ch1(0, 0, 1648)
+        gml_Script_instance_create_ch1(0, 0, obj_savemenu_ch1)
     if keyboard_check_pressed(ord("L"))
         gml_Script_ossafe_savedata_load_ch1()
     if keyboard_check_pressed(ord("R"))

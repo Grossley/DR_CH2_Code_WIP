@@ -3,11 +3,11 @@ image_speed = 0.05
 gml_Script_scr_depth_ch1()
 if (room == room_flowershop_1f_ch1)
 {
-    counter = gml_Script_scr_marker_ch1(20, 103, 3629)
+    counter = gml_Script_scr_marker_ch1(20, 103, spr_flowershop_counter_ch1)
     with (counter)
         gml_Script_scr_depth_ch1()
-    flowera = gml_Script_scr_marker_ch1(177, 136, 3630)
-    flowerb = gml_Script_scr_marker_ch1(177, 82, 3630)
+    flowera = gml_Script_scr_marker_ch1(177, 136, spr_flowershop_flowers_ch1)
+    flowerb = gml_Script_scr_marker_ch1(177, 82, spr_flowershop_flowers_ch1)
     with (flowera)
         gml_Script_scr_depth_ch1()
     with (flowerb)
@@ -15,7 +15,7 @@ if (room == room_flowershop_1f_ch1)
     con = 1
     if (global.flag[262] >= 1)
     {
-        gml_Script_instance_create_ch1(x, (y + sprite_height), 1407)
+        gml_Script_instance_create_ch1(x, (y + sprite_height), obj_npc_facing_ch1)
         visible = false
         if (global.flag[262] == 1)
             con = 50
@@ -49,7 +49,7 @@ if (room == room_flowershop_2f_ch1)
             x = 255
         if (obj_mainchara_ch1.x > 160)
             x = 15
-        gml_Script_instance_create_ch1(x, (y + sprite_height), 1407)
+        gml_Script_instance_create_ch1(x, (y + sprite_height), obj_npc_facing_ch1)
         con = -1
     }
 }

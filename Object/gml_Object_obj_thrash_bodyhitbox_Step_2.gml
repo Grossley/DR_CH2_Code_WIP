@@ -16,8 +16,8 @@ if duckmode
     var thrashcon = obj_rouxls_enemy.thrashcon
     if ((thrashcon == 3 || thrashcon == 5) && thrash.stomp != 0)
     {
-        gml_Script_snd_pitch(56, (thrash.stomp == 1 ? 1.25 : 1))
-        gml_Script_snd_play(56)
+        gml_Script_snd_pitch(snd_squeaky, (thrash.stomp == 1 ? 1.25 : 1))
+        gml_Script_snd_play(snd_squeaky)
     }
 }
 thrash.stomp = 0

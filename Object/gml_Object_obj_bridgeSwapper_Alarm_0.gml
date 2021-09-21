@@ -75,10 +75,10 @@ else
     swapped = 0
 }
 image_index = swapped
-var housecolor = 16777215
+var housecolor = c_white
 if (image_index == 0)
-    housecolor = 255
+    housecolor = c_red
 if (image_index == 1)
-    housecolor = 16711680
+    housecolor = c_blue
 if (dontskip == 1)
     gml_Script_scr_fx_housesquare((x + (sprite_width / 2)), (y + (sprite_height / 2)), housecolor)

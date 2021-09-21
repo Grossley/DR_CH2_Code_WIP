@@ -2,7 +2,7 @@ global.faceaction[myself] = 0
 gml_Script_scr_retarget_ch1(myself)
 if (cancelattack == false)
 {
-    dm = gml_Script_instance_create_ch1(global.monsterx[global.chartarget[myself]], ((global.monstery[global.chartarget[myself]] - (global.hittarget[global.chartarget[myself]] * 20)) + 20), 1629)
+    dm = gml_Script_instance_create_ch1(global.monsterx[global.chartarget[myself]], ((global.monstery[global.chartarget[myself]] - (global.hittarget[global.chartarget[myself]] * 20)) + 20), obj_dmgwriter_ch1)
     dm.type = (char - 1)
     dm.delay = 8
     damage = round((((global.battleat[myself] * points) / 20) - (global.monsterdf[global.chartarget[myself]] * 3)))
@@ -36,14 +36,14 @@ if (cancelattack == false)
             gml_Script_scr_tensionheal_ch1(round((points / 10)))
         if (global.monstertype[0] == 20)
             gml_Script_scr_tensionheal_ch1(round((points / 15)))
-        attack = gml_Script_instance_create_ch1((global.monsterx[global.chartarget[myself]] + random(6)), (global.monstery[global.chartarget[myself]] + random(6)), 1512)
+        attack = gml_Script_instance_create_ch1((global.monsterx[global.chartarget[myself]] + random(6)), (global.monstery[global.chartarget[myself]] + random(6)), obj_basicattack_ch1)
         if (object_index == obj_herosusie_ch1)
         {
             attack.sprite_index = spr_attack_mash2_ch1
             attack.image_speed = 0.5
             attack.maxindex = 4
-            gml_Script_snd_play_ch1(378)
-            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_snd_play_ch1(snd_impact_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
         }
         if (object_index == obj_heroralsei_ch1)
         {

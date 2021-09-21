@@ -18,6 +18,6 @@ else
 with (other)
     instance_destroy()
 damagetimer = 5
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 if (hp <= 0)
     destroyed = 1

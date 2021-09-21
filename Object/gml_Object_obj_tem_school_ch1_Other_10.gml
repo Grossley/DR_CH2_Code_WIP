@@ -39,7 +39,7 @@ if (global.plot == 3)
     }
 }
 myinteract = 3
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 if (global.darkzone == true)
     image_speed = 0.1
 talked += 1

@@ -653,27 +653,27 @@ if (global.myfight == 0)
 }
 if (movenoise == true)
 {
-    gml_Script_snd_play_ch1(492)
+    gml_Script_snd_play_ch1(snd_menumove_ch1)
     movenoise = false
 }
 if (grazenoise == true)
 {
-    gml_Script_snd_play_ch1(436)
+    gml_Script_snd_play_ch1(snd_graze_ch1)
     grazenoise = false
 }
 if (selnoise == true)
 {
-    gml_Script_snd_play_ch1(493)
+    gml_Script_snd_play_ch1(snd_select_ch1)
     selnoise = false
 }
 if (damagenoise == true)
 {
-    gml_Script_snd_play_ch1(434)
+    gml_Script_snd_play_ch1(snd_damage_ch1)
     damagenoise = false
 }
 if (laznoise == true)
 {
-    gml_Script_snd_play_ch1(442)
+    gml_Script_snd_play_ch1(snd_laz_c_ch1)
     laznoise = false
 }
 onebuffer -= 1
@@ -693,7 +693,7 @@ if (global.mnfight == 2 && timeron == true)
             darken = false
         with (obj_heart_ch1)
         {
-            gml_Script_instance_create_ch1(x, y, 1537)
+            gml_Script_instance_create_ch1(x, y, obj_returnheart_ch1)
             instance_destroy()
         }
         reset = true

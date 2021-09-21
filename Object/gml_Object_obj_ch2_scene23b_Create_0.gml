@@ -30,7 +30,7 @@ else
         instance_destroy(obj_caterpillarchara)
     with (obj_mainchara)
         visible = false
-    blackall = gml_Script_scr_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
@@ -40,10 +40,10 @@ else
     rudebuster = 0
     rudebuster_timer = 0
     wirecon = 0
-    werewire1 = gml_Script_scr_dark_marker(575, (gml_Script_cameray() - (sprite_get_height(spr_werewire_static) * 2)), 1706)
+    werewire1 = gml_Script_scr_dark_marker(575, (gml_Script_cameray() - (sprite_get_height(spr_werewire_static) * 2)), spr_werewire_static)
     werewire1.image_speed = 0
     werewire1.image_xscale = -2
-    werewire2 = gml_Script_scr_dark_marker(705, (gml_Script_cameray() - (sprite_get_height(spr_werewire_static) * 2)), 1706)
+    werewire2 = gml_Script_scr_dark_marker(705, (gml_Script_cameray() - (sprite_get_height(spr_werewire_static) * 2)), spr_werewire_static)
     werewire2.image_speed = 0
     sparecon = 0
     disable_face = 1

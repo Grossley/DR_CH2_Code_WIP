@@ -307,7 +307,7 @@ if (specialcon == 6 && wireframe_boxing == 0)
         global.hp[1] += 100
         if (global.hp[1] > global.maxhp[1])
             global.hp[1] = global.maxhp[1]
-        gml_Script_snd_play(162)
+        gml_Script_snd_play(snd_power)
     }
     flameframe = ((specialcontimer / 4) % 2)
     flamealpha = (specialcontimer / 15)

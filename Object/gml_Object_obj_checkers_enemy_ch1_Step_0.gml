@@ -11,7 +11,7 @@ if (global.monster[myself] == true)
     {
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         milkmax = 1000
         if (milk_counter > 0)
             milkmax = 600
@@ -20,7 +20,7 @@ if (global.monster[myself] == true)
             if ((!instance_exists(obj_moveheart_ch1)) && (!instance_exists(obj_heart_ch1)))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
         global.mnfight = 2
         rtimer = 0
@@ -57,7 +57,7 @@ if (global.monster[myself] == true)
                         rr = 1
                     if (attacktype == 3)
                         rr = 2
-                    dc = gml_Script_instance_create_ch1(x, y, 1583)
+                    dc = gml_Script_instance_create_ch1(x, y, obj_checkers_leap_ch1)
                     dc.leapmode = rr
                     dc.target = mytarget
                     dc.damage = (global.monsterat[myself] * 5)
@@ -116,13 +116,13 @@ if (scon == 1)
 }
 if (scon == 1.5 && (!instance_exists(obj_writer_ch1)))
 {
-    gml_Script_snd_play_ch1(413)
+    gml_Script_snd_play_ch1(snd_magicsprinkle_ch1)
     with (obj_writer_ch1)
         instance_destroy()
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_129_0")
     global.turntimer = 999
     gml_Script_scr_battletext_default_ch1()
-    milk = gml_Script_scr_dark_marker_ch1((x - 100), (y + 60), 3902)
+    milk = gml_Script_scr_dark_marker_ch1((x - 100), (y + 60), spr_checkers_milk_ch1)
     with (milk)
     {
         image_speed = 0
@@ -172,12 +172,12 @@ if (scon == 4)
     {
         if (global.monsterat[myself] < 10)
             global.monsterat[myself] += 0.5
-        gml_Script_snd_play_ch1(430)
+        gml_Script_snd_play_ch1(snd_power_ch1)
         milkheal = 700
         if (milk_counter == 0)
             milkheal = 300
         global.monsterhp[myself] += milkheal
-        healamt = gml_Script_instance_create_ch1(global.monsterx[myself], global.monstery[myself], 1629)
+        healamt = gml_Script_instance_create_ch1(global.monsterx[myself], global.monstery[myself], obj_dmgwriter_ch1)
         with (healamt)
         {
             delay = 8
@@ -185,7 +185,7 @@ if (scon == 4)
             damage = 700
         }
         healamt.damage = milkheal
-        hanim = gml_Script_instance_create_ch1(x, y, 1618)
+        hanim = gml_Script_instance_create_ch1(x, y, obj_healanim_ch1)
         hanim.target = id
     }
     if (milktimer >= 15)
@@ -279,7 +279,7 @@ if (global.myfight == 3)
             visible = false
         global.faceaction[0] = 0
         global.charaction[0] = 0
-        bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3811)
+        bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, spr_krisb_bow_ch1)
         with (bowkris)
         {
             gml_Script_scr_oflash_ch1()
@@ -287,14 +287,14 @@ if (global.myfight == 3)
             a.hspeed = 5
             a.depth = (depth + 1)
         }
-        gml_Script_snd_play_ch1(440)
+        gml_Script_snd_play_ch1(snd_item_ch1)
         gml_Script_scr_battletext_default_ch1()
         actcon = 20
     }
     if (actcon == 20 && (!instance_exists(obj_writer_ch1)))
     {
         visible = false
-        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, 3914)
+        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, spr_checkers_bow_ch1)
         with (bowcheck)
             image_speed = 0.334
         global.fc = 0
@@ -376,7 +376,7 @@ if (global.myfight == 3)
             global.charaction[0] = 0
             global.faceaction[1] = 0
             global.charaction[1] = 0
-            bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3811)
+            bowkris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, spr_krisb_bow_ch1)
             with (bowkris)
             {
                 gml_Script_scr_oflash_ch1()
@@ -384,7 +384,7 @@ if (global.myfight == 3)
                 a.hspeed = 5
                 a.depth = (depth + 1)
             }
-            bowral = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3851)
+            bowral = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, spr_ralseib_bow_ch1)
             with (bowral)
             {
                 gml_Script_scr_oflash_ch1()
@@ -392,7 +392,7 @@ if (global.myfight == 3)
                 a.hspeed = 5
                 a.depth = (depth + 1)
             }
-            gml_Script_snd_play_ch1(440)
+            gml_Script_snd_play_ch1(snd_item_ch1)
             gml_Script_scr_battletext_default_ch1()
             actcon = 30
         }
@@ -400,7 +400,7 @@ if (global.myfight == 3)
     if (actcon == 30 && (!instance_exists(obj_writer_ch1)))
     {
         visible = false
-        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, 3914)
+        bowcheck = gml_Script_scr_dark_marker_ch1(x, y, spr_checkers_bow_ch1)
         with (bowcheck)
             image_speed = 0.5
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_checkers_enemy_slash_Step_0_gml_442_0")
@@ -454,8 +454,8 @@ if (global.myfight == 3)
                 becomeflash = false
                 gml_Script_scr_battletext_default_ch1()
                 actcon = 90
-                gml_Script_instance_create_ch1(x, y, 1580)
-                throwsus = gml_Script_instance_create_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 1582)
+                gml_Script_instance_create_ch1(x, y, obj_throwtarget_ch1)
+                throwsus = gml_Script_instance_create_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, obj_throwralsei_ch1)
                 visible = false
                 global.faceaction[1] = 0
                 global.charaction[1] = 0
@@ -465,7 +465,7 @@ if (global.myfight == 3)
                     visible = false
                 with (obj_heroralsei_ch1)
                     visible = false
-                gml_Script_snd_play_ch1(377)
+                gml_Script_snd_play_ch1(snd_grab_ch1)
             }
             else
             {
@@ -526,8 +526,8 @@ if (global.myfight == 3)
         with (obj_heroralsei_ch1)
             visible = false
         thrown = 1
-        trsus = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 3845)
-        gml_Script_snd_play_ch1(377)
+        trsus = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, spr_susieb_throwralseiready_ch1)
+        gml_Script_snd_play_ch1(snd_grab_ch1)
     }
     if (actcon == 12)
     {
@@ -543,7 +543,7 @@ if (global.myfight == 3)
     {
         visible = false
         gml_Script_snd_free_all_ch1()
-        animtest = gml_Script_instance_create_ch1(x, y, 1579)
+        animtest = gml_Script_instance_create_ch1(x, y, obj_checker_animtest_ch1)
         animtest.sprite_index = spr_smallchecker_transform3_ch1
         animtest.image_xscale = 2
         animtest.image_yscale = 2

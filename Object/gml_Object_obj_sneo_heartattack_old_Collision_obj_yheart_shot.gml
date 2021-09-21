@@ -7,7 +7,7 @@ if (other.damage > 2)
     global.turntimer -= obj_spamton_neo_enemy.heart_hurt_timer_reduction_bigshot
 else
     global.turntimer -= obj_spamton_neo_enemy.heart_hurt_timer_reduction
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 with (other)
     event_user(0)
 if (heart_health < 1)

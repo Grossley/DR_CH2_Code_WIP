@@ -8,7 +8,7 @@ if (con == 0)
     {
         with (obj_sneo_heartattack_chest_shake)
             instance_destroy()
-        obj_spamton_neo_enemy.partsprite[4] = 1984
+        obj_spamton_neo_enemy.partsprite[4] = spr_sneo_body_chest_breaks
         obj_spamton_neo_enemy.partx[4] = chestoriginx
         obj_spamton_neo_enemy.party[4] = chestoriginy
         gml_Script_instance_create((obj_spamton_neo_enemy.x + 40), (obj_spamton_neo_enemy.y + 80), obj_sneo_heartattack)
@@ -45,8 +45,8 @@ if (con == 1)
     }
     if (timer == 60)
     {
-        obj_spamton_neo_enemy.partsprite[4] = 1976
-        obj_spamton_neo_enemy.partsprite[5] = 3319
+        obj_spamton_neo_enemy.partsprite[4] = spr_sneo_body
+        obj_spamton_neo_enemy.partsprite[5] = spr_sneo_head
         instance_destroy()
     }
 }

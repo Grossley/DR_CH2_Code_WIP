@@ -1,6 +1,6 @@
 gml_Script_scr_enemy_object_init()
 solo_music = audio_play_sound(cyber_battle_backing_solo, 90, true)
-gml_Script_snd_volume(129, 1, 0)
+gml_Script_snd_volume(cyber_battle_backing_solo, 1, 0)
 gml_Script_instance_create(x, y, obj_musical_controller)
 obj_battlecontroller.hidemercy = 1
 depth = (obj_battlecontroller.depth - 1)

@@ -67,10 +67,10 @@ else
 {
     if (destroycrop < 36)
     {
-        gml_Script_scr_draw_sprite_crop_ext(2015, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
-        gml_Script_scr_draw_sprite_crop_ext(2015, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y + offset), s, (-s), image_blend, 1)
-        gml_Script_scr_draw_sprite_crop_ext(2010, 2, 0, 0, 1, (18 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
-        gml_Script_scr_draw_sprite_crop_ext(2011, 2, 0, (destroycrop / 2), 1, 18, x, (y - offset), s, s, image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(spr_sneo_pillar_piston, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(spr_sneo_pillar_piston, 0, 0, 0, 32, (16 - (destroycrop / 2)), x, (y + offset), s, (-s), image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(spr_sneo_pillar_head_top, 2, 0, 0, 1, (18 - (destroycrop / 2)), x, (y - offset), s, s, image_blend, 1)
+        gml_Script_scr_draw_sprite_crop_ext(spr_sneo_pillar_head_bottom, 2, 0, (destroycrop / 2), 1, 18, x, (y - offset), s, s, image_blend, 1)
     }
     draw_sprite_ext(spr_sneo_pillar_thick, 0, x, 326, s, clamp(((326 - ((y + 32) + destroycrop)) / 16), 0, 16), 0, image_blend, 1)
     draw_sprite_ext(spr_sneo_pillar_thick, 0, x, ((y - 32) - destroycrop), s, 16, 0, image_blend, 1)

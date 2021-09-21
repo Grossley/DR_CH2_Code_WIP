@@ -81,7 +81,7 @@ if (condition == 2)
         image_alpha -= 0.25
     if (sndcon == 0)
     {
-        gml_Script_snd_play_ch1(363)
+        gml_Script_snd_play_ch1(snd_spearappear_ch1)
         sndcon = 1
     }
     draw_sprite_ext(spr_joker_main_ch1, 0, offx, (offy + fly), size, 2, 0, c_white, 1)
@@ -101,7 +101,7 @@ if (condition == 3)
         image_alpha += 0.25
     if (sndcon == 0)
     {
-        gml_Script_snd_play_ch1(363)
+        gml_Script_snd_play_ch1(snd_spearappear_ch1)
         sndcon = 1
     }
     draw_sprite_ext(spr_joker_main_ch1, 0, offx, (offy + fly), size, 2, 0, c_white, 1)

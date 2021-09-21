@@ -4,7 +4,7 @@ else
     phasechange = 0
 if (global.flag[915] == 0 && global.flag[531] == 6)
 {
-    gml_Script_snd_play(196)
+    gml_Script_snd_play(snd_ominous)
     global.flag[915] = 1
 }
 if (room == room_dw_city_intro)
@@ -13,7 +13,7 @@ if (room == room_dw_city_intro)
     {
         if (trashcon == 0)
         {
-            if gml_Script_i_ex(80)
+            if gml_Script_i_ex(obj_mainchara)
             {
                 if (obj_mainchara.x < (room_width / 2) && global.interact == 0)
                 {
@@ -37,7 +37,7 @@ if (global.flag[915] == 1 && global.flag[916] == 0)
 {
     if (global.flag[559] == 6 && global.flag[560] == 6 && global.flag[561] == 6)
     {
-        gml_Script_snd_play(196)
+        gml_Script_snd_play(snd_ominous)
         global.flag[915] = 1.5
     }
 }
@@ -45,7 +45,7 @@ if (global.flag[915] == 1.5 && global.flag[916] == 0)
 {
     if (global.flag[562] == 6 && global.flag[563] == 6)
     {
-        gml_Script_snd_play(196)
+        gml_Script_snd_play(snd_ominous)
         global.flag[915] = 1.75
     }
 }
@@ -53,7 +53,7 @@ if (global.flag[915] == 1.75 && global.flag[916] == 0)
 {
     if (global.flag[564] == 6 && global.flag[565] == 6 && global.flag[532] == 6 && global.flag[533] == 6)
     {
-        gml_Script_snd_play(196)
+        gml_Script_snd_play(snd_ominous)
         global.flag[915] = 2
     }
 }
@@ -62,7 +62,7 @@ if gml_Script_scr_debug()
     if (keyboard_check(vk_shift) && keyboard_check_pressed(ord("F")))
     {
         gml_Script_scr_weaponget(13)
-        gml_Script_snd_play(196)
+        gml_Script_snd_play(snd_ominous)
     }
 }
 if (global.flag[915] >= 2 && global.flag[916] == 0)
@@ -112,6 +112,6 @@ if (global.flag[915] > 0 && global.flag[916] == 0)
         gml_Script_scr_sideb_fail()
 }
 if (global.flag[916] > failstate)
-    gml_Script_snd_play(195)
+    gml_Script_snd_play(snd_ominous_cancel)
 lastphase = global.flag[915]
 failstate = global.flag[916]

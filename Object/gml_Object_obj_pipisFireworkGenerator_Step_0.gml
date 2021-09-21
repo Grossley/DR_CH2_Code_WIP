@@ -17,7 +17,7 @@ if (con == 0)
         con = 1
         timer = 0
     }
-    if gml_Script_i_ex(272)
+    if gml_Script_i_ex(obj_overworldbullet_fireworks)
     {
         with (obj_overworldbullet_fireworks)
         {
@@ -27,7 +27,7 @@ if (con == 0)
             timer = 0
         }
     }
-    if gml_Script_i_ex(253)
+    if gml_Script_i_ex(obj_overworldbulletparent)
     {
         with (obj_overworldbulletparent)
         {

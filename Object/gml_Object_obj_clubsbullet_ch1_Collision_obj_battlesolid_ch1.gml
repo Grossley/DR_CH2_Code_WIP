@@ -1,4 +1,4 @@
-bul = gml_Script_instance_create_ch1(x, y, 1520)
+bul = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
 if instance_exists(bul)
 {
     bul.sprite_index = spr_clubsball_b_ch1
@@ -10,7 +10,7 @@ if instance_exists(bul)
     bul.grazepoints = 3
     bul.timepoints = 2
 }
-bul = gml_Script_instance_create_ch1(x, y, 1520)
+bul = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
 if instance_exists(bul)
 {
     bul.sprite_index = spr_clubsball_c_ch1
@@ -22,7 +22,7 @@ if instance_exists(bul)
     bul.grazepoints = 3
     bul.timepoints = 2
 }
-bul = gml_Script_instance_create_ch1(x, y, 1520)
+bul = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
 if instance_exists(bul)
 {
     bul.sprite_index = spr_clubsball_a_ch1

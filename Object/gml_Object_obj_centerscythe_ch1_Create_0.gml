@@ -50,21 +50,21 @@ if (instance_number(obj_centerscythe_ch1) == 1)
     king = 1
     x = (centerx - radius)
     y = centery
-    s2 = gml_Script_instance_create_ch1((centerx + radius), centery, 1589)
+    s2 = gml_Script_instance_create_ch1((centerx + radius), centery, obj_centerscythe_ch1)
     with (s2)
     {
         sine = 0
         dir = 180
         un = 1
     }
-    s3 = gml_Script_instance_create_ch1(centerx, (centery - radius), 1589)
+    s3 = gml_Script_instance_create_ch1(centerx, (centery - radius), obj_centerscythe_ch1)
     with (s3)
     {
         sine = 0
         dir = 90
         un = 0
     }
-    s4 = gml_Script_instance_create_ch1(centerx, (centery + radius), 1589)
+    s4 = gml_Script_instance_create_ch1(centerx, (centery + radius), obj_centerscythe_ch1)
     with (s4)
     {
         sine = 0

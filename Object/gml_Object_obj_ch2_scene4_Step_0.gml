@@ -29,7 +29,7 @@ if (con == 1)
     gml_Script_scr_actor_setup(ra, ra_actor, "ralseinohat")
     ra_actor.sprite_index = spr_ralsei_walk_down
     gml_Script_c_msgside("bottom")
-    gml_Script_c_pannable(1)
+    gml_Script_c_pannable(true)
     gml_Script_c_panspeed(0, -2, 50)
     gml_Script_c_wait(40)
     gml_Script_c_sel(kr)
@@ -116,7 +116,7 @@ if (con == 1)
     gml_Script_c_walk("d", 4, 30)
     gml_Script_c_wait(15)
     gml_Script_c_sel(su)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_specialsprite(0)
     gml_Script_c_wait(20)
     gml_Script_c_speaker("ralsei")
@@ -133,7 +133,7 @@ if (con == 1)
     gml_Script_c_facing("d")
     gml_Script_c_wait(5)
     gml_Script_c_actortokris()
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
     gml_Script_c_waitcustom()
     gml_Script_c_terminatekillactors()
 }
@@ -242,12 +242,12 @@ if (con == 52)
 if (customcon == 1 && con >= 50)
 {
     global.facing = 2
-    gml_Script_snd_play(231)
+    gml_Script_snd_play(snd_sparkle_glock)
     image_alpha = 0
     breakcon = 3
     for (i = 0; i < 60; i++)
     {
-        sparkle[i] = gml_Script_scr_marker(((room_width / 4) + random((room_width / 2))), ((gml_Script_cameray() - random(400)) + 15), 2471)
+        sparkle[i] = gml_Script_scr_marker(((room_width / 4) + random((room_width / 2))), ((gml_Script_cameray() - random(400)) + 15), spr_sparestar_anim)
         sparkle[i].image_speed = 0.5
         sparkle[i].hspeed = random_range(-4, 4)
         sparkle[i].friction = 0.05

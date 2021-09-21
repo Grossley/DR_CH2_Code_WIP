@@ -2,13 +2,13 @@ if (con == 1)
 {
     with (obj_mainchara)
         visible = false
-    k = gml_Script_scr_dark_marker(0, obj_mainchara.y, 652)
+    k = gml_Script_scr_dark_marker(0, obj_mainchara.y, spr_krisr_dark)
     with (k)
     {
         hspeed = 12
         image_speed = 0.334
     }
-    s = gml_Script_scr_dark_marker(340, (obj_mainchara.y - 10), 991)
+    s = gml_Script_scr_dark_marker(340, (obj_mainchara.y - 10), spr_susied_dark_unhappy)
     con = 2
     alarm[4] = 22
 }
@@ -28,7 +28,7 @@ if (con == 3)
 }
 if (con == 4 && gml_Script_d_ex() == 0)
 {
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     with (s)
     {
         sprite_index = spr_susied_dark_unhappy
@@ -52,11 +52,11 @@ if (con == 6)
 }
 if (con == 8)
 {
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     obj_mainchara.x = k.x
     obj_mainchara.y = k.y
     alarm[1] = 1
-    slidesfx = gml_Script_snd_loop(236)
+    slidesfx = gml_Script_snd_loop(snd_paper_surf)
     with (obj_mainchara)
     {
         cutscene = true

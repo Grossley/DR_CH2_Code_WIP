@@ -135,7 +135,7 @@ else if ((global.boxingphase == 0 && punchcon == 0) || (global.boxingphase == 3 
 }
 if (global.boxingphase == 1)
 {
-    if gml_Script_i_ex(388)
+    if gml_Script_i_ex(obj_dbulletcontroller)
     {
         cancontrol = 1
         global.boxingphase = 2
@@ -254,7 +254,7 @@ if (cancontrol == 1 && o_boxingqueen.phase_transition == 0 && talking == 0 && ar
     canpunch = 1
     if (boxingtimer < 2 && o_boxingqueen.state != 3 && wireframe_boxing == 0)
         canpunch = 0
-    if (gml_Script_i_ex(840) && o_boxing_wireframe.introcon == 0 && wireframe_boxing == 1)
+    if (gml_Script_i_ex(o_boxing_wireframe) && o_boxing_wireframe.introcon == 0 && wireframe_boxing == 1)
         canpunch = 0
     if (o_boxingqueen.phase_transition > 0 && wireframe_boxing == 1)
         canpunch = 0
@@ -387,9 +387,9 @@ if ((punchcon == 0 && dodgecon == 0 && hurtcon == 0 && duckcon == 0 && jumpcon =
         drawflip = 1
         dodgecon = 1
         if arcade
-            gml_Script_snd_play(311)
+            gml_Script_snd_play(motor_upper_quick_high_bc)
         else
-            gml_Script_snd_play(119)
+            gml_Script_snd_play(motor_upper_quick_high)
         if instance_exists(obj_gigaqueen_enemy)
             obj_gigaqueen_enemy.didntdodgethisturn = 0
     }
@@ -407,9 +407,9 @@ if ((punchcon == 0 && dodgecon == 0 && hurtcon == 0 && duckcon == 0 && jumpcon =
         drawflip = 0
         dodgecon = 1
         if arcade
-            gml_Script_snd_play(311)
+            gml_Script_snd_play(motor_upper_quick_high_bc)
         else
-            gml_Script_snd_play(119)
+            gml_Script_snd_play(motor_upper_quick_high)
         if instance_exists(obj_gigaqueen_enemy)
             obj_gigaqueen_enemy.didntdodgethisturn = 0
     }
@@ -426,9 +426,9 @@ if ((punchcon == 0 && dodgecon == 0 && hurtcon == 0 && duckcon == 0 && jumpcon =
         }
         duckcon = 1
         if arcade
-            gml_Script_snd_play(311)
+            gml_Script_snd_play(motor_upper_quick_high_bc)
         else
-            gml_Script_snd_play(119)
+            gml_Script_snd_play(motor_upper_quick_high)
         if instance_exists(obj_gigaqueen_enemy)
             obj_gigaqueen_enemy.didntdodgethisturn = 0
     }
@@ -474,8 +474,8 @@ if (punchcon >= 1 && arcade_end == 0)
         friction = (2 * f)
         punchcon = 2
         punchtimer = 0
-        gml_Script_snd_play(119)
-        gml_Script_snd_pitch(119, 1.25)
+        gml_Script_snd_play(motor_upper_quick_high)
+        gml_Script_snd_pitch(motor_upper_quick_high, 1.25)
     }
     if (punchcon == 2)
     {
@@ -600,9 +600,9 @@ if (punchcon >= 1 && arcade_end == 0)
                         block_star = gml_Script_instance_create(x, y, obj_boxing_block_star)
                         block_star.direction = (270 + random(90))
                         if arcade
-                            gml_Script_snd_play(313)
+                            gml_Script_snd_play(snd_bell_bc)
                         else
-                            gml_Script_snd_play(39)
+                            gml_Script_snd_play(snd_bell)
                         drawflip = o_boxingcontroller.drawflip
                         savex = x
                         savey = y
@@ -675,7 +675,7 @@ if (punchcon >= 1 && arcade_end == 0)
                                 if arcade
                                     gml_Script_snd_play(snd_power_bc)
                                 else
-                                    gml_Script_snd_play(162)
+                                    gml_Script_snd_play(snd_power)
                             }
                         }
                         else if (o_boxingqueen.sprite_index == spr_bqueen_hurt)
@@ -708,9 +708,9 @@ if (punchcon >= 1 && arcade_end == 0)
                     {
                         gml_Script_scr_tensionheal(tpoverride)
                         if arcade
-                            gml_Script_snd_play(324)
+                            gml_Script_snd_play(snd_criticalswing_bc)
                         else
-                            gml_Script_snd_play(158)
+                            gml_Script_snd_play(snd_criticalswing)
                     }
                     gml_Script_scr_tensionheal(2.5)
                     tpoverride = 0
@@ -759,22 +759,22 @@ if (punchcon >= 1 && arcade_end == 0)
                         {
                             if arcade
                             {
-                                gml_Script_snd_play(322)
-                                punchnoise = gml_Script_snd_play(323)
+                                gml_Script_snd_play(snd_ultraswing_bc)
+                                punchnoise = gml_Script_snd_play(punch_ish_1_bc)
                             }
                             else
                             {
-                                gml_Script_snd_play(157)
-                                punchnoise = gml_Script_snd_play(341)
+                                gml_Script_snd_play(snd_ultraswing)
+                                punchnoise = gml_Script_snd_play(snd_queen_punched_lower_heavy)
                             }
                             audio_sound_pitch(punchnoise, 1.4)
                         }
                         else
                         {
                             if arcade
-                                punchnoise = gml_Script_snd_play(323)
+                                punchnoise = gml_Script_snd_play(punch_ish_1_bc)
                             else
-                                punchnoise = gml_Script_snd_play(5)
+                                punchnoise = gml_Script_snd_play(snd_queen_punched_lower)
                             var hitqueensfxcount = times_hit_in_a_row
                             if (hitqueensfxcount < 0)
                                 hitqueensfxcount = 0
@@ -797,9 +797,9 @@ if (punchcon >= 1 && arcade_end == 0)
                         if (dizzytimer <= 0)
                             noattack += 1
                         else if arcade
-                            gml_Script_snd_play(302)
+                            gml_Script_snd_play(snd_metalhit_bc)
                         else
-                            gml_Script_snd_play(114)
+                            gml_Script_snd_play(snd_metalhit)
                         blocking = -1
                         image_index = 0
                         sprite_index = spr_bqueen_hurt_effect
@@ -900,18 +900,18 @@ if (punchcon >= 1 && arcade_end == 0)
                     if (flameactive == 1)
                     {
                         if arcade
-                            gml_Script_snd_play(321)
+                            gml_Script_snd_play(snd_punchheavythunder_bc)
                         else
-                            gml_Script_snd_play(115)
+                            gml_Script_snd_play(snd_punchheavythunder)
                         flamepunch = 1
                         flametimer = 10
                     }
                     if (laseractive == 1)
                     {
                         if arcade
-                            gml_Script_snd_play(321)
+                            gml_Script_snd_play(snd_punchheavythunder_bc)
                         else
-                            gml_Script_snd_play(115)
+                            gml_Script_snd_play(snd_punchheavythunder)
                         laserpunch = 1
                         lasertimer = 10
                     }
@@ -919,13 +919,13 @@ if (punchcon >= 1 && arcade_end == 0)
                     {
                         if arcade
                         {
-                            gml_Script_snd_pitch(308, (0.75 + random(0.5)))
-                            gml_Script_snd_play(308)
+                            gml_Script_snd_pitch(snd_squeaky_bc, (0.75 + random(0.5)))
+                            gml_Script_snd_play(snd_squeaky_bc)
                         }
                         else
                         {
-                            gml_Script_snd_pitch(56, (0.75 + random(0.5)))
-                            gml_Script_snd_play(56)
+                            gml_Script_snd_pitch(snd_squeaky, (0.75 + random(0.5)))
+                            gml_Script_snd_play(snd_squeaky)
                         }
                         color_fade_alpha = 1
                         if (healoverride == 0)
@@ -945,9 +945,9 @@ if (punchcon >= 1 && arcade_end == 0)
         if (missnoise == 0)
         {
             if arcade
-                gml_Script_snd_play(326)
+                gml_Script_snd_play(motor_upper_quick_bc)
             else
-                gml_Script_snd_play(121)
+                gml_Script_snd_play(motor_upper_quick)
             missnoise = 1
         }
         vspeed *= 0.81
@@ -1259,15 +1259,15 @@ if (hurtcon > 0)
     {
         if arcade
         {
-            gml_Script_snd_play(327)
-            gml_Script_snd_play(303)
-            gml_Script_snd_play(302)
+            gml_Script_snd_play(snd_hurt1_bc)
+            gml_Script_snd_play(snd_punchmed_bc)
+            gml_Script_snd_play(snd_metalhit_bc)
         }
         else
         {
-            gml_Script_snd_play(170)
-            gml_Script_snd_play(116)
-            gml_Script_snd_play(114)
+            gml_Script_snd_play(snd_hurt1)
+            gml_Script_snd_play(snd_punchmed)
+            gml_Script_snd_play(snd_metalhit)
         }
         image_index = 7
         vspeed = (5 * f)

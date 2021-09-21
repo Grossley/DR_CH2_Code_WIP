@@ -31,7 +31,7 @@ if (global.chapter != 2 || global.plot >= 170)
 }
 else
 {
-    queenhand = (gml_Script_scr_sideb_get_phase() < 2 ? gml_Script_scr_dark_marker(2060, 85, 270) : gml_Script_scr_dark_marker(2060, 85, 266))
+    queenhand = (gml_Script_scr_sideb_get_phase() < 2 ? gml_Script_scr_dark_marker(2060, 85, spr_cutscene_26_queen_giga_bonds) : gml_Script_scr_dark_marker(2060, 85, spr_cutscene_26_queen_giga_hand))
     with (queenhand)
         depth = 1000200
     rudebuster = 0
@@ -54,12 +54,12 @@ else
     walllayer = -1
     layerid = -1
     battletimer = 0
-    whiteall = gml_Script_scr_marker(-10, -10, 2529)
+    whiteall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     whiteall.image_xscale = 999
     whiteall.image_yscale = 999
     whiteall.depth = 100
     whiteall.image_alpha = 0
-    bg_cover = gml_Script_scr_marker(-10, -10, 2529)
+    bg_cover = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     bg_cover.image_xscale = 999
     bg_cover.image_yscale = 999
     bg_cover.depth = 1000350
@@ -95,7 +95,7 @@ else
         raise_hands = 0
         for (var i = 0; i < 3; i++)
         {
-            hand_platform[i] = gml_Script_scr_marker((1550 + (i * 100)), ((gml_Script_cameray() + view_hport[0]) + (sprite_get_height(spr_cutscene_26_hand_platform) / 2)), 312)
+            hand_platform[i] = gml_Script_scr_marker((1550 + (i * 100)), ((gml_Script_cameray() + view_hport[0]) + (sprite_get_height(spr_cutscene_26_hand_platform) / 2)), spr_cutscene_26_hand_platform)
             with (hand_platform[i])
             {
                 image_xscale = 2

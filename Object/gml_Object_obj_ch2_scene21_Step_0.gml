@@ -16,7 +16,7 @@ if (con == 1)
     gml_Script_c_mus2("volume", 0, 30)
     gml_Script_c_msgside("bottom")
     gml_Script_c_sel(ra)
-    gml_Script_c_sprite(1506)
+    gml_Script_c_sprite(spr_ralsei_hurt)
     gml_Script_c_arg_objectxy(ra_actor, -30, 0)
     gml_Script_c_setxy(x, y)
     gml_Script_c_wait(10)
@@ -48,7 +48,7 @@ if (con == 1)
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 3 && (!gml_Script_i_ex(895)))
+if (con == 3 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 99
     global.interact = 0

@@ -10,7 +10,7 @@ if (room == room_town_mid_ch1)
     if (con == 22)
     {
         global.interact = 1
-        banim = gml_Script_scr_marker_ch1((bnpc.x - 1), (bnpc.y - 14), 3642)
+        banim = gml_Script_scr_marker_ch1((bnpc.x - 1), (bnpc.y - 14), spr_npc_icemascot_takeoff_ch1)
         banim.depth = bnpc.depth
         with (bnpc)
             visible = false
@@ -23,7 +23,7 @@ if (room == room_town_mid_ch1)
     {
         with (bnpc)
             instance_destroy()
-        bnpc = gml_Script_instance_create_ch1((banim.x + 9), (banim.y + 18), 1408)
+        bnpc = gml_Script_instance_create_ch1((banim.x + 9), (banim.y + 18), obj_npc_room_ch1)
         with (bnpc)
             sprite_index = spr_npc_burgerpants_ch1
         with (banim)
@@ -39,7 +39,7 @@ if (room == room_town_mid_ch1)
         global.msc = 340
         gml_Script_scr_text_ch1(global.msc)
         con = 27
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 27 && (!gml_Script_d_ex_ch1()))
     {
@@ -67,7 +67,7 @@ if (room == room_town_mid_ch1)
                 global.fe = 0
                 global.msc = 380
                 gml_Script_scr_text_ch1(global.msc)
-                gml_Script_instance_create_ch1(0, 0, 1326)
+                gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             }
         }
     }
@@ -83,7 +83,7 @@ if (room == room_town_south_ch1)
 {
     if (con == 50 && (!gml_Script_d_ex_ch1()))
     {
-        gml_Script_snd_play_ch1(381)
+        gml_Script_snd_play_ch1(snd_noise_ch1)
         con = 51
         alarm[4] = 28
     }
@@ -96,7 +96,7 @@ if (room == room_town_south_ch1)
     if (con == 52)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_town_event_slash_Step_0_gml_120_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 53
     }
     if (con == 53 && (!gml_Script_d_ex_ch1()))
@@ -111,7 +111,7 @@ if (room == room_torbathroom_ch1)
     if (con == 60 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_snd_pause_ch1(global.currentsong[1])
-        gml_Script_snd_play_ch1(366)
+        gml_Script_snd_play_ch1(snd_toilet_ch1)
         con = 61
         alarm[4] = 30
     }
@@ -120,7 +120,7 @@ if (room == room_torbathroom_ch1)
     if (con == 62)
     {
         specflush = 0
-        gml_Script_snd_play_ch1(374)
+        gml_Script_snd_play_ch1(snd_won_ch1)
         flush += 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_town_event_slash_Step_0_gml_157_0")
         if (flush == 3)
@@ -129,7 +129,7 @@ if (room == room_torbathroom_ch1)
             specflush = 2
         if (flush == 9)
             specflush = 3
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 63
         if (specflush > 0)
             con = 67
@@ -143,7 +143,7 @@ if (room == room_torbathroom_ch1)
     }
     if (con == 67 && (!gml_Script_d_ex_ch1()))
     {
-        gml_Script_snd_play_ch1(365)
+        gml_Script_snd_play_ch1(snd_knock_ch1)
         con = 68
         alarm[4] = 30
     }
@@ -165,7 +165,7 @@ if (room == room_torbathroom_ch1)
             gml_Script_scr_torface_ch1(0, 5)
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_town_event_slash_Step_0_gml_197_0")
         }
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 63
         specflush = 0
     }

@@ -10,6 +10,6 @@ disable = 0
 f = 2
 sold = 0
 black_override = 0
-stayVisible = 0
+stayVisible = false
 fadeout = 0
 gml_Script_scr_depth()

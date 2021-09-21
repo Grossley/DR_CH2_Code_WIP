@@ -37,7 +37,7 @@ if (con == 2)
         maxe = 12
         for (i = 0; i < 12; i += 1)
         {
-            spade[i] = gml_Script_instance_create_ch1(x, y, 1520)
+            spade[i] = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
             gml_Script_scr_bullet_inherit_ch1(spade[i])
             spade[i].active = true
             spade[i].direction = (dir + (i * (360 / maxe)))
@@ -51,7 +51,7 @@ if (con == 2)
     {
         for (i = 0; i < 3; i += 1)
         {
-            diamond[i] = gml_Script_instance_create_ch1(x, y, 1520)
+            diamond[i] = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
             diamond[i].damage = 100
             gml_Script_scr_bullet_inherit_ch1(diamond[i])
             with (diamond[i])
@@ -64,7 +64,7 @@ if (con == 2)
     }
     if (type == 2)
     {
-        h = gml_Script_instance_create_ch1(x, y, 1586)
+        h = gml_Script_instance_create_ch1(x, y, obj_heartbomb_blast_ch1)
         gml_Script_scr_bullet_inherit_ch1(h)
         con = 3
     }
@@ -73,7 +73,7 @@ if (con == 2)
         dir = point_direction(x, y, (obj_heart_ch1.x + 8), (obj_heart_ch1.y + 8))
         for (i = 0; i < 3; i += 1)
         {
-            club[i] = gml_Script_instance_create_ch1(x, y, 1520)
+            club[i] = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
             club[i].sprite_index = spr_clubsbullet_ch1
             club[i].damage = 100
             gml_Script_scr_bullet_inherit_ch1(club[i])

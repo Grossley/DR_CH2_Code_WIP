@@ -9,7 +9,7 @@ if (global.monster[myself] == true)
         if ((!gml_Script_i_ex(myspawner)) && instance_exists(obj_heart))
         {
             global.monsterattackname[myself] = ("ThisAttack" + string(spawntype))
-            myspawner = gml_Script_scr_bulletspawner(x, y, 388)
+            myspawner = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
             myspawner.type = spawntype
             myspawner.damage = 10
             myspawner.difficulty = global.tempflag[27]

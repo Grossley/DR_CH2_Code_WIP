@@ -6,7 +6,7 @@ if (state == 0 && obj_mainchara.x >= 480)
     timer = 0
     with (obj_fakeWalkway_dw_cyber_music_final)
         instance_destroy()
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     gml_Script_instance_create(0, 0, obj_shake)
     movingwall1 = gml_Script_instance_create(obj_MovingPlat_dw_cyber_music_final.x, obj_MovingPlat_dw_cyber_music_final.y, obj_invisMovingWall_dw_cyber_music_final)
     movingwall1.image_xscale = 2
@@ -50,10 +50,10 @@ if (state == 2.1)
 if (state == 2.11)
 {
     state = -999
-    gml_Script_c_pannable(1)
-    gml_Script_c_panobj(80, 1)
+    gml_Script_c_pannable(true)
+    gml_Script_c_panobj(obj_mainchara, 1)
     gml_Script_c_wait(1)
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
     gml_Script_c_var_instance(id, "state", 2.2)
     gml_Script_c_terminatekillactors()
 }
@@ -95,7 +95,7 @@ if (state == 4)
     {
         obj_MovingPlat_dw_cyber_music_final.x = 1640
         timer = 0
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (movingwall1)
             instance_destroy()
         endwall = gml_Script_instance_create(1600, 120, obj_soliddark)
@@ -127,14 +127,14 @@ if (state == 6)
     gml_Script_c_setxy(1812, 174)
     gml_Script_c_var_instance(id, "state", 7)
     gml_Script_c_wait(8)
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
     gml_Script_c_actortokris()
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
 if (state == 7)
 {
-    if (!gml_Script_i_ex(895))
+    if (!gml_Script_i_ex(obj_cutscene_master))
     {
         global.flag[7] = 0
         global.interact = 0

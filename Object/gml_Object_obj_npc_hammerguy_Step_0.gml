@@ -23,7 +23,7 @@ if (con >= 5)
             sprite_index = spr_hammerguy_powerup
             image_index = 0
             image_speed = 0.5
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
             con += 1
             alarm[4] = 30
             charcycle = 0
@@ -66,7 +66,7 @@ if (con >= 5)
                 visible = false
             var xpos = (global.chapter == 1 ? 390 : (x + 105))
             var ypos = (global.chapter == 1 ? 125 : (y + 30))
-            char = gml_Script_scr_dark_marker(xpos, ypos, 650)
+            char = gml_Script_scr_dark_marker(xpos, ypos, spr_krisd_dark)
             with (char)
                 depth = 400000
         }
@@ -78,7 +78,7 @@ if (con >= 5)
             {
                 xpos = (global.chapter == 1 ? 380 : (x + 85))
                 ypos = (global.chapter == 1 ? 110 : (y + 15))
-                char = gml_Script_scr_dark_marker(xpos, ypos, 995)
+                char = gml_Script_scr_dark_marker(xpos, ypos, spr_susie_shock)
                 with (char)
                     depth = 400000
             }
@@ -86,7 +86,7 @@ if (con >= 5)
             {
                 xpos = (global.chapter == 1 ? 390 : (x + 90))
                 ypos = (global.chapter == 1 ? 140 : (y + 35))
-                var ral_sprite = (global.chapter == 1 ? 1494 : 1506)
+                var ral_sprite = (global.chapter == 1 ? spr_ralsei_shock_overworld : spr_ralsei_hurt)
                 char = gml_Script_scr_dark_marker(xpos, ypos, ral_sprite)
                 with (char)
                     depth = 400000
@@ -111,7 +111,7 @@ if (con >= 5)
         global.hp[3] = global.maxhp[3]
         global.typer = 6
         global.fc = 0
-        gml_Script_snd_play(162)
+        gml_Script_snd_play(snd_power)
         global.msg[0] = gml_Script_stringsetloc("* (Somehow^1, everyone's HP was restored.)/", "obj_npc_hammerguy_slash_Step_0_gml_108_0")
         global.msg[1] = gml_Script_stringsetloc("* Well^1, well^1! Don't you feel better after a nice massage^1? Huh-Hah!!/%", "obj_npc_hammerguy_slash_Step_0_gml_109_0")
         mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)
@@ -131,13 +131,13 @@ if (con >= 5)
     if (hitmode == 1)
     {
         if (image_index == 4)
-            gml_Script_snd_play(56)
+            gml_Script_snd_play(snd_squeaky)
         if (image_index >= 10)
             image_index = 0
     }
     if (con == 33)
     {
-        char = gml_Script_scr_dark_marker(385, 160, 1187)
+        char = gml_Script_scr_dark_marker(385, 160, spr_brokencake)
         with (char)
             depth = 400000
         con = 34
@@ -154,7 +154,7 @@ if (con >= 5)
         gml_Script_scr_keyitemremove(3)
         global.typer = 6
         global.fc = 0
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         global.msg[0] = gml_Script_stringsetloc("* (The Broken Cake was fixed beyond recognition.)/", "obj_npc_hammerguy_slash_Step_0_gml_153_0")
         global.msg[1] = gml_Script_stringsetloc("* (The Broken Cake became the TOPCAKE.)/", "obj_npc_hammerguy_slash_Step_0_gml_154_0")
         global.msg[2] = gml_Script_stringsetloc("* This is truly a tremendous cake^1.&* Use its power wisely.../%", "obj_npc_hammerguy_slash_Step_0_gml_155_0")
@@ -163,7 +163,7 @@ if (con >= 5)
     }
     if (con == 53)
     {
-        char = gml_Script_scr_dark_marker(390, 170, 1188)
+        char = gml_Script_scr_dark_marker(390, 170, spr_brokenkey)
         with (char)
             depth = 400000
         con = 54
@@ -183,7 +183,7 @@ if (con >= 5)
         gml_Script_scr_keyitemget(5)
         global.typer = 6
         global.fc = 0
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         global.msg[0] = gml_Script_stringsetloc("* (The Broken Key parts were fixed beyond recognition.)/", "obj_npc_hammerguy_slash_Step_0_gml_184_0")
         global.msg[1] = gml_Script_stringsetloc("* (The Broken Key parts became the Prison Key.)/", "obj_npc_hammerguy_slash_Step_0_gml_185_0")
         global.msg[2] = gml_Script_stringsetloc("* .... Hmm^1,  this KEY has a terrible energy coming from it.../", "obj_npc_hammerguy_slash_Step_0_gml_186_0")
@@ -224,7 +224,7 @@ if (con == 77)
 {
     con = 78
     gml_Script_msgsetsubloc(0, "* (You got ~1!)/%", fusionResultName, "obj_npc_hammerguy_slash_Step_0_gml_251_0")
-    gml_Script_snd_play(172)
+    gml_Script_snd_play(snd_item)
     gml_Script_d_make()
 }
 if (con == 78 && (!gml_Script_d_ex()))

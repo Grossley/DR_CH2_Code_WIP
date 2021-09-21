@@ -35,5 +35,5 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen(other) && active == t
         image_index = redscreen
     }
     active = false
-    gml_Script_snd_play_pitch(159, 2.5)
+    gml_Script_snd_play_pitch(snd_jump, 2.5)
 }

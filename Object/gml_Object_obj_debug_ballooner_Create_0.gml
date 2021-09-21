@@ -2,7 +2,7 @@ depth = -5000
 timer = 0
 global.interact = 1
 gml_Script_scr_losechar()
-gml_Script_safe_delete(274)
+gml_Script_safe_delete(obj_caterpillarchara)
 gml_Script_scr_getchar(2)
 gml_Script_scr_getchar(3)
 gml_Script_scr_makecaterpillar(80, 130, 2, 0)
@@ -12,9 +12,9 @@ with (obj_caterpillarchara)
 muted = 0
 xmod = 0
 ymod = 0
-marker1 = gml_Script_scr_dark_marker(294, 64, 2424)
-marker2 = gml_Script_scr_dark_marker(230, 130, 2424)
-marker3 = gml_Script_scr_dark_marker(295, 204, 2424)
+marker1 = gml_Script_scr_dark_marker(294, 64, spr_dogcar)
+marker2 = gml_Script_scr_dark_marker(230, 130, spr_dogcar)
+marker3 = gml_Script_scr_dark_marker(295, 204, spr_dogcar)
 text = "Here's my#test dialogue!"
 if (!file_exists("ballooner.txt"))
 {

@@ -73,7 +73,7 @@ if (cancelattack == false)
             attack.sprite_index = spr_attack_mash2
             attack.image_speed = 0.5
             attack.maxindex = 4
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
             gml_Script_instance_create(0, 0, obj_shake)
         }
         if (object_index == obj_heroralsei)

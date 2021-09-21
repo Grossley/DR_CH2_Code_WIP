@@ -17,13 +17,13 @@ if (con == 11)
 {
     timer++
     if (timer == 30)
-        gml_Script_snd_play(151)
+        gml_Script_snd_play(snd_cantselect)
     if (timer == 60)
     {
         with (lastPressedTile)
             bouncecon = 1
-        gml_Script_snd_play(159)
-        ball = gml_Script_scr_dark_marker((obj_mainchara.x - 10), (obj_mainchara.y - 40), 544)
+        gml_Script_snd_play(snd_jump)
+        ball = gml_Script_scr_dark_marker((obj_mainchara.x - 10), (obj_mainchara.y - 40), spr_kris_fall_ball)
         ball.image_speed = 0.5
         ball.depth = 100
         if (puzzle_id == 2)
@@ -86,9 +86,9 @@ if (con == 21)
     {
         won = 1
         if (puzzle_id != 2)
-            gml_Script_snd_play(57)
+            gml_Script_snd_play(snd_won)
         else
-            gml_Script_snd_play(92)
+            gml_Script_snd_play(snd_won_skipping)
     }
     if (puzzle_id == 2)
     {
@@ -120,7 +120,7 @@ if (con == 21)
             con = 22
             if (room == room_dw_cyber_keyboard_puzzle_2)
             {
-                gml_Script_snd_play(295)
+                gml_Script_snd_play(snd_queen_bitcrushed_hoot)
                 victorySprite = 2396
             }
             else

@@ -1,6 +1,6 @@
 con = -1
 customcon = 0
-queen_monitor_frame = gml_Script_scr_dark_marker(148, 50, 2877)
+queen_monitor_frame = gml_Script_scr_dark_marker(148, 50, spr_dw_mansion_monitor_frame)
 with (queen_monitor_frame)
     gml_Script_scr_depth()
 queen_monitor = gml_Script_instance_create((queen_monitor_frame.x + 175), (queen_monitor_frame.y + 60), obj_queenmonitor)
@@ -10,7 +10,7 @@ lever.sprite_index = spr_dw_mansion_lever
 lever_timer = 0
 for (var i = 0; i < 4; i++)
 {
-    var frame = gml_Script_scr_dark_marker(((queen_monitor.x + 500) + (700 * i)), 50, 2877)
+    var frame = gml_Script_scr_dark_marker(((queen_monitor.x + 500) + (700 * i)), 50, spr_dw_mansion_monitor_frame)
     with (frame)
         gml_Script_scr_depth()
     monitor[i] = gml_Script_instance_create((frame.x + 175), (frame.y + 60), obj_queenmonitor)
@@ -42,13 +42,13 @@ else
         gml_Script_scr_depth()
     got_banana = 0
     remove_collider = 0
-    blackall = gml_Script_scr_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 700000
     blackall.image_blend = c_black
     blackall.image_alpha = 0
-    whiteall = gml_Script_scr_marker(-10, -10, 2529)
+    whiteall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     whiteall.image_xscale = 999
     whiteall.image_yscale = 999
     whiteall.depth = 0

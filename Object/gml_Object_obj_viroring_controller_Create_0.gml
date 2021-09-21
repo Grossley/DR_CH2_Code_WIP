@@ -5,7 +5,7 @@ else
     layer_set_visible(layer_get_id("SLIDE_TILES"), 0)
 if (global.flag[427] == 1)
 {
-    plat = gml_Script_scr_dark_marker(758, 1150, 2627)
+    plat = gml_Script_scr_dark_marker(758, 1150, spr_viroring_hiddenplatform)
     plat.depth = 998000
     leftlight = gml_Script_instance_create(760, 1200, obj_cyber_wall_lights_left)
     leftlight.image_xscale = 1

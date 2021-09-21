@@ -19,13 +19,13 @@ if (con == 3)
     global.fe = 0
     global.fc = 1
     con = 4
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     with (d)
         side = 0
 }
 if (con == 4 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    lancer = gml_Script_scr_dark_marker_ch1(1150, 370, 4078)
+    lancer = gml_Script_scr_dark_marker_ch1(1150, 370, spr_darklancer_ch1)
     global.facing = 2
     with (susie)
         sprite_index = spr_susieu_dark_ch1
@@ -42,9 +42,9 @@ if (con == 8)
 {
     with (lancer)
         image_index = 1
-    gml_Script_snd_play_ch1(432)
-    b[0] = gml_Script_scr_marker_ch1((lancer.x + 120), (lancer.y - 20), 4046)
-    b[1] = gml_Script_scr_marker_ch1((lancer.x - 160), (lancer.y - 20), 4046)
+    gml_Script_snd_play_ch1(snd_break1_ch1)
+    b[0] = gml_Script_scr_marker_ch1((lancer.x + 120), (lancer.y - 20), spr_spadebullet_ch1)
+    b[1] = gml_Script_scr_marker_ch1((lancer.x - 160), (lancer.y - 20), spr_spadebullet_ch1)
     for (i = 0; i < 2; i += 1)
     {
         b[i].image_alpha = 0
@@ -68,7 +68,7 @@ if (con == 10)
 {
     with (lancer)
         image_index = 0
-    gml_Script_snd_play_ch1(428)
+    gml_Script_snd_play_ch1(snd_bigcut_ch1)
     aftercon = true
     with (b[0])
         speed = 22
@@ -121,7 +121,7 @@ if (con == 15.1)
 {
     with (susie)
         sprite_index = spr_susiel_dark_unhappy_ch1
-    gml_Script_scr_pan_to_obj_ch1(1347, 5)
+    gml_Script_scr_pan_to_obj_ch1(obj_mainchara_ch1, 5)
     con = 14.2
     alarm[4] = 4
 }
@@ -139,7 +139,7 @@ if (con == 16)
     aftercon = false
     global.fe = 9
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerchaseevent_slash_Step_0_gml_137_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 17
 }
 if (con == 17 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -159,7 +159,7 @@ if (con == 17 && instance_exists(obj_dialoguer_ch1) == 0)
     }
     global.currentsong[0] = gml_Script_snd_init_ch1("creepychase.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ch1(global.currentsong[0])
-    gml_Script_instance_create_ch1(0, 0, 1508)
+    gml_Script_instance_create_ch1(0, 0, obj_overworld_spademaker_ch1)
 }
 if (con == 19)
     con = 20

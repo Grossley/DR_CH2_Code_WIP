@@ -17,8 +17,8 @@ if (BGMADE == 1)
             __WAVEMAG = 0
         else
             __WAVEMAG = (BGMAGNITUDE - __WAVEMINUS)
-        gml_Script_draw_background_part_ext_ch1(4376, 0, i, __WAVEWIDTH, 1, (sin(((i / 8) + (BG_SINER / 30))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
-        gml_Script_draw_background_part_ext_ch1(4376, 0, i, __WAVEWIDTH, 1, ((-sin(((i / 8) + (BG_SINER / 30)))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
+        gml_Script_draw_background_part_ext_ch1(IMAGE_MENU_ch1, 0, i, __WAVEWIDTH, 1, (sin(((i / 8) + (BG_SINER / 30))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
+        gml_Script_draw_background_part_ext_ch1(IMAGE_MENU_ch1, 0, i, __WAVEWIDTH, 1, ((-sin(((i / 8) + (BG_SINER / 30)))) * __WAVEMAG), ((-10 + i) - (BG_ALPHA * 20)), 1, 1, image_blend, (BG_ALPHA * 0.8))
     }
     T_SINER_ADD = ((sin((ANIM_SINER_B / 10)) * 0.6) - 0.25)
     if (T_SINER_ADD >= 0)

@@ -6,9 +6,9 @@ if (t == 0 && kingcon == 0)
     kingcon = 1
     soundplayed = false
     if (type == 2 && subtype == 1)
-        gml_Script_snd_play_ch1(403)
+        gml_Script_snd_play_ch1(snd_dadlaugh_ch1)
     else
-        gml_Script_snd_play_ch1(402)
+        gml_Script_snd_play_ch1(snd_dadblast_ch1)
 }
 if (kingcon == 1)
 {
@@ -16,7 +16,7 @@ if (kingcon == 1)
     {
         if (image_index >= 2 && soundplayed == false)
         {
-            gml_Script_snd_play_ch1(426)
+            gml_Script_snd_play_ch1(snd_criticalswing_ch1)
             soundplayed = true
         }
         sprite_index = spr_chainking_toss_idle_ch1
@@ -24,11 +24,11 @@ if (kingcon == 1)
         image_speed = 0.334
         kingcon = 2
         if (type == 0)
-            chain = gml_Script_instance_create_ch1((x - 44), (y + 104), 1564)
+            chain = gml_Script_instance_create_ch1((x - 44), (y + 104), obj_chain_of_hell_ch1)
         if (type == 1)
-            chain = gml_Script_instance_create_ch1((x - 24), (y + 104), 1573)
+            chain = gml_Script_instance_create_ch1((x - 24), (y + 104), obj_wavechain_ch1)
         if (type == 2)
-            chain = gml_Script_instance_create_ch1((x - 24), (y + 104), 1568)
+            chain = gml_Script_instance_create_ch1((x - 24), (y + 104), obj_finalchain_ch1)
         gml_Script_scr_bullet_inherit_ch1(chain)
         chain.type = subtype
     }

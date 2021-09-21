@@ -6,11 +6,11 @@ if (progressLoop > (pathLifetime + 1))
     {
         if (firedShots == 0)
         {
-            var muzzleflash = gml_Script_scr_bullet_create((x - 21), y, 489)
+            var muzzleflash = gml_Script_scr_bullet_create((x - 21), y, obj_berdlyb_spearblast_trail)
             muzzleflash.image_angle = 180
             muzzleflash.depth -= 2
         }
-        d = gml_Script_scr_bullet_create(x, y, 487)
+        d = gml_Script_scr_bullet_create(x, y, obj_berdlyb_spearblast_bullet)
         d.grazepoints = grazepoints
         d.childgraze = childgraze
         d.direction = point_direction(x, y, path_get_x(mypath, 0.02), path_get_y(mypath, 0.02))

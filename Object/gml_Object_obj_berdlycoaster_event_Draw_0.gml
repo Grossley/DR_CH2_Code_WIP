@@ -1,6 +1,6 @@
 if (con == 0)
 {
-    if gml_Script_i_ex(890)
+    if gml_Script_i_ex(obj_actor)
     {
         with (obj_actor)
         {
@@ -23,7 +23,7 @@ if (con == 0)
     }
     for (i = 0; i < 3; i++)
     {
-        fallmarker[i] = gml_Script_scr_dark_marker(((gml_Script_camerax() + 400) - (i * 100)), (gml_Script_cameray() - 100), 536)
+        fallmarker[i] = gml_Script_scr_dark_marker(((gml_Script_camerax() + 400) - (i * 100)), (gml_Script_cameray() - 100), spr_kris_fall_d_dw)
         fallmarker[i].vspeed = 2
         fallmarker[i].hspeed = -5
         fallmarker[i].gravity = 0.2

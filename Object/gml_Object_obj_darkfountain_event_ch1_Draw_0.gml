@@ -69,6 +69,6 @@ if (t >= 650)
     global.interact = 1
     gml_Script_scr_become_light_ch1()
     gml_Script_snd_free_all_ch1()
-    gml_Script_instance_create_ch1(0, 0, 1462)
+    gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
     room_goto(room_school_unusedroom_ch1)
 }

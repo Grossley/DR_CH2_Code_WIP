@@ -17,7 +17,7 @@ if (curtotal == funtotal && funbuffer < -1)
             image_index = 1
     }
     wonamt += 1
-    gml_Script_snd_play_ch1(432)
+    gml_Script_snd_play_ch1(snd_break1_ch1)
     funbuffer = 7
     if (wonamt == wonmax)
     {
@@ -51,7 +51,7 @@ if (funbuffer == 1)
     event_user(2)
 if (stepnoise == true)
 {
-    gml_Script_snd_play_ch1(457)
+    gml_Script_snd_play_ch1(snd_step1_ch1)
     stepnoise = false
 }
 if (active == true)
@@ -62,7 +62,7 @@ if (active == true)
     {
         active = false
         sprite_index = spr_hourglass_switch_off_ch1
-        gml_Script_snd_play_ch1(381)
+        gml_Script_snd_play_ch1(snd_noise_ch1)
         failamt += 1
         if (failamt >= 3 && talked == 0 && global.interact == 0 && obj_darkcontroller_ch1.atalk == 0 && room == room_field_puzzle1_ch1)
         {
@@ -73,7 +73,7 @@ if (active == true)
             global.fe = 1
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_77_0")
             global.msg[1] = ((gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_78_0") + gml_Script_scr_get_input_name_ch1(5)) + gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_78_1"))
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (failamt >= 3 && talked == 0 && global.interact == 0 && room == room_field_puzzle2_ch1)
         {
@@ -104,7 +104,7 @@ if (active == true)
                 gml_Script_scr_ralface_ch1(2, 8)
                 global.msg[3] = ((gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_113_0") + gml_Script_scr_get_input_name_ch1(5)) + gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_113_1"))
             }
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         with (obj_glowtile_ch1)
         {
@@ -123,8 +123,8 @@ if (talked == 1 && gml_Script_d_ex_ch1() == 0)
 if (shakecon == 1 && global.interact == 0)
 {
     global.interact = 1
-    gml_Script_snd_play_ch1(376)
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(snd_locker_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     shakecon = 2
 }
 if (shakecon == 2 && (!instance_exists(obj_shake_ch1)))
@@ -132,7 +132,7 @@ if (shakecon == 2 && (!instance_exists(obj_shake_ch1)))
     global.fc = 0
     global.typer = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_148_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     shakecon = 3
 }
 if (shakecon == 3 && gml_Script_d_ex_ch1() == 0)

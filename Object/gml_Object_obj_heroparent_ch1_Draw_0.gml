@@ -38,26 +38,26 @@ if (global.hp[global.char[myself]] > 0)
         siner += 1
         if (attacked == false)
         {
-            gml_Script_snd_stop_ch1(442)
+            gml_Script_snd_stop_ch1(snd_laz_c_ch1)
             if (object_index == obj_herokris_ch1)
-                gml_Script_snd_play_ch1(442)
+                gml_Script_snd_play_ch1(snd_laz_c_ch1)
             if (object_index == obj_heroralsei_ch1)
             {
-                ls = gml_Script_snd_play_ch1(442)
+                ls = gml_Script_snd_play_ch1(snd_laz_c_ch1)
                 gml_Script_snd_pitch_ch1(ls, 1.15)
             }
             if (object_index == obj_herosusie_ch1)
             {
-                ls = gml_Script_snd_play_ch1(442)
+                ls = gml_Script_snd_play_ch1(snd_laz_c_ch1)
                 gml_Script_snd_pitch_ch1(ls, 0.9)
             }
             if (points == 150)
             {
-                gml_Script_snd_stop_ch1(426)
-                gml_Script_snd_play_ch1(426)
+                gml_Script_snd_stop_ch1(snd_criticalswing_ch1)
+                gml_Script_snd_play_ch1(snd_criticalswing_ch1)
                 repeat (3)
                 {
-                    anim = gml_Script_instance_create_ch1(((x + mywidth) + random(50)), ((y + 30) + random(30)), 1509)
+                    anim = gml_Script_instance_create_ch1(((x + mywidth) + random(50)), ((y + 30) + random(30)), obj_afterimage_ch1)
                     anim.sprite_index = spr_lightfairy_ch1
                     anim.image_speed = 0.25
                     anim.depth = -20
@@ -200,9 +200,9 @@ if (specdraw == 0)
     if (flash == true)
     {
         fsiner += 1
-        gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+        gml_Script_d3d_set_fog_ch1(true, c_white, 0, 1)
         draw_sprite_ext(thissprite, index, x, y, 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-        gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+        gml_Script_d3d_set_fog_ch1(false, c_black, 0, 0)
     }
 }
 specdraw = 0

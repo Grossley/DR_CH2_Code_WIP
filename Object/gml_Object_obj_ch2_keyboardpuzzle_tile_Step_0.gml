@@ -11,7 +11,7 @@ if (init == 0)
     init = 1
 }
 var checkPress = 0
-if (gml_Script_i_ex(80) && pressable && global.interact == 0)
+if (gml_Script_i_ex(obj_mainchara) && pressable && global.interact == 0)
 {
     if place_meeting(x, y, obj_mainchara)
         checkPress = 1
@@ -25,9 +25,9 @@ if checkPress
         with (obj_ch2_keyboardpuzzle_speaker)
             image_timer = 7
         if (myString == "A" && irandom(99) == 0)
-            gml_Script_snd_play(21)
+            gml_Script_snd_play(snd_txtsans)
         else if (myString == "!")
-            gml_Script_snd_play(8)
+            gml_Script_snd_play(snd_speak_and_spell_Exclamation)
         else
             gml_Script_snd_play(asset_get_index(("snd_speak_and_spell_" + myString)))
         obj_ch2_keyboardpuzzle_controller.addString = myString

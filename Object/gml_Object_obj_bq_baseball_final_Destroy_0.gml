@@ -1,1 +1,1 @@
-gml_Script_snd_stop(10)
+gml_Script_snd_stop(snd_quake_nes)

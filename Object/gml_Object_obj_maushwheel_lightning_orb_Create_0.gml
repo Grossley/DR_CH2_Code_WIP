@@ -7,11 +7,11 @@ timer = 0
 con = 0
 depth = (obj_heart.depth - 100)
 _pitch = 1
-gml_Script_snd_play(136)
-gml_Script_snd_loop(136)
-gml_Script_snd_pitch(136, _pitch)
-gml_Script_snd_volume(136, 0, 0)
-gml_Script_snd_volume(136, 2, 6)
+gml_Script_snd_play(snd_sneo_overpower)
+gml_Script_snd_loop(snd_sneo_overpower)
+gml_Script_snd_pitch(snd_sneo_overpower, _pitch)
+gml_Script_snd_volume(snd_sneo_overpower, 0, 0)
+gml_Script_snd_volume(snd_sneo_overpower, 2, 6)
 destroyonhit = 0
 obj_mauswheel_enemy.mytarget = target
 grazepoints = 16

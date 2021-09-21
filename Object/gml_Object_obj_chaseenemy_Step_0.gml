@@ -494,7 +494,7 @@ if (frozen == false)
         if (alertskip == 0)
         {
             if (noAlertSound == 0)
-                gml_Script_snd_play(163)
+                gml_Script_snd_play(snd_b)
             targalarm = 20
             if (chasetype == 8)
                 targalarm = 8

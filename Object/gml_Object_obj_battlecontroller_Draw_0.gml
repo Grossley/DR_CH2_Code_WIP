@@ -551,7 +551,7 @@ if keyboard_check(ord("A"))
                         for (__n = 0; __n < 3; __n++)
                         {
                             draw_set_color(hpcolorsoft[1])
-                            if (global.canactsus[i][__n] == 1)
+                            if (global.canactsus[i][__n] == true)
                             {
                                 var __actnamestring = global.actnamesus[i][__n]
                                 var __actnamestringwidth = string_width(__actnamestring)
@@ -570,7 +570,7 @@ if keyboard_check(ord("A"))
                         for (__n = 0; __n < 3; __n++)
                         {
                             draw_set_color(hpcolorsoft[2])
-                            if (global.canactral[i][__n] == 1)
+                            if (global.canactral[i][__n] == true)
                             {
                                 __actnamestring = global.actnameral[i][__n]
                                 __actnamestringwidth = string_width(__actnamestring)
@@ -589,7 +589,7 @@ if keyboard_check(ord("A"))
                         for (__n = 0; __n < 3; __n++)
                         {
                             draw_set_color(hpcolorsoft[3])
-                            if (global.canactnoe[i][__n] == 1)
+                            if (global.canactnoe[i][__n] == true)
                             {
                                 __actnamestring = global.actnamenoe[i][__n]
                                 __actnamestringwidth = string_width(__actnamestring)
@@ -614,7 +614,7 @@ if keyboard_check(ord("A"))
 }
 if (global.myfight == 0 && global.chapter == 2 && instance_exists(obj_queen_enemy) && (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global.bmenuno == 12 || global.bmenuno == 13))
 {
-    if gml_Script_i_ex(573)
+    if gml_Script_i_ex(obj_berdlyplug_enemy)
     {
         draw_set_color(c_gray)
         draw_text_ext_transformed((gml_Script___view_get(0, 0) + 80), (gml_Script___view_get(1, 0) + 407), gml_Script_stringsetloc("Berdly", "obj_battlecontroller_slash_Draw_0_gml_653_0"), 9999, 9999, 1, 1, 0)

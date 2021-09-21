@@ -37,7 +37,7 @@ if (chasecon == 2)
         noisebuffer -= 1
         if (abs(length) <= 8 && noisebuffer < 0)
         {
-            gml_Script_snd_play_ch1(422)
+            gml_Script_snd_play_ch1(snd_swing_ch1)
             noisebuffer = 10
         }
     }
@@ -49,8 +49,8 @@ if (king == 1)
         scythetimer += 1
         if (scythetimer == 60)
         {
-            gml_Script_snd_play_ch1(363)
-            sbul = gml_Script_instance_create_ch1((centerx + (radius * scythesidex)), (centery + (60 * scythesidex)), 1518)
+            gml_Script_snd_play_ch1(snd_spearappear_ch1)
+            sbul = gml_Script_instance_create_ch1((centerx + (radius * scythesidex)), (centery + (60 * scythesidex)), obj_collidebullet_ch1)
             sbul.image_xscale = 2
             sbul.image_yscale = 2
             sbul.image_alpha = 0

@@ -36,7 +36,7 @@ if (global.chapter == 1)
             con = 6
             with (wallwindow)
                 image_index = 1
-            gml_Script_snd_play(51)
+            gml_Script_snd_play(snd_wing)
         }
         if (con == 7)
         {
@@ -98,7 +98,7 @@ if (global.chapter == 1)
         }
         if (con == 22)
         {
-            gml_Script_snd_play(51)
+            gml_Script_snd_play(snd_wing)
             image_index = 1
             alarm[4] = 40
             con = 23
@@ -292,8 +292,8 @@ if (global.chapter == 2)
         tor_actor.sprite_index = spr_toriel_u
         gml_Script_c_sel(0)
         gml_Script_c_walk_wait("u", 4, 27.5)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(5)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_cutscene_01_toriel_holding_tin_upset_right)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_walk_wait("r", 4, 12.5)
         gml_Script_c_halt()
@@ -302,25 +302,25 @@ if (global.chapter == 2)
         gml_Script_c_fe(5)
         gml_Script_c_msgsetloc(0, "* Kris^1, did you eat all of the pie!?/%", "obj_krisroom_slash_Step_0_gml_388_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_soundplay(216)
-        gml_Script_c_sprite(3)
+        gml_Script_c_soundplay(snd_whip_crack_only)
+        gml_Script_c_sprite(spr_cutscene_01_toriel_holding_tin_facepalm)
         gml_Script_c_wait(60)
         gml_Script_c_speaker("toriel")
         gml_Script_c_msgsetloc(0, "\\E3* It is YOUR knife in this empty tin, is it not!?/", "obj_krisroom_slash_Step_0_gml_393_0")
         gml_Script_c_msgnextloc("\\E8* Oh, Kris.../%", "obj_krisroom_slash_Step_0_gml_394_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(7)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_cutscene_01_toriel_laugh_pie_tin)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_msgsetloc(0, "\\E4* Am I going to have to lock the oven again?/%", "obj_krisroom_slash_Step_0_gml_399_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_sprite(11)
+        gml_Script_c_sprite(spr_cutscene_01_toriel_walk_left_pie)
         gml_Script_c_walk_wait("l", 2, 25)
-        gml_Script_c_sprite(10)
+        gml_Script_c_sprite(spr_cutscene_01_toriel_walk_right_pie)
         gml_Script_c_halt()
         gml_Script_c_msgsetloc(0, "\\E1* Well^1, hurry out of bed^1. It is time for school./%", "obj_krisroom_slash_Step_0_gml_406_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_sprite(8)
+        gml_Script_c_sprite(spr_cutscene_01_toriel_walk_down_pie)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_walk_wait("d", 2, 75)
         con = 9
@@ -329,7 +329,7 @@ if (global.chapter == 2)
         con = 22
     if (con == 22)
     {
-        gml_Script_snd_play(51)
+        gml_Script_snd_play(snd_wing)
         image_index = 1
         alarm[4] = 40
         con = 23

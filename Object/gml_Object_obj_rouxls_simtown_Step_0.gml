@@ -27,13 +27,13 @@ if (MyTurn == 1)
             HouseCount++
             TileYouCanBuild[CursorX][CursorY] = 0
             TileHasHouse[CursorX][CursorY] = 1
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
             obj_rouxls_enemy.hasplayerplacedhouses = 1
             repeat (21)
             {
                 gml_Script_instance_create(((base_xpos + (CursorX * 40)) + irandom(40)), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
                 gml_Script_instance_create(((base_xpos + (CursorX * 40)) + irandom(40)), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
-                gml_Script_scr_fx_housesquare(((base_xpos + (CursorX * 40)) + 20), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + 20), 255)
+                gml_Script_scr_fx_housesquare(((base_xpos + (CursorX * 40)) + 20), (((gml_Script_cameray() + ((CursorY + 1) * 40)) + 40) + 20), c_red)
             }
             gml_Script_scr_simtown_canbuild_check()
             if (GameOver == 1 || HouseCount >= HouseCountMax)
@@ -110,9 +110,9 @@ if (TurnCon == 3)
             {
                 gml_Script_instance_create(((gml_Script_camerax() + (RandomHouseX * 40)) + irandom(40)), (((gml_Script_cameray() + ((RandomHouseY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
                 gml_Script_instance_create(((gml_Script_camerax() + (RandomHouseX * 40)) + irandom(40)), (((gml_Script_cameray() + ((RandomHouseY + 1) * 40)) + 40) + irandom(40)), obj_house_placed_effect)
-                gml_Script_scr_fx_housesquare(((gml_Script_camerax() + (RandomHouseX * 40)) + 20), (((gml_Script_cameray() + ((RandomHouseY + 1) * 40)) + 40) + 20), 16711680)
+                gml_Script_scr_fx_housesquare(((gml_Script_camerax() + (RandomHouseX * 40)) + 20), (((gml_Script_cameray() + ((RandomHouseY + 1) * 40)) + 40) + 20), c_blue)
             }
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
         }
         else
             TurnCon = 4

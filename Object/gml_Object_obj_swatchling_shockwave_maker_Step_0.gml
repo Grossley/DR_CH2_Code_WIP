@@ -12,7 +12,7 @@ if (btimer > 6)
         xx = (x + ((made * 40) * side))
         yy = y
     }
-    d = gml_Script_scr_bullet_create(xx, yy, 435)
+    d = gml_Script_scr_bullet_create(xx, yy, obj_swatchling_shockwave)
     d.damage = obj_swatchling_battle_controller.red_damage
     d.target = obj_swatchling_battle_controller.red_target
     d.sizemultiplier = sizemultiplier

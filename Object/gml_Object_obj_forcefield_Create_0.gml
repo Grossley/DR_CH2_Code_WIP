@@ -10,8 +10,8 @@ disable = 0
 f = 2
 sold = 0
 black_override = 0
-stayVisible = 0
-skip = 0
+stayVisible = false
+skip = false
 ignorealpha = 0
 if (room != room_dw_city_mice2)
     depth = 900000
@@ -40,11 +40,11 @@ if (global.chapter == 2)
     }
     if (room == room_dw_city_mice2)
     {
-        stayVisible = 1
+        stayVisible = true
         depth = 5000
         if (global.flag[368] == 1)
             instance_destroy()
     }
     if (room == room_dw_mansion_b_central)
-        stayVisible = 1
+        stayVisible = true
 }

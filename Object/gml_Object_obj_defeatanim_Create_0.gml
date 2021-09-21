@@ -4,4 +4,4 @@ image_speed = 0
 starcount = 0
 redup = 0
 bsize = 6
-gml_Script_snd_play(144)
+gml_Script_snd_play(snd_defeatrun)

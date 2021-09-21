@@ -3,7 +3,7 @@ if ((instance_exists(obj_berdlyb_enemy) && global.mercymod[obj_berdlyb_enemy.mys
     if (smokestart == 0)
     {
         smokestart = 1
-        gml_Script_snd_play(141)
+        gml_Script_snd_play(snd_bomb)
         for (var _i = 0; _i < 8; _i++)
         {
             smoke = gml_Script_instance_create((x + 90), y, obj_berdly_smoke)

@@ -14,12 +14,12 @@ if (seat == 1 || seat == 3)
 {
     draw_sprite_ext(_sprite, image_index_fake, ((x + rx) + 35), ((y + ry) + 80), 2, 2, 0, c_white, 1)
     if (mode == 1)
-        gml_Script_draw_sprite_ext_flash(_sprite, image_index_fake, ((x + rx) + 35), ((y + ry) + 80), 2, 2, 0, 16777215, sin((fsiner / 8)))
+        gml_Script_draw_sprite_ext_flash(_sprite, image_index_fake, ((x + rx) + 35), ((y + ry) + 80), 2, 2, 0, c_white, sin((fsiner / 8)))
 }
 else
 {
     rx = ((((-sprite_get_xoffset(_sprite)) * 2) + recruitspritewidth) - (_spritex * 2))
     draw_sprite_ext(_sprite, image_index_fake, ((x + rx) + 35), ((y + ry) + 80), -2, 2, 0, c_white, 1)
     if (mode == 1)
-        gml_Script_draw_sprite_ext_flash(_sprite, image_index_fake, ((x + rx) + 35), ((y + ry) + 80), -2, 2, 0, 16777215, sin((fsiner / 8)))
+        gml_Script_draw_sprite_ext_flash(_sprite, image_index_fake, ((x + rx) + 35), ((y + ry) + 80), -2, 2, 0, c_white, sin((fsiner / 8)))
 }

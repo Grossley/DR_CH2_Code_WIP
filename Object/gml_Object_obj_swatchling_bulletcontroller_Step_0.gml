@@ -40,7 +40,7 @@ if (type == 5 && sameattacker < 2 && obj_swatchling_battle_controller.red_count 
             yy = (miny + 3)
         if reverse
             xx = (((minx - 140) + (made * 40)) + side)
-        d = gml_Script_scr_bullet_create(xx, yy, 435)
+        d = gml_Script_scr_bullet_create(xx, yy, obj_swatchling_shockwave)
         d.damage = damage
         d.target = target
         d.grazepoints = 4

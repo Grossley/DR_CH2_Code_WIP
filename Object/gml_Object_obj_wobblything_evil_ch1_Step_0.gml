@@ -6,7 +6,7 @@ if (wobbled == 0)
         {
             if (!instance_exists(obj_battlealphaer_ch1))
             {
-                d = gml_Script_instance_create_ch1(0, 0, 1493)
+                d = gml_Script_instance_create_ch1(0, 0, obj_battlealphaer_ch1)
                 d.depth = 800000
             }
             with (obj_mainchara_ch1)
@@ -14,15 +14,15 @@ if (wobbled == 0)
                 battlemode = 1
                 threebuffer = 2
             }
-            s = gml_Script_snd_play_ch1(459)
+            s = gml_Script_snd_play_ch1(snd_wobbler_ch1)
             gml_Script_snd_pitch_ch1(s, (0.5 + random(0.2)))
-            s2 = gml_Script_snd_play_ch1(459)
+            s2 = gml_Script_snd_play_ch1(snd_wobbler_ch1)
             gml_Script_snd_pitch_ch1(s2, (0.9 + random(0.2)))
             image_speed = 0.2
             wobbled = 1
             for (i = 0; i < 3; i += 1)
             {
-                dbullet = gml_Script_instance_create_ch1(x, y, 1507)
+                dbullet = gml_Script_instance_create_ch1(x, y, obj_overworld_spade_ch1)
                 with (dbullet)
                 {
                     damage = 15

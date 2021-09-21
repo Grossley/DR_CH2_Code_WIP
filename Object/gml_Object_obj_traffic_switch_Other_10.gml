@@ -3,7 +3,7 @@ if (active == true && pressbuffer < 0)
     timer = 0
 if (global.facing != 0 && active == false && pressbuffer <= 0)
 {
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     timer = (default_time * timefactor)
     pressbuffer = 2
     active = true

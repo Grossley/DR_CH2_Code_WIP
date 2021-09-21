@@ -9,12 +9,12 @@ if (global.chapter == 1)
 }
 if (global.chapter == 2)
 {
-    if gml_Script_i_ex(133)
+    if gml_Script_i_ex(obj_npc_facing)
     {
         with (obj_npc_facing)
             instance_destroy()
     }
-    if gml_Script_i_ex(101)
+    if gml_Script_i_ex(obj_npc_room)
     {
         with (obj_npc_room)
             instance_destroy()

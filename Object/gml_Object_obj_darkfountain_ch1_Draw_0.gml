@@ -23,7 +23,7 @@ if (adjust == 2)
 bgsiner += 0.0625
 if (bgsiner > 7)
     bgsiner -= 7
-bg = 4378
+bg = bg_fountain1_ch1
 gml_Script_draw_background_tiled_ext_ch1(bg, (0 - siner), (0 - siner), 2, 2, colcol, (0.7 * eyebody))
 gml_Script_draw_background_tiled_ext_ch1(bg, (-240 + hscroll), (0 + siner), 2, 2, colcol, (0.3 * eyebody))
 draw_set_color(c_black)

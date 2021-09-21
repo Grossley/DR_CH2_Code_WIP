@@ -8,8 +8,8 @@ if (global.plot < 5)
     con = 1
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_marker_ch1(290, 198, 4207)
-    s = gml_Script_scr_marker_ch1(310, 190, 3537)
+    k = gml_Script_scr_marker_ch1(290, 198, spr_krisu_ch1)
+    s = gml_Script_scr_marker_ch1(310, 190, spr_susieu_ch1)
     global.interact = 1
     with (s)
     {
@@ -25,9 +25,9 @@ if (global.plot < 5)
 }
 else
 {
-    block = gml_Script_instance_create_ch1(280, 100, 1334)
+    block = gml_Script_instance_create_ch1(280, 100, obj_solidblock_ch1)
     block.image_xscale = 4
-    sunset = gml_Script_scr_marker_ch1(0, 0, 3468)
+    sunset = gml_Script_scr_marker_ch1(0, 0, spr_doorarea_sunsetoverlay_ch1)
     with (sunset)
     {
         image_alpha = 0.4

@@ -5,7 +5,7 @@ if (blocktimer == 20)
 {
     xv = ((x + (sprite_width / 4)) + random((sprite_width / 2)))
     yv = ((y + (sprite_height / 4)) + random((sprite_height / 4)))
-    block = gml_Script_scr_dark_marker(xv, yv, 2293)
+    block = gml_Script_scr_dark_marker(xv, yv, spr_blocktree_block)
     with (block)
     {
         hspeed = (0.4 + random(1))

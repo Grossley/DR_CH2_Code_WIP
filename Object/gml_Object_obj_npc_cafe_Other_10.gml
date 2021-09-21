@@ -30,7 +30,7 @@ if (myid == 30 && aite == 35)
 if (myid == 32 && aite == 34)
 {
     _dialogue[0] = gml_Script_stringsetloc("* [Miaouw]/%", "obj_npc_cafe_slash_Other_10_gml_72_0")
-    if gml_Script_i_ex(114)
+    if gml_Script_i_ex(obj_npc_castle_cafe)
     {
         with (obj_npc_castle_cafe)
             t_con = 1

@@ -3,7 +3,7 @@ gml_Script_msgsetloc(0, "* (You dug through the trash...)/", "obj_cybercity_tras
 if (global.flag[flag] == 0)
 {
     image_index = 1
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     if (money_amount > 0)
     {
         global.flag[flag] = 1

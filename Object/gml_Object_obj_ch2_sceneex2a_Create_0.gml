@@ -15,7 +15,7 @@ else
     gml_Script_scr_makecaterpillar((obj_mainchara.x + 100), (gml_Script_cameray() - 300), 3, 1)
     if (violentdefeat == 1)
     {
-        whiteall = gml_Script_scr_dark_marker(-10, -10, 2529)
+        whiteall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
         whiteall.image_xscale = 999
         whiteall.image_yscale = 999
         whiteall.depth = 0
@@ -23,12 +23,12 @@ else
     }
     else
     {
-        whiteall = gml_Script_scr_dark_marker(-10, -10, 2529)
+        whiteall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
         whiteall.image_xscale = 999
         whiteall.image_yscale = 999
         whiteall.depth = 0
     }
-    sparkle = gml_Script_scr_dark_marker(-100, -100, 2435)
+    sparkle = gml_Script_scr_dark_marker(-100, -100, spr_shine)
     sparkle.image_speed = 0.25
     sparkle.image_alpha = 0
     audio_stop_all()

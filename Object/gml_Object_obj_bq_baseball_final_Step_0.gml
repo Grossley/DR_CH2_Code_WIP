@@ -29,7 +29,7 @@ if (hit == -1)
 image_angle += spin_speed
 if (hit == 1)
 {
-    gml_Script_snd_stop(10)
+    gml_Script_snd_stop(snd_quake_nes)
     hit_timer += 1
     if (hit_timer == 1)
     {
@@ -50,18 +50,18 @@ if (hit == 1)
     }
     if (hit_timer == (90 / f))
     {
-        gml_Script_snd_play(51)
-        gml_Script_snd_pitch(51, 0.7)
+        gml_Script_snd_play(snd_wing)
+        gml_Script_snd_pitch(snd_wing, 0.7)
     }
     if (hit_timer == (160 / f))
     {
-        gml_Script_snd_play(51)
-        gml_Script_snd_pitch(51, 1)
+        gml_Script_snd_play(snd_wing)
+        gml_Script_snd_pitch(snd_wing, 1)
     }
     if (hit_timer == (220 / f))
     {
-        gml_Script_snd_play(51)
-        gml_Script_snd_pitch(51, 1.3)
+        gml_Script_snd_play(snd_wing)
+        gml_Script_snd_pitch(snd_wing, 1.3)
     }
     if (hit_timer > 0 && hit_timer < (40 / f))
     {
@@ -93,7 +93,7 @@ if (hit == 1)
         speedlines.offsety = 1
         speedlines.flashframe = 1
         speedlines.depth = (o_bq_screen_flash.depth - 1)
-        gml_Script_snd_play(215)
+        gml_Script_snd_play(snd_whip_throw_only)
     }
     if (hit_timer > (220 / f))
     {
@@ -106,7 +106,7 @@ if (hit == 1)
     {
         instance_destroy()
         gml_Script_instance_create(x, y, obj_bq_baseball_final_hits_boss)
-        gml_Script_snd_play(286)
+        gml_Script_snd_play(snd_queen_gasp)
     }
 }
 if (y > 20 && (!instance_exists(o_bq_whitefade)) && hit != 1)

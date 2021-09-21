@@ -1,7 +1,7 @@
 alarm[3] = 20
 alarm[1] = 40
 gml_Script_scr_mercyadd(myself, 100)
-gml_Script_snd_play_pitch(166, 1.5)
+gml_Script_snd_play_pitch(snd_damage, 1.5)
 image_speed = 0
 shaved = 1
 global.flag[20] = 0

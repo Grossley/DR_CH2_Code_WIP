@@ -39,7 +39,7 @@ if (con == 1)
     {
         if gml_Script_scr_onscreen(id)
         {
-            gml_Script_snd_play_pitch(131, 0.6)
+            gml_Script_snd_play_pitch(snd_heartshot_dr_b, 0.6)
             spear = gml_Script_instance_create((x + (sprite_width / 2)), (y + 65), obj_virospear)
             spear.depth = (depth - 20)
             shotSpeed = (irandom(20) + 20)

@@ -9,7 +9,7 @@ if (con == 1)
     cutscene_master = gml_Script_scr_cutscene_make()
     with (obj_mainchara)
         visible = false
-    gml_Script_c_pannable(1)
+    gml_Script_c_pannable(true)
     kr = 0
     kr_actor = gml_Script_instance_create((obj_mainchara.x - 10), (obj_mainchara.y - 20), obj_actor)
     gml_Script_scr_actor_setup(kr, kr_actor, "kris")
@@ -79,9 +79,9 @@ if (con == 1)
     gml_Script_c_sel(su)
     gml_Script_c_walk("d", 5, 60)
     gml_Script_c_actortokris()
-    gml_Script_c_panobj(80, 15)
+    gml_Script_c_panobj(obj_mainchara, 15)
     gml_Script_c_wait(15)
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
 }
 if (con == 2)
 {

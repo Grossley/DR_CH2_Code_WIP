@@ -38,7 +38,7 @@ if (con == 1)
     if (timer < 13)
     {
         if (timer == 1)
-            gml_Script_snd_play(91)
+            gml_Script_snd_play(snd_wallclaw)
         speed += 2
     }
     if (timer >= 13)

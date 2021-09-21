@@ -1,6 +1,6 @@
 myinteract = 0
 image_speed = 0
-skip = 0
+skip = false
 flippable = 1
 flip = 0
 flipcon = 0

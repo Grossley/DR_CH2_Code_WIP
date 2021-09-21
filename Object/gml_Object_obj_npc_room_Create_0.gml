@@ -24,7 +24,7 @@ if (global.darkzone == false)
     }
     if (room == room_graveyard)
     {
-        fence = gml_Script_scr_marker(81, 122, 1091)
+        fence = gml_Script_scr_marker(81, 122, spr_npc_graveyardfence)
         with (fence)
             gml_Script_scr_depth()
         if (x < 30)
@@ -291,7 +291,7 @@ if (global.darkzone == true)
         if (global.flag[636] == 1)
         {
             var swatchling_sweep = 0
-            if gml_Script_i_ex(108)
+            if gml_Script_i_ex(obj_npc_room_animated)
             {
                 with (obj_npc_room_animated)
                 {
@@ -333,7 +333,7 @@ if (global.darkzone == true)
             if (global.flag[635] == 1)
             {
                 var viro_exists = 0
-                if gml_Script_i_ex(108)
+                if gml_Script_i_ex(obj_npc_room_animated)
                 {
                     with (obj_npc_room_animated)
                     {

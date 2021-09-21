@@ -6,9 +6,9 @@ if (con == 0)
     auto = 1
     song1 = gml_Script_snd_init("cyber_battle_end.ogg")
     song2 = gml_Script_mus_play(song1)
-    marker[0] = gml_Script_scr_dark_marker(xx, (yy - 200), 861)
-    marker[1] = gml_Script_scr_dark_marker(xx, (yy - 200), 817)
-    marker[2] = gml_Script_scr_dark_marker(xx, (yy - 200), 777)
+    marker[0] = gml_Script_scr_dark_marker(xx, (yy - 200), spr_kris_dance)
+    marker[1] = gml_Script_scr_dark_marker(xx, (yy - 200), spr_susie_dance)
+    marker[2] = gml_Script_scr_dark_marker(xx, (yy - 200), spr_ralsei_dance)
     marker[3] = gml_Script_instance_create(xx, (yy - 200), obj_sweet_npc)
     marker[3].dancing = 1
     marker[4] = gml_Script_instance_create(xx, (yy - 200), obj_kk_npc)

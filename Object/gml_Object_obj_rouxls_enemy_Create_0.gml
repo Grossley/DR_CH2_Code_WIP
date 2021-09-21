@@ -74,7 +74,7 @@ if ((!gml_Script_scr_debug()) || room == room_dw_mansion_acid_tunnel_loop_rouxls
     with (obj_simtown_acidmaker)
         visible = false
 }
-if (!gml_Script_i_ex(751))
+if (!gml_Script_i_ex(obj_rouxls_simtown))
     simcity = gml_Script_instance_create(x, y, obj_rouxls_simtown)
 else
     simcity = obj_rouxls_simtown

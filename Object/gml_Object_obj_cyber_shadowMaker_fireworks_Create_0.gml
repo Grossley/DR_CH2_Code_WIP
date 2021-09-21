@@ -17,7 +17,7 @@ inactive_cleanup = 0
 cleanup_timer = 0
 depth = (room == room_dw_cyber_post_music_boss_slide ? 80000 : 900000)
 var shadow_amount = 1
-if gml_Script_i_ex(274)
+if gml_Script_i_ex(obj_caterpillarchara)
 {
     with (obj_caterpillarchara)
     {
@@ -25,7 +25,7 @@ if gml_Script_i_ex(274)
         gml_Script_scr_caterpillar_interpolate()
     }
 }
-if gml_Script_i_ex(67)
+if gml_Script_i_ex(obj_interactablesolid)
 {
     with (obj_interactablesolid)
         shadow_amount++
@@ -36,7 +36,7 @@ for (var i = 0; i < shadow_amount; i++)
     shadow_char[i].image_speed = 0
 }
 shadow_total = shadow_amount
-if gml_Script_i_ex(67)
+if gml_Script_i_ex(obj_interactablesolid)
 {
     with (obj_interactablesolid)
     {

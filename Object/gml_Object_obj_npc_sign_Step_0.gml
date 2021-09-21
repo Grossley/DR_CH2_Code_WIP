@@ -1,4 +1,4 @@
-if (myinteract == 3 && skip == 0)
+if (myinteract == 3 && skip == false)
 {
     if (!gml_Script_d_ex())
     {

@@ -3,15 +3,15 @@ if (caught[other.which] == 0)
     caught[other.which] = 1
     if (other.parentid.object_index == obj_maus_enemy)
     {
-        gml_Script_snd_stop(56)
-        gml_Script_snd_play(56)
-        gml_Script_snd_volume(56, 1, 0)
+        gml_Script_snd_stop(snd_squeaky)
+        gml_Script_snd_play(snd_squeaky)
+        gml_Script_snd_volume(snd_squeaky, 1, 0)
     }
     else
     {
-        gml_Script_snd_stop(64)
-        gml_Script_snd_play(64)
-        gml_Script_snd_volume(64, 0.8, 0)
+        gml_Script_snd_stop(snd_noise)
+        gml_Script_snd_play(snd_noise)
+        gml_Script_snd_volume(snd_noise, 0.8, 0)
     }
 }
 monsterhit[other.which] = 1

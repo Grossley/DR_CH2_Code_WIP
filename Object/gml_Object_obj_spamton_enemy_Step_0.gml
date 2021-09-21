@@ -67,19 +67,19 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "Minitons"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 23
             }
             else if (rr == 1)
             {
                 global.monsterattackname[myself] = "WordBullets"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 24
             }
             else
             {
                 global.monsterattackname[myself] = "MoneyVacuum"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 25
             }
             gml_Script_scr_turntimer(270)
@@ -248,20 +248,20 @@ if (global.myfight == 3)
         }
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
     }
-    if (actcon == 5 && (!gml_Script_i_ex(62)))
+    if (actcon == 5 && (!gml_Script_i_ex(obj_writer)))
     {
         actcon = 10
         gml_Script_msgset(0, "\\C2 ")
         gml_Script_scr_battletext_default()
     }
-    if (actcon == 10 && (!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
+    if (actcon == 10 && (!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_choicer_neo)))
     {
         if (deal_counter == 0)
         {
             actcon = 1
             if (global.choice == correct_answer)
             {
-                gml_Script_snd_play(225)
+                gml_Script_snd_play(snd_great_shine)
                 gml_Script_scr_mercyadd(myself, 20)
                 deal_counter++
                 deal_read = 0
@@ -271,7 +271,7 @@ if (global.myfight == 3)
             }
             else
             {
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M3WRONG ANSWER!!!&WRONG!!! WRONG!!!&WRONG!!! TRY AGAIN!!!/%", "obj_spamton_enemy_slash_Step_0_gml_304_0")
             }
@@ -281,7 +281,7 @@ if (global.myfight == 3)
             actcon = 1
             if (global.choice == correct_answer)
             {
-                gml_Script_snd_play(225)
+                gml_Script_snd_play(snd_great_shine)
                 gml_Script_scr_mercyadd(myself, 20)
                 deal_counter++
                 deal_read = 0
@@ -291,7 +291,7 @@ if (global.myfight == 3)
             }
             else
             {
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M2YUM YUM.&DELICIS KROMER./", "obj_spamton_enemy_slash_Step_0_gml_323_0")
                 gml_Script_msgnextloc("\\M3DID YOU HAVE&AN YMORE?/%", "obj_spamton_enemy_slash_Step_0_gml_324_0")
@@ -306,7 +306,7 @@ if (global.myfight == 3)
             {
                 deal_counter++
                 deal_read = 0
-                gml_Script_snd_play(225)
+                gml_Script_snd_play(snd_great_shine)
                 gml_Script_scr_mercyadd(myself, 20)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M4NOW THAT'S WHAT&I'M TALKING AB04T!&YOU GOT [Guts] KID!!/", "obj_spamton_enemy_slash_Step_0_gml_346_0")
@@ -314,7 +314,7 @@ if (global.myfight == 3)
             }
             else
             {
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M0DEAL OR NO DEAL^1,&THAT'S THE TV SHOW/", "obj_spamton_enemy_slash_Step_0_gml_353_0")
                 gml_Script_msgnextloc("\\M3WHERE THE PEOPLE&WHO DON'T TAKE THE DEAL/", "obj_spamton_enemy_slash_Step_0_gml_354_0")
@@ -328,7 +328,7 @@ if (global.myfight == 3)
             {
                 deal_counter++
                 deal_read = 0
-                gml_Script_snd_play(225)
+                gml_Script_snd_play(snd_great_shine)
                 gml_Script_scr_mercyadd(myself, 20)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M3WHAT!? YOU DOn'T&HAVE ENOUGH&[Wacky Stacks]!?/", "obj_spamton_enemy_slash_Step_0_gml_368_0")
@@ -337,7 +337,7 @@ if (global.myfight == 3)
             }
             else
             {
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M2YUM YUM.&DELICIS KROMER./", "obj_spamton_enemy_slash_Step_0_gml_374_0")
                 gml_Script_msgnextloc("\\M3DID YOU HAVE&AN YMORE?/%", "obj_spamton_enemy_slash_Step_0_gml_375_0")
@@ -351,7 +351,7 @@ if (global.myfight == 3)
                 actcon = 20
                 deal_counter++
                 deal_read = 0
-                gml_Script_snd_play(225)
+                gml_Script_snd_play(snd_great_shine)
                 gml_Script_scr_mercyadd(myself, 19)
                 correct_answer = 1
                 global.choicemsg[0] = gml_Script_stringsetloc("#NO DEAL", "obj_spamton_enemy_slash_Step_0_gml_396_0")
@@ -369,7 +369,7 @@ if (global.myfight == 3)
             else
             {
                 actcon = 50
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
                 gml_Script_scr_speaker("spamton")
                 gml_Script_msgsetloc(0, "\\M2YUM YUM GREAT&DEAL KID!!/", "obj_spamton_enemy_slash_Step_0_gml_413_0")
                 gml_Script_msgnextloc("\\M2YOUR A BIGSHOT!^1!&SAVING THE WORLD!!/%", "obj_spamton_enemy_slash_Step_0_gml_414_0")
@@ -377,20 +377,20 @@ if (global.myfight == 3)
         }
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
     }
-    if (actcon == 20 && (!gml_Script_i_ex(62)))
+    if (actcon == 20 && (!gml_Script_i_ex(obj_writer)))
     {
         actcon = 25
         gml_Script_msgset(0, "\\C2 ")
         gml_Script_scr_battletext_default()
     }
-    if (actcon == 25 && (!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
+    if (actcon == 25 && (!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_choicer_neo)))
     {
         if (global.choice == correct_answer)
         {
             actcon = 26
             gml_Script_scr_mercyadd(myself, 100)
             global.mercymod[myself] = 0
-            gml_Script_snd_play(225)
+            gml_Script_snd_play(snd_great_shine)
             gml_Script_snd_free_all()
             image_xscale = 2
             remx += expand_spam
@@ -418,15 +418,15 @@ if (global.myfight == 3)
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
         actcon = 28
     }
-    if (actcon == 28 && (!gml_Script_i_ex(62)))
+    if (actcon == 28 && (!gml_Script_i_ex(obj_writer)))
     {
         global.flag[309] = 1
         gml_Script_scr_monsterdefeat()
         actcon = 1
     }
-    if (actcon == 50 && (!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
+    if (actcon == 50 && (!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_choicer_neo)))
     {
-        gml_Script_snd_play(104)
+        gml_Script_snd_play(snd_hypnosis)
         global.msg[0] = gml_Script_stringsetloc("* (You felt your KROMER being absorbed...)&* (Wrong choice...?)/%", "obj_spamton_enemy_slash_Step_0_gml_415_0")
         actcon = 1
         if (global.gold >= 25)

@@ -1,5 +1,5 @@
 var dialogue = 0
-if gml_Script_i_ex(72)
+if gml_Script_i_ex(obj_kris_headobj)
     dialogue = 1
 if (completed == 1)
     dialogue = 3

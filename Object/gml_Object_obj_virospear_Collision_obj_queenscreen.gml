@@ -35,17 +35,17 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
             con = 99
         with (obj_virospear)
             exploded = 1
-        gml_Script_safe_delete(285)
-        gml_Script_safe_delete(266)
+        gml_Script_safe_delete(obj_forcefield)
+        gml_Script_safe_delete(obj_overworld_bulletarea)
         obj_mainchara.battlemode = 0
         gml_Script_scr_shakescreen()
-        gml_Script_snd_play(57)
+        gml_Script_snd_play(snd_won)
         global.flag[352] = 1
     }
     if (other.extflag == 10)
     {
         global.flag[427] = 1
-        plat = gml_Script_scr_dark_marker(758, 1150, 2627)
+        plat = gml_Script_scr_dark_marker(758, 1150, spr_viroring_hiddenplatform)
         plat.depth = 998000
         leftlight = gml_Script_instance_create(760, 1200, obj_cyber_wall_lights_left)
         leftlight.image_xscale = 1
@@ -58,7 +58,7 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
         rightlight.depth = (plat.depth - 12)
         chest = gml_Script_instance_create(844, 1144, obj_treasure_room)
         shake = gml_Script_instance_create(x, y, obj_shake)
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (obj_ow_viroring)
         {
             if (trigNum == 3)
@@ -112,7 +112,7 @@ if (gml_Script_scr_onscreen(id) && gml_Script_scr_onscreen_tolerance(other, 64) 
     else
         other.sprite_index = spr_queenscreen_red
     active = false
-    gml_Script_snd_play_pitch(159, 2.5)
+    gml_Script_snd_play_pitch(snd_jump, 2.5)
 }
 if (other.image_index == 9 && active == true && room == room_dw_mansion_east_1f_d)
 {

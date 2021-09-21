@@ -222,8 +222,8 @@ y += py
 if (dmgnoise == true)
 {
     dmgnoise = false
-    gml_Script_snd_stop_ch1(438)
-    gml_Script_snd_play_ch1(438)
+    gml_Script_snd_stop_ch1(snd_hurt1_ch1)
+    gml_Script_snd_play_ch1(snd_hurt1_ch1)
 }
 global.inv -= 1
 if (global.inv > 0)

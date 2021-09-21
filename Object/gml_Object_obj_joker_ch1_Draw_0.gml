@@ -28,11 +28,11 @@ if (state == 3)
         }
         laughnoise = choose(0, 1, 2)
         if (laughnoise == 0)
-            gml_Script_snd_play_ch1(462)
+            gml_Script_snd_play_ch1(snd_joker_laugh0_ch1)
         if (laughnoise == 1)
-            gml_Script_snd_play_ch1(467)
+            gml_Script_snd_play_ch1(snd_joker_ha1_ch1)
         if (laughnoise == 2)
-            gml_Script_snd_play_ch1(464)
+            gml_Script_snd_play_ch1(snd_joker_ha0_ch1)
     }
     hurttimer -= 1
     if (hurttimer < 0)
@@ -51,14 +51,14 @@ if (state == 0)
         body.fsiner = fsiner
         with (body)
         {
-            gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+            gml_Script_d3d_set_fog_ch1(true, c_white, 0, 1)
             if (dancelv == 0)
                 draw_sprite_ext(spr_joker_main_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
             if (dancelv == 1)
                 draw_sprite_ext(spr_joker_dance_ch1, (floatsiner / 3), (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
             if (dancelv == 2)
                 draw_sprite_ext(spr_joker_tired_ch1, 0, (offx + flyx), (offy + fly), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-            gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+            gml_Script_d3d_set_fog_ch1(false, c_black, 0, 0)
         }
     }
 }

@@ -97,10 +97,10 @@ if (state == 2)
         if (inhalesfx == 0)
         {
             inhalesfx = 1
-            gml_Script_snd_loop(136)
-            gml_Script_snd_pitch(136, 3)
+            gml_Script_snd_loop(snd_sneo_overpower)
+            gml_Script_snd_pitch(snd_sneo_overpower, 3)
             gml_Script_snd_pitch_time(136, 5, 30)
-            gml_Script_snd_volume(136, 0.5, 0)
+            gml_Script_snd_volume(snd_sneo_overpower, 0.5, 0)
         }
         effecttimer++
         if ((effecttimer % 6) == 0)
@@ -128,7 +128,7 @@ if (state == 3)
     if inhalesfx
     {
         inhalesfx = 0
-        gml_Script_snd_stop(136)
+        gml_Script_snd_stop(snd_sneo_overpower)
     }
     timer--
     if (timer == 0)

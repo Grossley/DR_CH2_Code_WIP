@@ -11,7 +11,7 @@ if (con == 1)
         target.image_blend = merge_color(target.image_blend, flashcolor, 0.1)
         if ((siner % 2) == 0)
         {
-            ai = gml_Script_instance_create_ch1((target.x + random(target.sprite_width)), ((target.y + target.sprite_height) - 20), 1509)
+            ai = gml_Script_instance_create_ch1((target.x + random(target.sprite_width)), ((target.y + target.sprite_height) - 20), obj_afterimage_ch1)
             ai.gravity = 0.5
             ai.sprite_index = spr_savepoint_ch1
             ai.image_speed = 0.2

@@ -7,7 +7,7 @@ if (init == 0)
     init = 1
 }
 var checkPress = 0
-if (gml_Script_i_ex(890) && (!pressed) && pressable && global.interact == 0)
+if (gml_Script_i_ex(obj_actor) && (!pressed) && pressable && global.interact == 0)
 {
     if place_meeting(x, y, obj_actor)
         checkPress = 1
@@ -27,13 +27,13 @@ if checkPress
         controller.finalString += myString
         controller.buttonx = x
         down = 1
-        if gml_Script_i_ex(1127)
+        if gml_Script_i_ex(obj_ch2_noellepuzzle_screen)
         {
             with (obj_ch2_noellepuzzle_screen)
             {
                 if (forcefield_id == other.forcefield_id && myString != other.myString)
                 {
-                    gml_Script_snd_play(51)
+                    gml_Script_snd_play(snd_wing)
                     myString = other.myString
                 }
             }

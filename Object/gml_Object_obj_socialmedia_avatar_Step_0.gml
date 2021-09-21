@@ -32,8 +32,8 @@ if isqueen
             }
             vspeed = 0
             hspeed = 0
-            gml_Script_snd_play(292)
-            gml_Script_snd_stop(331)
+            gml_Script_snd_play(snd_queen_laugh_0)
+            gml_Script_snd_stop(snd_crowd)
             redword = gml_Script_instance_create((x - 40), (y - 10), obj_wordbullet)
             redword.queenword = 1
             redword.wordchoice = gml_Script_stringsetloc("DRAMA", "obj_socialmedia_avatar_slash_Step_0_gml_36_0")
@@ -46,9 +46,9 @@ if isqueen
     {
         sprite_index = spr_q_socialface_queen_laugh
         image_speed = 0.25
-        gml_Script_snd_play(331)
-        gml_Script_snd_loop(331)
-        gml_Script_snd_pitch(331, 1)
+        gml_Script_snd_play(snd_crowd)
+        gml_Script_snd_loop(snd_crowd)
+        gml_Script_snd_pitch(snd_crowd, 1)
     }
     angrycon = -1
 }

@@ -1,9 +1,9 @@
-if (stayVisible == 1)
+if (stayVisible == true)
     image_alpha = 1
 if fadeout
 {
-    if (stayVisible == 1)
-        stayVisible = 0
+    if (stayVisible == true)
+        stayVisible = false
     image_alpha = clamp((image_alpha - 0.1), 0, 1)
 }
 var height = (image_yscale / f)

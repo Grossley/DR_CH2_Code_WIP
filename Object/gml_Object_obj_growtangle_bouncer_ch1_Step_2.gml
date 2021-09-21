@@ -251,11 +251,11 @@ if instance_exists(obj_growtangle_ch1)
     }
     if (bumpnoise == true)
     {
-        gml_Script_snd_play_ch1(399)
-        gml_Script_snd_play_ch1(446)
+        gml_Script_snd_play_ch1(snd_bump_ch1)
+        gml_Script_snd_play_ch1(snd_screenshake_ch1)
         bumpnoise = false
         if (!instance_exists(obj_shake_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     }
 }
 if (grazed == 1)

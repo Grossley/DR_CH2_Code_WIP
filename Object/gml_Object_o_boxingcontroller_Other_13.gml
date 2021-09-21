@@ -1,4 +1,4 @@
-if gml_Script_i_ex(837)
+if gml_Script_i_ex(obj_gigaqueen_enemy)
 {
     with (obj_gigaqueen_enemy)
     {

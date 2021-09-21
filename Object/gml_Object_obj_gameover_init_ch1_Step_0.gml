@@ -13,20 +13,20 @@ if (timer == 31)
     sprite_delete(global.screenshot)
 if (timer == 50)
 {
-    gml_Script_snd_play_ch1(432)
+    gml_Script_snd_play_ch1(snd_break1_ch1)
     sprite_index = spr_heartbreak_ch1
     x -= 2
 }
 if (timer == 90)
 {
-    gml_Script_snd_play_ch1(433)
+    gml_Script_snd_play_ch1(snd_break2_ch1)
     visible = false
-    sh[0] = gml_Script_instance_create_ch1((x - 2), y, 1403)
-    sh[1] = gml_Script_instance_create_ch1(x, (y + 3), 1403)
-    sh[2] = gml_Script_instance_create_ch1((x + 2), (y + 6), 1403)
-    sh[3] = gml_Script_instance_create_ch1((x + 8), y, 1403)
-    sh[4] = gml_Script_instance_create_ch1((x + 10), (y + 3), 1403)
-    sh[5] = gml_Script_instance_create_ch1((x + 12), (y + 6), 1403)
+    sh[0] = gml_Script_instance_create_ch1((x - 2), y, obj_marker_ch1)
+    sh[1] = gml_Script_instance_create_ch1(x, (y + 3), obj_marker_ch1)
+    sh[2] = gml_Script_instance_create_ch1((x + 2), (y + 6), obj_marker_ch1)
+    sh[3] = gml_Script_instance_create_ch1((x + 8), y, obj_marker_ch1)
+    sh[4] = gml_Script_instance_create_ch1((x + 10), (y + 3), obj_marker_ch1)
+    sh[5] = gml_Script_instance_create_ch1((x + 12), (y + 6), obj_marker_ch1)
     for (i = 0; i < 6; i += 1)
     {
         with (sh[i])
@@ -43,7 +43,7 @@ if (timer == 90)
         timer += 15
 }
 if (timer == 140)
-    gml_Script_instance_create_ch1(0, 0, 1460)
+    gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
 if (timer >= 80 && timer < 150)
 {
     if gml_Script_button1_p_ch1()

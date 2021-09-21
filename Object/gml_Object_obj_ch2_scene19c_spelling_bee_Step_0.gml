@@ -50,7 +50,7 @@ if (sb_con == 1)
         {
             berdly_finish = 0
             sb_con = 99
-            if gml_Script_i_ex(959)
+            if gml_Script_i_ex(obj_ch2_scene19c)
             {
                 with (obj_ch2_scene19c)
                     con = 25

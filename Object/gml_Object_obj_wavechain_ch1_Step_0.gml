@@ -3,15 +3,15 @@ if (chaincon == 0)
     if (chain_noise == 0)
     {
         chain_noise = 1
-        chainsnd = gml_Script_snd_loop_ch1(401)
+        chainsnd = gml_Script_snd_loop_ch1(snd_chain_extend_ch1)
     }
     sons += 1
-    son[sons] = gml_Script_instance_create_ch1(x, y, 1566)
+    son[sons] = gml_Script_instance_create_ch1(x, y, obj_chainpiece_ch1)
     if (x <= obj_nonsolid_growtangle_ch1.x)
     {
         gml_Script_snd_stop_ch1(chainsnd)
-        gml_Script_snd_play_ch1(376)
-        gml_Script_snd_play_ch1(446)
+        gml_Script_snd_play_ch1(snd_locker_ch1)
+        gml_Script_snd_play_ch1(snd_screenshake_ch1)
         speed = 0
         chaincon = 1
         shakeamt = 12
@@ -46,7 +46,7 @@ if (chaincon == 3)
     if (chain_noise == 1)
     {
         chain_noise = 2
-        wavenoise = gml_Script_snd_loop_ch1(400)
+        wavenoise = gml_Script_snd_loop_ch1(snd_chain_wave_ch1)
     }
     if (type == 0)
     {
@@ -55,7 +55,7 @@ if (chaincon == 3)
         btimer += 1
         if (btimer >= 20)
         {
-            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
+            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, obj_regularbullet_ch1)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
             gml_Script_scr_bullet_inherit_ch1(regbul)
@@ -71,7 +71,7 @@ if (chaincon == 3)
         btimer += 1
         if (btimer >= 18)
         {
-            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
+            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, obj_regularbullet_ch1)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
             gml_Script_scr_bullet_inherit_ch1(regbul)
@@ -87,7 +87,7 @@ if (chaincon == 3)
         btimer += 1
         if (btimer >= 16)
         {
-            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
+            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, obj_regularbullet_ch1)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
             gml_Script_scr_bullet_inherit_ch1(regbul)
@@ -103,7 +103,7 @@ if (chaincon == 3)
         btimer += 1
         if (btimer >= 14)
         {
-            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, 1520)
+            regbul = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 20), initboxy, obj_regularbullet_ch1)
             regbul.sprite_index = spr_spadebullet_ch1
             regbul.hspeed = 4
             gml_Script_scr_bullet_inherit_ch1(regbul)

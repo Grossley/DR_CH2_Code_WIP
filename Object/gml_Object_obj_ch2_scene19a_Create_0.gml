@@ -11,7 +11,7 @@ if (global.chapter != 2 || global.plot >= 105)
     }
     if (global.plot >= 120)
     {
-        if gml_Script_i_ex(1107)
+        if gml_Script_i_ex(obj_shapepuzzle)
         {
             with (obj_shapepuzzle)
                 x = 120

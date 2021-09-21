@@ -5,7 +5,7 @@ if (collided == 0)
         with (obj_checkers_enemy)
             crown += 35
         global.msg[0] = gml_Script_stringsetloc("* The crown greatly loosened!/%", "obj_ralseithrown_slash_Collision_ac806612_bd9d_43f5_86b2_61306f514c9f_gml_6_0")
-        gml_Script_snd_play(148)
+        gml_Script_snd_play(snd_coin)
         with (other)
         {
             if (offing == 1)
@@ -19,7 +19,7 @@ if (collided == 0)
     }
     else
     {
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         with (other)
             con = 7
         with (obj_checkers_enemy)

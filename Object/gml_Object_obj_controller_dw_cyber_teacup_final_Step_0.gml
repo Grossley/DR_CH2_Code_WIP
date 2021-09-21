@@ -16,7 +16,7 @@ if (con == 1)
     if (pancakemaker1.y >= 262)
     {
         gml_Script_instance_create(0, 0, obj_shake)
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
         pancakemaker1.speed = 0
         deadTeacup1 = gml_Script_instance_create(teacup1.x, teacup1.y, obj_soliddark)
         deadTeacup1.visible = true

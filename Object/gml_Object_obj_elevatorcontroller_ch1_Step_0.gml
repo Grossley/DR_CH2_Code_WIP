@@ -116,7 +116,7 @@ if (shakecon == 2)
 }
 if (shakecon == 3)
 {
-    gml_Script_snd_play_ch1(446)
+    gml_Script_snd_play_ch1(snd_screenshake_ch1)
     shakeamt = 4
     shakecon = 4
 }
@@ -262,9 +262,9 @@ if (con >= 1)
         with (obj_mainchara_ch1)
             visible = false
         global.interact = 1
-        k = gml_Script_scr_dark_marker_ch1(300, 420, 4198)
-        s = gml_Script_scr_dark_marker_ch1(300, 460, 3551)
-        r = gml_Script_scr_dark_marker_ch1(300, 500, 3567)
+        k = gml_Script_scr_dark_marker_ch1(300, 420, spr_krisu_dark_ch1)
+        s = gml_Script_scr_dark_marker_ch1(300, 460, spr_susieu_dark_ch1)
+        r = gml_Script_scr_dark_marker_ch1(300, 500, spr_ralseiu_ch1)
         cc[0] = k
         cc[1] = s
         cc[2] = r
@@ -347,7 +347,7 @@ if (con >= 1)
         global.typer = 31
         global.fe = 11
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_353_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 6
     }
     if (con == 6 && (!gml_Script_d_ex_ch1()))
@@ -356,7 +356,7 @@ if (con >= 1)
         ele_noise_ind = gml_Script_mus_loop_ext_ch1(ele_noise, 0.6, 0.1)
         with (r)
             sprite_index = spr_ralseiu_ch1
-        gml_Script_snd_play_ch1(440)
+        gml_Script_snd_play_ch1(snd_item_ch1)
         movecon = 3
         newcno = 2
         con = 7
@@ -373,7 +373,7 @@ if (con >= 1)
         with (r)
             sprite_index = spr_ralseid_ch1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_384_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 9
     }
     if (con == 9 && (!gml_Script_d_ex_ch1()))
@@ -396,7 +396,7 @@ if (con >= 1)
             image_speed = 0.25
         }
         con = 12
-        gml_Script_snd_play_ch1(368)
+        gml_Script_snd_play_ch1(snd_wing_ch1)
         alarm[4] = 12
     }
     if (con == 13)
@@ -414,7 +414,7 @@ if (con >= 1)
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_419_0")
         con = 17
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 17 && (!gml_Script_d_ex_ch1()))
     {
@@ -425,7 +425,7 @@ if (con >= 1)
         }
         with (k)
             sprite_index = spr_kris_fallen_dark_ch1
-        gml_Script_snd_play_ch1(368)
+        gml_Script_snd_play_ch1(snd_wing_ch1)
         con = 18
         alarm[4] = 10
     }
@@ -457,7 +457,7 @@ if (con >= 1)
         global.msg[10] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_458_0")
         global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_459_0")
         global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_460_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 22
     }
     if (con == 22 && (!gml_Script_d_ex_ch1()))
@@ -482,7 +482,7 @@ if (con >= 1)
         global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_487_0")
         global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_488_0")
         con = 25
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 25 && (!gml_Script_d_ex_ch1()))
     {
@@ -507,7 +507,7 @@ if (con >= 1)
         global.msg[13] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_516_0")
         gml_Script_scr_susface_ch1(14, 2)
         global.msg[15] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_518_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 28
     }
     if (con == 28 && (!gml_Script_d_ex_ch1()))
@@ -580,7 +580,7 @@ if (con >= 1)
         global.typer = 31
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_605_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 0
         con = 39
     }
@@ -596,7 +596,7 @@ if (con >= 1)
         con = 40
         kremx = k.x
         kremy = k.y
-        gml_Script_snd_play_ch1(368)
+        gml_Script_snd_play_ch1(snd_wing_ch1)
         with (k)
             instance_destroy()
         obj_mainchara_ch1.x = kremx
@@ -618,7 +618,7 @@ if (con >= 1)
             global.typer = 30
             global.fe = 0
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_644_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
     }
     if (con == 41 && (!gml_Script_d_ex_ch1()))
@@ -646,7 +646,7 @@ if (con >= 1)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_675_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_676_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_677_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 47
     }
     if (con == 47 && (!gml_Script_d_ex_ch1()))
@@ -659,7 +659,7 @@ if (con >= 1)
     if (con == 49)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_691_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 50
     }
     if (con == 50 && (!gml_Script_d_ex_ch1()))
@@ -676,7 +676,7 @@ if (con >= 1)
         global.fe = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_709_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_710_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 53
     }
     if (con == 53 && (!gml_Script_d_ex_ch1()))
@@ -735,7 +735,7 @@ if (con >= 1)
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_774_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_775_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 0
         con = 59
     }
@@ -756,7 +756,7 @@ if (con >= 1)
         global.typer = 6
         global.fc = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_elevatorcontroller_slash_Step_0_gml_798_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 0
         con = 62
         alarm[4] = 110
@@ -780,7 +780,7 @@ if (con >= 1)
         if (movecon == 0)
             movecon = 1
         con = 101
-        gml_Script_snd_play_ch1(363)
+        gml_Script_snd_play_ch1(snd_spearappear_ch1)
         ele_noise = gml_Script_snd_init_ch1("elevator.ogg")
         ele_noise_ind = gml_Script_mus_loop_ext_ch1(ele_noise, 0.7, 0.5)
         pitchcount = 0.5

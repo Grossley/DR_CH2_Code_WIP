@@ -1,6 +1,6 @@
 if draw_kris
 {
-    if gml_Script_i_ex(230)
+    if gml_Script_i_ex(obj_darkfountain)
     {
         image_blend = obj_darkfountain.colcol
         siner = obj_darkfountain.siner

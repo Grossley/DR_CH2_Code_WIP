@@ -16,7 +16,7 @@ if (prepopulate == 1)
     }
     prepopulate = 0
 }
-if (active == true && (global.interact == 0 || gml_Script_i_ex(895)))
+if (active == true && (global.interact == 0 || gml_Script_i_ex(obj_cutscene_master)))
 {
     if (walking == 0)
         timer++

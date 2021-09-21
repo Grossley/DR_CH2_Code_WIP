@@ -225,8 +225,8 @@ y += py
 if (dmgnoise == true)
 {
     dmgnoise = false
-    gml_Script_snd_stop(170)
-    gml_Script_snd_play(170)
+    gml_Script_snd_stop(snd_hurt1)
+    gml_Script_snd_play(snd_hurt1)
 }
 global.inv -= 1
 if (global.inv > 0)
@@ -248,12 +248,12 @@ if (color == 0x000001)
         if (instance_number(obj_yheart_shot) < 3 && chargeshot_delay == 0)
         {
             gml_Script_instance_create((x + 10), (y + 10), obj_yheart_shot)
-            gml_Script_snd_play(131)
+            gml_Script_snd_play(snd_heartshot_dr_b)
         }
     }
     if (z_hold == 20)
     {
-        chargeshot_sound = gml_Script_snd_loop(130)
+        chargeshot_sound = gml_Script_snd_loop(snd_chargeshot_charge)
         gml_Script_snd_pitch(chargeshot_sound, 0.1)
         gml_Script_snd_volume(chargeshot_sound, 0, 0)
         gml_Script_snd_volume(chargeshot_sound, 0.3, 20)
@@ -265,7 +265,7 @@ if (color == 0x000001)
     if (z_hold >= 40 && gml_Script_button1_r())
     {
         gml_Script_snd_stop(chargeshot_sound)
-        gml_Script_snd_play(135)
+        gml_Script_snd_play(snd_chargeshot_fire)
         bigshot = gml_Script_instance_create((x + 10), (y + 10), obj_yheart_shot)
         bigshot.big = 1
         bigshot.sprite_index = spr_yheart_bigshot
@@ -287,7 +287,7 @@ if (color == 0x000001)
             if (obj_spamton_neo_enemy.bigshotcount == 0)
             {
                 gml_Script_instance_create(x, y, obj_supercharge_end)
-                gml_Script_snd_play(161)
+                gml_Script_snd_play(snd_stardrop)
                 var a = random(45)
                 repeat (8)
                 {

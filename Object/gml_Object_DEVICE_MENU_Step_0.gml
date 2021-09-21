@@ -119,7 +119,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                     MENU_NO = -1
                 }
                 if (FILECHECK == -1)
-                    gml_Script_snd_play(143)
+                    gml_Script_snd_play(snd_error)
             }
             if (MENU_NO == 4)
             {
@@ -411,9 +411,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
             else if (MENUCOORD[M] == 6 && CANQUIT == 1)
                 MENUCOORD[M] = 8
             else
-            {
                 MENUCOORD[M]++
-            }
         }
     }
     if gml_Script_left_p()
@@ -425,9 +423,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
             else if (MENUCOORD[M] == 8)
                 MENUCOORD[M] = 6
             else
-            {
                 MENUCOORD[M]--
-            }
             MOVENOISE = 1
         }
     }
@@ -455,7 +451,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
             else
             {
                 ONEBUFFER = 4
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
             }
         }
         if (MENUCOORD[M] == 3)
@@ -537,22 +533,22 @@ if (OBMADE == 1)
 }
 if (MOVENOISE == 1)
 {
-    gml_Script_snd_play(259)
+    gml_Script_snd_play(snd_menumove)
     MOVENOISE = 0
 }
 if (SELNOISE == 1)
 {
-    gml_Script_snd_play(260)
+    gml_Script_snd_play(snd_select)
     SELNOISE = 0
 }
 if (BACKNOISE == true)
 {
-    gml_Script_snd_play(154)
+    gml_Script_snd_play(snd_swing)
     BACKNOISE = false
 }
 if (DEATHNOISE == true)
 {
-    gml_Script_snd_play(254)
+    gml_Script_snd_play(AUDIO_APPEARANCE)
     DEATHNOISE = false
 }
 ONEBUFFER -= 1

@@ -1,7 +1,7 @@
 if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot < 72)
 {
     pressed = 1
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     if (attempt >= 1)
     {
         if instance_exists(obj_holemouse_generator)
@@ -17,17 +17,17 @@ if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot < 72)
 if (place_meeting(x, y, obj_mainchara) && pressed == 0 && global.plot >= 72)
 {
     pressed = 1
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
 }
 if (place_meeting(x, y, obj_caterpillarchara) && pressed == 0 && (!instance_exists(obj_npc_facing)) && (!instance_exists(obj_noelle_scared)) && obj_controller_dw_city_mice.con > 0)
 {
     pressed = 1
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
 }
 if (place_meeting(x, y, obj_actor) && pressed == 0 && global.plot < 72)
 {
     pressed = 1
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     if instance_exists(obj_holemouse_generator)
     {
         obj_holemouse_generator.mousecreate = 1
@@ -57,9 +57,9 @@ if (tIntroCon == 1)
     cutscene_master = gml_Script_scr_cutscene_make()
     gml_Script_scr_maincharacters_actors()
     tIntroCon = 2
-    fakemouse = gml_Script_scr_dark_marker(220, 180, 2687)
+    fakemouse = gml_Script_scr_dark_marker(220, 180, spr_holemouse_emerge)
     fakemouse.visible = false
-    fakedoor = gml_Script_scr_dark_marker(obj_holemouse_generator.x, obj_holemouse_generator.y, 2681)
+    fakedoor = gml_Script_scr_dark_marker(obj_holemouse_generator.x, obj_holemouse_generator.y, spr_mouseHole)
     fakedoor.image_index = 5
     realdoor = instance_find(obj_holemouse_generator, 0)
     cutscene_master.save_object[0] = fakemouse
@@ -77,13 +77,13 @@ if (tIntroCon == 2)
     gml_Script_c_sel(no)
     gml_Script_c_facing("u")
     gml_Script_c_var_instance(fakedoor, "image_index", 0)
-    gml_Script_c_soundplay(59)
+    gml_Script_c_soundplay(snd_locker)
     gml_Script_c_wait(30)
     gml_Script_c_var_instance(fakemouse, "visible", 1)
-    gml_Script_c_soundplay(176)
+    gml_Script_c_soundplay(snd_mouse)
     gml_Script_c_wait(30)
     gml_Script_c_sel(no)
-    gml_Script_c_sprite(716)
+    gml_Script_c_sprite(spr_noelle_shocked_dw)
     gml_Script_c_speaker("noelle")
     gml_Script_c_msgsetloc(0, "\\E2* A m-m-m-m-m.../", "obj_mouseSpawnSwitch_slash_Step_0_gml_123_0")
     gml_Script_c_msgnextloc("\\EE* Mouse!?/%", "obj_mouseSpawnSwitch_slash_Step_0_gml_124_0")
@@ -192,7 +192,7 @@ if (introCon == 1)
 }
 if (introCon == 2)
 {
-    fakenoelle = gml_Script_scr_dark_marker(obj_noelle_scared.x, obj_noelle_scared.y, 2719)
+    fakenoelle = gml_Script_scr_dark_marker(obj_noelle_scared.x, obj_noelle_scared.y, spr_noelleb_battleintro_l)
     with (obj_noelle_scared)
         instance_destroy()
     noelleWaitTimer = 0
@@ -230,7 +230,7 @@ if (introCon == 4 && (!gml_Script_d_ex()) && (!instance_exists(obj_cutscene_mast
         with (obj_noelle_scared)
             instance_destroy()
     }
-    if gml_Script_i_ex(317)
+    if gml_Script_i_ex(obj_cybercity_mousesign)
     {
         with (obj_cybercity_mousesign)
         {
@@ -275,7 +275,7 @@ if (introCon == 6)
         introCon = 9
     if (global.interact == 1 && timer > 60)
     {
-        if ((!gml_Script_d_ex()) && (!gml_Script_i_ex(1165)))
+        if ((!gml_Script_d_ex()) && (!gml_Script_i_ex(obj_holemouse)))
         {
             if (obj_controller_dw_city_mice.scaredAgain == 99 || obj_controller_dw_city_mice.scaredAgain == 3)
                 global.interact = 0
@@ -373,19 +373,19 @@ if (introCon == 132)
 {
     global.interact = 1
     gml_Script_c_sel(no)
-    gml_Script_c_autowalk(0)
-    gml_Script_c_sprite(717)
+    gml_Script_c_autowalk(false)
+    gml_Script_c_sprite(spr_noelle_walk_down_dw)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_walkdirect(485, 250, 15)
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_facing("d")
     gml_Script_c_wait(15)
     gml_Script_c_wait(30)
-    gml_Script_c_sprite(1540)
+    gml_Script_c_sprite(spr_noelle_cower_left)
     gml_Script_c_setxy(483, 256)
     gml_Script_c_halt()
     gml_Script_c_wait(15)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_walkdirect_wait(150, 256, 25)
     gml_Script_c_halt()
@@ -394,7 +394,7 @@ if (introCon == 132)
     gml_Script_c_msgsetloc(0, "\\E4* Ph..^1. phew.../", "obj_mouseSpawnSwitch_slash_Step_0_gml_454_0")
     gml_Script_c_msgnextloc("\\E8* (We'd better not have to do something like that again...)/%", "obj_mouseSpawnSwitch_slash_Step_0_gml_455_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_walkdirect_wait(150, 330, 20)
     gml_Script_c_halt()
     gml_Script_c_speaker("noelle")

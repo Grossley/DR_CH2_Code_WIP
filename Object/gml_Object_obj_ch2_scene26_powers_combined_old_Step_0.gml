@@ -5,7 +5,7 @@ if (con == 0)
     image_alpha = lerp(image_alpha, 1, 0.15)
     if (image_alpha >= 0.9)
     {
-        if gml_Script_i_ex(890)
+        if gml_Script_i_ex(obj_actor)
         {
             with (obj_actor)
                 image_alpha = lerp(image_alpha, 0, 0.5)
@@ -174,7 +174,7 @@ if (con == 3 && (!gml_Script_d_ex()))
             color_lerp = 1
             thrash_con = 3
             image_blend = c_white
-            d = gml_Script_scr_following_afterimage(200, id)
+            d = gml_Script_scr_following_afterimage(obj_power_up_fx, id)
             d.depth -= 1
             d.pivotx = 40
             d.pivoty = 10
@@ -185,7 +185,7 @@ if (con == 3 && (!gml_Script_d_ex()))
 if (con == 4)
 {
     con = 99
-    if gml_Script_i_ex(974)
+    if gml_Script_i_ex(obj_ch2_scene26)
     {
         with (obj_ch2_scene26)
             con = 15

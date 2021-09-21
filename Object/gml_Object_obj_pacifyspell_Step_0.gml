@@ -59,7 +59,7 @@ if (con == 9)
 if (con == 20)
 {
     if (timer == 0 && zcounter == 0)
-        gml_Script_snd_play(329)
+        gml_Script_snd_play(snd_pacify)
     timer--
     if (timer <= 0)
     {

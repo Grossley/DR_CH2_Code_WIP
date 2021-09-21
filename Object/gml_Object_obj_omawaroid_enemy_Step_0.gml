@@ -8,7 +8,7 @@ if (global.monster[myself] == true)
         if (!virokun_battle_init)
         {
             virokun_battle_init = 1
-            virokun_battle = gml_Script_i_ex(416)
+            virokun_battle = gml_Script_i_ex(obj_virovirokun_enemy)
         }
         global.typer = 50
         rr = choose(0, 1, 2, 3)
@@ -24,7 +24,7 @@ if (global.monster[myself] == true)
         {
             if (turns == 0)
                 gml_Script_msgsetloc(0, "Hey! Virus!&You've gotta pay!", "obj_omawaroid_enemy_slash_Step_0_gml_32_0")
-            if (!gml_Script_i_ex(416))
+            if (!gml_Script_i_ex(obj_virovirokun_enemy))
             {
                 rr = choose(0, 1)
                 if (rr == 0)
@@ -72,13 +72,13 @@ if (global.monster[myself] == true)
             if (rr == 0 && chasecheck == 0)
             {
                 global.monsterattackname[myself] = "Vaccine"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 15
             }
             else
             {
                 global.monsterattackname[myself] = "CarChase"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 16
                 if (chasecheck != 0)
                     dc.special = chasecheck

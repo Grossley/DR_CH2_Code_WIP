@@ -49,7 +49,7 @@ if (sndcon >= 1 && sndcon <= 5)
     if (sndtimer <= 0)
     {
         p = (0.5 + random(0.7))
-        b = gml_Script_snd_play_ch1(369)
+        b = gml_Script_snd_play_ch1(snd_scissorbell_ch1)
         gml_Script_snd_pitch_ch1(b, p)
         sndcon += 1
         sndtimer = 3

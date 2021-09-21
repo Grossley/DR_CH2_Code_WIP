@@ -1,5 +1,5 @@
 global.entrance = 24
-gml_Script_instance_create_ch1(0, 0, 1462)
+gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
 if (room == room_castle_town_ch1)
     room_goto(room_castle_tutorial_ch1)
 if (room == room_castle_tutorial_ch1)

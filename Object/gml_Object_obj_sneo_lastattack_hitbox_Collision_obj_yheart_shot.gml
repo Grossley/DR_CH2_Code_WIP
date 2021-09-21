@@ -2,7 +2,7 @@ with (other)
     event_user(0)
 if (obj_sneo_lastattack.endattack != 2)
 {
-    gml_Script_snd_play(166)
+    gml_Script_snd_play(snd_damage)
     if instance_exists(obj_sneo_lastattack)
     {
         with (obj_sneo_lastattack)

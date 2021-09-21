@@ -188,7 +188,7 @@ myinteract = 3
 if (nodialogue == 0)
     mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)
 talked += 1
-gml_Script_snd_play(162)
+gml_Script_snd_play(snd_power)
 for (i = 0; i < 5; i += 1)
 {
     if (global.hp[i] < global.maxhp[i])

@@ -15,13 +15,13 @@ with (tiled_wall)
 var tiled_wall_end = gml_Script_instance_create(590, 437, obj_cyber_wall_lights_right)
 with (tiled_wall_end)
     depth = 4900
-coaster_entry_shadow = gml_Script_scr_dark_marker(-35, -22, 3168)
+coaster_entry_shadow = gml_Script_scr_dark_marker(-35, -22, bg_dw_city_coaster_entry_shadow)
 coaster_entry_shadow.depth = 100000
-coaster_entry = gml_Script_scr_dark_marker(-39, -5, 3166)
+coaster_entry = gml_Script_scr_dark_marker(-39, -5, bg_dw_city_coaster_entry)
 coaster_entry.depth = (coaster_entry_shadow.depth - 100)
-coaster_entry_hood = gml_Script_scr_dark_marker(-39, -5, 3170)
+coaster_entry_hood = gml_Script_scr_dark_marker(-39, -5, bg_dw_city_coaster_entry_hood)
 coaster_entry_hood.depth = (coaster_entry.depth - 100)
-coaster_ramp = gml_Script_scr_dark_marker(1800, 28, 3174)
+coaster_ramp = gml_Script_scr_dark_marker(1800, 28, bg_dw_city_coaster_ramp)
 coaster_ramp.depth = 90000
 coaster_ramp.visible = true
 coaster_kris = gml_Script_instance_create(800, 72, obj_coaster)
@@ -45,7 +45,7 @@ with (coaster_berdly)
 coaster_noelle = gml_Script_instance_create(1890, 105, obj_coaster)
 coaster_noelle.type = 4
 coaster_noelle.depth = 95000
-nise_berdly = gml_Script_scr_dark_marker(-100, 0, 163)
+nise_berdly = gml_Script_scr_dark_marker(-100, 0, spr_cutscene_17_berdly_shocked)
 with (nise_berdly)
     gml_Script_scr_depth()
 parallax = 1
@@ -60,18 +60,18 @@ else
 {
     if (global.tempflag[28] == 1)
         shortened = 1
-    doorway = gml_Script_scr_dark_marker(458, 205, 2529)
+    doorway = gml_Script_scr_dark_marker(458, 205, spr_pixel_white)
     doorway.image_xscale = 22
     doorway.image_yscale = 22
     doorway.depth = 0
     doorway.image_blend = c_black
     doorway.image_alpha = 0.75
-    whiteall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    whiteall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     whiteall.image_xscale = 999
     whiteall.image_yscale = 999
     whiteall.depth = 100
     whiteall.image_alpha = 0
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 50

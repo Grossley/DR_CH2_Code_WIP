@@ -11,14 +11,14 @@ else if (global.plot < 70)
     gml_Script_scr_losechar()
     if instance_exists(obj_caterpillarchara)
         instance_destroy(obj_caterpillarchara)
-    alleyoverlay = gml_Script_scr_marker(320, 40, 2529)
+    alleyoverlay = gml_Script_scr_marker(320, 40, spr_pixel_white)
     alleyoverlay.image_xscale = 30
     alleyoverlay.image_yscale = 50
     alleyoverlay.image_blend = c_black
     alleyoverlay.image_alpha = 0.5
     with (alleyoverlay)
         gml_Script_scr_depth()
-    noellemarker = gml_Script_scr_dark_marker(360, 205, 723)
+    noellemarker = gml_Script_scr_dark_marker(360, 205, spr_noelle_walk_right_dw)
 }
 else
 {

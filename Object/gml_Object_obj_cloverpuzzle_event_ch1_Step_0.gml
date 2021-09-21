@@ -16,8 +16,8 @@ if (pcon == 0 && global.interact == 0)
 if (pcon == 1)
 {
     ptimer = 0
-    gml_Script_snd_play_ch1(446)
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(snd_screenshake_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     pcon = 2
 }
 if (pcon == 2)
@@ -43,7 +43,7 @@ if (con == 0 && global.interact == 0)
         global.interact = 1
         con = 1
         alarm[4] = 22
-        cmarker = gml_Script_scr_dark_marker_ch1(x, y, 3889)
+        cmarker = gml_Script_scr_dark_marker_ch1(x, y, spr_clubs_idle_ch1)
         with (cmarker)
             depth = 960000
         with (cmarker)
@@ -73,7 +73,7 @@ if (con == 2)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_cloverpuzzle_event_slash_Step_0_gml_86_0")
     }
     con = 3
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 3 && (!gml_Script_d_ex_ch1()))
 {
@@ -87,7 +87,7 @@ if (con == 3 && (!gml_Script_d_ex_ch1()))
         holecon = 999
         image_index = 0
     }
-    cencounter = gml_Script_instance_create_ch1(cmarker.x, cmarker.y, 1485)
+    cencounter = gml_Script_instance_create_ch1(cmarker.x, cmarker.y, obj_chaseenemy_ch1)
     with (cmarker)
         instance_destroy()
     with (cencounter)

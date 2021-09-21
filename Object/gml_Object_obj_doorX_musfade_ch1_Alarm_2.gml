@@ -1,5 +1,5 @@
 global.entrance = 24
-gml_Script_instance_create_ch1(0, 0, 1462)
+gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
 if (room == room_castle_town_ch1)
     room_goto(room_castle_tutorial_ch1)
 if (room == room_castle_tutorial_ch1)
@@ -29,7 +29,7 @@ if (room == room_cc_1f_ch1)
     if (x >= 1300)
         room_goto(room_cc_prisonelevator_ch1)
     else
-        gml_Script_snd_play_ch1(411)
+        gml_Script_snd_play_ch1(snd_error_ch1)
 }
 if (room == room_cc_5f_ch1)
     room_goto(room_shop2_ch1)

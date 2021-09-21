@@ -33,7 +33,7 @@ if (global.monster[myself] == true)
             {
                 global.inv = 0
                 global.monsterattackname[myself] = "HomingDiamonds"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 48
                 dc.btimer = 135
                 dc.damage = (global.monsterat[myself] * 5)

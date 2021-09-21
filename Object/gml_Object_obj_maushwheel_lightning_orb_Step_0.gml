@@ -3,7 +3,7 @@ if (timer < 24)
 {
     obj_mauswheel_enemy.image_speed += 0.08
     _pitch += 0.02
-    gml_Script_snd_pitch(136, _pitch)
+    gml_Script_snd_pitch(snd_sneo_overpower, _pitch)
 }
 if (timer > 0 && timer < 16)
 {
@@ -39,8 +39,8 @@ if (timer == 24)
     visible = false
     mask_index = spr_nothing
     gml_Script_scr_lerpvar_instance(obj_mauswheel_enemy.id, "image_speed", obj_mauswheel_enemy.image_speed, 0.5, 8)
-    gml_Script_snd_stop(136)
-    gml_Script_snd_play(135)
+    gml_Script_snd_stop(snd_sneo_overpower)
+    gml_Script_snd_play(snd_chargeshot_fire)
     with (obj_rouxls_power_up_orb)
         instance_destroy()
 }

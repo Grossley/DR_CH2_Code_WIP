@@ -13,7 +13,7 @@ if (blockstate == 1)
     if (timer < 3)
         gpu_set_fog(false, c_white, 0, 0)
     if (timer == 1)
-        gml_Script_snd_play(156)
+        gml_Script_snd_play(snd_heavyswing)
     if (timer < 9)
     {
         x = ((xstart - (8 - timer)) + random(((8 - timer) * 2)))

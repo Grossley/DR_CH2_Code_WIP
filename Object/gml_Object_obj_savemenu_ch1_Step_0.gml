@@ -21,7 +21,7 @@ if (coord == 0 && buffer < 0)
 {
     if gml_Script_button1_p_ch1()
     {
-        gml_Script_snd_play_ch1(490)
+        gml_Script_snd_play_ch1(snd_save_ch1)
         script_execute(gml_Script_scr_save_ch1)
         coord = 2
         buffer = 3

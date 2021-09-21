@@ -5,7 +5,7 @@ if (timer == 5)
     fx = gml_Script_instance_create(x, y, obj_pipis_destroy_fx)
     fx.image_xscale = 2
     fx.image_yscale = 2
-    obj_spamton_neo_enemy.partsprite[5] = 1978
+    obj_spamton_neo_enemy.partsprite[5] = spr_sneo_head_joke
     repeat (3)
     {
         fx = gml_Script_instance_create(x, y, obj_pipis_egg_bullet_piece)

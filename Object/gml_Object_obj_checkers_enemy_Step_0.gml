@@ -116,13 +116,13 @@ if (scon == 1)
 }
 if (scon == 1.5 && (!instance_exists(obj_writer)))
 {
-    gml_Script_snd_play(145)
+    gml_Script_snd_play(snd_magicsprinkle)
     with (obj_writer)
         instance_destroy()
     global.msg[0] = gml_Script_stringsetloc("* K. ROUND practiced self-care!", "obj_checkers_enemy_slash_Step_0_gml_129_0")
     global.turntimer = 999
     gml_Script_scr_battletext_default()
-    milk = gml_Script_scr_dark_marker((x - 100), (y + 60), 1781)
+    milk = gml_Script_scr_dark_marker((x - 100), (y + 60), spr_checkers_milk)
     with (milk)
     {
         image_speed = 0
@@ -172,7 +172,7 @@ if (scon == 4)
     {
         if (global.monsterat[myself] < 10)
             global.monsterat[myself] += 0.5
-        gml_Script_snd_play(162)
+        gml_Script_snd_play(snd_power)
         milkheal = 700
         if (milk_counter == 0)
             milkheal = 300
@@ -277,7 +277,7 @@ if (global.myfight == 3)
             visible = false
         global.faceaction[0] = 0
         global.charaction[0] = 0
-        bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1409)
+        bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, spr_krisb_bow)
         with (bowkris)
         {
             gml_Script_scr_oflash()
@@ -285,7 +285,7 @@ if (global.myfight == 3)
             a.hspeed = 5
             a.depth = (depth + 1)
         }
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         gml_Script_scr_battletext_default()
         actcon = 20
     }
@@ -374,7 +374,7 @@ if (global.myfight == 3)
             global.charaction[0] = 0
             global.faceaction[1] = 0
             global.charaction[1] = 0
-            bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, 1409)
+            bowkris = gml_Script_scr_dark_marker(obj_herokris.x, obj_herokris.y, spr_krisb_bow)
             with (bowkris)
             {
                 gml_Script_scr_oflash()
@@ -382,7 +382,7 @@ if (global.myfight == 3)
                 a.hspeed = 5
                 a.depth = (depth + 1)
             }
-            bowral = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1484)
+            bowral = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, spr_ralseib_bow)
             with (bowral)
             {
                 gml_Script_scr_oflash()
@@ -390,7 +390,7 @@ if (global.myfight == 3)
                 a.hspeed = 5
                 a.depth = (depth + 1)
             }
-            gml_Script_snd_play(172)
+            gml_Script_snd_play(snd_item)
             gml_Script_scr_battletext_default()
             actcon = 30
         }
@@ -463,7 +463,7 @@ if (global.myfight == 3)
                     visible = false
                 with (obj_heroralsei)
                     visible = false
-                gml_Script_snd_play(60)
+                gml_Script_snd_play(snd_grab)
             }
             else
             {
@@ -524,8 +524,8 @@ if (global.myfight == 3)
         with (obj_heroralsei)
             visible = false
         thrown = 1
-        trsus = gml_Script_scr_dark_marker(obj_herosusie.x, obj_herosusie.y, 1452)
-        gml_Script_snd_play(60)
+        trsus = gml_Script_scr_dark_marker(obj_herosusie.x, obj_herosusie.y, spr_susieb_throwralseiready)
+        gml_Script_snd_play(snd_grab)
     }
     if (actcon == 12)
     {

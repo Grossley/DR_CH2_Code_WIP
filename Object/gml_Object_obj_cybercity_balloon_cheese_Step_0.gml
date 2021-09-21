@@ -6,7 +6,7 @@ if place_meeting(x, y, obj_forcefield)
 if broken
 {
     image_index = 1
-    gml_Script_snd_play(165)
+    gml_Script_snd_play(snd_break2)
     afterimage = gml_Script_instance_create((x + 14), (y + 14), obj_afterimage_cut)
     afterimage.sprite_index = sprite_index
     afterimage.image_index = image_index

@@ -16,7 +16,7 @@ if (room == room_field2A_ch1 || room == room_field_puzzle1_ch1)
         instance_destroy()
     else
     {
-        candytree = gml_Script_scr_dark_marker_ch1(obj_npc_room_ch1.x, obj_npc_room_ch1.y, 4069)
+        candytree = gml_Script_scr_dark_marker_ch1(obj_npc_room_ch1.x, obj_npc_room_ch1.y, spr_candytree_candies_ch1)
         with (candytree)
         {
             siner = 0
@@ -49,7 +49,7 @@ if (room == room_torhouse_ch1)
     {
         if (global.flag[262] == 3)
             global.flag[262] = 4
-        pie = gml_Script_scr_marker_ch1(274, 96, 3444)
+        pie = gml_Script_scr_marker_ch1(274, 96, spr_pie_ch1)
         with (pie)
             depth = 100000
         if (!gml_Script_snd_is_playing_ch1(global.currentsong[1]))
@@ -87,11 +87,11 @@ if (room == room_cc_prison_prejoker_ch1)
         global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 1, 0.85)
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 0)
     }
-    doorimg = gml_Script_scr_dark_marker_ch1((x - 48), (y - 170), 3702)
+    doorimg = gml_Script_scr_dark_marker_ch1((x - 48), (y - 170), spr_jokerdoor_ch1)
     with (doorimg)
         depth = 500000
-    doorsolid = gml_Script_instance_create_ch1(x, y, 1656)
-    doorevent = gml_Script_instance_create_ch1(x, y, 1405)
+    doorsolid = gml_Script_instance_create_ch1(x, y, obj_soliddark_ch1)
+    doorevent = gml_Script_instance_create_ch1(x, y, obj_readable_room1_ch1)
     if (global.flag[241] == 5)
     {
         with (doorimg)
@@ -100,7 +100,7 @@ if (room == room_cc_prison_prejoker_ch1)
             instance_destroy()
         with (doorevent)
             instance_destroy()
-        door_door = gml_Script_instance_create_ch1((x + 15), y, 1414)
+        door_door = gml_Script_instance_create_ch1((x + 15), y, obj_doorA_ch1)
     }
     if (global.flag[241] >= 6)
     {
@@ -110,23 +110,23 @@ if (room == room_cc_prison_prejoker_ch1)
             instance_destroy()
         with (doorimg)
             instance_destroy()
-        finalsolid = gml_Script_instance_create_ch1(1600, 1040, 1656)
+        finalsolid = gml_Script_instance_create_ch1(1600, 1040, obj_soliddark_ch1)
     }
 }
 if (room == room_cc_throneroom_ch1)
 {
     if (global.plot >= 240)
     {
-        block = gml_Script_instance_create_ch1(260, 740, 1656)
+        block = gml_Script_instance_create_ch1(260, 740, obj_soliddark_ch1)
         block.image_xscale = 8
         with (obj_readable_room1_ch1)
             instance_destroy()
-        th = gml_Script_scr_dark_marker_ch1(obj_npc_sign_ch1.x, obj_npc_sign_ch1.y, 3716)
+        th = gml_Script_scr_dark_marker_ch1(obj_npc_sign_ch1.x, obj_npc_sign_ch1.y, spr_darkthrone_ch1)
         with (th)
             gml_Script_scr_depth_ch1()
         with (obj_npc_sign_ch1)
         {
-            chairsolid = gml_Script_instance_create_ch1(x, y, 1334)
+            chairsolid = gml_Script_instance_create_ch1(x, y, obj_solidblock_ch1)
             chairsolid.sprite_index = sprite_index
             chairsolid.image_xscale = 2
             chairsolid.image_yscale = 2
@@ -147,7 +147,7 @@ if (room == room_forest_savepoint3_ch1)
             global.hp[3] = 10
         global.fighting = false
         global.interact = 1
-        blackmarker = gml_Script_scr_dark_marker_ch1(-100, -100, 4277)
+        blackmarker = gml_Script_scr_dark_marker_ch1(-100, -100, spr_pixel_white_ch1)
         with (blackmarker)
         {
             image_blend = c_black
@@ -165,7 +165,7 @@ if (room == room_field_secret1_ch1)
 {
     pcon = 0
     ptimer = 0
-    puzzle = gml_Script_instance_create_ch1(1000, 100, 1542)
+    puzzle = gml_Script_instance_create_ch1(1000, 100, obj_suitspuzz_ch1)
     with (puzzle)
     {
         max_suit = 4
@@ -175,13 +175,13 @@ if (room == room_field_secret1_ch1)
         sol[2] = 3
         sol[3] = 1
     }
-    spikee[0] = gml_Script_scr_dark_marker_ch1(1300, 240, 3607)
-    spikee[1] = gml_Script_scr_dark_marker_ch1(1300, 280, 3607)
+    spikee[0] = gml_Script_scr_dark_marker_ch1(1300, 240, spr_spiketile_ch1)
+    spikee[1] = gml_Script_scr_dark_marker_ch1(1300, 280, spr_spiketile_ch1)
     with (spikee[0])
         depth = 900000
     with (spikee[1])
         depth = 900000
-    spike_solid = gml_Script_instance_create_ch1(1300, 240, 1656)
+    spike_solid = gml_Script_instance_create_ch1(1300, 240, obj_soliddark_ch1)
     with (spike_solid)
         image_yscale = 3
 }
@@ -189,9 +189,9 @@ if (room == room_forest_beforeclover_ch1)
 {
     pcon = 0
     ptimer = 0
-    hinta = gml_Script_scr_dark_marker_ch1(320, 680, 3594)
-    hintb = gml_Script_scr_dark_marker_ch1(840, 680, 3594)
-    hintc = gml_Script_scr_dark_marker_ch1(1400, 680, 3594)
+    hinta = gml_Script_scr_dark_marker_ch1(320, 680, spr_suitsicon_fade_ch1)
+    hintb = gml_Script_scr_dark_marker_ch1(840, 680, spr_suitsicon_fade_ch1)
+    hintc = gml_Script_scr_dark_marker_ch1(1400, 680, spr_suitsicon_fade_ch1)
     with (hinta)
         depth = 800000
     with (hintb)
@@ -204,7 +204,7 @@ if (room == room_forest_beforeclover_ch1)
         image_index = 2
         depth = 800000
     }
-    puzzle = gml_Script_instance_create_ch1(180, 140, 1542)
+    puzzle = gml_Script_instance_create_ch1(180, 140, obj_suitspuzz_ch1)
     with (puzzle)
     {
         max_suit = 3
@@ -213,13 +213,13 @@ if (room == room_forest_beforeclover_ch1)
         sol[1] = 2
         sol[2] = 3
     }
-    spikee[0] = gml_Script_scr_dark_marker_ch1(400, 240, 3607)
-    spikee[1] = gml_Script_scr_dark_marker_ch1(440, 240, 3607)
+    spikee[0] = gml_Script_scr_dark_marker_ch1(400, 240, spr_spiketile_ch1)
+    spikee[1] = gml_Script_scr_dark_marker_ch1(440, 240, spr_spiketile_ch1)
     with (spikee[0])
         depth = 900000
     with (spikee[1])
         depth = 900000
-    spike_solid = gml_Script_instance_create_ch1(400, 240, 1656)
+    spike_solid = gml_Script_instance_create_ch1(400, 240, obj_soliddark_ch1)
     with (spike_solid)
         image_xscale = 2
     if (global.flag[290] == 1)

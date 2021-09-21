@@ -8,11 +8,11 @@ if (global.flag[201] == 0)
     eye[2] = 0
     for (i = 0; i < 3; i += 1)
     {
-        shine[i] = gml_Script_scr_dark_marker_ch1(((x + 30) + (i * 110)), (y + 110), 4168)
+        shine[i] = gml_Script_scr_dark_marker_ch1(((x + 30) + (i * 110)), (y + 110), spr_shine_ch1)
         shine[i].image_speed = 0.1
         shine[i].depth = 800000
     }
-    block = gml_Script_instance_create_ch1(960, 320, 1656)
+    block = gml_Script_instance_create_ch1(960, 320, obj_soliddark_ch1)
     block.image_yscale = 2
 }
 else
@@ -23,9 +23,9 @@ else
     eye[2] = 1
     for (i = 0; i < 3; i += 1)
     {
-        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 320, 4188)
+        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 320, spr_magicalglass_ch1)
         glass.depth = 950000
-        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, 4188)
+        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, spr_magicalglass_ch1)
         glass.depth = 950000
     }
     with (obj_darkeyepuzzle_switch_ch1)

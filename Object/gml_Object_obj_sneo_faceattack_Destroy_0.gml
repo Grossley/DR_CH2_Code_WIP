@@ -1,6 +1,6 @@
 if (boss == true)
 {
-    if (obj_spamton_neo_enemy.eyeshp <= 0 && obj_spamton_neo_enemy.nosehp <= 0 && obj_spamton_neo_enemy.mouthhp <= 0 && gml_Script_i_ex(694))
+    if (obj_spamton_neo_enemy.eyeshp <= 0 && obj_spamton_neo_enemy.nosehp <= 0 && obj_spamton_neo_enemy.mouthhp <= 0 && gml_Script_i_ex(obj_spamton_neo_enemy))
     {
         with (obj_spamton_neo_enemy)
         {

@@ -13,7 +13,7 @@ if (global.flag[229] >= 99)
 }
 if (room == room_forest_afterthrash3_ch1)
 {
-    tree = gml_Script_scr_dark_marker_ch1(440, 72, 4070)
+    tree = gml_Script_scr_dark_marker_ch1(440, 72, spr_candytree_tall_ch1)
     if (global.flag[229] >= 6)
         tree.image_index = 1
     with (tree)
@@ -21,7 +21,7 @@ if (room == room_forest_afterthrash3_ch1)
 }
 if (room == room_forest_castleview_ch1)
 {
-    bg = gml_Script_instance_create_ch1(180, 0, 1458)
+    bg = gml_Script_instance_create_ch1(180, 0, obj_backgrounder_sprite_ch1)
     with (bg)
     {
         sprite_index = spr_darkcastle_bg_ch1

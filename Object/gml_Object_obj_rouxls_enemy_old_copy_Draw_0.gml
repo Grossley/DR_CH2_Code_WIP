@@ -200,7 +200,7 @@ if (thrashmode == 1)
     {
         if (thrashtimer == 50)
         {
-            gml_Script_snd_play(177)
+            gml_Script_snd_play(snd_pombark)
             thrash.a = 1
         }
         if (thrashtimer < 75)

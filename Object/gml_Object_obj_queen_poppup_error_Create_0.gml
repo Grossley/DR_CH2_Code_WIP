@@ -6,5 +6,5 @@ timer = 0
 mock = 0
 con = 0
 mocktimer = 0
-gml_Script_snd_stop(57)
-gml_Script_snd_play(57)
+gml_Script_snd_stop(snd_won)
+gml_Script_snd_play(snd_won)

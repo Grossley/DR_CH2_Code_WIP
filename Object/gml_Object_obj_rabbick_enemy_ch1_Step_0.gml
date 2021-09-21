@@ -4,7 +4,7 @@ if (global.monster[myself] == true)
     {
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         rr = choose(0, 1, 2, 3)
         rando = floor(random(50))
@@ -44,7 +44,7 @@ if (global.monster[myself] == true)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -55,7 +55,7 @@ if (global.monster[myself] == true)
             rr = choose(0, 1)
             if (rr == 0)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 30
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -64,7 +64,7 @@ if (global.monster[myself] == true)
             }
             else
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 32
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -215,8 +215,8 @@ if (global.myfight == 3)
         if (blowbuffer <= 0 && gml_Script_button1_p_ch1())
         {
             blow_wait = 1
-            gml_Script_snd_stop_ch1(392)
-            blowsnd = gml_Script_snd_play_ch1(392)
+            gml_Script_snd_stop_ch1(snd_whistlebreath_ch1)
+            blowsnd = gml_Script_snd_play_ch1(snd_whistlebreath_ch1)
             gml_Script_snd_pitch_ch1(blowsnd, (1 + (blowamt / 100)))
             onoff = 0
             shakeamt = 5

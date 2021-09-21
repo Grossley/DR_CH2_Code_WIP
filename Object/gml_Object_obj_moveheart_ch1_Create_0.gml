@@ -16,4 +16,4 @@ dist = point_distance(x, y, distx, disty)
 move_towards_point(distx, disty, (dist / flytime))
 alarm[0] = flytime
 image_speed = 0
-gml_Script_instance_create_ch1(x, y, 1526)
+gml_Script_instance_create_ch1(x, y, obj_heartburst_ch1)

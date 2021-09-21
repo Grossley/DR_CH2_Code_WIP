@@ -14,7 +14,7 @@ image_xscale = (2 + (sin((siner / 6)) * 0.5))
 image_yscale = (2 + (sin((siner / 6)) * 0.5))
 if (siner == 96)
 {
-    gml_Script_snd_play(220)
+    gml_Script_snd_play(snd_rocket)
     var a = random(44)
     repeat (8)
     {

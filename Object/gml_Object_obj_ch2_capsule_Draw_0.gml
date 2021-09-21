@@ -6,7 +6,7 @@ if (con == 0 && visible == true)
     {
         repeattimer = 8
         if main
-            noise = gml_Script_snd_play(112)
+            noise = gml_Script_snd_play(snd_chain_extend)
     }
 }
 if (con == 1)
@@ -14,14 +14,14 @@ if (con == 1)
     if (extendtimer == 0)
     {
         if main
-            gml_Script_snd_play(154)
+            gml_Script_snd_play(snd_swing)
     }
     extendtimer += 0.25
     if (extendtimer >= 4)
     {
         con = 2
         if main
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
     }
     else
         draw_sprite_ext(spr_cutscene_09_capsule_extend, extendtimer, x, y, image_yscale, image_yscale, image_angle, image_blend, image_alpha)

@@ -20,7 +20,7 @@ if (t >= 20)
     {
         soundcon = 1
         if (gml_Script_scr_sideb_get_phase() < 3)
-            gml_Script_snd_play(227)
+            gml_Script_snd_play(snd_usefountain)
     }
 }
 if (t >= 70 && t <= 240)

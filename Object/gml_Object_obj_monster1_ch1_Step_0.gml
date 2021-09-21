@@ -14,12 +14,12 @@ if (global.monster[myself] == true)
         else
             target = 3
         global.targeted[mytarget] = true
-        gml_Script_instance_create_ch1(0, 0, 1522)
+        gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 7
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_25_0")
         if (global.mercymod[myself] >= global.mercymax[myself])
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_26_0")
-        mywriter = gml_Script_instance_create_ch1((x - 60), (y - 30), 1327)
+        mywriter = gml_Script_instance_create_ch1((x - 60), (y - 30), obj_writer_ch1)
         talked = 1
         talktimer = 0
     }
@@ -45,9 +45,9 @@ if (global.myfight == 3)
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_75_0")
         global.typer = global.battletyper
-        battlewriter = gml_Script_instance_create_ch1((xx + 30), (yy + 376), 1327)
+        battlewriter = gml_Script_instance_create_ch1((xx + 30), (yy + 376), obj_writer_ch1)
         if (global.fc != 0)
-            myface = gml_Script_instance_create_ch1((xx + 26), (yy + 380), 1324)
+            myface = gml_Script_instance_create_ch1((xx + 26), (yy + 380), obj_face_ch1)
         if (acting == 1)
             global.mercymod[myself] += 120
         if (global.mercymod[myself] >= global.mercymax[myself])
@@ -59,9 +59,9 @@ if (global.myfight == 3)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_monster1_slash_Step_0_gml_91_0")
             global.typer = global.battletyper
-            battlewriter = gml_Script_instance_create_ch1((xx + 130), (yy + 376), 1327)
+            battlewriter = gml_Script_instance_create_ch1((xx + 130), (yy + 376), obj_writer_ch1)
             if (global.fc != 0)
-                myface = gml_Script_instance_create_ch1((xx + 26), (yy + 380), 1324)
+                myface = gml_Script_instance_create_ch1((xx + 26), (yy + 380), obj_face_ch1)
         }
         if (acttimer == 20)
         {

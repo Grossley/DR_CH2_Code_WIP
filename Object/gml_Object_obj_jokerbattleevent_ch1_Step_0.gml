@@ -9,7 +9,7 @@ if (con == 1)
         visible = false
     for (i = 0; i < 3; i += 1)
     {
-        c[i] = gml_Script_scr_dark_marker_ch1((global.heromakex[i] - 100), global.heromakey[i], 4197)
+        c[i] = gml_Script_scr_dark_marker_ch1((global.heromakex[i] - 100), global.heromakey[i], spr_krisr_dark_ch1)
         with (c[i])
         {
             gml_Script_scr_depth_ch1()
@@ -58,7 +58,7 @@ if (con == 3)
 }
 if (con == 5)
 {
-    gml_Script_snd_play_ch1(463)
+    gml_Script_snd_play_ch1(snd_joker_laugh1_ch1)
     global.typer = 35
     global.fc = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_59_0")
@@ -67,19 +67,19 @@ if (con == 5)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_62_0")
     gml_Script_scr_noface_ch1(4)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_64_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 6
 }
 if (con == 6 && (!gml_Script_d_ex_ch1()))
 {
     image_speed = 0.5
-    gml_Script_snd_play_ch1(462)
+    gml_Script_snd_play_ch1(snd_joker_laugh0_ch1)
     con = 9
     alarm[4] = 10
 }
 if (con == 10)
 {
-    gml_Script_snd_play_ch1(397)
+    gml_Script_snd_play_ch1(snd_rudebuster_swing_ch1)
     bulcon = 1
     smax = 2
     con = 11
@@ -89,7 +89,7 @@ if (bulcon == 1)
 {
     for (i = 0; i < smax; i += 1)
     {
-        sbul[i] = gml_Script_scr_dark_marker_ch1((s.x + 70), (((-i) * 100) - 40), 3942)
+        sbul[i] = gml_Script_scr_dark_marker_ch1((s.x + 70), (((-i) * 100) - 40), spr_joker_scythebody_ch1)
         with (sbul[i])
             vspeed = 24
         with (sbul[i])
@@ -153,7 +153,7 @@ if (con == 14)
     gml_Script_scr_susface_ch1(1, 0)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_142_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_143_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 15.1
 }
 if (con == 15.1 && (!gml_Script_d_ex_ch1()))
@@ -171,7 +171,7 @@ if (con == 15.1 && (!gml_Script_d_ex_ch1()))
     }
     con = 16
     alarm[4] = 60
-    gml_Script_snd_play_ch1(442)
+    gml_Script_snd_play_ch1(snd_laz_c_ch1)
 }
 if (con == 16)
 {
@@ -186,12 +186,12 @@ if (con == 17)
 {
     global.fe = 3
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_175_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 18
 }
 if (con == 18 && (!gml_Script_d_ex_ch1()))
 {
-    jlaugh = gml_Script_snd_loop_ch1(462)
+    jlaugh = gml_Script_snd_loop_ch1(snd_joker_laugh0_ch1)
     image_speed = 0.25
     con = 19
     alarm[4] = 15
@@ -203,7 +203,7 @@ if (con == 20)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_192_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_193_0")
     con = 21
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 21 && (!gml_Script_d_ex_ch1()))
 {
@@ -241,7 +241,7 @@ if (con == 23)
     global.batmusic[0] = gml_Script_snd_init_ch1("joker.ogg")
     global.encounterno = 25
     global.specialbattle = 3
-    gml_Script_instance_create_ch1(0, 0, 1488)
+    gml_Script_instance_create_ch1(0, 0, obj_encounterbasic_ch1)
     con = 25
     bultimer = 0
     bulcon = 10
@@ -331,7 +331,7 @@ if (con == 30)
             global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_316_0")
         }
         con = 31
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
 }
 if (con == 31 && (!gml_Script_d_ex_ch1()))
@@ -346,7 +346,7 @@ if (con == 31 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 33)
 {
-    gml_Script_snd_play_ch1(462)
+    gml_Script_snd_play_ch1(snd_joker_laugh0_ch1)
     global.typer = 35
     global.fc = 0
     if (global.flag[241] == 6)
@@ -372,11 +372,11 @@ if (con == 33)
         }
     }
     con = 34
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 34 && (!gml_Script_d_ex_ch1()))
 {
-    fade = gml_Script_instance_create_ch1(0, 0, 1460)
+    fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
     fade.fadespeed = 0.02
     con = 35
     alarm[4] = 60
@@ -386,7 +386,7 @@ if (con == 36)
     global.entrance = 2
     global.interact = 3
     global.facing = 3
-    gml_Script_instance_create_ch1(0, 0, 1462)
+    gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
     room_goto(room_cc_prison_prejoker_ch1)
     con = 37
 }

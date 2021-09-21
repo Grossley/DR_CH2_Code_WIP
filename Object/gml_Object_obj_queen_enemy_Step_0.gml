@@ -37,11 +37,11 @@ if (global.monster[myself] == true)
         {
             var a = choose(0, 1, 2)
             if (a == 0)
-                gml_Script_snd_play(289)
+                gml_Script_snd_play(snd_queen_hoot_0)
             if (a == 1)
-                gml_Script_snd_play(290)
+                gml_Script_snd_play(snd_queen_hoot_1)
             if (a == 2)
-                gml_Script_snd_play(291)
+                gml_Script_snd_play(snd_queen_hoot_2)
         }
         if (shieldjustbroke == 1)
             shieldjustbroke = 0
@@ -160,13 +160,13 @@ if (global.monster[myself] == true)
             sprite_index = spr_queen_chair_1_old
         }
     }
-    if (intro == 2 && (!gml_Script_i_ex(62)))
+    if (intro == 2 && (!gml_Script_i_ex(obj_writer)))
     {
         intro = 0
         global.charturn = 0
     }
     global.mercymod[myself] = 0
-    if gml_Script_i_ex(355)
+    if gml_Script_i_ex(obj_battlecontroller)
     {
         if (y > (gml_Script_cameray() + 100))
             depth = (obj_battlecontroller.depth + 1)
@@ -226,7 +226,7 @@ if (global.monster[myself] == true)
                 shieldbrokecon = 1
                 shieldjustbroke = 1
                 sprite_index = spr_queen_drunk
-                gml_Script_snd_play(289)
+                gml_Script_snd_play(snd_queen_hoot_0)
             }
             if (phase == 4)
                 usefinalattack = 1
@@ -401,13 +401,13 @@ if (global.monster[myself] == true)
         {
             global.typer = 74
             gml_Script_scr_enemyblcon((obj_heroralsei.x + 75), (obj_heroralsei.y + 15), 7)
-            gml_Script_scr_guardpeek(372)
+            gml_Script_scr_guardpeek(obj_heroralsei)
         }
         else if (susietalks == 1 && instance_exists(obj_herosusie))
         {
             global.typer = 75
             gml_Script_scr_enemyblcon((obj_herosusie.x + 75), (obj_herosusie.y + 15), 7)
-            gml_Script_scr_guardpeek(371)
+            gml_Script_scr_guardpeek(obj_herosusie)
         }
         else
             gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
@@ -428,7 +428,7 @@ if (global.monster[myself] == true)
     if (talked == 0.6)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15 && susieinterrupts == 0) || (!gml_Script_i_ex(62)) || (susieinterrupts == 1 && talktimer > 15))
+        if ((gml_Script_button3_p() && talktimer > 15 && susieinterrupts == 0) || (!gml_Script_i_ex(obj_writer)) || (susieinterrupts == 1 && talktimer > 15))
         {
             with (obj_writer)
                 instance_destroy()
@@ -589,13 +589,13 @@ if (global.monster[myself] == true)
             {
                 global.typer = 74
                 gml_Script_scr_heroblcon("ralsei")
-                gml_Script_scr_guardpeek(372)
+                gml_Script_scr_guardpeek(obj_heroralsei)
             }
             else if (susietalks == 1 && instance_exists(obj_herosusie))
             {
                 global.typer = 75
                 gml_Script_scr_heroblcon("susie")
-                gml_Script_scr_guardpeek(371)
+                gml_Script_scr_guardpeek(obj_herosusie)
             }
             else
                 gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
@@ -607,7 +607,7 @@ if (global.monster[myself] == true)
     if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -672,14 +672,14 @@ if (global.monster[myself] == true)
             {
                 case 0:
                     global.monsterattackname[myself] = "ImageSearch"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 0
                     dc.special = difficulty
                     gml_Script_scr_turntimer(300)
                     break
                 case 1:
                     global.monsterattackname[myself] = "QueenUltimate"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 1
                     if (ultimateattackused == 0)
                         gml_Script_scr_turntimer(371)
@@ -694,7 +694,7 @@ if (global.monster[myself] == true)
                         drink = 0
                     }
                     shieldjustwentup = 1
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 2
                     dc.bufferattack = bufferattack
                     if (difficulty == 1)
@@ -705,7 +705,7 @@ if (global.monster[myself] == true)
                     break
                 case 3:
                     global.monsterattackname[myself] = "Stomp"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 3
                     dc.bufferattack = bufferattack
                     gml_Script_scr_turntimer(240)
@@ -723,7 +723,7 @@ if (global.monster[myself] == true)
                     break
                 case 4:
                     global.monsterattackname[myself] = "NewSocialMedia"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 106
                     dc.bufferattack = bufferattack
                     gml_Script_scr_turntimer(250)
@@ -740,14 +740,14 @@ if (global.monster[myself] == true)
                     break
                 case 5:
                     global.monsterattackname[myself] = "Bufferbullet"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 5
                     dc.bufferattack = bufferattack
                     gml_Script_scr_turntimer(300)
                     break
                 case 6:
                     global.monsterattackname[myself] = "Explosion"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 6
                     dc.bufferattack = bufferattack
                     if (difficulty == 1)
@@ -758,32 +758,32 @@ if (global.monster[myself] == true)
                     if (difficulty == 0)
                     {
                         global.monsterattackname[myself] = "BerdlyTornado"
-                        dc = gml_Script_scr_bulletspawner(x, y, 572)
+                        dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                         dc.type = 112
                     }
                     if (difficulty == 1)
                     {
                         global.monsterattackname[myself] = "BerdlyTornado"
-                        dc = gml_Script_scr_bulletspawner(x, y, 572)
+                        dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                         dc.type = 113
                     }
                     if (difficulty == 2)
                     {
                         global.monsterattackname[myself] = "BerdlyFeather"
-                        dc = gml_Script_scr_bulletspawner(x, y, 572)
+                        dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                         dc.type = 7
                     }
                     if (difficulty == 3)
                     {
                         global.monsterattackname[myself] = "BerdlyFeather"
-                        dc = gml_Script_scr_bulletspawner(x, y, 572)
+                        dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                         dc.type = 7.5
                     }
                     gml_Script_scr_turntimer(266)
                     break
                 case 8:
                     global.monsterattackname[myself] = "QueenLaser"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 100
                     dc.bufferattack = bufferattack
                     if (difficulty == 1)
@@ -800,7 +800,7 @@ if (global.monster[myself] == true)
                     break
                 case 9:
                     global.monsterattackname[myself] = "Plug"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.bufferattack = bufferattack
                     dc.damage = (global.monsterat[obj_queen_enemy.myself] * 5)
                     dc.target = mytarget
@@ -812,7 +812,7 @@ if (global.monster[myself] == true)
                     break
                 case 10:
                     global.monsterattackname[myself] = "Birthday"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = 8
                     dc.special = 5
                     dc.bufferattack = bufferattack
@@ -820,7 +820,7 @@ if (global.monster[myself] == true)
                     break
                 default:
                     global.monsterattackname[myself] = "Unknown"
-                    dc = gml_Script_scr_bulletspawner(x, y, 572)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_queen_bulletcontroller)
                     dc.type = rr
                     dc.bufferattack = bufferattack
                     gml_Script_scr_turntimer(300)
@@ -1044,7 +1044,7 @@ if (global.myfight == 3)
         acttimer = 0
     }
     var _susie_simul = 0
-    if (waitnextactsusie == 1 && gml_Script_i_ex(62))
+    if (waitnextactsusie == 1 && gml_Script_i_ex(obj_writer))
         _susie_simul = 1
     if (actingsus == 1 && actconsus == 1 && _susie_simul == 0)
     {
@@ -1122,7 +1122,7 @@ if (global.myfight == 3)
         actingsus = 0
     }
     var _ralsei_simul = 0
-    if (waitnextactralsei == 1 && gml_Script_i_ex(62))
+    if (waitnextactralsei == 1 && gml_Script_i_ex(obj_writer))
         _ralsei_simul = 1
     if (actingral == 1 && actconral == 1 && _ralsei_simul == 0)
     {
@@ -1283,7 +1283,7 @@ if (global.myfight == 3)
         global.charspecial[1] = 5
         global.chartarget[1] = 0
         global.acting[1] = 0
-        gml_Script_snd_play(150)
+        gml_Script_snd_play(snd_boost)
         heartanim = gml_Script_instance_create((obj_herokris.x + 30), (obj_herokris.y + 50), obj_animation)
         with (heartanim)
         {
@@ -1326,7 +1326,7 @@ if (global.myfight == 3)
         global.charspecial[2] = 6
         global.chartarget[2] = 0
         global.acting[2] = 0
-        gml_Script_snd_play(150)
+        gml_Script_snd_play(snd_boost)
         heartanim = gml_Script_instance_create((obj_herokris.x + 30), (obj_herokris.y + 50), obj_animation)
         with (heartanim)
         {
@@ -1391,7 +1391,7 @@ if (defeat_cutscene_version == 0)
     if (endcon == 2)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -1437,7 +1437,7 @@ if (defeat_cutscene_version == 0)
                 alarm[6] = 1
         }
     }
-    if (endcon == 3 && (!gml_Script_i_ex(62)))
+    if (endcon == 3 && (!gml_Script_i_ex(obj_writer)))
     {
         if (ballooncon == 4)
         {
@@ -1445,7 +1445,7 @@ if (defeat_cutscene_version == 0)
             if (endtimer == 1)
             {
                 sprite_index = spr_queen_throw_wineglass
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
             }
             if (endtimer == 60)
             {
@@ -1459,7 +1459,7 @@ if (defeat_cutscene_version == 0)
             if (endtimer == 1)
             {
                 sprite_index = spr_queen_throw_wineglass
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
             }
             if (endtimer == 60)
             {
@@ -1471,13 +1471,13 @@ if (defeat_cutscene_version == 0)
     if (endcon == 4)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             endtimer++
             if (endtimer == 1)
             {
                 global.fighting = false
-                if gml_Script_i_ex(972)
+                if gml_Script_i_ex(obj_ch2_scene25)
                     obj_ch2_scene25.forcend = 1
             }
         }
@@ -1488,13 +1488,13 @@ if (defeat_cutscene_version == 1)
     if (endcon == 2 && extracon == 0)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             extratimer++
             if (extratimer == 1)
             {
                 obj_berdlyplug_enemy.shake2 = 10
-                gml_Script_snd_play(166)
+                gml_Script_snd_play(snd_damage)
             }
             if (extratimer == 50)
                 extracon = 1
@@ -1503,7 +1503,7 @@ if (defeat_cutscene_version == 1)
     if (endcon == 2 && extracon == 1)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -1562,7 +1562,7 @@ if (defeat_cutscene_version == 1)
                 alarm[6] = 1
         }
     }
-    if (endcon == 3 && (!gml_Script_i_ex(62)))
+    if (endcon == 3 && (!gml_Script_i_ex(obj_writer)))
     {
         if (ballooncon == 1)
         {
@@ -1570,12 +1570,12 @@ if (defeat_cutscene_version == 1)
             if (endtimer == 2)
             {
                 obj_berdlyplug_enemy.shake2 = 10
-                gml_Script_snd_play(166)
+                gml_Script_snd_play(snd_damage)
             }
             if (endtimer == 42)
             {
                 obj_berdlyplug_enemy.shake2 = 10
-                gml_Script_snd_play(166)
+                gml_Script_snd_play(snd_damage)
             }
             if (endtimer == 102)
             {
@@ -1610,7 +1610,7 @@ if (defeat_cutscene_version == 1)
                 obj_berdlyplug_enemy.shake2 = 10
                 obj_berdlyplug_enemy.image_xscale *= -1
                 obj_berdlyplug_enemy.x -= 50
-                gml_Script_snd_play(60)
+                gml_Script_snd_play(snd_grab)
             }
             if (endtimer == 30)
             {
@@ -1622,13 +1622,13 @@ if (defeat_cutscene_version == 1)
     if (endcon == 4)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             endtimer++
             if (endtimer == 1)
             {
-                gml_Script_snd_play(225)
-                whiteall = gml_Script_scr_dark_marker(-10, -10, 2529)
+                gml_Script_snd_play(snd_great_shine)
+                whiteall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                 whiteall.image_xscale = 999
                 whiteall.image_yscale = 999
                 whiteall.depth = -99999

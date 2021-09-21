@@ -6,7 +6,7 @@ if (mybuffer > 2)
     {
         if (gml_Script_button2_p() || obj_shapepuzzle.goalHit)
         {
-            gml_Script_snd_play(51)
+            gml_Script_snd_play(snd_wing)
             with (obj_shapepuzzle)
                 inUse = 0
             active = false
@@ -19,7 +19,7 @@ if (mybuffer > 2)
         }
         if gml_Script_button1_p()
         {
-            gml_Script_snd_play_pitch(172, 1.5)
+            gml_Script_snd_play_pitch(snd_item, 1.5)
             with (myPiece)
             {
                 if (other.troublePiece && image_angle == -90)
@@ -59,7 +59,7 @@ if (mybuffer > 2)
             image_index = min((1 + round((_moveDir / 90))), 4)
             if (--holdDelay <= 0)
             {
-                gml_Script_snd_play_pitch(259, 1.5)
+                gml_Script_snd_play_pitch(snd_menumove, 1.5)
                 holdDelay = holdDelayMax
                 with (myPiece)
                 {

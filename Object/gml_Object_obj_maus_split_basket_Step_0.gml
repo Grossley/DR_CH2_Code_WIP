@@ -28,7 +28,7 @@ if (con == 1)
             con = 5
             timer = 0
         }
-        gml_Script_snd_play(91)
+        gml_Script_snd_play(snd_wallclaw)
     }
 }
 if (con == 2)

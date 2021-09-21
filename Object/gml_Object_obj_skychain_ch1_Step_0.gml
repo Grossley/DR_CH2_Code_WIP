@@ -5,7 +5,7 @@ if (con == 0)
     if (timer >= 2)
     {
         sons += 1
-        son[sons] = gml_Script_instance_create_ch1(x, y, 1567)
+        son[sons] = gml_Script_instance_create_ch1(x, y, obj_fadechain_ch1)
         son[sons].image_angle = image_angle
         son[sons].direction = direction
         son[sons].speed = (speed / 2.5)

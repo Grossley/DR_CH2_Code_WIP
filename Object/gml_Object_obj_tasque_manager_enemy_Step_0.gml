@@ -124,7 +124,7 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "WhipAttack"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 20
                 dc.element = 6
             }
@@ -132,7 +132,7 @@ if (global.monster[myself] == true)
             {
                 lastQuizLetter = -1
                 global.monsterattackname[myself] = "QuizAttack"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 32
                 dc.element = 6
                 if (global.encounterno == 89)
@@ -185,7 +185,7 @@ if (global.myfight == 3)
     }
     if (acting == 2 && actcon == 0)
     {
-        gml_Script_scr_act_charsprite("kris", 1427, 0, 0)
+        gml_Script_scr_act_charsprite("kris", spr_krisb_wan_tail, 0, false)
         if (violenceused == 1)
         {
             var simultext = gml_Script_stringsetloc("* (Your act failed...)/%", "obj_tasque_manager_enemy_slash_Step_0_gml_254_0")
@@ -209,7 +209,7 @@ if (global.myfight == 3)
     }
     if (acting == 3 && actcon == 0)
     {
-        gml_Script_scr_act_charsprite("kris", 1427, 0, 0)
+        gml_Script_scr_act_charsprite("kris", spr_krisb_wan_tail, 0, false)
         if (violenceused == 1)
         {
             gml_Script_msgsetloc(0, "* (You talked to Tasque Manager, but no effect...)/%", "obj_tasque_manager_enemy_slash_Step_0_gml_277_0")
@@ -226,7 +226,7 @@ if (global.myfight == 3)
     }
     if (actingsus == 1 && actconsus == 1)
     {
-        gml_Script_scr_act_charsprite("susie", 1456, 0, 0)
+        gml_Script_scr_act_charsprite("susie", spr_susie_wan_sign, 0, false)
         if (violenceused == 1)
             simultext = gml_Script_stringsetloc("* S-Action failed!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_293_0")
         else
@@ -247,7 +247,7 @@ if (global.myfight == 3)
     }
     if (actingral == 1 && actconral == 1)
     {
-        gml_Script_scr_act_charsprite("ralsei", 1498, 0, 0)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralseib_wan, 0, false)
         if (violenceused == 1)
             simultext = gml_Script_stringsetloc("* R-Action failed!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_314_0")
         else

@@ -1,24 +1,24 @@
 if (con == 1)
 {
-    doorblock = gml_Script_instance_create_ch1(640, 360, 1656)
+    doorblock = gml_Script_instance_create_ch1(640, 360, obj_soliddark_ch1)
     with (doorblock)
         image_xscale = 2
-    gml_Script_snd_play_ch1(376)
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(snd_locker_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     gml_Script___view_set(0, 0, 440)
     with (obj_mainchara_ch1)
     {
         cutscene = true
         visible = false
     }
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 3813)
-    r = gml_Script_scr_dark_marker_ch1(520, 160, 4137)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisb_defeat_ch1)
+    r = gml_Script_scr_dark_marker_ch1(520, 160, spr_ralsei_fell_ch1)
     with (r)
         image_index = 2
-    irondoor = gml_Script_scr_dark_marker_ch1(640, 280, 3593)
+    irondoor = gml_Script_scr_dark_marker_ch1(640, 280, spr_irondoor_ch1)
     with (irondoor)
         gml_Script_scr_depth_ch1()
-    diamond = gml_Script_scr_dark_marker_ch1(640, 360, 3864)
+    diamond = gml_Script_scr_dark_marker_ch1(640, 360, spr_diamond_overworld_ch1)
     with (diamond)
         depth = 100
     con = 2
@@ -36,7 +36,7 @@ if (con == 3)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_30_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_31_0")
     con = 4
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     d.side = 0
 }
 if (con == 4 && (!gml_Script_d_ex_ch1()))
@@ -71,7 +71,7 @@ if (con == 6)
             sprite_index = spr_krisd_dark_ch1
         with (r)
             sprite_index = spr_ralseid_ch1
-        gml_Script_snd_play_ch1(381)
+        gml_Script_snd_play_ch1(snd_noise_ch1)
         con = 7
         alarm[4] = 20
     }
@@ -91,13 +91,13 @@ if (con == 8)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_85_0")
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_86_0")
     con = 8.1
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 8.1 && (!gml_Script_d_ex_ch1()))
 {
     with (r)
         sprite_index = spr_ralseid_ch1
-    exc = gml_Script_instance_create_ch1((r.x + 20), (r.y - 20), 1486)
+    exc = gml_Script_instance_create_ch1((r.x + 20), (r.y - 20), obj_excblcon_ch1)
     con = 7.2
     alarm[4] = 30
 }
@@ -112,12 +112,12 @@ if (con == 8.2)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_105_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_106_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_107_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 9
 }
 if (con == 9 && (!gml_Script_d_ex_ch1()))
 {
-    rnpc = gml_Script_instance_create_ch1(r.x, r.y, 1407)
+    rnpc = gml_Script_instance_create_ch1(r.x, r.y, obj_npc_facing_ch1)
     with (rnpc)
     {
         y += sprite_height
@@ -154,7 +154,7 @@ if (con == 15 && (!gml_Script_d_ex_ch1()))
     gml_Script_scr_susface_ch1(6, 7)
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_147_0")
     global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_148_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 16
 }
 if (con == 16)
@@ -164,14 +164,14 @@ if (con == 16)
 }
 if (con == 16 && (!gml_Script_d_ex_ch1()))
 {
-    r = gml_Script_scr_dark_marker_ch1(rnpc.x, rnpc.y, 3861)
+    r = gml_Script_scr_dark_marker_ch1(rnpc.x, rnpc.y, spr_ralsei_shock_overworld_ch1)
     with (r)
         gml_Script_scr_depth_ch1()
     with (rnpc)
         instance_destroy()
     global.facing = 3
     global.interact = 1
-    exc = gml_Script_instance_create_ch1((r.x + 20), (r.y - 20), 1486)
+    exc = gml_Script_instance_create_ch1((r.x + 20), (r.y - 20), obj_excblcon_ch1)
     con = 17
     alarm[4] = 30
 }
@@ -188,15 +188,15 @@ if (con == 18)
     gml_Script_scr_susface_ch1(1, 2)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_181_0")
     con = 19
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 19 && (!gml_Script_d_ex_ch1()))
 {
-    irondoor2 = gml_Script_scr_dark_marker_ch1(200, 520, 3593)
+    irondoor2 = gml_Script_scr_dark_marker_ch1(200, 520, spr_irondoor_ch1)
     with (irondoor2)
         gml_Script_scr_depth_ch1()
     gml_Script_scr_pan_ch1(-4, 4, 30)
-    s = gml_Script_scr_dark_marker_ch1(320, 300, 3544)
+    s = gml_Script_scr_dark_marker_ch1(320, 300, spr_susier_dark_ch1)
     with (s)
         gml_Script_scr_depth_ch1()
     con = 20
@@ -212,7 +212,7 @@ if (con == 21)
     gml_Script_scr_ralface_ch1(2, 3)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_210_0")
     con = 22
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 22 && (!gml_Script_d_ex_ch1()))
 {
@@ -234,7 +234,7 @@ if (con == 24)
     gml_Script_scr_ralface_ch1(2, 8)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_234_0")
     con = 25
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 25 && (!gml_Script_d_ex_ch1()))
 {
@@ -264,7 +264,7 @@ if (con == 27)
     gml_Script_scr_ralface_ch1(11, "6")
     global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_264_0")
     con = 200
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 200 && (!gml_Script_d_ex_ch1()))
 {
@@ -275,7 +275,7 @@ if (con == 200 && (!gml_Script_d_ex_ch1()))
     global.typer = 6
     global.fc = 0
     gml_Script_scr_text_ch1(global.msc)
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 201
     tried += 1
 }
@@ -295,7 +295,7 @@ if (con == 201 && (!gml_Script_d_ex_ch1()))
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_299_0")
                 global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_300_0")
                 global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_301_0")
-                gml_Script_instance_create_ch1(0, 0, 1326)
+                gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
                 wcon = 2
             }
             if (wcon == 0)
@@ -304,7 +304,7 @@ if (con == 201 && (!gml_Script_d_ex_ch1()))
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_309_0")
                 global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_310_0")
                 global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_311_0")
-                gml_Script_instance_create_ch1(0, 0, 1326)
+                gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
                 wcon = 1
             }
         }
@@ -313,21 +313,21 @@ if (con == 201 && (!gml_Script_d_ex_ch1()))
             pcon = 1
             global.fe = 0
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_322_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (obj_suitspuzz_ch1.reset == 2 && pcon == 1)
         {
             pcon = 2
             global.fe = 0
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_329_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (obj_suitspuzz_ch1.reset == 3 && pcon == 2)
         {
             pcon = 3
             global.fe = 6
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_336_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (obj_suitspuzz_ch1.reset == 4 && pcon == 3)
         {
@@ -336,22 +336,22 @@ if (con == 201 && (!gml_Script_d_ex_ch1()))
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_343_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_344_0")
             global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_345_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (obj_suitspuzz_ch1.swap == 1 && obj_suitspuzz_ch1.suit[0] == 0 && scon == 0 && pcon == 0)
         {
             scon = 1
             global.fe = 0
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_354_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
     }
     else
     {
         with (irondoor2)
             instance_destroy()
-        gml_Script_snd_play_ch1(378)
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(snd_impact_ch1)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
         con = 202
         alarm[4] = 30
     }
@@ -367,7 +367,7 @@ if (con == 203)
     gml_Script_scr_susface_ch1(3, 1)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_380_0")
     con = 204
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 204 && (!gml_Script_d_ex_ch1()))
 {
@@ -407,12 +407,12 @@ if (con == 210)
     global.fc = 2
     global.typer = 31
     gml_Script_scr_text_ch1(global.msc)
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 228
 }
 if (con == 228 && (!gml_Script_d_ex_ch1()))
 {
-    fade = gml_Script_instance_create_ch1(0, 0, 1460)
+    fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
     with (fade)
         fadespeed = 0.02
     con = 229
@@ -425,7 +425,7 @@ if (con == 230)
     global.entrance = 0
     global.interact = 3
     global.plot = 152
-    pers = gml_Script_instance_create_ch1(0, 0, 1462)
+    pers = gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
     room_goto(room_cc_prisonlancer_ch1)
     con = 231
 }
@@ -439,16 +439,16 @@ if (con == 300)
     }
     obj_mainchara_ch1.x = 680
     obj_mainchara_ch1.y = 160
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4195)
-    r = gml_Script_scr_dark_marker_ch1(640, 150, 3570)
-    s = gml_Script_scr_dark_marker_ch1(660, 500, 3551)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisd_dark_ch1)
+    r = gml_Script_scr_dark_marker_ch1(640, 150, spr_ralseir_ch1)
+    s = gml_Script_scr_dark_marker_ch1(660, 500, spr_susieu_dark_ch1)
     with (r)
         image_index = 2
     with (r)
         gml_Script_scr_depth_ch1()
     with (k)
         gml_Script_scr_depth_ch1()
-    irondoor = gml_Script_scr_dark_marker_ch1(640, 280, 3593)
+    irondoor = gml_Script_scr_dark_marker_ch1(640, 280, spr_irondoor_ch1)
     with (irondoor)
         gml_Script_scr_depth_ch1()
     con = 301
@@ -462,19 +462,19 @@ if (con == 302)
     global.typer = 31
     global.fe = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_481_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 303
 }
 if (con == 303 && (!gml_Script_d_ex_ch1()))
 {
     with (irondoor)
         instance_destroy()
-    gml_Script_snd_play_ch1(376)
+    gml_Script_snd_play_ch1(snd_locker_ch1)
     with (r)
         sprite_index = spr_ralseid_ch1
     with (k)
         sprite_index = spr_krisd_dark_ch1
-    exc = gml_Script_instance_create_ch1((r.x + 25), (y - 40), 1486)
+    exc = gml_Script_instance_create_ch1((r.x + 25), (y - 40), obj_excblcon_ch1)
     con = 304
     alarm[4] = 30
 }
@@ -508,7 +508,7 @@ if (con == 309)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_524_0")
     gml_Script_scr_susface_ch1(4, 0)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_526_0")
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 310
 }
 if (con == 310 && (!gml_Script_d_ex_ch1()))
@@ -523,7 +523,7 @@ if (con == 312)
     global.fc = 0
     global.typer = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_prisonevent_slash_Step_0_gml_543_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 313
 }
 if (con == 313 && (!gml_Script_d_ex_ch1()))
@@ -548,7 +548,7 @@ if (con == 313 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 315)
 {
-    gml_Script_instance_create_ch1(0, 0, 1460)
+    gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
     con = 316
     alarm[4] = 30
 }
@@ -567,6 +567,6 @@ if (con == 317)
     global.facing = 0
     global.entrance = 1
     global.interact = 3
-    gml_Script_instance_create_ch1(0, 0, 1462)
+    gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
     room_goto(room_cc_prisonlancer_ch1)
 }

@@ -4,7 +4,7 @@ if (global.monster[myself] == true)
     {
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         rr = choose(0, 1, 2, 3)
         text1 = gml_Script_scr_84_get_lang_string_ch1("obj_clubsenemy_old_slash_Step_0_gml_11_0")
@@ -147,7 +147,7 @@ if (global.monster[myself] == true)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -158,14 +158,14 @@ if (global.monster[myself] == true)
             rr = choose(0, 1)
             if (rr == 0)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 2
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
             }
             else
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 4
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)

@@ -22,7 +22,7 @@ if (actual == true)
     {
         for (t = 0; t < 16; t += 1)
         {
-            bul[t] = gml_Script_instance_create_ch1(-20, -20, 1521)
+            bul[t] = gml_Script_instance_create_ch1(-20, -20, obj_regularbullet_permanent_ch1)
             bul[t].damage = damage
             with (bul[t])
             {

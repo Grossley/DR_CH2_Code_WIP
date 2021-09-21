@@ -2,7 +2,7 @@ if (con != 5 || bouncethisframe)
 {
     if (gulped == 0)
     {
-        gml_Script_snd_play(179)
+        gml_Script_snd_play(snd_swallow)
         gulped = 1
     }
     other.win = 1

@@ -38,28 +38,28 @@ if (global.hp[global.char[myself]] > 0)
         siner += 1
         if (attacked == false)
         {
-            gml_Script_snd_stop(174)
+            gml_Script_snd_stop(snd_laz_c)
             if (object_index == obj_herokris)
-                gml_Script_snd_play(174)
+                gml_Script_snd_play(snd_laz_c)
             if (object_index == obj_heroralsei)
             {
-                ls = gml_Script_snd_play(174)
+                ls = gml_Script_snd_play(snd_laz_c)
                 gml_Script_snd_pitch(ls, 1.15)
             }
             if (object_index == obj_herosusie)
             {
-                ls = gml_Script_snd_play(174)
+                ls = gml_Script_snd_play(snd_laz_c)
                 gml_Script_snd_pitch(ls, 0.9)
             }
             if (object_index == obj_heronoelle)
             {
-                ls = gml_Script_snd_play(174)
+                ls = gml_Script_snd_play(snd_laz_c)
                 gml_Script_snd_pitch(ls, 1.5)
             }
             if (points == 150)
             {
-                gml_Script_snd_stop(158)
-                gml_Script_snd_play(158)
+                gml_Script_snd_stop(snd_criticalswing)
+                gml_Script_snd_play(snd_criticalswing)
                 repeat (3)
                 {
                     anim = gml_Script_instance_create(((x + mywidth) + random(50)), ((y + 30) + random(30)), obj_afterimage)
@@ -249,6 +249,7 @@ if (poisonamount > 0)
         if (global.hp[global.char[myself]] > 1)
         {
             global.hp[global.char[myself]] = (global.hp[global.char[myself]] - 1)
+            global.hp[global.char[myself]]
             poisonamount--
         }
         else

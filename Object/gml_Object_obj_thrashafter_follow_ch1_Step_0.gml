@@ -57,7 +57,7 @@ if (con == 2)
             gml_Script_scr_lanface_ch1(10, 1)
             global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_65_0")
             con = 4
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 3
         }
         if (obj_mainchara_ch1.x >= 1400 && global.interact == 0 && global.flag[229] < 4)
@@ -78,7 +78,7 @@ if (con == 2)
             gml_Script_scr_susface_ch1(9, 7)
             global.msg[10] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_87_0")
             con = 6
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 4
         }
         if (obj_mainchara_ch1.x >= 99999 && global.interact == 0 && global.flag[229] < 5)
@@ -95,7 +95,7 @@ if (con == 2)
             gml_Script_scr_susface_ch1(5, 7)
             global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_108_0")
             con = 6
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 5
         }
     }
@@ -114,7 +114,7 @@ if (con == 2)
             gml_Script_scr_susface_ch1(1, 2)
             global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_131_0")
             con = 20
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 6
         }
         if (obj_mainchara_ch1.x >= 1200 && global.interact == 0 && global.flag[229] < 7)
@@ -139,7 +139,7 @@ if (con == 2)
             global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_157_0")
             con = 6
             speclaugh = 1
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 7
         }
     }
@@ -173,7 +173,7 @@ if (con == 2)
             gml_Script_scr_lanface_ch1(11, 4)
             global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_199_0")
             con = 4
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 8
         }
         if (obj_mainchara_ch1.x >= 800 && global.interact == 0 && global.flag[229] < 9)
@@ -195,7 +195,7 @@ if (con == 2)
             gml_Script_scr_susface_ch1(9, 2)
             global.msg[10] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_223_0")
             con = 4
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 9
         }
         if (obj_mainchara_ch1.x >= 1200 && global.interact == 0 && global.flag[229] < 10)
@@ -206,7 +206,7 @@ if (con == 2)
             global.typer = 30
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_236_0")
             con = 4
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 10
         }
     }
@@ -241,7 +241,7 @@ if (con == 2)
             global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_277_0")
             gml_Script_scr_lanface_ch1(13, 6)
             global.msg[14] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_279_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 11
         }
         if (obj_mainchara_ch1.x >= 1600 && global.interact == 0 && global.flag[229] < 12)
@@ -271,7 +271,7 @@ if (con == 2)
             global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_311_0")
             gml_Script_scr_lanface_ch1(9, "C")
             global.msg[10] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_313_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             global.flag[229] = 12
         }
     }
@@ -303,8 +303,8 @@ if (con == 6 && (!gml_Script_d_ex_ch1()))
     followcon = 0
     sprite_index = spr_lancer_lt_laugh_ch1
     image_speed = 0.25
-    ll = gml_Script_snd_play_ch1(454)
-    sl = gml_Script_snd_play_ch1(382)
+    ll = gml_Script_snd_play_ch1(snd_lancerlaugh_ch1)
+    sl = gml_Script_snd_play_ch1(snd_suslaugh_ch1)
     gml_Script_snd_volume_ch1(ll, 0.8, 0)
     gml_Script_snd_volume_ch1(sl, 0.8, 0)
     con = 7
@@ -349,7 +349,7 @@ if (con == 9)
     gml_Script_scr_susface_ch1(5, 6)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_399_0")
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_400_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 12)
 {
@@ -481,14 +481,14 @@ if (con >= 20 && con < 80)
         global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_550_0")
         gml_Script_scr_lanface_ch1(6, 2)
         global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_552_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 28
         blender = 0
     }
     if (con == 28 && (!gml_Script_d_ex_ch1()))
     {
         blender = 0
-        gml_Script_snd_play_ch1(414)
+        gml_Script_snd_play_ch1(snd_boost_ch1)
         con = 29
         flash = gml_Script_scr_oflash_ch1()
         flash.flashspeed = 0
@@ -504,8 +504,8 @@ if (con >= 20 && con < 80)
     }
     if (con == 30)
     {
-        gml_Script_snd_play_ch1(455)
-        wh = gml_Script_instance_create_ch1(0, 0, 1460)
+        gml_Script_snd_play_ch1(snd_badexplosion_ch1)
+        wh = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         wh.image_blend = c_white
         con = 31
         alarm[4] = 30
@@ -515,7 +515,7 @@ if (con >= 20 && con < 80)
         sprite_index = spr_lancer_lt_stool_ch1
         with (wh)
             instance_destroy()
-        wh = gml_Script_instance_create_ch1(0, 0, 1461)
+        wh = gml_Script_instance_create_ch1(0, 0, obj_fadein_ch1)
         wh.fadespeed = -0.03
         wh.image_blend = c_white
         con = 33
@@ -532,7 +532,7 @@ if (con >= 20 && con < 80)
         gml_Script_scr_susface_ch1(3, 2)
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_612_0")
         con = 35
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 35 && (!gml_Script_d_ex_ch1()))
     {
@@ -634,7 +634,7 @@ if (con >= 20 && con < 80)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_723_0")
         gml_Script_scr_lanface_ch1(1, 3)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_725_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 45
     }
     if (con == 45 && (!gml_Script_d_ex_ch1()))
@@ -655,7 +655,7 @@ if (con >= 20 && con < 80)
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_745_0")
         gml_Script_scr_susface_ch1(4, 0)
         global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_747_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 48
     }
     if (con == 48 && (!gml_Script_d_ex_ch1()))
@@ -678,7 +678,7 @@ if (con >= 20 && con < 80)
         gml_Script_scr_lanface_ch1(1, 3)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_773_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_774_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 53
     }
     if (con == 53 && (!gml_Script_d_ex_ch1()))
@@ -707,7 +707,7 @@ if (con >= 20 && con < 80)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_803_0")
         gml_Script_scr_lanface_ch1(1, 1)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_805_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 58
     }
     if (con == 59 && (!gml_Script_d_ex_ch1()))
@@ -717,7 +717,7 @@ if (con >= 20 && con < 80)
         global.fc = 0
         global.typer = 52
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_817_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.skippable = false
         con = 60
         alarm[4] = 30
@@ -739,7 +739,7 @@ if (con >= 20 && con < 80)
         global.fe = 7
         global.fc = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_839_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 65
     }
     if (con == 65 && (!gml_Script_d_ex_ch1()))
@@ -828,7 +828,7 @@ if (con >= 100 && con <= 150)
         gml_Script_scr_lanface_ch1(8, 5)
         global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_941_0")
         con = 102
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 102 && (!gml_Script_d_ex_ch1()))
     {
@@ -849,7 +849,7 @@ if (con >= 100 && con <= 150)
         gml_Script_scr_susface_ch1(2, 0)
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_965_0")
         con = 107
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 107 && (!gml_Script_d_ex_ch1()))
     {
@@ -874,7 +874,7 @@ if (con >= 100 && con <= 150)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_991_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_992_0")
         con = 112
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 112 && (!gml_Script_d_ex_ch1()))
     {
@@ -883,7 +883,7 @@ if (con >= 100 && con <= 150)
         hspeed = 18
         con = 113
         alarm[4] = 30
-        exc = gml_Script_instance_create_ch1((s.x + 20), (s.y - 20), 1486)
+        exc = gml_Script_instance_create_ch1((s.x + 20), (s.y - 20), obj_excblcon_ch1)
     }
     if (con == 114)
     {
@@ -895,7 +895,7 @@ if (con >= 100 && con <= 150)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_1013_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_1014_0")
         con = 115
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 115 && (!gml_Script_d_ex_ch1()))
     {
@@ -914,7 +914,7 @@ if (con >= 100 && con <= 150)
         global.fc = 2
         global.fe = 3
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_follow_slash_Step_0_gml_1038_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 118
     }
     if (con == 118 && (!gml_Script_d_ex_ch1()))
@@ -936,7 +936,7 @@ if (con >= 100 && con <= 150)
         con = 121
         with (obj_mainchara_ch1)
             cutscene = true
-        block = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 40), 200, 1656)
+        block = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) - 40), 200, obj_soliddark_ch1)
         block.image_yscale = 20
     }
 }

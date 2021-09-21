@@ -9,7 +9,7 @@ if (state == 0)
         o_boxingqueen.y = o_boxingqueen.basey
         if instance_exists(obj_bq_baseball_final_hits_boss)
         {
-            gml_Script_snd_play(208)
+            gml_Script_snd_play(snd_explosion)
             with (obj_bq_baseball_final_hits_boss)
                 instance_destroy()
             gml_Script___view_set(1, 0, 0)

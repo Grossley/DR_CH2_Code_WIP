@@ -9,12 +9,12 @@ if (breakcon == 2)
     breaktimer++
     if (breaktimer >= 4)
     {
-        gml_Script_snd_play(231)
+        gml_Script_snd_play(snd_sparkle_glock)
         image_alpha = 0
         breakcon = 3
         for (var i = 0; i < 30; i++)
         {
-            sparkle[i] = gml_Script_scr_marker((x + random_range(-15, 15)), (y + random_range(-15, 15)), 2471)
+            sparkle[i] = gml_Script_scr_marker((x + random_range(-15, 15)), (y + random_range(-15, 15)), spr_sparestar_anim)
             sparkle[i].image_speed = 0.5
             sparkle[i].hspeed = random_range(-3, 3)
             sparkle[i].friction = 0.05
@@ -22,7 +22,7 @@ if (breakcon == 2)
         }
     }
 }
-if gml_Script_i_ex(347)
+if gml_Script_i_ex(obj_room_dw_city_postbaseball)
 {
     if (obj_room_dw_city_postbaseball.minigame == 1)
     {
@@ -34,7 +34,7 @@ if gml_Script_i_ex(347)
             obj_mainchara.sprite_index = spr_krisb_defeat
             yoffset = 0
             sprite_index = spr_mousefunnel_tilted
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
             if (miceheld > 0)
             {
                 var mousedrop = clamp(10, 1, miceheld)
@@ -55,7 +55,7 @@ if gml_Script_i_ex(347)
         if (mousefailcon == 2)
         {
             mousetimer++
-            if gml_Script_i_ex(348)
+            if gml_Script_i_ex(obj_city_cyberballoon_mouse)
                 mousetimer = 0
             if (mousetimer >= 25)
             {

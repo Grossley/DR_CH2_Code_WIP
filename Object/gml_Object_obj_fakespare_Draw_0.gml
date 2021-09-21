@@ -129,7 +129,7 @@ repeat (reverse ? reversespeed : 1)
             neotone = 0
     }
     if (reverse && t == (15 * reversespeed))
-        gml_Script_snd_play(299)
+        gml_Script_snd_play(snd_reverse_spare)
     if (t >= 50 && (!reverse))
     {
         for (i = 0; i < starcount; i += 1)

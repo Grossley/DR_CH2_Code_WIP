@@ -25,7 +25,7 @@ if (!ignoreHardWork)
         }
     }
     else if (!gml_Script_i_ex(forcefield))
-        forcefield = gml_Script_scr_forcefield(680, 1040, 2, 8, 1, 1)
+        forcefield = gml_Script_scr_forcefield(680, 1040, 2, 8, true, true)
 }
 toggledtimer++
 timer++
@@ -454,8 +454,8 @@ if (weirdRoute == 0)
                     image_speed = 0.25
                 }
                 ignoreHardWork = 1
-                gml_Script_snd_play(239)
-                field = gml_Script_scr_forcefield(680, 1040, 2, 8, 1, 1)
+                gml_Script_snd_play(snd_dtrans_flip)
+                field = gml_Script_scr_forcefield(680, 1040, 2, 8, true, true)
                 with (obj_alleySwitch)
                 {
                     if (x > 600)
@@ -479,7 +479,7 @@ if (weirdRoute == 0)
                 else
                 {
                     other.ignoreHardWork = 0
-                    gml_Script_snd_play(64)
+                    gml_Script_snd_play(snd_noise)
                     with (obj_alleySwitch)
                     {
                         if (x > 600)
@@ -749,7 +749,7 @@ if (weirdRoute == 1)
     }
     if (con == 14 && (!gml_Script_d_ex()))
     {
-        gml_Script_snd_play(196)
+        gml_Script_snd_play(snd_ominous)
         global.flag[915] = 4
         global.interact = 0
         con++

@@ -89,7 +89,7 @@ if (isswitch && dontshine == 0)
     if (!shine_init)
     {
         shine_init = 1
-        shine = gml_Script_scr_dark_marker((x - 8), (y + 84), 2436)
+        shine = gml_Script_scr_dark_marker((x - 8), (y + 84), spr_shine_white)
         shine.depth = (depth - 10)
         shine.image_speed = 0.1
     }

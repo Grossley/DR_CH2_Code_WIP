@@ -7,7 +7,7 @@ if ((!bottomhit) && (y + vspeed) > ((obj_growtangle.y + (obj_growtangle.sprite_w
     d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
     d.shakex = ceil(2)
     d.shakey = ceil(2)
-    gml_Script_snd_play(178)
+    gml_Script_snd_play(snd_screenshake)
     bottomhit = 1
 }
 if (y > (gml_Script___view_get(1, 0) + 580))

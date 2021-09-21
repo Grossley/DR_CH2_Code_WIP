@@ -10,7 +10,7 @@ if (init == 0)
         timer = -270
         with (obj_heronoelle)
             visible = false
-        fn = gml_Script_scr_dark_marker(obj_heronoelle.x, obj_heronoelle.y, 1523)
+        fn = gml_Script_scr_dark_marker(obj_heronoelle.x, obj_heronoelle.y, spr_noelleb_spell)
         fn.depth = obj_heronoelle.depth
         fn.image_index = 0
         fncon = 0
@@ -43,7 +43,7 @@ if (altpath == 1)
             amplitude = 0
             with (obj_berdlyb2_enemy)
                 visible = false
-            fb = gml_Script_scr_dark_marker(obj_berdlyb2_enemy.x, obj_berdlyb2_enemy.y, 1846)
+            fb = gml_Script_scr_dark_marker(obj_berdlyb2_enemy.x, obj_berdlyb2_enemy.y, spr_berdlyb_idle_shocked)
             fb.depth = obj_berdlyb2_enemy.depth
         }
     }
@@ -69,7 +69,7 @@ if (altpath == 1)
         fn.y += (cos((timer / 3)) * amplitude)
         if ((timer % 4) == 0 && timer < 70)
         {
-            dustsnd = gml_Script_snd_play(39)
+            dustsnd = gml_Script_snd_play(snd_bell)
             gml_Script_snd_volume(dustsnd, 0.5, 0)
             gml_Script_snd_pitch(dustsnd, (0.5 + random(0.3)))
             dust = gml_Script_instance_create((fn.x + 50), ((fn.y + 10) + 10), obj_afterimage_grow)

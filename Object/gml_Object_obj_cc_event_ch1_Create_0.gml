@@ -2,15 +2,15 @@ if (room == room_cc_1f_ch1)
 {
     if (global.flag[240] == 0)
     {
-        elevatorblocker = gml_Script_instance_create_ch1(1040, 160, 1656)
+        elevatorblocker = gml_Script_instance_create_ch1(1040, 160, obj_soliddark_ch1)
         with (elevatorblocker)
             image_xscale = 6
     }
 }
 if (room == room_cc_2f_ch1)
 {
-    spike[0] = gml_Script_scr_dark_marker_ch1(800, 280, 3607)
-    spike[1] = gml_Script_scr_dark_marker_ch1(840, 280, 3607)
+    spike[0] = gml_Script_scr_dark_marker_ch1(800, 280, spr_spiketile_ch1)
+    spike[1] = gml_Script_scr_dark_marker_ch1(840, 280, spr_spiketile_ch1)
     with (spike[0])
         depth = 900000
     with (spike[1])
@@ -24,14 +24,14 @@ if (room == room_cc_2f_ch1)
     }
     else
     {
-        darksolid = gml_Script_instance_create_ch1(800, 280, 1656)
+        darksolid = gml_Script_instance_create_ch1(800, 280, obj_soliddark_ch1)
         darksolid.image_xscale = 2
     }
 }
 if (room == room_cc_4f_ch1)
 {
-    spike[0] = gml_Script_scr_dark_marker_ch1(680, 920, 3607)
-    spike[1] = gml_Script_scr_dark_marker_ch1(720, 920, 3607)
+    spike[0] = gml_Script_scr_dark_marker_ch1(680, 920, spr_spiketile_ch1)
+    spike[1] = gml_Script_scr_dark_marker_ch1(720, 920, spr_spiketile_ch1)
     with (spike[0])
         depth = 900000
     with (spike[1])
@@ -45,7 +45,7 @@ if (room == room_cc_4f_ch1)
     }
     else
     {
-        darksolid = gml_Script_instance_create_ch1(680, 920, 1656)
+        darksolid = gml_Script_instance_create_ch1(680, 920, obj_soliddark_ch1)
         darksolid.image_xscale = 2
     }
     if (global.flag[245] == 1)
@@ -55,7 +55,7 @@ if (room == room_cc_4f_ch1)
             bluh = 1
             image_index = 1
         }
-        chest = gml_Script_instance_create_ch1(480, 980, 1410)
+        chest = gml_Script_instance_create_ch1(480, 980, obj_treasure_room_ch1)
     }
 }
 if (room == room_cc_5f_ch1)

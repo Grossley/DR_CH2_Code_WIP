@@ -11,9 +11,9 @@ checkid = id
 extflag = 0
 timer = 0
 ignorebuffer = 0
-if (!gml_Script_i_ex(242))
+if (!gml_Script_i_ex(obj_battlealphaer))
     gml_Script_instance_create(0, 0, obj_battlealphaer)
-if (!gml_Script_i_ex(44))
+if (!gml_Script_i_ex(obj_battleLayerHighlight))
     gml_Script_instance_create(0, 0, obj_battleLayerHighlight)
 if (showArea == 0)
     image_alpha = 0

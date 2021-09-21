@@ -122,7 +122,7 @@ if ((ystart - bounceCurrent) > (master.y - bulletHitHeight) && (cutOff / sprite_
                         {
                             if (theScore == 0)
                                 myPitch = 1
-                            gml_Script_snd_pitch(gml_Script_snd_play(293), myPitch)
+                            gml_Script_snd_pitch(gml_Script_snd_play(snd_booster), myPitch)
                             riseSpeedBoost += other.boostAmount
                             theScore++
                             tutorialRide = 0

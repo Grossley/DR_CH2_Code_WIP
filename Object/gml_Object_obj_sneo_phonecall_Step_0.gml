@@ -70,7 +70,7 @@ else if (state == 0)
     {
     }
     ringtimer = 12
-    sndphone = gml_Script_snd_play(53)
+    sndphone = gml_Script_snd_play(snd_phone)
     gml_Script_snd_volume(sndphone, 0.7, 0)
     talktimer = -10
     state++

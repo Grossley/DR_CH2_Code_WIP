@@ -50,13 +50,13 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "HomingDiamonds"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 0
             }
             else
             {
                 global.monsterattackname[myself] = "RisingDiamonds"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 1
             }
             gml_Script_scr_turntimer(140)

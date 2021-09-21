@@ -10,7 +10,7 @@ if (global.interact == 0)
             active = false
             instance_destroy()
         }
-        gml_Script_snd_play(39)
+        gml_Script_snd_play(snd_bell)
         if (obj_starwalker_overworld.beatcon == 0)
         {
             if (room == room_forest_starwalker && (!instance_exists(obj_npc_room)))

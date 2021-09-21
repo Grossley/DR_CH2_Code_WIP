@@ -1,4 +1,4 @@
-if gml_Script_i_ex(131)
+if gml_Script_i_ex(obj_readable_room1)
 {
     with (obj_readable_room1)
     {
@@ -19,5 +19,5 @@ if gml_Script_i_ex(131)
 if (howl_con == 1 && (!gml_Script_d_ex()))
 {
     howl_con = 0
-    gml_Script_snd_play(207)
+    gml_Script_snd_play(snd_howl)
 }

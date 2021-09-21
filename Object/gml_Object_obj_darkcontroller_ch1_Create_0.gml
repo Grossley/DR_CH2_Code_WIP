@@ -55,7 +55,7 @@ for (i = 0; i < 3; i += 1)
         charpos[1] = i
         if (i > 0)
         {
-            global.cinstance[(i - 1)] = gml_Script_instance_create_ch1((obj_mainchara_ch1.x - 6), (obj_mainchara_ch1.y - 16), 1489)
+            global.cinstance[(i - 1)] = gml_Script_instance_create_ch1((obj_mainchara_ch1.x - 6), (obj_mainchara_ch1.y - 16), obj_caterpillarchara_ch1)
             global.cinstance[(i - 1)].target = (i * 12)
         }
     }
@@ -65,7 +65,7 @@ for (i = 0; i < 3; i += 1)
         charpos[2] = i
         if (i > 0)
         {
-            global.cinstance[(i - 1)] = gml_Script_instance_create_ch1((obj_mainchara_ch1.x - 4), (obj_mainchara_ch1.y - 12), 1489)
+            global.cinstance[(i - 1)] = gml_Script_instance_create_ch1((obj_mainchara_ch1.x - 4), (obj_mainchara_ch1.y - 12), obj_caterpillarchara_ch1)
             global.cinstance[(i - 1)].target = (i * 12)
             with (global.cinstance[(i - 1)])
             {

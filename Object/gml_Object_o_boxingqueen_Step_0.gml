@@ -106,18 +106,18 @@ if (state == 0)
                 if (image_index == 0)
                 {
                     if arcade
-                        gml_Script_snd_play(308)
+                        gml_Script_snd_play(snd_squeaky_bc)
                 }
             }
             else if (image_index == 0)
-                gml_Script_snd_play(56)
+                gml_Script_snd_play(snd_squeaky)
             sprite_index = spr_bqueen_ducking
             image_index += 0.25
             if (image_index >= 2)
                 image_index = 0
         }
         if (player_dead_timer == 158)
-            gml_Script_snd_play(292)
+            gml_Script_snd_play(snd_queen_laugh_0)
         if (player_dead_timer > (310 / f))
         {
             sprite_index = spr_bqueen_laugh
@@ -142,7 +142,7 @@ if (state == 1)
 {
     movetimer++
     hurttimer += 1
-    gml_Script_snd_pitch(43, 1)
+    gml_Script_snd_pitch(snd_bell_bounce_short, 1)
     if (hurttimer == 1 && o_boxingcontroller.wireframe_boxing == 0)
     {
         if (o_boxingcontroller.wireframe_boxing == 0 && dizzytimer >= (30 / f))
@@ -531,9 +531,9 @@ if (state == 1)
                 d.shakey = ceil(2)
             }
             if arcade
-                gml_Script_snd_play(307)
+                gml_Script_snd_play(snd_screenshake_bc)
             else
-                gml_Script_snd_play(178)
+                gml_Script_snd_play(snd_screenshake)
         }
         if (phase_transition_timer > (82 / f) && y < basey)
         {
@@ -549,9 +549,9 @@ if (state == 1)
             gravity = 0
             hspeed = 0
             if arcade
-                gml_Script_snd_play(318)
+                gml_Script_snd_play(snd_impact_bc)
             else
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_impact)
             y = basey
             phase_transition_timer = (196 / f)
             d = gml_Script_instance_create(0, 0, obj_shake)
@@ -566,13 +566,13 @@ if (state == 1)
                 {
                     if audio_is_playing(snd_impact_bc)
                         audio_stop_sound(snd_impact_bc)
-                    gml_Script_snd_play(318)
+                    gml_Script_snd_play(snd_impact_bc)
                 }
                 else
                 {
                     if audio_is_playing(snd_impact)
                         audio_stop_sound(snd_impact)
-                    gml_Script_snd_play(61)
+                    gml_Script_snd_play(snd_impact)
                 }
                 d = gml_Script_instance_create(0, 0, obj_shake)
                 if gml_Script_i_ex(d)
@@ -624,12 +624,12 @@ if (state == 1)
             gml_Script_instance_create((obj_gigaqueen_intro_round.x + 5), obj_gigaqueen_intro_round.y, obj_gigaqueen_intro_fight)
         if (phase_transition_timer == (540 / f))
         {
-            gml_Script_snd_play(39)
+            gml_Script_snd_play(snd_bell)
             readycon = 0
         }
         if (phase_transition_timer == (560 / f))
         {
-            gml_Script_snd_play(39)
+            gml_Script_snd_play(snd_bell)
             readycon = 0
         }
         if (phase_transition_timer == (562 / f))
@@ -838,9 +838,9 @@ if (state == 3)
             if (attacktimer == ceil((punchthresholdc / f)))
             {
                 if arcade
-                    gml_Script_snd_play(313)
+                    gml_Script_snd_play(snd_bell_bc)
                 else
-                    gml_Script_snd_play(43)
+                    gml_Script_snd_play(snd_bell_bounce_short)
                 image_index = 5
                 white_flash = 120
             }
@@ -854,9 +854,9 @@ if (state == 3)
                 attackcon = 2
                 attacktimer = 0
                 if arcade
-                    gml_Script_snd_play(309)
+                    gml_Script_snd_play(motor_swing_down_bc)
                 else
-                    gml_Script_snd_play(120)
+                    gml_Script_snd_play(motor_swing_down)
             }
         }
         if (attackcon == 2)
@@ -1023,13 +1023,13 @@ if (state == 3)
             }
             if arcade
             {
-                gml_Script_snd_play(310)
-                gml_Script_snd_pitch(310, 0.9)
+                gml_Script_snd_play(motor_upper_2_bc)
+                gml_Script_snd_pitch(motor_upper_2_bc, 0.9)
             }
             else
             {
-                gml_Script_snd_play(43)
-                gml_Script_snd_pitch(43, 1)
+                gml_Script_snd_play(snd_bell_bounce_short)
+                gml_Script_snd_pitch(snd_bell_bounce_short, 1)
             }
             image_index = 3
             if (o_boxingcontroller.wireframe_boxing == 0)
@@ -1126,13 +1126,13 @@ if (state == 3)
                 ohpitch++
                 if arcade
                 {
-                    gml_Script_snd_pitch(310, (1 + (ohpitch / 10)))
-                    gml_Script_snd_play(310)
+                    gml_Script_snd_pitch(motor_upper_2_bc, (1 + (ohpitch / 10)))
+                    gml_Script_snd_play(motor_upper_2_bc)
                 }
                 else
                 {
-                    gml_Script_snd_pitch(43, (1 + (ohpitch / 10)))
-                    gml_Script_snd_play(43)
+                    gml_Script_snd_pitch(snd_bell_bounce_short, (1 + (ohpitch / 10)))
+                    gml_Script_snd_play(snd_bell_bounce_short)
                 }
                 ff = (-ff)
                 if (drawflip == 0)
@@ -1189,13 +1189,13 @@ if (state == 3)
             {
                 if arcade
                 {
-                    gml_Script_snd_play(317)
-                    kickyell = gml_Script_snd_play(305)
+                    gml_Script_snd_play(snd_heavyswing_bc)
+                    kickyell = gml_Script_snd_play(snd_queenhowl_b_bc)
                 }
                 else
                 {
-                    gml_Script_snd_play(156)
-                    kickyell = gml_Script_snd_play(117)
+                    gml_Script_snd_play(snd_heavyswing)
+                    kickyell = gml_Script_snd_play(snd_queenhowl_b)
                 }
                 audio_sound_pitch(kickyell, ((1 + (kick_amount * 0.08)) - (kicks_done * 0.08)))
                 attack_succeeded = 0
@@ -1342,7 +1342,7 @@ if (state == 3)
                 hspeed = 0
                 gravity = 0
                 attack_succeeded = 0
-                gml_Script_snd_pitch(43, 1)
+                gml_Script_snd_pitch(snd_bell_bounce_short, 1)
                 event_user(1)
             }
         }
@@ -1355,9 +1355,9 @@ if (state == 3)
             sprite_index = spr_bqueen_splash
             image_index = 0
             if arcade
-                gml_Script_snd_play(310)
+                gml_Script_snd_play(motor_upper_2_bc)
             else
-                gml_Script_snd_play(123)
+                gml_Script_snd_play(motor_upper_2)
             if (drawflip == 0)
             {
                 invincible_l = 1
@@ -1389,7 +1389,7 @@ if (state == 3)
             {
                 if (delayattacktelegraph == 0)
                 {
-                    gml_Script_snd_play(46)
+                    gml_Script_snd_play(snd_spearappear)
                     if (drawflip == 0)
                         gml_Script_instance_create((x + 6), (y - 180), obj_green_light)
                     else
@@ -1440,14 +1440,14 @@ if (state == 3)
                 {
                     y += 15
                     x -= (20 * ff)
-                    gml_Script_snd_play(312)
+                    gml_Script_snd_play(motor_upper_quick_mid_bc)
                 }
             }
             else if (attacktimer == 1)
             {
                 y += 15
                 x -= (20 * ff)
-                gml_Script_snd_play(124)
+                gml_Script_snd_play(motor_upper_quick_mid)
             }
             if (attacktimer == 2)
             {
@@ -1472,7 +1472,7 @@ if (state == 3)
             image_index = 2
             attacktimer += 1
             if (attacktimer == 1)
-                gml_Script_snd_play(174)
+                gml_Script_snd_play(snd_laz_c)
             if (attacktimer <= 5)
             {
                 fakesplash = gml_Script_instance_create((((x - (ff * 20)) + (60 * ff)) - ((attacktimer * ff) * 20)), (y - 60), o_boxing_splash)
@@ -1541,9 +1541,9 @@ if (state == 3)
             makedizzy = (180 / f)
             blocking = -1
             if arcade
-                gml_Script_snd_play(304)
+                gml_Script_snd_play(snd_queen_laugh_0_bc)
             else
-                gml_Script_snd_play(292)
+                gml_Script_snd_play(snd_queen_laugh_0)
             sprite_index = spr_bqueen_laugh
             if (o_boxingcontroller.wireframe_boxing == 1)
                 sprite_index = spr_bqueen_laugh_wireframe
@@ -1605,8 +1605,8 @@ if (state == 3)
         if (attackcon == 0 && pirouette_amount == 7)
         {
             blocking = -1
-            gml_Script_snd_play(153)
-            gml_Script_snd_pitch(153, 1.2)
+            gml_Script_snd_play(snd_cardrive)
+            gml_Script_snd_pitch(snd_cardrive, 1.2)
             specialcon = 1
             drawflip = 1
             sprite_index = spr_bqueen_ducking
@@ -1656,9 +1656,9 @@ if (state == 3)
                     event_user(5)
                     sprite_index = spr_bqueen_pirouette
                     if arcade
-                        gml_Script_snd_play(313)
+                        gml_Script_snd_play(snd_bell_bc)
                     else
-                        gml_Script_snd_play(43)
+                        gml_Script_snd_play(snd_bell_bounce_short)
                 }
                 if (attacktimer >= 1 && attacktimer < (15 / f) && pirouette_type == 1)
                 {
@@ -1685,9 +1685,9 @@ if (state == 3)
             image_speed = (0.25 * f)
             attacktimer = 0
             attackcon = 3
-            gml_Script_snd_play(9)
-            gml_Script_snd_pitch(9, 1.7)
-            gml_Script_snd_volume(9, 0.5, 0)
+            gml_Script_snd_play(snd_fall_cool_deep)
+            gml_Script_snd_pitch(snd_fall_cool_deep, 1.7)
+            gml_Script_snd_volume(snd_fall_cool_deep, 0.5, 0)
             dive_hitbox = gml_Script_instance_create(x, (y - 20), o_boxing_hitbox)
             with (dive_hitbox)
             {
@@ -1712,8 +1712,8 @@ if (state == 3)
                     attacktimer -= 1
                 if (attacktimer < 0 && pirouette_count < pirouette_amount)
                 {
-                    gml_Script_snd_play(9)
-                    gml_Script_snd_pitch(9, 1.7)
+                    gml_Script_snd_play(snd_fall_cool_deep)
+                    gml_Script_snd_pitch(snd_fall_cool_deep, 1.7)
                     pirouette_count += 1
                     attacktimer = (36 / f)
                     if (pirouette_amount == 7)
@@ -1791,9 +1791,9 @@ if (state == 3)
                 sprite_index = spr_bqueen_leggy
                 x = basex
                 if arcade
-                    gml_Script_snd_play(311)
+                    gml_Script_snd_play(motor_upper_quick_high_bc)
                 else
-                    gml_Script_snd_play(119)
+                    gml_Script_snd_play(motor_upper_quick_high)
                 invincible_l = 0
                 invincible_r = 0
                 blocking = -1
@@ -1806,7 +1806,7 @@ if (state == 3)
             attacktimer += 1
             if (attacktimer >= ((45 / f) - ((attack_succeeded * 45) / f)))
             {
-                gml_Script_snd_volume(9, 1, 0)
+                gml_Script_snd_volume(snd_fall_cool_deep, 1, 0)
                 speed = 0
                 image_index = 0
                 image_speed = 0
@@ -1911,8 +1911,8 @@ if (state == 3)
             attacktimer += 1
             if (attacktimer == 1)
             {
-                gml_Script_snd_play(51)
-                gml_Script_snd_pitch(51, (0.75 + (random(1) / 2)))
+                gml_Script_snd_play(snd_wing)
+                gml_Script_snd_pitch(snd_wing, (0.75 + (random(1) / 2)))
             }
             if (attacktimer < (20 / f) && minitimer >= (4 / f))
             {
@@ -1929,8 +1929,8 @@ if (state == 3)
                 sprite_index = spr_bqueen_laugh
                 if (o_boxingcontroller.wireframe_boxing == 1)
                     sprite_index = spr_bqueen_laugh_wireframe
-                gml_Script_snd_play(292)
-                gml_Script_snd_volume(292, 0.5, 0)
+                gml_Script_snd_play(snd_queen_laugh_0)
+                gml_Script_snd_volume(snd_queen_laugh_0, 0.5, 0)
                 if (o_boxingcontroller.wireframe_boxing == 0)
                     image_speed = 0.1
             }
@@ -1970,7 +1970,7 @@ if (state == 3)
             }
             if (attacktimer >= (((100 / f) - ((attack_succeeded * 25) / f)) + firstwheelattackdelay))
             {
-                gml_Script_snd_volume(292, 0.5, 1)
+                gml_Script_snd_volume(snd_queen_laugh_0, 0.5, 1)
                 if (o_boxingcontroller.wireframe_boxing == 1)
                     first_octagon_attack = 1
                 if (instance_exists(o_boxing_wireframe) && o_boxing_wireframe.text == o_boxingcontroller.duck_string)
@@ -1993,15 +1993,15 @@ if (state == 3)
             attackcon = 1
             if arcade
             {
-                gml_Script_snd_play(301)
-                gml_Script_snd_play(306)
-                gml_Script_snd_play(307)
+                gml_Script_snd_play(snd_jump_bc)
+                gml_Script_snd_play(snd_rocket_bc)
+                gml_Script_snd_play(snd_screenshake_bc)
             }
             else
             {
-                gml_Script_snd_play(159)
-                gml_Script_snd_play(220)
-                gml_Script_snd_play(178)
+                gml_Script_snd_play(snd_jump)
+                gml_Script_snd_play(snd_rocket)
+                gml_Script_snd_play(snd_screenshake)
             }
             d = gml_Script_instance_create(0, 0, obj_shake)
             d.shakex = ceil(2)
@@ -2563,9 +2563,9 @@ if (state == 3)
                 if (o_boxingcontroller.wireframe_boxing == 0)
                 {
                     if arcade
-                        gml_Script_snd_play(314)
+                        gml_Script_snd_play(snd_cardrive_bc)
                     else
-                        gml_Script_snd_play(153)
+                        gml_Script_snd_play(snd_cardrive)
                 }
                 specialcon = 1
                 attacktimer = (54 / f)
@@ -2693,9 +2693,9 @@ if (state == 3)
                     if (o_boxingcontroller.dead == 0)
                     {
                         if arcade
-                            gml_Script_snd_play(304)
+                            gml_Script_snd_play(snd_queen_laugh_0_bc)
                         else
-                            gml_Script_snd_play(292)
+                            gml_Script_snd_play(snd_queen_laugh_0)
                     }
                     sprite_index = spr_bqueen_laugh
                     if (o_boxingcontroller.wireframe_boxing == 1)
@@ -2726,9 +2726,9 @@ if (state == 3)
                 if (attacktimer == (196 / f))
                 {
                     if arcade
-                        gml_Script_snd_play(304)
+                        gml_Script_snd_play(snd_queen_laugh_0_bc)
                     else
-                        gml_Script_snd_play(292)
+                        gml_Script_snd_play(snd_queen_laugh_0)
                     sprite_index = spr_bqueen_laugh
                     if (o_boxingcontroller.wireframe_boxing == 1)
                         sprite_index = spr_bqueen_laugh_wireframe
@@ -2772,22 +2772,22 @@ if (state == 3)
                     hitanim = 0
                     if arcade
                     {
-                        punchnoise = gml_Script_snd_play(303)
-                        gml_Script_snd_play(315)
+                        punchnoise = gml_Script_snd_play(snd_punchmed_bc)
+                        gml_Script_snd_play(snd_damage_bc)
                     }
                     else
                     {
-                        punchnoise = gml_Script_snd_play(116)
-                        gml_Script_snd_play(166)
+                        punchnoise = gml_Script_snd_play(snd_punchmed)
+                        gml_Script_snd_play(snd_damage)
                     }
                     if (dizzytimer <= 0)
                         noattack += 1
                     else
                     {
                         if arcade
-                            gml_Script_snd_play(302)
+                            gml_Script_snd_play(snd_metalhit_bc)
                         else
-                            gml_Script_snd_play(114)
+                            gml_Script_snd_play(snd_metalhit)
                         audio_sound_pitch(punchnoise, 0.8)
                     }
                     blocking = -1
@@ -2926,10 +2926,10 @@ if (state == 3)
                 if (o_boxingcontroller.wireframe_boxing == 0)
                 {
                     if arcade
-                        gml_Script_snd_play(314)
+                        gml_Script_snd_play(snd_cardrive_bc)
                     else
-                        gml_Script_snd_play(153)
-                    gml_Script_snd_pitch(153, 1)
+                        gml_Script_snd_play(snd_cardrive)
+                    gml_Script_snd_pitch(snd_cardrive, 1)
                 }
                 specialcon = 2
                 attacktimer = (50 / f)
@@ -2962,9 +2962,9 @@ if (state == 3)
             {
                 obj_bq_baseball_final.vspeed = (8 / f)
                 obj_bq_baseball_final.hit = 0
-                gml_Script_snd_play(9)
-                gml_Script_snd_loop(10)
-                gml_Script_snd_volume(10, 0.4, 120)
+                gml_Script_snd_play(snd_fall_cool_deep)
+                gml_Script_snd_loop(snd_quake_nes)
+                gml_Script_snd_volume(snd_quake_nes, 0.4, 120)
             }
             if ((attacktimer > (90 / f) && attacktimer < (196 / f)) || (attacktimer > (160 / f) && instance_exists(obj_bq_baseball_final) && obj_bq_baseball_final.vspeed >= 0))
             {
@@ -3036,15 +3036,15 @@ if (state == 3)
                             {
                                 if audio_is_playing(snd_explosion_firework_bc)
                                     audio_stop_sound(snd_explosion_firework_bc)
-                                gml_Script_snd_play(316)
-                                gml_Script_snd_pitch(316, (0.7 + random(0.6)))
+                                gml_Script_snd_play(snd_explosion_firework_bc)
+                                gml_Script_snd_pitch(snd_explosion_firework_bc, (0.7 + random(0.6)))
                             }
                             else
                             {
                                 if audio_is_playing(snd_explosion_firework)
                                     audio_stop_sound(snd_explosion_firework)
-                                gml_Script_snd_play(95)
-                                gml_Script_snd_pitch(95, (0.7 + random(0.6)))
+                                gml_Script_snd_play(snd_explosion_firework)
+                                gml_Script_snd_pitch(snd_explosion_firework, (0.7 + random(0.6)))
                             }
                         }
                         if (crescent_explosion_timer == 6)
@@ -3067,20 +3067,20 @@ if (state == 3)
                     if (final_sequence_red_state == 1)
                         final_sequence_red_alpha += 0.01
                 }
-                if (attacktimer == (702 / f) && (!gml_Script_i_ex(62)))
+                if (attacktimer == (702 / f) && (!gml_Script_i_ex(obj_writer)))
                 {
                     gml_Script_scr_speaker("queen")
                     if (text_state == 0)
                         gml_Script_msgsetloc(0, "* Battle Power... Dropping.../%", "o_boxingqueen_slash_Step_0_gml_3078_0")
-                    if (text_state == 1 && (!gml_Script_i_ex(62)))
+                    if (text_state == 1 && (!gml_Script_i_ex(obj_writer)))
                         gml_Script_msgsetloc(0, "* Overheat... Activated/%", "o_boxingqueen_slash_Step_0_gml_3082_0")
-                    if (text_state == 2 && (!gml_Script_i_ex(62)))
+                    if (text_state == 2 && (!gml_Script_i_ex(obj_writer)))
                         gml_Script_msgsetloc(0, "* Listen Well/%", "o_boxingqueen_slash_Step_0_gml_3086_0")
-                    if (text_state == 3 && (!gml_Script_i_ex(62)))
+                    if (text_state == 3 && (!gml_Script_i_ex(obj_writer)))
                         gml_Script_msgsetloc(0, "* You May Have Defeated Me/%", "o_boxingqueen_slash_Step_0_gml_3090_0")
-                    if (text_state == 4 && (!gml_Script_i_ex(62)))
+                    if (text_state == 4 && (!gml_Script_i_ex(obj_writer)))
                         gml_Script_msgsetloc(0, "* But I Still Possess One Thing/%", "o_boxingqueen_slash_Step_0_gml_3094_0")
-                    if (text_state == 5 && (!gml_Script_i_ex(62)))
+                    if (text_state == 5 && (!gml_Script_i_ex(obj_writer)))
                         gml_Script_msgsetloc(0, "* You Three Will Never Have/%", "o_boxingqueen_slash_Step_0_gml_3098_0")
                     if (text_state < 6)
                     {
@@ -3096,7 +3096,7 @@ if (state == 3)
                     }
                     text_state++
                 }
-                if ((attacktimer > (704 / f) && attacktimer < (708 / f) && text_state >= 0 && text_state < 7) || (gml_Script_i_ex(62) && text_state >= 0 && text_state < 7))
+                if ((attacktimer > (704 / f) && attacktimer < (708 / f) && text_state >= 0 && text_state < 7) || (gml_Script_i_ex(obj_writer) && text_state >= 0 && text_state < 7))
                     attacktimer = (700 / f)
                 if (attacktimer == ((710 + aa) / f))
                 {
@@ -3104,9 +3104,9 @@ if (state == 3)
                     friction = 2.2
                     sprite_index = spr_queen_rocket_punch_pose
                     if arcade
-                        gml_Script_snd_play(306)
+                        gml_Script_snd_play(snd_rocket_bc)
                     else
-                        gml_Script_snd_play(220)
+                        gml_Script_snd_play(snd_rocket)
                     gml_Script_instance_create((x - 8), (y - 132), obj_boxingqueen_rocket_punch_idle)
                 }
                 if (attacktimer > ((710 + aa) / f) && attacktimer < ((758 + aa) / f))
@@ -3131,7 +3131,7 @@ if (state == 3)
                     with (obj_writer)
                         writingy = (y - 320)
                 }
-                if (attacktimer > ((768 + aa) / f) && attacktimer < ((772 + aa) / f) && gml_Script_i_ex(62))
+                if (attacktimer > ((768 + aa) / f) && attacktimer < ((772 + aa) / f) && gml_Script_i_ex(obj_writer))
                     attacktimer = ((768 + aa) / f)
                 if (attacktimer == ((772 + aa) / f))
                 {
@@ -3146,13 +3146,13 @@ if (state == 3)
                     }
                     else if audio_is_playing(snd_explosion_firework)
                         audio_stop_sound(snd_explosion_firework)
-                    if gml_Script_i_ex(786)
+                    if gml_Script_i_ex(o_boxingqueen)
                         o_boxingqueen.visible = false
-                    if gml_Script_i_ex(774)
+                    if gml_Script_i_ex(o_boxingcontroller)
                         o_boxingcontroller.visible = false
-                    if gml_Script_i_ex(810)
+                    if gml_Script_i_ex(obj_3d_bg_effect)
                         obj_3d_bg_effect.visible = false
-                    if gml_Script_i_ex(809)
+                    if gml_Script_i_ex(obj_bg_square)
                         obj_bg_square.visible = false
                     with (obj_boxingqueen_rocket_punch_idle)
                         instance_destroy()

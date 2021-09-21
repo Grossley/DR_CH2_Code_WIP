@@ -26,11 +26,11 @@ else
 {
     hp -= 5
     other.hp -= 10
-    other.alarm[0] = 10
+    @@Other@@().alarm[0] = 10
     if (!audio_is_playing(snd_hurt1))
-        gml_Script_snd_play(170)
+        gml_Script_snd_play(snd_hurt1)
 }
 damagetimer = 5
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 if (hp <= 0)
     destroyed = 1

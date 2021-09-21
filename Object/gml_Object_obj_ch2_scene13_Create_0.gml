@@ -29,7 +29,7 @@ if (global.chapter != 2 || global.plot >= 75)
 else
 {
     statuenpc.visible = false
-    boxhead = gml_Script_scr_dark_marker(0, 0, 103)
+    boxhead = gml_Script_scr_dark_marker(0, 0, spr_cutscene_13_noelle_box)
     boxhead.visible = false
     glassexplosion = gml_Script_instance_create(0, 0, obj_marker)
     glassexplosion.sprite_index = spr_realisticexplosion

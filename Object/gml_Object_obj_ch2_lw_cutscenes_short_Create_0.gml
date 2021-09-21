@@ -32,8 +32,8 @@ else
     {
         global.flag[20] = 0
         con = 50
-        alphys = gml_Script_scr_marker(469, 222, 922)
-        toriel = gml_Script_scr_marker(551, 201, 897)
+        alphys = gml_Script_scr_marker(469, 222, spr_alphysr)
+        toriel = gml_Script_scr_marker(551, 201, spr_toriel_l)
         with (alphys)
             gml_Script_scr_depth()
         with (toriel)

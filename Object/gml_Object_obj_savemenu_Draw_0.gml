@@ -157,7 +157,7 @@ else if (menuno == 1)
                 menuno = 0
                 buffer = 3
                 mpos = global.filechoice
-                gml_Script_snd_play(260)
+                gml_Script_snd_play(snd_select)
             }
             else if (level_file[mpos] != 0 && mpos != global.filechoice)
             {
@@ -169,7 +169,7 @@ else if (menuno == 1)
             {
                 menuno = 2
                 global.filechoice = mpos
-                gml_Script_snd_play(257)
+                gml_Script_snd_play(snd_save)
                 gml_Script_scr_save()
                 saved = 1
                 xcoord = 2
@@ -195,7 +195,7 @@ else if (menuno == 1)
             menuno = 0
             buffer = 3
             mpos = global.filechoice
-            gml_Script_snd_play(260)
+            gml_Script_snd_play(snd_select)
         }
     }
     if (overwrite == 1)
@@ -264,7 +264,7 @@ else if (menuno == 1)
             {
                 menuno = 2
                 global.filechoice = mpos
-                gml_Script_snd_play(257)
+                gml_Script_snd_play(snd_save)
                 script_execute(gml_Script_scr_save)
                 saved = 1
                 xcoord = 2

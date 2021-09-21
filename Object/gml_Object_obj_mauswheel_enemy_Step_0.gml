@@ -44,7 +44,7 @@ if (global.monster[myself] == true)
             else
             {
                 global.monsterattackname[myself] = "MausTrail"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 19
                 dc.target = mytarget
             }
@@ -112,7 +112,7 @@ if (global.myfight == 3)
         actconsus = 0
         actcon = 1
     }
-    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(62)))
+    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(obj_writer)))
     {
         if (!trappedText)
         {
@@ -140,7 +140,7 @@ if (global.myfight == 3)
         basket = gml_Script_instance_create((obj_herosusie.x - 5), (gml_Script_cameray() - 100), obj_maus_basket_susie)
         with (obj_herosusie)
             visible = false
-        nise_susie = gml_Script_scr_dark_marker((obj_herosusie.x + 16), (obj_herosusie.y - 1), 996)
+        nise_susie = gml_Script_scr_dark_marker((obj_herosusie.x + 16), (obj_herosusie.y - 1), spr_susie_shock_r)
         nise_susie.depth = obj_herosusie.depth
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Susie was captured!!/%", "obj_mauswheel_enemy_slash_Step_0_gml_209_0")
@@ -153,7 +153,7 @@ if (global.myfight == 3)
             gml_Script_scr_shakeobj()
         with (basket)
             gml_Script_scr_shakeobj()
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
     }
     if (actconral == 3 && (!instance_exists(obj_writer)))
     {
@@ -230,13 +230,13 @@ if (global.myfight == 3)
         gml_Script_scr_battletext_default()
         actcon = 22.2
     }
-    if (actcon == 22.2 && (!gml_Script_i_ex(62)))
+    if (actcon == 22.2 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_msgsetloc(0, "* But, it's still rolling out of control.../%", "obj_mauswheel_enemy_slash_Step_0_gml_324_0")
         gml_Script_scr_battletext_default()
         actcon = 22.3
     }
-    if (actcon == 22.3 && (!gml_Script_i_ex(62)))
+    if (actcon == 22.3 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_msgsetloc(0, "* Suddenly...!/%", "obj_mauswheel_enemy_slash_Step_0_gml_331_0")
         gml_Script_scr_battletext_default()
@@ -244,7 +244,7 @@ if (global.myfight == 3)
     }
     if (actcon > 22 && actcon < 23 && image_speed < 2)
         image_speed += 0.02
-    if (actcon == 23 && (!gml_Script_i_ex(62)))
+    if (actcon == 23 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_instance_create(((gml_Script_camerax() + 315) - 76), (gml_Script_cameray() - 138), obj_mauswheel_tasquemanager)
         gml_Script_instance_create(((gml_Script_camerax() + 435) - 74), (gml_Script_cameray() - 80), obj_mauswheel_tasque)
@@ -289,14 +289,14 @@ if (global.myfight == 3)
         gml_Script_scr_nextact()
         if remove
         {
-            if gml_Script_i_ex(463)
+            if gml_Script_i_ex(obj_maus_enemy)
             {
                 with (obj_maus_enemy)
                     tasque_joined = 1
             }
             global.monstermakey[myself] = (y - 15)
             global.monstermakex[myself] = tasquemarker.x
-            newtasque = gml_Script_scr_monster_change(myself, 32, 446)
+            newtasque = gml_Script_scr_monster_change(myself, 32, obj_tasque_enemy)
             with (tasquemarker)
                 instance_destroy()
             instance_destroy()

@@ -95,7 +95,7 @@ if (menu == 0)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_98_0")
         if (mainmessage == 0)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_99_0")
-        gml_Script_instance_create_ch1(30, 270, 1327)
+        gml_Script_instance_create_ch1(30, 270, obj_writer_ch1)
     }
     menumax = 3
     draw_set_color(c_white)
@@ -154,7 +154,7 @@ if (menu == 1 || menu == 2)
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_152_0")
             if (murder == 1)
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_153_0")
-            gml_Script_instance_create_ch1(450, 260, 1327)
+            gml_Script_instance_create_ch1(450, 260, obj_writer_ch1)
         }
         draw_sprite(spr_heart_ch1, 0, 30, (270 + (menuc[1] * 40)))
         if (gml_Script_button1_p_ch1() && onebuffer < 0)
@@ -220,7 +220,7 @@ if (menu == 1 || menu == 2)
                     {
                         global.gold -= buyvalue[menuc[1]]
                         sidemessage = 1
-                        gml_Script_snd_play_ch1(376)
+                        gml_Script_snd_play_ch1(snd_locker_ch1)
                     }
                     if (noroom == true)
                         sidemessage = 4
@@ -285,7 +285,7 @@ if (menu == 3)
     if (instance_exists(obj_writer_ch1) == 0)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_244_0")
-        gml_Script_instance_create_ch1(440, 260, 1327)
+        gml_Script_instance_create_ch1(440, 260, obj_writer_ch1)
     }
     draw_sprite(spr_heart_ch1, 0, 50, (270 + (menuc[3] * 40)))
     if (gml_Script_button1_p_ch1() && onebuffer < 0)
@@ -329,7 +329,7 @@ if (menu == 10)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_286_0")
         if (sidemessage == 2)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_287_0")
-        gml_Script_instance_create_ch1(460, 260, 1327)
+        gml_Script_instance_create_ch1(460, 260, obj_writer_ch1)
     }
     draw_sprite(spr_heart_ch1, 0, 50, (270 + (menuc[10] * 40)))
     if (gml_Script_button1_p_ch1() && onebuffer < 0)
@@ -408,7 +408,7 @@ if (menu == 11 || menu == 12 || menu == 13)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_352_0")
         if (sidemessage2 == 4)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_353_0")
-        gml_Script_instance_create_ch1(450, 260, 1327)
+        gml_Script_instance_create_ch1(450, 260, obj_writer_ch1)
     }
 }
 gml_Script_scr_shopmenu_ch1(4)
@@ -533,7 +533,7 @@ if (menu == 4)
                 global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_shop1_slash_Draw_0_gml_507_0")
             }
         }
-        gml_Script_instance_create_ch1(30, 270, 1327)
+        gml_Script_instance_create_ch1(30, 270, obj_writer_ch1)
         selling = 1
     }
     if (selling == 1 && instance_exists(obj_writer_ch1) == 0)

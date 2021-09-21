@@ -11,7 +11,7 @@ if (hurtsfxcon == 1)
 {
     hurtsfxtimer++
     if (!audio_is_playing(snd_swallow))
-        gml_Script_snd_play(179)
+        gml_Script_snd_play(snd_swallow)
     if (hurtsfxtimer == 10)
     {
         hurtsfxcon = 0
@@ -321,12 +321,17 @@ if (shieldhurt == 0)
         if (shieldpiece_fadecon[ii] == 1)
         {
             if (shieldpiece_fadetimer[ii] < 10)
+            {
                 shieldpiece_fadetimer[ii]++
+                shieldpiece_fadetimer[ii]
+            }
             draw_sprite_ext(spr_queenshield_pieces_hurt, shieldpiece_image_index[ii], shieldpiece_x[ii], (shieldpiece_y[ii] + y), shieldpiece_xscale[ii], shieldpiece_yscale[ii], 0, c_white, (shieldpiece_fadetimer[ii] / 10))
         }
         if (shieldpiece_fadecon[ii] == 2)
         {
+            shieldpiece_fadetimer[ii]
             shieldpiece_fadetimer[ii]--
+            shieldpiece_fadetimer[ii]
             if (shieldpiece_fadetimer[ii] == 0)
                 shieldpiece_fadecon[ii] = 0
             draw_sprite_ext(spr_queenshield_pieces_hurt, shieldpiece_image_index[ii], shieldpiece_x[ii], (shieldpiece_y[ii] + y), shieldpiece_xscale[ii], shieldpiece_yscale[ii], 0, c_white, (shieldpiece_fadetimer[ii] / 10))

@@ -74,9 +74,9 @@ else
         if (flash == true)
         {
             fsiner += 1
-            gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+            gml_Script_d3d_set_fog_ch1(true, c_white, 0, 1)
             draw_sprite_ext(thissprite, (animsiner / 5), (x + xoff), y, image_xscale, image_yscale, 0, c_white, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-            gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+            gml_Script_d3d_set_fog_ch1(false, c_black, 0, 0)
         }
     }
     if (becomeflash == false)

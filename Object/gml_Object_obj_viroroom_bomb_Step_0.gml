@@ -9,7 +9,7 @@ if (cont == 2)
 {
     image_alpha = 0
     multiplier = 2
-    gml_Script_snd_play(141)
+    gml_Script_snd_play(snd_bomb)
     explosion = gml_Script_instance_create(x, y, obj_textbomb_explosion)
     explosion.image_xscale = 3
     explosion.image_yscale = 3

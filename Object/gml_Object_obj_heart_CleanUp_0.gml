@@ -1,2 +1,2 @@
-if gml_Script_snd_is_playing(130)
-    gml_Script_snd_stop(130)
+if gml_Script_snd_is_playing(snd_chargeshot_charge)
+    gml_Script_snd_stop(snd_chargeshot_charge)

@@ -85,7 +85,7 @@ if (!return_title)
         {
             if (room_id == room_krisroom)
             {
-                if gml_Script_i_ex(83)
+                if gml_Script_i_ex(obj_krisroom)
                 {
                     if obj_krisroom.show_border
                         border_alpha = 1
@@ -93,7 +93,7 @@ if (!return_title)
             }
             if (room_id == room_schooldoor)
             {
-                if gml_Script_i_ex(941)
+                if gml_Script_i_ex(obj_dw_transition)
                 {
                     border_fade_in = 0
                     border_fade_out = border_alpha > 0
@@ -106,7 +106,7 @@ if (!return_title)
             }
             if (room_id == room_dw_castle_area_1)
             {
-                if gml_Script_i_ex(940)
+                if gml_Script_i_ex(obj_dw_leave)
                 {
                     if (obj_dw_leave.con >= 10)
                     {
@@ -114,7 +114,7 @@ if (!return_title)
                         border_fade_out = border_alpha > 0
                     }
                 }
-                if gml_Script_i_ex(941)
+                if gml_Script_i_ex(obj_dw_transition)
                 {
                     if (obj_dw_transition.timer >= 30)
                     {
@@ -129,7 +129,7 @@ if (!return_title)
             {
                 if (global.plot <= 10)
                 {
-                    if gml_Script_i_ex(928)
+                    if gml_Script_i_ex(obj_ch2_scene6)
                     {
                         if (obj_ch2_scene6.con >= 50)
                             border_fade_in = border_alpha < 1
@@ -140,12 +140,12 @@ if (!return_title)
             }
             if (room_id == room_library)
             {
-                if gml_Script_i_ex(941)
+                if gml_Script_i_ex(obj_dw_transition)
                     border_fade_out = border_alpha > 0
             }
             if (room_id == room_dw_cyber_rollercoaster)
             {
-                if gml_Script_i_ex(949)
+                if gml_Script_i_ex(obj_ch2_scene11a)
                 {
                     if (obj_ch2_scene11a.hide_border == 1)
                         border_fade_out = border_alpha > 0
@@ -164,7 +164,7 @@ if (!return_title)
                 border_alpha = 1
             if (room_id == room_dw_city_mansion_front)
             {
-                if gml_Script_i_ex(1009)
+                if gml_Script_i_ex(obj_ch2_city08)
                 {
                     if (obj_ch2_city08.circle_zoom_timer >= 50)
                     {
@@ -203,7 +203,7 @@ if (!return_title)
                 border_fade_out = border_alpha > 0
             if (room_id == room_dw_mansion_top_post)
             {
-                if gml_Script_i_ex(986)
+                if gml_Script_i_ex(obj_ch2_scene27)
                 {
                     if obj_ch2_scene27.hide_border
                     {
@@ -219,7 +219,7 @@ if (!return_title)
             }
             if (room_id == room_lw_computer_lab)
             {
-                if gml_Script_i_ex(989)
+                if gml_Script_i_ex(obj_ch2_scene28b)
                 {
                     if obj_ch2_scene28b.show_border
                         border_fade_in = border_alpha < 1
@@ -227,7 +227,7 @@ if (!return_title)
             }
             if (room_id == room_torhouse)
             {
-                if gml_Script_i_ex(994)
+                if gml_Script_i_ex(obj_ch2_scene32)
                 {
                     if obj_ch2_scene32.hide_border
                     {
@@ -239,7 +239,7 @@ if (!return_title)
         }
         if (room_id == PLACE_FAILURE)
         {
-            if gml_Script_i_ex(881)
+            if gml_Script_i_ex(DEVICE_FAILURE)
             {
                 if (DEVICE_FAILURE.EVENT >= 27 && (!instance_exists(obj_writer)))
                     border_alpha = 0

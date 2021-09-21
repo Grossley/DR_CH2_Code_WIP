@@ -15,4 +15,4 @@ fsiner++
 if (flash == true)
     gml_Script_draw_sprite_ext_flash(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
 if (shake > 4)
-    gml_Script_draw_sprite_ext_flash(232, 0, (x + z), (y + z), image_xscale, image_yscale, image_angle, image_blend, 1)
+    gml_Script_draw_sprite_ext_flash(spr_berdly_plug_queen_boss, 0, (x + z), (y + z), image_xscale, image_yscale, image_angle, image_blend, 1)

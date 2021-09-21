@@ -42,7 +42,7 @@ gml_Script_scr_simtown_canbuild_check()
 gml_Script_scr_simtown_reset_cursor()
 siner = 0
 actresult = "tie"
-specialCursor = gml_Script_scr_dark_marker(-100, -100, 2073)
+specialCursor = gml_Script_scr_dark_marker(-100, -100, spr_simtown_selector)
 specialCursor.depth = -100
 specialCursor.image_speed = 0.2
 flyaway = 0

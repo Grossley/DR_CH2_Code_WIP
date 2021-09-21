@@ -10,7 +10,7 @@ if (state == 0)
     if dancing
     {
         siner += 0.16666666666666666
-        gml_Script_draw_monster_body_part(1752, siner, x, y)
+        gml_Script_draw_monster_body_part(spr_hatguy_dance, siner, x, y)
         musicalnotetimer++
         if (musicalnotetimer == 14)
         {

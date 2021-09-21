@@ -9,7 +9,7 @@ if (isswitch == 1)
             if (global.flag[395] == 0)
             {
                 global.flag[395] = 1
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_impact)
                 gml_Script_instance_create(x, y, obj_shake)
                 if (shine != noone)
                     instance_destroy(shine)
@@ -21,7 +21,7 @@ if (isswitch == 1)
             if (global.flag[396] == 0)
             {
                 global.flag[396] = 1
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_impact)
                 gml_Script_instance_create(x, y, obj_shake)
                 if (shine != noone)
                     instance_destroy(shine)
@@ -33,7 +33,7 @@ if (isswitch == 1)
     {
         if (extflag == "treasureswitch" && global.flag[398] == 0)
         {
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
             with (obj_queenart_mona)
             {
                 if (extflag == "treasure")
@@ -55,7 +55,7 @@ if (isswitch == 1)
             }
             if (shine != noone)
                 instance_destroy(shine)
-            skip = 1
+            skip = true
             isswitch = 0
             extflag = 0
             global.flag[398] = 1
@@ -65,7 +65,7 @@ if (isswitch == 1)
         {
             if (global.flag[138] == 0)
             {
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_impact)
                 itemflag = 138
                 var itemget = gml_Script_scr_itemget_anytype_text(2, "item")
                 gml_Script_scr_speaker("no_name")
@@ -105,7 +105,7 @@ if (isswitch == 1)
                     decor.spriteindex2 = 2922
                     decor.extflag = "decor"
                     decor.depth = 998000
-                    gml_Script_snd_play(61)
+                    gml_Script_snd_play(snd_impact)
                     instance_destroy()
                 }
             }
@@ -119,5 +119,5 @@ if (isswitch == 1)
 }
 myinteract = 3
 global.interact = 1
-if (skip != 0)
+if (skip != false)
     global.interact = 0

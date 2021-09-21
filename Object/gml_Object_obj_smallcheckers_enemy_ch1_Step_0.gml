@@ -34,7 +34,7 @@ if (global.monster[myself] == true)
             global.turntimer = 1
             if (rr == 999)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1557)
+                dc = gml_Script_instance_create_ch1(x, y, obj_spinheart_ch1)
                 dc.type = 0
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)

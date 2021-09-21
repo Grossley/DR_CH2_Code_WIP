@@ -90,9 +90,9 @@ if (x < xprevious)
 tellspeed = (x - xprevious)
 if (con == 1)
 {
-    pipismarker = gml_Script_scr_dark_marker(x, (y - (sprite_height / 2)), 2000)
-    wheel1 = gml_Script_scr_marker((x - 8), ((y - 8) + (active * 8)), 2069)
-    wheel2 = gml_Script_scr_marker((x + 8), ((y - 8) + (active * 8)), 2069)
+    pipismarker = gml_Script_scr_dark_marker(x, (y - (sprite_height / 2)), spr_pipis_egg)
+    wheel1 = gml_Script_scr_marker((x - 8), ((y - 8) + (active * 8)), spr_thrash_wheel)
+    wheel2 = gml_Script_scr_marker((x + 8), ((y - 8) + (active * 8)), spr_thrash_wheel)
     wheel1.hspeed = 16
     wheel2.hspeed = -16
     wheel1.friction = 0.5
@@ -104,7 +104,7 @@ if (con == 1)
     gml_Script_scr_darksize(pipismarker)
     visible = false
     myinteract = 0
-    gml_Script_snd_play_pitch(297, 1.4)
+    gml_Script_snd_play_pitch(snd_spamton_laugh, 1.4)
     con = 2
     timer = 0
     boss = true
@@ -116,7 +116,7 @@ if (con == 2)
     {
         alarm[4] = 30
         global.flag[9] = 2
-        gml_Script_scr_battle(102, 0, pipismarker, 0, 0)
+        gml_Script_scr_battle(102, false, pipismarker, 0, 0)
     }
 }
 if (con == 3)

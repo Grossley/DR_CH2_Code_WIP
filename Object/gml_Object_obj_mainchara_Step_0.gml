@@ -17,9 +17,7 @@ if (!roomenterfreezeend)
     if (global.interact == 3)
     {
         if (global.flag[21] > 0)
-        {
             global.flag[21] = (global.flag[21] - 1)
-        }
         else
         {
             roomenterfreezeend = 1
@@ -194,7 +192,7 @@ if (global.interact == 0)
             }
             image_alpha = 0
             fun = true
-            gml_Script_snd_play(174)
+            gml_Script_snd_play(snd_laz_c)
             image_index = 0
             image_speed = 0.5
             swordtimer = 0
@@ -465,7 +463,7 @@ if (stepping == 1 && fun == false)
     if (image_index == 1 && stepped == false)
     {
         if (global.flag[31] == 0)
-            gml_Script_snd_play(190)
+            gml_Script_snd_play(snd_step1)
         stepped = true
     }
     if (image_index == 0 || image_index == 2)
@@ -474,7 +472,7 @@ if (stepping == 1 && fun == false)
     {
         stepped = true
         if (global.flag[31] == 0)
-            gml_Script_snd_play(191)
+            gml_Script_snd_play(snd_step2)
     }
 }
 if (onebuffer < 0)

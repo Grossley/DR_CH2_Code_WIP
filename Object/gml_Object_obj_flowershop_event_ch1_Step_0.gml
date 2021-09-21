@@ -11,7 +11,7 @@ if (con > 0 && con < 50)
     if (con == 2.1)
     {
         global.facing = 2
-        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4207)
+        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisu_ch1)
         with (k)
         {
             vspeed = -1
@@ -39,7 +39,7 @@ if (con > 0 && con < 50)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_46_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_47_0")
         con = 4
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 4 && (!gml_Script_d_ex_ch1()))
     {
@@ -57,7 +57,7 @@ if (con > 0 && con < 50)
     if (con == 8)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_69_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 9
     }
     if (con == 9 && gml_Script_d_ex_ch1() == 0)
@@ -84,13 +84,13 @@ if (con > 0 && con < 50)
         global.fe = 1
         global.msc = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_100_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 15
     }
     if (con == 15 && (!gml_Script_d_ex_ch1()))
     {
-        exc = gml_Script_instance_create_ch1((x + 25), (y - 2), 1486)
-        gml_Script_snd_play_ch1(431)
+        exc = gml_Script_instance_create_ch1((x + 25), (y - 2), obj_excblcon_ch1)
+        gml_Script_snd_play_ch1(snd_b_ch1)
         con = 16
         alarm[4] = 30
     }
@@ -99,7 +99,7 @@ if (con > 0 && con < 50)
         global.fe = 4
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_116_0")
         con = 18
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 18 && gml_Script_d_ex_ch1() == 0)
     {
@@ -148,7 +148,7 @@ if (con > 0 && con < 50)
         global.fe = 2
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_171_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_172_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 24
     }
     if (con == 24 && (!gml_Script_d_ex_ch1()))
@@ -188,14 +188,14 @@ if (con > 0 && con < 50)
         global.fe = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_216_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_217_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 32
     }
     if (con == 32 && (!gml_Script_d_ex_ch1()))
     {
         global.interact = 0
         visible = false
-        asg = gml_Script_instance_create_ch1(x, (y + sprite_height), 1407)
+        asg = gml_Script_instance_create_ch1(x, (y + sprite_height), obj_npc_facing_ch1)
         con = 50
         global.flag[262] = 1
     }
@@ -214,8 +214,8 @@ if (con >= 50)
             obj_mainchara_ch1.y = 180
             con = 50.1
             alarm[4] = 30
-            exc = gml_Script_instance_create_ch1((x + 25), (y - 2), 1486)
-            gml_Script_snd_play_ch1(431)
+            exc = gml_Script_instance_create_ch1((x + 25), (y - 2), obj_excblcon_ch1)
+            gml_Script_snd_play_ch1(snd_b_ch1)
         }
     }
     if (con == 51.1)
@@ -226,7 +226,7 @@ if (con >= 50)
         global.fe = 2
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_260_0")
         con = 52
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 52 && (!gml_Script_d_ex_ch1()))
     {
@@ -261,7 +261,7 @@ if (con >= 50)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_300_0")
         global.flag[262] = 2
         gml_Script_scr_litemget_ch1(4)
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 59
     }
     if (con == 59 && (!gml_Script_d_ex_ch1()))
@@ -283,12 +283,12 @@ if (con >= 50)
         global.fc = 10
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_flowershop_event_slash_Step_0_gml_327_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 63
     }
     if (con == 63 && (!gml_Script_d_ex_ch1()))
     {
-        asg = gml_Script_instance_create_ch1(x, (y + sprite_height), 1407)
+        asg = gml_Script_instance_create_ch1(x, (y + sprite_height), obj_npc_facing_ch1)
         global.interact = 0
         visible = false
         con = 70

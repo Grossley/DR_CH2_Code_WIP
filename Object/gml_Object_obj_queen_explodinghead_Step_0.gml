@@ -19,7 +19,7 @@ if (timer == 20)
     image_speed = 1
     sprite_index = spr_queen_wireframe_laugh
     if (laugh == 1)
-        laughsound = gml_Script_snd_play(193)
+        laughsound = gml_Script_snd_play(snd_queen_bitcrushlaugh)
 }
 timer--
 if (first == 1)
@@ -32,7 +32,7 @@ if (timer == 8 && buffer && (!instance_exists(obj_queen_buffercontroller)))
 }
 if (timer == 0)
 {
-    gml_Script_snd_play(133)
+    gml_Script_snd_play(snd_explosion_mmx3)
     if (ultimate == 1)
     {
         for (i = 0; i < 10; i++)

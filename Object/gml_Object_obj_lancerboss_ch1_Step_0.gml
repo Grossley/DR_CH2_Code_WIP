@@ -6,7 +6,7 @@ if (global.monster[myself] == true)
         global.flag[(51 + myself)] = 4
         global.targeted[mytarget] = true
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         if (turns == 0)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss_slash_Step_0_gml_17_0")
@@ -40,7 +40,7 @@ if (global.monster[myself] == true)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
             with (obj_writer_ch1)
                 instance_destroy()
             global.mnfight = 2
@@ -50,7 +50,7 @@ if (global.monster[myself] == true)
     {
         if (attacks == false)
         {
-            bike = gml_Script_instance_create_ch1(x, y, 1528)
+            bike = gml_Script_instance_create_ch1(x, y, obj_lancerbike_ch1)
             visible = false
             bike.racecon = 1
             bike.target = mytarget
@@ -59,7 +59,7 @@ if (global.monster[myself] == true)
         }
         else
         {
-            bike = gml_Script_instance_create_ch1(x, y, 1528)
+            bike = gml_Script_instance_create_ch1(x, y, obj_lancerbike_ch1)
             visible = false
             bike.lcon = 1
             bike.target = mytarget

@@ -14,7 +14,7 @@ else
     con = 99
     if gml_Script_scr_havechar_ch1(3)
     {
-        rd = gml_Script_instance_create_ch1(240, 240, 1405)
+        rd = gml_Script_instance_create_ch1(240, 240, obj_readable_room1_ch1)
         rd.image_xscale = 8
         rd.image_yscale = 2
     }

@@ -1,11 +1,11 @@
 instance_destroy()
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 with (other)
 {
     hp -= 0.5
     if (image_index < 3)
         image_index += 0.5
-    gml_Script_snd_play(166)
+    gml_Script_snd_play(snd_damage)
     if (hp < 1)
     {
         fx = gml_Script_instance_create(x, y, obj_pipis_destroy_fx)

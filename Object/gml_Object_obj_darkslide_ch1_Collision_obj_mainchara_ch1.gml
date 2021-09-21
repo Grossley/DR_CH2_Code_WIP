@@ -8,8 +8,8 @@ if (cancollide == true)
         if (obj_mainchara_ch1.y < y)
         {
             abovey = 1
-            gml_Script_snd_play_ch1(381)
-            slide_noise = gml_Script_snd_loop_ch1(484)
+            gml_Script_snd_play_ch1(snd_noise_ch1)
+            slide_noise = gml_Script_snd_loop_ch1(snd_paper_surf_ch1)
             with (obj_mainchara_ch1)
             {
                 fun = true
@@ -26,7 +26,7 @@ if (cancollide == true)
     collider += 1
     if (slidetimer == 0 && abovey == 1)
     {
-        dust = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + 20), (obj_mainchara_ch1.y + 30), 1471)
+        dust = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + 20), (obj_mainchara_ch1.y + 30), obj_slidedust_ch1)
         with (dust)
         {
             vspeed = -6

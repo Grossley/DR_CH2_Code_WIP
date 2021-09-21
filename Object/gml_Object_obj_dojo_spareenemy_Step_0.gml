@@ -166,7 +166,7 @@ if (global.myfight == 3)
     }
     if (acting == 2 && actcon == 0 && battlestate < 2)
     {
-        shavesprite = gml_Script_scr_act_charsprite("kris", 1413, 0, 0)
+        shavesprite = gml_Script_scr_act_charsprite("kris", spr_krisb_attackready, 0, false)
         gml_Script_msgsetloc(0, "* (You shaved Jigsaw Joe's stubble!)/%", "obj_dojo_spareenemy_slash_Step_0_gml_187_0")
         gml_Script_scr_battletext_default()
         actcon = 2
@@ -175,7 +175,7 @@ if (global.myfight == 3)
     {
         gml_Script_msgsetloc(0, "* Susie told the enemy a bedtime story about beating them up!^1&* The enemy became TIRED!/%", "obj_dojo_spareenemy_slash_Step_0_gml_195_0")
         image_speed /= 2
-        gml_Script_snd_play(104)
+        gml_Script_snd_play(snd_hypnosis)
         gml_Script_scr_battletext_default()
         actcon = 1
         gml_Script_scr_monster_make_tired(myself)
@@ -203,7 +203,7 @@ if (global.myfight == 3)
             gml_Script_scr_animate(0, 0, 1)
         }
         alarm[2] = 20
-        gml_Script_snd_play_pitch(174, 1.5)
+        gml_Script_snd_play_pitch(snd_laz_c, 1.5)
         image_speed = 0
         var _cut = gml_Script_instance_create((x + 34), (y + 38), obj_animation)
         _cut.sprite_index = spr_attack_cut1

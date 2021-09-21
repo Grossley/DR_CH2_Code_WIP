@@ -20,12 +20,12 @@ if show_laser_outline
         reveal_pos += 16
         if (reveal_pos >= (gml_Script_camerax() + view_wport[0]))
             cityscape_reveal = 1
-        gpu_set_blendenable(0)
+        gpu_set_blendenable(false)
         gpu_set_colorwriteenable(0, 0, 0, 1)
         draw_set_alpha(0)
         draw_rectangle(reveal_pos, 0, (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + view_hport[0]), false)
         draw_set_alpha(1)
-        gpu_set_blendenable(1)
+        gpu_set_blendenable(true)
         gpu_set_colorwriteenable(1, 1, 1, 1)
         gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
         gpu_set_alphatestenable(1)
@@ -44,12 +44,12 @@ if show_laser_beam
         hand_alpha -= 0.1
     else
         show_laser_hand = 0
-    gpu_set_blendenable(0)
+    gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
     gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
     draw_set_alpha(1)
-    gpu_set_blendenable(1)
+    gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)
@@ -63,12 +63,12 @@ if show_mini_fountains
     if (mini_alpha < 1)
         mini_alpha += 0.1
     gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, mini_alpha)
-    gpu_set_blendenable(0)
+    gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
     gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, mini_alpha)
     draw_set_alpha(1)
-    gpu_set_blendenable(1)
+    gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)
@@ -90,7 +90,7 @@ if tender_goodbye
         sinery -= 10
     if (tender_reveal_pos < 0)
     {
-        gml_Script_snd_play(145)
+        gml_Script_snd_play(snd_magicsprinkle)
         tender_reveal_pos = ((gml_Script_camerax() + (view_wport[0] / 2)) - sprite_get_width(byebye_sprite))
     }
     if (!tender_reveal)
@@ -99,12 +99,12 @@ if tender_goodbye
         if (tender_reveal_pos >= ((gml_Script_camerax() + (view_wport[0] / 2)) + (sprite_get_width(byebye_sprite) * 2)))
             tender_reveal = 1
     }
-    gpu_set_blendenable(0)
+    gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
     draw_rectangle(tender_reveal_pos, ((gml_Script_cameray() + 40) + sinery), ((gml_Script_camerax() + (view_wport[0] / 2)) + (sprite_get_width(byebye_sprite) * 2)), (((gml_Script_cameray() + 40) + (sprite_get_height(byebye_sprite) * 2)) + sinery), false)
     draw_set_alpha(1)
-    gpu_set_blendenable(1)
+    gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)
@@ -135,12 +135,12 @@ if tender_cancel
             tender_cancel = 0
         }
     }
-    gpu_set_blendenable(0)
+    gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
     draw_rectangle(tender_cancel_pos, (((sinery + gml_Script_cameray()) + 50) + (sprite_get_height(byebye_sprite) / 2)), (((gml_Script_camerax() + (view_wport[0] / 2)) + sprite_get_width(byebye_sprite)) + 10), (((gml_Script_cameray() + 120) + (sprite_get_height(spr_cutscene_27_tender_cancelled) * 2)) + sinery), false)
     draw_set_alpha(1)
-    gpu_set_blendenable(1)
+    gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)
@@ -154,12 +154,12 @@ if tender_cancel
 if show_hands
 {
     draw_sprite_ext(spr_cutscene_26_laser_hand_right, 0, hand_right_xpos, (gml_Script_cameray() + 80), 2, 2, 0, c_white, 1)
-    gpu_set_blendenable(0)
+    gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
     gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, knife_alpha)
     draw_set_alpha(1)
-    gpu_set_blendenable(1)
+    gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)

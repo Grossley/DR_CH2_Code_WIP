@@ -18,7 +18,7 @@ if (global.chapter != 2 || global.flag[319] > 0 || global.plot >= 160)
 else
 {
     global.interact = 0
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

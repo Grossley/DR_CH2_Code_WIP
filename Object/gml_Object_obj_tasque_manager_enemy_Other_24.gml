@@ -100,19 +100,19 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "WhipAttack"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 20
             }
             else if (rr == 1)
             {
                 global.monsterattackname[myself] = "RisingDiamonds"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 1
             }
             else if (rr == 2)
             {
                 global.monsterattackname[myself] = "QuizAttack"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 32
                 dc.difficulty = quizDifficulty
             }
@@ -155,7 +155,7 @@ if (global.myfight == 3)
     }
     if (acting == 2 && actcon == 0)
     {
-        gml_Script_scr_act_charsprite("kris", 1427, 0, 0)
+        gml_Script_scr_act_charsprite("kris", spr_krisb_wan_tail, 0, false)
         gml_Script_scr_mercyadd(myself, 50)
         if (simultotal == 1)
         {
@@ -193,7 +193,7 @@ if (global.myfight == 3)
     }
     if (actingsus == 1 && actconsus == 1)
     {
-        gml_Script_scr_act_charsprite("susie", 1456, 0, 0)
+        gml_Script_scr_act_charsprite("susie", spr_susie_wan_sign, 0, false)
         gml_Script_scr_mercyadd(myself, 20)
         if (simultotal == 1 || global.actsimulsus[myself][0] == 0)
         {
@@ -229,7 +229,7 @@ if (global.myfight == 3)
     }
     if (actingral == 1 && actconral == 1)
     {
-        gml_Script_scr_act_charsprite("ralsei", 1498, 0, 0)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralseib_wan, 0, false)
         gml_Script_scr_mercyadd(myself, 20)
         if (simultotal == 1 || global.actsimulral[myself][0] == 0)
         {

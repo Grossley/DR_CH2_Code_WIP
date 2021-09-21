@@ -1,6 +1,6 @@
 if (!init_butler)
 {
-    if gml_Script_i_ex(107)
+    if gml_Script_i_ex(obj_npc_butler)
     {
         with (obj_npc_butler)
         {
@@ -22,7 +22,7 @@ if (instance_exists(obj_mainchara) && triggered == 0)
         }
     }
 }
-if (gml_Script_i_ex(101) && readtrigger == 0)
+if (gml_Script_i_ex(obj_npc_room) && readtrigger == 0)
 {
     readcount = 0
     with (obj_npc_room)
@@ -39,7 +39,7 @@ if gml_Script_scr_debug()
 {
     if keyboard_check_pressed(vk_space)
     {
-        if gml_Script_i_ex(1257)
+        if gml_Script_i_ex(obj_balancepot)
             obj_balancepot.falling = 3
     }
 }
@@ -49,7 +49,7 @@ if (con == 1)
     obj_balancepot.balance = 0
     obj_balancepot.image_angle = 0
     global.interact = 1
-    gml_Script_snd_play(57)
+    gml_Script_snd_play(snd_won)
     timer = 0
     con++
 }
@@ -65,7 +65,7 @@ if (con == 2)
             normalanim = 3
             remanimspeed = 0.25
         }
-        gml_Script_snd_play(99)
+        gml_Script_snd_play(snd_applause)
     }
     if (timer == 72)
         con++
@@ -93,25 +93,25 @@ if (con == 4)
     gml_Script_c_talk_wait()
     gml_Script_c_wait(6)
     gml_Script_c_sel(su)
-    gml_Script_c_sprite(834)
+    gml_Script_c_sprite(spr_susie_playful_punch_dw)
     gml_Script_c_addxy(-4, 2)
     gml_Script_c_animate(0, 2, 0.1)
     gml_Script_c_wait(10)
     gml_Script_c_sel(kr)
     gml_Script_c_shakeobj()
-    gml_Script_c_soundplay(166)
+    gml_Script_c_soundplay(snd_damage)
     gml_Script_c_wait(15)
     gml_Script_c_sel(su)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_facing("l")
     gml_Script_c_addxy(4, -2)
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_var_instance(id, "timer", 0)
     gml_Script_c_actortokris()
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 6 && (!gml_Script_i_ex(895)))
+if (con == 6 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     with (obj_balancepot)
     {
@@ -172,16 +172,16 @@ if (con == 11)
     con = 12
     alarm[1] = 30
     gml_Script_c_sel(su)
-    gml_Script_c_sprite(995)
+    gml_Script_c_sprite(spr_susie_shock)
     gml_Script_c_emote("!", 30)
     gml_Script_c_shakeobj()
     gml_Script_c_sel(ra)
-    gml_Script_c_sprite(1518)
+    gml_Script_c_sprite(spr_ralsei_surprised_down)
     gml_Script_c_emote("!", 30)
     gml_Script_c_shakeobj()
     gml_Script_c_wait(30)
     gml_Script_c_imageindex(1)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_sel(su)
     if (su_actor.y > 1140)
         gml_Script_c_walkdirect_wait(su_actor.x, 1078, 10)
@@ -191,7 +191,7 @@ if (con == 11)
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 13 && (!gml_Script_i_ex(895)))
+if (con == 13 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     with (obj_caterpillarchara)
     {

@@ -1,4 +1,4 @@
-if (skip == 1 || isswitch == 1)
+if (skip == true || isswitch == 1)
     flippable = 0
 if (myinteract == 3)
 {

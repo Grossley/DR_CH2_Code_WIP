@@ -32,7 +32,7 @@ if (global.interact == 0 && event == 0)
         confirm = 0
     if collision_rectangle(ix, iy, (ix + 15), (iy + 15), obj_solidenemy_ch1, 0, 1)
         confirm = 0
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     if (confirm == 1)
     {
         sprite_index = spr_npc_block_ch1
@@ -68,7 +68,7 @@ if (event == 1)
         with (obj_boxpuzzle_event_ch1)
             con = 50
     }
-    mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+    mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     if (sd == 1)
     {
         with (mydialoguer)

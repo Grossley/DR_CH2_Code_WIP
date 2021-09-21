@@ -20,7 +20,7 @@ if (init == 0)
     }
     currentangle = (idealangle + 360)
     init = 1
-    gml_Script_snd_play(46)
+    gml_Script_snd_play(snd_spearappear)
     timer = 0
     size = 0
 }
@@ -46,7 +46,7 @@ if (inittimer >= inittime)
         timer++
         if (timer >= waittime)
         {
-            gml_Script_snd_play(91)
+            gml_Script_snd_play(snd_wallclaw)
             laser = gml_Script_instance_create(x, y, obj_queen_laser)
             laser.image_angle = image_angle
             laser.direction = image_angle

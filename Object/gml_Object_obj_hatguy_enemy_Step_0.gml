@@ -145,7 +145,7 @@ if (global.myfight == 3)
                 actCounter++
         }
         danceCounter = 1
-        gml_Script_scr_act_charsprite("kris", 861, 0.16, 1)
+        gml_Script_scr_act_charsprite("kris", spr_kris_dance, 0.16, true)
         if (simultotal == 1 || (global.lang == "ja" && obj_sweet_enemy.simultotal_funny == 1))
         {
             gml_Script_msgsetloc(0, "* You danced!/", "obj_hatguy_enemy_slash_Step_0_gml_165_0")
@@ -193,9 +193,9 @@ if (global.myfight == 3)
                 actCounter++
         }
         danceCounter = 2
-        gml_Script_scr_act_charsprite("kris", 861, 0.16, 1)
-        gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
-        gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
+        gml_Script_scr_act_charsprite("kris", spr_kris_dance, 0.16, true)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralsei_dance, 0.16, true)
+        gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.16, true)
         gml_Script_msgsetloc(0, "* Everyone danced with Cap'n! They're totally lost in the groove!/%", "obj_hatguy_enemy_slash_Step_0_gml_214_0")
         gml_Script_scr_battletext_default()
         actcon = 4
@@ -211,7 +211,7 @@ if (global.myfight == 3)
         dancing = 1
         danceCounter = 1
         dancedwithsusie = 1
-        gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
+        gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.16, true)
         if (groove == 0)
         {
             if (global.lang == "ja")
@@ -243,7 +243,7 @@ if (global.myfight == 3)
     {
         dancing = 1
         danceCounter = 1
-        gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralsei_dance, 0.16, true)
         if (groove == 0)
         {
             if (global.lang == "ja")

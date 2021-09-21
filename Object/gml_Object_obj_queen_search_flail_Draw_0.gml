@@ -25,7 +25,7 @@ if (broken == 0)
 draw_self()
 if (bufferstate == 0)
 {
-    var _af = gml_Script_scr_custom_afterimage(545)
+    var _af = gml_Script_scr_custom_afterimage(spr_kris_jump_ball)
     _af.image_alpha = 0.5
     _af.image_index = 5
     _af.image_blend = 0x89D931

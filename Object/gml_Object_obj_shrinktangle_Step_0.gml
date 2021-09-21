@@ -72,7 +72,7 @@ if ((bottom - top) < 10 || (right - left) < 10)
         damage = ceil((damage / 3))
         gml_Script_scr_damage_all()
     }
-    gml_Script_snd_play(188)
+    gml_Script_snd_play(snd_badexplosion)
     instance_destroy(obj_sneo_splitbouncer)
     if (global.turntimer > 30)
         global.turntimer = 30

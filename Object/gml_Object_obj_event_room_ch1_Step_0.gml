@@ -26,7 +26,7 @@ if (room == room_field2_ch1)
         if (global.plot < 34)
             global.plot = 34
         con = 1
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 1 && gml_Script_d_ex_ch1() == 0)
     {
@@ -69,7 +69,7 @@ if (room == room_torhouse_ch1)
             con = 1
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_71_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_72_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (global.flag[277] >= 2 && global.flag[277] <= 6)
         {
@@ -87,7 +87,7 @@ if (room == room_torhouse_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_91_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_92_0")
             global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_93_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (global.flag[277] == 0)
         {
@@ -102,7 +102,7 @@ if (room == room_torhouse_ch1)
             global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_108_0")
             global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_109_0")
             global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_110_0")
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
     }
     if (con == 1 && (!gml_Script_d_ex_ch1()))
@@ -124,7 +124,7 @@ if (room == room_cc_prison_prejoker_ch1)
     gml_Script_mus_volume_ch1(global.currentsong[1], m, 0)
     if (con == 5 && (!gml_Script_d_ex_ch1()))
     {
-        doorimg2 = gml_Script_scr_dark_marker_ch1(doorimg.x, doorimg.y, 3702)
+        doorimg2 = gml_Script_scr_dark_marker_ch1(doorimg.x, doorimg.y, spr_jokerdoor_ch1)
         with (doorimg2)
         {
             depth = 400000
@@ -133,7 +133,7 @@ if (room == room_cc_prison_prejoker_ch1)
         }
         con = 6
         timer = 0
-        gml_Script_snd_play_ch1(413)
+        gml_Script_snd_play_ch1(snd_magicsprinkle_ch1)
     }
     if (con == 6)
     {
@@ -150,7 +150,7 @@ if (room == room_cc_prison_prejoker_ch1)
         global.typer = 6
         global.fc = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_163_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 8
     }
     if (con == 8 && (!gml_Script_d_ex_ch1()))
@@ -159,9 +159,9 @@ if (room == room_cc_prison_prejoker_ch1)
             image_index = 2
         with (doorimg2)
             instance_destroy()
-        gml_Script_instance_create_ch1(0, 0, 1464)
-        gml_Script_snd_play_ch1(380)
-        gml_Script_snd_play_ch1(376)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
+        gml_Script_snd_play_ch1(snd_dooropen_ch1)
+        gml_Script_snd_play_ch1(snd_locker_ch1)
         con = 9
         alarm[4] = 60
     }
@@ -171,13 +171,13 @@ if (room == room_cc_prison_prejoker_ch1)
             instance_destroy()
         with (doorevent)
             instance_destroy()
-        door_door = gml_Script_instance_create_ch1((x + 15), y, 1414)
+        door_door = gml_Script_instance_create_ch1((x + 15), y, obj_doorA_ch1)
         global.interact = 0
         con = 11
     }
     if (con == 20 && (!gml_Script_d_ex_ch1()))
     {
-        gml_Script_snd_play_ch1(472)
+        gml_Script_snd_play_ch1(snd_creepyjingle_ch1)
         con = 21
     }
 }
@@ -202,7 +202,7 @@ if (room == room_cc_prefountain_ch1)
                 global.fe = 3
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_217_0")
             }
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
         if (con == 1 && (!gml_Script_d_ex_ch1()))
         {
@@ -230,7 +230,7 @@ if (room == room_cc_prefountain_ch1)
                 global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_252_0")
                 global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_253_0")
                 global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_254_0")
-                gml_Script_instance_create_ch1(0, 0, 1326)
+                gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
                 global.plot = 241
             }
             if (obj_mainchara_ch1.y <= 280 && global.interact == 0 && con == 0)
@@ -252,7 +252,7 @@ if (room == room_cc_prefountain_ch1)
                     global.msc = 445
                     gml_Script_scr_text_ch1(global.msc)
                 }
-                gml_Script_instance_create_ch1(0, 0, 1326)
+                gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
                 if (global.plot <= 240)
                     global.plot = 241
             }
@@ -276,7 +276,7 @@ if (room == room_cc_prefountain_ch1)
                 global.fe = 0
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_307_0")
                 global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_event_room_slash_Step_0_gml_308_0")
-                gml_Script_instance_create_ch1(0, 0, 1326)
+                gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             }
             if (con == 1 && (!gml_Script_d_ex_ch1()))
             {
@@ -293,12 +293,12 @@ if (room == room_forest_savepoint3_ch1)
     {
         gml_Script_snd_free_all_ch1()
         con = 10.5
-        gml_Script_snd_play_ch1(438)
+        gml_Script_snd_play_ch1(snd_hurt1_ch1)
     }
     if (con == 11.5)
     {
-        ll = gml_Script_snd_play_ch1(454)
-        sl = gml_Script_snd_play_ch1(382)
+        ll = gml_Script_snd_play_ch1(snd_lancerlaugh_ch1)
+        sl = gml_Script_snd_play_ch1(snd_suslaugh_ch1)
         gml_Script_snd_volume_ch1(ll, 0.8, 0)
         gml_Script_snd_volume_ch1(sl, 0.8, 0)
         con = 12
@@ -306,7 +306,7 @@ if (room == room_forest_savepoint3_ch1)
     }
     if (con == 13)
     {
-        gml_Script_instance_create_ch1(0, 0, 1461)
+        gml_Script_instance_create_ch1(0, 0, obj_fadein_ch1)
         with (blackmarker)
             instance_destroy()
         global.interact = 0
@@ -333,8 +333,8 @@ if (room == room_field_secret1_ch1)
     if (pcon == 1)
     {
         ptimer = 0
-        gml_Script_snd_play_ch1(446)
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(snd_screenshake_ch1)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
         pcon = 2
     }
     if (pcon == 2)
@@ -367,8 +367,8 @@ if (room == room_forest_beforeclover_ch1)
     if (pcon == 1)
     {
         ptimer = 0
-        gml_Script_snd_play_ch1(446)
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(snd_screenshake_ch1)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
         pcon = 2
     }
     if (pcon == 2)

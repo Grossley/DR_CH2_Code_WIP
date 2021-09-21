@@ -18,7 +18,7 @@ if (con >= 5)
         with (weirdlight)
             instance_destroy()
         con = 51
-        gml_Script_snd_play_ch1(380)
+        gml_Script_snd_play_ch1(snd_dooropen_ch1)
         image_index = 1
     }
     if (con == 51)
@@ -35,8 +35,8 @@ if (con >= 5)
         if (doortimer >= 6)
         {
             gml_Script_snd_free_all_ch1()
-            gml_Script_snd_play_ch1(379)
-            dark_marker = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 10), (gml_Script___view_get(1, 0) - 10), 4277)
+            gml_Script_snd_play_ch1(snd_doorclose_ch1)
+            dark_marker = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 10), (gml_Script___view_get(1, 0) - 10), spr_pixel_white_ch1)
             with (dark_marker)
             {
                 image_xscale = 700
@@ -55,9 +55,9 @@ if (con >= 5)
         {
             global.facing = 0
             con = 54
-            gml_Script_snd_play_ch1(380)
+            gml_Script_snd_play_ch1(snd_dooropen_ch1)
             global.interact = 3
-            gml_Script_instance_create_ch1(0, 0, 1462)
+            gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
             global.entrance = 23
             room_goto(door_destination)
         }

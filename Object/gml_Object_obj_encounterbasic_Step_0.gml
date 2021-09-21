@@ -18,9 +18,9 @@ if (fightcon == 1)
     {
         if (global.encounterno != 84)
         {
-            wp = gml_Script_snd_play(61)
+            wp = gml_Script_snd_play(snd_impact)
             gml_Script_snd_volume(wp, 0.7, 0)
-            wp2 = gml_Script_snd_play(138)
+            wp2 = gml_Script_snd_play(snd_weaponpull_fast)
             gml_Script_snd_volume(wp2, 0.8, 0)
         }
         for (i = 0; i < (count + 1); i += 1)

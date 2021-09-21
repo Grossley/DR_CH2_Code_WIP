@@ -204,12 +204,12 @@ if (global.menuno == 9 && instance_exists(obj_dialoguer) == 0)
 }
 if (selnoise == true)
 {
-    gml_Script_snd_play(260)
+    gml_Script_snd_play(snd_select)
     selnoise = false
 }
 if (movenoise == true)
 {
-    gml_Script_snd_play(259)
+    gml_Script_snd_play(snd_menumove)
     movenoise = false
 }
 if gml_Script_scr_debug()

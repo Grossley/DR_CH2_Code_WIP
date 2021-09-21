@@ -249,9 +249,9 @@ if (phase == 3.5)
 {
     failure = 1
     hole.closed = 1
-    if gml_Script_i_ex(1165)
-        gml_Script_snd_play(176)
-    if gml_Script_i_ex(1165)
+    if gml_Script_i_ex(obj_holemouse)
+        gml_Script_snd_play(snd_mouse)
+    if gml_Script_i_ex(obj_holemouse)
     {
         with (obj_holemouse)
         {

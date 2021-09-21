@@ -49,8 +49,8 @@ else if (state == 0)
         gml_Script_draw_monster_body_part(sparedsprite, siner, x, y)
     else
     {
-        gml_Script_draw_monster_body_part(1559, 1, (x + (sin(siner) * 2)), y)
-        gml_Script_draw_monster_body_part(1559, 0, (x - (sin(siner) * 2)), (y + cos(siner)))
+        gml_Script_draw_monster_body_part(spr_diamondm_custom_body_example, 1, (x + (sin(siner) * 2)), y)
+        gml_Script_draw_monster_body_part(spr_diamondm_custom_body_example, 0, (x - (sin(siner) * 2)), (y + cos(siner)))
     }
 }
 if (becomeflash == false)

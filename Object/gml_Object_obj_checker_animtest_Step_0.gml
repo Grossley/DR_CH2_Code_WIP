@@ -6,9 +6,9 @@ if (type == 0)
         image_speed = 0.2
         sprite_index = spr_smallchecker_front
         global.interact = 1
-        s = gml_Script_scr_dark_marker(-100, global.cinstance[1].y, 985)
-        r = gml_Script_scr_dark_marker(-50, global.cinstance[0].y, 1014)
-        k = gml_Script_scr_dark_marker(0, obj_mainchara.y, 652)
+        s = gml_Script_scr_dark_marker(-100, global.cinstance[1].y, spr_susier_dark)
+        r = gml_Script_scr_dark_marker(-50, global.cinstance[0].y, spr_ralseir)
+        k = gml_Script_scr_dark_marker(0, obj_mainchara.y, spr_krisr_dark)
         with (obj_caterpillarchara)
             visible = false
         with (obj_mainchara)
@@ -18,7 +18,7 @@ if (type == 0)
             hspeed = 5
             image_speed = 0.2
         }
-        l = gml_Script_scr_dark_marker(500, obj_mainchara.y, 1293)
+        l = gml_Script_scr_dark_marker(500, obj_mainchara.y, spr_lancer_rt)
         con = -50
         alarm[4] = 28
     }
@@ -55,7 +55,7 @@ if (type == 0)
     }
     if (con == -46 && (!gml_Script_d_ex()))
     {
-        hitnoise = gml_Script_snd_play(184)
+        hitnoise = gml_Script_snd_play(snd_orchhit)
         gml_Script_snd_pitch(hitnoise, (1 + (warnpitch / 16)))
         with (l)
         {
@@ -187,10 +187,10 @@ if (type == 0)
     }
     if (con == 2.1)
     {
-        gml_Script_snd_play(150)
+        gml_Script_snd_play(snd_boost)
         for (j = 0; j < 3; j += 1)
         {
-            tile[j] = gml_Script_scr_marker(((480 - (j * 40)) + 400), (240 + (j * 40)), 2300)
+            tile[j] = gml_Script_scr_marker(((480 - (j * 40)) + 400), (240 + (j * 40)), spr_checkertile_bullet)
             tile[j].image_alpha = 0
             tile[j].depth = 700000
         }
@@ -234,7 +234,7 @@ if (type == 0)
         {
             sprite_index = spr_smallchecker_transform
             y += 2
-            gml_Script_snd_play(152)
+            gml_Script_snd_play(snd_shineselect)
             with (crown)
                 instance_destroy()
             con = 6
@@ -243,7 +243,7 @@ if (type == 0)
     }
     if (con == 7)
     {
-        gml_Script_snd_play(146)
+        gml_Script_snd_play(snd_crowngrowth)
         image_speed = 0.25
         con = 8
     }
@@ -279,7 +279,7 @@ if (type == 0)
     {
         x -= 18
         y -= 90
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (s)
             sprite_index = spr_susie_shock_r
         with (r)
@@ -353,7 +353,7 @@ if (type == 1)
     {
         if (windsound == false)
         {
-            gml_Script_snd_play(105)
+            gml_Script_snd_play(snd_whistlebreath)
             windsound = true
         }
         if (secondtime == false)
@@ -401,7 +401,7 @@ if (type == 1)
     if (con == 1.9)
     {
         image_speed = 0.25
-        gml_Script_snd_play(147)
+        gml_Script_snd_play(snd_crownshrink)
         con = 2.1
     }
     if (con == 2.1)
@@ -534,7 +534,7 @@ if (type == 2)
     }
     if (con == 7.1 && (!gml_Script_d_ex()))
     {
-        gml_Script_snd_play(65)
+        gml_Script_snd_play(snd_suslaugh)
         with (s)
             image_speed = 0.2
         con = 6.2
@@ -548,9 +548,9 @@ if (type == 2)
             visible = false
         with (obj_mainchara)
             visible = false
-        r = gml_Script_scr_dark_marker(global.cinstance[0].x, global.cinstance[0].y, 1012)
-        s = gml_Script_scr_dark_marker(global.cinstance[1].x, global.cinstance[1].y, 985)
-        k = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 654)
+        r = gml_Script_scr_dark_marker(global.cinstance[0].x, global.cinstance[0].y, spr_ralseil)
+        s = gml_Script_scr_dark_marker(global.cinstance[1].x, global.cinstance[1].y, spr_susier_dark)
+        k = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, spr_krisl_dark)
         global.typer = 31
         global.fc = 2
         global.fe = 1
@@ -742,7 +742,7 @@ if (type == 2)
     if (con == 70 && (!gml_Script_d_ex()))
     {
         gml_Script_snd_volume(global.currentsong[1], 0, 50)
-        gml_Script_snd_play(187)
+        gml_Script_snd_play(snd_lancerlaugh)
         with (l)
         {
             sprite_index = spr_lancer_lt_laugh

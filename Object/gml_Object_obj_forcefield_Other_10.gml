@@ -1,4 +1,4 @@
-if (skip == 0)
+if (skip == false)
 {
     if (canttalk == 0 && global.interact == 0)
     {

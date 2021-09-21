@@ -13,13 +13,13 @@ if (destroyable == 1)
     if (hp <= 0)
     {
         event_user(0)
-        gml_Script_snd_play(188)
+        gml_Script_snd_play(snd_badexplosion)
         speed = 0
     }
     else
     {
         timer = -1
-        gml_Script_snd_play(166)
+        gml_Script_snd_play(snd_damage)
     }
 }
 with (other)

@@ -1,7 +1,7 @@
 if gml_Script_scr_debug()
 {
     if (quicksaved != 2)
-        gml_Script_scr_84_debug(0)
+        gml_Script_scr_84_debug(false)
     if gif_recording
     {
         draw_set_color(c_red)

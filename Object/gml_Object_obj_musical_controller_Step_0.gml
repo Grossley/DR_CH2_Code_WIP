@@ -161,8 +161,8 @@ if (scon == 1.7)
         yy = 90
     if (whohealed == 3)
         yy = 240
-    gml_Script_snd_play(145)
-    milk = gml_Script_scr_dark_marker((x - 100), (gml_Script_cameray() + yy), 1781)
+    gml_Script_snd_play(snd_magicsprinkle)
+    milk = gml_Script_scr_dark_marker((x - 100), (gml_Script_cameray() + yy), spr_checkers_milk)
     with (milk)
     {
         image_speed = 0
@@ -311,7 +311,7 @@ if (scon == 6)
 }
 if (scon == 7)
 {
-    if (gml_Script_i_ex(355) && obj_battlecontroller.alarm[2] > 1)
+    if (gml_Script_i_ex(obj_battlecontroller) && obj_battlecontroller.alarm[2] > 1)
     {
         scon = 0
         obj_battlecontroller.alarm[2] = 1

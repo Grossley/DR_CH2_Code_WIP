@@ -21,6 +21,7 @@ if (sprite_index == spr_sneo_bigshot_l)
                 __mercydmgwriter.damage = 5
                 __mercydmgwriter.type = 5
                 global.hittarget[myself] = (global.hittarget[myself] + 1)
+                global.hittarget[myself]
             }
         }
         else

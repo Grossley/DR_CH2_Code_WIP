@@ -8,7 +8,7 @@ if (global.plot >= 14)
     instance_destroy()
 else
 {
-    partysus = gml_Script_instance_create_ch1(500, 500, 1489)
+    partysus = gml_Script_instance_create_ch1(500, 500, obj_caterpillarchara_ch1)
     with (partysus)
         visible = false
 }

@@ -13,7 +13,7 @@ if (TYPE == 0)
 }
 if (TYPE == 1)
 {
-    gml_Script_instance_create_ch1(0, 0, 1461)
+    gml_Script_instance_create_ch1(0, 0, obj_fadein_ch1)
     global.tempflag[10] = 1
     gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Create_0_gml_17_0"))
     global.currentsong[0] = gml_Script_snd_init_ch1("AUDIO_STORY.ogg")

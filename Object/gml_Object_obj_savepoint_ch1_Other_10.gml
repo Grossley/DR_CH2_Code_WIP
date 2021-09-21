@@ -95,9 +95,9 @@ if (room == room_forest_savepoint2_ch1)
 }
 myinteract = 3
 if (nodialogue == 0)
-    mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+    mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 talked += 1
-gml_Script_snd_play_ch1(430)
+gml_Script_snd_play_ch1(snd_power_ch1)
 for (i = 0; i < 4; i += 1)
 {
     if (global.hp[i] < global.maxhp[i])

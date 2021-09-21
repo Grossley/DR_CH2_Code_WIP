@@ -30,7 +30,7 @@ if (keyboard_check_pressed(vk_backspace) && beatcon == 89898 && gml_Script_scr_d
     beattimer = 0
     with (obj_mainchara_ch1)
         battlemode = 0
-    dead = gml_Script_instance_create_ch1((x - 92), (y - 74), 1494)
+    dead = gml_Script_instance_create_ch1((x - 92), (y - 74), obj_starwalker_battle_ch1)
     with (dead)
     {
         walkcon = 1
@@ -130,7 +130,7 @@ if (beatcon == 0)
         wingtimer += 1
         if (wingtimer >= 0)
         {
-            gml_Script_snd_play_ch1(368)
+            gml_Script_snd_play_ch1(snd_wing_ch1)
             wingtimer = -16
         }
     }
@@ -150,12 +150,12 @@ if (beatcon == 0)
     }
     if (attacktimer >= 60 && attackcon == 1)
     {
-        gml_Script_snd_play_ch1(367)
+        gml_Script_snd_play_ch1(snd_crow_ch1)
         attackcon = 2
         shot = 1
         for (i = 0; i < 3; i += 1)
         {
-            starbullet[i] = gml_Script_instance_create_ch1((x + (17 * xmake)), (y + 42), 1504)
+            starbullet[i] = gml_Script_instance_create_ch1((x + (17 * xmake)), (y + 42), obj_overworldbulletparent_ch1)
             starbullet[i].sprite_index = spr_starbullet_test_ch1
             starbullet[i].image_xscale = 2
             starbullet[i].image_yscale = 2

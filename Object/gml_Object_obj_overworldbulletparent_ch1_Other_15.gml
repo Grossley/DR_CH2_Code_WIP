@@ -1,7 +1,7 @@
 if (active == true)
 {
-    gml_Script_snd_stop_ch1(438)
-    gml_Script_snd_play_ch1(438)
+    gml_Script_snd_stop_ch1(snd_hurt1_ch1)
+    gml_Script_snd_play_ch1(snd_hurt1_ch1)
     if (target != 3)
         gml_Script_scr_damage_ch1()
     if (target == 3)

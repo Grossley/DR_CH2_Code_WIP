@@ -16,7 +16,7 @@ if (active == true)
     activetimer++
     if (activetimer == timetarg)
     {
-        snd = gml_Script_snd_play(55)
+        snd = gml_Script_snd_play(snd_egg)
         gml_Script_snd_pitch(snd, (1 + ((timesfired / times) / 2)))
         mybul = gml_Script_instance_create(x, y, obj_regularbullet)
         mybul.grazepoints = grazepoints

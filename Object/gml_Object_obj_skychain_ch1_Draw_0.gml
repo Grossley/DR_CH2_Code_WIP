@@ -13,6 +13,6 @@ if (can == 1)
 }
 if (can == 0 && soundcon == 0)
 {
-    gml_Script_snd_play_ch1(362)
+    gml_Script_snd_play_ch1(snd_spearrise_ch1)
     soundcon = 1
 }

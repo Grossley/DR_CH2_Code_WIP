@@ -20,7 +20,7 @@ if (con == 1)
     }
     if instance_exists(obj_caterpillarchara)
     {
-        su_actor = gml_Script_scr_marker(obj_caterpillarchara.x, obj_caterpillarchara.y, 979)
+        su_actor = gml_Script_scr_marker(obj_caterpillarchara.x, obj_caterpillarchara.y, spr_susieu)
         with (su_actor)
         {
             gml_Script_scr_depth()

@@ -27,9 +27,9 @@ if (fightcon == 2)
             fun = false
         with (obj_caterpillarchara)
             fun = false
-        wp = gml_Script_snd_play(61)
+        wp = gml_Script_snd_play(snd_impact)
         gml_Script_snd_volume(wp, 0.7, 0)
-        wp2 = gml_Script_snd_play(138)
+        wp2 = gml_Script_snd_play(snd_weaponpull_fast)
         gml_Script_snd_volume(wp2, 0.8, 0)
         with (obj_ch2_scene11a)
         {

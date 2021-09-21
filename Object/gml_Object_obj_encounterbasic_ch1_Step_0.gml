@@ -16,9 +16,9 @@ if (fightcon == 1)
     }
     if (counttimer >= 10)
     {
-        wp = gml_Script_snd_play_ch1(378)
+        wp = gml_Script_snd_play_ch1(snd_impact_ch1)
         gml_Script_snd_volume_ch1(wp, 0.7, 0)
-        wp2 = gml_Script_snd_play_ch1(406)
+        wp2 = gml_Script_snd_play_ch1(snd_weaponpull_fast_ch1)
         gml_Script_snd_volume_ch1(wp2, 0.8, 0)
         for (i = 0; i < (count + 1); i += 1)
         {
@@ -52,7 +52,7 @@ if (fightcon == 2)
             with (c[i])
                 instance_destroy()
         }
-        gml_Script_instance_create_ch1(0, 0, 1513)
+        gml_Script_instance_create_ch1(0, 0, obj_battlecontroller_ch1)
         instance_destroy()
     }
 }

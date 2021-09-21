@@ -59,7 +59,7 @@ if (explode == 1)
             if (abs((chosen_bolt - final_bolt)) <= 2)
             {
                 bonus_anim = 1
-                gml_Script_snd_play_ch1(461)
+                gml_Script_snd_play_ch1(snd_scytheburst_ch1)
             }
         }
         if (red == 1)
@@ -76,7 +76,7 @@ if (explode == 1)
                     __of.flashcolor = c_red
             }
         }
-        gml_Script_snd_play_ch1(396)
+        gml_Script_snd_play_ch1(snd_rudebuster_hit_ch1)
         for (i = 0; i < 4; i += 1)
         {
             burst[i] = gml_Script_scr_afterimage_ch1()

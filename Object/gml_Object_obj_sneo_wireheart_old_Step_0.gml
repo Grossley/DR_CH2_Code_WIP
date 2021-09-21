@@ -74,7 +74,7 @@ if (con == 1)
             targety = ((gml_Script_cameray() + 160) + random_range(45, 0))
         }
     }
-    if (gml_Script_i_ex(628) && obj_sneo_bulletcontroller.hearttargettimer < 1 && type != 3)
+    if (gml_Script_i_ex(obj_heart) && obj_sneo_bulletcontroller.hearttargettimer < 1 && type != 3)
     {
         if (choose(0, 1, 2) == 0)
         {

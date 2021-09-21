@@ -3,7 +3,7 @@ image_xscale = 2
 image_yscale = 2
 image_speed = 0.2
 vspeed = (12 * f)
-if (gml_Script_i_ex(786) && o_boxingqueen.pirouette_amount == 5)
+if (gml_Script_i_ex(o_boxingqueen) && o_boxingqueen.pirouette_amount == 5)
     vspeed = (10.5 * f)
 y = -20
 image_alpha = (0.8 * f)

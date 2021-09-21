@@ -30,7 +30,7 @@ if (con == -3)
 }
 if (con == 1)
 {
-    gml_Script_snd_play(201)
+    gml_Script_snd_play(snd_petrify)
     image_index = 0
     image_speed = 0.2
     draw_self()
@@ -66,7 +66,7 @@ if (con == 2)
         {
             if (bumped == 0)
             {
-                gml_Script_snd_play(110)
+                gml_Script_snd_play(snd_bump)
                 bumped = 1
             }
             gravity = 0
@@ -78,7 +78,7 @@ if (con == 2)
         {
             if (bumped == 1)
             {
-                gml_Script_snd_play(93)
+                gml_Script_snd_play(snd_fall)
                 bumped = 2
             }
             image_angle += (abs((image_angle / 3)) + 2)
@@ -86,7 +86,7 @@ if (con == 2)
             {
                 if (bumped == 2)
                 {
-                    gml_Script_snd_play(110)
+                    gml_Script_snd_play(snd_bump)
                     bumped = 3
                 }
                 image_angle = 90

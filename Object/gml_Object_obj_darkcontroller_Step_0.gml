@@ -99,7 +99,7 @@ if (global.interact == 5)
             gml_Script_scr_itemdesc()
             global.charselect = -1
             global.submenu = 3
-            gml_Script_snd_play(156)
+            gml_Script_snd_play(snd_heavyswing)
             if (throwitem == 4)
             {
                 if (global.char[2] == 3 || global.char[1] == 3)
@@ -323,7 +323,7 @@ if (global.interact == 5)
             if (sndchange == true && sndbuffer < 0)
             {
                 audio_group_set_gain(1, global.flag[15], 0)
-                gml_Script_snd_play(64)
+                gml_Script_snd_play(snd_noise)
                 sndbuffer = 2
             }
             if (muschange == true)
@@ -333,7 +333,7 @@ if (global.interact == 5)
             }
             if (audchange == true && sndbuffer < 0)
             {
-                gml_Script_snd_play(64)
+                gml_Script_snd_play(snd_noise)
                 sndbuffer = 2
                 audio_set_master_gain(0, global.flag[17])
             }
@@ -528,7 +528,7 @@ if (global.interact == 5)
                 }
                 if (global.submenucoord[35] == 7)
                 {
-                    gml_Script_snd_play(175)
+                    gml_Script_snd_play(snd_levelup)
                     gml_Script_scr_controls_default()
                     control_flash_timer = 10
                 }
@@ -913,7 +913,7 @@ if (global.interact == 5)
                     gml_Script_scr_itemuse((global.keyitem[sm] + 300))
                 }
                 else
-                    gml_Script_snd_play(151)
+                    gml_Script_snd_play(snd_cantselect)
             }
             if (gml_Script_button2_p() && twobuffer < 0)
             {
@@ -1170,7 +1170,7 @@ if (global.interact == 5)
                 {
                     hold_up = 0
                     hold_down = 0
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_equip)
                     if (global.submenu == 12)
                     {
                         oldequip = global.charweapon[wwho]
@@ -1202,7 +1202,7 @@ if (global.interact == 5)
                     }
                 }
                 else
-                    gml_Script_snd_play(151)
+                    gml_Script_snd_play(snd_cantselect)
                 gml_Script_scr_itemcomment(global.submenucoord[10], wmsg)
             }
             if (gml_Script_button2_p() && twobuffer < 0)
@@ -1434,17 +1434,17 @@ if (charcon == 0)
 }
 if (movenoise == true)
 {
-    gml_Script_snd_play(259)
+    gml_Script_snd_play(snd_menumove)
     movenoise = false
 }
 if (selectnoise == true)
 {
-    gml_Script_snd_play(260)
+    gml_Script_snd_play(snd_select)
     selectnoise = false
 }
 if (cancelnoise == 1)
 {
-    gml_Script_snd_play(155)
+    gml_Script_snd_play(snd_smallswing)
     cancelnoise = 0
 }
 onebuffer -= 1

@@ -8,7 +8,7 @@ if (drawdoor == 1)
     draw_rectangle(138, 27, 181, 74, false)
     if (darkbg == 0)
     {
-        px = (global.lang == "en" ? gml_Script_scr_marker(0, 0, 2781) : gml_Script_scr_marker(0, 0, 1602))
+        px = (global.lang == "en" ? gml_Script_scr_marker(0, 0, bg_library) : gml_Script_scr_marker(0, 0, bg_lang_ja_library))
         px.image_xscale = 1
         px.image_yscale = 1
         px.image_alpha = 0.1

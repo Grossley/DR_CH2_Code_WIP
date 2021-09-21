@@ -9,7 +9,7 @@ else
         instance_destroy(obj_caterpillarchara)
     with (obj_mainchara)
         visible = false
-    blackall = gml_Script_scr_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

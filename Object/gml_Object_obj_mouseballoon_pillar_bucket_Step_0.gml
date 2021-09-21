@@ -20,7 +20,7 @@ if (con == 1)
     timer++
     if (timer >= 5)
     {
-        gml_Script_snd_play_pitch(176, 0.6)
+        gml_Script_snd_play_pitch(snd_mouse, 0.6)
         mouse = gml_Script_scr_dark_marker(bucket.x, bucket.y, bucket.sprite_index)
         mouse.depth = bucket.depth
         gml_Script_safe_delete(bucket)
@@ -47,7 +47,7 @@ if (con == 2)
     {
         gml_Script_scr_shakescreen()
         completed = 1
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
     }
     if (timer == 40)
     {

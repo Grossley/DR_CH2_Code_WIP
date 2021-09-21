@@ -23,7 +23,7 @@ if instance_exists(obj_npc_butler)
         }
         instance_destroy()
     }
-    gml_Script_snd_play(163)
+    gml_Script_snd_play(snd_b)
 }
 spawnVase = 2
 triggered = 1

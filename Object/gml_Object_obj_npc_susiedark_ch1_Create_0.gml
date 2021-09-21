@@ -14,6 +14,6 @@ if (global.plot >= 30)
     instance_destroy()
 else
 {
-    s = gml_Script_instance_create_ch1(450, 950, 1656)
+    s = gml_Script_instance_create_ch1(450, 950, obj_soliddark_ch1)
     s.image_yscale = 8
 }

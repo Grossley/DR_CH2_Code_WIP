@@ -1,9 +1,9 @@
 if (hit == 0 && o_boxingcontroller.hit_baseball_check == 0 && y < c)
 {
     if arcade
-        gml_Script_snd_play(321)
+        gml_Script_snd_play(snd_punchheavythunder_bc)
     else
-        gml_Script_snd_play(115)
+        gml_Script_snd_play(snd_punchheavythunder)
     hit = 1
     baseball_combo_timer = 2
     o_boxingcontroller.hit_baseball += 1
@@ -36,13 +36,13 @@ if (hit == 0 && o_boxingcontroller.hit_baseball_check == 0 && y < c)
         {
             if (arcade == 1)
             {
-                gml_Script_snd_pitch(308, (0.75 + random(0.5)))
-                gml_Script_snd_play(308)
+                gml_Script_snd_pitch(snd_squeaky_bc, (0.75 + random(0.5)))
+                gml_Script_snd_play(snd_squeaky_bc)
             }
             else
             {
-                gml_Script_snd_pitch(56, (0.75 + random(0.5)))
-                gml_Script_snd_play(56)
+                gml_Script_snd_pitch(snd_squeaky, (0.75 + random(0.5)))
+                gml_Script_snd_play(snd_squeaky)
             }
             color_fade_alpha = 1
             global.hp[1] += 4

@@ -1,6 +1,6 @@
 if (touchflag > 0)
     global.flag[touchflag] = 1
-newme = gml_Script_instance_create_ch1(x, y, 1487)
+newme = gml_Script_instance_create_ch1(x, y, obj_testoverworldenemy_ch1)
 newme.sprite_index = touchsprite
 newme.touchsprite = touchsprite
 newme.slidesprite = sprite_index

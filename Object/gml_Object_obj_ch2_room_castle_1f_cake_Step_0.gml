@@ -20,9 +20,9 @@ if (con == 3 && (!gml_Script_d_ex()))
     con = 10
     alarm[0] = 40
     explosion = gml_Script_instance_create(620, 250, obj_animation)
-    gml_Script_snd_play(188)
+    gml_Script_snd_play(snd_badexplosion)
     explosion.sprite_index = spr_realisticexplosion
-    cake = gml_Script_scr_dark_marker(590, 250, 3117)
+    cake = gml_Script_scr_dark_marker(590, 250, spr_cauldron_cake)
     cake.depth = (explosion.depth - 100)
 }
 if (con >= 3)
@@ -75,8 +75,8 @@ if (con == 11)
     {
         con = 12
         instance_destroy(cake)
-        gml_Script_snd_play_pitch(253, 1.2)
-        gml_Script_snd_play(162)
+        gml_Script_snd_play_pitch(snd_reverse_splat, 1.2)
+        gml_Script_snd_play(snd_power)
         healanim = gml_Script_instance_create(susx, susy, obj_healanim)
         healanim.target = susid
     }

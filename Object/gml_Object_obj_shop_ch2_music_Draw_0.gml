@@ -3,6 +3,7 @@ if gml_Script_snd_is_playing(global.currentsong[1])
 for (i = 0; i < 3; i++)
 {
     spritetalkingbuffer[i]--
+    spritetalkingbuffer[i]
     if (spritetalkingbuffer[i] <= 0)
         spritetalking[i] = 0
 }
@@ -188,7 +189,7 @@ if (menu == 0)
             }
             if (menuc[0] == 1)
             {
-                gml_Script_snd_play(40)
+                gml_Script_snd_play(snd_splat)
                 mainmessage = 2
             }
         }
@@ -304,7 +305,7 @@ if (menu == 1 || menu == 2)
                     if (noroom == false)
                     {
                         global.gold -= buyvalue[menuc[1]]
-                        gml_Script_snd_play(59)
+                        gml_Script_snd_play(snd_locker)
                         if (_pocketed == 1)
                             sidemessage = 5
                         else
@@ -577,7 +578,7 @@ if (menu == 4)
         global.typer = 78
         gml_Script_instance_create(30, 270, obj_writer)
     }
-    if (selling == 3 && (!gml_Script_i_ex(62)))
+    if (selling == 3 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_snd_pause(global.currentsong[1])
         coolbeat = gml_Script_snd_init("coolbeat.ogg")
@@ -669,7 +670,7 @@ if (menu < 4 || menu >= 10)
 }
 if (menu == 99)
 {
-    if gml_Script_i_ex(279)
+    if gml_Script_i_ex(obj_fusionmenu)
     {
         is_playing = obj_fusionmenu.songPlaying != " "
         if is_playing

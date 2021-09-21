@@ -5,24 +5,24 @@ if (room == room_town_mid_ch1)
 {
     if (global.flag[271] == 0)
     {
-        bnpc = gml_Script_instance_create_ch1(x, y, 1409)
+        bnpc = gml_Script_instance_create_ch1(x, y, obj_npc_room_animated_ch1)
         bnpc.sprite_index = spr_npc_icemascot1_ch1
     }
     else
     {
-        bnpc = gml_Script_instance_create_ch1((x + 7), (y + 4), 1408)
+        bnpc = gml_Script_instance_create_ch1((x + 7), (y + 4), obj_npc_room_ch1)
         bnpc.sprite_index = spr_npc_burgerpants_ch1
     }
 }
 if (room == room_town_south_ch1)
 {
-    policewindow = gml_Script_scr_marker_ch1(292, 57, 3670)
+    policewindow = gml_Script_scr_marker_ch1(292, 57, spr_policewindow_ch1)
     with (policewindow)
         depth = 940000
 }
 if (room == room_graveyard_ch1)
 {
-    overlay = gml_Script_instance_create_ch1(0, 0, 1458)
+    overlay = gml_Script_instance_create_ch1(0, 0, obj_backgrounder_sprite_ch1)
     with (obj_mainchara_ch1)
         bg = 1
     with (overlay)

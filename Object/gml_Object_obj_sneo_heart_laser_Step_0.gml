@@ -14,7 +14,7 @@ if (timer > 0 && timer < 14)
 }
 if (timer == 14)
 {
-    gml_Script_snd_play(91)
+    gml_Script_snd_play(snd_wallclaw)
     laser = gml_Script_instance_create(x, y, obj_queen_laser)
     laser.image_angle = image_angle
     laser.direction = image_angle

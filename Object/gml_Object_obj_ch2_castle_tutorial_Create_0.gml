@@ -24,7 +24,7 @@ if (global.chapter == 2 && global.plot >= 9)
             gml_Script_scr_depth()
         if (gml_Script_scr_get_total_recruits(2) >= 9)
         {
-            var music_shop = gml_Script_scr_dark_marker(605, 6, 3125)
+            var music_shop = gml_Script_scr_dark_marker(605, 6, bg_dw_castle_music_shop)
             with (music_shop)
                 gml_Script_scr_depth()
             var music_shop_solid1 = gml_Script_instance_create(633, 112, obj_solidblocksized)

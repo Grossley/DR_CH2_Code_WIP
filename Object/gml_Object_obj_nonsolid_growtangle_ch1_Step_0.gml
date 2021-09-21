@@ -13,7 +13,7 @@ if (growth == 1)
     image_yscale = (2 * (timer / maxtimer))
     image_angle = (180 + (180 * (timer / maxtimer)))
     image_alpha = (0.5 + ((timer / maxtimer) * 0.5))
-    d = gml_Script_instance_create_ch1(x, y, 1509)
+    d = gml_Script_instance_create_ch1(x, y, obj_afterimage_ch1)
     d.sprite_index = sprite_index
     d.image_xscale = image_xscale
     d.image_yscale = image_yscale

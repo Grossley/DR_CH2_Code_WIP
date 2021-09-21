@@ -295,7 +295,7 @@ if (room == room_dw_cyber_musical_door)
         if (global.flag[354] >= 6)
         {
             var sold_out_talk = talked
-            if gml_Script_i_ex(120)
+            if gml_Script_i_ex(obj_npc_musical_door)
             {
                 with (obj_npc_musical_door)
                 {

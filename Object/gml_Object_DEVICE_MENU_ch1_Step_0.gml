@@ -398,7 +398,7 @@ if (OBMADE == 1)
     obacktimer += OBM
     if (obacktimer >= 20)
     {
-        DV = gml_Script_instance_create_ch1(0, 0, 1639)
+        DV = gml_Script_instance_create_ch1(0, 0, DEVICE_OBACK_4_ch1)
         DV.depth = (5 + OB_DEPTH)
         DV.OBSPEED = (0.01 * OBM)
         if (OB_DEPTH >= 60000)
@@ -408,22 +408,22 @@ if (OBMADE == 1)
 }
 if (MOVENOISE == 1)
 {
-    gml_Script_snd_play_ch1(492)
+    gml_Script_snd_play_ch1(snd_menumove_ch1)
     MOVENOISE = 0
 }
 if (SELNOISE == 1)
 {
-    gml_Script_snd_play_ch1(493)
+    gml_Script_snd_play_ch1(snd_select_ch1)
     SELNOISE = 0
 }
 if (BACKNOISE == true)
 {
-    gml_Script_snd_play_ch1(422)
+    gml_Script_snd_play_ch1(snd_swing_ch1)
     BACKNOISE = false
 }
 if (DEATHNOISE == true)
 {
-    gml_Script_snd_play_ch1(487)
+    gml_Script_snd_play_ch1(AUDIO_APPEARANCE_ch1)
     DEATHNOISE = false
 }
 ONEBUFFER -= 1

@@ -17,13 +17,13 @@ if (con == 1)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_18_0")
         gml_Script_scr_susface_ch1(3, 2)
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_20_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 2
     }
 }
 if (con == 2 && (!gml_Script_d_ex_ch1()))
 {
-    exc = gml_Script_instance_create_ch1((s.x + 30), (s.y - 20), 1486)
+    exc = gml_Script_instance_create_ch1((s.x + 30), (s.y - 20), obj_excblcon_ch1)
     con = 3
     with (s)
         sprite_index = spr_susiel_dark_ch1
@@ -44,7 +44,7 @@ if (con == 4)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_47_0")
     gml_Script_scr_ralface_ch1(7, 6)
     global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_49_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 5
 }
 if (con == 5 && (!gml_Script_d_ex_ch1()))
@@ -80,7 +80,7 @@ if (con == 7)
     gml_Script_scr_susface_ch1(10, 2)
     global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_82_0")
     global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_83_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 8
 }
 if (con == 8 && (!gml_Script_d_ex_ch1()))
@@ -91,7 +91,7 @@ if (con == 8 && (!gml_Script_d_ex_ch1()))
     visible = false
     with (s)
         visible = false
-    lnpc = gml_Script_instance_create_ch1(x, y, 1407)
+    lnpc = gml_Script_instance_create_ch1(x, y, obj_npc_facing_ch1)
     with (lnpc)
     {
         dtsprite = spr_lancer_dt_ch1
@@ -101,7 +101,7 @@ if (con == 8 && (!gml_Script_d_ex_ch1()))
         sprite_index = dtsprite
         y += 100
     }
-    snpc = gml_Script_instance_create_ch1(s.x, s.y, 1407)
+    snpc = gml_Script_instance_create_ch1(s.x, s.y, obj_npc_facing_ch1)
     with (snpc)
     {
         dtsprite = spr_susiedt_dark_ch1
@@ -127,7 +127,7 @@ if (con == 9 && obj_mainchara_ch1.x < 40 && global.interact == 0)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_133_0")
     else
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_137_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 10
 }
 if (con == 10 && (!gml_Script_d_ex_ch1()))
@@ -148,8 +148,8 @@ if (con == 15 && global.interact == 0)
             fun = true
             sprite_index = rsprite
         }
-        gml_Script_snd_play_ch1(446)
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(snd_screenshake_ch1)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
         global.interact = 1
         with (block)
             instance_destroy()
@@ -181,7 +181,7 @@ if (con == 12)
     global.fc = 1
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_189_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 13
 }
 if (con == 13 && (!gml_Script_d_ex_ch1()))
@@ -198,7 +198,7 @@ if (con == 13 && (!gml_Script_d_ex_ch1()))
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_200_0")
     gml_Script_scr_lanface_ch1(1, 2)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_202_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 14
 }
 if (con == 14 && (!gml_Script_d_ex_ch1()))
@@ -239,7 +239,7 @@ if (con == 19)
     global.fe = 0
     global.typer = 30
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_247_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 20
 }
 if (con == 20 && (!gml_Script_d_ex_ch1()))

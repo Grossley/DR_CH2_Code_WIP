@@ -21,8 +21,8 @@ if (global.flag[915] >= 1.5 && global.flag[916] == 0)
 {
     if (room == room_dw_city_intro)
     {
-        gml_Script_safe_delete(101)
-        gml_Script_safe_delete(108)
+        gml_Script_safe_delete(obj_npc_room)
+        gml_Script_safe_delete(obj_npc_room_animated)
     }
     if instance_exists(obj_city_parallaxStreet)
     {
@@ -31,11 +31,11 @@ if (global.flag[915] >= 1.5 && global.flag[916] == 0)
     }
     if (room == room_dw_city_traffic_1)
     {
-        gml_Script_safe_delete(1114)
-        gml_Script_safe_delete(1115)
-        gml_Script_safe_delete(1228)
-        gml_Script_safe_delete(101)
-        gml_Script_safe_delete(108)
+        gml_Script_safe_delete(obj_traffic_car_generator)
+        gml_Script_safe_delete(obj_traffic_switch)
+        gml_Script_safe_delete(obj_traffic_road_trigger)
+        gml_Script_safe_delete(obj_npc_room)
+        gml_Script_safe_delete(obj_npc_room_animated)
         omawaroid = gml_Script_instance_create(880, 160, obj_chaseenemy)
         tasque = gml_Script_instance_create(1680, 220, obj_chaseenemy)
     }
@@ -49,24 +49,24 @@ if (global.flag[915] >= 1.75 && global.flag[916] == 0)
     }
     if (room == room_dw_city_traffic_2)
     {
-        gml_Script_safe_delete(1114)
-        gml_Script_safe_delete(1115)
-        gml_Script_safe_delete(1228)
-        gml_Script_safe_delete(101)
-        gml_Script_safe_delete(103)
-        gml_Script_safe_delete(108)
+        gml_Script_safe_delete(obj_traffic_car_generator)
+        gml_Script_safe_delete(obj_traffic_switch)
+        gml_Script_safe_delete(obj_traffic_road_trigger)
+        gml_Script_safe_delete(obj_npc_room)
+        gml_Script_safe_delete(obj_npc_sign)
+        gml_Script_safe_delete(obj_npc_room_animated)
         virokun = gml_Script_instance_create(840, 120, obj_chaseenemy)
         werewire = gml_Script_instance_create(1504, 80, obj_chaseenemy)
     }
     if (room == room_dw_city_mirrorfriend)
     {
-        gml_Script_safe_delete(101)
-        gml_Script_safe_delete(1035)
+        gml_Script_safe_delete(obj_npc_room)
+        gml_Script_safe_delete(obj_ch2_room_city_susie_ralsei_fun_2)
     }
     if (room == room_dw_city_roadblock)
-        gml_Script_safe_delete(108)
+        gml_Script_safe_delete(obj_npc_room_animated)
     if (room == room_dw_city_big_1)
-        gml_Script_safe_delete(101)
+        gml_Script_safe_delete(obj_npc_room)
     if (room == room_dw_city_susie_ralsei_fun_1)
     {
         with (obj_cybercity_balloon)
@@ -95,16 +95,16 @@ if (phase == 2)
 {
     if (room == room_dw_city_traffic_1 || room == room_dw_city_traffic_2 || room == room_dw_city_traffic_3 || room == room_dw_city_roadblock || room == room_dw_city_big_1 || room == room_dw_city_big_2 || room == room_dw_city_big_3 || room == room_dw_city_mirrorfriend || room == room_dw_city_entrance)
     {
-        gml_Script_safe_delete(1114)
-        gml_Script_safe_delete(1228)
-        gml_Script_safe_delete(103)
-        gml_Script_safe_delete(101)
-        gml_Script_safe_delete(108)
-        gml_Script_safe_delete(313)
-        gml_Script_safe_delete(314)
-        gml_Script_safe_delete(311)
-        gml_Script_safe_delete(1035)
-        gml_Script_safe_delete(1251)
+        gml_Script_safe_delete(obj_traffic_car_generator)
+        gml_Script_safe_delete(obj_traffic_road_trigger)
+        gml_Script_safe_delete(obj_npc_sign)
+        gml_Script_safe_delete(obj_npc_room)
+        gml_Script_safe_delete(obj_npc_room_animated)
+        gml_Script_safe_delete(obj_cybercity_bg_sign)
+        gml_Script_safe_delete(obj_cybercity_bg_lightset)
+        gml_Script_safe_delete(obj_cybercity_bg_screen)
+        gml_Script_safe_delete(obj_ch2_room_city_susie_ralsei_fun_2)
+        gml_Script_safe_delete(obj_welcometothecity_backinglights)
         if instance_exists(obj_traffic_switch)
         {
             with (obj_traffic_switch)
@@ -281,10 +281,10 @@ if (phase == 3)
         secretdoorlocked.sprite_index = spr_dw_mansion_door_closed
         secretdoorlocked.image_xscale = 1
         secretdoorlocked.image_yscale = 1
-        gml_Script_safe_delete(142)
-        gml_Script_safe_delete(152)
-        gml_Script_safe_delete(1285)
-        gml_Script_safe_delete(1284)
+        gml_Script_safe_delete(obj_doorB)
+        gml_Script_safe_delete(obj_doorw_musfade)
+        gml_Script_safe_delete(obj_mansion_keygen_lock)
+        gml_Script_safe_delete(obj_mansion_switch)
         with (obj_readable_room1)
         {
             if (x < 220)
@@ -298,7 +298,7 @@ if (phase == 3)
     }
     if (room == room_dw_mansion_east_2f_transformed_new)
     {
-        gml_Script_scr_forcefield(760, 1000, 10, 2, 1, 0)
+        gml_Script_scr_forcefield(760, 1000, 10, 2, true, false)
         with (obj_overworld_bulletarea)
             instance_destroy()
         gml_Script_instance_create(860, 760, obj_queenart_red)
@@ -351,11 +351,11 @@ if (phase == 3)
     }
     if (room == room_dw_mansion_dininghall)
     {
-        gml_Script_safe_delete(258)
-        gml_Script_safe_delete(1198)
-        gml_Script_safe_delete(1197)
+        gml_Script_safe_delete(obj_saucer)
+        gml_Script_safe_delete(obj_controller_dininghall)
+        gml_Script_safe_delete(obj_scarableSwatch)
         layer_set_visible("TILES_Pathway_NoCorridors_Weird", 1)
-        block = gml_Script_scr_forcefield(520, 160, 2, 10, 1, 0)
+        block = gml_Script_scr_forcefield(520, 160, 2, 10, true, false)
         with (block)
             gml_Script_scr_depth()
     }
@@ -375,7 +375,7 @@ if (phase == 3)
         bulletarea = gml_Script_instance_create(120, 320, obj_overworld_bulletarea)
         bulletarea.image_xscale = 42
         bulletarea.image_yscale = 2
-        field = gml_Script_scr_forcefield(80, 280, 88, 2, 1, 1)
+        field = gml_Script_scr_forcefield(80, 280, 88, 2, true, true)
         field.depth = 800000
         with (obj_mansion_vase)
             instance_destroy()
@@ -406,9 +406,9 @@ if (phase == 3)
         bathroomdoor.image_xscale = 2
         bathroomdoor.image_yscale = 2
         bathroomdoor.depth = 899980
-        door = gml_Script_scr_dark_marker(590, 80, 2860)
+        door = gml_Script_scr_dark_marker(590, 80, spr_dw_mansion_door_open)
         door.depth = 899980
-        door_left = gml_Script_scr_dark_marker(250, 80, 2860)
+        door_left = gml_Script_scr_dark_marker(250, 80, spr_dw_mansion_door_open)
         door_left.depth = 899980
     }
     if (room == room_dw_mansion_acid_tunnel)
@@ -427,7 +427,7 @@ if (phase == 3)
         gml_Script_instance_create(255, 287, obj_chaseenemy)
     }
     if (room == room_dw_mansion_east_4f_b)
-        field = gml_Script_scr_forcefield(40, 280, 2, 8, 1, 0)
+        field = gml_Script_scr_forcefield(40, 280, 2, 8, true, false)
     if (room == room_dw_mansion_east_teacup_4)
     {
         with (obj_teacup)
@@ -455,8 +455,8 @@ if (phase != 3)
     }
     if (room == room_dw_mansion_dininghall)
     {
-        gml_Script_safe_delete(266)
-        gml_Script_safe_delete(3)
+        gml_Script_safe_delete(obj_overworld_bulletarea)
+        gml_Script_safe_delete(obj_pipisFireworkGenerator)
     }
 }
 encountercheck = 0

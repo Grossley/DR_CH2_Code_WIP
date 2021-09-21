@@ -3,7 +3,7 @@ if (other.active == false)
 if (other.destroyable == 1)
 {
     instance_destroy()
-    gml_Script_snd_play(166)
+    gml_Script_snd_play(snd_damage)
     with (other)
         instance_destroy()
 }

@@ -40,6 +40,6 @@ if (x < 800 && done == 0)
     }
     done = 1
 }
-gml_Script_snd_play_ch1(381)
+gml_Script_snd_play_ch1(snd_noise_ch1)
 with (obj_mainchara_ch1)
     onebuffer = 3

@@ -20,7 +20,7 @@ if (dont == 0)
         activetimer += 1
         if (activetimer >= 5 && times < difficulty)
         {
-            mybul = gml_Script_instance_create_ch1(x, y, 1520)
+            mybul = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
             if instance_exists(mybul)
             {
                 mybul.damage = damage

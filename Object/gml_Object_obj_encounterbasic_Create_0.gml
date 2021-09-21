@@ -13,7 +13,7 @@ with (obj_mainchara)
 with (obj_caterpillarchara)
     fun = false
 count = 0
-c[0] = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 863)
+c[0] = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, spr_kris_sword_jump_down)
 if gml_Script_i_ex(global.cinstance[0])
 {
     count += 1

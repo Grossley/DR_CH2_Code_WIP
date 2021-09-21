@@ -17,13 +17,13 @@ if (con == 11)
 {
     timer++
     if (timer == 30)
-        gml_Script_snd_play(151)
+        gml_Script_snd_play(snd_cantselect)
     if (timer == 60)
     {
         with (lastPressedTile)
             bouncecon = 1
-        gml_Script_snd_play(159)
-        ball = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, 544)
+        gml_Script_snd_play(snd_jump)
+        ball = gml_Script_scr_dark_marker(obj_mainchara.x, obj_mainchara.y, spr_kris_fall_ball)
         ball.image_speed = 0.5
         ball.depth = 100
         var ballY = krisStartY
@@ -62,7 +62,7 @@ if (con == 21)
     if (timer == 30)
     {
         won = 1
-        gml_Script_snd_play(57)
+        gml_Script_snd_play(snd_won)
         for (i = 0; i < 15; i++)
         {
             d = gml_Script_instance_create(180, 200, obj_confetti_overworld)
@@ -85,7 +85,7 @@ if (con == 21)
             pressable = 0
         }
         global.facing = 0
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
         gml_Script_instance_create(0, 0, obj_shake)
         global.interact = 0
         timer = 0

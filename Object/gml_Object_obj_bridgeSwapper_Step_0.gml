@@ -1,7 +1,7 @@
 if (con == 1)
 {
     global.interact = 1
-    if (skip == 0)
+    if (skip == false)
     {
         notallcharactersaresafe = 0
         with (obj_mainchara)
@@ -88,7 +88,7 @@ if (con == 3)
     panpoint = gml_Script_scr_dark_marker(mtx, mty, kr_actor.sprite_index)
     with (panpoint)
         visible = false
-    gml_Script_c_pannable(1)
+    gml_Script_c_pannable(true)
     gml_Script_c_sel(kr)
     gml_Script_c_walkdirect(mtx, mty, 4)
     gml_Script_c_delayfacing(4, krisface)
@@ -97,7 +97,7 @@ if (con == 3)
     gml_Script_c_delayfacing(5, krisface)
     gml_Script_c_panobj(panpoint, 4)
     gml_Script_c_wait(6)
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
     gml_Script_c_var_instance(id, "con", 98)
     gml_Script_c_actortokris()
     gml_Script_c_actortocaterpillar()
@@ -112,7 +112,7 @@ if (con == 98)
 if (con == 99)
 {
     alarm[0] = 1
-    gml_Script_snd_play(59)
+    gml_Script_snd_play(snd_locker)
     gml_Script_instance_create(x, y, obj_shakeobj)
     global.interact = 0
     con = 0

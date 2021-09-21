@@ -14,7 +14,7 @@ if (global.mnfight == 1 && talked == 0)
     if (sleeping == false)
         gml_Script_scr_randomtarget_ch1()
     if (!instance_exists(obj_darkener_ch1))
-        gml_Script_instance_create_ch1(0, 0, 1522)
+        gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
     global.typer = 53
     rr = choose(0, 1, 2, 3)
     if (rr == 0)

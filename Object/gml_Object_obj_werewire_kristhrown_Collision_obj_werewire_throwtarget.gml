@@ -3,7 +3,7 @@ if (other.collided == 0)
     if (other.good == 1)
     {
         global.msg[0] = gml_Script_stringsetloc("* The wire greatly loosened!/%", "obj_werewire_kristhrown_slash_Collision_048192d7_9c3b_472a_adb9_e1f06953ce64_gml_10_0")
-        gml_Script_snd_play(174)
+        gml_Script_snd_play(snd_laz_c)
         if instance_exists(obj_werewire_enemy)
         {
             with (other.maker)
@@ -22,7 +22,7 @@ if (other.collided == 0)
     }
     else
     {
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         with (other)
             con = 7
         if instance_exists(obj_werewire_enemy)

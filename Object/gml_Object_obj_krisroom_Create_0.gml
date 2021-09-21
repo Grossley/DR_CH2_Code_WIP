@@ -1,6 +1,6 @@
 con = 0
 image_speed = 0
-wallwindow = gml_Script_scr_marker(140, 40, 882)
+wallwindow = gml_Script_scr_marker(140, 40, spr_housewindow)
 with (wallwindow)
     gml_Script_scr_depth()
 show_border = 0
@@ -14,7 +14,7 @@ if (global.plot > 0)
 else if (global.chapter == 1)
 {
     gml_Script_scr_windowcaption(gml_Script_stringsetloc("The Beginning", "obj_krisroom_slash_Create_0_gml_16_0"))
-    t = gml_Script_scr_marker(151, 97, 896)
+    t = gml_Script_scr_marker(151, 97, spr_toriel_rt)
     with (t)
     {
         gml_Script_scr_depth()
@@ -35,7 +35,7 @@ else if (global.chapter == 2)
 {
     global.msc = 0
     gml_Script_scr_speaker("toriel")
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

@@ -8,7 +8,7 @@ if (global.flag[215] == 1)
     instance_destroy()
 else
 {
-    pwall = gml_Script_instance_create_ch1((x + 10), (y - 20), 1656)
+    pwall = gml_Script_instance_create_ch1((x + 10), (y - 20), obj_soliddark_ch1)
     pwall.image_yscale = 3
 }
 lecturecon = 0

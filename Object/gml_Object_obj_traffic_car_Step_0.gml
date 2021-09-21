@@ -7,7 +7,7 @@ if (walkdir == "left" && x <= (0 - (sprite_width * 2)))
     endme = 1
 if place_meeting(x, y, obj_solidenemy_2)
     endme = 1
-if ((global.interact == 0 || gml_Script_i_ex(895)) && active == true)
+if ((global.interact == 0 || gml_Script_i_ex(obj_cutscene_master)) && active == true)
 {
     if (alwayswalking == 1)
         walking = 1
@@ -52,7 +52,7 @@ if (touchcon == 1)
     touchtimer = 0
     spintimer = 0
     touchcon = 2
-    gml_Script_snd_play(153)
+    gml_Script_snd_play(snd_cardrive)
     with (obj_mainchara)
         image_alpha = 0.5
     if (instance_exists(obj_noelle_city_traffic_2) && instance_exists(obj_caterpillarchara))

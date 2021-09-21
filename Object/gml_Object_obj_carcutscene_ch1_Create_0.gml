@@ -28,10 +28,10 @@ else
     alarm[4] = 30
     global.interact = 1
     k = 1347
-    t = gml_Script_scr_marker_ch1(195, 240, 3465)
+    t = gml_Script_scr_marker_ch1(195, 240, spr_toriel_lt_ch1)
     with (t)
         depth = 400000
-    c = gml_Script_scr_marker_ch1(131, 240, 3452)
+    c = gml_Script_scr_marker_ch1(131, 240, spr_torcar_d_ch1)
     with (c)
         depth = 500000
 }

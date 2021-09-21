@@ -1,5 +1,5 @@
 funbuffer = 0
-gml_Script_snd_play_ch1(381)
+gml_Script_snd_play_ch1(snd_noise_ch1)
 with (obj_glowtile_ch1)
 {
     active = false

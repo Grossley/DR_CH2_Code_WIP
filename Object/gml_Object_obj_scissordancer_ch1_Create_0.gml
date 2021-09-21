@@ -16,7 +16,7 @@ if (room == room_cc_4f_ch1)
     vspeed = 0
     hspeed = 6
 }
-bullet = gml_Script_instance_create_ch1(x, y, 1504)
+bullet = gml_Script_instance_create_ch1(x, y, obj_overworldbulletparent_ch1)
 bullet.sprite_index = spr_scissordancer_precise_ch1
 with (bullet)
 {

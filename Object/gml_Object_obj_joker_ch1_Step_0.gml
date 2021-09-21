@@ -69,7 +69,7 @@ if (global.monster[myself] == true)
             }
         }
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         if (jturn == 0)
         {
@@ -194,7 +194,7 @@ if (global.monster[myself] == true)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -291,16 +291,16 @@ if (global.myfight == 3)
     {
         actcon = 5
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_247_0")
-        gml_Script_snd_play_ch1(388)
+        gml_Script_snd_play_ch1(snd_pirouette_ch1)
         with (obj_herokris_ch1)
             visible = false
-        dancekris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, 3810)
+        dancekris = gml_Script_scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, spr_krisb_pirouette_ch1)
         with (dancekris)
         {
             image_speed = 0.3334
             depth = obj_herokris_ch1.depth
         }
-        fx = gml_Script_instance_create_ch1((dancekris.x + 28), (dancekris.y + 40), 1510)
+        fx = gml_Script_instance_create_ch1((dancekris.x + 28), (dancekris.y + 40), obj_afterimage_grow_ch1)
         fx.sprite_index = spr_pirouette_fx_ch1
         fx.image_xscale = 2
         fx.image_yscale = 2
@@ -318,30 +318,30 @@ if (global.myfight == 3)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_276_0")
             ch = choose(0, 1, 2)
             if (ch == 0)
-                gml_Script_snd_play_ch1(455)
+                gml_Script_snd_play_ch1(snd_badexplosion_ch1)
             if (ch == 1)
-                gml_Script_snd_play_ch1(387)
+                gml_Script_snd_play_ch1(snd_carhonk_ch1)
             if (ch == 2)
-                gml_Script_snd_play_ch1(366)
+                gml_Script_snd_play_ch1(snd_toilet_ch1)
         }
         if (chaosdance == 1)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_284_0")
             if (global.monsterdf[myself] >= -16)
                 global.monsterdf[myself] -= 4
-            gml_Script_snd_play_ch1(389)
+            gml_Script_snd_play_ch1(snd_weirdeffect_ch1)
         }
         if (chaosdance == 2)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_290_0")
-            gml_Script_snd_play_ch1(390)
+            gml_Script_snd_play_ch1(snd_awkward_ch1)
             global.invc = 0.4
         }
         if (chaosdance == 3)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_296_0")
             pfactor = 0.7
-            gml_Script_snd_play_ch1(361)
+            gml_Script_snd_play_ch1(snd_shadowpendant_ch1)
         }
         if (chaosdance == 4)
         {
@@ -350,13 +350,13 @@ if (global.myfight == 3)
                 if (sprite_index == spr_uselessbird_ch1)
                     instance_destroy()
             }
-            bird = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 40), (gml_Script___view_get(1, 0) + 60), 3929)
+            bird = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) - 40), (gml_Script___view_get(1, 0) + 60), spr_uselessbird_ch1)
             with (bird)
             {
                 hspeed = 12
                 image_speed = 0.334
             }
-            gml_Script_snd_play_ch1(385)
+            gml_Script_snd_play_ch1(snd_birdtweet_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_310_0")
         }
         if (chaosdance == 5)
@@ -411,17 +411,17 @@ if (global.myfight == 3)
             gml_Script_scr_revive_ch1(0)
             gml_Script_scr_revive_ch1(1)
             gml_Script_scr_revive_ch1(2)
-            gml_Script_snd_play_ch1(389)
+            gml_Script_snd_play_ch1(snd_weirdeffect_ch1)
         }
         if (chaosdance == 7)
         {
-            gml_Script_snd_play_ch1(414)
+            gml_Script_snd_play_ch1(snd_boost_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_373_0")
             pfactor = 1.25
         }
         if (chaosdance == 8)
         {
-            gml_Script_snd_play_ch1(386)
+            gml_Script_snd_play_ch1(snd_applause_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_379_0")
             gml_Script_scr_healallitemspell_ch1((36 + floor(random(15))))
         }
@@ -440,8 +440,8 @@ if (global.myfight == 3)
     {
         if (global.monsterat[myself] > 10)
             global.monsterat[myself] -= 0.5
-        hypnofx = gml_Script_instance_create_ch1(global.monsterx[myself], global.monstery[myself], 1622)
-        gml_Script_snd_play_ch1(391)
+        hypnofx = gml_Script_instance_create_ch1(global.monsterx[myself], global.monstery[myself], obj_hypnofx_ch1)
+        gml_Script_snd_play_ch1(snd_hypnosis_ch1)
         actcon = 1
         aaa = choose(0, 1, 2)
         if (aaa == 0)
@@ -476,14 +476,14 @@ if (global.myfight == 7)
 beepbuffer -= 1
 if (beepnoise == 4 && beepbuffer < 0)
 {
-    gml_Script_snd_stop_ch1(410)
-    gml_Script_snd_play_ch1(410)
+    gml_Script_snd_stop_ch1(snd_bombfall_ch1)
+    gml_Script_snd_play_ch1(snd_bombfall_ch1)
     beepnoise = 0
     beepbuffer = 5
 }
 if (burstnoise == true)
 {
-    gml_Script_snd_stop_ch1(409)
-    gml_Script_snd_play_ch1(409)
+    gml_Script_snd_stop_ch1(snd_bomb_ch1)
+    gml_Script_snd_play_ch1(snd_bomb_ch1)
     burstnoise = false
 }

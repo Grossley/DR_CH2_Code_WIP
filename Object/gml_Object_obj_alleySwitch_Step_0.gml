@@ -15,13 +15,13 @@ if (keeptoggled == 0)
         if (place_meeting(x, y, obj_mainchara) || (place_meeting(x, y, obj_marker) && x > 480) || (place_meeting(x, y, obj_marker) && global.flag[915] == 3 && global.flag[916] == 0) || (place_meeting(x, y, obj_caterpillarchara) && caterpillarable == 1))
         {
             if (toggle == 0)
-                gml_Script_snd_play(64)
+                gml_Script_snd_play(snd_noise)
             toggle = 1
         }
         else
         {
             if (toggle == 1)
-                gml_Script_snd_play(239)
+                gml_Script_snd_play(snd_dtrans_flip)
             toggle = 0
         }
     }

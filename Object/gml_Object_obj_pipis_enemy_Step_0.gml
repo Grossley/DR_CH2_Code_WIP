@@ -17,7 +17,7 @@ if (global.monster[myself] == true)
         gml_Script_scr_blconskip(-1)
         if gml_Script_scr_isphase("bullets")
         {
-            if ((!instance_exists(obj_moveheart)) && (!gml_Script_i_ex(628)))
+            if ((!instance_exists(obj_moveheart)) && (!gml_Script_i_ex(obj_heart)))
                 gml_Script_scr_moveheart()
             if (!instance_exists(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
@@ -32,7 +32,7 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "PipisExplosion"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 50
                 dc.damage = 50
                 dc.btimer = (35 - random(30))

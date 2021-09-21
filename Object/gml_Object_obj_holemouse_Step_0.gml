@@ -149,7 +149,7 @@ if (con == 5)
         }
         customSprite = 2690
         bouncelength = 15
-        gml_Script_snd_play(159)
+        gml_Script_snd_play(snd_jump)
         fakeYSpeed = (-bouncelength)
         gml_Script_scr_move_to_point_over_time(bounceTargetX, bounceTargetY, bouncelength)
         bouncetimer = 0

@@ -1,7 +1,7 @@
 draw_self()
 if (init == 1)
 {
-    if gml_Script_i_ex(1178)
+    if gml_Script_i_ex(obj_mouseTowerTrigger)
     {
         if (obj_mouseTowerTrigger.controlled == id && obj_mouseTowerTrigger.rotate == 1)
             mymoving = 1

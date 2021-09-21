@@ -15,6 +15,6 @@ susindex = 0
 songplay = 0
 with (obj_mainchara_ch1)
     visible = false
-fin = gml_Script_instance_create_ch1(0, 0, 1461)
+fin = gml_Script_instance_create_ch1(0, 0, obj_fadein_ch1)
 with (fin)
     fadespeed = -0.01

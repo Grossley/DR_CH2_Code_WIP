@@ -8,19 +8,19 @@ if (global.flag[394] == 1)
 if (global.flag[106] == 1)
 {
     moss_readable = gml_Script_instance_create(470, 386, obj_readable_room1)
-    moss = gml_Script_scr_marker(460, 366, 3126)
+    moss = gml_Script_scr_marker(460, 366, spr_dw_kris_room_moss)
     with (moss)
         depth = 900000
 }
 if (global.flag[207] >= 2)
 {
-    trash = gml_Script_scr_marker(301, 108, 3298)
+    trash = gml_Script_scr_marker(301, 108, bg_dw_kris_room_trash)
     with (trash)
         gml_Script_scr_depth()
 }
 else
 {
-    manual_stand = gml_Script_scr_marker(301, 108, 1194)
+    manual_stand = gml_Script_scr_marker(301, 108, bg_dw_kris_room_manual_stand)
     with (manual_stand)
         gml_Script_scr_depth()
 }

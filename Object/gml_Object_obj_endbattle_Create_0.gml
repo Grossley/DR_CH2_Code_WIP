@@ -6,7 +6,7 @@ count = 0
 global.tension = 0
 if (global.specialbattle == 0 || global.specialbattle == 3)
 {
-    c[0] = gml_Script_scr_dark_marker(global.heromakex[0], global.heromakey[0], 652)
+    c[0] = gml_Script_scr_dark_marker(global.heromakex[0], global.heromakey[0], spr_krisr_dark)
     if gml_Script_i_ex(global.cinstance[0])
     {
         count += 1

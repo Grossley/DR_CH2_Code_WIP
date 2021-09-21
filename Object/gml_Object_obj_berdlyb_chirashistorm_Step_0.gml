@@ -4,7 +4,7 @@ if (init == 0)
     {
         for (ix = 0; ix < 4; ix++)
         {
-            d = gml_Script_scr_bullet_create(x, y, 488)
+            d = gml_Script_scr_bullet_create(x, y, obj_berdlyb_chirashibullet)
             xx = (((originx + (ix * 40)) + (iy * 20)) + irandom(35))
             yy = ((originy + (iy * 40)) + irandom(35))
             d.___myrememberx = xx

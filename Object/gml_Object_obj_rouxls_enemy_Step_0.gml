@@ -65,7 +65,7 @@ if (global.monster[myself] == true)
         if (ralseitalks == 1 && instance_exists(obj_heroralsei))
         {
             global.typer = 74
-            gml_Script_scr_guardpeek(372)
+            gml_Script_scr_guardpeek(obj_heroralsei)
             gml_Script_scr_enemyblcon((obj_heroralsei.x + 75), (obj_heroralsei.y + 15), 7)
         }
         else
@@ -84,7 +84,7 @@ if (global.monster[myself] == true)
     if (talked == 0.5)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -109,7 +109,7 @@ if (global.monster[myself] == true)
     if (talked == 0.7)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -125,7 +125,7 @@ if (global.monster[myself] == true)
     if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -175,7 +175,7 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "ThrashHead"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.damage = (global.monsterat[myself] * 5)
                 dc.type = 26
                 dc.difficulty = head_difficulty
@@ -183,7 +183,7 @@ if (global.monster[myself] == true)
             else if (rr == 1)
             {
                 global.monsterattackname[myself] = "ThrashFoot"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.damage = (global.monsterat[myself] * 7)
                 dc.type = 27
                 dc.difficulty = wheel_difficulty
@@ -191,7 +191,7 @@ if (global.monster[myself] == true)
             else
             {
                 global.monsterattackname[myself] = "PuzzleBlocks"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.damage = (global.monsterat[myself] * 6)
                 dc.type = 28
             }
@@ -378,9 +378,9 @@ if gml_Script_scr_debug()
         }
         else
         {
-            d = gml_Script_scr_following_afterimage(200, self)
+            d = gml_Script_scr_following_afterimage(obj_power_up_fx, self)
             d.depth -= 1
-            d = gml_Script_scr_following_afterimage(202, 727)
+            d = gml_Script_scr_following_afterimage(obj_power_up_thrash, obj_thrashmachine)
             d.depth -= 1
         }
     }

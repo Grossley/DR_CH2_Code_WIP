@@ -1,14 +1,14 @@
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("C")))
 {
-    gml_Script_snd_play_pitch(55, 1.2)
-    if (!gml_Script_i_ex(27))
+    gml_Script_snd_play_pitch(snd_egg, 1.2)
+    if (!gml_Script_i_ex(obj_debug_drawInput))
         gml_Script_instance_create(x, y, obj_debug_drawInput)
     else
-        gml_Script_safe_delete(27)
+        gml_Script_safe_delete(obj_debug_drawInput)
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(vk_up))
 {
-    gml_Script_snd_play(21)
+    gml_Script_snd_play(snd_txtsans)
     if (showdebug == 0)
         showdebug = 1
     else
@@ -24,7 +24,7 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
         writedisplay = 0
     for (var i = (array_length_1d(global.flag) - 1); i > -1; i--)
         lastval[i] = global.flag[i]
-    gml_Script_snd_play_pitch(289, 1.1)
+    gml_Script_snd_play_pitch(snd_queen_hoot_0, 1.1)
 }
 if (writedisplay == 1)
 {
@@ -52,12 +52,12 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
         ini_write_string("objects", sid, writestring)
     }
     ini_close()
-    gml_Script_snd_play(57)
+    gml_Script_snd_play(snd_won)
     file_text_open_read((("activeObjectList_" + dump_date) + ".txt"))
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("T")))
 {
-    gml_Script_snd_play_pitch(110, 0.8)
+    gml_Script_snd_play_pitch(snd_bump, 0.8)
     if (cutsceneshow == 1)
         cutsceneshow = 0
     else
@@ -68,23 +68,26 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
 {
     global.chemg_god_mode = (1 - global.chemg_god_mode)
     if (global.chemg_god_mode == 1)
-        gml_Script_snd_play_pitch(154, 1.5)
+        gml_Script_snd_play_pitch(snd_swing, 1.5)
     if (global.chemg_god_mode == 0)
-        gml_Script_snd_play_pitch(154, 0.5)
+        gml_Script_snd_play_pitch(snd_swing, 0.5)
 }
 if (global.chemg_god_mode == 1)
 {
     for (i = 0; i < 6; i++)
     {
         if (global.hp[i] < global.maxhp[i])
+        {
             global.hp[i] = (global.hp[i] + 1)
+            global.hp[i]
+        }
     }
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("B")))
 {
     with (obj_solidblock)
         visible = true
-    gml_Script_snd_play(113)
+    gml_Script_snd_play(snd_dadtxt)
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("W")))
 {
@@ -97,7 +100,7 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("I")))
 {
-    gml_Script_snd_play_pitch(55, 1.2)
+    gml_Script_snd_play_pitch(snd_egg, 1.2)
     interactshower = (1 - interactshower)
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("M")))

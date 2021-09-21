@@ -17,7 +17,7 @@ if (global.chapter == 1)
     }
     if (con == 3 && instance_exists(obj_dialoguer) == 0)
     {
-        gml_Script_snd_play(63)
+        gml_Script_snd_play(snd_dooropen)
         with (door)
             image_index = 1
         con = 4
@@ -47,7 +47,7 @@ if (global.chapter == 1)
         }
         with (door)
             image_index = 0
-        gml_Script_snd_play(62)
+        gml_Script_snd_play(snd_doorclose)
         con = 8
         alarm[4] = 30
     }
@@ -114,7 +114,7 @@ if (global.chapter == 1)
             sprite_index = spr_classdoorslam
             depth = 5000
         }
-        sus = gml_Script_scr_marker(237, 24, 981)
+        sus = gml_Script_scr_marker(237, 24, spr_susied_plain)
         with (sus)
             gml_Script_scr_depth()
         con = 24
@@ -124,9 +124,9 @@ if (global.chapter == 1)
     }
     if (con == 25)
     {
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         alphys2 = alphys
-        alphys = gml_Script_scr_marker(alphys.x, alphys.y, 924)
+        alphys = gml_Script_scr_marker(alphys.x, alphys.y, spr_alphysr_shock)
         with (alphys)
             gml_Script_scr_depth()
         with (alphys2)
@@ -340,7 +340,7 @@ if (global.chapter == 1)
         with (sus)
             instance_destroy()
         gml_Script_instance_create(0, 0, obj_shake)
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (door)
             image_index = 0
         con = 55
@@ -384,7 +384,7 @@ if (global.chapter == 2)
 {
     if (con == 1)
     {
-        susie_fake = gml_Script_scr_marker(145, 170, 979)
+        susie_fake = gml_Script_scr_marker(145, 170, spr_susieu)
         with (susie_fake)
             gml_Script_scr_depth()
         alphys.x = 130
@@ -400,7 +400,7 @@ if (global.chapter == 2)
     }
     if (con == 3 && instance_exists(obj_dialoguer) == 0)
     {
-        gml_Script_snd_play(63)
+        gml_Script_snd_play(snd_dooropen)
         with (door)
             image_index = 1
         con = 4
@@ -430,7 +430,7 @@ if (global.chapter == 2)
         }
         with (door)
             image_index = 0
-        gml_Script_snd_play(62)
+        gml_Script_snd_play(snd_doorclose)
         con = 8
         alarm[4] = 30
     }
@@ -491,10 +491,10 @@ if (global.chapter == 2)
         gml_Script_c_wait(30)
         gml_Script_c_facing("r")
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_imageindex(1)
         gml_Script_c_shake()
-        gml_Script_c_soundplay(61)
+        gml_Script_c_soundplay(snd_impact)
         gml_Script_c_wait(30)
         gml_Script_c_imageindex(0)
         gml_Script_c_msgside("top")
@@ -516,20 +516,20 @@ if (global.chapter == 2)
         gml_Script_c_msgnextloc("\\E1* Okay./", "obj_classscene_slash_Step_0_gml_580_0")
         gml_Script_c_msgnextloc("\\E2* Next time I'll aim for the vitals./%", "obj_classscene_slash_Step_0_gml_581_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_soundplay(65)
+        gml_Script_c_soundplay(snd_suslaugh)
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(859)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_susie_laugh_lw)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_wait(45)
         gml_Script_c_halt()
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_facing("u")
         gml_Script_c_sel(al)
-        gml_Script_c_sprite(921)
+        gml_Script_c_sprite(spr_alphysl_unhappy)
         gml_Script_c_halt()
         gml_Script_c_wait(15)
-        gml_Script_c_sprite(923)
+        gml_Script_c_sprite(spr_alphysr_unhappy)
         gml_Script_c_halt()
         gml_Script_c_wait(30)
         gml_Script_c_msgside("bottom")
@@ -549,11 +549,11 @@ if (global.chapter == 2)
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\E2* Umm^1, I..^1. I guess I could read the.../%", "obj_classscene_slash_Step_0_gml_616_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_sprite(750)
+        gml_Script_c_sprite(spr_noelle_walk_right_lw)
         gml_Script_c_halt()
         gml_Script_c_sel(4)
         gml_Script_c_autodepth(0)
-        gml_Script_c_soundplay_x(218, 1, 1.6)
+        gml_Script_c_soundplay_x(snd_escaped, 1, 1.6)
         gml_Script_c_walk_wait("u", 3, 10)
         gml_Script_c_facing("d")
         gml_Script_c_speaker("berdly")
@@ -569,7 +569,7 @@ if (global.chapter == 2)
         gml_Script_c_setxy(139, 84)
         gml_Script_c_specialsprite(0)
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(751)
+        gml_Script_c_sprite(spr_noelle_walk_up_lw)
         gml_Script_c_speaker("berdly")
         gml_Script_c_msgsetloc(0, "\\E0* A-HEM./", "obj_classscene_slash_Step_0_gml_643_0")
         gml_Script_c_msgnextloc("\\E1* \"Page 142.\"/", "obj_classscene_slash_Step_0_gml_644_0")
@@ -587,7 +587,7 @@ if (global.chapter == 2)
         gml_Script_c_waittalk()
         gml_Script_c_mus("free")
         gml_Script_c_wait(30)
-        gml_Script_c_soundplay(62)
+        gml_Script_c_soundplay(snd_doorclose)
         gml_Script_c_actortokris()
     }
     if (customconb == 1)

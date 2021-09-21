@@ -34,7 +34,7 @@ if (qualify == 1)
     }
     if (obj_darkponman_ow_ch1.max_battlealpha < 1.9)
     {
-        gml_Script_snd_play_ch1(368)
+        gml_Script_snd_play_ch1(snd_wing_ch1)
         with (obj_darkponman_ow_ch1)
         {
             max_battlealpha += 0.12

@@ -13,7 +13,7 @@ if (con == 2)
         sndplay = true
         gml_Script_snd_pause(global.currentsong[1])
     }
-    gml_Script_snd_play(54)
+    gml_Script_snd_play(snd_smile)
     con = 3
     alarm[4] = 200
 }
@@ -27,7 +27,7 @@ if (con == 4)
 }
 if (con == 7)
 {
-    gml_Script_snd_stop(54)
+    gml_Script_snd_stop(snd_smile)
     if (sndplay == true)
         gml_Script_snd_resume(global.currentsong[1])
     global.msg[0] = gml_Script_stringsetloc("* It's nothing but garbage noise./%", "obj_darkphone_event_slash_Step_0_gml_42_0")

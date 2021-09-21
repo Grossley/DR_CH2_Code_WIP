@@ -28,7 +28,7 @@ if (con == 4 && (!gml_Script_d_ex()))
 {
     con = 5
     alarm[0] = 30
-    gml_Script_snd_play(162)
+    gml_Script_snd_play(snd_power)
     gml_Script_scr_speaker("no_name")
     gml_Script_msgsetloc(0, "* (You ate the moss..^1. together.)/%", "obj_ch2_room_city_moss_slash_Step_0_gml_43_0")
     gml_Script_d_make()

@@ -53,7 +53,7 @@ if (con == 9)
             gml_Script_snd_free_all()
             if (skiprunback == 0)
             {
-                gml_Script_snd_play(59)
+                gml_Script_snd_play(snd_locker)
                 doorblack = 1
             }
             sus_v = 6
@@ -69,7 +69,7 @@ if (con == 9)
     if (timer == 30)
     {
         gml_Script_snd_free_all()
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
         with (obj_darkdoor)
             instance_destroy()
         doorblack = 1
@@ -135,9 +135,9 @@ if (con == 16)
     if (soundtimer >= soundthreshold && rectsound < rect_amount)
     {
         soundtimer = 0
-        gml_Script_snd_stop(243)
-        gml_Script_snd_play(243)
-        gml_Script_snd_volume(243, 0.5, 0)
+        gml_Script_snd_stop(snd_dtrans_square)
+        gml_Script_snd_play(snd_dtrans_square)
+        gml_Script_snd_volume(snd_dtrans_square, 0.5, 0)
         rectsound++
     }
     sus_index += 0.25
@@ -172,7 +172,7 @@ if (con == 17)
 }
 if (soundcon == 1)
 {
-    dronesfx = gml_Script_snd_loop(244)
+    dronesfx = gml_Script_snd_loop(snd_dtrans_drone)
     gml_Script_snd_volume(dronesfx, 0, 0)
     gml_Script_snd_volume(dronesfx, 0.5, 60)
     gml_Script_snd_pitch(dronesfx, 0.1)
@@ -258,10 +258,10 @@ if (con == 31)
             breakcon = 1
         if (room == room_library)
         {
-            gml_Script_snd_play(231)
+            gml_Script_snd_play(snd_sparkle_glock)
             for (i = 0; i < 1; i++)
             {
-                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), 2471)
+                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), spr_sparestar_anim)
                 sparkle[i].image_speed = 0.5
                 sparkle[i].hspeed = random_range(-3, 3)
                 sparkle[i].friction = 0.05
@@ -271,11 +271,11 @@ if (con == 31)
         }
         if (global.plot >= 200 && global.flag[387] == 0)
         {
-            gml_Script_snd_play(231)
+            gml_Script_snd_play(snd_sparkle_glock)
             var total_recruits = (gml_Script_scr_get_total_recruits(2) + 1)
             for (i = 0; i < total_recruits; i++)
             {
-                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), 2471)
+                sparkle[i] = gml_Script_scr_marker((kris_x + 15), (kris_y + 15), spr_sparestar_anim)
                 sparkle[i].image_speed = 0.5
                 sparkle[i].hspeed = random_range(-3, 3)
                 sparkle[i].friction = 0.05
@@ -333,7 +333,7 @@ if (con == 32)
 {
     if (timer == 0)
     {
-        megablack = gml_Script_scr_dark_marker(-10, -10, 547)
+        megablack = gml_Script_scr_dark_marker(-10, -10, spr_whitepixel)
         with (megablack)
         {
             depth = 150
@@ -405,9 +405,9 @@ if (con == 33)
     if (timer > 30)
     {
         if (skiprunback == 1 && timer == 36)
-            gml_Script_snd_play(239)
+            gml_Script_snd_play(snd_dtrans_flip)
         if (timer == 39)
-            gml_Script_snd_play(239)
+            gml_Script_snd_play(snd_dtrans_flip)
         if (sus_y >= (finaly - 8))
         {
             con = 34
@@ -451,7 +451,7 @@ if (con == 34)
     }
     if (timer == 27)
     {
-        gml_Script_snd_play(240)
+        gml_Script_snd_play(snd_him_quick)
         with (obj_mainchara)
         {
             x = -999

@@ -1,6 +1,6 @@
 timer++
 if (timer == 1)
-    gml_Script_snd_play(251)
+    gml_Script_snd_play(snd_icespell)
 if (timer == 1)
     hex[0] = gml_Script_instance_create((x - 25), (y - 20), obj_icespell_hexagon)
 if (timer == 4)

@@ -9,8 +9,8 @@ if (timer >= (4 + irandom(1)))
     fx.image_xscale = 2
     fx.image_yscale = 2
     fx.image_speed = 1
-    gml_Script_snd_play(220)
-    gml_Script_snd_volume(220, 0.1, 0)
+    gml_Script_snd_play(snd_rocket)
+    gml_Script_snd_volume(snd_rocket, 0.1, 0)
     obj_spamton_neo_enemy.partx[5] = random(8)
     obj_spamton_neo_enemy.party[5] = random(8)
 }

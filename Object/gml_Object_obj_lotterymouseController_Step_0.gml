@@ -13,7 +13,7 @@ if (victory == true)
     timer++
     if (timer == 30)
     {
-        gml_Script_snd_play_pitch(59, 0.8)
+        gml_Script_snd_play_pitch(snd_locker, 0.8)
         gml_Script_scr_camerareset(20)
     }
     if (timer == 60)

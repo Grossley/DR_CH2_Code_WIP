@@ -9,7 +9,7 @@ if gml_Script_i_ex(target)
 {
     if (t == 10)
     {
-        gml_Script_snd_play(108)
+        gml_Script_snd_play(snd_rudebuster_swing)
         blast = gml_Script_instance_create((x + 40), (y + 30), obj_rudebuster_bolt)
         blast.caster = caster
         blast.target = target

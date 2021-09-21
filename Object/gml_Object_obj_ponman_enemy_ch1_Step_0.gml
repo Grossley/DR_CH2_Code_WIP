@@ -5,7 +5,7 @@ if (global.monster[myself] == true)
         if (global.mercymod[myself] < 100)
             gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         global.msg[0] = " "
         g = gml_Script_scr_enemyblcon_ch1((x - 160), y, 3)
@@ -25,7 +25,7 @@ if (global.monster[myself] == true)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -123,20 +123,20 @@ if (global.myfight == 3)
         gml_Script_snd_pause_ch1(global.batmusic[1])
         if (lullabied == 0)
         {
-            singy = gml_Script_snd_play_ch1(393)
+            singy = gml_Script_snd_play_ch1(snd_ralseising1_ch1)
             with (object_index)
                 lullabied = 1
         }
         else
         {
-            singy = gml_Script_snd_play_ch1(394)
+            singy = gml_Script_snd_play_ch1(snd_ralseising2_ch1)
             with (object_index)
                 lullabied = 0
         }
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ponman_enemy_slash_Step_0_gml_134_0")
         with (obj_heroralsei_ch1)
             visible = false
-        ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3848)
+        ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, spr_ralseib_sing_ch1)
         with (ralsing)
             image_speed = 0.2
         lullatimer = 0
@@ -285,8 +285,8 @@ if (eyecon == 20)
             }
             if (totalshotcount >= maxshot)
                 maxtimer = 1
-            gml_Script_snd_play_ch1(438)
-            bul = gml_Script_instance_create_ch1(((eyex + 28) + x), ((eyey + 32) + y), 1520)
+            gml_Script_snd_play_ch1(snd_hurt1_ch1)
+            bul = gml_Script_instance_create_ch1(((eyex + 28) + x), ((eyey + 32) + y), obj_regularbullet_ch1)
             bul.speed = 2
             bul.timepoints = 2.5
             bul.target = mytarget

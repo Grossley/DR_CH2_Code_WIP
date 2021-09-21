@@ -6,7 +6,7 @@ if (con == 1)
         global.facing = 1
         global.interact = 1
         sprite_index = spr_lancer_lt_ch1
-        exc = gml_Script_instance_create_ch1((x + 40), (y - 20), 1486)
+        exc = gml_Script_instance_create_ch1((x + 40), (y - 20), obj_excblcon_ch1)
         gml_Script_scr_caterpillar_facing_ch1(global.facing)
         con = 2
         alarm[4] = 30
@@ -34,7 +34,7 @@ if (con == 3)
     gml_Script_scr_lanface_ch1(7, 3)
     global.msg[8] = gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_34_0"), name)
     global.msg[9] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_35_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 4
 }
 if (con == 4 && (!gml_Script_d_ex_ch1()))
@@ -56,7 +56,7 @@ if (con == 7)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_59_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_60_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_61_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 8
 }
 if (con == 8 && (!gml_Script_d_ex_ch1()))
@@ -74,7 +74,7 @@ if (con == 10)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_79_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_80_0")
     con = 11
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 11 && (!gml_Script_d_ex_ch1()))
 {
@@ -99,7 +99,7 @@ if (con == 15)
     gml_Script_scr_lanface_ch1(3, 3)
     global.msg[4] = gml_Script_scr_84_get_subst_string_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_108_0"), name)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_109_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 16
 }
 if (con == 16 && (!gml_Script_d_ex_ch1()))
@@ -120,7 +120,7 @@ if (con == 18)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_130_0")
     gml_Script_scr_lanface_ch1(6, 8)
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_132_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 19
     global.currentsong[0] = gml_Script_snd_init_ch1("fanfare.ogg")
 }
@@ -130,7 +130,7 @@ if (con == 19 && (!gml_Script_d_ex_ch1()))
     global.fc = 0
     global.typer = 51
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_144_0")
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     d.skippable = false
     con = 20
     alarm[4] = 120
@@ -146,7 +146,7 @@ if (con == 21)
     global.fe = 8
     global.fc = 1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashafter_event_slash_Step_0_gml_159_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 22
 }
 if (con == 22 && (!gml_Script_d_ex_ch1()))
@@ -158,7 +158,7 @@ if (con == 22 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 25 && (!gml_Script_d_ex_ch1()))
 {
-    npc = gml_Script_instance_create_ch1(x, y, 1408)
+    npc = gml_Script_instance_create_ch1(x, y, obj_npc_room_ch1)
     npc.sprite_index = spr_lancer_dt_ch1
     con = 26
     global.interact = 0

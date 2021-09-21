@@ -1,2 +1,2 @@
-gml_Script_snd_volume(244, 0, 30)
+gml_Script_snd_volume(snd_dtrans_drone, 0, 30)
 alarm[0] = 30

@@ -21,7 +21,7 @@ if (throwcon == 1)
         sprite_index = spr_susieb_attack_unarmed
         angledraw = 0
         throwcon = 2
-        gml_Script_snd_play(157)
+        gml_Script_snd_play(snd_ultraswing)
         kris = gml_Script_instance_create(kx, ky, obj_werewire_kristhrown)
         kris.speed = mypower
         kris.mypower = mypower

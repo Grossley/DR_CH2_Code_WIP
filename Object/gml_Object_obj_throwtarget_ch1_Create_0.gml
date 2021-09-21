@@ -5,7 +5,7 @@ good = 1
 offing = 0
 if (instance_number(object_index) == 1)
 {
-    tt = gml_Script_instance_create_ch1(x, y, 1580)
+    tt = gml_Script_instance_create_ch1(x, y, obj_throwtarget_ch1)
     tt.depth = (depth + 1)
     with (tt)
     {

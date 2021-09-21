@@ -10,7 +10,7 @@ if (global.flag[344] == 0)
     {
         con = 2
         global.interact = 1
-        key = gml_Script_scr_dark_marker(keyXPos, keyYPos, 2310)
+        key = gml_Script_scr_dark_marker(keyXPos, keyYPos, spr_ch2_gimmick_saucer_key)
         fadeplatters = 1
     }
     if fadeplatters
@@ -80,10 +80,10 @@ if (global.flag[344] == 0)
         explosion.sprite_index = spr_realisticexplosion
         explosion.image_xscale = 2
         explosion.image_yscale = 2
-        dooropen = gml_Script_scr_dark_marker(180, 40, 2860)
+        dooropen = gml_Script_scr_dark_marker(180, 40, spr_dw_mansion_door_open)
         dooropen.depth = 899999
         fadeplatters = 0
-        gml_Script_snd_play(188)
+        gml_Script_snd_play(snd_badexplosion)
         instance_destroy(key)
         instance_destroy(exitcollider)
         instance_destroy(doorlocked)
@@ -108,7 +108,7 @@ if (global.flag[344] == 0)
     }
     if make_forcefield
     {
-        forcefield = gml_Script_scr_forcefield(410, 235, 2, 8, 1, 0)
+        forcefield = gml_Script_scr_forcefield(410, 235, 2, 8, true, false)
         forcefield.depth = 80000
         make_forcefield = 0
     }

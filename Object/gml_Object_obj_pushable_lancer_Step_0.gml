@@ -22,7 +22,7 @@ if (movecourse == 1)
     {
         movetimer = movetimetarget
         x = 2018
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
     }
     if (movedir == 3)
     {
@@ -58,7 +58,7 @@ if (movecourse == 1)
             global.interact = 1
             x = 1038
             gml_Script_instance_create(x, y, obj_shake)
-            gml_Script_snd_play(59)
+            gml_Script_snd_play(snd_locker)
             con = 1
             timer = 0
             visible = false
@@ -107,7 +107,7 @@ if (con == 2)
         gml_Script_scr_depth()
     if (plate.y >= 286)
     {
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         plate.y = 294
         plate.speed = 0
         plate.image_angle = 0
@@ -136,7 +136,7 @@ if (con == 3)
     food.image_angle -= 12
     if (food.y >= 294)
     {
-        gml_Script_snd_play(40)
+        gml_Script_snd_play(snd_splat)
         food.y = 302
         food.image_angle = 0
         food.speed = 0
@@ -170,7 +170,7 @@ if (con == 4)
         interactablelancer.sprite_index = spr_cutscene_20_lancer_stone_bib
         global.flag[356] = 1
         global.interact = 0
-        gml_Script_snd_play(149)
+        gml_Script_snd_play(snd_equip)
         instance_destroy()
     }
 }

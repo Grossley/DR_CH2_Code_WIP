@@ -20,8 +20,8 @@ if (global.interact == 0)
     if (type == 3)
     {
         image_index = 1
-        gml_Script_snd_stop(40)
-        gml_Script_snd_play(40)
+        gml_Script_snd_stop(snd_splat)
+        gml_Script_snd_play(snd_splat)
         type = 4
     }
     if (type == 4)

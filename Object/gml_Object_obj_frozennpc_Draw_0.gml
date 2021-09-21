@@ -2,7 +2,7 @@ if (fresh == 0)
 {
     image_alpha = 1
     if (skipsound == 0)
-        gml_Script_snd_play(201)
+        gml_Script_snd_play(snd_petrify)
     if (global.flag[55] != 0 && global.flag[56] != 0)
         returntoxy = 1
     fresh = 2

@@ -11,7 +11,7 @@ if global.is_console
 {
     if (!instance_exists(obj_gamecontroller))
         gml_Script_instance_create(0, 0, obj_gamecontroller)
-    if (!gml_Script_i_ex(1110))
+    if (!gml_Script_i_ex(obj_border_controller))
         gml_Script_instance_create(0, 0, obj_border_controller)
 }
 paused = 0

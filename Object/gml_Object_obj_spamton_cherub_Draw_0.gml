@@ -1,6 +1,6 @@
 if (timer == target)
 {
-    var _sparkle = gml_Script_snd_play(231)
+    var _sparkle = gml_Script_snd_play(snd_sparkle_glock)
     gml_Script_snd_pitch(_sparkle, (1.1 + (target * 0.2)))
 }
 timer++

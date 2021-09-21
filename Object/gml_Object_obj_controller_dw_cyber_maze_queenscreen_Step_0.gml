@@ -116,14 +116,14 @@ if instance_exists(obj_mainchara)
         }
     }
 }
-if gml_Script_i_ex(80)
+if gml_Script_i_ex(obj_mainchara)
 {
     if (obj_mainchara.x >= 1000 && obj_mainchara.y < 430 && global.flag[350] == 0)
         global.flag[350] = 1
 }
 if (global.flag[350] == 1)
-    gml_Script_safe_delete(101)
-if gml_Script_i_ex(865)
+    gml_Script_safe_delete(obj_npc_room)
+if gml_Script_i_ex(obj_battleback)
 {
     gml_Script_safe_delete(werewire1)
     gml_Script_safe_delete(werewire2)
@@ -177,7 +177,7 @@ if gml_Script_i_ex(werewire6)
         hatflyaway = 1
     }
 }
-if (spawned == 1 && gml_Script_i_ex(hat) && hatflyaway == 1 && gml_Script_i_ex(865))
+if (spawned == 1 && gml_Script_i_ex(hat) && hatflyaway == 1 && gml_Script_i_ex(obj_battleback))
 {
     with (hat)
     {

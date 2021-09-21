@@ -18,7 +18,7 @@ if (global.interact == 0 && con == 1)
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 3 && (!gml_Script_i_ex(895)))
+if (con == 3 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 0
     global.plot = 50

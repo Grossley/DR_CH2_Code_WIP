@@ -12,15 +12,15 @@ if (con == 3)
     con = 4
     for (i = 0; i < 3; i += 1)
     {
-        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 320, 4188)
+        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 320, spr_magicalglass_ch1)
         glass.depth = 950000
-        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, 4188)
+        glass = gml_Script_scr_dark_marker_ch1((960 + (i * 40)), 360, spr_magicalglass_ch1)
         glass.depth = 950000
     }
     with (block)
         instance_destroy()
-    gml_Script_snd_play_ch1(378)
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(snd_impact_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     global.facing = 1
     alarm[4] = 30
     for (i = 0; i < 3; i += 1)

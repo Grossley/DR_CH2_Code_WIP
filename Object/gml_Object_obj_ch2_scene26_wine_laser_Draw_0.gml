@@ -31,7 +31,7 @@ if (timer >= 40)
     trailend = ((d.x - 30) - gml_Script_camerax())
     d.sprite_index = spr_explosion_round
     if ((explosioncount % 3) == 0)
-        gml_Script_snd_play(141)
+        gml_Script_snd_play(snd_bomb)
     explosioncount++
     d.image_xscale = 2
     d.image_yscale = 2

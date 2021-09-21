@@ -1,7 +1,7 @@
 if (con == 1 && (!gml_Script_d_ex()))
 {
     global.interact = 1
-    gml_Script_snd_play(102)
+    gml_Script_snd_play(snd_weirdeffect)
     con++
 }
 if (con == 2 && (!gml_Script_d_ex()))

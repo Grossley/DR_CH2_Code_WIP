@@ -22,20 +22,20 @@ if (timer > (6 / m) && timer <= (my_length + 3))
     laser.friction = (-my_accel)
     laser.image_yscale = 1
     laser.my_angle_change = my_angle_change
-    if gml_Script_i_ex(694)
+    if gml_Script_i_ex(obj_spamton_neo_enemy)
         laser.sprite_index = spr_bullet_laser_square_sneo
     else
         laser.sprite_index = spr_bullet_laser_square
     if (timer == 3)
     {
-        if gml_Script_i_ex(694)
+        if gml_Script_i_ex(obj_spamton_neo_enemy)
             laser.sprite_index = spr_bullet_laser_front_sneo
         else
             laser.sprite_index = spr_bullet_laser_front
     }
     if (timer == (my_length + 3))
     {
-        if gml_Script_i_ex(694)
+        if gml_Script_i_ex(obj_spamton_neo_enemy)
             laser.sprite_index = spr_bullet_laser_front_sneo
         else
             laser.sprite_index = spr_bullet_laser_front

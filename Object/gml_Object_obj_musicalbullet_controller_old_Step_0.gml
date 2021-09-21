@@ -92,7 +92,7 @@ if (tobymode == 1 && made == 0)
 }
 if (tobymode == 1 && made == 1)
 {
-    if ((global.turntimer < 10 && global.turntimer > 4) || (!gml_Script_i_ex(1104)))
+    if ((global.turntimer < 10 && global.turntimer > 4) || (!gml_Script_i_ex(obj_musicalbattlebullet)))
     {
         con = 0
         global.turntimer = 3

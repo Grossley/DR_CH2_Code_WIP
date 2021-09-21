@@ -13,7 +13,7 @@ if (global.monster[myself] == true)
     if (global.mnfight == 1 && talked == 0)
     {
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_king_boss_slash_Step_0_gml_25_0")
         blcontype = 3
@@ -196,7 +196,7 @@ if (global.myfight == 3)
         }
         else
         {
-            gml_Script_snd_play_ch1(430)
+            gml_Script_snd_play_ch1(snd_power_ch1)
             with (obj_heroparent_ch1)
             {
                 __of = gml_Script_scr_oflash_ch1()
@@ -291,8 +291,8 @@ if (global.myfight == 3)
         global.charspecial[1] = 5
         global.chartarget[1] = 0
         global.acting[1] = 0
-        gml_Script_snd_play_ch1(414)
-        heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), 1402)
+        gml_Script_snd_play_ch1(snd_boost_ch1)
+        heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), obj_animation_ch1)
         with (heartanim)
         {
             depth = -20
@@ -334,8 +334,8 @@ if (global.myfight == 3)
         global.charspecial[2] = 6
         global.chartarget[2] = 0
         global.acting[2] = 0
-        gml_Script_snd_play_ch1(414)
-        heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), 1402)
+        gml_Script_snd_play_ch1(snd_boost_ch1)
+        heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), obj_animation_ch1)
         with (heartanim)
         {
             depth = -20

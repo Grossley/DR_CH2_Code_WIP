@@ -34,10 +34,10 @@ if (tornadocon == 1)
         x = remx
         y = remy
         gml_Script_scr_oflash()
-        gml_Script_snd_play(51)
+        gml_Script_snd_play(snd_wing)
         for (i = 0; i < 12; i++)
         {
-            tornado = gml_Script_scr_marker((x + 30), (y + 60), 1850)
+            tornado = gml_Script_scr_marker((x + 30), (y + 60), spr_berdlyb_tornado)
             tornado.gravity = (-0.5 - random(0.2))
             tornado.friction = 0.2
             tornado.image_speed = 0.25
@@ -57,7 +57,7 @@ if (con == 1)
 {
     floatcon = 0
     gml_Script_scr_shakeobj()
-    gml_Script_snd_play(60)
+    gml_Script_snd_play(snd_grab)
     sprite_index = spr_cutscene_25_berdly_grab_plug_old
     con = 2
 }

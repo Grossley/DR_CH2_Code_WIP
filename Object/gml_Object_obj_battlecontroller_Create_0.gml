@@ -1,7 +1,7 @@
 if (global.flag[9] == 1)
 {
     var battlemusicvolume = 0.7
-    if gml_Script_i_ex(181)
+    if gml_Script_i_ex(obj_astream)
     {
         if (obj_astream.mystream == global.batmusic[0])
         {

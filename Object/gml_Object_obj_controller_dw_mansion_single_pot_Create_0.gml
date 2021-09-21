@@ -1,7 +1,7 @@
 con = 0
 drawtimer = 0
 visible = true
-queen_monitor_frame = gml_Script_scr_dark_marker(142, 80, 2877)
+queen_monitor_frame = gml_Script_scr_dark_marker(142, 80, spr_dw_mansion_monitor_frame)
 with (queen_monitor_frame)
     gml_Script_scr_depth()
 queen_monitor = gml_Script_instance_create((queen_monitor_frame.x + 175), (queen_monitor_frame.y + 60), obj_queenmonitor)

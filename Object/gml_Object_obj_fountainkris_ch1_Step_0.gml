@@ -44,7 +44,7 @@ if (con == 3.1)
         JA_XOFF = 50
     global.typer = 37
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_47_0")
-    gml_Script_instance_create_ch1((100 + JA_XOFF), 80, 1327)
+    gml_Script_instance_create_ch1((100 + JA_XOFF), 80, obj_writer_ch1)
     con = 4
 }
 if (con == 4 && (!instance_exists(obj_writer_ch1)))
@@ -59,7 +59,7 @@ if (con == 4.2)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_65_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_66_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_67_0")
-    gml_Script_instance_create_ch1((100 + JA_XOFF), 80, 1327)
+    gml_Script_instance_create_ch1((100 + JA_XOFF), 80, obj_writer_ch1)
     con = 6
 }
 if (con == 6 && (!instance_exists(obj_writer_ch1)))
@@ -74,7 +74,7 @@ if (con == 8)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_82_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_83_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_84_0")
-    gml_Script_instance_create_ch1((100 + JA_XOFF), 80, 1327)
+    gml_Script_instance_create_ch1((100 + JA_XOFF), 80, obj_writer_ch1)
     con = 8.1
 }
 if (con == 8.1 && (!instance_exists(obj_writer_ch1)))
@@ -100,13 +100,13 @@ if (con == 10.1)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_113_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_114_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_fountainkris_slash_Step_0_gml_115_0")
-    gml_Script_instance_create_ch1((80 + JA_XOFF), 80, 1327)
+    gml_Script_instance_create_ch1((80 + JA_XOFF), 80, obj_writer_ch1)
     con = 12
 }
 if (con == 12 && (!instance_exists(obj_writer_ch1)))
 {
     gml_Script_snd_free_all_ch1()
     made = 1
-    gml_Script_instance_create_ch1((x + (sprite_width / 2)), ((y + (sprite_width / 2)) + 20), 1483)
+    gml_Script_instance_create_ch1((x + (sprite_width / 2)), ((y + (sprite_width / 2)) + 20), obj_darkfountain_event_ch1)
     con = 13
 }

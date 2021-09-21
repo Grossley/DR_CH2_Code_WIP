@@ -104,7 +104,7 @@ if (init == 1)
                 dropped = 1
                 vspeed = 16
                 gravity = 1
-                gml_Script_snd_play(91)
+                gml_Script_snd_play(snd_wallclaw)
             }
         }
         if (magnitude < 100)

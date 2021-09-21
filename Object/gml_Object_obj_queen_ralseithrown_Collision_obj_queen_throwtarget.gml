@@ -21,7 +21,7 @@ if (other.collided == 0)
     if (other.good == 1)
     {
         global.msg[0] = gml_Script_stringsetloc("* The wire was cut!/%", "obj_queen_ralseithrown_slash_Collision_22f849ff_cd13_405b_a486_5468f83d4033_gml_23_0")
-        gml_Script_snd_play(148)
+        gml_Script_snd_play(snd_coin)
         with (other)
         {
             if (offing == 1)
@@ -32,7 +32,7 @@ if (other.collided == 0)
     }
     else
     {
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         with (other)
             con = 7
         global.msg[0] = gml_Script_stringsetloc("* The wire was cut!/%", "obj_queen_ralseithrown_slash_Collision_22f849ff_cd13_405b_a486_5468f83d4033_gml_42_0")

@@ -10,7 +10,7 @@ if (con < 400)
         global.fe = 3
         global.typer = 31
         global.fc = 2
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 20 && gml_Script_d_ex_ch1() == 0)
     {
@@ -18,7 +18,7 @@ if (con < 400)
         global.specialbattle = 3
         global.flag[9] = 1
         global.batmusic[0] = gml_Script_snd_init_ch1("battle.ogg")
-        gml_Script_instance_create_ch1(0, 0, 1488)
+        gml_Script_instance_create_ch1(0, 0, obj_encounterbasic_ch1)
         con = 21
         alarm[4] = 10
     }
@@ -67,7 +67,7 @@ if (con < 400)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_tutorialbattleevent_slash_Step_0_gml_95_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_tutorialbattleevent_slash_Step_0_gml_96_0")
         }
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         gml_Script_scr_itemget_ch1(4)
         con = 28
     }

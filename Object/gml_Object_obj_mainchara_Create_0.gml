@@ -97,79 +97,79 @@ if (global.interact == 3)
         switch global.entrance
         {
             case 1:
-                if gml_Script_i_ex(154)
+                if gml_Script_i_ex(obj_markerA)
                     gml_Script_setxy(obj_markerA.x, obj_markerA.y)
                 else
                     noentrancefound = 1
                 break
             case 2:
-                if gml_Script_i_ex(155)
+                if gml_Script_i_ex(obj_markerB)
                     gml_Script_setxy(obj_markerB.x, obj_markerB.y)
                 else
                     noentrancefound = 1
                 break
             case 3:
-                if gml_Script_i_ex(156)
+                if gml_Script_i_ex(obj_markerC)
                     gml_Script_setxy(obj_markerC.x, obj_markerC.y)
                 else
                     noentrancefound = 1
                 break
             case 4:
-                if gml_Script_i_ex(157)
+                if gml_Script_i_ex(obj_markerD)
                     gml_Script_setxy(obj_markerD.x, obj_markerD.y)
                 else
                     noentrancefound = 1
                 break
             case 5:
-                if gml_Script_i_ex(158)
+                if gml_Script_i_ex(obj_markerE)
                     gml_Script_setxy(obj_markerE.x, obj_markerE.y)
                 else
                     noentrancefound = 1
                 break
             case 6:
-                if gml_Script_i_ex(159)
+                if gml_Script_i_ex(obj_markerF)
                     gml_Script_setxy(obj_markerF.x, obj_markerF.y)
                 else
                     noentrancefound = 1
                 break
             case 18:
-                if gml_Script_i_ex(160)
+                if gml_Script_i_ex(obj_markerr)
                     gml_Script_setxy(obj_markerr.x, obj_markerr.y)
                 else
                     noentrancefound = 1
                 break
             case 19:
-                if gml_Script_i_ex(161)
+                if gml_Script_i_ex(obj_markers)
                     gml_Script_setxy(obj_markers.x, obj_markers.y)
                 else
                     noentrancefound = 1
                 break
             case 20:
-                if gml_Script_i_ex(162)
+                if gml_Script_i_ex(obj_markert)
                     gml_Script_setxy(obj_markert.x, obj_markert.y)
                 else
                     noentrancefound = 1
                 break
             case 21:
-                if gml_Script_i_ex(163)
+                if gml_Script_i_ex(obj_markeru)
                     gml_Script_setxy(obj_markeru.x, obj_markeru.y)
                 else
                     noentrancefound = 1
                 break
             case 22:
-                if gml_Script_i_ex(164)
+                if gml_Script_i_ex(obj_markerv)
                     gml_Script_setxy(obj_markerv.x, obj_markerv.y)
                 else
                     noentrancefound = 1
                 break
             case 23:
-                if gml_Script_i_ex(165)
+                if gml_Script_i_ex(obj_markerw)
                     gml_Script_setxy(obj_markerw.x, obj_markerw.y)
                 else
                     noentrancefound = 1
                 break
             case 24:
-                if gml_Script_i_ex(166)
+                if gml_Script_i_ex(obj_markerX)
                     gml_Script_setxy(obj_markerX.x, obj_markerX.y)
                 else
                     noentrancefound = 1
@@ -180,7 +180,7 @@ if (global.interact == 3)
 
         if (noentrancefound == 1)
         {
-            if gml_Script_i_ex(139)
+            if gml_Script_i_ex(obj_markerAny)
             {
                 with (obj_markerAny)
                 {

@@ -10,12 +10,12 @@ if (con == 2.5)
     global.fc = 11
     global.typer = 20
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_14_0")
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 3
 }
 if (con == 3 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    gml_Script_snd_play_ch1(380)
+    gml_Script_snd_play_ch1(snd_dooropen_ch1)
     with (door)
         image_index = 1
     con = 4
@@ -45,7 +45,7 @@ if (con == 7)
     }
     with (door)
         image_index = 0
-    gml_Script_snd_play_ch1(379)
+    gml_Script_snd_play_ch1(snd_doorclose_ch1)
     con = 8
     alarm[4] = 30
 }
@@ -55,18 +55,18 @@ if (con == 9)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_61_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_62_0")
     con = 10
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 10 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     gml_Script_mus_loop_ch1(global.currentsong[0])
     gml_Script___view_set(9, 0, -4)
-    door_readable = gml_Script_instance_create_ch1(244, 51, 1405)
+    door_readable = gml_Script_instance_create_ch1(244, 51, obj_readable_room1_ch1)
     alphys2 = alphys
-    alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), 1407)
+    alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), obj_npc_facing_ch1)
     with (alphys2)
         instance_destroy()
-    doorsolid = gml_Script_instance_create_ch1(236, 52, 1334)
+    doorsolid = gml_Script_instance_create_ch1(236, 52, obj_solidblock_ch1)
     with (doorsolid)
         image_xscale = 2
     with (door)
@@ -98,11 +98,11 @@ if (con == 22)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_111_0")
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_112_0")
     con = 23
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 23 && instance_exists(obj_dialoguer_ch1) == 0)
 {
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     gml_Script_snd_stop_all_ch1()
     gml_Script_snd_free_ch1(global.currentsong[0])
     with (door)
@@ -112,7 +112,7 @@ if (con == 23 && instance_exists(obj_dialoguer_ch1) == 0)
         sprite_index = spr_classdoorslam_ch1
         depth = 5000
     }
-    sus = gml_Script_scr_marker_ch1(237, 24, 3540)
+    sus = gml_Script_scr_marker_ch1(237, 24, spr_susied_plain_ch1)
     with (sus)
         gml_Script_scr_depth_ch1()
     con = 24
@@ -122,9 +122,9 @@ if (con == 23 && instance_exists(obj_dialoguer_ch1) == 0)
 }
 if (con == 25)
 {
-    gml_Script_snd_play_ch1(378)
+    gml_Script_snd_play_ch1(snd_impact_ch1)
     alphys2 = alphys
-    alphys = gml_Script_scr_marker_ch1(alphys.x, alphys.y, 3484)
+    alphys = gml_Script_scr_marker_ch1(alphys.x, alphys.y, spr_alphysr_shock_ch1)
     with (alphys)
         gml_Script_scr_depth_ch1()
     with (alphys2)
@@ -169,7 +169,7 @@ if (con == 33)
     global.fc = 11
     global.typer = 22
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_190_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 28
     alarm[4] = 20
 }
@@ -187,7 +187,7 @@ if (con == 35)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_209_0")
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_210_0")
     con = 36
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 36 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -203,7 +203,7 @@ if (con == 38)
     global.fe = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_230_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_231_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 39
 }
 if (con == 39 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -233,7 +233,7 @@ if (con == 43)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_263_0")
     con = 44
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 44 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -269,7 +269,7 @@ if (con == 51)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_301_0")
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_302_0")
     global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_303_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 51.1
 }
 if (con == 51.1 && gml_Script_d_ex_ch1() == 0)
@@ -287,7 +287,7 @@ if (con == 51.2)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_319_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_320_0")
     con = 51.3
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 51.3 && gml_Script_d_ex_ch1() == 0)
 {
@@ -308,7 +308,7 @@ if (con == 51.4)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_340_0")
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_341_0")
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_342_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 52
 }
 if (con == 52)
@@ -337,8 +337,8 @@ if (con == 54)
 {
     with (sus)
         instance_destroy()
-    gml_Script_instance_create_ch1(0, 0, 1464)
-    gml_Script_snd_play_ch1(378)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
+    gml_Script_snd_play_ch1(snd_impact_ch1)
     with (door)
         image_index = 0
     con = 55
@@ -356,18 +356,18 @@ if (con == 56)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_394_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_395_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_classscene_slash_Step_0_gml_396_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 57
 }
 if (con == 57 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     with (door_readable)
         instance_destroy()
-    doorb = gml_Script_instance_create_ch1(242, 51, 1417)
+    doorb = gml_Script_instance_create_ch1(242, 51, obj_doorB_ch1)
     global.plot = 3
     global.facing = 0
     alphys2 = alphys
-    alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), 1407)
+    alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), obj_npc_facing_ch1)
     with (obj_npc_facing_ch1)
         talked = 0
     with (alphys2)

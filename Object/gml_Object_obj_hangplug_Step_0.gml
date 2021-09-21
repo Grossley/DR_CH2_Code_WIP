@@ -32,9 +32,9 @@ if (active == true && decorative == 0)
             timerbtarget = 8
         if (timerb == timerbtarget)
         {
-            if (!gml_Script_snd_is_playing(46))
+            if (!gml_Script_snd_is_playing(snd_spearappear))
             {
-                spawn = gml_Script_snd_play(46)
+                spawn = gml_Script_snd_play(snd_spearappear)
                 gml_Script_snd_volume(spawn, 0.6, 0)
             }
             image_index = 0

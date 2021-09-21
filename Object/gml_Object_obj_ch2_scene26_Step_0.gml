@@ -10,7 +10,7 @@ if (obj_mainchara.x > 1120 && con == -1)
     gml_Script_scr_actor_setup(qu, qu_actor, "queen")
     qu_actor.sprite_index = spr_cutscene_26_queen_back
     gml_Script_c_sel(qu)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_imagespeed(0.25)
     no = 5
     no_actor = gml_Script_instance_create(2146, 167, obj_actor)
@@ -21,22 +21,22 @@ if (obj_mainchara.x > 1120 && con == -1)
     no_actor.depth = (queenhand.depth - 100)
     gml_Script_c_visible(0)
     qu_flame = 6
-    qu_flame_actor = gml_Script_scr_dark_marker(1670, 130, 764)
+    qu_flame_actor = gml_Script_scr_dark_marker(1670, 130, spr_queen_chair_flame_side)
     gml_Script_scr_actor_setup_nofacing(qu_flame, qu_flame_actor, "qu_flame")
     gml_Script_c_sel(qu_flame)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_stickto(qu_actor, 100)
-    queenwinehand = gml_Script_scr_dark_marker(1600, ((gml_Script_cameray() + view_hport[0]) + 100), 300)
+    queenwinehand = gml_Script_scr_dark_marker(1600, ((gml_Script_cameray() + view_hport[0]) + 100), spr_cutscene_26_queen_giga_hand_glass)
     queenwinehand.depth = 1000100
     queenwinehand.image_speed = 0
     queenwinehand.visible = false
-    queenfistleft = gml_Script_scr_dark_marker(1770, ((gml_Script_cameray() + view_hport[0]) + 100), 268)
+    queenfistleft = gml_Script_scr_dark_marker(1770, ((gml_Script_cameray() + view_hport[0]) + 100), spr_cutscene_26_queen_giga_fist_left)
     queenfistleft.depth = 1000240
     queenfistleft.visible = false
-    damage1 = gml_Script_scr_dark_marker(1680, 266, 280)
+    damage1 = gml_Script_scr_dark_marker(1680, 266, spr_cutscene_26_slam_damage)
     damage1.depth = 950000
     damage1.visible = false
-    damage2 = gml_Script_scr_dark_marker(2100, 266, 280)
+    damage2 = gml_Script_scr_dark_marker(2100, 266, spr_cutscene_26_slam_damage)
     damage2.depth = 950000
     damage2.visible = false
 }
@@ -46,7 +46,7 @@ if (con == 1)
     alarm[0] = 30
     gml_Script_c_wait(15)
     gml_Script_c_mus2("volume", 0, 30)
-    gml_Script_c_pannable(1)
+    gml_Script_c_pannable(true)
     gml_Script_c_panspeed_wait(5, 0, 120)
     gml_Script_c_mus("free_all")
     gml_Script_c_msgside("bottom")
@@ -67,7 +67,7 @@ if (con == 3 && obj_ch2_scene26_cityscape.cityscape_reveal && customcon == 1)
     customcon = 0
     gml_Script_c_waitcustom_end()
     gml_Script_c_sel(qu)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_walkdirect(1581, 173, 15)
     gml_Script_c_var_instance(id, "laser_con", 1)
     gml_Script_c_msgsetloc(0, "* Reaching Its Long Hand To The Sky/%", "obj_ch2_scene26_slash_Step_0_gml_101_0")
@@ -95,7 +95,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
     gml_Script_c_msgsetloc(0, "* And Made/%", "obj_ch2_scene26_slash_Step_0_gml_103_0")
     gml_Script_c_talk_wait()
     gml_Script_c_sel(qu)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_walkdirect(1670, 130, 15)
     gml_Script_c_msgsetloc(0, "* Thrusting The Fountain From The Earth/%", "obj_ch2_scene26_slash_Step_0_gml_104_0")
     gml_Script_c_talk_wait()
@@ -133,12 +133,12 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
     if (gml_Script_scr_sideb_get_phase() < 2)
     {
         gml_Script_c_sel(qu)
-        gml_Script_c_sprite(765)
+        gml_Script_c_sprite(spr_queen_chair_pose)
         gml_Script_c_sel(qu_flame)
-        gml_Script_c_sprite(763)
+        gml_Script_c_sprite(spr_queen_chair_flame)
         gml_Script_c_panspeed(8, 0, 43)
         gml_Script_c_sel(qu)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_walk_wait("r", 6, 45)
         gml_Script_c_msgzurasu(1)
         gml_Script_c_speaker("queen")
@@ -181,20 +181,20 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_var_instance(queenhand, "sprite_index", 272)
         gml_Script_c_sel(no)
         gml_Script_c_visible(1)
-        gml_Script_c_soundplay(159)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_soundplay(snd_jump)
+        gml_Script_c_autowalk(false)
         gml_Script_c_jump_sprite(2105, 210, 10, 15, 716, 712)
         gml_Script_c_wait(15)
-        gml_Script_c_sprite(712)
+        gml_Script_c_sprite(spr_noelle_kneel)
         gml_Script_c_var_lerp_instance(queenhand, "y", queenhand.y, ((gml_Script_cameray() + view_hport[0]) + 200), 60)
         gml_Script_c_wait(30)
-        gml_Script_c_sprite(715)
+        gml_Script_c_sprite(spr_noelle_kneel_face_left)
         gml_Script_c_msgside("bottom")
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\EN* S-Susie...^1! You..^1. you came to save me!/%", "obj_ch2_scene26_slash_Step_0_gml_277_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(714)
+        gml_Script_c_sprite(spr_noelle_kneel_happy)
         gml_Script_c_halt()
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\E6* Somehow^1, I..^1. I..^1. I knew you would.../%", "obj_ch2_scene26_slash_Step_0_gml_285_0")
@@ -205,7 +205,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgsetloc(0, "\\E3* Uh^1, you did?/%", "obj_ch2_scene26_slash_Step_0_gml_292_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(215)
+        gml_Script_c_sprite(spr_cutscene_23b_noelle_blush)
         gml_Script_c_halt()
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\EP* Umm^1, I mean..^1. I..^1. umm.. well.../", "obj_ch2_scene26_slash_Step_0_gml_298_0")
@@ -213,7 +213,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_talk_wait()
         gml_Script_c_wait(5)
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(716)
+        gml_Script_c_sprite(spr_noelle_shocked_dw)
         gml_Script_c_shakeobj()
         gml_Script_c_sel(su)
         gml_Script_c_facing("r")
@@ -231,14 +231,14 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgsetloc(0, "\\E6* H-huh?!/%", "obj_ch2_scene26_slash_Step_0_gml_333_0")
         gml_Script_c_talk_wait()
         gml_Script_c_mus("free_all")
-        gml_Script_c_soundplay(2)
+        gml_Script_c_soundplay(snd_queen_laugh_bitcrush_deep)
         gml_Script_c_wait(60)
         gml_Script_c_var_instance(id, "shakeloop", 1)
         gml_Script_c_var_lerp_instance(bg_cover, "image_alpha", 0, 1, 60)
         gml_Script_c_sel(ra)
-        gml_Script_c_sprite(1507)
+        gml_Script_c_sprite(spr_ralsei_hurt_overworld)
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(996)
+        gml_Script_c_sprite(spr_susie_shock_r)
         gml_Script_c_wait(60)
         gml_Script_c_mus("free_all")
         gml_Script_c_mus2("initloop", "giant_queen_appears.ogg", 0)
@@ -256,15 +256,15 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_sel(kr)
         gml_Script_c_facing("u")
         gml_Script_c_sel(ra)
-        gml_Script_c_sprite(813)
+        gml_Script_c_sprite(spr_ralsei_shocked_behind)
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(843)
+        gml_Script_c_sprite(spr_susie_shocked_behind)
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(736)
+        gml_Script_c_sprite(spr_noelle_shocked_behind_dw)
         gml_Script_c_wait(30)
         gml_Script_c_var_instance(id, "shakeloop", 0)
         gml_Script_c_wait(30)
-        gml_Script_c_soundplay(2)
+        gml_Script_c_soundplay(snd_queen_laugh_bitcrush_deep)
         gml_Script_c_var_instance(id, "queen_laugh_start", 1)
         gml_Script_c_shake()
         gml_Script_c_wait(62)
@@ -295,8 +295,8 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgsetloc(0, "\\E4* H..^1. heh.../%", "obj_ch2_scene26_slash_Step_0_gml_464_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(43)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_cutscene_09_susie_point)
         gml_Script_c_imageindex(0)
         gml_Script_c_imagespeed(0.15)
         gml_Script_c_speaker("susie")
@@ -306,7 +306,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_talk_wait()
         gml_Script_c_wait(10)
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_facing("u")
         gml_Script_c_var_instance(queenwinehand, "visible", 1)
         gml_Script_c_var_lerp_instance(queenwinehand, "y", queenwinehand.y, 149, 15)
@@ -322,7 +322,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_var_instance(id, "winelaser", 1)
         gml_Script_c_wait(6)
         gml_Script_c_var_instance(queenwinehand, "image_index", 1)
-        gml_Script_c_soundplay(44)
+        gml_Script_c_soundplay(snd_shadowpendant)
         gml_Script_c_wait(15)
         gml_Script_c_wait(3)
         gml_Script_c_sel(su)
@@ -338,25 +338,25 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_facing("r")
         gml_Script_c_wait(15)
         gml_Script_c_sel(ra)
-        gml_Script_c_soundplay(61)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(52)
+        gml_Script_c_soundplay(snd_impact)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_cutscene_10_ralsei_splat)
         gml_Script_c_addxy(-35, 50)
         gml_Script_c_shakeobj()
         gml_Script_c_wait(2)
         gml_Script_c_sel(kr)
         gml_Script_c_shakeobj()
-        gml_Script_c_soundplay(61)
-        gml_Script_c_sprite(1412)
+        gml_Script_c_soundplay(snd_impact)
+        gml_Script_c_sprite(spr_krisb_defeat)
         gml_Script_c_wait(2)
         gml_Script_c_sel(su)
         gml_Script_c_shakeobj()
-        gml_Script_c_soundplay(61)
-        gml_Script_c_sprite(1444)
+        gml_Script_c_soundplay(snd_impact)
+        gml_Script_c_sprite(spr_susieb_defeat)
         gml_Script_c_wait(6)
         gml_Script_c_sel(no)
         gml_Script_c_shakeobj()
-        gml_Script_c_sprite(712)
+        gml_Script_c_sprite(spr_noelle_kneel)
         gml_Script_c_wait(10)
         gml_Script_c_var_instance(queenwinehand, "image_index", 0)
         gml_Script_c_wait(15)
@@ -376,16 +376,16 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgsetloc(0, "\\EH* Hell if we're giving up now!!/%", "obj_ch2_scene26_slash_Step_0_gml_659_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(no)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(713)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_noelle_kneel_shocked)
         gml_Script_c_imageindex(0)
         gml_Script_c_wait(10)
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\EF* S..^1. Susie...?/%", "obj_ch2_scene26_slash_Step_0_gml_671_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(43)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_cutscene_09_susie_point)
         gml_Script_c_imageindex(0)
         gml_Script_c_imagespeed(0.15)
         gml_Script_c_speaker("susie")
@@ -395,12 +395,12 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_sel(kr)
         gml_Script_c_facing("r")
         gml_Script_c_sel(ra)
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_facing("r")
         gml_Script_c_addxy(35, -50)
         gml_Script_c_wait(10)
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_facing("l")
         gml_Script_c_speaker("susie")
         gml_Script_c_msgsetloc(0, "\\EN* Kris^1, Ralsei^1, c'mon!!/%", "obj_ch2_scene26_slash_Step_0_gml_700_0")
@@ -409,22 +409,22 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_wait(30)
         gml_Script_c_sel(ra)
         gml_Script_c_setxy(1910, 225)
-        gml_Script_c_sprite(53)
+        gml_Script_c_sprite(spr_cutscene_10_ralsei_stool)
         gml_Script_c_sel(kr)
         gml_Script_c_visible(0)
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(59)
+        gml_Script_c_sprite(spr_cutscene_10_susie_kris_t_pose_front)
         gml_Script_c_setxy(1960, 210)
         gml_Script_c_wait(15)
         gml_Script_c_fadein(15)
         gml_Script_c_wait(15)
-        gml_Script_c_soundplay(159)
+        gml_Script_c_soundplay(snd_jump)
         gml_Script_c_jump(1890, 180, 20, 15)
         gml_Script_c_wait(15)
-        gml_Script_c_sprite(54)
+        gml_Script_c_sprite(spr_cutscene_10_susie_kris_t_pose_back)
         gml_Script_c_wait(15)
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(716)
+        gml_Script_c_sprite(spr_noelle_shocked_dw)
         gml_Script_c_imageindex(0)
         gml_Script_c_imagespeed(0)
         gml_Script_c_speaker("noelle")
@@ -448,29 +448,29 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_var_instance(id, "fist_explode", 1)
         gml_Script_c_var_lerp_instance(queenfistleft, "y", 15, 187, 3)
         gml_Script_c_wait(3)
-        gml_Script_c_soundplay(61)
-        gml_Script_c_soundplay(141)
+        gml_Script_c_soundplay(snd_impact)
+        gml_Script_c_soundplay(snd_bomb)
         gml_Script_c_shake()
         gml_Script_c_sel(qu)
         gml_Script_c_visible(0)
         gml_Script_c_var_instance(queenhand, "visible", 0)
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(716)
+        gml_Script_c_sprite(spr_noelle_shocked_dw)
         gml_Script_c_sel(kr)
         gml_Script_c_setxy(1890, 220)
         gml_Script_c_visible(1)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_jump_sprite(2023, 720, 40, 30, 536, 536)
         gml_Script_c_delaycmd(5, "sprite", 536)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_sel(ra)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_jump_sprite(1830, 720, 40, 30, 1518, 1518)
         gml_Script_c_delaycmd(5, "sprite", 1518)
         gml_Script_c_var_instance(ra_actor, "siner_add0", 0.5)
         gml_Script_c_sel(su)
-        gml_Script_c_autowalk(0)
-        gml_Script_c_sprite(819)
+        gml_Script_c_autowalk(false)
+        gml_Script_c_sprite(spr_susie_walk_down_dw)
         gml_Script_c_jump_sprite(1938, 720, 40, 30, 845, 845)
         gml_Script_c_delaycmd(5, "sprite", 845)
         gml_Script_c_imagespeed(0.25)
@@ -509,7 +509,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_visible(0)
         gml_Script_c_sel(su)
         gml_Script_c_visible(0)
-        gml_Script_c_soundplay(186)
+        gml_Script_c_soundplay(snd_lancerwhistle)
         gml_Script_c_wait(30)
         gml_Script_c_var_instance(id, "wallcon", 2)
         gml_Script_c_var_lerp_instance(bg_cover, "image_alpha", 1, 0, 15)
@@ -538,14 +538,14 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_var_instance(anime_bg, "image_alpha", 1)
         gml_Script_c_sel(su)
         gml_Script_c_visible(1)
-        gml_Script_c_sprite(59)
+        gml_Script_c_sprite(spr_cutscene_10_susie_kris_t_pose_front)
         gml_Script_c_halt()
         gml_Script_c_setxy(1910, 720)
         gml_Script_c_autodepth(0)
         gml_Script_c_depth(90000)
         gml_Script_c_sel(ra)
         gml_Script_c_visible(1)
-        gml_Script_c_sprite(53)
+        gml_Script_c_sprite(spr_cutscene_10_ralsei_stool)
         gml_Script_c_halt()
         gml_Script_c_setxy(1940, 770)
         gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 1, 0, 30)
@@ -564,7 +564,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_var_instance(bigqueen, "rem_head_y_pos", 464)
         gml_Script_c_panspeed(8, 0, 43)
         gml_Script_c_sel(qu)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_walk_wait("r", 6, 45)
         gml_Script_c_msgsetloc(0, "* But Here I Am/", "obj_ch2_scene26_slash_Step_0_gml_849_0")
         gml_Script_c_msgnextloc("* Still Empty Handed In My Quest/", "obj_ch2_scene26_slash_Step_0_gml_850_0_b")
@@ -589,10 +589,10 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_emote("!", 15)
         gml_Script_c_wait(15)
         gml_Script_c_sel(qu)
-        gml_Script_c_sprite(1881)
+        gml_Script_c_sprite(spr_queen_chair_2)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_sel(qu_flame)
-        gml_Script_c_sprite(764)
+        gml_Script_c_sprite(spr_queen_chair_flame_side)
         gml_Script_c_wait(35)
         gml_Script_c_speaker("queen")
         gml_Script_c_msgsetloc(0, "\\E1* How Thoughtful You Two Have Come To Help Me/", "obj_ch2_scene26_slash_Step_0_gml_888_0")
@@ -600,7 +600,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgnextloc("\\E7* Which One Of You Wants To Be The New Knight/%", "obj_ch2_scene26_slash_Step_0_gml_890_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(230)
+        gml_Script_c_sprite(spr_susie_point_right)
         gml_Script_c_addxy(-2, 55)
         gml_Script_c_shakeobj()
         gml_Script_c_speaker("susie")
@@ -611,10 +611,10 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgnextloc("\\ED* Let Her Close Her Eyes And Sleep Away/", "obj_ch2_scene26_slash_Step_0_gml_904_0")
         gml_Script_c_msgnextloc("\\E0* Into A Darker^1, Darker Dream/%", "obj_ch2_scene26_slash_Step_0_gml_905_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_soundplay(292)
-        gml_Script_c_soundplay_x(154, 1, 0.5)
+        gml_Script_c_soundplay(snd_queen_laugh_0)
+        gml_Script_c_soundplay_x(snd_swing, 1, 0.5)
         gml_Script_c_sel(qu)
-        gml_Script_c_sprite(759)
+        gml_Script_c_sprite(spr_queen_chair_ohoho_1)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_walkdirect(2300, 100, 15)
         gml_Script_c_var_lerp_instance(queenhand, "y", queenhand.y, ((gml_Script_cameray() + view_hport[0]) + 200), 15)
@@ -638,13 +638,13 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_var_instance(bigqueen, "climb", 1)
         gml_Script_c_wait(41)
         gml_Script_c_wait(30)
-        gml_Script_c_soundplay(2)
+        gml_Script_c_soundplay(snd_queen_laugh_bitcrush_deep)
         gml_Script_c_var_instance(id, "queen_laugh_start", 1)
         gml_Script_c_shake()
         gml_Script_c_sel(ra)
-        gml_Script_c_sprite(813)
+        gml_Script_c_sprite(spr_ralsei_shocked_behind)
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(843)
+        gml_Script_c_sprite(spr_susie_shocked_behind)
         gml_Script_c_wait(62)
         gml_Script_c_var_instance(id, "queen_laugh_stop", 1)
         gml_Script_c_speaker("queen")
@@ -675,7 +675,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_msgnextloc("\\E7* And all Lightners will be lost in eternal chaos./%", "obj_ch2_scene26_slash_Step_0_gml_1027_0")
         gml_Script_c_talk_wait()
         gml_Script_c_wait(30)
-        gml_Script_c_soundplay(295)
+        gml_Script_c_soundplay(snd_queen_bitcrushed_hoot)
         gml_Script_c_var_instance(bigqueen, "surprised", 1)
         gml_Script_c_wait(30)
         gml_Script_c_speaker("queen")
@@ -694,8 +694,8 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_visible(0)
         gml_Script_c_sel(qu)
         gml_Script_c_setxy(2300, 165)
-        gml_Script_c_sprite(3289)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_sprite(spr_queen_walk_left_unhappy)
+        gml_Script_c_autowalk(false)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_walkdirect(2015, 165, 90)
         gml_Script_c_delaycmd(91, "imagespeed", 0)
@@ -719,7 +719,7 @@ if (con == 7 && obj_ch2_scene26_cityscape.knife_hover && customcon == 1)
         gml_Script_c_panobj(kr_actor, 30)
         gml_Script_c_wait(35)
         gml_Script_c_var_instance(id, "make_npc_a", 1)
-        gml_Script_c_pannable(0)
+        gml_Script_c_pannable(false)
         gml_Script_c_actortokris()
         gml_Script_c_actortocaterpillar()
         gml_Script_c_terminatekillactors()
@@ -768,7 +768,7 @@ if (con == 18)
         instance_destroy()
     with (obj_ch2_scene26_cityscape)
         instance_destroy()
-    if gml_Script_i_ex(207)
+    if gml_Script_i_ex(obj_looping_tiled_area)
     {
         with (obj_looping_tiled_area)
             instance_destroy()
@@ -786,7 +786,7 @@ if (con == 18)
     gml_Script_camerax_set(0)
     gml_Script_cameray_set(0)
 }
-if (con == 19 && gml_Script_i_ex(355))
+if (con == 19 && gml_Script_i_ex(obj_battlecontroller))
 {
     if gml_Script_i_ex(whiteall)
     {
@@ -816,12 +816,12 @@ if (con == 22)
         instance_destroy()
     with (obj_heroparent)
         instance_destroy()
-    if gml_Script_i_ex(865)
+    if gml_Script_i_ex(obj_battleback)
     {
         with (obj_battleback)
             destroy = 1
     }
-    if gml_Script_i_ex(355)
+    if gml_Script_i_ex(obj_battlecontroller)
         instance_destroy(obj_battlecontroller)
     gml_Script_scr_tempsave()
     room_goto(room_dw_mansion_top_post)
@@ -836,7 +836,7 @@ if (con == 11)
             if (power_up == -4)
             {
                 power_up = gml_Script_instance_create((gml_Script_camerax() + (view_wport[0] / 2)), (gml_Script_cameray() + (view_hport[0] / 2)), obj_ch2_scene26_powers_combined)
-                if gml_Script_i_ex(983)
+                if gml_Script_i_ex(obj_ch2_scene26_cityscape)
                 {
                     with (obj_ch2_scene26_cityscape)
                         auto_scroll = 0
@@ -844,7 +844,7 @@ if (con == 11)
             }
         }
     }
-    else if (!gml_Script_i_ex(895))
+    else if (!gml_Script_i_ex(obj_cutscene_master))
     {
         global.interact = 0
         global.facing = 0
@@ -878,7 +878,7 @@ if (con == 30 && (!gml_Script_d_ex()) && gml_Script_scr_sideb_get_phase() >= 2)
         if (extra_con > 0)
         {
             extra_con++
-            if (extra_con > 2 && (!gml_Script_i_ex(62)))
+            if (extra_con > 2 && (!gml_Script_i_ex(obj_writer)))
             {
                 global.interact = 0
                 extra_con = 0
@@ -908,7 +908,7 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_msgsetloc(0, "\\E0* .../%", "obj_ch2_scene26_slash_Step_0_gml_1328_0")
     gml_Script_c_talk_wait()
     gml_Script_c_walkdirect(2105, 200, 30)
-    gml_Script_c_pannable(1)
+    gml_Script_c_pannable(true)
     gml_Script_c_panspeed(-5, 0, 15)
     gml_Script_c_wait(10)
     gml_Script_c_sel(kr)
@@ -924,9 +924,9 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EC* You don't have to..^1. I mean.../%", "obj_ch2_scene26_slash_Step_0_gml_1357_0_b")
     gml_Script_c_talk_wait()
-    gml_Script_c_sprite(80)
+    gml_Script_c_sprite(spr_cutscene_11b_susie_scratch)
     gml_Script_c_addxy(0, -6)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_wait(5)
     gml_Script_c_speaker("susie")
@@ -934,7 +934,7 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_facenext("queen", 21)
     gml_Script_c_msgnextloc("\\EL* Error: I Have No Idea What You're Talking About/%", "obj_ch2_scene26_slash_Step_0_gml_1370_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_facing("u")
     gml_Script_c_addxy(0, 6)
     gml_Script_c_speaker("susie")
@@ -953,18 +953,18 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_msgsetloc(0, "\\E1* Really/%", "obj_ch2_scene26_slash_Step_0_gml_1399_0")
     gml_Script_c_talk_wait()
     gml_Script_c_sel(su)
-    gml_Script_c_sprite(80)
+    gml_Script_c_sprite(spr_cutscene_11b_susie_scratch)
     gml_Script_c_addxy(0, -6)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_wait(5)
     gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EK* Uhh^1, maybe?/%", "obj_ch2_scene26_slash_Step_0_gml_1411_0")
     gml_Script_c_talk_wait()
     gml_Script_c_sel(qu)
-    gml_Script_c_autowalk(0)
-    gml_Script_c_soundplay(292)
-    gml_Script_c_sprite(62)
+    gml_Script_c_autowalk(false)
+    gml_Script_c_soundplay(snd_queen_laugh_0)
+    gml_Script_c_sprite(spr_cutscene_10_queen_ohoho_standing)
     gml_Script_c_addxy(8, 0)
     gml_Script_c_imageindex(0)
     gml_Script_c_imagespeed(0.25)
@@ -972,11 +972,11 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_msgsetloc(0, "\\EP* Fatal Exception \"Sweet\" In Oh Hell Yeah.EXE/", "obj_ch2_scene26_slash_Step_0_gml_1424_0")
     gml_Script_c_msgnextloc("\\EQ* Susie I Knew You Were A Nice Girl/%", "obj_ch2_scene26_slash_Step_0_gml_1425_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_facing("d")
     gml_Script_c_addxy(-8, 0)
     gml_Script_c_sel(su)
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_facing("l")
     gml_Script_c_addxy(0, 6)
     gml_Script_c_wait(15)
@@ -992,9 +992,9 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_msgsetloc(0, "\\EG* Hey^1, uhh^1, I'm just.../%", "obj_ch2_scene26_slash_Step_0_gml_1448_0")
     gml_Script_c_talk_wait()
     gml_Script_c_wait(30)
-    gml_Script_c_sprite(45)
+    gml_Script_c_sprite(spr_cutscene_09_susie_exasperated)
     gml_Script_c_shakeobj()
-    gml_Script_c_soundplay(216)
+    gml_Script_c_soundplay(snd_whip_crack_only)
     gml_Script_c_speaker("susie")
     gml_Script_c_msgsetloc(0, "\\EH* Kris^1, go seal the fountain!/%", "obj_ch2_scene26_slash_Step_0_gml_1459_0")
     gml_Script_c_talk_wait()
@@ -1020,16 +1020,16 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_msgsetloc(0, "\\EQ* Umm^1, Kris^1, I'll tell Queen about our town!/%", "obj_ch2_scene26_slash_Step_0_gml_1496_0")
     gml_Script_c_talk_wait()
     gml_Script_c_sel(qu)
-    gml_Script_c_autowalk(0)
-    gml_Script_c_soundplay(292)
-    gml_Script_c_sprite(62)
+    gml_Script_c_autowalk(false)
+    gml_Script_c_soundplay(snd_queen_laugh_0)
+    gml_Script_c_sprite(spr_cutscene_10_queen_ohoho_standing)
     gml_Script_c_addxy(8, 0)
     gml_Script_c_imageindex(0)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_speaker("queen")
     gml_Script_c_msgsetloc(0, "\\EN* Kris I Look Forward To Being Your Wacky Roommate/%", "obj_ch2_scene26_slash_Step_0_gml_1509_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_autowalk(1)
+    gml_Script_c_autowalk(true)
     gml_Script_c_facing("d")
     gml_Script_c_sel(ra)
     gml_Script_c_facing("u")
@@ -1038,7 +1038,7 @@ if (con == 31 && gml_Script_scr_sideb_get_phase() >= 2)
     gml_Script_c_visible(0)
     gml_Script_c_var_instance(id, "make_npc_b", 1)
     gml_Script_c_wait(30)
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
     gml_Script_c_actortokris()
     gml_Script_c_terminatekillactors()
 }
@@ -1057,7 +1057,7 @@ if make_npc_b
     with (ralsei_npc)
         gml_Script_scr_depth()
 }
-if (con == 32 && (!gml_Script_i_ex(895)))
+if (con == 32 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 99
     global.plot = 170
@@ -1083,7 +1083,7 @@ if shakeloop
     {
         shakecon = 0
         alarm[1] = 30
-        gml_Script_snd_play(235)
+        gml_Script_snd_play(snd_closet_impact)
         gml_Script_instance_create(0, 0, obj_shake)
     }
 }
@@ -1101,7 +1101,7 @@ if platform_fall
     {
         platform_y += 30
         layer_y("TILES", platform_y)
-        if gml_Script_i_ex(984)
+        if gml_Script_i_ex(obj_ch2_scene26_wall)
         {
             with (obj_ch2_scene26_wall)
             {
@@ -1136,7 +1136,7 @@ if hand_catch
 if cityscape_fall
 {
     cityscape_fall = 0
-    if gml_Script_i_ex(983)
+    if gml_Script_i_ex(obj_ch2_scene26_cityscape)
     {
         with (obj_ch2_scene26_cityscape)
             auto_scroll_y = 1
@@ -1199,7 +1199,7 @@ if wallanimstart
     if (wallcon == 1)
     {
         wallcon = 99
-        if gml_Script_i_ex(984)
+        if gml_Script_i_ex(obj_ch2_scene26_wall)
         {
             with (obj_ch2_scene26_wall)
                 wall_con = 1
@@ -1209,12 +1209,12 @@ if wallanimstart
     {
         wallcon = 99
         wallanimstart = 0
-        if gml_Script_i_ex(984)
+        if gml_Script_i_ex(obj_ch2_scene26_wall)
         {
             with (obj_ch2_scene26_wall)
                 wall_con = 3
         }
-        if gml_Script_i_ex(983)
+        if gml_Script_i_ex(obj_ch2_scene26_cityscape)
         {
             with (obj_ch2_scene26_cityscape)
                 auto_scroll = 1
@@ -1289,7 +1289,7 @@ if (laser_con >= 0)
 if release_queen
 {
     release_queen = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             release = 1
@@ -1298,7 +1298,7 @@ if release_queen
 if queen_laugh_start
 {
     queen_laugh_start = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             laugh = 1
@@ -1307,7 +1307,7 @@ if queen_laugh_start
 if queen_laugh_stop
 {
     queen_laugh_stop = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             laugh = 0
@@ -1316,7 +1316,7 @@ if queen_laugh_stop
 if hand_release
 {
     hand_release = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
         {
@@ -1330,7 +1330,7 @@ if hand_release
 if hand_leave
 {
     hand_leave = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             leave = 1
@@ -1339,7 +1339,7 @@ if hand_leave
 if su_struggle
 {
     su_struggle = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_struggle = 1
@@ -1348,7 +1348,7 @@ if su_struggle
 if su_shocked
 {
     su_shocked = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_shocked = 1
@@ -1357,7 +1357,7 @@ if su_shocked
 if su_look_left
 {
     su_look_left = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_look_left = 1
@@ -1366,7 +1366,7 @@ if su_look_left
 if su_look_right
 {
     su_look_right = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_look_right = 1
@@ -1375,7 +1375,7 @@ if su_look_right
 if su_grin_1
 {
     su_grin_1 = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_grin_1 = 1
@@ -1384,7 +1384,7 @@ if su_grin_1
 if su_grin_2
 {
     su_grin_2 = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_grin_2 = 1
@@ -1393,7 +1393,7 @@ if su_grin_2
 if su_squint_1
 {
     su_squint_1 = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_squint_1 = 1
@@ -1402,7 +1402,7 @@ if su_squint_1
 if su_squint_2
 {
     su_squint_2 = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_squint_2 = 1
@@ -1411,7 +1411,7 @@ if su_squint_2
 if su_concerned
 {
     su_concerned = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             su_concerned = 1
@@ -1420,7 +1420,7 @@ if su_concerned
 if ra_struggle
 {
     ra_struggle = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_struggle = 1
@@ -1429,7 +1429,7 @@ if ra_struggle
 if ra_huh
 {
     ra_huh = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_huh = 1
@@ -1438,7 +1438,7 @@ if ra_huh
 if ra_look
 {
     ra_look = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_look = 1
@@ -1447,7 +1447,7 @@ if ra_look
 if ra_smile
 {
     ra_smile = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_smile = 1
@@ -1456,7 +1456,7 @@ if ra_smile
 if ra_scared
 {
     ra_scared = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_scared = 1
@@ -1465,7 +1465,7 @@ if ra_scared
 if ra_stern
 {
     ra_stern = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_stern = 1
@@ -1474,7 +1474,7 @@ if ra_stern
 if ra_mu
 {
     ra_mu = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_mu = 1
@@ -1483,7 +1483,7 @@ if ra_mu
 if ra_shake
 {
     ra_shake = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             ra_shake = 1
@@ -1492,7 +1492,7 @@ if ra_shake
 if shake_hand
 {
     shake_hand = 0
-    if gml_Script_i_ex(987)
+    if gml_Script_i_ex(obj_ch2_scene27_queenhand)
     {
         with (obj_ch2_scene27_queenhand)
             gml_Script_scr_shakeobj()
@@ -1501,7 +1501,7 @@ if shake_hand
 if queen_laugh_start
 {
     queen_laugh_start = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             laugh = 1
@@ -1510,7 +1510,7 @@ if queen_laugh_start
 if queen_laugh_stop
 {
     queen_laugh_stop = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             laugh = 0
@@ -1519,7 +1519,7 @@ if queen_laugh_stop
 if queen_surprised
 {
     queen_surprised = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             surprised = 1
@@ -1528,7 +1528,7 @@ if queen_surprised
 if queen_leave
 {
     queen_leave = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             leave = 1
@@ -1537,7 +1537,7 @@ if queen_leave
 if queen_leave_fast
 {
     queen_leave_fast = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             leave_fast = 1
@@ -1546,7 +1546,7 @@ if queen_leave_fast
 if queen_release_fast
 {
     queen_release_fast = 0
-    if gml_Script_i_ex(985)
+    if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     {
         with (obj_ch2_scene26_gigaqueen)
             release_fast = 1

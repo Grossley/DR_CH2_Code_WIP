@@ -8,7 +8,7 @@ if (global.monster[myself] == true)
         if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         gml_Script_instance_create((x - 102), (y + 18), obj_werewire_zzt_balloon)
-        gml_Script_snd_play(219)
+        gml_Script_snd_play(snd_electric_talk)
         talked = 1
         talktimer = 0
     }
@@ -160,14 +160,14 @@ if (global.monster[myself] == true)
         shoottimer -= 1
         if (shoottimer <= 0)
         {
-            gml_Script_snd_play_x(219, 1, 1.5)
+            gml_Script_snd_play_x(snd_electric_talk, 1, 1.5)
             for (i = 0; i < 3; i += 1)
             {
                 lasercircle = gml_Script_instance_create((x - 52), (y + 18), obj_werewire_bullet_lasercircle)
                 lasercircle.damage = (global.monsterat[myself] * 5)
                 lasercircle.target = mytarget
                 lasercircle.grazepoints = 1
-                if gml_Script_i_ex(628)
+                if gml_Script_i_ex(obj_heart)
                     laser_angle = ((point_direction(lasercircle.x, lasercircle.y, (obj_heart.x + 8), (obj_heart.y + 8)) - 2) + random(4))
                 else
                     laser_angle += (-2 + random(4))
@@ -221,7 +221,7 @@ if (global.monster[myself] == true)
         by1[2] = 6
         by1[3] = 46
         by1[4] = 72
-        if gml_Script_i_ex(628)
+        if gml_Script_i_ex(obj_heart)
             bullet_angle = ((point_direction((x + bx1[2]), (y + by1[2]), (obj_heart.x + 8), (obj_heart.y + 8)) - 10) + random(20))
         else
             bullet_angle += (-10 + random(20))
@@ -234,7 +234,7 @@ if (global.monster[myself] == true)
         {
             image_index += (0.25 * m)
             if (image_index == 2)
-                gml_Script_snd_play_x(120, 1, 1)
+                gml_Script_snd_play_x(motor_swing_down, 1, 1)
             if (image_index >= 2 && image_index <= 3)
             {
                 repeat (2)
@@ -373,7 +373,7 @@ if (global.myfight == 3)
     if (acting == 2 && actcon == 0)
     {
         var simultext = (simultotal == 1 ? gml_Script_stringsetloc("* You jiggled your body. The wire loosened in turn!/%", "obj_werewire_enemy_slash_Step_0_gml_399_0") : gml_Script_stringsetloc("* You jiggled your body!/%", "obj_werewire_enemy_slash_Step_0_gml_399_1"))
-        gml_Script_scr_act_charsprite("kris", 1428, 0.25, 1)
+        gml_Script_scr_act_charsprite("kris", spr_krisb_wiggle, 0.25, true)
         gml_Script_msgset(0, simultext)
         gml_Script_scr_mercyadd(myself, 50)
         gml_Script_scr_simultext("kris")

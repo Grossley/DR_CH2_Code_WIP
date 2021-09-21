@@ -536,7 +536,7 @@ if (type == 1)
         gml_Script_scr_itemremove_anytype(fusionIngredient1[menuCoord[0]], fusionIngredientType1[menuCoord[0]])
         gml_Script_scr_itemremove_anytype(fusionIngredient2[menuCoord[0]], fusionIngredientType2[menuCoord[0]])
         gml_Script_scr_itemget_anytype(fusionResult[menuCoord[0]], fusionResultType[menuCoord[0]])
-        gml_Script_snd_play(260)
+        gml_Script_snd_play(snd_select)
         if instance_exists(obj_npc_hammerguy)
         {
             obj_npc_hammerguy.con = 70
@@ -622,7 +622,7 @@ if (type == 3)
             global.flag[(800 + menuCoord[2])] = recruitID[menuCoord[1]]
             with (obj_npc_cafe)
                 event_user(6)
-            gml_Script_snd_play(260)
+            gml_Script_snd_play(snd_select)
             with (obj_npc_cafe)
             {
                 mode = 0
@@ -674,7 +674,7 @@ if (type == 4)
                 global.pocketitem[menuCoord[1]] = 0
                 gml_Script_scr_custommenu_item_info_refresh()
             }
-            gml_Script_snd_play(260)
+            gml_Script_snd_play(snd_select)
             optionSelected[0][menuCoord[0]] = 0
             optionSelected[1][menuCoord[1]] = 0
             menu = 0

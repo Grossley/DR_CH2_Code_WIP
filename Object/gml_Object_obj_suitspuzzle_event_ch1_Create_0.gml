@@ -2,7 +2,7 @@ con = 1
 image_xscale = 2
 image_yscale = 2
 talked = 0
-puzzle = gml_Script_instance_create_ch1(180, 60, 1542)
+puzzle = gml_Script_instance_create_ch1(180, 60, obj_suitspuzz_ch1)
 with (puzzle)
 {
     max_suit = 3
@@ -10,17 +10,17 @@ with (puzzle)
     sol[1] = 4
     sol[2] = 3
 }
-easel = gml_Script_scr_dark_marker_ch1(400, 160, 3694)
+easel = gml_Script_scr_dark_marker_ch1(400, 160, spr_thrashdesign_ch1)
 with (easel)
     depth = 900000
 for (i = 0; i < 3; i += 1)
 {
-    spike[i] = gml_Script_scr_dark_marker_ch1(520, (240 + (i * 40)), 3607)
+    spike[i] = gml_Script_scr_dark_marker_ch1(520, (240 + (i * 40)), spr_spiketile_ch1)
     spike[i].depth = 800000
 }
-block = gml_Script_instance_create_ch1(520, 240, 1656)
+block = gml_Script_instance_create_ch1(520, 240, obj_soliddark_ch1)
 block.image_yscale = 3
-s = gml_Script_scr_dark_marker_ch1(372, 170, 3551)
+s = gml_Script_scr_dark_marker_ch1(372, 170, spr_susieu_dark_ch1)
 if (global.plot < 71)
     global.plot = 71
 if (global.plot == 71)
@@ -29,7 +29,7 @@ if (global.plot == 71)
     with (s)
         visible = false
     visible = false
-    lnpc = gml_Script_instance_create_ch1(x, y, 1407)
+    lnpc = gml_Script_instance_create_ch1(x, y, obj_npc_facing_ch1)
     with (lnpc)
     {
         dtsprite = spr_lancer_dt_ch1
@@ -41,7 +41,7 @@ if (global.plot == 71)
         dfacing = 2
         y += 100
     }
-    snpc = gml_Script_instance_create_ch1(s.x, s.y, 1407)
+    snpc = gml_Script_instance_create_ch1(s.x, s.y, obj_npc_facing_ch1)
     with (snpc)
     {
         dtsprite = spr_susiedt_dark_ch1

@@ -13,8 +13,8 @@ if (mcon == 1)
     mcon = 2
 if (con == 1)
 {
-    diamond = gml_Script_scr_dark_marker_ch1((x + 80), (y - 47), 3985)
-    puzzwall = gml_Script_scr_dark_marker_ch1(1000, 0, 3591)
+    diamond = gml_Script_scr_dark_marker_ch1((x + 80), (y - 47), spr_diamond_knight_overworld_ch1)
+    puzzwall = gml_Script_scr_dark_marker_ch1(1000, 0, spr_jailwall_ch1)
     gml_Script___view_set(0, 0, 200)
     global.interact = 1
     image_speed = 0
@@ -24,7 +24,7 @@ if (con == 1)
         cutscene = true
     global.encounterno = 20
     gml_Script_scr_encountersetup_ch1(global.encounterno)
-    s = gml_Script_scr_dark_marker_ch1(500, (gml_Script___view_get(1, 0) - 20), 3550)
+    s = gml_Script_scr_dark_marker_ch1(500, (gml_Script___view_get(1, 0) - 20), spr_susied_dark_unhappy_ch1)
     with (s)
     {
         gml_Script_scr_depth_ch1()
@@ -54,7 +54,7 @@ if (con == 4)
     global.fe = 0
     global.msc = 310
     gml_Script_scr_text_ch1(global.msc)
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 150
 }
 if (con == 150)
@@ -71,7 +71,7 @@ if (con == 150 && (!gml_Script_d_ex_ch1()))
         sprite_index = spr_susiel_dark_unhappy_ch1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_79_0")
     con = 151
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 151 && (!gml_Script_d_ex_ch1()))
 {
@@ -95,14 +95,14 @@ if (con == 155)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_105_0")
     con = 160
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     rep = 0
 }
 if (con == 160 && (!gml_Script_d_ex_ch1()))
 {
     with (s)
         sprite_index = spr_susier_dark_unhappy_ch1
-    exc = gml_Script_instance_create_ch1((s.x + 20), (s.y - 20), 1486)
+    exc = gml_Script_instance_create_ch1((s.x + 20), (s.y - 20), obj_excblcon_ch1)
     con = 161
 }
 if (con == 162)
@@ -110,7 +110,7 @@ if (con == 162)
 if (con == 161)
 {
     rep += 1
-    gml_Script_snd_play_ch1(353)
+    gml_Script_snd_play_ch1(snd_txtlan_ch1)
     con = 162
 }
 if (con == 163)
@@ -130,7 +130,7 @@ if (con == 164)
     global.fc = 1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_147_0")
     con = 165
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 165 && (!gml_Script_d_ex_ch1()))
 {
@@ -157,7 +157,7 @@ if (con == 169)
         sprite_index = spr_susieu_dark_ch1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_175_0")
     con = 170
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 170 && (!gml_Script_d_ex_ch1()))
 {
@@ -171,7 +171,7 @@ if (con == 172)
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_190_0")
     con = 174
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 174 && (!gml_Script_d_ex_ch1()))
 {
@@ -180,7 +180,7 @@ if (con == 174 && (!gml_Script_d_ex_ch1()))
     with (s)
         sprite_index = spr_susier_dark_unhappy_ch1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_200_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 175
 }
 if (con == 175 && (!gml_Script_d_ex_ch1()))
@@ -189,7 +189,7 @@ if (con == 175 && (!gml_Script_d_ex_ch1()))
     global.typer = 30
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_209_0")
     con = 176
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 176 && (!gml_Script_d_ex_ch1()))
 {
@@ -206,7 +206,7 @@ if (con == 178)
 if (con == 180)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_232_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 181
 }
 if (con == 181 && (!gml_Script_d_ex_ch1()))
@@ -216,7 +216,7 @@ if (con == 181 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 183)
 {
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     with (puzz1)
         event_user(2)
     con = 184
@@ -224,7 +224,7 @@ if (con == 183)
 }
 if (con == 185)
 {
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     with (puzz1)
         event_user(3)
     con = 186
@@ -232,7 +232,7 @@ if (con == 185)
 }
 if (con == 187)
 {
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     with (puzz1)
         event_user(2)
     con = 188
@@ -241,8 +241,8 @@ if (con == 187)
 if (con == 189)
 {
     gml_Script_snd_free_all_ch1()
-    gml_Script_instance_create_ch1(0, 0, 1464)
-    gml_Script_snd_play_ch1(376)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
+    gml_Script_snd_play_ch1(snd_locker_ch1)
     with (puzzwall)
         instance_destroy()
     with (s)
@@ -253,7 +253,7 @@ if (con == 5 && (!gml_Script_d_ex_ch1()))
 {
     with (s)
         sprite_index = spr_susier_dark_ch1
-    exc = gml_Script_instance_create_ch1((s.x + 20), (s.y - 20), 1486)
+    exc = gml_Script_instance_create_ch1((s.x + 20), (s.y - 20), obj_excblcon_ch1)
     con = 6
     alarm[4] = 30
 }
@@ -295,7 +295,7 @@ if (con == 11)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_332_0")
     gml_Script_scr_susface_ch1(3, 0)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_334_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 12
 }
 if (con == 12 && (!gml_Script_d_ex_ch1()))
@@ -303,7 +303,7 @@ if (con == 12 && (!gml_Script_d_ex_ch1()))
     with (diamond)
         hspeed = 8
     sprite_index = spr_lancer_battle_hurt_ch1
-    exc = gml_Script_instance_create_ch1((x + 20), (y - 20), 1486)
+    exc = gml_Script_instance_create_ch1((x + 20), (y - 20), obj_excblcon_ch1)
     con = 13
     alarm[4] = 30
 }
@@ -317,7 +317,7 @@ if (con == 14)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_354_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_355_0")
     con = 15
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 15 && (!gml_Script_d_ex_ch1()))
 {
@@ -349,7 +349,7 @@ if (con == 19)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_388_0")
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_389_0")
     con = 20
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 20 && (!gml_Script_d_ex_ch1()))
 {
@@ -364,7 +364,7 @@ if (con == 22)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_408_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_409_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_410_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 23
 }
 if (con == 23 && (!gml_Script_d_ex_ch1()))
@@ -397,7 +397,7 @@ if (con == 27)
     gml_Script_scr_lanface_ch1(4, "C")
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_445_0")
     con = 28
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 28 && (!gml_Script_d_ex_ch1()))
 {
@@ -419,7 +419,7 @@ if (con == 30)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_467_0")
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_468_0")
     con = 31
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 31 && (!gml_Script_d_ex_ch1()))
 {
@@ -444,7 +444,7 @@ if (con == 33)
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_500_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_501_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 33.1
 }
 if (con == 33.1 && (!gml_Script_d_ex_ch1()))
@@ -452,7 +452,7 @@ if (con == 33.1 && (!gml_Script_d_ex_ch1()))
     sprite_index = spr_lancer_battle_hurt_ch1
     with (s)
         sprite_index = spr_susier_dark_unhappy_ch1
-    exc = gml_Script_instance_create_ch1((x + 50), (y - 30), 1486)
+    exc = gml_Script_instance_create_ch1((x + 50), (y - 30), obj_excblcon_ch1)
     con = 32.2
     alarm[4] = 30
     global.currentsong[0] = gml_Script_snd_init_ch1("tense.ogg")
@@ -474,7 +474,7 @@ if (con == 33.2)
     gml_Script_scr_susface_ch1(5, 3)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_532_0")
     con = 33.3
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 33.3 && (!gml_Script_d_ex_ch1()))
 {
@@ -503,15 +503,15 @@ if (con == 33.5)
     gml_Script_scr_lanface_ch1(1, 5)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_562_0")
     con = 34
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 34 && (!gml_Script_d_ex_ch1()))
 {
     with (s)
         image_index = 1
     sprite_index = spr_lancer_battle_hurt_ch1
-    gml_Script_snd_play_ch1(378)
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(snd_impact_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     con = 35
     alarm[4] = 15
 }
@@ -534,7 +534,7 @@ if (con == 38)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_597_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_598_0")
     con = 39
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 39 && (!gml_Script_d_ex_ch1()))
 {
@@ -543,7 +543,7 @@ if (con == 39 && (!gml_Script_d_ex_ch1()))
         sprite_index = spr_susier_dark_laugh_ch1
         image_speed = 0.25
     }
-    gml_Script_snd_play_ch1(382)
+    gml_Script_snd_play_ch1(snd_suslaugh_ch1)
     con = 40
     alarm[4] = 60
 }
@@ -560,7 +560,7 @@ if (con == 41)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_627_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_628_0")
     con = 42
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 42 && (!gml_Script_d_ex_ch1()))
 {
@@ -586,7 +586,7 @@ if (con == 45)
 {
     global.fe = 1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_659_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 46
 }
 if (con == 46 && (!gml_Script_d_ex_ch1()))
@@ -598,7 +598,7 @@ if (con == 46 && (!gml_Script_d_ex_ch1()))
         image_speed = 0.5
         sprite_index = spr_susieb_attack_ch1
     }
-    gml_Script_snd_play_ch1(442)
+    gml_Script_snd_play_ch1(snd_laz_c_ch1)
     con = 47
     alarm[4] = 10
 }
@@ -614,7 +614,7 @@ if (con == 49.1)
     global.currentsong[0] = gml_Script_snd_init_ch1("vs_susie.ogg")
     global.fe = 4
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_691_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 50
 }
 if (con == 50 && (!gml_Script_d_ex_ch1()))
@@ -630,9 +630,9 @@ if (con == 50 && (!gml_Script_d_ex_ch1()))
     gml_Script_scr_encountersetup_ch1(global.encounterno)
     x = global.monstermakex[0]
     y = global.monstermakey[0]
-    gml_Script_instance_create_ch1(0, 0, 1513)
+    gml_Script_instance_create_ch1(0, 0, obj_battlecontroller_ch1)
     visible = false
-    hk = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 640), (gml_Script___view_get(1, 0) - 20), 1530)
+    hk = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 640), (gml_Script___view_get(1, 0) - 20), obj_herokris_ch1)
     with (hk)
         visible = false
     with (obj_mainchara_ch1)
@@ -640,7 +640,7 @@ if (con == 50 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 53)
 {
-    s = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 3840)
+    s = gml_Script_scr_dark_marker_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, spr_susieb_attack_serious_ch1)
     with (s)
     {
         gml_Script_scr_depth_ch1()
@@ -663,7 +663,7 @@ if (con == 53)
         instance_destroy()
     with (black)
         instance_destroy()
-    dm = gml_Script_instance_create_ch1((x + 30), (y + 40), 1629)
+    dm = gml_Script_instance_create_ch1((x + 30), (y + 40), obj_dmgwriter_ch1)
     dm.type = 1
     dm.damage = 0
     con = 54
@@ -678,14 +678,14 @@ if (con == 55)
     global.fe = 12
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_762_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_763_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 56
 }
 if (con == 56 && (!gml_Script_d_ex_ch1()))
 {
     with (s)
         sprite_index = spr_susieb_defeat_ch1
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     con = 57
     alarm[4] = 45
 }
@@ -697,7 +697,7 @@ if (con == 58)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_781_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_782_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_783_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 59
 }
 if (con == 59 && (!gml_Script_d_ex_ch1()))
@@ -709,14 +709,14 @@ if (con == 59 && (!gml_Script_d_ex_ch1()))
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_794_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_795_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_796_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 60
 }
 if (con == 60 && (!gml_Script_d_ex_ch1()))
 {
     with (s)
         sprite_index = spr_susier_dark_unhappy_ch1
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     con = 61
     alarm[4] = 30
 }
@@ -729,7 +729,7 @@ if (con == 62)
     gml_Script_scr_lanface_ch1(1, 5)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_816_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_817_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 63
 }
 if (con == 63 && (!gml_Script_d_ex_ch1()))
@@ -758,7 +758,7 @@ if (con == 67)
     image_index = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_849_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_850_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 68
 }
 if (con == 68 && (!gml_Script_d_ex_ch1()))
@@ -785,7 +785,7 @@ if (con == 72)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_878_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_879_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_880_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 73
 }
 if (con == 73 && (!gml_Script_d_ex_ch1()))
@@ -798,7 +798,7 @@ if (con == 73 && (!gml_Script_d_ex_ch1()))
     global.fe = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_892_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_893_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 74
 }
 if (con == 74 && (!gml_Script_d_ex_ch1()))
@@ -830,7 +830,7 @@ if (con == 78)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_927_0")
     gml_Script_scr_lanface_ch1(3, 6)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_929_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 79
 }
 if (con == 79 && (!gml_Script_d_ex_ch1()))
@@ -850,7 +850,7 @@ if (con == 81)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_949_0")
     gml_Script_scr_lanface_ch1(6, 3)
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_951_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 82
 }
 if (con == 82 && (!gml_Script_d_ex_ch1()))
@@ -873,7 +873,7 @@ if (con == 87.1)
     sprite_index = spr_lancer_rt_unhappy_ch1
     global.fe = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_978_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 88
 }
 if (con == 88 && (!gml_Script_d_ex_ch1()))
@@ -889,7 +889,7 @@ if (con == 90)
     global.typer = 30
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_995_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 91
 }
 if (con == 91 && (!gml_Script_d_ex_ch1()))
@@ -908,7 +908,7 @@ if (con == 93)
     gml_Script_scr_susface_ch1(2, 5)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_1015_0")
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_1016_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 94
 }
 if (con == 94 && (!gml_Script_d_ex_ch1()))
@@ -920,7 +920,7 @@ if (con == 94 && (!gml_Script_d_ex_ch1()))
     global.fe = 3
     sprite_index = spr_lancer_rt_ch1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_1028_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 95
 }
 if (con == 95 && (!gml_Script_d_ex_ch1()))
@@ -938,7 +938,7 @@ if (con == 97)
     global.typer = 30
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_1046_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbattle2_event_slash_Step_0_gml_1047_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 98
 }
 if (con == 98 && (!gml_Script_d_ex_ch1()))
@@ -954,7 +954,7 @@ if (con == 98 && (!gml_Script_d_ex_ch1()))
 }
 if (con == 100)
 {
-    gml_Script_instance_create_ch1(0, 0, 1460)
+    gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
     con = 101
     alarm[4] = 60
 }
@@ -963,6 +963,6 @@ if (con == 102)
     global.plot = 154
     global.entrance = 0
     global.interact = 3
-    gml_Script_instance_create_ch1(0, 0, 1462)
+    gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
     room_goto(room_cc_prison_cells_ch1)
 }

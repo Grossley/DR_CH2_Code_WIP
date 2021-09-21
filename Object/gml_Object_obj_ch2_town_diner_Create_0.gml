@@ -22,9 +22,9 @@ if (global.chapter == 2)
     jo.sprite_index = spr_jockington_lt
     var ficus = gml_Script_instance_create(55, 160, obj_npc_room)
     ficus.sprite_index = spr_npc_ficus
-    var diner_table = gml_Script_scr_marker(7, 172, 2776)
+    var diner_table = gml_Script_scr_marker(7, 172, bg_diner_table)
     diner_table.depth = (ficus.depth - 100)
-    var seat_back = gml_Script_scr_marker(236, 212, 2777)
+    var seat_back = gml_Script_scr_marker(236, 212, bg_diner_seat_back)
     seat_back.depth = (jo.depth - 100)
 }
 else

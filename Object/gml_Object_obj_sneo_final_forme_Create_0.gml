@@ -41,7 +41,7 @@ headoffset_y = 0
 dmgcon = 0
 back = gml_Script_instance_create(x, y, obj_sneo_final_forme_mouth_back)
 back.depth = (depth + 1)
-if gml_Script_i_ex(628)
+if gml_Script_i_ex(obj_heart)
     back.depth = (obj_heart.depth + 1)
 hidemouthback = 0
 playback_sprite = gml_Script_scr_84_get_sprite("spr_sneo_playback")

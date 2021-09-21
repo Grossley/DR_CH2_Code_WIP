@@ -29,7 +29,7 @@ if (ds_map_find_value(async_load, "id") == global.savedata_async_id)
             global.hearty = 220
             audio_group_load(1)
             if (!instance_exists(obj_time_ch1))
-                gml_Script_instance_create_ch1(0, 0, 1645)
+                gml_Script_instance_create_ch1(0, 0, obj_time_ch1)
         }
     }
 }

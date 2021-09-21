@@ -16,9 +16,9 @@ if (confirm == 2)
     if (o_boxingcontroller.hurttimer == 0)
     {
         if arcade
-            gml_Script_snd_play(319)
+            gml_Script_snd_play(snd_graze_bc)
         else
-            gml_Script_snd_play(168)
+            gml_Script_snd_play(snd_graze)
         image_alpha = 1
     }
     confirm = 0

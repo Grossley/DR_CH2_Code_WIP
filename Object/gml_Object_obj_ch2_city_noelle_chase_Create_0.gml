@@ -14,7 +14,7 @@ else
             depth = 98000
         if (global.plot < 68)
         {
-            noellemarker = gml_Script_scr_dark_marker(2100, 245, 723)
+            noellemarker = gml_Script_scr_dark_marker(2100, 245, spr_noelle_walk_right_dw)
             noellemarker.image_speed = 0
         }
         else
@@ -24,7 +24,7 @@ else
     {
         if (global.plot < 69)
         {
-            noellemarker = gml_Script_scr_dark_marker(920, 670, 723)
+            noellemarker = gml_Script_scr_dark_marker(920, 670, spr_noelle_walk_right_dw)
             noellemarker.image_speed = 0
         }
         else

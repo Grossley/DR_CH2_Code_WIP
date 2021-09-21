@@ -179,18 +179,18 @@ if (global.menuno == 9 && instance_exists(obj_dialoguer_ch1) == 0)
 }
 if (selnoise == true)
 {
-    gml_Script_snd_play_ch1(493)
+    gml_Script_snd_play_ch1(snd_select_ch1)
     selnoise = false
 }
 if (movenoise == true)
 {
-    gml_Script_snd_play_ch1(492)
+    gml_Script_snd_play_ch1(snd_menumove_ch1)
     movenoise = false
 }
 if gml_Script_scr_debug_ch1()
 {
     if keyboard_check_pressed(ord("S"))
-        gml_Script_instance_create_ch1(0, 0, 1648)
+        gml_Script_instance_create_ch1(0, 0, obj_savemenu_ch1)
     if keyboard_check_pressed(ord("F"))
         room_speed = 58
     if keyboard_check_pressed(ord("L"))

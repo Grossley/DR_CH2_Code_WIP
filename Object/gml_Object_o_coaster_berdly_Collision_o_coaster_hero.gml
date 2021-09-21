@@ -20,7 +20,7 @@ if (damagecon == 0)
         particle = gml_Script_instance_create(((x + 40) + random(80)), ((y - 8) - random(20)), obj_berdlyparticle)
     if (kiss == 1)
     {
-        gml_Script_snd_play(206)
+        gml_Script_snd_play(snd_coaster_kiss)
         particle = gml_Script_instance_create((x + 12), (y - 20), obj_berdlyparticle)
         particle.hspeed = -1
         particle.sprite_index = spr_coaster_berdly_heart
@@ -28,7 +28,7 @@ if (damagecon == 0)
         particle.gravity = (-0.2 - random(0.1))
     }
 }
-gml_Script_snd_play(110)
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_bump)
+gml_Script_snd_play(snd_damage)
 with (other)
     damaged = 1

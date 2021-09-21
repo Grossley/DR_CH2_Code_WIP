@@ -46,14 +46,14 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "YarnBalls"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 2
                 dc.element = 6
             }
             else if (rr > 0)
             {
                 global.monsterattackname[myself] = "MeowWow"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 3
                 dc.element = 6
                 if (rr == 2)
@@ -119,7 +119,7 @@ if (global.myfight == 3)
                 gml_Script_scr_smallface(0, "ralsei", 20, "right", "middle", gml_Script_stringsetloc("It's just a cat...", "obj_tasque_enemy_slash_Step_0_gml_150_0"))
             var sentenceEnd = (sact_count == 1 ? "/" : "/%")
             gml_Script_msgsetsubloc(0, "* Susie roared!! The enemies became TIRED.~1", sentenceEnd, "obj_tasque_enemy_slash_Step_0_gml_155_0")
-            gml_Script_snd_play(66)
+            gml_Script_snd_play(snd_sussurprise)
             if (sact_count == 1)
             {
                 gml_Script_scr_anyface_next("susie", 2)

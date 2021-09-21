@@ -130,7 +130,7 @@ if (beatcon == 0)
         wingtimer += 1
         if (wingtimer >= 0)
         {
-            gml_Script_snd_play(51)
+            gml_Script_snd_play(snd_wing)
             wingtimer = -16
         }
     }
@@ -150,7 +150,7 @@ if (beatcon == 0)
     }
     if (attacktimer >= 60 && attackcon == 1)
     {
-        gml_Script_snd_play(50)
+        gml_Script_snd_play(snd_crow)
         attackcon = 2
         shot = 1
         for (i = 0; i < 3; i += 1)

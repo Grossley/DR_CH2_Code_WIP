@@ -36,6 +36,6 @@ if (timer != 0)
 if (timer > 16)
 {
     instance_destroy()
-    gml_Script_snd_volume(222, 0, 70)
+    gml_Script_snd_volume(snd_rumble, 0, 70)
     obj_spamton_neo_enemy.stoprumblesfx = 70
 }

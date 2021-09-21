@@ -10,7 +10,7 @@ down = 0
 if (rotate == 1)
 {
     global.interact = 1
-    if (gml_Script_down_p() && controlled.moving == 0 && (!gml_Script_d_ex()) && mytimer <= 0 && (!gml_Script_i_ex(1165)) && buffer < 0)
+    if (gml_Script_down_p() && controlled.moving == 0 && (!gml_Script_d_ex()) && mytimer <= 0 && (!gml_Script_i_ex(obj_holemouse)) && buffer < 0)
     {
         mytimer = 20
         buffer = 3
@@ -44,7 +44,7 @@ if (rotate == 1)
         right = 0
         controlled.move = 0
     }
-    if ((gml_Script_button1_p() || gml_Script_button2_p()) && timer > 1 && mytimer <= 0 && (!gml_Script_i_ex(1165)) && (!gml_Script_d_ex()) && buffer < 0)
+    if ((gml_Script_button1_p() || gml_Script_button2_p()) && timer > 1 && mytimer <= 0 && (!gml_Script_i_ex(obj_holemouse)) && (!gml_Script_d_ex()) && buffer < 0)
     {
         buffer = 3
         rotate = 0

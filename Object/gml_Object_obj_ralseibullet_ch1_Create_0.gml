@@ -12,7 +12,7 @@ active = false
 image_alpha = 0
 if (y < 50)
     y = 50
-g = gml_Script_instance_create_ch1(x, y, 1510)
+g = gml_Script_instance_create_ch1(x, y, obj_afterimage_grow_ch1)
 g.sprite_index = spr_smallbullet_outline_ch1
 g.image_alpha = 1.4
 g.xrate = 0.25

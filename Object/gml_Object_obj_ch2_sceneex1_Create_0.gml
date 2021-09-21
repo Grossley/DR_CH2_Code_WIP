@@ -6,11 +6,11 @@ if (global.chapter != 2 || global.flag[309] == 9)
     instance_destroy()
 else if (global.flag[358] == 1)
 {
-    nise_susie = gml_Script_scr_dark_marker(575, 275, 496)
+    nise_susie = gml_Script_scr_dark_marker(575, 275, spr_cutscene_ex1_susie_ralsei_glasses_1)
     nise_susie.image_speed = 0.25
     with (nise_susie)
         gml_Script_scr_depth()
-    nise_ralsei = gml_Script_scr_dark_marker(660, 280, 494)
+    nise_ralsei = gml_Script_scr_dark_marker(660, 280, spr_cutscene_ex1_ralsei_glasses_1)
     nise_ralsei.image_speed = 0.25
     with (nise_ralsei)
         gml_Script_scr_depth()

@@ -53,9 +53,9 @@ else
     queen_beam.visible = false
     crank_volume = 0
     cityscape_parallax = 0
-    girder_marker = gml_Script_scr_marker(3300, 0, 3091)
+    girder_marker = gml_Script_scr_marker(3300, 0, spr_city_road_girder_left)
     girder_marker.depth = 10000
-    girder_marker_2 = gml_Script_scr_marker(3480, 0, 3090)
+    girder_marker_2 = gml_Script_scr_marker(3480, 0, spr_city_road_girder_tile)
     girder_marker_2.depth = 10000
     island_collider = gml_Script_instance_create(3080, 280, obj_soliddark)
     island_collider.image_xscale = 6

@@ -341,7 +341,7 @@ if (menu == 1 || menu == 2)
                     if (noroom == false)
                     {
                         global.gold -= buyvalue[menuc[1]]
-                        gml_Script_snd_play(59)
+                        gml_Script_snd_play(snd_locker)
                         if (_pocketed == 1)
                             sidemessage = 5
                         else
@@ -715,7 +715,7 @@ if (menu == 4)
         }
         gml_Script_instance_create(30, 270, obj_writer)
     }
-    if (sell == 10 && (!gml_Script_i_ex(62)))
+    if (sell == 10 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_snd_free(keygenmusic)
         gml_Script_snd_resume(global.currentsong[1])
@@ -740,7 +740,7 @@ if (menu == 4)
             global.fe = 0
         }
     }
-    if (selling == 3 && (!gml_Script_i_ex(62)))
+    if (selling == 3 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_scr_84_set_draw_font("main")
         draw_set_color(c_white)
@@ -774,7 +774,7 @@ if (menu == 4)
             }
         }
     }
-    if (selling == 4 && (!gml_Script_i_ex(62)))
+    if (selling == 4 && (!gml_Script_i_ex(obj_writer)))
     {
         selling = 0
         sell = 0

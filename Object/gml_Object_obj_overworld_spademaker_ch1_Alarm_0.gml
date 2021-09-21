@@ -6,7 +6,7 @@ if (homing == 1)
     diry = lengthdir_y(radius, dir)
     xx = ((dirx + obj_mainchara_ch1.x) + 10)
     yy = ((diry + obj_mainchara_ch1.y) + 40)
-    gml_Script_instance_create_ch1(xx, yy, 1506)
+    gml_Script_instance_create_ch1(xx, yy, obj_overworld_spade_homing_ch1)
     alarm[0] = 10
 }
 if (homing == 0)
@@ -15,7 +15,7 @@ if (homing == 0)
     if (global.facing == 3)
         radius *= -1
     alarm[0] = 5
-    fallspade = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + radius), (gml_Script___view_get(1, 0) - 500), 1507)
+    fallspade = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + radius), (gml_Script___view_get(1, 0) - 500), obj_overworld_spade_ch1)
     with (fallspade)
     {
         image_angle = 270
@@ -37,7 +37,7 @@ if (homing == 2)
         radius = 80
     else
         radius = 560
-    sidespade[side] = gml_Script_instance_create_ch1(radius, ((gml_Script___view_get(1, 0) + 30) + random(420)), 1507)
+    sidespade[side] = gml_Script_instance_create_ch1(radius, ((gml_Script___view_get(1, 0) + 30) + random(420)), obj_overworld_spade_ch1)
     if (side == 0)
         sidespade[side].direction = 0
     if (side == 1)
@@ -57,7 +57,7 @@ if (homing == 3)
     if (global.facing == 3)
         radius -= 500
     alarm[0] = 7
-    fallspade = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + radius), choose((gml_Script___view_get(1, 0) + 550), (gml_Script___view_get(1, 0) - 100)), 1507)
+    fallspade = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + radius), choose((gml_Script___view_get(1, 0) + 550), (gml_Script___view_get(1, 0) - 100)), obj_overworld_spade_ch1)
     with (fallspade)
     {
         damage -= 4
@@ -89,7 +89,7 @@ if (homing == 4)
     {
         for (i = 0; i < 6; i += 1)
         {
-            fallspade = gml_Script_instance_create_ch1(((220 + (20 * i)) + (side * 120)), (gml_Script___view_get(1, 0) + 500), 1507)
+            fallspade = gml_Script_instance_create_ch1(((220 + (20 * i)) + (side * 120)), (gml_Script___view_get(1, 0) + 500), obj_overworld_spade_ch1)
             fallspade.vvalue = (-10 + (3 * slow_bonus))
             fallspade.fvalue = (-0.5 + (0.2 * slow_bonus))
             with (fallspade)

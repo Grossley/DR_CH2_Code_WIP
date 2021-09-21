@@ -8,4 +8,4 @@ verticalDirection = 0
 horizontalDirection = 0
 spd = 16
 hsp = 0
-gml_Script_snd_play(110)
+gml_Script_snd_play(snd_bump)

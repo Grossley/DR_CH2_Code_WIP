@@ -66,8 +66,8 @@ if (con == 10)
     {
         con = 12
         alarm[4] = 60
-        gml_Script_snd_play(170)
-        gml_Script_snd_play(166)
+        gml_Script_snd_play(snd_hurt1)
+        gml_Script_snd_play(snd_damage)
         with (sneo)
         {
             gravity = 0
@@ -83,7 +83,7 @@ if (con == 10)
             hspeed = -20
             friction = 0.8
         }
-        gml_Script_snd_play_x(154, 1, 0.5)
+        gml_Script_snd_play_x(snd_swing, 1, 0.5)
     }
 }
 if (con == 13)
@@ -91,7 +91,7 @@ if (con == 13)
     if (!shortened)
     {
         if (sneo.gravity == 0)
-            gml_Script_snd_play_x(154, 1, 0.5)
+            gml_Script_snd_play_x(snd_swing, 1, 0.5)
         with (sneo)
             gravity = -2
         if (sneo.y <= (gml_Script_cameray() - 200))
@@ -119,14 +119,14 @@ if (con == 14)
         if (sneo_fall_timer == 15)
         {
             sneo_fall_sfx = 1
-            gml_Script_snd_play_x(154, 1, 0.5)
+            gml_Script_snd_play_x(snd_swing, 1, 0.5)
         }
     }
     if (sneo.y >= (y - 140))
     {
         con = 15
         alarm[4] = 60
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (sneo)
         {
             gravity = 0
@@ -191,7 +191,7 @@ if (con == 16)
     }
     gml_Script_c_wait(15)
     gml_Script_c_var_instance(sneo, "partmode", 41)
-    gml_Script_c_soundplay(248)
+    gml_Script_c_soundplay(snd_sneo_laugh_long)
     var _n = 0
     repeat (10)
     {
@@ -204,7 +204,7 @@ if (con == 16)
     gml_Script_c_actortokris()
     gml_Script_c_terminatekillactors()
 }
-if (con == 17 && (!gml_Script_i_ex(895)))
+if (con == 17 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 19
     alarm[0] = 120
@@ -213,7 +213,7 @@ if (con == 17 && (!gml_Script_i_ex(895)))
     savekrisx = obj_mainchara.x
     savekrisy = obj_mainchara.y
     draw_fountain = 0
-    if gml_Script_i_ex(230)
+    if gml_Script_i_ex(obj_darkfountain)
     {
         with (obj_darkfountain)
             adjust = 3
@@ -228,7 +228,7 @@ if (con == 17 && (!gml_Script_i_ex(895)))
     global.flag[9] = 2
     global.batmusic[0] = gml_Script_snd_init("spamton_neo_mix_ex_wip.ogg")
     global.flag[54] = 571
-    gml_Script_scr_battle(61, 1, sneo, 0, 0)
+    gml_Script_scr_battle(61, true, sneo, 0, 0)
     if shortened
     {
     }

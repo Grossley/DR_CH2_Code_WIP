@@ -391,8 +391,8 @@ if (room == room_forest_area5_ch1)
         if (global.flag[237] == 0)
         {
             global.flag[237] = 1
-            gml_Script_snd_play_ch1(446)
-            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_snd_play_ch1(snd_screenshake_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_540_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_541_0")
             if (obj_mainchara_ch1.becamebattle == false)
@@ -427,7 +427,7 @@ if (room == room_forest_starwalker_ch1)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_571_0")
     if (read == 0)
     {
-        gml_Script_snd_play_ch1(440)
+        gml_Script_snd_play_ch1(snd_item_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_575_0")
         global.gold += 40
     }
@@ -986,7 +986,7 @@ if (room == room_town_south_ch1)
     {
         if (read == 0)
         {
-            gml_Script_snd_play_ch1(365)
+            gml_Script_snd_play_ch1(snd_knock_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1274_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1275_0")
             global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1276_0")
@@ -1013,7 +1013,7 @@ if (room == room_town_mid_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1301_0")
     if (x >= 1240)
     {
-        gml_Script_snd_play_ch1(365)
+        gml_Script_snd_play_ch1(snd_knock_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1307_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1308_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1309_0")
@@ -1062,7 +1062,7 @@ if (room == room_town_north_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1360_0")
     if (x >= 1090 && x <= 1130)
     {
-        gml_Script_snd_play_ch1(365)
+        gml_Script_snd_play_ch1(snd_knock_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1365_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1366_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1367_0")
@@ -1077,5 +1077,5 @@ if (room == room_town_north_ch1)
 }
 if (room == room_town_shelter_ch1)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_readable_room1_slash_Other_10_gml_1383_0")
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 read += 1

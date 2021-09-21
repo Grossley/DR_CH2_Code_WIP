@@ -3,7 +3,7 @@ if (mode == 0 || mode == 3)
 {
     if (con == 0 && myinteract == 1)
     {
-        gml_Script_snd_play(51)
+        gml_Script_snd_play(snd_wing)
         lid = gml_Script_instance_create(x, y, obj_marker)
         lid.depth = (depth - 100)
         lid.vspeed = (-4 * multiplier)
@@ -29,7 +29,7 @@ if (mode == 0 || mode == 3)
         }
         if (mode == 3 && contentsprite == spr_ch2_gimmick_saucer_key)
         {
-            gml_Script_snd_play(231)
+            gml_Script_snd_play(snd_sparkle_glock)
             with (obj_saucer)
             {
                 if (mode == 3)
@@ -84,7 +84,7 @@ if (mode == 1)
     if (con == 0 && myinteract == 1)
     {
         if (montyboss == 0 || montyboss == 1)
-            gml_Script_snd_play(51)
+            gml_Script_snd_play(snd_wing)
         if (room == room_dw_mansion_dining3)
             global.interact = 1
         siner = 0
@@ -132,7 +132,7 @@ if (mode == 1)
         if (siner >= 10 && height <= 0)
         {
             if (montyboss == 0 || montyboss == 1)
-                gml_Script_snd_play(114)
+                gml_Script_snd_play(snd_metalhit)
             height = 0
             siner = 0
             con = 0
@@ -159,7 +159,7 @@ if (mode == 2)
         myinteract = 0
     if (con == 0 && myinteract == 1)
     {
-        gml_Script_snd_play_pitch(104, 1.4)
+        gml_Script_snd_play_pitch(snd_hypnosis, 1.4)
         ufo = gml_Script_instance_create(x, y, obj_saucer_ufo)
         image_index = 3
         myinteract = 0
@@ -168,7 +168,7 @@ if (mode == 2)
     yrange = 30
     if (con == 0 && activated && gml_Script_charaY() > (y - yrange) && gml_Script_charaY() < ((y + yrange) + sprite_height))
     {
-        gml_Script_snd_play_pitch(104, 1.4)
+        gml_Script_snd_play_pitch(snd_hypnosis, 1.4)
         ufo = gml_Script_instance_create(x, y, obj_saucer_ufo)
         image_index = 3
         myinteract = 0
@@ -205,7 +205,7 @@ if (mode == 4)
         if (timer >= 120)
         {
             if (montyboss == 1)
-                gml_Script_snd_play(134)
+                gml_Script_snd_play(snd_explosion_mmx)
             midx = (x + (sprite_width / 2))
             midy = (y + (sprite_height / 2))
             explosion = gml_Script_instance_create(midx, midy, obj_textbomb_explosion)

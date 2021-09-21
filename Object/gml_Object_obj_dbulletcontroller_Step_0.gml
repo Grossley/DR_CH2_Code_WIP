@@ -93,7 +93,7 @@ else if (type == 3)
         btimer = 0
         d = gml_Script_instance_create((x + 28), (y + 34), obj_chainbullet)
         d.childBullet = 450
-        gml_Script_snd_play_x(97, 0.8, random_range(0.8, 1.2))
+        gml_Script_snd_play_x(snd_electric_meow, 0.8, random_range(0.8, 1.2))
         d.element = 6
         d.damage = damage
         d.grazepoints = 1.4
@@ -148,7 +148,7 @@ else if (type == 5)
     {
         xx = (choose((minx - 35), (maxx + 35)) + random_range(-15, 15))
         yy = random_range((miny - 20), (maxy + 20))
-        d = gml_Script_scr_bullet_create(xx, yy, 444)
+        d = gml_Script_scr_bullet_create(xx, yy, obj_swatchling_bird)
         d.image_blend = (special == 1 ? c_orange : c_red)
         d.grazepoints = 4
         d.depth -= 11
@@ -255,7 +255,7 @@ else if (type == 8)
             }
             for (var i = 0; i < 4; i++)
             {
-                d = gml_Script_scr_bullet_create(xx, yy, 42)
+                d = gml_Script_scr_bullet_create(xx, yy, obj_berdlyb_tornado)
                 yy += yshift
                 d.maxSpeed = 6
                 d.timer = startDelay
@@ -290,7 +290,7 @@ else if (type == 8)
                 pattern = 1
                 xx = (obj_growtangle.x + lengthdir_x(240, startDir))
                 yy = (obj_growtangle.y + lengthdir_y(240, startDir))
-                d = gml_Script_scr_bullet_create(xx, yy, 42)
+                d = gml_Script_scr_bullet_create(xx, yy, obj_berdlyb_tornado)
                 d.direction = (startDir + 180)
                 d.maxSpeed = 6
                 d.grazepoints = 5
@@ -1097,7 +1097,7 @@ else if (type == 32)
         }
         obj_growtangle.target_angle = 45
         obj_growtangle.image_angle = 45
-        d = gml_Script_scr_bullet_create((x - 22), (y - 6), 459)
+        d = gml_Script_scr_bullet_create((x - 22), (y - 6), obj_tm_quizzler)
         made++
         d.depth = global.monsterinstance[creator].depth
         d.controller = self
@@ -1126,7 +1126,7 @@ else if (type == 32)
             special = -1
             difficulty++
             dd = gml_Script_scr_dark_marker_animated((x + 80), (y + 4), 1702, 1)
-            dd2 = gml_Script_scr_dark_marker((x + 74), (y + 66), 292)
+            dd2 = gml_Script_scr_dark_marker((x + 74), (y + 66), spr_cutscene_26_tasquemanager)
             var _maru = gml_Script_instance_create((x + (phase * 40)), (y + 175), obj_bulletparent)
             _maru.sprite_index = spr_tm_maru
             _maru.image_xscale = 2
@@ -1140,7 +1140,7 @@ else if (type == 32)
             dd.depth = (dd2.depth - 1)
             with (obj_tasque_manager_enemy)
                 visible = false
-            gml_Script_snd_play(148)
+            gml_Script_snd_play(snd_coin)
             btimer = -45
             phase++
         }
@@ -1185,10 +1185,10 @@ else if (type == 32)
         {
             special = -1
             made = 4
-            dd2 = gml_Script_scr_dark_marker(x, y, 1695)
+            dd2 = gml_Script_scr_dark_marker(x, y, spr_tm_hurt)
             with (obj_tasque_manager_enemy)
                 visible = false
-            gml_Script_snd_play(143)
+            gml_Script_snd_play(snd_error)
             if (global.encounterno == 89)
             {
                 var _batsu = gml_Script_instance_create((x + (strikes * 40)), (y + 215), obj_bulletparent)
@@ -1211,7 +1211,7 @@ else if (type == 32)
     {
         if (special == 1)
             made++
-        d = gml_Script_scr_bullet_create((x - 22), (y - 6), 459)
+        d = gml_Script_scr_bullet_create((x - 22), (y - 6), obj_tm_quizzler)
         d.element = 6
         d.creator = creator
         d.controller = self
@@ -1243,7 +1243,7 @@ else if (type == 34)
         }
         else
             side = ((side + irandom(1)) % 3)
-        gml_Script_snd_play_x(46, 1, 1.2)
+        gml_Script_snd_play_x(snd_spearappear, 1, 1.2)
         d = gml_Script_instance_create(x, y, obj_werewerewire_laserbullet)
         d.grazepoints = 4
         d.damage = damage
@@ -1282,7 +1282,7 @@ else if (type == 35)
         }
         obj_growtangle.target_angle = 45
         obj_growtangle.image_angle = 45
-        d = gml_Script_scr_bullet_create(x, y, 459)
+        d = gml_Script_scr_bullet_create(x, y, obj_tm_quizzler)
         d.depth = global.monsterinstance[creator].depth
         d.creator = creator
         d.difficulty = difficulty
@@ -1314,7 +1314,7 @@ else if (type == 47)
 }
 else if (type == 48)
 {
-    if (btimer >= 135 && (!gml_Script_i_ex(849)))
+    if (btimer >= 135 && (!gml_Script_i_ex(obj_ch2_dojo_puzzlebullet_maker)))
     {
         var xmod = 0
         if (roundcount == 1)
@@ -1381,7 +1381,7 @@ else if (type == 50)
     if (btimer >= 45 && made == 0)
     {
         made = 1
-        gml_Script_snd_play(96)
+        gml_Script_snd_play(snd_explosion_8bit)
         var initangle = random(80)
         var initspeed = 4
         bulcount = 9
@@ -1439,7 +1439,7 @@ else if (type == 51)
     }
     if (btimer >= 45 && btimer < 46)
     {
-        gml_Script_snd_play(96)
+        gml_Script_snd_play(snd_explosion_8bit)
         with (obj_sneo_weird_end_pipis)
             event_user(0)
     }

@@ -5,7 +5,7 @@ if (con == 0)
     image_alpha = lerp(image_alpha, 1, 0.15)
     if (image_alpha >= 0.9)
     {
-        if gml_Script_i_ex(890)
+        if gml_Script_i_ex(obj_actor)
         {
             with (obj_actor)
                 image_alpha = lerp(image_alpha, 0, 0.5)
@@ -204,8 +204,8 @@ if (con == 5)
 {
     if (thrash_con == 4)
     {
-        gml_Script_snd_play(139)
-        gml_Script_snd_play(235)
+        gml_Script_snd_play(snd_weaponpull)
+        gml_Script_snd_play(snd_closet_impact)
         thrash_con = 5
         thrash.max_index = 3
         thrash.image_play = 1
@@ -217,8 +217,8 @@ if (con == 6)
 {
     if (thrash_con == 5)
     {
-        gml_Script_snd_play(139)
-        gml_Script_snd_play(235)
+        gml_Script_snd_play(snd_weaponpull)
+        gml_Script_snd_play(snd_closet_impact)
         thrash.max_index = 6
         thrash.image_play = 1
         thrash.image_index++
@@ -230,8 +230,8 @@ if (con == 7)
 {
     if (thrash_con == 6)
     {
-        gml_Script_snd_play(139)
-        gml_Script_snd_play(235)
+        gml_Script_snd_play(snd_weaponpull)
+        gml_Script_snd_play(snd_closet_impact)
         thrash.image_play = 1
         thrash.image_index++
         thrash.max_index = 9
@@ -266,8 +266,8 @@ if (con == 10)
     if (thrash_con == 9)
     {
         thrash.max_index = 13
-        gml_Script_snd_play(153)
-        gml_Script_snd_play(159)
+        gml_Script_snd_play(snd_cardrive)
+        gml_Script_snd_play(snd_jump)
         thrash_con = 10
         alarm[0] = 5
     }
@@ -284,7 +284,7 @@ if (con == 11)
 if (con == 12)
 {
     con = 99
-    if gml_Script_i_ex(974)
+    if gml_Script_i_ex(obj_ch2_scene26)
     {
         with (obj_ch2_scene26)
             con = 15

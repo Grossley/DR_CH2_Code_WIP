@@ -11,7 +11,7 @@ else
         if (global.plot < 140)
         {
             gml_Script_scr_losechar()
-            gml_Script_safe_delete(274)
+            gml_Script_safe_delete(obj_caterpillarchara)
             gml_Script_scr_getchar(3)
             obj_mainchara.x = -100
             var ra_x = (global.plot < 140 ? (obj_mainchara.x - 40) : obj_mainchara.x)

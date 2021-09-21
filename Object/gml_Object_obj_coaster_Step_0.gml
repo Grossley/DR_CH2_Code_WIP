@@ -2,7 +2,7 @@ if (type == 0 && (!init))
 {
     init = 1
     character_sprite = spr_krisr_dark
-    actor = gml_Script_scr_dark_marker(0, 0, 652)
+    actor = gml_Script_scr_dark_marker(0, 0, spr_krisr_dark)
     actor.image_speed = 0
     actor.visible = false
 }
@@ -15,7 +15,7 @@ if (type == 1 && (!init))
     hurt_sprite_back = 839
     hurt_character_sprite = 1464
     character_sprite = spr_susie_walk_right_dw
-    actor = gml_Script_scr_dark_marker(0, 0, 823)
+    actor = gml_Script_scr_dark_marker(0, 0, spr_susie_walk_right_dw)
     actor.image_speed = 0
     actor.visible = false
     coaster_offset_x = -20
@@ -30,7 +30,7 @@ if (type == 2 && (!init))
     hurt_sprite_back = 804
     hurt_character_sprite = 1507
     character_sprite = spr_ralsei_walk_right
-    actor = gml_Script_scr_dark_marker(0, 0, 794)
+    actor = gml_Script_scr_dark_marker(0, 0, spr_ralsei_walk_right)
     actor.image_speed = 0
     actor.visible = false
     coaster_offset_x = -30
@@ -45,7 +45,7 @@ if (type == 3 && (!init))
     hurt_sprite_back = 687
     hurt_character_sprite = 1849
     character_sprite = spr_berdly_walk_left_dw
-    actor = gml_Script_scr_dark_marker(0, 0, 669)
+    actor = gml_Script_scr_dark_marker(0, 0, spr_berdly_walk_left_dw)
     actor.image_speed = 0
     actor.visible = false
     coaster_offset_x = -65
@@ -57,7 +57,7 @@ if (type == 4 && (!init))
     default_sprite_front = 734
     default_sprite_back = -1
     character_sprite = spr_noelle_walk_left_dw
-    actor = gml_Script_scr_dark_marker(0, 0, 718)
+    actor = gml_Script_scr_dark_marker(0, 0, spr_noelle_walk_left_dw)
     actor.image_speed = 0
     actor.visible = false
     coaster_offset_x = -65

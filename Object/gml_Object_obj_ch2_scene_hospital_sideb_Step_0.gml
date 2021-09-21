@@ -38,8 +38,8 @@ if (con == 5 && gml_Script_d_ex())
             maked = 1
             global.msc = 1218
             steptimer = -30
-            gml_Script_snd_play(190)
-            gml_Script_snd_play(191)
+            gml_Script_snd_play(snd_step1)
+            gml_Script_snd_play(snd_step2)
             with (obj_writer)
                 instance_destroy()
             global.flag[928] = 3
@@ -57,8 +57,8 @@ if (con == 4 && gml_Script_d_ex())
             maked = 1
             global.msc = 1217
             steptimer = 50
-            gml_Script_snd_play(190)
-            gml_Script_snd_play(191)
+            gml_Script_snd_play(snd_step1)
+            gml_Script_snd_play(snd_step2)
             with (obj_writer)
                 instance_destroy()
             global.flag[928] = 2
@@ -73,15 +73,15 @@ if (con == 4 && gml_Script_d_ex())
             maked = 1
             global.msc = 1216
             steptimer = 0
-            gml_Script_snd_play(190)
-            gml_Script_snd_play(191)
+            gml_Script_snd_play(snd_step1)
+            gml_Script_snd_play(snd_step2)
             with (obj_writer)
                 instance_destroy()
             global.flag[928] = 1
         }
     }
 }
-if (con == 4 && (!gml_Script_i_ex(61)))
+if (con == 4 && (!gml_Script_i_ex(obj_dialoguer)))
 {
     global.msc = 1217
     gml_Script_scr_text(global.msc)
@@ -102,25 +102,25 @@ if (con == 5)
             shake = 0
     }
 }
-if (con == 5 && (!gml_Script_i_ex(61)))
+if (con == 5 && (!gml_Script_i_ex(obj_dialoguer)))
 {
     timer++
     if (timer == 1)
-        gml_Script_snd_play(218)
+        gml_Script_snd_play(snd_escaped)
     if (timer >= 90)
     {
         con = 6
         timer = 0
     }
 }
-if (con == 6 && (!gml_Script_i_ex(61)))
+if (con == 6 && (!gml_Script_i_ex(obj_dialoguer)))
 {
     global.msc = 1219
     gml_Script_scr_text(global.msc)
     d = gml_Script_d_make()
     con = 7
 }
-if (con == 7 && (!gml_Script_i_ex(61)))
+if (con == 7 && (!gml_Script_i_ex(obj_dialoguer)))
 {
     timer++
     with (blackscreen)

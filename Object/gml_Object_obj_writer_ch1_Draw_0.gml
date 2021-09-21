@@ -47,7 +47,7 @@ if (formatted == 0)
     textalignment = ""
     for (i = 0; i < (length + 1); i += 1)
     {
-        skip = 0
+        skip = false
         thischar = string_char_at(mystring, i)
         if (thischar == "/" || thischar == "%")
         {
@@ -150,7 +150,7 @@ if (formatted == 0)
             remspace = -1
             charpos = 0
             linecount += 1
-            skip = 1
+            skip = true
             nextchar = string_char_at(mystring, (i + 1))
             if (aster == true && autoaster == true && nextchar != "*" && global.lang != "ja")
             {
@@ -160,7 +160,7 @@ if (formatted == 0)
                 i += 2
             }
         }
-        if (skip == 0)
+        if (skip == false)
         {
             if (thischar == " ")
             {
@@ -344,7 +344,7 @@ for (n = 1; n < pos; n += 1)
             fam = 0
             fam = real(nextchar2)
             faced = 1
-            smallface = gml_Script_instance_create_ch1(global.smxx[fam], global.smyy[fam], 1325)
+            smallface = gml_Script_instance_create_ch1(global.smxx[fam], global.smyy[fam], obj_smallface_ch1)
             if instance_exists(smallface)
             {
                 smallface.x += x
@@ -505,14 +505,14 @@ for (n = 1; n < pos; n += 1)
             if (nextchar2 == "1")
             {
                 if (instance_exists(obj_choicer_old_ch1) == 0)
-                    choicer = gml_Script_instance_create_ch1(0, 0, 1321)
+                    choicer = gml_Script_instance_create_ch1(0, 0, obj_choicer_old_ch1)
                 halt = 5
             }
             if (nextchar2 == "2" || nextchar2 == "3" || nextchar2 == "4")
             {
                 if (instance_exists(obj_choicer_neo_ch1) == 0)
                 {
-                    choicer = gml_Script_instance_create_ch1(0, 0, 1322)
+                    choicer = gml_Script_instance_create_ch1(0, 0, obj_choicer_neo_ch1)
                     choicer.choicetotal = (real(nextchar2) - 1)
                 }
                 halt = 5

@@ -7,7 +7,7 @@ if (global.chapter != 2 || global.plot >= 64)
     layer_set_visible(layer_get_id("SLIDE_TILES_Overlay"), 1)
     with (obj_doorA_musfade)
         instance_destroy()
-    if gml_Script_i_ex(341)
+    if gml_Script_i_ex(obj_cyber_wall_lights)
     {
         with (obj_cyber_wall_lights)
         {
@@ -23,7 +23,7 @@ else
     layer_set_visible(layer_get_id("SLIDE_DECOR"), 0)
     layer_set_visible(layer_get_id("SLIDE_TILES"), 0)
     layer_set_visible(layer_get_id("SLIDE_TILES_Overlay"), 0)
-    if gml_Script_i_ex(341)
+    if gml_Script_i_ex(obj_cyber_wall_lights)
     {
         with (obj_cyber_wall_lights)
         {

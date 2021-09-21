@@ -13,7 +13,7 @@ if (global.chapter != 2 || global.plot >= 99)
 else if (weird == 0)
 {
     gml_Script_scr_losechar()
-    gml_Script_safe_delete(274)
+    gml_Script_safe_delete(obj_caterpillarchara)
     gml_Script_scr_getchar(2)
     gml_Script_scr_getchar(3)
     gml_Script_scr_getchar(4)

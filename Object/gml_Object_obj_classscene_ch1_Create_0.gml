@@ -1,4 +1,4 @@
-door = gml_Script_scr_marker_ch1(236, 26, 3479)
+door = gml_Script_scr_marker_ch1(236, 26, spr_classdoor_ch1)
 with (door)
     gml_Script_scr_depth_ch1()
 con = 0
@@ -13,21 +13,21 @@ if (global.plot < 2)
         y = 30
         gml_Script_scr_depth_ch1()
     }
-    alphys = gml_Script_scr_marker_ch1(50, 50, 3480)
+    alphys = gml_Script_scr_marker_ch1(50, 50, spr_alphysd_ch1)
     with (alphys)
         gml_Script_scr_depth_ch1()
     global.interact = 1
 }
 if (global.plot >= 3)
 {
-    doorb = gml_Script_instance_create_ch1(242, 48, 1417)
+    doorb = gml_Script_instance_create_ch1(242, 48, obj_doorB_ch1)
     with (door)
         depth = 900000
     with (obj_npc_facing_ch1)
         instance_destroy()
     with (obj_tem_school_ch1)
         instance_destroy()
-    sunset = gml_Script_scr_marker_ch1(3, 0, 3466)
+    sunset = gml_Script_scr_marker_ch1(3, 0, spr_torielclass_sunsetoverlay_ch1)
     with (sunset)
     {
         image_alpha = 0.4

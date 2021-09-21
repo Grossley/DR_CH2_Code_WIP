@@ -8,7 +8,7 @@ if (global.plot < 140)
         global.interact = 1
         swanboat.pause_x_move = 1
         swanboat.sprite_index = spr_swanboat_squish
-        gml_Script_snd_play(56)
+        gml_Script_snd_play(snd_squeaky)
         swanboat.con = 99
         swanboat.active = false
         cutscene_master = gml_Script_scr_cutscene_make()
@@ -40,7 +40,7 @@ if (global.plot < 140)
         gml_Script_c_actortocaterpillar()
         gml_Script_c_terminatekillactors()
     }
-    if (con == 2 && (!gml_Script_i_ex(895)))
+    if (con == 2 && (!gml_Script_i_ex(obj_cutscene_master)))
     {
         con = 99
         with (obj_mainchara)

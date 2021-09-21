@@ -10,7 +10,7 @@ if (global.flag[346] == 0)
     {
         con = 2
         global.interact = 1
-        key = gml_Script_scr_dark_marker(keyXPos, keyYPos, 2310)
+        key = gml_Script_scr_dark_marker(keyXPos, keyYPos, spr_ch2_gimmick_saucer_key)
         fadeplatters = 1
     }
     if fadeplatters
@@ -50,7 +50,7 @@ if (global.flag[346] == 0)
         {
             for (var i = 0; i < 1; i++)
             {
-                sparkle[i] = gml_Script_scr_marker((key.x + 50), (key.y + 30), 2471)
+                sparkle[i] = gml_Script_scr_marker((key.x + 50), (key.y + 30), spr_sparestar_anim)
                 sparkle[i].image_speed = 0.5
                 sparkle[i].hspeed = random_range(-3, 3)
                 sparkle[i].friction = 0.05
@@ -78,7 +78,7 @@ if (global.flag[346] == 0)
         explosion.image_xscale = 2
         explosion.image_yscale = 2
         fadeplatters = 0
-        gml_Script_snd_play(188)
+        gml_Script_snd_play(snd_badexplosion)
         gml_Script_safe_delete(key)
         gml_Script_safe_delete(bookcase)
         for (i = 0; i < array_length_1d(sparkle); i++)
@@ -101,7 +101,7 @@ if (global.flag[346] == 0)
     }
     if make_forcefield
     {
-        forcefield_right = gml_Script_scr_forcefield(520, 240, 2, 8, 1, 0)
+        forcefield_right = gml_Script_scr_forcefield(520, 240, 2, 8, true, false)
         forcefield_right.depth = 80000
         make_forcefield = 0
     }

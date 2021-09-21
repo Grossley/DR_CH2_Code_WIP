@@ -8,8 +8,8 @@ if (cancollide == true)
         if (obj_mainchara.y < y)
         {
             abovey = 1
-            gml_Script_snd_play(64)
-            slide_noise = gml_Script_snd_loop(236)
+            gml_Script_snd_play(snd_noise)
+            slide_noise = gml_Script_snd_loop(snd_paper_surf)
             with (obj_mainchara)
             {
                 fun = true

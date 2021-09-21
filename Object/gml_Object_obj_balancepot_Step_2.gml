@@ -22,7 +22,7 @@ if (falling == -1)
         global.facing = 0
         falling = 0
         y = (obj_mainchara.y + 5)
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
     }
 }
 if (falling == 0 && global.interact == 0)

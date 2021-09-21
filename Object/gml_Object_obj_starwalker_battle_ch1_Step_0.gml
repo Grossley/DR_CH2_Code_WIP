@@ -1,7 +1,7 @@
 if (walkcon == 1)
 {
     visible = false
-    wings = gml_Script_scr_dark_marker_ch1((x + 92), (y + 74), 3983)
+    wings = gml_Script_scr_dark_marker_ch1((x + 92), (y + 74), spr_starwalker_wings_ch1)
     wings.image_index = image_index
     with (wings)
     {
@@ -12,7 +12,7 @@ if (walkcon == 1)
         gravity_direction = 90
         gravity = 0.2
     }
-    body = gml_Script_scr_dark_marker_ch1((x + 70), (y + 52), 3982)
+    body = gml_Script_scr_dark_marker_ch1((x + 70), (y + 52), spr_starwalker_walk_ch1)
     with (body)
     {
         depth = 1000
@@ -36,7 +36,7 @@ if (walkcon == 2)
             hspeed = 7
             image_speed = 0.25
         }
-        bodycheck = gml_Script_instance_create_ch1(body.x, (body.y + 20), 1405)
+        bodycheck = gml_Script_instance_create_ch1(body.x, (body.y + 20), obj_readable_room1_ch1)
         bodycheck.image_xscale = 2
         bodycheck.image_yscale = 2
         with (bodycheck)

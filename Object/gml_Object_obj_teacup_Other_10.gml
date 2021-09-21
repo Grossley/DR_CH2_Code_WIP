@@ -37,7 +37,7 @@ if (state == 1)
         partySize++
     if gml_Script_i_ex(global.cinstance[1])
         partySize++
-    gml_Script_snd_play(159)
+    gml_Script_snd_play(snd_jump)
     for (var i = 0; i < partySize; i++)
     {
         var _character = (i == 0 ? obj_mainchara : global.cinstance[(i - 1)])

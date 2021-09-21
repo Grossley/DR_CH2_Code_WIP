@@ -2,7 +2,7 @@ gml_Script_scr_depth_ch1()
 siner += 1
 if (con == 1 && gml_Script___view_get(0, 0) >= 280 && obj_mainchara_ch1.y > 535)
 {
-    darksus = gml_Script_scr_dark_marker_ch1(873, 602, 4184)
+    darksus = gml_Script_scr_dark_marker_ch1(873, 602, spr_susier_shadow_ch1)
     darksus.image_speed = 0.2
     with (darksus)
         gml_Script_scr_depth_ch1()
@@ -20,7 +20,7 @@ if (con == 3)
 }
 if (con == 4 && gml_Script___view_get(0, 0) >= 540 && obj_mainchara_ch1.y > 535)
 {
-    darksus2 = gml_Script_scr_dark_marker_ch1(1116, 720, 4184)
+    darksus2 = gml_Script_scr_dark_marker_ch1(1116, 720, spr_susier_shadow_ch1)
     darksus2.image_speed = 0.2
     with (darksus2)
         gml_Script_scr_depth_ch1()
@@ -49,7 +49,7 @@ if (con == 13)
     global.fe = 7
     global.typer = 30
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_57_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 14
 }
 if (con == 14 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -69,7 +69,7 @@ if (con == 16)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_80_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_81_0")
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_82_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 17
 }
 if (con == 17 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -90,7 +90,7 @@ if (con == 21)
 {
     global.fe = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_104_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 22
 }
 if (con == 22 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -104,7 +104,7 @@ if (con == 24)
         sprite_index = spr_susiel_dark_ch1
     global.fe = 7
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_119_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 25
 }
 if (con == 25 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -141,7 +141,7 @@ if (con == 31)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_156_0")
     gml_Script_scr_getchar_ch1(2)
     con = 32
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 32 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -162,7 +162,7 @@ if (con == 33 && global.interact == 0)
         global.typer = 30
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_182_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (obj_mainchara_ch1.x > 1760)
     {
@@ -178,14 +178,14 @@ if (con == 33 && global.interact == 0)
         }
         else
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dustpile_susie_slash_Step_0_gml_201_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
 }
 if (con == 34 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     with (partysus)
         visible = false
-    news = gml_Script_scr_dark_marker_ch1(partysus.x, partysus.y, 3544)
+    news = gml_Script_scr_dark_marker_ch1(partysus.x, partysus.y, spr_susier_dark_ch1)
     with (news)
     {
         move_towards_point(940, 660, 14)
@@ -198,7 +198,7 @@ if (con == 35 && instance_exists(obj_dialoguer_ch1) == 0)
 {
     with (partysus)
         visible = false
-    news = gml_Script_scr_dark_marker_ch1(partysus.x, partysus.y, 3544)
+    news = gml_Script_scr_dark_marker_ch1(partysus.x, partysus.y, spr_susier_dark_ch1)
     with (news)
     {
         hspeed = 14

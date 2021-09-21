@@ -1,13 +1,13 @@
-var jukebox = gml_Script_scr_marker(44, 82, 3123)
+var jukebox = gml_Script_scr_marker(44, 82, bg_dw_castle_cafe_juke)
 with (jukebox)
     gml_Script_scr_depth()
-var table_a = gml_Script_scr_marker(42, 230, 3122)
+var table_a = gml_Script_scr_marker(42, 230, bg_dw_castle_cafe_table)
 with (table_a)
     gml_Script_scr_depth()
-var table_b = gml_Script_scr_marker(260, 230, 3122)
+var table_b = gml_Script_scr_marker(260, 230, bg_dw_castle_cafe_table)
 with (table_b)
     gml_Script_scr_depth()
-var table_c = gml_Script_scr_marker(140, 325, 3122)
+var table_c = gml_Script_scr_marker(140, 325, bg_dw_castle_cafe_table)
 with (table_c)
     gml_Script_scr_depth()
 var table_collider_a = gml_Script_instance_create((table_a.x + 8), (table_a.y + 10), obj_soliddark)
@@ -19,7 +19,7 @@ table_collider_b.image_yscale = 1.3
 var table_collider_c = gml_Script_instance_create((table_c.x + 8), (table_c.y + 10), obj_soliddark)
 table_collider_c.image_xscale = 1.9
 table_collider_c.image_yscale = 1.3
-var counter = gml_Script_scr_marker(365, 110, 3124)
+var counter = gml_Script_scr_marker(365, 110, bg_dw_castle_cafe_counter)
 counter.depth = 98000
 tm_con = -1
 t_con = -1

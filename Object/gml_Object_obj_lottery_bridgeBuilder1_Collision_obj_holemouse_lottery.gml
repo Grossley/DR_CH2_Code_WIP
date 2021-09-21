@@ -1,7 +1,7 @@
 depth = (other.depth + 1)
 if (built == 0)
 {
-    gml_Script_snd_play(59)
+    gml_Script_snd_play(snd_locker)
     gml_Script_instance_create(x, y, obj_shakeobj)
     if (bridgetarget == "bridge1")
         image_index = 0
@@ -32,6 +32,6 @@ if (built == 0)
     built = 1
 }
 else
-    gml_Script_snd_play(176)
+    gml_Script_snd_play(snd_mouse)
 with (other)
     instance_destroy()

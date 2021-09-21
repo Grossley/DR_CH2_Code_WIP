@@ -1,9 +1,9 @@
 if (hatinit == 0)
 {
-    hat = gml_Script_scr_dark_marker(room_width, room_height, 2705)
+    hat = gml_Script_scr_dark_marker(room_width, room_height, spr_werewirehat)
     hatinit = 1
 }
-if (!gml_Script_i_ex(865))
+if (!gml_Script_i_ex(obj_battleback))
 {
     if gml_Script_i_ex(werewire6)
     {

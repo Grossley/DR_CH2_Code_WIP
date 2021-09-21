@@ -15,7 +15,7 @@ if (con > 0)
         global.fe = 2
         global.typer = 7
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_carcutscene_slash_Step_0_gml_17_0")
-        dd = gml_Script_instance_create_ch1(0, 0, 1326)
+        dd = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         dd.side = 0
         con = 3
     }
@@ -134,7 +134,7 @@ if (con > 0)
             hspeed = 0
             vspeed = 2
         }
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         fade.depth = 4000
         fade.height = 400
         fade.fadespeed = 0.01
@@ -143,7 +143,7 @@ if (con > 0)
     }
     if (con == 21)
     {
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         fade.depth = -200
         fade.height = 400
         fade.fadespeed = 0.025
@@ -153,7 +153,7 @@ if (con > 0)
     }
     if (con == 23.1)
     {
-        car = gml_Script_scr_marker_ch1(390, 0, 3452)
+        car = gml_Script_scr_marker_ch1(390, 0, spr_torcar_d_ch1)
         with (car)
         {
             gml_Script_scr_depth_ch1()
@@ -174,10 +174,10 @@ if (con > 0)
         carcon = 1
         with (obj_npc_room_ch1)
             instance_destroy()
-        catty = gml_Script_scr_marker_ch1(486, 68, 3651)
-        cattydad = gml_Script_scr_marker_ch1(574, 64, 3649)
-        bratty = gml_Script_scr_marker_ch1(744, 174, 3650)
-        froggit = gml_Script_scr_marker_ch1(800, 114, 3657)
+        catty = gml_Script_scr_marker_ch1(486, 68, spr_npc_catty_ch1)
+        cattydad = gml_Script_scr_marker_ch1(574, 64, spr_npc_cattydad_ch1)
+        bratty = gml_Script_scr_marker_ch1(744, 174, spr_npc_bratty_ch1)
+        froggit = gml_Script_scr_marker_ch1(800, 114, spr_npc_froggit_ch1)
         with (froggit)
         {
             gml_Script_scr_depth_ch1()
@@ -194,7 +194,7 @@ if (con > 0)
     {
         with (obj_writer_ch1)
             instance_destroy()
-        fade2 = gml_Script_instance_create_ch1(0, 0, 1462)
+        fade2 = gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         fade2.image_blend = c_white
         con = 23.1
         room_goto(room_town_north_ch1)
@@ -241,12 +241,12 @@ if (con > 0)
         }
         carcon = 0
         con = 133
-        gml_Script_instance_create_ch1(0, 0, 1460)
+        gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         alarm[4] = 30
     }
     if (con == 130)
     {
-        car = gml_Script_scr_marker_ch1(790, -60, 3452)
+        car = gml_Script_scr_marker_ch1(790, -60, spr_torcar_d_ch1)
         with (car)
         {
             gml_Script_scr_depth_ch1()
@@ -266,7 +266,7 @@ if (con > 0)
     }
     if (con == 29)
     {
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_town_mid_ch1)
         con = 130
     }
@@ -274,13 +274,13 @@ if (con > 0)
         global.interact = 1
     if (con == 132)
     {
-        gml_Script_instance_create_ch1(0, 0, 1460)
+        gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         alarm[4] = 30
         con = 133
     }
     if (con == 140)
     {
-        car = gml_Script_scr_marker_ch1(810, 0, 3452)
+        car = gml_Script_scr_marker_ch1(810, 0, spr_torcar_d_ch1)
         with (car)
         {
             gml_Script_scr_depth_ch1()
@@ -303,9 +303,9 @@ if (con > 0)
         con = 141
         alarm[4] = (140 / car.vspeed)
         carcon = 2
-        qc = gml_Script_scr_marker_ch1(764, 85, 3660)
-        undyne = gml_Script_scr_marker_ch1(905, 80, 3644)
-        bear = gml_Script_scr_marker_ch1(710, 82, 3679)
+        qc = gml_Script_scr_marker_ch1(764, 85, spr_npc_qc_stand_ch1)
+        undyne = gml_Script_scr_marker_ch1(905, 80, spr_undyne_dt_ch1)
+        bear = gml_Script_scr_marker_ch1(710, 82, spr_npc_politicsbear_ch1)
         with (bear)
             gml_Script_scr_depth_ch1()
         with (qc)
@@ -315,7 +315,7 @@ if (con > 0)
     }
     if (con == 134)
     {
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_town_south_ch1)
         con = 140
     }
@@ -354,13 +354,13 @@ if (con > 0)
     if (con == 144)
     {
         carcon = 0
-        gml_Script_instance_create_ch1(0, 0, 1460)
+        gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         alarm[4] = 30
         con = 145
     }
     if (con == 161)
     {
-        car = gml_Script_scr_marker_ch1(0, 220, 3450)
+        car = gml_Script_scr_marker_ch1(0, 220, spr_torcar_r_ch1)
         with (car)
         {
             gml_Script_scr_depth_ch1()
@@ -382,7 +382,7 @@ if (con > 0)
     }
     if (con == 146)
     {
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_town_school_ch1)
         con = 161
     }
@@ -422,8 +422,8 @@ if (con > 0)
         gml_Script_scr_pan_ch1(1, -0.334, 100)
         with (car)
             depth = 500
-        k = gml_Script_scr_marker_ch1(((car.x - ctx) + 10), (car.y - cty), 4202)
-        t = gml_Script_scr_marker_ch1((car.x - ckx), (car.y - cky), 3464)
+        k = gml_Script_scr_marker_ch1(((car.x - ctx) + 10), (car.y - cty), spr_krisr_ch1)
+        t = gml_Script_scr_marker_ch1((car.x - ckx), (car.y - cky), spr_toriel_l_ch1)
         with (k)
         {
             depth = 50000
@@ -529,7 +529,7 @@ if (con > 0)
             hspeed = 0
             sprite_index = spr_toriel_handhold_u_ch1
         }
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (fade)
             fadespeed = 0.03
         con = 56
@@ -542,7 +542,7 @@ if (con > 0)
         fade.y = 0
     if (con == 57)
     {
-        pf = gml_Script_instance_create_ch1(0, 0, 1462)
+        pf = gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         with (pf)
             image_alpha = 1.2
         room_goto(room_schoollobby_ch1)

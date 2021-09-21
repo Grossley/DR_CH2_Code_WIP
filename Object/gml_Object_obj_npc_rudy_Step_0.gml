@@ -3,7 +3,7 @@ if (coughcon < 0)
 if (coughcon == 0 && (!gml_Script_d_ex()))
 {
     coughcon = 1
-    gml_Script_snd_play(233)
+    gml_Script_snd_play(snd_rudycough)
     sprite_index = spr_rudy_cough
     image_speed = 0.25
     alarm[0] = 30

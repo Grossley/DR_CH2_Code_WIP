@@ -53,9 +53,9 @@ if dodraw
     var xmult = min(((70 / sprite_width) * 4), 4)
     var ymult = min(((80 / sprite_height) * 5), 5)
     var ysmult = min(((80 / sprite_height) * 0.2), 0.2)
-    gml_Script_draw_sprite_ext_centerscale(sprite_index, walk_index, ((x + superdrawx) + (sin((drawsiner / 5)) * xmult)), (y + (cos((drawsiner / 5)) * ymult)), (image_xscale + superscalex), (image_yscale + (sin((drawsiner / 5)) * ysmult)), image_angle, 255, (image_alpha * 0.2))
-    gml_Script_draw_sprite_ext_centerscale(sprite_index, walk_index, ((x + superdrawx) - (sin((drawsiner / 5)) * xmult)), (y - (cos((drawsiner / 5)) * ymult)), (image_xscale + superscalex), (image_yscale - (sin((drawsiner / 5)) * ysmult)), image_angle, 255, (image_alpha * 0.2))
-    gml_Script_scr_draw_outline_ext(sprite_index, walk_index, x, y, (image_xscale * drawscale), image_yscale, image_angle, 255, (image_alpha * 0.3), 2)
+    gml_Script_draw_sprite_ext_centerscale(sprite_index, walk_index, ((x + superdrawx) + (sin((drawsiner / 5)) * xmult)), (y + (cos((drawsiner / 5)) * ymult)), (image_xscale + superscalex), (image_yscale + (sin((drawsiner / 5)) * ysmult)), image_angle, c_red, (image_alpha * 0.2))
+    gml_Script_draw_sprite_ext_centerscale(sprite_index, walk_index, ((x + superdrawx) - (sin((drawsiner / 5)) * xmult)), (y - (cos((drawsiner / 5)) * ymult)), (image_xscale + superscalex), (image_yscale - (sin((drawsiner / 5)) * ysmult)), image_angle, c_red, (image_alpha * 0.2))
+    gml_Script_scr_draw_outline_ext(sprite_index, walk_index, x, y, (image_xscale * drawscale), image_yscale, image_angle, c_red, (image_alpha * 0.3), 2)
     draw_sprite_ext(sprite_index, walk_index, x, y, (image_xscale * drawscale), image_yscale, image_angle, image_blend, image_alpha)
     x = tempx
     mymidx = (x + (sprite_width / 2))

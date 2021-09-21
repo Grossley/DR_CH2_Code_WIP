@@ -75,7 +75,7 @@ if (global.fighting == true)
                             vfx = gml_Script_instance_create((((x + partx[c]) + (partxoff[c] / 1.2)) + (c * 5)), (y - 20), obj_sneo_vine_weak)
                             vfx.depth = (depth - 5)
                             if (!audio_is_playing(snd_damage))
-                                gml_Script_snd_play(166)
+                                gml_Script_snd_play(snd_damage)
                             c = irandom(5)
                             maxvines++
                             a--
@@ -96,7 +96,7 @@ if (global.fighting == true)
                         vfx = gml_Script_instance_create((((x + partx[c]) + (partxoff[c] / 1.2)) + (c * 5)), (y - 20), obj_sneo_vine_weak)
                         vfx.depth = (depth - 5)
                         if (!audio_is_playing(snd_damage))
-                            gml_Script_snd_play(166)
+                            gml_Script_snd_play(snd_damage)
                         c = irandom(5)
                         maxvines++
                         a++

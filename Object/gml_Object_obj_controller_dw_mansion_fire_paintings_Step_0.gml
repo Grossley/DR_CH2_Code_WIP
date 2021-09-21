@@ -26,7 +26,7 @@ if (con == 2.1)
     gml_Script_c_speaker("queen")
     gml_Script_c_msgsetloc(0, "\\E1* I See You Have: Escaped From Your Room Units/%", "obj_controller_dw_mansion_fire_paintings_slash_Step_0_gml_29_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_pannable(1)
+    gml_Script_c_pannable(true)
     gml_Script_c_sel(kr)
     gml_Script_c_walkdirect(464, 230, 12)
     gml_Script_c_sel(su)
@@ -53,20 +53,20 @@ if (con == 2.1)
     gml_Script_c_talk()
     gml_Script_c_wait_box(3)
     gml_Script_c_sel(su)
-    gml_Script_c_autowalk(0)
-    gml_Script_c_sprite(43)
+    gml_Script_c_autowalk(false)
+    gml_Script_c_sprite(spr_cutscene_09_susie_point)
     gml_Script_c_imageindex(0)
     gml_Script_c_imagespeed(0.15)
     gml_Script_c_shakeobj()
     gml_Script_c_wait_box(6)
     gml_Script_c_halt()
     gml_Script_c_wait_talk()
-    gml_Script_c_pannable(0)
+    gml_Script_c_pannable(false)
     gml_Script_c_actortokris()
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 3 && (!gml_Script_i_ex(895)))
+if (con == 3 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     queen_monitor.turnoff = 1
     con++
@@ -78,7 +78,7 @@ if (con == 4 && queen_monitor.turnoff == 0 && queen_monitor.con == 0)
     with (queen_monitor_frame)
         instance_destroy()
     con++
-    gml_Script_snd_play(157)
+    gml_Script_snd_play(snd_ultraswing)
 }
 if (con == 5)
 {
@@ -106,7 +106,7 @@ if (con == 5.6)
 {
     timer++
     if (timer == 5)
-        gml_Script_snd_play(154)
+        gml_Script_snd_play(snd_swing)
     with (queen_wall)
     {
         if (image_xscale < 2)

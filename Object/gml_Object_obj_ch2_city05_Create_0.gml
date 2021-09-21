@@ -19,11 +19,11 @@ else
     if (global.tempflag[29] == 1)
         shortened = 1
     gml_Script_snd_volume(global.currentsong[1], 0, 50)
-    dumpster = gml_Script_scr_dark_marker(560, 106, 136)
+    dumpster = gml_Script_scr_dark_marker(560, 106, spr_cutscene_14_dumpster_closed)
     dumpster.depth = 900000
     with (dumpster)
         gml_Script_scr_depth_alt()
-    dumpster_nakami = gml_Script_scr_dark_marker(560, 106, 135)
+    dumpster_nakami = gml_Script_scr_dark_marker(560, 106, spr_cutscene_14_dumpster_nakami)
     dumpster_nakami.depth = (dumpster.depth - 100)
     dumpster_nakami.visible = false
     play_intro = 0

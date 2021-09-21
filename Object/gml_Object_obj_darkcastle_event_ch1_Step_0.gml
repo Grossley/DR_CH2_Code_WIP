@@ -21,7 +21,7 @@ if (con < 40)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_20_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_21_0")
         con = 5
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 5 && gml_Script_d_ex_ch1() == 0)
     {
@@ -29,7 +29,7 @@ if (con < 40)
         global.fc = 0
         global.typer = 42
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_32_0")
-        wr = gml_Script_instance_create_ch1((xx + 200), (yy + 100), 1327)
+        wr = gml_Script_instance_create_ch1((xx + 200), (yy + 100), obj_writer_ch1)
         if (gml_Script_scr_debug_ch1() == 0)
         {
             with (wr)
@@ -45,7 +45,7 @@ if (con < 40)
             global.typer = 30
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_46_0")
             con = 7
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
     }
     if (con == 7 && gml_Script_d_ex_ch1() == 0)
@@ -55,7 +55,7 @@ if (con < 40)
         global.typer = 42
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_58_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_59_0")
-        wr = gml_Script_instance_create_ch1((xx + 200), (yy + 100), 1327)
+        wr = gml_Script_instance_create_ch1((xx + 200), (yy + 100), obj_writer_ch1)
         if (gml_Script_scr_debug_ch1() == 0)
         {
             with (wr)
@@ -66,7 +66,7 @@ if (con < 40)
     {
         if (instance_exists(wr) == 0)
         {
-            r = gml_Script_scr_dark_marker_ch1(495, 310, 3563)
+            r = gml_Script_scr_dark_marker_ch1(495, 310, spr_ralsei_hood_ch1)
             with (r)
                 depth = 100
             with (s)
@@ -102,12 +102,12 @@ if (con < 40)
         global.msc = 120
         gml_Script_scr_text_ch1(global.msc)
         con = 20
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
     }
     if (con == 20 && gml_Script_d_ex_ch1() == 0)
     {
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (fade)
             fadespeed = 0.01
         con = 21
@@ -121,7 +121,7 @@ if (con < 40)
     }
     if (con == 25)
     {
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_legend_ch1)
         global.plot = 20
         con = 26
@@ -144,7 +144,7 @@ if (con < 40)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_144_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_145_0")
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_146_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 35
     }
@@ -198,7 +198,7 @@ if (con < 40)
         global.msg[18] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_199_0")
         gml_Script_scr_ralface_ch1(19, 1)
         global.msg[20] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_201_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 38
     }
@@ -239,16 +239,16 @@ else
     {
         with (s)
             sprite_index = spr_susieu_dark_ch1
-        gml_Script_snd_play_ch1(454)
+        gml_Script_snd_play_ch1(snd_lancerlaugh_ch1)
         con = 44
         alarm[4] = 50
     }
     if (con == 45)
     {
-        gml_Script_snd_play_ch1(452)
+        gml_Script_snd_play_ch1(snd_drive_ch1)
         xx = gml_Script___view_get(0, 0)
         yy = gml_Script___view_get(1, 0)
-        l = gml_Script_scr_dark_marker_ch1((xx + 720), ((r.y + r.sprite_height) - 10), 3791)
+        l = gml_Script_scr_dark_marker_ch1((xx + 720), ((r.y + r.sprite_height) - 10), spr_lancerbike_ch1)
         with (l)
             hspeed = -32
         con = 46
@@ -257,7 +257,7 @@ else
     {
         if (l.x <= (xx + 360))
         {
-            ex = gml_Script_instance_create_ch1((r.x + 30), (r.y + 30), 1402)
+            ex = gml_Script_instance_create_ch1((r.x + 30), (r.y + 30), obj_animation_ch1)
             ex.sprite_index = spr_realisticexplosion_ch1
             ex.image_xscale = 2
             ex.image_yscale = 2
@@ -273,8 +273,8 @@ else
                 gravity = 0.2
             }
             rflip = 1
-            gml_Script_snd_play_ch1(455)
-            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_snd_play_ch1(snd_badexplosion_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
             con = 47
             alarm[4] = 60
         }
@@ -303,13 +303,13 @@ else
             gml_Script_scr_lanface_ch1(4, 0)
             global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_292_0")
         }
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
     }
     if (con == 49 && gml_Script_d_ex_ch1() == 0)
     {
         con = 50
-        gml_Script_snd_play_ch1(453)
+        gml_Script_snd_play_ch1(snd_lancerwhistle_ch1)
         with (l)
             sprite_index = spr_lancerbike_l_ch1
         siner = 0
@@ -356,7 +356,7 @@ else
         gml_Script_scr_susface_ch1(18, 2)
         global.msg[19] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_346_0")
         global.msg[20] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_347_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 70
     }
@@ -376,14 +376,14 @@ else
         global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_366_0")
         gml_Script_scr_lanface_ch1(7, 4)
         global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_368_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             side = 1
         con = 56
     }
     if (con == 56 && gml_Script_d_ex_ch1() == 0)
     {
-        r2 = gml_Script_scr_dark_marker_ch1((xx - 60), (yy + 80), 3563)
+        r2 = gml_Script_scr_dark_marker_ch1((xx - 60), (yy + 80), spr_ralsei_hood_ch1)
         with (r2)
             hspeed = 16
         con = 57
@@ -403,7 +403,7 @@ else
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_392_0")
         gml_Script_scr_susface_ch1(5, 0)
         global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_394_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             side = 1
         con = 59
@@ -429,14 +429,14 @@ else
         global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_418_0")
         gml_Script_scr_lanface_ch1(7, 7)
         global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_420_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             side = 1
         con = 62
     }
     if (con == 62 && gml_Script_d_ex_ch1() == 0)
     {
-        r3 = gml_Script_scr_dark_marker_ch1((xx - 60), (yy + 80), 3563)
+        r3 = gml_Script_scr_dark_marker_ch1((xx - 60), (yy + 80), spr_ralsei_hood_ch1)
         with (r3)
             hspeed = 16
         con = 63
@@ -452,7 +452,7 @@ else
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_440_0")
         gml_Script_scr_susface_ch1(1, 0)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_442_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             side = 1
         con = 65
@@ -475,7 +475,7 @@ else
         gml_Script_scr_susface_ch1(3, 2)
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_464_0")
         global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_465_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             side = 1
         con = 70
@@ -489,12 +489,12 @@ else
         gml_Script_scr_getchar_ch1(2)
         obj_mainchara_ch1.x = k.x
         obj_mainchara_ch1.y = k.y
-        global.cinstance[0] = gml_Script_instance_create_ch1(s.x, s.y, 1489)
+        global.cinstance[0] = gml_Script_instance_create_ch1(s.x, s.y, obj_caterpillarchara_ch1)
         with (k)
             instance_destroy()
         with (s)
             instance_destroy()
-        gml_Script_instance_create_ch1(0, 0, 1488)
+        gml_Script_instance_create_ch1(0, 0, obj_encounterbasic_ch1)
         con = 73
         with (l)
         {
@@ -536,8 +536,8 @@ else
     {
         rflip = 0
         global.interact = 1
-        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4198)
-        s = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, 3551)
+        k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisu_dark_ch1)
+        s = gml_Script_scr_dark_marker_ch1(global.cinstance[0].x, global.cinstance[0].y, spr_susieu_dark_ch1)
         with (obj_mainchara_ch1)
             visible = false
         with (global.cinstance[0])
@@ -547,7 +547,7 @@ else
     }
     if (con == 79)
     {
-        r = gml_Script_scr_dark_marker_ch1(95, 310, 3563)
+        r = gml_Script_scr_dark_marker_ch1(95, 310, spr_ralsei_hood_ch1)
         r.hspeed = 16
         con = 80
         alarm[4] = 25
@@ -560,7 +560,7 @@ else
         global.fe = 1
         global.typer = 6
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_552_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 82
     }
@@ -583,13 +583,13 @@ else
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_572_0")
         gml_Script_scr_ralface_ch1(4, 0)
         global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_574_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 85
     }
     if (con == 85 && gml_Script_d_ex_ch1() == 0)
     {
-        gml_Script_snd_play_ch1(381)
+        gml_Script_snd_play_ch1(snd_noise_ch1)
         with (r)
         {
             sprite_index = spr_ralsei_removehood_ch1
@@ -625,7 +625,7 @@ else
         global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_617_0")
         gml_Script_scr_susface_ch1(7, 0)
         global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_619_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 90
     }
@@ -643,7 +643,7 @@ else
         global.fc = 1
         global.fe = 2
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_637_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 93
     }
@@ -669,7 +669,7 @@ else
         global.fe = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_663_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_664_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 96
     }
@@ -709,7 +709,7 @@ else
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_705_0")
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_706_0")
         global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_707_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 100
     }
@@ -724,7 +724,7 @@ else
     {
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_723_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 103
     }
@@ -749,7 +749,7 @@ else
             con = 105
             global.fe = 8
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkcastle_event_slash_Step_0_gml_749_0")
-            d = gml_Script_instance_create_ch1(0, 0, 1326)
+            d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             d.side = 1
         }
     }
@@ -758,7 +758,7 @@ else
         con = 107
         global.currentsong[0] = gml_Script_snd_init_ch1("castletown_empty.ogg")
         alarm[4] = 30
-        gml_Script_scr_pan_to_obj_ch1(1347, 25)
+        gml_Script_scr_pan_to_obj_ch1(obj_mainchara_ch1, 25)
     }
     if (con == 109)
     {
@@ -776,7 +776,7 @@ else
         obj_mainchara_ch1.cutscene = false
         with (k)
             instance_destroy()
-        global.cinstance[0] = gml_Script_instance_create_ch1((r.x + 4), (r.y + 12), 1489)
+        global.cinstance[0] = gml_Script_instance_create_ch1((r.x + 4), (r.y + 12), obj_caterpillarchara_ch1)
         with (global.cinstance[0])
         {
             gml_Script_scr_caterpillar_interpolate_ch1()

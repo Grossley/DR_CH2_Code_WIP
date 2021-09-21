@@ -18,31 +18,31 @@ if (con == 2)
 }
 if (con == 3 && (!gml_Script_d_ex()))
 {
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     con = 4
     alarm[4] = 15
 }
 if (con == 5)
 {
-    gml_Script_snd_play(185)
+    gml_Script_snd_play(snd_drive)
     con = 6
     alarm[4] = 15
 }
 if (con == 7)
 {
-    gml_Script_snd_play(59)
+    gml_Script_snd_play(snd_locker)
     con = 8
     alarm[4] = 15
 }
 if (con == 9)
 {
-    gml_Script_snd_play(56)
+    gml_Script_snd_play(snd_squeaky)
     con = 10
     alarm[4] = 15
 }
 if (con == 11)
 {
-    gml_Script_snd_play(66)
+    gml_Script_snd_play(snd_sussurprise)
     global.msg[0] = gml_Script_stringsetloc("* Hey^1, WATCH IT!/%", "obj_unusedclassevent_slash_Step_0_gml_52_0")
     gml_Script_instance_create(0, 0, obj_dialoguer)
     con = 12
@@ -50,28 +50,28 @@ if (con == 11)
 }
 if (con == 13 && (!gml_Script_d_ex()))
 {
-    gml_Script_snd_play(51)
+    gml_Script_snd_play(snd_wing)
     con = 14
     alarm[4] = 15
 }
 if (con == 15)
 {
-    gml_Script_snd_play(177)
+    gml_Script_snd_play(snd_pombark)
     con = 16
     alarm[4] = 15
 }
 if (con == 17)
 {
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     con = 18
     alarm[4] = 15
 }
 if (con == 19)
 {
     gml_Script_scr_windowcaption("The Return")
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     lightsoff = 0
-    s = gml_Script_scr_marker(146, 70, 981)
+    s = gml_Script_scr_marker(146, 70, spr_susied_plain)
     with (s)
         depth = 100000
     con = 24
@@ -145,7 +145,7 @@ if (con == 35)
 {
     if (s.y >= 140)
     {
-        gml_Script_snd_play(62)
+        gml_Script_snd_play(snd_doorclose)
         with (s)
             visible = false
         con = 37
@@ -174,7 +174,7 @@ if (con == 50)
 }
 if (con == 52 && (!gml_Script_d_ex()))
 {
-    gml_Script_snd_play(149)
+    gml_Script_snd_play(snd_equip)
     con = 53
     alarm[4] = 5
     global.facing = 0

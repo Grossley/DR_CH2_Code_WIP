@@ -8,7 +8,7 @@ if (active && obj_thrashmachine.duckmode)
     explosion_marker.sprite_index = spr_realisticexplosion
     explosion_marker.endtime = 30
     with (explosion_marker)
-        gml_Script_snd_play(188)
+        gml_Script_snd_play(snd_badexplosion)
     obj_rouxls_enemy.advancespeed = 0
     obj_rouxls_enemy.wheel_difficulty = 0
     deathtimer = 5

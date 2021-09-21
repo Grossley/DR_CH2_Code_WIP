@@ -33,7 +33,7 @@ if (x < 150)
     type = 3
     if (room == room_field_puzzletutorial_ch1)
     {
-        hole = gml_Script_scr_dark_marker_ch1(270, 126, 4057)
+        hole = gml_Script_scr_dark_marker_ch1(270, 126, spr_donation_hole_and_tree_ch1)
         hole.image_index = 1
         hole.depth = 900000
     }

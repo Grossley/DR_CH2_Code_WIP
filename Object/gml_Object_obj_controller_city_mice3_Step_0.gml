@@ -47,7 +47,7 @@ if (weird == 1)
         gml_Script_c_walkdirect_wait(38, 264, 40)
         gml_Script_c_walkdirect_wait(198, 254, 32)
         gml_Script_c_walkdirect_wait(198, 246, 16)
-        gml_Script_c_sprite(728)
+        gml_Script_c_sprite(spr_noelle_walk_up_headtilt_dw)
         gml_Script_c_wait(15)
         gml_Script_c_fadeout(15)
         gml_Script_c_wait(30)
@@ -70,7 +70,7 @@ if (weird == 1)
         gml_Script_c_talk_wait()
         gml_Script_c_var_instance(id, "noface", 0)
         gml_Script_c_wait(15)
-        gml_Script_c_soundplay(251)
+        gml_Script_c_soundplay(snd_icespell)
         gml_Script_c_var_instance(id, "solve", 1)
         gml_Script_c_wait(60)
         gml_Script_c_setxy(108, 26)
@@ -80,7 +80,7 @@ if (weird == 1)
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\E4* All finished^1, Kris^1. Should we find some more enemies?/%", "obj_controller_city_mice3_slash_Step_0_gml_88_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_soundplay(196)
+        gml_Script_c_soundplay(snd_ominous)
         gml_Script_c_var_instance(id, "con", 3)
         gml_Script_c_actortocaterpillar()
         gml_Script_c_actortokris()
@@ -223,7 +223,7 @@ if (weird == 0)
         timer++
         if (timer == 5)
         {
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
             gml_Script_instance_create(0, 0, obj_shake)
             with (bridge)
                 instance_destroy()
@@ -257,7 +257,7 @@ if (weird == 0)
     }
     if (con == 11)
     {
-        if (gml_Script_i_ex(317) && (!gml_Script_d_ex()))
+        if (gml_Script_i_ex(obj_cybercity_mousesign) && (!gml_Script_d_ex()))
         {
             with (obj_cybercity_mousesign)
             {
@@ -487,7 +487,7 @@ if (weird == 0)
             layer_set_visible(layer_get_id("BG_Tiles_HiddenPath_Sidewalk"), 1)
             with (fakeWall)
                 instance_destroy()
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
             gml_Script_instance_create(0, 0, obj_shake)
             timer = 0
             con++
@@ -645,7 +645,7 @@ if (weird == 0)
         bridge.image_xscale = 2
         bridge.image_yscale = 2
         bridge.depth = 890000
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (obj_rotationtile_tower)
             freeze = 1
         with (obj_masterPlatformController)

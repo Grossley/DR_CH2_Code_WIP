@@ -77,7 +77,7 @@ if (con == 7)
             if (room == room_field_checkers5_ch1)
                 myencounter = 14
             global.flag[502] += 1
-            newme = gml_Script_instance_create_ch1(x, y, 1487)
+            newme = gml_Script_instance_create_ch1(x, y, obj_testoverworldenemy_ch1)
             newme.sprite_index = spr_ponman_touched_ch1
             newme.touchsprite = spr_ponman_touched_ch1
             newme.slidesprite = spr_ponman_touched_ch1

@@ -21,7 +21,7 @@ if (con == 0)
         {
             xa = (lengthdir_x((eyer * (2 + (i * 2))), (rot - (i * 2))) + offx)
             ya = (lengthdir_y((eyer * (2 + (i * 2))), (rot - (i * 2))) + offy)
-            fb[i] = gml_Script_instance_create_ch1((x + xa), (y + ya), 1504)
+            fb[i] = gml_Script_instance_create_ch1((x + xa), (y + ya), obj_overworldbulletparent_ch1)
             fb[i].sprite_index = spr_diamondbullet_ch1
             fb[i].active = true
             fb[i].target = 3

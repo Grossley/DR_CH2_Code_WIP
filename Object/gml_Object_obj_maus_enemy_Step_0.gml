@@ -75,13 +75,13 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "MausHoles"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 17
             }
             else
             {
                 global.monsterattackname[myself] = "MausTrail"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 19
             }
             gml_Script_scr_turntimer(140)
@@ -188,7 +188,7 @@ if (global.myfight == 3)
     }
     if (actcon == 30 && (!instance_exists(obj_writer)))
     {
-        tasquemarker = gml_Script_scr_dark_marker((gml_Script_camerax() + 800), y, 1664)
+        tasquemarker = gml_Script_scr_dark_marker((gml_Script_camerax() + 800), y, spr_tasque_idle)
         tasquemarker.image_speed = 0.16666666666666666
         tasquemarker.depth = depth
         var currentX = (x - 80)
@@ -227,12 +227,12 @@ if (global.myfight == 3)
         basket.maker = id
         if (trappingX == 1)
         {
-            basket.cancatch[0] = true
-            basket.cancatch[1] = true
-            basket.cancatch[2] = true
+            basket.cancatch[0] = 1
+            basket.cancatch[1] = 1
+            basket.cancatch[2] = 1
         }
         else
-            basket.cancatch[myself] = true
+            basket.cancatch[myself] = 1
         basket.trappingX = trappingX
         actcon = 11
         caught[0] = 0
@@ -294,7 +294,7 @@ if (global.myfight == 3)
         basket = gml_Script_instance_create((obj_herosusie.x - 5), (gml_Script_cameray() - 100), obj_maus_basket_susie)
         with (obj_herosusie)
             visible = false
-        nise_susie = gml_Script_scr_dark_marker((obj_herosusie.x + 16), (obj_herosusie.y - 1), 996)
+        nise_susie = gml_Script_scr_dark_marker((obj_herosusie.x + 16), (obj_herosusie.y - 1), spr_susie_shock_r)
         nise_susie.depth = obj_herosusie.depth
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Susie was captured!!/%", "obj_maus_enemy_slash_Step_0_gml_422_0")
@@ -307,7 +307,7 @@ if (global.myfight == 3)
             gml_Script_scr_shakeobj()
         with (basket)
             gml_Script_scr_shakeobj()
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
     }
     if (actconral == 3 && (!instance_exists(obj_writer)))
     {
@@ -341,14 +341,14 @@ if (global.myfight == 3)
         gml_Script_scr_nextact()
         if remove
         {
-            if gml_Script_i_ex(463)
+            if gml_Script_i_ex(obj_maus_enemy)
             {
                 with (obj_maus_enemy)
                     tasque_joined = 1
             }
             global.monstermakey[myself] = (y - 15)
             global.monstermakex[myself] = tasquemarker.x
-            newtasque = gml_Script_scr_monster_change(myself, 32, 446)
+            newtasque = gml_Script_scr_monster_change(myself, 32, obj_tasque_enemy)
             with (tasquemarker)
                 instance_destroy()
             if (global.char[2] == 3)

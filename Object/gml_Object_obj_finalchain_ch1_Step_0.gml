@@ -2,13 +2,13 @@ if (chaincon == 0)
 {
     if (chain_noise == 0)
     {
-        chainsound = gml_Script_snd_loop_ch1(401)
+        chainsound = gml_Script_snd_loop_ch1(snd_chain_extend_ch1)
         chain_noise = 1
     }
     if (sons < 40)
     {
         sons += 1
-        son[sons] = gml_Script_instance_create_ch1(x, y, 1566)
+        son[sons] = gml_Script_instance_create_ch1(x, y, obj_chainpiece_ch1)
         son[sons].image_blend = c_red
     }
     if (x <= obj_nonsolid_growtangle_ch1.x)
@@ -17,8 +17,8 @@ if (chaincon == 0)
         {
             chain_noise = 2
             gml_Script_snd_stop_ch1(chainsound)
-            gml_Script_snd_play_ch1(376)
-            gml_Script_snd_play_ch1(446)
+            gml_Script_snd_play_ch1(snd_locker_ch1)
+            gml_Script_snd_play_ch1(snd_screenshake_ch1)
         }
         box = obj_nonsolid_growtangle_ch1
         x = obj_nonsolid_growtangle_ch1.x
@@ -60,7 +60,7 @@ if (chaincon == 2.2)
     chaincon = 2.3
     if (type >= 1)
     {
-        spike = gml_Script_instance_create_ch1(x, y, 1521)
+        spike = gml_Script_instance_create_ch1(x, y, obj_regularbullet_permanent_ch1)
         gml_Script_scr_bullet_inherit_ch1(spike)
         spike.image_speed = 0
         spike.active = false
@@ -79,7 +79,7 @@ if (chaincon == 2.2)
         {
             for (j = 0; j < 5; j += 1)
             {
-                bul[i][j] = gml_Script_instance_create_ch1(((xx - 150) + (i * 70)), ((yy_2 + 20) + (j * 70)), 1521)
+                bul[i][j] = gml_Script_instance_create_ch1(((xx - 150) + (i * 70)), ((yy_2 + 20) + (j * 70)), obj_regularbullet_permanent_ch1)
                 bul[i][j].sprite_index = spr_spadebullet_ch1
                 bul[i][j].basealpha = 0
                 bul[i][j].active = false
@@ -157,13 +157,13 @@ if (chaincon == 3)
             pointy = ((yy + random(120)) - random(120))
             pointdist = point_distance(x, y, pointx, pointy)
         }
-        target = gml_Script_instance_create_ch1(pointx, pointy, 1566)
+        target = gml_Script_instance_create_ch1(pointx, pointy, obj_chainpiece_ch1)
         target.sprite_index = spr_heartoutline_ch1
         target.depth = 30
         move_towards_point(pointx, pointy, (pointdist / movetime))
         movetimer = 0
         movecon = 1
-        chainnoise = gml_Script_snd_loop_ch1(401)
+        chainnoise = gml_Script_snd_loop_ch1(snd_chain_extend_ch1)
     }
     if (movecon == 1 && ended == 0)
     {
@@ -277,7 +277,7 @@ if (ended == 1)
     endtimer += 1
     if (endtimer >= 10)
     {
-        gml_Script_snd_stop_ch1(401)
+        gml_Script_snd_stop_ch1(snd_chain_extend_ch1)
         with (obj_chainpiece_ch1)
             instance_destroy()
         with (obj_regularbullet_ch1)

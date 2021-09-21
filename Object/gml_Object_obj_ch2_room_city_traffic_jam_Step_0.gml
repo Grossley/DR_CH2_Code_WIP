@@ -8,7 +8,7 @@ if dismiss
         dismiss = 0
         vertical_dismiss = 1
         horizontal_dismiss = 1
-        if gml_Script_i_ex(1012)
+        if gml_Script_i_ex(obj_ch2_city_car_b)
         {
             with (obj_ch2_city_car_b)
                 con = 0

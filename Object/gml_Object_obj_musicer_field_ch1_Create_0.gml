@@ -6,6 +6,6 @@ if (!gml_Script_snd_is_playing_ch1(global.currentsong[1]))
     if (global.flag[209] == 0)
     {
         global.flag[209] = 1
-        gml_Script_instance_create_ch1(0, 0, 1456)
+        gml_Script_instance_create_ch1(0, 0, obj_fieldmuslogo_ch1)
     }
 }

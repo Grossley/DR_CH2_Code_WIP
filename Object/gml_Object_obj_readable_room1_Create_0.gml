@@ -4,7 +4,7 @@ read = 0
 tempvar = 0
 extflag = 0
 mydialoguer = -1
-skip = 0
+skip = false
 selfdestruct = 0
 if (global.chapter == 2)
 {
@@ -55,7 +55,7 @@ if (global.chapter == 2)
     }
     if (room == room_dw_mansion_darkbulb_1 || room == room_dw_mansion_darkbulb_2 || room == room_dw_mansion_darkbulb_3)
     {
-        var plaque = gml_Script_scr_dark_marker(115, 110, 2901)
+        var plaque = gml_Script_scr_dark_marker(115, 110, spr_mansion_plaque_small)
         with (plaque)
             gml_Script_scr_depth()
     }

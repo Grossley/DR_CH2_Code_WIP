@@ -8,9 +8,9 @@ if (timer == 15)
 {
     image_alpha = 1
     vspeed = 0.1
-    if (!gml_Script_snd_is_playing(157))
+    if (!gml_Script_snd_is_playing(snd_ultraswing))
     {
-        spawn = gml_Script_snd_play_pitch(157, 2)
+        spawn = gml_Script_snd_play_pitch(snd_ultraswing, 2)
         gml_Script_snd_volume(spawn, 0.6, 0)
     }
     con = 1
@@ -41,7 +41,7 @@ if (con == 2)
     right = gml_Script_instance_create(x, (y - (sprite_height / 2)), obj_hangplug_sparkwave)
     with (right)
         dir = "right"
-    drop = gml_Script_snd_play_pitch(140, 1.5)
+    drop = gml_Script_snd_play_pitch(snd_battleenter, 1.5)
     gml_Script_snd_volume(drop, 0.3, 0)
     instance_destroy()
 }

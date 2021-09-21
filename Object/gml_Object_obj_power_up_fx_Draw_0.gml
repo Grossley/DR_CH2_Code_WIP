@@ -40,7 +40,7 @@ if (effecttimer >= effectPause)
 {
     if ((timer + 15) >= poweruptime)
     {
-        d = gml_Script_scr_custom_afterimage(203)
+        d = gml_Script_scr_custom_afterimage(spr_cutscene_20_susie_lancer_look_down)
         d.depth = (depth + 1)
         d.image_alpha = max(0.1, __alpha)
         d.reverse = 1
@@ -48,7 +48,7 @@ if (effecttimer >= effectPause)
         d.pivotx = pivotx
         d.pivoty = pivoty
         d.use_pivot = use_pivot
-        d = gml_Script_scr_custom_afterimage(203)
+        d = gml_Script_scr_custom_afterimage(spr_cutscene_20_susie_lancer_look_down)
         d.image_alpha = max(0.1, __alpha)
         d.fade = 0.1
         d.image_blend = image_blend

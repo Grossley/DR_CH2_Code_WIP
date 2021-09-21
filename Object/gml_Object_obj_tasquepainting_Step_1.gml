@@ -17,12 +17,12 @@ if (extflag == 2 && tasquespawn == 1)
         tasquetimer = 0
         tasquecon = 2
         image_index = 1
-        tasquemarker_head1 = gml_Script_scr_dark_marker((x + 4), (y + 10), 1669)
-        tasquemarker1 = gml_Script_scr_dark_marker((x + 4), (y + 10), 1664)
+        tasquemarker_head1 = gml_Script_scr_dark_marker((x + 4), (y + 10), spr_tasque_head)
+        tasquemarker1 = gml_Script_scr_dark_marker((x + 4), (y + 10), spr_tasque_idle)
         tasquemarker1.image_alpha = 0
         tasquemarker_head1.depth = (depth - 11)
         tasquemarker1.depth = (depth - 10)
-        gml_Script_snd_play(159)
+        gml_Script_snd_play(snd_jump)
         tasquemarker1.remid = id
         with (tasquemarker1)
         {

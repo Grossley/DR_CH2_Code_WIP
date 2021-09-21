@@ -1,6 +1,6 @@
 if (bigshot == 1)
     global.sp = 5
-if (cantspareinit == 0 && gml_Script_scr_sideb_get_phase() > 2 && gml_Script_i_ex(355))
+if (cantspareinit == 0 && gml_Script_scr_sideb_get_phase() > 2 && gml_Script_i_ex(obj_battlecontroller))
 {
     obj_battlecontroller.cantspare[0] = 1
     cantspareinit = 1
@@ -320,7 +320,7 @@ if (global.fighting == true)
         if (talked == 0.6)
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 with (obj_writer)
                     instance_destroy()
@@ -504,7 +504,7 @@ if (global.fighting == true)
                     ballooncon = 32
                     balloonend = 0
                     specialcon = 1
-                    gml_Script_snd_play(153)
+                    gml_Script_snd_play(snd_cardrive)
                 }
                 else if (ballooncon == 32)
                 {
@@ -610,10 +610,10 @@ if (global.fighting == true)
                 alarm[6] = 1
             }
         }
-        if (talked == 1 && gml_Script_scr_isphase("enemytalk") && (!gml_Script_i_ex(57)))
+        if (talked == 1 && gml_Script_scr_isphase("enemytalk") && (!gml_Script_i_ex(obj_choicer_neo)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 with (obj_writer)
                     instance_destroy()
@@ -730,37 +730,37 @@ if (global.fighting == true)
                 if (rr == 0)
                 {
                     global.monsterattackname[myself] = "FlyingHeads"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 0
                 }
                 else if (rr == 1)
                 {
                     global.monsterattackname[myself] = "FootballPipis"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 1
                 }
                 else if (rr == 2)
                 {
                     global.monsterattackname[myself] = "HeartAttackNeo"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 1.5
                 }
                 else if (rr == 3)
                 {
                     global.monsterattackname[myself] = "FootballPipis"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 1
                 }
                 else if (rr == 4)
                 {
                     global.monsterattackname[myself] = "Phonehands"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 8.5
                 }
                 else if (rr == 5)
                 {
                     global.monsterattackname[myself] = "PipisExplosion"
-                    dc = gml_Script_scr_bulletspawner(x, y, 388)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                     dc.type = 51
                     dc.damage = 3
                     dc.btimer = (35 - random(30))
@@ -768,13 +768,13 @@ if (global.fighting == true)
                 else if (rr == 6)
                 {
                     global.monsterattackname[myself] = "RECREWColumns"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 6
                 }
                 else if (rr == 7)
                 {
                     global.monsterattackname[myself] = "SneoFaceAttack"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 12
                     faceattackcount++
                 }
@@ -796,20 +796,20 @@ if (global.fighting == true)
                 else if (rr == 8.5)
                 {
                     global.monsterattackname[myself] = "Phonehands"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 8.5
                 }
                 else if (rr == 9)
                 {
                     global.monsterattackname[myself] = "NeoFinale"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = 9
                     dc.target = 3
                 }
                 else if (rr == 10)
                 {
                     global.monsterattackname[myself] = "diamonds"
-                    dc = gml_Script_scr_bulletspawner(x, y, 388)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                     dc.type = 1
                     dc.target = 3
                     partframe[5] = 3
@@ -817,7 +817,7 @@ if (global.fighting == true)
                 else
                 {
                     global.monsterattackname[myself] = "UnspecifiedSneoAttack"
-                    dc = gml_Script_scr_bulletspawner(x, y, 695)
+                    dc = gml_Script_scr_bulletspawner(x, y, obj_sneo_bulletcontroller)
                     dc.type = rr
                 }
                 gml_Script_scr_heartcolor("yellow")
@@ -854,7 +854,7 @@ if (global.fighting == true)
             else
                 gml_Script_scr_turntimer(120)
         }
-        if (gml_Script_i_ex(378) && statustextupdate == 0)
+        if (gml_Script_i_ex(obj_returnheart) && statustextupdate == 0)
         {
             statustextupdate = 1
             if (weirdpathendcon > 0)
@@ -970,10 +970,10 @@ if (global.fighting == true)
             }
             savemeactcon++
         }
-        if (actcon == 96 && (!gml_Script_i_ex(62)))
+        if (actcon == 96 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 gml_Script_msgsetloc(0, "... HER?/%", "obj_spamton_neo_enemy_slash_Step_0_gml_637_0")
                 global.typer = 72
@@ -983,10 +983,10 @@ if (global.fighting == true)
                 alarm[4] = 1
             }
         }
-        if (actcon == 98 && (!gml_Script_i_ex(62)))
+        if (actcon == 98 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 gml_Script_msgsetloc(0, "YOU'RE STILL TRYING&TO [Use] HER!?/%", "obj_spamton_neo_enemy_slash_Step_0_gml_651_0")
                 global.typer = 72
@@ -995,42 +995,42 @@ if (global.fighting == true)
                 alarm[4] = 1
             }
         }
-        if (actcon == 100 && (!gml_Script_i_ex(62)))
+        if (actcon == 100 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 gml_Script_msgsetloc(0, "HA HA HA HA!!!/%", "obj_spamton_neo_enemy_slash_Step_0_gml_667_0")
                 global.typer = 72
                 gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                gml_Script_snd_play(248)
+                gml_Script_snd_play(snd_sneo_laugh_long)
                 laughtimer = 0
                 talktimer = 0
                 actcon = 101
                 alarm[4] = 1
             }
         }
-        if (actcon == 102 && (!gml_Script_i_ex(62)))
+        if (actcon == 102 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
             if (talktimer == 10)
-                gml_Script_snd_stop(248)
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+                gml_Script_snd_stop(snd_sneo_laugh_long)
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 gml_Script_msgsetloc(0, "YOU THINK SHE CAN&[Hear] YOU NOW,&MUTTERING HER NAME!?/%", "obj_spamton_neo_enemy_slash_Step_0_gml_685_0")
                 global.typer = 72
                 gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                gml_Script_snd_stop(248)
+                gml_Script_snd_stop(snd_sneo_laugh_long)
                 partmode = 1
                 talktimer = 0
                 actcon = 103
                 alarm[4] = 15
             }
         }
-        if (actcon == 104 && (!gml_Script_i_ex(62)))
+        if (actcon == 104 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 gml_Script_msgsetloc(0, "WHAT'S SHE GONNA&DO, MAKE ME AN&[Ice Cream]!?/%", "obj_spamton_neo_enemy_slash_Step_0_gml_701_0")
                 global.typer = 72
@@ -1040,10 +1040,10 @@ if (global.fighting == true)
                 alarm[4] = 15
             }
         }
-        if (actcon == 106 && (!gml_Script_i_ex(62)))
+        if (actcon == 106 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 partmode = 41
                 actcon = 107
@@ -1057,12 +1057,12 @@ if (global.fighting == true)
             headforceframe = 2
             partrot[5] = 30
             partmode = 99
-            gml_Script_snd_stop(248)
+            gml_Script_snd_stop(snd_sneo_laugh_long)
         }
-        if (actcon == 108 && (!gml_Script_i_ex(62)))
+        if (actcon == 108 && (!gml_Script_i_ex(obj_writer)))
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 partmode = 99
                 headforceframe = 2
@@ -1077,15 +1077,15 @@ if (global.fighting == true)
         if (actcon == 110)
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 actcon = 111
-                gml_Script_snd_play(64)
+                gml_Script_snd_play(snd_noise)
                 with (obj_writer)
                     instance_destroy()
                 with (obj_fountainkris_ch2_sideb)
                 {
-                    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+                    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                     blackall.image_xscale = 999
                     blackall.image_yscale = 999
                     blackall.depth = 0
@@ -1099,13 +1099,13 @@ if (global.fighting == true)
         if (actcon == 112)
         {
             actcon = 113
-            gml_Script_snd_play(251)
+            gml_Script_snd_play(snd_icespell)
             alarm[4] = 12
         }
         if (actcon == 114)
         {
             actcon = 115
-            gml_Script_snd_play(166)
+            gml_Script_snd_play(snd_damage)
             dmgwriter = gml_Script_instance_create((x + 64), (y + 62), obj_dmgwriter)
             dmgwriter.damage = (684 + irandom(20))
             dmgwriter.type = 0
@@ -1115,8 +1115,8 @@ if (global.fighting == true)
         if (actcon == 116)
         {
             actcon = 117
-            gml_Script_snd_stop(166)
-            gml_Script_snd_play(166)
+            gml_Script_snd_stop(snd_damage)
+            gml_Script_snd_play(snd_damage)
             dmgwriter = gml_Script_instance_create((x + 84), (y + 90), obj_dmgwriter)
             dmgwriter.damage = (684 + irandom(20))
             dmgwriter.type = 0
@@ -1126,8 +1126,8 @@ if (global.fighting == true)
         if (actcon == 118)
         {
             actcon = 119
-            gml_Script_snd_stop(166)
-            gml_Script_snd_play(166)
+            gml_Script_snd_stop(snd_damage)
+            gml_Script_snd_play(snd_damage)
             dmgwriter = gml_Script_instance_create((x + 66), (y + 119), obj_dmgwriter)
             dmgwriter.damage = (684 + irandom(20))
             dmgwriter.type = 0
@@ -1139,9 +1139,9 @@ if (global.fighting == true)
             event_user(3)
             obj_battlecontroller.skipvictory = true
             global.fighting = false
-            if gml_Script_i_ex(20)
+            if gml_Script_i_ex(obj_fountainkris_ch2_sideb)
                 obj_fountainkris_ch2_sideb.forcend = 1
-            if gml_Script_i_ex(20)
+            if gml_Script_i_ex(obj_fountainkris_ch2_sideb)
                 obj_fountainkris_ch2_sideb.con = 21
             gml_Script_scr_wincombat()
         }
@@ -1153,11 +1153,11 @@ if (global.fighting == true)
                 gml_Script_scr_battletext_default()
                 acting = 0
                 actcon = 21
-                krs = gml_Script_scr_act_charsprite("kris", 1418, 0.25, 1)
+                krs = gml_Script_scr_act_charsprite("kris", spr_krisb_attack, 0.25, true)
                 krs.depth = (obj_herokris.depth + 1)
                 alarm[4] = 14
-                gml_Script_snd_play(223)
-                gml_Script_snd_pitch(223, 1.2)
+                gml_Script_snd_play(snd_scytheburst)
+                gml_Script_snd_pitch(snd_scytheburst, 1.2)
                 att = gml_Script_instance_create((x + 57), (y + 76), obj_basicattack)
                 att.image_xscale = 2
                 att.image_yscale = 2
@@ -1174,11 +1174,11 @@ if (global.fighting == true)
             {
                 actcon = 23
                 gml_Script_scr_act_charsprite_end()
-                krs = gml_Script_scr_act_charsprite("kris", 1418, 0.25, 1)
+                krs = gml_Script_scr_act_charsprite("kris", spr_krisb_attack, 0.25, true)
                 krs.depth = (obj_herokris.depth + 1)
                 alarm[4] = 14
-                gml_Script_snd_play(223)
-                gml_Script_snd_pitch(223, 0.8)
+                gml_Script_snd_play(snd_scytheburst)
+                gml_Script_snd_pitch(snd_scytheburst, 0.8)
                 att = gml_Script_instance_create((x + 57), (y + 76), obj_basicattack)
                 att.image_xscale = -2
                 att.image_yscale = 2
@@ -1207,7 +1207,7 @@ if (global.fighting == true)
                 actcon = 31
                 gml_Script_instance_create((obj_herokris.x + 105), (obj_herokris.y + 50), obj_sneo_friedpipis)
             }
-            if (actcon == 31 && (!gml_Script_i_ex(62)) && (!instance_exists(obj_sneo_friedpipis)))
+            if (actcon == 31 && (!gml_Script_i_ex(obj_writer)) && (!instance_exists(obj_sneo_friedpipis)))
                 actcon = 1
         }
         else
@@ -1527,7 +1527,7 @@ if (global.fighting == true)
                 if (global.hp[4] < global.hp[3])
                     a = 4
                 global.hp[a] += 10
-                gml_Script_snd_play(150)
+                gml_Script_snd_play(snd_boost)
             }
         }
         if ((actcon == 1 && (!instance_exists(obj_writer))) || actconsus == 20 || actconral == 20)
@@ -1549,7 +1549,7 @@ if (global.fighting == true)
         }
         if (endtimer > 0 && endtimer < 91)
         {
-            if gml_Script_i_ex(996)
+            if gml_Script_i_ex(obj_ch2_sceneex2)
             {
                 obj_ch2_sceneex2.trackspeed = lerp(-15, 0, (endtimer / 90))
                 obj_ch2_sceneex2.cityscape_speed_max = lerp(5, 0, (endtimer / 90))
@@ -1593,7 +1593,7 @@ if (global.fighting == true)
         if (endcon == 2)
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 with (obj_writer)
                     instance_destroy()
@@ -1637,7 +1637,7 @@ if (global.fighting == true)
                     balloonend = 0
                     shockthreshold = 10
                     hurttimer2 = 20
-                    gml_Script_snd_play(166)
+                    gml_Script_snd_play(snd_damage)
                     dontchangepose = 0
                     smokethreshold = 10
                     partmode = 40
@@ -1670,16 +1670,16 @@ if (global.fighting == true)
                 }
                 else if (ballooncon == 8)
                 {
-                    if gml_Script_i_ex(996)
+                    if gml_Script_i_ex(obj_ch2_sceneex2)
                         obj_ch2_sceneex2.trackspeed = 20
                     gml_Script_msgsetloc(0, "ARE YOU READY [Kids]!?/%", "obj_spamton_neo_enemy_slash_Step_0_gml_1068_0")
                     ballooncon = 9
                     balloonend = 0
                     shockthreshold = 10
                     hurttimer2 = 10
-                    gml_Script_snd_play(136)
-                    gml_Script_snd_loop(136)
-                    gml_Script_snd_pitch(136, 0.3)
+                    gml_Script_snd_play(snd_sneo_overpower)
+                    gml_Script_snd_loop(snd_sneo_overpower)
+                    gml_Script_snd_pitch(snd_sneo_overpower, 0.3)
                     targetbgspeed = -5
                 }
                 else if (ballooncon == 9)
@@ -1688,7 +1688,7 @@ if (global.fighting == true)
                     ballooncon = 10
                     balloonend = 0
                     shockthreshold = 5
-                    gml_Script_snd_pitch(136, 0.5)
+                    gml_Script_snd_pitch(snd_sneo_overpower, 0.5)
                     targetbgspeed = -9
                     smokethreshold = 1
                 }
@@ -1698,7 +1698,7 @@ if (global.fighting == true)
                     ballooncon = 11
                     balloonend = 0
                     shockthreshold = 3
-                    gml_Script_snd_pitch(136, 0.7)
+                    gml_Script_snd_pitch(snd_sneo_overpower, 0.7)
                     targetbgspeed = -13
                 }
                 else if (ballooncon == 11)
@@ -1707,7 +1707,7 @@ if (global.fighting == true)
                     ballooncon = 12
                     balloonend = 0
                     shockthreshold = 2
-                    gml_Script_snd_pitch(136, 0.9)
+                    gml_Script_snd_pitch(snd_sneo_overpower, 0.9)
                     targetbgspeed = -17
                 }
                 else if (ballooncon == 12)
@@ -1716,7 +1716,7 @@ if (global.fighting == true)
                     ballooncon = 13
                     balloonend = 0
                     shockthreshold = 1
-                    gml_Script_snd_pitch(136, 1.1)
+                    gml_Script_snd_pitch(snd_sneo_overpower, 1.1)
                     targetbgspeed = -21
                 }
                 else if (ballooncon == 13)
@@ -1725,7 +1725,7 @@ if (global.fighting == true)
                     ballooncon = 0
                     balloonend = 1
                     shocktimer = 1
-                    gml_Script_snd_pitch(136, 1.3)
+                    gml_Script_snd_pitch(snd_sneo_overpower, 1.3)
                     targetbgspeed = -25
                 }
                 endcon = 3
@@ -1746,19 +1746,19 @@ if (global.fighting == true)
                 }
                 alarm[6] = 1
             }
-            if gml_Script_i_ex(996)
+            if gml_Script_i_ex(obj_ch2_sceneex2)
                 obj_ch2_sceneex2.trackspeed = lerp(obj_ch2_sceneex2.trackspeed, (targetbgspeed * 6), 0.1)
-            if gml_Script_i_ex(996)
+            if gml_Script_i_ex(obj_ch2_sceneex2)
                 obj_ch2_sceneex2.cityscape_speed_max = lerp(obj_ch2_sceneex2.cityscape_speed_max, targetbgspeed, 0.1)
         }
         if (endcon == 4)
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 endtimer++
                 if (endtimer <= 90)
-                    gml_Script_snd_pitch(136, lerp(1.3, 2, (endtimer / 90)))
+                    gml_Script_snd_pitch(snd_sneo_overpower, lerp(1.3, 2, (endtimer / 90)))
                 if (endtimer == 120)
                 {
                     violentendflash = 1
@@ -1769,8 +1769,8 @@ if (global.fighting == true)
                     audio_stop_sound(snd_sneo_overpower)
                     with (obj_afterimage_grow)
                         instance_destroy()
-                    gml_Script_snd_play(208)
-                    whiteall = gml_Script_scr_dark_marker(-10, -10, 2529)
+                    gml_Script_snd_play(snd_explosion)
+                    whiteall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                     whiteall.image_xscale = 999
                     whiteall.image_yscale = 999
                     whiteall.depth = 0
@@ -1780,7 +1780,7 @@ if (global.fighting == true)
                     whiteall.image_alpha = lerp(0, 1, ((endtimer - 150) / 11))
                 if (endtimer == 300)
                 {
-                    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+                    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                     blackall.image_xscale = 999
                     blackall.image_yscale = 999
                     blackall.depth = -1
@@ -1793,9 +1793,9 @@ if (global.fighting == true)
                 {
                     with (whiteall)
                     {
-                        if gml_Script_i_ex(996)
+                        if gml_Script_i_ex(obj_ch2_sceneex2)
                             obj_ch2_sceneex2.forcend = 1
-                        if gml_Script_i_ex(996)
+                        if gml_Script_i_ex(obj_ch2_sceneex2)
                             obj_ch2_sceneex2.con = 13
                     }
                 }
@@ -1810,7 +1810,7 @@ if (global.fighting == true)
             if (instance_exists(obj_ch2_sceneex2) && obj_ch2_sceneex2.shop_spamton_bg_con > 0 && obj_ch2_sceneex2.shop_spamton_bg_con < 3)
                 aa = 1
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15 && aa == 0) || ((!gml_Script_i_ex(62)) && aa == 0))
+            if ((gml_Script_button3_p() && talktimer > 15 && aa == 0) || ((!gml_Script_i_ex(obj_writer)) && aa == 0))
             {
                 if (ballooncon == 7 && instance_exists(obj_ch2_sceneex2) && obj_ch2_sceneex2.shop_spamton_bg_con < 3)
                 {
@@ -1818,7 +1818,7 @@ if (global.fighting == true)
                     aa = 1
                 }
             }
-            if ((gml_Script_button3_p() && talktimer > 15 && aa == 0) || ((!gml_Script_i_ex(62)) && aa == 0))
+            if ((gml_Script_button3_p() && talktimer > 15 && aa == 0) || ((!gml_Script_i_ex(obj_writer)) && aa == 0))
             {
                 with (obj_writer)
                     instance_destroy()
@@ -1934,9 +1934,9 @@ if (global.fighting == true)
                 }
                 alarm[6] = 1
             }
-            if gml_Script_i_ex(996)
+            if gml_Script_i_ex(obj_ch2_sceneex2)
                 obj_ch2_sceneex2.trackspeed = lerp(obj_ch2_sceneex2.trackspeed, (targetbgspeed * 6), 0.1)
-            if gml_Script_i_ex(996)
+            if gml_Script_i_ex(obj_ch2_sceneex2)
                 obj_ch2_sceneex2.cityscape_speed_max = lerp(obj_ch2_sceneex2.cityscape_speed_max, targetbgspeed, 0.1)
             if (ballooncon == 13)
             {
@@ -1948,15 +1948,15 @@ if (global.fighting == true)
         if (endcon == 4)
         {
             talktimer++
-            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+            if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
             {
                 endtimer++
                 if (endtimer == 1)
                 {
                     gml_Script_snd_free(global.currentsong[0])
-                    gml_Script_snd_play(64)
-                    gml_Script_snd_play(166)
-                    blackall4 = gml_Script_scr_dark_marker(-10, -10, 2529)
+                    gml_Script_snd_play(snd_noise)
+                    gml_Script_snd_play(snd_damage)
+                    blackall4 = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                     blackall4.image_xscale = 999
                     blackall4.image_yscale = 999
                     blackall4.depth = (obj_ch2_sceneex2.depth - 1)
@@ -1973,7 +1973,7 @@ if (global.fighting == true)
                     vfx.depth = (depth - 5)
                     lastwirecon = 3
                     partmode = 99
-                    if gml_Script_i_ex(996)
+                    if gml_Script_i_ex(obj_ch2_sceneex2)
                     {
                         obj_ch2_sceneex2.cityscape_speed_max = 0
                         obj_ch2_sceneex2.cityscape_speed = 0
@@ -1983,7 +1983,7 @@ if (global.fighting == true)
                 if (endtimer == 91)
                 {
                     depth = -99999
-                    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+                    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                     blackall.image_xscale = 999
                     blackall.image_yscale = 999
                     blackall.depth = 0
@@ -1993,7 +1993,7 @@ if (global.fighting == true)
                 }
                 if (endtimer == 330)
                 {
-                    blackall2 = gml_Script_scr_dark_marker(-10, -10, 2529)
+                    blackall2 = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
                     blackall2.image_xscale = 999
                     blackall2.image_yscale = 999
                     blackall2.depth = 0
@@ -2005,9 +2005,9 @@ if (global.fighting == true)
                 {
                     with (blackall2)
                     {
-                        if gml_Script_i_ex(996)
+                        if gml_Script_i_ex(obj_ch2_sceneex2)
                             obj_ch2_sceneex2.forcend = 1
-                        if gml_Script_i_ex(996)
+                        if gml_Script_i_ex(obj_ch2_sceneex2)
                             obj_ch2_sceneex2.con = 13
                     }
                 }

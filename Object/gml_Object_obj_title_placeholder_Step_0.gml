@@ -52,6 +52,6 @@ if gml_Script_button1_p()
             room_goto(room_krisroom)
         }
         else
-            gml_Script_snd_play(143)
+            gml_Script_snd_play(snd_error)
     }
 }

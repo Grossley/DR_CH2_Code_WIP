@@ -25,7 +25,7 @@ if (global.flag[384] == 1)
 }
 if (global.flag[310] == 1)
 {
-    if gml_Script_i_ex(1147)
+    if gml_Script_i_ex(obj_solidblock_destructable)
     {
         with (obj_solidblock_destructable)
             instance_destroy()

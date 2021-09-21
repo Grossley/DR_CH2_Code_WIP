@@ -7,9 +7,9 @@ berdlygift = 0
 explore = 0
 wrongexit = 0
 havewalker = global.flag[254] == 1
-tentback = gml_Script_scr_dark_marker(1312, -161, 2999)
+tentback = gml_Script_scr_dark_marker(1312, -161, spr_carnival_tent_1)
 tentback.depth = 100000
-tent = gml_Script_scr_dark_marker(1312, 32, 155)
+tent = gml_Script_scr_dark_marker(1312, 32, spr_cutscene_15_tent_foreground)
 tent.depth = 97800
 var buy_sign = gml_Script_instance_create(1390, 50, obj_cybercity_bg_screen)
 buy_sign.depth = 200
@@ -47,12 +47,12 @@ else
 {
     for (var i = 0; i < 5; i++)
     {
-        bottle[i] = gml_Script_scr_dark_marker((1360 + (15 * i)), 190, 157)
+        bottle[i] = gml_Script_scr_dark_marker((1360 + (15 * i)), 190, spr_cutscene_15_milk_bottle)
         bottle[i].depth = 97700
     }
     for (i = 5; i < 9; i++)
     {
-        bottle[i] = gml_Script_scr_dark_marker((1367 + (15 * (i - 5))), 160, 157)
+        bottle[i] = gml_Script_scr_dark_marker((1367 + (15 * (i - 5))), 160, spr_cutscene_15_milk_bottle)
         bottle[i].depth = 97700
     }
 }

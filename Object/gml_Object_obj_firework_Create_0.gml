@@ -7,4 +7,4 @@ hue = irandom(255)
 depth = 900000
 if (room == room_dw_city_postbaseball_1)
     depth = 1100000
-gml_Script_snd_play(94)
+gml_Script_snd_play(snd_firework_send)

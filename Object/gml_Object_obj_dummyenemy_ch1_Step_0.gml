@@ -67,8 +67,8 @@ if (global.monster[myself] == true)
                 target = 3
             global.targeted[mytarget] = true
             attackcon = 1
-            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         }
         global.typer = 45
         global.fc = 2
@@ -446,7 +446,7 @@ if (global.monster[myself] == true)
                 if ((!instance_exists(obj_moveheart_ch1)) && (!instance_exists(obj_heart_ch1)))
                     gml_Script_scr_moveheart_ch1()
                 if (!instance_exists(obj_growtangle_ch1))
-                    gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                    gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
             }
         }
         else if (!instance_exists(obj_writer_ch1))
@@ -465,7 +465,7 @@ if (global.monster[myself] == true)
             rr = choose(0)
             if (rr == 0)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 14
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -603,7 +603,7 @@ if (global.myfight == 3)
     {
         with (global.charinstance[0])
             visible = false
-        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, 3809)
+        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, spr_kris_hug_ch1)
         with (k)
             gml_Script_scr_move_to_point_over_time_ch1((global.monsterx[0] - 42), (global.monstery[0] - 30), 15)
         actcon = 11
@@ -723,7 +723,7 @@ if (global.myfight == 3)
         maker = 0
         with (global.charinstance[0])
             visible = false
-        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, 3809)
+        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, spr_kris_hug_ch1)
         with (k)
             gml_Script_scr_move_to_point_over_time_ch1((obj_heroralsei_ch1.x - 24), (obj_heroralsei_ch1.y + 10), 15)
         actcon = 31
@@ -734,7 +734,7 @@ if (global.myfight == 3)
         maker = 1
         with (obj_heroralsei_ch1)
             visible = false
-        rb = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3569)
+        rb = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, spr_ralseil_blush_ch1)
         with (k)
             image_speed = 0.25
         actcon = 33

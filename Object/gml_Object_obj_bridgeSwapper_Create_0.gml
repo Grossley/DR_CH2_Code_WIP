@@ -1,10 +1,10 @@
 event_inherited()
 dontskip = 0
-skip = 0
+skip = false
 noflare = 0
 inert = 0
 if (room == room_dw_mansion_mouseLottery)
-    skip = 1
+    skip = true
 bridgetarget = "a_1"
 bridgetarget2 = "a_2"
 extflag = "null"

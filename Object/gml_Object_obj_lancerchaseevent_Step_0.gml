@@ -42,9 +42,9 @@ if (con == 8)
 {
     with (lancer)
         image_index = 1
-    gml_Script_snd_play(164)
-    b[0] = gml_Script_scr_marker((lancer.x + 120), (lancer.y - 20), 2253)
-    b[1] = gml_Script_scr_marker((lancer.x - 160), (lancer.y - 20), 2253)
+    gml_Script_snd_play(snd_break1)
+    b[0] = gml_Script_scr_marker((lancer.x + 120), (lancer.y - 20), spr_spadebullet)
+    b[1] = gml_Script_scr_marker((lancer.x - 160), (lancer.y - 20), spr_spadebullet)
     for (i = 0; i < 2; i += 1)
     {
         b[i].image_alpha = 0
@@ -68,7 +68,7 @@ if (con == 10)
 {
     with (lancer)
         image_index = 0
-    gml_Script_snd_play(160)
+    gml_Script_snd_play(snd_bigcut)
     aftercon = true
     with (b[0])
         speed = 22
@@ -121,7 +121,7 @@ if (con == 15.1)
 {
     with (susie)
         sprite_index = spr_susiel_dark_unhappy
-    gml_Script_scr_pan_to_obj(80, 5)
+    gml_Script_scr_pan_to_obj(obj_mainchara, 5)
     con = 14.2
     alarm[4] = 4
 }

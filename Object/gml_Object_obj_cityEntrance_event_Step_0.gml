@@ -2,8 +2,8 @@ if instance_exists(obj_mainchara)
 {
     if (obj_mainchara.x >= triggerPoint && spawned == 0)
     {
-        ralsei = gml_Script_scr_dark_marker(310, 80, 794)
-        susie = gml_Script_scr_dark_marker(360, 80, 823)
+        ralsei = gml_Script_scr_dark_marker(310, 80, spr_ralsei_walk_right)
+        susie = gml_Script_scr_dark_marker(360, 80, spr_susie_walk_right_dw)
         global.plot = 67
         spawned = 1
     }

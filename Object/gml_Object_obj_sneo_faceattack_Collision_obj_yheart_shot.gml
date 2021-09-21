@@ -2,7 +2,7 @@ if (type == 0 || image_alpha < 0.9)
     return;
 if (broken == 1)
 {
-    gml_Script_snd_play(39)
+    gml_Script_snd_play(snd_bell)
     with (other)
         event_user(0)
     return;
@@ -32,15 +32,15 @@ else
     if (type == 3)
         obj_spamton_neo_enemy.mouthhp -= 4
 }
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 invincibilitytimer = 10
 hurtflashtimer = 3
 if ((type == 1 && obj_spamton_neo_enemy.eyeshp <= 0) || (type == 2 && obj_spamton_neo_enemy.nosehp <= 0) || (type == 3 && obj_spamton_neo_enemy.mouthhp <= 0))
 {
     broken = 1
     image_index = 2
-    gml_Script_snd_volume(220, 1, 0)
-    gml_Script_snd_play(220)
+    gml_Script_snd_volume(snd_rocket, 1, 0)
+    gml_Script_snd_play(snd_rocket)
     explodetimer = 16
 }
 with (other)

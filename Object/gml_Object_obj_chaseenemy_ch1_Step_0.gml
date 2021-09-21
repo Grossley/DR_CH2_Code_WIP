@@ -100,8 +100,8 @@ if (frozen == false)
                 pacecon = 1
                 alerttimer = 0
                 alertcon = 1
-                gml_Script_snd_play_ch1(431)
-                gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y - 20), 1486)
+                gml_Script_snd_play_ch1(snd_b_ch1)
+                gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y - 20), obj_excblcon_ch1)
                 alarm[4] = 20
             }
         }

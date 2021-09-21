@@ -2,17 +2,17 @@ if (con == 1 && myinteract == 3 && (!gml_Script_d_ex()))
 {
     myinteract = 0
     if (type == 1)
-        mousemarker = gml_Script_scr_dark_marker((((gml_Script_camerax() + 640) + 35) + 15), 278, 1741)
+        mousemarker = gml_Script_scr_dark_marker((((gml_Script_camerax() + 640) + 35) + 15), 278, spr_maus_idle)
     if (type == 2)
     {
         if (room == room_dw_city_postbaseball_2)
-            mousemarker = gml_Script_scr_dark_marker((((gml_Script_camerax() + 640) + 35) + 15), 310, 1741)
+            mousemarker = gml_Script_scr_dark_marker((((gml_Script_camerax() + 640) + 35) + 15), 310, spr_maus_idle)
         else
         {
             var yax = (gml_Script_charaY() - 18)
             if (yax < 240)
                 yax = 240
-            mousemarker = gml_Script_scr_dark_marker((((gml_Script_camerax() + 640) + 35) + 15), yax, 1741)
+            mousemarker = gml_Script_scr_dark_marker((((gml_Script_camerax() + 640) + 35) + 15), yax, spr_maus_idle)
         }
     }
     mousemarker.hspeed = -10
@@ -24,7 +24,7 @@ if (con == 1 && myinteract == 3 && (!gml_Script_d_ex()))
             sprite_index = spr_noelle_shocked_dw
         }
     }
-    gml_Script_snd_play(176)
+    gml_Script_snd_play(snd_mouse)
     con = 2
     alarm[4] = 20
 }
@@ -51,13 +51,13 @@ if (con == 5 && (!gml_Script_d_ex()))
         encounterflag = 537
     global.flag[54] = encounterflag
     if (type == 1)
-        gml_Script_scr_battle(66, 0, mousemarker, 0, 0)
+        gml_Script_scr_battle(66, false, mousemarker, 0, 0)
     if (type == 2)
     {
         if (room == room_dw_city_postbaseball_2)
-            gml_Script_scr_battle(79, 0, mousemarker, 0, 0)
+            gml_Script_scr_battle(79, false, mousemarker, 0, 0)
         else
-            gml_Script_scr_battle(54, 0, mousemarker, 0, 0)
+            gml_Script_scr_battle(54, false, mousemarker, 0, 0)
     }
     con = 6
     alarm[4] = 25
@@ -134,7 +134,7 @@ if (room == room_dw_city_postbaseball_2)
 {
     if (fallcon == 0)
     {
-        gml_Script_snd_play(93)
+        gml_Script_snd_play(snd_fall)
         fallcon++
     }
     if (fallcon == 1)

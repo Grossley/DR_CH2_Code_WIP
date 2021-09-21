@@ -12,7 +12,7 @@ if (global.plot < 2)
     alarm[5] = 2
     with (obj_mainchara_ch1)
         visible = false
-    t = gml_Script_scr_marker_ch1(460, 360, 3456)
+    t = gml_Script_scr_marker_ch1(460, 360, spr_toriel_handhold_u_ch1)
     with (t)
     {
         vspeed = -2
@@ -32,10 +32,10 @@ if (global.plot == 3)
         x = obj_markerB_ch1.x
         y = obj_markerB_ch1.y
     }
-    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4205)
+    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisd_ch1)
     with (k)
         gml_Script_scr_depth_ch1()
-    s = gml_Script_scr_marker_ch1(240, 192, 3535)
+    s = gml_Script_scr_marker_ch1(240, 192, spr_susier_plain_ch1)
     with (s)
     {
         gml_Script_scr_depth_ch1()
@@ -44,13 +44,13 @@ if (global.plot == 3)
     global.interact = 1
     with (obj_doorA_ch1)
         instance_destroy()
-    doorsolid = gml_Script_instance_create_ch1(110, 200, 1334)
+    doorsolid = gml_Script_instance_create_ch1(110, 200, obj_solidblock_ch1)
     con = 0.1
     alarm[4] = 50
 }
 if (global.plot >= 250)
 {
-    sunset = gml_Script_scr_marker_ch1(0, 0, 3467)
+    sunset = gml_Script_scr_marker_ch1(0, 0, spr_schoollobby_sunsetoverlay_ch1)
     with (sunset)
     {
         image_alpha = 0.4

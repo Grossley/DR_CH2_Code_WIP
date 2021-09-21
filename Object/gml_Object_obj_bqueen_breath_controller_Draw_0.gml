@@ -38,9 +38,9 @@ if (timer > 9)
     }
     else
     {
-        gml_Script_snd_stop(220)
-        gml_Script_snd_volume(220, 1, 0)
-        gml_Script_snd_play_pitch(220, (0.5 + random(1)))
+        gml_Script_snd_stop(snd_rocket)
+        gml_Script_snd_volume(snd_rocket, 1, 0)
+        gml_Script_snd_play_pitch(snd_rocket, (0.5 + random(1)))
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
         with (d)
             gml_Script_scr_afterimage_grow()
@@ -67,9 +67,9 @@ if (timer2 > 9 && difficulty == 1)
     }
     else
     {
-        gml_Script_snd_stop(220)
-        gml_Script_snd_volume(220, 1, 0)
-        gml_Script_snd_play_pitch(220, (0.5 + random(1)))
+        gml_Script_snd_stop(snd_rocket)
+        gml_Script_snd_volume(snd_rocket, 1, 0)
+        gml_Script_snd_play_pitch(snd_rocket, (0.5 + random(1)))
         d = gml_Script_instance_create(x, y, obj_bqueen_breath)
         with (d)
             gml_Script_scr_afterimage_grow()

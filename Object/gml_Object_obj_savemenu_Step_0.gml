@@ -35,7 +35,7 @@ if (menuno == 0)
         {
             if (type == 0)
             {
-                gml_Script_snd_play(257)
+                gml_Script_snd_play(snd_save)
                 gml_Script_scr_save()
                 saved = 1
                 xcoord = 2
@@ -59,7 +59,7 @@ if (menuno == 0)
             {
                 menuno = 1
                 buffer = 3
-                gml_Script_snd_play(260)
+                gml_Script_snd_play(snd_select)
             }
         }
     }

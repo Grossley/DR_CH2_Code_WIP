@@ -18,7 +18,7 @@ with (other)
 }
 if (room == 1193)
     vspeed *= 0.75
-if (instance_number(obj_saucer) == (targ - 1) && gml_Script_i_ex(1193))
+if (instance_number(obj_saucer) == (targ - 1) && gml_Script_i_ex(obj_controller_dining3))
 {
     vertState = 1
     global.interact = 1

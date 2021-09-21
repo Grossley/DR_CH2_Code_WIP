@@ -157,12 +157,12 @@ if (stepsound == 1)
 {
     if (stepsound_count == 0)
     {
-        gml_Script_snd_play(190)
+        gml_Script_snd_play(snd_step1)
         stepsound_count = 1
     }
     else if (stepsound_count == 1)
     {
-        gml_Script_snd_play(191)
+        gml_Script_snd_play(snd_step2)
         stepsound_count = 0
     }
     stepsound = 0

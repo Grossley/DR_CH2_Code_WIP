@@ -50,7 +50,7 @@ if undyne_slam
     if (undyne_slam_timer >= 20)
     {
         undyne_slam_timer = 0
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
     }
 }
 if (con == 2)
@@ -71,7 +71,7 @@ if (con == 4 && (!gml_Script_d_ex()))
 if (con == 6)
 {
     con = 7
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     gml_Script_instance_create(0, 0, obj_shake)
     undynedesk.sprite_index = spr_undyne_police_table_break
     undynedesk.image_index = 1
@@ -98,14 +98,14 @@ if (keycon == 2)
     key_turn_timer++
     if (key_turn_timer >= 25 && keys.image_index == 0)
     {
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         with (keys)
             image_index = 1
         undynedesk.image_index = 1
     }
     if (key_turn_timer >= 65 && keys.image_index == 1)
     {
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         with (keys)
             image_index = 2
     }
@@ -121,7 +121,7 @@ if (keycon == 3)
         instance_destroy(keys)
         instance_destroy(undyneinteract)
         instance_destroy(undynesideinteract)
-        gml_Script_snd_play(63)
+        gml_Script_snd_play(snd_dooropen)
         bars.sprite_index = bg_lw_police_house_bars_open
         doorcollider = gml_Script_instance_create(223, 95, obj_solidblock)
         doorcollider.image_xscale = 0.35
@@ -290,7 +290,7 @@ if (con == 19)
     {
         deskchairless.visible = true
         deskchairless.depth = (obj_mainchara.depth + 10)
-        undyne = gml_Script_scr_marker(147, 91, 1114)
+        undyne = gml_Script_scr_marker(147, 91, spr_undyne_walk_down)
         undyne.image_speed = 0
         undyne.depthcancel = true
         undyne.depth = (deskchairless.depth + 100)
@@ -350,21 +350,21 @@ if (con == 22 && (!gml_Script_d_ex()))
     gml_Script_scr_actor_setup(un, un_actor, "undyne")
     un_actor.sprite_index = spr_undyne_exasperated
     gml_Script_c_sel(un)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_imagespeed(0)
     gml_Script_c_speaker("undyne")
     gml_Script_c_msgsetloc(0, "\\E2* NGAAHHHH!!^1! NOT AGAIN!!!/%", "obj_npc_police_slash_Step_0_gml_501_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_sprite(1113)
+    gml_Script_c_sprite(spr_undyne_walk_up)
     gml_Script_c_halt()
     gml_Script_c_speaker("undyne")
     gml_Script_c_msgsetloc(0, "\\E4* Looks like I gotta go recapture those criminals.../%", "obj_npc_police_slash_Step_0_gml_508_0")
     gml_Script_c_talk_wait()
-    gml_Script_c_sprite(1113)
+    gml_Script_c_sprite(spr_undyne_walk_up)
     gml_Script_c_imageindex(0)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_walk_wait("u", 3, 20)
-    gml_Script_c_sprite(1115)
+    gml_Script_c_sprite(spr_undyne_walk_left)
     gml_Script_c_sel(kr)
     gml_Script_c_facing("r")
     gml_Script_c_speaker("undyne")
@@ -385,15 +385,15 @@ if (con == 22 && (!gml_Script_d_ex()))
     gml_Script_c_msgnextloc("* (You got the previously described box of candy with a note on it.)/%", "obj_npc_police_slash_Step_0_gml_536_0")
     gml_Script_c_talk_wait()
     gml_Script_c_sel(un)
-    gml_Script_c_autowalk(0)
-    gml_Script_c_sprite(1114)
+    gml_Script_c_autowalk(false)
+    gml_Script_c_sprite(spr_undyne_walk_down)
     gml_Script_c_imageindex(0)
     gml_Script_c_imagespeed(0.25)
     gml_Script_c_walk_wait("d", 8, 30)
     gml_Script_c_actortokris()
     gml_Script_c_terminatekillactors()
 }
-if (con == 50 && (!gml_Script_i_ex(895)))
+if (con == 50 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = -1
     global.interact = 0
@@ -423,7 +423,7 @@ if (napstacon == 10 && global.flag[317] == 1)
     gml_Script_scr_actor_setup(na, na_actor, "napstablook")
     na_actor.sprite_index = spr_npc_napstablook_police_up
     gml_Script_c_sel(na)
-    gml_Script_c_autowalk(0)
+    gml_Script_c_autowalk(false)
     gml_Script_c_var_lerp("y", 84, 64, 15)
     gml_Script_c_wait(15)
     gml_Script_c_wait(5)
@@ -432,12 +432,12 @@ if (napstacon == 10 && global.flag[317] == 1)
     gml_Script_c_wait(5)
     gml_Script_c_var_lerp("y", 64, 84, 15)
     gml_Script_c_wait(15)
-    gml_Script_c_sprite(1123)
+    gml_Script_c_sprite(spr_npc_napstablook_police_down)
     gml_Script_c_var_instance(napstablook, "visible", 1)
     gml_Script_c_wait(15)
     gml_Script_c_terminatekillactors()
 }
-if (napstacon == 20 && (!gml_Script_i_ex(895)))
+if (napstacon == 20 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     with (napstablook)
         con = -1

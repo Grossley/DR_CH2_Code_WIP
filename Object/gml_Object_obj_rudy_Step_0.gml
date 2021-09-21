@@ -26,7 +26,7 @@ if (con == 3)
 if (con == 4 && (!gml_Script_d_ex()))
 {
     sprite_index = spr_rudy_laugh
-    gml_Script_snd_play(232)
+    gml_Script_snd_play(snd_rudylaugh)
     image_speed = 0.25
     con = 5
     alarm[4] = 30
@@ -34,9 +34,9 @@ if (con == 4 && (!gml_Script_d_ex()))
 if (con == 6)
 {
     image_index = 0
-    gml_Script_snd_stop(232)
+    gml_Script_snd_stop(snd_rudylaugh)
     sprite_index = spr_rudy_cough
-    gml_Script_snd_play(233)
+    gml_Script_snd_play(snd_rudycough)
     con = 7
     alarm[4] = 30
 }

@@ -12,7 +12,7 @@ if (con == -1)
     gml_Script_scr_maincharacters_actors()
     gml_Script_c_sel(su)
     gml_Script_c_setxy(958, 69)
-    gml_Script_c_sprite(16)
+    gml_Script_c_sprite(spr_cutscene_03a_susie_leaning_down)
 }
 if (con == 1)
 {
@@ -56,7 +56,7 @@ if (con == 1)
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 2 && (!gml_Script_i_ex(895)))
+if (con == 2 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     global.interact = 0
     con = 0

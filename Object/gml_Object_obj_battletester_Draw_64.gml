@@ -72,7 +72,7 @@ if (!instance_exists(obj_debug_xy))
 }
 if (global.fighting == true && keyboard_check_pressed(ord("D")))
 {
-    if (!gml_Script_i_ex(914))
+    if (!gml_Script_i_ex(obj_danmaku_analyzer))
         gml_Script_instance_create(0, 0, obj_danmaku_analyzer)
     else
     {

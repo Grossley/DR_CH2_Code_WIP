@@ -59,7 +59,7 @@ if (victory == true)
         timer++
         if (timer == 1)
         {
-            hole = gml_Script_scr_dark_marker(1400, 1360, 2681)
+            hole = gml_Script_scr_dark_marker(1400, 1360, spr_mouseHole)
             with (hole)
                 gml_Script_scr_depth()
             hole.image_index = 5
@@ -77,22 +77,22 @@ if (victory == true)
             hole.image_index = 0
         if (timer == 15)
         {
-            mousetail = gml_Script_scr_dark_marker(1420, 1380, 2692)
+            mousetail = gml_Script_scr_dark_marker(1420, 1380, spr_holemouse_tail)
             mousetail.image_angle = -90
             mousetail.image_speed = 0
             with (mousetail)
                 gml_Script_scr_depth()
-            mouse1 = gml_Script_scr_dark_marker(1418, 1380, 2687)
+            mouse1 = gml_Script_scr_dark_marker(1418, 1380, spr_holemouse_emerge)
             with (mouse1)
                 gml_Script_scr_depth()
-            gml_Script_snd_play(176)
+            gml_Script_snd_play(snd_mouse)
         }
         if (timer == 30)
             gml_Script_instance_create(1420, 1390, obj_mouse_traffic)
         if (timer == 35 || timer == 40 || timer == 45 || timer == 50)
         {
             gml_Script_instance_create(1420, 1390, obj_mouse_traffic)
-            gml_Script_snd_play(176)
+            gml_Script_snd_play(snd_mouse)
         }
         if (timer == 30)
         {

@@ -9,6 +9,6 @@ image_speed = 0
 breakable = 0
 if (global.flag[447] == 1)
 {
-    gml_Script_scr_forcefield(3960, 280, 2, 6, 1, 0)
+    gml_Script_scr_forcefield(3960, 280, 2, 6, true, false)
     instance_destroy()
 }

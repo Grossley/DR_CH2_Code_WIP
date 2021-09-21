@@ -72,7 +72,7 @@ if (con == 18)
     gml_Script_scr_lanface_ch1(1, 2)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbakesale_event_slash_Step_0_gml_82_0")
     con = 19
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 19 && (!gml_Script_d_ex_ch1()))
 {
@@ -100,7 +100,7 @@ if (con == 21)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbakesale_event_slash_Step_0_gml_108_0")
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbakesale_event_slash_Step_0_gml_109_0")
     con = 25
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 25 && (!gml_Script_d_ex_ch1()))
 {
@@ -170,7 +170,7 @@ if (con == 34)
 }
 if (con == 35 && (!gml_Script_d_ex_ch1()))
 {
-    lnpc = gml_Script_instance_create_ch1(l.x, (l.y + 108), 1407)
+    lnpc = gml_Script_instance_create_ch1(l.x, (l.y + 108), obj_npc_facing_ch1)
     with (lnpc)
     {
         dfacing = 0
@@ -180,7 +180,7 @@ if (con == 35 && (!gml_Script_d_ex_ch1()))
         ltsprite = sprite_index
         utsprite = sprite_index
     }
-    snpc = gml_Script_instance_create_ch1(s.x, (s.y + 108), 1407)
+    snpc = gml_Script_instance_create_ch1(s.x, (s.y + 108), obj_npc_facing_ch1)
     with (snpc)
     {
         dfacing = 1
@@ -219,7 +219,7 @@ if (con == 4000)
         global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerbakesale_event_slash_Step_0_gml_241_0")
         global.interact = 1
         con = 2
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
 }
 if (con == 4002 && (!gml_Script_d_ex_ch1()))

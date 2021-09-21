@@ -6,14 +6,14 @@ if (global.monster[myself] == true)
         if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         gml_Script_instance_create((x - 102), (y + 18), obj_werewire_zzt_balloon)
-        gml_Script_snd_play(219)
+        gml_Script_snd_play(snd_electric_talk)
         talked = 1
         talktimer = 0
     }
     if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
-        if (!gml_Script_i_ex(478))
+        if (!gml_Script_i_ex(obj_werewire_zzt_balloon))
             global.mnfight = 2
         if gml_Script_scr_isphase("bullets")
         {
@@ -120,7 +120,7 @@ if (global.monster[myself] == true)
         {
             for (i = 0; i < 3; i += 1)
             {
-                gml_Script_snd_play_x(219, 0.8, 1.9)
+                gml_Script_snd_play_x(snd_electric_talk, 0.8, 1.9)
                 lasercircle = gml_Script_instance_create((x - 52), (y + 18), obj_werewire_bullet_lasercircle)
                 lasercircle.damage = (global.monsterat[myself] * 5)
                 lasercircle.target = mytarget
@@ -184,7 +184,7 @@ if (global.monster[myself] == true)
         {
             image_index += (0.25 * m)
             if (image_index == 2)
-                gml_Script_snd_play_x(120, 1, 1.2)
+                gml_Script_snd_play_x(motor_swing_down, 1, 1.2)
             if (image_index >= 2 && image_index <= 3)
             {
                 repeat (2)

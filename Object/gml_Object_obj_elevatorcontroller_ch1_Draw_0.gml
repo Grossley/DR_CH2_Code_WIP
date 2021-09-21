@@ -1,4 +1,4 @@
-gml_Script_draw_background_ext_ch1(4369, 0, 0, 2, 2, 0, cur_bg_c, 1)
+gml_Script_draw_background_ext_ch1(bg_cc_elevator_ch1, 0, 0, 2, 2, 0, cur_bg_c, 1)
 if (rectcon >= 1)
 {
     draw_set_color(merge_color(cur_bg_c, c_black, (1 - rect_alpha)))

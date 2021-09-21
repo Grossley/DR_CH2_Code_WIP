@@ -8,7 +8,7 @@ if (type == 0)
         radius = (140 + random(80))
         xx = lengthdir_x(radius, dir)
         yy = lengthdir_y(radius, dir)
-        bm = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), 1554)
+        bm = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), obj_dbullet_maker_ch1)
         if (bm.y < (gml_Script___view_get(1, 0) + 40))
             bm.y = (gml_Script___view_get(1, 0) + 40)
         bm.damage = damage
@@ -26,7 +26,7 @@ if (type == 1)
         num = choose(0, 1, 2, 3)
         if (num == 3)
             xx = (-10 + random(20))
-        d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), 1555)
+        d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), obj_dbullet_vert_ch1)
         d.damage = damage
         d.target = target
     }
@@ -39,7 +39,7 @@ if (type == 2)
         if (side == 1)
             xx = (gml_Script___view_get(0, 0) + 660)
         yy = (miny + random((maxy - miny)))
-        bul = gml_Script_instance_create_ch1(xx, yy, 1552)
+        bul = gml_Script_instance_create_ch1(xx, yy, obj_clubsbullet_ch1)
         bul.speed = 12
         bul.damage = damage
         bul.target = target
@@ -63,7 +63,7 @@ if (type == 3)
         radius = 400
         xx = lengthdir_x(radius, dir)
         yy = lengthdir_y(radius, dir)
-        d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), 1553)
+        d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), obj_clubsbullet_dark_ch1)
         d.direction = (dir + 180)
         d.speed = 20
         d.friction = 1
@@ -89,7 +89,7 @@ if (type == 4)
         radius = 400
         xx = lengthdir_x(radius, dir)
         yy = lengthdir_y(radius, dir)
-        d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), 1553)
+        d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), obj_clubsbullet_dark_ch1)
         d.damage = damage
         d.target = target
         d.direction = (dir + 180)
@@ -109,8 +109,8 @@ if (type == 6)
     yy = gml_Script___view_get(1, 0)
     if (made == 0)
     {
-        d = gml_Script_instance_create_ch1((300 + xx), (-20 + yy), 1550)
-        e = gml_Script_instance_create_ch1((360 + xx), (-60 + yy), 1550)
+        d = gml_Script_instance_create_ch1((300 + xx), (-20 + yy), obj_dicebul_ch1)
+        e = gml_Script_instance_create_ch1((360 + xx), (-60 + yy), obj_dicebul_ch1)
         d.target = target
         d.damage = damage
         e.target = target
@@ -125,7 +125,7 @@ if (type == 7)
     if (made < 3 && btimer >= 15)
     {
         btimer = 0
-        mine = gml_Script_instance_create_ch1((300 + xx), (-20 + yy), 1550)
+        mine = gml_Script_instance_create_ch1((300 + xx), (-20 + yy), obj_dicebul_ch1)
         mine.damage = damage
         mine.target = target
         with (obj_dicebul_ch1)
@@ -144,7 +144,7 @@ if (type == 8)
     if (made < 4 && btimer >= 15)
     {
         btimer = 0
-        mine = gml_Script_instance_create_ch1((300 + xx), (yy - 40), 1550)
+        mine = gml_Script_instance_create_ch1((300 + xx), (yy - 40), obj_dicebul_ch1)
         mine.damage = damage
         mine.target = target
         with (mine)
@@ -166,7 +166,7 @@ if (type == 10)
     if (btimer >= 15)
     {
         btimer = 0
-        dicecomet = gml_Script_instance_create_ch1(choose((xx + 680), (xx - 100)), (0 - random(100)), 1550)
+        dicecomet = gml_Script_instance_create_ch1(choose((xx + 680), (xx - 100)), (0 - random(100)), obj_dicebul_ch1)
         dicecomet.damage = damage
         dicecomet.target = target
         with (dicecomet)
@@ -188,7 +188,7 @@ if (type == 11)
     if (made < 4 && btimer >= 15)
     {
         btimer = 0
-        bb = gml_Script_instance_create_ch1((300 + xx), (-20 + yy), 1550)
+        bb = gml_Script_instance_create_ch1((300 + xx), (-20 + yy), obj_dicebul_ch1)
         bb.damage = damage
         bb.target = target
         with (obj_dicebul_ch1)
@@ -214,7 +214,7 @@ if (type == 12)
     yy = gml_Script___view_get(1, 0)
     if (made == 0)
     {
-        db = gml_Script_instance_create_ch1((320 + xx), (-20 + yy), 1550)
+        db = gml_Script_instance_create_ch1((320 + xx), (-20 + yy), obj_dicebul_ch1)
         db.image_xscale = 1
         db.image_yscale = 1
         db.damage = damage
@@ -228,7 +228,7 @@ if (type == 13)
     yy = gml_Script___view_get(1, 0)
     if (made < 2 && btimer >= 20)
     {
-        db[made] = gml_Script_instance_create_ch1((320 + xx), (-20 + yy), 1550)
+        db[made] = gml_Script_instance_create_ch1((320 + xx), (-20 + yy), obj_dicebul_ch1)
         db[made].image_xscale = 1
         db[made].image_yscale = 1
         db[made].damage = damage
@@ -253,7 +253,7 @@ if (type == 14)
         if (side == 1)
             xx = (gml_Script___view_get(0, 0) + 660)
         yy = (miny + random((maxy - miny)))
-        bul = gml_Script_instance_create_ch1(xx, yy, 1520)
+        bul = gml_Script_instance_create_ch1(xx, yy, obj_regularbullet_ch1)
         bul.sprite_index = spr_smallbullet_ch1
         bul.hspeed = -8
         bul.damage = damage
@@ -272,7 +272,7 @@ if (type == 20 || type == 22)
     {
         if (made == 0)
         {
-            gml_Script_snd_play_ch1(453)
+            gml_Script_snd_play_ch1(snd_lancerwhistle_ch1)
             whistletimer = 0
             made = 1
             with (obj_lancerboss3_ch1)
@@ -296,7 +296,7 @@ if (type == 20 || type == 22)
     if (btimer >= bmax)
     {
         radius = ((-80 + random(160)) + 8)
-        fallspade = gml_Script_instance_create_ch1((obj_heart_ch1.x + radius), (gml_Script___view_get(1, 0) - 20), 1520)
+        fallspade = gml_Script_instance_create_ch1((obj_heart_ch1.x + radius), (gml_Script___view_get(1, 0) - 20), obj_regularbullet_ch1)
         fallspade.damage = damage
         fallspade.target = target
         with (fallspade)
@@ -331,7 +331,7 @@ if (type == 21 || type == 23 || type == 25)
             radius = 80
         else
             radius = 560
-        sidespade[side] = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + radius), ((obj_growtangle_ch1.y - (obj_growtangle_ch1.sprite_height / 2)) + random(obj_growtangle_ch1.sprite_height)), 1520)
+        sidespade[side] = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + radius), ((obj_growtangle_ch1.y - (obj_growtangle_ch1.sprite_height / 2)) + random(obj_growtangle_ch1.sprite_height)), obj_regularbullet_ch1)
         if (side == 0)
             sidespade[side].direction = 0
         if (side == 1)
@@ -409,7 +409,7 @@ if (type == 24)
     if (btimer >= bmax)
     {
         radius = ((-80 + random(160)) + 8)
-        fallspade = gml_Script_instance_create_ch1((obj_heart_ch1.x + radius), -20, 1520)
+        fallspade = gml_Script_instance_create_ch1((obj_heart_ch1.x + radius), -20, obj_regularbullet_ch1)
         fallspade.damage = damage
         fallspade.target = target
         with (fallspade)
@@ -456,7 +456,7 @@ if (type == 26)
             rightallow = choose(0, 1, 2)
             for (j = 0; j < 2; j += 1)
             {
-                bul[i][j] = gml_Script_instance_create_ch1(((x_c + x_o) + (i * 80)), ((y_c + y_o) + (j * 80)), 1520)
+                bul[i][j] = gml_Script_instance_create_ch1(((x_c + x_o) + (i * 80)), ((y_c + y_o) + (j * 80)), obj_regularbullet_ch1)
                 gml_Script_scr_bullet_inherit_ch1(bul[i][j])
                 if (j == upallow)
                     bul[i][j].y += choose(0, 40)
@@ -493,7 +493,7 @@ if (type == 27)
         if (made == prevmade)
             made = choose(0, 1, 2, 3)
         btimer = 0
-        block = gml_Script_instance_create_ch1(100, 100, 1599)
+        block = gml_Script_instance_create_ch1(100, 100, obj_blockbullet_fall_ch1)
         block.xpos = made
         gml_Script_scr_bullet_inherit_ch1(block)
         testblock = collision_point(((lx + (made * block.sprite_width)) + 8), ((ly - (block.sprite_height * 3)) - 10), obj_blockbullet_fall_ch1, 0, 1)
@@ -531,7 +531,7 @@ if (type == 30)
         bmax = 60
     if (btimer >= bmax)
     {
-        rab = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + obj_battlesolid_ch1.sprite_width), obj_battlesolid_ch1.y, 1597)
+        rab = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + obj_battlesolid_ch1.sprite_width), obj_battlesolid_ch1.y, obj_rabbitbullet_ch1)
         gml_Script_scr_bullet_inherit_ch1(rab)
         btimer = 0
     }
@@ -547,7 +547,7 @@ if (type == 32)
     if (made == 0 && skiprab == 0)
     {
         made = 1
-        rab = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, 1596)
+        rab = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, obj_carrotthrower_ch1)
         gml_Script_scr_bullet_inherit_ch1(rab)
         instance_destroy()
     }
@@ -556,7 +556,7 @@ if (type == 33)
 {
     if (btimer >= (26 * ratio))
     {
-        hs = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, 1556)
+        hs = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, obj_heartshaper_ch1)
         hs.maxradius = 50
         hs.type = 1
         btimer = 0
@@ -587,7 +587,7 @@ if (type == 34)
             xx = (gml_Script___view_get(0, 0) + 700)
             yy = random(320)
         }
-        chain = gml_Script_instance_create_ch1(xx, yy, 1572)
+        chain = gml_Script_instance_create_ch1(xx, yy, obj_skychain_ch1)
         gml_Script_scr_bullet_inherit_ch1(1572)
         btimer = 0
     }
@@ -614,7 +614,7 @@ if (type == 35)
             xx = (gml_Script___view_get(0, 0) + 700)
             yy = random(320)
         }
-        chain = gml_Script_instance_create_ch1(xx, yy, 1572)
+        chain = gml_Script_instance_create_ch1(xx, yy, obj_skychain_ch1)
         gml_Script_scr_bullet_inherit_ch1(chain)
         btimer = 0
     }
@@ -641,7 +641,7 @@ if (type == 36)
             xx = (gml_Script___view_get(0, 0) + 700)
             yy = random(320)
         }
-        chain = gml_Script_instance_create_ch1(xx, yy, 1572)
+        chain = gml_Script_instance_create_ch1(xx, yy, obj_skychain_ch1)
         gml_Script_scr_bullet_inherit_ch1(chain)
         btimer = 0
     }
@@ -673,9 +673,9 @@ if (type >= 80 && type <= 84)
         }
         if (side == 0)
         {
-            puzz1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (ly - 150), 1576)
+            puzz1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (ly - 150), obj_jigsawbullet_ch1)
             puzz1.side = 3
-            puzz2 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (ly + 150), 1576)
+            puzz2 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (ly + 150), obj_jigsawbullet_ch1)
             puzz2.side = 1
             if (type == 82)
                 puzz1.timer = 10
@@ -690,9 +690,9 @@ if (type >= 80 && type <= 84)
         }
         if (side == 1)
         {
-            puzz1 = gml_Script_instance_create_ch1((lx + 150), (obj_heart_ch1.y + 8), 1576)
+            puzz1 = gml_Script_instance_create_ch1((lx + 150), (obj_heart_ch1.y + 8), obj_jigsawbullet_ch1)
             puzz1.side = 2
-            puzz2 = gml_Script_instance_create_ch1((lx - 150), (obj_heart_ch1.y + 8), 1576)
+            puzz2 = gml_Script_instance_create_ch1((lx - 150), (obj_heart_ch1.y + 8), obj_jigsawbullet_ch1)
             puzz2.side = 0
             if (type == 82)
                 puzz1.timer = 10
@@ -724,7 +724,7 @@ if (type == 85)
             visible = false
         with (obj_lancerboss3_ch1)
             visible = false
-        fakelan = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 580), (obj_battlesolid_ch1.y + 160), 1516)
+        fakelan = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 580), (obj_battlesolid_ch1.y + 160), obj_bulletparent_ch1)
         with (fakelan)
         {
             depth += 1
@@ -735,7 +735,7 @@ if (type == 85)
             active = false
             image_speed = 0.2
         }
-        fakesus = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 530), (obj_battlesolid_ch1.y - 40), 1516)
+        fakesus = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 530), (obj_battlesolid_ch1.y - 40), obj_bulletparent_ch1)
         with (fakesus)
         {
             image_xscale = 2
@@ -756,7 +756,7 @@ if (type == 85)
                 if (global.inv > 10)
                 {
                     cheer = 1
-                    gml_Script_snd_play_ch1(453)
+                    gml_Script_snd_play_ch1(snd_lancerwhistle_ch1)
                     with (fakelan)
                         sprite_index = spr_lancerbike_l_ch1
                 }
@@ -798,11 +798,11 @@ if (type == 85)
         with (fakesus)
         {
             image_index = 0
-            gml_Script_snd_play_ch1(442)
+            gml_Script_snd_play_ch1(snd_laz_c_ch1)
         }
         for (i = 0; i < 1; i += 1)
         {
-            axe[i] = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 540), obj_battlesolid_ch1.y, 1602)
+            axe[i] = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 540), obj_battlesolid_ch1.y, obj_axebullet_ch1)
             gml_Script_scr_bullet_inherit_ch1(axe[i])
         }
         btimer = 0
@@ -822,7 +822,7 @@ if (joker == 1)
                 idealx = ((basex - 180) - random(100))
             if (xx == 1)
                 idealx = ((basex + 180) + random(100))
-            bomb = gml_Script_instance_create_ch1(idealx, -20, 1587)
+            bomb = gml_Script_instance_create_ch1(idealx, -20, obj_suitbomb_ch1)
             gml_Script_scr_bullet_inherit_ch1(bomb)
             if (bomb.type == 2)
                 bomb.type = choose(0, 1, 2, 3)
@@ -841,7 +841,7 @@ if (joker == 1)
                 idealx = ((basex - 180) - random(100))
             if (xx == 1)
                 idealx = ((basex + 180) + random(100))
-            bomb = gml_Script_instance_create_ch1(idealx, -20, 1587)
+            bomb = gml_Script_instance_create_ch1(idealx, -20, obj_suitbomb_ch1)
             gml_Script_scr_bullet_inherit_ch1(bomb)
             if (bomb.type == 2)
                 bomb.type = choose(0, 1, 2, 3)
@@ -860,7 +860,7 @@ if (joker == 1)
                 idealx = ((basex - 180) - random(100))
             if (xx == 1)
                 idealx = ((basex + 180) + random(100))
-            bomb = gml_Script_instance_create_ch1(idealx, -20, 1587)
+            bomb = gml_Script_instance_create_ch1(idealx, -20, obj_suitbomb_ch1)
             gml_Script_scr_bullet_inherit_ch1(bomb)
             bomb.type = 1
             btimer = 0
@@ -878,7 +878,7 @@ if (joker == 1)
                 idealx = ((basex - 180) - random(100))
             if (xx == 1)
                 idealx = ((basex + 180) + random(100))
-            bomb = gml_Script_instance_create_ch1(idealx, -20, 1587)
+            bomb = gml_Script_instance_create_ch1(idealx, -20, obj_suitbomb_ch1)
             gml_Script_scr_bullet_inherit_ch1(bomb)
             bomb.type = 0
             btimer = 0
@@ -896,7 +896,7 @@ if (joker == 1)
                 idealx = ((basex - 180) - random(100))
             if (xx == 1)
                 idealx = ((basex + 180) + random(100))
-            bomb = gml_Script_instance_create_ch1(idealx, -20, 1587)
+            bomb = gml_Script_instance_create_ch1(idealx, -20, obj_suitbomb_ch1)
             gml_Script_scr_bullet_inherit_ch1(bomb)
             bomb.type = 2
             btimer = 0
@@ -914,7 +914,7 @@ if (joker == 1)
                 idealx = ((basex - 180) - random(100))
             if (xx == 1)
                 idealx = ((basex + 180) + random(100))
-            bomb = gml_Script_instance_create_ch1(idealx, -20, 1587)
+            bomb = gml_Script_instance_create_ch1(idealx, -20, obj_suitbomb_ch1)
             gml_Script_scr_bullet_inherit_ch1(bomb)
             bomb.type = 3
             btimer = 0
@@ -926,7 +926,7 @@ if (joker == 1)
         {
             btimer = 0
             made = 1
-            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x - 200), obj_battlesolid_ch1.y, 1591)
+            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x - 200), obj_battlesolid_ch1.y, obj_bigscythe_ch1)
             gml_Script_scr_bullet_inherit_ch1(scythe)
             scythe.image_angle = (270 + random(120))
         }
@@ -937,7 +937,7 @@ if (joker == 1)
         {
             btimer = 0
             xchoose = choose(-250)
-            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + xchoose), obj_battlesolid_ch1.y, 1591)
+            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + xchoose), obj_battlesolid_ch1.y, obj_bigscythe_ch1)
             gml_Script_scr_bullet_inherit_ch1(scythe)
             scythe.image_angle = random(90)
             scythe.type = 3
@@ -954,7 +954,7 @@ if (joker == 1)
         {
             btimer = 0
             made = 1
-            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x - 140), obj_battlesolid_ch1.y, 1591)
+            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x - 140), obj_battlesolid_ch1.y, obj_bigscythe_ch1)
             gml_Script_scr_bullet_inherit_ch1(scythe)
             scythe.anglespeed = -12
             scythe.image_angle = (270 + random(120))
@@ -966,7 +966,7 @@ if (joker == 1)
         {
             btimer = 0
             made = 1
-            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x - 150), obj_battlesolid_ch1.y, 1591)
+            scythe = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x - 150), obj_battlesolid_ch1.y, obj_bigscythe_ch1)
             scythe.anglespeed = -17
             scythe.image_angle = (270 + random(120))
         }
@@ -981,7 +981,7 @@ if (joker == 1)
             {
                 for (j = 0; j < 7; j += 1)
                 {
-                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), 1592)
+                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), obj_carouselbullet_ch1)
                     horse1.siner = (j * 18)
                     horse1.vsin = (j * 9)
                     gml_Script_scr_bullet_inherit_ch1(horse1)
@@ -1001,14 +1001,14 @@ if (joker == 1)
             {
                 for (i = 0; i < 3; i += 1)
                 {
-                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), 1592)
+                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), obj_carouselbullet_ch1)
                     horse1.siner = (j * 42)
                     horse1.vsin = (0 + vseed)
                     horse1.image_index = 0
                     horse1.altmode = 2
                     horse1.sinspeed = 1.1
                     gml_Script_scr_bullet_inherit_ch1(horse1)
-                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), 1592)
+                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), obj_carouselbullet_ch1)
                     horse1.siner = ((j * 42) + 21)
                     horse1.vsin = (0 + vseed)
                     horse1.image_index = 1
@@ -1036,7 +1036,7 @@ if (joker == 1)
             {
                 for (j = 0; j < 7; j += 1)
                 {
-                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), 1592)
+                    horse1 = gml_Script_instance_create_ch1((obj_battlesolid_ch1.x + 150), ((obj_battlesolid_ch1.y - 80) + (i * 80)), obj_carouselbullet_ch1)
                     horse1.siner = (j * 18)
                     horse1.vsin = (j * 9)
                     horse1.sinspeed = 1.15
@@ -1050,7 +1050,7 @@ if (joker == 1)
     {
         if (btimer >= 60)
         {
-            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, 1594)
+            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, obj_spadering_ch1)
             ring.maxspade = 10
             ring.grav = 0.4
             gml_Script_scr_bullet_inherit_ch1(ring)
@@ -1061,7 +1061,7 @@ if (joker == 1)
     {
         if (btimer >= 30)
         {
-            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, 1594)
+            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, obj_spadering_ch1)
             ring.maxspade = 6
             ring.grav = 3
             ring.size = 1.5
@@ -1073,7 +1073,7 @@ if (joker == 1)
     {
         if (btimer >= 20)
         {
-            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, 1594)
+            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, obj_spadering_ch1)
             ring.grav = 0.2
             ring.maxspade = 4
             ring.special = 1
@@ -1087,7 +1087,7 @@ if (joker == 1)
             wspeed = 5
         if (btimer >= 54)
         {
-            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, 1594)
+            ring = gml_Script_instance_create_ch1(obj_battlesolid_ch1.x, obj_battlesolid_ch1.y, obj_spadering_ch1)
             ring.side = choose(0, 1)
             ring.grav = 0.45
             ring.maxspade = 10
@@ -1101,7 +1101,7 @@ if (joker == 1)
         {
             jokerx = choose(((obj_battlesolid_ch1.x - 100) - random(100)), ((obj_battlesolid_ch1.x + 100) + random(100)))
             jokery = choose((obj_battlesolid_ch1.y - random(100)), (obj_battlesolid_ch1.y + random(100)))
-            jokern = gml_Script_instance_create_ch1(jokerx, jokery, 1593)
+            jokern = gml_Script_instance_create_ch1(jokerx, jokery, obj_joker_teleport_ch1)
             jokern.type = 1
             gml_Script_scr_bullet_inherit_ch1(jokern)
             jokern.active = false
@@ -1114,7 +1114,7 @@ if (joker == 1)
         {
             jokerx = choose(((obj_battlesolid_ch1.x - 100) - random(100)), ((obj_battlesolid_ch1.x + 100) + random(100)))
             jokery = choose((obj_battlesolid_ch1.y - random(100)), (obj_battlesolid_ch1.y + random(100)))
-            jokern = gml_Script_instance_create_ch1(jokerx, jokery, 1593)
+            jokern = gml_Script_instance_create_ch1(jokerx, jokery, obj_joker_teleport_ch1)
             gml_Script_scr_bullet_inherit_ch1(jokern)
             jokern.active = false
             btimer = 0
@@ -1132,7 +1132,7 @@ if (joker == 1)
             radius = 360
             xx = lengthdir_x(radius, dir)
             yy = lengthdir_y(radius, dir)
-            d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), 1553)
+            d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), obj_clubsbullet_dark_ch1)
             d.direction = (dir + 180)
             d.speed = 20
             d.friction = 1
@@ -1160,7 +1160,7 @@ if (joker == 1)
                 xx = (-10 + random(20))
             if instance_exists(obj_battlesolid_ch1)
             {
-                db = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), (obj_battlesolid_ch1.y + 100), 1555)
+                db = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), (obj_battlesolid_ch1.y + 100), obj_dbullet_vert_ch1)
                 with (db)
                     type = 1
                 db.damage = damage
@@ -1180,7 +1180,7 @@ if (joker == 1)
             num = choose(0, 1, 2, 3)
             if (num == 3)
                 xx = (-10 + random(20))
-            d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), 1555)
+            d = gml_Script_instance_create_ch1(((obj_heart_ch1.x + 8) + xx), ((obj_heart_ch1.y + 8) + yy), obj_dbullet_vert_ch1)
             d.grazepoints = 12
             d.timepoints = 2
             d.damage = damage
@@ -1191,8 +1191,8 @@ if (joker == 1)
     {
         if (btimer >= 0 && special == 0)
         {
-            gml_Script_snd_play_ch1(363)
-            scythe = gml_Script_instance_create_ch1(0, 0, 1589)
+            gml_Script_snd_play_ch1(snd_spearappear_ch1)
+            scythe = gml_Script_instance_create_ch1(0, 0, obj_centerscythe_ch1)
             obj_centerscythe_ch1.damage = damage
             obj_centerscythe_ch1.grazepoints = grazepoints
             obj_centerscythe_ch1.timepoints = timepoints
@@ -1210,7 +1210,7 @@ if (joker == 1)
             wspeed = 10
         if (special == 0)
         {
-            gml_Script_snd_play_ch1(469)
+            gml_Script_snd_play_ch1(snd_joker_byebye_ch1)
             prevmake = 0
             special = 1
             rank = 16
@@ -1219,7 +1219,7 @@ if (joker == 1)
             made = 0
             amount = 0
             jokertimer = 0
-            darkfader = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 10), 3938)
+            darkfader = gml_Script_scr_dark_marker_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 10), spr_tallpx_ch1)
             with (darkfader)
             {
                 depth = 2
@@ -1247,9 +1247,9 @@ if (joker == 1)
                 instance_destroy()
         }
         if (realtimer == 20)
-            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 40), -60, 1590)
+            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 40), -60, obj_laserscythe_ch1)
         if (realtimer == 40)
-            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 570), -60, 1590)
+            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 570), -60, obj_laserscythe_ch1)
         if (realtimer >= 60 && amount < 30)
         {
             if (btimer >= rank)
@@ -1264,11 +1264,11 @@ if (joker == 1)
                     which = floor(((obj_heart_ch1.x + 8) / 90))
                     chase = 0
                 }
-                scythe = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 40) + (90 * which)), -60, 1590)
+                scythe = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 40) + (90 * which)), -60, obj_laserscythe_ch1)
                 if (which == 1)
-                    scythe2 = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 40) + 450), -60, 1590)
+                    scythe2 = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 40) + 450), -60, obj_laserscythe_ch1)
                 if (which == 0)
-                    scythe2 = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 40) + 540), -60, 1590)
+                    scythe2 = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 40) + 540), -60, obj_laserscythe_ch1)
                 prevmake = which
                 btimer = 0
                 chase += 1
@@ -1278,7 +1278,7 @@ if (joker == 1)
         if (amount >= (29 - made) && special == 1)
         {
             jokertimer = 0
-            jokerin = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 100), 1593)
+            jokerin = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 100), obj_joker_teleport_ch1)
             with (jokerin)
             {
                 type = 66
@@ -1294,24 +1294,24 @@ if (joker == 1)
                 gml_Script_snd_play_ch1(gml_Script_scr_84_get_sound_ch1("snd_joker_neochaos"))
             if (jokertimer == 40 || jokertimer == 98)
             {
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 40), -60, 1590)
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 580), -60, 1590)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 40), -60, obj_laserscythe_ch1)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 580), -60, obj_laserscythe_ch1)
             }
             if (jokertimer == 46 || jokertimer == 86)
             {
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 130), -60, 1590)
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 490), -60, 1590)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 130), -60, obj_laserscythe_ch1)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 490), -60, obj_laserscythe_ch1)
             }
             if (jokertimer == 52 || jokertimer == 80)
             {
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 220), -60, 1590)
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 400), -60, 1590)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 220), -60, obj_laserscythe_ch1)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 400), -60, obj_laserscythe_ch1)
             }
             if (jokertimer == 66 || jokertimer == 98)
-                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 310), -60, 1590)
+                scythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 310), -60, obj_laserscythe_ch1)
             if (jokertimer == 130)
             {
-                lastscythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), -320, 1590)
+                lastscythe = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), -320, obj_laserscythe_ch1)
                 p = 0
                 vol = 0
                 vol2 = 1
@@ -1327,7 +1327,7 @@ if (joker == 1)
                     remrot = 160
                     image_angle = 160
                 }
-                fadewhite = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 40), 1403)
+                fadewhite = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) - 40), obj_marker_ch1)
                 fadewhite.sprite_index = spr_tallpx_ch1
                 fadewhite.image_xscale = 400
                 fadewhite.image_yscale = 2

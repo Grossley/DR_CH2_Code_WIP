@@ -15,7 +15,7 @@ if instance_exists(obj_controller_dining3)
                 tab.verticalDirection = -1
                 tab.horizontalDirection = 1
             }
-            gml_Script_snd_play(110)
+            gml_Script_snd_play(snd_bump)
             instance_destroy()
         }
     }

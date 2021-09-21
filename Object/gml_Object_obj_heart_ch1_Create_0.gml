@@ -5,5 +5,5 @@ fly = 0
 darken = true
 darkamt = 0
 dmgnoise = false
-gml_Script_instance_create_ch1((x + 10), (y + 10), 1523)
+gml_Script_instance_create_ch1((x + 10), (y + 10), obj_grazebox_ch1)
 boundaryup = 0

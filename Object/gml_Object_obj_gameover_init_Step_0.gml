@@ -13,13 +13,13 @@ if (timer == 31)
     sprite_delete(global.screenshot)
 if (timer == 50)
 {
-    gml_Script_snd_play(164)
+    gml_Script_snd_play(snd_break1)
     sprite_index = spr_heartbreak
     x -= 2
 }
 if (timer == 90)
 {
-    gml_Script_snd_play(165)
+    gml_Script_snd_play(snd_break2)
     visible = false
     sh[0] = gml_Script_instance_create((x - 2), y, obj_marker)
     sh[1] = gml_Script_instance_create(x, (y + 3), obj_marker)

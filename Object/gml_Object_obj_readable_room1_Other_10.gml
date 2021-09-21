@@ -605,7 +605,7 @@ if (room == room_cc_lancer)
         {
             if (global.flag[411] == 0)
                 global.flag[411] = 1
-            if gml_Script_i_ex(101)
+            if gml_Script_i_ex(obj_npc_room)
             {
                 gml_Script_scr_speaker("lancer")
                 gml_Script_msgsetloc(0, "\\E1* Wow!^1! It's better than I remember!!!!!/", "obj_readable_room1_slash_Other_10_gml_789_0")
@@ -1143,7 +1143,7 @@ if (room == room_town_south)
     {
         if (read == 0)
         {
-            gml_Script_snd_play(48)
+            gml_Script_snd_play(snd_knock)
             global.msg[0] = gml_Script_stringsetloc("* (You knocked on the door to the Police Station.)/", "obj_readable_room1_slash_Other_10_gml_1119_0")
             global.msg[1] = gml_Script_stringsetloc("* (...)/", "obj_readable_room1_slash_Other_10_gml_1120_0")
             global.msg[2] = gml_Script_stringsetloc("* (Someone's coming up to the window.)/%", "obj_readable_room1_slash_Other_10_gml_1121_0")
@@ -1170,7 +1170,7 @@ if (room == room_town_mid)
         global.msg[0] = gml_Script_stringsetloc("* (Ice E's P\"E\"ZZA, You're number \"#1\" Spot for a piping hot pe\"E\"ce of PEZZA.)/%", "obj_readable_room1_slash_Other_10_gml_1146_0")
     if (x >= 1240)
     {
-        gml_Script_snd_play(48)
+        gml_Script_snd_play(snd_knock)
         if (global.chapter == 1)
         {
             global.msg[0] = gml_Script_stringsetloc("* (Knock knock knock...)/", "obj_readable_room1_slash_Other_10_gml_1154_0")
@@ -1288,7 +1288,7 @@ if (room == room_town_north)
     }
     if (x >= 1090 && x <= 1130)
     {
-        gml_Script_snd_play(48)
+        gml_Script_snd_play(snd_knock)
         if (global.chapter == 1)
         {
             global.msg[0] = gml_Script_stringsetloc("* (Knock knock knock...)/", "obj_readable_room1_slash_Other_10_gml_1276_0")
@@ -1377,7 +1377,7 @@ if (room == room_lw_conbini)
             gml_Script_scr_anyface_next("susie", 0)
             gml_Script_msgnextloc("* ... did you just^1, uh^1, reverse-steal that egg?/%", "obj_readable_room1_slash_Other_10_gml_1695_0_b")
             gml_Script_scr_keyitemremove(2)
-            skip = 0
+            skip = false
             global.flag[439] = 1
         }
     }
@@ -1457,7 +1457,7 @@ if (room == room_lw_conbini)
     }
     if (x > 400 && x < 420 && y < 80)
     {
-        gml_Script_snd_play(39)
+        gml_Script_snd_play(snd_bell)
         global.interact = 0
         myinteract = 0
         with (obj_mainchara)
@@ -1659,7 +1659,7 @@ if (room == room_dw_mansion_east_1f_e)
     {
         with (obj_ch2_room_mansion_east_1f_e)
             con = 1
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         gml_Script_instance_create(x, y, obj_shake)
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (A secret switch...!)/", "obj_readable_room1_slash_Other_10_gml_2031_0")
@@ -1682,17 +1682,17 @@ if (room == room_dw_mansion_east_1f_secret)
         with (obj_ch2_room_mansion_east_1f_secret)
             con = 1
         gml_Script_instance_create(0, 0, obj_shake)
-        gml_Script_snd_play(61)
-        gml_Script_snd_play(300)
-        skip = 1
+        gml_Script_snd_play(snd_impact)
+        gml_Script_snd_play(snd_bwaap)
+        skip = true
     }
     else
     {
         if (read < 20)
-            gml_Script_snd_play_pitch(300, (1 + (read / 10)))
+            gml_Script_snd_play_pitch(snd_bwaap, (1 + (read / 10)))
         else
-            gml_Script_snd_play_pitch(300, 3)
-        skip = 1
+            gml_Script_snd_play_pitch(snd_bwaap, 3)
+        skip = true
     }
 }
 if (room == room_dw_cyber_battle_maze_2)
@@ -1858,8 +1858,8 @@ if (room == room_dw_castle_east_door)
     }
     if (sprite_index == spr_traffic_car_side_legs_small_left)
     {
-        skip = 1
-        gml_Script_snd_play(280)
+        skip = true
+        gml_Script_snd_play(snd_smallcar_yelp)
     }
 }
 if (room == room_dw_castle_dojo)
@@ -1918,7 +1918,7 @@ if (room == room_dw_cyber_tasque_battle)
         gml_Script_msgsetloc(0, "* (Nothing happened.)/%", "obj_readable_room1_slash_Other_10_gml_2238_0")
     else
     {
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         gml_Script_instance_create(0, 0, obj_shake)
         gml_Script_msgsetloc(0, "* (Click!)&* (You found a hidden switch!)/%", "obj_readable_room1_slash_Other_10_gml_2244_0")
         global.flag[330] = 1
@@ -1930,7 +1930,7 @@ if (room == room_dw_cyber_virovirokun_fight)
         gml_Script_msgsetloc(0, "* (Nothing happened.)/%", "obj_readable_room1_slash_Other_10_gml_2254_0")
     else
     {
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         gml_Script_instance_create(0, 0, obj_shake)
         gml_Script_msgsetloc(0, "* (Sounds like a forcefield powering down..^1. or something.)/%", "obj_readable_room1_slash_Other_10_gml_2260_0")
         global.flag[333] = 1
@@ -1942,7 +1942,7 @@ if (room == room_dw_cyber_battle_maze_2)
         gml_Script_msgsetloc(0, "* (Nothing happened.)/%", "obj_readable_room1_slash_Other_10_gml_2269_0")
     else
     {
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         gml_Script_instance_create(0, 0, obj_shake)
         gml_Script_msgsetloc(0, "* (Sounds like a forcefield powering down..^1. or something.)/%", "obj_readable_room1_slash_Other_10_gml_2275_0")
         global.flag[332] = 1
@@ -1973,7 +1973,7 @@ if (room == room_dw_mansion_b_west_2f)
     if (global.flag[373] == 0)
     {
         global.flag[373] = 1
-        gml_Script_snd_play(44)
+        gml_Script_snd_play(snd_shadowpendant)
         gml_Script_msgsetloc(0, "* (Sounds like a forcefield powering down.)/%", "obj_readable_room1_slash_Other_10_gml_2303_0")
     }
     else if (global.flag[373] == 1)
@@ -2078,7 +2078,7 @@ if (room == room_dw_city_big_2)
 {
     if (extflag == "ferris")
     {
-        if gml_Script_i_ex(274)
+        if gml_Script_i_ex(obj_caterpillarchara)
         {
             with (obj_caterpillarchara)
                 sprite_index = usprite
@@ -2160,7 +2160,7 @@ if (room == room_dw_city_moss)
             haveNoelle = gml_Script_scr_havechar(4)
             if (read == 0 && global.flag[920] == 0)
             {
-                if gml_Script_i_ex(104)
+                if gml_Script_i_ex(obj_npc_dumpster)
                 {
                     with (obj_npc_dumpster)
                         moss_con = 1
@@ -2413,7 +2413,7 @@ if (room == room_dw_mansion_bridges)
 {
     gml_Script_scr_speaker("no_name")
     gml_Script_msgsetloc(0, "* (This castle looks like it has worn many seiges...)/%", "obj_readable_room1_slash_Other_10_gml_2843_0")
-    if (!gml_Script_i_ex(238))
+    if (!gml_Script_i_ex(obj_chaseenemy))
         gml_Script_msgsetloc(0, "* (It seems that peace has returned to the castle...)/%", "obj_readable_room1_slash_Other_10_gml_2890_0")
 }
 if (room == room_dw_castle_cafe)
@@ -2431,7 +2431,7 @@ if (room == room_dw_city_postbaseball_1)
     if (global.flag[450] == 0)
     {
         var have_noelle = 1
-        if gml_Script_i_ex(274)
+        if gml_Script_i_ex(obj_caterpillarchara)
         {
             with (obj_caterpillarchara)
             {
@@ -2465,7 +2465,7 @@ if (room == room_dw_city_postbaseball_1)
     }
     if (global.flag[450] == 1)
     {
-        if gml_Script_i_ex(347)
+        if gml_Script_i_ex(obj_room_dw_city_postbaseball)
             obj_room_dw_city_postbaseball.rodeteacup = -3
         global.flag[450] = 2
         myinteract = 0
@@ -2480,16 +2480,16 @@ if (room == room_dw_city_postbaseball_1)
 }
 if (room == room_dw_city_split)
 {
-    skip = 1
+    skip = true
     if (read > 3)
-        gml_Script_snd_play_pitch(177, choose(1, 1, 1, 1, 1, 1, 1, random_range(0.6, 1.6)))
+        gml_Script_snd_play_pitch(snd_pombark, choose(1, 1, 1, 1, 1, 1, 1, random_range(0.6, 1.6)))
     else
-        gml_Script_snd_play(177)
+        gml_Script_snd_play(snd_pombark)
 }
 if (room == room_dw_city_traffic_4)
 {
-    skip = 1
-    gml_Script_snd_play(281)
+    skip = true
+    gml_Script_snd_play(snd_bigcar_yelp)
 }
 if (room == room_dw_mansion_prefountain)
 {
@@ -2498,17 +2498,17 @@ if (room == room_dw_mansion_prefountain)
 }
 if (room == room_dw_city_traffic_3)
 {
-    gml_Script_snd_play(48)
+    gml_Script_snd_play(snd_knock)
     gml_Script_scr_speaker("no_name")
     gml_Script_msgsetloc(0, "* (Knock^1, knock^1, knock)/", "obj_readable_room1_slash_Other_10_gml_3015_0")
     gml_Script_msgnextloc("* You found the only knockable door in the city./", "obj_readable_room1_slash_Other_10_gml_3016_0")
     gml_Script_msgnextloc("* This here is my pride and joy.../%", "obj_readable_room1_slash_Other_10_gml_3017_0")
 }
-if (skip == 0)
+if (skip == false)
     mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)
 read += 1
-if (skip == 1)
+if (skip == true)
 {
     global.interact = 0
-    skip = 0
+    skip = false
 }

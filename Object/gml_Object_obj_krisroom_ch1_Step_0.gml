@@ -34,7 +34,7 @@ if (con > 0 && con < 50)
         con = 6
         with (wallwindow)
             image_index = 1
-        gml_Script_snd_play_ch1(368)
+        gml_Script_snd_play_ch1(snd_wing_ch1)
     }
     if (con == 7)
     {
@@ -79,7 +79,7 @@ if (con > 0 && con < 50)
         with (t)
             image_speed = 0.25
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_krisroom_slash_Step_0_gml_92_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 20
     }
     if (con == 20 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -96,7 +96,7 @@ if (con > 0 && con < 50)
     }
     if (con == 22)
     {
-        gml_Script_snd_play_ch1(368)
+        gml_Script_snd_play_ch1(snd_wing_ch1)
         image_index = 1
         alarm[4] = 40
         con = 23
@@ -170,7 +170,7 @@ if (con >= 50 && con < 100)
         gml_Script_scr_save_ch1()
         global.filechoice = _remfilechoice
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 100)
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (fade)
             fadespeed = 0.01
         con = 51
@@ -195,7 +195,7 @@ if (con >= 100 && con < 150)
     if (con == 100 && (!gml_Script_d_ex_ch1()))
     {
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 50)
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (fade)
         {
             fadespeed = 0.02
@@ -216,12 +216,12 @@ if (con >= 100 && con < 150)
         global.typer = 5
         global.fc = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_krisroom_slash_Step_0_gml_281_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 105
     }
     if (con == 105 && (!gml_Script_d_ex_ch1()))
     {
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("obj_krisroom_slash_Step_0_gml_289_0"))
         global.plot = 10
         gml_Script_scr_become_dark_ch1()

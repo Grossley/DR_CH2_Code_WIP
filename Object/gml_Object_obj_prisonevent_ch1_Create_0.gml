@@ -1,4 +1,4 @@
-puzz1 = gml_Script_instance_create_ch1(260, 220, 1542)
+puzz1 = gml_Script_instance_create_ch1(260, 220, obj_suitspuzz_ch1)
 with (puzz1)
 {
     sol[0] = 3

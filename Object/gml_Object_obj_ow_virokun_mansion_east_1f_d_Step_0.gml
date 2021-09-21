@@ -67,7 +67,7 @@ if (con == 3)
     if (y <= -128)
     {
         global.flag[354] = 1
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         gml_Script_instance_create(0, 0, obj_shake)
         global.interact = 0
         instance_destroy()

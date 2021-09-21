@@ -3,7 +3,7 @@ if (con == 1)
     con = 2
     global.interact = 1
     audio_sound_gain(global.currentsong[1], 0, 500)
-    nise_kknpc = gml_Script_scr_dark_marker(355, 113, 1259)
+    nise_kknpc = gml_Script_scr_dark_marker(355, 113, spr_npc_kk)
     nise_kknpc.image_index = kknpc.image_index
     nise_kknpc.image_speed = kknpc.image_speed
     with (nise_kknpc)
@@ -20,7 +20,7 @@ if (con == 2)
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (You were crushed under the weight of 400 bagels and defeated instantly...)/%", "obj_npc_musical_door_slash_Step_0_gml_30_0")
         gml_Script_d_make()
-        gml_Script_snd_play(298)
+        gml_Script_snd_play(snd_bageldefeat)
     }
     if (fade_timer >= 120 && (!gml_Script_d_ex()))
         con = 3

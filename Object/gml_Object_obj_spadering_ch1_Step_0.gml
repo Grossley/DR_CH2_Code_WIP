@@ -9,7 +9,7 @@ if (t == 0)
             spadeang = (-spadeang)
         spadex = lengthdir_x(300, (spadeang + 180))
         spadey = lengthdir_y(300, (spadeang + 180))
-        spade[i] = gml_Script_instance_create_ch1((spadex + obj_battlesolid_ch1.x), (spadey + obj_battlesolid_ch1.y), 1518)
+        spade[i] = gml_Script_instance_create_ch1((spadex + obj_battlesolid_ch1.x), (spadey + obj_battlesolid_ch1.y), obj_collidebullet_ch1)
         gml_Script_scr_bullet_inherit_ch1(spade[i])
         spade[i].sprite_index = spr_spadebullet_ch1
         spade[i].image_alpha = 0

@@ -6,11 +6,11 @@ if (timer > 0)
     x += (3 - random(6))
     y += (3 - random(6))
 }
-else if gml_Script_i_ex(50)
+else if gml_Script_i_ex(obj_sneo_wall_controller_new)
     x += obj_sneo_wall_controller_new.wallspeed[wallnumber]
 if (timer == 8)
 {
-    gml_Script_snd_play(141)
+    gml_Script_snd_play(snd_bomb)
     instance_destroy()
     fx = gml_Script_instance_create(x, y, obj_pipis_destroy_fx)
     fx.image_xscale = 1.5

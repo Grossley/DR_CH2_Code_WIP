@@ -81,7 +81,7 @@ if (instance_exists(obj_queenshield_enemy) && x > (obj_queenshield_enemy.x - 60)
         event_user(0)
     bonk = 1
     con = 2
-    gml_Script_snd_play(39)
+    gml_Script_snd_play(snd_bell)
     speed *= -0.2
     x += 15
     obj_queenshield_enemy.shaketimer = 4

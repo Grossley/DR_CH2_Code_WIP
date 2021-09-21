@@ -16,7 +16,7 @@ if (room == room_forest_dancers1_ch1)
 {
     for (var i = 0; i < 5; i += 1)
     {
-        sc = gml_Script_instance_create_ch1(320, (160 + (80 * i)), 1500)
+        sc = gml_Script_instance_create_ch1(320, (160 + (80 * i)), obj_scissordancer_ch1)
         with (sc)
         {
             hspeed = 0
@@ -25,7 +25,7 @@ if (room == room_forest_dancers1_ch1)
     }
     for (i = 0; i < 4; i += 1)
     {
-        sc = gml_Script_instance_create_ch1((520 + (80 * i)), 450, 1500)
+        sc = gml_Script_instance_create_ch1((520 + (80 * i)), 450, obj_scissordancer_ch1)
         with (sc)
         {
             vspeed = 0
@@ -34,7 +34,7 @@ if (room == room_forest_dancers1_ch1)
     }
     for (i = 0; i < 2; i += 1)
     {
-        sc = gml_Script_instance_create_ch1(500, (170 - (80 * i)), 1500)
+        sc = gml_Script_instance_create_ch1(500, (170 - (80 * i)), obj_scissordancer_ch1)
         with (sc)
         {
             vspeed = 5
@@ -43,35 +43,35 @@ if (room == room_forest_dancers1_ch1)
     }
     for (i = 0; i < 4; i += 1)
     {
-        sc = gml_Script_instance_create_ch1(960, (440 - (80 * i)), 1500)
+        sc = gml_Script_instance_create_ch1(960, (440 - (80 * i)), obj_scissordancer_ch1)
         with (sc)
             vspeed = 5
     }
     for (i = 0; i < 4; i += 1)
     {
-        sc = gml_Script_instance_create_ch1(960, (40 - (80 * i)), 1500)
+        sc = gml_Script_instance_create_ch1(960, (40 - (80 * i)), obj_scissordancer_ch1)
         with (sc)
             vspeed = 5
     }
-    sc = gml_Script_instance_create_ch1(280, 830, 1500)
+    sc = gml_Script_instance_create_ch1(280, 830, obj_scissordancer_ch1)
     with (sc)
     {
         vspeed = -5
         hspeed = 0
     }
-    sc = gml_Script_instance_create_ch1(580, 820, 1500)
+    sc = gml_Script_instance_create_ch1(580, 820, obj_scissordancer_ch1)
     with (sc)
     {
         hspeed = 5
         vspeed = 0
     }
-    sc = gml_Script_instance_create_ch1(590, 1050, 1500)
+    sc = gml_Script_instance_create_ch1(590, 1050, obj_scissordancer_ch1)
     with (sc)
     {
         vspeed = 5
         hspeed = 0
     }
-    sc = gml_Script_instance_create_ch1(290, 1060, 1500)
+    sc = gml_Script_instance_create_ch1(290, 1060, obj_scissordancer_ch1)
     with (sc)
     {
         hspeed = -5

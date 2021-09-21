@@ -9,6 +9,6 @@ if (weretriggered == 0)
 if (weretriggered == 1)
 {
     gml_Script_instance_create(((gml_Script_camerax() + 640) + 12), 290, obj_chaseenemy)
-    gml_Script_snd_play(163)
+    gml_Script_snd_play(snd_b)
     weretriggered = 2
 }

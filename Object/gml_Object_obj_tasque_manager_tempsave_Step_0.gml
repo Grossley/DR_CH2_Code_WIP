@@ -1,4 +1,4 @@
-if ((!gml_Script_i_ex(273)) && (!gml_Script_i_ex(355)))
+if ((!gml_Script_i_ex(obj_encounterbasic)) && (!gml_Script_i_ex(obj_battlecontroller)))
 {
     if (global.flag[371] != 1)
     {

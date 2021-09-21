@@ -1,6 +1,6 @@
 if (!obj_shapepuzzle.goalHit)
 {
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     global.interact = 1
     global.facing = 2
     active = true

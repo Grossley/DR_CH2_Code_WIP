@@ -166,7 +166,7 @@ if (global.monster[myself] == true)
         if (currentcolor == blue && rtimer == 2)
         {
             global.monsterattackname[myself] = "Bounce"
-            dc = gml_Script_scr_bulletspawner(x, y, 388)
+            dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
             dc.type = 7
             dc.creator = myself
         }
@@ -177,7 +177,7 @@ if (global.monster[myself] == true)
             if (currentcolor == red || currentcolor == orange)
             {
                 global.monsterattackname[myself] = "Shockwave"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 5
                 if (currentcolor == orange)
                     dc.special = 1
@@ -186,7 +186,7 @@ if (global.monster[myself] == true)
             else if (currentcolor == yellow || currentcolor == green)
             {
                 global.monsterattackname[myself] = "Platter"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 6
                 if (currentcolor == green)
                     dc.special = 1

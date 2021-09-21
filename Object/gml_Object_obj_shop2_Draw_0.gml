@@ -169,7 +169,7 @@ if (menu == 1 || menu == 2)
                     {
                         global.gold -= buyvalue[menuc[1]]
                         sidemessage = 1
-                        gml_Script_snd_play(59)
+                        gml_Script_snd_play(snd_locker)
                     }
                     if (noroom == true)
                         sidemessage = 4

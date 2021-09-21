@@ -50,7 +50,7 @@ if (onroad == 0)
             susie.image_alpha += 0.1
     }
 }
-if (!gml_Script_i_ex(1228))
+if (!gml_Script_i_ex(obj_traffic_road_trigger))
 {
     if instance_exists(obj_caterpillarchara)
     {

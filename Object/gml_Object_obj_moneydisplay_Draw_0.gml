@@ -1,7 +1,7 @@
 draw_set_color(c_black)
 xx = (gml_Script_camerax() - 72)
 yy = (gml_Script_cameray() + 88)
-if gml_Script_i_ex(80)
+if gml_Script_i_ex(obj_mainchara)
 {
     if (obj_mainchara.x <= (gml_Script_camerax() + 320))
         xx += 320

@@ -20,7 +20,7 @@ if (state == 0)
         state = 1
         if (uniqueRideExperience == 1)
         {
-            gml_Script_snd_play(59)
+            gml_Script_snd_play(snd_locker)
             gml_Script_instance_create(0, 0, obj_shake)
             state = 0.1
             waitingAround = 15
@@ -40,7 +40,7 @@ if (state == 2)
     if (--waitingAround <= 0)
     {
         state = 3
-        gml_Script_snd_play(51)
+        gml_Script_snd_play(snd_wing)
     }
 }
 if (state == 3)
@@ -93,7 +93,7 @@ if (state == 4)
     {
         heldThisRide = 0
         state = 5
-        looptrack = gml_Script_snd_loop(112)
+        looptrack = gml_Script_snd_loop(snd_chain_extend)
         gml_Script_snd_pitch(looptrack, (0.3 + (_riseSpeedFinal * 0.09)))
         gml_Script_snd_volume(looptrack, 0.3, 0)
     }
@@ -153,7 +153,7 @@ if (state == 5)
                 teatimer--
                 if (teatimer <= 0)
                 {
-                    gml_Script_snd_play(179)
+                    gml_Script_snd_play(snd_swallow)
                     teatimer = 6
                 }
             }
@@ -228,7 +228,7 @@ if (state == 5)
     {
         state = 6
         instance_create_depth(0, 0, 0, obj_shake)
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
     }
     if (riseSpeedBoost != 0)
         riseSpeedBoost = gml_Script_scr_approach(riseSpeedBoost, 0, riseSpeedBoostFriction)
@@ -260,7 +260,7 @@ if (state == 6)
                 state = 7
             else
             {
-                gml_Script_snd_play(143)
+                gml_Script_snd_play(snd_error)
                 state = 6.1
                 waitingAround = 30
             }
@@ -293,7 +293,7 @@ with (crusher)
         {
             other.crushed = 1
             gml_Script_instance_create(0, 0, obj_shake)
-            gml_Script_snd_play(59)
+            gml_Script_snd_play(snd_locker)
         }
     }
 }
@@ -324,12 +324,12 @@ if (state == 7)
             rideToRide = 1
             event_perform(ev_other, ev_user0)
         }
-        gml_Script_snd_play(159)
+        gml_Script_snd_play(snd_jump)
         state = 12
     }
     else
     {
-        gml_Script_snd_play(159)
+        gml_Script_snd_play(snd_jump)
         for (i = 0; i < partySize; i++)
         {
             _sprites = [544, 544, 542, 3338]
@@ -377,8 +377,8 @@ if (state == 8)
         }
         waitingAround = (12 + (_longestAnim / _animSpeed))
         state = 9
-        gml_Script_snd_play(51)
-        cameramarker = gml_Script_scr_dark_marker(jumpMarker[0].jumper.endx, jumpMarker[0].jumper.endy, 650)
+        gml_Script_snd_play(snd_wing)
+        cameramarker = gml_Script_scr_dark_marker(jumpMarker[0].jumper.endx, jumpMarker[0].jumper.endy, spr_krisd_dark)
         cameramarker.depth = -100
         cameramarker.image_blend = c_blue
         cameramarker.visible = false
@@ -582,19 +582,19 @@ if (room == room_dw_cyber_battle_maze_1)
 }
 if (wooshnoise == 1)
 {
-    var woosh = gml_Script_snd_play_pitch(179, 0.6)
+    var woosh = gml_Script_snd_play_pitch(snd_swallow, 0.6)
     gml_Script_snd_volume(woosh, 0.1, 0)
     gml_Script_snd_volume(woosh, 1, 1)
     wooshnoise = 0
 }
 if bouncenoise
 {
-    if (!gml_Script_snd_is_playing(159))
-        gml_Script_snd_play_pitch(159, 1.5)
+    if (!gml_Script_snd_is_playing(snd_jump))
+        gml_Script_snd_play_pitch(snd_jump, 1.5)
     bouncenoise = 0
 }
 if swallownoise
 {
-    gml_Script_snd_play(179)
+    gml_Script_snd_play(snd_swallow)
     swallownoise = 0
 }

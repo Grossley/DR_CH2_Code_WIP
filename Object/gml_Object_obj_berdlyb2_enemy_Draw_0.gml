@@ -5,7 +5,7 @@ if (state == 3)
         state = 0
     else
     {
-        if (global.monster[myself] == false && (!gml_Script_i_ex(62)))
+        if (global.monster[myself] == false && (!gml_Script_i_ex(obj_writer)))
         {
             hurtsprite = spr_berdly_hurt_kneel_battle
             if (endbattle == 0)

@@ -30,7 +30,7 @@ if (room == room_town_mid)
 }
 if (room == room_town_south)
 {
-    policewindow = gml_Script_scr_marker(292, 57, 1096)
+    policewindow = gml_Script_scr_marker(292, 57, spr_policewindow)
     with (policewindow)
         depth = 940000
 }

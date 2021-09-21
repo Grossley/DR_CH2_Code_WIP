@@ -22,5 +22,5 @@ image_yscale = _scalesize
 if (x > ((obj_sneo_final_forme.x + obj_sneo_final_forme.mouthx) + 50))
 {
     instance_destroy()
-    gml_Script_snd_play(179)
+    gml_Script_snd_play(snd_swallow)
 }

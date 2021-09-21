@@ -4,7 +4,7 @@ if (autocomplete == 0)
     {
         if (con == 0)
         {
-            gml_Script_snd_play(294)
+            gml_Script_snd_play(snd_noelle_scared)
             jumpy = 20
             if (instance_exists(obj_controller_city_mice2) && obj_controller_city_mice2.victory == false)
             {
@@ -33,7 +33,7 @@ if (autocomplete == 0)
             else
                 obj_controller_city_mice3.exttrig = "fell"
         }
-        gml_Script_snd_play(294)
+        gml_Script_snd_play(snd_noelle_scared)
         if instance_exists(obj_masterPlatformController)
         {
             if (con == 0)

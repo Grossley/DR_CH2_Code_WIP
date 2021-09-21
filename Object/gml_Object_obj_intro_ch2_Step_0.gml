@@ -28,11 +28,11 @@ if (con == 0)
             {
                 queen_sprite = 1936
                 queen_animate = 1
-                gml_Script_snd_play(193)
+                gml_Script_snd_play(snd_queen_bitcrushlaugh)
             }
             if (timer == 130)
             {
-                gml_Script_snd_play(133)
+                gml_Script_snd_play(snd_explosion_mmx3)
                 queen_sprite = 1937
             }
             if (timer == 170)

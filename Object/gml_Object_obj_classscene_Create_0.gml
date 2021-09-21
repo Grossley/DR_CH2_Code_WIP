@@ -1,4 +1,4 @@
-door = gml_Script_scr_marker(236, 26, 917)
+door = gml_Script_scr_marker(236, 26, spr_classdoor)
 with (door)
     gml_Script_scr_depth()
 con = 0
@@ -51,7 +51,7 @@ if (introtime == 1)
         y = 30
         gml_Script_scr_depth()
     }
-    alphys = gml_Script_scr_marker(50, 50, 918)
+    alphys = gml_Script_scr_marker(50, 50, spr_alphysd)
     with (alphys)
         gml_Script_scr_depth()
     global.interact = 1
@@ -86,7 +86,7 @@ if (sunsettime == 1)
         with (obj_tem_school)
             instance_destroy()
     }
-    sunset = gml_Script_scr_marker(3, 0, 901)
+    sunset = gml_Script_scr_marker(3, 0, spr_torielclass_sunsetoverlay)
     with (sunset)
     {
         image_alpha = 0.4

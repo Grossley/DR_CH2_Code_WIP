@@ -10,15 +10,15 @@ if (x > (o_boxingcontroller.basex - 120) && x < (o_boxingcontroller.basex + 120)
     {
         if (o_boxingcontroller.wireframe_boxing == 1)
         {
-            gml_Script_snd_play(309)
-            gml_Script_snd_play(309)
-            gml_Script_snd_volume(309, 2, 0)
+            gml_Script_snd_play(motor_swing_down_bc)
+            gml_Script_snd_play(motor_swing_down_bc)
+            gml_Script_snd_volume(motor_swing_down_bc, 2, 0)
         }
         else
         {
-            gml_Script_snd_play(120)
-            gml_Script_snd_play(120)
-            gml_Script_snd_volume(120, 2, 0)
+            gml_Script_snd_play(motor_swing_down)
+            gml_Script_snd_play(motor_swing_down)
+            gml_Script_snd_volume(motor_swing_down, 2, 0)
         }
     }
     o_boxingqueen.wheelsoundtimer = 7

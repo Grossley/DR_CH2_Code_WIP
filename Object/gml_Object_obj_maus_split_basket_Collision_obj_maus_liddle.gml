@@ -14,7 +14,7 @@ if (other.con == 5 && other.captured == 0)
         mercycount += 2
     with (obj_mauswheel_enemy)
         actfailure = 0
-    gml_Script_snd_stop(56)
-    gml_Script_snd_play(56)
-    gml_Script_snd_volume(56, noisevol, 0)
+    gml_Script_snd_stop(snd_squeaky)
+    gml_Script_snd_play(snd_squeaky)
+    gml_Script_snd_volume(snd_squeaky, noisevol, 0)
 }

@@ -69,7 +69,10 @@ if (move_l == 1 && move_r == 0)
             hpageturn = -1
     }
     else
+    {
         menuCoord[menu]--
+        menuCoord[menu]
+    }
 }
 else if (move_r == 1 && move_l == 0)
 {
@@ -81,7 +84,10 @@ else if (move_r == 1 && move_l == 0)
             hpageturn = 1
     }
     else
+    {
         menuCoord[menu]++
+        menuCoord[menu]
+    }
 }
 if (move_d == 1 && move_u == 0)
 {
@@ -163,7 +169,11 @@ if (hpageturn != 0 || vpageturn != 0)
                 else
                 {
                     while (menuCoord[menu] > menuMaximumID[menu])
+                    {
+                        menuCoord[menu]
                         menuCoord[menu]--
+                        menuCoord[menu]
+                    }
                 }
             }
         }
@@ -188,12 +198,20 @@ if (hpageturn != 0 || vpageturn != 0)
     if (menuWidth[menu] > 1)
     {
         while ((menuScrollCurrent[menu] % menuWidth[menu]) != 0)
+        {
+            menuScrollCurrent[menu]
             menuScrollCurrent[menu]++
+            menuScrollCurrent[menu]
+        }
     }
     if (menuWidth[menu] == 1)
     {
         while ((menuScrollCurrent[menu] % menuHeight[menu]) != 0)
+        {
+            menuScrollCurrent[menu]
             menuScrollCurrent[menu]++
+            menuScrollCurrent[menu]
+        }
     }
 }
 if (menuCoord[menu] > menuMaximumID[menu])

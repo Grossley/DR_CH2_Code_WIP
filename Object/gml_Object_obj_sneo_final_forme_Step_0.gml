@@ -27,7 +27,7 @@ if (state < 2)
         d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
         d.shakex = ceil(2)
         d.shakey = ceil(2)
-        gml_Script_snd_play(178)
+        gml_Script_snd_play(snd_screenshake)
         if (state == 1)
             stepdir = 1
     }
@@ -67,10 +67,10 @@ if (state < 2)
         if (inhalesfx == 0)
         {
             inhalesfx = 1
-            gml_Script_snd_loop(136)
-            gml_Script_snd_pitch(136, 0.1)
+            gml_Script_snd_loop(snd_sneo_overpower)
+            gml_Script_snd_pitch(snd_sneo_overpower, 0.1)
             gml_Script_snd_pitch_time(136, 1, 90)
-            gml_Script_snd_volume(136, 0.75, 0)
+            gml_Script_snd_volume(snd_sneo_overpower, 0.75, 0)
         }
         effecttimer++
         if ((effecttimer % 6) == 0)
@@ -108,7 +108,7 @@ if (state < 2)
             obj_sneo_warped_box.state = 2
         image_index = 4
         image_angle = 1
-        gml_Script_snd_stop(136)
+        gml_Script_snd_stop(snd_sneo_overpower)
         obj_sneo_warped_box.stopthesucc = 1
     }
 }
@@ -195,7 +195,7 @@ else if (state == 10)
     if (x > ((x + mouthx) + 10))
     {
         image_index = 4
-        gml_Script_snd_stop(136)
+        gml_Script_snd_stop(snd_sneo_overpower)
     }
     if (formtimer > 45)
     {
@@ -205,7 +205,7 @@ else if (state == 10)
         formtimer = 0
         image_index = 4
         hidemouthback = 1
-        gml_Script_snd_stop(136)
+        gml_Script_snd_stop(snd_sneo_overpower)
         obj_sneo_warped_box.image_alpha = 0
         obj_sneo_warped_box.timer = 0
         fakeheart.state = 1
@@ -223,7 +223,7 @@ else if (state == 11)
         formtimer = 65
     if ((formtimer % 5) == 0 && formtimer >= 30 && formtimer <= 65)
     {
-        var _hearthurt = gml_Script_snd_play(170)
+        var _hearthurt = gml_Script_snd_play(snd_hurt1)
         gml_Script_snd_pitch(_hearthurt, random_range(1.4, 2))
         d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
         d.shakex = ceil(1)
@@ -292,7 +292,7 @@ if (state >= 11)
         d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
         d.shakex = ceil(2)
         d.shakey = ceil(2)
-        gml_Script_snd_play(178)
+        gml_Script_snd_play(snd_screenshake)
     }
     y = (ystart - (sin(steptimer) * 40))
 }

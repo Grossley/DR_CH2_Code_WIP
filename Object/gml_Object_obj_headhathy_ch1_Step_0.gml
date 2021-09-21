@@ -4,8 +4,8 @@ if (global.monster[myself] == true)
     {
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
-        hb = gml_Script_instance_create_ch1((x - 100), y, 1551)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
+        hb = gml_Script_instance_create_ch1((x - 100), y, obj_heartblcon_ch1)
         hb.sprite_index = choose(3994, 3995)
         if (acting == 2)
             hb.sprite_index = spr_heartblcon_2_ch1
@@ -31,7 +31,7 @@ if (global.monster[myself] == true)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -45,7 +45,7 @@ if (global.monster[myself] == true)
             global.turntimer = 180
             if (rr == 1)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1557)
+                dc = gml_Script_instance_create_ch1(x, y, obj_spinheart_ch1)
                 dc.joker = 1
                 dc.type = 0
                 dc.target = mytarget
@@ -53,7 +53,7 @@ if (global.monster[myself] == true)
             }
             else
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 33
                 dc.ratio = (1.3 - (instance_number(object_index) / 10))
                 dc.target = mytarget

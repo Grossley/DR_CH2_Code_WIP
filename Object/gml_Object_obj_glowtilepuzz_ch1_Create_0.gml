@@ -22,12 +22,12 @@ if (room == room_field_puzzle1_ch1)
     plotamt = 35
     for (i = 0; i < wonmax; i += 1)
     {
-        block[i] = gml_Script_instance_create_ch1((1280 + (i * 40)), 280, 1656)
+        block[i] = gml_Script_instance_create_ch1((1280 + (i * 40)), 280, obj_soliddark_ch1)
         block[i].image_yscale = 2
-        spike1[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 280, 3607)
+        spike1[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 280, spr_spiketile_ch1)
         with (spike1[i])
             depth = 900000
-        spike2[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 320, 3607)
+        spike2[i] = gml_Script_scr_dark_marker_ch1((1280 + (i * 40)), 320, spr_spiketile_ch1)
         with (spike2[i])
             depth = 900000
         if (global.plot >= 35)

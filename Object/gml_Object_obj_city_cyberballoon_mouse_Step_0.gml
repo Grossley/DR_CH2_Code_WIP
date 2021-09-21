@@ -21,7 +21,7 @@ if (falling == 1)
         vspeed += 0.4
         vspeed = clamp(vspeed, 0, 8)
     }
-    if gml_Script_i_ex(72)
+    if gml_Script_i_ex(obj_kris_headobj)
     {
         if (y <= (obj_kris_headobj.bbox_bottom - 20))
             depth = (obj_kris_headobj.depth + 100)
@@ -57,8 +57,8 @@ if (falling == 1)
             cloud.friction = 0.2
             cloud.y -= 8
             cloud.sprite_index = spr_fx_mushroomcloud
-            gml_Script_snd_play(110)
-            gml_Script_snd_play(51)
+            gml_Script_snd_play(snd_bump)
+            gml_Script_snd_play(snd_wing)
             instance_destroy()
         }
     }
@@ -68,7 +68,7 @@ if (falling == 1)
             obj_room_dw_city_postbaseball.balloondestroyed[balloonid] = 1
         if (obj_kris_headobj.mousefailcon == 0 && obj_room_dw_city_postbaseball.minigame == 1)
             obj_kris_headobj.mousefailcon = 1
-        gml_Script_snd_play(176)
+        gml_Script_snd_play(snd_mouse)
         jumper = gml_Script_scr_afterimage()
         with (jumper)
             gml_Script_scr_jump_to_point((x + random_range(-40, 40)), (room_height + (sprite_height * 2)), 20, 16)

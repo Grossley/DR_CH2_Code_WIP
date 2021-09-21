@@ -58,8 +58,8 @@ if keyboard_check_pressed(ord("C"))
 if keyboard_check_pressed(vk_space)
 {
     haswritten = 1
-    gml_Script_safe_delete(57)
-    gml_Script_safe_delete(62)
+    gml_Script_safe_delete(obj_choicer_neo)
+    gml_Script_safe_delete(obj_writer)
     if fileExists
     {
         ini_open("choicer.txt")
@@ -99,7 +99,7 @@ else
     global.interact = 0
 if keyboard_check_pressed(ord("P"))
 {
-    gml_Script_snd_play(203)
+    gml_Script_snd_play(snd_camera_flash)
     var date = ((((((((((string(date_get_year(date_current_datetime())) + "_") + string(date_get_month(date_current_datetime()))) + "_") + string(date_get_day(date_current_datetime()))) + "_") + string(date_get_hour(date_current_datetime()))) + "_") + string(date_get_minute(date_current_datetime()))) + "_") + string(date_get_second(date_current_datetime())))
     screen_save((("Choicer_Screenshot_" + date) + ".png"))
 }

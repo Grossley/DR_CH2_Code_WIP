@@ -14,12 +14,12 @@ if (room == room_cc_rurus1_ch1)
                 instance_destroy()
             global.interact = 1
             gml_Script_snd_free_all_ch1()
-            gml_Script_snd_play_ch1(378)
-            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_snd_play_ch1(snd_impact_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
             for (i = 0; i < 4; i += 1)
                 spike[i].image_index = 0
-            spikewall1 = gml_Script_instance_create_ch1(spike[0].x, spike[0].y, 1656)
-            spikewall2 = gml_Script_instance_create_ch1(spike[2].x, spike[2].y, 1656)
+            spikewall1 = gml_Script_instance_create_ch1(spike[0].x, spike[0].y, obj_soliddark_ch1)
+            spikewall2 = gml_Script_instance_create_ch1(spike[2].x, spike[2].y, obj_soliddark_ch1)
             spikewall1.image_yscale = 2
             spikewall2.image_yscale = 2
             con = 1
@@ -28,7 +28,7 @@ if (room == room_cc_rurus1_ch1)
     }
     if (con == 2)
     {
-        darkfade = gml_Script_scr_marker_ch1(-10, -10, 4277)
+        darkfade = gml_Script_scr_marker_ch1(-10, -10, spr_pixel_white_ch1)
         darkfade.image_xscale = 700
         darkfade.image_yscale = 400
         darkfade.image_alpha = 0
@@ -57,7 +57,7 @@ if (room == room_cc_rurus1_ch1)
         }
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_58_0")
         global.typer = 42
-        gml_Script_instance_create_ch1(120, 50, 1327)
+        gml_Script_instance_create_ch1(120, 50, obj_writer_ch1)
         con = 6
     }
     if (con == 6 && (!instance_exists(obj_writer_ch1)))
@@ -67,19 +67,19 @@ if (room == room_cc_rurus1_ch1)
         global.typer = 31
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_71_0")
         con = 7
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 7 && (!gml_Script_d_ex_ch1()))
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_78_0")
         global.typer = 42
-        gml_Script_instance_create_ch1(200, 50, 1327)
+        gml_Script_instance_create_ch1(200, 50, obj_writer_ch1)
         con = 8
     }
     if (con == 8 && (!instance_exists(obj_writer_ch1)))
     {
-        gml_Script_snd_play_ch1(360)
-        appear = gml_Script_instance_create_ch1(x, y, 1370)
+        gml_Script_snd_play_ch1(snd_rurus_appear_ch1)
+        appear = gml_Script_instance_create_ch1(x, y, obj_rurus_appear_ch1)
         visible = false
         con = 14
         alarm[4] = 60
@@ -113,13 +113,13 @@ if (room == room_cc_rurus1_ch1)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_122_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_123_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_124_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 18
     }
     if (con == 18 && (!gml_Script_d_ex_ch1()))
     {
-        gml_Script_snd_play_ch1(430)
+        gml_Script_snd_play_ch1(snd_power_ch1)
         fade = 0
         con = 19
         with (darkfade)
@@ -135,9 +135,9 @@ if (room == room_cc_rurus1_ch1)
         if (darkfade.image_alpha >= 1)
         {
             con = 20
-            block = gml_Script_instance_create_ch1(320, 240, 1544)
+            block = gml_Script_instance_create_ch1(320, 240, obj_pushableblock_ch1)
             block.event = 0
-            tile = gml_Script_instance_create_ch1(280, 240, 1546)
+            tile = gml_Script_instance_create_ch1(280, 240, obj_blocktile_ch1)
         }
     }
     if (con == 20)
@@ -150,7 +150,7 @@ if (room == room_cc_rurus1_ch1)
                 instance_destroy()
             con = 21
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_164_0")
-            d = gml_Script_instance_create_ch1(0, 0, 1326)
+            d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             d.side = 1
         }
     }
@@ -158,7 +158,7 @@ if (room == room_cc_rurus1_ch1)
     {
         with (floorwall)
             instance_destroy()
-        interactable = gml_Script_instance_create_ch1(280, 160, 1405)
+        interactable = gml_Script_instance_create_ch1(280, 160, obj_readable_room1_ch1)
         interactable.image_xscale = 4
         interactable.image_yscale = 2
         global.facing = 0
@@ -173,7 +173,7 @@ if (room == room_cc_rurus1_ch1)
         {
             gml_Script_snd_free_all_ch1()
             global.interact = 1
-            gml_Script_snd_play_ch1(374)
+            gml_Script_snd_play_ch1(snd_won_ch1)
             with (spikewall1)
                 instance_destroy()
             with (spikewall2)
@@ -194,7 +194,7 @@ if (room == room_cc_rurus1_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_208_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_209_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_210_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 28
     }
@@ -228,12 +228,12 @@ if (room == room_cc_rurus2_ch1)
                 instance_destroy()
             global.interact = 1
             gml_Script_snd_free_all_ch1()
-            gml_Script_snd_play_ch1(378)
-            gml_Script_instance_create_ch1(0, 0, 1464)
+            gml_Script_snd_play_ch1(snd_impact_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
             for (i = 0; i < 4; i += 1)
                 spike[i].image_index = 0
-            spikewall1 = gml_Script_instance_create_ch1(spike[0].x, spike[0].y, 1656)
-            spikewall2 = gml_Script_instance_create_ch1(spike[2].x, spike[2].y, 1656)
+            spikewall1 = gml_Script_instance_create_ch1(spike[0].x, spike[0].y, obj_soliddark_ch1)
+            spikewall2 = gml_Script_instance_create_ch1(spike[2].x, spike[2].y, obj_soliddark_ch1)
             spikewall1.image_yscale = 2
             spikewall2.image_yscale = 2
             con = 7
@@ -242,8 +242,8 @@ if (room == room_cc_rurus2_ch1)
     }
     if (con == 8 && (!instance_exists(obj_writer_ch1)))
     {
-        gml_Script_snd_play_ch1(360)
-        appear = gml_Script_instance_create_ch1(x, y, 1370)
+        gml_Script_snd_play_ch1(snd_rurus_appear_ch1)
+        appear = gml_Script_instance_create_ch1(x, y, obj_rurus_appear_ch1)
         visible = false
         con = 14
         alarm[4] = 60
@@ -269,16 +269,16 @@ if (room == room_cc_rurus2_ch1)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_296_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_297_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_298_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 18
     }
     if (con == 18 && (!gml_Script_d_ex_ch1()))
     {
-        gml_Script_snd_play_ch1(430)
+        gml_Script_snd_play_ch1(snd_power_ch1)
         fade = 0
         con = 19
-        darkfade = gml_Script_scr_marker_ch1(-10, -10, 4277)
+        darkfade = gml_Script_scr_marker_ch1(-10, -10, spr_pixel_white_ch1)
         darkfade.image_xscale = 700
         darkfade.image_yscale = 400
         with (darkfade)
@@ -294,9 +294,9 @@ if (room == room_cc_rurus2_ch1)
         if (darkfade.image_alpha >= 1)
         {
             con = 20
-            block = gml_Script_instance_create_ch1(340, 240, 1544)
+            block = gml_Script_instance_create_ch1(340, 240, obj_pushableblock_ch1)
             block.event = 0
-            tile = gml_Script_instance_create_ch1(260, 240, 1546)
+            tile = gml_Script_instance_create_ch1(260, 240, obj_blocktile_ch1)
         }
     }
     if (con == 20)
@@ -309,13 +309,13 @@ if (room == room_cc_rurus2_ch1)
                 instance_destroy()
             con = 21
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_341_0")
-            d = gml_Script_instance_create_ch1(0, 0, 1326)
+            d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
             d.side = 1
         }
     }
     if (con == 21 && (!gml_Script_d_ex_ch1()))
     {
-        interactable = gml_Script_instance_create_ch1(280, 160, 1405)
+        interactable = gml_Script_instance_create_ch1(280, 160, obj_readable_room1_ch1)
         interactable.image_xscale = 4
         interactable.image_yscale = 2
         with (floorwall)
@@ -332,7 +332,7 @@ if (room == room_cc_rurus2_ch1)
         {
             gml_Script_snd_free_all_ch1()
             global.interact = 1
-            gml_Script_snd_play_ch1(374)
+            gml_Script_snd_play_ch1(snd_won_ch1)
             with (interactable)
                 instance_destroy()
             with (spikewall1)
@@ -358,7 +358,7 @@ if (room == room_cc_rurus2_ch1)
         global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_390_0")
         gml_Script_scr_ralface_ch1(6, 1)
         global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_392_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         con = 28
     }
@@ -368,7 +368,7 @@ if (room == room_cc_rurus2_ch1)
         global.fe = 1
         global.typer = 6
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_event_slash_Step_0_gml_404_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         d.side = 1
         hspeed = 12
         con = 29

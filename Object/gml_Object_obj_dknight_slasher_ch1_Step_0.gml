@@ -37,7 +37,7 @@ if (con == 11)
     image_index += 0.334
     if (image_index >= 4 && thrown == 0)
     {
-        swordbullet = gml_Script_instance_create_ch1((x + 6), (y + 34), 1520)
+        swordbullet = gml_Script_instance_create_ch1((x + 6), (y + 34), obj_regularbullet_ch1)
         swordbullet.siner = movesiner
         gml_Script_scr_bullet_inherit_ch1(swordbullet)
         swordbullet.throwernumber = throwernumber

@@ -1,6 +1,6 @@
 if (timer == 0)
 {
-    gml_Script_snd_play(166)
+    gml_Script_snd_play(snd_damage)
     if (other.big == 0)
     {
         with (other)

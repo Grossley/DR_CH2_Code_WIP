@@ -23,8 +23,8 @@ if (global.monster[myself] == true)
             else
                 target = 3
             global.targeted[mytarget] = true
-            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         }
         global.typer = 45
         global.fc = 2
@@ -273,19 +273,19 @@ if (attackcon < 92 && attackcon > 0)
     if (attackcon == 1)
     {
         krishp = global.hp[1]
-        b1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 150), obj_heart_ch1.y, 1560)
+        b1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 150), obj_heart_ch1.y, obj_ralseibullet_ch1)
         attackcon = 2
         alarm[5] = 35
     }
     if (attackcon == 3)
     {
-        b2 = gml_Script_instance_create_ch1((obj_heart_ch1.x - 150), obj_heart_ch1.y, 1560)
+        b2 = gml_Script_instance_create_ch1((obj_heart_ch1.x - 150), obj_heart_ch1.y, obj_ralseibullet_ch1)
         attackcon = 4
         alarm[5] = 35
     }
     if (attackcon == 5)
     {
-        b3 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (obj_heart_ch1.y - 150), 1560)
+        b3 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (obj_heart_ch1.y - 150), obj_ralseibullet_ch1)
         attackcon = 6
         alarm[5] = 60
     }
@@ -317,7 +317,7 @@ if (attackcon < 92 && attackcon > 0)
         with (obj_face_ch1)
             instance_destroy()
         krishp = global.hp[1]
-        b1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (obj_heart_ch1.y - 150), 1560)
+        b1 = gml_Script_instance_create_ch1((obj_heart_ch1.x + 8), (obj_heart_ch1.y - 150), obj_ralseibullet_ch1)
         attackcon = 9
         alarm[5] = 60
     }
@@ -345,7 +345,7 @@ if (attackcon < 92 && attackcon > 0)
     }
     if (attackcon == 11 && instance_exists(obj_writer_ch1) == 0)
     {
-        b1 = gml_Script_instance_create_ch1((xx + 440), (obj_heart_ch1.y + 8), 1560)
+        b1 = gml_Script_instance_create_ch1((xx + 440), (obj_heart_ch1.y + 8), obj_ralseibullet_ch1)
         with (b1)
         {
             special = 1
@@ -422,7 +422,7 @@ if (global.myfight == 3)
     {
         with (global.charinstance[0])
             visible = false
-        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, 3809)
+        k = gml_Script_scr_dark_marker_ch1(global.charinstance[0].x, global.charinstance[0].y, spr_kris_hug_ch1)
         with (k)
             gml_Script_scr_move_to_point_over_time_ch1((global.monsterx[1] - 42), (global.monstery[1] - 16), 15)
         actcon = 11
@@ -514,7 +514,7 @@ if (con == 3)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_579_0")
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseienemy_slash_Step_0_gml_580_0")
     con = 4
-    mywriter = gml_Script_instance_create_ch1((x - 160), (y - 30), 1327)
+    mywriter = gml_Script_instance_create_ch1((x - 160), (y - 30), obj_writer_ch1)
 }
 if (con == 4 && (!instance_exists(obj_writer_ch1)))
 {

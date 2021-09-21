@@ -372,9 +372,9 @@ if (introcon == 0)
     if (introtimer >= 72 && introtimer < 102)
         draw_sprite_ext(spr_arcade_fight, 0, 266, 114, 2, 2, 0, c_white, 1)
     if (introtimer == 20)
-        gml_Script_snd_play(16)
+        gml_Script_snd_play(snd_boxing_round1_bc)
     if (introtimer == 72)
-        gml_Script_snd_play(12)
+        gml_Script_snd_play(snd_boxing_fight_bc)
     if (introtimer == 112)
         introcon = 1
 }

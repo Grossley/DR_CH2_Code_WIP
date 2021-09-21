@@ -10,7 +10,7 @@ if (myinteract == 3)
 }
 if (ballooncon == 1 && (!gml_Script_d_ex()))
 {
-    gml_Script_snd_play(176)
+    gml_Script_snd_play(snd_mouse)
     myballoon = gml_Script_instance_create((x - 12), (y - 70), obj_cybercity_balloon)
     fakeballoony = -400
     with (myballoon)

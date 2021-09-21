@@ -1,4 +1,4 @@
-forcefield = gml_Script_scr_forcefield(680, 1040, 2, 8, 1, 1)
+forcefield = gml_Script_scr_forcefield(680, 1040, 2, 8, true, true)
 toggle = 0
 hasToggled = 0
 con = 0

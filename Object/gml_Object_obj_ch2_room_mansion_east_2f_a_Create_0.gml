@@ -16,12 +16,12 @@ else
 {
     if (global.flag[344] == 1)
     {
-        dooropen = gml_Script_scr_dark_marker(180, 40, 2860)
+        dooropen = gml_Script_scr_dark_marker(180, 40, spr_dw_mansion_door_open)
         dooropen.depth = 899999
     }
     else
     {
-        doorlocked = gml_Script_scr_marker(180, 40, 2862)
+        doorlocked = gml_Script_scr_marker(180, 40, spr_dw_mansion_door_closed)
         doorlocked.depth = 899999
         monty = gml_Script_instance_create(170, 240, obj_saucer_monty)
         exitcollider = gml_Script_instance_create(180, 80, obj_solidblock)

@@ -392,7 +392,7 @@ if (stepping == 1)
     {
         if (global.flag[31] == 0)
         {
-            gml_Script_snd_play_ch1(457)
+            gml_Script_snd_play_ch1(snd_step1_ch1)
             stepped = true
         }
     }
@@ -402,7 +402,7 @@ if (stepping == 1)
     {
         stepped = true
         if (global.flag[31] == 0)
-            gml_Script_snd_play_ch1(458)
+            gml_Script_snd_play_ch1(snd_step2_ch1)
     }
 }
 if (onebuffer < 0)

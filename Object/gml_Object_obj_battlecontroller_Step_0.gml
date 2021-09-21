@@ -51,7 +51,7 @@ if (victory == true && victoried == 0)
             global.battlemsg[0] = gml_Script_stringsetsubloc("* You won^1!&* Got ~1 D$^1.&* You became stronger./%", string(global.monstergold[3]), "obj_battlecontroller_slash_Step_0_gml_46_0")
             if gml_Script_scr_havechar(4)
                 global.battlemsg[0] = gml_Script_stringsetsubloc("* You won^1!&* Got ~1 D$^1.&* Noelle became stronger./%", string(global.monstergold[3]), "obj_battlecontroller_slash_Step_0_gml_69_0")
-            var lvsnd = gml_Script_snd_play_pitch(245, 2)
+            var lvsnd = gml_Script_snd_play_pitch(snd_dtrans_lw, 2)
             gml_Script_snd_volume(lvsnd, 0.7, 0)
             gml_Script_scr_levelup()
         }
@@ -491,7 +491,7 @@ if (global.myfight == 0)
                 }
                 if _tensionhealed
                 {
-                    var _drivenoise = gml_Script_snd_play(153)
+                    var _drivenoise = gml_Script_snd_play(snd_cardrive)
                     gml_Script_snd_pitch(_drivenoise, 1.4)
                     gml_Script_snd_volume(_drivenoise, 0.8, 0)
                     with (global.charinstance[global.charturn])
@@ -797,7 +797,7 @@ if (global.myfight == 0)
                     {
                         for (i = 0; i < 6; i += 1)
                         {
-                            if (global.canactsus[thisenemy][actcoord] == 0)
+                            if (global.canactsus[thisenemy][actcoord] == false)
                             {
                                 if (actcoord > 0)
                                     global.bmenucoord[9][global.charturn] -= 1
@@ -808,7 +808,7 @@ if (global.myfight == 0)
                     {
                         for (i = 0; i < 6; i += 1)
                         {
-                            if (global.canactral[thisenemy][actcoord] == 0)
+                            if (global.canactral[thisenemy][actcoord] == false)
                             {
                                 if (actcoord > 0)
                                     global.bmenucoord[9][global.charturn] -= 1
@@ -819,7 +819,7 @@ if (global.myfight == 0)
                     {
                         for (i = 0; i < 6; i += 1)
                         {
-                            if (global.canactnoe[thisenemy][actcoord] == 0)
+                            if (global.canactnoe[thisenemy][actcoord] == false)
                             {
                                 if (actcoord > 0)
                                     global.bmenucoord[9][global.charturn] -= 1
@@ -854,27 +854,27 @@ if (global.myfight == 0)
 }
 if (movenoise == true)
 {
-    gml_Script_snd_play(259)
+    gml_Script_snd_play(snd_menumove)
     movenoise = false
 }
 if (grazenoise == true)
 {
-    gml_Script_snd_play(168)
+    gml_Script_snd_play(snd_graze)
     grazenoise = false
 }
 if (selnoise == true)
 {
-    gml_Script_snd_play(260)
+    gml_Script_snd_play(snd_select)
     selnoise = false
 }
 if (damagenoise == true)
 {
-    gml_Script_snd_play(166)
+    gml_Script_snd_play(snd_damage)
     damagenoise = false
 }
 if (laznoise == true)
 {
-    gml_Script_snd_play(174)
+    gml_Script_snd_play(snd_laz_c)
     laznoise = false
 }
 onebuffer -= 1
@@ -945,18 +945,20 @@ if (global.charweapon[4] == 13)
     if ((t_siner % 6) == 0)
     {
         if (global.hp[4] > round((global.maxhp[4] / 3)))
+        {
             global.hp[4] = (global.hp[4] - 1)
+        }
     }
 }
 t_siner++
 if gml_Script_scr_debug()
 {
     gml_Script_scr_turn_skip()
-    if gml_Script_scr_debug_keycheck(113)
+    if gml_Script_scr_debug_keycheck(vk_f2)
         gml_Script_scr_debug_fullheal()
-    if gml_Script_scr_debug_keycheck(114)
+    if gml_Script_scr_debug_keycheck(vk_f3)
         gml_Script_scr_raise_party()
-    if gml_Script_scr_debug_keycheck(116)
+    if gml_Script_scr_debug_keycheck(vk_f5)
     {
         if (global.chapter == 2 && instance_exists(o_boxingqueen))
         {
@@ -969,21 +971,21 @@ if gml_Script_scr_debug()
         else
             gml_Script_scr_wincombat()
     }
-    if gml_Script_scr_debug_keycheck(117)
+    if gml_Script_scr_debug_keycheck(vk_f6)
         gml_Script_scr_weaken_enemies()
-    if gml_Script_scr_debug_keycheck(119)
+    if gml_Script_scr_debug_keycheck(vk_f8)
         gml_Script_scr_weaken_party(1)
-    if gml_Script_scr_debug_keycheck(120)
+    if gml_Script_scr_debug_keycheck(vk_f9)
     {
         global.tension = 0
         gml_Script_scr_debug_print("TP set to 0%")
     }
-    if gml_Script_scr_debug_keycheck(121)
+    if gml_Script_scr_debug_keycheck(vk_f10)
     {
         global.tension = 250
         gml_Script_scr_debug_print("TP maxed out!!")
     }
-    if (gml_Script_scr_debug_keycheck(77) && (!instance_exists(obj_queen_enemy)) && (!instance_exists(obj_spamton_neo_enemy)))
+    if (gml_Script_scr_debug_keycheck(ord("M")) && (!instance_exists(obj_queen_enemy)) && (!instance_exists(obj_spamton_neo_enemy)))
     {
         if audio_is_playing(global.batmusic[1])
         {

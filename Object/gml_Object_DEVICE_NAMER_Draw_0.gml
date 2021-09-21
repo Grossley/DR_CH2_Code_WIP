@@ -87,7 +87,7 @@ if (EVENT == 74)
     if (global.choice == 1)
     {
         gml_Script_snd_free_all()
-        gml_Script_snd_play(245)
+        gml_Script_snd_play(snd_dtrans_lw)
         fade = gml_Script_scr_fadeout(80)
         fade.depth = -1
         fade.image_blend = c_white
@@ -106,8 +106,8 @@ if (CANCELMENU == 1)
             ONEBUFFER = 3
             TWOBUFFER = 3
         }
-        gml_Script_safe_delete(62)
-        gml_Script_safe_delete(878)
+        gml_Script_safe_delete(obj_writer)
+        gml_Script_safe_delete(DEVICE_CHOICE)
     }
     else
     {

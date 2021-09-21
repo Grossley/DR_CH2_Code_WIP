@@ -8,7 +8,7 @@ if (dont == 0)
         else
         {
             state = 1
-            mybul = gml_Script_scr_bullet_create(x, y, 448)
+            mybul = gml_Script_scr_bullet_create(x, y, obj_yarnbullet)
             gml_Script_i_ex(mybul)
             mybul.element = 6
             mybul.sprite_index = spr_yarnbullet

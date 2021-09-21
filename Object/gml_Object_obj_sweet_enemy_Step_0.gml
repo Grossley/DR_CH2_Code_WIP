@@ -205,7 +205,7 @@ if (dancecon == 1)
 }
 if (dancecon == 1.1 && (!instance_exists(obj_writer)))
 {
-    susi = gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
+    susi = gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.16, true)
     susi.depth = (obj_heroralsei.depth + 1)
     with (obj_afterimage)
         instance_destroy()
@@ -251,7 +251,7 @@ if (dancecon == 1.2 || (dancescenetimer > 0 && dancescenetimer <= 146))
     if (dancescenetimer == 1)
     {
         gml_Script_scr_act_charsprite_end()
-        susi = gml_Script_scr_act_charsprite("susie", 817, 0.5, 1)
+        susi = gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.5, true)
         susi.depth = (obj_heroralsei.depth + 1)
         with (obj_afterimage)
             instance_destroy()
@@ -265,7 +265,7 @@ if (dancecon == 1.2 || (dancescenetimer > 0 && dancescenetimer <= 146))
     {
         susi.hspeed = 10
         dancescenetimer2 = 1
-        rals = gml_Script_scr_act_charsprite("ralsei", 1508, 0.16, 1)
+        rals = gml_Script_scr_act_charsprite("ralsei", spr_ralsei_hurt_fixed, 0.16, true)
         with (obj_afterimage)
             instance_destroy()
         with (obj_oflash)
@@ -320,10 +320,10 @@ if (dancecon == 1.2 || (dancescenetimer > 0 && dancescenetimer <= 146))
 if (dancecon == 2.3 && (!instance_exists(obj_writer)))
 {
     gml_Script_scr_act_charsprite_end()
-    susi = gml_Script_scr_act_charsprite("susie", 817, 0.5, 1)
+    susi = gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.5, true)
     susi.x = (obj_heroralsei.x + 80)
     susi.y = (obj_heroralsei.y + 5)
-    gml_Script_scr_act_charsprite("ralsei", 1508, 0.16, 1)
+    gml_Script_scr_act_charsprite("ralsei", spr_ralsei_hurt_fixed, 0.16, true)
     with (obj_afterimage)
         instance_destroy()
     with (obj_oflash)
@@ -334,10 +334,10 @@ if (dancecon == 2.4 && (!instance_exists(obj_writer)))
 {
     gml_Script_scr_act_charsprite_end()
     gml_Script_scr_speaker("none")
-    susi = gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
+    susi = gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.16, true)
     susi.x = (obj_heroralsei.x + 100)
     susi.y = (obj_heroralsei.y + 5)
-    gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
+    gml_Script_scr_act_charsprite("ralsei", spr_ralsei_dance, 0.16, true)
     gml_Script_msgsetloc(0, "* (Susie made Ralsei learn \\cVR-Action\\cW even though he didn't want to!)/", "obj_sweet_enemy_slash_Step_0_gml_354_0")
     gml_Script_scr_anyface_next("ralsei", "U")
     gml_Script_msgnextloc("\\EU* (I... I'm sorry^1, Kris!!!)/%", "obj_sweet_enemy_slash_Step_0_gml_356_0")
@@ -395,7 +395,7 @@ if (global.myfight == 3)
     {
         actCounter++
         danceCounter = 1
-        gml_Script_scr_act_charsprite("kris", 861, 0.16, 1)
+        gml_Script_scr_act_charsprite("kris", spr_kris_dance, 0.16, true)
         if (simultotal == 1 || (global.lang == "ja" && simultotal_funny == 1))
         {
             gml_Script_msgsetloc(0, "* You danced!/", "obj_sweet_enemy_slash_Step_0_gml_422_0")
@@ -439,9 +439,9 @@ if (global.myfight == 3)
     {
         actCounter++
         danceCounter = 2
-        gml_Script_scr_act_charsprite("kris", 861, 0.16, 1)
-        gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
-        gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
+        gml_Script_scr_act_charsprite("kris", spr_kris_dance, 0.16, true)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralsei_dance, 0.16, true)
+        gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.16, true)
         gml_Script_msgsetloc(0, "* Everyone danced with Sweet! They're totally lost in the groove!/%", "obj_sweet_enemy_slash_Step_0_gml_470_0")
         gml_Script_scr_battletext_default()
         actcon = 4
@@ -456,7 +456,7 @@ if (global.myfight == 3)
     {
         dancing = 1
         danceCounter = 1
-        gml_Script_scr_act_charsprite("susie", 817, 0.16, 1)
+        gml_Script_scr_act_charsprite("susie", spr_susie_dance, 0.16, true)
         if (groove == 0)
         {
             if (global.lang == "ja")
@@ -488,7 +488,7 @@ if (global.myfight == 3)
     {
         dancing = 1
         danceCounter = 1
-        gml_Script_scr_act_charsprite("ralsei", 777, 0.16, 1)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralsei_dance, 0.16, true)
         if (groove == 0)
         {
             if (global.lang == "ja")
@@ -586,8 +586,8 @@ if (endcon == 1)
         rate = 3
         skippable = false
     }
-    gml_Script_snd_volume(125, 0, 15)
-    gml_Script_snd_volume(129, 0, 15)
+    gml_Script_snd_volume(cyber_battle_backing, 0, 15)
+    gml_Script_snd_volume(cyber_battle_backing_solo, 0, 15)
 }
 if (endcon == 1.5)
 {

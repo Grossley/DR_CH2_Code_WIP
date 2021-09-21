@@ -17,6 +17,6 @@ if (type == 3)
     global.msc = 245
 gml_Script_scr_text_ch1(global.msc)
 myinteract = 3
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 mydialoguer.side = 0
 talked += 1

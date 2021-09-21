@@ -6,7 +6,7 @@ if (leapmode == 0)
         {
             if (y >= ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - sprite_height))
             {
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_impact)
                 gml_Script_instance_create(0, 0, obj_shake)
                 y = ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - sprite_height)
                 jumptimer = 0
@@ -24,7 +24,7 @@ if (leapmode == 0)
         {
             if (y >= (floory - 2))
             {
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_impact)
                 gml_Script_instance_create(0, 0, obj_shake)
                 y = floory
                 x = xstart
@@ -45,7 +45,7 @@ if (leapmode == 0)
             jumpmax = 10
         if (jumptimer >= jumpmax)
         {
-            gml_Script_snd_play(159)
+            gml_Script_snd_play(snd_jump)
             floory = y
             jumptimer = 0
             jumpcon = 1
@@ -126,7 +126,7 @@ if (leapmode == 1)
             targetx = ((obj_heart.x + 8) - (sprite_width / 2))
             hspeed = ((targetx - x) / 17)
             vspeed = -17
-            gml_Script_snd_play(159)
+            gml_Script_snd_play(snd_jump)
             gravity = 1
             amt += 1
             if (amt >= 3)
@@ -147,7 +147,7 @@ if (leapmode == 1)
             vspeed = 0
             hspeed = 0
             jumpcon = 2
-            gml_Script_snd_play(150)
+            gml_Script_snd_play(snd_boost)
         }
     }
     if (jumpcon == 2)
@@ -156,7 +156,7 @@ if (leapmode == 1)
         jumptimer += 1
         if (jumptimer >= 15)
         {
-            gml_Script_snd_play(157)
+            gml_Script_snd_play(snd_ultraswing)
             image_speed = 0
             image_index = 0
             vspeed = 32
@@ -171,7 +171,7 @@ if (leapmode == 1)
         if (y >= ((obj_growtangle.y + (obj_growtangle.sprite_height / 2)) - sprite_height))
         {
             shrapmax = 6
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
             gml_Script_instance_create(0, 0, obj_shake)
             for (i = 0; i < shrapmax; i += 1)
             {
@@ -206,7 +206,7 @@ if (leapmode == 2)
     if (jumpcon == 1)
     {
         if (image_index == 2)
-            gml_Script_snd_play(157)
+            gml_Script_snd_play(snd_ultraswing)
         if (image_index >= 4)
         {
             image_index = 4
@@ -223,7 +223,7 @@ if (leapmode == 2)
         y += (sin((siner / 3)) * 4)
         s_timer += 1
         if (s_timer == 20)
-            gml_Script_snd_play(145)
+            gml_Script_snd_play(snd_magicsprinkle)
         if (s_timer >= 24)
         {
             bul = gml_Script_instance_create((x + random((sprite_width / 2))), ((y + sprite_height) - 50), obj_regularbullet)
@@ -264,7 +264,7 @@ if (leapmode == 2)
         jumptimer += 1
         if (jumptimer >= 10)
         {
-            gml_Script_snd_play(61)
+            gml_Script_snd_play(snd_impact)
             gml_Script_instance_create(0, 0, obj_shake)
             amt += 1
             s_timer = 0
@@ -318,8 +318,8 @@ if (leapmode == 3)
     {
         if (image_index == 3)
         {
-            gml_Script_snd_play(154)
-            gml_Script_snd_play(145)
+            gml_Script_snd_play(snd_swing)
+            gml_Script_snd_play(snd_magicsprinkle)
             for (i = 0; i < 4; i += 1)
             {
                 bul = gml_Script_instance_create((x - 40), (y + 100), obj_regularbullet)

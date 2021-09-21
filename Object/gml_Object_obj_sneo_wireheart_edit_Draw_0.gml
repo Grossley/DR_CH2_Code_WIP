@@ -53,7 +53,7 @@ if (hidesprite == 0)
 }
 if (destroyed == 1)
 {
-    gml_Script_snd_play(141)
+    gml_Script_snd_play(snd_bomb)
     if (type == 4 && global.turntimer > 20)
     {
         bomb = gml_Script_instance_create(x, y, obj_sneo_heart_bomb_explode)
@@ -63,7 +63,7 @@ if (destroyed == 1)
         gml_Script_scr_afterimage_cut()
     for (i = 10; i >= 0; i--)
     {
-        piece = gml_Script_scr_marker(lerp(x, rembossx, (i / 9)), lerp(y, rembossy, (i / 9)), 2049)
+        piece = gml_Script_scr_marker(lerp(x, rembossx, (i / 9)), lerp(y, rembossy, (i / 9)), spr_sneo_wireheart)
         piece.image_index = 4
         piece.i = i
         piece.depth = (depth + 1)
@@ -90,6 +90,7 @@ if (destroyed == 1)
                     __mercydmgwriter.damage = 3
                     __mercydmgwriter.type = 5
                     global.hittarget[myself] = (global.hittarget[myself] + 1)
+                    global.hittarget[myself]
                 }
             }
             else

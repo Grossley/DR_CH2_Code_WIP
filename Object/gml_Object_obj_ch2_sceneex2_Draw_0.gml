@@ -1,5 +1,5 @@
 depth = 99000
-if gml_Script_i_ex(273)
+if gml_Script_i_ex(obj_encounterbasic)
     fightmode = 1
 if (drawblack == 1 && fightmode == 0)
 {
@@ -50,11 +50,11 @@ if cityscape_active
             cityscape_alpha = 0.15
         gml_Script_scr_draw_sprite_tiled_area(2056, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape) * 2)), 1.6708, 1.195, 16777215, cityscape_alpha)
     }
-    if (shop_spamton_bg_con == 1 && (!gml_Script_i_ex(62)) && (!gml_Script_i_ex(867)))
+    if (shop_spamton_bg_con == 1 && (!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_battleblcon)))
     {
         shop_spamton_bg_timer++
         if (shop_spamton_bg_timer == 1)
-            gml_Script_snd_play(201)
+            gml_Script_snd_play(snd_petrify)
         if (shop_spamton_bg_timer == 23)
             shop_spamton_bg_con = 2
     }

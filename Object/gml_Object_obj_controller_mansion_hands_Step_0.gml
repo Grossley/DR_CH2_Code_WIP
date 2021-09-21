@@ -85,7 +85,7 @@ if (con == 8)
     }
     if (timer == 8)
     {
-        gml_Script_snd_play(216)
+        gml_Script_snd_play(snd_whip_crack_only)
         gml_Script_instance_create(x, y, obj_shake)
     }
     if (timer == 9)

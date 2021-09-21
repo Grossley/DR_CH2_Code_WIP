@@ -2,8 +2,8 @@ if (hp < 1)
 {
     if (active == true)
     {
-        gml_Script_snd_play(170)
-        gml_Script_snd_pitch(170, 2)
+        gml_Script_snd_play(snd_hurt1)
+        gml_Script_snd_pitch(snd_hurt1, 2)
     }
     active = false
     image_alpha -= 0.05

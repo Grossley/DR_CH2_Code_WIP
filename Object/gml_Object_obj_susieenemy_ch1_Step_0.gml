@@ -11,7 +11,7 @@ if (global.monster[myself] == true && defeated == 0)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
         }
     }
     if (global.mnfight == 2 && attacked == false)
@@ -22,7 +22,7 @@ if (global.monster[myself] == true && defeated == 0)
             global.turntimer = 180
             if (attacktype == 2)
             {
-                dc = gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y + (sprite_height / 2)), 1558)
+                dc = gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_dbulletcontroller_ch1)
                 dc.type = 85
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -36,7 +36,7 @@ if (global.monster[myself] == true && defeated == 0)
             }
             if (attacktype == 1)
             {
-                dc = gml_Script_instance_create_ch1(x, y, 1558)
+                dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
                 dc.type = 20
                 dc.target = mytarget
                 dc.damage = (global.monsterat[myself] * 5)
@@ -50,7 +50,7 @@ if (global.monster[myself] == true && defeated == 0)
             }
             if (attacktype == 0 && sleeping == false)
             {
-                bike = gml_Script_instance_create_ch1(obj_lancerboss3_ch1.x, obj_lancerboss3_ch1.y, 1601)
+                bike = gml_Script_instance_create_ch1(obj_lancerboss3_ch1.x, obj_lancerboss3_ch1.y, obj_lancerbike_neo_ch1)
                 with (obj_lancerboss3_ch1)
                     visible = false
                 bike.target = mytarget
@@ -165,20 +165,20 @@ if (global.myfight == 3)
         gml_Script_snd_pause_ch1(global.batmusic[1])
         if (lullabied == 0)
         {
-            singy = gml_Script_snd_play_ch1(393)
+            singy = gml_Script_snd_play_ch1(snd_ralseising1_ch1)
             with (object_index)
                 lullabied = 1
         }
         else
         {
-            singy = gml_Script_snd_play_ch1(394)
+            singy = gml_Script_snd_play_ch1(snd_ralseising2_ch1)
             with (object_index)
                 lullabied = 0
         }
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_susieenemy_slash_Step_0_gml_197_0")
         with (obj_heroralsei_ch1)
             visible = false
-        ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, 3848)
+        ralsing = gml_Script_scr_dark_marker_ch1(obj_heroralsei_ch1.x, obj_heroralsei_ch1.y, spr_ralseib_sing_ch1)
         with (ralsing)
             image_speed = 0.2
         lullatimer = 0
@@ -233,13 +233,13 @@ if (pacifycon == 1)
         pacifycon = 2
         with (obj_lancerboss3_ch1)
             visible = false
-        temp_l = gml_Script_scr_dark_marker_ch1((x - 40), (y + sprite_height), 3791)
+        temp_l = gml_Script_scr_dark_marker_ch1((x - 40), (y + sprite_height), spr_lancerbike_ch1)
         temp_l.depth = (depth - 2)
     }
 }
 if (pacifycon == 2)
 {
-    gml_Script_snd_play_ch1(453)
+    gml_Script_snd_play_ch1(snd_lancerwhistle_ch1)
     with (temp_l)
     {
         o = gml_Script_scr_oflash_ch1()

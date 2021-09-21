@@ -1,6 +1,6 @@
 if (global.turntimer < 1)
     instance_destroy()
-if gml_Script_i_ex(50)
+if gml_Script_i_ex(obj_sneo_wall_controller_new)
     x += obj_sneo_wall_controller_new.wallspeed[wallnumber]
 if (wallcontroller > -1)
 {
@@ -42,7 +42,7 @@ if (sprite_index == spr_sneo_crew)
                 with (hitshot)
                     event_user(0)
             }
-            gml_Script_snd_play_pitch(141, (1.1 + random(0.2)))
+            gml_Script_snd_play_pitch(snd_bomb, (1.1 + random(0.2)))
             gml_Script_scr_afterimage_cut()
             anim = gml_Script_instance_create(x, y, obj_yshot_anim)
             anim.image_xscale = image_xscale

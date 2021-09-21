@@ -15,7 +15,7 @@ else
     alphysbike.sprite_index = spr_npc_alphys_bike_broken
     if (global.flag[336] == 1)
     {
-        nisesusie = gml_Script_scr_marker(310, 125, 849)
+        nisesusie = gml_Script_scr_marker(310, 125, spr_susie_walk_left_lw)
         with (nisesusie)
             gml_Script_scr_depth()
     }

@@ -141,7 +141,7 @@ if (EVENT == 8)
         alarm[4] = 45
     }
     else
-        gml_Script_snd_play(245)
+        gml_Script_snd_play(snd_dtrans_lw)
     global.tempflag[3] += 1
 }
 if (EVENT == 10)
@@ -155,7 +155,7 @@ if (EVENT == 26)
     gml_Script_snd_free_all()
     if (global.chapter > 1)
     {
-        if gml_Script_i_ex(1310)
+        if gml_Script_i_ex(obj_gameoverbg)
             instance_destroy(obj_gameoverbg)
     }
     global.typer = 667

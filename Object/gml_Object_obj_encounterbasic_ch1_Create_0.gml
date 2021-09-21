@@ -9,7 +9,7 @@ with (global.cinstance[0])
 with (global.cinstance[1])
     visible = false
 count = 0
-c[0] = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4197)
+c[0] = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisr_dark_ch1)
 if instance_exists(global.cinstance[0])
 {
     count += 1

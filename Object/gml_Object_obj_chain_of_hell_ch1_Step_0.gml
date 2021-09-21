@@ -11,7 +11,7 @@ if (chaincon == 2)
     chaintimer += 1
     if (chaintimer >= chainrate)
     {
-        chain[chain_number] = gml_Script_instance_create_ch1(x, y, 1566)
+        chain[chain_number] = gml_Script_instance_create_ch1(x, y, obj_chainpiece_ch1)
         chain[chain_number].image_angle = image_angle
         chain_max += 1
         chain_number += 1
@@ -35,7 +35,7 @@ if (chaincon == 2)
             cchoice = choose(-1, 0, 1)
             ychoice = lengthdir_x(36, image_angle)
             xchoice = lengthdir_y(36, image_angle)
-            bul = gml_Script_instance_create_ch1((x + (xchoice * cchoice)), (y + (ychoice * cchoice)), 1518)
+            bul = gml_Script_instance_create_ch1((x + (xchoice * cchoice)), (y + (ychoice * cchoice)), obj_collidebullet_ch1)
             bul.active = true
             bul.sprite_index = spr_spadebullet_ch1
             bul.image_angle = image_angle
@@ -129,7 +129,7 @@ if (smashtime == 1)
         {
             for (i = 0; i < 1; i += 1)
             {
-                regbul = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 320) + (i * 120)), (gml_Script___view_get(1, 0) - 20), 1520)
+                regbul = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 320) + (i * 120)), (gml_Script___view_get(1, 0) - 20), obj_regularbullet_ch1)
                 regbul.vspeed = 2
                 regbul.gravity = 0.2
                 regbul.sprite_index = spr_spadebullet_ch1
@@ -142,7 +142,7 @@ if (smashtime == 1)
             btimer = 0
             for (i = 0; i < 2; i += 1)
             {
-                regbul = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 260) + (i * 120)), (gml_Script___view_get(1, 0) - 20), 1520)
+                regbul = gml_Script_instance_create_ch1(((gml_Script___view_get(0, 0) + 260) + (i * 120)), (gml_Script___view_get(1, 0) - 20), obj_regularbullet_ch1)
                 regbul.vspeed = 2
                 regbul.gravity = 0.2
                 regbul.sprite_index = spr_spadebullet_ch1

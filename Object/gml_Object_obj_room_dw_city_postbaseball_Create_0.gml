@@ -4,7 +4,7 @@ con = 0
 balloontimer = 0
 balloonthreshold = 5
 gml_Script_scr_losechar()
-gml_Script_safe_delete(274)
+gml_Script_safe_delete(obj_caterpillarchara)
 gml_Script_scr_getchar(2)
 gml_Script_scr_getchar(3)
 caterpillarsus = gml_Script_scr_makecaterpillar(obj_mainchara.x, ((obj_mainchara.y - 16) + 2), 2, 0)
@@ -23,7 +23,7 @@ if (room == room_dw_city_postbaseball_1)
     forcefieldright = gml_Script_instance_create(880, 760, obj_forcefield)
     forcefieldright.image_xscale = 100
     with (obj_forcefield)
-        stayVisible = 1
+        stayVisible = true
 }
 switchcon = 0
 rodeteacup = -5

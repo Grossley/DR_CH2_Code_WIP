@@ -57,7 +57,7 @@ if keyboard_check_pressed(ord("2"))
 if keyboard_check_pressed(vk_space)
 {
     haswritten = 1
-    gml_Script_safe_delete(62)
+    gml_Script_safe_delete(obj_writer)
     if fileExists
     {
         ini_open("smallface.txt")
@@ -80,7 +80,7 @@ if keyboard_check_pressed(vk_space)
         d.side = 1
     }
     else
-        gml_Script_snd_play(289)
+        gml_Script_snd_play(snd_queen_hoot_0)
 }
 if gml_Script_d_ex()
     global.interact = 1
@@ -88,7 +88,7 @@ else
     global.interact = 0
 if keyboard_check_pressed(ord("P"))
 {
-    gml_Script_snd_play(203)
+    gml_Script_snd_play(snd_camera_flash)
     var date = ((((((((((string(date_get_year(date_current_datetime())) + "_") + string(date_get_month(date_current_datetime()))) + "_") + string(date_get_day(date_current_datetime()))) + "_") + string(date_get_hour(date_current_datetime()))) + "_") + string(date_get_minute(date_current_datetime()))) + "_") + string(date_get_second(date_current_datetime())))
     screen_save((("Smallface_Screenshot_" + date) + ".png"))
 }

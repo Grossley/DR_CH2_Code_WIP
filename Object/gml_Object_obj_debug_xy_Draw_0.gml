@@ -3,7 +3,7 @@ y = round(mouse_y)
 siner++
 mousebuffer--
 main_focus = 1
-if gml_Script_i_ex(915)
+if gml_Script_i_ex(obj_debug_windows)
     main_focus = 0
 if main_focus
 {
@@ -187,7 +187,7 @@ if (!old_right_click)
     if mouse_check_button_pressed(mb_right)
     {
         main_focus = 0
-        if (!gml_Script_i_ex(915))
+        if (!gml_Script_i_ex(obj_debug_windows))
         {
             gml_Script_instance_create(0, 0, obj_debug_windows)
             if (!gml_Script_i_ex(selected_object))

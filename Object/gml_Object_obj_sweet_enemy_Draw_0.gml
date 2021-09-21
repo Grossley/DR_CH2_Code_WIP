@@ -17,11 +17,11 @@ if (state == 0)
         }
         if (flash == true)
             fsiner++
-        gml_Script_draw_monster_body_part_ext(1772, (8 - dance_index), ((x + (sin((siner / 4)) * 3)) + 2), y, 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1772, (3 - dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1772, 4, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1772, 1, ((x + (sin((siner / 2)) * 6)) - 4), (y + (cos((siner / 2)) * 6)), 2, 2, 0, 16777215, image_alpha)
-        gml_Script_draw_monster_body_part_ext(1772, (5 + dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, 16777215, image_alpha)
+        gml_Script_draw_monster_body_part_ext(spr_sweet_dance_pieces, (8 - dance_index), ((x + (sin((siner / 4)) * 3)) + 2), y, 2, 2, 0, c_white, image_alpha)
+        gml_Script_draw_monster_body_part_ext(spr_sweet_dance_pieces, (3 - dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, c_white, image_alpha)
+        gml_Script_draw_monster_body_part_ext(spr_sweet_dance_pieces, 4, (x + (sin((siner / 2)) * 2)), (y + (cos((siner / 2)) * 3)), 2, 2, 0, c_white, image_alpha)
+        gml_Script_draw_monster_body_part_ext(spr_sweet_dance_pieces, 1, ((x + (sin((siner / 2)) * 6)) - 4), (y + (cos((siner / 2)) * 6)), 2, 2, 0, c_white, image_alpha)
+        gml_Script_draw_monster_body_part_ext(spr_sweet_dance_pieces, (5 + dance_index), (x + (sin((siner / 3)) * 3)), (y + (cos((siner / 2)) * 4)), 2, 2, 0, c_white, image_alpha)
         dancetimer++
         if (sin((siner / 4)) > 0)
             dance_index = 1

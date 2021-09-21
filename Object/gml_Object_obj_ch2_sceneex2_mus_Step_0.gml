@@ -15,7 +15,7 @@ if (con == 10)
 {
     con = 99
     alarm[0] = 10
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     gml_Script_snd_free(global.currentsong[0])
 }
 if (con == 100)

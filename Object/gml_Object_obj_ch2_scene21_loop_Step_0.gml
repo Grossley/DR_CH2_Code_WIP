@@ -8,7 +8,7 @@ if (global.plot < 150)
             swan_shadow.image_alpha -= 0.2
         actor_shadow = clamp((actor_shadow + 0.2), 0, 1)
         var shadow = actor_shadow
-        if gml_Script_i_ex(890)
+        if gml_Script_i_ex(obj_actor)
         {
             with (obj_actor)
                 color_blend = merge_color(make_color_hsv(0, 0, 100), c_white, shadow)
@@ -51,7 +51,7 @@ if (global.plot < 150)
         swanboat.pause_x_move = 1
         swanboat.pause_y_move = 1
         swanboat.pause_auto_talk = 1
-        if gml_Script_i_ex(968)
+        if gml_Script_i_ex(obj_ch2_scene21_loop_vfx)
         {
             with (obj_ch2_scene21_loop_vfx)
                 auto_scroll_start = 1
@@ -214,7 +214,7 @@ if (global.plot < 150)
     if (con == 29 && customcon == 1)
     {
         con = 200
-        if gml_Script_i_ex(968)
+        if gml_Script_i_ex(obj_ch2_scene21_loop_vfx)
         {
             with (obj_ch2_scene21_loop_vfx)
                 auto_scroll_stop = 1
@@ -285,7 +285,7 @@ if (global.plot < 150)
         gml_Script_c_waitcustom_end()
         gml_Script_c_sel(kr)
         gml_Script_c_facing("r")
-        gml_Script_c_pannable(1)
+        gml_Script_c_pannable(true)
         gml_Script_c_panspeed(4, 0, 50)
         gml_Script_c_msgzurasu(1)
         gml_Script_c_speaker("ralsei")
@@ -314,7 +314,7 @@ if (global.plot < 150)
         if (rouxls_appear == self)
         {
             gml_Script_snd_free_all()
-            gml_Script_snd_play(42)
+            gml_Script_snd_play(snd_rurus_appear)
             rouxls_appear = gml_Script_instance_create((rouxls.x - 40), (rouxls.y - 50), obj_rurus_appear)
             rouxls_appear.depth = 0
         }
@@ -330,7 +330,7 @@ if (global.plot < 150)
                 instance_destroy(rouxls_appear)
         }
     }
-    if ((con == 33 && (!gml_Script_i_ex(62))) || gml_Script_scr_cutscene_loaded())
+    if ((con == 33 && (!gml_Script_i_ex(obj_writer))) || gml_Script_scr_cutscene_loaded())
     {
         con = 35
         gml_Script_c_waitcustom_end()
@@ -362,7 +362,7 @@ if (global.plot < 150)
         gml_Script_c_msgnextloc("\\E6* Hahaha!^1! Me!^1! The ULTIMATE Minion!!/", "obj_ch2_scene21_loop_slash_Step_0_gml_527_0")
         gml_Script_c_msgnextloc("\\E2* Now^1, beholdeth^1! The forme of thoun Destroyere!/%", "obj_ch2_scene21_loop_slash_Step_0_gml_528_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_soundplay(154)
+        gml_Script_c_soundplay(snd_swing)
         gml_Script_c_var_instance(rouxls.boatfront, "fallnow", 1)
         gml_Script_c_wait(5)
         gml_Script_c_var_instance(thrash, "visible", 1)
@@ -371,7 +371,7 @@ if (global.plot < 150)
         gml_Script_c_msgsetloc(0, "\\E2* ..^1. whatevereth this Thing is!/%", "obj_ch2_scene21_loop_slash_Step_0_gml_538_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(ra)
-        gml_Script_c_sprite(1507)
+        gml_Script_c_sprite(spr_ralsei_hurt_overworld)
         gml_Script_c_speaker("ralsei")
         gml_Script_c_msgsetloc(0, "\\EU* Th..^1. This again!?/%", "obj_ch2_scene21_loop_slash_Step_0_gml_546_0")
         gml_Script_c_talk_wait()
@@ -401,7 +401,7 @@ if (global.plot < 150)
             gml_Script_c_talk_wait()
         }
         gml_Script_c_mus("stop")
-        gml_Script_c_soundplay(164)
+        gml_Script_c_soundplay(snd_break1)
         gml_Script_c_var_instance(rouxls, "sprite_index", 1165)
         gml_Script_c_var_instance(rouxls, "x", (rouxls.x - 34))
         gml_Script_c_var_instance(rouxls, "y", (rouxls.y - 126))
@@ -409,9 +409,9 @@ if (global.plot < 150)
         gml_Script_c_wait(15)
         gml_Script_c_var_instance(rouxls, "image_speed", 0)
         gml_Script_c_sel(kr)
-        gml_Script_c_soundplay(139)
-        gml_Script_c_sprite(1420)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_soundplay(snd_weaponpull)
+        gml_Script_c_sprite(spr_krisb_intro)
+        gml_Script_c_autowalk(false)
         gml_Script_c_imagespeed(0.5)
         gml_Script_c_wait(12)
         gml_Script_c_var_instance(id, "swan_swap", 1)
@@ -423,7 +423,7 @@ if (global.plot < 150)
     {
         if (swan_swap == 1)
         {
-            swan_cover = gml_Script_scr_dark_marker(swanboat.x, swanboat.y, 1182)
+            swan_cover = gml_Script_scr_dark_marker(swanboat.x, swanboat.y, spr_swanboat_cover)
             swan_cover.image_index = swanboat.image_index
             swan_cover.image_speed = swanboat.image_speed
             swan_cover.depth = (kr_actor.depth - 10)
@@ -449,7 +449,7 @@ if (global.plot < 150)
         gml_Script_scr_encountersetup(63)
         battle = gml_Script_instance_create(0, 0, obj_battlecontroller)
         battlehey = gml_Script_instance_create(0, 0, obj_rouxlsbattle_hey)
-        battle_swan = gml_Script_scr_dark_marker(swanboat.x, swanboat.y, 2377)
+        battle_swan = gml_Script_scr_dark_marker(swanboat.x, swanboat.y, spr_swanboat)
         battle_swan.image_index = swanboat.image_index
         battle_swan.image_speed = swanboat.image_speed
         battle_swan.depth = (obj_herokris.depth + 1)
@@ -459,7 +459,7 @@ if (global.plot < 150)
         with (obj_actor)
             visible = false
     }
-    if (con == 40 && gml_Script_i_ex(355))
+    if (con == 40 && gml_Script_i_ex(obj_battlecontroller))
     {
         var battle_end = 0
         with (obj_battlecontroller)
@@ -519,25 +519,25 @@ if (global.plot < 150)
             instance_destroy()
         with (obj_heroparent)
             instance_destroy()
-        if gml_Script_i_ex(355)
+        if gml_Script_i_ex(obj_battlecontroller)
             instance_destroy(obj_battlecontroller)
     }
     if rouxls_power_up
     {
         rouxls_power_up = 0
-        if (!gml_Script_i_ex(40))
+        if (!gml_Script_i_ex(obj_power_up_fx_rouxls))
         {
-            d = gml_Script_scr_following_afterimage(40, rouxls)
+            d = gml_Script_scr_following_afterimage(obj_power_up_fx_rouxls, rouxls)
             d.depth -= 1
         }
     }
     if rouxls_power_up_cancel
     {
         rouxls_power_up_cancel = 0
-        if gml_Script_i_ex(40)
+        if gml_Script_i_ex(obj_power_up_fx_rouxls)
             instance_destroy(obj_power_up_fx_rouxls)
     }
-    if (con == 44 && (!gml_Script_i_ex(355)))
+    if (con == 44 && (!gml_Script_i_ex(obj_battlecontroller)))
     {
         con = 49
         alarm[0] = 30
@@ -612,7 +612,7 @@ if (global.plot < 150)
             gml_Script_c_talk_wait()
         }
         gml_Script_c_sel(ra)
-        gml_Script_c_sprite(1507)
+        gml_Script_c_sprite(spr_ralsei_hurt_overworld)
         gml_Script_c_wait(10)
         gml_Script_c_var_instance(id, "rouxls_power_up", 1)
         gml_Script_c_mus2("loopsfx", 130, 0)
@@ -646,7 +646,7 @@ if (global.plot < 150)
         gml_Script_c_facing("r")
         gml_Script_c_wait(10)
         gml_Script_c_wait(40)
-        gml_Script_c_soundplay(188)
+        gml_Script_c_soundplay(snd_badexplosion)
         gml_Script_c_var_instance(id, "explosion", 1)
         gml_Script_c_var_instance(simcity, "flyaway", 1)
         gml_Script_c_wait(60)
@@ -667,12 +667,12 @@ if (global.plot < 150)
         gml_Script_c_facing("r")
         gml_Script_c_panobj(kr_actor, 15)
         gml_Script_c_wait(16)
-        gml_Script_c_pannable(0)
+        gml_Script_c_pannable(false)
         gml_Script_c_actortokris()
         gml_Script_c_actortocaterpillar()
         gml_Script_c_terminatekillactors()
     }
-    if (con == 50 && (!gml_Script_i_ex(895)))
+    if (con == 50 && (!gml_Script_i_ex(obj_cutscene_master)))
     {
         con = 51
         alarm[0] = 20
@@ -736,22 +736,22 @@ if (global.plot < 150)
             gml_Script_c_sel(kr)
             gml_Script_c_facing("l")
             gml_Script_c_walk_wait("l", 3, 10)
-            gml_Script_c_autowalk(0)
-            gml_Script_c_sprite(873)
+            gml_Script_c_autowalk(false)
+            gml_Script_c_sprite(spr_kris_hug_left)
             gml_Script_c_imageindex(0)
             gml_Script_c_imagespeed(0.15)
             gml_Script_c_wait(20)
             gml_Script_c_imagespeed(0)
             gml_Script_c_sel(ra)
-            gml_Script_c_autowalk(0)
-            gml_Script_c_sprite(797)
+            gml_Script_c_autowalk(false)
+            gml_Script_c_sprite(spr_ralsei_walk_right_blush)
             gml_Script_c_speaker("ralsei")
             gml_Script_c_msgsetloc(0, "\\ED* K..^1. Kris!?/%", "obj_ch2_scene21_loop_slash_Step_0_gml_905_0")
             gml_Script_c_talk_wait()
             gml_Script_c_var_instance(whiteall, "x", gml_Script_camerax())
             gml_Script_c_var_instance(whiteall, "y", 0)
             gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 0, 1, 5)
-            gml_Script_c_soundplay(203)
+            gml_Script_c_soundplay(snd_camera_flash)
             gml_Script_c_wait(10)
             gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 1, 0, 5)
             gml_Script_c_wait(60)
@@ -765,7 +765,7 @@ if (global.plot < 150)
             gml_Script_c_msgnextloc("\\E1* Umm^1, l..^1. let's keep going!/%", "obj_ch2_scene21_loop_slash_Step_0_gml_928_0")
             gml_Script_c_talk_wait()
             gml_Script_c_sel(ra)
-            gml_Script_c_autowalk(1)
+            gml_Script_c_autowalk(true)
             gml_Script_c_facing("r")
         }
         if (photocon == 3)
@@ -773,24 +773,24 @@ if (global.plot < 150)
             photocon = 10
             global.flag[325] = 2
             gml_Script_c_sel(kr)
-            gml_Script_c_sprite(874)
+            gml_Script_c_sprite(spr_kris_peace)
             gml_Script_c_sel(ra)
-            gml_Script_c_autowalk(0)
-            gml_Script_c_sprite(801)
+            gml_Script_c_autowalk(false)
+            gml_Script_c_sprite(spr_ralsei_wave_start)
             gml_Script_c_imageindex(2)
             gml_Script_c_imagespeed(0)
             gml_Script_c_wait(15)
             gml_Script_c_var_instance(whiteall, "x", gml_Script_camerax())
             gml_Script_c_var_instance(whiteall, "y", 0)
             gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 0, 1, 5)
-            gml_Script_c_soundplay(203)
+            gml_Script_c_soundplay(snd_camera_flash)
             gml_Script_c_wait(10)
             gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 1, 0, 5)
             gml_Script_c_wait(60)
             gml_Script_c_sel(kr)
             gml_Script_c_facing("r")
             gml_Script_c_sel(ra)
-            gml_Script_c_autowalk(1)
+            gml_Script_c_autowalk(true)
             gml_Script_c_facing("r")
             gml_Script_c_wait(30)
             gml_Script_c_speaker("ralsei")
@@ -808,9 +808,9 @@ if (global.plot < 150)
             gml_Script_c_facing("u")
             gml_Script_c_wait(10)
             gml_Script_c_sel(kr)
-            gml_Script_c_sprite(875)
+            gml_Script_c_sprite(spr_kris_rude_gesture)
             gml_Script_c_sel(ra)
-            gml_Script_c_sprite(1507)
+            gml_Script_c_sprite(spr_ralsei_hurt_overworld)
             gml_Script_c_shakeobj()
             gml_Script_c_speaker("ralsei")
             gml_Script_c_msgsetloc(0, "\\EL* K-Kris!?/%", "obj_ch2_scene21_loop_slash_Step_0_gml_1005_0")
@@ -819,7 +819,7 @@ if (global.plot < 150)
             gml_Script_c_var_instance(whiteall, "x", gml_Script_camerax())
             gml_Script_c_var_instance(whiteall, "y", 0)
             gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 0, 1, 5)
-            gml_Script_c_soundplay(203)
+            gml_Script_c_soundplay(snd_camera_flash)
             gml_Script_c_wait(10)
             gml_Script_c_var_lerp_instance(whiteall, "image_alpha", 1, 0, 5)
             gml_Script_c_wait(60)
@@ -847,7 +847,7 @@ if (global.plot < 150)
             gml_Script_c_terminatekillactors()
         }
     }
-    if (con == 58 && (!gml_Script_i_ex(895)))
+    if (con == 58 && (!gml_Script_i_ex(obj_cutscene_master)))
     {
         con = 59
         alarm[0] = 60
@@ -884,24 +884,24 @@ if (global.plot < 150)
         gml_Script_scr_maincharacters_actors()
         gml_Script_c_wait(10)
         gml_Script_c_sel(kr)
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_walk("r", 5, 40)
         gml_Script_c_sel(ra)
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_walk_wait("r", 5, 40)
-        gml_Script_c_pannable(1)
+        gml_Script_c_pannable(true)
         gml_Script_c_panobj(kr_actor, 30)
         gml_Script_c_wait(10)
         gml_Script_c_msgzurasu(1)
         gml_Script_c_speaker("ralsei")
         gml_Script_c_msgsetloc(0, "\\E2* ..^1. that was a nice boatride^1, wasn't it^1, Kris?/%", "obj_ch2_scene21_loop_slash_Step_0_gml_1106_0")
         gml_Script_c_talk_wait()
-        gml_Script_c_pannable(0)
+        gml_Script_c_pannable(false)
         gml_Script_c_actortokris()
         gml_Script_c_actortocaterpillar()
         gml_Script_c_terminatekillactors()
     }
-    if (con == 64 && (!gml_Script_i_ex(895)))
+    if (con == 64 && (!gml_Script_i_ex(obj_cutscene_master)))
     {
         con = 65
         global.interact = 0

@@ -1,3 +1,3 @@
 shake = 10
-gml_Script_snd_play(101)
-gml_Script_snd_volume(101, 0.4, 0)
+gml_Script_snd_play(snd_pirouette)
+gml_Script_snd_volume(snd_pirouette, 0.4, 0)

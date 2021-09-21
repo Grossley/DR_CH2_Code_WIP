@@ -65,7 +65,7 @@ if static_start
     my_static = gml_Script_instance_create(252, 123, obj_ch2_queen_static)
     with (my_static)
         gml_Script_scr_depth()
-    crack = gml_Script_scr_dark_marker(my_static.x, my_static.y, 351)
+    crack = gml_Script_scr_dark_marker(my_static.x, my_static.y, spr_cutscene_27_queen_static_googles_crack)
     crack.depth = (my_static.depth - 100)
 }
 if static_stop
@@ -74,7 +74,7 @@ if static_stop
     static_start = 0
     static_happened = 0
     pilot_alpha = 1
-    if gml_Script_i_ex(1065)
+    if gml_Script_i_ex(obj_ch2_queen_static)
     {
         instance_destroy(obj_ch2_queen_static)
         instance_destroy(crack)
@@ -141,7 +141,7 @@ if (climb == 1)
         gml_Script_scr_lerpvar_instance(id, "head_y_pos", rem_head_y_pos, (rem_head_y_pos - 120), 30, -3, "out")
     if (climbtimer == 10)
     {
-        var deepsnd = gml_Script_snd_play(235)
+        var deepsnd = gml_Script_snd_play(snd_closet_impact)
         gml_Script_snd_pitch(deepsnd, 0.5)
         gml_Script_instance_create(0, 0, obj_shake)
     }

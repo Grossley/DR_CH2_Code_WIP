@@ -14,7 +14,7 @@ if (global.plot >= 50)
 }
 else
 {
-    groundblock = gml_Script_instance_create_ch1(x, 120, 1656)
+    groundblock = gml_Script_instance_create_ch1(x, 120, obj_soliddark_ch1)
     groundblock.image_xscale = 2
     global.facing = 1
     con = 1

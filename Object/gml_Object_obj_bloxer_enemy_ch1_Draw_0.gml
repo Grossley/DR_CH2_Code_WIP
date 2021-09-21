@@ -181,7 +181,7 @@ if (swaptime == 0 || swaptime == 1 || swaptime == 6)
     if (state == 0 && flash == true)
     {
         fsiner += 1
-        gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+        gml_Script_d3d_set_fog_ch1(true, c_white, 0, 1)
         draw_sprite_ext(thissprite, 5, ((((x - 24) + (ss * 2)) + (swapx * 1.5)) + shakex), ((y + 54) + (ssb * 2)), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         draw_sprite_ext(thissprite, part[4], ((x - ss) + shakex), ((y + 100) - swapx), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         if (swaptime == 1 || swaptime == 6)
@@ -189,7 +189,7 @@ if (swaptime == 0 || swaptime == 1 || swaptime == 6)
         draw_sprite_ext(thissprite, part[3], (((x - 4) + (ss * 2)) + shakex), (y + 78), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         draw_sprite_ext(thissprite, part[2], (((x + 4) - (ss * 2)) + shakex), (y + 54), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         draw_sprite_ext(thissprite, part[1], ((x + (ss * 2)) + shakex), (y + 28), 2, 2, 0, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
-        gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+        gml_Script_d3d_set_fog_ch1(false, c_black, 0, 0)
     }
 }
 if (swaptime == 10)

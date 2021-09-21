@@ -11,7 +11,7 @@ if (EVENT == 0)
 }
 if (EVENT == 1 && (!instance_exists(obj_writer)))
 {
-    gml_Script_snd_play(254)
+    gml_Script_snd_play(AUDIO_APPEARANCE)
     SOUL = gml_Script_instance_create(150, 120, DEVICE_APPEARANCE)
     SOUL.momentum = 0.5
     EVENT = 2
@@ -60,7 +60,7 @@ if (EVENT == 6.2 && (!instance_exists(obj_writer)))
 if (EVENT == 5.1 && (!instance_exists(obj_writer)))
 {
     gml_Script_snd_free_all()
-    gml_Script_snd_play(254)
+    gml_Script_snd_play(AUDIO_APPEARANCE)
     HEARTMADE = 0
     SOUL.t -= 2
     SOUL.momentum = -0.5
@@ -544,7 +544,7 @@ if (EVENT == 65)
     W = gml_Script_instance_create(90, 50, obj_writer)
     EVENT = 65.5
     alarm[4] = 32
-    if gml_Script_i_ex(882)
+    if gml_Script_i_ex(DEVICE_GONERMAKER)
     {
         gmx = GM.initx
         gmy = GM.inity
@@ -552,7 +552,7 @@ if (EVENT == 65)
 }
 if (EVENT == 65.5)
 {
-    if gml_Script_i_ex(882)
+    if gml_Script_i_ex(DEVICE_GONERMAKER)
     {
         if (GM.initx > (gmx - 24))
             GM.initx -= 1
@@ -671,7 +671,7 @@ if (EVENT == 74 && (!instance_exists(obj_writer)))
 if (EVENT == 75 && (!instance_exists(obj_writer)))
 {
     gml_Script_snd_free_all()
-    gml_Script_snd_play(32)
+    gml_Script_snd_play(snd_text)
     with (DEVICE_GONERMAKER)
         instance_destroy()
     with (DEVICE_OBACK_4)

@@ -8,7 +8,7 @@ if instance_exists(obj_sneo_final_forme)
     else
         return;
 }
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 if instance_exists(obj_sneo_final_forme)
 {
     with (obj_sneo_final_forme)

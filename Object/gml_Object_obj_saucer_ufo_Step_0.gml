@@ -26,8 +26,8 @@ if (global.interact == 0)
         timer++
         if (timer == timer1 || timer == timer2 || timer == timer3)
         {
-            gml_Script_snd_play_x(174, 0.5, 0.7)
-            gml_Script_snd_play_x(174, 0.6, 2)
+            gml_Script_snd_play_x(snd_laz_c, 0.5, 0.7)
+            gml_Script_snd_play_x(snd_laz_c, 0.6, 2)
             bullet = gml_Script_instance_create((x + 50), (y + 65), obj_saucer_ufo_bullet)
             bullet.damage = 10
             bullet.target = 3

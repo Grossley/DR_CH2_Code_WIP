@@ -600,7 +600,7 @@ if (global.myfight == 3)
     {
         with (global.charinstance[0])
             visible = false
-        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, 1407)
+        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, spr_kris_hug)
         with (k)
             gml_Script_scr_move_to_point_over_time((global.monsterx[0] - 42), (global.monstery[0] - 30), 15)
         actcon = 11
@@ -720,7 +720,7 @@ if (global.myfight == 3)
         maker = 0
         with (global.charinstance[0])
             visible = false
-        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, 1407)
+        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, spr_kris_hug)
         with (k)
             gml_Script_scr_move_to_point_over_time((obj_heroralsei.x - 24), (obj_heroralsei.y + 10), 15)
         actcon = 31
@@ -731,7 +731,7 @@ if (global.myfight == 3)
         maker = 1
         with (obj_heroralsei)
             visible = false
-        rb = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1013)
+        rb = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, spr_ralseil_blush)
         with (k)
             image_speed = 0.25
         actcon = 33

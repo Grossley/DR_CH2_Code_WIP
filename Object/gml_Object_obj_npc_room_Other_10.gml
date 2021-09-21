@@ -1547,7 +1547,7 @@ if (room == room_dw_castle_cafe)
             gml_Script_msgsetloc(0, "* Boss^1, this Cafe is so unrefined. So plain./", "obj_npc_room_slash_Other_10_gml_1729_0")
             gml_Script_msgnextloc("* Why don't we make it into an animal cafe?/", "obj_npc_room_slash_Other_10_gml_1730_0")
             gml_Script_msgnextloc("* ..^1. you can be one of the animals^1, too^1, boss./%", "obj_npc_room_slash_Other_10_gml_1731_0")
-            if gml_Script_i_ex(114)
+            if gml_Script_i_ex(obj_npc_castle_cafe)
             {
                 with (obj_npc_castle_cafe)
                     tm_con = 1
@@ -1562,7 +1562,7 @@ if (room == room_dw_castle_cafe)
         {
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* (Seems well behaved.)/%", "obj_npc_room_slash_Other_10_gml_1743_0")
-            if gml_Script_i_ex(114)
+            if gml_Script_i_ex(obj_npc_castle_cafe)
             {
                 with (obj_npc_castle_cafe)
                     t_con = 1
@@ -1639,7 +1639,7 @@ if (room == room_dw_castle_east_door)
             gml_Script_msgnextloc("* No^1, they are practicing a special loneliness style./", "obj_npc_room_slash_Other_10_gml_1809_0")
             gml_Script_msgnextloc("* ..^1. Just like me./", "obj_npc_room_slash_Other_10_gml_1810_0")
             gml_Script_msgnextloc("* Lone wolves have to stick together./%", "obj_npc_room_slash_Other_10_gml_1811_0")
-            if gml_Script_i_ex(117)
+            if gml_Script_i_ex(obj_npc_castle_door)
             {
                 with (obj_npc_castle_door)
                     howl_con = 1
@@ -2427,7 +2427,7 @@ if (room == room_dw_mansion_acid_tunnel_loop_rouxls)
 if (room == room_dw_mansion_potBalance)
 {
     alt = 0
-    if gml_Script_i_ex(1258)
+    if gml_Script_i_ex(obj_controller_dw_mansion_potBalance)
         alt = obj_controller_dw_mansion_potBalance.readtrigger
     gml_Script_scr_speaker("no_name")
     if (alt == 0)

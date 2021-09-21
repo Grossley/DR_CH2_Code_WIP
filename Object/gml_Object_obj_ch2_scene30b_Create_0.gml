@@ -8,7 +8,7 @@ if (global.chapter != 2 || global.plot < 205 || global.plot >= 210)
 else
 {
     gml_Script_scr_losechar()
-    blackall = gml_Script_scr_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

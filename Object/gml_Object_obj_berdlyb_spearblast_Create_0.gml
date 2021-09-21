@@ -13,4 +13,4 @@ special = 0
 grazepoints = 4
 childgraze = 4
 aim_at_player = 0
-gml_Script_snd_play(46)
+gml_Script_snd_play(snd_spearappear)

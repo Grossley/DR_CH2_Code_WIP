@@ -1,4 +1,4 @@
-dust = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + 20), (obj_mainchara_ch1.y + 30), 1471)
+dust = gml_Script_instance_create_ch1((obj_mainchara_ch1.x + 20), (obj_mainchara_ch1.y + 30), obj_slidedust_ch1)
 with (dust)
 {
     vspeed = -6

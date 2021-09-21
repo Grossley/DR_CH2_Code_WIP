@@ -26,7 +26,7 @@ if (top == 1)
     }
     if (con == 1)
     {
-        gml_Script_snd_play(245)
+        gml_Script_snd_play(snd_dtrans_lw)
         with (obj_dw_leave)
         {
             if (bottom == 1)

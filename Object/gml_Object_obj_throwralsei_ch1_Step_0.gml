@@ -29,8 +29,8 @@ if (throwcon == 1)
         sprite_index = spr_susieb_attack_unarmed_ch1
         angledraw = 0
         throwcon = 2
-        gml_Script_snd_play_ch1(425)
-        ral = gml_Script_instance_create_ch1(rx, ry, 1581)
+        gml_Script_snd_play_ch1(snd_ultraswing_ch1)
+        ral = gml_Script_instance_create_ch1(rx, ry, obj_ralseithrown_ch1)
         ral.speed = mypower
         ral.mypower = mypower
         ral.image_xscale = 2

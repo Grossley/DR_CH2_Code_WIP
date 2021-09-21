@@ -9,8 +9,8 @@ if instance_exists(target)
 {
     if (t == 10)
     {
-        gml_Script_snd_play_ch1(397)
-        blast = gml_Script_instance_create_ch1((x + 40), (y + 30), 1621)
+        gml_Script_snd_play_ch1(snd_rudebuster_swing_ch1)
+        blast = gml_Script_instance_create_ch1((x + 40), (y + 30), obj_rudebuster_bolt_ch1)
         blast.caster = caster
         blast.target = target
         blast.damage = damage

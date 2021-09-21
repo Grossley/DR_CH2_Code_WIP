@@ -15,7 +15,7 @@ if (rotate == 1 && blocked == 0)
     inUse = 1
 else
     inUse = 0
-if gml_Script_i_ex(1186)
+if gml_Script_i_ex(obj_controller_city_mice3)
 {
     if (obj_controller_city_mice3.micescore > 2)
         inUse = 0

@@ -23,7 +23,7 @@ if (con > 0 && con < 40)
     }
     if (con == 4.5 && instance_exists(obj_dialoguer) == 0)
     {
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
         image_index = 1
         con = 5.5
         alarm[4] = 60
@@ -166,7 +166,7 @@ if (con >= 40)
         global.currentsong[0] = gml_Script_snd_init("mus_birdnoise.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 0.6, 0.7)
         global.interact = 1
-        s = gml_Script_scr_marker(479, 92, 975)
+        s = gml_Script_scr_marker(479, 92, spr_susiel_plain)
         with (s)
             gml_Script_scr_depth()
         with (obj_mainchara)
@@ -190,7 +190,7 @@ if (con >= 40)
     }
     if (con == 43 && (!gml_Script_d_ex()))
     {
-        k = gml_Script_scr_marker(obj_mainchara.x, obj_mainchara.y, 659)
+        k = gml_Script_scr_marker(obj_mainchara.x, obj_mainchara.y, spr_krisl)
         with (k)
             gml_Script_scr_depth()
         with (obj_mainchara)

@@ -5,7 +5,7 @@ if (timer > 0)
 spawninvincibilitytimer++
 if (timer == 6)
 {
-    gml_Script_snd_play(141)
+    gml_Script_snd_play(snd_bomb)
     gml_Script_snd_stop(bomsfallsfx)
     sprite_index = spr_mettaton_bomb2
     image_index = 0
@@ -25,7 +25,7 @@ if (y > ((obj_growtangle.y - 81) + obj_growtangle.sprite_height))
 {
     if (alarm[0] < 1)
     {
-        gml_Script_snd_play(110)
+        gml_Script_snd_play(snd_bump)
         gravity = 0.24
         vspeed = (-5.5 - random(3))
         con = 2
@@ -36,11 +36,11 @@ if (x < ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) + 10) && y > ((o
 {
     if (timer == 0)
     {
-        gml_Script_snd_play(166)
+        gml_Script_snd_play(snd_damage)
         gravity = 0
         speed = 0
         timer = 1
         image_speed = 1
-        bomsfallsfx = gml_Script_snd_loop(142)
+        bomsfallsfx = gml_Script_snd_loop(snd_bombfall)
     }
 }

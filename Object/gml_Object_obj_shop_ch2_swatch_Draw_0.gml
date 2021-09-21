@@ -181,7 +181,7 @@ if (menu == 1 || menu == 2)
                     if (noroom == false)
                     {
                         global.gold -= buyvalue[menuc[1]]
-                        gml_Script_snd_play(59)
+                        gml_Script_snd_play(snd_locker)
                         if (_pocketed == 1)
                             sidemessage = 5
                         else

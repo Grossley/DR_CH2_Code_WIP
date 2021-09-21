@@ -8,7 +8,7 @@ if (room != room_dw_mansion_b_east_a)
 if (state == 0)
     fsiner++
 var hidebgvines = 0
-if (gml_Script_i_ex(355) && global.mercymod[myself] > 89)
+if (gml_Script_i_ex(obj_battlecontroller) && global.mercymod[myself] > 89)
     hidebgvines = 1
 var bgvinecount = 0
 for (var ii = 0; ii < 18; ii += 1)
@@ -110,7 +110,7 @@ for (var i = 0; i < 6; i += 1)
     if (partweakened[i] == 1 && weakentimer == 10)
         partweakened[i] = 2
 }
-if (gml_Script_i_ex(355) && global.mercymod[myself] > 89 && bgvinecount > 0 && (!gml_Script_i_ex(686)) && (!gml_Script_i_ex(685)))
+if (gml_Script_i_ex(obj_battlecontroller) && global.mercymod[myself] > 89 && bgvinecount > 0 && (!gml_Script_i_ex(obj_sneo_vine_transition)) && (!gml_Script_i_ex(obj_sneo_vine_cut)))
 {
     for (i = 0; i < 6; i += 1)
     {
@@ -423,10 +423,10 @@ for (i = 0; i < 8; i += 1)
                 if (keyboard_check_pressed(ord("A")) && i == 5)
                     shake_head = 1
             }
-            partsprite[5] = 1979
+            partsprite[5] = spr_sneo_head_preview
             if (partframe[5] == 0)
                 partframe[5] = 1
-            partsprite[0] = 3226
+            partsprite[0] = spr_nothing
             partsiner[i] += 1
             if (shake_head == 0)
             {
@@ -438,7 +438,7 @@ for (i = 0; i < 8; i += 1)
                 if (shake_head == 1)
                 {
                     partframe[5]++
-                    gml_Script_snd_play(179)
+                    gml_Script_snd_play(snd_swallow)
                 }
                 partrot[5] = ((sin((shake_head * 2)) * 8) + random(4))
                 party[5] = random(4)
@@ -455,7 +455,7 @@ for (i = 0; i < 8; i += 1)
         {
             if (i == 5)
             {
-                gml_Script_snd_play(138)
+                gml_Script_snd_play(snd_weaponpull_fast)
                 var _n = 0
                 repeat (5)
                 {
@@ -471,7 +471,7 @@ for (i = 0; i < 8; i += 1)
                     _n += 0.2
                 }
                 eyeshine.image_angle = (partrot[5] * facing)
-                eyeshine = gml_Script_scr_dark_marker((((x + (partx[5] * facing)) + (partxoff[5] * facing)) + lastxoff), ((y + party[5]) + partyoff[5]), 1979)
+                eyeshine = gml_Script_scr_dark_marker((((x + (partx[5] * facing)) + (partxoff[5] * facing)) + lastxoff), ((y + party[5]) + partyoff[5]), spr_sneo_head_preview)
                 eyeshine.image_xscale = -2
                 partmode = 32
             }
@@ -483,17 +483,17 @@ for (i = 0; i < 8; i += 1)
                 if (sprite_index == spr_sneo_head_preview)
                     instance_destroy()
             }
-            partsprite[0] = 1971
-            partsprite[1] = 1972
-            partsprite[2] = 1973
-            partsprite[3] = 1974
-            partsprite[4] = 1976
-            partsprite[5] = 3319
-            partsprite[6] = 1982
-            partsprite[7] = 1981
+            partsprite[0] = spr_sneo_wingl
+            partsprite[1] = spr_sneo_arml
+            partsprite[2] = spr_sneo_legl
+            partsprite[3] = spr_sneo_legr
+            partsprite[4] = spr_sneo_body
+            partsprite[5] = spr_sneo_head
+            partsprite[6] = spr_sneo_armr
+            partsprite[7] = spr_sneo_wingr
             partframe[5] = 0
             partmode = 0
-            gml_Script_snd_play(110)
+            gml_Script_snd_play(snd_bump)
         }
     }
     if (partmode == 34)
@@ -858,7 +858,7 @@ for (i = 0; i < 8; i += 1)
         armendy = (((y + party[1]) + partyoff[1]) + lengthdir_y(armlength, (partrot[1] - 93)))
         if (dance_timer == 0)
         {
-            if gml_Script_i_ex(628)
+            if gml_Script_i_ex(obj_heart)
                 armangle = point_direction(partxoff[1], partyoff[1], obj_heart.x, obj_heart.y)
             idealrot[5] = -15
         }
@@ -886,7 +886,7 @@ for (i = 0; i < 8; i += 1)
                 d = gml_Script_instance_create(x, y, obj_sneo_biglaser)
                 d.depth += 1
                 d._type = 1
-                chargeshot_sound = gml_Script_snd_loop(130)
+                chargeshot_sound = gml_Script_snd_loop(snd_chargeshot_charge)
                 chargesfxtimer = 1
             }
             if (dance_timer == (42 - (fastshot * 10)))
@@ -899,7 +899,7 @@ for (i = 0; i < 8; i += 1)
                 armaim += 360
                 head_recoil_amount = -170
                 gml_Script_snd_stop(chargeshot_sound)
-                gml_Script_snd_play_x(135, 0.6, 0.5)
+                gml_Script_snd_play_x(snd_chargeshot_fire, 0.6, 0.5)
             }
             if (dance_timer == (84 - (fastshot * 20)))
             {
@@ -911,7 +911,7 @@ for (i = 0; i < 8; i += 1)
                 armaim -= 360
                 head_recoil_amount = -170
                 gml_Script_snd_stop(chargeshot_sound)
-                gml_Script_snd_play_x(135, 0.6, 0.5)
+                gml_Script_snd_play_x(snd_chargeshot_fire, 0.6, 0.5)
             }
             if (dance_timer == (85 - (fastshot * 20)))
                 dance_timer = 3
@@ -1009,7 +1009,7 @@ for (i = 0; i < 8; i += 1)
         if (i == 5)
         {
             if (laughtimer == 1)
-                gml_Script_snd_play(248)
+                gml_Script_snd_play(snd_sneo_laugh_long)
             if (laughtimer >= 1 && laughtimer < 30)
             {
                 headsize = 0
@@ -1140,7 +1140,7 @@ for (i = 0; i < 8; i += 1)
         if (fallen != 0)
         {
             if (fallshake == 10)
-                gml_Script_snd_play(235)
+                gml_Script_snd_play(snd_closet_impact)
             for (ii = 0; ii < 7; ii++)
             {
                 party[ii] += random_range((-fallshake), fallshake)
@@ -1165,7 +1165,7 @@ for (i = 0; i < 8; i += 1)
         partblend[5] = blend
     }
     else if (partblend[5] == blend)
-        partblend[5] = 16777215
+        partblend[5] = c_white
     var shakevar = 0
     if (i == 0)
     {
@@ -1178,7 +1178,7 @@ for (i = 0; i < 8; i += 1)
                 shockthreshold = 10
                 partmode = 1
             }
-            if ((didwejustdie == 0 && gml_Script_i_ex(355) && global.monsterhp[global.chartarget[myself]] <= 0) || (didwejustdie == 0 && gml_Script_i_ex(355) && global.monsterhp[myself] <= (global.monstermaxhp[myself] * 0.1) && gml_Script_scr_sideb_get_phase() > 2 && weirdpathendcon == 0))
+            if ((didwejustdie == 0 && gml_Script_i_ex(obj_battlecontroller) && global.monsterhp[global.chartarget[myself]] <= 0) || (didwejustdie == 0 && gml_Script_i_ex(obj_battlecontroller) && global.monsterhp[myself] <= (global.monstermaxhp[myself] * 0.1) && gml_Script_scr_sideb_get_phase() > 2 && weirdpathendcon == 0))
             {
                 partmode = 99
                 dontchangepose = 1
@@ -1191,15 +1191,15 @@ for (i = 0; i < 8; i += 1)
     {
         partrot[5] = (-37 + sin((partsiner[4] / 16)))
         partframe[5] = 1
-        partsprite[5] = 3319
+        partsprite[5] = spr_sneo_head
     }
     if (headendcon == 2)
     {
         partrot[5] = (15 + sin((partsiner[4] / 16)))
-        partsprite[5] = 1977
+        partsprite[5] = spr_sneo_head_sad
     }
     if (headendcon == 3)
-        partsprite[5] = 3319
+        partsprite[5] = spr_sneo_head
     if (instance_exists(obj_pipis_destroy_fx) && i == 5)
         partrot[5] -= random(60)
     if (headforceframe != -1 && i == 5)
@@ -1236,7 +1236,7 @@ hitdetector.image_angle = partrot[5]
 hitdetector.image_index = partframe[5]
 if (hitcon == 1 || hitcon == -1)
 {
-    partblend[5] = 4235519
+    partblend[5] = c_orange
     hitcontimer = 0
     if (headhit < 20)
         headhit += 6
@@ -1251,7 +1251,7 @@ if (hitcon == 2)
     {
         hitcontimer = 0
         hitcon = 0
-        partblend[5] = 16777215
+        partblend[5] = c_white
     }
 }
 if gml_Script_scr_debug()

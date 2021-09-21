@@ -154,7 +154,7 @@ if (global.myfight == 3)
         gml_Script_msgsetloc(0, "* Choose a topic that Clover likes!/%", "obj_clubsenemy_slash_Step_0_gml_233_0")
         gml_Script_scr_battletext_default()
     }
-    if (topic_con == 2 && (!gml_Script_i_ex(62)))
+    if (topic_con == 2 && (!gml_Script_i_ex(obj_writer)))
     {
         topic_con = 3
         gml_Script_msgset(0, "\\C3 ")
@@ -162,7 +162,7 @@ if (global.myfight == 3)
     }
     if (topic_con == 3)
     {
-        if ((!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
+        if ((!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_choicer_neo)))
             topic_con = 4
         else
         {
@@ -171,27 +171,27 @@ if (global.myfight == 3)
             {
                 topic_con = 4
                 topic_timeup = 1
-                if gml_Script_i_ex(62)
+                if gml_Script_i_ex(obj_writer)
                     instance_destroy(obj_writer)
-                if gml_Script_i_ex(57)
+                if gml_Script_i_ex(obj_choicer_neo)
                     instance_destroy(obj_choicer_neo)
             }
         }
     }
-    if (topic_con == 4 && (!gml_Script_i_ex(62)) && (!gml_Script_i_ex(57)))
+    if (topic_con == 4 && (!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_choicer_neo)))
     {
         topic_start = 0
         topic_con = 0
         if topic_timeup
         {
             topic_timeup = 0
-            gml_Script_snd_play(143)
+            gml_Script_snd_play(snd_error)
             gml_Script_scr_miniface_init_clover()
             gml_Script_msgsetloc(0, "\\m1*		Time's up!&\\m2	TOO SLOW!&\\m3	(Sorry...)/%", "obj_clubsenemy_slash_Step_0_gml_286_0")
         }
         else if (global.choice == right_answer)
         {
-            gml_Script_snd_play(57)
+            gml_Script_snd_play(snd_won)
             if (global.mercymod[myself] < global.mercymax[myself])
             {
                 var mercytotal = clamp((20 + (turns * 5)), 20, 50)
@@ -202,7 +202,7 @@ if (global.myfight == 3)
         }
         else
         {
-            gml_Script_snd_play(143)
+            gml_Script_snd_play(snd_error)
             gml_Script_scr_miniface_init_clover()
             gml_Script_msgsetloc(0, "\\m1*		No thanks!&\\m2	WRONG!&\\m3	(Is it that bad?)/%", "obj_clubsenemy_slash_Step_0_gml_296_0_b")
         }

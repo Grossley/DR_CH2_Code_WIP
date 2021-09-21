@@ -31,14 +31,14 @@ if (myinteract == 1)
     with (obj_mainchara)
         onebuffer = 5
 }
-if (active == true && (global.interact == 0 || gml_Script_i_ex(895)))
+if (active == true && (global.interact == 0 || gml_Script_i_ex(obj_cutscene_master)))
 {
     timer--
     if (timer <= 0)
     {
         timer = (default_time * timefactor)
         active = false
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         if instance_exists(obj_traffic_car)
             obj_traffic_car.groupcheck = group
         if instance_exists(obj_traffic_car_generator)
@@ -72,7 +72,7 @@ if (active == true && (global.interact == 0 || gml_Script_i_ex(895)))
 }
 if clear_traffic
 {
-    if gml_Script_i_ex(1112)
+    if gml_Script_i_ex(obj_traffic_car)
     {
         with (obj_traffic_car)
         {

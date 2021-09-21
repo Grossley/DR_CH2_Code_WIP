@@ -422,7 +422,7 @@ if (global.myfight == 3)
     {
         with (global.charinstance[0])
             visible = false
-        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, 1407)
+        k = gml_Script_scr_dark_marker(global.charinstance[0].x, global.charinstance[0].y, spr_kris_hug)
         with (k)
             gml_Script_scr_move_to_point_over_time((global.monsterx[1] - 42), (global.monstery[1] - 16), 15)
         actcon = 11

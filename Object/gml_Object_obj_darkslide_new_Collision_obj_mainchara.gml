@@ -11,11 +11,11 @@ if (sliding == 0 && global.interact == 0)
         }
         if (solidcheck == 0)
         {
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
             if (room == room_dw_cyber_teacup_final)
-                gml_Script_snd_play(236)
+                gml_Script_snd_play(snd_paper_surf)
             else
-                slide_noise = gml_Script_snd_loop(236)
+                slide_noise = gml_Script_snd_loop(snd_paper_surf)
             with (obj_mainchara)
             {
                 sliding = 1

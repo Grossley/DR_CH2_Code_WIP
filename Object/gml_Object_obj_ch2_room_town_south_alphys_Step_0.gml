@@ -7,7 +7,7 @@ if (gml_Script_scr_havechar(2) && obj_mainchara.x < x && con == -1 && global.fla
     gml_Script_scr_losechar()
     susxpos = obj_caterpillarchara.x
     susypos = obj_caterpillarchara.y
-    nisesusie = gml_Script_scr_marker(susxpos, susypos, 849)
+    nisesusie = gml_Script_scr_marker(susxpos, susypos, spr_susie_walk_left_lw)
     with (nisesusie)
         gml_Script_scr_depth()
     with (obj_caterpillarchara)

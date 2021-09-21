@@ -4,7 +4,7 @@ if (init == 0)
         visible = false
     init = 1
 }
-if gml_Script_i_ex(786)
+if gml_Script_i_ex(o_boxingqueen)
 {
     x = o_boxingqueen.x
     y = (o_boxingqueen.y - 80)
@@ -160,7 +160,7 @@ if (global.monster[myself] == true)
     if (talked == 0.6)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -287,7 +287,7 @@ if (global.monster[myself] == true)
     if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -328,7 +328,7 @@ if (global.monster[myself] == true)
             if (missleattack == 1)
             {
                 global.monsterattackname[myself] = "gigamissle"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 46
                 dc.target = mytarget
                 gml_Script_scr_turntimer(208)
@@ -336,7 +336,7 @@ if (global.monster[myself] == true)
             else if (breathattack == 1)
             {
                 global.monsterattackname[myself] = "gigabreath"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 47
                 dc.target = mytarget
                 gml_Script_scr_turntimer(200)
@@ -402,7 +402,7 @@ if (global.myfight == 3)
         gml_Script_msgset(0, actpunchtext)
         gml_Script_scr_battletext_default()
     }
-    if (acting == 1.5 && (!gml_Script_i_ex(62)))
+    if (acting == 1.5 && (!gml_Script_i_ex(obj_writer)))
     {
         extradamage = 0
         if (o_boxingcontroller.headsprite == spr_bhero_head_a)
@@ -422,11 +422,11 @@ if (global.myfight == 3)
             o_boxingcontroller.specialcon = 4
             extradamage = -30
         }
-        gml_Script_snd_play(153)
+        gml_Script_snd_play(snd_cardrive)
         acting = 4
         alarm[5] = 30
     }
-    if (acting == 5 && o_boxingcontroller.specialcon == 0 && (!gml_Script_i_ex(62)))
+    if (acting == 5 && o_boxingcontroller.specialcon == 0 && (!gml_Script_i_ex(obj_writer)))
     {
         acting = 7
         o_boxingcontroller.punchcon = 1
@@ -442,7 +442,7 @@ if (global.myfight == 3)
     if (acting == 2)
     {
         o_boxingcontroller.specialcon = 5
-        gml_Script_snd_play(153)
+        gml_Script_snd_play(snd_cardrive)
         gml_Script_msgsetloc(0, "* TURBODODGE engaged!&* A dodge-enhancing aura fired up...!/%", "obj_gigaqueen_enemy_slash_Step_0_gml_309_0")
         gml_Script_scr_battletext_default()
         haventusedspell = 0
@@ -452,7 +452,7 @@ if (global.myfight == 3)
     if (acting == 3)
     {
         o_boxingcontroller.specialcon = 6
-        gml_Script_snd_play(153)
+        gml_Script_snd_play(snd_cardrive)
         if (healcount > 2)
             gml_Script_msgsetloc(0, "* SELF-FIX engaged!&* A healing aura fired up...!/%", "obj_gigaqueen_enemy_slash_Step_0_gml_320_0")
         else

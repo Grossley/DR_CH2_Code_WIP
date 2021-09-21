@@ -1,7 +1,7 @@
 g += 1
 if (g == 20)
 {
-    gml_Script_snd_play(103)
+    gml_Script_snd_play(snd_awkward)
     speed = 35
     gravity = 1
 }

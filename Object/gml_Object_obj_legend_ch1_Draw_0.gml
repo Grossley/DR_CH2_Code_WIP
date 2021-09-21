@@ -9,7 +9,7 @@ if draw_screen
         {
             global.typer = 41
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_13_0")
-            w = gml_Script_instance_create_ch1(40, 160, 1327)
+            w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
             w.depth = -10
         }
         if (textimer == 220)
@@ -17,10 +17,10 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_21_0")
-            w = gml_Script_instance_create_ch1(40, 160, 1327)
+            w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
             w.depth = -10
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_24_0")
-            w = gml_Script_instance_create_ch1(220, 160, 1327)
+            w = gml_Script_instance_create_ch1(220, 160, obj_writer_ch1)
             w.depth = -10
         }
         if (textimer == 340)
@@ -28,10 +28,10 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_32_0")
-            w = gml_Script_instance_create_ch1(40, 160, 1327)
+            w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
             w.depth = -10
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_35_0")
-            w = gml_Script_instance_create_ch1(220, 160, 1327)
+            w = gml_Script_instance_create_ch1(220, 160, obj_writer_ch1)
             w.depth = -10
         }
         if (textimer == 460)
@@ -39,7 +39,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_43_0")
-            w = gml_Script_instance_create_ch1(80, 160, 1327)
+            w = gml_Script_instance_create_ch1(80, 160, obj_writer_ch1)
             w.depth = -10
         }
         draw_sprite(pic, 0, 60, (48 + yoff))
@@ -84,7 +84,7 @@ if draw_screen
         global.typer = 40
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_98_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_99_0")
-        w = gml_Script_instance_create_ch1(40, 160, 1327)
+        w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
     }
     if (con == 4)
     {
@@ -95,7 +95,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_113_0")
-            w = gml_Script_instance_create_ch1(70, 160, 1327)
+            w = gml_Script_instance_create_ch1(70, 160, obj_writer_ch1)
         }
         if (contimer >= 276)
         {
@@ -128,7 +128,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_151_0")
-            w = gml_Script_instance_create_ch1(40, 80, 1327)
+            w = gml_Script_instance_create_ch1(40, 80, obj_writer_ch1)
         }
         if (contimer == 210)
         {
@@ -146,7 +146,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_170_0")
-            w = gml_Script_instance_create_ch1(80, 185, 1327)
+            w = gml_Script_instance_create_ch1(80, 185, obj_writer_ch1)
             fadespeed = 0.05
             con = 6
             chunkfade = 0
@@ -177,21 +177,21 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_205_0")
-            w = gml_Script_instance_create_ch1(80, 185, 1327)
+            w = gml_Script_instance_create_ch1(80, 185, obj_writer_ch1)
         }
         if (contimer == 276)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_212_0")
-            w = gml_Script_instance_create_ch1(60, 185, 1327)
+            w = gml_Script_instance_create_ch1(60, 185, obj_writer_ch1)
         }
         if (contimer == 414)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_219_0")
-            w = gml_Script_instance_create_ch1(80, 185, 1327)
+            w = gml_Script_instance_create_ch1(80, 185, obj_writer_ch1)
         }
         if (contimer == 520)
         {
@@ -204,7 +204,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_233_0")
-            w = gml_Script_instance_create_ch1(40, 185, 1327)
+            w = gml_Script_instance_create_ch1(40, 185, obj_writer_ch1)
             contimer = 0
             c_chunkamt = 0
             chunkfade = 0
@@ -221,7 +221,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_253_0")
-            w = gml_Script_instance_create_ch1(80, 185, 1327)
+            w = gml_Script_instance_create_ch1(80, 185, obj_writer_ch1)
         }
         con_alph = 0
         if (contimer >= 138)
@@ -263,17 +263,17 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_301_0")
-            w = gml_Script_instance_create_ch1(20, 185, 1327)
+            w = gml_Script_instance_create_ch1(20, 185, obj_writer_ch1)
         }
         if (contimer == 69)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_309_0")
-            w = gml_Script_instance_create_ch1(110, 185, 1327)
+            w = gml_Script_instance_create_ch1(110, 185, obj_writer_ch1)
         }
         if (contimer == 138)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_317_0")
-            w = gml_Script_instance_create_ch1(200, 185, 1327)
+            w = gml_Script_instance_create_ch1(200, 185, obj_writer_ch1)
         }
         if (contimer >= 69 && contimer <= 138)
         {
@@ -316,7 +316,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_356_0")
-            w = gml_Script_instance_create_ch1(40, 185, 1327)
+            w = gml_Script_instance_create_ch1(40, 185, obj_writer_ch1)
             contimer = 0
             c_chunkamt = 0
             chunkfade = 0
@@ -345,21 +345,21 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_387_0")
-            w = gml_Script_instance_create_ch1(40, 185, 1327)
+            w = gml_Script_instance_create_ch1(40, 185, obj_writer_ch1)
         }
         if (contimer == 276)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_394_0")
-            w = gml_Script_instance_create_ch1(80, 185, 1327)
+            w = gml_Script_instance_create_ch1(80, 185, obj_writer_ch1)
         }
         if (contimer == 414)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_401_0")
-            w = gml_Script_instance_create_ch1(80, 185, 1327)
+            w = gml_Script_instance_create_ch1(80, 185, obj_writer_ch1)
             fadespeed = 0.04
             fadecolor = c_black
             chunkfade = 1
@@ -381,7 +381,7 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_426_0")
-            w = gml_Script_instance_create_ch1(40, 160, 1327)
+            w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
         }
     }
     if (con == 10)
@@ -399,28 +399,28 @@ if draw_screen
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_451_0")
-            w = gml_Script_instance_create_ch1(80, 160, 1327)
+            w = gml_Script_instance_create_ch1(80, 160, obj_writer_ch1)
         }
         if (contimer == 276)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_459_0")
-            w = gml_Script_instance_create_ch1(80, 160, 1327)
+            w = gml_Script_instance_create_ch1(80, 160, obj_writer_ch1)
         }
         if (contimer == 444)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_466_0")
-            w = gml_Script_instance_create_ch1(40, 160, 1327)
+            w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
         }
         if (contimer == 640)
         {
             with (obj_writer_ch1)
                 instance_destroy()
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_legend_slash_Draw_0_gml_473_0")
-            w = gml_Script_instance_create_ch1(40, 160, 1327)
+            w = gml_Script_instance_create_ch1(40, 160, obj_writer_ch1)
         }
         if (contimer >= 444)
         {
@@ -440,14 +440,14 @@ if draw_screen
         {
             gml_Script_snd_free_ch1(global.currentsong[0])
             global.flag[6] = 0
-            f = gml_Script_instance_create_ch1(0, 0, 1460)
+            f = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
             f.fadespeed = 0.02
         }
         if (contimer == 960 && skipped == 0)
         {
             if (global.plot == 20)
             {
-                gml_Script_instance_create_ch1(0, 0, 1462)
+                gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
                 room_goto(room_castle_front_ch1)
             }
             else
@@ -486,7 +486,7 @@ if (ingame == 0)
     {
         skipped = 1
         skiptimer = 0
-        f = gml_Script_instance_create_ch1(0, 0, 1460)
+        f = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         f.fadespeed = 0.08
         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 15)
     }

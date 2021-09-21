@@ -65,7 +65,7 @@ if (setupComplete && goalCheck)
     var _currentState = buffer_md5(_buffer, 0, buffer_get_size(_buffer))
     if (_currentState == bufferGoal)
     {
-        gml_Script_snd_play(44)
+        gml_Script_snd_play(snd_shadowpendant)
         goalHit = 1
         goalCheck = 0
         with (obj_shapepuzzlepiece)

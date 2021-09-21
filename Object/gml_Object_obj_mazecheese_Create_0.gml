@@ -23,7 +23,7 @@ if (global.flag[384] == 1 && type == 2)
 }
 if (room == room_dw_city_postbaseball_2)
 {
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     image_index = 0
     fallcon = 0
     type = 2

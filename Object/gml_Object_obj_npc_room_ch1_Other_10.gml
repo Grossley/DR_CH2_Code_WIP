@@ -1112,5 +1112,5 @@ if (room == room_beach_ch1)
 }
 remanimspeed = image_speed
 myinteract = 3
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 talked += 1

@@ -18,7 +18,7 @@ if (global.darkzone == false)
     if (room == room_graveyard_ch1)
     {
         sprite_index = spr_npc_bench_ch1
-        fence = gml_Script_scr_marker_ch1(81, 122, 3665)
+        fence = gml_Script_scr_marker_ch1(81, 122, spr_npc_graveyardfence_ch1)
         with (fence)
             gml_Script_scr_depth_ch1()
     }
@@ -212,7 +212,7 @@ if (global.darkzone == true)
         sprite_index = spr_npc_gouldensam_ch1
         if (x > 240 && x < 440)
         {
-            king = gml_Script_instance_create_ch1(-100, -100, 1408)
+            king = gml_Script_instance_create_ch1(-100, -100, obj_npc_room_ch1)
             king.x = x
             king.y = y
             king.sprite_index = spr_npc_cage_king_ch1
@@ -222,7 +222,7 @@ if (global.darkzone == true)
         if (x > 480 && x < 680)
         {
             x += 4
-            puzz = gml_Script_instance_create_ch1(-100, -100, 1408)
+            puzz = gml_Script_instance_create_ch1(-100, -100, obj_npc_room_ch1)
             puzz.x = 660
             puzz.y = 130
             puzz.sprite_index = spr_npc_puzzlepiece_jail_ch1
@@ -231,7 +231,7 @@ if (global.darkzone == true)
         if (x > 680 && x < 900)
         {
             x += 8
-            rudinn = gml_Script_instance_create_ch1(-100, -100, 1408)
+            rudinn = gml_Script_instance_create_ch1(-100, -100, obj_npc_room_ch1)
             rudinn.x = 900
             rudinn.y = 115
             rudinn.sprite_index = spr_diamond_overworld_ch1
@@ -241,7 +241,7 @@ if (global.darkzone == true)
         {
             x += 12
             tempvar = 3
-            animal = gml_Script_instance_create_ch1(-100, -100, 1408)
+            animal = gml_Script_instance_create_ch1(-100, -100, obj_npc_room_ch1)
             animal.x = x
             animal.y = y
             animal.sprite_index = spr_npc_cage_animals_ch1
@@ -272,7 +272,7 @@ if (global.darkzone == true)
             sprite_index = spr_npc_gouldensam_ch1
             if (x < (room_width / 2))
             {
-                king = gml_Script_instance_create_ch1(-100, -100, 1408)
+                king = gml_Script_instance_create_ch1(-100, -100, obj_npc_room_ch1)
                 king.x = x
                 king.y = y
                 king.sprite_index = spr_npc_cage_king_ch1
@@ -282,7 +282,7 @@ if (global.darkzone == true)
             else
             {
                 tempvar = 1
-                animal = gml_Script_instance_create_ch1(-100, -100, 1408)
+                animal = gml_Script_instance_create_ch1(-100, -100, obj_npc_room_ch1)
                 animal.x = x
                 animal.y = y
                 animal.sprite_index = spr_npc_cage_animals_ch1

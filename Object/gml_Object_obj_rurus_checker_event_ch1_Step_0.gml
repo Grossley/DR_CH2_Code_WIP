@@ -14,7 +14,7 @@ if (con == 1)
 }
 if (con == 2)
 {
-    darkfade = gml_Script_scr_marker_ch1(-10, -10, 4277)
+    darkfade = gml_Script_scr_marker_ch1(-10, -10, spr_pixel_white_ch1)
     darkfade.image_xscale = 700
     darkfade.image_yscale = 400
     darkfade.image_alpha = 0
@@ -41,15 +41,15 @@ if (con == 5)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_45_0")
     global.typer = 42
-    gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 120), 50, 1327)
+    gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 120), 50, obj_writer_ch1)
     con = 6
 }
 if (con == 6 && (!instance_exists(obj_writer_ch1)))
 {
-    appear = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 420), (gml_Script___view_get(1, 0) + 160), 1370)
-    gml_Script_snd_play_ch1(360)
+    appear = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 420), (gml_Script___view_get(1, 0) + 160), obj_rurus_appear_ch1)
+    gml_Script_snd_play_ch1(snd_rurus_appear_ch1)
     con = 14
-    rurus = gml_Script_scr_dark_marker_ch1(appear.x, appear.y, 3682)
+    rurus = gml_Script_scr_dark_marker_ch1(appear.x, appear.y, spr_rurus_idle_ch1)
     rurus.visible = false
     alarm[4] = 60
 }
@@ -81,7 +81,7 @@ if (con == 17)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_88_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_89_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_90_0")
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     d.side = 1
     con = 18
 }
@@ -96,11 +96,11 @@ if (con == 20)
 {
     with (rurus)
         gml_Script_scr_halt_ch1()
-    gml_Script_snd_play_ch1(360)
-    checkerappear = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 380), (gml_Script___view_get(1, 0) + 120), 1370)
+    gml_Script_snd_play_ch1(snd_rurus_appear_ch1)
+    checkerappear = gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 380), (gml_Script___view_get(1, 0) + 120), obj_rurus_appear_ch1)
     with (checkerappear)
         type = 1
-    checker = gml_Script_scr_dark_marker_ch1(checkerappear.x, checkerappear.y, 3912)
+    checker = gml_Script_scr_dark_marker_ch1(checkerappear.x, checkerappear.y, spr_checkers_idle_ch1)
     with (checker)
         visible = false
     con = 21
@@ -135,7 +135,7 @@ if (con == 22)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_147_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_148_0")
     global.msg[4] = "%%"
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 23
 }
 if (con == 23 && (!gml_Script_d_ex_ch1()))
@@ -145,13 +145,13 @@ if (con == 23 && (!gml_Script_d_ex_ch1()))
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_161_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_162_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 24
 }
 if (con == 24 && (!gml_Script_d_ex_ch1()))
 {
-    gml_Script_snd_play_ch1(378)
-    gml_Script_instance_create_ch1(0, 0, 1464)
+    gml_Script_snd_play_ch1(snd_impact_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     with (checker)
         image_index = 4
     con = 25
@@ -166,7 +166,7 @@ if (con == 26)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_182_0")
     global.msg[2] = "%%"
     con = 27
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 27 && (!gml_Script_d_ex_ch1()))
 {
@@ -176,7 +176,7 @@ if (con == 27 && (!gml_Script_d_ex_ch1()))
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_194_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_195_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_196_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 28
 }
 if (con == 28 && (!gml_Script_d_ex_ch1()))
@@ -189,7 +189,7 @@ if (con == 28 && (!gml_Script_d_ex_ch1()))
     global.flag[9] = 1
     global.batmusic[0] = gml_Script_snd_init_ch1("checkers.ogg")
     global.specialbattle = 3
-    gml_Script_instance_create_ch1(0, 0, 1488)
+    gml_Script_instance_create_ch1(0, 0, obj_encounterbasic_ch1)
     depth = 4000
     with (checker)
         gml_Script_scr_move_to_point_over_time_ch1(global.monstermakex[0], global.monstermakey[0], 20)
@@ -238,7 +238,7 @@ if (con == 39)
     global.fc = 18
     global.typer = 6
     global.fe = 6
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 39.1
 }
 if (con == 39.1 && (!gml_Script_d_ex_ch1()))
@@ -252,7 +252,7 @@ if (con == 39.1 && (!gml_Script_d_ex_ch1()))
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_277_0")
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_278_0")
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_279_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 40
 }
 if (con == 40 && (!gml_Script_d_ex_ch1()))
@@ -267,7 +267,7 @@ if (con == 42)
     global.fe = 6
     global.typer = 31
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_296_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 43
 }
 if (con == 43 && (!gml_Script_d_ex_ch1()))
@@ -276,7 +276,7 @@ if (con == 43 && (!gml_Script_d_ex_ch1()))
     global.fe = 3
     global.typer = 6
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rurus_checker_event_slash_Step_0_gml_306_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 44
     with (rurus)
         hspeed = 24

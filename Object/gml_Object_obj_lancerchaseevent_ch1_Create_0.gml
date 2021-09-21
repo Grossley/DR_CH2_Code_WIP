@@ -4,7 +4,7 @@ if (global.plot >= 15)
 else
 {
     con = 1
-    susie = gml_Script_scr_dark_marker_ch1(1200, 760, 3551)
+    susie = gml_Script_scr_dark_marker_ch1(1200, 760, spr_susieu_dark_ch1)
     with (susie)
         depth = 500000
 }

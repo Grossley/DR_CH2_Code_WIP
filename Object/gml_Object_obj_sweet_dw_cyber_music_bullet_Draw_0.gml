@@ -3,8 +3,8 @@ if instance_exists(obj_mainchara)
 {
     if (obj_mainchara.x >= 200 && move == 0)
     {
-        gml_Script_snd_play(220)
-        gml_Script_snd_play_pitch(220, 1.6)
+        gml_Script_snd_play(snd_rocket)
+        gml_Script_snd_play_pitch(snd_rocket, 1.6)
         global.flag[428] = 1
         move = 1
         hspeed = 2

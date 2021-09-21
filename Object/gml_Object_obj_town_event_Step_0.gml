@@ -10,7 +10,7 @@ if (room == room_town_mid)
     if (con == 22)
     {
         global.interact = 1
-        banim = gml_Script_scr_marker((bnpc.x - 1), (bnpc.y - 14), 1067)
+        banim = gml_Script_scr_marker((bnpc.x - 1), (bnpc.y - 14), spr_npc_icemascot_takeoff)
         banim.depth = bnpc.depth
         with (bnpc)
             visible = false
@@ -83,7 +83,7 @@ if (room == room_town_south)
 {
     if (con == 50 && (!gml_Script_d_ex()))
     {
-        gml_Script_snd_play(64)
+        gml_Script_snd_play(snd_noise)
         con = 51
         alarm[4] = 28
     }
@@ -111,7 +111,7 @@ if (room == room_torbathroom)
     if (con == 60 && (!gml_Script_d_ex()))
     {
         gml_Script_snd_pause(global.currentsong[1])
-        gml_Script_snd_play(49)
+        gml_Script_snd_play(snd_toilet)
         con = 61
         alarm[4] = 30
     }
@@ -120,7 +120,7 @@ if (room == room_torbathroom)
     if (con == 62)
     {
         specflush = 0
-        gml_Script_snd_play(57)
+        gml_Script_snd_play(snd_won)
         flush += 1
         global.msg[0] = gml_Script_stringsetloc("* (You flushed the toilet!)/%", "obj_town_event_slash_Step_0_gml_157_0")
         if (flush == 3)
@@ -143,7 +143,7 @@ if (room == room_torbathroom)
     }
     if (con == 67 && (!gml_Script_d_ex()))
     {
-        gml_Script_snd_play(48)
+        gml_Script_snd_play(snd_knock)
         con = 68
         alarm[4] = 30
     }

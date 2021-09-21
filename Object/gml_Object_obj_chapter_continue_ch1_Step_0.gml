@@ -28,10 +28,10 @@ if confirmed_selection
 if move_noise
 {
     move_noise = 0
-    gml_Script_snd_play_ch1(492)
+    gml_Script_snd_play_ch1(snd_menumove_ch1)
 }
 if select_noise
 {
     select_noise = 0
-    gml_Script_snd_play_ch1(493)
+    gml_Script_snd_play_ch1(snd_select_ch1)
 }

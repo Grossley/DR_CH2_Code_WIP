@@ -39,7 +39,7 @@ if (buffer >= 19)
         if (image_index >= 2 && throw_n == 0)
         {
             throw_n = 1
-            carrot = gml_Script_instance_create_ch1(x, y, 1518)
+            carrot = gml_Script_instance_create_ch1(x, y, obj_collidebullet_ch1)
             gml_Script_scr_bullet_inherit_ch1(carrot)
             with (carrot)
             {

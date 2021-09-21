@@ -7,7 +7,7 @@ for (var i = 0; i < 5; i++)
     {
         var xpos = (325 + (88 * i))
         var ypos = ((gml_Script_cameray() - 30) + (j * 55))
-        traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, 2372)
+        traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, spr_traffic_car_idling)
         with (traffic_car[i][j])
             gml_Script_scr_depth()
         traffic_car[i][j].image_speed = 0.15
@@ -19,7 +19,7 @@ for (i = 0; i < 5; i++)
     {
         xpos = (325 + (88 * i))
         ypos = ((gml_Script_cameray() + 345) + (j * 55))
-        traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, 2372)
+        traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, spr_traffic_car_idling)
         with (traffic_car[i][j])
             gml_Script_scr_depth()
         traffic_car[i][j].image_speed = 0.15
@@ -43,7 +43,7 @@ if (global.chapter != 2 || global.plot >= 80)
             {
                 xpos = (1685 + (85 * i))
                 ypos = (65 + (j * 55))
-                traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, 2369)
+                traffic_car[i][j] = gml_Script_scr_dark_marker(xpos, ypos, spr_traffic_car_side_wheels)
                 with (traffic_car[i][j])
                 {
                     gml_Script_scr_depth()

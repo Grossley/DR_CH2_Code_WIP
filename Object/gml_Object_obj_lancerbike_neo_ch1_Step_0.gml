@@ -8,7 +8,7 @@ if (racecon == 0)
     rtimer = 0
     with (obj_susieenemy_ch1)
         visible = false
-    s = gml_Script_instance_create_ch1(susiex, susiey, 1521)
+    s = gml_Script_instance_create_ch1(susiex, susiey, obj_regularbullet_permanent_ch1)
     gml_Script_scr_bullet_inherit_ch1(s)
     s.wall_destroy = 0
     s.sprite_index = spr_susiel_dark_ch1
@@ -20,7 +20,7 @@ if (racecon == 0)
     s.image_index = 1
     s.lx = x
     s.ly = (y - 108)
-    gml_Script_snd_play_ch1(427)
+    gml_Script_snd_play_ch1(snd_jump_ch1)
     with (s)
     {
         hspeed = -2
@@ -34,8 +34,8 @@ if (racecon == 1)
     rtimer += 1
     if (rtimer == 13)
     {
-        gml_Script_snd_stop_ch1(427)
-        gml_Script_snd_play_ch1(358)
+        gml_Script_snd_stop_ch1(snd_jump_ch1)
+        gml_Script_snd_play_ch1(snd_splat_ch1)
     }
     if (rtimer >= 13)
     {
@@ -65,7 +65,7 @@ if (s_attack == 1)
     s_timer += 1
     if (s_timer == 1)
     {
-        axe = gml_Script_instance_create_ch1((s.x - 40), (s.y - 15), 1602)
+        axe = gml_Script_instance_create_ch1((s.x - 40), (s.y - 15), obj_axebullet_ch1)
         gml_Script_scr_bullet_inherit_ch1(axe)
         axe.depth = (depth + 2)
         with (axe)
@@ -84,7 +84,7 @@ if (s_attack == 1)
             gravity = 0.5
         }
         axe.hspeed += (0.3 * ax_timer)
-        gml_Script_snd_play_ch1(442)
+        gml_Script_snd_play_ch1(snd_laz_c_ch1)
         s.sprite_index = spr_susie_enemy_attack_ch1
         s.active = false
         s.image_index = 0
@@ -113,8 +113,8 @@ if (racecon == 2)
     if (rtimer == 5 || rtimer == 10)
     {
         vspeed = 0
-        gml_Script_snd_play_ch1(441)
-        honkimg = gml_Script_instance_create_ch1((x - 60), (y - 40), 1510)
+        gml_Script_snd_play_ch1(snd_lancerhonk_ch1)
+        honkimg = gml_Script_instance_create_ch1((x - 60), (y - 40), obj_afterimage_grow_ch1)
         with (honkimg)
             sprite_index = spr_lancernoise_ch1
     }
@@ -125,7 +125,7 @@ if (racecon == 2)
         racecon = 3
         rtimer = 0
         ang = 0
-        gml_Script_snd_play_ch1(452)
+        gml_Script_snd_play_ch1(snd_drive_ch1)
         hspeed = -10
         vspeed = -11
         gravity = 0.5

@@ -140,15 +140,15 @@ if (id == bossid && con != 3)
 {
     if (flamesfx == 1)
     {
-        gml_Script_snd_stop(220)
-        flame = gml_Script_snd_play_pitch(220, 1.5)
+        gml_Script_snd_stop(snd_rocket)
+        flame = gml_Script_snd_play_pitch(snd_rocket, 1.5)
         gml_Script_snd_volume(flame, 0.35, 0)
         flamesfx = 0
     }
     if (dingsfx == 1)
     {
-        gml_Script_snd_stop(46)
-        gml_Script_snd_play_pitch(46, 0.9)
+        gml_Script_snd_stop(snd_spearappear)
+        gml_Script_snd_play_pitch(snd_spearappear, 0.9)
         dingsfx = 0
     }
 }

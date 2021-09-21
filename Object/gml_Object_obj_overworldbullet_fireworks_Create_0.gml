@@ -10,13 +10,13 @@ if (room == room_dw_mansion_dininghall)
 if (type == 0)
 {
     sprite_index = spr_bullet_laser_circle
-    gml_Script_snd_play(94)
+    gml_Script_snd_play(snd_firework_send)
     vspeed = (-20 - random(3))
     friction = 1
 }
 else
 {
-    gml_Script_snd_play_pitch(94, 0.5)
+    gml_Script_snd_play_pitch(snd_firework_send, 0.5)
     sprite_index = spr_pipis_egg
     image_speed = 0
     image_index = 0

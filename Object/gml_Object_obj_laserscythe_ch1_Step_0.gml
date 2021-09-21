@@ -8,7 +8,7 @@ if (explode == 0)
 if (y >= (room_height - 100) && explode == 0)
 {
     audio_stop_sound(snd_scytheburst_ch1)
-    gml_Script_snd_play_ch1(461)
+    gml_Script_snd_play_ch1(snd_scytheburst_ch1)
     remx = x
     remy = y
     explode = 1

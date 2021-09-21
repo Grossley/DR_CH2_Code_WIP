@@ -1,5 +1,5 @@
 global.flag[917] = 2
-if gml_Script_i_ex(274)
+if gml_Script_i_ex(obj_caterpillarchara)
 {
     with (obj_caterpillarchara)
         instance_destroy()

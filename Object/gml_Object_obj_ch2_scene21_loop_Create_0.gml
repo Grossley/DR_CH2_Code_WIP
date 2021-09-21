@@ -27,12 +27,12 @@ else if (global.plot < 150)
     swanboat.pause_auto_talk = 1
     actor_shadow = 0
     inside_tunnel = 1
-    swan_shadow = gml_Script_scr_dark_marker(-200, swanboat.y, 2379)
+    swan_shadow = gml_Script_scr_dark_marker(-200, swanboat.y, spr_swanboat_shadow)
     swan_shadow.image_speed = swanboat.image_speed
     swan_shadow.image_alpha = 0.5
     adjust_actors = 1
     remove_shadow = 0
-    camera = gml_Script_scr_dark_marker(1794, 60, 2875)
+    camera = gml_Script_scr_dark_marker(1794, 60, spr_dw_mansion_camera)
     with (camera)
         gml_Script_scr_depth()
     ralsei_convo = 0
@@ -52,13 +52,13 @@ else if (global.plot < 150)
     rouxls_power_up = 0
     rouxls_power_up_cancel = 0
     rouxls_talk_timer = 0
-    blackall = gml_Script_scr_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 700000
     blackall.image_blend = c_black
     blackall.image_alpha = 0
-    whiteall = gml_Script_scr_marker(-10, -10, 2529)
+    whiteall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     whiteall.image_xscale = 999
     whiteall.image_yscale = 999
     whiteall.depth = 0

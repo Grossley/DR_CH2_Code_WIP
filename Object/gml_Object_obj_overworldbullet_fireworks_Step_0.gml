@@ -27,7 +27,7 @@ if (type == 0)
                     gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
             }
         }
-        gml_Script_snd_play(95)
+        gml_Script_snd_play(snd_explosion_firework)
         instance_destroy()
     }
 }
@@ -59,7 +59,7 @@ if (type == 1)
                     gml_Script_scr_script_delayed(gml_Script_scr_afterimage_grow, 10)
             }
         }
-        gml_Script_snd_play_pitch(95, 1.4)
+        gml_Script_snd_play_pitch(snd_explosion_firework, 1.4)
         instance_destroy()
     }
 }

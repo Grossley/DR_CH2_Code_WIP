@@ -4,7 +4,7 @@ if (playsound == 1)
 {
     if (global.interact == 0)
     {
-        var burst = gml_Script_snd_play_pitch(223, 1.5)
+        var burst = gml_Script_snd_play_pitch(snd_scytheburst, 1.5)
         gml_Script_snd_volume(burst, 0.3, 0)
     }
     playsound = 2

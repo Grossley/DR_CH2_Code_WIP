@@ -1,7 +1,7 @@
 if (hp < 1)
 {
     if (active == true)
-        gml_Script_snd_play(239)
+        gml_Script_snd_play(snd_dtrans_flip)
     active = false
     image_alpha -= 0.05
     if (image_alpha < 0.01)

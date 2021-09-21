@@ -136,7 +136,7 @@ if (global.myfight == 3)
         global.msg[0] = gml_Script_stringsetloc("* Ralsei sang a soft and entrancing lullaby!/%", "obj_ponman_enemy_slash_Step_0_gml_134_0")
         with (obj_heroralsei)
             visible = false
-        ralsing = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, 1480)
+        ralsing = gml_Script_scr_dark_marker(obj_heroralsei.x, obj_heroralsei.y, spr_ralseib_sing)
         with (ralsing)
             image_speed = 0.2
         lullatimer = 0
@@ -285,7 +285,7 @@ if (eyecon == 20)
             }
             if (totalshotcount >= maxshot)
                 maxtimer = 1
-            gml_Script_snd_play(170)
+            gml_Script_snd_play(snd_hurt1)
             bul = gml_Script_instance_create(((eyex + 28) + x), ((eyey + 32) + y), obj_regularbullet)
             bul.speed = 2
             bul.timepoints = 2.5

@@ -29,7 +29,7 @@ if instance_exists(target)
     {
         for (i = 0; i < 2; i += 1)
         {
-            star[starcount] = gml_Script_instance_create_ch1((x + random(sw)), (y + random(sh)), 1403)
+            star[starcount] = gml_Script_instance_create_ch1((x + random(sw)), (y + random(sh)), obj_marker_ch1)
             with (star[starcount])
             {
                 image_angle = random(360)

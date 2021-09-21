@@ -9,7 +9,7 @@ if (con == 1 && myinteract == 3 && (!gml_Script_d_ex()))
     gml_Script_scr_darksize(pipismarker)
     visible = false
     myinteract = 0
-    gml_Script_snd_play_pitch(297, 1.4)
+    gml_Script_snd_play_pitch(snd_spamton_laugh, 1.4)
     con = 2
     timer = 0
     boss = true
@@ -21,7 +21,7 @@ if (con == 2)
     {
         alarm[4] = 30
         global.flag[9] = 2
-        gml_Script_scr_battle(102, 0, pipismarker, 0, 0)
+        gml_Script_scr_battle(102, false, pipismarker, 0, 0)
     }
 }
 if (con == 3)

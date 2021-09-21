@@ -27,7 +27,7 @@ if (con == 0 && myinteract == 1)
 if (con == 1)
 {
     if (boss == true)
-        gml_Script_snd_play(46)
+        gml_Script_snd_play(snd_spearappear)
     radius = 0
     keysaucer = floor(random(saucercount))
     for (i = 0; i < saucercount; i += 1)
@@ -83,7 +83,7 @@ if (con == 3)
     if (timer >= 100)
     {
         if (boss == true)
-            loop = gml_Script_snd_loop(111)
+            loop = gml_Script_snd_loop(snd_chain_wave)
         con = 4
         timer = 0
         maxsiner = (960 + ((floor(random(6)) * saucercount) / 360))

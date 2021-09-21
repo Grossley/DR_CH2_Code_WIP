@@ -11,7 +11,7 @@ if (global.plot < 100)
     with (nubert_npc)
         gml_Script_scr_depth()
 }
-trashpile = gml_Script_scr_dark_marker(15, 60, 3019)
+trashpile = gml_Script_scr_dark_marker(15, 60, spr_spamton_trash_pile_large)
 with (trashpile)
     depth = 98000
 trashpile_collider = gml_Script_instance_create(20, 60, obj_soliddark)
@@ -36,7 +36,7 @@ else
     gml_Script_scr_getchar(3)
     gml_Script_scr_makecaterpillar((obj_mainchara.x - 60), obj_mainchara.y, 2, 0)
     gml_Script_scr_makecaterpillar((obj_mainchara.x - 140), obj_mainchara.y, 3, 1)
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100

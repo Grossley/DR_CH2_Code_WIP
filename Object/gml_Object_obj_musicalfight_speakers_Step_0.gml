@@ -30,7 +30,7 @@ if (state == 1)
             bulletdir = (((baseangle + ((i / bulletsperbeat) * 360)) + random((180 / bulletsperbeat))) - (90 / bulletsperbeat))
             xx = (x + lengthdir_x(10, bulletdir))
             yy = (y + lengthdir_y(10, bulletdir))
-            d = gml_Script_scr_bullet_create(xx, yy, 730)
+            d = gml_Script_scr_bullet_create(xx, yy, obj_fadingbullet)
             d.speed = 3
             d.direction = bulletdir
             d.sprite_index = spr_musical_notes

@@ -160,7 +160,7 @@ if (con == 40)
     gml_Script_c_actortokris()
     gml_Script_c_terminatekillactors()
 }
-if (con == 50 && (!gml_Script_i_ex(895)))
+if (con == 50 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 0
     global.flag[319] = 2

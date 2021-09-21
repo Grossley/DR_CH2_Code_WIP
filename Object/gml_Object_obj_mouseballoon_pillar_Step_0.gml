@@ -20,8 +20,8 @@ if (con == 1)
     timer++
     if (timer >= 5)
     {
-        gml_Script_snd_play(176)
-        mouse = gml_Script_scr_dark_marker(bucket.x, bucket.y, 2690)
+        gml_Script_snd_play(snd_mouse)
+        mouse = gml_Script_scr_dark_marker(bucket.x, bucket.y, spr_holemouse_exit)
         mouse.depth = (bucket.depth + 10)
         var _x = (x + 20)
         var _y = (y + 20)
@@ -50,7 +50,7 @@ if (con == 2)
     {
         gml_Script_scr_shakescreen()
         completed = 1
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
     }
     if (timer == 40)
     {

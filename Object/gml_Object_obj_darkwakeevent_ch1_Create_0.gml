@@ -8,7 +8,7 @@ if (global.plot < 11)
     global.interact = 1
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4133)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_kris_fell_ch1)
     waketimer = -50
 }
 else

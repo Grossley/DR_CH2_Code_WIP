@@ -133,7 +133,7 @@ if hitbox_mode
 }
 if keyboard_check_pressed(ord("S"))
 {
-    gml_Script_snd_play(257)
+    gml_Script_snd_play(snd_save)
     sprite_set_bbox(sprite[0], bboxl, bboxu, bboxr, bboxd)
     for (i = 0; i < 3; i++)
         sprite_set_offset(sprite[i], xx[i], yy[i])

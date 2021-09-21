@@ -1,9 +1,9 @@
-if (con == 1 && (!gml_Script_d_ex()) && gml_Script_i_ex(101))
+if (con == 1 && (!gml_Script_d_ex()) && gml_Script_i_ex(obj_npc_room))
 {
     if (!sfx)
     {
         sfx = 1
-        gml_Script_snd_play(104)
+        gml_Script_snd_play(snd_hypnosis)
     }
     sinerx = 0
     sinery = 0

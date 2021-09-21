@@ -1,7 +1,7 @@
 if (kq == 1)
 {
-    gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, (x + ((12 * hskew) / 20)), y, image_xscale, image_yscale, image_angle, 4210752, image_alpha, hskew, vskew)
-    gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, (x + ((6 * hskew) / 20)), y, image_xscale, image_yscale, image_angle, 8421504, image_alpha, hskew, vskew)
+    gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, (x + ((12 * hskew) / 20)), y, image_xscale, image_yscale, image_angle, c_dkgray, image_alpha, hskew, vskew)
+    gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, (x + ((6 * hskew) / 20)), y, image_xscale, image_yscale, image_angle, c_gray, image_alpha, hskew, vskew)
 }
 gml_Script_draw_sprite_skew_ext_cute(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, hskew, vskew)
 draw_set_color(c_black)

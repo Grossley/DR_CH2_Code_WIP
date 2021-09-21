@@ -7,7 +7,7 @@ if (init == 0)
     init = 1
 }
 var checkPress = 0
-if (gml_Script_i_ex(890) && (!pressed) && pressable && global.interact == 0)
+if (gml_Script_i_ex(obj_actor) && (!pressed) && pressable && global.interact == 0)
 {
     if place_meeting(x, y, obj_actor)
         checkPress = 1

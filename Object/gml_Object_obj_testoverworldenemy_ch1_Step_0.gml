@@ -39,13 +39,13 @@ if (con == 0)
 if (con == 1)
 {
     sprite_index = touchsprite
-    hnka = gml_Script_snd_play_ch1(405)
+    hnka = gml_Script_snd_play_ch1(snd_tensionhorn_ch1)
     con = 2
     alarm[4] = 8
 }
 if (con == 3)
 {
-    hnkb = gml_Script_snd_play_ch1(405)
+    hnkb = gml_Script_snd_play_ch1(snd_tensionhorn_ch1)
     gml_Script_snd_pitch_ch1(hnkb, 1.1)
     con = 4
     alarm[4] = 12
@@ -53,8 +53,8 @@ if (con == 3)
 if (con == 5)
 {
     depth = 5000
-    gml_Script_instance_create_ch1(0, 0, 1624)
-    gml_Script_instance_create_ch1(0, 0, 1488)
+    gml_Script_instance_create_ch1(0, 0, obj_battleback_ch1)
+    gml_Script_instance_create_ch1(0, 0, obj_encounterbasic_ch1)
     con = 6
     sprite_index = slidesprite
     direction = point_direction(x, y, global.monstermakex[0], global.monstermakey[0])

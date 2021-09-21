@@ -18,12 +18,12 @@ if (con > 0 && con < 40)
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_21_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_22_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 4.5
     }
     if (con == 4.5 && instance_exists(obj_dialoguer_ch1) == 0)
     {
-        gml_Script_snd_play_ch1(376)
+        gml_Script_snd_play_ch1(snd_locker_ch1)
         image_index = 1
         con = 5.5
         alarm[4] = 60
@@ -66,7 +66,7 @@ if (con > 0 && con < 40)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_72_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_73_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_74_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (s)
             sprite_index = spr_susiel_ch1
         con = 12
@@ -83,7 +83,7 @@ if (con > 0 && con < 40)
         with (s)
             sprite_index = spr_susiel_ch1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_90_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 15
     }
     if (con == 15 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -108,7 +108,7 @@ if (con > 0 && con < 40)
         with (s)
             sprite_index = spr_susiel_ch1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_117_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 18
     }
     if (con == 18 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -123,7 +123,7 @@ if (con > 0 && con < 40)
         with (s)
             sprite_index = spr_susiel_ch1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_132_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 21
     }
     if (con == 21 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -144,7 +144,7 @@ if (con > 0 && con < 40)
     }
     if (con == 23)
     {
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (fade)
             fadespeed = 0.03
         con = 24
@@ -154,7 +154,7 @@ if (con > 0 && con < 40)
     {
         con = 26
         global.plot = 5
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_insidecloset_ch1)
     }
 }
@@ -166,7 +166,7 @@ if (con >= 40)
         global.currentsong[0] = gml_Script_snd_init_ch1("mus_birdnoise.ogg")
         global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.6, 0.7)
         global.interact = 1
-        s = gml_Script_scr_marker_ch1(479, 92, 3531)
+        s = gml_Script_scr_marker_ch1(479, 92, spr_susiel_plain_ch1)
         with (s)
             gml_Script_scr_depth_ch1()
         with (obj_mainchara_ch1)
@@ -185,12 +185,12 @@ if (con >= 40)
         global.flag[29] = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_194_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_195_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 43
     }
     if (con == 43 && (!gml_Script_d_ex_ch1()))
     {
-        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4204)
+        k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisl_ch1)
         with (k)
             gml_Script_scr_depth_ch1()
         with (obj_mainchara_ch1)
@@ -205,7 +205,7 @@ if (con >= 40)
         global.fe = 2
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_215_0")
         con = 50
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 50 && (!gml_Script_d_ex_ch1()))
     {
@@ -244,7 +244,7 @@ if (con >= 40)
     {
         global.fe = 0
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_252_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 52.2
     }
     if (con == 52.2 && (!gml_Script_d_ex_ch1()))
@@ -262,7 +262,7 @@ if (con >= 40)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_268_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_269_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_270_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 55
     }
     if (con == 55 && (!gml_Script_d_ex_ch1()))
@@ -292,7 +292,7 @@ if (con >= 40)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_299_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_300_0")
         con = 60
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             side = 0
     }
@@ -351,7 +351,7 @@ if (con >= 40)
         global.fe = 8
         global.flag[6] = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_darkdoor_slash_Step_0_gml_363_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (obj_writer_ch1)
             skippable = false
         with (d)

@@ -53,19 +53,19 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "ThrashHead"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 26
             }
             else if (rr == 1)
             {
                 global.monsterattackname[myself] = "ThrashFoot"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 27
             }
             else
             {
                 global.monsterattackname[myself] = "PuzzleBlocks"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 28
             }
             gml_Script_scr_turntimer(200)
@@ -232,9 +232,9 @@ if gml_Script_scr_debug()
         }
         else
         {
-            d = gml_Script_scr_following_afterimage(200, self)
+            d = gml_Script_scr_following_afterimage(obj_power_up_fx, self)
             d.depth -= 1
-            d = gml_Script_scr_following_afterimage(202, 727)
+            d = gml_Script_scr_following_afterimage(obj_power_up_thrash, obj_thrashmachine)
             d.depth -= 1
         }
     }

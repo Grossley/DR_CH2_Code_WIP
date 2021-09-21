@@ -10,7 +10,7 @@ if is_active
         {
             if (obj_mainchara.x <= 2320 && obj_mainchara.x > 1080)
             {
-                if gml_Script_i_ex(344)
+                if gml_Script_i_ex(obj_cyber_shadowMaker_fireworks)
                 {
                     if (!obj_cyber_shadowMaker_fireworks.is_active)
                         obj_cyber_shadowMaker_fireworks.is_active = 1
@@ -21,7 +21,7 @@ if is_active
             }
             else
             {
-                if gml_Script_i_ex(344)
+                if gml_Script_i_ex(obj_cyber_shadowMaker_fireworks)
                 {
                     if obj_cyber_shadowMaker_fireworks.is_active
                     {

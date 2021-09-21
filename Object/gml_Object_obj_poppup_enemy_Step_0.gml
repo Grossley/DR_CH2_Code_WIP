@@ -68,7 +68,7 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "Birds"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 11
                 if avoiding
                     dc.special = 1
@@ -76,7 +76,7 @@ if (global.monster[myself] == true)
             else
             {
                 global.monsterattackname[myself] = "Popups"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 12
                 if avoiding
                     dc.special = 1
@@ -166,8 +166,8 @@ if (global.myfight == 3)
         {
             staticPoppup++
             cloning = 1
-            gml_Script_snd_stop(194)
-            gml_Script_snd_play(194)
+            gml_Script_snd_stop(snd_acquire_lancer)
+            gml_Script_snd_play(snd_acquire_lancer)
             overload = gml_Script_instance_create(x, y, obj_poppup_overload)
             overload.image_index = siner
             if (staticPoppup == 1)
@@ -217,7 +217,7 @@ if (global.myfight == 3)
         {
             with (obj_poppup_overload)
                 speed = 0
-            gml_Script_snd_stop(194)
+            gml_Script_snd_stop(snd_acquire_lancer)
             gml_Script_msgsetloc(0, "* The Poppups crashed!/%", "obj_poppup_enemy_slash_Step_0_gml_239_0")
             gml_Script_scr_battletext_default()
             actcon = 5.1
@@ -229,8 +229,8 @@ if (global.myfight == 3)
         else
         {
             cloning = 1
-            gml_Script_snd_play(194)
-            newpopupid = gml_Script_scr_monster_add(31, 424)
+            gml_Script_snd_play(snd_acquire_lancer)
+            newpopupid = gml_Script_scr_monster_add(31, obj_poppup_enemy)
             global.monsterinstance[newpopupid].cloning = 1
             global.monsterinstance[newpopupid].x = x
             global.monsterinstance[newpopupid].y = y
@@ -354,7 +354,7 @@ if (global.myfight == 3)
             fx = gml_Script_instance_create((x - 50), y, obj_blocked_total_fx)
             fx.count = blocked
         }
-        gml_Script_snd_play(148)
+        gml_Script_snd_play(snd_coin)
     }
     if (actcon == 23.7)
     {
@@ -413,7 +413,7 @@ if (global.myfight == 3)
     }
     if (actconsus == 1.1 && (!instance_exists(obj_writer)))
     {
-        gml_Script_scr_act_charsprite("susie", 996, 0, 0)
+        gml_Script_scr_act_charsprite("susie", spr_susie_shock_r, 0, false)
         gml_Script_scr_speaker("susie")
         gml_Script_msgsetloc(0, "\\E5* D..^1. Damn!^1! They knew what I'd fall for!!/%", "obj_poppup_enemy_slash_Step_0_gml_470_0")
         gml_Script_scr_battletext()
@@ -422,7 +422,7 @@ if (global.myfight == 3)
         actconsus = 0
         actcon = 1
     }
-    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(62)))
+    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_scr_speaker("no_name")
         a = choose(0, 1, 2)
@@ -447,7 +447,7 @@ if (global.myfight == 3)
     }
     if (actconral == 1.1 && (!instance_exists(obj_writer)))
     {
-        gml_Script_scr_act_charsprite("ralsei", 1508, 0, 0)
+        gml_Script_scr_act_charsprite("ralsei", spr_ralsei_hurt_fixed, 0, false)
         gml_Script_scr_speaker("ralsei")
         gml_Script_msgsetloc(0, "\\EU* I... I didn't mean to do it... I... I'm sorry!!^1! I repent!!!/%", "obj_poppup_enemy_slash_Step_0_gml_507_0")
         gml_Script_scr_battletext()

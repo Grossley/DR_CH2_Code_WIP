@@ -1,10 +1,10 @@
 con = -1
 customcon = 0
 shortened = 0
-dogcone1 = gml_Script_scr_dark_marker(487, 75, 2732)
+dogcone1 = gml_Script_scr_dark_marker(487, 75, spr_cone_alley)
 with (dogcone1)
     gml_Script_scr_depth()
-dogcone2 = gml_Script_scr_dark_marker((dogcone1.x - 40), 75, 2732)
+dogcone2 = gml_Script_scr_dark_marker((dogcone1.x - 40), 75, spr_cone_alley)
 with (dogcone2)
     gml_Script_scr_depth()
 north_collider = gml_Script_instance_create((dogcone2.x - 15), 85, obj_soliddark)

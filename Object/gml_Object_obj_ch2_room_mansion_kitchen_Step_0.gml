@@ -6,7 +6,7 @@ if (global.flag[362] == 0)
         timer = 0
         alarm[0] = 15
         global.interact = 1
-        gml_Script_snd_play(176)
+        gml_Script_snd_play(snd_mouse)
         with (mouse_a)
         {
             gml_Script_scr_emote("!", 20)
@@ -60,7 +60,7 @@ if (global.flag[362] == 0)
                 else
                 {
                     radius = 0
-                    gml_Script_snd_play(225)
+                    gml_Script_snd_play(snd_great_shine)
                     con = 2.1
                 }
             }
@@ -105,7 +105,7 @@ if (global.flag[362] == 0)
                 visible = false
             if (mauswheel == noone)
             {
-                mauswheel = gml_Script_scr_dark_marker(20, 160, 2082)
+                mauswheel = gml_Script_scr_dark_marker(20, 160, spr_mauswheel_idle)
                 mauswheel.image_speed = 0.5
             }
         }
@@ -133,9 +133,9 @@ if (global.flag[362] == 0)
         encounterflag = 543
         global.flag[54] = encounterflag
         global.flag[9] = 2
-        gml_Script_scr_battle(83, 0, mauswheel, 0, 0)
+        gml_Script_scr_battle(83, false, mauswheel, 0, 0)
     }
-    if (con == 10 && (!gml_Script_i_ex(355)))
+    if (con == 10 && (!gml_Script_i_ex(obj_battlecontroller)))
     {
         global.flag[362] = 1
         global.flag[9] = 0

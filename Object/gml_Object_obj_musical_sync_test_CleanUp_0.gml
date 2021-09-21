@@ -1,2 +1,2 @@
-gml_Script_snd_stop(125)
-gml_Script_snd_stop(129)
+gml_Script_snd_stop(cyber_battle_backing)
+gml_Script_snd_stop(cyber_battle_backing_solo)

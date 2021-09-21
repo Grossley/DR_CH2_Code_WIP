@@ -8,7 +8,7 @@ with (obj_battleback)
 init = 0
 turn = 0
 battlemsgtimer = 0
-if gml_Script_i_ex(355)
+if gml_Script_i_ex(obj_battlecontroller)
 {
     obj_battlecontroller.cantspare[0] = 1
     cantspareinit = 1

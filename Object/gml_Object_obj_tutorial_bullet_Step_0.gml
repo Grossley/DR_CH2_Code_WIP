@@ -14,6 +14,6 @@ if (ticked == 0)
         ticked = 1
         with (obj_tutorial_puzboy)
             tickAlpha = 1
-        gml_Script_snd_play(168)
+        gml_Script_snd_play(snd_graze)
     }
 }

@@ -80,7 +80,7 @@ if (global.monster[myself] == true)
     if (talked == 0.5)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -108,7 +108,7 @@ if (global.monster[myself] == true)
     if (talked == 0.7)
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             talked = 0
             forcedefaultballoon = 1
@@ -117,7 +117,7 @@ if (global.monster[myself] == true)
     if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
-        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(62)))
+        if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
             with (obj_writer)
                 instance_destroy()
@@ -146,7 +146,7 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "Tornado"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 8
                 dc.difficulty = 0
                 gml_Script_scr_turntimer(210)
@@ -154,7 +154,7 @@ if (global.monster[myself] == true)
             else if (rr == 1)
             {
                 global.monsterattackname[myself] = "SpearBlast"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 9
                 dc.difficulty = 1
                 gml_Script_scr_turntimer(200)
@@ -162,7 +162,7 @@ if (global.monster[myself] == true)
             else
             {
                 global.monsterattackname[myself] = "Chirashi"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 10
                 dc.difficulty = 2
                 gml_Script_scr_turntimer(180)
@@ -395,7 +395,7 @@ if (global.myfight == 3)
             gml_Script_scr_nextact()
     }
 }
-if gml_Script_i_ex(494)
+if gml_Script_i_ex(o_coaster_berdly)
     sactionboxx = ((o_coaster_berdly.x - o_coaster_berdly.xstart) - 60)
 if (endcon == 1)
 {
@@ -420,7 +420,7 @@ if (endcon == 1)
             obj_ch2_scene11a.coaster_berdly.character_offset_x = -10
             obj_ch2_scene11a.coaster_berdly.character_offset_y = -5
         }
-        gml_Script_snd_play(141)
+        gml_Script_snd_play(snd_bomb)
     }
     if (endtime == 90)
     {
@@ -429,7 +429,7 @@ if (endcon == 1)
         global.typer = 69
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
     }
-    if (endtime >= 90 && (!gml_Script_i_ex(62)))
+    if (endtime >= 90 && (!gml_Script_i_ex(obj_writer)))
     {
         endcon = 0
         gml_Script_scr_wincombat()

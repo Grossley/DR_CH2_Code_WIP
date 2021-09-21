@@ -1,12 +1,12 @@
 if (global.turntimer < 1)
     instance_destroy()
-if (timer == 0 && gml_Script_i_ex(50))
+if (timer == 0 && gml_Script_i_ex(obj_sneo_wall_controller_new))
     x += obj_sneo_wall_controller_new.wallspeed[wallnumber]
 if (timer > 0)
     timer++
 if (timer == 6)
 {
-    gml_Script_snd_play(141)
+    gml_Script_snd_play(snd_bomb)
     gml_Script_snd_stop(bomsfallsfx)
     sprite_index = spr_mettaton_bomb2
     image_index = 0

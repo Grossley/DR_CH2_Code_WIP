@@ -10,12 +10,12 @@ if (type == 3)
     if (x < ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) + 10) && y > ((obj_growtangle.y - (obj_growtangle.sprite_height / 2)) + 10))
     {
         event_user(0)
-        gml_Script_snd_play(141)
+        gml_Script_snd_play(snd_bomb)
     }
     if (y > ((obj_growtangle.y - 20) + obj_growtangle.sprite_height))
     {
         event_user(0)
-        gml_Script_snd_play(141)
+        gml_Script_snd_play(snd_bomb)
     }
     image_angle += 10
 }
@@ -29,7 +29,7 @@ else if (type == 2)
     }
     if (con == 1)
     {
-        gml_Script_snd_play(110)
+        gml_Script_snd_play(snd_bump)
         image_angle = (-30 - random(30))
         gravity = 0.24
         vspeed = bouncespeed
@@ -39,7 +39,7 @@ else if (type == 2)
     if (x < ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) + 10) && y > ((obj_growtangle.y - (obj_growtangle.sprite_height / 2)) + 10))
     {
         event_user(0)
-        gml_Script_snd_play(141)
+        gml_Script_snd_play(snd_bomb)
     }
     if (y > ((obj_growtangle.y - 20) + (obj_growtangle.sprite_height / 2)) && vspeed > 0 && con == 2 && alarm[0] < 1)
         con = 1
@@ -54,7 +54,7 @@ else
         if (x < ((obj_growtangle.x + (obj_growtangle.sprite_width / 2)) + 10))
         {
             event_user(0)
-            gml_Script_snd_play(141)
+            gml_Script_snd_play(snd_bomb)
         }
     }
 }

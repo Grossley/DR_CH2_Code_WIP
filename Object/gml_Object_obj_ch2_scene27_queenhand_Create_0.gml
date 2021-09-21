@@ -4,7 +4,7 @@ image_alpha = 0
 x = -1
 ral_x = gml_Script_cameray()
 y = -1
-if gml_Script_i_ex(985)
+if gml_Script_i_ex(obj_ch2_scene26_gigaqueen)
     depth = (obj_ch2_scene26_gigaqueen.depth - 10)
 x_pos = (gml_Script_camerax() + 78)
 y_pos = -1

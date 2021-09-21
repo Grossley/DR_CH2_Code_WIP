@@ -118,7 +118,7 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
                     audio_stop_sound(punch_ish_1)
                 if audio_is_playing(snd_criticalswing_bc)
                     audio_stop_sound(snd_criticalswing)
-                gml_Script_snd_play(320)
+                gml_Script_snd_play(snd_scytheburst_bc)
             }
             else
             {
@@ -132,7 +132,7 @@ if (o_boxingcontroller.health_count > 0 && sub_healthbar_count != -1 && o_boxing
                     audio_stop_sound(punch_ish_1)
                 if audio_is_playing(snd_criticalswing)
                     audio_stop_sound(snd_criticalswing)
-                gml_Script_snd_play(223)
+                gml_Script_snd_play(snd_scytheburst)
             }
             if (o_boxinghud.sub_healthbar_count == 0)
                 o_boxingqueen.health_count_max = 1800

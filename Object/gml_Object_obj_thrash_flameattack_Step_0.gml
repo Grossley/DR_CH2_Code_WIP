@@ -7,7 +7,7 @@ if (btimer >= 14 && abs(attackangle) < 26)
 {
     xx = (thrash.headx + gml_Script_scr_orbitx(0, 0, -40, -4, attackangle))
     yy = (thrash.heady + gml_Script_scr_orbity(0, 0, -40, -4, attackangle))
-    d = gml_Script_scr_bullet_create(xx, yy, 731)
+    d = gml_Script_scr_bullet_create(xx, yy, obj_thrash_flames)
     d.direction = (attackangle + 180)
     d.speed = 4
     d.updateimageangle = 1

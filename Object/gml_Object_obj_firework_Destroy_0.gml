@@ -1,4 +1,4 @@
-gml_Script_snd_play_pitch(95, (0.8 + random(0.1)))
+gml_Script_snd_play_pitch(snd_explosion_firework, (0.8 + random(0.1)))
 var c = gml_Script_instance_create(x, y, obj_firework_explosion)
 with (c)
 {
@@ -7,7 +7,7 @@ with (c)
     colorProfile = other.colorProfile
     event_user(0)
 }
-if gml_Script_i_ex(344)
+if gml_Script_i_ex(obj_cyber_shadowMaker_fireworks)
 {
     with (obj_cyber_shadowMaker_fireworks)
         fade_in = 1

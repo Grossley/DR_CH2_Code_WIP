@@ -77,7 +77,7 @@ if (active == true)
                 boltalpha = (1 + ((boltframe[i] - boltx) / 3))
             else if (imagetimer == 0 && boltalive[i] == 1)
             {
-                img = gml_Script_instance_create_ch1((((x + 80) + (boltframe[i] * boltspeed)) - (boltx * boltspeed)), (y + (38 * offset)), 1509)
+                img = gml_Script_instance_create_ch1((((x + 80) + (boltframe[i] * boltspeed)) - (boltx * boltspeed)), (y + (38 * offset)), obj_afterimage_ch1)
                 with (img)
                 {
                     sprite_index = spr_attackspot_ch1

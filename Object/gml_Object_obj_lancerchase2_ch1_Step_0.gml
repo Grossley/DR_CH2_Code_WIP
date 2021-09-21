@@ -1,7 +1,7 @@
 if (con == 1)
 {
-    s = gml_Script_scr_dark_marker_ch1(400, 200, 3546)
-    r = gml_Script_scr_dark_marker_ch1(300, 200, 3570)
+    s = gml_Script_scr_dark_marker_ch1(400, 200, spr_susier_dark_unhappy_ch1)
+    r = gml_Script_scr_dark_marker_ch1(300, 200, spr_ralseir_ch1)
     with (obj_marker_ch1)
     {
         gml_Script_scr_depth_ch1()
@@ -19,7 +19,7 @@ if (con == 2)
         alarm[4] = 14
         for (i = 0; i < dmax; i += 1)
         {
-            d[i] = gml_Script_scr_dark_marker_ch1((400 + (i * 120)), -100, 3985)
+            d[i] = gml_Script_scr_dark_marker_ch1((400 + (i * 120)), -100, spr_diamond_knight_overworld_ch1)
             with (d[i])
             {
                 vspeed = 10
@@ -45,13 +45,13 @@ if (con == 6)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerchase2_slash_Step_0_gml_43_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerchase2_slash_Step_0_gml_44_0")
     con = 7
-    doo = gml_Script_instance_create_ch1(0, 0, 1326)
+    doo = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     doo.side = 1
 }
 if (con == 7 && (!gml_Script_d_ex_ch1()))
 {
     global.interact = 0
-    gml_Script_instance_create_ch1(0, 0, 1508)
+    gml_Script_instance_create_ch1(0, 0, obj_overworld_spademaker_ch1)
     con = 8
 }
 if (con == 8)
@@ -70,8 +70,8 @@ if (con == 20)
         {
             dactive[i] = 0
             dsiner[i] = i
-            dl[i] = gml_Script_scr_dark_marker_ch1(-100, (20 + (i * 140)), 3985)
-            dr[i] = gml_Script_scr_dark_marker_ch1(660, (20 + (i * 140)), 3985)
+            dl[i] = gml_Script_scr_dark_marker_ch1(-100, (20 + (i * 140)), spr_diamond_knight_overworld_ch1)
+            dr[i] = gml_Script_scr_dark_marker_ch1(660, (20 + (i * 140)), spr_diamond_knight_overworld_ch1)
         }
         con = 21
     }

@@ -45,7 +45,7 @@ if (con == 10)
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 11 && (!gml_Script_i_ex(895)))
+if (con == 11 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     global.flag[331] = 0
     room_goto(room_dw_mansion_noelle_room)
@@ -67,7 +67,7 @@ if (con == 30 && (!gml_Script_d_ex()))
     global.flag[319] = 2
     global.flag[331] = 1
 }
-if (con == 32 && (!gml_Script_i_ex(895)))
+if (con == 32 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 99
     gml_Script_instance_create(0, 0, obj_ch2_scene24e)

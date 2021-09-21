@@ -40,7 +40,7 @@ if (ripple_effect == 0 && flashtimer >= (flashspeed / 2))
     ripple_effect = 1
     with (obj_ch2_scene21_loop.puddle)
     {
-        var ripple = gml_Script_scr_custom_afterimage(203)
+        var ripple = gml_Script_scr_custom_afterimage(spr_cutscene_20_susie_lancer_look_down)
         ripple.sprite_index = spr_rouxls_ripple
         ripple.image_blend = 0x67FFE3
         ripple.yrate *= 5
@@ -89,7 +89,7 @@ if (effecttimer >= effectPause)
 }
 if ((timer + 15) >= poweruptime && after_image_flash == 1)
 {
-    d = gml_Script_scr_custom_afterimage(203)
+    d = gml_Script_scr_custom_afterimage(spr_cutscene_20_susie_lancer_look_down)
     d.image_alpha = max(0.1, __alpha)
     d.fade = 0.1
     d.depth += 2

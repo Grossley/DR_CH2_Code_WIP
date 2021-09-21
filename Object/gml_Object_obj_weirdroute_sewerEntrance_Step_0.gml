@@ -12,7 +12,7 @@ if (con == 1 && (!gml_Script_d_ex()))
 {
     global.interact = 1
     fade = gml_Script_scr_fadeout(15)
-    gml_Script_snd_play(218)
+    gml_Script_snd_play(snd_escaped)
     timer = 0
     con++
 }

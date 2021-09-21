@@ -5,4 +5,4 @@ global.typer = 5
 global.fc = 0
 global.fc = 0
 global.interact = 1
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)

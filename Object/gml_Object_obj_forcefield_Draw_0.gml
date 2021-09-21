@@ -14,7 +14,7 @@ else
             cl = 10
         image_alpha = (1 - ((cl - 10) / 30))
     }
-    if (stayVisible == 1 && ignorealpha == 0)
+    if (stayVisible == true && ignorealpha == 0)
         image_alpha = 1
     var height = (image_yscale / f)
     if (image_yscale > 2)

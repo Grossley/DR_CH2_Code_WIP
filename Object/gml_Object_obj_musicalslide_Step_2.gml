@@ -84,8 +84,8 @@ if (state == 0)
             depth = 900000
             timer = 0
         }
-        gml_Script_snd_play(64)
-        slideSound = gml_Script_snd_loop(236)
+        gml_Script_snd_play(snd_noise)
+        slideSound = gml_Script_snd_loop(snd_paper_surf)
         alarm[1] = 1
         state = 1
         gml_Script_instance_create(0, 0, obj_battlealphaer)
@@ -165,7 +165,7 @@ if (slideSus != obj_sneo_friedpipis)
 }
 if (state > 0)
 {
-    if gml_Script_i_ex(341)
+    if gml_Script_i_ex(obj_cyber_wall_lights)
     {
         with (obj_cyber_wall_lights)
             y -= 10

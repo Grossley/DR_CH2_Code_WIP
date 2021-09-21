@@ -10,7 +10,7 @@ teleportmode = 0
 door_destination = room
 door_location = room
 on = 1
-weirdlight = gml_Script_scr_dark_marker_ch1((x + 6), (y + 96), 3719)
+weirdlight = gml_Script_scr_dark_marker_ch1((x + 6), (y + 96), spr_weirdlight_ch1)
 with (weirdlight)
 {
     depth = 895000

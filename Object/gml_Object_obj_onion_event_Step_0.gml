@@ -138,7 +138,7 @@ else if (global.flag[258] == 1 || global.flag[258] == 2)
             gml_Script_c_actortocaterpillar()
             gml_Script_c_terminatekillactors()
         }
-        if (con == 33 && (!gml_Script_i_ex(895)))
+        if (con == 33 && (!gml_Script_i_ex(obj_cutscene_master)))
             con = 9
     }
 }

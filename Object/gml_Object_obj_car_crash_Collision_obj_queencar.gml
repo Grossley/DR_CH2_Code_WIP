@@ -1,13 +1,13 @@
 if (!crash)
 {
-    if gml_Script_i_ex(1011)
+    if gml_Script_i_ex(obj_ch2_city_car_a)
     {
         with (obj_ch2_city_car_a)
             car_crash_count++
     }
     hspeed = 0
     crash = 1
-    gml_Script_snd_play(188)
+    gml_Script_snd_play(snd_badexplosion)
     visible = false
     explosion = gml_Script_instance_create((x + 40), y, obj_animation)
     explosion.sprite_index = spr_realisticexplosion

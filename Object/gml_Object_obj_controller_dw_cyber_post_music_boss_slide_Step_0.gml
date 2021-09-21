@@ -68,7 +68,7 @@ if (con == 3)
 {
     if gml_Script_i_ex(realsus)
         susx = realsus.x
-    if gml_Script_i_ex(80)
+    if gml_Script_i_ex(obj_mainchara)
         plx = ((obj_mainchara.x + obj_mainchara.sprite_width) + 2)
     if (block.x > plx)
         block.x = plx

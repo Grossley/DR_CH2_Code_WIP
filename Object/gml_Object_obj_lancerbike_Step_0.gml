@@ -14,7 +14,7 @@ if (lcon == 1.5)
     {
         ltimer = 0
         lcon = 2
-        gml_Script_snd_play(153)
+        gml_Script_snd_play(snd_cardrive)
     }
 }
 if (lcon >= 6 && lcon < 10)
@@ -24,7 +24,7 @@ if (lcon >= 6 && lcon < 10)
     {
         xoff = lengthdir_x(40, (image_angle - 20))
         yoff = lengthdir_y(40, (image_angle - 20))
-        gml_Script_snd_play(45)
+        gml_Script_snd_play(snd_spearrise)
         bullet = gml_Script_instance_create((x - xoff), (y - yoff), obj_regularbullet)
         with (bullet)
         {
@@ -215,14 +215,14 @@ if (racecon == 3)
     rtimer += 1
     if (rtimer == 5 || rtimer == 10)
     {
-        gml_Script_snd_play(173)
+        gml_Script_snd_play(snd_lancerhonk)
         honkimg = gml_Script_instance_create((x - 60), (y - 40), obj_afterimage_grow)
         with (honkimg)
             sprite_index = spr_lancernoise
     }
     if (rtimer >= 25)
     {
-        gml_Script_snd_play(185)
+        gml_Script_snd_play(snd_drive)
         racecon = 4
         hspeed = -20
         rtimer = 0

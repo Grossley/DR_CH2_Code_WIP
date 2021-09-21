@@ -6,8 +6,8 @@ if (btimer <= (difficulty ? 8 : 15))
     {
         var xx = (thrash.headx - gml_Script_scr_orbitx(0, 0, 45, 0, headangle))
         var yy = (thrash.heady - gml_Script_scr_orbity(0, 0, 45, 0, headangle))
-        gml_Script_snd_play_x(46, 1, 1.2)
-        d = gml_Script_scr_bullet_create(xx, yy, 734)
+        gml_Script_snd_play_x(snd_spearappear, 1, 1.2)
+        d = gml_Script_scr_bullet_create(xx, yy, obj_thrash_laserbullet)
         d.grazepoints = grazepoints
         d.direction = 0
         d.attackdirection = lastattack

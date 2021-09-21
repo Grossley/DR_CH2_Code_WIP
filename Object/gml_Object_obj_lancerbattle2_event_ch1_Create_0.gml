@@ -1,7 +1,7 @@
 con = 1
 image_speed = 0
 mcon = 1
-puzz1 = gml_Script_instance_create_ch1(780, 60, 1542)
+puzz1 = gml_Script_instance_create_ch1(780, 60, obj_suitspuzz_ch1)
 with (puzz1)
 {
     sol[0] = 1

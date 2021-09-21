@@ -2,7 +2,7 @@ var makeballoons = 0
 if (room == room_dw_city_postbaseball_1)
 {
     balloonthreshold = 10
-    if (gml_Script_i_ex(80) && obj_mainchara.y <= (room_height - 320))
+    if (gml_Script_i_ex(obj_mainchara) && obj_mainchara.y <= (room_height - 320))
         makeballoons = 1
 }
 if makeballoons
@@ -87,7 +87,7 @@ if (room == room_dw_city_postbaseball_1)
     }
     if (con == 2)
     {
-        if (!gml_Script_i_ex(895))
+        if (!gml_Script_i_ex(obj_cutscene_master))
         {
             with (obj_caterpillarchara)
             {
@@ -160,7 +160,7 @@ if (room == room_dw_city_postbaseball_1)
     }
     if (con == 12)
     {
-        if (!gml_Script_i_ex(895))
+        if (!gml_Script_i_ex(obj_cutscene_master))
         {
             con = 13
             global.interact = 0
@@ -179,7 +179,7 @@ if (room == room_dw_city_postbaseball_1)
                 caterpillarnoe = gml_Script_scr_makecaterpillar(no_actor.x, no_actor.y, 2, 3)
                 caterpillarnoe.target = 24
                 if gml_Script_scr_debug()
-                    gml_Script_snd_play(57)
+                    gml_Script_snd_play(snd_won)
             }
             else
             {
@@ -206,14 +206,14 @@ if (room == room_dw_city_postbaseball_1)
     }
     if (switchcon == 1)
     {
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
         with (forcefieldtopright)
             instance_destroy()
         switchcon = 0
     }
     if (switch2con == 1)
     {
-        gml_Script_snd_play(59)
+        gml_Script_snd_play(snd_locker)
         with (forcefieldright)
             instance_destroy()
         global.flag[448] = 1
@@ -229,12 +229,12 @@ if (room == room_dw_city_postbaseball_1)
         gml_Script_c_fadeout(20)
         gml_Script_c_wait(20)
         gml_Script_c_speaker("no_name")
-        gml_Script_c_soundplay(159)
+        gml_Script_c_soundplay(snd_jump)
         gml_Script_c_msgsetloc(0, "* (You all jumped into one teacup.)/", "obj_room_dw_city_postbaseball_slash_Step_0_gml_257_0")
         gml_Script_c_msgnextloc("* (You heard a clicking sound.)/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_258_0")
         gml_Script_c_talk()
         gml_Script_c_wait_box(1)
-        gml_Script_c_soundplay(64)
+        gml_Script_c_soundplay(snd_noise)
         gml_Script_c_waittalk()
         gml_Script_c_fadein(20)
         gml_Script_c_wait(20)
@@ -262,7 +262,7 @@ if (room == room_dw_city_postbaseball_2)
         fireworkshotcon = 1
         with (obj_fireworks_manager)
             is_active = 0
-        forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, 1, 0)
+        forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, true, false)
         bulletarea = gml_Script_instance_create(0, 320, obj_overworld_bulletarea)
         bulletarea.image_xscale = 66
         bulletarea.image_yscale = 4
@@ -370,7 +370,7 @@ if (room == room_dw_city_postbaseball_2)
     }
     if (con == 12)
     {
-        if (!gml_Script_i_ex(895))
+        if (!gml_Script_i_ex(obj_cutscene_master))
         {
             con = 13
             global.interact = 0
@@ -389,7 +389,7 @@ if (room == room_dw_city_postbaseball_2)
                 caterpillarnoe = gml_Script_scr_makecaterpillar(no_actor.x, no_actor.y, 2, 3)
                 caterpillarnoe.target = 24
                 if gml_Script_scr_debug()
-                    gml_Script_snd_play(57)
+                    gml_Script_snd_play(snd_won)
             }
             else
             {
@@ -425,7 +425,7 @@ if (room == room_dw_city_postbaseball_2)
                 forcefield1 = gml_Script_instance_create(2860, 160, obj_forcefield)
                 forcefield1.image_xscale = 10
                 forcefield1.image_yscale = 2
-                forcefield1.stayVisible = 1
+                forcefield1.stayVisible = true
                 forcefield1.ignorealpha = 1
                 forcefield1.image_alpha = 0.2
             }
@@ -459,7 +459,7 @@ if (room == room_dw_city_postbaseball_2)
                 forcefield2 = gml_Script_instance_create(3120, 160, obj_forcefield)
                 forcefield2.image_xscale = 10
                 forcefield2.image_yscale = 2
-                forcefield2.stayVisible = 1
+                forcefield2.stayVisible = true
                 forcefield2.ignorealpha = 1
             }
             else
@@ -489,7 +489,7 @@ if (room == room_dw_city_postbaseball_2)
         {
             if (!gml_Script_i_ex(forcefield3))
             {
-                forcefield3 = gml_Script_scr_forcefield(3600, 120, 10, 2, 1, 1)
+                forcefield3 = gml_Script_scr_forcefield(3600, 120, 10, 2, true, true)
                 forcefield3.ignorealpha = 1
             }
             else
@@ -516,7 +516,7 @@ if (room == room_dw_city_postbaseball_3)
 {
     if (obj_mainchara.x > 420 && blockleft == 0)
     {
-        gml_Script_scr_forcefield(80, 280, 2, 6, 1, 0)
+        gml_Script_scr_forcefield(80, 280, 2, 6, true, false)
         blockleft = 1
     }
     if balloondestroyed[0]
@@ -543,7 +543,7 @@ if (room == room_dw_city_postbaseball_3)
         {
             if (!gml_Script_i_ex(forcefield1))
             {
-                forcefield1 = gml_Script_scr_forcefield(580, 80, 8, 2, 1, 1)
+                forcefield1 = gml_Script_scr_forcefield(580, 80, 8, 2, true, true)
                 forcefield1.ignorealpha = 1
             }
             else
@@ -573,7 +573,7 @@ if (room == room_dw_city_postbaseball_3)
         {
             if (!gml_Script_i_ex(forcefield2))
             {
-                forcefield2 = gml_Script_scr_forcefield(980, 40, 16, 2, 1, 1)
+                forcefield2 = gml_Script_scr_forcefield(980, 40, 16, 2, true, true)
                 forcefield2.ignorealpha = 1
             }
             else
@@ -652,7 +652,7 @@ if (room == room_dw_city_postbaseball_3)
     if (minigamestartcon == 1)
     {
         minigamestartcon = -999
-        gml_Script_c_pannable(1)
+        gml_Script_c_pannable(true)
         gml_Script_c_pan(1380, 0, 25)
         gml_Script_c_sel(kr)
         gml_Script_c_facing("r")
@@ -726,7 +726,7 @@ if (room == room_dw_city_postbaseball_3)
             }
             obj_mainchara.cutscene = true
             gml_Script_camerax_set((pillaremerge.x - 80))
-            gml_Script_safe_delete(188)
+            gml_Script_safe_delete(obj_fadeout)
             gml_Script_scr_fadein(15)
             minigamecon = 0.1
         }
@@ -832,7 +832,7 @@ if (room == room_dw_city_postbaseball_3)
     {
         gml_Script_mus_volume(global.currentsong[1], 0, 30)
         global.interact = 1
-        gml_Script_snd_play(57)
+        gml_Script_snd_play(snd_won)
         gml_Script_scr_fadeout(15)
         timer = 0
         minigame = 3
@@ -874,13 +874,13 @@ if (room == room_dw_city_postbaseball_3)
         gml_Script_c_fadein(15)
         gml_Script_c_wait(45)
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(832)
+        gml_Script_c_sprite(spr_susie_pose)
         gml_Script_c_wait(10)
         gml_Script_c_speaker("susie")
         gml_Script_c_msgsetloc(0, "\\E5* Hell yeah^1! Take that^1, you stupid mice!/%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_936_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(ra)
-        gml_Script_c_sprite(812)
+        gml_Script_c_sprite(spr_ralsei_laugh)
         gml_Script_c_addxy(0, 6)
         gml_Script_c_wait(10)
         gml_Script_c_speaker("ralsei")
@@ -889,23 +889,23 @@ if (room == room_dw_city_postbaseball_3)
         gml_Script_c_facing("r")
         gml_Script_c_addxy(0, -6)
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(80)
+        gml_Script_c_sprite(spr_cutscene_11b_susie_scratch)
         gml_Script_c_addxy(0, -6)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_wait(5)
         gml_Script_c_speaker("susie")
         gml_Script_c_msgsetloc(0, "\\EK* Well. Maybe they aren't awful if you do 'em like that./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_957_0")
         gml_Script_c_talk_wait()
         gml_Script_c_wait(2)
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_facing("l")
         gml_Script_c_addxy(0, 6)
         gml_Script_c_wait(2)
         gml_Script_c_msgsetloc(0, "\\EL* ..^1. not bad^1, Noelle. That was kinda smart./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_966_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(no)
-        gml_Script_c_sprite(737)
+        gml_Script_c_sprite(spr_noelle_blush_dw)
         gml_Script_c_speaker("noelle")
         gml_Script_c_msgsetloc(0, "\\EM* H-Huh? Th..^1. thanks.../%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_972_0")
         gml_Script_c_talk_wait()
@@ -913,13 +913,13 @@ if (room == room_dw_city_postbaseball_3)
         gml_Script_c_msgsetloc(0, "\\EY* Heh^1, maybe next time I'll let you do my homework./%", "obj_room_dw_city_postbaseball_slash_Step_0_gml_977_0")
         gml_Script_c_talk_wait()
         gml_Script_c_sel(su)
-        gml_Script_c_sprite(846)
+        gml_Script_c_sprite(spr_susie_laugh_dw)
         gml_Script_c_addxy(4, 2)
-        gml_Script_c_autowalk(0)
+        gml_Script_c_autowalk(false)
         gml_Script_c_imagespeed(0.25)
         gml_Script_c_soundplay_wait(65)
         gml_Script_c_halt()
-        gml_Script_c_autowalk(1)
+        gml_Script_c_autowalk(true)
         gml_Script_c_facing("l")
         gml_Script_c_addxy(-4, -2)
         gml_Script_c_speaker("noelle")

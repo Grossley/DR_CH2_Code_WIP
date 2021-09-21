@@ -35,7 +35,7 @@ if instance_exists(obj_mainchara_ch1)
         global.typer = 5
         global.msc = 195
         gml_Script_scr_text_ch1(global.msc)
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 7
     }
     if (con == 7 && (!gml_Script_d_ex_ch1()))

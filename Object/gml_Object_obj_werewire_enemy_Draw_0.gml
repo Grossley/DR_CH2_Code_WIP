@@ -24,12 +24,12 @@ if (state == 0)
             draw_self()
         draw_sprite_ext(spr_werewire_wire_curve, 0, (x - 16), (y - 12), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
         if (flash == true)
-            gml_Script_draw_sprite_ext_flash(1733, 0, (x - 16), (y - 12), image_xscale, image_yscale, image_angle, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+            gml_Script_draw_sprite_ext_flash(spr_werewire_wire_curve, 0, (x - 16), (y - 12), image_xscale, image_yscale, image_angle, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         for (i = 0; i < 32; i += 1)
         {
             draw_sprite_ext(spr_werewire_wire_vertical, 0, (((x - 16) + ((sin(((i / 4) + (siner / 16))) * i) / 4)) + (i * 2)), ((y - 20) - (i * 8)), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
             if (flash == true)
-                gml_Script_draw_sprite_ext_flash(1732, 0, (((x - 16) + ((sin(((i / 4) + (siner / 16))) * i) / 4)) + (i * 2)), ((y - 20) - (i * 8)), image_xscale, image_yscale, image_angle, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
+                gml_Script_draw_sprite_ext_flash(spr_werewire_wire_vertical, 0, (((x - 16) + ((sin(((i / 4) + (siner / 16))) * i) / 4)) + (i * 2)), ((y - 20) - (i * 8)), image_xscale, image_yscale, image_angle, image_blend, (((-cos((fsiner / 5))) * 0.4) + 0.6))
         }
     }
     else

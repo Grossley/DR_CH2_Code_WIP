@@ -7,7 +7,7 @@ if (stompspeed > 0 && stomplerp >= 1)
     d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
     d.shakex = ceil(2)
     d.shakey = ceil(2)
-    gml_Script_snd_play(178)
+    gml_Script_snd_play(snd_screenshake)
     if (shootbullets == 1)
         event_user(0)
 }

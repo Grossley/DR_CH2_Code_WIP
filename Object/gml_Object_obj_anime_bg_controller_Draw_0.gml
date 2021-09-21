@@ -3,7 +3,7 @@ x = gml_Script_camerax()
 if (image_alpha > 0.1 && init == 0)
 {
     init = 1
-    dronesfx = gml_Script_snd_loop(244)
+    dronesfx = gml_Script_snd_loop(snd_dtrans_drone)
     gml_Script_snd_volume(dronesfx, 0, 0)
     gml_Script_snd_volume(dronesfx, 0.5, 60)
     gml_Script_snd_pitch(dronesfx, 0.1)
@@ -14,7 +14,7 @@ if (init == 1)
     if (linesfxtimer >= 4)
     {
         linesfxtimer = 0
-        sidenoise = gml_Script_snd_play(242)
+        sidenoise = gml_Script_snd_play(snd_dtrans_twinkle)
         gml_Script_snd_volume(sidenoise, 0.3, 0)
         gml_Script_snd_pitch(sidenoise, (0.6 + random(0.6)))
     }

@@ -9,7 +9,7 @@ global.fe = 0
 global.interact = 1
 if (image_index == 0)
 {
-    gml_Script_snd_play(59)
+    gml_Script_snd_play(snd_locker)
     if (room != room_dw_city_postbaseball_1)
     {
         for (var i = 0; i < 5; i++)

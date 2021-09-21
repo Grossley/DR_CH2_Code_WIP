@@ -8,14 +8,14 @@ if (EVENT == 0)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_8_0")
     EVENT = 1
     if (global.lang == "ja")
-        W = gml_Script_instance_create_ch1(100, 80, 1327)
+        W = gml_Script_instance_create_ch1(100, 80, obj_writer_ch1)
     else
-        W = gml_Script_instance_create_ch1(110, 80, 1327)
+        W = gml_Script_instance_create_ch1(110, 80, obj_writer_ch1)
 }
 if (EVENT == 1 && (!instance_exists(obj_writer_ch1)))
 {
-    gml_Script_snd_play_ch1(487)
-    SOUL = gml_Script_instance_create_ch1(150, 120, 1633)
+    gml_Script_snd_play_ch1(AUDIO_APPEARANCE_ch1)
+    SOUL = gml_Script_instance_create_ch1(150, 120, DEVICE_APPEARANCE_ch1)
     SOUL.momentum = 0.5
     EVENT = 2
     alarm[4] = 20
@@ -35,7 +35,7 @@ if (EVENT == 5)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_34_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_35_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_36_0")
-    W = gml_Script_instance_create_ch1(110, 50, 1327)
+    W = gml_Script_instance_create_ch1(110, 50, obj_writer_ch1)
     EVENT = 5.1
 }
 if (EVENT == 5.1 && instance_exists(obj_writer_ch1) && FADED == 0)
@@ -63,7 +63,7 @@ if (EVENT == 6.2 && (!instance_exists(obj_writer_ch1)))
 if (EVENT == 5.1 && (!instance_exists(obj_writer_ch1)))
 {
     gml_Script_snd_free_all_ch1()
-    gml_Script_snd_play_ch1(487)
+    gml_Script_snd_play_ch1(AUDIO_APPEARANCE_ch1)
     HEARTMADE = 0
     SOUL.t -= 2
     SOUL.momentum = -0.5
@@ -86,7 +86,7 @@ if (EVENT == 10)
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_107_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_111_0")
-    W = gml_Script_instance_create_ch1(80, 50, 1327)
+    W = gml_Script_instance_create_ch1(80, 50, obj_writer_ch1)
     EVENT = 16
 }
 if (EVENT == 15)
@@ -99,14 +99,14 @@ if (EVENT == 16 && (!instance_exists(obj_writer_ch1)))
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_125_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_126_0")
-    W = gml_Script_instance_create_ch1(75, 40, 1327)
+    W = gml_Script_instance_create_ch1(75, 40, obj_writer_ch1)
     EVENT = 17
     alarm[4] = 30
 }
 if (EVENT == 18)
 {
     EVENT = 19
-    GM = gml_Script_instance_create_ch1(140, 120, 1637)
+    GM = gml_Script_instance_create_ch1(140, 120, DEVICE_GONERMAKER_ch1)
 }
 if (EVENT == 19)
 {
@@ -121,13 +121,13 @@ if (EVENT == 20.1)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_148_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_149_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_150_0")
-    W = gml_Script_instance_create_ch1(75, 40, 1327)
+    W = gml_Script_instance_create_ch1(75, 40, obj_writer_ch1)
     EVENT = 21
     alarm[4] = 30
 }
 if (EVENT == 22)
 {
-    GM = gml_Script_instance_create_ch1(140, 120, 1637)
+    GM = gml_Script_instance_create_ch1(140, 120, DEVICE_GONERMAKER_ch1)
     GM.s = 1
     GM.STEP = 2
     EVENT = 23
@@ -144,13 +144,13 @@ if (EVENT == 24.1)
         instance_destroy()
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_173_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_174_0")
-    W = gml_Script_instance_create_ch1(75, 40, 1327)
+    W = gml_Script_instance_create_ch1(75, 40, obj_writer_ch1)
     EVENT = 25
     alarm[4] = 30
 }
 if (EVENT == 26)
 {
-    GM = gml_Script_instance_create_ch1(140, 120, 1637)
+    GM = gml_Script_instance_create_ch1(140, 120, DEVICE_GONERMAKER_ch1)
     GM.s = 2
     GM.STEP = 3
     EVENT = 27
@@ -166,7 +166,7 @@ if (EVENT == 29)
     global.typer = 667
     with (obj_writer_ch1)
         instance_destroy()
-    GM = gml_Script_instance_create_ch1(140, 90, 1637)
+    GM = gml_Script_instance_create_ch1(140, 90, DEVICE_GONERMAKER_ch1)
     GM.CANCEL = true
     GM.FINISH = -1
     GM.s = -1
@@ -174,13 +174,13 @@ if (EVENT == 29)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_205_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_206_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_207_0")
-    W = gml_Script_instance_create_ch1(60, 40, 1327)
+    W = gml_Script_instance_create_ch1(60, 40, obj_writer_ch1)
     EVENT = 30
     alarm[4] = 110
 }
 if (EVENT == 31)
 {
-    choice = gml_Script_instance_create_ch1(100, 120, 1634)
+    choice = gml_Script_instance_create_ch1(100, 120, DEVICE_CHOICE_ch1)
     EVENT = 32
 }
 if (EVENT == 32)
@@ -210,7 +210,7 @@ if (EVENT == 35)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_241_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_242_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_243_0")
-    W = gml_Script_instance_create_ch1(60, 40, 1327)
+    W = gml_Script_instance_create_ch1(60, 40, obj_writer_ch1)
     EVENT = 36
 }
 if (EVENT == 36 && (!instance_exists(obj_writer_ch1)))
@@ -221,7 +221,7 @@ if (EVENT == 36 && (!instance_exists(obj_writer_ch1)))
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_258_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_259_0")
-    W = gml_Script_instance_create_ch1(80, 40, 1327)
+    W = gml_Script_instance_create_ch1(80, 40, obj_writer_ch1)
 }
 if (EVENT == 37)
 {
@@ -230,7 +230,7 @@ if (EVENT == 37)
 }
 if (EVENT == 38)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 39
     with (CHOICE)
     {
@@ -276,11 +276,11 @@ if (EVENT == 41)
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_323_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_324_0")
-    W = gml_Script_instance_create_ch1(80, 40, 1327)
+    W = gml_Script_instance_create_ch1(80, 40, obj_writer_ch1)
 }
 if (EVENT == 43)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 44
     with (CHOICE)
     {
@@ -323,11 +323,11 @@ if (EVENT == 46)
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_381_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_382_0")
-    W = gml_Script_instance_create_ch1(80, 40, 1327)
+    W = gml_Script_instance_create_ch1(80, 40, obj_writer_ch1)
 }
 if (EVENT == 48)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 49
     with (CHOICE)
     {
@@ -337,7 +337,7 @@ if (EVENT == 48)
             NAME[0][i] = string((1 + i))
             NAMEX[0][i] = 80
             if (global.lang == "ja")
-                NAMEX[0][i][i] -= 16
+                NAMEX[0][i] -= 16
             NAMEY[0][i] = (100 + (i * 16))
             YMAX += 1
         }
@@ -374,11 +374,11 @@ if (EVENT == 51.5)
     JA_XOFF = 0
     if (global.lang == "ja")
         JA_XOFF = -20
-    W = gml_Script_instance_create_ch1((80 + JA_XOFF), 30, 1327)
+    W = gml_Script_instance_create_ch1((80 + JA_XOFF), 30, obj_writer_ch1)
 }
 if (EVENT == 53.5)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 54.5
     with (CHOICE)
     {
@@ -421,11 +421,11 @@ if (EVENT == 51)
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_497_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_498_0")
-    W = gml_Script_instance_create_ch1(50, 20, 1327)
+    W = gml_Script_instance_create_ch1(50, 20, obj_writer_ch1)
 }
 if (EVENT == 53)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 54
     with (CHOICE)
     {
@@ -467,11 +467,11 @@ if (EVENT == 55.1)
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_555_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_556_0")
-    W = gml_Script_instance_create_ch1(65, 30, 1327)
+    W = gml_Script_instance_create_ch1(65, 30, obj_writer_ch1)
 }
 if (EVENT == 57)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 58
     with (CHOICE)
     {
@@ -511,11 +511,11 @@ if (EVENT == 60)
     global.typer = 667
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_611_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_612_0")
-    W = gml_Script_instance_create_ch1(60, 20, 1327)
+    W = gml_Script_instance_create_ch1(60, 20, obj_writer_ch1)
 }
 if (EVENT == 62)
 {
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 63
     with (CHOICE)
     {
@@ -551,7 +551,7 @@ if (EVENT == 65)
     with (obj_writer_ch1)
         instance_destroy()
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_664_0")
-    W = gml_Script_instance_create_ch1(90, 50, 1327)
+    W = gml_Script_instance_create_ch1(90, 50, obj_writer_ch1)
     EVENT = 65.5
     alarm[4] = 32
     if instance_exists(DEVICE_GONERMAKER_ch1)
@@ -579,8 +579,8 @@ if (EVENT == 66.5 && instance_exists(obj_writer_ch1) == 0)
         instance_destroy()
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_697_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_698_0")
-    W = gml_Script_instance_create_ch1((68 + JA_XOFF), 20, 1327)
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    W = gml_Script_instance_create_ch1((68 + JA_XOFF), 20, obj_writer_ch1)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 67
     with (CHOICE)
         event_user(0)
@@ -624,7 +624,7 @@ if (EVENT == 69)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_735_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_736_0")
     }
-    W = gml_Script_instance_create_ch1(80, 50, 1327)
+    W = gml_Script_instance_create_ch1(80, 50, obj_writer_ch1)
     EVENT = 70
 }
 if (EVENT == 70 && instance_exists(obj_writer_ch1) == 0)
@@ -636,8 +636,8 @@ if (EVENT == 70 && instance_exists(obj_writer_ch1) == 0)
         instance_destroy()
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_755_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_756_0")
-    W = gml_Script_instance_create_ch1((88 + JA_XOFF), 20, 1327)
-    CHOICE = gml_Script_instance_create_ch1(0, 0, 1634)
+    W = gml_Script_instance_create_ch1((88 + JA_XOFF), 20, obj_writer_ch1)
+    CHOICE = gml_Script_instance_create_ch1(0, 0, DEVICE_CHOICE_ch1)
     EVENT = 71
     with (CHOICE)
         event_user(0)
@@ -687,7 +687,7 @@ if (EVENT == 73)
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_800_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_801_0")
     }
-    W = gml_Script_instance_create_ch1(80, 50, 1327)
+    W = gml_Script_instance_create_ch1(80, 50, obj_writer_ch1)
     EVENT = 74
 }
 if (EVENT == 74 && (!instance_exists(obj_writer_ch1)))
@@ -698,13 +698,13 @@ if (EVENT == 74 && (!instance_exists(obj_writer_ch1)))
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_817_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_818_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_819_0")
-    W = gml_Script_instance_create_ch1(80, 50, 1327)
+    W = gml_Script_instance_create_ch1(80, 50, obj_writer_ch1)
     EVENT = 75
 }
 if (EVENT == 75 && (!instance_exists(obj_writer_ch1)))
 {
     gml_Script_snd_free_all_ch1()
-    gml_Script_snd_play_ch1(356)
+    gml_Script_snd_play_ch1(snd_text_ch1)
     with (DEVICE_GONERMAKER_ch1)
         instance_destroy()
     with (DEVICE_OBACK_4_ch1)
@@ -722,7 +722,7 @@ if (EVENT == 77)
     JA_XOFF = 0
     if (global.lang == "ja")
         JA_XOFF = -10
-    W = gml_Script_instance_create_ch1((100 + JA_XOFF), 50, 1327)
+    W = gml_Script_instance_create_ch1((100 + JA_XOFF), 50, obj_writer_ch1)
     EVENT = 78
 }
 if (EVENT == 78 && (!instance_exists(obj_writer_ch1)))
@@ -740,7 +740,7 @@ if (EVENT == 78 && (!instance_exists(obj_writer_ch1)))
     JA_XOFF = 0
     if (global.lang == "ja")
         JA_XOFF = -15
-    W = gml_Script_instance_create_ch1((145 + JA_XOFF), 50, 1327)
+    W = gml_Script_instance_create_ch1((145 + JA_XOFF), 50, obj_writer_ch1)
     EVENT = 98
     WHITEFADE = 1
     FADEUP = 0.008
@@ -773,7 +773,7 @@ if (EVENT == 100 && (!instance_exists(obj_writer_ch1)))
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_890_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_891_0")
     alarm[4] = 350
-    gml_Script_instance_create_ch1(125, 90, 1327)
+    gml_Script_instance_create_ch1(125, 90, obj_writer_ch1)
 }
 if (EVENT == 102)
     room_goto(room_krisroom_ch1)
@@ -783,13 +783,13 @@ if (EVENT == 900)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_928_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_929_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_CONTACT_slash_Step_0_gml_930_0")
-    W = gml_Script_instance_create_ch1(80, 50, 1327)
+    W = gml_Script_instance_create_ch1(80, 50, obj_writer_ch1)
     EVENT = 919
     alarm[4] = 100
 }
 if (EVENT == 920)
 {
-    choice = gml_Script_instance_create_ch1(100, 100, 1634)
+    choice = gml_Script_instance_create_ch1(100, 100, DEVICE_CHOICE_ch1)
     EVENT = 930
 }
 if (EVENT == 930)
@@ -824,7 +824,7 @@ if (OBMADE == 1)
     obacktimer += OBM
     if (obacktimer >= 20)
     {
-        DV = gml_Script_instance_create_ch1(0, 0, 1639)
+        DV = gml_Script_instance_create_ch1(0, 0, DEVICE_OBACK_4_ch1)
         DV.depth = (5 + OB_DEPTH)
         DV.OBSPEED = (0.01 * OBM)
         if (OB_DEPTH >= 60000)

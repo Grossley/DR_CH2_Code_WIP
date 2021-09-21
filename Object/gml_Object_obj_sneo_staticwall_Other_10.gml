@@ -5,7 +5,7 @@ if (destroyable == 1 && active == true)
         with (hitshot)
             event_user(0)
     }
-    gml_Script_snd_play(166)
+    gml_Script_snd_play(snd_damage)
     anim = gml_Script_instance_create(x, y, obj_yshot_anim)
     anim.image_xscale = image_xscale
     anim.image_yscale = image_yscale

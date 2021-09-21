@@ -1,10 +1,10 @@
 siner++
 talking = 0
-if (gml_Script_i_ex(59) && global.fc == 21)
+if (gml_Script_i_ex(obj_face) && global.fc == 21)
     talking = 1
 if (turnon == 1 && con == 0)
 {
-    gml_Script_snd_play_pitch(46, 2)
+    gml_Script_snd_play_pitch(snd_spearappear, 2)
     con = 1
     timer = 0
     turnon = 0
@@ -37,7 +37,7 @@ if (con == 2)
 }
 if (turnoff && con == 3)
 {
-    gml_Script_snd_play_pitch(46, 2)
+    gml_Script_snd_play_pitch(snd_spearappear, 2)
     turnoff = 0
     con = 4
     timer = 0

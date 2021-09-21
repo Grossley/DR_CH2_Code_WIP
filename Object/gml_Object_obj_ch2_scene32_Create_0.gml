@@ -17,17 +17,17 @@ else
         global.currentsong[0] = gml_Script_snd_init("home.ogg")
         global.currentsong[1] = gml_Script_mus_loop(global.currentsong[0])
     }
-    blackall = gml_Script_scr_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
     blackall.image_blend = c_black
-    bg = gml_Script_scr_marker(0, 0, 440)
+    bg = gml_Script_scr_marker(0, 0, spr_cutscene_32_bg_windows_dark)
     bg.depth = 9000000
-    bgdim = gml_Script_scr_marker(0, 0, 438)
+    bgdim = gml_Script_scr_marker(0, 0, spr_cutscene_32_bg_room_dim)
     bgdim.depth = 6000000
     bgdim.image_alpha = 0
-    bgdark = gml_Script_scr_marker(0, 0, 439)
+    bgdark = gml_Script_scr_marker(0, 0, spr_cutscene_32_bg_room_dark)
     bgdark.depth = 5000000
     bgdark.image_alpha = 0
     disable_face = 0

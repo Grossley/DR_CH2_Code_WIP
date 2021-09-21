@@ -12,7 +12,7 @@ if (myinteract == 3)
             if (egtimer >= 60)
             {
                 sprite_index = spr_tem_sit_ch1
-                egg = gml_Script_scr_marker_ch1((x + 29), (y + 3), 3508)
+                egg = gml_Script_scr_marker_ch1((x + 29), (y + 3), spr_egg_ch1)
                 egg.depth = depth
                 egcon = 3
             }

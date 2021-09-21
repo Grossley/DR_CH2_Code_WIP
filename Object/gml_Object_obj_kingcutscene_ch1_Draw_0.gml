@@ -1,6 +1,6 @@
 fountain_index += 0.1
 draw_sprite_ext(spr_cc_fountainbg_ch1, fountain_index, 745, 0, 2, 2, 0, c_white, image_alpha)
-gml_Script_draw_background_ext_ch1(4368, 600, 0, 2, 2, 0, 16777215, image_alpha)
+gml_Script_draw_background_ext_ch1(bg_cc_arena_ch1, 600, 0, 2, 2, 0, c_white, image_alpha)
 if gml_Script_scr_debug_ch1()
 {
     draw_set_color(c_yellow)

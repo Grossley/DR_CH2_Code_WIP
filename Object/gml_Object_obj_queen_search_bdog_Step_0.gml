@@ -25,7 +25,7 @@ else if (timer >= 162 && impact == 0)
     d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
     d.shakex = ceil(2)
     d.shakey = ceil(2)
-    gml_Script_snd_play(178)
+    gml_Script_snd_play(snd_screenshake)
     impact = 1
     var explosion = gml_Script_instance_create(x, y, obj_animation_dx)
     explosion.sprite_index = spr_realisticexplosion

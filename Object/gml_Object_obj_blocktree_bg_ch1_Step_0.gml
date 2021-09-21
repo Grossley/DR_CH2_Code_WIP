@@ -29,7 +29,7 @@ if (blocktimer == 20)
 {
     xv = ((x + (sprite_width / 4)) + random((sprite_width / 2)))
     yv = ((y + (sprite_height / 4)) + random((sprite_height / 4)))
-    block = gml_Script_scr_dark_marker_ch1(xv, yv, 4063)
+    block = gml_Script_scr_dark_marker_ch1(xv, yv, spr_blocktree_block_ch1)
     with (block)
     {
         hspeed = (0.4 + random(1))

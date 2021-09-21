@@ -10,7 +10,7 @@ if instance_exists(obj_heart)
         if (con < 19)
         {
             var presstext = gml_Script_stringsetloc("PRESS ", "obj_ch2_sceneex2_special_slash_Draw_0_gml_16_0")
-            if (!gml_Script_i_ex(589))
+            if (!gml_Script_i_ex(obj_yheart_shot))
                 input_timer++
             else
                 input_timer = 0

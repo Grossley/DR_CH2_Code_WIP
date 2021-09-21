@@ -3,7 +3,7 @@ if (con == 1)
     con = 1
     global.interact = 1
     global.facing = 3
-    sneo = gml_Script_scr_dark_marker(288, -170, 1842)
+    sneo = gml_Script_scr_dark_marker(288, -170, spr_spamton_defeat_vines)
     with (sneo)
         gml_Script_scr_depth()
     cutscene_master = gml_Script_scr_cutscene_make()
@@ -49,7 +49,7 @@ if (con == 1)
             global.flag[468] = 1
         else
         {
-            gml_Script_c_soundplay(172)
+            gml_Script_c_soundplay(snd_item)
             gml_Script_c_speaker("no_name")
             gml_Script_c_msgsetloc(0, "* (You got PuppetScarf.)/%", "obj_ch2_sceneex2a_slash_Step_0_gml_88_0")
             gml_Script_c_talk_wait()
@@ -63,14 +63,14 @@ if (con == 1)
             global.flag[468] = 1
         else
         {
-            gml_Script_c_soundplay(172)
+            gml_Script_c_soundplay(snd_item)
             gml_Script_c_speaker("no_name")
             gml_Script_c_msgsetloc(0, "* (You got Dealmaker.)/%", "obj_ch2_sceneex2a_slash_Step_0_gml_82_0")
             gml_Script_c_talk_wait()
         }
     }
     gml_Script_scr_keyitemget(13)
-    gml_Script_c_soundplay(172)
+    gml_Script_c_soundplay(snd_item)
     gml_Script_c_speaker("no_name")
     gml_Script_c_msgsetloc(0, "* (You got ShadowCrystal.)/%", "obj_ch2_sceneex2a_slash_Step_0_gml_95_0")
     gml_Script_c_talk_wait()
@@ -84,7 +84,7 @@ if (con == 50 && (!gml_Script_d_ex()))
     gml_Script_c_actortocaterpillar()
     gml_Script_c_terminatekillactors()
 }
-if (con == 60 && (!gml_Script_i_ex(895)))
+if (con == 60 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = -1
     global.interact = 0

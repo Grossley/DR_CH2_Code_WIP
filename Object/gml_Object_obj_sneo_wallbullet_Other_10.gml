@@ -11,7 +11,7 @@ if (destroyable == 1 && active == true)
         with (hitshot)
             event_user(0)
     }
-    gml_Script_snd_play_pitch(141, (1.1 + random(0.2)))
+    gml_Script_snd_play_pitch(snd_bomb, (1.1 + random(0.2)))
     gml_Script_scr_afterimage_cut()
     anim = gml_Script_instance_create(x, y, obj_yshot_anim)
     anim.image_xscale = image_xscale
@@ -24,5 +24,5 @@ else if (destroyable == 0 && active == true)
 {
     with (hitshot)
         event_user(0)
-    gml_Script_snd_play(39)
+    gml_Script_snd_play(snd_bell)
 }

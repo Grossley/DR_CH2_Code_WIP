@@ -42,7 +42,7 @@ if first_time
             if (type == 0)
             {
                 gml_Script_scr_shakescreen()
-                gml_Script_snd_play(235)
+                gml_Script_snd_play(snd_closet_impact)
             }
         }
     }

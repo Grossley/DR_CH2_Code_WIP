@@ -24,7 +24,7 @@ if (global.monster[myself] == true && defeated == 0)
                     event_user(1)
                 }
                 global.monsterhp[0] = 40
-                gml_Script_snd_play_ch1(430)
+                gml_Script_snd_play_ch1(snd_power_ch1)
                 susie_revive_count = 0
             }
         }
@@ -40,7 +40,7 @@ if (global.monster[myself] == true && defeated == 0)
             global.targeted[mytarget] = true
         }
         if (!instance_exists(obj_darkener_ch1))
-            gml_Script_instance_create_ch1(0, 0, 1522)
+            gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
         global.typer = 50
         rrrr = choose(0, 1, 2, 3)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss3_slash_Step_0_gml_56_0")
@@ -97,7 +97,7 @@ if (global.monster[myself] == true && defeated == 0)
             if (!instance_exists(obj_moveheart_ch1))
                 gml_Script_scr_moveheart_ch1()
             if (!instance_exists(obj_growtangle_ch1))
-                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), 1628)
+                gml_Script_instance_create_ch1((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle_ch1)
             with (obj_writer_ch1)
                 instance_destroy()
             global.mnfight = 2
@@ -117,7 +117,7 @@ if (global.monster[myself] == true && defeated == 0)
         {
             if (attacks == false)
             {
-                bike = gml_Script_instance_create_ch1(x, y, 1528)
+                bike = gml_Script_instance_create_ch1(x, y, obj_lancerbike_ch1)
                 visible = false
                 bike.racecon = 1
                 bike.target = mytarget
@@ -126,7 +126,7 @@ if (global.monster[myself] == true && defeated == 0)
             }
             else
             {
-                bike = gml_Script_instance_create_ch1(x, y, 1528)
+                bike = gml_Script_instance_create_ch1(x, y, obj_lancerbike_ch1)
                 visible = false
                 bike.lcon = 1
                 bike.target = mytarget
@@ -309,9 +309,9 @@ if (global.myfight == 3)
             with (obj_susieandlancer_event_ch1)
                 s.visible = false
         }
-        blocklan = gml_Script_scr_dark_marker_ch1(x, y, 3792)
+        blocklan = gml_Script_scr_dark_marker_ch1(x, y, spr_lancerbike_earcover_ch1)
         blocklan.depth = depth
-        gml_Script_snd_play_ch1(357)
+        gml_Script_snd_play_ch1(snd_bell_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss3_slash_Step_0_gml_314_0")
         gml_Script_scr_susface_ch1(1, 2)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss3_slash_Step_0_gml_316_0")

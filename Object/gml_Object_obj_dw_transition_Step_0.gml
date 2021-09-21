@@ -13,7 +13,7 @@ if (linecon == 1)
     if (linesfxtimer >= 4)
     {
         linesfxtimer = 0
-        sidenoise = gml_Script_snd_play(242)
+        sidenoise = gml_Script_snd_play(snd_dtrans_twinkle)
         gml_Script_snd_volume(sidenoise, 0.3, 0)
         gml_Script_snd_pitch(sidenoise, (0.6 + random(0.6)))
     }

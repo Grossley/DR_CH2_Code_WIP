@@ -5,7 +5,7 @@ if (collided == 0)
         with (obj_checkers_enemy_ch1)
             crown += 35
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_ralseithrown_slash_Collision_154b9139_8c0d_44d5_b8de_0f03c1a8096c_gml_6_0")
-        gml_Script_snd_play_ch1(417)
+        gml_Script_snd_play_ch1(snd_coin_ch1)
         with (other)
         {
             if (offing == 1)
@@ -19,7 +19,7 @@ if (collided == 0)
     }
     else
     {
-        gml_Script_snd_play_ch1(381)
+        gml_Script_snd_play_ch1(snd_noise_ch1)
         with (other)
             con = 7
         with (obj_checkers_enemy_ch1)

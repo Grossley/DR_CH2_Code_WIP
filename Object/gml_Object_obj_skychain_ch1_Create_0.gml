@@ -13,4 +13,4 @@ damage = 50
 grazed = 0
 grazetimer = 0
 soundcon = 0
-gml_Script_snd_play_ch1(492)
+gml_Script_snd_play_ch1(snd_menumove_ch1)

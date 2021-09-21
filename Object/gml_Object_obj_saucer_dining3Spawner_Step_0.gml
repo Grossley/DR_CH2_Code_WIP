@@ -8,8 +8,8 @@ if (y > startY)
     gravity = 0
     if (room == room_dw_mansion_dininghall)
     {
-        gml_Script_snd_stop(61)
-        gml_Script_snd_play(61)
+        gml_Script_snd_stop(snd_impact)
+        gml_Script_snd_play(snd_impact)
         gml_Script_instance_create(0, 0, obj_shake)
     }
 }

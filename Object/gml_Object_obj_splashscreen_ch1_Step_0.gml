@@ -14,18 +14,18 @@ if loaded
         buffer++
         if gml_Script_left_p_ch1()
         {
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             heart_pos_x = heart_pos_x_default
         }
         if gml_Script_right_p_ch1()
         {
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             heart_pos_x = (heart_pos_x_default + heart_pos_x_h_padding)
         }
         if (gml_Script_button1_p_ch1() && buffer >= 3)
         {
             buffer = 0
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             if (heart_pos_x == heart_pos_x_default)
             {
                 if (os_type == os_switch)
@@ -39,7 +39,7 @@ if loaded
         }
         if gml_Script_button2_p_ch1()
         {
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             visit_shop = 0
         }
     }
@@ -47,7 +47,7 @@ if loaded
     {
         if gml_Script_up_p_ch1()
         {
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             if (global.lang == "en")
             {
                 if (heart_pos_y == ((yy + 288) + line_height))
@@ -58,7 +58,7 @@ if loaded
         }
         if gml_Script_down_p_ch1()
         {
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             if (global.lang == "en")
             {
                 if (heart_pos_y == (yy + 288))
@@ -69,7 +69,7 @@ if loaded
         }
         if gml_Script_button1_p_ch1()
         {
-            gml_Script_snd_play_ch1(492)
+            gml_Script_snd_play_ch1(snd_menumove_ch1)
             if (global.lang == "en")
             {
                 if (heart_pos_y == (yy + 288))

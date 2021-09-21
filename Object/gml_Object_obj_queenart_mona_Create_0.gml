@@ -52,7 +52,7 @@ if (room == room_dw_mansion_fire_paintings)
         sprite_index = spr_queenart_red
         if (global.flag[399] == 1)
         {
-            my_new = gml_Script_scr_dark_marker(x, y, 2922)
+            my_new = gml_Script_scr_dark_marker(x, y, spr_queenart_red)
             with (my_new)
                 gml_Script_scr_depth()
             instance_destroy()

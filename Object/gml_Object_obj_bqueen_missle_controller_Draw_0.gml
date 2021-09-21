@@ -5,7 +5,7 @@ if (introtimer == 15)
 if (image_index >= 2)
 {
     if (openmisslechambertimer == 0)
-        gml_Script_snd_play(60)
+        gml_Script_snd_play(snd_grab)
     if (openmisslechambertimer < 5)
     {
         openmisslechambertimer += 1
@@ -62,8 +62,8 @@ if (!oldmode)
             var _y = 0
             if (volleycount >= 3)
                 _y += 20
-            gml_Script_snd_stop(220)
-            gml_Script_snd_play(220)
+            gml_Script_snd_stop(snd_rocket)
+            gml_Script_snd_play(snd_rocket)
             d = gml_Script_instance_create((x + missilex[volleycount]), ((y + 16) + _y), obj_bqueen_missle_homing)
             d.vspeed = -6
             d.hspeed = choose(2, -2, 4, -4)

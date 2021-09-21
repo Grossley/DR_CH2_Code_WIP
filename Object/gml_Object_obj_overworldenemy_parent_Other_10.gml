@@ -5,7 +5,7 @@ if (encountered == 0)
         global.flag[touchflag] = 1
     if (global.ambush == 1)
     {
-        gml_Script_snd_play(170)
+        gml_Script_snd_play(snd_hurt1)
         with (obj_mainchara)
         {
             fun = true

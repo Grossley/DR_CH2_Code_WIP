@@ -17,7 +17,7 @@ if (con == 3)
     encounterflag = 542
     global.flag[54] = encounterflag
     global.flag[9] = 2
-    gml_Script_scr_battle(57, 0, marker2, id, 0)
+    gml_Script_scr_battle(57, false, marker2, id, 0)
     gml_Script_instance_create(x, y, obj_tasque_manager_tempsave)
     con = 4
     if instance_exists(obj_tasquepainting)

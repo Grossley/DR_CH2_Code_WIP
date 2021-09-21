@@ -64,7 +64,7 @@ if (weird == 1)
         image_speed = 0.25
         if (image_index >= 7)
             image_index = 3
-        if gml_Script_i_ex(80)
+        if gml_Script_i_ex(obj_mainchara)
         {
             if (distance_to_object(obj_mainchara) < 120)
                 con = 1
@@ -83,7 +83,7 @@ if (weird == 1)
     }
 }
 gml_Script_scr_depth_alt()
-if (place_meeting(x, y, obj_mainchara) && global.interact == 0 && (!gml_Script_i_ex(188)))
+if (place_meeting(x, y, obj_mainchara) && global.interact == 0 && (!gml_Script_i_ex(obj_fadeout)))
 {
     sprite_index = spr_poppup_intro
     image_index = 0
@@ -108,10 +108,10 @@ if (place_meeting(x, y, obj_mainchara) && global.interact == 0 && (!gml_Script_i
     global.flag[56] = y
     global.flag[54] = encounterflag
     if (encountertype == 0)
-        gml_Script_scr_battle(51, 0, marker, 0, 0)
+        gml_Script_scr_battle(51, false, marker, 0, 0)
     if (encountertype == 1)
-        gml_Script_scr_battle(88, 0, marker, 0, 0)
+        gml_Script_scr_battle(88, false, marker, 0, 0)
     if (encountertype == 2)
-        gml_Script_scr_battle(101, 0, marker, 0, 0)
+        gml_Script_scr_battle(101, false, marker, 0, 0)
     instance_destroy()
 }

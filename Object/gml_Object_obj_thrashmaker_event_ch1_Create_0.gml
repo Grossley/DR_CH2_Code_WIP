@@ -2,7 +2,7 @@ con = 1
 x = 400
 y = 300
 bush_debris = 0
-bush = gml_Script_scr_dark_marker_ch1(305, 20, 4091)
+bush = gml_Script_scr_dark_marker_ch1(305, 20, spr_susiebush_ch1)
 with (bush)
 {
     depth = 850000

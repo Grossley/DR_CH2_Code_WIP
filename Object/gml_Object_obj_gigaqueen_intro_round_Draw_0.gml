@@ -2,11 +2,11 @@ timer++
 if (timer == 8)
 {
     if (sprite_index == spr_gigaqueen_intro_round1)
-        gml_Script_snd_play(330)
+        gml_Script_snd_play(snd_boxing_round1)
     if (sprite_index == spr_gigaqueen_intro_round2)
-        gml_Script_snd_play(328)
+        gml_Script_snd_play(snd_boxing_round2)
     if (sprite_index == spr_gigaqueen_intro_round3)
-        gml_Script_snd_play(339)
+        gml_Script_snd_play(snd_boxing_round3)
 }
 if (o_boxingcontroller.wireframe_boxing == 1)
 {

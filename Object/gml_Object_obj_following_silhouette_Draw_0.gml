@@ -43,13 +43,13 @@ else if (target_char.sprite_index == target_char.rsprite || target_char.sprite_i
 else
     sprite_index = target_char.sprite_index
 depth = 4000
-gpu_set_blendenable(0)
+gpu_set_blendenable(false)
 gpu_set_colorwriteenable(0, 0, 0, 1)
 draw_set_alpha(0)
 draw_rectangle(0, 0, room_width, room_height, false)
 draw_set_alpha(1)
 gpu_set_alphatestenable(1)
-gpu_set_blendenable(1)
+gpu_set_blendenable(true)
 if (instance_number(obj_silhouette_cover) > 0)
 {
     for (i = 0; i < instance_number(obj_silhouette_cover); i++)
@@ -61,7 +61,7 @@ if (instance_number(obj_silhouette_cover) > 0)
             draw_sprite_ext(_cover.sprite_index, _cover.image_index, _cover.x, _cover.y, _cover.image_xscale, _cover.image_yscale, _cover.image_angle, c_white, 1)
     }
 }
-gpu_set_blendenable(1)
+gpu_set_blendenable(true)
 if outline
 {
     gpu_set_blendmode_ext(bm_zero, bm_zero)

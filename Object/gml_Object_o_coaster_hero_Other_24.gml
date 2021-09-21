@@ -444,7 +444,7 @@ if (con == 0)
     if (mykeybuffer > 0 && disabled == 0)
     {
         con = 1
-        gml_Script_snd_play_pitch(185, (1 + random(0.2)))
+        gml_Script_snd_play_pitch(snd_drive, (1 + random(0.2)))
         dashtimer = 0
         damaged = 0
         with (o_coaster_controller)

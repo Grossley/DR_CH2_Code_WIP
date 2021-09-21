@@ -4,12 +4,12 @@ if (!(instance_exists(obj_caterpillarchara) && obj_caterpillarchara.name == "noe
     instance_destroy()
 if (room == room_dw_city_traffic_1 && global.flag[915] >= 1.5 && global.flag[916] == 0)
 {
-    gml_Script_safe_delete(1228)
+    gml_Script_safe_delete(obj_traffic_road_trigger)
     instance_destroy()
 }
 if (global.flag[915] >= 1.75 && global.flag[916] == 0)
 {
-    gml_Script_safe_delete(1228)
+    gml_Script_safe_delete(obj_traffic_road_trigger)
     instance_destroy()
 }
 fakeNoelleActive = 0

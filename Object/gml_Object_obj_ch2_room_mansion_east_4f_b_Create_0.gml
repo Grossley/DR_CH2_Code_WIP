@@ -1,5 +1,5 @@
 book_con = -1
-bookcase_left = gml_Script_scr_dark_marker(200, 120, 2889)
+bookcase_left = gml_Script_scr_dark_marker(200, 120, spr_dw_mansion_bookcase)
 bookcase_left.setdepth = 0
 bookcase_left.depth = 850050
 bookcase_collider = -4

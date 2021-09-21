@@ -106,14 +106,14 @@ if (part[0] >= 0)
         _flash = (_do_flash && loop == true)
         _pieceVector = gml_Script_scr_rotatevector(0, (s * walkc), image_angle)
         if ((!_flash) && _do_flash)
-            gml_Script_scr_draw_outline_ext(2328, part[0], xx, (yy + _pieceVector.y), s, s, image_angle, 16777215, rim_flash, 2)
+            gml_Script_scr_draw_outline_ext(spr_thrashbody, part[0], xx, (yy + _pieceVector.y), s, s, image_angle, c_white, rim_flash, 2)
         if (bad == 0)
             gml_Script_draw_sprite_ext_glow(2328, part[0], xx, (yy + _pieceVector.y), s, s, image_angle, color[0], a, override_color)
         else if (bad == 1)
             gml_Script_draw_sprite_ext_glow(2327, part[0], xx, (yy + _pieceVector.y), (s / 2), (s / 2), image_angle, color[0], a, override_color)
         if _flash
         {
-            var _af = gml_Script_scr_custom_afterimage_ext(203, 2328, 0, xx, (yy + _pieceVector.y), 3, 3)
+            var _af = gml_Script_scr_custom_afterimage_ext(obj_power_up_afterimage, spr_thrashbody, 0, xx, (yy + _pieceVector.y), 3, 3)
             _af.use_pivot = 1
             _af.pivotx = ((_pieceVector.x / 3) + 3)
             _af.pivoty = ((_pieceVector.y / 3) - 12)
@@ -146,9 +146,9 @@ for (loop = false; loop < 2; loop += 1)
             _pieceVector = gml_Script_scr_rotatevector((-8 * s), ((6 * s) + ((s * walkc) * 2)), image_angle)
             headx = (xx + _pieceVector.x)
             heady = (yy + _pieceVector.y)
-            var _headsprite = 2335
+            var _headsprite = spr_thrashweapon_laser
             if ((!_flash) && _do_flash)
-                gml_Script_scr_draw_outline_ext(2335, part[0], headx, heady, s, s, image_angle, 16777215, rim_flash, 2)
+                gml_Script_scr_draw_outline_ext(spr_thrashweapon_laser, part[0], headx, heady, s, s, image_angle, c_white, rim_flash, 2)
             if _flash
             {
                 gml_Script_draw_set_blend_mode(0)
@@ -161,7 +161,7 @@ for (loop = false; loop < 2; loop += 1)
             _pieceVector = gml_Script_scr_rotatevector((-10 * s), ((6 * s) + ((s * walkc) * 2)), image_angle)
             headx = (xx + _pieceVector.x)
             heady = (yy + _pieceVector.y)
-            _headsprite = 2336
+            _headsprite = spr_thrashweapon_sword
             gml_Script_draw_sprite_ext_glow(2336, 0, headx, heady, s, s, (headangle + image_angle), color[1], a, override_color)
             if _flash
             {
@@ -174,7 +174,7 @@ for (loop = false; loop < 2; loop += 1)
             _pieceVector = gml_Script_scr_rotatevector(((-s) * 4), ((5 * s) + ((s * walkc) * 2)), image_angle)
             headx = (xx + _pieceVector.x)
             heady = (yy + _pieceVector.y)
-            _headsprite = 2334
+            _headsprite = spr_thrashweapon_flame
             gml_Script_draw_sprite_ext_glow(2334, 0, headx, heady, s, s, (headangle + image_angle), color[1], a, override_color)
             if _flash
             {
@@ -187,7 +187,7 @@ for (loop = false; loop < 2; loop += 1)
             _pieceVector = gml_Script_scr_rotatevector((-8 * s), ((3 * s) + ((s * walkc) * 2)), image_angle)
             headx = (xx + _pieceVector.x)
             heady = (yy + _pieceVector.y)
-            _headsprite = 2333
+            _headsprite = spr_thrashweapon_duck
             gml_Script_draw_sprite_ext_glow(2333, 0, headx, heady, s, s, (headangle + image_angle), color[1], a, override_color)
             if _flash
             {
@@ -196,7 +196,7 @@ for (loop = false; loop < 2; loop += 1)
             }
             if _flash
             {
-                _af = gml_Script_scr_custom_afterimage_ext(203, _headsprite, 0, headx, heady, 3, 3)
+                _af = gml_Script_scr_custom_afterimage_ext(obj_power_up_afterimage, _headsprite, 0, headx, heady, 3, 3)
                 _af.use_pivot = 1
                 _af.pivotx = ((_pieceVector.x / 3) + 3)
                 _af.pivoty = ((_pieceVector.y / 3) - 12)

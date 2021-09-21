@@ -2,7 +2,7 @@ shake = 8
 hp -= 3
 if (image_index < 3)
     image_index += 1
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 fx = gml_Script_instance_create(x, y, obj_pipis_destroy_fx)
 fx.image_xscale = 1.5
 fx.image_yscale = 1.5

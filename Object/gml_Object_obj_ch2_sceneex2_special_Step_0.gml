@@ -7,8 +7,8 @@ if (init == 0)
 }
 if (con == 1)
 {
-    gml_Script_snd_play(297)
-    gml_Script_snd_play_pitch(297, 0.8)
+    gml_Script_snd_play(snd_spamton_laugh)
+    gml_Script_snd_play_pitch(snd_spamton_laugh, 0.8)
     for (i = 0; i < 3; i++)
     {
         enemyrow[0][i] = gml_Script_instance_create(((gml_Script_camerax() + 760) + (60 * i)), (gml_Script_cameray() + 100), obj_sneo_lilguy)
@@ -62,8 +62,8 @@ if (con == 2)
             image_index = 0
             y = _cutsceneremy
         }
-        gml_Script_snd_play(64)
-        blackall = gml_Script_scr_dark_marker(gml_Script_camerax(), gml_Script_cameray(), 3227)
+        gml_Script_snd_play(snd_noise)
+        blackall = gml_Script_scr_dark_marker(gml_Script_camerax(), gml_Script_cameray(), spr_whitepx_10)
         blackall.image_xscale = 70
         blackall.image_yscale = 70
         blackall.image_blend = c_black
@@ -94,7 +94,7 @@ if (con == 4)
 }
 if (con == 6)
 {
-    tracknoise = gml_Script_snd_play(45)
+    tracknoise = gml_Script_snd_play(snd_spearrise)
     gml_Script_snd_pitch(tracknoise, 0.9)
     gml_Script_scr_lerpvar_instance(heart, "image_angle", 0, 90, 10, -1, "out")
     con = 7
@@ -132,14 +132,14 @@ if (con == 10)
     heart.canmove = 0
     con = 11
     alarm[4] = 60
-    gml_Script_snd_play_pitch(225, 0.8)
-    gml_Script_snd_play_pitch(225, 1)
-    gml_Script_snd_play_pitch(235, 1.5)
+    gml_Script_snd_play_pitch(snd_great_shine, 0.8)
+    gml_Script_snd_play_pitch(snd_great_shine, 1)
+    gml_Script_snd_play_pitch(snd_closet_impact, 1.5)
     gml_Script_instance_create(0, 0, obj_shake)
 }
 if (con == 12)
 {
-    gml_Script_snd_play_pitch(154, 0.5)
+    gml_Script_snd_play_pitch(snd_swing, 0.5)
     var goenemy = enemyrow[0][0]
     with (heart)
         gml_Script_scr_move_to_point_over_time((goenemy.x - 80), (goenemy.y - 10), 10)
@@ -153,7 +153,7 @@ if (con == 13)
 }
 if (con == 14)
 {
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     with (heart)
         color = 0x000001
     con = 15
@@ -165,7 +165,7 @@ if (con == 15)
         con = 16
         with (heart)
             color = c_black
-        gml_Script_snd_play_pitch(154, 0.5)
+        gml_Script_snd_play_pitch(snd_swing, 0.5)
         goenemy = enemyrow[2][0]
         with (heart)
             gml_Script_scr_move_to_point_over_time((goenemy.x - 80), (goenemy.y - 10), 10)
@@ -179,7 +179,7 @@ if (con == 16)
 }
 if (con == 17)
 {
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     with (heart)
         color = 0x000001
     con = 18
@@ -191,7 +191,7 @@ if (con == 18)
         con = 19
         with (heart)
             color = c_black
-        gml_Script_snd_play_pitch(154, 0.5)
+        gml_Script_snd_play_pitch(snd_swing, 0.5)
         goenemy = enemyrow[1][0]
         with (heart)
             gml_Script_scr_move_to_point_over_time((goenemy.x - 110), (goenemy.y - 10), 10)
@@ -205,14 +205,14 @@ if (con == 19)
 }
 if (con == 20)
 {
-    gml_Script_snd_play(61)
+    gml_Script_snd_play(snd_impact)
     with (heart)
         color = 0x000001
     con = 22
 }
 if (con == 22)
 {
-    if (!gml_Script_i_ex(600))
+    if (!gml_Script_i_ex(obj_sneo_lilguy))
     {
         alarm[4] = 15
         con = 29
@@ -232,7 +232,7 @@ if (con == 30)
         gravity = 0
         speed = 0
     }
-    gml_Script_snd_play(64)
+    gml_Script_snd_play(snd_noise)
     with (heart)
         instance_destroy()
     with (obj_yheart_shot)

@@ -48,7 +48,7 @@ if ((trackpos >= (trigpoint - 0.03) && trackpos <= (trigpoint + 0.01)) || (track
             gml_Script_scr_depth()
     }
 }
-if gml_Script_i_ex(127)
+if gml_Script_i_ex(obj_marker)
 {
     with (obj_marker)
     {

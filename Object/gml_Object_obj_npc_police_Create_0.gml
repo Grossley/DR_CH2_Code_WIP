@@ -14,19 +14,19 @@ if (global.flag[317] == 0)
     doge.image_yscale = 1
     doge.setdepth = 0
     doge.depth = 400000100
-    doga = gml_Script_scr_dark_marker(177, 40, 1128)
+    doga = gml_Script_scr_dark_marker(177, 40, spr_npc_prisoner_dog_m)
     doga.image_speed = 0
     doga.image_xscale = 1
     doga.image_yscale = 1
     doga.depthcancel = true
     doga.depth = (dogd.depth + 20)
-    dogb = gml_Script_scr_dark_marker(202, 40, 1131)
+    dogb = gml_Script_scr_dark_marker(202, 40, spr_npc_prisoner_dog_f)
     dogb.image_speed = 0
     dogb.image_xscale = 1
     dogb.image_yscale = 1
     dogb.depth = (dogd.depth + 20)
     dogb.depthcancel = true
-    dogc = gml_Script_scr_dark_marker(211, 40, 1129)
+    dogc = gml_Script_scr_dark_marker(211, 40, spr_npc_prisoner_dog_big)
     dogc.image_speed = 0
     dogc.image_xscale = 1
     dogc.image_yscale = 1
@@ -38,8 +38,8 @@ if (global.flag[317] == 0)
     undyneinteract.visible = false
     undynesideinteract = gml_Script_instance_create(154, 120, obj_npc_sign)
     undynesideinteract.visible = false
-    undynedesk = gml_Script_scr_marker(128, 97, 1108)
-    deskchairless = gml_Script_scr_marker(128, 97, 2966)
+    undynedesk = gml_Script_scr_marker(128, 97, spr_undyne_police_table)
+    deskchairless = gml_Script_scr_marker(128, 97, spr_lw_police_table_broken_chairless)
     deskchairless.depthcancel = true
     deskchairless.depth = 98260
     deskchairless.visible = false
@@ -47,12 +47,12 @@ if (global.flag[317] == 0)
     undynecollider.image_xscale = 3.5
     undynecollider.image_yscale = 1.5
     undyne = -1
-    keys = gml_Script_scr_marker(180, 135, 2969)
+    keys = gml_Script_scr_marker(180, 135, spr_lw_police_keys_insert)
     keys.image_speed = 0
     keys.image_index = 0
     key_turn_timer = 0
-    boombox = gml_Script_scr_marker(75, 68, 2968)
-    bars = gml_Script_scr_marker(177, 35, 3194)
+    boombox = gml_Script_scr_marker(75, 68, spr_lw_police_boombox)
+    bars = gml_Script_scr_marker(177, 35, bg_lw_police_house_bars_closed)
     bars.depthcancel = true
     bars.depth = 500
     con = -1
@@ -74,15 +74,15 @@ else
     keys = self
     keycon = -1
     kriscon = -1
-    boombox = gml_Script_scr_marker(75, 68, 2968)
-    bars = gml_Script_scr_marker(177, 35, 3195)
+    boombox = gml_Script_scr_marker(75, 68, spr_lw_police_boombox)
+    bars = gml_Script_scr_marker(177, 35, bg_lw_police_house_bars_open)
     with (bars)
     {
         auto_depth = 0
         depthcancel = false
         depth = 0
     }
-    bars_bottom = gml_Script_scr_marker(177, 35, 3196)
+    bars_bottom = gml_Script_scr_marker(177, 35, bg_lw_police_house_bars_open_bottom)
     with (bars_bottom)
         depth = 100000
     jail_collider_bottom = gml_Script_instance_create(180, 98, obj_solidblock)

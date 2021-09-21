@@ -21,12 +21,12 @@ if (con == 3)
     gml_Script_scr_rudface_ch1(7, 7)
     global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_rudy_slash_Step_0_gml_23_0")
     con = 4
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 4 && (!gml_Script_d_ex_ch1()))
 {
     sprite_index = spr_rudy_laugh_ch1
-    gml_Script_snd_play_ch1(480)
+    gml_Script_snd_play_ch1(snd_rudylaugh_ch1)
     image_speed = 0.25
     con = 5
     alarm[4] = 30
@@ -34,9 +34,9 @@ if (con == 4 && (!gml_Script_d_ex_ch1()))
 if (con == 6)
 {
     image_index = 0
-    gml_Script_snd_stop_ch1(480)
+    gml_Script_snd_stop_ch1(snd_rudylaugh_ch1)
     sprite_index = spr_rudy_cough_ch1
-    gml_Script_snd_play_ch1(481)
+    gml_Script_snd_play_ch1(snd_rudycough_ch1)
     con = 7
     alarm[4] = 30
 }
@@ -78,7 +78,7 @@ if (con == 8)
     global.msg[29] = gml_Script_scr_84_get_lang_string_ch1("obj_rudy_slash_Step_0_gml_82_0")
     gml_Script_scr_rudface_ch1(30, 2)
     global.msg[31] = gml_Script_scr_84_get_lang_string_ch1("obj_rudy_slash_Step_0_gml_84_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 9
 }
 if (con == 9 && (!gml_Script_d_ex_ch1()))
@@ -128,7 +128,7 @@ if (con == 13)
     global.fc = 3
     global.fe = 4
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_rudy_slash_Step_0_gml_140_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 14
     kcon = 0
 }
@@ -154,7 +154,7 @@ if (con == 15)
 }
 if (con == 16)
 {
-    gml_Script_instance_create_ch1(x, y, 1408)
+    gml_Script_instance_create_ch1(x, y, obj_npc_room_ch1)
     global.facing = 0
     global.flag[255] = 1
     global.interact = 0

@@ -26,8 +26,8 @@ if (con == 8)
         {
             con = 9
             alarm[4] = 60
-            gml_Script_snd_play(170)
-            gml_Script_snd_play(166)
+            gml_Script_snd_play(snd_hurt1)
+            gml_Script_snd_play(snd_damage)
             with (sneo)
             {
                 gravity = 0

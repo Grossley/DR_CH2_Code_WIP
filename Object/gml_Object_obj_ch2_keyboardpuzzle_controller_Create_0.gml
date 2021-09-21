@@ -78,12 +78,12 @@ if (puzzle_id == 2)
     victorySprite = IMAGE_LOGO
     if use_ja
     {
-        monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, 527)
+        monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, bg_dw_cyber_keyboard_bigger)
         monitorx += 412
     }
     else
     {
-        monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, 3217)
+        monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 1100000, bg_dw_cyber_keyboard_big)
         monitorx += 390
     }
     monitor.image_speed = 0.0625
@@ -100,7 +100,7 @@ else
         monitorx = 40
         monitory = 0
     }
-    monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 950000, 3216)
+    monitor = gml_Script_scr_dark_marker_depth(monitorx, monitory, 950000, bg_dw_cyber_keyboard)
     monitor.image_speed = 0.0625
     monitorx += 330
 }

@@ -154,7 +154,7 @@ for (i = 0; i < 3; i += 1)
     {
         havechar[0] = true
         charpos[0] = i
-        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], 1530)
+        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], obj_herokris_ch1)
         global.charinstance[i].myself = i
         global.charinstance[i].char = 1
         global.charinstance[i].depth = (200 - (i * 20))
@@ -163,7 +163,7 @@ for (i = 0; i < 3; i += 1)
     {
         havechar[1] = true
         charpos[1] = i
-        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], 1531)
+        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], obj_herosusie_ch1)
         global.charinstance[i].myself = i
         global.charinstance[i].char = 2
         global.charinstance[i].depth = (200 - (i * 20))
@@ -172,7 +172,7 @@ for (i = 0; i < 3; i += 1)
     {
         havechar[2] = true
         charpos[2] = i
-        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], 1532)
+        global.charinstance[i] = gml_Script_instance_create_ch1(global.heromakex[i], global.heromakey[i], obj_heroralsei_ch1)
         global.charinstance[i].myself = i
         global.charinstance[i].char = 3
         global.charinstance[i].depth = (200 - (i * 20))
@@ -181,7 +181,7 @@ for (i = 0; i < 3; i += 1)
 slmxx = 0
 slmyy = 0
 s_siner = 0
-gml_Script_instance_create_ch1(0, 0, 1650)
+gml_Script_instance_create_ch1(0, 0, obj_tensionbar_ch1)
 reset = false
 timeron = true
 noreturn = false

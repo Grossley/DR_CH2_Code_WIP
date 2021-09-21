@@ -7,7 +7,7 @@ if (EVENT == 1)
     global.fc = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_10_0")
     EVENT = 2
-    W = gml_Script_instance_create_ch1(70, 80, 1327)
+    W = gml_Script_instance_create_ch1(70, 80, obj_writer_ch1)
     if (global.tempflag[3] >= 1)
     {
         with (obj_writer_ch1)
@@ -31,11 +31,11 @@ if (EVENT == 2 && (!instance_exists(obj_writer_ch1)))
     alarm[4] = 30
     if (global.tempflag[3] >= 1)
         alarm[4] = 15
-    W = gml_Script_instance_create_ch1((40 + JA_XOFF), 80, 1327)
+    W = gml_Script_instance_create_ch1((40 + JA_XOFF), 80, obj_writer_ch1)
 }
 if (EVENT == 4)
 {
-    choice = gml_Script_instance_create_ch1(100, 120, 1634)
+    choice = gml_Script_instance_create_ch1(100, 120, DEVICE_CHOICE_ch1)
     EVENT = 5
 }
 if (EVENT == 5)
@@ -58,7 +58,7 @@ if (EVENT == 6)
     gml_Script_snd_free_all_ch1()
     global.flag[6] = 1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_68_0")
-    W = gml_Script_instance_create_ch1(50, 80, 1327)
+    W = gml_Script_instance_create_ch1(50, 80, obj_writer_ch1)
     EVENT = 7
     alarm[4] = 30
     if (global.tempflag[3] >= 1)
@@ -92,7 +92,7 @@ if (EVENT == 26)
     gml_Script_snd_free_all_ch1()
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("DEVICE_FAILURE_slash_Step_0_gml_103_0")
     EVENT = 27
-    W = gml_Script_instance_create_ch1(60, 80, 1327)
+    W = gml_Script_instance_create_ch1(60, 80, obj_writer_ch1)
 }
 if (EVENT == 27 && (!instance_exists(obj_writer_ch1)))
 {

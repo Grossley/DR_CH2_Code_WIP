@@ -360,7 +360,7 @@ if (room == room_dw_city_traffic_4)
     if (sprite_index == spr_trafficswitch)
     {
         image_index = 0
-        if gml_Script_i_ex(1060)
+        if gml_Script_i_ex(obj_ch2_room_city_traffic_jam)
         {
             with (obj_ch2_room_city_traffic_jam)
                 dismiss = 1
@@ -408,7 +408,7 @@ if (room == room_dw_mansion_acid_tunnel)
         }
         if (sprite_index == spr_dw_mansion_lever && read == 0)
         {
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
             with (obj_ch2_scene21)
                 release_swan = 1
             read++
@@ -788,7 +788,7 @@ if (room == room_dw_cyber_maze_fireworks)
                 global.flag[359] = 2
                 if (global.flag[357] == 0)
                     global.flag[357] = 1
-                if gml_Script_i_ex(1026)
+                if gml_Script_i_ex(obj_ch2_room_cyber_maze_fireworks)
                 {
                     with (obj_ch2_room_cyber_maze_fireworks)
                         fireworks_con = 1
@@ -816,15 +816,15 @@ if (room == room_dw_mansion_hands)
     {
         global.flag[343] = 1
         global.plot = 140
-        gml_Script_snd_play(61)
+        gml_Script_snd_play(snd_impact)
         with (obj_controller_mansion_hands)
             con = 1
-        skip = 1
+        skip = true
         image_index = 2
     }
     else
     {
-        skip = 0
+        skip = false
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* (Pulling the lever back would undo the high-five.)/", "obj_npc_sign_slash_Other_10_gml_813_0")
         gml_Script_msgnextloc("* (You can't undo a high-five.)/%", "obj_npc_sign_slash_Other_10_gml_814_0")
@@ -945,7 +945,7 @@ if (room == room_dw_mansion_east_4f_b)
 {
     if (x > 800)
     {
-        if gml_Script_i_ex(1059)
+        if gml_Script_i_ex(obj_ch2_room_mansion_east_4f_b)
         {
             with (obj_ch2_room_mansion_east_4f_b)
                 book_con = 1
@@ -965,7 +965,7 @@ if (room == room_dw_mansion_noelle_room)
         gml_Script_msgnextloc("\\EK* Huh? Umm..^1. th-that would be stealing.../", "obj_npc_sign_slash_Other_10_gml_955_0")
         gml_Script_scr_anyface_next("no_name", 0)
         gml_Script_msgnextloc("* (You stole the Susie-like Statue...)/%", "obj_npc_sign_slash_Other_10_gml_957_0")
-        if gml_Script_i_ex(964)
+        if gml_Script_i_ex(obj_ch2_scene23b)
         {
             with (obj_ch2_scene23b)
                 steal_susie = 1
@@ -983,7 +983,7 @@ if (room == room_dw_mansion_noelle_room)
         gml_Script_msgnextloc("\\EK* Umm^1, that would be stealing.../", "obj_npc_sign_slash_Other_10_gml_975_0")
         gml_Script_scr_anyface_next("no_name", 0)
         gml_Script_msgnextloc("* (You stole the ICE-E statue for some reason.)/%", "obj_npc_sign_slash_Other_10_gml_977_0")
-        if gml_Script_i_ex(964)
+        if gml_Script_i_ex(obj_ch2_scene23b)
         {
             with (obj_ch2_scene23b)
                 steal_icee = 1
@@ -1210,10 +1210,10 @@ if (room == room_dw_city_poppup)
 if (room == room_dw_mansion_east_2f_shortcut)
 {
     if (sprite_index == spr_dw_mansion_bookcase)
-        skip = 1
+        skip = true
 }
 if (room == room_dw_city_postbaseball_3)
-    skip = 1
+    skip = true
 if (room == room_dw_mansion_top)
 {
     if (sprite_index == spr_queen_walk_up)
@@ -1247,7 +1247,7 @@ if (room == room_dw_cyber_tasque_battle)
 }
 read += 1
 myinteract = 3
-if (skip == 0)
+if (skip == false)
     mydialoguer = gml_Script_instance_create(0, 0, obj_dialoguer)
 else
 {

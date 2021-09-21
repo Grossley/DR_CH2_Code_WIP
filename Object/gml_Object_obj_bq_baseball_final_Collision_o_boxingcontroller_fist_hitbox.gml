@@ -4,9 +4,9 @@ if (hit != 1)
     state = 2
     gml_Script_instance_create(x, (y + 91), o_bq_screen_flash)
     if arcade
-        gml_Script_snd_play(321)
+        gml_Script_snd_play(snd_punchheavythunder_bc)
     else
-        gml_Script_snd_play(115)
+        gml_Script_snd_play(snd_punchheavythunder)
     hit = 1
     baseball_combo_timer = 2
     o_boxingcontroller.hit_baseball += 1
@@ -29,8 +29,8 @@ if (hit != 1)
     {
         if (duckactive == 1)
         {
-            gml_Script_snd_pitch(56, (0.75 + random(0.5)))
-            gml_Script_snd_play(56)
+            gml_Script_snd_pitch(snd_squeaky, (0.75 + random(0.5)))
+            gml_Script_snd_play(snd_squeaky)
             color_fade_alpha = 1
             global.hp[1] += 4
             if (global.hp[1] > global.maxhp[1])

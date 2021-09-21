@@ -24,7 +24,7 @@ if (state == 0 && y > 310)
     d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
     d.shakex = ceil(2)
     d.shakey = ceil(2)
-    gml_Script_snd_play(235)
+    gml_Script_snd_play(snd_closet_impact)
 }
 if (state == 1)
 {

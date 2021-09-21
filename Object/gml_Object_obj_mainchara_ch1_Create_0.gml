@@ -8,7 +8,7 @@ if instance_exists(obj_backgrounderparent_ch1)
 stepping = 0
 stepped = false
 battlemode = 0
-battleheart = gml_Script_instance_create_ch1(x, y, 1497)
+battleheart = gml_Script_instance_create_ch1(x, y, obj_overworldheart_ch1)
 battleheart.image_alpha = 0
 battleheart.image_speed = 0
 battlealpha = 0

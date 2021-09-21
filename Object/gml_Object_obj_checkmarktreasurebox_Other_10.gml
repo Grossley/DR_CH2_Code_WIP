@@ -4,7 +4,7 @@ if (!opened)
     global.interact = 1
     image_index = 1
     opened = 1
-    gml_Script_snd_play(59)
+    gml_Script_snd_play(snd_locker)
     screen = gml_Script_instance_create(980, 100, obj_queenscreen)
     screen.image_index = 10
 }

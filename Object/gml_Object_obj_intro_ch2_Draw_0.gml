@@ -25,7 +25,7 @@ else
         logotimer++
         if ((logotimer % 8) == 0 && logotimer < 80)
         {
-            gml_Script_snd_play_x(64, 0.8, (0.5 + random(1)))
+            gml_Script_snd_play_x(snd_noise, 0.8, (0.5 + random(1)))
             if (logopieces == 0)
                 drawlogopart[0] = 1
             if (logopieces == 1)
@@ -52,7 +52,7 @@ else
                 draw_sprite_ext(IMAGE_LOGO_CENTER_SEPARATE, i, 160, 100, 1, 1, 0, c_white, 1)
         }
         if (logotimer == 120)
-            gml_Script_snd_play(6)
+            gml_Script_snd_play(snd_queen_laugh_title)
         if (logotimer >= 120)
         {
             draw_set_font(fnt_mainbig)

@@ -3,7 +3,7 @@ var y_offset = 0
 draw_set_color(acidColor)
 starttimer++
 if (starttimer == 30)
-    gml_Script_snd_play(11)
+    gml_Script_snd_play(snd_spearappear_choppy)
 if (starttimer == 43)
 {
     state = 1

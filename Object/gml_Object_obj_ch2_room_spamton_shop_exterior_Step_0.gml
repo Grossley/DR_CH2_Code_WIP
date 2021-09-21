@@ -31,7 +31,7 @@ if (con == 50 && (!gml_Script_d_ex()))
     con = 59
     alarm[0] = 30
 }
-if (con == 60 && (!gml_Script_i_ex(895)))
+if (con == 60 && (!gml_Script_i_ex(obj_cutscene_master)))
 {
     con = 0
     global.interact = 0

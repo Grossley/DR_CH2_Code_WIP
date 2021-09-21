@@ -1,27 +1,27 @@
 if (t >= 6 && t <= 26)
 {
     afterimage += 1
-    gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+    gml_Script_d3d_set_fog_ch1(true, c_white, 0, 1)
     draw_sprite_ext(sprite_index, image_index, (x + (afterimage * 4)), y, image_xscale, image_yscale, 0, image_blend, (0.7 - (afterimage / 25)))
     draw_sprite_ext(sprite_index, image_index, (x + (afterimage * 8)), y, image_xscale, image_yscale, 0, image_blend, (0.4 - (afterimage / 30)))
-    gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+    gml_Script_d3d_set_fog_ch1(false, c_black, 0, 0)
 }
 if (t < 6)
 {
     if (t < 5)
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, (1 - (neotone / 4)))
-    gml_Script_d3d_set_fog_ch1(1, 16777215, 0, 1)
+    gml_Script_d3d_set_fog_ch1(true, c_white, 0, 1)
     maxwhite = (t / 5)
     if (maxwhite > 1)
         maxwhite = 1
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, (maxwhite - (tone / 5)))
-    gml_Script_d3d_set_fog_ch1(0, 0, 0, 0)
+    gml_Script_d3d_set_fog_ch1(false, c_black, 0, 0)
 }
 if (t >= 1 && t <= 5)
 {
     for (i = 0; i < 2; i += 1)
     {
-        star[starcount] = gml_Script_instance_create_ch1((x + random(sprite_width)), (y + random(sprite_height)), 1403)
+        star[starcount] = gml_Script_instance_create_ch1((x + random(sprite_width)), (y + random(sprite_height)), obj_marker_ch1)
         with (star[starcount])
         {
             image_xscale = 2

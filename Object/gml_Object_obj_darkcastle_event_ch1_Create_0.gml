@@ -8,8 +8,8 @@ else
     con = 1
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_dark_marker_ch1(460, (obj_mainchara_ch1.y + 60), 4198)
-    s = gml_Script_scr_dark_marker_ch1(520, (obj_mainchara_ch1.y + 100), 3551)
+    k = gml_Script_scr_dark_marker_ch1(460, (obj_mainchara_ch1.y + 60), spr_krisu_dark_ch1)
+    s = gml_Script_scr_dark_marker_ch1(520, (obj_mainchara_ch1.y + 100), spr_susieu_dark_ch1)
     with (k)
     {
         vspeed = -2

@@ -14,8 +14,8 @@ if (global.interact == 0 && (global.facing == 1 || global.facing == 3))
         ix = ((x - wd) + 5)
         iy = (y + 2)
     }
-    gml_Script_snd_play(64)
-    gml_Script_snd_play(194)
+    gml_Script_snd_play(snd_noise)
+    gml_Script_snd_play(snd_acquire_lancer)
     if (confirm == 1)
     {
         global.interact = 1

@@ -37,6 +37,6 @@ if place_meeting(x, y, obj_mainchara)
         flyoff.depth = 2
         flyoff.image_angle = -10
     }
-    gml_Script_scr_battle(51, 0, marker, 0, 0)
+    gml_Script_scr_battle(51, false, marker, 0, 0)
     instance_destroy()
 }

@@ -1,7 +1,7 @@
 timer++
 image_speed = 0
 if (timer == 1)
-    gml_Script_snd_play(181)
+    gml_Script_snd_play(snd_spell_cure_slight_smaller)
 if (timer > 0 && timer < 21)
 {
     image_xscale = lerp(0, 2, (timer / 20))

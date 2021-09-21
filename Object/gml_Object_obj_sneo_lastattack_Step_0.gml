@@ -28,7 +28,7 @@ if (con == 0)
         shotmouthopen = 1
         shotmouthopentimer = 0
         rand = (70 + irandom(5))
-        gml_Script_snd_play_x(135, 0.75, 0.7)
+        gml_Script_snd_play_x(snd_chargeshot_fire, 0.75, 0.7)
     }
     if (count == 10 || endattack == 1)
     {
@@ -82,9 +82,9 @@ if (con == 1)
         bigshot.image_yscale = 0
         bigshot.sprite_index = spr_sneo_bigshot_l
         shottimer = 0
-        gml_Script_snd_play_x(135, 0.7, 0.4)
-        gml_Script_snd_play_x(135, 0.7, 0.6)
-        gml_Script_snd_play_x(135, 0.7, 0.8)
-        gml_Script_snd_play_x(135, 0.7, 0.9)
+        gml_Script_snd_play_x(snd_chargeshot_fire, 0.7, 0.4)
+        gml_Script_snd_play_x(snd_chargeshot_fire, 0.7, 0.6)
+        gml_Script_snd_play_x(snd_chargeshot_fire, 0.7, 0.8)
+        gml_Script_snd_play_x(snd_chargeshot_fire, 0.7, 0.9)
     }
 }

@@ -8,7 +8,7 @@ if (attacked == false)
     global.monsterat[myself] *= pfactor
     if (jattack == 0)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 70
         dc.target = mytarget
         dc.grazepoints = 2
@@ -18,7 +18,7 @@ if (attacked == false)
     }
     if (jattack == 1)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.grazepoints = 3
         dc.type = 65
         dc.target = mytarget
@@ -26,7 +26,7 @@ if (attacked == false)
     }
     if (jattack == 2)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 49
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
@@ -38,7 +38,7 @@ if (attacked == false)
     {
         if (body.condition < 4)
             body.condition = 5
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.grazepoints = 3
         dc.type = 75
         dc.target = mytarget
@@ -47,7 +47,7 @@ if (attacked == false)
     if (jattack == 4)
     {
         gml_Script_snd_play_ch1(gml_Script_scr_84_get_sound_ch1("snd_joker_anything"))
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 62
         dc.target = mytarget
         dc.inv = 20
@@ -56,7 +56,7 @@ if (attacked == false)
     }
     if (jattack == 5)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.grazepoints = 3
         dc.type = 50
         dc.target = 3
@@ -67,14 +67,14 @@ if (attacked == false)
     }
     if (jattack == 6)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 73
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 5)
     }
     if (jattack == 7)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 68
         dc.target = mytarget
         dc.grazepoints = 2
@@ -83,7 +83,7 @@ if (attacked == false)
     if (jattack == 8)
     {
         gml_Script_snd_play_ch1(gml_Script_scr_84_get_sound_ch1("snd_joker_anything"))
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.inv = 20
         dc.type = 61
         dc.target = mytarget
@@ -93,7 +93,7 @@ if (attacked == false)
     }
     if (jattack == 9)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 48
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
@@ -104,7 +104,7 @@ if (attacked == false)
     }
     if (jattack == 10)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 72
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 5)
@@ -113,7 +113,7 @@ if (attacked == false)
     {
         if (body.condition < 4)
             body.condition = 5
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 76
         dc.target = mytarget
         dc.grazepoints = 3
@@ -121,7 +121,7 @@ if (attacked == false)
     }
     if (jattack == 12)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 71
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 5)
@@ -131,7 +131,7 @@ if (attacked == false)
     }
     if (jattack == 13)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 46
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
@@ -142,14 +142,14 @@ if (attacked == false)
     }
     if (jattack == 14)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 74
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 4)
     }
     if (jattack == 15)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 77
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 4)
@@ -159,7 +159,7 @@ if (attacked == false)
     }
     if (jattack == 99)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 47
         dc.target = 3
         dc.damage = (global.monsterat[myself] * 4)
@@ -169,7 +169,7 @@ if (attacked == false)
     }
     if (jattack == 999)
     {
-        dc = gml_Script_instance_create_ch1(x, y, 1558)
+        dc = gml_Script_instance_create_ch1(x, y, obj_dbulletcontroller_ch1)
         dc.type = 25
         dc.target = mytarget
         dc.damage = (global.monsterat[myself] * 4)

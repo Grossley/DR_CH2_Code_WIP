@@ -30,7 +30,7 @@ if (con == 3 && (!gml_Script_d_ex()) && queen_monitor.turnoff == 0)
 if (con == 3 && (!instance_exists(obj_queenvase)))
 {
     global.flag[400] = 2
-    gml_Script_snd_play(163)
+    gml_Script_snd_play(snd_b)
     enemy1 = gml_Script_instance_create(-146, 200, obj_chaseenemy)
     with (enemy1)
     {

@@ -25,12 +25,12 @@ if (global.plot >= 10)
     var show_shine = (global.tempflag[36] == 1 || global.tempflag[36] == 2)
     if (show_shine && global.plot >= 200 && global.flag[309] < 9)
         show_shine = 0
-    var hole = gml_Script_scr_marker(281, 200, 3328)
+    var hole = gml_Script_scr_marker(281, 200, spr_darkwest_hole)
     with (hole)
         gml_Script_scr_depth()
     if show_shine
     {
-        shine = gml_Script_scr_marker(320, 235, 2435)
+        shine = gml_Script_scr_marker(320, 235, spr_shine)
         shine.image_speed = 0.1
         shine.image_xscale = 2
         shine.image_yscale = 2

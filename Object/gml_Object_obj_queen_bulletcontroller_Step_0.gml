@@ -280,7 +280,7 @@ else if (type == 2 || type == 2.1 || type == 2.2)
     {
         init = 2
         btimer = 30
-        d = gml_Script_scr_bullet_create(x, y, 512)
+        d = gml_Script_scr_bullet_create(x, y, obj_queen_wineglass)
         d.xx = (x + 20)
         d.yy = (y + 37)
         if (type == 2.1)
@@ -403,17 +403,17 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
             {
                 if (chooselocation == 0)
                 {
-                    d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), 562)
+                    d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), obj_queen_leg)
                     stomplocation[0] = 1
                 }
                 if (chooselocation == 1)
                 {
-                    d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), 562)
+                    d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), obj_queen_leg)
                     stomplocation[1] = 1
                 }
                 if (chooselocation == 2)
                 {
-                    d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), 562)
+                    d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), obj_queen_leg)
                     stomplocation[2] = 1
                 }
                 d.pos = chooselocation
@@ -426,7 +426,7 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
     {
         if (btimer >= 30)
         {
-            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + choose(-47, 0, 47)), 562)
+            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + choose(-47, 0, 47)), obj_queen_leg)
             d.direction = 180
             d.sprite_index = spr_queen_leg_side
             btimer = 0
@@ -435,26 +435,26 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
     if (type == 3.2)
     {
         if (btimer == 110)
-            d = gml_Script_scr_bullet_create((obj_growtangle.x + choose(-47, 0, 47)), (miny - 4), 562)
+            d = gml_Script_scr_bullet_create((obj_growtangle.x + choose(-47, 0, 47)), (miny - 4), obj_queen_leg)
         if (btimer == 130)
         {
-            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + choose(-47, 0, 47)), 562)
+            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + choose(-47, 0, 47)), obj_queen_leg)
             d.direction = 180
             d.sprite_index = spr_queen_leg_side
         }
         if (btimer == 150)
-            d = gml_Script_scr_bullet_create((obj_growtangle.x + choose(-47, 0, 47)), (miny - 4), 562)
+            d = gml_Script_scr_bullet_create((obj_growtangle.x + choose(-47, 0, 47)), (miny - 4), obj_queen_leg)
         if (btimer == 170)
         {
-            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + choose(-47, 0, 47)), 562)
+            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + choose(-47, 0, 47)), obj_queen_leg)
             d.direction = 180
             d.sprite_index = spr_queen_leg_side
         }
         if (btimer == 190)
-            d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), 562)
+            d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), obj_queen_leg)
         if (btimer == 192)
         {
-            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + 0), 562)
+            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + 0), obj_queen_leg)
             d.direction = 180
             d.sprite_index = spr_queen_leg_side
         }
@@ -463,14 +463,14 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
     {
         if (btimer == 110)
         {
-            d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), 562)
+            d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), obj_queen_leg)
             d.special = 1
-            d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), 562)
+            d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), obj_queen_leg)
             d.special = 1
         }
         if (btimer == 140)
         {
-            d = gml_Script_scr_bullet_create((obj_growtangle.x - 47), (miny - 4), 562)
+            d = gml_Script_scr_bullet_create((obj_growtangle.x - 47), (miny - 4), obj_queen_leg)
             d.special = 2
         }
         if (btimer > 140 && btimer < 154)
@@ -483,7 +483,7 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
         }
         if (btimer == 170)
         {
-            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + 47), 562)
+            d = gml_Script_scr_bullet_create((maxx + 4), (obj_growtangle.y + 47), obj_queen_leg)
             d.direction = 180
             d.sprite_index = spr_queen_leg_side
             d.special = 3
@@ -496,11 +496,11 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
             repeat (2)
             {
                 if (a == 0)
-                    d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), 562)
+                    d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), obj_queen_leg)
                 if (a == 1)
-                    d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), 562)
+                    d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), obj_queen_leg)
                 if (a == 2)
-                    d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), 562)
+                    d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), obj_queen_leg)
                 var a += (1 + irandom(1))
                 if (a > 2)
                     a -= 3
@@ -534,7 +534,7 @@ else if (type == 4)
         {
             for (i = 0; i < 6; i++)
             {
-                d = gml_Script_scr_bullet_create((minx + (i * 30)), spawnheight, 510)
+                d = gml_Script_scr_bullet_create((minx + (i * 30)), spawnheight, obj_queen_social_media)
                 d.image_xscale = 1.25
                 d.image_yscale = 1.25
                 d.image_speed = 0.5
@@ -733,9 +733,9 @@ else if (type == 105 || type == 106 || type == 107)
     init++
     if (init == 12)
     {
-        gml_Script_snd_play(331)
-        gml_Script_snd_loop(331)
-        gml_Script_snd_pitch(331, 0.85)
+        gml_Script_snd_play(snd_crowd)
+        gml_Script_snd_loop(snd_crowd)
+        gml_Script_snd_pitch(snd_crowd, 0.85)
     }
     if (btimer >= timerthreshold)
     {
@@ -861,11 +861,11 @@ else if (type == 115)
         repeat (1)
         {
             if (a == 0)
-                d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), 562)
+                d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), obj_queen_leg)
             if (a == 1)
-                d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), 562)
+                d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), obj_queen_leg)
             if (a == 2)
-                d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), 562)
+                d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), obj_queen_leg)
             d.pos = a
             a += (1 + irandom(1))
             if (a > 2)
@@ -903,11 +903,11 @@ else if (type == 116)
         repeat (1)
         {
             if (a == 0)
-                d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), 562)
+                d = gml_Script_scr_bullet_create((obj_growtangle.x + -47), (miny - 4), obj_queen_leg)
             if (a == 1)
-                d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), 562)
+                d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), obj_queen_leg)
             if (a == 2)
-                d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), 562)
+                d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), obj_queen_leg)
             d.pos = a
             a += (1 + irandom(1))
             if (a > 2)

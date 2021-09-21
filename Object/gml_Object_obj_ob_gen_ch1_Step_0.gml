@@ -2,15 +2,15 @@ if (room == room_field_checkers1_ch1)
 {
     if (timer >= 900)
     {
-        gml_Script_instance_create_ch1(1202, 240, 1505)
-        gml_Script_instance_create_ch1(1242, 280, 1505)
-        gml_Script_instance_create_ch1(1282, 320, 1505)
-        gml_Script_instance_create_ch1(962, 240, 1505)
-        gml_Script_instance_create_ch1(1002, 280, 1505)
-        gml_Script_instance_create_ch1(1042, 320, 1505)
-        gml_Script_instance_create_ch1(722, 240, 1505)
-        gml_Script_instance_create_ch1(762, 280, 1505)
-        gml_Script_instance_create_ch1(802, 320, 1505)
+        gml_Script_instance_create_ch1(1202, 240, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(1242, 280, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(1282, 320, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(962, 240, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(1002, 280, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(1042, 320, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(722, 240, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(762, 280, obj_ob_checkertile_ch1)
+        gml_Script_instance_create_ch1(802, 320, obj_ob_checkertile_ch1)
     }
     if (obj_mainchara_ch1.x >= 4000 && obj_mainchara_ch1.x <= 1620)
         obj_mainchara_ch1.battlemode = 1
@@ -22,7 +22,7 @@ if (room == room_field_checkers1_ch1)
     {
         timer = 0
         ch = (con * 40)
-        gml_Script_instance_create_ch1((1442 - ch), (240 + ch), 1505)
+        gml_Script_instance_create_ch1((1442 - ch), (240 + ch), obj_ob_checkertile_ch1)
         con += 1
         if (con > 2)
             con = 0

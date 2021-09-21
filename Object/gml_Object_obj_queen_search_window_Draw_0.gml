@@ -65,7 +65,7 @@ if (state == 3)
 {
     if (search == 1)
     {
-        d = gml_Script_scr_bullet_create((x - (20 * sign((obj_growtangle.x - x)))), (y + 12), 535)
+        d = gml_Script_scr_bullet_create((x - (20 * sign((obj_growtangle.x - x)))), (y + 12), obj_queen_search_gun)
         d.parentwindow = self
         state = 4
     }
@@ -74,7 +74,7 @@ if (state == 3)
         var maxchainlength = (135 + random(65))
         for (i = 0; i < 2; i++)
         {
-            d = gml_Script_scr_bullet_create(x, y, 534)
+            d = gml_Script_scr_bullet_create(x, y, obj_queen_search_flail)
             d.maxchainlength = maxchainlength
             d.parentwindow = self
             d.direction += (i * 180)
@@ -83,7 +83,7 @@ if (state == 3)
     }
     else if (search == 3)
     {
-        d = gml_Script_scr_bullet_create(x, y, 548)
+        d = gml_Script_scr_bullet_create(x, y, obj_queen_search_junk)
         d.parentwindow = self
         state = 4
     }

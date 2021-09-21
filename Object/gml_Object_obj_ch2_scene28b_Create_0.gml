@@ -20,17 +20,17 @@ else
             instance_destroy()
     }
     layer_set_visible("GIVE_DEPTH", 0)
-    whiteall = gml_Script_scr_marker(-10, -10, 2529)
+    whiteall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     whiteall.image_xscale = 999
     whiteall.image_yscale = 999
     whiteall.depth = 100
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
     blackall.image_blend = c_black
     blackall.image_alpha = 0
-    desk_marker = gml_Script_scr_marker(152, 96, 2975)
+    desk_marker = gml_Script_scr_marker(152, 96, spr_lw_computer_lab_desk_right)
     desk_marker.depthcancel = true
     desk_marker.depth = (whiteall.depth + 100)
     standing = 0

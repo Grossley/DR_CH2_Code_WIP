@@ -69,7 +69,7 @@ if (type == 0)
 {
     if (button_clicked[1] == 1)
     {
-        if gml_Script_i_ex(900)
+        if gml_Script_i_ex(obj_debug_xy)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
@@ -82,7 +82,7 @@ if (type == 0)
     }
     if (button_clicked[2] == 1)
     {
-        if gml_Script_i_ex(900)
+        if gml_Script_i_ex(obj_debug_xy)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
@@ -103,7 +103,7 @@ if (type == 0)
     }
     if (button_clicked[3] == 1)
     {
-        if gml_Script_i_ex(900)
+        if gml_Script_i_ex(obj_debug_xy)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
@@ -123,7 +123,7 @@ if (type == 0)
     }
     if (button_clicked[4] == 1)
     {
-        if gml_Script_i_ex(900)
+        if gml_Script_i_ex(obj_debug_xy)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
@@ -139,7 +139,7 @@ if (type == 0)
     }
     if (button_clicked[5] == 1)
     {
-        if gml_Script_i_ex(900)
+        if gml_Script_i_ex(obj_debug_xy)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {
@@ -153,7 +153,7 @@ if (type == 0)
     if (watchvar != " ")
     {
         button_text[4] = "Watch Variable"
-        if gml_Script_i_ex(900)
+        if gml_Script_i_ex(obj_debug_xy)
         {
             if gml_Script_i_ex(obj_debug_xy.selected_object)
             {

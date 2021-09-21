@@ -2,7 +2,7 @@ shake = 8
 hp -= other.damage
 if (image_index < 3)
     image_index += 1
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 if (other.big == 0)
 {
     with (other)

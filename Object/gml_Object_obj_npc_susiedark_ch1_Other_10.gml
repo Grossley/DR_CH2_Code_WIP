@@ -19,4 +19,4 @@ if (room == room_castle_town_ch1)
     }
 }
 talked += 1
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)

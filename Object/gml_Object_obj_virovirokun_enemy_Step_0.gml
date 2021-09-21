@@ -9,7 +9,7 @@ if (global.monster[myself] == true)
         if (!omawaroid_battle_init)
         {
             omawaroid_battle_init = 1
-            omawaroid_battle = gml_Script_i_ex(409)
+            omawaroid_battle = gml_Script_i_ex(obj_omawaroid_enemy)
         }
         rr = choose(0, 1, 2, 3)
         if (rr == 0)
@@ -29,7 +29,7 @@ if (global.monster[myself] == true)
         {
             if (turns == 0)
                 gml_Script_msgsetloc(0, "This shrink's&out of control!", "obj_virovirokun_enemy_slash_Step_0_gml_40_0")
-            if (!gml_Script_i_ex(409))
+            if (!gml_Script_i_ex(obj_omawaroid_enemy))
                 gml_Script_msgsetloc(0, "Yaha, I'm&home free!", "obj_virovirokun_enemy_slash_Step_0_gml_46_0")
         }
         if (global.mercymod[myself] >= global.mercymax[myself])
@@ -66,13 +66,13 @@ if (global.monster[myself] == true)
             if (rr == 0)
             {
                 global.monsterattackname[myself] = "Invader"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 13
             }
             else
             {
                 global.monsterattackname[myself] = "Viruses"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 14
             }
             gml_Script_scr_turntimer(140)
@@ -115,7 +115,7 @@ if (global.myfight == 3)
     }
     if (acting == 2 && actcon == 0)
     {
-        gml_Script_scr_act_charsprite("kris", choose(1425, 1424), 0, 0)
+        gml_Script_scr_act_charsprite("kris", choose(1425, 1424), 0, false)
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 100)
         gml_Script_msgsetloc(0, "* You treated Virovirokun with care! It's no longer infectious!/%", "obj_virovirokun_enemy_slash_Step_0_gml_163_0")
@@ -126,11 +126,11 @@ if (global.myfight == 3)
     {
         if (noelle_special == 0)
         {
-            gml_Script_scr_act_charsprite("kris", choose(1425, 1424), 0, 0)
+            gml_Script_scr_act_charsprite("kris", choose(1425, 1424), 0, false)
             if (!gml_Script_scr_havechar(4))
             {
-                gml_Script_scr_act_charsprite("ralsei", 1497, 0, 0)
-                gml_Script_scr_act_charsprite("susie", 1453, 0, 0)
+                gml_Script_scr_act_charsprite("ralsei", spr_ralseib_virokun, 0, false)
+                gml_Script_scr_act_charsprite("susie", spr_susieb_virokun, 0, false)
                 gml_Script_msgsetloc(0, "* Everyone treated the enemy with tender loving care!! All the enemies felt great!!/%", "obj_virovirokun_enemy_slash_Step_0_gml_179_0")
             }
             else
@@ -168,7 +168,7 @@ if (global.myfight == 3)
                 gml_Script_msgnextloc("\\E8* Can someone please explain what's going on?!/%", "obj_virovirokun_enemy_slash_Step_0_gml_199_0")
                 gml_Script_scr_battletext()
             }
-            if (noelle_special_con == 2 && (!gml_Script_i_ex(62)))
+            if (noelle_special_con == 2 && (!gml_Script_i_ex(obj_writer)))
             {
                 noelle_special_con = 3
                 alarm[5] = 30
@@ -189,7 +189,7 @@ if (global.myfight == 3)
                 gml_Script_msgsetloc(0, "\\E6* Uh... well... um... yes./%", "obj_virovirokun_enemy_slash_Step_0_gml_222_0")
                 gml_Script_scr_battletext()
             }
-            if (noelle_special_con == 6 && (!gml_Script_i_ex(62)))
+            if (noelle_special_con == 6 && (!gml_Script_i_ex(obj_writer)))
             {
                 noelle_special_con = 7
                 alarm[5] = 30
@@ -237,7 +237,7 @@ if (global.myfight == 3)
                 with (fadeout)
                     instance_destroy()
             }
-            if (noelle_special_con == 14 && (!gml_Script_i_ex(62)))
+            if (noelle_special_con == 14 && (!gml_Script_i_ex(obj_writer)))
             {
                 noelle_special_con = 15
                 alarm[5] = 15
@@ -246,7 +246,7 @@ if (global.myfight == 3)
                 gml_Script_msgnextloc("\\E0* And if we're nice to you, we can win through mercy?/%", "obj_virovirokun_enemy_slash_Step_0_gml_297_0")
                 gml_Script_scr_battletext()
             }
-            if (noelle_special_con == 16 && (!gml_Script_i_ex(62)))
+            if (noelle_special_con == 16 && (!gml_Script_i_ex(obj_writer)))
             {
                 noelle_special_con = 17
                 alarm[5] = 15
@@ -267,7 +267,7 @@ if (global.myfight == 3)
                 gml_Script_msgnextloc("\\EH* Dressing up in a weird costume./%", "obj_virovirokun_enemy_slash_Step_0_gml_321_0")
                 gml_Script_scr_battletext()
             }
-            if (noelle_special_con == 20 && (!gml_Script_i_ex(62)))
+            if (noelle_special_con == 20 && (!gml_Script_i_ex(obj_writer)))
             {
                 noelle_special_con = 21
                 alarm[5] = 15
@@ -288,7 +288,7 @@ if (global.myfight == 3)
                 gml_Script_scr_battletext()
                 gml_Script_scr_speaker("no_one")
             }
-            if (noelle_special_con == 24 && (!gml_Script_i_ex(62)))
+            if (noelle_special_con == 24 && (!gml_Script_i_ex(obj_writer)))
             {
                 noelle_special_con = 99
                 audio_resume_sound(global.batmusic[0])
@@ -306,7 +306,7 @@ if (global.myfight == 3)
                 visible = true
                 image_alpha = 0
             }
-            nise_noelle = gml_Script_scr_dark_marker(obj_heronoelle.x, obj_heronoelle.y, 1531)
+            nise_noelle = gml_Script_scr_dark_marker(obj_heronoelle.x, obj_heronoelle.y, spr_noelleb_act_nurse)
             with (nise_noelle)
             {
                 depth = (20 - (gml_Script___view_get(1, 0) / 40))
@@ -324,13 +324,13 @@ if (global.myfight == 3)
         if (noelle_fall_timer == 30)
         {
             nise_noelle.image_index = 1
-            gml_Script_snd_play(64)
+            gml_Script_snd_play(snd_noise)
             with (nise_noelle)
                 gml_Script_scr_shakeobj()
         }
         if (noelle_fall_timer == 50)
         {
-            gml_Script_snd_play_x(40, 0.6, 0.8)
+            gml_Script_snd_play_x(snd_splat, 0.6, 0.8)
             nise_noelle.image_index = 2
             nise_noelle.hspeed = 6
             nise_noelle.friction = 0.75
@@ -365,7 +365,7 @@ if (global.myfight == 3)
     if (actcon == 5 && (!instance_exists(obj_writer)))
     {
         explosion = gml_Script_instance_create((obj_herosusie.x + 25), (obj_herosusie.y + 15), obj_animation)
-        gml_Script_snd_play(188)
+        gml_Script_snd_play(snd_badexplosion)
         explosion.sprite_index = spr_realisticexplosion
         for (var i = 0; i < 3; i++)
         {

@@ -1,7 +1,7 @@
 if (type == "banana")
 {
-    gml_Script_snd_play(172)
-    gml_Script_snd_play(179)
+    gml_Script_snd_play(snd_item)
+    gml_Script_snd_play(snd_swallow)
     with (other)
     {
         triggertalk = 1

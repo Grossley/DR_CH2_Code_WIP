@@ -15,7 +15,7 @@ if (x <= (gml_Script_camerax() + 480))
             hspeed += 4
     }
 }
-gml_Script_snd_play(166)
+gml_Script_snd_play(snd_damage)
 if (x >= (gml_Script_camerax() + 480))
     x = (gml_Script_camerax() + 480)
 with (other)

@@ -98,4 +98,4 @@ if (room == room_town_krisyard_ch1)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_npc_sign_slash_Other_10_gml_196_0")
 read += 1
 myinteract = 3
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)

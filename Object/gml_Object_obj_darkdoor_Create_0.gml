@@ -10,8 +10,8 @@ if (global.chapter == 1)
         con = 1
         with (obj_mainchara)
             visible = false
-        k = gml_Script_scr_marker(290, 198, 662)
-        s = gml_Script_scr_marker(310, 190, 979)
+        k = gml_Script_scr_marker(290, 198, spr_krisu)
+        s = gml_Script_scr_marker(310, 190, spr_susieu)
         global.interact = 1
         with (s)
         {
@@ -29,7 +29,7 @@ if (global.chapter == 1)
     {
         block = gml_Script_instance_create(280, 100, obj_solidblock)
         block.image_xscale = 4
-        sunset = gml_Script_scr_marker(0, 0, 903)
+        sunset = gml_Script_scr_marker(0, 0, spr_doorarea_sunsetoverlay)
         with (sunset)
         {
             image_alpha = 0.4
@@ -51,13 +51,13 @@ if (global.chapter >= 2)
 {
     if (global.plot >= 100)
     {
-        sunset = gml_Script_scr_marker(0, 0, 903)
+        sunset = gml_Script_scr_marker(0, 0, spr_doorarea_sunsetoverlay)
         with (sunset)
         {
             image_alpha = 0.4
             depth = 2000
         }
-        if (!gml_Script_i_ex(177))
+        if (!gml_Script_i_ex(obj_musicer_town))
             gml_Script_instance_create(0, 0, obj_musicer_town)
     }
 }

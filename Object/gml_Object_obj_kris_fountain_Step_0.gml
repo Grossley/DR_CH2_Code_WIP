@@ -44,7 +44,7 @@ if (active == true)
     }
     if (con == 60 || con == 56)
     {
-        gml_Script_snd_play(228)
+        gml_Script_snd_play(snd_fountain_target)
         blazetimer++
         anim = gml_Script_instance_create(((x - 40) + (blazetimer * 6)), ((y + 10) + random(20)), obj_animation)
         anim.sprite_index = spr_kris_make_fountain_flash
@@ -52,7 +52,7 @@ if (active == true)
     }
     if (con == 61)
     {
-        gml_Script_snd_play(229)
+        gml_Script_snd_play(snd_fountain_make)
         ballcon = 1
         image_index = 14
         image_speed = 0.5

@@ -1,1 +1,1 @@
-gml_Script_snd_stop(244)
+gml_Script_snd_stop(snd_dtrans_drone)

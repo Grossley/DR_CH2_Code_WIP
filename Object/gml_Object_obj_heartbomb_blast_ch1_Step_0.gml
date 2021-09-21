@@ -2,7 +2,7 @@ if (made == 0)
 {
     for (i = 0; i < 4; i += 1)
     {
-        son[i] = gml_Script_instance_create_ch1(x, y, 1520)
+        son[i] = gml_Script_instance_create_ch1(x, y, obj_regularbullet_ch1)
         son[i].sprite_index = spr_heartbullet_ch1
         gml_Script_scr_bullet_inherit_ch1(son[i])
     }

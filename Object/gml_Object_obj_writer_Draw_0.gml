@@ -57,7 +57,7 @@ if (formatted == 0)
     aster = false
     for (i = 0; i < (length + 1); i += 1)
     {
-        skip = 0
+        skip = false
         thischar = string_char_at(mystring, i)
         if (thischar == "`")
             i++
@@ -150,7 +150,7 @@ if (formatted == 0)
             remspace = -1
             charpos = 0
             linecount += 1
-            skip = 1
+            skip = true
             nextchar = string_char_at(mystring, (i + 1))
             if (aster == true && autoaster == true && nextchar != "*" && global.lang != "ja")
             {
@@ -160,7 +160,7 @@ if (formatted == 0)
                 i += 2
             }
         }
-        if (skip == 0)
+        if (skip == false)
         {
             if (thischar == " ")
             {

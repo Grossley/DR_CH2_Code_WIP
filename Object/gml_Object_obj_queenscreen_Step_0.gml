@@ -276,12 +276,12 @@ if (activecon == 1)
             timer = 0
             tasquetimer = 0
             image_index = 11
-            tasquemarker_head = gml_Script_scr_dark_marker((x - 32), (y - 26), 1669)
-            tasquemarker = gml_Script_scr_dark_marker((x - 32), (y - 26), 1664)
+            tasquemarker_head = gml_Script_scr_dark_marker((x - 32), (y - 26), spr_tasque_head)
+            tasquemarker = gml_Script_scr_dark_marker((x - 32), (y - 26), spr_tasque_idle)
             tasquemarker.image_alpha = 0
             tasquemarker_head.depth = (depth - 11)
             tasquemarker.depth = (depth - 10)
-            gml_Script_snd_play(159)
+            gml_Script_snd_play(snd_jump)
             tasquemarker.remid = id
             with (tasquemarker)
             {
@@ -386,7 +386,7 @@ if (bluecheckcon == 2)
         image_yscale = lerp(0, 4, (timer / 30))
         if (timer >= 30)
         {
-            gml_Script_snd_play(57)
+            gml_Script_snd_play(snd_won)
             con = 1
             timer = 0
         }

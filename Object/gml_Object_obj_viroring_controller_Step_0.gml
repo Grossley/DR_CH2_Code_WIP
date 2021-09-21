@@ -13,7 +13,7 @@ if (noleave == 1)
     barrier = gml_Script_instance_create(200, 240, obj_forcefield)
     barrier.image_xscale = 2
     barrier.image_yscale = 8
-    barrier.skip = 1
+    barrier.skip = true
     noleave = 2
 }
 if (noleave == 2)

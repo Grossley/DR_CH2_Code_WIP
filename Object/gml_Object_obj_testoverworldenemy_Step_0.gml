@@ -41,26 +41,26 @@ if (con == 1)
     sprite_index = touchsprite
     if (washit == 0 && global.ambush == 0)
     {
-        hnka = gml_Script_snd_play(137)
+        hnka = gml_Script_snd_play(snd_tensionhorn)
         con = 2
         alarm[4] = 8
     }
     if (washit == 1 || global.ambush == 2)
     {
-        hnka = gml_Script_snd_play(165)
+        hnka = gml_Script_snd_play(snd_break2)
         con = 4
         alarm[4] = 10
     }
     if (washit == 0 && global.ambush == 1)
     {
-        gml_Script_snd_play(140)
+        gml_Script_snd_play(snd_battleenter)
         con = 4
         alarm[4] = 10
     }
 }
 if (con == 3)
 {
-    hnkb = gml_Script_snd_play(137)
+    hnkb = gml_Script_snd_play(snd_tensionhorn)
     gml_Script_snd_pitch(hnkb, 1.1)
     con = 4
     alarm[4] = 12

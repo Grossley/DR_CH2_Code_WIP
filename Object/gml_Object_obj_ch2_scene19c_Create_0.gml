@@ -16,19 +16,19 @@ else
     exitcollider = gml_Script_instance_create(575, 240, obj_soliddark)
     exitcollider.image_xscale = 2
     exitcollider.image_yscale = 2
-    blackall = gml_Script_scr_dark_marker(-10, -10, 2529)
+    blackall = gml_Script_scr_dark_marker(-10, -10, spr_pixel_white)
     blackall.image_xscale = 999
     blackall.image_yscale = 999
     blackall.depth = 100
     blackall.image_blend = c_black
     blackall.image_alpha = 0
-    berdlyoutline = gml_Script_scr_dark_marker(323, 190, 184)
+    berdlyoutline = gml_Script_scr_dark_marker(323, 190, spr_cutscene_19c_berdly_outline)
     berdlyoutline.depth = (blackall.depth - 10)
     berdlyoutline.image_alpha = 0
-    berdly_crown = gml_Script_scr_dark_marker(302, -20, 185)
+    berdly_crown = gml_Script_scr_dark_marker(302, -20, spr_cutscene_19c_crown)
     berdly_crown.depth = (berdlyoutline.depth - 10)
     berdly_crown.image_alpha = 0
-    noelleoutline = gml_Script_scr_dark_marker(200, 189, 183)
+    noelleoutline = gml_Script_scr_dark_marker(200, 189, spr_cutscene_19c_noelle_outline)
     noelleoutline.depth = (blackall.depth - 10)
     noelleoutline.image_alpha = 0
     noelleoutline.image_speed = 0
@@ -38,7 +38,7 @@ else
     sb_crowd_show = 0
     sb_crowd_hide = 0
     sb_crowd_siner = random(400)
-    sb_crowd = gml_Script_scr_dark_marker(0, 0, 182)
+    sb_crowd = gml_Script_scr_dark_marker(0, 0, spr_cutscene_19c_crowd)
     with (sb_crowd)
     {
         image_alpha = 0

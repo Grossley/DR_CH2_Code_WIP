@@ -1,9 +1,9 @@
 if (con == 1)
 {
     global.interact = 1
-    sus = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 100), global.cinstance[1].y, 3544)
-    ral = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 50), global.cinstance[0].y, 3570)
-    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4197)
+    sus = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 100), global.cinstance[1].y, spr_susier_dark_ch1)
+    ral = gml_Script_scr_dark_marker_ch1((obj_mainchara_ch1.x - 50), global.cinstance[0].y, spr_ralseir_ch1)
+    k = gml_Script_scr_dark_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_krisr_dark_ch1)
     with (obj_caterpillarchara_ch1)
         instance_destroy()
     with (obj_mainchara_ch1)
@@ -28,7 +28,7 @@ if (con == 3)
     with (k)
         instance_destroy()
     alarm[4] = 30
-    gml_Script_instance_create_ch1((ral.x + 20), (ral.y - 20), 1486)
+    gml_Script_instance_create_ch1((ral.x + 20), (ral.y - 20), obj_excblcon_ch1)
 }
 if (con == 5)
 {
@@ -41,7 +41,7 @@ if (con == 5)
     gml_Script_scr_ralface_ch1(3, 8)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_43_0")
     con = 6
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 6 && gml_Script_d_ex_ch1() == 0)
 {
@@ -80,7 +80,7 @@ if (con == 14)
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_85_0")
     gml_Script_scr_susface_ch1(4, 2)
     global.msg[5] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_87_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 5.5
 }
 if (con == 5.5 && gml_Script_d_ex_ch1() == 0)
@@ -128,7 +128,7 @@ if (con == 9.5)
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_138_0")
     gml_Script_scr_ralface_ch1(5, 8)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_140_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 15
 }
 if (con == 15 && gml_Script_d_ex_ch1() == 0)
@@ -136,8 +136,8 @@ if (con == 15 && gml_Script_d_ex_ch1() == 0)
     global.flag[212] = 1
     with (obj_pushableblock_ch1)
         event = 0
-    sus2 = gml_Script_instance_create_ch1(sus.x, sus.y, 1407)
-    ral2 = gml_Script_instance_create_ch1(ral.x, ral.y, 1407)
+    sus2 = gml_Script_instance_create_ch1(sus.x, sus.y, obj_npc_facing_ch1)
+    ral2 = gml_Script_instance_create_ch1(ral.x, ral.y, obj_npc_facing_ch1)
     with (sus)
         instance_destroy()
     with (ral)
@@ -159,7 +159,7 @@ if (leavecon == 1 && global.interact == 0)
         global.fc = 1
         global.fe = 7
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_170_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
 }
 if (leavecon == 2)
@@ -200,7 +200,7 @@ if (con == 20)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_207_0")
         gml_Script_scr_susface_ch1(1, 2)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_209_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (boxcount == 1 && global.interact == 0 && boxon == 0)
     {
@@ -213,7 +213,7 @@ if (con == 20)
         gml_Script_scr_susface_ch1(1, 2)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_222_0")
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_223_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (boxcount >= 2 && global.interact == 0)
     {
@@ -221,8 +221,8 @@ if (con == 20)
         with (groundblock)
             instance_destroy()
         global.interact = 1
-        gml_Script_instance_create_ch1(0, 0, 1464)
-        gml_Script_snd_play_ch1(378)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
+        gml_Script_snd_play_ch1(snd_impact_ch1)
         con = 25
         alarm[4] = 30
     }
@@ -242,7 +242,7 @@ if (con == 20)
         global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_254_0")
         gml_Script_scr_susface_ch1(7, 2)
         global.msg[8] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_256_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
 }
 if (boxcon == 2)
@@ -279,15 +279,15 @@ if (con == 26)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_297_0")
     global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_298_0")
     con = 27
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 27)
 {
     if (gml_Script_d_ex_ch1() == 0)
     {
         global.facing = 2
-        ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, 3570)
-        sus3 = gml_Script_scr_dark_marker_ch1(sus2.x, sus2.y, 3541)
+        ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, spr_ralseir_ch1)
+        sus3 = gml_Script_scr_dark_marker_ch1(sus2.x, sus2.y, spr_susiel_dark_ch1)
         with (ral2)
             instance_destroy()
         with (sus2)
@@ -325,7 +325,7 @@ if (con == 30)
     global.fc = 2
     global.fe = 8
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_347_0")
-    dl = gml_Script_instance_create_ch1(0, 0, 1326)
+    dl = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     dl.side = 1
     con = 31
 }
@@ -375,25 +375,25 @@ if (con == 50)
     {
         con = 51
         global.interact = 1
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         alarm[4] = 30
     }
 }
 if (con == 52)
 {
-    gml_Script_instance_create_ch1(290, 200, 1408)
-    gml_Script_instance_create_ch1(460, 370, 1408)
-    ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, 3570)
+    gml_Script_instance_create_ch1(290, 200, obj_npc_room_ch1)
+    gml_Script_instance_create_ch1(460, 370, obj_npc_room_ch1)
+    ral3 = gml_Script_scr_dark_marker_ch1(ral2.x, ral2.y, spr_ralseir_ch1)
     with (ral3)
         gml_Script_scr_depth_ch1()
     with (ral2)
         instance_destroy()
-    sus3 = gml_Script_scr_dark_marker_ch1(((room_width / 2) - 22), sus2.y, 3548)
+    sus3 = gml_Script_scr_dark_marker_ch1(((room_width / 2) - 22), sus2.y, spr_susied_dark_ch1)
     with (sus3)
         gml_Script_scr_depth_ch1()
     with (sus2)
         instance_destroy()
-    gml_Script_snd_play_ch1(378)
+    gml_Script_snd_play_ch1(snd_impact_ch1)
     con = 53
     alarm[4] = 30
 }
@@ -407,14 +407,14 @@ if (con == 54)
     with (fade)
         instance_destroy()
     global.facing = 2
-    gml_Script_instance_create_ch1(0, 0, 1461)
+    gml_Script_instance_create_ch1(0, 0, obj_fadein_ch1)
     con = 55
     alarm[4] = 50
 }
 if (con == 56)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_boxpuzzle_event_slash_Step_0_gml_437_0")
-    dl = gml_Script_instance_create_ch1(0, 0, 1326)
+    dl = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     dl.side = 1
     global.interact = 1
     con = 28

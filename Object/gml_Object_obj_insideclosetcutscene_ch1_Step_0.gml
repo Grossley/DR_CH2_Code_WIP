@@ -16,8 +16,8 @@ if (papefall == 1)
     {
         if (papei < papeno)
         {
-            gml_Script_snd_stop_ch1(486)
-            gml_Script_snd_play_ch1(486)
+            gml_Script_snd_stop_ch1(snd_paper_rise_ch1)
+            gml_Script_snd_play_ch1(snd_paper_rise_ch1)
             with (pape[papei])
             {
                 sprite_index = spr_paperfly_ch1
@@ -39,7 +39,7 @@ if (global.interact == 0 && obj_mainchara_ch1.x <= 70)
     dex = 1
     global.interact = 1
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_45_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (dex == 1 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -57,7 +57,7 @@ if (con == 1.5)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_63_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_64_0")
     con = 2
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 2 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -89,7 +89,7 @@ if (con == 4 && obj_mainchara_ch1.x >= 270 && global.interact == 0)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_97_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_98_0")
     con = 5
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 5 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -123,7 +123,7 @@ if (con == 7 && obj_mainchara_ch1.x >= 450 && global.interact == 0)
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_135_0")
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_136_0")
     con = 8
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 8 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -162,7 +162,7 @@ if (con == 10 && obj_mainchara_ch1.x >= 630 && global.interact == 0)
     global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_186_0")
     global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_187_0")
     con = 15
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 15 && instance_exists(obj_dialoguer_ch1) == 0)
 {
@@ -192,7 +192,7 @@ if (con == 17)
     gml_Script_snd_free_all_ch1()
     with (obj_fallpaper_ch1)
         image_blend = c_gray
-    gml_Script_snd_play_ch1(376)
+    gml_Script_snd_play_ch1(snd_locker_ch1)
     con = 18
     alarm[4] = 60
 }
@@ -200,7 +200,7 @@ if (con == 19)
 {
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_237_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 51
 }
 if (con == 51 && gml_Script_d_ex_ch1() == 0)
@@ -224,12 +224,12 @@ if (con == 53)
     global.fe = 9
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_266_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_267_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 54
 }
 if (con == 54 && gml_Script_d_ex_ch1() == 0)
 {
-    pape_sfx = gml_Script_snd_loop_ch1(485)
+    pape_sfx = gml_Script_snd_loop_ch1(snd_paper_rumble_ch1)
     papeshake = 1
     con = 55
     alarm[4] = 30
@@ -238,7 +238,7 @@ if (con == 56)
 {
     global.fe = 0
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_284_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 57
 }
 if (con == 57 && gml_Script_d_ex_ch1() == 0)
@@ -259,7 +259,7 @@ if (con == 61)
 {
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_312_0")
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_insideclosetcutscene_slash_Step_0_gml_313_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 62
 }
 if (con == 62 && gml_Script_d_ex_ch1() == 0)
@@ -283,7 +283,7 @@ if (instance_exists(obj_dialoguer_ch1) == 0 && con == 70)
     gml_Script___view_set(9, 0, -4)
     with (obj_mainchara_ch1)
         visible = false
-    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, 4206)
+    k = gml_Script_scr_marker_ch1(obj_mainchara_ch1.x, obj_mainchara_ch1.y, spr_kris_fall_ch1)
     with (k)
     {
         vspeed = 1
@@ -294,13 +294,13 @@ if (instance_exists(obj_dialoguer_ch1) == 0 && con == 70)
     vspeed = 1
     gravity = 0.5
     sprite_index = spr_susie_fall_ch1
-    gml_Script_snd_play_ch1(383)
+    gml_Script_snd_play_ch1(snd_sussurprise_ch1)
     con = 21
     alarm[4] = 50
 }
 if (con == 22)
 {
-    gml_Script_snd_play_ch1(482)
+    gml_Script_snd_play_ch1(snd_closet_fall_ch1)
     rate = 5
     rate_alpha = 1.8
     bgdraw = 1
@@ -309,7 +309,7 @@ if (con == 22)
 }
 if (con == 24)
 {
-    gml_Script_snd_play_ch1(483)
+    gml_Script_snd_play_ch1(snd_closet_impact_ch1)
     con = 25
     alarm[4] = 80
 }

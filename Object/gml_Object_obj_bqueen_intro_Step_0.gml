@@ -18,7 +18,7 @@ if (con == 1)
         }
     }
 }
-if (con == 2 && (!gml_Script_i_ex(62)))
+if (con == 2 && (!gml_Script_i_ex(obj_writer)))
 {
     con = 3
     y = -120
@@ -70,7 +70,7 @@ if (con == 3 && y > 280)
     d = (instance_exists(obj_shake) ? obj_shake : gml_Script_instance_create(0, 0, obj_shake))
     d.shakex = ceil(2)
     d.shakey = ceil(2)
-    gml_Script_snd_play(235)
+    gml_Script_snd_play(snd_closet_impact)
 }
 if (con == 4)
 {
@@ -99,7 +99,7 @@ if (con == 6)
 {
     timer++
     if (timer == 1 || timer == 10)
-        gml_Script_snd_play(39)
+        gml_Script_snd_play(snd_bell)
     if (timer == 22)
     {
         con = 8

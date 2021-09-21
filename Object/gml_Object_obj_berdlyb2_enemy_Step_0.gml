@@ -13,7 +13,7 @@ if (global.monster[myself] == true)
             global.targeted[0] = true
         else
             gml_Script_scr_randomtarget()
-        if (!gml_Script_i_ex(361))
+        if (!gml_Script_i_ex(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         if (!hurt_noelle)
         {
@@ -66,7 +66,7 @@ if (global.monster[myself] == true)
                         gml_Script_msgsetloc(0, "So now you think&it's your chance to&usurp me at my weakest.../%", "obj_berdlyb2_enemy_slash_Step_0_gml_79_0")
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                     }
-                    if (balloon_con == 2 && (!gml_Script_i_ex(867)))
+                    if (balloon_con == 2 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         balloon_con = 0
                         global.typer = berdlytalk
@@ -86,7 +86,7 @@ if (global.monster[myself] == true)
                         gml_Script_msgsetloc(0, "But guess what, Kris!&I have one or more things&you will NEVER have!/%", "obj_berdlyb2_enemy_slash_Step_0_gml_98_0")
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                     }
-                    else if (balloon_con == 2 && (!gml_Script_i_ex(867)))
+                    else if (balloon_con == 2 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         balloon_con = 0
                         global.typer = berdlytalk
@@ -108,7 +108,7 @@ if (global.monster[myself] == true)
                         gml_Script_msgsetloc(0, "That's right, Kris!&Unlike YOU, I have a&LOVING TEAM behind me!/%", "obj_berdlyb2_enemy_slash_Step_0_gml_146_0")
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                     }
-                    else if (balloon_con == 2 && (!gml_Script_i_ex(867)))
+                    else if (balloon_con == 2 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         if (gml_Script_scr_monsterpop() == 1)
                             balloon_con = 3
@@ -123,12 +123,12 @@ if (global.monster[myself] == true)
                             talktimer = 0
                         }
                     }
-                    else if (balloon_con == 3 && (!gml_Script_i_ex(867)))
+                    else if (balloon_con == 3 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         balloon_con = 4
                         alarm[7] = 45
                     }
-                    else if (balloon_con == 5 && (!gml_Script_i_ex(867)))
+                    else if (balloon_con == 5 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         balloon_con = 0
                         global.typer = berdlytalk
@@ -154,7 +154,7 @@ if (global.monster[myself] == true)
                         }
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                     }
-                    if (balloon_con == 2 && (!gml_Script_i_ex(867)))
+                    if (balloon_con == 2 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         balloon_con = 0
                         global.typer = berdlytalk
@@ -195,7 +195,7 @@ if (global.monster[myself] == true)
                         }
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                     }
-                    if (balloon_con == 2 && (!gml_Script_i_ex(867)))
+                    if (balloon_con == 2 && (!gml_Script_i_ex(obj_battleblcon)))
                     {
                         balloon_con = 0
                         if (gml_Script_scr_monsterpop() == 1)
@@ -254,7 +254,7 @@ if (global.monster[myself] == true)
                     gml_Script_msgsetloc(0, "N-Noelle, look!&Kris is down!/%", "obj_berdlyb2_enemy_slash_Step_0_gml_226_0")
                     gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                 }
-                if (kris_defeat_con == 2 && (!gml_Script_i_ex(867)))
+                if (kris_defeat_con == 2 && (!gml_Script_i_ex(obj_battleblcon)))
                 {
                     kris_defeat_con = 3
                     alarm[6] = 30
@@ -262,7 +262,7 @@ if (global.monster[myself] == true)
                     gml_Script_msgsetloc(0, "Now's your chance to&come back over here!/%", "obj_berdlyb2_enemy_slash_Step_0_gml_236_0")
                     gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                 }
-                if (kris_defeat_con == 4 && (!gml_Script_i_ex(867)))
+                if (kris_defeat_con == 4 && (!gml_Script_i_ex(obj_battleblcon)))
                 {
                     kris_defeat_con = 5
                     alarm[6] = 30
@@ -270,7 +270,7 @@ if (global.monster[myself] == true)
                     gml_Script_msgsetloc(0, ".../%", "obj_berdlyb2_enemy_slash_Step_0_gml_247_0")
                     gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                 }
-                if (kris_defeat_con == 6 && (!gml_Script_i_ex(867)))
+                if (kris_defeat_con == 6 && (!gml_Script_i_ex(obj_battleblcon)))
                 {
                     kris_defeat_con = 7
                     alarm[6] = 30
@@ -278,7 +278,7 @@ if (global.monster[myself] == true)
                     gml_Script_msgsetloc(0, "N... Noelle?/%", "obj_berdlyb2_enemy_slash_Step_0_gml_258_0")
                     gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                 }
-                if (kris_defeat_con == 8 && (!gml_Script_i_ex(867)))
+                if (kris_defeat_con == 8 && (!gml_Script_i_ex(obj_battleblcon)))
                 {
                     global.typer = noelletalk
                     gml_Script_msgsetloc(0, "(I can...&still...&hear...&their voice...)/%", "obj_berdlyb2_enemy_slash_Step_0_gml_266_0")
@@ -297,7 +297,7 @@ if (global.monster[myself] == true)
             var _count = (3 - gml_Script_scr_monsterpop())
             repeat _count
             {
-                var _newwerewire = gml_Script_scr_monster_add(33, 474)
+                var _newwerewire = gml_Script_scr_monster_add(33, obj_werewire_enemy)
                 with (global.monsterinstance[_newwerewire])
                 {
                     skiptext = 1
@@ -328,12 +328,12 @@ if (global.monster[myself] == true)
         }
         else if (summontimer != 0)
         {
-            if gml_Script_i_ex(478)
+            if gml_Script_i_ex(obj_werewire_zzt_balloon)
                 summontimer = -1
-            else if (summontimer == -1 && (!gml_Script_i_ex(478)))
+            else if (summontimer == -1 && (!gml_Script_i_ex(obj_werewire_zzt_balloon)))
                 summontimer = 0
         }
-        else if (!gml_Script_i_ex(62))
+        else if (!gml_Script_i_ex(obj_writer))
             gml_Script_scr_blconskip(-1)
         else
         {
@@ -355,9 +355,9 @@ if (global.monster[myself] == true)
         else
         {
             difficulty = gml_Script_scr_monsterpop() == 1
-            if ((!gml_Script_i_ex(377)) && (!gml_Script_i_ex(628)))
+            if ((!gml_Script_i_ex(obj_moveheart)) && (!gml_Script_i_ex(obj_heart)))
                 gml_Script_scr_moveheart()
-            if (!gml_Script_i_ex(869))
+            if (!gml_Script_i_ex(obj_growtangle))
                 gml_Script_instance_create((gml_Script___view_get(0, 0) + 320), (gml_Script___view_get(1, 0) + 170), obj_growtangle)
             if (difficulty == 1 && chosenattack == 0)
                 obj_growtangle.target_angle += 45
@@ -372,21 +372,21 @@ if (global.monster[myself] == true)
             if (chosenattack == 0)
             {
                 global.monsterattackname[myself] = "Tornado"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 8
                 dc.difficulty = difficulty
             }
             else if (chosenattack == 1)
             {
                 global.monsterattackname[myself] = "SpearBlast"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 9
                 dc.difficulty = (sideb_route ? 2 : difficulty)
             }
             else
             {
                 global.monsterattackname[myself] = "Chirashi"
-                dc = gml_Script_scr_bulletspawner(x, y, 388)
+                dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 10
                 dc.difficulty = difficulty
             }
@@ -564,7 +564,7 @@ if (global.myfight == 3)
         }
         actconnoe = 2
     }
-    if ((actcon == 2 || actconnoe == 2) && (!gml_Script_i_ex(62)))
+    if ((actcon == 2 || actconnoe == 2) && (!gml_Script_i_ex(obj_writer)))
     {
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, mercy_add_amount)
@@ -574,7 +574,7 @@ if (global.myfight == 3)
         actconnoe = -1
         actcon = 1
     }
-    if (actcon == 1 && (!gml_Script_i_ex(62)))
+    if (actcon == 1 && (!gml_Script_i_ex(obj_writer)))
     {
         if (global.mercymod[myself] >= 100)
             gml_Script_scr_wincombat()
@@ -649,7 +649,7 @@ if (global.bmenuno == 99)
             instance_destroy()
         gml_Script_scr_battletext()
     }
-    if (snowgrave_con == 2 && (!gml_Script_i_ex(62)))
+    if (snowgrave_con == 2 && (!gml_Script_i_ex(obj_writer)))
     {
         snowgrave_timer++
         if (snowgrave_timer >= 10)
@@ -686,7 +686,7 @@ if (sidebcon > 0)
         gml_Script_scr_battletext()
         sidebcon = 6
     }
-    if (sidebcon == 6 && (!gml_Script_i_ex(62)))
+    if (sidebcon == 6 && (!gml_Script_i_ex(obj_writer)))
     {
         with (fn)
             gml_Script_scr_flip("h")
@@ -698,7 +698,7 @@ if (sidebcon > 0)
         gml_Script_msgnextloc("* I.../%", "obj_berdlyb2_enemy_slash_Step_0_gml_444_0")
         gml_Script_scr_battletext()
     }
-    if (sidebcon == 7 && (!gml_Script_i_ex(62)))
+    if (sidebcon == 7 && (!gml_Script_i_ex(obj_writer)))
     {
         with (fn)
             gml_Script_scr_flip("h")
@@ -716,7 +716,7 @@ if (sidebcon > 0)
         gml_Script_msgnextloc("* I'm going to go home./%", "obj_berdlyb2_enemy_slash_Step_0_gml_465_0")
         gml_Script_scr_battletext()
     }
-    if (sidebcon == 15 && (!gml_Script_i_ex(62)))
+    if (sidebcon == 15 && (!gml_Script_i_ex(obj_writer)))
     {
         sidebcon = 29
         alarm[5] = 320
@@ -728,7 +728,7 @@ if (sidebcon > 0)
         fntimer++
         fn.x += (sin((fntimer / 2)) * 0.7)
     }
-    if (sidebcon == 30 && (!gml_Script_i_ex(62)))
+    if (sidebcon == 30 && (!gml_Script_i_ex(obj_writer)))
     {
         global.flag[38] = 1
         global.specialbattle = 1

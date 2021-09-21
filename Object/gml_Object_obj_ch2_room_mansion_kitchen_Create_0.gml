@@ -1,7 +1,7 @@
 con = -1
 for (var i = 0; i < 26; i++)
 {
-    var timer_sprite = ((i % 3) == 1 ? 3210 : 3209)
+    var timer_sprite = ((i % 3) == 1 ? bg_dw_mansion_kitchen_timer_blink : bg_dw_mansion_kitchen_timer)
     var timer = gml_Script_scr_marker((120 + (i * 40)), 40, timer_sprite)
     timer.image_speed = 0.1
     timer.depth = 900000
@@ -29,19 +29,19 @@ with (swatchling_npc_c)
     current_pal = red
     image_speed = 0.25
 }
-cheese_a = gml_Script_scr_dark_marker(15, 150, 2380)
+cheese_a = gml_Script_scr_dark_marker(15, 150, spr_mazecheese)
 with (cheese_a)
 {
     image_index = global.flag[362]
     gml_Script_scr_depth()
 }
-cheese_b = gml_Script_scr_dark_marker(55, 210, 2380)
+cheese_b = gml_Script_scr_dark_marker(55, 210, spr_mazecheese)
 with (cheese_b)
 {
     image_index = global.flag[362]
     gml_Script_scr_depth()
 }
-cheese_c = gml_Script_scr_dark_marker(15, 260, 2380)
+cheese_c = gml_Script_scr_dark_marker(15, 260, spr_mazecheese)
 with (cheese_c)
 {
     image_index = global.flag[362]
@@ -49,19 +49,19 @@ with (cheese_c)
 }
 if (global.flag[362] == 0)
 {
-    mouse_a = gml_Script_scr_dark_marker(50, cheese_a.y, 1741)
+    mouse_a = gml_Script_scr_dark_marker(50, cheese_a.y, spr_maus_idle)
     with (mouse_a)
         image_speed = 0.25
     mouse_a.depth = (cheese_a.depth - 10)
-    mouse_b = gml_Script_scr_dark_marker(90, cheese_b.y, 1741)
+    mouse_b = gml_Script_scr_dark_marker(90, cheese_b.y, spr_maus_idle)
     with (mouse_b)
         image_speed = 0.25
     mouse_b.depth = (cheese_b.depth - 10)
-    mouse_c = gml_Script_scr_dark_marker(50, cheese_c.y, 1741)
+    mouse_c = gml_Script_scr_dark_marker(50, cheese_c.y, spr_maus_idle)
     with (mouse_c)
         image_speed = 0.25
     mouse_c.depth = (cheese_c.depth - 10)
-    whiteall = gml_Script_scr_marker(-10, -10, 2529)
+    whiteall = gml_Script_scr_marker(-10, -10, spr_pixel_white)
     whiteall.image_xscale = 999
     whiteall.image_yscale = 999
     whiteall.depth = 0

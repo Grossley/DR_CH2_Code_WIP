@@ -3,8 +3,8 @@ if (con == 1)
     gml_Script_snd_free_all_ch1()
     y = 200
     global.interact = 1
-    ral = gml_Script_scr_dark_marker_ch1(-50, global.cinstance[0].y, 3570)
-    k = gml_Script_scr_dark_marker_ch1(0, obj_mainchara_ch1.y, 4197)
+    ral = gml_Script_scr_dark_marker_ch1(-50, global.cinstance[0].y, spr_ralseir_ch1)
+    k = gml_Script_scr_dark_marker_ch1(0, obj_mainchara_ch1.y, spr_krisr_dark_ch1)
     c[0] = k
     c[1] = ral
     with (obj_caterpillarchara_ch1)
@@ -41,7 +41,7 @@ if (con == 5)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_57_0")
     gml_Script_scr_ralface_ch1(1, 3)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_59_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 5.1
 }
 if (con == 5.1 && (!gml_Script_d_ex_ch1()))
@@ -57,12 +57,12 @@ if (con == 5.1 && (!gml_Script_d_ex_ch1()))
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_76_0")
     gml_Script_scr_lanface_ch1(3, "E")
     global.msg[4] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_78_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 6
 }
 if (con == 6 && (!gml_Script_d_ex_ch1()))
 {
-    gml_Script_snd_play_ch1(454)
+    gml_Script_snd_play_ch1(snd_lancerlaugh_ch1)
     sprite_index = spr_lancer_lt_laugh_mustache_ch1
     image_speed = 0.25
     con = 7
@@ -89,19 +89,19 @@ if (con == 8)
     global.msg[10] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_113_0")
     gml_Script_scr_lanface_ch1(11, "E")
     global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_115_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 8.1
 }
 if (con == 8.1 && (!gml_Script_d_ex_ch1()))
 {
-    easel = gml_Script_scr_dark_marker_ch1(280, -80, 3694)
+    easel = gml_Script_scr_dark_marker_ch1(280, -80, spr_thrashdesign_ch1)
     with (easel)
     {
         vspeed = 3
         gravity = 0.5
         depth = 700000
     }
-    gml_Script_snd_play_ch1(362)
+    gml_Script_snd_play_ch1(snd_spearrise_ch1)
     con = 8.2
 }
 if (con == 8.2)
@@ -114,8 +114,8 @@ if (con == 8.2)
             gravity = 0
             y = 160
         }
-        gml_Script_snd_play_ch1(378)
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_snd_play_ch1(snd_impact_ch1)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
         con = 8.3
         alarm[4] = 30
     }
@@ -159,7 +159,7 @@ if (con == 13)
     global.fe = 14
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_187_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_188_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 23
 }
 if (con == 23 && (!gml_Script_d_ex_ch1()))
@@ -176,7 +176,7 @@ if (con == 25)
 {
     global.currentsong[0] = gml_Script_snd_init_ch1("thrashmachine.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ext_ch1(global.currentsong[0], 0.6, 1)
-    gml_Script_instance_create_ch1(0, 0, 1363)
+    gml_Script_instance_create_ch1(0, 0, obj_thrashcontroller_ch1)
     con = 30
 }
 if (con == 30 && (!instance_exists(obj_thrashcontroller_ch1)))
@@ -192,22 +192,22 @@ if (con == 30 && (!instance_exists(obj_thrashcontroller_ch1)))
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_223_0")
     gml_Script_scr_ralface_ch1(1, 8)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_225_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 31
 }
 if (con == 31 && (!gml_Script_d_ex_ch1()))
 {
-    gml_Script_snd_play_ch1(381)
+    gml_Script_snd_play_ch1(snd_noise_ch1)
     with (bush)
         image_index = 1
-    s = gml_Script_scr_dark_marker_ch1((bush.x + 88), (bush.y + 44), 3548)
+    s = gml_Script_scr_dark_marker_ch1((bush.x + 88), (bush.y + 44), spr_susied_dark_ch1)
     with (s)
     {
         vspeed = 8
         image_speed = 0.25
         gml_Script_scr_depth_ch1()
     }
-    bush_debris_obj = gml_Script_scr_dark_marker_ch1(s.x, s.y, 4092)
+    bush_debris_obj = gml_Script_scr_dark_marker_ch1(s.x, s.y, spr_susiebushdebris_ch1)
     bush_debris_obj.depth = (s.depth - 20)
     bush_debris = 1
     hspeed = 8
@@ -260,7 +260,7 @@ if (con == 35)
     global.typer = 30
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_299_0")
     global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_300_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 39
 }
 if (con == 39 && (!gml_Script_d_ex_ch1()))
@@ -351,7 +351,7 @@ if (con == 124)
         global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_404_0")
         con = 126
     }
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 126 && (!gml_Script_d_ex_ch1()))
 {
@@ -387,7 +387,7 @@ if (con == 128 && (!gml_Script_d_ex_ch1()))
         global.msg[6] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_441_0")
         global.msg[7] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_442_0")
     }
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 49
 }
 if (con == 49 && (!gml_Script_d_ex_ch1()))
@@ -412,7 +412,7 @@ if (con == 51)
     global.fe = 0
     global.fc = 2
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_thrashmaker_event_slash_Step_0_gml_465_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 52
 }
 if (con == 52 && (!gml_Script_d_ex_ch1()))

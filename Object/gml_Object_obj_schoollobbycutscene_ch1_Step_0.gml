@@ -56,7 +56,7 @@ if (con > 0 && type == 1)
             image_speed = 0
             sprite_index = spr_toriel_d_ch1
         }
-        k = gml_Script_scr_marker_ch1((t.x + 4), (t.y + 21), 4207)
+        k = gml_Script_scr_marker_ch1((t.x + 4), (t.y + 21), spr_krisu_ch1)
         con = 15
         alarm[4] = 20
     }
@@ -87,7 +87,7 @@ if (con > 0 && type == 1)
     }
     if (con == 19.1)
     {
-        fade = gml_Script_instance_create_ch1(0, 0, 1460)
+        fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         fade.fadespeed = 0.02
         con = 19
         alarm[4] = 10
@@ -105,7 +105,7 @@ if (con > 0 && type == 1)
     }
     if (con == 23)
     {
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_alphysclass_ch1)
     }
     if (con == 22)
@@ -135,7 +135,7 @@ if (con > 0 && type == 2)
         if (s.image_index >= 16 && chalksound == false)
         {
             chalksound = true
-            gml_Script_snd_play_ch1(381)
+            gml_Script_snd_play_ch1(snd_noise_ch1)
         }
         if (s.image_index >= 21)
         {
@@ -173,10 +173,10 @@ if (con > 0 && type == 2)
             image_speed = 0
         }
         con = 1
-        gml_Script_instance_create_ch1((s.x + 10), (s.y - 10), 1486)
+        gml_Script_instance_create_ch1((s.x + 10), (s.y - 10), obj_excblcon_ch1)
         with (obj_excblcon_ch1)
             alarm[0] = 40
-        gml_Script_snd_play_ch1(431)
+        gml_Script_snd_play_ch1(snd_b_ch1)
         alarm[4] = 70
     }
     if (con == 2)
@@ -189,7 +189,7 @@ if (con > 0 && type == 2)
         global.typer = 10
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_193_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_194_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 2.1
     }
     if (con == 2.1 && gml_Script_d_ex_ch1() == 0)
@@ -204,7 +204,7 @@ if (con > 0 && type == 2)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_209_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_210_0")
         con = 3
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 3 && instance_exists(obj_dialoguer_ch1) == 0)
     {
@@ -218,7 +218,7 @@ if (con > 0 && type == 2)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_225_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_226_0")
         con = 6
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 6 && instance_exists(obj_dialoguer_ch1) == 0)
     {
@@ -244,7 +244,7 @@ if (con > 0 && type == 2)
         global.fe = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_254_0")
         con = 13
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 13 && instance_exists(obj_dialoguer_ch1) == 0)
     {
@@ -286,7 +286,7 @@ if (con > 0 && type == 2)
     if (con == 19)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_303_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 20
     }
     if (con == 20 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -312,7 +312,7 @@ if (con > 0 && type == 2)
     if (con == 24)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_330_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 25
     }
     if (con == 25 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -333,7 +333,7 @@ if (con > 0 && type == 2)
     }
     if (con == 30)
     {
-        gml_Script_snd_play_ch1(376)
+        gml_Script_snd_play_ch1(snd_locker_ch1)
         con = 31
         alarm[4] = 6
     }
@@ -348,7 +348,7 @@ if (con > 0 && type == 2)
     {
         global.fe = 2
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_374_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 35
     }
     if (con == 35 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -374,7 +374,7 @@ if (con > 0 && type == 2)
         global.msg[11] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_400_0")
         global.msg[12] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_401_0")
         global.msg[13] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_402_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 38
     }
     if (instance_exists(obj_dialoguer_ch1) == 0 && con == 38)
@@ -401,7 +401,7 @@ if (con > 0 && type == 2)
         global.fe = 3
         global.typer = 2
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_432_0")
-        d = gml_Script_instance_create_ch1(0, 0, 1326)
+        d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         with (d)
             skippable = false
         con = 43
@@ -436,7 +436,7 @@ if (con > 0 && type == 2)
             image_speed = 0.334
             image_index = 0
         }
-        gml_Script_snd_play_ch1(381)
+        gml_Script_snd_play_ch1(snd_noise_ch1)
         con = 46
         alarm[4] = 12
     }
@@ -464,7 +464,7 @@ if (con > 0 && type == 2)
         }
         con = 50
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_499_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (con == 50 && instance_exists(obj_dialoguer_ch1) == 0)
     {
@@ -493,7 +493,7 @@ if (con > 0 && type == 2)
             sprite_index = spr_susier_lookup_ch1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_532_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_533_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 55
     }
     if (con == 55 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -507,7 +507,7 @@ if (con > 0 && type == 2)
     {
         global.msc = 104
         gml_Script_scr_text_ch1(global.msc)
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 57.1
         choosetimer = 0
     }
@@ -540,7 +540,7 @@ if (con > 0 && type == 2)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_582_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_583_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_584_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 59
     }
     if (con == 59 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -567,12 +567,12 @@ if (con > 0 && type == 2)
     if (con == 63)
     {
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_616_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 64
     }
     if (con == 64 && instance_exists(obj_dialoguer_ch1) == 0)
     {
-        interact = gml_Script_instance_create_ch1(110, 200, 1405)
+        interact = gml_Script_instance_create_ch1(110, 200, obj_readable_room1_ch1)
         obj_mainchara_ch1.x = (k.x + 6)
         obj_mainchara_ch1.y = (k.y + 2)
         with (k)
@@ -674,7 +674,7 @@ if (type == 3)
                 global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_729_0")
                 global.msg[3] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_730_0")
             }
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
     }
     if (scon == 5 && instance_exists(obj_dialoguer_ch1) == 0)
@@ -694,7 +694,7 @@ if (type == 3)
             image_speed = 0.2
             move_towards_point(450, 20, 1)
         }
-        f = gml_Script_instance_create_ch1(0, 0, 1460)
+        f = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (f)
             fadespeed = 0.03
         scon = 6
@@ -704,7 +704,7 @@ if (type == 3)
     if (con == 6)
     {
         global.plot = 4
-        gml_Script_instance_create_ch1(0, 0, 1462)
+        gml_Script_instance_create_ch1(0, 0, obj_persistentfadein_ch1)
         room_goto(room_schooldoor_ch1)
         con = 7
     }
@@ -725,7 +725,7 @@ if (type == 3)
         if (teast > 0)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_784_0")
         teast += 1
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (obj_mainchara_ch1.y >= 300 && global.interact == 0)
     {
@@ -742,7 +742,7 @@ if (type == 3)
         if (tsouth > 0)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_schoollobbycutscene_slash_Step_0_gml_805_0")
         tsouth += 1
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     }
     if (dex == 1 && instance_exists(obj_dialoguer_ch1) == 0 && global.interact == 1)
     {
@@ -761,11 +761,11 @@ if (type == 4)
             global.interact = 1
             global.msc = 365
             gml_Script_scr_text_ch1(global.msc)
-            gml_Script_snd_play_ch1(370)
+            gml_Script_snd_play_ch1(snd_phone_ch1)
             if (global.flag[272] == 0)
                 global.flag[272] = 1
             con = 2
-            gml_Script_instance_create_ch1(0, 0, 1326)
+            gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
     }
     if (con == 2 && (!gml_Script_d_ex_ch1()))

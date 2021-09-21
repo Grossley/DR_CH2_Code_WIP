@@ -36,7 +36,7 @@ if (global.flag[itemflag] == 1)
 }
 else
 {
-    gml_Script_snd_play_ch1(376)
+    gml_Script_snd_play_ch1(snd_locker_ch1)
     itemname = gml_Script_scr_84_get_lang_string_ch1("obj_treasure_room_slash_Other_10_gml_48_0")
     itemtypename = gml_Script_scr_84_get_lang_string_ch1("obj_treasure_room_slash_Other_10_gml_49_0")
     if (itemtype == "armor")
@@ -99,5 +99,5 @@ else
     }
 }
 myinteract = 3
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 talked += 1

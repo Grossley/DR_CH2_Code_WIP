@@ -1,2 +1,2 @@
-gml_Script_snd_volume(129, 1, 0)
-gml_Script_snd_stop(129)
+gml_Script_snd_volume(cyber_battle_backing_solo, 1, 0)
+gml_Script_snd_stop(cyber_battle_backing_solo)

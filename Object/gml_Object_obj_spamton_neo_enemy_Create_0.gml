@@ -129,7 +129,7 @@ for (i = 0; i < 8; i += 1)
     partframe[i] = 0
     partsiner[i] = 0
     partrot[i] = 0
-    partblend[i] = 16777215
+    partblend[i] = c_white
     partx[i] = 0
     party[i] = 0
     partxoff[i] = (sprite_get_xoffset(partsprite[i]) * 2)

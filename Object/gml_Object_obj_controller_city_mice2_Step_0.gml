@@ -27,7 +27,7 @@ if (victory == false)
             if (icon == 1)
             {
                 icon = -999
-                gml_Script_c_pannable(1)
+                gml_Script_c_pannable(true)
                 gml_Script_c_pan(320, 0, 25)
                 gml_Script_c_sel(kr)
                 gml_Script_c_walkdirect(410, 246, 28)
@@ -58,15 +58,15 @@ if (victory == false)
                 gml_Script_c_sel(no)
                 gml_Script_c_actortocaterpillar()
                 gml_Script_c_var_instance(id, "icon", 2)
-                gml_Script_c_pannable(0)
+                gml_Script_c_pannable(false)
                 gml_Script_c_terminatekillactors()
             }
             if (icon == 2)
             {
-                forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, 1, 0)
+                forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, true, false)
                 global.interact = 0
                 icon = 3
-                if gml_Script_i_ex(317)
+                if gml_Script_i_ex(obj_cybercity_mousesign)
                 {
                     with (obj_cybercity_mousesign)
                     {
@@ -92,7 +92,7 @@ if (victory == false)
             if (icon == 1)
             {
                 icon = -9999
-                gml_Script_c_pannable(1)
+                gml_Script_c_pannable(true)
                 gml_Script_c_pan(320, 0, 25)
                 gml_Script_c_sel(kr)
                 gml_Script_c_walkdirect(410, 240, 48)
@@ -104,7 +104,7 @@ if (victory == false)
                 gml_Script_c_facing("r")
                 gml_Script_c_wait(30)
                 gml_Script_c_speaker("noelle")
-                gml_Script_c_pannable(0)
+                gml_Script_c_pannable(false)
                 gml_Script_c_sel(kr)
                 gml_Script_c_facing("r")
                 gml_Script_c_actortocaterpillar()
@@ -114,7 +114,7 @@ if (victory == false)
             }
             if (icon == 2)
             {
-                forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, 1, 0)
+                forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, true, false)
                 with (obj_caterpillarchara)
                 {
                     x = 484
@@ -370,7 +370,7 @@ if (victory == false)
                 if (timer == 45)
                 {
                     gml_Script_scr_camerareset(1)
-                    gml_Script_snd_play(251)
+                    gml_Script_snd_play(snd_icespell)
                     with (obj_mice2Switch)
                         gml_Script_scr_createFrozen(0)
                     with (obj_rotationController_track)
@@ -410,7 +410,7 @@ if (victory == false)
             if (icon == 13 && (!gml_Script_d_ex()))
             {
                 icon = 6
-                gml_Script_snd_play(196)
+                gml_Script_snd_play(snd_ominous)
                 gml_Script_snd_free_all()
                 victory = 2
                 global.flag[915] = 5
@@ -427,7 +427,7 @@ if (victory == false)
                 global.interact = 0
                 icon = 3
                 weird = 0
-                if gml_Script_i_ex(317)
+                if gml_Script_i_ex(obj_cybercity_mousesign)
                 {
                     with (obj_cybercity_mousesign)
                     {
@@ -479,7 +479,7 @@ if (victory == true)
             con++
         }
     }
-    if (con == -1 && (!gml_Script_d_ex()) && (!gml_Script_i_ex(1165)) && (!gml_Script_i_ex(1166)))
+    if (con == -1 && (!gml_Script_d_ex()) && (!gml_Script_i_ex(obj_holemouse)) && (!gml_Script_i_ex(obj_noelle_scared)))
     {
         global.interact = 1
         if (scarecount > 0)
@@ -518,7 +518,7 @@ if (victory == true)
         gml_Script_c_msgsetloc(0, "\\E0* Kris^1! You did it^1! We should be able to.../%", "obj_controller_city_mice2_slash_Step_0_gml_134_0")
         gml_Script_c_talk_wait()
         gml_Script_c_wait(4)
-        gml_Script_c_sprite(716)
+        gml_Script_c_sprite(spr_noelle_shocked_dw)
         gml_Script_c_wait(4)
         gml_Script_c_msgsetloc(0, "\\E2* ..^1. huh?/", "obj_controller_city_mice2_slash_Step_0_gml_197_0")
         gml_Script_c_msgnextloc("\\E1* The forcefield's still up./%", "obj_controller_city_mice2_slash_Step_0_gml_198_0")
@@ -577,8 +577,8 @@ if (victory == true)
                         move = 0
                 }
                 gml_Script_instance_create(x, y, obj_shake)
-                gml_Script_snd_play(64)
-                gml_Script_snd_play(61)
+                gml_Script_snd_play(snd_noise)
+                gml_Script_snd_play(snd_impact)
                 other.endNoelle = gml_Script_instance_create(obj_noelle_scared.x, obj_noelle_scared.y, obj_marker)
                 other.endNoelle.visible = true
                 other.endNoelle.sprite_index = spr_noelle_shocked_dw

@@ -2,9 +2,9 @@ if (active == true)
 {
     if (global.inv < 0)
     {
-        gml_Script_instance_create_ch1(0, 0, 1464)
-        gml_Script_snd_stop_ch1(438)
-        gml_Script_snd_play_ch1(438)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
+        gml_Script_snd_stop_ch1(snd_hurt1_ch1)
+        gml_Script_snd_play_ch1(snd_hurt1_ch1)
         global.inv = (global.invc * 40)
         for (i = 0; i < 3; i += 1)
         {

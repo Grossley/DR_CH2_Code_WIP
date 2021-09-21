@@ -120,5 +120,5 @@ if (room == room_forest_savepoint_relax_ch1)
     }
 }
 myinteract = 3
-mydialoguer = gml_Script_instance_create_ch1(0, 0, 1326)
+mydialoguer = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 talked += 1

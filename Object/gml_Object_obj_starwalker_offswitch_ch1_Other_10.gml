@@ -10,12 +10,12 @@ if (global.interact == 0)
             active = false
             instance_destroy()
         }
-        gml_Script_snd_play_ch1(357)
+        gml_Script_snd_play_ch1(snd_bell_ch1)
         if (obj_starwalker_overworld_ch1.beatcon == 0)
         {
             if (room == room_forest_starwalker_ch1 && (!instance_exists(obj_npc_room_ch1)))
             {
-                originalstarwalker = gml_Script_instance_create_ch1(2200, 200, 1408)
+                originalstarwalker = gml_Script_instance_create_ch1(2200, 200, obj_npc_room_ch1)
                 if (x >= (room_width / 2))
                 {
                     with (originalstarwalker)
@@ -29,7 +29,7 @@ if (global.interact == 0)
                 beattimer = 0
                 with (obj_mainchara_ch1)
                     battlemode = 0
-                dead = gml_Script_instance_create_ch1((x - 92), (y - 74), 1494)
+                dead = gml_Script_instance_create_ch1((x - 92), (y - 74), obj_starwalker_battle_ch1)
                 with (dead)
                 {
                     walkcon = 1

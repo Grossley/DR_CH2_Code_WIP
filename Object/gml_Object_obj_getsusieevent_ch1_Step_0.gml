@@ -13,14 +13,14 @@ if (con == 1)
         global.fe = 9
         global.typer = 30
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_16_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         con = 2
     }
 }
 if (con == 2 && gml_Script_d_ex_ch1() == 0)
 {
     sprite_index = spr_susied_dark_ch1
-    gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y - 30), 1486)
+    gml_Script_instance_create_ch1((x + (sprite_width / 2)), (y - 30), obj_excblcon_ch1)
     con = 3
     alarm[4] = 30
 }
@@ -52,7 +52,7 @@ if (con == 4)
     gml_Script_scr_susface_ch1(22, 0)
     global.msg[23] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_58_0")
     con = 3.1
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 3.1 && gml_Script_d_ex_ch1() == 0)
 {
@@ -95,7 +95,7 @@ if (con == 4.4)
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_105_0")
     gml_Script_scr_ralface_ch1(1, 8)
     global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_107_0")
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 5
 }
 if (con == 7)
@@ -104,7 +104,7 @@ if (con == 7)
     global.fc = 0
     global.typer = 51
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_118_0")
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     d.skippable = false
     con = 8
     alarm[4] = 340
@@ -126,7 +126,7 @@ if (con == 9 && gml_Script_d_ex_ch1() == 0)
     global.fe = 8
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_144_0")
     con = 10
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (con == 10 && gml_Script_d_ex_ch1() == 0)
 {
@@ -139,7 +139,7 @@ if (con == 10 && gml_Script_d_ex_ch1() == 0)
     global.fc = 0
     global.typer = 52
     global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_160_0")
-    d = gml_Script_instance_create_ch1(0, 0, 1326)
+    d = gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
     d.skippable = false
     con = 12
     alarm[4] = 320
@@ -176,7 +176,7 @@ if (rcon == 1 && obj_mainchara_ch1.x >= 80 && global.interact == 0)
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("obj_getsusieevent_slash_Step_0_gml_203_0")
     }
     rcon = 2
-    gml_Script_instance_create_ch1(0, 0, 1326)
+    gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 }
 if (rcon == 2 && gml_Script_d_ex_ch1() == 0)
 {

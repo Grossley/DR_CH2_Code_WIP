@@ -4,14 +4,14 @@ if (doorPreset > 0)
     {
         doorDelay = 14
         doorPostDelay = 6
-        doorSound = 63
+        doorSound = snd_dooropen
         doorSound2 = 62
     }
     else if (doorPreset == 2)
     {
         doorDelay = 16
         doorPostDelay = 6
-        doorSound = 218
+        doorSound = snd_escaped
     }
 }
 if doorFadeMusic
@@ -25,7 +25,7 @@ if (doorDelay > 0)
     alarm[2] = doorDelay
 if (doorSound != -1)
     gml_Script_snd_play(doorSound)
-if gml_Script_i_ex(188)
+if gml_Script_i_ex(obj_fadeout)
 {
     if (alarm[2] > 0)
         obj_fadeout.fadespeed = (1 / alarm[2])
