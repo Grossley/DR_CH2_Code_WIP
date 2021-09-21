@@ -59,7 +59,7 @@ global.input_g[6] = global.button2
 global.input_g[7] = 999
 global.input_g[8] = 999
 global.input_g[9] = 999
-if (!gml_Script_i_ex(1109))
+if (!gml_Script_i_ex(obj_gamecontroller))
     gml_Script_instance_create(0, 0, obj_gamecontroller)
 with (obj_gamecontroller)
     gamepad_shoulderlb_reassign = 0

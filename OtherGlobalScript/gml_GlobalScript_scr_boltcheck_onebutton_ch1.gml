@@ -30,7 +30,7 @@ if (qualifybolt != -1)
 {
     bc = boltchar[qualifybolt]
     p = abs(topclose)
-    burstbolt = gml_Script_instance_create_ch1((((x + 80) + (boltframe[qualifybolt] * boltspeed)) - (boltx * boltspeed)), (y + (38 * bc)), 1517)
+    burstbolt = gml_Script_instance_create_ch1((((x + 80) + (boltframe[qualifybolt] * boltspeed)) - (boltx * boltspeed)), (y + (38 * bc)), obj_burstbolt_ch1)
     if (p == 0)
     {
         points[bc] += 150
@@ -55,7 +55,7 @@ if (qualifybolt != -1)
     {
         bc = boltchar[dualboltid]
         p = abs(topclose)
-        burstbolt = gml_Script_instance_create_ch1((((x + 80) + (boltframe[dualboltid] * boltspeed)) - (boltx * boltspeed)), (y + (38 * bc)), 1517)
+        burstbolt = gml_Script_instance_create_ch1((((x + 80) + (boltframe[dualboltid] * boltspeed)) - (boltx * boltspeed)), (y + (38 * bc)), obj_burstbolt_ch1)
         if (p == 0)
         {
             points[bc] += 150

@@ -445,7 +445,7 @@ if (argument0 == 5)
         {
             if (menuc[15] == 0)
             {
-                gml_Script_snd_play_ch1(376)
+                gml_Script_snd_play_ch1(snd_locker_ch1)
                 global.gold += sellvalue
                 gml_Script_scr_itemshift_ch1(menuc[11], 0)
                 gml_Script_scr_iteminfo_all_ch1()
@@ -487,7 +487,7 @@ if (argument0 == 5)
         {
             if (menuc[16] == 0)
             {
-                gml_Script_snd_play_ch1(376)
+                gml_Script_snd_play_ch1(snd_locker_ch1)
                 global.gold += sellvalue
                 global.weapon[menuc[12]] = 0
                 gml_Script_scr_weaponinfo_all_ch1()
@@ -523,7 +523,7 @@ if (argument0 == 5)
         {
             if (menuc[17] == 0)
             {
-                gml_Script_snd_play_ch1(376)
+                gml_Script_snd_play_ch1(snd_locker_ch1)
                 global.gold += sellvalue
                 global.armor[menuc[13]] = 0
                 gml_Script_scr_armorinfo_all_ch1()

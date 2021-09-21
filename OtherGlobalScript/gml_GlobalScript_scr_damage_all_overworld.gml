@@ -6,8 +6,8 @@ if (global.inv < 0)
         gml_Script_instance_create(0, 0, obj_shake)
     with (obj_dmgwriter)
         killactive = 1
-    gml_Script_snd_stop(170)
-    gml_Script_snd_play(170)
+    gml_Script_snd_stop(snd_hurt1)
+    gml_Script_snd_play(snd_hurt1)
     for (ti = 0; ti < 3; ti += 1)
     {
         global.inv = -1

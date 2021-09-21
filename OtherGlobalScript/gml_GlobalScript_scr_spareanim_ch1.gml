@@ -1,4 +1,4 @@
-spareanim = gml_Script_instance_create_ch1(x, y, 1623)
+spareanim = gml_Script_instance_create_ch1(x, y, obj_spareanim_ch1)
 spareanim.sprite_index = sprite_index
 spareanim.sprite_index = sparedsprite
 spareanim.image_index = 0

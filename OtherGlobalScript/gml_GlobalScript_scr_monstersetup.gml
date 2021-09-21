@@ -25,14 +25,14 @@ if (global.monstertype[myself] == 1)
     global.actname[myself][4] = gml_Script_stringsetloc("Victory (S)", "scr_monstersetup_slash_scr_monstersetup_gml_28_0")
     global.canact[myself][5] = true
     global.actname[myself][5] = gml_Script_stringsetloc("Lecture", "scr_monstersetup_slash_scr_monstersetup_gml_30_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("CoolDance", "scr_monstersetup_slash_scr_monstersetup_gml_33_0")
-    global.canactsus[myself][1] = 1
+    global.canactsus[myself][1] = true
     global.actnamesus[myself][1] = gml_Script_stringsetloc("SimuDance", "scr_monstersetup_slash_scr_monstersetup_gml_35_0")
     global.actsimulsus[myself][1] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("CoolDance", "scr_monstersetup_slash_scr_monstersetup_gml_40_0")
-    global.canactral[myself][1] = 1
+    global.canactral[myself][1] = true
     global.actnameral[myself][1] = gml_Script_stringsetloc("SimuDance", "scr_monstersetup_slash_scr_monstersetup_gml_42_0")
     global.actsimulral[myself][1] = 1
 }
@@ -666,13 +666,13 @@ if (global.monstertype[myself] == 30)
         global.actdesc[myself][1] = " "
         global.actcost[myself][1] = 0
     }
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_797_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_801_0")
     global.actsimulral[myself][0] = 1
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_805_0")
     global.actsimulnoe[myself][0] = 1
 }
@@ -710,12 +710,12 @@ if (global.monstertype[myself] == 31)
         global.actdesc[myself][3] = " "
         global.actcost[myself][3] = 0
     }
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_847_0")
     global.actsimulsus[myself][0] = 0
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_850_0")
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_853_0")
     global.actsimulnoe[myself][0] = 1
 }
@@ -757,13 +757,13 @@ if (global.monstertype[myself] == 32)
         global.actdesc[myself][2] = " "
         global.actcost[myself][2] = 0
     }
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_900_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_904_0")
     global.actsimulral[myself][0] = 1
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_908_0")
     global.actsimulnoe[myself][0] = 1
 }
@@ -791,13 +791,13 @@ if (global.monstertype[myself] == 33)
     global.actname[myself][2] = gml_Script_stringsetloc("ThrowWire", "scr_monstersetup_slash_scr_monstersetup_gml_934_0")
     global.actdesc[myself][2] = gml_Script_stringsetloc("Toss Kris#to free#wire", "scr_monstersetup_slash_scr_monstersetup_gml_935_0")
     global.actcost[myself][2] = 0
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_939_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_943_0")
     global.actsimulral[myself][0] = 1
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_947_0")
     global.actsimulnoe[myself][0] = 1
 }
@@ -843,13 +843,13 @@ if (global.monstertype[myself] == 34)
         global.actdesc[myself][3] = " "
         global.actcost[myself][3] = 0
     }
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_993_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_997_0")
     global.actsimulral[myself][0] = 0
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1001_0")
     global.actsimulnoe[myself][0] = 1
 }
@@ -885,13 +885,13 @@ if (global.monstertype[myself] == 35)
         global.actdesc[myself][2] = " "
         global.actcost[myself][2] = 0
     }
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1053_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1057_0")
     global.actsimulral[myself][0] = 1
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1061_0")
     global.actsimulnoe[myself][0] = 1
 }
@@ -915,10 +915,10 @@ if (global.monstertype[myself] == 36)
     global.canact[myself][2] = true
     global.actname[myself][2] = gml_Script_stringsetloc("Coldify", "scr_monstersetup_slash_scr_monstersetup_gml_1085_0")
     global.actdesc[myself][2] = gml_Script_stringsetloc("Bluer#2 stages", "scr_monstersetup_slash_scr_monstersetup_gml_1103_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Half-Warm", "scr_monstersetup_slash_scr_monstersetup_gml_1088_0")
     global.actdescsus[myself][0] = gml_Script_stringsetloc("Redder#1 stage", "scr_monstersetup_slash_scr_monstersetup_gml_1107_0")
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("Half-Cold", "scr_monstersetup_slash_scr_monstersetup_gml_1091_0")
     global.actdescral[myself][0] = gml_Script_stringsetloc("Bluer#1 stage", "scr_monstersetup_slash_scr_monstersetup_gml_1111_0_b")
 }
@@ -943,11 +943,11 @@ if (global.monstertype[myself] == 37)
     global.canact[myself][2] = true
     global.actactor[myself][2] = 4
     global.actname[myself][2] = gml_Script_stringsetloc("Dance X", "scr_monstersetup_slash_scr_monstersetup_gml_1116_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Dance", "scr_monstersetup_slash_scr_monstersetup_gml_1119_0")
     if (global.lang != "ja")
         global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("Dance", "scr_monstersetup_slash_scr_monstersetup_gml_1123_0")
     if (global.lang != "ja")
         global.actsimulral[myself][0] = 1
@@ -973,11 +973,11 @@ if (global.monstertype[myself] == 38)
     global.canact[myself][2] = true
     global.actactor[myself][2] = 4
     global.actname[myself][2] = gml_Script_stringsetloc("Dance X", "scr_monstersetup_slash_scr_monstersetup_gml_1150_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Dance", "scr_monstersetup_slash_scr_monstersetup_gml_1153_0")
     if (global.lang != "ja")
         global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("Dance", "scr_monstersetup_slash_scr_monstersetup_gml_1157_0")
     if (global.lang != "ja")
         global.actsimulral[myself][0] = 1
@@ -1003,11 +1003,11 @@ if (global.monstertype[myself] == 39)
     global.canact[myself][2] = true
     global.actactor[myself][2] = 4
     global.actname[myself][2] = gml_Script_stringsetloc("Dance X", "scr_monstersetup_slash_scr_monstersetup_gml_1184_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Dance", "scr_monstersetup_slash_scr_monstersetup_gml_1187_0")
     if (global.lang != "ja")
         global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("Dance", "scr_monstersetup_slash_scr_monstersetup_gml_1191_0")
     if (global.lang != "ja")
         global.actsimulral[myself][0] = 1
@@ -1039,10 +1039,10 @@ if (global.monstertype[myself] == 40)
     global.actname[myself][3] = gml_Script_stringsetloc("BeSweet", "scr_monstersetup_slash_scr_monstersetup_gml_1224_0")
     global.actdesc[myself][3] = " "
     global.actcost[myself][3] = 0
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1229_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1233_0")
     global.actsimulral[myself][0] = 1
 }
@@ -1060,9 +1060,9 @@ if (global.monstertype[myself] == 41)
     global.mercymax[myself] = 100
     global.canact[myself][0] = true
     global.actname[myself][0] = gml_Script_stringsetloc("Check", "scr_monstersetup_slash_scr_monstersetup_gml_1251_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1254_0")
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1257_0")
 }
 if (global.monstertype[myself] == 42)
@@ -1088,10 +1088,10 @@ if (global.monstertype[myself] == 42)
     global.actname[myself][2] = gml_Script_stringsetloc("OrderX", "scr_monstersetup_slash_scr_monstersetup_gml_1285_0")
     global.actdesc[myself][2] = " "
     global.actsimul[myself][2] = 1
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1289_0_b")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1293_0")
     global.actsimulral[myself][0] = 1
 }
@@ -1118,11 +1118,11 @@ if (global.monstertype[myself] == 43)
     global.actname[myself][2] = gml_Script_stringsetloc("BumpX", "scr_monstersetup_slash_scr_monstersetup_gml_1321_0")
     global.actdesc[myself][2] = gml_Script_stringsetloc("Everyone#rides#coaster", "scr_monstersetup_slash_scr_monstersetup_gml_1338_0")
     global.actcost[myself][2] = 0
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Bump", "scr_monstersetup_slash_scr_monstersetup_gml_1337_0")
     global.actdescsus[myself][0] = gml_Script_stringsetloc("Ride#coaster", "scr_monstersetup_slash_scr_monstersetup_gml_1354_0")
     global.actcostsus[myself][0] = 0
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("Bump", "scr_monstersetup_slash_scr_monstersetup_gml_1347_0_b")
     global.actdescral[myself][0] = gml_Script_stringsetloc("Ride#coaster", "scr_monstersetup_slash_scr_monstersetup_gml_1364_0")
     global.actcostral[myself][0] = 0
@@ -1146,11 +1146,11 @@ if (global.monstertype[myself] == 44)
     global.canact[myself][2] = true
     global.actactor[myself][2] = 4
     global.actname[myself][2] = gml_Script_stringsetloc("CatchX", "scr_monstersetup_slash_scr_monstersetup_gml_1366_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1378_0")
     global.actdescsus[myself][0] = " "
     global.actcostsus[myself][0] = 0
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1384_0")
     global.actdescral[myself][0] = " "
     global.actcostral[myself][0] = 0
@@ -1187,9 +1187,9 @@ if (global.monstertype[myself] == 45)
     global.actname[myself][4] = gml_Script_stringsetloc("Take House 4", "scr_monstersetup_slash_scr_monstersetup_gml_1425_0")
     global.actdesc[myself][4] = " "
     global.actcost[myself][4] = 80
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1430_0")
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("Distract", "scr_monstersetup_slash_scr_monstersetup_gml_1433_0_b")
     global.actdescral[myself][0] = " "
     global.actcostral[myself][0] = 0
@@ -1215,7 +1215,7 @@ if (global.monstertype[myself] == 46)
     global.actname[myself][2] = (gml_Script_scr_sideb_get_phase() > 0 ? gml_Script_stringsetloc("Wake", "scr_monstersetup_slash_scr_monstersetup_gml_1460_0") : gml_Script_stringsetloc("Play Smart", "scr_monstersetup_slash_scr_monstersetup_gml_1460_1"))
     global.actdesc[myself][2] = " "
     global.actcost[myself][2] = 0
-    global.canactnoe[myself][0] = 1
+    global.canactnoe[myself][0] = true
     global.actnamenoe[myself][0] = gml_Script_stringsetloc("N-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1465_0")
 }
 if (global.monstertype[myself] == 47)
@@ -1240,10 +1240,10 @@ if (global.monstertype[myself] == 47)
     global.actactor[myself][2] = 4
     global.actname[myself][2] = gml_Script_stringsetloc("Topic(Long)", "scr_monstersetup_slash_scr_monstersetup_gml_1492_0")
     global.actdesc[myself][2] = gml_Script_stringsetloc("Longer#time to#guess", "scr_monstersetup_slash_scr_monstersetup_gml_1510_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1495_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1499_0_b")
     global.actsimulral[myself][0] = 1
 }
@@ -1291,9 +1291,9 @@ if (global.monstertype[myself] == 48)
         global.actname[myself][4] = gml_Script_stringsetloc("DualHeal", "scr_monstersetup_slash_scr_monstersetup_gml_1558_0")
         global.actdesc[myself][4] = gml_Script_stringsetloc("Heals#everyone", "scr_monstersetup_slash_scr_monstersetup_gml_1559_0")
         global.actcost[myself][4] = 125
-        global.canactsus[myself][0] = 1
+        global.canactsus[myself][0] = true
         global.actnamesus[myself][0] = gml_Script_stringsetloc("Loosen", "scr_monstersetup_slash_scr_monstersetup_gml_1563_0")
-        global.canactral[myself][0] = 1
+        global.canactral[myself][0] = true
         global.actnameral[myself][0] = gml_Script_stringsetloc("Loosen", "scr_monstersetup_slash_scr_monstersetup_gml_1566_0")
     }
 }
@@ -1355,19 +1355,19 @@ if (global.monstertype[myself] == 50)
         global.actname[myself][2] = gml_Script_stringsetloc("SnapAll", "scr_monstersetup_slash_scr_monstersetup_gml_1670_0")
         global.actdesc[myself][2] = ""
         global.actcost[myself][2] = 0
-        global.canactsus[myself][0] = 1
+        global.canactsus[myself][0] = true
         global.actnamesus[myself][0] = gml_Script_stringsetloc("Snap", "scr_monstersetup_slash_scr_monstersetup_gml_1682_0")
         global.actdescsus[myself][0] = ""
         global.actcostsus[myself][0] = 0
-        global.canactsus[myself][1] = 1
+        global.canactsus[myself][1] = true
         global.actnamesus[myself][1] = gml_Script_stringsetloc("Supercharge", "scr_monstersetup_slash_scr_monstersetup_gml_1687_0")
         global.actdescsus[myself][1] = gml_Script_stringsetloc("Charge#faster", "scr_monstersetup_slash_scr_monstersetup_gml_1685_0")
         global.actcostsus[myself][1] = 80
-        global.canactral[myself][0] = 1
+        global.canactral[myself][0] = true
         global.actnameral[myself][0] = gml_Script_stringsetloc("Snap", "scr_monstersetup_slash_scr_monstersetup_gml_1698_0")
         global.actdescral[myself][0] = ""
         global.actcostral[myself][0] = 0
-        global.canactral[myself][1] = 1
+        global.canactral[myself][1] = true
         global.actnameral[myself][1] = gml_Script_stringsetloc("FluffyGuard", "scr_monstersetup_slash_scr_monstersetup_gml_1703_0")
         global.actdescral[myself][1] = gml_Script_stringsetloc("Orbiting#shield", "scr_monstersetup_slash_scr_monstersetup_gml_1701_0")
         global.actcostral[myself][1] = 80
@@ -1449,10 +1449,10 @@ if (global.monstertype[myself] == 53)
     global.mercymax[myself] = 100
     global.canact[myself][0] = true
     global.actname[myself][0] = gml_Script_stringsetloc("Check", "scr_monstersetup_slash_scr_monstersetup_gml_1276_0")
-    global.canactsus[myself][0] = 1
+    global.canactsus[myself][0] = true
     global.actnamesus[myself][0] = gml_Script_stringsetloc("S-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1816_0")
     global.actsimulsus[myself][0] = 1
-    global.canactral[myself][0] = 1
+    global.canactral[myself][0] = true
     global.actnameral[myself][0] = gml_Script_stringsetloc("R-Action", "scr_monstersetup_slash_scr_monstersetup_gml_1820_0")
     global.actsimulral[myself][0] = 1
 }

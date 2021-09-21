@@ -1,4 +1,4 @@
-_oflash = gml_Script_instance_create_ch1(x, y, 1619)
+_oflash = gml_Script_instance_create_ch1(x, y, obj_oflash_ch1)
 _oflash.image_xscale = image_xscale
 _oflash.image_speed = 0
 _oflash.image_index = image_index

@@ -5,14 +5,14 @@ switch argument1
         break
     case 1:
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_9_0")
-        gml_Script_snd_play_ch1(447)
+        gml_Script_snd_play_ch1(snd_swallow_ch1)
         gml_Script_scr_writetext_ch1(0, "x", 0, 0)
         script_execute(gml_Script_scr_litemshift_ch1, argument0, 0)
         break
     case 2:
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_18_0")
         gml_Script_scr_lweaponeq_ch1(argument0, argument1)
-        gml_Script_snd_play_ch1(440)
+        gml_Script_snd_play_ch1(snd_item_ch1)
         gml_Script_scr_writetext_ch1(0, "x", 0, 0)
         break
     case 3:
@@ -31,23 +31,23 @@ switch argument1
     case 6:
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_48_0")
         gml_Script_scr_lweaponeq_ch1(argument0, argument1)
-        gml_Script_snd_play_ch1(440)
+        gml_Script_snd_play_ch1(snd_item_ch1)
         gml_Script_scr_writetext_ch1(0, "x", 0, 0)
         break
     case 7:
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_56_0")
         gml_Script_scr_lweaponeq_ch1(argument0, argument1)
-        gml_Script_snd_play_ch1(440)
+        gml_Script_snd_play_ch1(snd_item_ch1)
         gml_Script_scr_writetext_ch1(0, "x", 0, 0)
         break
     case 8:
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_63_0")
-        gml_Script_snd_play_ch1(372)
+        gml_Script_snd_play_ch1(snd_egg_ch1)
         gml_Script_scr_writetext_ch1(0, "x", 0, 0)
         break
     case 201:
         tempsaid = 0
-        gml_Script_snd_play_ch1(370)
+        gml_Script_snd_play_ch1(snd_phone_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_72_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("scr_litemuseb_slash_scr_litemuseb_gml_73_0")
         if (room == room_krisroom_ch1 || room == room_krishallway_ch1 || room == room_torbathroom_ch1)
@@ -105,7 +105,7 @@ switch argument1
         gml_Script_scr_text_ch1(global.msc)
         global.typer = 5
         global.fc = 0
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         break
 }
 

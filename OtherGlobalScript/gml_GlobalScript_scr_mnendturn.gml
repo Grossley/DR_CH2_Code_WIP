@@ -23,7 +23,7 @@ if (techwon == false)
     global.myfight = 0
     global.bmenuno = 0
     global.charturn = 0
-    skip = 0
+    skip = false
     for (i = 0; i < 3; i += 1)
     {
         global.hittarget[i] = 0
@@ -57,7 +57,7 @@ if (techwon == false)
     if (global.charturn == 2)
     {
         if (global.charmove[2] == false || global.charauto[global.char[2]] == 1)
-            skip = 1
+            skip = true
     }
     for (i = 0; i < 3; i += 1)
     {
@@ -82,7 +82,7 @@ if (techwon == false)
         actingral = 0
         actingnoe = 0
     }
-    if (skip == 1)
+    if (skip == true)
     {
         if (global.char[0] == 2 && global.charauto[2] == 1)
         {

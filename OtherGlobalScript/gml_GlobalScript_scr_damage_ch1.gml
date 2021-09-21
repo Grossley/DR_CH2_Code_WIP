@@ -28,7 +28,7 @@ if (global.inv < 0 && debug_inv == 0)
             tdamage = 1
     }
     if (!instance_exists(obj_shake_ch1))
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     with (global.charinstance[target])
     {
         hurt = true
@@ -62,7 +62,7 @@ if (global.inv < 0 && debug_inv == 0)
                 gml_Script_scr_dead_ch1(target)
             }
         }
-        dmgwriter = gml_Script_instance_create_ch1(global.charinstance[target].x, ((global.charinstance[target].y + global.charinstance[target].myheight) - 24), 1629)
+        dmgwriter = gml_Script_instance_create_ch1(global.charinstance[target].x, ((global.charinstance[target].y + global.charinstance[target].myheight) - 24), obj_dmgwriter_ch1)
         dmgwriter.damage = hpdiff
         dmgwriter.type = doomtype
     }

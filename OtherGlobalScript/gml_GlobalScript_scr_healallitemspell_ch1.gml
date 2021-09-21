@@ -3,7 +3,7 @@ for (i = 0; i < 3; i += 1)
 {
     with (global.charinstance[i])
     {
-        ha = gml_Script_instance_create_ch1(x, y, 1618)
+        ha = gml_Script_instance_create_ch1(x, y, obj_healanim_ch1)
         ha.target = id
         dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
         with (dmgwr)

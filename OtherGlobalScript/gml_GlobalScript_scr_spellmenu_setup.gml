@@ -26,7 +26,7 @@ for (__i = 0; __i < 3; __i++)
         }
         if (global.char[__i] == 2)
         {
-            if (global.canactsus[0][__fj] == 1)
+            if (global.canactsus[0][__fj] == true)
             {
                 global.battlespell[__i][__fj] = -1
                 if (global.battleactcount[__i] < (__fj + 1))
@@ -42,7 +42,7 @@ for (__i = 0; __i < 3; __i++)
         }
         if (global.char[__i] == 3)
         {
-            if (global.canactral[0][__fj] == 1)
+            if (global.canactral[0][__fj] == true)
             {
                 global.battlespell[__i][__fj] = -1
                 if (global.battleactcount[__i] < (__fj + 1))
@@ -58,7 +58,7 @@ for (__i = 0; __i < 3; __i++)
         }
         if (global.char[__i] == 4)
         {
-            if (global.canactnoe[0][__fj] == 1)
+            if (global.canactnoe[0][__fj] == true)
             {
                 global.battlespell[__i][__fj] = -1
                 if (global.battleactcount[__i] < (__fj + 1))

@@ -6,7 +6,7 @@ if (global.mercymod[argument0] >= 100)
 var _playsound = 1
 if (argument1 <= 0)
     _playsound = 0
-if gml_Script_i_ex(870)
+if gml_Script_i_ex(obj_dmgwriter)
 {
     with (obj_dmgwriter)
     {
@@ -23,7 +23,7 @@ if _playsound
         _pitch = 1.2
     if (argument1 <= 25)
         _pitch = 1.4
-    gml_Script_snd_play_x(0, 0.8, _pitch)
+    gml_Script_snd_play_x(snd_mercyadd, 0.8, _pitch)
 }
 __mercydmgwriter = gml_Script_instance_create(global.monsterx[argument0], ((global.monstery[argument0] + 20) - (global.hittarget[argument0] * 20)), obj_dmgwriter)
 __mercydmgwriter.damage = argument1

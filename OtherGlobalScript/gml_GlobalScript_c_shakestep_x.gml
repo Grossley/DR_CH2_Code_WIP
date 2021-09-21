@@ -1,4 +1,4 @@
-gml_Script_c_autowalk(0)
+gml_Script_c_autowalk(false)
 gml_Script_c_imageindex(1)
 gml_Script_c_addxy(argument0, argument1)
 if (argument5 == 1)

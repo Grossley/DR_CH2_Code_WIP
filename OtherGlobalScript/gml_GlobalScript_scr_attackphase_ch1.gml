@@ -18,12 +18,12 @@ with (obj_battlecontroller_ch1)
         if (fightphase == 1)
         {
             global.myfight = 1
-            gml_Script_instance_create_ch1((xx + 2), (yy + 365), 1511)
+            gml_Script_instance_create_ch1((xx + 2), (yy + 365), obj_attackpress_ch1)
         }
         else
         {
             global.myfight = 4
-            gml_Script_instance_create_ch1(0, 0, 1625)
+            gml_Script_instance_create_ch1(0, 0, obj_spellphase_ch1)
         }
     }
     else

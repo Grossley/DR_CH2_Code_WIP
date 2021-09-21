@@ -17,7 +17,7 @@ switch argument0
         if (global.choice == 0)
         {
             global.flag[466] = 1
-            gml_Script_snd_play(298)
+            gml_Script_snd_play(snd_bageldefeat)
             global.msg[0] = gml_Script_stringsetloc("* Hand shaking^1, you dropped the ball of junk on the ground./", "scr_text_slash_scr_text_gml_20_0")
             global.msg[1] = gml_Script_stringsetloc("* It broke into pieces./", "scr_text_slash_scr_text_gml_21_0")
             global.msg[2] = gml_Script_stringsetloc("* You felt bitter./%", "scr_text_slash_scr_text_gml_22_0")
@@ -1486,7 +1486,7 @@ switch argument0
         if (global.choice == 0)
         {
             global.hp[1] = global.maxhp[1]
-            gml_Script_snd_play(179)
+            gml_Script_snd_play(snd_swallow)
             global.msg[0] = gml_Script_stringsetloc("* (You ate the moss.^1)&* (Tastes..^1. mossy.)/", "scr_text_slash_scr_text_gml_1703_0")
             global.msg[1] = gml_Script_stringsetloc("* (Your HP was mossed out.)/%", "scr_text_slash_scr_text_gml_1704_0")
             global.flag[106] = 1
@@ -1952,7 +1952,7 @@ switch argument0
         {
             with (obj_npc_room)
                 tempvar = 1
-            gml_Script_snd_play(47)
+            gml_Script_snd_play(snd_pianonoise)
             global.msg[0] = gml_Script_stringsetloc("* (Plink...)/%", "scr_text_slash_scr_text_gml_2239_0")
         }
         else
@@ -2098,7 +2098,7 @@ switch argument0
         global.choicemsg[1] = gml_Script_stringsetloc("#2", "scr_text_slash_scr_text_gml_2399_0")
         global.choicemsg[2] = gml_Script_stringsetloc("3", "scr_text_slash_scr_text_gml_2402_0")
         global.choicemsg[3] = gml_Script_stringsetloc("4", "scr_text_slash_scr_text_gml_2403_0_b")
-        gml_Script_snd_play_x(53, 0.7, 1)
+        gml_Script_snd_play_x(snd_phone, 0.7, 1)
         global.msg[0] = gml_Script_stringsetloc("* (Ring^1, ring...)/", "scr_text_slash_scr_text_gml_2403_0")
         global.msg[1] = gml_Script_stringsetloc("* Hello./", "scr_text_slash_scr_text_gml_2404_0")
         global.msg[2] = gml_Script_stringsetloc("* You have reached the Hotline for Idiot Babies./", "scr_text_slash_scr_text_gml_2405_0")
@@ -2517,7 +2517,7 @@ switch argument0
     case 431:
         if (global.choice == 0)
         {
-            gml_Script_snd_play(40)
+            gml_Script_snd_play(snd_splat)
             global.msg[0] = gml_Script_stringsetloc("* (...)/", "scr_text_slash_scr_text_gml_2853_0")
             global.msg[1] = gml_Script_stringsetloc("* (It's full of cartoon splat noises.)/%", "scr_text_slash_scr_text_gml_2854_0")
         }
@@ -2840,7 +2840,7 @@ switch argument0
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_stringsetloc("* (You received an Egg.)/%", "scr_text_slash_scr_text_gml_3215_0")
-            gml_Script_snd_play(55)
+            gml_Script_snd_play(snd_egg)
             gml_Script_scr_keyitemget(2)
         }
         else
@@ -3870,7 +3870,7 @@ switch argument0
                     global.gold -= 80
                     gml_Script_scr_miniface_init_sweet()
                     gml_Script_msgsetloc(0, "\\m3		*Good eye for music^1!/", "scr_text_slash_scr_text_gml_4360_0")
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_equip)
                     gml_Script_msgnext(itemgetstring)
                 }
                 else
@@ -3996,7 +3996,7 @@ switch argument0
                 if (noroom == false)
                 {
                     global.gold -= 300
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_equip)
                     if instance_exists(obj_npc_sign)
                         instance_destroy(obj_npc_sign)
                     gml_Script_scr_speaker("no_name")
@@ -4076,7 +4076,7 @@ switch argument0
         }
         if (global.choice == 2)
             itemgetstring = gml_Script_scr_itemget_anytype_text(20, "item")
-        gml_Script_snd_play(149)
+        gml_Script_snd_play(snd_equip)
         gml_Script_msgsetloc(0, "* Okay^1, here you go!/", "scr_text_slash_scr_text_gml_4617_0")
         gml_Script_msgnext(itemgetstring)
         break
@@ -4928,7 +4928,7 @@ switch argument0
         {
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* (The EmptyDisk was added to your KEY ITEMS.)/%", "scr_text_slash_scr_text_gml_5633_0")
-            gml_Script_snd_play(172)
+            gml_Script_snd_play(snd_item)
             if (gml_Script_scr_keyitemcheck(10) == 0)
                 gml_Script_scr_keyitemget(10)
             with (obj_npc_room_animated)
@@ -5204,7 +5204,7 @@ switch argument0
                     gml_Script_scr_miniface_init_sweet()
                     gml_Script_scr_speaker("no_name")
                     gml_Script_msgsetloc(0, "\\m3		*Pleasure doin' business with&	ya^1! ..^1. (snicker)/", "scr_text_slash_scr_text_gml_5959_0")
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_equip)
                     gml_Script_msgnext(itemgetstring)
                 }
                 else
@@ -5273,7 +5273,7 @@ switch argument0
                 if (global.gold >= 80)
                 {
                     global.gold -= 80
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_equip)
                     gml_Script_scr_speaker("no_name")
                     gml_Script_msgsetloc(0, "* (You paid $80 for a bagel.)/", "scr_text_slash_scr_text_gml_6043_0")
                     gml_Script_msgnextloc("\\m2		*Can I have one^1, too?&\\m3	You're selling them!/%", "scr_text_slash_scr_text_gml_6044_0")
@@ -5284,7 +5284,7 @@ switch argument0
                     gml_Script_msgsetloc(0, "\\m2		*You can't afford it? Don't&	worry^1, this one's on me!/", "scr_text_slash_scr_text_gml_6049_0")
                     gml_Script_scr_anyface_next("no_name", 0)
                     gml_Script_msgnextloc("* (You got a bagel.)/%", "scr_text_slash_scr_text_gml_6051_0")
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_equip)
                 }
             }
             else
@@ -5455,7 +5455,7 @@ switch argument0
     case 1156:
         if (global.choice == 0)
         {
-            gml_Script_snd_play(47)
+            gml_Script_snd_play(snd_pianonoise)
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* (Plink...)/", "scr_text_slash_scr_text_gml_6243_0")
             gml_Script_scr_anyface_next("susie", "Y")
@@ -5669,8 +5669,8 @@ switch argument0
                 if (noroom == false)
                 {
                     global.gold -= 1997
-                    gml_Script_snd_play(297)
-                    gml_Script_snd_play(149)
+                    gml_Script_snd_play(snd_spamton_laugh)
+                    gml_Script_snd_play(snd_equip)
                     global.writersnd[1] = snd_item
                     gml_Script_scr_speaker("spamton")
                     gml_Script_msgsetloc(0, "* HERE'S YOUR [Ring]^1! CAREFUL^1, IT MIGHT [Sting]&* EAHEAHEAH/", "scr_text_slash_scr_text_gml_6503_0")
@@ -5678,7 +5678,7 @@ switch argument0
                 }
                 else
                 {
-                    gml_Script_snd_play(218)
+                    gml_Script_snd_play(snd_escaped)
                     gml_Script_scr_speaker("spamton")
                     gml_Script_msgsetloc(0, "* LET ME CHECK YOUR [Pockets]/", "scr_text_slash_scr_text_gml_6509_0")
                     gml_Script_msgnextloc("* WOW^1, NICE AND SPACIOUS!!/", "scr_text_slash_scr_text_gml_6510_0")
@@ -5718,7 +5718,7 @@ switch argument0
             global.flag[918] = 1
             gml_Script_scr_speaker("no_name")
             gml_Script_msgsetloc(0, "* You got the Egg./%", "scr_text_slash_scr_text_gml_6548_0")
-            gml_Script_snd_play(55)
+            gml_Script_snd_play(snd_egg)
             gml_Script_scr_keyitemget(2)
         }
         if (global.choice == 1)
@@ -6299,7 +6299,7 @@ switch argument0
             gml_Script_msgsetloc(0, "\\M1* S-stop^1! Don't come any closer!", "scr_text_slash_scr_text_gml_7247_0_b")
         break
     case 1218:
-        gml_Script_snd_play(63)
+        gml_Script_snd_play(snd_dooropen)
         gml_Script_scr_script_delayed(gml_Script_snd_play, 10, 62)
         gml_Script_scr_speaker("susie")
         gml_Script_msgsetloc(0, "\\E2\\M0* Hey^1, Kris^1! Let's beat it already./", "scr_text_slash_scr_text_gml_7317_0")
@@ -6337,7 +6337,7 @@ switch argument0
         {
             if (global.flag[423] < 4)
             {
-                gml_Script_snd_play(149)
+                gml_Script_snd_play(snd_equip)
                 itemgetstring = gml_Script_scr_itemget_anytype_text(16, "item")
                 if (noroom == false)
                     global.flag[423] = (global.flag[423] + 1)
@@ -6638,7 +6638,7 @@ switch argument0
                 gml_Script_scr_speaker("no_name")
                 gml_Script_msgsetloc(0, "* (You reached inside and found something alongside a strange piece of glass...)/", "scr_text_slash_scr_text_gml_7648_0")
                 gml_Script_msgnext(itemgetstring)
-                if gml_Script_i_ex(116)
+                if gml_Script_i_ex(obj_npc_castle_cliff)
                 {
                     with (obj_npc_castle_cliff)
                         remove_shine = 1
