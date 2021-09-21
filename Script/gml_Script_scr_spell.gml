@@ -247,7 +247,7 @@ switch spell
         global.spelldelay = 15
         if (global.encounterno == 50)
         {
-            if gml_Script_i_ex(409)
+            if gml_Script_i_ex(obj_omawaroid_enemy)
                 obj_omawaroid_enemy.ultimatehealprompt = 1
         }
         break
@@ -411,7 +411,7 @@ switch spell
     case 232:
         if gml_Script_i_ex(global.charinstance[star])
             global.charinstance[star].poisonamount = 60
-        gml_Script_snd_play(170)
+        gml_Script_snd_play(snd_hurt1)
         var healanim = gml_Script_scr_healitemspell(40)
         healanim.particlecolor = c_fuchsia
         break

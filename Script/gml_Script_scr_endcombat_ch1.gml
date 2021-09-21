@@ -21,13 +21,13 @@ if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbatt
         }
         with (obj_caterpillarchara_ch1)
             gml_Script_scr_caterpillar_interpolate_ch1()
-        gml_Script_scr_pan_to_obj_ch1(1347, 30)
+        gml_Script_scr_pan_to_obj_ch1(obj_mainchara_ch1, 30)
         with (obj_mainchara_ch1)
             visible = true
         with (obj_caterpillarchara_ch1)
             visible = true
     }
-    gml_Script_instance_create_ch1(0, 0, 1627)
+    gml_Script_instance_create_ch1(0, 0, obj_endbattle_ch1)
     with (obj_monsterparent_ch1)
         instance_destroy()
     with (obj_bulletparent_ch1)

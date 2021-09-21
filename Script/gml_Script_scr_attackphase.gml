@@ -3,7 +3,7 @@ with (obj_battlecontroller)
     techwon = false
     if (gml_Script_scr_monsterpop() == 0)
         techwon = true
-    if (global.chapter == 2 && gml_Script_i_ex(482) && obj_berdlyb_enemy.endcon == 1)
+    if (global.chapter == 2 && gml_Script_i_ex(obj_berdlyb_enemy) && obj_berdlyb_enemy.endcon == 1)
         techwon = true
     else if (techwon == true)
         gml_Script_scr_wincombat()

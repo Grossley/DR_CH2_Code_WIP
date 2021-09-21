@@ -48,7 +48,7 @@ if (playtextsound == true)
         if (textsound == snd_txtq)
         {
             audio_stop_sound(snd_txtq_2)
-            qv = gml_Script_snd_play(33)
+            qv = gml_Script_snd_play(snd_txtq_2)
             qp = (0.9 + random(0.15))
             gml_Script_snd_pitch(qv, qp)
             sound_timer = 2
@@ -56,13 +56,13 @@ if (playtextsound == true)
         else if (textsound == snd_txtspam)
         {
             audio_stop_sound(snd_txtspam2)
-            gml_Script_snd_play_x(35, 0.8, 1.2)
+            gml_Script_snd_play_x(snd_txtspam2, 0.8, 1.2)
             sound_timer = 2
         }
         else if (textsound == snd_txtsans)
         {
             audio_stop_sound(snd_txtsans)
-            qv = gml_Script_snd_play(21)
+            qv = gml_Script_snd_play(snd_txtsans)
             sound_timer = 2
         }
         else

@@ -18,6 +18,6 @@ if (belowzero == true && global.hp[hltarget] >= 0)
         global.hp[hltarget] = ceil((global.maxhp[hltarget] / 6))
     gml_Script_scr_revive(argument0)
 }
-gml_Script_snd_stop(162)
-gml_Script_snd_play(162)
+gml_Script_snd_stop(snd_power)
+gml_Script_snd_play(snd_power)
 return (global.hp[hltarget] - _curhp);

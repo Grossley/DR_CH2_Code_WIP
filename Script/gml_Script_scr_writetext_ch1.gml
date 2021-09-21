@@ -7,5 +7,5 @@ if (argument2 != 0)
 global.typer = 5
 if (argument3 != 0)
     global.typer = argument3
-gml_Script_instance_create_ch1(0, 0, 1326)
+gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
 return;

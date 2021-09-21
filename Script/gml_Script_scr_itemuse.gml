@@ -208,20 +208,20 @@ switch argument0
         gml_Script_scr_healitem(global.charselect, 80)
         usable = true
         if (_gc == 1)
-            gml_Script_snd_play(87)
+            gml_Script_snd_play(snd_cd_bagel_kris)
         if (_gc == 2)
         {
-            gml_Script_snd_play(90)
+            gml_Script_snd_play(snd_cd_bagel_susie)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("It's got crunch.", "scr_itemuse_slash_scr_itemuse_gml_275_0"))
         }
         if (_gc == 3)
         {
-            gml_Script_snd_play(89)
+            gml_Script_snd_play(snd_cd_bagel_ralsei)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("How elegant!", "scr_itemuse_slash_scr_itemuse_gml_279_0"))
         }
         if (_gc == 4)
         {
-            gml_Script_snd_play(88)
+            gml_Script_snd_play(snd_cd_bagel_noelle)
             gml_Script_scr_itemcomment(global.charselect, gml_Script_stringsetloc("What a nice song...", "scr_itemuse_slash_scr_itemuse_gml_283_0"))
         }
         break
@@ -428,7 +428,7 @@ switch argument0
         if (global.char[global.charselect] != 4)
         {
             global.hp[_gc] = max((global.hp[_gc] - 20), 1)
-            gml_Script_snd_play(170)
+            gml_Script_snd_play(snd_hurt1)
         }
         usable = true
         if (global.char[global.charselect] == 2)
@@ -454,14 +454,14 @@ switch argument0
         global.fc = 0
         global.fe = 0
         global.typer = 6
-        gml_Script_snd_play_x(53, 0.7, 1)
+        gml_Script_snd_play_x(snd_phone, 0.7, 1)
         global.msg[0] = gml_Script_stringsetloc("* (You tried to call on the Cell Phone.)", "scr_itemuse_slash_scr_itemuse_gml_426_0")
         gml_Script_instance_create(0, 0, obj_dialoguer)
         gml_Script_instance_create(0, 0, obj_darkphone_event)
         global.interact = 1
         break
     case 302:
-        gml_Script_snd_play(55)
+        gml_Script_snd_play(snd_egg)
         gml_Script_scr_speaker("noone")
         global.msg[0] = gml_Script_stringsetloc("* (You used the Egg.)/%", "scr_itemuse_slash_scr_itemuse_gml_441_0")
         gml_Script_scr_itemdialoguer()
@@ -488,14 +488,14 @@ switch argument0
             }
             else
             {
-                gml_Script_snd_stop(40)
-                gml_Script_snd_play(40)
+                gml_Script_snd_stop(snd_splat)
+                gml_Script_snd_play(snd_splat)
             }
         }
         else
         {
-            gml_Script_snd_stop(201)
-            gml_Script_snd_play(201)
+            gml_Script_snd_stop(snd_petrify)
+            gml_Script_snd_play(snd_petrify)
         }
         break
     case 313:

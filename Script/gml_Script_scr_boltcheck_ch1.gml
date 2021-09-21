@@ -20,7 +20,7 @@ for (i = 0; i < bolttotal; i += 1)
 if (qualifybolt != -1)
 {
     p = abs(topclose)
-    burstbolt = gml_Script_instance_create_ch1((((x + 80) + (boltframe[qualifybolt] * boltspeed)) - (boltx * boltspeed)), (y + (38 * argument0)), 1517)
+    burstbolt = gml_Script_instance_create_ch1((((x + 80) + (boltframe[qualifybolt] * boltspeed)) - (boltx * boltspeed)), (y + (38 * argument0)), obj_burstbolt_ch1)
     if (p == 0)
     {
         points[argument0] += 150

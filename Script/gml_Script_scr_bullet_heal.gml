@@ -40,6 +40,6 @@ with (global.charinstance[target])
     }
     tu += 1
 }
-gml_Script_snd_stop(162)
-gml_Script_snd_play(162)
+gml_Script_snd_stop(snd_power)
+gml_Script_snd_play(snd_power)
 return;

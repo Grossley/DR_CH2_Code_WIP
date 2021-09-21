@@ -55,7 +55,7 @@ switch argument0
         global.fe = 0
         global.typer = 6
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_itemuse_slash_scr_itemuse_gml_71_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         break
     case 5:
         gml_Script_scr_healitem_ch1(global.charselect, 20)
@@ -165,10 +165,10 @@ switch argument0
         global.fc = 0
         global.fe = 0
         global.typer = 6
-        gml_Script_snd_play_ch1(370)
+        gml_Script_snd_play_ch1(snd_phone_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_itemuse_slash_scr_itemuse_gml_222_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
-        gml_Script_instance_create_ch1(0, 0, 1644)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
+        gml_Script_instance_create_ch1(0, 0, obj_darkphone_event_ch1)
         global.interact = 1
         break
     case 302:
@@ -177,12 +177,12 @@ switch argument0
             charcon = 0
         global.menuno = -1
         charcon = 0
-        gml_Script_snd_play_ch1(372)
+        gml_Script_snd_play_ch1(snd_egg_ch1)
         global.fc = 0
         global.fe = 0
         global.typer = 6
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_itemuse_slash_scr_itemuse_gml_237_0")
-        gml_Script_instance_create_ch1(0, 0, 1326)
+        gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         break
 }
 

@@ -1,4 +1,4 @@
-dm = gml_Script_instance_create_ch1(global.monsterx[argument0], ((global.monstery[argument0] + 20) - (global.hittarget[argument0] * 20)), 1629)
+dm = gml_Script_instance_create_ch1(global.monsterx[argument0], ((global.monstery[argument0] + 20) - (global.hittarget[argument0] * 20)), obj_dmgwriter_ch1)
 dm.type = (global.char[caster] - 1)
 dm.damage = argument1
 global.monsterhp[argument0] -= argument1

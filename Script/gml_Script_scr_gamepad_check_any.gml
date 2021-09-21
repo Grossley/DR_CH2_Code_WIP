@@ -1,4 +1,4 @@
-if (!gml_Script_i_ex(1109))
+if (!gml_Script_i_ex(obj_gamecontroller))
     return 0;
 else
 {

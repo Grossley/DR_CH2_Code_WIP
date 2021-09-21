@@ -47,7 +47,7 @@ if (global.fighting == true && __healamt < 40)
     __healamt = 40
 if (global.chapter == 2)
 {
-    if gml_Script_i_ex(774)
+    if gml_Script_i_ex(o_boxingcontroller)
         __healamt = 100
 }
 return __healamt;

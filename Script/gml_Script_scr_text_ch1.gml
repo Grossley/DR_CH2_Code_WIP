@@ -1481,7 +1481,7 @@ switch argument0
         if (global.choice == 0)
         {
             global.hp[1] = global.maxhp[1]
-            gml_Script_snd_play_ch1(447)
+            gml_Script_snd_play_ch1(snd_swallow_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_1702_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_1703_0")
             global.flag[106] = 1
@@ -1947,7 +1947,7 @@ switch argument0
         {
             with (obj_npc_room_ch1)
                 tempvar = 1
-            gml_Script_snd_play_ch1(364)
+            gml_Script_snd_play_ch1(snd_pianonoise_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2238_0")
         }
         else
@@ -2093,7 +2093,7 @@ switch argument0
         global.choicemsg[1] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2398_0")
         global.choicemsg[2] = "3"
         global.choicemsg[3] = "4"
-        gml_Script_snd_play_ch1(370)
+        gml_Script_snd_play_ch1(snd_phone_ch1)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2402_0")
         global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2403_0")
         global.msg[2] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2404_0")
@@ -2512,7 +2512,7 @@ switch argument0
     case 431:
         if (global.choice == 0)
         {
-            gml_Script_snd_play_ch1(358)
+            gml_Script_snd_play_ch1(snd_splat_ch1)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2852_0")
             global.msg[1] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_2853_0")
         }
@@ -2835,7 +2835,7 @@ switch argument0
         if (global.choice == 0)
         {
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("scr_text_slash_scr_text_gml_3214_0")
-            gml_Script_snd_play_ch1(372)
+            gml_Script_snd_play_ch1(snd_egg_ch1)
             gml_Script_scr_keyitemget_ch1(2)
         }
         else

@@ -21,7 +21,7 @@ if (global.specialbattle == 0 || global.specialbattle == 2 || global.specialbatt
         }
         with (obj_caterpillarchara)
             gml_Script_scr_caterpillar_interpolate()
-        gml_Script_scr_pan_to_obj(80, 30)
+        gml_Script_scr_pan_to_obj(obj_mainchara, 30)
         with (obj_mainchara)
             visible = true
         with (obj_caterpillarchara)

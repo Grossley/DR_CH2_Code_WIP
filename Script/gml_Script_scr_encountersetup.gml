@@ -573,7 +573,7 @@ switch argument0
         global.battlemsg[0] = gml_Script_stringsetloc("* Sweet Cap'n Cakes block your way!", "scr_encountersetup_slash_scr_encountersetup_gml_752_0")
         break
     case 63:
-        if gml_Script_i_ex(967)
+        if gml_Script_i_ex(obj_ch2_scene21_loop)
         {
             with (obj_ch2_scene21_loop)
             {

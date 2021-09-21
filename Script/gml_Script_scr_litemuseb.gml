@@ -5,14 +5,14 @@ switch argument1
         break
     case 1:
         global.msg[0] = gml_Script_stringsetloc("* You drank the hot chocolate^1.&* It tasted wonderful^1.&* Your throat tightened.../%", "scr_litemuseb_slash_scr_litemuseb_gml_9_0")
-        gml_Script_snd_play(179)
+        gml_Script_snd_play(snd_swallow)
         gml_Script_scr_writetext(0, "x", 0, 0)
         script_execute(gml_Script_scr_litemshift, argument0, 0)
         break
     case 2:
         global.msg[0] = gml_Script_stringsetloc("* You equipped the Pencil./%", "scr_litemuseb_slash_scr_litemuseb_gml_18_0")
         gml_Script_scr_lweaponeq(argument0, argument1)
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
     case 3:
@@ -31,18 +31,18 @@ switch argument1
     case 6:
         global.msg[0] = gml_Script_stringsetloc("* You equipped the Halloween Pencil./%", "scr_litemuseb_slash_scr_litemuseb_gml_48_0")
         gml_Script_scr_lweaponeq(argument0, argument1)
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
     case 7:
         global.msg[0] = gml_Script_stringsetloc("* You equipped the Lucky Pencil./%", "scr_litemuseb_slash_scr_litemuseb_gml_56_0")
         gml_Script_scr_lweaponeq(argument0, argument1)
-        gml_Script_snd_play(172)
+        gml_Script_snd_play(snd_item)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
     case 8:
         global.msg[0] = gml_Script_stringsetloc("* You used the Egg./%", "scr_litemuseb_slash_scr_litemuseb_gml_63_0")
-        gml_Script_snd_play(55)
+        gml_Script_snd_play(snd_egg)
         gml_Script_scr_writetext(0, "x", 0, 0)
         break
     case 9:
@@ -53,7 +53,7 @@ switch argument1
         var consume_item = 0
         var have_susie = gml_Script_scr_havechar(2)
         var sans_npc = 0
-        if gml_Script_i_ex(127)
+        if gml_Script_i_ex(obj_marker)
         {
             with (obj_marker)
             {
@@ -62,7 +62,7 @@ switch argument1
             }
         }
         var alphys_npc = 0
-        if gml_Script_i_ex(103)
+        if gml_Script_i_ex(obj_npc_sign)
         {
             with (obj_npc_sign)
             {
@@ -150,7 +150,7 @@ switch argument1
         break
     case 201:
         tempsaid = 0
-        gml_Script_snd_play_x(53, 0.7, 1)
+        gml_Script_snd_play_x(snd_phone, 0.7, 1)
         global.msg[0] = gml_Script_stringsetloc("* Ring.../", "scr_litemuseb_slash_scr_litemuseb_gml_116_0")
         global.msg[1] = gml_Script_stringsetloc("* No one picked up./%", "scr_litemuseb_slash_scr_litemuseb_gml_117_0")
         if (room == room_krisroom || room == room_krishallway || room == room_torbathroom)

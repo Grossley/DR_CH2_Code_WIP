@@ -14,7 +14,7 @@ if ((global.flag[65] % 10) == 0)
     global.mag[2] += 1
     global.at[3] += 1
     global.mag[3] += 1
-    global.flag[66] = global.flag[66] + 1
+    global.flag[66] = (global.flag[66] + 1)
 }
 if gml_Script_scr_havechar(4)
 {

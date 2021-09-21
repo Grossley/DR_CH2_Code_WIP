@@ -41,7 +41,7 @@ for (i = 0; i < 3; i++)
 global.inv = (global.invc * 40)
 if _didhit
 {
-    gml_Script_snd_play(170)
+    gml_Script_snd_play(snd_hurt1)
     if (!instance_exists(obj_shake))
         gml_Script_instance_create(0, 0, obj_shake)
 }

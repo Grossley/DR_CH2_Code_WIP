@@ -3,11 +3,11 @@ if (global.inv < 0)
     remdamage = damage
     remtarget = target
     if (!instance_exists(obj_shake_ch1))
-        gml_Script_instance_create_ch1(0, 0, 1464)
+        gml_Script_instance_create_ch1(0, 0, obj_shake_ch1)
     with (obj_dmgwriter_ch1)
         killactive = 1
-    gml_Script_snd_stop_ch1(438)
-    gml_Script_snd_play_ch1(438)
+    gml_Script_snd_stop_ch1(snd_hurt1_ch1)
+    gml_Script_snd_play_ch1(snd_hurt1_ch1)
     for (ti = 0; ti < 3; ti += 1)
     {
         global.inv = -1
@@ -32,7 +32,7 @@ if (global.inv < 0)
         {
             doomtype = -1
             global.hp[global.char[target]] -= hpdiff
-            dmgwriter = gml_Script_instance_create_ch1(global.charinstance[target].x, ((global.charinstance[target].y + global.charinstance[target].myheight) - 24), 1629)
+            dmgwriter = gml_Script_instance_create_ch1(global.charinstance[target].x, ((global.charinstance[target].y + global.charinstance[target].myheight) - 24), obj_dmgwriter_ch1)
             dmgwriter.damage = hpdiff
             dmgwriter.type = doomtype
         }

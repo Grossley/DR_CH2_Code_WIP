@@ -1,4 +1,4 @@
-if gml_Script_i_ex(355)
+if gml_Script_i_ex(obj_battlecontroller)
 {
     if (obj_battlecontroller.messagepriority < argument0)
     {

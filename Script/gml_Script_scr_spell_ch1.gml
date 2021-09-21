@@ -16,7 +16,7 @@ switch spell
             if (global.automiss[star] == true)
                 damage = 0
             gml_Script_scr_damage_enemy_ch1(star, damage)
-            attack = gml_Script_instance_create_ch1((global.monsterx[star] + random(6)), (global.monstery[star] + random(6)), 1512)
+            attack = gml_Script_instance_create_ch1((global.monsterx[star] + random(6)), (global.monstery[star] + random(6)), obj_basicattack_ch1)
             attack.sprite_index = spr_attack_mash1_ch1
             dm.delay = 8
         }
@@ -28,7 +28,7 @@ switch spell
         global.charinstance[star].healnum = healnum
         with (global.charinstance[star])
         {
-            ha = gml_Script_instance_create_ch1(x, y, 1618)
+            ha = gml_Script_instance_create_ch1(x, y, obj_healanim_ch1)
             ha.target = id
             dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
             with (dmgwr)
@@ -70,7 +70,7 @@ switch spell
             }
             else
             {
-                _pspell = gml_Script_instance_create_ch1(0, 0, 1615)
+                _pspell = gml_Script_instance_create_ch1(0, 0, obj_pacifyspell_ch1)
                 _pspell.target = global.monsterinstance[star]
                 _pspell.fail = 1
             }
@@ -88,7 +88,7 @@ switch spell
             damage = ceil((((global.battlemag[argument1] * 5) + (global.battleat[argument1] * 11)) - (global.monsterdf[star] * 3)))
             if (global.automiss[star] == true)
                 damage = 0
-            attack = gml_Script_instance_create_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 1620)
+            attack = gml_Script_instance_create_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, obj_rudebuster_anim_ch1)
             attack.damage = damage
             attack.star = star
             attack.caster = caster
@@ -106,7 +106,7 @@ switch spell
             damage = ceil((((global.battlemag[argument1] * 6) + (global.battleat[argument1] * 13)) - (global.monsterdf[star] * 6)))
             if (global.automiss[star] == true)
                 damage = 0
-            attack = gml_Script_instance_create_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, 1620)
+            attack = gml_Script_instance_create_ch1(obj_herosusie_ch1.x, obj_herosusie_ch1.y, obj_rudebuster_anim_ch1)
             attack.damage = damage
             attack.star = star
             attack.caster = caster
@@ -122,7 +122,7 @@ switch spell
             global.charinstance[i].healnum = healnum
             with (global.charinstance[i])
             {
-                ha = gml_Script_instance_create_ch1(x, y, 1618)
+                ha = gml_Script_instance_create_ch1(x, y, obj_healanim_ch1)
                 ha.target = id
                 dmgwr = gml_Script_scr_dmgwriter_selfchar_ch1()
                 with (dmgwr)
@@ -166,7 +166,7 @@ switch spell
             else
             {
                 gml_Script_scr_mercyadd_ch1(star, global.sparepoint[star])
-                _pspell = gml_Script_instance_create_ch1(0, 0, 1615)
+                _pspell = gml_Script_instance_create_ch1(0, 0, obj_pacifyspell_ch1)
                 _pspell.target = global.monsterinstance[star]
                 _pspell.fail = 1
                 _pspell.flashcolor = c_yellow

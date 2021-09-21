@@ -7,7 +7,7 @@ if variable_global_exists("chapter_return")
 }
 if (!return_title)
 {
-    gml_Script_draw_enable_alphablend_ch1(0)
+    gml_Script_draw_enable_alphablend_ch1(false)
     if (border_id == "Dynamic" || border_id == "ダイナミック")
     {
         if (!loaded)
@@ -87,11 +87,11 @@ if (!return_title)
                 }
             }
         }
-        gml_Script_scr_draw_background_ps4_ch1(4420, 0, 0)
+        gml_Script_scr_draw_background_ps4_ch1(bg_border_line_1080_ch1, 0, 0)
         global.disable_border = obj_time_ch1.border_alpha != 1
     }
     draw_set_alpha(1)
-    gml_Script_draw_enable_alphablend_ch1(1)
+    gml_Script_draw_enable_alphablend_ch1(true)
 }
 if return_title
 {

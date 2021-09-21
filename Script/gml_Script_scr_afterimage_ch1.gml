@@ -1,4 +1,4 @@
-afterimage = gml_Script_instance_create_ch1(x, y, 1509)
+afterimage = gml_Script_instance_create_ch1(x, y, obj_afterimage_ch1)
 afterimage.sprite_index = sprite_index
 afterimage.image_index = image_index
 afterimage.image_blend = image_blend

@@ -1,2 +1,4 @@
-__remapped_value = gml_Script_remap(argument0, argument1, argument2, argument3, argument4)
-return clamp(__remapped_value, argument3, argument4);
+if (argument1 == argument0)
+    return argument3;
+__invLerp = ((argument2 - argument0) / (argument1 - argument0))
+return lerp(argument3, argument4, __invLerp);

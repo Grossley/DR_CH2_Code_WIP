@@ -33,14 +33,14 @@ if (argument1 == 0)
         }
     }
 }
-if (global.chapter == 2 && gml_Script_i_ex(707) && global.monsterhp[argument0] <= 0)
+if (global.chapter == 2 && gml_Script_i_ex(obj_sweet_enemy) && global.monsterhp[argument0] <= 0)
     global.monsterhp[argument0] = 1
 var a = 0
-if (global.chapter == 2 && gml_Script_i_ex(571))
+if (global.chapter == 2 && gml_Script_i_ex(obj_queen_enemy))
     a = 1
-if (global.chapter == 2 && gml_Script_i_ex(694))
+if (global.chapter == 2 && gml_Script_i_ex(obj_spamton_neo_enemy))
     a = 2
-if (global.chapter == 2 && gml_Script_i_ex(482))
+if (global.chapter == 2 && gml_Script_i_ex(obj_berdlyb_enemy))
     a = 3
 if (global.monsterhp[argument0] <= 0 && a == 0)
 {
