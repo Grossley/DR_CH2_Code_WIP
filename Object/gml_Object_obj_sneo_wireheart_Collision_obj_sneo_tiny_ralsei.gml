@@ -22,7 +22,7 @@ else
 {
     hp -= 5
     other.hp -= 10
-    @@Other@@().alarm[0] = 10
+    other.alarm[0] = 10
     if (!audio_is_playing(snd_hurt1))
         gml_Script_snd_play(snd_hurt1)
 }

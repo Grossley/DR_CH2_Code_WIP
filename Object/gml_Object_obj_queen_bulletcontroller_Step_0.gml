@@ -501,7 +501,7 @@ else if (type == 3 || type == 3.1 || type == 3.2 || type == 3.3 || type == 3.4)
                     d = gml_Script_scr_bullet_create(obj_growtangle.x, (miny - 4), obj_queen_leg)
                 if (a == 2)
                     d = gml_Script_scr_bullet_create((obj_growtangle.x + 47), (miny - 4), obj_queen_leg)
-                var a += (1 + irandom(1))
+                var a = (a + 1 + irandom(1))
                 if (a > 2)
                     a -= 3
             }

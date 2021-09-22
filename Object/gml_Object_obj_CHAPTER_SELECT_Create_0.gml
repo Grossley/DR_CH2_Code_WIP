@@ -70,7 +70,7 @@ con = "init"
 file_found = 0
 highestUncompletedChapter = 0
 highestCompletedChapter = 0
-stringset = "0"
+stringset("0")
 yes = "Yes"
 no = "No"
 mpos = 0

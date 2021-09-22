@@ -3,7 +3,6 @@ if gml_Script_snd_is_playing(global.currentsong[1])
 for (i = 0; i < 3; i++)
 {
     spritetalkingbuffer[i]--
-    spritetalkingbuffer[i]
     if (spritetalkingbuffer[i] <= 0)
         spritetalking[i] = 0
 }

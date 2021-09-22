@@ -73,27 +73,46 @@ if (current > 0)
     }
 }
 shit = 0
-@@try_hook@@(2224, 2272)
-if (global.tensionselect >= 0)
-    shit = 1
-@@try_unhook@@()
+if (variable_global_exists("tensionselect"))
+{
+    if (global.tensionselect >= 0)
+        shit = 1
+}
+else
+{
+    shit = 2
+}
+/*
+try
+{
+    if (global.tensionselect >= 0)
+        shit = 1
+}
+catch (e)
+{
+    shit = 2
+}
+*/
 if (shit == 2)
     gml_Script_snd_play(snd_splat)
-if (global.tensionselect > 0)
+if (variable_global_exists("tensionselect"))
 {
-    tsiner += 1
-    draw_set_color(c_white)
-    draw_set_alpha((abs((sin((tsiner / 8)) * 0.5)) + 0.2))
-    theight = ((0 + sprite_height) - ((current / global.maxtension) * sprite_height))
-    theight2 = (theight + ((global.tensionselect / global.maxtension) * sprite_height))
-    if (theight2 > ((0 + sprite_height) - 1))
+    if (global.tensionselect > 0)
     {
-        theight2 = ((0 + sprite_height) - 1)
-        draw_set_color(c_dkgray)
-        draw_set_alpha(0.7)
+        tsiner += 1
+        draw_set_color(c_white)
+        draw_set_alpha((abs((sin((tsiner / 8)) * 0.5)) + 0.2))
+        theight = ((0 + sprite_height) - ((current / global.maxtension) * sprite_height))
+        theight2 = (theight + ((global.tensionselect / global.maxtension) * sprite_height))
+        if (theight2 > ((0 + sprite_height) - 1))
+        {
+            theight2 = ((0 + sprite_height) - 1)
+            draw_set_color(c_dkgray)
+            draw_set_alpha(0.7)
+        }
+        draw_rectangle(3, theight2, ((0 + sprite_width) - 1), theight, false)
+        draw_set_alpha(1)
     }
-    draw_rectangle(3, theight2, ((0 + sprite_width) - 1), theight, false)
-    draw_set_alpha(1)
 }
 if (apparent > 20 && apparent < global.maxtension)
     draw_sprite(spr_tensionmarker, 0, 3, ((0 + sprite_height) - ((current / global.maxtension) * sprite_height)))

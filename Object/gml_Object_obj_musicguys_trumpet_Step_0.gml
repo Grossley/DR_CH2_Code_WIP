@@ -34,6 +34,5 @@ for (i = 0; i < shotcount; i++)
             shot[i].y = (y + (sin((abs((siner / 14)) + (singletimer[i] / 14))) * amp))
         }
         singletimer[i]++
-        singletimer[i]
     }
 }

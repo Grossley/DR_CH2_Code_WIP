@@ -249,7 +249,6 @@ if (poisonamount > 0)
         if (global.hp[global.char[myself]] > 1)
         {
             global.hp[global.char[myself]] = (global.hp[global.char[myself]] - 1)
-            global.hp[global.char[myself]]
             poisonamount--
         }
         else

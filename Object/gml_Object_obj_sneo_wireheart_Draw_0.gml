@@ -90,7 +90,6 @@ if (destroyed == 1)
                     __mercydmgwriter.damage = 3
                     __mercydmgwriter.type = 5
                     global.hittarget[myself] = (global.hittarget[myself] + 1)
-                    global.hittarget[myself]
                 }
             }
             else

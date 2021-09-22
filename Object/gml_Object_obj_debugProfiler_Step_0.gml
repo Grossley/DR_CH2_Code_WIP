@@ -79,7 +79,6 @@ if (global.chemg_god_mode == 1)
         if (global.hp[i] < global.maxhp[i])
         {
             global.hp[i] = (global.hp[i] + 1)
-            global.hp[i]
         }
     }
 }
