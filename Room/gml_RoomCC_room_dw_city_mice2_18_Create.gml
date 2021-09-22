@@ -11,11 +11,11 @@ else
         if (sprite_index != spr_toilet_together)
             instance_destroy()
     }
-    gml_Script_safe_delete(1182)
-    gml_Script_safe_delete(1183)
-    gml_Script_safe_delete(1184)
-    gml_Script_safe_delete(1179)
+    gml_Script_safe_delete(obj_rotationTile_track1)
+    gml_Script_safe_delete(obj_rotationTile_track2)
+    gml_Script_safe_delete(obj_rotationTile_track3)
+    gml_Script_safe_delete(obj_rotationController_track)
     layer_set_visible(layer_get_id("SPRITES_Decor"), 0)
-    gml_Script_safe_delete(1164)
-    gml_Script_safe_delete(1163)
+    gml_Script_safe_delete(obj_holemouse_generator)
+    gml_Script_safe_delete(obj_holemouse_goal)
 }
