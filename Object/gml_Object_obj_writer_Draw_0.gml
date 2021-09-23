@@ -24,7 +24,7 @@ if (global.flag[10] == 1 || gml_Script_scr_debug())
 if forcebutton1
     button1 = 1
 prevent_mash_buffer--
-if (dialoguer == 1 && formatted == 0)
+if (dialoguer == 1 && formatted == false)
 {
     if (global.fc == 0)
     {
@@ -46,7 +46,7 @@ if (dialoguer == 1 && formatted == 0)
         }
     }
 }
-if (formatted == 0)
+if (formatted == false)
 {
     length = string_length(mystring)
     charpos = -1
@@ -135,7 +135,7 @@ if (formatted == 0)
                     }
                 }
                 if (nextchar == "m")
-                    drawaster = 0
+                    drawaster = false
                 if (nextchar == "s")
                 {
                     if (nextchar2 == "0")
@@ -207,7 +207,7 @@ if (formatted == 0)
     }
     if (charpos > stringmax)
         stringmax = charpos
-    formatted = 1
+    formatted = true
 }
 accept = false
 wx = writingx
@@ -215,7 +215,7 @@ wy = writingy
 colorchange = false
 draw_set_font(myfont)
 draw_set_color(mycolor)
-if (halt == 0 && button2 == 1 && pos < length && skippable == true)
+if (halt == false && button2 == 1 && pos < length && skippable == true)
     skipme = true
 if (skipme == true)
 {
@@ -253,7 +253,7 @@ for (n = 1; n < pos; n += 1)
     }
     else if (mychar == "/")
     {
-        halt = 1
+        halt = true
         if (string_char_at(mystring, (n + 1)) == "%")
             halt = 2
         accept = false
@@ -615,7 +615,7 @@ for (n = 1; n < pos; n += 1)
         }
         if (nextchar == "m")
         {
-            drawaster = 0
+            drawaster = false
             for (i = 0; i < 10; i += 1)
             {
                 if (nextchar2 == string(i))
@@ -637,7 +637,7 @@ for (n = 1; n < pos; n += 1)
     }
     if (accept == true)
     {
-        if (drawaster == 0 && mychar == "*")
+        if (drawaster == false && mychar == "*")
             mychar = " "
         if (colorchange == true)
             draw_set_color(xcolor)
@@ -748,9 +748,9 @@ for (n = 1; n < pos; n += 1)
         }
     }
 }
-if (halt != 0 && button1 == 1 && siner > 0)
+if (halt != false && button1 == 1 && siner > 0)
 {
-    if (halt == 1)
+    if (halt == true)
     {
         gml_Script_scr_nextmsg()
         with (obj_smallface)

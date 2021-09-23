@@ -1,7 +1,7 @@
 event_inherited()
 coughcon = -1
 laughcon = -1
-talked = 0
+talked = false
 if (global.flag[316] == 1)
 {
     sprite_index = spr_rudy_d

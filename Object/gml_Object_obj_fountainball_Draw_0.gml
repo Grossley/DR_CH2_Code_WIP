@@ -1,4 +1,4 @@
-if (init == 0 && back == 0)
+if (init == false && back == 0)
 {
     backball = gml_Script_instance_create(x, y, obj_fountainball)
     backball.image_xscale = 0.1
@@ -11,7 +11,7 @@ if (init == 0 && back == 0)
     backball.gravity = gravity
     backball.gravity_direction = gravity_direction
     backball.back = 1
-    init = 1
+    init = true
 }
 size += 0.5
 image_xscale += 0.01

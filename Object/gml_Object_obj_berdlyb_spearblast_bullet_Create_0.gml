@@ -3,7 +3,7 @@ image_alpha = 1
 if (!instance_exists(obj_heart))
     instance_destroy()
 wall_destroy = 1
-init = 0
+init = false
 bulletPath = 0
 spawnrate = -1
 spawntimer = 0

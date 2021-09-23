@@ -1,6 +1,6 @@
 siner = 0
 linesiner = 0
-init = 0
+init = false
 room_scale = (room_width / 20)
 bg_y_pos = 0
 bg_x_pos = 0

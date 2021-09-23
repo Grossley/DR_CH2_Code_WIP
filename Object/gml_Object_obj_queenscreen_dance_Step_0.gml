@@ -1,5 +1,5 @@
-if (init == 0)
-    init = 1
+if (init == false)
+    init = true
 if (activecon == 0)
 {
     if instance_exists(obj_mainchara)

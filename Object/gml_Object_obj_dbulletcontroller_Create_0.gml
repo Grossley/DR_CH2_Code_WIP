@@ -8,7 +8,7 @@ inv = -1
 grazed = -1
 grazetimer = -1
 element = "none"
-target = -1
+target = self
 ratio = 1
 if (gml_Script_scr_monsterpop() == 2)
     ratio = 1.6
@@ -19,7 +19,7 @@ difficulty = 0
 made = 0
 special = 0
 roundcount = 0
-init = 0
+init = false
 sameattack = 0
 sameattacker = 0
 miny = 999

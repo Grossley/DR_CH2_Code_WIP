@@ -206,7 +206,7 @@ if (con == 3)
     susstring = gml_Script_stringsetloc("Hell if I know???", "obj_ch2_room_town_hospital_slash_Step_0_gml_154_0")
     if (global.lang == "ja")
     {
-        if (global.is_console == 1)
+        if (global.is_console == true)
             gml_Script_scr_smallface(1, "susie", 20, 426, 180, susstring)
         else
             gml_Script_scr_smallface(1, "susie", 20, 440, 170, susstring)

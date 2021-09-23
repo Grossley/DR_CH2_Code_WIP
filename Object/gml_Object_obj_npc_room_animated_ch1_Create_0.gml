@@ -1,5 +1,5 @@
 myinteract = 0
-talked = 0
+talked = false
 image_speed = 0.2
 depthcancel = false
 if (global.darkzone == true)

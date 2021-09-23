@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
     event_user(0)
 if (movecount >= movemax || (!gml_Script_i_ex(target)))
     instance_destroy()

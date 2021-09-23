@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     if (type == 0)
     {
         movemax = 8

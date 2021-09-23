@@ -1,7 +1,7 @@
 gml_Script_scr_bullet_init()
 startcolor = 255
 colorlerp = 0
-init = 0
+init = false
 platter_spawn = 0
 target_speed = 0
 image_alpha = 0

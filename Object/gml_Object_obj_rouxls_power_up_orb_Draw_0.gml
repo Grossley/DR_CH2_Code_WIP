@@ -8,9 +8,9 @@ if (parenttarget != self && gml_Script_i_ex(parenttarget))
     xstart = parenttarget.x
     ystart = parenttarget.y
 }
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     if thin
         lifetime /= 2
     if (track_target != noone)

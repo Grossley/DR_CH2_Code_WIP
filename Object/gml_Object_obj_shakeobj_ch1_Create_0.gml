@@ -1,5 +1,5 @@
 active = false
-target = 0
+target = obj_sneo_friedpipis
 shakeamt = 10
 shakereduct = 2
 shakespeed = 1

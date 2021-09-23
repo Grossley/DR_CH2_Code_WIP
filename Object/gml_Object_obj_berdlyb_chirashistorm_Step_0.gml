@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     for (iy = 0; iy < 3; iy++)
     {
@@ -17,5 +17,5 @@ if (init == 0)
                 d.image_blend = c_gray
         }
     }
-    init = 1
+    init = true
 }

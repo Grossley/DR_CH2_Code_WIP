@@ -3,7 +3,7 @@ if (!instance_exists(obj_queen_bulletcontroller))
     instance_destroy()
     return;
 }
-if (init == 0)
+if (init == false)
 {
     if instance_exists(obj_heart)
     {
@@ -19,7 +19,7 @@ if (init == 0)
             idealangle += random_range(-20, 20)
     }
     currentangle = (idealangle + 360)
-    init = 1
+    init = true
     gml_Script_snd_play(snd_spearappear)
     timer = 0
     size = 0

@@ -123,7 +123,7 @@ if (con == 9 && obj_mainchara_ch1.x < 40 && global.interact == 0)
     global.typer = 30
     global.fc = 1
     global.fe = 0
-    if (talked == 0)
+    if (talked == false)
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_133_0")
     else
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_suitspuzzle_event_slash_Step_0_gml_137_0")

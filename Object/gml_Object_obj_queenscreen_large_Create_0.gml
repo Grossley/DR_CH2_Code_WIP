@@ -10,4 +10,4 @@ depth = 100000
 activecon = 1
 extspawnflag = 0
 count = 0
-init = 0
+init = false

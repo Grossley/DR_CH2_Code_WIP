@@ -66,13 +66,13 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
 }
 if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pressed(ord("G")))
 {
-    global.chemg_god_mode = (1 - global.chemg_god_mode)
-    if (global.chemg_god_mode == 1)
+    global.chemg_god_mode = (true - global.chemg_god_mode)
+    if (global.chemg_god_mode == true)
         gml_Script_snd_play_pitch(snd_swing, 1.5)
-    if (global.chemg_god_mode == 0)
+    if (global.chemg_god_mode == false)
         gml_Script_snd_play_pitch(snd_swing, 0.5)
 }
-if (global.chemg_god_mode == 1)
+if (global.chemg_god_mode == true)
 {
     for (i = 0; i < 6; i++)
     {

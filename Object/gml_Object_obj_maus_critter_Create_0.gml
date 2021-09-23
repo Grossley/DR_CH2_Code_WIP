@@ -3,7 +3,7 @@ active = false
 destroyonhit = 0
 initialspeed = 0
 eyetimer = 0
-init = 0
+init = false
 big = 0
 stuck = 0
 if instance_exists(obj_mauswheel_enemy)

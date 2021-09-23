@@ -1,9 +1,9 @@
 mywriter = gml_Script_instance_create((x + 5), (y + 5), obj_writer)
 mywriter.depth = 9999999
-auto_length = 0
+auto_length = false
 side = 1
 xoffset = 0
-init = 0
+init = false
 reformatted = 0
 remx = x
 remy = y

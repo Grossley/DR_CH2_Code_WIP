@@ -1,7 +1,7 @@
 if (!init)
 {
     ignoredepth = 0
-    init = 1
+    init = true
 }
 if (!ignoredepth)
 {

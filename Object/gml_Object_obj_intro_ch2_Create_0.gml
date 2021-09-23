@@ -10,5 +10,5 @@ queen_siner = 0
 queen_animate = true
 queen_y_pos = -100
 queen_alpha = 0
-init = 0
+init = false
 type = 0

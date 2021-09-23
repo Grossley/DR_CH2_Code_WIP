@@ -5,5 +5,5 @@ battlealpha = 0
 active = false
 tile_fade = false
 fadeplease = true
-init = 0
-autobattle = 0
+init = false
+autobattle = false

@@ -1,7 +1,7 @@
 if (type == 5 && sameattacker < 2 && obj_swatchling_battle_controller.red_count > 0)
 {
     var swatch_bc = obj_swatchling_battle_controller
-    if (init == 1)
+    if (init == true)
     {
         if (sameattacker == 1 && sameattack == gml_Script_scr_monsterpop())
             btimer = -20
@@ -56,7 +56,7 @@ if (type == 5 && sameattacker < 2 && obj_swatchling_battle_controller.red_count 
 }
 else if (type == 6 && sameattacker < 2 && obj_swatchling_battle_controller.yellow_count > 0)
 {
-    if (init == 1)
+    if (init == true)
     {
         ratio = min(ratio, 1.6)
         init = 2

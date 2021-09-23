@@ -212,7 +212,7 @@ if (menu == 1 || menu == 2)
                     afford = true
                 if (afford == true)
                 {
-                    _pocketed = 0
+                    _pocketed = false
                     if (itemtype[menuc[1]] == "item")
                         gml_Script_scr_itemget(item[menuc[1]])
                     if (itemtype[menuc[1]] == "weapon")
@@ -223,7 +223,7 @@ if (menu == 1 || menu == 2)
                     {
                         global.gold -= buyvalue[menuc[1]]
                         gml_Script_snd_play(snd_locker)
-                        if (_pocketed == 1)
+                        if (_pocketed == true)
                             sidemessage = 5
                         else
                             sidemessage = 1
@@ -712,7 +712,7 @@ if (menu == 4)
                 {
                     var have_jevil = (global.flag[460] == 1 || global.flag[241] >= 6)
                     var sentence_end = (have_jevil ? "/" : "/%")
-                    if (haveit == 1)
+                    if (haveit == true)
                     {
                         gml_Script_scr_speaker("seam")
                         gml_Script_msgsetloc(0, "\\E1* ..^1. What is that? It appears you have a Shadow Crystal./", "obj_shop1_slash_Draw_0_gml_619_0")
@@ -741,7 +741,7 @@ if (menu == 4)
                         normal_post_plot = 1
                     if (global.flag[312] == 0)
                         global.flag[312] = 1
-                    if (haveit == 1)
+                    if (haveit == true)
                     {
                         gml_Script_scr_keyitemremove(13)
                         took_crystal = 1

@@ -581,7 +581,7 @@ with (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_door
 if (battlemode == 1)
 {
     global.inv -= 1
-    if (global.inv < 0)
+    if (global.inv < false)
     {
         with (collision_rectangle((x + 12), (y + 40), (x + 27), (y + 49), obj_overworldbulletparent, 1, 0))
             event_user(5)

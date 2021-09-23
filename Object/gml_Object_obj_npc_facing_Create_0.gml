@@ -7,7 +7,7 @@ myinteract = 0
 facing = 0
 dfacing = 0
 image_speed = 0
-talked = 0
+talked = false
 ourcase = 0
 if (global.darkzone == true)
 {

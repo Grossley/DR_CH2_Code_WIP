@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         talkcon = 0
         if (gml_Script_scr_sideb_get_phase() == 0)
@@ -53,7 +53,7 @@ if (global.monster[myself] == true)
                     gml_Script_msgsetloc(0, "Kris^1! I get it^1!&Your head's gotten big&from solving that puzzle&by DUMB LUCK!/%", "obj_berdlyb2_enemy_slash_Step_0_gml_47_0")
                     talkmax += 30
                     gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                    talked = 1
+                    talked = true
                     talktimer = 0
                 }
                 if (turns == 1)
@@ -72,7 +72,7 @@ if (global.monster[myself] == true)
                         global.typer = berdlytalk
                         gml_Script_msgsetloc(0, "By taking my most&precious thing..^1. Noelle!/%", "obj_berdlyb2_enemy_slash_Step_0_gml_88_0")
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                        talked = 1
+                        talked = true
                         talktimer = 0
                     }
                 }
@@ -94,7 +94,7 @@ if (global.monster[myself] == true)
                         summoning = 1
                         wirewait = 1
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                        talked = 1
+                        talked = true
                         talktimer = 0
                     }
                 }
@@ -119,7 +119,7 @@ if (global.monster[myself] == true)
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
                         if (gml_Script_scr_monsterpop() > 1)
                         {
-                            talked = 1
+                            talked = true
                             talktimer = 0
                         }
                     }
@@ -134,7 +134,7 @@ if (global.monster[myself] == true)
                         global.typer = berdlytalk
                         gml_Script_msgsetloc(0, "... h-hey^1, wait^1, where'd&the other guys go!?/%", "obj_berdlyb2_enemy_slash_Step_0_gml_182_0")
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                        talked = 1
+                        talked = true
                         talktimer = 0
                     }
                 }
@@ -166,7 +166,7 @@ if (global.monster[myself] == true)
                             talkmax += 60
                         }
                         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                        talked = 1
+                        talked = true
                         talktimer = 0
                     }
                 }
@@ -187,7 +187,7 @@ if (global.monster[myself] == true)
                                 alarm[7] = 30
                             else
                             {
-                                talked = 1
+                                talked = true
                                 talktimer = 0
                             }
                             global.typer = berdlytalk
@@ -209,7 +209,7 @@ if (global.monster[myself] == true)
                             gml_Script_msgsetloc(0, "(Help.)/%", "obj_berdlyb2_enemy_slash_Step_0_gml_180_0")
                             balloon = gml_Script_scr_heroblcon("noelle")
                         }
-                        talked = 1
+                        talked = true
                         talktimer = 0
                     }
                 }
@@ -231,7 +231,7 @@ if (global.monster[myself] == true)
                 }
                 else
                     gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-                talked = 1
+                talked = true
                 talktimer = 0
             }
         }
@@ -241,7 +241,7 @@ if (global.monster[myself] == true)
                 kris_defeat_talk = 1
             else
             {
-                talked = 1
+                talked = true
                 talktimer = 0
             }
             if kris_defeat_talk
@@ -284,7 +284,7 @@ if (global.monster[myself] == true)
                     gml_Script_msgsetloc(0, "(I can...&still...&hear...&their voice...)/%", "obj_berdlyb2_enemy_slash_Step_0_gml_266_0")
                     gml_Script_scr_heroblcon("noelle")
                     kris_defeat_con = 99
-                    talked = 1
+                    talked = true
                     talktimer = 0
                 }
             }
@@ -316,7 +316,7 @@ if (global.monster[myself] == true)
             summoning = 0
         }
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk") && (!summoning))
+    if (talked == true && gml_Script_scr_isphase("enemytalk") && (!summoning))
     {
         talkcon = 1
         rtimer = 0
@@ -421,7 +421,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         if (gml_Script_scr_sideb_get_phase() == 0)
@@ -537,7 +537,7 @@ if (global.myfight == 3)
             actcon = 1
         }
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         naction_count++
         mercy_add_amount = 10

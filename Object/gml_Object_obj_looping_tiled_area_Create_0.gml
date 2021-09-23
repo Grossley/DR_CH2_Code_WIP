@@ -1,4 +1,4 @@
-init = 0
+init = false
 x_pos = x
 y_pos = y
 x_scale = 2

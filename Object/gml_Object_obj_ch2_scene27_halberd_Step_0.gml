@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     timer = 0
     siner = 0
     con = 1
     float = 0
-    init = 1
+    init = true
     image_speed = 0
     image_index = 0
 }

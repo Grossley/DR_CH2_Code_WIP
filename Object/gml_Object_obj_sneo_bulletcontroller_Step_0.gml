@@ -1,6 +1,6 @@
 if (global.mercymod[obj_spamton_neo_enemy.myself] > 99 && global.turntimer > 1)
     global.turntimer = 1
-if (init == 0)
+if (init == false)
 {
     sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])
     if (sameattack > 1)
@@ -17,12 +17,12 @@ if (init == 0)
         minx = (obj_growtangle.x - (obj_growtangle.sprite_width / 2))
         maxx = (obj_growtangle.x + (obj_growtangle.sprite_width / 2))
     }
-    init = 1
+    init = true
 }
 btimer += 1
 if (type == 0)
 {
-    if (init == 1)
+    if (init == true)
     {
         btimer = 0
         gml_Script_instance_create(0, 0, obj_sneo_guymaker)
@@ -105,7 +105,7 @@ if (type == 1)
         sneo.vinex = (gml_Script_scr_ease_in((min(10, atimer) / 10), 5) * 300)
         sneo.x = (sneo.xstart + (gml_Script_scr_ease_in((atimer / 20), 2) * 300))
     }
-    if (atimer == 20 && init == 1)
+    if (atimer == 20 && init == true)
     {
         sneo.x = (sneo.xstart + 300)
         sneo.vinex *= -1
@@ -131,7 +131,7 @@ if (type == 1)
 if (type == 1.5)
 {
     hearttargettimer--
-    if (init == 1)
+    if (init == true)
     {
         with (obj_spamton_neo_enemy)
             partmode = 34
@@ -155,7 +155,7 @@ if (type == 2)
         obj_spamton_neo_enemy.newcrushermovement = 0
         if (btimer >= 30)
         {
-            if (init == 1)
+            if (init == true)
             {
                 side = ((irandom(1) * 2) - 1)
                 init = 2
@@ -271,7 +271,7 @@ if (type == 2)
     {
         if (btimer >= 30)
         {
-            if (init == 1)
+            if (init == true)
             {
                 side = ((irandom(1) * 2) - 1)
                 init = 2
@@ -468,7 +468,7 @@ if (type == 3)
     if (!instance_exists(obj_sneo_pendulum_controller))
     {
         pendulum = gml_Script_instance_create(x, y, obj_sneo_pendulum_controller)
-        init = 1
+        init = true
     }
 }
 if (type == 4)
@@ -488,7 +488,7 @@ if (type == 4)
 }
 if (type == 5)
 {
-    if (init == 1)
+    if (init == true)
     {
         d = gml_Script_instance_create(x, y, obj_sneo_bulletcontroller_somn)
         d.damage = damage
@@ -504,7 +504,7 @@ if (type == 5)
 }
 if (type == 6)
 {
-    if (init == 1)
+    if (init == true)
     {
         if (difficulty == 9)
             gml_Script_instance_create(0, 0, obj_sneo_wall_controller)
@@ -532,7 +532,7 @@ if (type == 7)
             sneo.vinex = (gml_Script_scr_ease_in((min(10, atimer) / 10), 5) * 200)
             sneo.x = (sneo.xstart + (gml_Script_scr_ease_in((atimer / 20), 2) * 200))
         }
-        if (atimer == 20 && init == 1)
+        if (atimer == 20 && init == true)
         {
             sneo.x = (sneo.xstart + 200)
             sneo.vinex *= -1
@@ -669,7 +669,7 @@ if (type == 7)
 }
 if (type == 8)
 {
-    if (init == 1)
+    if (init == true)
     {
         obj_spamton_neo_enemy.partmode = (special ? 11 : 10)
         init = 2
@@ -678,7 +678,7 @@ if (type == 8)
 }
 if (type == 8.5)
 {
-    if (init == 1)
+    if (init == true)
     {
         init = 2
         made = 60
@@ -696,7 +696,7 @@ if (type == 8.5)
 }
 if (type == 9)
 {
-    if (init == 1)
+    if (init == true)
     {
         global.turntimer = 1200
         gml_Script_instance_create(obj_growtangle.x, obj_growtangle.y, obj_finale_growtangle)
@@ -822,7 +822,7 @@ if (type == 10)
 }
 if (type == 11)
 {
-    if (init == 1)
+    if (init == true)
     {
         d = gml_Script_instance_create(obj_growtangle.x, obj_growtangle.y, obj_shrinktangle)
         d.target = target
@@ -886,7 +886,7 @@ if (type == 12)
             }
         }
     }
-    if (global.turntimer > 80 && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == 1 && obj_spamton_neo_enemy.facebroken == 0)
+    if (global.turntimer > 80 && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == true && obj_spamton_neo_enemy.facebroken == 0)
     {
         a = 0
         for (var i = 0; i < instance_number(obj_sneo_faceattack); i++)

@@ -7,7 +7,7 @@ if (room == room_dw_mansion_dininghall)
         instance_destroy()
     }
 }
-init = 0
+init = false
 inside = 0
 ignorebuffer = -1
 checkid = id

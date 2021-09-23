@@ -442,19 +442,19 @@ if (global.myfight == 0)
                 global.tensionselect = 0
                 if instance_exists(global.monsterinstance[thisenemy])
                     global.monsterinstance[thisenemy].acting = (global.bmenucoord[9][global.charturn] + 1)
-                global.acting[0] = 1
+                global.acting[0] = true
                 if (global.actactor[global.bmenucoord[11][global.charturn]][global.bmenucoord[9][global.charturn]] == 2)
-                    global.acting[charpos[1]] = 1
+                    global.acting[charpos[1]] = true
                 if (global.actactor[global.bmenucoord[11][global.charturn]][global.bmenucoord[9][global.charturn]] == 3)
-                    global.acting[charpos[2]] = 1
+                    global.acting[charpos[2]] = true
                 if (global.actactor[global.bmenucoord[11][global.charturn]][global.bmenucoord[9][global.charturn]] == 4)
                 {
-                    global.acting[2] = 1
-                    global.acting[1] = 1
+                    global.acting[2] = true
+                    global.acting[1] = true
                 }
                 for (i = 0; i < 3; i += 1)
                 {
-                    if (global.acting[i] == 1)
+                    if (global.acting[i] == true)
                     {
                         global.faceaction[i] = 6
                         global.charaction[i] = 9

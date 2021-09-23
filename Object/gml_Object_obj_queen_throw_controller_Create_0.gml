@@ -1,7 +1,7 @@
 timer = 0
 con = 0
 variant = 0
-init = 0
+init = false
 siner = 0
 difficulty = (obj_queen_enemy.phase - obj_queen_enemy.wirescut)
 bardlymercy = 0

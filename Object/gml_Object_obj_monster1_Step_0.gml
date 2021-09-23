@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         abletotarget = true
         if (global.charcantarget[0] == false && global.charcantarget[1] == false && global.charcantarget[2] == false)
@@ -20,10 +20,10 @@ if (global.monster[myself] == true)
         if (global.mercymod[myself] >= global.mercymax[myself])
             global.msg[0] = ""
         mywriter = gml_Script_instance_create((x - 60), (y - 30), obj_writer)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         if (gml_Script_button1_p() && talktimer > 15)
             talktimer = talkmax
@@ -48,7 +48,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = ""
@@ -56,7 +56,7 @@ if (global.myfight == 3)
         battlewriter = gml_Script_instance_create((xx + 30), (yy + 376), obj_writer)
         if (global.fc != 0)
             myface = gml_Script_instance_create((xx + 26), (yy + 380), obj_face)
-        if (acting == 1)
+        if (acting == true)
             global.mercymod[myself] += 120
         if (global.mercymod[myself] >= global.mercymax[myself])
             global.msg[0] = ""

@@ -7,7 +7,7 @@ name = gml_Script_scr_84_get_lang_string_ch1("obj_savemenu_slash_Create_0_gml_7_
 level = 1
 love = 1
 time = 0
-roome = 0
+roome = PLACE_DOGCHECK2
 endme = 0
 global.interact = 1
 if gml_Script_ossafe_file_exists_ch1("dr.ini")
@@ -20,8 +20,8 @@ if gml_Script_ossafe_file_exists_ch1("dr.ini")
     time = ini_read_real(("G" + string(global.filechoice)), "Time", 0)
     var room_index = ini_read_real(("G" + string(global.filechoice)), "Room", 0)
     var room_offset = room_index
-    if (room_index < 280)
-        room_offset = (280 + room_index)
+    if (room_index < ROOM_INITIALIZE_ch1)
+        room_offset = (ROOM_INITIALIZE_ch1 + room_index)
     roome = room_offset
     gml_Script_ossafe_ini_close_ch1()
     gml_Script_ossafe_savedata_save_ch1()

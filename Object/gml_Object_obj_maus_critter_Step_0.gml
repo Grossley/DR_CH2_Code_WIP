@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     initialspeed = speed
     speed = 0
-    init = 1
+    init = true
     depth -= 2
     if big
         stuck = 1

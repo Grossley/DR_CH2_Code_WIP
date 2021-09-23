@@ -10,7 +10,7 @@ else
     facing = 0
     dfacing = 0
     image_speed = 0
-    talked = 0
+    talked = false
     ourcase = 0
     eggmake = 0
     egcon = 0

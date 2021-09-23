@@ -1,11 +1,11 @@
 if gml_Script_i_ex(target)
 {
-    if (init == 0)
+    if (init == false)
     {
         dark = (global.darkzone + 1)
         fakegravity = (jumpspeed / (jumptime * 0.5))
         ignoredepth = 0
-        init = 1
+        init = true
         body_obj = gml_Script_scr_dark_marker(target.x, target.y, target.sprite_index)
         body_obj.sprite_index = target.sprite_index
         body_obj.image_index = target.image_index

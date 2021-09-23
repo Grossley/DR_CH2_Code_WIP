@@ -1,9 +1,9 @@
-if (init == 0 && image_alpha < 1)
+if (init == false && image_alpha < 1)
 {
     image_alpha += 0.1
     if (image_alpha >= 1)
     {
-        init = 1
+        init = true
         active = true
     }
 }

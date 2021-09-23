@@ -51,7 +51,7 @@ if (type == 0)
 }
 if (type == 1)
 {
-    if (init == 0)
+    if (init == false)
     {
         instancemax = 0
         with (obj_mainchara)
@@ -69,9 +69,9 @@ if (type == 1)
             other.listinstance[other.instancemax] = id
             other.instancemax++
         }
-        init = 1
+        init = true
     }
-    if (init == 1)
+    if (init == true)
     {
         for (i = 0; i < instancemax; i++)
         {

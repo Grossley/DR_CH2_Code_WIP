@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -42,10 +42,10 @@ if (global.monster[myself] == true)
             gml_Script_msgsetloc(0, "Nice", "obj_virovirokun_enemy_slash_Step_0_gml_58_0")
         noelle_splat = 0
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -107,7 +107,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* VIROVIROKUN - This sick virus needs affordable healthcare./%", "obj_virovirokun_enemy_slash_Step_0_gml_154_0")
@@ -380,7 +380,7 @@ if (global.myfight == 3)
         gml_Script_scr_battletext_default()
         actcon = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_scr_mercyadd(myself, 50)
         if (simultotal == 1)
@@ -400,7 +400,7 @@ if (global.myfight == 3)
             actconsus = (simulordersus == 0 ? 20 : 0)
         }
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         if (global.mercymod[myself] < global.mercymax[myself])
             gml_Script_scr_mercyadd(myself, 50)
@@ -421,7 +421,7 @@ if (global.myfight == 3)
             actconral = (simulorderral == 0 ? 20 : 0)
         }
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         if (noelle_special == 0)
         {

@@ -1,8 +1,8 @@
 xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     fncon = 0
     siner = 0
     if (altpath == 1)
@@ -152,7 +152,7 @@ if (timer == (95 + (altpath * 30)) && damage > 0 && global.fighting == true)
             if gml_Script_i_ex(global.monsterinstance[i])
             {
                 global.hittarget[i] = 0
-                global.monsterinstance[i].fatal = 1
+                global.monsterinstance[i].fatal = true
                 if (altpath == 0)
                     gml_Script_scr_damage_enemy(i, (damage + round(random(100))))
                 else
@@ -164,7 +164,7 @@ if (timer == (95 + (altpath * 30)) && damage > 0 && global.fighting == true)
                 }
                 if (global.monsterhp[i] > 0 && altpath == 0)
                 {
-                    global.monsterinstance[i].fatal = 0
+                    global.monsterinstance[i].fatal = false
                     with (global.monsterinstance[i])
                         __of = gml_Script_scr_oflash()
                 }

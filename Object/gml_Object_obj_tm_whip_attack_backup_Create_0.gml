@@ -1,5 +1,5 @@
 state = 0
-creator = obj_sneo_friedpipis
+creator = 0
 animConst = 9.426
 timer = (animConst * 2)
 attacktimer = 0
@@ -21,4 +21,4 @@ rotateCracker = 0
 attackoffset = 0
 whipball = gml_Script_instance_create(x, y, obj_tm_whip)
 quizmode = 0
-init = 0
+init = false

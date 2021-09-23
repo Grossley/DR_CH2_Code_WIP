@@ -1,7 +1,7 @@
 if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         if (pirouette != 2)
             global.invc = reminvc
@@ -144,7 +144,7 @@ if (global.monster[myself] == true)
                 global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_59_0")
         }
         gml_Script_scr_enemyblcon_ch1((x - 160), (y - 20), 3)
-        talked = 1
+        talked = true
         talktimer = 0
         if (jturn >= 19)
         {
@@ -185,7 +185,7 @@ if (global.monster[myself] == true)
         else
             gml_Script_scr_randomtarget_ch1()
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip_ch1(15)
@@ -281,7 +281,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_237_0")

@@ -4,6 +4,6 @@ maxlength = 36
 if instance_exists(obj_pipis_controller)
 {
 }
-init = 0
+init = false
 homingfactor = 0
 maxhomingfactor = 5

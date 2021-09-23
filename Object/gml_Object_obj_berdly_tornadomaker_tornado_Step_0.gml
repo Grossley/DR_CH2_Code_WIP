@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     remhspeed = hspeed
     remy = y
@@ -6,7 +6,7 @@ if (init == 0)
         yspot = (obj_growtangle.y + (sprite_height * howfar))
     else
         yspot = 240
-    init = 1
+    init = true
 }
 if (con == 0)
 {

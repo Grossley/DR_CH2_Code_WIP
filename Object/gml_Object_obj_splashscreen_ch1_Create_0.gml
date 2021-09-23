@@ -2,7 +2,7 @@ xx = gml_Script___view_get(0, 0)
 yy = gml_Script___view_get(1, 0)
 text_alpha_a = 0
 text_alpha_b = 0
-loaded = 0
+loaded = false
 heart_pos_y = (yy + 288)
 heart_pos_y_ja = (yy + 328)
 heart_pos_x_padding = (global.lang == "ja" ? -20 : -10)
@@ -13,7 +13,7 @@ line_height = 50
 line_height_ja = 33
 select_padding = 45
 confirming = 0
-visit_shop = 0
+visit_shop = false
 selected = false
 buffer = 0
 played_text_en = "This program is intended for players#who are already familiar with UNDERTALE."
@@ -24,7 +24,7 @@ check_text_ja_1 = "まだプレイしたことのない方は、"
 check_text_ja_2 = "まずは「UNDERTALE」をチェックしてみませんか？"
 shop_options = (global.lang == "en" ? ["Yes", "No"] : ["はい", "いいえ"])
 shop_text = (global.lang == "en" ? "Nintendo eShop" : "ニンテンドーeショップ")
-commerce_dialog_open = 0
+commerce_dialog_open = false
 if (os_type == os_ps4)
 {
     shop_text = (global.lang == "en" ? "\"PlayStation Store\"" : "「PlayStation Store」")

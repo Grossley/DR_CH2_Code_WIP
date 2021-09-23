@@ -188,7 +188,7 @@ if (condition == 0 || condition == 1)
         draw_rectangle(((((x + (sprite_width / 2)) - 20) - fly) + flyx), ((y + 80) - (fly / 2)), ((((x + (sprite_width / 2)) + 30) + fly) + flyx), ((y + 85) + (fly / 2)), false)
     }
 }
-if (debug == 1)
+if (debug == true)
 {
     if keyboard_check_pressed(vk_down)
     {

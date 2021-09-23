@@ -1,7 +1,7 @@
-if (init == 0)
+if (init == false)
 {
     active = true
-    init = 1
+    init = true
     if (attackdirection == 1)
         targety = (obj_growtangle.y + random_range(-70, 70))
     else

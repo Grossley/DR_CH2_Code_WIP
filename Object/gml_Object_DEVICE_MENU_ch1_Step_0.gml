@@ -22,7 +22,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7)
     {
         ONEBUFFER = 2
         TWOBUFFER = 2
-        SELNOISE = 1
+        SELNOISE = true
         if (MENUCOORD[MENU_NO] == 0)
         {
             if (MENU_NO == 1)
@@ -32,7 +32,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7)
                     global.filechoice = MENUCOORD[0]
                     gml_Script_scr_windowcaption_ch1(gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Step_0_gml_35_0"))
                     gml_Script_snd_free_all_ch1()
-                    obj_loadscreen_ch1.loaded = 1
+                    obj_loadscreen_ch1.loaded = true
                     if gml_Script_ossafe_file_exists_ch1((("keyconfig_" + string(global.filechoice)) + ".ini"))
                     {
                         gml_Script_ossafe_ini_open_ch1((("keyconfig_" + string(global.filechoice)) + ".ini"))
@@ -100,7 +100,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7)
                 if (TYPE == 1)
                     TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Step_0_gml_91_0")
                 MESSAGETIMER = 90
-                SELNOISE = 0
+                SELNOISE = false
                 DEATHNOISE = true
                 MENU_NO = 0
             }
@@ -127,7 +127,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7)
                 if (TYPE == 1)
                     TEMPCOMMENT = gml_Script_scr_84_get_lang_string_ch1("DEVICE_MENU_slash_Step_0_gml_127_0")
                 MESSAGETIMER = 90
-                SELNOISE = 0
+                SELNOISE = false
                 DEATHNOISE = true
                 MENU_NO = 0
             }
@@ -206,7 +206,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
                     {
                         TWOBUFFER = 2
                         ONEBUFFER = 2
-                        SELNOISE = 1
+                        SELNOISE = true
                         MENUCOORD[4] = 0
                         MENU_NO = 4
                     }
@@ -240,7 +240,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
                 {
                     TWOBUFFER = 2
                     ONEBUFFER = 2
-                    SELNOISE = 1
+                    SELNOISE = true
                     MENUCOORD[3] = 0
                     MENU_NO = 3
                 }
@@ -263,7 +263,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
                 {
                     TWOBUFFER = 2
                     ONEBUFFER = 2
-                    SELNOISE = 1
+                    SELNOISE = true
                     MENUCOORD[6] = 0
                     MENU_NO = 6
                 }
@@ -285,7 +285,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
         {
             TWOBUFFER = 2
             ONEBUFFER = 2
-            SELNOISE = 1
+            SELNOISE = true
             MENU_NO = 0
         }
     }
@@ -357,7 +357,7 @@ if (MENU_NO == 0)
             ONEBUFFER = 1
             TWOBUFFER = 1
             MENU_NO = 1
-            SELNOISE = 1
+            SELNOISE = true
         }
         if (MENUCOORD[0] == 3)
         {
@@ -365,7 +365,7 @@ if (MENU_NO == 0)
             ONEBUFFER = 1
             TWOBUFFER = 1
             MENU_NO = 2
-            SELNOISE = 1
+            SELNOISE = true
         }
         if (MENUCOORD[0] == 4)
         {
@@ -373,12 +373,12 @@ if (MENU_NO == 0)
             ONEBUFFER = 1
             TWOBUFFER = 1
             MENU_NO = 5
-            SELNOISE = 1
+            SELNOISE = true
         }
         if (MENUCOORD[0] == 5)
         {
-            input_enabled = 0
-            SELNOISE = 1
+            input_enabled = false
+            SELNOISE = true
             gml_Script_snd_free_all_ch1()
             alarm[0] = 30
         }
@@ -388,7 +388,7 @@ if (MENU_NO == 0)
             gml_Script_scr_84_load_ini_ch1()
             ONEBUFFER = 2
             TWOBUFFER = 2
-            SELNOISE = 1
+            SELNOISE = true
         }
     }
 }
@@ -411,10 +411,10 @@ if (MOVENOISE == 1)
     gml_Script_snd_play_ch1(snd_menumove_ch1)
     MOVENOISE = 0
 }
-if (SELNOISE == 1)
+if (SELNOISE == true)
 {
     gml_Script_snd_play_ch1(snd_select_ch1)
-    SELNOISE = 0
+    SELNOISE = false
 }
 if (BACKNOISE == true)
 {

@@ -9,7 +9,7 @@ for (i = 0; i < 3; i++)
     ismaus[i] = 0
     caught[i] = 0
 }
-init = 0
+init = false
 visible = false
 if instance_exists(obj_mauswheel_enemy)
 {

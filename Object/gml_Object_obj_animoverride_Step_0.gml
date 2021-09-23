@@ -1,7 +1,7 @@
-if (init == 0)
+if (init == false)
 {
     source.image_alpha = 0
-    init = 1
+    init = true
 }
 if animdone
 {

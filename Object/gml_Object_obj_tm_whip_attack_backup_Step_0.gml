@@ -1,7 +1,7 @@
-if (init == 0)
+if (init == false)
 {
     whipball.quizmode = quizmode
-    init = 1
+    init = true
 }
 truetimer++
 attacktimer++

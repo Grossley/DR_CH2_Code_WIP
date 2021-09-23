@@ -1,4 +1,4 @@
-mouthmove = 0
+mouthmove = false
 mouthtimer = 0
 face_index = 0
 image_speed = 0

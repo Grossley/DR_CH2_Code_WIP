@@ -1,6 +1,6 @@
 if (active == false)
 {
-    beenset = 1
+    beenset = true
     mycamerax = gml_Script___view_get(0, camera)
     mycameray = gml_Script___view_get(1, camera)
     if (global.flag[12] == 0)

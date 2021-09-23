@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     if gml_Script_scr_debug()
         global.interact = 1
-    init = 1
+    init = true
     input_timer = 0
 }
 if (con == 1)

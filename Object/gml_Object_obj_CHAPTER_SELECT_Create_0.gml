@@ -65,7 +65,7 @@ if global.is_console
     application_surface_enable(true)
     application_surface_draw_enable(false)
 }
-global.debug = 1
+global.debug = true
 con = "init"
 file_found = 0
 highestUncompletedChapter = 0
@@ -105,9 +105,9 @@ move_noise = 0
 select_noise = 0
 for (i = 0; i < 10; i += 1)
 {
-    global.input_pressed[i] = 0
-    global.input_held[i] = 0
-    global.input_released[i] = 0
+    global.input_pressed[i] = false
+    global.input_held[i] = false
+    global.input_released[i] = false
 }
 if global.is_console
 {

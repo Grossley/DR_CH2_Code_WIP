@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     tiletype[0] = obj_marker
     tiletype[1] = obj_marker
@@ -48,7 +48,7 @@ if (init == 0)
     with (obj_marker)
         visible = false
     visible = true
-    init = 1
+    init = true
 }
 for (i = 0; i <= tilemax; i++)
 {

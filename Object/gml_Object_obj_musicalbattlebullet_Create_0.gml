@@ -7,5 +7,5 @@ image_index = 0
 soundTimeStep = audio_sound_get_track_position(global.batmusic[1])
 variant = 0
 varianty = 0
-init = 0
+init = false
 failed = 0

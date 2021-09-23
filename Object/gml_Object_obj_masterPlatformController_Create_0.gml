@@ -23,6 +23,6 @@ if (global.flag[379] == 0 || global.plot < 78)
     waitbuffer = 0
     makenewplatform = 0
     noelle = 0
-    init = 0
+    init = false
     active = false
 }

@@ -8,7 +8,7 @@ if (TYPE == 1 && SUBTYPE == 0)
     draw_sprite_ext(spr_giantdarkdoor, 1, 45, 50, 2, 2, 0, c_white, 0.25)
     BG_SINER++
 }
-if (BGMADE == 1 && SUBTYPE == 1)
+if (BGMADE == true && SUBTYPE == 1)
 {
     ANIM_SINER += 1
     ANIM_SINER_B += 1
@@ -96,9 +96,9 @@ if (MENU_NO >= 0)
             if (MENU_NO == 10 || MENU_NO == 11)
             {
                 var filefound = 0
-                if (INCOMPLETE_LOAD == 0 && COMPLETEFILE_PREV[i] == 1)
+                if (INCOMPLETE_LOAD == false && COMPLETEFILE_PREV[i] == 1)
                     filefound = 1
-                if (INCOMPLETE_LOAD == 1 && INCOMPLETEFILE_PREV[i] == 1)
+                if (INCOMPLETE_LOAD == true && INCOMPLETEFILE_PREV[i] == 1)
                     filefound = 1
                 if filefound
                 {

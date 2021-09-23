@@ -1,4 +1,4 @@
-init = 0
+init = false
 found_gif = 0
 mygif = -1
 image_speed = 0

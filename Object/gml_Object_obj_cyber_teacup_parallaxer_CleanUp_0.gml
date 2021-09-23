@@ -1,4 +1,4 @@
-if (init == 1)
+if (init == true)
 {
     for (i = 0; i < 8; i++)
     {

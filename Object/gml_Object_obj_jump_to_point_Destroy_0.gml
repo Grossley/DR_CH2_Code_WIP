@@ -1,4 +1,4 @@
-if (init == 1)
+if (init == true)
 {
     if gml_Script_i_ex(body_obj)
     {

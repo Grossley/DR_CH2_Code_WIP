@@ -1,4 +1,4 @@
-if (init == 1)
+if (init == true)
 {
     for (i = 0; i <= tilemax; i++)
     {
@@ -8,7 +8,7 @@ if (init == 1)
         tile[i].image_blend = image_blend
     }
 }
-if (init == 1)
+if (init == true)
 {
     for (i = 0; i <= 20; i++)
     {
@@ -22,7 +22,7 @@ if (init == 1)
             staticTile[i].image_blend = image_blend
     }
 }
-if (init == 1)
+if (init == true)
 {
     puzSwitch.x += (x - xprevious)
     puzSwitch.y += (y - yprevious)

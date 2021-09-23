@@ -1,14 +1,14 @@
-if (init == 0)
+if (init == false)
 {
     if (global.flag[419] == 1)
         global.mercymod[myself] = 100
     if (global.flag[419] == 2)
         global.mercymod[myself] = 50
-    init = 1
+    init = true
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -60,10 +60,10 @@ if (global.monster[myself] == true)
         }
         gml_Script_msgset(0, dialogText)
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -147,7 +147,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* TASQUE MANAGER - Obsessed with order, and abhors Chaos. Whip it good!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_205_0")
@@ -191,18 +191,18 @@ if (global.myfight == 3)
             instance_destroy()
         actcon = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_scr_act_charsprite("susie", spr_susie_wan_sign, 0, false)
         gml_Script_scr_mercyadd(myself, 20)
-        if (simultotal == 1 || global.actsimulsus[myself][0] == 0)
+        if (simultotal == 1 || global.actsimulsus[myself][0] == false)
         {
             gml_Script_msgsetloc(0, "* Susie was trained like an animal.../", "obj_tasque_manager_enemy_slash_Step_0_gml_256_0")
             gml_Script_scr_anyface_next("susie", "I")
             var sentenceEnd = "/%"
             if (!treatText)
             {
-                global.actsimulsus[myself][0] = 1
+                global.actsimulsus[myself][0] = true
                 treatText = 1
                 gml_Script_scr_smallface(0, "ralsei", 12, 300, 50, gml_Script_stringsetloc("A treat!! Somebody give her a treat!!", "obj_tasque_manager_enemy_slash_Step_0_gml_265_0"))
                 sentenceEnd = "\\f0/%"
@@ -227,17 +227,17 @@ if (global.myfight == 3)
         actcon = 6
         alarm[4] = 15
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         gml_Script_scr_act_charsprite("ralsei", spr_ralseib_wan, 0, false)
         gml_Script_scr_mercyadd(myself, 20)
-        if (simultotal == 1 || global.actsimulral[myself][0] == 0)
+        if (simultotal == 1 || global.actsimulral[myself][0] == false)
         {
             gml_Script_msgsetloc(0, "* Ralsei got trained like an animal!!/", "obj_tasque_manager_enemy_slash_Step_0_gml_299_0")
             sentenceEnd = "/%"
             if (!badgeText)
             {
-                global.actsimulral[myself][0] = 1
+                global.actsimulral[myself][0] = true
                 badgeText = 1
                 gml_Script_scr_smallface(0, "susie", 12, 300, 50, gml_Script_stringsetloc("Why the hell do YOU get one of those!!", "obj_tasque_manager_enemy_slash_Step_0_gml_307_0"))
                 sentenceEnd = "\\f0/%"

@@ -57,7 +57,7 @@ if (endcoaster == 1)
             {
                 bumpwait = 1
                 alarm[7] = 10
-                acting = 0
+                acting = false
                 actcon = 1
                 actconsus = 0
                 actconral = 0

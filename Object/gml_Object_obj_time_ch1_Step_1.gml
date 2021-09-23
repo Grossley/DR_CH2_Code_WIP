@@ -24,10 +24,10 @@ if keyboard_check(vk_escape)
 else
     quit_timer -= 2
 if keyboard_check_pressed(vk_f4)
-    fullscreen_toggle = 1
-if (fullscreen_toggle == 1)
+    fullscreen_toggle = true
+if (fullscreen_toggle == true)
 {
-    fullscreen_toggle = 0
+    fullscreen_toggle = false
     if window_get_fullscreen()
     {
         window_set_fullscreen(false)
@@ -48,45 +48,45 @@ if (fullscreen_toggle == 1)
 if (window_center_toggle == 2)
 {
     window_center()
-    window_center_toggle = 0
+    window_center_toggle = false
 }
-if (window_center_toggle == 1)
+if (window_center_toggle == true)
     window_center_toggle = 2
 for (i = 0; i < 10; i += 1)
 {
-    global.input_released[i] = 0
-    global.input_pressed[i] = 0
+    global.input_released[i] = false
+    global.input_pressed[i] = false
 }
-if (instance_exists(obj_gamecontroller) && obj_gamecontroller.gamepad_active == 1)
+if (instance_exists(obj_gamecontroller) && obj_gamecontroller.gamepad_active == true)
 {
     for (var j = 0; j < 4; j++)
     {
         if (keyboard_check(global.input_k[j]) || gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[j]) || gml_Script_scr_gamepad_axis_check_ch1(obj_gamecontroller.gamepad_id, j))
         {
-            if (global.input_held[j] == 0)
-                global.input_pressed[j] = 1
-            global.input_held[j] = 1
+            if (global.input_held[j] == false)
+                global.input_pressed[j] = true
+            global.input_held[j] = true
         }
         else
         {
-            if (global.input_held[j] == 1)
-                global.input_released[j] = 1
-            global.input_held[j] = 0
+            if (global.input_held[j] == true)
+                global.input_released[j] = true
+            global.input_held[j] = false
         }
     }
     for (var k = 4; k < 10; k++)
     {
         if (keyboard_check(global.input_k[k]) || gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[k]))
         {
-            if (global.input_held[k] == 0)
-                global.input_pressed[k] = 1
-            global.input_held[k] = 1
+            if (global.input_held[k] == false)
+                global.input_pressed[k] = true
+            global.input_held[k] = true
         }
         else
         {
-            if (global.input_held[k] == 1)
-                global.input_released[k] = 1
-            global.input_held[k] = 0
+            if (global.input_held[k] == true)
+                global.input_released[k] = true
+            global.input_held[k] = false
         }
     }
 }
@@ -96,15 +96,15 @@ else
     {
         if keyboard_check(global.input_k[l])
         {
-            if (global.input_held[l] == 0)
-                global.input_pressed[l] = 1
-            global.input_held[l] = 1
+            if (global.input_held[l] == false)
+                global.input_pressed[l] = true
+            global.input_held[l] = true
         }
         else
         {
-            if (global.input_held[l] == 1)
-                global.input_released[l] = 1
-            global.input_held[l] = 0
+            if (global.input_held[l] == true)
+                global.input_released[l] = true
+            global.input_held[l] = false
         }
     }
 }

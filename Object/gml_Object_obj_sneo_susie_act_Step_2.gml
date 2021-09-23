@@ -2,9 +2,9 @@ if (turnsleft < 1)
     instance_destroy()
 if instance_exists(obj_heart)
 {
-    if (init == 0)
+    if (init == false)
     {
-        init = 1
+        init = true
         x = (obj_heart.x - 30)
         y = obj_heart.y
     }

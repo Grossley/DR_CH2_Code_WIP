@@ -13,7 +13,7 @@ if (y >= (gml_Script_cameray() + 520))
     instance_destroy()
 if (y <= (gml_Script_cameray() - 40))
     instance_destroy()
-if (x >= (gml_Script_camerax() + 500) && x < (gml_Script_camerax() + 530) && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == 1)
+if (x >= (gml_Script_camerax() + 500) && x < (gml_Script_camerax() + 530) && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == true)
 {
     event_user(0)
     gml_Script_snd_play(snd_bell)

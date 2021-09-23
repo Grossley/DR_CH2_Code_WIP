@@ -1,4 +1,4 @@
-if (play == 0)
+if (play == false)
 {
     gml_Script_snd_play(snd_bell)
     if gml_Script_i_ex(obj_holemouse_block_clockwise)
@@ -16,7 +16,7 @@ if (play == 0)
         with (obj_holemouse_block_clockwise_moveable)
             reset = true
     }
-    play = 1
+    play = true
     timer = 20
     image_speed = 0.25
 }

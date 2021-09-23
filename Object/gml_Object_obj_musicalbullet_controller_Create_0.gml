@@ -10,5 +10,5 @@ enemy_count = 1
 skip_bullet = 0
 skip_bullet_count = 0
 made = 0
-init = 0
+init = false
 solotimerprevious = 0

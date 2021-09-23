@@ -1,4 +1,4 @@
-init = 0
+init = false
 red_damage[0] = 0
 red_target[0] = 0
 shockwave_color = 255

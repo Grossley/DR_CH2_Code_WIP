@@ -1,7 +1,7 @@
 if (firstskip == 1)
 {
-    global.acting[0] = 1
-    acting = 1
+    global.acting[0] = true
+    acting = true
     with (obj_writer_ch1)
         instance_destroy()
     with (obj_face_ch1)
@@ -16,18 +16,18 @@ if (firstskip == 1)
 if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4
-    global.acting[0] = 1
-    acting = 1
-    if (global.mnfight == 1 && talked == 0)
+    global.acting[0] = true
+    acting = true
+    if (global.mnfight == 1 && talked == false)
     {
         actcon = 0
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
             gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip_ch1(-1)
@@ -99,7 +99,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         firstskip = 0
         global.typer = 53

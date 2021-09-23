@@ -26,7 +26,7 @@ if (!init)
     }
     if turnSignal
         sprite_index = (x > obj_growtangle.x ? leftTurnSprite : rightTurnSprite)
-    init = 1
+    init = true
 }
 if (initialSpeed == 0)
     initialSpeed = speed

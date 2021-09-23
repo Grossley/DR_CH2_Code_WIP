@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -48,10 +48,10 @@ if (global.monster[myself] == true)
             ultimatehealprompt = 0
         }
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -110,7 +110,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* AMBYU-LANCE - If it doesn't find an accident, it'll make one!/%", "obj_omawaroid_enemy_slash_Step_0_gml_130_0")
@@ -167,7 +167,7 @@ if (global.myfight == 3)
     }
     if (actcon == 6 && (!gml_Script_d_ex()))
         actcon = 1
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         var simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Susie lies about how often she brushes and flosses!/%", "obj_omawaroid_enemy_slash_Step_0_gml_227_0") : gml_Script_stringsetloc("* Susie lies about her health!/%", "obj_omawaroid_enemy_slash_Step_0_gml_227_1"))
         gml_Script_msgset(0, simultext)
@@ -175,7 +175,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Ralsei washes his hands for 60 seconds!/%", "obj_omawaroid_enemy_slash_Step_0_gml_238_0") : gml_Script_stringsetloc("* Ralsei washes his hands!/%", "obj_omawaroid_enemy_slash_Step_0_gml_238_1"))
         gml_Script_msgset(0, simultext)
@@ -183,7 +183,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("ralsei")
         actconral = (simulorderral == 0 ? 20 : 0)
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         gml_Script_scr_mercyadd(myself, 50)
         gml_Script_msgsetloc(0, "* Noelle takes on and off her nurse hat really fast!/%", "obj_omawaroid_enemy_slash_Step_0_gml_253_0")

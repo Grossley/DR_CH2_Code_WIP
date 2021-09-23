@@ -3,20 +3,20 @@ if gml_Script_i_ex(mywriter)
     mywriter.depth = (depth - 5)
     if (remmsgno != obj_writer.msgno)
         reformatted = 0
-    if (auto_length == 0)
+    if (auto_length == false)
     {
-        init = 1
+        init = true
         reformatted = 1
     }
     if (reformatted == 0)
     {
-        if (mywriter.formatted == 1)
+        if (mywriter.formatted == true)
         {
-            if (init == 0)
+            if (init == false)
             {
                 initwritingx = mywriter.writingx
                 initwritingy = mywriter.writingy
-                init = 1
+                init = true
             }
             writingx = mywriter.writingx
             writingy = mywriter.writingy
@@ -71,9 +71,9 @@ if gml_Script_i_ex(mywriter)
             }
         }
     }
-    if (auto_length == 0)
+    if (auto_length == false)
         draw_self()
-    if (auto_length == 1 && init == 1)
+    if (auto_length == true && init == true)
     {
         blconscale = 1
         if (balloonheight < 40)

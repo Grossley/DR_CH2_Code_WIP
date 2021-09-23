@@ -88,7 +88,7 @@ if (wireframe_boxing == 0 && dead == 1)
     if (dead_timer > (20 / f))
         vspeed = (14 / f)
 }
-if ((instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting > 0 && punchcon == 0 && dead == 0) || (gml_Script_scr_isphase("enemytalk") && punchcon == 0 && dead == 0) || (specialcon != 0 && punchcon == 0 && dead == 0) || (acttoenemytalktransition == 1 && punchcon == 0 && dead == 0))
+if ((instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting > false && punchcon == 0 && dead == 0) || (gml_Script_scr_isphase("enemytalk") && punchcon == 0 && dead == 0) || (specialcon != 0 && punchcon == 0 && dead == 0) || (acttoenemytalktransition == true && punchcon == 0 && dead == 0))
 {
     if (obj_gigaqueen_enemy.breathattack == 0 && obj_gigaqueen_enemy.missleattack == 0)
     {
@@ -214,7 +214,7 @@ if (global.boxingphase == 3)
     global.turntimer = 5
     with (obj_gigaqueen_enemy)
     {
-        talked = 0
+        talked = false
         if (didntcounterthisturn == 1)
             global.battlemsg[0] = gml_Script_stringsetsubloc("* (Press ~1 or ~2 to hit Queen after she attacks!)", gml_Script_scr_get_input_name(4), gml_Script_scr_get_input_name(5), "o_boxingcontroller_slash_Step_0_gml_170_0")
         if (didntpunchthisturn == 1)
@@ -465,7 +465,7 @@ if (punchcon >= 1 && arcade_end == 0)
         if (swordactive == 1)
             image_index = 14
         vspeed = ((-12 * f) * punch_speed_multiplier)
-        if (instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting > 0)
+        if (instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting > false)
             vspeed = (-10 * f)
         if (drawflip == 0)
             hspeed = (-4 * f)
@@ -482,7 +482,7 @@ if (punchcon >= 1 && arcade_end == 0)
         punchtimer += (1 * punch_speed_multiplier)
         if (laseractive == 1)
             punchtimer += 1
-        if ((punchtimer >= (7 / f) && instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting == 0) || (punchtimer >= (14 / f) && instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting > 0) || (punchtimer >= (7 / f) && (!instance_exists(obj_gigaqueen_enemy))))
+        if ((punchtimer >= (7 / f) && instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting == false) || (punchtimer >= (14 / f) && instance_exists(obj_gigaqueen_enemy) && obj_gigaqueen_enemy.acting > false) || (punchtimer >= (7 / f) && (!instance_exists(obj_gigaqueen_enemy))))
         {
             hspeed = 0
             punchtimer = 0

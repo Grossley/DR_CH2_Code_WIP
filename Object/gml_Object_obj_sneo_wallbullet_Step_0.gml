@@ -1,9 +1,9 @@
 if (image_alpha < 1)
     image_alpha += 0.04
-if (init == 0)
+if (init == false)
 {
     startdepth = (obj_growtangle.depth + depth)
-    init = 1
+    init = true
 }
 if (x >= (room_width + 100) || x <= -100 || y >= (room_height + 100) || y <= -100)
     instance_destroy()

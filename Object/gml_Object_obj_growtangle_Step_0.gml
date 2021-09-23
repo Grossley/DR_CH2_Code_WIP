@@ -18,7 +18,7 @@ if (!init)
         surface_reset_target()
         surface_free(surf)
     }
-    init = 1
+    init = true
 }
 growth = 0
 if (timer < maxtimer && growcon == 1)

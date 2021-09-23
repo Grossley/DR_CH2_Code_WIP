@@ -1,6 +1,6 @@
 global.is_console = (os_type == os_switch || os_type == os_ps4)
 global.screen_border_id = "Dynamic"
-global.screen_border_active = 1
+global.screen_border_active = true
 global.screen_border_alpha = 1
 global.screen_border_state = 0
 global.screen_border_dynamic_fade_id = 0

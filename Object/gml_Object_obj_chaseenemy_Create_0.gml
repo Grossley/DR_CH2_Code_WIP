@@ -1,7 +1,7 @@
 event_inherited()
 test_release_bullet = 0
 test_release_bullet_timer = 0
-init = 0
+init = false
 state = 0
 image_xscale = 2
 image_yscale = 2

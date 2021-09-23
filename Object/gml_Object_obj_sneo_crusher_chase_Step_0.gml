@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     if (crushedObj != 1)
         offsetCap = (crushedObj == 2 ? 15 : 0)
 }

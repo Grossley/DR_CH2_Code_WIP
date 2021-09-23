@@ -1,9 +1,9 @@
-if (init == 0)
+if (init == false)
 {
     gml_Script_snd_stop(snd_rocket)
     gml_Script_snd_volume(snd_rocket, 1, 0)
     gml_Script_snd_play(snd_rocket)
-    init = 1
+    init = true
     timer = 2
     path_start(bulletPath, 21, path_action_stop, 0)
 }

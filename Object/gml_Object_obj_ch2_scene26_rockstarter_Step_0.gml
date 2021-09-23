@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if smallrocks
     {

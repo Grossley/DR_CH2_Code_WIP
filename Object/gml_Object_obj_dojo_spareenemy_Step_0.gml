@@ -5,7 +5,7 @@ if (ambushed == false)
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         global.typer = 50
         if (checkreact == 1)
@@ -69,7 +69,7 @@ if (global.monster[myself] == true)
             global.actactor[myself][1] = 2
             global.actname[myself][1] = gml_Script_stringsetloc("SleepyStory", "obj_dojo_spareenemy_slash_Step_0_gml_70_0")
             global.actdesc[myself][1] = " "
-            global.actsimul[myself][1] = 1
+            global.actsimul[myself][1] = true
         }
         else if (battlestate == 3)
         {
@@ -98,7 +98,7 @@ if (global.monster[myself] == true)
         if (pacifycon == -1)
             talked = -1
         else
-            talked = 1
+            talked = true
         talktimer = 0
     }
     if (talked == -1 && gml_Script_scr_isphase("enemytalk"))
@@ -106,9 +106,9 @@ if (global.monster[myself] == true)
         if (talktimer < 15)
             talktimer++
         else if (!instance_exists(obj_writer))
-            talked = 0
+            talked = false
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         if (talktimer < 15)
@@ -118,7 +118,7 @@ if (global.monster[myself] == true)
             global.flag[20] = 0
             if (sparecon == -1)
             {
-                talked = 0
+                talked = false
                 return;
             }
             if (sparecon == 1)
@@ -128,7 +128,7 @@ if (global.monster[myself] == true)
                 battlestate = 2
                 fakespare = 1
                 alarm[0] = 90
-                talked = 0
+                talked = false
                 global.mnfight = 8
                 global.mercymod[myself] = 0
             }
@@ -157,7 +157,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* JIGSAW JOE - Beat him up to earn his life savings!/%", "obj_dojo_spareenemy_slash_Step_0_gml_177_0")
@@ -180,14 +180,14 @@ if (global.myfight == 3)
         actcon = 1
         gml_Script_scr_monster_make_tired(myself)
     }
-    if (acting == 1 && actconsus == 1)
+    if (acting == true && actconsus == 1)
     {
         gml_Script_msgsetloc(0, "* Susie acted!/%", "obj_dojograzeenemy_slash_Step_0_gml_97_0")
         gml_Script_scr_battletext_default()
         actcon = 1
         actconsus = 0
     }
-    if (acting == 1 && actconral == 1)
+    if (acting == true && actconral == 1)
     {
         gml_Script_msgsetloc(0, "* Ralsei acted!/%", "obj_dojograzeenemy_slash_Step_0_gml_106_0")
         gml_Script_scr_battletext_default()

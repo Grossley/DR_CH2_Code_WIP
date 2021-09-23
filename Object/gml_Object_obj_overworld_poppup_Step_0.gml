@@ -1,6 +1,6 @@
 if (global.flag[encounterflag] == 1)
     instance_destroy()
-if (global.flag[encounterflag] == 6 && init == 0)
+if (global.flag[encounterflag] == 6 && init == false)
 {
     if (frozensprite == IMAGE_LOGO)
         frozensprite = spr_poppup_hurt
@@ -8,7 +8,7 @@ if (global.flag[encounterflag] == 6 && init == 0)
     frozennpc.sprite_index = frozensprite
     frozennpc.fresh = true
     instance_destroy()
-    init = 1
+    init = true
 }
 offX = (x + 42)
 offY = (y + 62)

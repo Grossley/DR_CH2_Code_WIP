@@ -14,11 +14,11 @@ nitro = 0
 premonition = 0
 mrboneswildride = 0
 bumpactstarted = 0
-init = 0
+init = false
 attackorder = 0
 with (obj_battleback)
     instance_destroy()
-recruitable = 0
+recruitable = false
 with (obj_herokris)
     x = (gml_Script_camerax() - 200)
 with (obj_herosusie)
@@ -28,7 +28,7 @@ with (obj_heroralsei)
 tornadocount = 0
 spearblastcount = 0
 chirchicount = 0
-recruitable = 0
+recruitable = false
 rideactgo = 0
 dialoguecon = 0
 bumpedfirsttime = 0

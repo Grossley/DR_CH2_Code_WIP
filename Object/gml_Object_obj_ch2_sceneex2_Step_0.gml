@@ -1,7 +1,7 @@
-if (init == 0)
+if (init == false)
 {
     trackx = 0
-    init = 1
+    init = true
 }
 if (con == 1 && obj_mainchara.x <= start_xpos)
 {

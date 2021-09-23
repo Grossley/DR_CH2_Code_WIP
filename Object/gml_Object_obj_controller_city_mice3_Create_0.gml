@@ -16,7 +16,7 @@ if (global.flag[379] == 0 || global.plot < 78)
     }
     with (obj_rotationtile_tower)
         freeze = 1
-    init = 0
+    init = false
     layer_set_visible(layer_get_id("BG_Tiles_HiddenPath"), 0)
     layer_set_visible(layer_get_id("BG_Tiles_HiddenPath_Sidewalk"), 0)
     fakeWall = gml_Script_instance_create(240, 80, obj_solidblocksized)

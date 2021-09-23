@@ -6,6 +6,6 @@ headangle = 180
 lastangle = 180
 btimer = 0
 damage = -1
-target = -1
+target = self
 difficulty = 0
 grazepoints = 4

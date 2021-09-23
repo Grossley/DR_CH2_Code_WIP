@@ -124,7 +124,7 @@ if (TurnCon == 4)
         TurnCon = 1
     else
     {
-        obj_rouxls_enemy.talked = 1
+        obj_rouxls_enemy.talked = true
         TurnCon = 5
         Myturn = 0
         RouxlsTurn++

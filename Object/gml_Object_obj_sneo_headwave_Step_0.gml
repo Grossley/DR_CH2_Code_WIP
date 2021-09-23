@@ -1,9 +1,9 @@
 if (x >= (gml_Script_camerax() + 900) || x <= (gml_Script_camerax() - 200) || y >= (gml_Script_cameray() + 600) || y <= (gml_Script_cameray() - 200))
     instance_destroy()
-if (init == 0 && image_alpha >= 0.5)
+if (init == false && image_alpha >= 0.5)
 {
     destroyable = 1
-    init = 1
+    init = true
 }
 if (state == 0)
 {

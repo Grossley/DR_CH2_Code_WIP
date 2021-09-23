@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -27,10 +27,10 @@ if (global.monster[myself] == true)
                 global.msg[0] = gml_Script_stringsetloc("Yeah it&would be&weird.", "obj_rudinnranger_slash_Step_0_gml_25_0")
         }
         gml_Script_scr_enemyblcon((x - 160), y, 3)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -143,7 +143,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* RUDINN RANGER - AT 8 DF 0&* Ideally multicolored, but they all wanted to be red./%", "obj_rudinnranger_slash_Step_0_gml_158_0")

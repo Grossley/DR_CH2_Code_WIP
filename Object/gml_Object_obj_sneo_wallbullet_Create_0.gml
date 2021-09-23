@@ -23,7 +23,7 @@ friction = 0
 image_speed = 0
 xx = obj_growtangle.x
 xdist = (xstart - xx)
-init = 0
+init = false
 startdepth = 0
 if instance_exists(obj_spamton_neo_enemy)
     damage = (global.monsterat[obj_spamton_neo_enemy.myself] * 5)

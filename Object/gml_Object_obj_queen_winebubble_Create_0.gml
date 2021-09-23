@@ -13,4 +13,4 @@ var d = gml_Script_instance_create(x, y, obj_queen_bubble_half)
 d.parent = self
 d.depth = (obj_queen_wineglass.depth - 1)
 d.image_alpha = 0.4
-init = 0
+init = false

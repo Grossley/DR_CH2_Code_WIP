@@ -3,9 +3,9 @@ if (!instance_exists(obj_heart))
     instance_destroy()
     return;
 }
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     b1 = gml_Script_instance_create(x, y, obj_pipis_bullet)
     b1.place = (60 + random(15))
     b1.parent = id

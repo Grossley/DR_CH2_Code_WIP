@@ -1,4 +1,4 @@
-target = 920
+target = obj_move_to_point
 moved = 0
 movetimer = 0
 movex = 0

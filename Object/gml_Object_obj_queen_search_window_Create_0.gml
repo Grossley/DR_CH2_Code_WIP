@@ -1,6 +1,6 @@
 search = 0
 targetstring = "weapon"
-init = 0
+init = false
 image_xscale = 0
 image_yscale = 0
 state = 0
@@ -12,6 +12,6 @@ childdireciton = 180
 spawndelay = 0
 firsttime = 0
 damage = -1
-target = -1
+target = self
 quick = 0
 donttypeanything = 0

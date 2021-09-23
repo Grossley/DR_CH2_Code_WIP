@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     image_xscale = 0.5
     image_yscale = 0.5
@@ -7,7 +7,7 @@ if (init == 0)
     bouncecount = 0
     shottype = 0
     shottimer = 0
-    init = 1
+    init = true
     con = 1
     if gml_Script_i_ex(boss)
     {

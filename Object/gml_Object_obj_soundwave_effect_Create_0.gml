@@ -7,4 +7,4 @@ fadetime = 0
 easepower = 2
 startwidth = 4
 endwidth = 2
-init = 0
+init = false

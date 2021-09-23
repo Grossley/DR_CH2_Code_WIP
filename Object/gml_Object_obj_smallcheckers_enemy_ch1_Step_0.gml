@@ -8,13 +8,13 @@ if instance_exists(obj_basicattack_ch1)
 if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         gml_Script_scr_randomtarget_ch1()
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         if (gml_Script_button1_p_ch1() && talktimer > 5)
@@ -77,7 +77,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_smallcheckers_enemy_slash_Step_0_gml_127_0")

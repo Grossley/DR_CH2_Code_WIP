@@ -255,5 +255,5 @@ if (room == room_forest_maze_susie_ch1)
         sprite_index = spr_susied_dark_unhappy_ch1
     }
 }
-talked = 0
+talked = false
 timer = 0

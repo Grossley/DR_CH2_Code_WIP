@@ -1,4 +1,4 @@
-init = 0
+init = false
 image_alpha = 0
 lifetime = 30
 xx = x

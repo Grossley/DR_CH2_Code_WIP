@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     image_count = (sprite_get_number(sprite_index) - 1)
 }
 if (reverse == 1)

@@ -1,5 +1,5 @@
 myinteract = 0
-talked = 0
+talked = false
 checked = false
 global.flag[32] = 0
 image_xscale = 2

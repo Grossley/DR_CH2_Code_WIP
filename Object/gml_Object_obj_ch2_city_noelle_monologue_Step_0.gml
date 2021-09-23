@@ -10,7 +10,7 @@ if (!init_forcefields)
         }
     }
 }
-if (init == 0)
+if (init == false)
 {
     for (i = 0; i < instance_number(obj_ch2_noellepuzzle_key_noelle); i++)
     {
@@ -19,7 +19,7 @@ if (init == 0)
     }
     buttonX = gml_Script_scr_array_sort(buttonX, 1)
     buttonY = gml_Script_scr_array_sort(buttonY, 1)
-    init = 1
+    init = true
 }
 if (con == 0 && obj_mainchara.x > 150)
 {
@@ -314,7 +314,7 @@ if auto_continue
     if instance_exists(obj_writer)
     {
         obj_writer.skippable = false
-        if (obj_writer.halt != 0)
+        if (obj_writer.halt != false)
         {
             msgtimer++
             var max_timer = 60
@@ -328,7 +328,7 @@ if auto_continue
             if (msgtimer >= max_timer)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
                 msgtimer = 0
             }
         }

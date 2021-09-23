@@ -1,11 +1,11 @@
-if (init == 0)
+if (init == false)
 {
     if random_image
     {
         image_speed = 0
         image_index = irandom((image_number - 1))
     }
-    init = 1
+    init = true
 }
 if (rotation != 0)
     image_angle += rotation

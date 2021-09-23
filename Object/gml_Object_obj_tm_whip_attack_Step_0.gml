@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     animator.damage = damage
     animator.target = target
     animator.animSpeed = animSpeed

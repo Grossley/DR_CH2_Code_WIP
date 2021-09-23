@@ -13,7 +13,7 @@ if (!init)
             lastOpening += 45
         target_speed *= 1
     }
-    init = 1
+    init = true
 }
 if (x >= (room_width + 100) || x <= -100 || y >= (room_height + 100) || y <= -100)
     instance_destroy()

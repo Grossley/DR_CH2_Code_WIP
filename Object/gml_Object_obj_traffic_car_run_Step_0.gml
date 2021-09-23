@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     if (dir == 0)
         hspeed = 12
     if (dir == 1)
         hspeed = -12
-    init = 1
+    init = true
 }
 hspeed *= 1.1
 vspeed *= 1.1

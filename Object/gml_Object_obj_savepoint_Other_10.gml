@@ -30,7 +30,7 @@ if (room == room_dw_castle_area_2_transformed)
 {
     if (global.plot < 200)
     {
-        if (talked == 0)
+        if (talked == false)
         {
             nodialogue = 0
             gml_Script_scr_speaker("no_name")

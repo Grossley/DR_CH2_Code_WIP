@@ -4,9 +4,9 @@ if (global.encounterno == 89 && global.inv > 0 && hit == 0)
     controller.special = -4
     hit = 1
 }
-if (init == 0 || restart)
+if (init == false || restart)
 {
-    if (init == 0)
+    if (init == false)
     {
         animator.creator = creator
         animator.quizmode = 1
@@ -27,8 +27,8 @@ if (init == 0 || restart)
         turns = 4
     }
     tm = global.monsterinstance[creator]
-    init = 1
-    restart = 0
+    init = true
+    restart = false
     for (i = 0; i < turns; i++)
     {
         if (tm != noone && tm.lastQuizLetter != -1)

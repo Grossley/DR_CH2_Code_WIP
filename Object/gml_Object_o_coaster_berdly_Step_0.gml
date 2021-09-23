@@ -22,7 +22,7 @@ if ((instance_exists(obj_berdlyb_enemy) && global.mercymod[obj_berdlyb_enemy.mys
         smoke.depth = (depth + 1)
     }
 }
-if (init == 0)
+if (init == false)
 {
     if (mode == 0)
     {
@@ -64,7 +64,7 @@ if (init == 0)
         movetype = 1
         moveframes = 4
     }
-    init = 1
+    init = true
 }
 if (obj_berdlyb_enemy.premonition > 0 && o_coaster_controller.actcon == 1)
 {

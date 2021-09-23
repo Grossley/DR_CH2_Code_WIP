@@ -39,8 +39,8 @@ if (global.darkzone == true)
         {
             with (writergod)
             {
-                if (halt == 0)
-                    halt = 1
+                if (halt == false)
+                    halt = true
             }
             finished = 2
         }

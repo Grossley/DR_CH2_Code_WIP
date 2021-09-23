@@ -18,7 +18,7 @@ mouthbottomy = 0
 shotmouthopen = 0
 shotmouthopentimer = 0
 mouthangle = 0
-init = 0
+init = false
 remx = x
 hurtalpha = 0
 gml_Script_instance_create(x, y, obj_sneo_lastattack_hitbox)

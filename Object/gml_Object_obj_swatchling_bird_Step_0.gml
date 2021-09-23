@@ -1,7 +1,7 @@
-if (init == 0)
+if (init == false)
 {
     startcolor = image_blend
-    init = 1
+    init = true
     angle_offset = (startcolor == 4235519 ? random_range(-15, 15) : random_range(-10, 10))
     if platter_spawn
     {

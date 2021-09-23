@@ -1,4 +1,4 @@
-if (play == 1)
+if (play == true)
 {
     global.interact = 1
     timer--
@@ -6,6 +6,6 @@ if (play == 1)
     {
         global.facing = 0
         global.interact = 0
-        play = 0
+        play = false
     }
 }

@@ -5,7 +5,7 @@ shakereduct = 2
 if (global.darkzone == false)
 {
     shakeamt = 5
-    shakereduct = 1
+    shakereduct = true
 }
 shakespeed = 1
 nowx = 0

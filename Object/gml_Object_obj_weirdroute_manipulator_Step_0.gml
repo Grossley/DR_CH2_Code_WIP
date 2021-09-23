@@ -81,14 +81,14 @@ if (global.flag[915] >= 2 && global.flag[916] == 0)
         }
     }
 }
-if (init == 0)
+if (init == false)
 {
     if (phase == 2)
     {
         with (obj_chaseenemy)
             chasetype = 8
     }
-    init = 1
+    init = true
 }
 if (phasechange == 1)
 {

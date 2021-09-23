@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if caralert
         shottimer = 20
@@ -15,7 +15,7 @@ if (init == 0)
         moveinterval = (sqr(fleetspeed) * 2)
     else
         moveinterval = 4
-    init = 1
+    init = true
     boys[0].image_alpha = 1
     boys[0].damage = damage
     boys[0].target = target

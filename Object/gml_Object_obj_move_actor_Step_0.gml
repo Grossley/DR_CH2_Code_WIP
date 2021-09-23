@@ -1,8 +1,8 @@
 if gml_Script_i_ex(target)
 {
-    if (init == 0)
+    if (init == false)
     {
-        init = 1
+        init = true
         if (direction_word != "nothing")
         {
             if (direction_word == "l")

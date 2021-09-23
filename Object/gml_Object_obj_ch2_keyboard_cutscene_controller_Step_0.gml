@@ -1,9 +1,9 @@
-if (init == 0)
+if (init == false)
 {
     idealLength = string_length(idealString)
     for (i = 0; i < idealLength; i++)
         idealLetter[i] = string_char_at(idealString, (1 + i))
-    init = 1
+    init = true
 }
 if (con == 10 && global.interact == 0)
 {

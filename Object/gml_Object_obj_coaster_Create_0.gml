@@ -1,5 +1,5 @@
 type = 0
-init = 0
+init = false
 con = 0
 actor = -1
 spam_car = room == room_dw_mansion_b_east

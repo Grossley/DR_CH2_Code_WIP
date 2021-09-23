@@ -4,11 +4,11 @@ if loaded
     {
         if (os_type == os_ps4)
         {
-            if (commerce_dialog_open == 1)
+            if (commerce_dialog_open == true)
             {
                 var result = psn_np_commerce_dialog_tick()
                 if (result != 0)
-                    commerce_dialog_open = 0
+                    commerce_dialog_open = false
             }
         }
         buffer++
@@ -35,12 +35,12 @@ if loaded
                 }
             }
             else if (heart_pos_x == (heart_pos_x_default + heart_pos_x_h_padding))
-                visit_shop = 0
+                visit_shop = false
         }
         if gml_Script_button2_p_ch1()
         {
             gml_Script_snd_play_ch1(snd_menumove_ch1)
-            visit_shop = 0
+            visit_shop = false
         }
     }
     else
@@ -75,22 +75,22 @@ if loaded
                 if (heart_pos_y == (yy + 288))
                 {
                     heart_pos_x = heart_pos_x_default
-                    visit_shop = 1
+                    visit_shop = true
                 }
                 else if (heart_pos_y == ((yy + 288) + line_height))
                 {
-                    global.store_prompt = 1
+                    global.store_prompt = true
                     gml_Script_ossafe_game_end()
                 }
             }
             else if (heart_pos_y_ja == (yy + 328))
             {
                 heart_pos_x = heart_pos_x_default
-                visit_shop = 1
+                visit_shop = true
             }
             else if (heart_pos_y_ja == ((yy + 328) + select_padding))
             {
-                global.store_prompt = 1
+                global.store_prompt = true
                 gml_Script_ossafe_game_end()
             }
         }

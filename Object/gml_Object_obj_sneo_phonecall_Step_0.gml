@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     y = -30
     visible = true
-    init = 1
+    init = true
 }
 if (state < 7)
 {

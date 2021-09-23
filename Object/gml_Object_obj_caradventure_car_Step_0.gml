@@ -93,10 +93,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -110,10 +110,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         hittalk = 1
@@ -128,10 +128,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -145,10 +145,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -162,10 +162,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -179,10 +179,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -198,7 +198,7 @@ if active
         if instance_exists(obj_writer)
         {
             with (obj_writer)
-                forcebutton1 = 1
+                forcebutton1 = true
         }
         bananamode = 1
         triggertalk = 1
@@ -213,10 +213,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -231,10 +231,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -248,10 +248,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         triggertalk = 1
@@ -265,10 +265,10 @@ if active
     {
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         finish_convo = 1

@@ -1,6 +1,6 @@
 search = 0
 targetstring = "weapon"
-init = 0
+init = false
 image_xscale = 0
 image_yscale = 0
 state = 0

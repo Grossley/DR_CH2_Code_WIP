@@ -1,7 +1,7 @@
 depth = 1005400
 xx = (gml_Script_camerax() * 0.95)
 yy = gml_Script_cameray()
-if (init == 0)
+if (init == false)
 {
     linesiner = 0
     for (i = 0; i < 20; i++)
@@ -20,11 +20,11 @@ if (init == 0)
             path_add_point(pathb[i], (-((i * 20) + (((i * j) * j) * 8))), (-70 * j), 1)
         }
     }
-    init = 1
+    init = true
 }
 draw_set_color(c_lime)
 linesiner++
-if (init == 1)
+if (init == true)
 {
     draw_set_alpha(0.1)
     for (i = 0; i < 19; i++)

@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -36,11 +36,11 @@ if (global.monster[myself] == true)
         gml_Script_scr_enemyblcon((x + 125), (y - 10), 6)
         with (obj_monsterparent)
             talkmax = 210
-        talked = 1
+        talked = true
         talktimer = 0
         manual = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -123,7 +123,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* CLOVER - AT 8 DF 2&* Two heads are better than one^1!&* Three..^1. maybe not./%", "obj_clubsenemy_slash_Step_0_gml_168_0")
@@ -227,14 +227,14 @@ if (global.myfight == 3)
         gml_Script_scr_act_charsprite_end()
         gml_Script_scr_nextact()
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_scr_mercyadd(myself, 5)
         gml_Script_msgsetloc(0, "* Susie stood there awkwardly!/%", "obj_clubsenemy_slash_Step_0_gml_459_0")
         gml_Script_scr_simultext("susie")
         actconsus = 20
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         gml_Script_scr_mercyadd(myself, 25)
         gml_Script_msgsetloc(0, "* Ralsei stood there cutely!/%", "obj_clubsenemy_slash_Step_0_gml_469_0")

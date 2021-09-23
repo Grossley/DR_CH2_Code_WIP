@@ -7,4 +7,4 @@ for (i = 0; i < 6; i++)
     myx[i] = 0
     myy[i] = 0
 }
-init = 0
+init = false

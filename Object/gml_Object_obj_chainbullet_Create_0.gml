@@ -1,5 +1,5 @@
 gml_Script_scr_bullet_init()
-init = 0
+init = false
 if (!instance_exists(obj_heart))
     instance_destroy()
 childSpeed = 5

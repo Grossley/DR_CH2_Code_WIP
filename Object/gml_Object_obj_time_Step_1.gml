@@ -132,12 +132,12 @@ if keyboard_check(vk_escape)
 }
 else
     quit_timer -= 2
-if (keyboard_check_pressed(vk_f4) || fullscreen_toggle == 1)
+if (keyboard_check_pressed(vk_f4) || fullscreen_toggle == true)
     alarm[1] = 1
 for (i = 0; i < 10; i += 1)
 {
-    global.input_released[i] = 0
-    global.input_pressed[i] = 0
+    global.input_released[i] = false
+    global.input_pressed[i] = false
 }
 gamepad_check_timer += 1
 if (gamepad_check_timer >= 90)
@@ -151,7 +151,7 @@ if (gamepad_check_timer >= 90)
         {
             if gamepad_is_connected(i)
             {
-                obj_gamecontroller.gamepad_active = 1
+                obj_gamecontroller.gamepad_active = true
                 obj_gamecontroller.gamepad_id = i
                 any_connected = 1
                 break
@@ -163,40 +163,40 @@ if (gamepad_check_timer >= 90)
             }
         }
         if (any_connected == 0)
-            obj_gamecontroller.gamepad_active = 0
+            obj_gamecontroller.gamepad_active = false
     }
     gamepad_check_timer = 0
 }
-if (obj_gamecontroller.gamepad_active == 1 && quicksaved != 2)
+if (obj_gamecontroller.gamepad_active == true && quicksaved != 2)
 {
     for (i = 0; i < 4; i += 1)
     {
         if (keyboard_check(global.input_k[i]) || (gml_Script_i_ex(obj_gamecontroller) && (gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[i]) || gml_Script_scr_gamepad_axis_check(obj_gamecontroller.gamepad_id, i))))
         {
-            if (global.input_held[i] == 0)
-                global.input_pressed[i] = 1
-            global.input_held[i] = 1
+            if (global.input_held[i] == false)
+                global.input_pressed[i] = true
+            global.input_held[i] = true
         }
         else
         {
-            if (global.input_held[i] == 1)
-                global.input_released[i] = 1
-            global.input_held[i] = 0
+            if (global.input_held[i] == true)
+                global.input_released[i] = true
+            global.input_held[i] = false
         }
     }
     for (i = 4; i < 10; i += 1)
     {
         if (keyboard_check(global.input_k[i]) || (gml_Script_i_ex(obj_gamecontroller) && gamepad_button_check(obj_gamecontroller.gamepad_id, global.input_g[i])))
         {
-            if (global.input_held[i] == 0)
-                global.input_pressed[i] = 1
-            global.input_held[i] = 1
+            if (global.input_held[i] == false)
+                global.input_pressed[i] = true
+            global.input_held[i] = true
         }
         else
         {
-            if (global.input_held[i] == 1)
-                global.input_released[i] = 1
-            global.input_held[i] = 0
+            if (global.input_held[i] == true)
+                global.input_released[i] = true
+            global.input_held[i] = false
         }
     }
 }
@@ -206,15 +206,15 @@ else
     {
         if keyboard_check(global.input_k[i])
         {
-            if (global.input_held[i] == 0)
-                global.input_pressed[i] = 1
-            global.input_held[i] = 1
+            if (global.input_held[i] == false)
+                global.input_pressed[i] = true
+            global.input_held[i] = true
         }
         else
         {
-            if (global.input_held[i] == 1)
-                global.input_released[i] = 1
-            global.input_held[i] = 0
+            if (global.input_held[i] == true)
+                global.input_released[i] = true
+            global.input_held[i] = false
         }
     }
 }

@@ -43,7 +43,7 @@ if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4
     commanded = 0
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         global.writerimg[0] = gml_Script_scr_84_get_sprite_ch1("spr_btfight")
         global.writerimg[1] = gml_Script_scr_84_get_sprite_ch1("spr_btdefend")
@@ -416,10 +416,10 @@ if (global.monster[myself] == true)
             with (obj_writer_ch1)
                 instance_destroy()
         }
-        acting = 0
+        acting = false
         spare_used = 0
         dummyhp = global.monsterhp[myself]
-        talked = 1
+        talked = true
         talktimer = 0
         ral_wrongcommand = 0
     }
@@ -435,7 +435,7 @@ if (global.monster[myself] == true)
         if (rr == 0)
             global.battlemsg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_489_0")
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         if (won == 0)
         {
@@ -563,7 +563,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_dummyenemy_slash_Step_0_gml_642_0")
@@ -592,9 +592,9 @@ if (global.myfight == 3)
     }
     if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
-        global.acting[0] = 0
-        global.acting[1] = 0
-        global.acting[2] = 0
+        global.acting[0] = false
+        global.acting[1] = false
+        global.acting[2] = false
         actcon = 0
         acting = -1
         gml_Script_scr_attackphase_ch1()

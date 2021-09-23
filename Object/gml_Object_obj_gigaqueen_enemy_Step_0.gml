@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     with (obj_heroparent)
         visible = false
-    init = 1
+    init = true
 }
 if gml_Script_i_ex(o_boxingqueen)
 {
@@ -17,9 +17,9 @@ if instance_exists(o_boxinghud)
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
         turn++
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && turn > 18 && o_boxingqueen.phase_transition < 1)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false && turn > 18 && o_boxingqueen.phase_transition < 1)
     {
         if (global.monsterdf[myself] > -25)
         {
@@ -27,14 +27,14 @@ if (global.monster[myself] == true)
             o_boxingqueen.damagetakenincrease += 0.166666
         }
     }
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && o_boxingqueen.phase_transition < 1)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false && o_boxingqueen.phase_transition < 1)
     {
         global.typer = 70
         ballooncon = 0
         balloonsubcon = 0
         balloonend = 1
         talkedcon = 0
-        o_boxingcontroller.acttoenemytalktransition = 0
+        o_boxingcontroller.acttoenemytalktransition = false
         if (playerhasntdodged == 0 && balloonorder > 0 && playerhasntdodgedorder < 3)
         {
             if (playerhasntdodgedorder == 0)
@@ -148,7 +148,7 @@ if (global.monster[myself] == true)
         gml_Script_scr_enemyblcon((o_boxingqueen.x - 40), (o_boxingqueen.y - 185), 10)
         if (ballooncon == 0)
         {
-            talked = 1
+            talked = true
             talktimer = 0
         }
         else
@@ -284,7 +284,7 @@ if (global.monster[myself] == true)
             alarm[6] = 1
         }
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
         if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
@@ -387,7 +387,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1)
+    if (acting == true)
     {
         if (o_boxingcontroller.headsprite == spr_bhero_head_a)
             actpunchtext = gml_Script_stringsetloc("* FLAME MODE engaged!&* A power-boosting aura fired up...!/%", "obj_gigaqueen_enemy_slash_Step_0_gml_243_0")
@@ -437,7 +437,7 @@ if (global.myfight == 3)
     if (acting == 7 && o_boxingcontroller.punchcon == 0)
     {
         actcon = 1
-        acting = 0
+        acting = false
     }
     if (acting == 2)
     {
@@ -446,7 +446,7 @@ if (global.myfight == 3)
         gml_Script_msgsetloc(0, "* TURBODODGE engaged!&* A dodge-enhancing aura fired up...!/%", "obj_gigaqueen_enemy_slash_Step_0_gml_309_0")
         gml_Script_scr_battletext_default()
         haventusedspell = 0
-        acting = 0
+        acting = false
         actcon = 1
     }
     if (acting == 3)
@@ -467,13 +467,13 @@ if (global.myfight == 3)
         if (healcount == 3)
             global.actcost[myself][2] = 125
         gml_Script_scr_spellmenu_setup()
-        acting = 0
+        acting = false
         actcon = 1
     }
-    if (actcon == 1 && acting == 0 && (!instance_exists(obj_writer)))
+    if (actcon == 1 && acting == false && (!instance_exists(obj_writer)))
     {
         actcon = 0
-        o_boxingcontroller.acttoenemytalktransition = 1
+        o_boxingcontroller.acttoenemytalktransition = true
         gml_Script_scr_nextact()
     }
 }

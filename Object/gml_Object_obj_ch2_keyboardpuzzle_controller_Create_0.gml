@@ -3,7 +3,7 @@ lost = 0
 won = 0
 con = 0
 timer = 0
-init = 0
+init = false
 use_ja = global.lang == "ja"
 currentString = ""
 idealString = gml_Script_stringsetloc("APPLE", "obj_ch2_keyboardpuzzle_controller_slash_Create_0_gml_11_0")

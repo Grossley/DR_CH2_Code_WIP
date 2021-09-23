@@ -30,7 +30,7 @@ if talking
                 with (suballoon3)
                 {
                     depth = (obj_ch2_scene10.su_actor.depth - 1)
-                    auto_length = 1
+                    auto_length = true
                 }
                 with (obj_writer)
                     depth = (obj_ch2_scene10.su_actor.depth - 2)

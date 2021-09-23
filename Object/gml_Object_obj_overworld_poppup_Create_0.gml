@@ -3,7 +3,7 @@ if (gml_Script_scr_sideb_get_phase() == 2)
 else
     weird = 0
 topsprite = 0
-init = 0
+init = false
 frozensprite = 0
 speedboost = 0
 encountertype = 0

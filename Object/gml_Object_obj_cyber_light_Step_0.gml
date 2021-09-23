@@ -1,5 +1,5 @@
 siner++
-if (init == 0)
+if (init == false)
 {
     wd = (sprite_width / 2)
     if (bosscheck == 0)
@@ -17,6 +17,6 @@ if (init == 0)
             wy[i] = which[i].y
         }
     }
-    init = 1
+    init = true
 }
 image_alpha = ((sin((siner / 12)) * 0.2) + 0.8)

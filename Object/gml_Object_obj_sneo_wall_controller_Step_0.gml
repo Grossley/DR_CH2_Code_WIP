@@ -25,7 +25,7 @@ if (difficulty == 2)
 }
 if (sinetargetspeed < 0)
     return;
-if (init == 0 && type == 3)
+if (init == false && type == 3)
 {
     for (j = 0; j < spawncount; j++)
     {
@@ -38,7 +38,7 @@ if (init == 0 && type == 3)
             bullet[i].siner = (waittime * j)
         }
     }
-    init = 1
+    init = true
 }
 if (type == 3)
 {

@@ -1,12 +1,12 @@
 quit_timer = 0
-keyboard_active = 1
-gamepad_active = 1
+keyboard_active = true
+gamepad_active = true
 gamepad_check_timer = 0
 gamepad_id = 0
 axis_value = 0.4
-fullscreen_toggle = 0
+fullscreen_toggle = false
 quicksaved = 0
-window_center_toggle = 0
+window_center_toggle = false
 if global.is_console
 {
     if (!instance_exists(obj_gamecontroller))
@@ -15,11 +15,11 @@ if global.is_console
         gml_Script_instance_create(0, 0, obj_border_controller)
 }
 paused = 0
-pausing = 0
+pausing = false
 screenshot = -1
 gif_recording = 0
 gif_timer = 0
-loaded = 0
+loaded = false
 border_fade_out = 0
 border_fade_in = 0
 border_alpha = 1
@@ -52,9 +52,9 @@ else
     gml_Script_scr_ascii_input_names()
     for (i = 0; i < 10; i += 1)
     {
-        global.input_pressed[i] = 0
-        global.input_held[i] = 0
-        global.input_released[i] = 0
+        global.input_pressed[i] = false
+        global.input_held[i] = false
+        global.input_released[i] = false
     }
     if global.is_console
     {

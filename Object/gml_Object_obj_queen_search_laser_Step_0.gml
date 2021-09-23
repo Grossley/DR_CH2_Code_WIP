@@ -2,9 +2,9 @@ if gml_Script_scr_queen_buffercheck()
     return;
 nextx = (x + lengthdir_x(fauxspeed, direction))
 nexty = (y + lengthdir_y(fauxspeed, direction))
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     hitbox[0].damage = damage
     hitbox[1].damage = damage
 }

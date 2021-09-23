@@ -9,4 +9,4 @@ scale = 1
 bulletsperbeat = 4
 baseangle = 0
 damage = -1
-target = -1
+target = self

@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
     return;
 if (endtime == 0)
     instance_destroy()

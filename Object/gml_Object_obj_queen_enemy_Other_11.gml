@@ -4,34 +4,34 @@ if (instance_exists(obj_queenshield_enemy) && obj_queenshield_enemy.shieldhurt =
 if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.actname[myself][0] = gml_Script_stringsetloc("Loosen", "obj_queen_enemy_slash_Other_11_gml_10_0")
-    global.actsimul[myself][0] = 0
+    global.actsimul[myself][0] = false
     global.actname[myself][1] = gml_Script_stringsetloc("GroupLoosen", "obj_queen_enemy_slash_Other_11_gml_11_0")
 }
 else
 {
     global.actname[myself][0] = gml_Script_stringsetloc("Toast", "obj_queen_enemy_slash_Other_11_gml_15_0")
-    global.actsimul[myself][0] = 1
+    global.actsimul[myself][0] = true
     global.actname[myself][1] = gml_Script_stringsetloc("GroupToast", "obj_queen_enemy_slash_Other_11_gml_16_0")
 }
 if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Loosen", "obj_queen_enemy_slash_Other_11_gml_22_0")
-    global.actsimulsus[myself][0] = 0
+    global.actsimulsus[myself][0] = false
 }
 else
 {
     global.actnamesus[myself][0] = gml_Script_stringsetloc("Toast", "obj_queen_enemy_slash_Other_11_gml_26_0")
-    global.actsimulsus[myself][0] = 1
+    global.actsimulsus[myself][0] = true
 }
 if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {
     global.actnameral[myself][0] = gml_Script_stringsetloc("Loosen", "obj_queen_enemy_slash_Other_11_gml_32_0")
-    global.actsimulral[myself][0] = 0
+    global.actsimulral[myself][0] = false
 }
 else
 {
     global.actnameral[myself][0] = gml_Script_stringsetloc("Toast", "obj_queen_enemy_slash_Other_11_gml_36_0")
-    global.actsimulral[myself][0] = 1
+    global.actsimulral[myself][0] = true
 }
 if ((!instance_exists(obj_queenshield_enemy)) || shieldbreaking == 1)
 {

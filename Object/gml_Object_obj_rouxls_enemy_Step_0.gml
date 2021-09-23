@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         global.typer = 50
@@ -72,7 +72,7 @@ if (global.monster[myself] == true)
             gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
         if (ballooncon == 0)
         {
-            talked = 1
+            talked = true
             talktimer = 0
         }
         else
@@ -122,7 +122,7 @@ if (global.monster[myself] == true)
             gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
         }
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
         if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
@@ -239,7 +239,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* ROUXLS - Miniboss for hire. Will appear even if unhired.&\"I eventh do Partiese\"/%", "obj_rouxls_enemy_slash_Step_0_gml_171_0")
@@ -273,7 +273,7 @@ if (global.myfight == 3)
         acting = 9
         HouseCount = 4
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         with (obj_rouxls_simtown)
         {

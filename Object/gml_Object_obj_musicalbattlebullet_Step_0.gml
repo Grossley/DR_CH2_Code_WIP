@@ -11,7 +11,7 @@ if (_percent > 0)
 if (varianty > 0)
     varianty -= 5
 y = lerp(yTarget, (ystart - varianty), _percent)
-if (init == 1)
+if (init == true)
 {
     if (abs((remFramesAway - framesAway)) >= 4 && y >= 60)
     {
@@ -20,10 +20,10 @@ if (init == 1)
     }
     remFramesAway = framesAway
 }
-if (init == 0)
+if (init == false)
 {
     remFramesAway = framesAway
-    init = 1
+    init = true
 }
 if (failed == 1)
 {

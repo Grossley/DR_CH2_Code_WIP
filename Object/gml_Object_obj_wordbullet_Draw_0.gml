@@ -2,9 +2,9 @@ if (y < (gml_Script_cameray() + 290))
     depth = (obj_heart.depth - 1)
 if (y > (gml_Script_cameray() + 290))
     depth = (obj_heart.depth + 100.5)
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     if (queenword == 1)
         idealxscale = 2
     if (angry && queenword == 0)

@@ -55,7 +55,7 @@ if (global.interact == 5)
         }
         if (close == 1)
         {
-            cancelnoise = 1
+            cancelnoise = true
             global.faceaction[global.charselect] = 0
             global.charselect = -1
             twobuffer = 2
@@ -152,7 +152,7 @@ if (global.interact == 5)
         }
         if (gml_Script_button2_p_ch1() && twobuffer < 0)
         {
-            cancelnoise = 1
+            cancelnoise = true
             twobuffer = 2
             global.faceaction[0] = 0
             global.faceaction[1] = 0
@@ -171,7 +171,7 @@ if (global.interact == 5)
         if (global.submenu == 30)
         {
             sndbuffer = 0
-            m_quit = 0
+            m_quit = false
             if gml_Script_up_p_ch1()
             {
                 movenoise = true
@@ -225,21 +225,21 @@ if (global.interact == 5)
                         else
                         {
                             global.submenu = 36
-                            check_border = 1
-                            border_select = 0
+                            check_border = true
+                            border_select = false
                         }
                     }
                     if (global.submenucoord[30] == 5)
                         global.submenu = 34
                     if (global.submenucoord[30] == 6)
-                        m_quit = 1
+                        m_quit = true
                 }
                 else
                 {
                     if (global.submenucoord[30] == 3)
                     {
                         with (obj_time_ch1)
-                            fullscreen_toggle = 1
+                            fullscreen_toggle = true
                     }
                     if (global.submenucoord[30] == 4)
                     {
@@ -251,15 +251,15 @@ if (global.interact == 5)
                     if (global.submenucoord[30] == 5)
                         global.submenu = 34
                     if (global.submenucoord[30] == 6)
-                        m_quit = 1
+                        m_quit = true
                 }
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                m_quit = 1
-                cancelnoise = 1
+                m_quit = true
+                cancelnoise = true
             }
-            if (m_quit == 1)
+            if (m_quit == true)
             {
                 onebuffer = 2
                 twobuffer = 2
@@ -393,82 +393,82 @@ if (global.interact == 5)
                         }
                         if keyboard_check_pressed(ord(";"))
                         {
-                            new_key = 59
+                            new_key = ord(";")
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_printscreen)
                         {
-                            new_key = 44
+                            new_key = vk_printscreen
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_delete)
                         {
-                            new_key = 46
+                            new_key = vk_delete
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(ord("/"))
                         {
-                            new_key = 47
+                            new_key = ord("/")
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(ord("\\"))
                         {
-                            new_key = 92
+                            new_key = ord("\\")
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(ord("]"))
                         {
-                            new_key = 93
+                            new_key = ord("]")
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(ord("["))
                         {
-                            new_key = 91
+                            new_key = ord("[")
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_numpad0)
                         {
-                            new_key = 96
+                            new_key = vk_numpad0
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_insert)
                         {
-                            new_key = 45
+                            new_key = vk_insert
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(ord("="))
                         {
-                            new_key = 61
+                            new_key = ord("=")
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_left)
                         {
-                            new_key = 37
+                            new_key = vk_left
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_right)
                         {
-                            new_key = 39
+                            new_key = vk_right
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_up)
                         {
-                            new_key = 38
+                            new_key = vk_up
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_down)
                         {
-                            new_key = 40
+                            new_key = vk_down
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_backspace)
                         {
-                            new_key = 8
+                            new_key = vk_backspace
                             control_select_con = 2
                         }
                         if keyboard_check_pressed(vk_alt)
                         {
-                            new_key = 18
+                            new_key = vk_alt
                             control_select_con = 2
                         }
                         if (os_type == os_windows)
@@ -551,7 +551,7 @@ if (global.interact == 5)
                 }
                 if (gml_Script_button1_p_ch1() && controls_quitmenu == 0 && onebuffer < 2)
                 {
-                    cancelnoise = 1
+                    cancelnoise = true
                     onebuffer = 2
                     twobuffer = 2
                     if (global.submenucoord[35] == 8)
@@ -576,34 +576,34 @@ if (global.interact == 5)
                     ctrlcancel = -1
                     for (i = 0; i < 7; i += 1)
                     {
-                        if (global.input_k[i] == 13)
+                        if (global.input_k[i] == vk_return)
                         {
                             global.input_k[7] = -1
                             entercancel = 1
                         }
-                        if (global.input_k[i] == 16)
+                        if (global.input_k[i] == vk_shift)
                         {
                             global.input_k[8] = -1
                             shiftcancel = 1
                         }
-                        if (global.input_k[i] == 17)
+                        if (global.input_k[i] == vk_control)
                         {
                             global.input_k[9] = -1
                             ctrlcancel = 1
                         }
                     }
                     if (entercancel == -1)
-                        global.input_k[7] = 13
+                        global.input_k[7] = vk_return
                     if (shiftcancel == -1)
-                        global.input_k[8] = 16
+                        global.input_k[8] = vk_shift
                     if (ctrlcancel == -1)
-                        global.input_k[9] = 17
+                        global.input_k[9] = vk_control
                 }
                 else
                 {
                     dupe = -1
-                    if (new_gamepad_key == 32775)
-                        obj_gamecontroller.gamepad_shoulderlb_reassign = 1
+                    if (new_gamepad_key == gp_shoulderlb)
+                        obj_gamecontroller.gamepad_shoulderlb_reassign = true
                     for (i = 0; i < 7; i += 1)
                     {
                         if (global.input_g[i] == new_gamepad_key)
@@ -652,7 +652,7 @@ if (global.interact == 5)
                 if (selected_border < (array_length_1d(border_options) - 1))
                 {
                     selected_border++
-                    check_border = 1
+                    check_border = true
                 }
             }
             if gml_Script_left_p_ch1()
@@ -660,10 +660,10 @@ if (global.interact == 5)
                 if (selected_border > 0)
                 {
                     selected_border--
-                    check_border = 1
+                    check_border = true
                 }
             }
-            if (check_border == 1)
+            if (check_border == true)
             {
                 var _border = border_options[selected_border]
                 if (_border == "None" || _border == "なし")
@@ -671,13 +671,13 @@ if (global.interact == 5)
                 else
                     gml_Script_scr_enable_screen_border_ch1(1)
                 global.screen_border_id = border_options[selected_border]
-                check_border = 0
+                check_border = false
             }
             if (gml_Script_button1_p_ch1() && onebuffer < 0)
-                border_select = 1
+                border_select = true
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
-                border_select = 1
-            if (border_select == 1)
+                border_select = true
+            if (border_select == true)
             {
                 onebuffer = 2
                 twobuffer = 2
@@ -728,7 +728,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 deschaver = 0
                 onebuffer = 2
                 twobuffer = 2
@@ -765,7 +765,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 twobuffer = 2
                 global.menuno = 0
                 global.submenu = 0
@@ -835,7 +835,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 twobuffer = 2
                 deschaver = 0
                 global.submenu = 1
@@ -913,7 +913,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 twobuffer = 2
                 deschaver = 0
                 global.submenu = 1
@@ -1018,7 +1018,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p() && onebuffer < 0 && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 twobuffer = 2
                 global.menuno = 0
                 global.submenu = 0
@@ -1133,11 +1133,11 @@ if (global.interact == 5)
                         wmsg = amessage2temp
                     if (wwho == 3)
                         wmsg = amessage3temp
-                    if (wwho == 1 && armorchar1temp == 1)
+                    if (wwho == 1 && armorchar1temp == true)
                         canequip = true
-                    if (wwho == 2 && armorchar2temp == 1)
+                    if (wwho == 2 && armorchar2temp == true)
                         canequip = true
-                    if (wwho == 3 && armorchar3temp == 1)
+                    if (wwho == 3 && armorchar3temp == true)
                         canequip = true
                 }
                 if (canequip == true)
@@ -1181,7 +1181,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 hold_up = 0
                 hold_down = 0
                 twobuffer = 2
@@ -1214,7 +1214,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 deschaver = 0
                 twobuffer = 2
                 global.submenu = 10
@@ -1247,7 +1247,7 @@ if (global.interact == 5)
             }
             if (gml_Script_button2_p_ch1() && twobuffer < 0)
             {
-                cancelnoise = 1
+                cancelnoise = true
                 twobuffer = 2
                 global.menuno = 0
                 global.submenu = 0
@@ -1416,10 +1416,10 @@ if (selectnoise == true)
     gml_Script_snd_play_ch1(snd_select_ch1)
     selectnoise = false
 }
-if (cancelnoise == 1)
+if (cancelnoise == true)
 {
     gml_Script_snd_play_ch1(snd_smallswing_ch1)
-    cancelnoise = 0
+    cancelnoise = false
 }
 onebuffer -= 1
 twobuffer -= 1

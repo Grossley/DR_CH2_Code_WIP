@@ -11,6 +11,6 @@ FADEFACTOR = 0
 WHITEFADE = 0
 FADEUP = 0
 DARK_WAIT = 0
-restart = 0
+restart = false
 restart_timer = 0
 gamepad_controls = [32769, 32770, 32771, 32772, 32773, 32775, 32774, 32776, 32777, 32778, 32779, 32780, 32781, 32782, 32783, 32784]

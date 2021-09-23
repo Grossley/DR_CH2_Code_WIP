@@ -9,7 +9,7 @@ if (endcon > 0)
     }
 }
 else if (balloonend == 1)
-    talked = 1
+    talked = true
 else
 {
     talked = 0.6

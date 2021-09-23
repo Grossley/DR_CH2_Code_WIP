@@ -1,12 +1,12 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     gml_Script_instance_create(x, y, o_coaster_controller)
     alarm[5] = 1
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && bumpwait == 0 && endcon == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false && bumpwait == 0 && endcon == 0)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -68,7 +68,7 @@ if (global.monster[myself] == true)
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
         if (ballooncon == 0)
         {
-            talked = 1
+            talked = true
             talktimer = 0
         }
         else
@@ -110,11 +110,11 @@ if (global.monster[myself] == true)
         talktimer++
         if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
         {
-            talked = 0
+            talked = false
             forcedefaultballoon = 1
         }
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
         if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
@@ -197,7 +197,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* BERDLY - Go! Use your roller coaster cars to play \"bump of chicken\"!/%", "obj_berdlyb_enemy_slash_Step_0_gml_123_0")
@@ -205,14 +205,14 @@ if (global.myfight == 3)
     }
     if (acting == 2 && actcon == 0)
     {
-        if (actingsus == 1 && actingral == 1)
+        if (actingsus == true && actingral == true)
             dialoguecon = 1
-        else if (actingsus == 1 && actingral != 1)
+        else if (actingsus == true && actingral != true)
         {
             gml_Script_msgsetloc(0, "* You and Susie will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_130_0")
             gml_Script_scr_battletext_default()
         }
-        else if (actingsus != 1 && actingral == 1)
+        else if (actingsus != true && actingral == true)
         {
             gml_Script_msgsetloc(0, "* You and Ralsei will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_131_0")
             gml_Script_scr_battletext_default()
@@ -223,7 +223,7 @@ if (global.myfight == 3)
             gml_Script_scr_battletext_default()
         }
         kriscoaster = 1
-        acting = 0
+        acting = false
         actcon = 1
         rideactgo = 1
         if (actingsus == 2)
@@ -234,7 +234,7 @@ if (global.myfight == 3)
     if (acting == 3 && actcon == 0)
     {
         dialoguecon = 1
-        acting = 0
+        acting = false
         actcon = 1
         rideactgo = 1
         kriscoaster = 1
@@ -244,7 +244,7 @@ if (global.myfight == 3)
     if (acting == 4 && actcon == 0)
     {
         dialoguecon = 1
-        acting = 0
+        acting = false
         actcon = 1
         rideactgo = 1
         mrboneswildride = 1
@@ -252,28 +252,28 @@ if (global.myfight == 3)
         suscoaster = 1
         ralcoaster = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         if (bumpactstarted == 1)
         {
-            acting = 0
+            acting = false
             actcon = 1
-            actingsus = 0
+            actingsus = false
             actconsus = 0
         }
         else
         {
-            if (actingral != 1 && rideactgo == 0)
+            if (actingral != true && rideactgo == 0)
             {
                 gml_Script_msgsetloc(0, "* Susie will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_186_0")
                 gml_Script_scr_battletext_default()
             }
-            if (actingral == 1 && rideactgo == 0)
+            if (actingral == true && rideactgo == 0)
             {
                 gml_Script_msgsetloc(0, "* Susie and Ralsei will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_187_0")
                 gml_Script_scr_battletext_default()
             }
-            acting = 0
+            acting = false
             actcon = 1
             rideactgo = 1
             actconsus = 0
@@ -284,23 +284,23 @@ if (global.myfight == 3)
                 ralcoaster = 1
         }
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         if (bumpactstarted == 1)
         {
-            acting = 0
+            acting = false
             actcon = 1
             actconral = 0
-            actingral = 0
+            actingral = false
         }
         else
         {
-            if (actingsus != 1 && rideactgo == 0)
+            if (actingsus != true && rideactgo == 0)
             {
                 gml_Script_msgsetloc(0, "* Ralsei will attempt to bump into Berdly's car!/%", "obj_berdlyb_enemy_slash_Step_0_gml_221_0")
                 gml_Script_scr_battletext_default()
             }
-            acting = 0
+            acting = false
             actcon = 1
             rideactgo = 1
             actconral = 0
@@ -335,7 +335,7 @@ if (global.myfight == 3)
         if (global.mercymod[myself] > 99)
         {
         }
-        else if ((global.currentactingchar == 0 && actingsus == 0 && actingral == 0 && rideactgo == 1) || (global.currentactingchar == 1 && actingral == 0 && rideactgo == 1) || (global.currentactingchar == 2 && rideactgo == 1))
+        else if ((global.currentactingchar == 0 && actingsus == false && actingral == false && rideactgo == 1) || (global.currentactingchar == 1 && actingral == false && rideactgo == 1) || (global.currentactingchar == 2 && rideactgo == 1))
         {
             if (mrboneswildride == 1)
                 o_coaster_controller.timermax = 250
@@ -370,7 +370,7 @@ if (global.myfight == 3)
                 }
             }
             bumpactstarted = 1
-            acting = 0
+            acting = false
             actcon = 0
             actconsus = 0
             actconral = 0

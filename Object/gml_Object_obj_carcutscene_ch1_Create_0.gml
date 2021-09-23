@@ -27,7 +27,7 @@ else
     con = 1
     alarm[4] = 30
     global.interact = 1
-    k = 1347
+    k = obj_mainchara_ch1
     t = gml_Script_scr_marker_ch1(195, 240, spr_toriel_lt_ch1)
     with (t)
         depth = 400000

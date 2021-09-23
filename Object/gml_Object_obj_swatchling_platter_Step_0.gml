@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     gml_Script_scr_bullet_inherit(platterLid)
     gml_Script_scr_bullet_inherit(platterPlate)
@@ -9,7 +9,7 @@ if (init == 0)
     platterLid.image_angle = image_angle
     if (image_angle > 0)
         platterLid.image_xscale *= -1
-    init = 1
+    init = true
 }
 if (hasCandy == 1)
 {

@@ -1,1 +1,1 @@
-debug = 0
+debug = false

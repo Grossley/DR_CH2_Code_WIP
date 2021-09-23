@@ -36,7 +36,7 @@ else
     footsteps_volume = 1
     susie_snore = 0
     end_game = 0
-    return_title = 0
+    return_title = false
     show_door_open = 0
     credits_timer = 0
     fade_out_deep = 0

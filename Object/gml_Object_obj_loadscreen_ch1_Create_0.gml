@@ -1,4 +1,4 @@
-loaded = 0
+loaded = false
 save_ready = 0
 save_loaded = 0
 var ww = window_get_width()

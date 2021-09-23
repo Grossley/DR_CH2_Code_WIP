@@ -6,7 +6,7 @@ if ((y - height) > (gml_Script_cameray() + 500) || x < (gml_Script_camerax() - 1
 }
 if (!init)
 {
-    init = 1
+    init = true
     if gml_Script_i_ex(shadow)
         shadow.depth = maxDepth
 }

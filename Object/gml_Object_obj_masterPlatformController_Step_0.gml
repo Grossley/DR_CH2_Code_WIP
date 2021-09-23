@@ -1,4 +1,4 @@
-if (init == 1)
+if (init == true)
 {
     noelle = gml_Script_instance_create((obj_controller_city_mice3.noelle.x + 4), obj_controller_city_mice3.noelle.y, obj_noelle_scared)
     with (noelle)

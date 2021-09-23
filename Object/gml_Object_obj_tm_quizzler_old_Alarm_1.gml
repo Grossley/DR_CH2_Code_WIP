@@ -2,7 +2,7 @@ animator.state = 3
 if dojo
 {
     animator.quizloop = 1
-    restart = 1
+    restart = true
     state = 0
     timer = 0
     if (difficulty == 0)

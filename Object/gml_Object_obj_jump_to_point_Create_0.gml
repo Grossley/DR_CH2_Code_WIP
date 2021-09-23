@@ -1,6 +1,6 @@
 target = -10
 body_obj = -32322
-init = 0
+init = false
 startx = x
 starty = y
 endx = x

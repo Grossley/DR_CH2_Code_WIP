@@ -184,7 +184,7 @@ if (my_method == 2)
 }
 haveauto = false
 autoed = false
-if (global.charauto[2] == 1)
+if (global.charauto[2] == true)
 {
     if (global.char[0] == 2 || global.char[1] == 2 || global.char[2] == 2)
     {

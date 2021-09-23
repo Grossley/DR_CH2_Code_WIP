@@ -1,9 +1,9 @@
 var border_id = global.screen_border_id
-var return_title = 0
+var return_title = false
 if variable_global_exists("chapter_return")
 {
-    if (global.chapter_return > 0)
-        return_title = 1
+    if (global.chapter_return > false)
+        return_title = true
 }
 if (!return_title)
 {
@@ -11,8 +11,8 @@ if (!return_title)
     {
         if (!loaded)
         {
-            border_alpha = 0
-            loaded = 1
+            border_alpha = false
+            loaded = true
         }
         border_fade_value = 0.025
         if (!variable_global_exists("currentroom"))
@@ -37,7 +37,7 @@ if (!return_title)
         if (room_id == room_shop_ch2_spamton)
             _border_image = border_dw_city
         if (room_id == PLACE_CONTACT || room_id == 878 || room_id == PLACE_MENU || room_id == room_gameover || room_id == PLACE_DOG || room_id == room_title_placeholder || room_id == room_intro_ch2)
-            border_alpha = 0
+            border_alpha = false
         else if (room_id == room_insidecloset || room_id == room_cc_fountain)
             border_fade_out = border_alpha > 0
         else if (room_id == room_town_krisyard || room_id == room_castle_town || room_id == room_town_school)
@@ -245,7 +245,7 @@ if (!return_title)
                     border_alpha = 0
             }
         }
-        if ((room_id == room_legend || room_id == 883 || room_id == PLACE_MENU) && global.game_won == 1)
+        if ((room_id == room_legend || room_id == 883 || room_id == PLACE_MENU) && global.game_won == true)
         {
             _border_image = border_dw_castletown
             border_alpha = 1

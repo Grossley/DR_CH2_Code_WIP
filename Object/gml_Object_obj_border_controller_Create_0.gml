@@ -1,4 +1,4 @@
-loaded = 0
+loaded = false
 border_fade_out = 0
 border_fade_in = 0
 border_alpha = 0

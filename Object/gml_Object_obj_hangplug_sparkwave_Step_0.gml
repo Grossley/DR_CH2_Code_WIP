@@ -4,7 +4,7 @@ a.x += deshspeed
 a.image_alpha = (image_alpha * 0.5)
 a.fadeSpeed = 0.15
 a.depth = (depth + 10)
-if (init == 0)
+if (init == false)
 {
     if (dir == "left")
         deshspeed = -12
@@ -12,7 +12,7 @@ if (init == 0)
         deshspeed = 12
     hspeed = (0.1 * sign(deshspeed))
     image_xscale = ((2 * sign(deshspeed)) * -1)
-    init = 1
+    init = true
     image_alpha = 0
 }
 if (hspeed < abs(deshspeed))

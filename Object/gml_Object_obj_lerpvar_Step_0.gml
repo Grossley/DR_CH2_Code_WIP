@@ -1,10 +1,10 @@
 if gml_Script_i_ex(target)
 {
-    if (init == 0)
+    if (init == false)
     {
         if is_string(pointa)
             pointa = variable_instance_get(target, varname)
-        init = 1
+        init = true
     }
     time++
     if (easetype == 0)

@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -18,10 +18,10 @@ if (global.monster[myself] == true)
         if (global.mercymod[myself] >= global.mercymax[myself])
             gml_Script_msgsetloc(0, "(Well, everyone's captured.)&(What does that make me?)", "obj_mauswheel_enemy_slash_Step_0_gml_36_0")
         gml_Script_scr_enemyblcon((x - 20), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -78,7 +78,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script_camerax()
     yy = gml_Script_cameray()
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* MAUSWHEEL - Two mice are better than one! ... Three^1, maybe not./", "obj_mauswheel_enemy_slash_Step_0_gml_157_0")
@@ -103,21 +103,21 @@ if (global.myfight == 3)
         basket_size = 1
         alarm[4] = 10
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_msgsetloc(0, "* Susie got on all fours and chased the mouse around the room like an animal!!/%", "obj_mauswheel_enemy_slash_Step_0_gml_183_0")
         gml_Script_scr_battletext_default()
         gml_Script_scr_mercyadd(myself, 5)
-        actingsus = 0
+        actingsus = false
         actconsus = 0
         actcon = 1
     }
-    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(obj_writer)))
+    if (actingral == true && actconral == 1 && (!gml_Script_i_ex(obj_writer)))
     {
         if (!trappedText)
         {
             trappedText = 1
-            global.actsimulral[myself][0] = 1
+            global.actsimulral[myself][0] = true
             gml_Script_msgsetloc(0, "* Ralsei started putting peanut butter on a spoon and put it in a trap!!/%", "obj_mauswheel_enemy_slash_Step_0_gml_202_0")
             gml_Script_scr_mercyadd(myself, 5)
             actconral = 2
@@ -129,7 +129,7 @@ if (global.myfight == 3)
             gml_Script_msgset(0, simultext)
             gml_Script_scr_mercyadd(myself, 5)
             gml_Script_scr_battletext_default()
-            actingral = 0
+            actingral = false
             actconral = 0
             actcon = 1
         }
@@ -275,7 +275,7 @@ if (global.myfight == 3)
         gml_Script_scr_wincombat()
         instance_destroy()
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         gml_Script_scr_speaker("no_name")
         gml_Script_msgsetloc(0, "* Noelle screamed quietly!/%", "obj_mauswheel_enemy_slash_Step_0_gml_360_0")

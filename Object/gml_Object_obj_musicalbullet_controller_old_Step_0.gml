@@ -1,5 +1,5 @@
 timer++
-init = 1
+init = true
 if (sfxtimer > 0)
     sfxtimer--
 tobymode = 1

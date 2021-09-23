@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     if (difficulty == 0)
     {
         x2[0] = x

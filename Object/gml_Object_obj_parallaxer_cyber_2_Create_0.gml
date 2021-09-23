@@ -81,4 +81,4 @@ for (var i = 0; i < array_length_1d(layersprites); i++)
 depth = 1005000
 if (room == room_dw_cyber_teacup_final)
     depth = 1005100
-init = 0
+init = false

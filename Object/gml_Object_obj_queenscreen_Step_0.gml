@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if (room == room_dw_cyber_battle_maze_2 || room == room_dw_cyber_keyboard_puzzle_3)
     {
@@ -15,7 +15,7 @@ if (init == 0)
             gml_Script_scr_depth()
         }
     }
-    init = 1
+    init = true
 }
 if (activecon == 0)
 {

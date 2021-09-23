@@ -9,16 +9,16 @@ global.inv = 0
 global.invc = 1
 for (i = 0; i < 3; i += 1)
 {
-    global.charauto[i] = 0
+    global.charauto[i] = false
     global.charmove[i] = false
     global.charcantarget[i] = false
     global.chardead[i] = false
     global.invincible[i] = 1
 }
-global.charauto[0] = 0
-global.charauto[1] = 0
-global.charauto[2] = 1
-global.charauto[3] = 0
+global.charauto[0] = false
+global.charauto[1] = false
+global.charauto[2] = true
+global.charauto[3] = false
 for (i = 0; i < 4; i += 1)
 {
     global.hp[i] = 200

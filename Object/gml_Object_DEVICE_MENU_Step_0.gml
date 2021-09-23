@@ -22,12 +22,12 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
     {
         ONEBUFFER = 2
         TWOBUFFER = 2
-        SELNOISE = 1
+        SELNOISE = true
         if (MENUCOORD[MENU_NO] == 0)
         {
             if (MENU_NO == 1 || MENU_NO == 11)
             {
-                var FILECHECK = 0
+                var FILECHECK = false
                 var FILESLOT = 0
                 var DONAMING = 0
                 if (MENU_NO == 1)
@@ -35,18 +35,18 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                 if (MENU_NO == 11)
                     FILESLOT = MENUCOORD[10]
                 if (MENU_NO == 1 && FILE[MENUCOORD[0]] == 1)
-                    FILECHECK = 1
+                    FILECHECK = true
                 if (MENU_NO == 11)
                 {
                     if INCOMPLETE_LOAD
                     {
                         if (INCOMPLETEFILE_PREV[FILESLOT] == 1)
-                            FILECHECK = 1
+                            FILECHECK = true
                         else
                             FILECHECK = -1
                     }
                     else if (COMPLETEFILE_PREV[FILESLOT] == 1)
-                        FILECHECK = 1
+                        FILECHECK = true
                     else
                         FILECHECK = -1
                 }
@@ -96,7 +96,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                     }
                     if (MENU_NO == 11)
                     {
-                        if (INCOMPLETE_LOAD == 0)
+                        if (INCOMPLETE_LOAD == false)
                         {
                             global.filechoice += 3
                             gml_Script_scr_load_chapter1()
@@ -107,10 +107,10 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                         if (global.flag[914] == 0)
                             global.flag[914] = (global.chapter - 1)
                         FILECHECK = -2
-                        STARTGAME = 1
+                        STARTGAME = true
                     }
                 }
-                if (FILECHECK == 0)
+                if (FILECHECK == false)
                 {
                     global.filechoice = FILESLOT
                     var namer = gml_Script_instance_create(0, 0, DEVICE_NAMER)
@@ -123,7 +123,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
             }
             if (MENU_NO == 4)
             {
-                var temp_comment_is_interesting = 0
+                var temp_comment_is_interesting = false
                 if (TYPE == 0)
                 {
                     TEMPCOMMENT = gml_Script_stringsetloc("IT CONFORMED TO THE REFLECTION.", "DEVICE_MENU_slash_Step_0_gml_74_0")
@@ -133,7 +133,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                         {
                             if (PLACE[0] == PLACE[1] && PLACE[1] == PLACE[2])
                             {
-                                temp_comment_is_interesting = 1
+                                temp_comment_is_interesting = true
                                 TEMPCOMMENT = gml_Script_stringsetloc("WHAT AN INTERESTING BEHAVIOR.", "DEVICE_MENU_slash_Step_0_gml_77_0")
                             }
                         }
@@ -154,7 +154,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                 if (TYPE == 1)
                     TEMPCOMMENT = gml_Script_stringsetloc("Copy complete.", "DEVICE_MENU_slash_Step_0_gml_91_0")
                 MESSAGETIMER = 90
-                SELNOISE = 0
+                SELNOISE = false
                 DEATHNOISE = true
                 MENU_NO = 0
             }
@@ -183,7 +183,7 @@ if (MENU_NO == 1 || MENU_NO == 4 || MENU_NO == 6 || MENU_NO == 7 || MENU_NO == 1
                 if (TYPE == 1)
                     TEMPCOMMENT = gml_Script_stringsetloc("Erase complete.", "DEVICE_MENU_slash_Step_0_gml_127_0")
                 MESSAGETIMER = 90
-                SELNOISE = 0
+                SELNOISE = false
                 DEATHNOISE = true
                 MENU_NO = 0
             }
@@ -271,7 +271,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
                     {
                         TWOBUFFER = 2
                         ONEBUFFER = 2
-                        SELNOISE = 1
+                        SELNOISE = true
                         MENUCOORD[4] = 0
                         MENU_NO = 4
                     }
@@ -305,7 +305,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
                 {
                     TWOBUFFER = 2
                     ONEBUFFER = 2
-                    SELNOISE = 1
+                    SELNOISE = true
                     MENUCOORD[3] = 0
                     MENU_NO = 3
                 }
@@ -328,7 +328,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
                 {
                     TWOBUFFER = 2
                     ONEBUFFER = 2
-                    SELNOISE = 1
+                    SELNOISE = true
                     MENUCOORD[6] = 0
                     MENU_NO = 6
                 }
@@ -350,7 +350,7 @@ if (MENU_NO == 2 || MENU_NO == 3 || MENU_NO == 5)
         {
             TWOBUFFER = 2
             ONEBUFFER = 2
-            SELNOISE = 1
+            SELNOISE = true
             MENU_NO = 0
         }
     }
@@ -381,7 +381,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
                 MENUCOORD[M] = 5
             else if (MENUCOORD[M] == 4)
                 MENUCOORD[M] = 6
-            else if (MENUCOORD[M] == 7 && CANQUIT == 1)
+            else if (MENUCOORD[M] == 7 && CANQUIT == true)
                 MENUCOORD[M] = 8
             MOVENOISE = 1
         }
@@ -408,7 +408,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
             MOVENOISE = 1
             if (MENUCOORD[M] == 4)
                 MENUCOORD[M] = 7
-            else if (MENUCOORD[M] == 6 && CANQUIT == 1)
+            else if (MENUCOORD[M] == 6 && CANQUIT == true)
                 MENUCOORD[M] = 8
             else
                 MENUCOORD[M]++
@@ -432,13 +432,13 @@ if (MENU_NO == 0 || MENU_NO == 10)
         MESSAGETIMER = -1
         if (MENUCOORD[M] <= 2)
         {
-            FILECHECK = 1
+            FILECHECK = true
             if (MENU_NO == 10)
             {
-                if (INCOMPLETE_LOAD == 0 && COMPLETEFILE_PREV[MENUCOORD[M]] != 1)
-                    FILECHECK = 0
-                if (INCOMPLETE_LOAD == 1 && INCOMPLETEFILE_PREV[MENUCOORD[M]] != 1)
-                    FILECHECK = 0
+                if (INCOMPLETE_LOAD == false && COMPLETEFILE_PREV[MENUCOORD[M]] != 1)
+                    FILECHECK = false
+                if (INCOMPLETE_LOAD == true && INCOMPLETEFILE_PREV[MENUCOORD[M]] != 1)
+                    FILECHECK = false
             }
             if FILECHECK
             {
@@ -446,7 +446,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
                 ONEBUFFER = 1
                 TWOBUFFER = 1
                 MENU_NO = (M + 1)
-                SELNOISE = 1
+                SELNOISE = true
             }
             else
             {
@@ -462,7 +462,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
                 ONEBUFFER = 1
                 TWOBUFFER = 1
                 MENU_NO = 2
-                SELNOISE = 1
+                SELNOISE = true
             }
             else
             {
@@ -470,7 +470,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
                 ONEBUFFER = 1
                 TWOBUFFER = 1
                 MENU_NO = 0
-                SELNOISE = 1
+                SELNOISE = true
             }
         }
         if (MENUCOORD[M] == 4)
@@ -479,7 +479,7 @@ if (MENU_NO == 0 || MENU_NO == 10)
             ONEBUFFER = 1
             TWOBUFFER = 1
             MENU_NO = 5
-            SELNOISE = 1
+            SELNOISE = true
         }
         if (MENUCOORD[M] == 5)
         {
@@ -487,24 +487,24 @@ if (MENU_NO == 0 || MENU_NO == 10)
             ONEBUFFER = 1
             TWOBUFFER = 1
             MENU_NO = 10
-            SELNOISE = 1
+            SELNOISE = true
         }
         if (MENUCOORD[M] == 6)
         {
-            SELNOISE = 1
+            SELNOISE = true
             gml_Script_scr_change_language()
             gml_Script_scr_84_load_ini()
         }
         if (MENUCOORD[M] == 7)
         {
-            input_enabled = 0
-            SELNOISE = 1
+            input_enabled = false
+            SELNOISE = true
             gml_Script_snd_free_all()
             alarm[0] = 30
         }
         if (MENUCOORD[M] == 8 && CANQUIT)
         {
-            SELNOISE = 1
+            SELNOISE = true
             gml_Script_ossafe_game_end()
         }
     }
@@ -536,10 +536,10 @@ if (MOVENOISE == 1)
     gml_Script_snd_play(snd_menumove)
     MOVENOISE = 0
 }
-if (SELNOISE == 1)
+if (SELNOISE == true)
 {
     gml_Script_snd_play(snd_select)
-    SELNOISE = 0
+    SELNOISE = false
 }
 if (BACKNOISE == true)
 {
@@ -553,7 +553,7 @@ if (DEATHNOISE == true)
 }
 ONEBUFFER -= 1
 TWOBUFFER -= 1
-if (STARTGAME == 1)
+if (STARTGAME == true)
 {
     gml_Script_snd_free_all()
     if (global.chapter == 1)

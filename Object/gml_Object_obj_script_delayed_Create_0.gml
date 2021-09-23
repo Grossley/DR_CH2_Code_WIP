@@ -1,5 +1,5 @@
 script = -1
-target = -1
+target = self
 rate = 1
 alarm[0] = 1
 for (i = 0; i < 13; i++)

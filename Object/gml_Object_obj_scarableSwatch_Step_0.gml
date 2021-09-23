@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if (dir == 0)
         dir = choose("left", "right")
@@ -6,7 +6,7 @@ if (init == 0)
         dir = "left"
     else
         dir = "right"
-    init = 1
+    init = true
 }
 if (con == 0)
 {

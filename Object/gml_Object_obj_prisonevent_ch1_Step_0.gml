@@ -559,10 +559,10 @@ if (con == 317)
     global.char[0] = 1
     gml_Script_scr_getchar_ch1(2)
     gml_Script_scr_getchar_ch1(3)
-    global.charauto[0] = 0
-    global.charauto[1] = 0
-    global.charauto[2] = 0
-    global.charauto[3] = 0
+    global.charauto[0] = false
+    global.charauto[1] = false
+    global.charauto[2] = false
+    global.charauto[3] = false
     con = 318
     global.facing = 0
     global.entrance = 1

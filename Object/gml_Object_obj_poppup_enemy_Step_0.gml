@@ -2,7 +2,7 @@ if (blockbuffer > 0)
     blockbuffer--
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -41,10 +41,10 @@ if (global.monster[myself] == true)
         }
         gml_Script_msgset(0, dialogText)
         gml_Script_scr_enemyblcon((((x - 40) - 42) + 70), (((global.monstery[myself] - 125) - 62) + 172), 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -128,7 +128,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* POPPUP - A rubbery mascot starved for attention. Click it and...?/%", "obj_poppup_enemy_slash_Step_0_gml_176_0")
@@ -263,9 +263,9 @@ if (global.myfight == 3)
             {
                 if (global.actingtarget[__i] == myself && global.char[__i] > 0)
                 {
-                    global.acting[__i] = 0
-                    global.actingsimul[__i] = 0
-                    global.actingsingle[__i] = 0
+                    global.acting[__i] = false
+                    global.actingsimul[__i] = false
+                    global.actingsingle[__i] = false
                     global.faceaction[__i] = 0
                 }
             }
@@ -392,7 +392,7 @@ if (global.myfight == 3)
         gml_Script_scr_battletext_default()
         actcon = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_scr_speaker("no_name")
         var a = choose(0, 1, 2)
@@ -422,7 +422,7 @@ if (global.myfight == 3)
         actconsus = 0
         actcon = 1
     }
-    if (actingral == 1 && actconral == 1 && (!gml_Script_i_ex(obj_writer)))
+    if (actingral == true && actconral == 1 && (!gml_Script_i_ex(obj_writer)))
     {
         gml_Script_scr_speaker("no_name")
         a = choose(0, 1, 2)
@@ -456,7 +456,7 @@ if (global.myfight == 3)
         actconral = 0
         actcon = 1
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         gml_Script_scr_mercyadd(myself, 50)
         var random_line = choose(0, 1, 2)

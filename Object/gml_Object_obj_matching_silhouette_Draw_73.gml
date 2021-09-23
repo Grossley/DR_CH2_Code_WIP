@@ -1,6 +1,6 @@
 if (target_char == noone)
     return;
-if (init == 0)
+if (init == false)
 {
     if instance_exists(obj_caterpillarchara)
     {

@@ -1,5 +1,5 @@
 mypath = path_add()
-init = 0
+init = false
 damage = 10
 target = 0
 shootSpeed = 1

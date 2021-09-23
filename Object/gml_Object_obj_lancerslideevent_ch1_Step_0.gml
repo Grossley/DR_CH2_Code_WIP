@@ -128,7 +128,7 @@ if (cameracon == 2)
         gml_Script_tile_layer_shift_ch1(1000000, 0, 480)
         shifted += 480
     }
-    if (global.inv == 1 && slidetimer <= 390)
+    if (global.inv == true && slidetimer <= 390)
         slidetimer -= 10
     if (slidetimer == 390)
     {

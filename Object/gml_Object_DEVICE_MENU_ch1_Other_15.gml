@@ -3,8 +3,8 @@ _NEWNAME = ini_read_string(("G" + string(MENUCOORD[2])), "Name", "------")
 _NEWTIME = ini_read_real(("G" + string(MENUCOORD[2])), "Time", 0)
 var room_index = ini_read_real(("G" + string(MENUCOORD[2])), "Room", 0)
 var room_offset = room_index
-if (room_index < 280)
-    room_offset = (280 + room_index)
+if (room_index < ROOM_INITIALIZE_ch1)
+    room_offset = (ROOM_INITIALIZE_ch1 + room_index)
 _NEWROOM = room_offset
 _NEWLEVEL = ini_read_real(("G" + string(MENUCOORD[2])), "Level", 0)
 _NEWINITLANG = ini_read_real(("G" + string(MENUCOORD[2])), "InitLang", 0)

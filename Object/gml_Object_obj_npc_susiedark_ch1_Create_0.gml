@@ -6,7 +6,7 @@ myinteract = 0
 facing = 2
 dfacing = 2
 image_speed = 0
-talked = 0
+talked = false
 image_xscale = 2
 image_yscale = 2
 gml_Script_scr_depth_ch1()

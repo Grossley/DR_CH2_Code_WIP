@@ -11,10 +11,10 @@ lightf = merge_color(c_purple, c_white, 0.6)
 lightb = merge_color(c_aqua, c_white, 0.5)
 lightg = merge_color(c_lime, c_white, 0.5)
 lighty = merge_color(c_yellow, c_white, 0.3)
-init = 0
+init = false
 kill = 0
 killtimer = 0
-killactive = 0
+killactive = false
 with (obj_dmgwriter)
 {
     if (type != 3)

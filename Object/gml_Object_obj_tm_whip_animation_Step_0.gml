@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     whipball.quizmode = quizmode
     if quizmode
@@ -6,7 +6,7 @@ if (init == 0)
     whipball.damage = damage
     whipball.target = target
     whipball.element = 6
-    init = 1
+    init = true
     depth = global.monsterinstance[creator].depth
     if quizmode
         state = -1

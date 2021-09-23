@@ -8,10 +8,10 @@ if (type == "banana")
         bananahit = 1
         if instance_exists(obj_writer)
         {
-            if (obj_writer.halt != 0)
+            if (obj_writer.halt != false)
             {
                 with (obj_writer)
-                    forcebutton1 = 1
+                    forcebutton1 = true
             }
         }
         gml_Script_scr_speaker("queen")

@@ -1,9 +1,9 @@
-if (init == 0)
+if (init == false)
 {
     image_xscale = (size / 3)
     image_yscale = (size / 3)
     hp = size
-    init = 1
+    init = true
     speed = power(2, (size - 1))
     if (direction == 0)
         direction = point_direction(x, y, (obj_growtangle.x + random_range(-60, 60)), obj_growtangle.y)

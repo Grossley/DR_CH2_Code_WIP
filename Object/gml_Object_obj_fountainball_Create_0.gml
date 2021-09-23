@@ -9,4 +9,4 @@ image_yscale = 0.05
 back = 0
 depth = 12
 image_blend = c_black
-init = 0
+init = false

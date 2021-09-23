@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     remx = x
     movetimer++
-    init = 1
+    init = true
 }
 if (con == 0)
 {

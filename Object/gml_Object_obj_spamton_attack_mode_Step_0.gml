@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     if (attack == 1)
         firingspeed = 25
     else
         btimer = (firingspeed - irandom(10))
-    init = 1
+    init = true
 }
 if (state == 0)
 {

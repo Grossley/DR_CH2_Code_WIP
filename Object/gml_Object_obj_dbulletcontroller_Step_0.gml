@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])
     if (sameattack > 1)
@@ -15,7 +15,7 @@ if (init == 0)
         minx = (obj_growtangle.x - (obj_growtangle.sprite_width / 2))
         maxx = (obj_growtangle.x + (obj_growtangle.sprite_width / 2))
     }
-    init = 1
+    init = true
 }
 btimer += 1
 if (type == 0)
@@ -76,7 +76,7 @@ else if (type == 2)
 }
 else if (type == 3)
 {
-    if (init == 1)
+    if (init == true)
     {
         init = 2
         special = gml_Script_instance_create(x, y, obj_tasque_meowing)
@@ -127,7 +127,7 @@ else if (type == 4 && (sameattack < 3 || creator < obj_84_lang_helper))
 }
 else if (type == 5)
 {
-    if (init == 1)
+    if (init == true)
     {
         btimer = (12 * ratio)
         made = sameattacker
@@ -157,7 +157,7 @@ else if (type == 5)
 }
 else if (type == 6)
 {
-    if (init == 1)
+    if (init == true)
     {
         ratio = 1
         if (gml_Script_scr_monsterpop() == 2)
@@ -231,7 +231,7 @@ else if (type == 7)
 }
 else if (type == 8)
 {
-    if (init == 1 && difficulty == 1)
+    if (init == true && difficulty == 1)
     {
         special = 1
         init = 2
@@ -331,7 +331,7 @@ else if (type == 8)
 }
 else if (type == 9)
 {
-    if (init == 1)
+    if (init == true)
     {
         berdly = gml_Script_instance_create((x - 18), (y - 114), obj_berdlyb_spearblaster)
         global.monsterinstance[creator].visible = false
@@ -357,7 +357,7 @@ else if (type == 9)
 }
 else if (type == 10)
 {
-    if (init == 1)
+    if (init == true)
     {
         if (difficulty == 0)
             difficulty = choose(-1, 0)
@@ -381,7 +381,7 @@ else if (type == 10)
 }
 else if (type == 11)
 {
-    if (init == 1)
+    if (init == true)
     {
         if (sameattacker == 1)
         {
@@ -417,7 +417,7 @@ else if (type == 11)
 }
 else if (type == 12 && sameattacker == 0)
 {
-    if (init == 1)
+    if (init == true)
     {
         gml_Script_instance_create(mouse_x, mouse_y, obj_poppup_mouse)
         d = gml_Script_instance_create(obj_heart.x, obj_heart.y, obj_hiddenheart)
@@ -529,7 +529,7 @@ else if (type == 14)
 }
 else if (type == 15)
 {
-    if (init == 1)
+    if (init == true)
     {
         if (gml_Script_scr_monsterpop() == sameattack || gml_Script_scr_monsterattacknamecount("Viruses") == 1 || gml_Script_scr_monsterattackidcount(14) == 1)
             ratio *= 0.75
@@ -550,7 +550,7 @@ else if (type == 15)
 }
 else if (type == 16)
 {
-    if (init == 1)
+    if (init == true)
     {
         if (!instance_exists(obj_omawaroid_street))
         {
@@ -645,7 +645,7 @@ else if (type == 16)
 }
 else if (type == 17)
 {
-    if (init == 1)
+    if (init == true)
     {
         if (gml_Script_scr_monsterpop() == 1)
             ratio = 0.5
@@ -676,7 +676,7 @@ else if (type == 18)
 }
 else if (type == 19)
 {
-    if (init == 1)
+    if (init == true)
     {
         if instance_exists(obj_mauswheel_enemy)
         {
@@ -720,7 +720,7 @@ else if (type == 19)
 }
 else if (type == 20)
 {
-    if (init == 1)
+    if (init == true)
     {
         d = gml_Script_instance_create((x - 22), (y - 6), obj_tm_whip_attack)
         d.depth = global.monsterinstance[creator].depth
@@ -737,7 +737,7 @@ else if (type == 20)
 }
 else if (type == 21)
 {
-    if (init == 1)
+    if (init == true)
     {
         init = 2
         gml_Script_scr_debug_print("Transmitting VERY EVIL computer virus to dataminer's house and room...")
@@ -745,7 +745,7 @@ else if (type == 21)
 }
 else if (type == 22)
 {
-    if (init == 1)
+    if (init == true)
     {
         btimer = 115
         init = 2
@@ -787,7 +787,7 @@ else if (type == 22)
 }
 else if (type >= 23 && type <= 25)
 {
-    if (init == 1)
+    if (init == true)
     {
         global.monsterinstance[creator].visible = false
         d = gml_Script_instance_create(x, y, obj_spamton_attack_mode)
@@ -825,7 +825,7 @@ else if (type >= 23 && type <= 25)
         btimer = 0
     }
 }
-else if (type == 26 && init == 1)
+else if (type == 26 && init == true)
 {
     var _thrash = obj_rouxls_enemy.thrash
     obj_rouxls_enemy.head_difficulty = 1
@@ -873,7 +873,7 @@ else if (type == 27)
     var legattack = _thrash.part[2]
     var thrashcon = obj_rouxls_enemy.thrashcon
     obj_rouxls_enemy.headattack = 0
-    if (init == 1)
+    if (init == true)
     {
         obj_rouxls_enemy.wheel_difficulty = 1
         obj_rouxls_enemy.thrashmode = 1
@@ -971,7 +971,7 @@ else if (type == 28)
 {
     if (btimer >= max(10, (15 - (made / 2))))
     {
-        if (init == 1)
+        if (init == true)
         {
             obj_rouxls_enemy.saberanim = 1
             xoffset = irandom(3)
@@ -998,7 +998,7 @@ else if (type == 28)
 }
 else if (type == 29)
 {
-    if (init == 1)
+    if (init == true)
     {
         special = irandom(2)
         init = 2
@@ -1063,7 +1063,7 @@ else if (type == 31)
 }
 else if (type == 32)
 {
-    if (init == 1)
+    if (init == true)
     {
         dd = obj_sneo_friedpipis
         dd2 = obj_sneo_friedpipis
@@ -1236,7 +1236,7 @@ else if (type == 34)
 {
     if (btimer >= (14 * (difficulty + 1)))
     {
-        if (init == 1 || side == 1)
+        if (init == true || side == 1)
         {
             side = irandom(2)
             init = 2
@@ -1254,7 +1254,7 @@ else if (type == 34)
 }
 else if (type == 35)
 {
-    if (init == 1)
+    if (init == true)
     {
         global.turntimer = 3600
         difficulty = 0
@@ -1294,7 +1294,7 @@ else if (type == 35)
 }
 else if (type == 46)
 {
-    if (init == 1)
+    if (init == true)
     {
         init = 2
         d = gml_Script_instance_create(obj_growtangle.x, (miny - 130), obj_bqueen_missle_controller)
@@ -1304,7 +1304,7 @@ else if (type == 46)
 }
 else if (type == 47)
 {
-    if (init == 1)
+    if (init == true)
     {
         init = 2
         d = gml_Script_instance_create(obj_growtangle.x, (miny - 130), obj_bqueen_breath_controller)

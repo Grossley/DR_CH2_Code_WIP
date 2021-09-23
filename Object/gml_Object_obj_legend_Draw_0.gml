@@ -436,14 +436,14 @@ if draw_screen
             fadespeed = 0.02
             chunkfade = 1
         }
-        if (contimer == 880 && skipped == 0)
+        if (contimer == 880 && skipped == false)
         {
             gml_Script_snd_free(global.currentsong[0])
             global.flag[6] = 0
             f = gml_Script_instance_create(0, 0, obj_fadeout)
             f.fadespeed = 0.02
         }
-        if (contimer == 960 && skipped == 0)
+        if (contimer == 960 && skipped == false)
         {
             if (global.plot == 20)
             {
@@ -480,17 +480,17 @@ if draw_screen
     draw_rectangle(-10, -10, 330, 330, false)
 }
 draw_set_alpha(1)
-if (ingame == 0)
+if (ingame == false)
 {
-    if (gml_Script_button1_p() && skipped == 0)
+    if (gml_Script_button1_p() && skipped == false)
     {
-        skipped = 1
+        skipped = true
         skiptimer = 0
         f = gml_Script_instance_create(0, 0, obj_fadeout)
         f.fadespeed = 0.08
         gml_Script_mus_volume(global.currentsong[1], 0, 15)
     }
-    if (skipped == 1)
+    if (skipped == true)
         skiptimer += 1
     if (skiptimer == 19)
     {

@@ -28,7 +28,7 @@ if audio_group_is_loaded(1)
         menu_go = 2
     if global.is_console
     {
-        if (global.game_won == 1)
+        if (global.game_won == true)
             menu_go = 2
     }
     if gml_Script_scr_debug()

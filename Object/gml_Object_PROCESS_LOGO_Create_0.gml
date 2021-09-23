@@ -17,10 +17,10 @@ PHASETIMER = 0
 PHASEPLUS = 0
 AA = 1
 AB = 1
-ingame = 1
+ingame = true
 if (global.plot == 0)
-    ingame = 0
-skipped = 0
+    ingame = false
+skipped = false
 skiptimer = 0
 room_speed = 15
-draw_screen = 1
+draw_screen = true

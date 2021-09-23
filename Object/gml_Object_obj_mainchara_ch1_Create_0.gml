@@ -149,4 +149,4 @@ mywidth = sprite_width
 myheight = sprite_height
 for (i = 0; i < 3; i += 1)
     global.battledf[i] = (((global.df[global.char[i]] + global.itemdf[global.char[i]][0]) + global.itemdf[global.char[i]][1]) + global.itemdf[global.char[i]][2])
-menuOpened = 0
+menuOpened = false

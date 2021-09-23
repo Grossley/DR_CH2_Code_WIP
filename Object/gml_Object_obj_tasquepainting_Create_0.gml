@@ -1,5 +1,5 @@
 myinteract = 0
-talked = 0
+talked = false
 tempvar = 0
 image_speed = 0
 depthcancel = false

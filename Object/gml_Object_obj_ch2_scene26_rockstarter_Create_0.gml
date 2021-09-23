@@ -1,4 +1,4 @@
 depth = 10000300
-init = 0
+init = false
 smallrocks = 0
 sourcelayer = "BG_Rocks"

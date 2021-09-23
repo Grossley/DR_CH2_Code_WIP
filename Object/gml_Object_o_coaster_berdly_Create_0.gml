@@ -65,7 +65,7 @@ for (j = 6; j < 12; j++)
         nexty[j] = choose(0, 1, 2)
 }
 queenmode = 0
-init = 0
+init = false
 mode = 0
 with (obj_berdlyb_enemy)
 {

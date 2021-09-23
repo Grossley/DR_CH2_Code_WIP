@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     if (ord(myString) <= 57)
         textImage = (ord(myString) - 22)
     else
         textImage = (ord(string_upper(myString)) - 65)
-    init = 1
+    init = true
 }
 var checkPress = 0
 if (gml_Script_i_ex(obj_actor) && (!pressed) && pressable && global.interact == 0)

@@ -1,2 +1,2 @@
 laserflash = 0
-target = -1
+target = self

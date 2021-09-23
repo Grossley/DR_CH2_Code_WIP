@@ -1,16 +1,16 @@
 quit_timer = 0
-keyboard_active = 1
+keyboard_active = true
 axis_value = 0.4
-fullscreen_toggle = 0
-window_center_toggle = 0
+fullscreen_toggle = false
+window_center_toggle = false
 screenshot_number = 0
 border_fade_out = 0
 border_fade_in = 0
 border_alpha = 1
 border_fade_value = 0.025
-loaded = 0
+loaded = false
 paused = 0
-pausing = 0
+pausing = false
 screenshot = -1
 if (instance_number(obj_time_ch1) > 1)
     instance_destroy()
@@ -27,7 +27,7 @@ else
     if (window_size_multiplier > 1)
     {
         window_set_size((640 * window_size_multiplier), (480 * window_size_multiplier))
-        window_center_toggle = 1
+        window_center_toggle = true
     }
     if (os_type == os_switch)
     {
@@ -39,9 +39,9 @@ else
     gml_Script_scr_ascii_input_names_ch1()
     for (i = 0; i < 10; i += 1)
     {
-        global.input_pressed[i] = 0
-        global.input_held[i] = 0
-        global.input_released[i] = 0
+        global.input_pressed[i] = false
+        global.input_held[i] = false
+        global.input_released[i] = false
     }
     if global.is_console
     {

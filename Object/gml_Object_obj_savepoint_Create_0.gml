@@ -1,6 +1,6 @@
 image_speed = 0.2
 myinteract = 0
-talked = 0
+talked = false
 mydialoguer = 3478247328
 gml_Script_scr_depth()
 if (global.darkzone == true)

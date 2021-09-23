@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if (global.lang == "ja" && jaString != "-")
         myString = jaString
@@ -8,7 +8,7 @@ if (init == 0)
         textImage = (ord(myString) - 22)
     else
         textImage = (ord(string_upper(myString)) - 65)
-    init = 1
+    init = true
 }
 var checkPress = 0
 if (gml_Script_i_ex(obj_mainchara) && pressable && global.interact == 0)

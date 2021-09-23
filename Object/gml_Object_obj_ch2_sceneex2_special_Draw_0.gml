@@ -1,4 +1,4 @@
-if (init == 1)
+if (init == true)
 {
     init = 2
     input_timer = 0

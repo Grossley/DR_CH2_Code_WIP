@@ -8,7 +8,7 @@ miny += 8
 maxy -= 8
 destroyonhit = 0
 traillength = 25
-init = 0
+init = false
 for (i = 0; i < 3; i++)
 {
     bouncepoint_x[i] = x

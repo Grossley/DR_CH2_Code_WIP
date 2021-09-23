@@ -17,7 +17,7 @@ if (target == obj_spamton_neo_enemy)
 }
 move_towards_point(target.x, target.y, 22)
 image_angle = direction
-target = 694
+target = obj_spamton_neo_enemy
 var dist = 9999
 if instance_exists(obj_pipis_bullet)
 {
@@ -59,5 +59,5 @@ if instance_exists(obj_sneo_faceattack_target)
     if (distance_to_object(instance_nearest(x, y, obj_sneo_faceattack_target)) < dist)
         target = instance_nearest(x, y, obj_sneo_faceattack_target)
 }
-if (x >= (gml_Script_camerax() + 500) && x < (gml_Script_camerax() + 530) && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == 1)
+if (x >= (gml_Script_camerax() + 500) && x < (gml_Script_camerax() + 530) && instance_exists(obj_sneo_faceattack) && obj_sneo_faceattack.init == true)
     instance_destroy()

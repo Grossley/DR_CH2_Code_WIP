@@ -12,7 +12,7 @@ if (myself == 1)
 if (state == 3)
 {
     gml_Script_scr_enemyhurt_tired_after_damage(0.5)
-    fatal = 1
+    fatal = true
     hurttimer -= 1
     if (hurttimer < 0)
         state = 0

@@ -1,7 +1,7 @@
 drawx = x
 drawy = y
 image_blend = merge_color(c_white, c_black, max(0, ((y - 240) / 240)))
-if (init == 0)
+if (init == false)
 {
     if (starter == 1)
         pattern = 4
@@ -182,7 +182,7 @@ if (init == 0)
     with (obj_marker)
         visible = false
     visible = true
-    init = 1
+    init = true
 }
 for (i = 0; i <= tilemax; i++)
 {

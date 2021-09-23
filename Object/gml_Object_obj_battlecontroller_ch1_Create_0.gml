@@ -20,7 +20,7 @@ global.myfight = 0
 global.mnfight = 0
 global.bmenuno = 0
 global.attacking = false
-global.acting = 0
+global.acting = false
 global.tension = 0
 global.spelldelay = 10
 gml_Script_scr_spellinfo_all_ch1()
@@ -99,7 +99,7 @@ for (i = 0; i < 3; i += 1)
 global.charturn = 0
 for (i = 0; i < 3; i += 1)
 {
-    global.acting[i] = 0
+    global.acting[i] = false
     global.charaction[i] = 0
     global.charspecial[i] = 0
     global.chartarget[i] = 0

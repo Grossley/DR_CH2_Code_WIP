@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     if (pivotx == -999)
         pivotx = (sprite_width / 2)
     if (pivoty == -999)
         pivoty = (sprite_height / 2)
-    init = 1
+    init = true
 }
 timer++
 effecttimer++

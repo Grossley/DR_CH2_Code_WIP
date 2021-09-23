@@ -5,7 +5,7 @@ gml_Script_instance_create(x, y, o_boxingcontroller)
 gml_Script_instance_create(x, y, o_boxingqueen)
 with (obj_battleback)
     visible = false
-init = 0
+init = false
 turn = 0
 battlemsgtimer = 0
 if gml_Script_i_ex(obj_battlecontroller)
@@ -57,7 +57,7 @@ didntcounterthisturn = 0
 recentphasetransition = 0
 healcount = 0
 haventusedspell = 1
-init = 0
+init = false
 finalconvcon = 0
 missleattack = 0
 breathattack = 0

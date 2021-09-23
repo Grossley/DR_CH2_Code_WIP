@@ -1,4 +1,4 @@
-if (encounterflag > 0 && init == 0)
+if (encounterflag > 0 && init == false)
 {
     if (global.flag[encounterflag] == 1)
         instance_destroy()
@@ -126,7 +126,7 @@ if (encounterflag > 0 && init == 0)
             }
         }
     }
-    init = 1
+    init = true
 }
 gml_Script_scr_depth_alt()
 targetx = ((obj_mainchara.x + (obj_mainchara.sprite_width / 2)) - (sprite_width / 2))

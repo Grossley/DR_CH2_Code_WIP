@@ -43,7 +43,7 @@ if (state == 2)
             talkedcon = 0
             playerhasntdodged = 0
             playerhasntdodgedorder = 0
-            init = 0
+            init = false
         }
         with (o_boxingcontroller)
         {

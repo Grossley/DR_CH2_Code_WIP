@@ -369,7 +369,7 @@ if (con == 57 && instance_exists(obj_dialoguer_ch1) == 0)
     alphys2 = alphys
     alphys = gml_Script_instance_create_ch1(alphys.x, (alphys.y + alphys.sprite_height), obj_npc_facing_ch1)
     with (obj_npc_facing_ch1)
-        talked = 0
+        talked = false
     with (alphys2)
         instance_destroy()
     with (doorsolid)

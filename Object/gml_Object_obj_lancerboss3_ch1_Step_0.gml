@@ -6,7 +6,7 @@ if (defeated == 1 && global.mnfight == 1)
 if (global.monster[myself] == true && defeated == 0)
 {
     global.flag[(51 + myself)] = 4
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         if (gml_Script_scr_monsterpop_ch1() == 1)
         {
@@ -84,10 +84,10 @@ if (global.monster[myself] == true && defeated == 0)
         susie_act = 0
         lancer_act = 0
         gml_Script_scr_enemyblcon_ch1((x - 235), (y - 65), 3)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         if (gml_Script_button1_p_ch1() && talktimer > 17)
             talktimer = talkmax
@@ -156,7 +156,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_lancerboss3_slash_Step_0_gml_167_0")

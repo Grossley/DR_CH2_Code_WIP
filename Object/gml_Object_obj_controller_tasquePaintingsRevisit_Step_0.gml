@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     with (tasque)
         path_start(path_tasquePaintings_tasque, 200, path_action_continue, 1)
     with (swatch)
         path_start(path_tasquePaintings_swatchling, 200, path_action_continue, 1)
-    init = 1
+    init = true
 }
 if (gml_Script_i_ex(tasque) && gml_Script_i_ex(swatch))
 {

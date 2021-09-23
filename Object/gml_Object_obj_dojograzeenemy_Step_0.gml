@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -8,10 +8,10 @@ if (global.monster[myself] == true)
         global.typer = 50
         gml_Script_msgsetloc(0, "Graze!", "obj_dojograzeenemy_slash_Step_0_gml_15_0")
         gml_Script_scr_enemyblcon((x - 160), y, 3)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -31,7 +31,7 @@ if (global.monster[myself] == true)
             rr = 0
             if (rr == 0)
             {
-                global.inv = 0
+                global.inv = false
                 global.monsterattackname[myself] = "HomingDiamonds"
                 dc = gml_Script_scr_bulletspawner(x, y, obj_dbulletcontroller)
                 dc.type = 48
@@ -61,20 +61,20 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* GRAZECHALLENGE - Graze the bullets!/%", "obj_dojograzeenemy_slash_Step_0_gml_91_0")
         gml_Script_scr_battletext_default()
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_msgsetloc(0, "* Susie acted!/%", "obj_dojograzeenemy_slash_Step_0_gml_97_0")
         gml_Script_scr_battletext_default()
         actcon = 1
         actconsus = 0
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         gml_Script_msgsetloc(0, "* Ralsei acted!/%", "obj_dojograzeenemy_slash_Step_0_gml_106_0")
         gml_Script_scr_battletext_default()

@@ -62,26 +62,26 @@ if draw_screen
         draw_sprite_ext(IMAGE_LOGO_CENTER_HEART_ch1, image_index, x, y, image_xscale, image_yscale, 0, c_white, AA)
         if (AA <= -0.46)
             room_speed = 30
-        if (AA <= -0.5 && skipped == 0)
+        if (AA <= -0.5 && skipped == false)
         {
-            if (ingame == 1)
+            if (ingame == true)
                 room_goto(room_ed_ch1)
             else
                 room_goto(PLACE_MENU_ch1)
         }
     }
 }
-if (ingame == 0)
+if (ingame == false)
 {
-    if (gml_Script_button1_p_ch1() && skipped == 0)
+    if (gml_Script_button1_p_ch1() && skipped == false)
     {
         fade = gml_Script_instance_create_ch1(0, 0, obj_fadeout_ch1)
         with (fade)
             fadespeed = 0.04
         gml_Script_snd_volume_ch1(NOISE, 0, 20)
-        skipped = 1
+        skipped = true
     }
-    if (skipped == 1)
+    if (skipped == true)
     {
         skiptimer += 1
         if (skiptimer >= 28)

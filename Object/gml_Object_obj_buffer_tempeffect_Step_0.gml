@@ -5,7 +5,7 @@ if gml_Script_scr_queen_buffercheck()
 }
 else if (image_speed == 0)
     image_speed = 1
-init = 1
+init = true
 if animdone
 {
     timer++

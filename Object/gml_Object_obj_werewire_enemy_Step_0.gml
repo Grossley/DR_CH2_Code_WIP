@@ -2,17 +2,17 @@ if (global.monster[myself] == true)
 {
     if (global.monsterstatus[myself] == false)
         gml_Script_scr_monster_make_tired(myself)
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && talkwait != 1)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false && talkwait != 1)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
         gml_Script_instance_create((x - 102), (y + 18), obj_werewire_zzt_balloon)
         gml_Script_snd_play(snd_electric_talk)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         if ((!talkwait) && (!instance_exists(obj_werewire_zzt_balloon)) && (!instance_exists(obj_writer)) && global.mnfight == 1)
@@ -364,7 +364,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* WEREWIRE - Controlled by the Queen's wire, it's sleepwalking through a nightmare!/%", "obj_werewire_enemy_slash_Step_0_gml_393_0")
@@ -424,7 +424,7 @@ if (global.myfight == 3)
             mercyaccumulated = 0
         }
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Susie yanked on the wire! It loosened a little bit./%", "obj_werewire_enemy_slash_Step_0_gml_457_0") : gml_Script_stringsetloc("* Susie yanked the wire!/%", "obj_werewire_enemy_slash_Step_0_gml_457_1"))
         gml_Script_msgset(0, simultext)
@@ -432,7 +432,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Ralsei sang a snake-charming song to the wire! It loosened a little bit./%", "obj_werewire_enemy_slash_Step_0_gml_469_0") : gml_Script_stringsetloc("* Ralsei charmed the wire!/%", "obj_werewire_enemy_slash_Step_0_gml_469_1"))
         gml_Script_msgset(0, simultext)
@@ -440,7 +440,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("ralsei")
         actconral = (simulorderral == 0 ? 20 : 0)
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Noelle pulled out the plug like a fairy light!/%", "obj_werewire_enemy_slash_Step_0_gml_481_0") : gml_Script_stringsetloc("* Noelle pulled on the plug!/%", "obj_werewire_enemy_slash_Step_0_gml_481_1"))
         gml_Script_msgset(0, simultext)

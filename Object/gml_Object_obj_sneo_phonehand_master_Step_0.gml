@@ -17,7 +17,7 @@ if instance_exists(obj_heart)
     if (obj_heart.x > (obj_sneo_phonehand_master.x - 36))
         obj_heart.x = (obj_sneo_phonehand_master.x - 36)
 }
-if (init == 0)
+if (init == false)
 {
     if (difficulty == 2)
     {
@@ -26,7 +26,7 @@ if (init == 0)
     }
     phonehand_top.target = target
     phonehand_bottom.target = target
-    init = 1
+    init = true
 }
 if (difficulty == 0)
     y = (ystart + (sin((siner / 8)) * 40))

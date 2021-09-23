@@ -7,7 +7,7 @@ if instance_exists(obj_MovingPlat_dw_cyber_music_final)
     xx = obj_MovingPlat_dw_cyber_music_final.x
     yy = obj_MovingPlat_dw_cyber_music_final.y
 }
-if (init == 0)
+if (init == false)
 {
     xx = (obj_MovingPlat_dw_cyber_music_final.x + 38)
     yy = 152
@@ -32,7 +32,7 @@ if (init == 0)
     glow.image_angle = image_angle
     glow.sprite_index = sprite_index
     glow.depth = (depth + 1)
-    init = 1
+    init = true
 }
 if (con == 0)
 {

@@ -78,7 +78,7 @@ if (attacked == false)
     {
         global.invc *= 1.5
         visible = false
-        timeruse = 0
+        timeruse = false
         chainking = gml_Script_instance_create_ch1(x, y, obj_chainking_ch1)
         chainking.type = 2
         chainking.subtype = 5
@@ -155,7 +155,7 @@ if (attacked == false)
     {
         global.invc *= 1.5
         visible = false
-        timeruse = 0
+        timeruse = false
         chainking = gml_Script_instance_create_ch1(x, y, obj_chainking_ch1)
         chainking.type = 2
         chainking.subtype = 1

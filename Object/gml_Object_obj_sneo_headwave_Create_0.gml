@@ -1,6 +1,6 @@
 event_inherited()
 hp = 3
-init = 0
+init = false
 destroyable = 0
 state = 0
 spin = 0

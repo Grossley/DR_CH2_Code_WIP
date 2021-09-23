@@ -15,4 +15,4 @@ forwardSprite = sprite_index
 turnSignal = 0
 leftTurnSprite = spr_omawaroid_car_left_turn
 rightTurnSprite = spr_omawaroid_car_right_turn
-init = 0
+init = false

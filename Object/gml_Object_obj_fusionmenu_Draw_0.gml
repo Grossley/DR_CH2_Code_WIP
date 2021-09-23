@@ -1,12 +1,12 @@
 if init
     event_inherited()
-if (type == 2 && init == 1)
+if (type == 2 && init == true)
 {
     draw_set_color(c_white)
     var topbary = 206
     draw_rectangle((gml_Script_camerax() + 110), (gml_Script_cameray() + topbary), ((gml_Script_camerax() + 640) - 110), ((gml_Script_cameray() + topbary) + 2), false)
 }
-if (type == 1 && init == 1)
+if (type == 1 && init == true)
 {
     draw_set_color(c_white)
     topbary = 179
@@ -20,7 +20,7 @@ if (type == 1 && init == 1)
         draw_text_transformed(((((gml_Script_camerax() + 640) - 110) + 20) + 40), 346, (((gml_Script_stringsetloc("Page ", "obj_fusionmenu_slash_Draw_0_gml_171_0") + string(((floor(menuScrollCurrent[0]) / 2) + 1))) + " / ") + string(ceil((menuMaximumID[0] / 2)))), 0.5, 1, 0)
     draw_set_halign(fa_left)
 }
-if (type == 3 && init == 1)
+if (type == 3 && init == true)
 {
     if (menu == 0)
     {
@@ -208,7 +208,7 @@ if (type == 3 && init == 1)
             draw_text((xx + 80), (yy + 400), gml_Script_stringsetsubloc("Press ~1 to Return", gml_Script_scr_get_input_name(5), "obj_fusionmenu_slash_Draw_0_gml_136_0"))
     }
 }
-if (type == 4 && init == 1)
+if (type == 4 && init == true)
 {
     gml_Script_scr_84_set_draw_font("mainbig")
     if (menu == 0)
@@ -254,7 +254,7 @@ if (type == 4 && init == 1)
         draw_text_transformed((xx + 60), (yy + 380), ((string(((floor(menuScrollCurrent[1]) / 12) + 1)) + "/") + string(floor((global.flag[64] / 12)))), 1, 1, 0)
     }
 }
-if (type == 5 && init == 1)
+if (type == 5 && init == true)
 {
     draw_set_font(fnt_mainbig)
     draw_set_color(c_silver)

@@ -5,7 +5,7 @@ stimer = 0
 caster = 0
 damage = 0
 altpath = 0
-init = 0
+init = false
 fncon = 0
 con = 0
 if (global.encounterno == 82)

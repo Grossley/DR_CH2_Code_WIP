@@ -1,2 +1,2 @@
-talked = 1
+talked = true
 talktimer = 0

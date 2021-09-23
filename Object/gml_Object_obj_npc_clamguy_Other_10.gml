@@ -1,4 +1,4 @@
-if (talked == 0)
+if (talked == false)
 {
     gml_Script_msgsetloc(0, "* Oh hey hey hey hey hey./", "obj_npc_clamguy_slash_Other_10_gml_5_0")
     gml_Script_msgnextloc("* Listen up. See that \\cYweird circle\\cW on the beach?/", "obj_npc_clamguy_slash_Other_10_gml_6_0")

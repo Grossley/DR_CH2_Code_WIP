@@ -14,4 +14,4 @@ else
 }
 interact = 0
 myinteract = 0
-talked = 0
+talked = false

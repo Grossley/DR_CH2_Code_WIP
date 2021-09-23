@@ -14,9 +14,9 @@ if (global.monster[myself] == true)
         else
             idlesprite = spr_queen_chair_1_old
     }
-    if (init == 0)
+    if (init == false)
     {
-        init = 1
+        init = true
         global.typer = 70
         global.charturn = 3
         gml_Script_msgsetloc(0, "Ah My Sweet&Idiot Children/%", "obj_queen_enemy_slash_Step_0_gml_12_0")
@@ -175,12 +175,12 @@ if (global.monster[myself] == true)
     }
     if instance_exists(obj_berdlyplug_enemy)
         event_user(1)
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && turn > 14)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false && turn > 14)
     {
         if (global.monsterdf[myself] > -25)
             global.monsterdf[myself] -= 5
     }
-    if ((gml_Script_scr_isphase("enemytalk") && talked == 0 && global.monsterhp[myself] <= 0) || (gml_Script_scr_isphase("enemytalk") && talked == 0 && bardlymercy > 99) || (talked == -1 && endcon == 0))
+    if ((gml_Script_scr_isphase("enemytalk") && talked == false && global.monsterhp[myself] <= 0) || (gml_Script_scr_isphase("enemytalk") && talked == false && bardlymercy > 99) || (talked == -1 && endcon == 0))
     {
         talked = -1
         wintimer++
@@ -202,12 +202,12 @@ if (global.monster[myself] == true)
                 endcon = 1
         }
     }
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         with (obj_queen_enemy)
             event_user(2)
     }
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0 && instance_exists(obj_queenshield_enemy))
+    if (gml_Script_scr_isphase("enemytalk") && talked == false && instance_exists(obj_queenshield_enemy))
     {
         alarm[5] = 30
         talked = 0.4
@@ -238,7 +238,7 @@ if (global.monster[myself] == true)
                 appearcon = 2
         }
     }
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         talked = 0.5
         if instance_exists(obj_queenshield_enemy)
@@ -416,7 +416,7 @@ if (global.monster[myself] == true)
         drunk = 0
         if (ballooncon == 0)
         {
-            talked = 1
+            talked = true
             talktimer = 0
         }
         else
@@ -604,7 +604,7 @@ if (global.monster[myself] == true)
             alarm[6] = 1
         }
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         talktimer++
         if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
@@ -870,13 +870,13 @@ if (global.myfight == 3)
         acting = 5
     else if (acting == 4)
         acting = 6
-    if (acting == 1 && actcon == 0 && (!instance_exists(obj_berdlyplug_enemy)))
+    if (acting == true && actcon == 0 && (!instance_exists(obj_berdlyplug_enemy)))
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* QUEEN - Her drinking glass generates a powerful barrier. Break or lower it!/%", "obj_queen_enemy_slash_Step_0_gml_338_0")
         gml_Script_scr_battletext_default()
     }
-    if (acting == 1 && actcon == 0 && instance_exists(obj_berdlyplug_enemy))
+    if (acting == true && actcon == 0 && instance_exists(obj_berdlyplug_enemy))
     {
         if (!instance_exists(obj_queenshield_enemy))
         {
@@ -920,42 +920,42 @@ if (global.myfight == 3)
                 gml_Script_scr_battletext_default()
                 waitnextactsusie = 1
                 waitnextactralsei = 1
-                if (actingsus == 1 && susieflattercount > 0 && actingral == 1 && ralseiflattercount > 0)
+                if (actingsus == true && susieflattercount > 0 && actingral == true && ralseiflattercount > 0)
                     changesimulorder = 1
-                if (actingsus == 1 && susieflattercount == 0 && actingral == 1 && ralseiflattercount > 0)
+                if (actingsus == true && susieflattercount == 0 && actingral == true && ralseiflattercount > 0)
                     changesimulorder = 2
-                if (actingsus == 0 && actingral == 1 && ralseiflattercount > 0)
+                if (actingsus == false && actingral == true && ralseiflattercount > 0)
                     changesimulorder = 2
-                if (actingral == 0 && actingsus == 1 && susieflattercount > 0)
+                if (actingral == false && actingsus == true && susieflattercount > 0)
                     changesimulorder = 5
             }
             else
             {
                 var aa = 0
-                if (actingsus == 1 && susieflattercount == 0 && actingral == 1 && ralseiflattercount == 0)
+                if (actingsus == true && susieflattercount == 0 && actingral == true && ralseiflattercount == 0)
                     aa = 1
-                if (actingral != 1 && actingsus == 1 && susieflattercount == 0)
+                if (actingral != true && actingsus == true && susieflattercount == 0)
                     aa = 1
-                if (actingsus != 1 && actingral == 1 && ralseiflattercount == 0)
+                if (actingsus != true && actingral == true && ralseiflattercount == 0)
                     aa = 1
                 if (simultotal == 1 || aa == 1)
                 {
                     gml_Script_msgsetloc(0, "* You made a memorable and charming toast to Queen!/%", "obj_queen_enemy_slash_Step_0_gml_788_0")
                     gml_Script_scr_battletext_default()
-                    if (actingsus == 1 && susieflattercount == 0)
+                    if (actingsus == true && susieflattercount == 0)
                         waitnextactsusie = 1
-                    if (actingral == 1 && ralseiflattercount == 0)
+                    if (actingral == true && ralseiflattercount == 0)
                         waitnextactralsei = 1
-                    if (actingsus == 1 && susieflattercount == 0 && actingral == 1 && ralseiflattercount > 0)
+                    if (actingsus == true && susieflattercount == 0 && actingral == true && ralseiflattercount > 0)
                         changesimulorder = 3
                 }
                 else
                 {
-                    if (actingsus == 1 && susieflattercount == 0)
+                    if (actingsus == true && susieflattercount == 0)
                         waitnextactsusie = 1
-                    if (actingral == 1 && ralseiflattercount == 0)
+                    if (actingral == true && ralseiflattercount == 0)
                         waitnextactralsei = 1
-                    if (actingsus == 1 && susieflattercount == 0 && actingral == 1 && ralseiflattercount > 0)
+                    if (actingsus == true && susieflattercount == 0 && actingral == true && ralseiflattercount > 0)
                         changesimulorder = 3
                     gml_Script_msgsetloc(0, "* You toasted Queen!/%", "obj_queen_enemy_slash_Step_0_gml_803_0")
                     gml_Script_scr_simultext("kris")
@@ -1017,7 +1017,7 @@ if (global.myfight == 3)
         if (acting == 4)
             throwX = 1
         actcon = 32
-        acting = 0
+        acting = false
         alarm[4] = 15
         ___myrememberx = xstart
         ___myremembery = ystart
@@ -1046,7 +1046,7 @@ if (global.myfight == 3)
     var _susie_simul = 0
     if (waitnextactsusie == 1 && gml_Script_i_ex(obj_writer))
         _susie_simul = 1
-    if (actingsus == 1 && actconsus == 1 && _susie_simul == 0)
+    if (actingsus == true && actconsus == 1 && _susie_simul == 0)
     {
         if (!instance_exists(obj_queenshield_enemy))
         {
@@ -1086,7 +1086,7 @@ if (global.myfight == 3)
                 gml_Script_msgnextloc("\\E1* It's A Good Thing I Have No Standards For This/%", "obj_queen_enemy_slash_Step_0_gml_932_0")
                 gml_Script_scr_battletext_default()
                 waitnextactralsei = 1
-                if (actingral == 1)
+                if (actingral == true)
                     changesimulorder = 2
             }
             else if (simultotal == 1 || changesimulorder == 5)
@@ -1108,9 +1108,9 @@ if (global.myfight == 3)
                     simulorderral = 1
                     changesimulorder = 0
                 }
-                if (actingral == 1 && ralseiflattercount == 0)
+                if (actingral == true && ralseiflattercount == 0)
                     waitnextactralsei = 1
-                if (actingral == 1 && ralseiflattercount > 0)
+                if (actingral == true && ralseiflattercount > 0)
                     waitnextactralsei = 0
                 gml_Script_msgsetloc(0, "* Susie toasted Queen!/%", "obj_queen_enemy_slash_Step_0_gml_955_0")
                 gml_Script_scr_simultext("susie")
@@ -1119,12 +1119,12 @@ if (global.myfight == 3)
             acting = 100
         }
         actconsus = 0
-        actingsus = 0
+        actingsus = false
     }
     var _ralsei_simul = 0
     if (waitnextactralsei == 1 && gml_Script_i_ex(obj_writer))
         _ralsei_simul = 1
-    if (actingral == 1 && actconral == 1 && _ralsei_simul == 0)
+    if (actingral == true && actconral == 1 && _ralsei_simul == 0)
     {
         if (!instance_exists(obj_queenshield_enemy))
         {
@@ -1193,7 +1193,7 @@ if (global.myfight == 3)
             acting = 100
         }
         actconral = 0
-        actingral = 0
+        actingral = false
     }
     if (actingral == 2 && actconral == 1)
     {
@@ -1201,12 +1201,12 @@ if (global.myfight == 3)
         gml_Script_scr_battletext_default()
         aimact = 2
         actconral = 0
-        actingral = 0
+        actingral = false
         actcon = 1
     }
     if (acting == 100 && (!instance_exists(obj_writer)))
     {
-        acting = 0
+        acting = false
         actcon = 1
         drunk = 1
         wineglasscon = 10
@@ -1282,7 +1282,7 @@ if (global.myfight == 3)
         global.charaction[1] = 2
         global.charspecial[1] = 5
         global.chartarget[1] = 0
-        global.acting[1] = 0
+        global.acting[1] = false
         gml_Script_snd_play(snd_boost)
         heartanim = gml_Script_instance_create((obj_herokris.x + 30), (obj_herokris.y + 50), obj_animation)
         with (heartanim)
@@ -1325,7 +1325,7 @@ if (global.myfight == 3)
         global.charaction[2] = 2
         global.charspecial[2] = 6
         global.chartarget[2] = 0
-        global.acting[2] = 0
+        global.acting[2] = false
         gml_Script_snd_play(snd_boost)
         heartanim = gml_Script_instance_create((obj_herokris.x + 30), (obj_herokris.y + 50), obj_animation)
         with (heartanim)

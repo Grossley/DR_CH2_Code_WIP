@@ -1,5 +1,5 @@
 myinteract = 0
-talked = 0
+talked = false
 image_speed = 0
 image_xscale = 2
 image_yscale = 2

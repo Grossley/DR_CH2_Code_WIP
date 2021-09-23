@@ -1,2 +1,2 @@
 con = 1
-init = 0
+init = false

@@ -13,5 +13,5 @@ megakeep = 0
 maxxscale = 2
 maxyscale = 2
 customBox = 0
-init = 0
+init = false
 spr_custom_box = sprite_index

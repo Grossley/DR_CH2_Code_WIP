@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     var _jpmode = global.lang == "ja"
     switch search
@@ -26,6 +26,6 @@ if (init == 0)
             break
     }
 
-    init = 1
+    init = true
     depth++
 }

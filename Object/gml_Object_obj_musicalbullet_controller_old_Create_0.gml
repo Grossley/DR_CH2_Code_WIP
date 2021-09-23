@@ -12,5 +12,5 @@ skip_bullet = 0
 skip_bullet_count = 0
 sfxtimer = 0
 made = 0
-init = 0
+init = false
 stop_song = 0

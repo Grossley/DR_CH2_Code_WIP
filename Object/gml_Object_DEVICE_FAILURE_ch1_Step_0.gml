@@ -117,10 +117,10 @@ if (EVENT == 28)
             {
                 if gamepad_button_check_pressed(obj_gamecontroller.gamepad_id, gamepad_controls[i])
                 {
-                    if (gamepad_controls[i] == global.button0 || gamepad_controls[i] == global.button1 || gamepad_controls[i] == global.button2 || gamepad_controls[i] == 32775)
+                    if (gamepad_controls[i] == global.button0 || gamepad_controls[i] == global.button1 || gamepad_controls[i] == global.button2 || gamepad_controls[i] == gp_shoulderlb)
                     {
                         gml_Script_mus_volume_ch1(global.currentsong[1], 0, 80)
-                        restart = 1
+                        restart = true
                         break
                     }
                     else

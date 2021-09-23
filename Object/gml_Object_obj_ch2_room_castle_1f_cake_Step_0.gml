@@ -1,4 +1,4 @@
-if (obj_npc_room_animated.talked == 1 && (!instance_exists(obj_dialoguer)) && con == -1 && global.flag[304] == 0)
+if (obj_npc_room_animated.talked == true && (!instance_exists(obj_dialoguer)) && con == -1 && global.flag[304] == 0)
 {
     con = 1
     global.interact = 1

@@ -9,7 +9,7 @@ if (global.monster[myself] == true)
     sweetdanceprev = obj_sweet_enemy.dancing
     capndanceprev = obj_hatguy_enemy.dancing
     kkdanceprev = obj_kk_enemy.dancing
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -18,7 +18,7 @@ if (global.monster[myself] == true)
         heal = 0
         groove = 0
         obj_musical_controller.scon = 0
-        simultotal_funny = 0
+        simultotal_funny = false
         global.typer = 50
         rr = choose(0, 1, 2, 3)
         if (dancing == 1)
@@ -35,10 +35,10 @@ if (global.monster[myself] == true)
                 gml_Script_msgsetloc(0, "Taste the rhythm^1,&prism!", "obj_sweet_enemy_slash_Step_0_gml_33_0")
         }
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -385,7 +385,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* SWEET - The energetic one. Looks up to K_K./%", "obj_sweet_enemy_slash_Step_0_gml_403_0")
@@ -396,7 +396,7 @@ if (global.myfight == 3)
         actCounter++
         danceCounter = 1
         gml_Script_scr_act_charsprite("kris", spr_kris_dance, 0.16, true)
-        if (simultotal == 1 || (global.lang == "ja" && simultotal_funny == 1))
+        if (simultotal == 1 || (global.lang == "ja" && simultotal_funny == true))
         {
             gml_Script_msgsetloc(0, "* You danced!/", "obj_sweet_enemy_slash_Step_0_gml_422_0")
             gml_Script_msgnextloc("* Sweet got lost in the groove!/%", "obj_sweet_enemy_slash_Step_0_gml_423_0")
@@ -452,7 +452,7 @@ if (global.myfight == 3)
         dancing = 1
         actcon = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         dancing = 1
         danceCounter = 1
@@ -484,7 +484,7 @@ if (global.myfight == 3)
                 actconsus = 0
         }
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         dancing = 1
         danceCounter = 1

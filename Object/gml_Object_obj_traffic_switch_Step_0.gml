@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if (count == 0)
     {
@@ -23,7 +23,7 @@ if (init == 0)
                 allcount = allcountcheck
         }
     }
-    init = 1
+    init = true
 }
 if (myinteract == 1)
 {

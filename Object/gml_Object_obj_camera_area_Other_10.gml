@@ -24,5 +24,5 @@ if instance_exists(obj_camera_advanced)
         if (panSpeedInit != -1)
             obj_camera_advanced.panSpeedInit[myView] = panSpeedInit
     }
-    init = 1
+    init = true
 }

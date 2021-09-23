@@ -1,6 +1,6 @@
 gml_Script_scr_enemy_object_init()
 recruitcount = 1
-recruitable = 0
+recruitable = false
 talkmax = 90
 image_speed = 0
 idlesprite = spr_pipis_egg

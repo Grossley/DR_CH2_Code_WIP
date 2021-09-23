@@ -1,5 +1,5 @@
 gml_Script_scr_84_set_draw_font_ch1("main")
-if (BGMADE == 1)
+if (BGMADE == true)
 {
     ANIM_SINER += 1
     ANIM_SINER_B += 1

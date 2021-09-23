@@ -1,6 +1,6 @@
 if (myinteract == 3)
 {
-    if (talked == 0)
+    if (talked == false)
     {
         timer++
         if (timer >= 15)

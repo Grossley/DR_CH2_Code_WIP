@@ -1,5 +1,5 @@
 layer_set_visible("reference", 0)
-init = 0
+init = false
 if (global.flag[542] != 0)
 {
     swatch = gml_Script_instance_create(500, 500, obj_chaseenemy)

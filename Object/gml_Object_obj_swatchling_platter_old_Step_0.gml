@@ -1,11 +1,11 @@
-if (init == 0)
+if (init == false)
 {
     gml_Script_scr_bullet_inherit(platterLid)
     gml_Script_scr_bullet_inherit(platterPlate)
     targetColor = startColor
     platterPlate.image_blend = startColor
     platterLid.image_blend = startColor
-    init = 1
+    init = true
 }
 if (hasCandy == 1)
 {

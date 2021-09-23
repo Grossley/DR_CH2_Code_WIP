@@ -63,7 +63,7 @@ damageoverride = 0
 healoverride = 0
 tpoverride = 0
 actpunchtimer = 0
-acttoenemytalktransition = 0
+acttoenemytalktransition = false
 lastpunchside = 0
 damagetakenthisturn = 0
 if (wireframe_boxing == 1)

@@ -6,7 +6,7 @@ if (ambushed == false)
 if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         if (attackcon == 0)
         {
@@ -229,10 +229,10 @@ if (global.monster[myself] == true)
             }
         }
         gml_Script_scr_battletext()
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         if (instance_exists(obj_writer) == 0)
         {
@@ -395,7 +395,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_stringsetloc("* RALSEI - AT 8 DF 12&* The fluffy prince.../%", "obj_ralseienemy_slash_Step_0_gml_447_0")

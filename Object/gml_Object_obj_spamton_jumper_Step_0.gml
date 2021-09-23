@@ -4,7 +4,7 @@ if (truegravity == 0)
     destroyonhit = 0
     truegravity = (gravity * 2)
 }
-if (init == 0)
+if (init == false)
 {
     flip = sign(gravity)
     if (gravity < 0)
@@ -12,7 +12,7 @@ if (init == 0)
     if jumper
         depth--
     yscale = image_yscale
-    init = 1
+    init = true
 }
 if (jumpstate == 0 && jumper)
 {

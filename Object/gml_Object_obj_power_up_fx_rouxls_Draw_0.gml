@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     if (pivotx == -999)
         pivotx = ((sprite_width / 2) - (sprite_get_xoffset(sprite_index) * image_xscale))
     if (pivoty == -999)
         pivoty = ((sprite_height / 2) - (sprite_get_yoffset(sprite_index) * image_yscale))
-    init = 1
+    init = true
     fadebg.sprite_index = spr_pixel_white
     fadebg.image_blend = c_black
     fadebg.image_xscale = ((room_width / 4) + 20)

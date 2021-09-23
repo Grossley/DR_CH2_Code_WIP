@@ -27,7 +27,7 @@ if (gml_Script_i_ex(obj_npc_room) && readtrigger == 0)
     readcount = 0
     with (obj_npc_room)
     {
-        if (talked != 0)
+        if (talked != false)
             other.readcount++
     }
     if (readcount == 8)
@@ -200,7 +200,7 @@ if (con == 13 && (!gml_Script_i_ex(obj_cutscene_master)))
         else
         {
             parent = obj_mainchara
-            target = 12
+            target = obj_magicalglass
             gml_Script_scr_caterpillar_interpolate()
         }
     }

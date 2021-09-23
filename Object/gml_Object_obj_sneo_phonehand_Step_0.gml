@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if gml_Script_i_ex(boss)
     {
@@ -14,7 +14,7 @@ if (init == 0)
             jointy = (y + 30)
         }
         remjointy = jointy
-        init = 1
+        init = true
     }
 }
 if (btimer == 13)

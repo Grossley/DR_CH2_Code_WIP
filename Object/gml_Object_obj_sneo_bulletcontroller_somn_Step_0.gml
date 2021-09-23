@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])
     if (sameattack > 1)
@@ -15,7 +15,7 @@ if (init == 0)
         minx = (obj_growtangle.x - (obj_growtangle.sprite_width / 2))
         maxx = (obj_growtangle.x + (obj_growtangle.sprite_width / 2))
     }
-    init = 1
+    init = true
 }
 btimer += 1
 if (type == 5)

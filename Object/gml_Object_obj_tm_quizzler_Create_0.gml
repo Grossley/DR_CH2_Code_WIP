@@ -1,4 +1,4 @@
-init = 0
+init = false
 difficulty = 0
 currentturn = 0
 turns = 1
@@ -15,7 +15,7 @@ voiceclips[3] = snd_tm_quiz_d
 canrepeat = 1
 creator = obj_sneo_friedpipis
 damage = -1
-target = -1
+target = self
 element = 6
 tm = 0
 animator = noone
@@ -29,7 +29,7 @@ else
 }
 nextdifficulty = 0
 dojo = 0
-restart = 0
+restart = false
 rounds = 0
 hit = 0
 controller = 0

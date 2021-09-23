@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     if (fadeplease == true)
     {
         tile_layer_amount = 777777
@@ -12,7 +12,7 @@ if (init == 0)
     }
 }
 cur_alpha = battlealpha
-if (autobattle == 1)
+if (autobattle == true)
 {
     if instance_exists(obj_overworldbulletparent)
         obj_mainchara.battlemode = 1

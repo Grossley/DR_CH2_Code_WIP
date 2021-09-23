@@ -15,4 +15,4 @@ maxdistance = 400
 firstwave = 0
 spindir = 0
 start_angle = 0
-init = 0
+init = false

@@ -1,12 +1,12 @@
 if (playercrush == 1)
     return;
-if (init == 0)
+if (init == false)
 {
     depth = obj_growtangle.depth
     obj_growtangle.image_alpha = 0
     obj_battlesolid.image_xscale = 3
     obj_battlesolid.image_yscale = 3
-    init = 1
+    init = true
 }
 if (global.turntimer <= 30 && (global.turntimer % 2) >= 1 && instance_exists(obj_sneo_splitbouncer))
 {

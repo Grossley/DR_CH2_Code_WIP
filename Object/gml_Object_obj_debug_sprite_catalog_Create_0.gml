@@ -1,7 +1,7 @@
 lastSprite = spr_nothing
 myLastSprite = spr_nothing
 siner = 0
-for (i = IMAGE_LOGO; i < lastSprite; i++)
+for (i = 0; i < lastSprite; i++)
 {
     spriteName[i] = sprite_get_name(i)
     spriteHeight[i] = sprite_get_height(i)
@@ -10,6 +10,6 @@ for (i = IMAGE_LOGO; i < lastSprite; i++)
     mySpriteHeight[i] = spriteHeight[i]
 }
 sy = 0
-init = 0
+init = false
 oldway = 0
 displaymode = 0

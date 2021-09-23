@@ -1,5 +1,5 @@
 con = 0
-init = 0
+init = false
 drawground = 0
 siner = 0
 gml_Script_snd_free_all()

@@ -1,6 +1,6 @@
 if (!init)
 {
-    init = 1
+    init = true
     width = (width == -1 ? (sprite_get_width(sprite_index) * x_scale) : width)
     height = (height == -1 ? (sprite_get_height(sprite_index) * y_scale) : height)
 }

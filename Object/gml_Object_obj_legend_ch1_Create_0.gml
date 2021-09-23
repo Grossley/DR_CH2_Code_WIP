@@ -15,9 +15,9 @@ pic = spr_introimage0_ch1
 fadespeed = 0.02
 global.flag[6] = 1
 textimer = 0
-ingame = 0
+ingame = false
 if (global.plot == 20)
-    ingame = 1
-skipped = 0
+    ingame = true
+skipped = false
 skiptimer = 0
-draw_screen = 1
+draw_screen = true

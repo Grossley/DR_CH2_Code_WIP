@@ -64,9 +64,9 @@ if (active == true)
         sprite_index = spr_hourglass_switch_off_ch1
         gml_Script_snd_play_ch1(snd_noise_ch1)
         failamt += 1
-        if (failamt >= 3 && talked == 0 && global.interact == 0 && obj_darkcontroller_ch1.atalk == 0 && room == room_field_puzzle1_ch1)
+        if (failamt >= 3 && talked == false && global.interact == 0 && obj_darkcontroller_ch1.atalk == 0 && room == room_field_puzzle1_ch1)
         {
-            talked = 1
+            talked = true
             global.interact = 1
             global.fc = 2
             global.typer = 31
@@ -75,9 +75,9 @@ if (active == true)
             global.msg[1] = ((gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_78_0") + gml_Script_scr_get_input_name_ch1(5)) + gml_Script_scr_84_get_lang_string_ch1("obj_glowtilepuzz_slash_Step_0_gml_78_1"))
             gml_Script_instance_create_ch1(0, 0, obj_dialoguer_ch1)
         }
-        if (failamt >= 3 && talked == 0 && global.interact == 0 && room == room_field_puzzle2_ch1)
+        if (failamt >= 3 && talked == false && global.interact == 0 && room == room_field_puzzle2_ch1)
         {
-            talked = 1
+            talked = true
             global.interact = 1
             global.fc = 2
             global.typer = 31
@@ -115,7 +115,7 @@ if (active == true)
         }
     }
 }
-if (talked == 1 && gml_Script_d_ex_ch1() == 0)
+if (talked == true && gml_Script_d_ex_ch1() == 0)
 {
     talked = 2
     global.interact = 0

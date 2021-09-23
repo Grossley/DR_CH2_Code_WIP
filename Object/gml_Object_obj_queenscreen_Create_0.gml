@@ -21,7 +21,7 @@ count = 0
 brokenscreen = 0
 bluecheckcon = 0
 bluechecktimer = 0
-init = 0
+init = false
 if (image_index == 30)
 {
     brokeAlpha = 0

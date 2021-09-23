@@ -2,7 +2,7 @@ if (global.monster[myself] == true && defeated == 0)
 {
     global.flag[(51 + myself)] = 4
     event_user(1)
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip_ch1(15)
@@ -127,7 +127,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         _armordf = ((global.itemdf[2][0] + global.itemdf[2][1]) + global.itemdf[2][2])

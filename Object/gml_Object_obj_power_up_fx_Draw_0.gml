@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if use_pivot
     {
@@ -14,7 +14,7 @@ if (init == 0)
         if (pivoty == -999)
             pivoty = ((sprite_height / 2) - (sprite_get_yoffset(sprite_index) * image_yscale))
     }
-    init = 1
+    init = true
 }
 timer++
 effecttimer++

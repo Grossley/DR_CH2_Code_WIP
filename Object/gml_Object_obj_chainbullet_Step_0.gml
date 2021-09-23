@@ -1,6 +1,6 @@
 if (!instance_exists(obj_heart))
     instance_destroy()
-if (init == 1)
+if (init == true)
 {
     timer++
     if (timer >= firingSpeed)
@@ -21,4 +21,4 @@ if (init == 1)
             instance_destroy()
     }
 }
-init = 1
+init = true

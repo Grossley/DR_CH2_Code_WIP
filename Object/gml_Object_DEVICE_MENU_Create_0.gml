@@ -13,15 +13,15 @@ COMPLETEFILE_PREV[2] = gml_Script_ossafe_file_exists((("filech" + string((global
 INCOMPLETEFILE_PREV[0] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_0"))
 INCOMPLETEFILE_PREV[1] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_1"))
 INCOMPLETEFILE_PREV[2] = gml_Script_ossafe_file_exists((("filech" + string((global.chapter - 1))) + "_2"))
-INCOMPLETE_LOAD = 0
+INCOMPLETE_LOAD = false
 if global.is_console
 {
-    if (global.game_won == 1)
+    if (global.game_won == true)
     {
         if (COMPLETEFILE_PREV[0] == 0 && COMPLETEFILE_PREV[1] == 0 && COMPLETEFILE_PREV[2] == 0)
         {
             if (INCOMPLETEFILE_PREV[0] == 1 || INCOMPLETEFILE_PREV[1] == 1 || INCOMPLETEFILE_PREV[2] == 1)
-                INCOMPLETE_LOAD = 1
+                INCOMPLETE_LOAD = true
         }
     }
 }
@@ -42,15 +42,15 @@ if (TYPE == 1)
         global.currentsong[0] = gml_Script_snd_init("AUDIO_STORY.ogg")
     global.currentsong[1] = gml_Script_mus_loop_ext(global.currentsong[0], 1, 0.95)
 }
-BGMADE = 0
+BGMADE = false
 BG_ALPHA = 0
 BG_SINER = 0
 OBMADE = 0
 OB_DEPTH = 0
 obacktimer = 0
 OBM = 0.5
-COL_A = 32768
-COL_B = 65280
+COL_A = c_green
+COL_B = c_lime
 COL_PLUS = merge_color(c_lime, c_white, 0.5)
 jamod = 0
 if (TYPE == 1)
@@ -58,9 +58,9 @@ if (TYPE == 1)
     BGSINER = 0
     BGMAGNITUDE = 6
     COL_A = merge_color(c_silver, c_navy, 0.2)
-    COL_B = 16777215
+    COL_B = c_white
     COL_PLUS = merge_color(c_yellow, c_white, 0.5)
-    BGMADE = 1
+    BGMADE = true
     BG_ALPHA = 0
     ANIM_SINER = 0
     ANIM_SINER_B = 0
@@ -68,10 +68,10 @@ if (TYPE == 1)
     if (SUBTYPE == 0)
     {
         COL_A = merge_color(c_silver, c_maroon, 0.2)
-        COL_B = 16777215
+        COL_B = c_white
         COL_PLUS = merge_color(c_yellow, c_white, 0.4)
-        BGMADE = 0
-    }
+        BGMADE = false
+      }
 }
 MENU_NO = 0
 for (i = 0; i < 12; i += 1)
@@ -84,14 +84,14 @@ HEARTY = 110
 HEARTXCUR = 75
 HEARTYCUR = 75
 MOVENOISE = 0
-SELNOISE = 0
+SELNOISE = false
 BACKNOISE = false
 DEATHNOISE = false
-STARTGAME = 0
+STARTGAME = false
 REMMENU = 0
-CANQUIT = 1
-if (global.is_console == 1)
-    CANQUIT = 0
+CANQUIT = true
+if (global.is_console == true)
+    CANQUIT = false
 ONEBUFFER = 2
 TWOBUFFER = 0
 THREAT = 0
@@ -163,9 +163,9 @@ if gml_Script_ossafe_file_exists("dr.ini")
         INCOMPLETEFILE_PREV_NAME[i] = gml_Script_stringsetloc("NO DATA", "DEVICE_MENU_slash_Create_0_gml_185_0")
         INCOMPLETEFILE_PREV_TIME[i] = 0
         var loadcompletion = 0
-        if (COMPLETEFILE_PREV[i] == 1 && INCOMPLETE_LOAD == 0)
+        if (COMPLETEFILE_PREV[i] == 1 && INCOMPLETE_LOAD == false)
             loadcompletion = 1
-        if (INCOMPLETEFILE_PREV[i] == 1 && INCOMPLETE_LOAD == 1)
+        if (INCOMPLETEFILE_PREV[i] == 1 && INCOMPLETE_LOAD == true)
             loadcompletion = 1
         if loadcompletion
         {
@@ -200,11 +200,11 @@ if gml_Script_ossafe_file_exists("dr.ini")
     {
         if (COMPLETEFILE_PREV[0] == 1 || COMPLETEFILE_PREV[1] == 1 || COMPLETEFILE_PREV[2] == 1)
             INITMENU = 10
-        if (INCOMPLETE_LOAD == 1)
+        if (INCOMPLETE_LOAD == true)
             INITMENU = 10
     }
 }
 MENU_NO = INITMENU
 depth = 5
 jamod = 0
-input_enabled = 1
+input_enabled = true

@@ -1,4 +1,4 @@
-if (init == 1)
+if (init == true)
 {
     if (type == 1 && obj_spamton_neo_enemy.eyeshp > 0)
         image_blend = merge_color(c_purple, blue_col, (obj_spamton_neo_enemy.eyeshp / 16))

@@ -371,7 +371,7 @@ if (global.chapter == 1)
         alphys2 = alphys
         alphys = gml_Script_instance_create(alphys.x, (alphys.y + alphys.sprite_height), obj_npc_facing)
         with (obj_npc_facing)
-            talked = 0
+            talked = false
         with (alphys2)
             instance_destroy()
         with (doorsolid)

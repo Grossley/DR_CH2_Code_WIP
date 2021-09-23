@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     if (crushedObj > 0)
         maxspeed = (crushedObj == 2 ? 2 : 3)
-    init = 1
+    init = true
     if (new_movement == 0)
     {
         if (difficulty != 2)

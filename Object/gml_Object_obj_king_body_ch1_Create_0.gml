@@ -10,5 +10,5 @@ y = (yy + 70)
 active = true
 faketimer = 0
 faketimermax = 180
-timeruse = 0
+timeruse = false
 image_speed = 0.334

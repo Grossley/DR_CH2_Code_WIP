@@ -7,7 +7,7 @@ if (global.monster[myself] == true)
         milk_counter = 99
     if (secondtime == true)
         ralsei_lecture = 99
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -36,7 +36,7 @@ if (global.monster[myself] == true)
         rtimer += 1
         if (rtimer == 12)
         {
-            talked = 0
+            talked = false
             milkmax = 1000
             if (milk_counter > 0)
                 milkmax = 600
@@ -238,7 +238,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         if (secondtime == false)

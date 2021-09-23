@@ -1,8 +1,8 @@
-if (init == 0)
+if (init == false)
 {
     if firsttime
         targetTime *= 2
-    init = 1
+    init = true
     event_user(0)
 }
 if (loading > 0)

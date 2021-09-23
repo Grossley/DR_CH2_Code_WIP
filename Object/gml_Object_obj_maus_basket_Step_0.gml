@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     visible = true
     for (i = 0; i < 3; i++)
@@ -78,9 +78,9 @@ if (init == 0)
     sineradd = 0
     con = 1
     alarm[4] = 16
-    init = 1
+    init = true
 }
-if (init == 1)
+if (init == true)
 {
     if (con == 2)
     {

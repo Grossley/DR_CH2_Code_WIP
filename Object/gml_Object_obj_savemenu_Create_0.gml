@@ -8,14 +8,14 @@ name = gml_Script_stringsetloc("Kris", "obj_savemenu_slash_Create_0_gml_8_0")
 level = 1
 love = 1
 time = 0
-roome = 0
+roome = PLACE_DOGCHECK2
 saved = 0
 endme = 0
 menuno = 0
 mpos = global.filechoice
 overwrite = 0
 overcoord = 0
-init = 0
+init = false
 type = 0
 if (global.chapter >= 2 && global.darkzone == true)
 {

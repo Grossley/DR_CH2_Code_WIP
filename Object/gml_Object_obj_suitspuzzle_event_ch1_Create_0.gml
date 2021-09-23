@@ -1,7 +1,7 @@
 con = 1
 image_xscale = 2
 image_yscale = 2
-talked = 0
+talked = false
 puzzle = gml_Script_instance_create_ch1(180, 60, obj_suitspuzz_ch1)
 with (puzzle)
 {

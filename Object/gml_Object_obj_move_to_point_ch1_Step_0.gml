@@ -16,7 +16,7 @@ if instance_exists(target)
     movetimer += 1
     if (movetimer >= movemax)
         instance_destroy()
-    if (target == 1646)
+    if (target == obj_move_to_point_ch1)
         instance_destroy()
 }
 else

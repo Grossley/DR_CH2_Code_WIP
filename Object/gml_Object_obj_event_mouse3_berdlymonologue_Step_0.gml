@@ -74,13 +74,13 @@ if (con == 99 && (!gml_Script_d_ex()))
     instance_destroy()
 if instance_exists(obj_writer)
 {
-    if (obj_writer.halt != 0)
+    if (obj_writer.halt != false)
     {
         msgtimer++
         if (msgtimer >= 60)
         {
             with (obj_writer)
-                forcebutton1 = 1
+                forcebutton1 = true
             msgtimer = 0
         }
     }

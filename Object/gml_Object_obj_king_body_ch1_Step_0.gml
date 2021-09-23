@@ -12,7 +12,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
         gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, obj_dbulletcontroller_ch1)
         dd.type = 21
-        timeruse = 1
+        timeruse = true
         faketimermax = 190
         faketimer = 0
     }
@@ -32,7 +32,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
         gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, obj_dbulletcontroller_ch1)
         dd.type = 34
-        timeruse = 1
+        timeruse = true
         faketimermax = 200
         faketimer = 0
     }
@@ -57,7 +57,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
     if (attack == 6)
     {
         visible = false
-        timeruse = 0
+        timeruse = false
         chainking = gml_Script_instance_create_ch1(x, y, obj_chainking_ch1)
         chainking.type = 2
         chainking.subtype = 2
@@ -71,7 +71,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
         gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, obj_dbulletcontroller_ch1)
         dd.type = 35
-        timeruse = 1
+        timeruse = true
         faketimermax = 220
         faketimer = 0
     }
@@ -89,7 +89,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
         gml_Script_scr_moveheart_ch1()
         dd = gml_Script_instance_create_ch1(0, 0, obj_dbulletcontroller_ch1)
         dd.type = 23
-        timeruse = 1
+        timeruse = true
         faketimermax = 190
         faketimer = 0
     }
@@ -106,7 +106,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
     if (attack == 11)
     {
         visible = false
-        timeruse = 0
+        timeruse = false
         chainking = gml_Script_instance_create_ch1(x, y, obj_chainking_ch1)
         chainking.type = 2
         chainking.subtype = 1
@@ -115,7 +115,7 @@ if (keyboard_check(vk_return) && active == true && gml_Script_scr_debug_ch1())
         gml_Script_scr_moveheart_ch1()
     }
 }
-if (timeruse == 1)
+if (timeruse == true)
 {
     faketimer += 1
     if (faketimer >= faketimermax)
@@ -129,7 +129,7 @@ if (timeruse == 1)
         with (obj_heart_ch1)
             instance_destroy()
         active = true
-        timeruse = 0
+        timeruse = false
         faketimer = 0
     }
 }

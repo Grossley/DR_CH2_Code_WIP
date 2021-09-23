@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -21,10 +21,10 @@ if (global.monster[myself] == true)
             gml_Script_msgsetloc(0, "owowowmememeowme&owmemeowowmemeow&owmeowmemeowmeow", "obj_tasque_enemy_slash_Step_0_gml_24_0")
         }
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -94,7 +94,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* TASQUE - This stray cat is in need of some management./%", "obj_tasque_enemy_slash_Step_0_gml_126_0")
@@ -179,7 +179,7 @@ if (global.myfight == 3)
         gml_Script_scr_battletext_default()
         actcon = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Susie yelled at Tasque to get off her lawn./%", "obj_tasque_enemy_slash_Step_0_gml_228_0") : gml_Script_stringsetloc("* Susie roared like a lion!/%", "obj_tasque_enemy_slash_Step_0_gml_228_1"))
         gml_Script_msgset(0, simultext)
@@ -188,7 +188,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         simultext = (simultotal == 1 ? gml_Script_stringsetloc("* Ralsei cooed gently at Tasque!/%", "obj_tasque_enemy_slash_Step_0_gml_240_0") : gml_Script_stringsetloc("* Ralsei blinks at Tasque!/%", "obj_tasque_enemy_slash_Step_0_gml_240_1"))
         gml_Script_msgset(0, simultext)
@@ -197,7 +197,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("ralsei")
         actconral = (simulorderral == 0 ? 20 : 0)
     }
-    if (actingnoe == 1 && actconnoe == 1)
+    if (actingnoe == true && actconnoe == 1)
     {
         var nact_text = (choose(0, 1) == 0 ? gml_Script_stringsetloc("* Noelle got rubbed on by Tasque!/%", "obj_tasque_enemy_slash_Step_0_gml_252_0") : gml_Script_stringsetloc("* Tasque showed its belly to Noelle!/%", "obj_tasque_enemy_slash_Step_0_gml_252_1"))
         gml_Script_msgset(0, nact_text)

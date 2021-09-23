@@ -1,10 +1,10 @@
-if (init == 0)
+if (init == false)
 {
     if (global.flag[419] == 1)
         global.mercymod[myself] = 100
     if (global.flag[419] == 2)
         global.mercymod[myself] = 50
-    init = 1
+    init = true
 }
 if instance_exists(obj_tm_quizzler)
     simonsayscon = 1
@@ -17,7 +17,7 @@ if (simonsayscon == 1 && (!instance_exists(obj_tm_quizzler)))
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -82,10 +82,10 @@ if (global.monster[myself] == true)
         }
         gml_Script_msgset(0, dialogText)
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -177,7 +177,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* TASQUE MANAGER - Obsessed with order, and abhors Chaos. Whip it good!/%", "obj_tasque_manager_enemy_slash_Step_0_gml_205_0")
@@ -224,7 +224,7 @@ if (global.myfight == 3)
         }
         gml_Script_scr_battletext_default()
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         gml_Script_scr_act_charsprite("susie", spr_susie_wan_sign, 0, false)
         if (violenceused == 1)
@@ -245,7 +245,7 @@ if (global.myfight == 3)
         gml_Script_scr_simultext("susie")
         actconsus = (simulordersus == 0 ? 20 : 0)
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         gml_Script_scr_act_charsprite("ralsei", spr_ralseib_wan, 0, false)
         if (violenceused == 1)

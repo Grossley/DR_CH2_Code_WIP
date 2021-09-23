@@ -1,6 +1,6 @@
 if (global.monster[myself] == true)
 {
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         gml_Script_scr_randomtarget_ch1()
         if (!instance_exists(obj_darkener_ch1))
@@ -20,10 +20,10 @@ if (global.monster[myself] == true)
         if (acting == 3)
             global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_diamondenemy_slash_Step_0_gml_28_0")
         gml_Script_scr_enemyblcon_ch1((x - 160), y, 3)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip_ch1(15)
@@ -130,7 +130,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_diamondenemy_slash_Step_0_gml_154_0")

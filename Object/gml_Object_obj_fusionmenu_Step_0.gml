@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
@@ -526,7 +526,7 @@ if (init == 0)
         gml_Script_scr_custommenu_optionxy()
     heartX = menuX[0]
     heartY = menuY[0]
-    init = 1
+    init = true
 }
 event_inherited()
 if (type == 1)

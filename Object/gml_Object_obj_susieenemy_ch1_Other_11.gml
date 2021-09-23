@@ -1,4 +1,4 @@
-if (global.mnfight == 1 && talked == 0)
+if (global.mnfight == 1 && talked == false)
 {
     awoke = false
     sleepcounter += 1
@@ -64,6 +64,6 @@ if (global.mnfight == 1 && talked == 0)
     awoke = false
     lancer_act = 0
     gml_Script_scr_enemyblcon_ch1((x - 160), y, 3)
-    talked = 1
+    talked = true
     talktimer = 0
 }

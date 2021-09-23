@@ -1,6 +1,6 @@
-if (init == 0)
+if (init == false)
 {
-    init = 1
+    init = true
     bridge = gml_Script_instance_create(120, 322, obj_marker)
     bridge.visible = true
     bridge.sprite_index = spr_dw_city_mice3fakeplat
@@ -300,7 +300,7 @@ if (weird == 0)
                     freeze = 0
                 with (obj_masterPlatformController)
                 {
-                    init = 1
+                    init = true
                     plat[(currentPlatform - 1)].falltimer = 0
                 }
                 towerinit = 1

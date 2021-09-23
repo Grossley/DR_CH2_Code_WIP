@@ -1,6 +1,6 @@
-if (init == 0 || restart)
+if (init == false || restart)
 {
-    if (init == 0)
+    if (init == false)
     {
         animator.creator = creator
         animator.quizmode = 1
@@ -20,8 +20,8 @@ if (init == 0 || restart)
         turnspeed = 40
         turns = 4
     }
-    init = 1
-    restart = 0
+    init = true
+    restart = false
     for (i = 0; i < turns; i++)
     {
         if (i > 0 && (!canrepeat))

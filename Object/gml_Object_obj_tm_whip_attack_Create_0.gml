@@ -11,4 +11,4 @@ difficulty = 0
 zaptime = 10
 animator = gml_Script_instance_create(x, y, obj_tm_whip_animation)
 quizmode = 0
-init = 0
+init = false

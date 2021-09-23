@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if use_pivot
     {
@@ -18,7 +18,7 @@ if (init == 0)
     }
     xrate *= scale
     yrate *= scale
-    init = 1
+    init = true
     if (reverse == 1)
     {
         image_xscale += (xrate / fade)

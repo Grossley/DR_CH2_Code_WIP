@@ -10,11 +10,11 @@ if (endcon > 0)
 }
 else if (balloonend == 1)
 {
-    talked = 1
+    talked = true
     if (intro == 1)
     {
         intro = 2
-        talked = 0
+        talked = false
     }
 }
 else

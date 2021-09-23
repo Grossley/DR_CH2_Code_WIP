@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     switch image_index
     {
@@ -29,5 +29,5 @@ if (init == 0)
     if (doorSpecial != "none")
     {
     }
-    init = 1
+    init = true
 }

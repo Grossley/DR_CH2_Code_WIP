@@ -33,7 +33,7 @@ if (falling == 0 && global.interact == 0)
     y = (obj_mainchara.y + 5)
     if (inittimer < 1)
         inittimer += 0.02
-    if (init == 1)
+    if (init == true)
     {
         if (nowx != x)
         {
@@ -46,7 +46,7 @@ if (falling == 0 && global.interact == 0)
         balance += ((balancespeed / 2) * inittimer)
         image_angle = balance
     }
-    init = 1
+    init = true
     if (abs(balance) >= 90)
     {
         falling = 1

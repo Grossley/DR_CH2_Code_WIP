@@ -30,7 +30,7 @@ if (active == true)
         draw_set_color(bcolor)
         if (i == 1 || i == 2)
             draw_rectangle(x, (y + (38 * i)), (x + 300), ((y + (38 * i)) + 2), false)
-        if (global.char[i] != 0 && global.charauto[global.char[i]] == 0 && havechar[i] == true)
+        if (global.char[i] != 0 && global.charauto[global.char[i]] == false && havechar[i] == true)
         {
             j = global.char[i]
             fullbox = 0

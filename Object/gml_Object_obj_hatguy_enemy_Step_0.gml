@@ -5,7 +5,7 @@ if (global.monstercomment[myself] == gml_Script_stringsetloc("(Tired)", "obj_hat
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
@@ -32,10 +32,10 @@ if (global.monster[myself] == true)
         }
         gml_Script_scr_enemyblcon((x - 10), global.monstery[myself], 10)
         dancedwithsusie = 0
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(15)
@@ -131,7 +131,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         gml_Script_msgsetloc(0, "* CAP'N - The smooth one. Looks up to K_K./%", "obj_hatguy_enemy_slash_Step_0_gml_143_0")
@@ -146,7 +146,7 @@ if (global.myfight == 3)
         }
         danceCounter = 1
         gml_Script_scr_act_charsprite("kris", spr_kris_dance, 0.16, true)
-        if (simultotal == 1 || (global.lang == "ja" && obj_sweet_enemy.simultotal_funny == 1))
+        if (simultotal == 1 || (global.lang == "ja" && obj_sweet_enemy.simultotal_funny == true))
         {
             gml_Script_msgsetloc(0, "* You danced!/", "obj_hatguy_enemy_slash_Step_0_gml_165_0")
             gml_Script_msgnextloc("* Cap'n got lost in the groove!/%", "obj_hatguy_enemy_slash_Step_0_gml_166_0")
@@ -206,7 +206,7 @@ if (global.myfight == 3)
         dancing = 1
         actcon = 1
     }
-    if (actingsus == 1 && actconsus == 1)
+    if (actingsus == true && actconsus == 1)
     {
         dancing = 1
         danceCounter = 1
@@ -239,7 +239,7 @@ if (global.myfight == 3)
                 actconsus = 0
         }
     }
-    if (actingral == 1 && actconral == 1)
+    if (actingral == true && actconral == 1)
     {
         dancing = 1
         danceCounter = 1

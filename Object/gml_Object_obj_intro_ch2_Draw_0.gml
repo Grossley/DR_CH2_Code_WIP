@@ -11,10 +11,10 @@ if show_queen
 }
 else
 {
-    if (init == 0 && con == 1)
+    if (init == false && con == 1)
     {
         logopieces = 0
-        init = 1
+        init = true
         for (i = 0; i < 9; i++)
             drawlogopart[i] = 0
         con = 2

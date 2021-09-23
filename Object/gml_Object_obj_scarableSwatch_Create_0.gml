@@ -1,7 +1,7 @@
 if (global.flag[382] == 1 && 216)
     instance_destroy()
 dir = 0
-init = 0
+init = false
 image_yscale = 2
 con = 0
 image_speed = 0

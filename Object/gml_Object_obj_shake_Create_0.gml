@@ -6,7 +6,7 @@ shakey = 4
 siner = 0
 active = false
 permashake = false
-beenset = 0
+beenset = false
 if (instance_number(object_index) >= 2)
 {
     active = -1

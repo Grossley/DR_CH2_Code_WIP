@@ -20,4 +20,4 @@ con = 0
 image_alpha = 0.01
 timer = 0
 dir = 0
-init = 0
+init = false

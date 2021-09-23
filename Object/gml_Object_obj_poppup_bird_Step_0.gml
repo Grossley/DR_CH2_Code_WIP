@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if targetplayer
     {
@@ -24,7 +24,7 @@ if (init == 0)
         else
             image_speed /= 2
     }
-    init = 1
+    init = true
     startdirection = direction
 }
 if (timer == 0)

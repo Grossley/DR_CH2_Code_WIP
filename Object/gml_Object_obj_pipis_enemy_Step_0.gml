@@ -3,15 +3,15 @@ if gml_Script_scr_debug()
 }
 if (global.monster[myself] == true)
 {
-    if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+    if (gml_Script_scr_isphase("enemytalk") && talked == false)
     {
         gml_Script_scr_randomtarget()
         if (!instance_exists(obj_darkener))
             gml_Script_instance_create(0, 0, obj_darkener)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && gml_Script_scr_isphase("enemytalk"))
+    if (talked == true && gml_Script_scr_isphase("enemytalk"))
     {
         rtimer = 0
         gml_Script_scr_blconskip(-1)
@@ -54,7 +54,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         var randomnumber = irandom_range(42, 5555)
@@ -63,16 +63,16 @@ if (global.myfight == 3)
         gml_Script_msgsetloc(0, "PIPIS - ''The Original'' An invasive species of freshwater clam. \\f0 /%", "obj_pipis_enemy_slash_Step_0_gml_100_0")
         gml_Script_scr_battletext_default()
     }
-    if ((actingsus == 1 && actconsus == 1) || (actingral == 1 && actconral == 1))
+    if ((actingsus == true && actconsus == 1) || (actingral == true && actconral == 1))
     {
         gml_Script_msgsetloc(0, "* Nothing happened!/%", "obj_pipis_enemy_slash_Step_0_gml_110_0")
         gml_Script_scr_battletext_default()
-        if (actingsus == 1 && actconsus == 1)
+        if (actingsus == true && actconsus == 1)
         {
             actcon = 1
             actconsus = 0
         }
-        if (actingral == 1 && actconral == 1)
+        if (actingral == true && actconral == 1)
         {
             actcon = 1
             actconral = 0

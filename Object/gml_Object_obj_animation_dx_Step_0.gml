@@ -1,4 +1,4 @@
-init = 1
+init = true
 if animdone
 {
     timer++

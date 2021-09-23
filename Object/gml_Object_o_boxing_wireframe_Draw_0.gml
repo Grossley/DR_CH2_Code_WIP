@@ -137,7 +137,7 @@ if surface_exists(surface)
             with (queenbubble)
             {
                 depth = (obj_ch2_scene10.qu_actor.depth - 1)
-                auto_length = 1
+                auto_length = true
                 side = -1
             }
             talktype = 1

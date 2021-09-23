@@ -1,8 +1,8 @@
 event_inherited()
-if (init == 0)
+if (init == false)
 {
     rawspeed = speed
-    init = 1
+    init = true
 }
 if (x >= (mouthx - 16) && gml_Script_i_ex(creator))
     offset = (((creator.y + creator.mouthy) - 4) - ystart)

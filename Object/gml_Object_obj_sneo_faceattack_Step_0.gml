@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     if (type == 0)
         sprite_index = spr_spamtonneo_faceAttack_face
@@ -21,7 +21,7 @@ if (init == 0)
     }
     if (type == 0)
         depth += 10
-    init = 1
+    init = true
     if first_time
     {
         image_alpha = 1

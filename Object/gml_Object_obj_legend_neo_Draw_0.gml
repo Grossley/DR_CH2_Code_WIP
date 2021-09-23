@@ -245,7 +245,7 @@ if (con == 5)
         con_alph -= 0.01
     if (contimer == 1080)
         gml_Script_instance_create(0, 0, obj_fadeout)
-    if (contimer == 1100 && skipped == 0)
+    if (contimer == 1100 && skipped == false)
     {
         gml_Script_snd_free_all()
         global.flag[6] = 0
@@ -286,17 +286,17 @@ if (chunkamt >= 1)
 draw_set_alpha(alph)
 draw_rectangle(-10, -10, 330, 330, false)
 draw_set_alpha(1)
-if (ingame == 0)
+if (ingame == false)
 {
-    if (gml_Script_button1_p() && skipped == 0)
+    if (gml_Script_button1_p() && skipped == false)
     {
-        skipped = 1
+        skipped = true
         skiptimer = 0
         f = gml_Script_instance_create(0, 0, obj_fadeout)
         f.fadespeed = 0.08
         gml_Script_mus_volume(global.currentsong[1], 0, 15)
     }
-    if (skipped == 1)
+    if (skipped == true)
         skiptimer += 1
     if (skiptimer == 19)
     {

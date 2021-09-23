@@ -83,7 +83,7 @@ if (timer >= timermax && buttonspressed > 5)
             {
                 bumpwait = 1
                 alarm[7] = 60
-                acting = 0
+                acting = false
                 actcon = 1
                 actconsus = 0
                 actconral = 0

@@ -1,4 +1,4 @@
-if (init == 0)
+if (init == false)
 {
     sameattack = gml_Script_scr_monsterattacknamecount(global.monsterattackname[creator])
     if (sameattack > 1)
@@ -15,7 +15,7 @@ if (init == 0)
         minx = (obj_growtangle.x - (obj_growtangle.sprite_width / 2))
         maxx = (obj_growtangle.x + (obj_growtangle.sprite_width / 2))
     }
-    init = 1
+    init = true
 }
 if (!gml_Script_scr_queen_buffercheck())
     btimer += 1
@@ -38,7 +38,7 @@ if (type == 0 || type == 9 || type == 8)
             bc.bufferduration = 45
         }
     }
-    if (init == 1)
+    if (init == true)
     {
         if (special == 4)
         {
@@ -266,7 +266,7 @@ if (type == 0 || type == 9 || type == 8)
 }
 else if (type == 1)
 {
-    if (init == 1)
+    if (init == true)
     {
         d = gml_Script_instance_create(obj_growtangle.x, obj_growtangle.y, obj_queen_ultimate_attack_controller)
         d = gml_Script_instance_create(obj_heart.x, obj_heart.y, obj_hiddenheart)
@@ -276,7 +276,7 @@ else if (type == 1)
 }
 else if (type == 2 || type == 2.1 || type == 2.2)
 {
-    if (init == 1)
+    if (init == true)
     {
         init = 2
         btimer = 30
@@ -513,7 +513,7 @@ else if (type == 4)
 {
     if instance_exists(obj_queen_finger)
         btimer += ((obj_queen_finger.scrollSpeed / 4) - 1)
-    if (init == 1)
+    if (init == true)
     {
         btimer = 10
         d = gml_Script_instance_create((obj_growtangle.x - 15), -40, obj_queen_sm_deleter)
@@ -566,7 +566,7 @@ else if (type == 4)
 }
 else if (type == 5)
 {
-    if (init == 1)
+    if (init == true)
     {
         d = gml_Script_instance_create(obj_growtangle.x, (miny - 66), obj_queen_spadeblow)
         d.depth = obj_growtangle.depth
@@ -577,7 +577,7 @@ else if (type == 5)
 }
 else if (type == 6 || type == 6.1)
 {
-    if (init == 1)
+    if (init == true)
         init = 2
     if (btimer > 30)
     {
@@ -617,7 +617,7 @@ else if (type == 6 || type == 6.1)
 }
 else if (type == 7)
 {
-    if (init == 1)
+    if (init == true)
     {
         gml_Script_instance_create(obj_berdlyplug_enemy.x, obj_berdlyplug_enemy.y, obj_queen_berdlywireattack)
         obj_berdlyplug_enemy.visible = false
@@ -926,7 +926,7 @@ else if (type == 116)
         dtimer = 0
     }
 }
-else if (init == 1)
+else if (init == true)
 {
     gml_Script_scr_debug_print((("Queen doesn't have an attack with an ID of " + string(type)) + " yet."))
     init = 2

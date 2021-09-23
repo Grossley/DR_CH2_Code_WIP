@@ -2,7 +2,7 @@ con = 0
 ra_npc = pointer_null
 su_npc = pointer_null
 customcon = 0
-talked = 0
+talked = false
 if (global.chapter != 2)
 {
     con = -1

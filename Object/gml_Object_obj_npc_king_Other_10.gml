@@ -8,7 +8,7 @@ global.interact = 1
 image_speed = 0.2
 gml_Script_scr_speaker("king")
 gml_Script_msgsetloc(0, "\\E5* We have NOTHING to discuss./%", "obj_npc_king_slash_Other_10_gml_35_0_b")
-if (talked == 0)
+if (talked == false)
 {
     if (global.plot < 200)
     {

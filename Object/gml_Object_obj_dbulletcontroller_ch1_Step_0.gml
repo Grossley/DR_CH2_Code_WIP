@@ -499,7 +499,7 @@ if (type == 27)
         testblock = collision_point(((lx + (made * block.sprite_width)) + 8), ((ly - (block.sprite_height * 3)) - 10), obj_blockbullet_fall_ch1, 0, 1)
         if (testblock > 1)
         {
-            if (testblock.halt == 1)
+            if (testblock.halt == true)
             {
                 with (block)
                     instance_destroy()
@@ -588,7 +588,7 @@ if (type == 34)
             yy = random(320)
         }
         chain = gml_Script_instance_create_ch1(xx, yy, obj_skychain_ch1)
-        gml_Script_scr_bullet_inherit_ch1(1572)
+        gml_Script_scr_bullet_inherit_ch1(obj_skychain_ch1)
         btimer = 0
     }
 }

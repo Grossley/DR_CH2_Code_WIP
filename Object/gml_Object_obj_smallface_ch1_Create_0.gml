@@ -9,6 +9,6 @@ finished = false
 mycolor = c_purple
 alarm[0] = 1
 getrid = 0
-writergod = 1327
+writergod = obj_writer_ch1
 nowdir = 90
 facealpha = 0

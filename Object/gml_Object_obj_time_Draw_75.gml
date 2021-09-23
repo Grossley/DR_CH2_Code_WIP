@@ -1,6 +1,6 @@
 if (paused && (!pausing))
 {
-    pausing = 1
+    pausing = true
     audio_pause_all()
     instance_deactivate_all(true)
     if global.is_console
@@ -9,7 +9,7 @@ if (paused && (!pausing))
 if (pausing && (!os_is_paused()))
 {
     paused = 0
-    pausing = 0
+    pausing = false
     instance_activate_all()
     audio_resume_all()
     alarm[0] = 1

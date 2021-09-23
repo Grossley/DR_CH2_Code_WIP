@@ -10,7 +10,7 @@ if (susinit == 0)
 if (global.monster[myself] == true)
 {
     global.flag[(51 + myself)] = 4
-    if (global.mnfight == 1 && talked == 0)
+    if (global.mnfight == 1 && talked == false)
     {
         if (!instance_exists(obj_darkener_ch1))
             gml_Script_instance_create_ch1(0, 0, obj_darkener_ch1)
@@ -95,10 +95,10 @@ if (global.monster[myself] == true)
         else
             gml_Script_scr_randomtarget_ch1()
         gml_Script_scr_enemyblcon_ch1((x - 160), y, blcontype)
-        talked = 1
+        talked = true
         talktimer = 0
     }
-    if (talked == 1 && global.mnfight == 1)
+    if (talked == true && global.mnfight == 1)
     {
         rtimer = 0
         gml_Script_scr_blconskip_ch1(-1)
@@ -169,7 +169,7 @@ if (global.myfight == 3)
 {
     xx = gml_Script___view_get(0, 0)
     yy = gml_Script___view_get(1, 0)
-    if (acting == 1 && actcon == 0)
+    if (acting == true && actcon == 0)
     {
         actcon = 1
         global.msg[0] = gml_Script_scr_84_get_lang_string_ch1("obj_king_boss_slash_Step_0_gml_169_0")
@@ -290,7 +290,7 @@ if (global.myfight == 3)
         global.charaction[1] = 2
         global.charspecial[1] = 5
         global.chartarget[1] = 0
-        global.acting[1] = 0
+        global.acting[1] = false
         gml_Script_snd_play_ch1(snd_boost_ch1)
         heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), obj_animation_ch1)
         with (heartanim)
@@ -333,7 +333,7 @@ if (global.myfight == 3)
         global.charaction[2] = 2
         global.charspecial[2] = 6
         global.chartarget[2] = 0
-        global.acting[2] = 0
+        global.acting[2] = false
         gml_Script_snd_play_ch1(snd_boost_ch1)
         heartanim = gml_Script_instance_create_ch1((obj_herokris_ch1.x + 30), (obj_herokris_ch1.y + 50), obj_animation_ch1)
         with (heartanim)

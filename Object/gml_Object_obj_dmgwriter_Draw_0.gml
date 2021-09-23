@@ -45,14 +45,14 @@ if (delaytimer >= delay)
         hspeed += 1
     if (abs(hspeed) < 1)
         hspeed = 0
-    if (init == 0)
+    if (init == false)
     {
         damagemessage = string(damage)
         if (type == 5)
             damagemessage = (("+" + string(damage)) + "%")
         if (type == 5 && damage < 0)
             damagemessage = (string(damage) + "%")
-        init = 1
+        init = true
     }
     if (message == 0)
     {
@@ -88,13 +88,13 @@ if (delaytimer >= delay)
     }
     if (bounces < 2)
         vspeed += 1
-    if (y > ystart && bounces < 2 && killactive == 0)
+    if (y > ystart && bounces < 2 && killactive == false)
     {
         y = ystart
         vspeed = (vstart / 2)
         bounces += 1
     }
-    if (bounces >= 2 && killactive == 0)
+    if (bounces >= 2 && killactive == false)
     {
         vspeed = 0
         y = ystart
@@ -108,8 +108,8 @@ if (delaytimer >= delay)
     }
     killtimer += 1
     if (killtimer > 35)
-        killactive = 1
-    if (killactive == 1)
+        killactive = true
+    if (killactive == true)
     {
         kill += 0.08
         y -= 4

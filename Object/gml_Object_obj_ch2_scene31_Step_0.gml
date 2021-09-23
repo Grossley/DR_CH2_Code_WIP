@@ -275,12 +275,12 @@ if (con == 12 || gml_Script_scr_cutscene_loaded())
     torielstring = gml_Script_stringsetloc("Toriel???", "obj_ch2_scene31_slash_Step_0_gml_431_0")
     if (global.lang == "ja")
     {
-        if (global.is_console == 1)
+        if (global.is_console == true)
             gml_Script_scr_smallface(0, "susie", 7, 372, 219, torielstring)
         else
             gml_Script_scr_smallface(0, "susie", 7, 372, 244, torielstring)
     }
-    else if (global.is_console == 1)
+    else if (global.is_console == true)
         gml_Script_scr_smallface(0, "susie", 7, 442, 208, torielstring)
     else
         gml_Script_scr_smallface(0, "susie", 7, 442, 230, torielstring)

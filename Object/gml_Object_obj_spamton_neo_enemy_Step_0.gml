@@ -11,7 +11,7 @@ if (global.fighting == true)
 {
     if (global.monster[myself] == true)
     {
-        if ((gml_Script_scr_isphase("enemytalk") && talked == 0 && global.monsterhp[myself] <= 0 && gml_Script_scr_sideb_get_phase() <= 2) || (endcon == 1 && gml_Script_scr_sideb_get_phase() <= 2))
+        if ((gml_Script_scr_isphase("enemytalk") && talked == false && global.monsterhp[myself] <= 0 && gml_Script_scr_sideb_get_phase() <= 2) || (endcon == 1 && gml_Script_scr_sideb_get_phase() <= 2))
         {
             talked = -1
             endcon = 1
@@ -29,16 +29,16 @@ if (global.fighting == true)
             }
             if (weirdpathendtimer == 91)
             {
-                talked = 0
+                talked = false
                 weirdpathendcon = 1
             }
         }
-        if (gml_Script_scr_isphase("enemytalk") && talked == 0)
+        if (gml_Script_scr_isphase("enemytalk") && talked == false)
         {
             gml_Script_scr_randomtarget()
             if (!instance_exists(obj_darkener))
                 gml_Script_instance_create(0, 0, obj_darkener)
-            if (gml_Script_scr_isphase("enemytalk") && talked == 0 && turn > 14 && weirdpathendcon == 0)
+            if (gml_Script_scr_isphase("enemytalk") && talked == false && turn > 14 && weirdpathendcon == 0)
             {
                 if (global.monsterdf[myself] > -10)
                     global.monsterdf[myself] -= 3
@@ -308,7 +308,7 @@ if (global.fighting == true)
             correct_answer = -1
             if (ballooncon == 0)
             {
-                talked = 1
+                talked = true
                 talktimer = 0
             }
             else
@@ -610,7 +610,7 @@ if (global.fighting == true)
                 alarm[6] = 1
             }
         }
-        if (talked == 1 && gml_Script_scr_isphase("enemytalk") && (!gml_Script_i_ex(obj_choicer_neo)))
+        if (talked == true && gml_Script_scr_isphase("enemytalk") && (!gml_Script_i_ex(obj_choicer_neo)))
         {
             talktimer++
             if ((gml_Script_button3_p() && talktimer > 15) || (!gml_Script_i_ex(obj_writer)))
@@ -937,7 +937,7 @@ if (global.fighting == true)
     {
         xx = gml_Script___view_get(0, 0)
         yy = gml_Script___view_get(1, 0)
-        if (acting == 1 && actcon == 0 && savemeactcon == 0)
+        if (acting == true && actcon == 0 && savemeactcon == 0)
         {
             actcon = 1
             if (checkcount == 0)
@@ -951,7 +951,7 @@ if (global.fighting == true)
             gml_Script_scr_battletext_default()
             checkcount++
         }
-        if (acting == 1 && actcon == 0 && savemeactcon > 0)
+        if (acting == true && actcon == 0 && savemeactcon > 0)
         {
             actcon = 1
             if (savemeactcon < 5)
@@ -1151,7 +1151,7 @@ if (global.fighting == true)
             {
                 gml_Script_msgsetloc(0, "* Kris used X-Slash!/%", "obj_spamton_neo_enemy_slash_Step_0_gml_531_0")
                 gml_Script_scr_battletext_default()
-                acting = 0
+                acting = false
                 actcon = 21
                 krs = gml_Script_scr_act_charsprite("kris", spr_krisb_attack, 0.25, true)
                 krs.depth = (obj_herokris.depth + 1)
@@ -1203,7 +1203,7 @@ if (global.fighting == true)
                 gml_Script_scr_smallface(0, "none", 6, "rightmid", "bottom", string((("" + string([n])) + small_text)))
                 gml_Script_msgset(0, gml_Script_stringsetloc("* RECOVERED HP with pipis!\\f0 /%", "obj_spamton_neo_enemy_slash_Step_0_gml_581_0"))
                 gml_Script_scr_battletext_default()
-                acting = 0
+                acting = false
                 actcon = 31
                 gml_Script_instance_create((obj_herokris.x + 105), (obj_herokris.y + 50), obj_sneo_friedpipis)
             }
@@ -1293,12 +1293,12 @@ if (global.fighting == true)
                     alarm[4] = 30
                 else
                     actcon = 1
-                acting = 0
+                acting = false
             }
             if (acting == 5 && actcon == 0)
             {
                 actcon = 12
-                acting = 0
+                acting = false
                 alarm[4] = 15
                 gml_Script_instance_create(x, y, obj_sneo_throwkris_vine_controller)
                 gml_Script_scr_rememberxy()
@@ -1326,7 +1326,7 @@ if (global.fighting == true)
         }
         if (actcon == 17)
             actcon = 1
-        if (actingsus == 1 && actconsus == 1)
+        if (actingsus == true && actconsus == 1)
         {
             i = irandom(5)
             a = -1
@@ -1389,18 +1389,18 @@ if (global.fighting == true)
             }
             gml_Script_scr_battletext_default()
             actconsus = 0
-            actingsus = 0
+            actingsus = false
             alarm[4] = 30
         }
         if (actingsus == 2 && actconsus == 1)
         {
-            actingsus = 0
+            actingsus = false
             actcon = 1
             bigshotcount = 20
             gml_Script_msgsetloc(0, "* You Super Charged! Can charge bullets faster! Lasts 20 shots./%", "obj_spamton_neo_enemy_slash_Step_0_gml_898_0")
             gml_Script_scr_battletext_default()
         }
-        if (actingral == 1 && actconral == 1)
+        if (actingral == true && actconral == 1)
         {
             i = irandom(5)
             a = -1
@@ -1463,13 +1463,13 @@ if (global.fighting == true)
             }
             gml_Script_scr_battletext_default()
             actconral = 0
-            actingral = 0
+            actingral = false
             actcon = 1
         }
         if (actingral == 2 && actconral == 1)
         {
             actconral = 0
-            actingral = 0
+            actingral = false
             actcon = 1
             if (instance_number(obj_sneo_tiny_ralsei) < 5)
             {

@@ -7,7 +7,7 @@ if (!target_char.visible)
     return;
 if (target_char == noone)
     return;
-if (init == 0)
+if (init == false)
 {
     depth = 0
     if (target_char != obj_mainchara)
@@ -22,7 +22,7 @@ if (init == 0)
             rsprite = spr_noelle_young_silhouette
         }
     }
-    init = 1
+    init = true
 }
 if copy_sprite
 {

@@ -14,4 +14,4 @@ else
     ini_write_real("SCREEN", "FULLSCREEN", 1)
     ini_close()
 }
-fullscreen_toggle = 0
+fullscreen_toggle = false

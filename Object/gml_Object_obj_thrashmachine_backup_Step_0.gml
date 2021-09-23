@@ -1,14 +1,14 @@
 dcolor[1] = make_color_hsv((global.flag[223] * 8), 255, (255 * value))
 dcolor[0] = make_color_hsv((global.flag[224] * 8), 255, (255 * value))
 dcolor[2] = make_color_hsv((global.flag[225] * 8), 255, (255 * value))
-if (init == 0)
+if (init == false)
 {
     part[1] = global.flag[220]
     part[0] = global.flag[221]
     part[2] = global.flag[222]
     if (part[0] == 3 && part[1] == 3 && part[2] == 3)
         duckmode = 1
-    init = 1
+    init = true
 }
 basecolor = merge_color(c_black, c_white, value)
 if gml_Script_scr_debug()
@@ -41,7 +41,7 @@ if gml_Script_scr_debug()
         if keyboard_check_pressed(vk_decimal)
         {
             gml_Script_scr_debug_print("Thrash machine pieces reset to defaults.")
-            init = 0
+            init = false
         }
         if (dbselect && (!duckmode) && part[0] == 3 && part[1] == 3 && part[2] == 3)
         {

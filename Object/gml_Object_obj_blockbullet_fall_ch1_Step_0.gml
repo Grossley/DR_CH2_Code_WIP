@@ -14,7 +14,7 @@ if (con == 2)
         if (ypos < 0 && (!collision_point((x + (sprite_width / 2)), (y + (sprite_height * 1.5)), obj_blockbullet_fall_ch1, 0, 1)))
             ypos += 1
         else
-            halt = 1
+            halt = true
         falltimer = 0
     }
 }

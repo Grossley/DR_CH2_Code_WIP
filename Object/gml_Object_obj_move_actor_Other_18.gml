@@ -12,9 +12,9 @@ if (global.chapter == 2)
 }
 if (dothis == 1)
 {
-    if (init == 0)
+    if (init == false)
     {
-        init = 1
+        init = true
         if (direction_word != "nothing")
         {
             if (direction_word == "l")

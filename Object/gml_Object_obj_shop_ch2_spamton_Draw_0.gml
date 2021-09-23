@@ -322,7 +322,7 @@ if (menu == 1 || menu == 2)
                     afford = false
                 if (afford == true)
                 {
-                    _pocketed = 0
+                    _pocketed = false
                     if (itemtype[menuc[1]] == "item")
                         gml_Script_scr_itemget(item[menuc[1]])
                     if (itemtype[menuc[1]] == "keyitem")
@@ -342,7 +342,7 @@ if (menu == 1 || menu == 2)
                     {
                         global.gold -= buyvalue[menuc[1]]
                         gml_Script_snd_play(snd_locker)
-                        if (_pocketed == 1)
+                        if (_pocketed == true)
                             sidemessage = 5
                         else
                             sidemessage = 1

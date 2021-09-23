@@ -1,6 +1,6 @@
 hp = 50
 axe_timer = 0
-init = 0
+init = false
 frametype = 0
 x = (gml_Script_camerax() + 320)
 y = (gml_Script_cameray() + 240)

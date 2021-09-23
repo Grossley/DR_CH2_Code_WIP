@@ -1,6 +1,6 @@
 starter = 0
 image_alpha = 1
-init = 0
+init = false
 con = 0
 timer = 0
 pattern = 0

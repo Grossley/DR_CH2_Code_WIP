@@ -1,4 +1,4 @@
-if (global.debug == 1)
+if (global.debug == true)
 {
     if gml_Script_i_ex(obj_debugProfiler)
     {
