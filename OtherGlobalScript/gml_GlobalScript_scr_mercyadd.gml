@@ -3,15 +3,15 @@ if (global.mercymod[argument0] < 0)
     global.mercymod[argument0] = 0
 if (global.mercymod[argument0] >= 100)
     global.mercymod[argument0] = 100
-var _playsound = 1
+var _playsound = true
 if (argument1 <= 0)
-    _playsound = 0
+    _playsound = false
 if gml_Script_i_ex(obj_dmgwriter)
 {
     with (obj_dmgwriter)
     {
         if (type == 5)
-            _playsound = 0
+            _playsound = false
     }
 }
 if _playsound

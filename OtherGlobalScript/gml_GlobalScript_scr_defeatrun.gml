@@ -1,17 +1,17 @@
 if object_is_ancestor(object_index, obj_monsterparent)
 {
-    var __frozen = 0
+    var __frozen = false
     if (global.flag[(51 + myself)] == 6)
-        __frozen = 1
-    if (__frozen == 1)
+        __frozen = true
+    if (__frozen == true)
     {
         _rtext = gml_Script_instance_create(global.monsterx[myself], (global.monstery[myself] - 40), obj_recruitanim)
         _rtext.image_index = 12
-        if (recruitable == 1)
+        if (recruitable == true)
             global.flag[(global.monstertype[myself] + 600)] = -1
         global.flag[63] = 1
     }
-    if (recruitable == 1 && global.flag[61] == 0 && __frozen == 0)
+    if (recruitable == true && global.flag[61] == 0 && __frozen == false)
     {
         global.flag[63] = 1
         if (global.flag[(global.monstertype[myself] + 600)] != -1)
@@ -23,10 +23,10 @@ if object_is_ancestor(object_index, obj_monsterparent)
     }
 }
 else
-    fatal = 0
+    fatal = false
 if (!__frozen)
 {
-    if (fatal == 1)
+    if (fatal == true)
         defeatanim = gml_Script_instance_create(x, y, obj_deathanim)
     else
         defeatanim = gml_Script_instance_create(x, y, obj_defeatanim)

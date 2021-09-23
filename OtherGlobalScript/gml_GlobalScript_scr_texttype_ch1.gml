@@ -4,11 +4,11 @@ if (!variable_global_exists("chemg_typer"))
     global.chemg_typer = -1
 if (global.chemg_typer != global.typer)
     global.chemg_typer = global.typer
-var font_set = 1
+var font_set = true
 switch global.typer
 {
     case 0:
-        font_set = 0
+        font_set = false
         break
     case 1:
         gml_Script_scr_textsetup_ch1(gml_Script_scr_84_get_font_ch1("main"), c_white, x, y, 33, 0, 1, snd_text_ch1, 8, 18, 0)
@@ -54,7 +54,7 @@ switch global.typer
         gml_Script_scr_textsetup_ch1(gml_Script_scr_84_get_font_ch1("main"), c_white, x, y, 33, 0, 1, snd_text_ch1, 8, 18, 0)
         break
     case 16:
-        font_set = 0
+        font_set = false
         break
     case 17:
         gml_Script_scr_textsetup_ch1(gml_Script_scr_84_get_font_ch1("main"), c_white, x, y, 33, 0, 1, snd_txtund_ch1, 8, 18, 0)
@@ -160,7 +160,7 @@ switch global.typer
         gml_Script_scr_textsetup_ch1(gml_Script_scr_84_get_font_ch1("main"), c_white, x, y, 33, 0, 4, snd_txtecho_ch1, 8, 18, 3)
         break
     default:
-        font_set = 0
+        font_set = false
         break
 }
 

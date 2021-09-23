@@ -31,7 +31,7 @@ for (i = 0; i < 3; i += 1)
 {
     global.heromakex[i] = 100
     global.heromakey[i] = 200
-    global.charauto[i] = 0
+    global.charauto[i] = false
     global.charmove[i] = false
     global.charcantarget[i] = false
     global.chardead[i] = false
@@ -98,7 +98,7 @@ for (i = 0; i < 20; i += 1)
         global.itemspecial[i][q] = 0
         global.itemelement[i][q] = 0
         global.itemelementamount[i][q] = 0
-        global.charauto[i] = 0
+        global.charauto[i] = false
     }
     for (j = 0; j < 12; j += 1)
         global.spell[i][j] = 0
@@ -238,7 +238,7 @@ global.currentsong[0] = snd_nosound
 global.currentsong[1] = snd_nosound
 global.batmusic[0] = snd_nosound
 global.batmusic[1] = snd_nosound
-global.debug = 0
+global.debug = false
 global.fc = 0
 global.fe = 0
 global.choice = -1
@@ -280,16 +280,16 @@ global.lmaxhp = 20
 global.lat = 10
 global.ldf = 10
 global.lwstrength = 1
-global.ladef = 0
+global.ladef = false
 global.facing = 0
 global.flag[15] = 1
 global.flag[16] = 0.85
 global.flag[17] = 0.6
 for (i = 0; i < 10; i += 1)
 {
-    global.input_pressed[i] = 0
-    global.input_held[i] = 0
-    global.input_released[i] = 0
+    global.input_pressed[i] = false
+    global.input_held[i] = false
+    global.input_released[i] = false
 }
 global.flag[220] = choose(0, 1, 2, 3)
 global.flag[221] = choose(0, 1, 2, 3)

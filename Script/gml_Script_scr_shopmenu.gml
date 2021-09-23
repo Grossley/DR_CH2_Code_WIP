@@ -434,14 +434,14 @@ if (argument0 == 5)
             {
                 gml_Script_snd_play(snd_locker)
                 global.gold += sellvalue
-                var noneleft = 0
+                var noneleft = false
                 if (selltype == "item")
                 {
                     gml_Script_scr_itemshift(menuc[11], 0)
                     gml_Script_scr_iteminfo_all()
                     gml_Script_scr_itemcheck(0)
                     if (itemcount == 12)
-                        noneleft = 1
+                        noneleft = true
                     nothingcount = itemcount
                     for (i = 0; i < selltotal; i++)
                     {
@@ -460,7 +460,7 @@ if (argument0 == 5)
                     global.pocketitem[menuc[11]] = 0
                     gml_Script_scr_itemcheck_pocket(0)
                     if (itemcount == global.flag[64])
-                        noneleft = 1
+                        noneleft = true
                     nothingcount = 0
                     for (i = 0; i < global.flag[64]; i++)
                     {
@@ -469,7 +469,7 @@ if (argument0 == 5)
                         itemsellname[i] = itemnameb
                     }
                 }
-                if (noneleft == 1)
+                if (noneleft == true)
                 {
                     menu = 10
                     sidemessage = 1

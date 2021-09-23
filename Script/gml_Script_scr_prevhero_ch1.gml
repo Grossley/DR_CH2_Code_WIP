@@ -11,7 +11,7 @@ if (global.charturn == 1)
 if (global.charturn == 2)
 {
     moveswapped = 1
-    if (global.charmove[1] == true && global.acting[1] == 0)
+    if (global.charmove[1] == true && global.acting[1] == false)
         global.charturn = 1
     else if (global.charmove[0] == true)
         global.charturn = 0
@@ -28,10 +28,10 @@ if (moveswapped == 1)
 if (global.charturn == 0)
 {
     with (obj_monsterparent_ch1)
-        acting = 0
-    global.acting[0] = 0
-    global.acting[1] = 0
-    global.acting[2] = 0
+        acting = false
+    global.acting[0] = false
+    global.acting[1] = false
+    global.acting[2] = false
     global.faceaction[1] = 0
     global.chartarget[1] = 0
     global.charaction[1] = 0

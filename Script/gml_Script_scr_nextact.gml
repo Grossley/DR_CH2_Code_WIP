@@ -1,11 +1,11 @@
-global.acting[0] = 0
-global.acting[1] = 0
-global.acting[2] = 0
-global.actingsingle[global.currentactingchar] = 0
+global.acting[0] = false
+global.acting[1] = false
+global.acting[2] = false
+global.actingsingle[global.currentactingchar] = false
 __minstance = global.monsterinstance[global.actingtarget[global.currentactingchar]]
 with (__minstance)
 {
-    acting = 0
+    acting = false
     actcon = 0
     actconsus = 0
     actconral = 0
@@ -17,14 +17,14 @@ while (global.currentactingchar < 3)
     global.currentactingchar++
     if (global.currentactingchar < 3)
     {
-        if (global.actingsingle[global.currentactingchar] == 1)
+        if (global.actingsingle[global.currentactingchar] == true)
         {
             __minstance = global.monsterinstance[global.actingtarget[global.currentactingchar]]
             if (global.char[global.currentactingchar] == 2)
             {
                 with (__minstance)
                     actconsus = 1
-                if (global.actingsimul[global.currentactingchar] == 0)
+                if (global.actingsimul[global.currentactingchar] == false)
                     singleactcomplete = 1
                 break
             }
@@ -32,7 +32,7 @@ while (global.currentactingchar < 3)
             {
                 with (__minstance)
                     actconral = 1
-                if (global.actingsimul[global.currentactingchar] == 0)
+                if (global.actingsimul[global.currentactingchar] == false)
                     singleactcomplete = 1
                 break
             }
@@ -40,7 +40,7 @@ while (global.currentactingchar < 3)
             {
                 with (__minstance)
                     actconnoe = 1
-                if (global.actingsimul[global.currentactingchar] == 0)
+                if (global.actingsimul[global.currentactingchar] == false)
                     singleactcomplete = 1
                 break
             }
@@ -57,10 +57,10 @@ if (global.currentactingchar >= 3)
 {
     with (obj_monsterparent)
     {
-        acting = 0
-        actingsus = 0
-        actingral = 0
-        actingnoe = 0
+        acting = false
+        actingsus = false
+        actingral = false
+        actingnoe = false
     }
     global.currentactingchar = 0
     gml_Script_scr_attackphase()

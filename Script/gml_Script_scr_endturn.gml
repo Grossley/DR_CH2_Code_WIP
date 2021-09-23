@@ -16,7 +16,7 @@ global.attacking = false
 for (i = 0; i < 3; i += 1)
 {
     global.monsterattackname[i] = " "
-    if (global.charauto[global.char[i]] == 1 && global.hp[global.char[i]] > 0)
+    if (global.charauto[global.char[i]] == true && global.hp[global.char[i]] > 0)
     {
         if (global.monster[2] == true)
             global.chartarget[i] = 2
@@ -28,26 +28,26 @@ for (i = 0; i < 3; i += 1)
     if (global.charaction[i] == 1)
         global.attacking = true
 }
-__noactors = 1
-if (global.acting[0] == 1)
-    __noactors = 0
+__noactors = true
+if (global.acting[0] == true)
+    __noactors = false
 for (__noactorsi = 0; __noactorsi < 3; __noactorsi++)
 {
-    if (global.actingsingle[__noactorsi] == 1)
-        __noactors = 0
+    if (global.actingsingle[__noactorsi] == true)
+        __noactors = false
 }
-if (__noactors == 1)
+if (__noactors == true)
     gml_Script_scr_attackphase()
 else
 {
     global.charturn = 3
     global.myfight = 3
     global.currentactingchar = 0
-    if (global.acting[0] == 0)
+    if (global.acting[0] == false)
         gml_Script_scr_nextact()
-    if (global.chapter == 2 && instance_exists(obj_sweet_enemy) && global.actingsingle[0] == 1 && global.actingsingle[1] == 0 && global.actingsingle[2] == 0)
-        obj_sweet_enemy.simultotal_funny = 1
-    if (global.acting[0] == 1 && global.actingsimul[0] == 1)
+    if (global.chapter == 2 && instance_exists(obj_sweet_enemy) && global.actingsingle[0] == true && global.actingsingle[1] == false && global.actingsingle[2] == false)
+        obj_sweet_enemy.simultotal_funny = true
+    if (global.acting[0] == true && global.actingsimul[0] == true)
         gml_Script_scr_act_simul()
 }
 with (obj_battlecontroller)

@@ -15,7 +15,7 @@ with (obj_smallface_ch1)
 global.attacking = false
 for (i = 0; i < 3; i += 1)
 {
-    if (global.charauto[global.char[i]] == 1 && global.hp[global.char[i]] > 0)
+    if (global.charauto[global.char[i]] == true && global.hp[global.char[i]] > 0)
     {
         if (global.monster[2] == true)
             global.chartarget[i] = 2
@@ -27,7 +27,7 @@ for (i = 0; i < 3; i += 1)
     if (global.charaction[i] == 1)
         global.attacking = true
 }
-if (global.acting[0] == 0)
+if (global.acting[0] == false)
     gml_Script_scr_attackphase_ch1()
 else
 {

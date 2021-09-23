@@ -37,21 +37,21 @@ if (techwon == false)
             }
         }
     }
-    if (global.charmove[0] == false || global.charauto[global.char[0]] == 1)
+    if (global.charmove[0] == false || global.charauto[global.char[0]] == true)
         global.charturn = 1
     if (global.charturn == 1)
     {
-        if (global.charmove[1] == false || global.charauto[global.char[1]] == 1)
+        if (global.charmove[1] == false || global.charauto[global.char[1]] == true)
             global.charturn = 2
     }
     if (global.charturn == 2)
     {
-        if (global.charmove[2] == false || global.charauto[global.char[2]] == 1)
+        if (global.charmove[2] == false || global.charauto[global.char[2]] == true)
             skip = true
     }
     for (i = 0; i < 3; i += 1)
     {
-        global.acting[i] = 0
+        global.acting[i] = false
         global.temptension[i] = global.tension
         global.charspecial[i] = 0
         global.targeted[i] = false
@@ -61,14 +61,14 @@ if (techwon == false)
     with (obj_monsterparent_ch1)
     {
         attacked = false
-        talked = 0
-        acting = 0
+        talked = false
+        acting = false
     }
     if (skip == true)
     {
-        if (global.char[0] == 2 && global.charauto[2] == 1)
+        if (global.char[0] == 2 && global.charauto[2] == true)
         {
-            global.acting[0] = 1
+            global.acting[0] = true
             global.myfight = 3
         }
         gml_Script_scr_endturn_ch1()

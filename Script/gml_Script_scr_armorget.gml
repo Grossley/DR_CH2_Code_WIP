@@ -1,7 +1,7 @@
 noroom = false
-var legacy = 0
+var legacy = false
 var __i = 0
-if (legacy == 0)
+if (legacy == false)
 {
     var __itemcount = 0
     __armor[0] = argument0

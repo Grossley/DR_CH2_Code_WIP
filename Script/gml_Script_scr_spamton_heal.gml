@@ -1,7 +1,7 @@
 with (obj_dmgwriter)
 {
     if (delaytimer >= 1)
-        killactive = 1
+        killactive = true
 }
 for (i = 0; i < 3; i++)
 {

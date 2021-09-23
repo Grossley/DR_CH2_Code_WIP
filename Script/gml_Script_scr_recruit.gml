@@ -1,4 +1,4 @@
-if (recruitable == 1 && global.flag[61] == 0)
+if (recruitable == true && global.flag[61] == 0)
 {
     if (global.flag[(global.monstertype[myself] + 600)] >= 0 && global.flag[(global.monstertype[myself] + 600)] < 1 && recruitcount > 0)
     {

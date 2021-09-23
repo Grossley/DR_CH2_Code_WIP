@@ -2742,22 +2742,22 @@ switch argument0
         if (global.choice == 0)
         {
             with (obj_shortcut_door_ch1)
-                door_destination = 341
+                door_destination = room_field3_ch1
         }
         if (global.choice == 1)
         {
             with (obj_shortcut_door_ch1)
-                door_destination = 353
+                door_destination = room_forest_savepoint1_ch1
         }
         if (global.choice == 2)
         {
             with (obj_shortcut_door_ch1)
-                door_destination = 362
+                door_destination = room_forest_savepoint2_ch1
         }
         if (global.choice == 3)
         {
             with (obj_shortcut_door_ch1)
-                door_destination = 377
+                door_destination = room_forest_fightsusie_ch1
         }
         with (obj_shortcut_door_ch1)
         {

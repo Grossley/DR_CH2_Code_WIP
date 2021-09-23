@@ -1,3 +1,3 @@
-if (global.debug == 1)
+if (global.debug == true)
     return 1;
 return;

@@ -9,45 +9,45 @@ if (playtextsound == true)
         getchar = string_char_at(mystring, pos)
     else
         getchar = string_char_at(mystring, (pos - 1))
-    play = 1
-    playcheck = 0
+    play = true
+    playcheck = false
     if (getchar == "&")
     {
         if (rate < 3)
         {
-            playcheck = 1
+            playcheck = true
             getchar = string_char_at(mystring, (pos + 1))
         }
         else
-            play = 0
+            play = false
     }
     if (getchar == " ")
-        play = 0
+        play = false
     if (getchar == "^")
-        play = 0
+        play = false
     if (getchar == "!")
-        play = 0
+        play = false
     if (getchar == ".")
-        play = 0
+        play = false
     if (getchar == "?")
-        play = 0
+        play = false
     if (getchar == ",")
-        play = 0
+        play = false
     if (getchar == ":")
-        play = 0
+        play = false
     if (getchar == "/")
-        play = 0
+        play = false
     if (getchar == "\\")
-        play = 0
+        play = false
     if (getchar == "|")
-        play = 0
+        play = false
     if (getchar == "*")
-        play = 0
-    if (play == 1)
+        play = false
+    if (play == true)
     {
         gml_Script_snd_play_ch1(textsound)
         with (obj_face_parent_ch1)
-            mouthmove = 1
+            mouthmove = true
     }
 }
 return;

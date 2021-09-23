@@ -1,10 +1,10 @@
-var font_set = 1
+var font_set = true
 var extra_ja_vspace = 0
 textscale = 1
 switch global.typer
 {
     case 0:
-        font_set = 0
+        font_set = false
         break
     case 1:
         gml_Script_scr_textsetup(gml_Script_scr_84_get_font("main"), c_white, x, y, 33, 0, 1, snd_text, 8, 18, 0)
@@ -50,7 +50,7 @@ switch global.typer
         gml_Script_scr_textsetup(gml_Script_scr_84_get_font("main"), c_white, x, y, 33, 0, 1, snd_text, 8, 18, 0)
         break
     case 16:
-        font_set = 0
+        font_set = false
         break
     case 17:
         gml_Script_scr_textsetup(gml_Script_scr_84_get_font("main"), c_white, x, y, 33, 0, 1, snd_txtund, 8, 18, 0)
@@ -224,7 +224,7 @@ switch global.typer
         gml_Script_scr_textsetup(gml_Script_scr_84_get_font("main"), c_white, x, y, 33, 0, 4, snd_txtecho, 8, 18, 3)
         break
     default:
-        font_set = 0
+        font_set = false
         break
 }
 

@@ -1,5 +1,5 @@
 usable = false
-replaceable = 0
+replaceable = false
 value = 0
 itemtarget = 0
 itemnameb = " "

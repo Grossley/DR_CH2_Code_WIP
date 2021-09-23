@@ -1,8 +1,8 @@
 var __i = 0
 var loop = true
 noroom = false
-_pocketed = 0
-_noroominventory = 0
+_pocketed = false
+_noroominventory = false
 global.item[12] = 999
 while (loop == true)
 {
@@ -13,7 +13,7 @@ while (loop == true)
     }
     else if (__i == 12)
     {
-        _noroominventory = 1
+        _noroominventory = true
         noroom = true
         var __j = 0
         while (__j < global.flag[64])
@@ -22,7 +22,7 @@ while (loop == true)
             {
                 gml_Script_debug_message(("Placed in pocket :" + string(__j)))
                 global.pocketitem[__j] = argument0
-                _pocketed = 1
+                _pocketed = true
                 noroom = false
                 break
             }

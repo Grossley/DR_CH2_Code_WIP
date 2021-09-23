@@ -39,7 +39,7 @@ else
             layer_background_change(__backid, __val)
             if sprite_exists(__val)
             {
-                layer_background_blend(__backid, 16777215)
+                layer_background_blend(__backid, c_white)
                 layer_background_alpha(__backid, 1)
             }
             break

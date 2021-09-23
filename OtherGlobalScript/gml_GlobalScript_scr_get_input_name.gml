@@ -2,13 +2,13 @@ var _control = "[?]"
 if (global.is_console || obj_gamecontroller.gamepad_active)
 {
     _control = global.input_g[argument0]
-    if (_control == 32784)
+    if (_control == gp_padr)
         return "\\*D  ";
-    if (_control == 32783)
+    if (_control == gp_padl)
         return "\\*A  ";
-    if (_control == 32781)
+    if (_control == gp_padu)
         return "\\*W  ";
-    if (_control == 32782)
+    if (_control == gp_padd)
         return "\\*S  ";
     if (_control == global.button0)
         return "\\*Z  ";

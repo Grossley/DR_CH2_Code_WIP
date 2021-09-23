@@ -13,7 +13,7 @@ if (global.charturn == 0)
 if (global.charturn == 1 && moveswapped == 0)
 {
     moveswapped = 1
-    if (gml_Script_scr_charcan(2) && global.acting[1] == 0)
+    if (gml_Script_scr_charcan(2) && global.acting[1] == false)
         global.charturn = 2
     else
         gml_Script_scr_endturn()

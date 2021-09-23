@@ -21,15 +21,15 @@ if (global.charweapon[1] == 14)
     global.lweapon = 12
 if (global.charweapon[1] == 16)
     global.lweapon = 13
-var armorconverted = 0
+var armorconverted = false
 if (gml_Script_scr_armorcheck_equipped(1, 14) > 0)
 {
-    armorconverted = 1
+    armorconverted = true
     global.larmor = 14
 }
-if (armorconverted == 1)
-    global.ladef = 1
+if (armorconverted == true)
+    global.ladef = true
 else
-    global.ladef = 0
+    global.ladef = false
 global.darkzone = false
 return;

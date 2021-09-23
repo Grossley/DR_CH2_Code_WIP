@@ -218,7 +218,7 @@ switch spell
             if instance_exists(obj_berdlyb2_enemy)
             {
                 global.spelldelay = 999999
-                attack.textwait = 1
+                attack.textwait = true
             }
         }
         break

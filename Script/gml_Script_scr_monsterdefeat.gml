@@ -12,7 +12,7 @@ if (global.monster[myself] == true)
     if (global.flag[(51 + myself)] == 1)
     {
         global.flag[40] += 1
-        if (fatal == 1)
+        if (fatal == true)
             global.flag[44] = (global.flag[44] + 1)
     }
     if (global.flag[(51 + myself)] == 2)

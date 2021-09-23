@@ -47,23 +47,23 @@ if (techwon == false)
             }
         }
     }
-    if (global.charmove[0] == false || global.charauto[global.char[0]] == 1)
+    if (global.charmove[0] == false || global.charauto[global.char[0]] == true)
         global.charturn = 1
     if (global.charturn == 1)
     {
-        if (global.charmove[1] == false || global.charauto[global.char[1]] == 1)
+        if (global.charmove[1] == false || global.charauto[global.char[1]] == true)
             global.charturn = 2
     }
     if (global.charturn == 2)
     {
-        if (global.charmove[2] == false || global.charauto[global.char[2]] == 1)
+        if (global.charmove[2] == false || global.charauto[global.char[2]] == true)
             skip = true
     }
     for (i = 0; i < 3; i += 1)
     {
-        global.acting[i] = 0
-        global.actingsingle[i] = 0
-        global.actingsimul[i] = 0
+        global.acting[i] = false
+        global.actingsingle[i] = false
+        global.actingsimul[i] = false
         global.actingtarget[i] = 0
         global.temptension[i] = global.tension
         global.charspecial[i] = 0
@@ -76,17 +76,17 @@ if (techwon == false)
     with (obj_monsterparent)
     {
         attacked = false
-        talked = 0
-        acting = 0
-        actingsus = 0
-        actingral = 0
-        actingnoe = 0
+        talked = false
+        acting = false
+        actingsus = false
+        actingral = false
+        actingnoe = false
     }
     if (skip == true)
     {
-        if (global.char[0] == 2 && global.charauto[2] == 1)
+        if (global.char[0] == 2 && global.charauto[2] == true)
         {
-            global.acting[0] = 1
+            global.acting[0] = true
             global.myfight = 3
         }
         gml_Script_scr_endturn()

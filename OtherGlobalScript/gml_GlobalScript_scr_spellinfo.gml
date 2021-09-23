@@ -4,7 +4,7 @@ spellname = gml_Script_stringsetloc(" ", "scr_spellinfo_slash_scr_spellinfo_gml_
 spellnameb = " "
 spelldescb = gml_Script_stringsetloc(" ", "scr_spellinfo_slash_scr_spellinfo_gml_5_0")
 spelldesc = gml_Script_stringsetloc(" ", "scr_spellinfo_slash_scr_spellinfo_gml_6_0")
-spellanim = 0
+spellanim = false
 spellusable = false
 spelltext = " "
 switch argument0
@@ -114,7 +114,7 @@ switch argument0
             if (global.flag[924] < 4)
                 spelltarget = 3
             else
-                spellanim = 1
+                spellanim = true
         }
         cost = (global.maxtension * 2)
         if (global.charweapon[4] == 13)

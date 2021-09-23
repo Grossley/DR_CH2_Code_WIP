@@ -1,6 +1,6 @@
 w = argument0
 usable = false
-replaceable = 0
+replaceable = false
 if (global.charselect < 3)
     _gc = global.char[global.charselect]
 suspos = -1

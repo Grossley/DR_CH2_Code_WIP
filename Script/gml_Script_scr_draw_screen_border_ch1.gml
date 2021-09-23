@@ -1,9 +1,9 @@
 var border_id = argument0
-var return_title = 0
+var return_title = false
 if variable_global_exists("chapter_return")
 {
     if (global.chapter_return > 0)
-        return_title = 1
+        return_title = true
 }
 if (!return_title)
 {
@@ -13,7 +13,7 @@ if (!return_title)
         if (!loaded)
         {
             obj_time_ch1.border_alpha = 0
-            loaded = 1
+            loaded = true
         }
         obj_time_ch1.border_fade_value = 0.025
         var room_id = room
@@ -56,26 +56,26 @@ if (!return_title)
                     obj_time_ch1.border_alpha = 0
             }
         }
-        var game_won = 0
+        var game_won = false
         if gml_Script_ossafe_file_exists_ch1("filech1_3")
-            game_won = 1
+            game_won = true
         if gml_Script_ossafe_file_exists_ch1("filech1_4")
-            game_won = 1
+            game_won = true
         if gml_Script_ossafe_file_exists_ch1("filech1_5")
-            game_won = 1
-        if ((room_id == room_legend_ch1 || room_id == 1638 || room_id == PLACE_MENU_ch1) && game_won == 1)
+            game_won = true
+        if ((room_id == room_legend_ch1 || room_id == 1638 || room_id == PLACE_MENU_ch1) && game_won == true)
         {
             _border_image = border_dark_ch1
-            obj_time_ch1.border_alpha = 1
+            obj_time_ch1.border_alpha = true
         }
         gml_Script_scr_draw_background_ps4_ch1(_border_image, 0, 0)
-        global.disable_border = obj_time_ch1.border_alpha != 1
+        global.disable_border = obj_time_ch1.border_alpha != true
     }
     else if (border_id == "Simple" || border_id == "シンプル")
     {
         room_id = global.currentroom
         if instance_exists(obj_savepoint_ch1)
-            obj_time_ch1.border_alpha = 1
+            obj_time_ch1.border_alpha = true
         if (room_id == room_ed_ch1)
         {
             if instance_exists(obj_credits_ch1)

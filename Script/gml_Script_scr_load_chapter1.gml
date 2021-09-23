@@ -257,7 +257,7 @@ gml_Script_ossafe_file_text_close(myfileid)
 global.lastsavedtime = global.time
 global.lastsavedlv = global.lv
 gml_Script_scr_gamestart_chapter_override()
-if (global.is_console && global.game_won == 1)
+if (global.is_console && global.game_won == true)
     global.darkzone = false
 gml_Script_scr_tempsave()
 audio_group_set_gain(1, global.flag[15], 0)

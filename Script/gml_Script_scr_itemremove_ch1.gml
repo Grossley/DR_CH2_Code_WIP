@@ -1,6 +1,6 @@
-removed = 0
+removed = false
 gml_Script_scr_itemcheck_ch1(argument0)
-if (haveit == 1)
+if (haveit == true)
 {
     loc = 0
     skip = false
@@ -65,6 +65,6 @@ if (haveit == 1)
         skip = true
     }
     gml_Script_scr_itemshift_ch1(loc, 0)
-    removed = 1
+    removed = true
 }
 return;

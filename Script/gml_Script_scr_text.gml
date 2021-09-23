@@ -6035,17 +6035,17 @@ switch argument0
         if (global.choice == 0)
         {
             with (obj_shortcut_door)
-                door_destination = 166
+                door_destination = room_dw_mansion_entrance
         }
         if (global.choice == 1)
         {
             with (obj_shortcut_door)
-                door_destination = 93
+                door_destination = room_dw_cyber_musical_door
         }
         if (global.choice == 2)
         {
             with (obj_shortcut_door)
-                door_destination = 119
+                door_destination = room_dw_city_intro
         }
         if (global.choice == 3)
             global.msg[0] = gml_Script_stringsetloc("* (You doorn't.)/%", "scr_text_slash_scr_text_gml_6918_0_b")

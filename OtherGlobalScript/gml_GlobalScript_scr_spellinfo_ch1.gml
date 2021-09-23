@@ -4,7 +4,7 @@ spellname = " "
 spellnameb = " "
 spelldescb = " "
 spelldesc = " "
-spellanim = 0
+spellanim = false
 spellusable = false
 spelltext = " "
 switch argument0

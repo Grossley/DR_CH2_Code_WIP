@@ -1,9 +1,9 @@
 if (global.is_console || obj_gamecontroller.gamepad_active)
 {
     var _control = global.input_g[argument0]
-    if (_control == 32784)
+    if (_control == gp_padr)
         return "\\*D  ";
-    if (_control == 32783)
+    if (_control == gp_padl)
         return "\\*A  ";
     if (_control == global.button0)
         return "\\*Z  ";

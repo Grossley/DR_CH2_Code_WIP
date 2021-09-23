@@ -6,7 +6,7 @@ if (global.flag[34] == 1)
 if (global.flag[34] == 0)
     global.charspecial[global.charturn] = global.battlespell[global.charturn][global.bmenucoord[2][global.charturn]]
 global.tensionselect = 0
-if (spellanim == 1)
+if (spellanim == true)
 {
     with (global.charinstance[global.charturn])
     {

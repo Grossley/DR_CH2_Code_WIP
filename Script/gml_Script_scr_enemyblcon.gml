@@ -62,7 +62,7 @@ if (argument2 == 10)
 {
     myblcon = gml_Script_instance_create(argument0, argument1, obj_battleblcon)
     myblcon.sprite_index = spr_battleblcon_long
-    myblcon.auto_length = 1
+    myblcon.auto_length = true
     return myblcon;
 }
 return;

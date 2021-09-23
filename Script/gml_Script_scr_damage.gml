@@ -48,7 +48,7 @@ if (global.inv < 0)
     }
     chartarget = 3
     tdamage = damage
-    var oldcalculation = 0
+    var oldcalculation = false
     if (target < 3)
     {
         if oldcalculation
@@ -74,7 +74,7 @@ if (global.inv < 0)
     with (obj_dmgwriter)
     {
         if (delaytimer >= 1)
-            killactive = 1
+            killactive = true
     }
     doomtype = -1
     with (obj_heart)
@@ -130,14 +130,14 @@ if (global.inv < 0)
         }
     }
     global.inv = (global.invc * 40)
-    gameover = 1
+    gameover = true
     if (global.char[0] != 0 && global.hp[global.char[0]] > 0)
-        gameover = 0
+        gameover = false
     if (global.char[1] != 0 && global.hp[global.char[1]] > 0)
-        gameover = 0
+        gameover = false
     if (global.char[2] != 0 && global.hp[global.char[2]] > 0)
-        gameover = 0
-    if (gameover == 1)
+        gameover = false
+    if (gameover == true)
         gml_Script_scr_gameover()
     if (__remtarget != -1)
         target = __remtarget

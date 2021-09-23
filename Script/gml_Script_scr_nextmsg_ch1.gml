@@ -1,12 +1,12 @@
 msgno += 1
 lineno = 0
 aster = false
-halt = 0
+halt = false
 pos = 1
 alarm[0] = 1
 autoaster = true
 mystring = nstring[msgno]
-formatted = 0
+formatted = false
 wxskip = 0
 sound_played = false
 if (rate < 3)

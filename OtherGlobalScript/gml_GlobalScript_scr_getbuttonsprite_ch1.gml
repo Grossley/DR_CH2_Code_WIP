@@ -1,7 +1,7 @@
 var control = argument0
 var isString = argument1
 var button = -4
-var is_dualshock = (os_type == os_ps4 || obj_gamecontroller.gamepad_type == 1)
+var is_dualshock = (os_type == os_ps4 || obj_gamecontroller.gamepad_type == true)
 var button_sprite = button_questionmark
 if isString
 {

@@ -264,7 +264,7 @@ audio_set_master_gain(0, global.flag[17])
 if (global.plot >= 156)
 {
     for (i = 0; i < 4; i += 1)
-        global.charauto[i] = 0
+        global.charauto[i] = false
 }
 if (global.flag[279] == 0)
 {

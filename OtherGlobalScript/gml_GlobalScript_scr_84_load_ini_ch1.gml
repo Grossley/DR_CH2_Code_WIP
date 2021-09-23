@@ -34,8 +34,8 @@ if gml_Script_ossafe_file_exists_ch1("dr.ini")
         {
             var room_index = ini_read_real(("G" + string(i)), "Room", 0)
             var room_offset = room_index
-            if (room_index < 280)
-                room_offset = (280 + room_index)
+            if (room_index < ROOM_INITIALIZE_ch1)
+                room_offset = (ROOM_INITIALIZE_ch1 + room_index)
             PLACE[i] = gml_Script_scr_roomname_ch1(room_offset)
             TIME[i] = ini_read_real(("G" + string(i)), "Time", 0)
             NAME[i] = ini_read_string(("G" + string(i)), "Name", "------")

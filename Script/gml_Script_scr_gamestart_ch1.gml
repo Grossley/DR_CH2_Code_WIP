@@ -27,7 +27,7 @@ for (i = 0; i < 3; i += 1)
 {
     global.heromakex[i] = 100
     global.heromakey[i] = 200
-    global.charauto[i] = 0
+    global.charauto[i] = false
     global.charmove[i] = false
     global.charcantarget[i] = false
     global.chardead[i] = false
@@ -36,10 +36,10 @@ for (i = 0; i < 3; i += 1)
     global.faceaction[i] = 0
     global.charcond[i] = 0
 }
-global.charauto[0] = 0
-global.charauto[1] = 0
-global.charauto[2] = 1
-global.charauto[3] = 0
+global.charauto[0] = false
+global.charauto[1] = false
+global.charauto[2] = true
+global.charauto[3] = false
 for (i = 0; i < 4; i += 1)
 {
     global.hp[i] = 200
@@ -254,17 +254,17 @@ global.lmaxhp = 20
 global.lat = 10
 global.ldf = 10
 global.lwstrength = 1
-global.ladef = 0
+global.ladef = false
 global.facing = 0
 global.flag[15] = 1
 global.flag[16] = 1
 global.flag[17] = 1
 for (i = 0; i < 10; i += 1)
 {
-    global.input_pressed[i] = 0
-    global.input_held[i] = 0
-    global.input_released[i] = 0
+    global.input_pressed[i] = false
+    global.input_held[i] = false
+    global.input_released[i] = false
 }
 global.currentroom = PLACE_DOGCHECK2
-global.disable_border = 0
+global.disable_border = false
 return;
