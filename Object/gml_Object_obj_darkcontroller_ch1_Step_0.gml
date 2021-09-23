@@ -383,7 +383,7 @@ if (global.interact == 5)
                 {
                     if keyboard_check_pressed(vk_anykey)
                     {
-                        for (var i = ord("0"); i <= 90; i += 1)
+                        for (var i = 48; i <= 90; i += 1)
                         {
                             if keyboard_check_pressed(i)
                             {
