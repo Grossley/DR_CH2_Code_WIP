@@ -37,23 +37,23 @@ if (fightcon == 2)
             {
                 stop_siner = 1
                 con = 1
-                character_sprite = 1418
+                character_sprite = spr_krisb_attack
                 actor.sprite_index = spr_krisb_attack
             }
             with (coaster_susie)
             {
                 stop_siner = 1
                 con = 1
-                character_sprite = 1446
+                character_sprite = spr_susieb_attack
                 actor.sprite_index = spr_susieb_attack
                 if (global.charweapon[global.char[2]] == 0)
-                    character_sprite = 1448
+                    character_sprite = spr_susieb_attack_unarmed
             }
             with (coaster_ralsei)
             {
                 stop_siner = 1
                 con = 1
-                character_sprite = 1503
+                character_sprite = spr_ralsei_battleintro
                 actor.sprite_index = spr_ralsei_battleintro
             }
             with (coaster_berdly)

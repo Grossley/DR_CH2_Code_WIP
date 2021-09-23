@@ -1,4 +1,4 @@
-mySprite = 2427
+mySprite = spr_firework_explosion_shape1
 vspeed = random_range(-10, -8)
 gravity = 0.25
 time = 0

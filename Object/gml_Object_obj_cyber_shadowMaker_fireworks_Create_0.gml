@@ -10,9 +10,9 @@ fade_out = 0
 fade_timer = 0
 fade_cleanup = 0
 fade_reset = 0
-is_active = 0
+is_active = false
 if (room == room_dw_cyber_maze_fireworks)
-    is_active = global.flag[357] == 1
+    is_active = global.flag[357] == true
 inactive_cleanup = 0
 cleanup_timer = 0
 depth = (room == room_dw_cyber_post_music_boss_slide ? 80000 : 900000)

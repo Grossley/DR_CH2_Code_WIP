@@ -1,6 +1,6 @@
 damaged = global.plot >= 170
 damagedfx = damaged
-head_sprite = (damaged ? 348 : 261)
+head_sprite = (damaged ? spr_cutscene_27_queen_damaged : spr_cutscene_26_queen_giga_head)
 head_index = 0
 head_x_pos = (damaged ? ((gml_Script_camerax() + (view_wport[0] / 2)) - sprite_get_width(spr_cutscene_26_queen_giga_head)) : -1)
 head_y_pos = (damaged ? (gml_Script_cameray() - 15) : -1)
@@ -20,7 +20,7 @@ if (room == room_dw_mansion_top)
     else
         head_y_pos = -1
 }
-pilot_sprite = 275
+pilot_sprite = spr_cutscene_26_queen_pilot_laugh
 pilot_index = 0
 pilot_alpha = 1
 laugh = 0

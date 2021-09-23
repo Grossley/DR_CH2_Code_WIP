@@ -23,7 +23,7 @@ if (walkdir == "left")
     draw_sprite_ext(spr_traffic_car_side_legs_only, (animsiner / 6), (sprite_width + x), ((y + (downframe * 2)) - 32), (-image_xscale), image_yscale, 0, c_white, image_alpha)
     draw_sprite_ext(spr_traffic_car_side, image_index, ((sprite_width + x) + walkx), ((y + (downframe * 4)) + walky), (-image_xscale), image_yscale, 0, c_white, image_alpha)
 }
-if (walking == 1)
+if (walking == true)
 {
     walklerp += (0.01 + (walklerp / 2))
     if (walklerp >= 1)
@@ -42,5 +42,5 @@ else
 }
 walkx = ((sin((animsiner / 4)) * walklerp) * 2)
 walky = lerp(0, walklerp, -26)
-if (alwayswalking == 1)
+if (alwayswalking == true)
     walky = -26

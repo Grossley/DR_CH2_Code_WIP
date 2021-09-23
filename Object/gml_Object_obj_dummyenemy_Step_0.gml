@@ -45,12 +45,12 @@ if (global.monster[myself] == true)
     commanded = 0
     if (global.mnfight == 1 && talked == 0)
     {
-        global.writerimg[0] = 2239
-        global.writerimg[1] = 2238
-        global.writerimg[2] = 2246
-        global.writerimg[3] = 2236
-        global.writerimg[4] = 2240
-        global.writerimg[5] = 2244
+        global.writerimg[0] = spr_btfight
+        global.writerimg[1] = spr_btdefend
+        global.writerimg[2] = spr_bttech
+        global.writerimg[3] = spr_btact
+        global.writerimg[4] = spr_btspare
+        global.writerimg[5] = spr_btitem
         if (attackcon == 0)
         {
             gml_Script_scr_moveheart()
@@ -132,7 +132,7 @@ if (global.monster[myself] == true)
                 }
                 if (plot == 2)
                 {
-                    global.writerimg[2] = 2246
+                    global.writerimg[2] = spr_bttech
                     global.msg[0] = gml_Script_stringsetloc("\\E8* Great job^1, Kris^1!&* Now that you've gathered TP -/", "obj_dummyenemy_slash_Step_0_gml_142_0")
                     global.msg[1] = gml_Script_stringsetloc("\\E0* How about spending that TP on one of my \\cYSPELLs\\cW?/", "obj_dummyenemy_slash_Step_0_gml_143_0")
                     global.msg[2] = gml_Script_stringsetloc("* Because you hit the enemy enough^1, it got \\cBTIRED\\cW./", "obj_dummyenemy_slash_Step_0_gml_144_0")
@@ -482,12 +482,12 @@ if (global.monster[myself] == true)
             global.typer = 6
             global.fc = 0
             global.battlemsg[0] = gml_Script_stringsetloc("* What?", "obj_dummyenemy_slash_Step_0_gml_548_0")
-            global.writerimg[0] = 2239
-            global.writerimg[1] = 2238
-            global.writerimg[2] = 2246
-            global.writerimg[3] = 2236
-            global.writerimg[4] = 2240
-            global.writerimg[5] = 2244
+            global.writerimg[0] = spr_btfight
+            global.writerimg[1] = spr_btdefend
+            global.writerimg[2] = spr_bttech
+            global.writerimg[3] = spr_btact
+            global.writerimg[4] = spr_btspare
+            global.writerimg[5] = spr_btitem
             global.fc = 0
             if (plot == 1)
                 global.battlemsg[0] = gml_Script_stringsetloc("* Let's try FIGHTing!&  (\\I0    )", "obj_dummyenemy_slash_Step_0_gml_556_0")
@@ -529,7 +529,7 @@ if (con == 3)
     global.typer = 45
     global.fc = 2
     global.fe = 0
-    global.writerimg[0] = 2239
+    global.writerimg[0] = spr_btfight
     global.msg[0] = gml_Script_stringsetloc("* Great job^1, Kris^1!&* You're a natural!/", "obj_dummyenemy_slash_Step_0_gml_598_0")
     if (kris_inithp > global.hp[1])
     {

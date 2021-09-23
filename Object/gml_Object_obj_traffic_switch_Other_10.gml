@@ -62,7 +62,7 @@ if (global.facing != 0 && active == false && pressbuffer <= 0)
         {
             if (group == groupcheck)
             {
-                walking = 1
+                walking = true
                 active = true
             }
         }
@@ -70,7 +70,7 @@ if (global.facing != 0 && active == false && pressbuffer <= 0)
         {
             if (group == groupcheck)
             {
-                walking = 1
+                walking = true
                 active = true
             }
         }

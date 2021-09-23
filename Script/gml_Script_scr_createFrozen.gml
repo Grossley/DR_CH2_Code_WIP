@@ -3,7 +3,7 @@ frozenbody.sprite_index = sprite_index
 frozenbody.image_index = image_index
 frozenbody.image_xscale = image_xscale
 frozenbody.image_yscale = image_yscale
-frozenbody.fresh = 1
+frozenbody.fresh = true
 if (argument0 == 0)
     frozenbody.skipsolid = 1
 else

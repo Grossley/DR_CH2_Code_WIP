@@ -5,7 +5,7 @@ if (doorPreset > 0)
         doorDelay = 14
         doorPostDelay = 6
         doorSound = snd_dooropen
-        doorSound2 = 62
+        doorSound2 = snd_doorclose
     }
     else if (doorPreset == 2)
     {

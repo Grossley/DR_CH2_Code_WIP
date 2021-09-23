@@ -3,10 +3,10 @@ if (global.flag[encounterflag] == 1)
 if (global.flag[encounterflag] == 6 && init == 0)
 {
     if (frozensprite == IMAGE_LOGO)
-        frozensprite = 1643
+        frozensprite = spr_poppup_hurt
     frozennpc = gml_Script_instance_create(x, y, obj_frozennpc)
     frozennpc.sprite_index = frozensprite
-    frozennpc.fresh = 1
+    frozennpc.fresh = true
     instance_destroy()
     init = 1
 }

@@ -3,7 +3,7 @@ if (global.monster[myself] == true)
     talkOrder = myself
     if (!color_init)
     {
-        var color_index = 0
+        var color_index = c_black
         with (obj_swatchling_enemy)
         {
             if (!color_init)

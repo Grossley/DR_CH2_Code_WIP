@@ -29,11 +29,11 @@ if (drawtype == 0)
         suheight = 0
         rot = 0
     }
-    if (drawcustom == 0)
+    if (drawcustom == false)
     {
         krspr = 650
-        suspr = 844
-        raspr = 1518
+        suspr = spr_susie_sheeh
+        raspr = spr_ralsei_surprised_down
     }
     dogimagespeed += 0.25
     draw_sprite_ext(spr_dog_walk, dogimagespeed, x, (y + 24), 2, 2, 0, c_white, 1)

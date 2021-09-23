@@ -21,7 +21,7 @@ edgedebug = 0
 siner = 0
 type = 1
 reminteract = global.interact
-menuSprite = 2527
+menuSprite = spr_heart
 display_buttons = 0
 for (i = 0; i < menuMax; i++)
 {

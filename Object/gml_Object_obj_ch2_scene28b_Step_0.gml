@@ -58,7 +58,7 @@ if (con == 1)
     su_actor = gml_Script_instance_create(157, 114, obj_actor)
     gml_Script_scr_actor_setup(su, su_actor, "susie")
     su_actor.sprite_index = spr_susie_walk_up_lw
-    su_actor.specialsprite[0] = 14
+    su_actor.specialsprite[0] = spr_cutscene_03a_susie_kris_shake
     gml_Script_c_sel(su)
     gml_Script_c_facing("u")
     no = 2
@@ -415,7 +415,7 @@ if (con == 2)
             gml_Script_c_sprite(spr_berdly_walk_down_lw_brokenArm)
             gml_Script_c_imagespeed(0.25)
             gml_Script_c_walk_wait("u", 4, 4)
-            gml_Script_c_actorsetsprites(be_actor, 0, 410, 3296, 0)
+            gml_Script_c_actorsetsprites(be_actor, 0, 410, spr_berdly_walk_down_lw_brokenArm, false)
             gml_Script_c_autowalk(true)
             gml_Script_c_walk("r", 3, 37)
             gml_Script_c_delaywalk(38, "d", 3, 30)

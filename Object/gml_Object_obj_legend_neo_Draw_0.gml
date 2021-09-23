@@ -13,8 +13,8 @@ if (drawpic == 1)
 }
 if (con == 3)
 {
-    pic = 2460
-    picb = 314
+    pic = spr_introimage2
+    picb = spr_cutscene_27_1
     picyb = -50
     con = 3.1
     con_alphb = 0
@@ -85,7 +85,7 @@ if (con == 3.1)
         picy = picyb
         pic = picb
         con_alphb = 0
-        picb = 315
+        picb = spr_cutscene_27_2
         gml_Script_msgsetloc(0, "The TITANS will take&form from the FOUNTAINS", "obj_legend_neo_slash_Draw_0_gml_80_0")
         wx = 69
         if jp
@@ -103,7 +103,7 @@ if (con == 3.1)
         picy = picyb
         pic = picb
         con_alphb = 0
-        picb = 316
+        picb = spr_cutscene_27_2_2
         with (w)
             instance_destroy()
         gml_Script_msgsetloc(0, "          And envelop&   the land in devastation.", "obj_legend_neo_slash_Draw_0_gml_99_0")
@@ -151,8 +151,8 @@ if (con == 4)
 {
     con = 5
     contimer = 0
-    pic = 319
-    picb = 320
+    pic = spr_cutscene_27_4
+    picb = spr_cutscene_27_5
     con_alph = 0
     con_alphb = 0
     picx = 48
@@ -195,7 +195,7 @@ if (con == 5)
     if (contimer == 420)
     {
         pic = picb
-        picb = 321
+        picb = spr_cutscene_27_6
         con_alphb = 0
         with (w)
             instance_destroy()
@@ -213,7 +213,7 @@ if (con == 5)
     if (contimer == 600)
     {
         pic = picb
-        picb = 322
+        picb = spr_cutscene_27_7
         con_alphb = 0
         with (w)
             instance_destroy()

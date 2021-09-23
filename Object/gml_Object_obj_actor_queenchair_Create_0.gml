@@ -17,5 +17,5 @@ fakeshadow.image_xscale = 2
 fakeshadow.visible = false
 fakeshadow.image_yscale = 0.25
 fakeshadow.image_speed = 0
-specialsprite[0] = 759
-specialsprite[1] = 761
+specialsprite[0] = spr_queen_chair_ohoho_1
+specialsprite[1] = spr_queen_chair_swish_wine

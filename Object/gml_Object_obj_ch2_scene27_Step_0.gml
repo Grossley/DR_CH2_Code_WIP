@@ -1234,8 +1234,8 @@ if queen_sad
     {
         with (obj_ch2_scene26_gigaqueen)
         {
-            head_sprite = 346
-            pilot_sprite = 274
+            head_sprite = spr_cutscene_27_queen_look_down_damaged_opaque
+            pilot_sprite = spr_cutscene_26_queen_pilot_unhappy
         }
     }
 }
@@ -1246,8 +1246,8 @@ if queen_happy
     {
         with (obj_ch2_scene26_gigaqueen)
         {
-            head_sprite = 348
-            pilot_sprite = 275
+            head_sprite = spr_cutscene_27_queen_damaged
+            pilot_sprite = spr_cutscene_26_queen_pilot_laugh
         }
     }
 }

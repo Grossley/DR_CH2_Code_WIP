@@ -1,1 +1,1 @@
-doorSound = 40
+doorSound = snd_splat

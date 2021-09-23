@@ -1,4 +1,4 @@
-fountain = gml_Script_scr_marker_animated(x, 0, 3140)
+fountain = gml_Script_scr_marker_animated(x, 0, spr_cyber_coaster_bg_fountain)
 with (fountain)
 {
     depth = 1000450

@@ -33,7 +33,7 @@ if laugh
     animsiner++
     if (pilot_alpha == 0)
         pilot_alpha = 1
-    head_sprite = (damaged ? 350 : 264)
+    head_sprite = (damaged ? spr_cutscene_27_queen_laugh_damaged : spr_cutscene_26_queen_giga_head_laugh)
     anim_index = (animsiner / 4)
 }
 else
@@ -44,22 +44,22 @@ else
 if surprised
 {
     surprised = 0
-    head_sprite = 347
+    head_sprite = spr_cutscene_27_queen_shock_damaged
     pilot_alpha = 0
     if (!damaged)
-        head_sprite = 332
+        head_sprite = spr_cutscene_27_queen_giga_surprise
 }
 if unhappy
 {
     unhappy = 0
-    head_sprite = 2553
-    pilot_sprite = 273
+    head_sprite = spr_cutscene_26_queen_giga_head_unhappy
+    pilot_sprite = spr_cutscene_26_queen_pilot
     pilot_alpha = 1
 }
 if static_start
 {
     static_start = 0
-    head_sprite = 345
+    head_sprite = spr_cutscene_27_queen_look_down_damaged
     pilot_alpha = 0
     static_happened = 1
     my_static = gml_Script_instance_create(252, 123, obj_ch2_queen_static)

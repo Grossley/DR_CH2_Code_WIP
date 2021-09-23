@@ -56,7 +56,7 @@ if (instance_number(obj_silhouette_cover) > 0)
     {
         var _cover = instance_find(obj_silhouette_cover, i)
         if tiled_cover
-            gml_Script_scr_draw_sprite_tiled_area(_cover.sprite_index, 0, _cover.x, _cover.y, _cover.x, _cover.y, (_cover.x + (sprite_get_width(_cover.sprite_index) * _cover.image_xscale)), (_cover.y + (sprite_get_height(_cover.sprite_index) * _cover.image_yscale)), 2, 2, 16777215, 1)
+            gml_Script_scr_draw_sprite_tiled_area(_cover.sprite_index, 0, _cover.x, _cover.y, _cover.x, _cover.y, (_cover.x + (sprite_get_width(_cover.sprite_index) * _cover.image_xscale)), (_cover.y + (sprite_get_height(_cover.sprite_index) * _cover.image_yscale)), 2, 2, c_white, true)
         else
             draw_sprite_ext(_cover.sprite_index, _cover.image_index, _cover.x, _cover.y, _cover.image_xscale, _cover.image_yscale, _cover.image_angle, c_white, 1)
     }

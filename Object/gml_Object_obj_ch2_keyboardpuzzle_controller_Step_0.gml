@@ -93,10 +93,10 @@ if (con == 21)
     if (puzzle_id == 2)
     {
         if (timer == 30)
-            victorySprite = 2397
+            victorySprite = spr_keyboard_puzzle_icee
         if (timer == 60)
         {
-            victorySprite = 2399
+            victorySprite = spr_keyboard_puzzle_icee_hacked
             hacked = 1
             image_timer = 1
         }
@@ -104,7 +104,7 @@ if (con == 21)
         {
             hacked = 0
             image_timer = -0.25
-            victorySprite = 279
+            victorySprite = spr_keyboard_puzzle_icee_hacked_2
         }
     }
     if (timer == 90)
@@ -121,10 +121,10 @@ if (con == 21)
             if (room == room_dw_cyber_keyboard_puzzle_2)
             {
                 gml_Script_snd_play(snd_queen_bitcrushed_hoot)
-                victorySprite = 2396
+                victorySprite = spr_keyboard_puzzle_queenface
             }
             else
-                victorySprite = 0
+                victorySprite = IMAGE_LOGO
         }
         timer = 0
     }
@@ -163,7 +163,7 @@ if (con == 23)
         timer++
         if (timer == 60)
         {
-            victorySprite = 2398
+            victorySprite = spr_keyboard_puzzle_bluecheck
             global.interact = 0
             show_debug_message("yep")
             checkscreen = gml_Script_instance_create((monitorx + 40), 80, obj_queenscreen)
@@ -179,7 +179,7 @@ else if (con == 24)
 {
     if (!instance_exists(obj_dialoguer))
     {
-        victorySprite = 2395
+        victorySprite = spr_keyboard_puzzle_agree2all
         global.interact = 0
         global.facing = 0
         event_user(1)

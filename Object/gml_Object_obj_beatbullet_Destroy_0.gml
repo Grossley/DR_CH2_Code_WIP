@@ -6,5 +6,5 @@ with (instance_create_depth(x, y, 0, obj_beatflash))
 if (gml_Script_scr_outside_camera(0) == 0)
 {
     with (obj_beatbulletroom)
-        playsound = 1
+        playsound = true
 }

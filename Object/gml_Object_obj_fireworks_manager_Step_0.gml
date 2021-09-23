@@ -13,7 +13,7 @@ if is_active
                 if gml_Script_i_ex(obj_cyber_shadowMaker_fireworks)
                 {
                     if (!obj_cyber_shadowMaker_fireworks.is_active)
-                        obj_cyber_shadowMaker_fireworks.is_active = 1
+                        obj_cyber_shadowMaker_fireworks.is_active = true
                 }
                 spawn = (time % 40) == 0
                 _y = (room_height - 220)
@@ -25,7 +25,7 @@ if is_active
                 {
                     if obj_cyber_shadowMaker_fireworks.is_active
                     {
-                        obj_cyber_shadowMaker_fireworks.is_active = 0
+                        obj_cyber_shadowMaker_fireworks.is_active = false
                         obj_cyber_shadowMaker_fireworks.inactive_cleanup = 1
                     }
                 }
@@ -48,7 +48,7 @@ if is_active
                 if (obj_mainchara.x < 900)
                     spawn = 0
                 else
-                    is_active = 1
+                    is_active = true
             }
             else
             {

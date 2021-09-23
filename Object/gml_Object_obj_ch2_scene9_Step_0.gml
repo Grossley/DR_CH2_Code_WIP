@@ -15,8 +15,8 @@ if (con == 99 && obj_mainchara.x >= 540)
     no_actor = gml_Script_instance_create(950, 208, obj_actor)
     gml_Script_scr_actor_setup(no, no_actor, "noelle")
     no_actor.sprite_index = spr_noelle_kneel
-    no_actor.specialsprite[5] = 713
-    no_actor.specialsprite[6] = 716
+    no_actor.specialsprite[5] = spr_noelle_kneel_shocked
+    no_actor.specialsprite[6] = spr_noelle_shocked_dw
     qu = (actor_count + 2)
     qu_actor = gml_Script_instance_create(725, 273, obj_actor_queenchair)
     gml_Script_scr_actor_setup_nofacing(qu, qu_actor, "queen")
@@ -651,14 +651,14 @@ if (con == 9.6 || gml_Script_scr_cutscene_loaded())
     gml_Script_c_talk_wait()
     gml_Script_c_soundplay(snd_jump)
     gml_Script_c_sel(kr)
-    gml_Script_c_jump_sprite(720, 193, 12, 17, 536, 540)
+    gml_Script_c_jump_sprite(720, 193, 12, 17, spr_kris_fall_d_dw, spr_kris_dw_landed)
     gml_Script_c_delayfacing(16, "r")
     gml_Script_c_sel(su)
     gml_Script_c_delayfacing(16, "r")
-    gml_Script_c_jump_sprite(635, 178, 12, 17, 534, 548)
+    gml_Script_c_jump_sprite(635, 178, 12, 17, spr_susie_dw_fall_d, spr_susie_dw_landed)
     gml_Script_c_sel(ra)
     gml_Script_c_delayfacing(16, "r")
-    gml_Script_c_jump_sprite(564, 184, 12, 17, 779, 2558)
+    gml_Script_c_jump_sprite(564, 184, 12, 17, spr_ralsei_jump, spr_teacup_ralsei_land)
     gml_Script_c_wait(20)
     gml_Script_c_soundplay(snd_impact)
     gml_Script_c_wait(16)

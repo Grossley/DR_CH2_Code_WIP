@@ -8,7 +8,7 @@ if (encounterflag > 0 && init == 0)
             frozensprite = touchsprite
         frozennpc = gml_Script_instance_create(x, y, obj_frozennpc)
         frozennpc.sprite_index = frozensprite
-        frozennpc.fresh = 1
+        frozennpc.fresh = true
         instance_destroy()
         if (sprite_index == spr_werewire_hang_overworld)
             frozennpc.sprite_index = spr_werewire_hurt
@@ -493,7 +493,7 @@ if (frozen == false)
             path_end()
         if (alertskip == 0)
         {
-            if (noAlertSound == 0)
+            if (noAlertSound == false)
                 gml_Script_snd_play(snd_b)
             targalarm = 20
             if (chasetype == 8)

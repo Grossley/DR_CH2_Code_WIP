@@ -1125,7 +1125,7 @@ else if (type == 32)
         {
             special = -1
             difficulty++
-            dd = gml_Script_scr_dark_marker_animated((x + 80), (y + 4), 1702, 1)
+            dd = gml_Script_scr_dark_marker_animated((x + 80), (y + 4), spr_tm_pleased_effect, true)
             dd2 = gml_Script_scr_dark_marker((x + 74), (y + 66), spr_cutscene_26_tasquemanager)
             var _maru = gml_Script_instance_create((x + (phase * 40)), (y + 175), obj_bulletparent)
             _maru.sprite_index = spr_tm_maru

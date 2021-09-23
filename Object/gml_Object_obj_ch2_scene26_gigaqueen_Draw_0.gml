@@ -16,7 +16,7 @@ if head_init
     gpu_set_blendmode(bm_normal)
     if (!static_start)
     {
-        var offset = (head_sprite == 2553 ? 5 : 0)
+        var offset = (head_sprite == spr_cutscene_26_queen_giga_head_unhappy ? 5 : 0)
         gpu_set_blendenable(false)
         gpu_set_colorwriteenable(0, 0, 0, 1)
         draw_set_alpha(0)

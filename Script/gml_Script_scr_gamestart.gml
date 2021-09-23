@@ -204,7 +204,7 @@ global.msgno = 0
 for (i = 0; i < 10; i += 1)
 {
     global.writersnd[i] = snd_noise
-    global.writerimg[i] = 2236
+    global.writerimg[i] = spr_btact
     global.smdir[i] = 90
     global.smspeed[i] = 2
     global.smsprite[i] = spr_smallface_s0

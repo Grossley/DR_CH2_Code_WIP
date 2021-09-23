@@ -99,7 +99,7 @@ if (state == 2)
             inhalesfx = 1
             gml_Script_snd_loop(snd_sneo_overpower)
             gml_Script_snd_pitch(snd_sneo_overpower, 3)
-            gml_Script_snd_pitch_time(136, 5, 30)
+            gml_Script_snd_pitch_time(snd_sneo_overpower, 5, 30)
             gml_Script_snd_volume(snd_sneo_overpower, 0.5, 0)
         }
         effecttimer++

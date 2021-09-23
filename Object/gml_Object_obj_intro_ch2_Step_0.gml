@@ -9,31 +9,31 @@ if (con == 0)
     else
     {
         if (!show_queen)
-            show_queen = 1
+            show_queen = true
         if show_queen
         {
             timer++
             if (timer == 30)
             {
-                queen_sprite = 3350
+                queen_sprite = spr_queen_wireframe_rotate
                 gml_Script_scr_lerpvar("queen_y_pos", -150, (view_hport[0] / 4), 15, -1, "out")
                 gml_Script_scr_lerpvar("queen_alpha", 0, 1, 10)
             }
             if (timer == 50)
             {
-                queen_sprite = 1920
-                queen_animate = 0
+                queen_sprite = spr_queen_wireframe
+                queen_animate = false
             }
             if (timer == 80)
             {
-                queen_sprite = 1936
-                queen_animate = 1
+                queen_sprite = spr_queen_wireframe_laugh
+                queen_animate = true
                 gml_Script_snd_play(snd_queen_bitcrushlaugh)
             }
             if (timer == 130)
             {
                 gml_Script_snd_play(snd_explosion_mmx3)
-                queen_sprite = 1937
+                queen_sprite = spr_queen_wireframe_explode
             }
             if (timer == 170)
                 gml_Script_scr_lerpvar("queen_alpha", 1, 0, 10)

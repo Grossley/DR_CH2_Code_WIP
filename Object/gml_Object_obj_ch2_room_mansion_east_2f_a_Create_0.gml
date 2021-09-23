@@ -36,15 +36,15 @@ else
         {
             mode = 1
             if (i == 0)
-                contentsprite = 2309
+                contentsprite = spr_ch2_gimmick_saucer_wig
             if (i == 1)
-                contentsprite = 1799
+                contentsprite = spr_saucer_checkmark
             if (i == 2)
             {
                 if (global.flag[357] == 1)
-                    contentsprite = 2486
+                    contentsprite = spr_platter_cursor
                 else
-                    contentsprite = 1797
+                    contentsprite = spr_platter_smallsaucer
             }
             gml_Script_scr_depth()
         }

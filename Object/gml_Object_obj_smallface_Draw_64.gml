@@ -22,7 +22,7 @@ if (global.darkzone == false)
         gml_Script_scr_84_set_draw_font("main")
         draw_set_color(mycolor)
         draw_text(((x + 70) - cx), ((y + 15) - cy), string_hash_to_newline(mystring))
-        finished = 1
+        finished = true
     }
     if (type == 2 || type == 4)
     {
@@ -30,19 +30,19 @@ if (global.darkzone == false)
         {
             gml_Script_scr_84_set_draw_font("main")
             draw_set_color(mycolor)
-            if (finished == 0)
+            if (finished == false)
             {
                 partstring += string_char_at(mystring, part)
                 part += 1
                 if (part >= (string_length(mystring) + 1))
-                    finished = 1
+                    finished = true
             }
             draw_text((((x + 70) + random(1)) - cx), (((y + 15) + random(1)) - cy), string_hash_to_newline(partstring))
         }
     }
     if gml_Script_i_ex(writergod)
     {
-        if (finished == 1 && getrid == 0)
+        if (finished == true && getrid == 0)
         {
             with (writergod)
             {

@@ -133,7 +133,7 @@ if keyboard_check_pressed(ord("F"))
 {
     sy = 0
     myLastSprite = 1
-    mySprite[0] = 831
+    mySprite[0] = spr_susie_chomp
     mySpriteName[0] = "Nothing found."
     var spriteCount = 0
     var findString = get_string("Search term!", "")
@@ -168,7 +168,7 @@ if keyboard_check_pressed(ord("D"))
     }
     if (found == 0)
     {
-        mySprite[0] = 831
+        mySprite[0] = spr_susie_chomp
         mySpriteName[0] = "Nothing found."
         myLastSprite = 1
     }

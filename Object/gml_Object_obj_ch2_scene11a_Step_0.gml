@@ -529,7 +529,7 @@ if (con == 14)
 {
     con = 15
     alarm[0] = 30
-    coaster_berdly.character_sprite = 1849
+    coaster_berdly.character_sprite = spr_berdlyb_shocked
     coaster_berdly.character_offset_x = 5
     coaster_berdly.character_offset_y = 3
     gml_Script_c_var_instance(coaster_berdly, "animate", 0)

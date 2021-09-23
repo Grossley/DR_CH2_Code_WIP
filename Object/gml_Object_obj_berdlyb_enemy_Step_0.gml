@@ -416,7 +416,7 @@ if (endcon == 1)
         o_coaster_berdly.sprite_index = spr_cutscene_17_berdly_shocked
         if instance_exists(obj_ch2_scene11a)
         {
-            obj_ch2_scene11a.coaster_berdly.character_sprite = 1849
+            obj_ch2_scene11a.coaster_berdly.character_sprite = spr_berdlyb_shocked
             obj_ch2_scene11a.coaster_berdly.character_offset_x = -10
             obj_ch2_scene11a.coaster_berdly.character_offset_y = -5
         }

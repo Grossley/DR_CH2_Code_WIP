@@ -1,5 +1,5 @@
 drawx = (((gml_Script___view_get(0, 0) + auto) * ss) + xstart)
-gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, drawx, 0, 0, y, room_width, (gml_Script_cameray() + view_hport[0]), 1, 1, c_dark, 1)
+gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, drawx, 0, 0, y, room_width, (gml_Script_cameray() + view_hport[0]), 1, 1, c_dark, true)
 animsiner++
 for (var i = 0; i < max_cars; i++)
 {

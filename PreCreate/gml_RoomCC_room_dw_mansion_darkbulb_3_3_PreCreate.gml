@@ -1,1 +1,1 @@
-puzzle_icon = 2409
+puzzle_icon = spr_darkbulb3_switch_3

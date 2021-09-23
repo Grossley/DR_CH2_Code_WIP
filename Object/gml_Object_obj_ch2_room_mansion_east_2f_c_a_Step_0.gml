@@ -15,7 +15,7 @@ if (dothis == 1)
                 treasure = gml_Script_instance_create(x, y, obj_saucer)
                 treasure.mode = 0
                 treasure.makecontent = 1
-                treasure.contentsprite = 1026
+                treasure.contentsprite = spr_treasurebox
                 instance_destroy()
             }
         }

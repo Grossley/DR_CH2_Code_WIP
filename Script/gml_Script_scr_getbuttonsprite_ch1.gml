@@ -2,43 +2,43 @@ var control = argument0
 var isString = argument1
 var button = -4
 var is_dualshock = (os_type == os_ps4 || obj_gamecontroller.gamepad_type == 1)
-var button_sprite = 757
+var button_sprite = button_questionmark
 if isString
 {
     if (control == "A")
     {
-        button_sprite = 4427
+        button_sprite = button_xbox_left_ch1
         if (os_type == os_switch)
-            button_sprite = 4385
+            button_sprite = button_switch_left_0_ch1
         else if is_dualshock
-            button_sprite = 4416
+            button_sprite = button_ps4_dpad_left_ch1
         return button_sprite;
     }
     if (control == "D")
     {
-        button_sprite = 4428
+        button_sprite = button_xbox_right_ch1
         if (os_type == os_switch)
-            button_sprite = 4389
+            button_sprite = button_switch_right_0_ch1
         else if is_dualshock
-            button_sprite = 4417
+            button_sprite = button_ps4_dpad_right_ch1
         return button_sprite;
     }
     if (control == "W")
     {
-        button_sprite = 3941
+        button_sprite = button_xbox_up_ch1
         if (os_type == os_switch)
-            button_sprite = 4392
+            button_sprite = button_switch_up_0_ch1
         else if is_dualshock
-            button_sprite = 4418
+            button_sprite = button_ps4_dpad_up_ch1
         return button_sprite;
     }
     if (control == "S")
     {
-        button_sprite = 3412
+        button_sprite = button_xbox_down_ch1
         if (os_type == os_switch)
-            button_sprite = 4401
+            button_sprite = button_switch_down_0_ch1
         else if is_dualshock
-            button_sprite = 4419
+            button_sprite = button_ps4_dpad_down_ch1
         return button_sprite;
     }
     if (control == "Z")
@@ -51,185 +51,185 @@ if isString
 else
 {
     button = control
-    if (control == 32783)
+    if (control == gp_padl)
     {
-        button_sprite = 4427
+        button_sprite = button_xbox_left_ch1
         if (os_type == os_switch)
-            button_sprite = 4385
+            button_sprite = button_switch_left_0_ch1
         else if is_dualshock
-            button_sprite = 4416
+            button_sprite = button_ps4_dpad_left_ch1
         return button_sprite;
     }
-    if (control == 32784)
+    if (control == gp_padr)
     {
-        button_sprite = 4428
+        button_sprite = button_xbox_right_ch1
         if (os_type == os_switch)
-            button_sprite = 4389
+            button_sprite = button_switch_right_0_ch1
         else if is_dualshock
-            button_sprite = 4417
+            button_sprite = button_ps4_dpad_right_ch1
         return button_sprite;
     }
-    if (control == 32781)
+    if (control == gp_padu)
     {
-        button_sprite = 3941
+        button_sprite = button_xbox_up_ch1
         if (os_type == os_switch)
-            button_sprite = 4392
+            button_sprite = button_switch_up_0_ch1
         else if is_dualshock
-            button_sprite = 4418
+            button_sprite = button_ps4_dpad_up_ch1
         return button_sprite;
     }
-    if (control == 32782)
+    if (control == gp_padd)
     {
-        button_sprite = 3412
+        button_sprite = button_xbox_down_ch1
         if (os_type == os_switch)
-            button_sprite = 4401
+            button_sprite = button_switch_down_0_ch1
         else if is_dualshock
-            button_sprite = 4419
+            button_sprite = button_ps4_dpad_down_ch1
         return button_sprite;
     }
 }
 if (button == 32769)
 {
-    button_sprite = 4429
+    button_sprite = button_xbox_a_ch1
     if is_dualshock
-        button_sprite = 4413
+        button_sprite = button_ps4_cross_0_ch1
     if (os_type == os_switch)
-        button_sprite = 4399
+        button_sprite = button_switch_b_0_ch1
     return button_sprite;
 }
 if (button == 32770)
 {
-    button_sprite = 3655
+    button_sprite = button_xbox_b_ch1
     if is_dualshock
-        button_sprite = 4412
+        button_sprite = button_ps4_circle_0_ch1
     if (os_type == os_switch)
-        button_sprite = 4398
+        button_sprite = button_switch_a_0_ch1
     return button_sprite;
 }
 if (button == 32771)
 {
-    button_sprite = 4424
+    button_sprite = button_xbox_x_ch1
     if is_dualshock
-        button_sprite = 4408
+        button_sprite = button_ps4_square_0_ch1
     if (os_type == os_switch)
-        button_sprite = 4394
+        button_sprite = button_switch_y_0_ch1
     return button_sprite;
 }
 if (button == 32772)
 {
-    button_sprite = 4117
+    button_sprite = button_xbox_y_ch1
     if is_dualshock
-        button_sprite = 4410
+        button_sprite = button_ps4_triangle_0_ch1
     if (os_type == os_switch)
-        button_sprite = 4393
+        button_sprite = button_switch_x_0_ch1
     return button_sprite;
 }
 if (button == 32773)
 {
-    button_sprite = 4425
+    button_sprite = button_xbox_left_bumper_ch1
     if is_dualshock
-        button_sprite = 4414
+        button_sprite = button_ps4_l1_ch1
     if (os_type == os_switch)
-        button_sprite = 4384
+        button_sprite = button_switch_l_0_ch1
     return button_sprite;
 }
 if (button == 32775)
 {
-    button_sprite = 4430
+    button_sprite = button_xbox_left_trigger_ch1
     if is_dualshock
-        button_sprite = 4415
+        button_sprite = button_ps4_l2_ch1
     if (os_type == os_switch)
-        button_sprite = 4395
+        button_sprite = button_switch_zl_0_ch1
     return button_sprite;
 }
 if (button == 32774)
 {
-    button_sprite = 4431
+    button_sprite = button_xbox_right_bumper_ch1
     if is_dualshock
-        button_sprite = 4405
+        button_sprite = button_ps4_r1_ch1
     if (os_type == os_switch)
-        button_sprite = 4388
+        button_sprite = button_switch_r_0_ch1
     return button_sprite;
 }
 if (button == 32776)
 {
-    button_sprite = 4426
+    button_sprite = button_xbox_right_trigger_ch1
     if is_dualshock
-        button_sprite = 4406
+        button_sprite = button_ps4_r2_ch1
     if (os_type == os_switch)
-        button_sprite = 4396
+        button_sprite = button_switch_zr_0_ch1
     return button_sprite;
 }
 if (button == 32779)
 {
-    button_sprite = 4423
+    button_sprite = button_xbox_left_stick_ch1
     if is_dualshock
-        button_sprite = 4404
+        button_sprite = button_ps4_l3_0_ch1
     if (os_type == os_switch)
-        button_sprite = 4402
+        button_sprite = button_switch_lStickClick_0_ch1
     return button_sprite;
 }
 if (button == 32780)
 {
-    button_sprite = 3571
+    button_sprite = button_xbox_right_stick_ch1
     if is_dualshock
-        button_sprite = 4407
+        button_sprite = button_ps4_r3_0_ch1
     if (os_type == os_switch)
-        button_sprite = 4403
+        button_sprite = button_switch_rStickClick_0_ch1
     return button_sprite;
 }
 if (button == 32777)
 {
-    button_sprite = 3601
+    button_sprite = button_xbox_menu_ch1
     if is_dualshock
-        button_sprite = 4409
+        button_sprite = button_ps4_touchpad_ch1
     if (os_type == os_switch)
-        button_sprite = 4386
+        button_sprite = button_switch_minus_0_ch1
     return button_sprite;
 }
 if (button == 32778)
 {
-    button_sprite = 3678
+    button_sprite = button_xbox_share_ch1
     if is_dualshock
         return 2516;
     if (os_type == os_switch)
-        button_sprite = 4387
+        button_sprite = button_switch_plus_0_ch1
     return button_sprite;
 }
 if (button == 32783)
 {
-    button_sprite = 4427
+    button_sprite = button_xbox_left_ch1
     if (os_type == os_switch)
-        button_sprite = 4385
+        button_sprite = button_switch_left_0_ch1
     else if is_dualshock
-        button_sprite = 4416
+        button_sprite = button_ps4_dpad_left_ch1
     return button_sprite;
 }
 if (button == 32784)
 {
-    button_sprite = 4428
+    button_sprite = button_xbox_right_ch1
     if (os_type == os_switch)
-        button_sprite = 4389
+        button_sprite = button_switch_right_0_ch1
     else if is_dualshock
-        button_sprite = 4417
+        button_sprite = button_ps4_dpad_right_ch1
     return button_sprite;
 }
 if (button == 32781)
 {
-    button_sprite = 3941
+    button_sprite = button_xbox_up_ch1
     if (os_type == os_switch)
-        button_sprite = 4392
+        button_sprite = button_switch_up_0_ch1
     else if is_dualshock
-        button_sprite = 4418
+        button_sprite = button_ps4_dpad_up_ch1
     return button_sprite;
 }
 if (button == 32782)
 {
-    button_sprite = 3412
+    button_sprite = button_xbox_down_ch1
     if (os_type == os_switch)
-        button_sprite = 4401
+        button_sprite = button_switch_down_0_ch1
     else if is_dualshock
-        button_sprite = 4419
+        button_sprite = button_ps4_dpad_down_ch1
     return button_sprite;
 }
 return button_sprite;

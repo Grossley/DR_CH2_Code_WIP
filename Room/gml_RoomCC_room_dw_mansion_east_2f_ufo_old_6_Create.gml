@@ -1,4 +1,4 @@
 mode = 0
-contentsprite = 1309
+contentsprite = spr_npc_block
 xoffset = 30
 yoffset = 12

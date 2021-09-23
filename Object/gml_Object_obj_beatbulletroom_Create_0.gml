@@ -5,5 +5,5 @@ bpf = (bps / game_get_speed(gamespeed_fps))
 beat = 0
 active = autoStart
 specialsSetup = 0
-playsound = 0
+playsound = false
 alarm[0] = 5

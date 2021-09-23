@@ -17,5 +17,5 @@ skipsolid = 0
 depth = 0
 specialinit = 0
 specialcolor = merge_color(c_navy, c_white, 0.8)
-fresh = 0
+fresh = false
 inbattle = 0

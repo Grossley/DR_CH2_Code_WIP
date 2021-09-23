@@ -54,7 +54,7 @@ if (room == room_dw_city_postbaseball_2 || room == room_dw_city_postbaseball_1)
 {
     gml_Script_instance_create(0, 0, obj_fireworks_manager)
     with (obj_fireworks_manager)
-        is_active = 1
+        is_active = true
 }
 fireworkshotcon = 0
 fireworktimer = 0

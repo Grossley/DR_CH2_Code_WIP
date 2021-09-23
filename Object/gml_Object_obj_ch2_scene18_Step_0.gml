@@ -24,7 +24,7 @@ if (con == 1)
     la_actor = gml_Script_instance_create(350, 288, obj_actor)
     gml_Script_scr_actor_setup(la, la_actor, "lancer")
     la_actor.sprite_index = spr_lancer_rt
-    la_actor.sprite_palette = 1307
+    la_actor.sprite_palette = spr_lancer_palette
     be = 4
     be_actor = gml_Script_instance_create(804, 200, obj_actor)
     gml_Script_scr_actor_setup(be, be_actor, "berdly")

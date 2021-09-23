@@ -30,9 +30,9 @@ if (swatch_color != "")
     }
 
 }
-sprite_palette = 1813
+sprite_palette = spr_swatchling_palette
 color_init = 0
-new_color = 0
+new_color = c_black
 base_colors[0] = blue
 base_colors[1] = red
 base_colors[2] = yellow

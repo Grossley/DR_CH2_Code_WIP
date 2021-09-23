@@ -9,32 +9,32 @@ if place_meeting(x, y, obj_solidenemy_2)
     endme = 1
 if ((global.interact == 0 || gml_Script_i_ex(obj_cutscene_master)) && active == true)
 {
-    if (alwayswalking == 1)
-        walking = 1
+    if (alwayswalking == true)
+        walking = true
     if (walkdir == "down")
     {
-        if (walking == 0)
+        if (walking == false)
             y += myspeed
-        if (walking == 1)
+        if (walking == true)
         {
-            if (alwayswalking == 0)
+            if (alwayswalking == false)
                 y += (myspeed / 4)
         }
-        if (alwayswalking == 1)
+        if (alwayswalking == true)
             y += myspeed
     }
     if (walkdir == "left")
     {
-        if (walking == 0)
+        if (walking == false)
             x -= myspeed
-        if (walking == 1)
+        if (walking == true)
             x -= (myspeed / 4)
     }
     if (walkdir == "right")
     {
-        if (walking == 0)
+        if (walking == false)
             x += myspeed
-        if (walking == 1)
+        if (walking == true)
             x += (myspeed / 4)
     }
 }
@@ -108,17 +108,17 @@ if gml_Script_scr_debug()
 {
     if (keyboard_check_pressed(ord("W")) && buffer < 0)
     {
-        if (walking == 1)
+        if (walking == true)
         {
             with (obj_traffic_car)
             {
                 buffer = 2
-                walking = 0
+                walking = false
             }
             with (obj_traffic_car_generator)
             {
                 buffer = 2
-                walking = 0
+                walking = false
             }
         }
         else
@@ -126,12 +126,12 @@ if gml_Script_scr_debug()
             with (obj_traffic_car)
             {
                 buffer = 2
-                walking = 1
+                walking = true
             }
             with (obj_traffic_car_generator)
             {
                 buffer = 2
-                walking = 1
+                walking = true
             }
         }
     }
@@ -164,7 +164,7 @@ if place_meeting(x, y, obj_carTurner)
             active = other.active
             touchcon = other.touchcon
             touchtimer = other.touchtimer
-            speedadjust = 1
+            speedadjust = true
             turned = 1
         }
         if (madeblock == 1)

@@ -6,119 +6,119 @@ if ((obj_queen_enemy.shieldhp / obj_queen_enemy.shieldmaxhp) <= (obj_queen_enemy
     if (shieldsize == 5)
     {
         if (a < 0.8)
-            shieldpiece_alpha[0] = 1892
+            shieldpiece_alpha[0] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[0] = 1891
+            shieldpiece_alpha[0] = spr_queenshield_pieces
         if (a < 0.6)
-            shieldpiece_alpha[1] = 1892
+            shieldpiece_alpha[1] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[1] = 1891
+            shieldpiece_alpha[1] = spr_queenshield_pieces
         if (a < 0.4)
-            shieldpiece_alpha[2] = 1892
+            shieldpiece_alpha[2] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[2] = 1891
+            shieldpiece_alpha[2] = spr_queenshield_pieces
         if (a < 0.2)
-            shieldpiece_alpha[3] = 1892
+            shieldpiece_alpha[3] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[3] = 1891
+            shieldpiece_alpha[3] = spr_queenshield_pieces
     }
     if (shieldsize == 10)
     {
         if (a < 0.9)
-            shieldpiece_alpha[0] = 1892
+            shieldpiece_alpha[0] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[0] = 1891
+            shieldpiece_alpha[0] = spr_queenshield_pieces
         if (a < 0.8)
-            shieldpiece_alpha[1] = 1892
+            shieldpiece_alpha[1] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[1] = 1891
+            shieldpiece_alpha[1] = spr_queenshield_pieces
         if (a < 0.7)
-            shieldpiece_alpha[2] = 1892
+            shieldpiece_alpha[2] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[2] = 1891
+            shieldpiece_alpha[2] = spr_queenshield_pieces
         if (a < 0.6)
-            shieldpiece_alpha[3] = 1892
+            shieldpiece_alpha[3] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[3] = 1891
+            shieldpiece_alpha[3] = spr_queenshield_pieces
         if (a < 0.5)
-            shieldpiece_alpha[4] = 1892
+            shieldpiece_alpha[4] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[4] = 1891
+            shieldpiece_alpha[4] = spr_queenshield_pieces
         if (a < 0.4)
-            shieldpiece_alpha[5] = 1892
+            shieldpiece_alpha[5] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[5] = 1891
+            shieldpiece_alpha[5] = spr_queenshield_pieces
         if (a < 0.3)
-            shieldpiece_alpha[6] = 1892
+            shieldpiece_alpha[6] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[6] = 1891
+            shieldpiece_alpha[6] = spr_queenshield_pieces
         if (a < 0.2)
-            shieldpiece_alpha[7] = 1892
+            shieldpiece_alpha[7] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[7] = 1891
+            shieldpiece_alpha[7] = spr_queenshield_pieces
         if (a < 0.1)
-            shieldpiece_alpha[8] = 1892
+            shieldpiece_alpha[8] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[8] = 1891
+            shieldpiece_alpha[8] = spr_queenshield_pieces
     }
     if (shieldsize == 15)
     {
         if (a < 0.9333333333333333)
-            shieldpiece_alpha[0] = 1892
+            shieldpiece_alpha[0] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[0] = 1891
+            shieldpiece_alpha[0] = spr_queenshield_pieces
         if (a < 0.8666666666666667)
-            shieldpiece_alpha[1] = 1892
+            shieldpiece_alpha[1] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[1] = 1891
+            shieldpiece_alpha[1] = spr_queenshield_pieces
         if (a < 0.8)
-            shieldpiece_alpha[2] = 1892
+            shieldpiece_alpha[2] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[2] = 1891
+            shieldpiece_alpha[2] = spr_queenshield_pieces
         if (a < 0.7333333333333333)
-            shieldpiece_alpha[3] = 1892
+            shieldpiece_alpha[3] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[3] = 1891
+            shieldpiece_alpha[3] = spr_queenshield_pieces
         if (a < (2/3))
-            shieldpiece_alpha[4] = 1892
+            shieldpiece_alpha[4] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[4] = 1891
+            shieldpiece_alpha[4] = spr_queenshield_pieces
         if (a < 0.6)
-            shieldpiece_alpha[5] = 1892
+            shieldpiece_alpha[5] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[5] = 1891
+            shieldpiece_alpha[5] = spr_queenshield_pieces
         if (a < 0.5333333333333333)
-            shieldpiece_alpha[6] = 1892
+            shieldpiece_alpha[6] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[6] = 1891
+            shieldpiece_alpha[6] = spr_queenshield_pieces
         if (a < 0.4666666666666667)
-            shieldpiece_alpha[7] = 1892
+            shieldpiece_alpha[7] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[7] = 1891
+            shieldpiece_alpha[7] = spr_queenshield_pieces
         if (a < 0.4)
-            shieldpiece_alpha[8] = 1892
+            shieldpiece_alpha[8] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[8] = 1891
+            shieldpiece_alpha[8] = spr_queenshield_pieces
         if (a < (1/3))
-            shieldpiece_alpha[9] = 1892
+            shieldpiece_alpha[9] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[9] = 1891
+            shieldpiece_alpha[9] = spr_queenshield_pieces
         if (a < 0.26666666666666666)
-            shieldpiece_alpha[10] = 1892
+            shieldpiece_alpha[10] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[10] = 1891
+            shieldpiece_alpha[10] = spr_queenshield_pieces
         if (a < 0.2)
-            shieldpiece_alpha[11] = 1892
+            shieldpiece_alpha[11] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[11] = 1891
+            shieldpiece_alpha[11] = spr_queenshield_pieces
         if (a < 0.13333333333333333)
-            shieldpiece_alpha[12] = 1892
+            shieldpiece_alpha[12] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[12] = 1891
+            shieldpiece_alpha[12] = spr_queenshield_pieces
         if (a < (1/15))
-            shieldpiece_alpha[13] = 1892
+            shieldpiece_alpha[13] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[13] = 1891
+            shieldpiece_alpha[13] = spr_queenshield_pieces
     }
 }
 else
@@ -127,119 +127,119 @@ else
     if (shieldsize == 5)
     {
         if (a < 0.8)
-            shieldpiece_alpha[0] = 1892
+            shieldpiece_alpha[0] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[0] = 1891
+            shieldpiece_alpha[0] = spr_queenshield_pieces
         if (a < 0.6)
-            shieldpiece_alpha[1] = 1892
+            shieldpiece_alpha[1] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[1] = 1891
+            shieldpiece_alpha[1] = spr_queenshield_pieces
         if (a < 0.4)
-            shieldpiece_alpha[2] = 1892
+            shieldpiece_alpha[2] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[2] = 1891
+            shieldpiece_alpha[2] = spr_queenshield_pieces
         if (a < 0.2)
-            shieldpiece_alpha[3] = 1892
+            shieldpiece_alpha[3] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[3] = 1891
+            shieldpiece_alpha[3] = spr_queenshield_pieces
     }
     if (shieldsize == 10)
     {
         if (a < 0.9)
-            shieldpiece_alpha[0] = 1892
+            shieldpiece_alpha[0] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[0] = 1891
+            shieldpiece_alpha[0] = spr_queenshield_pieces
         if (a < 0.8)
-            shieldpiece_alpha[1] = 1892
+            shieldpiece_alpha[1] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[1] = 1891
+            shieldpiece_alpha[1] = spr_queenshield_pieces
         if (a < 0.7)
-            shieldpiece_alpha[2] = 1892
+            shieldpiece_alpha[2] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[2] = 1891
+            shieldpiece_alpha[2] = spr_queenshield_pieces
         if (a < 0.6)
-            shieldpiece_alpha[3] = 1892
+            shieldpiece_alpha[3] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[3] = 1891
+            shieldpiece_alpha[3] = spr_queenshield_pieces
         if (a < 0.5)
-            shieldpiece_alpha[4] = 1892
+            shieldpiece_alpha[4] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[4] = 1891
+            shieldpiece_alpha[4] = spr_queenshield_pieces
         if (a < 0.4)
-            shieldpiece_alpha[5] = 1892
+            shieldpiece_alpha[5] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[5] = 1891
+            shieldpiece_alpha[5] = spr_queenshield_pieces
         if (a < 0.3)
-            shieldpiece_alpha[6] = 1892
+            shieldpiece_alpha[6] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[6] = 1891
+            shieldpiece_alpha[6] = spr_queenshield_pieces
         if (a < 0.2)
-            shieldpiece_alpha[7] = 1892
+            shieldpiece_alpha[7] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[7] = 1891
+            shieldpiece_alpha[7] = spr_queenshield_pieces
         if (a < 0.1)
-            shieldpiece_alpha[8] = 1892
+            shieldpiece_alpha[8] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[8] = 1891
+            shieldpiece_alpha[8] = spr_queenshield_pieces
     }
     if (shieldsize == 15)
     {
         if (a < 0.9333333333333333)
-            shieldpiece_alpha[0] = 1892
+            shieldpiece_alpha[0] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[0] = 1891
+            shieldpiece_alpha[0] = spr_queenshield_pieces
         if (a < 0.8666666666666667)
-            shieldpiece_alpha[1] = 1892
+            shieldpiece_alpha[1] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[1] = 1891
+            shieldpiece_alpha[1] = spr_queenshield_pieces
         if (a < 0.8)
-            shieldpiece_alpha[2] = 1892
+            shieldpiece_alpha[2] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[2] = 1891
+            shieldpiece_alpha[2] = spr_queenshield_pieces
         if (a < 0.7333333333333333)
-            shieldpiece_alpha[3] = 1892
+            shieldpiece_alpha[3] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[3] = 1891
+            shieldpiece_alpha[3] = spr_queenshield_pieces
         if (a < (2/3))
-            shieldpiece_alpha[4] = 1892
+            shieldpiece_alpha[4] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[4] = 1891
+            shieldpiece_alpha[4] = spr_queenshield_pieces
         if (a < 0.6)
-            shieldpiece_alpha[5] = 1892
+            shieldpiece_alpha[5] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[5] = 1891
+            shieldpiece_alpha[5] = spr_queenshield_pieces
         if (a < 0.5333333333333333)
-            shieldpiece_alpha[6] = 1892
+            shieldpiece_alpha[6] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[6] = 1891
+            shieldpiece_alpha[6] = spr_queenshield_pieces
         if (a < 0.4666666666666667)
-            shieldpiece_alpha[7] = 1892
+            shieldpiece_alpha[7] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[7] = 1891
+            shieldpiece_alpha[7] = spr_queenshield_pieces
         if (a < 0.4)
-            shieldpiece_alpha[8] = 1892
+            shieldpiece_alpha[8] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[8] = 1891
+            shieldpiece_alpha[8] = spr_queenshield_pieces
         if (a < (1/3))
-            shieldpiece_alpha[9] = 1892
+            shieldpiece_alpha[9] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[9] = 1891
+            shieldpiece_alpha[9] = spr_queenshield_pieces
         if (a < 0.26666666666666666)
-            shieldpiece_alpha[10] = 1892
+            shieldpiece_alpha[10] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[10] = 1891
+            shieldpiece_alpha[10] = spr_queenshield_pieces
         if (a < 0.2)
-            shieldpiece_alpha[11] = 1892
+            shieldpiece_alpha[11] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[11] = 1891
+            shieldpiece_alpha[11] = spr_queenshield_pieces
         if (a < 0.13333333333333333)
-            shieldpiece_alpha[12] = 1892
+            shieldpiece_alpha[12] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[12] = 1891
+            shieldpiece_alpha[12] = spr_queenshield_pieces
         if (a < (1/15))
-            shieldpiece_alpha[13] = 1892
+            shieldpiece_alpha[13] = spr_queenshield_pieces_hurt
         else
-            shieldpiece_alpha[13] = 1891
+            shieldpiece_alpha[13] = spr_queenshield_pieces
     }
 }
 draw_set_alpha((shieldalpha * 0.8))

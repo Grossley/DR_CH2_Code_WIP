@@ -551,9 +551,9 @@ if (con == 9 && gml_Script_i_ex(obj_battlecontroller))
         con = 10
         with (o_coaster_hero_sneo)
             lerpstate = 2
-        coaster_kris.character_sprite = 652
-        coaster_susie.character_sprite = 824
-        coaster_ralsei.character_sprite = 795
+        coaster_kris.character_sprite = spr_krisr_dark
+        coaster_susie.character_sprite = spr_susie_walk_right_dw_unhappy
+        coaster_ralsei.character_sprite = spr_ralsei_walk_right_unhappy
         alarm[0] = 5
     }
 }
@@ -576,9 +576,9 @@ if ((con == 13 && (!gml_Script_i_ex(obj_battlecontroller))) || (con == 13 && for
 {
     con = 49
     alarm[0] = 30
-    coaster_kris.character_sprite = 652
-    coaster_susie.character_sprite = 824
-    coaster_ralsei.character_sprite = 795
+    coaster_kris.character_sprite = spr_krisr_dark
+    coaster_susie.character_sprite = spr_susie_walk_right_dw_unhappy
+    coaster_ralsei.character_sprite = spr_ralsei_walk_right_unhappy
     coaster_kris.visible = true
     coaster_susie.visible = true
     coaster_ralsei.visible = true

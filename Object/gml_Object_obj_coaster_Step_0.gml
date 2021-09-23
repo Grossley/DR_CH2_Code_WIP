@@ -9,11 +9,11 @@ if (type == 0 && (!init))
 if (type == 1 && (!init))
 {
     init = 1
-    default_sprite_front = (spam_car ? 2054 : 840)
-    default_sprite_back = (spam_car ? 2053 : 842)
-    hurt_sprite_front = 838
-    hurt_sprite_back = 839
-    hurt_character_sprite = 1464
+    default_sprite_front = (spam_car ? spr_sneo_car_front : spr_susie_coaster_front)
+    default_sprite_back = (spam_car ? spr_sneo_car_back : spr_susie_coaster_back)
+    hurt_sprite_front = spr_susie_coaster_hurt_front
+    hurt_sprite_back = spr_susie_coaster_hurt_back
+    hurt_character_sprite = spr_susie_hurt
     character_sprite = spr_susie_walk_right_dw
     actor = gml_Script_scr_dark_marker(0, 0, spr_susie_walk_right_dw)
     actor.image_speed = 0
@@ -24,11 +24,11 @@ if (type == 1 && (!init))
 if (type == 2 && (!init))
 {
     init = 1
-    default_sprite_front = (spam_car ? 2054 : 805)
-    default_sprite_back = (spam_car ? 2053 : 807)
-    hurt_sprite_front = 803
-    hurt_sprite_back = 804
-    hurt_character_sprite = 1507
+    default_sprite_front = (spam_car ? spr_sneo_car_front : spr_ralsei_coaster_front)
+    default_sprite_back = (spam_car ? spr_sneo_car_back : spr_ralsei_coaster_back)
+    hurt_sprite_front = spr_ralsei_coaster_hurt_front
+    hurt_sprite_back = spr_ralsei_coaster_hurt_back
+    hurt_character_sprite = spr_ralsei_hurt_overworld
     character_sprite = spr_ralsei_walk_right
     actor = gml_Script_scr_dark_marker(0, 0, spr_ralsei_walk_right)
     actor.image_speed = 0
@@ -39,11 +39,11 @@ if (type == 2 && (!init))
 if (type == 3 && (!init))
 {
     init = 1
-    default_sprite_front = 688
-    default_sprite_back = 689
-    hurt_sprite_front = 686
-    hurt_sprite_back = 687
-    hurt_character_sprite = 1849
+    default_sprite_front = spr_berdly_coaster_front
+    default_sprite_back = spr_berdly_coaster_back
+    hurt_sprite_front = spr_berdly_coaster_hurt_front
+    hurt_sprite_back = spr_berdly_coaster_hurt_back
+    hurt_character_sprite = spr_berdlyb_shocked
     character_sprite = spr_berdly_walk_left_dw
     actor = gml_Script_scr_dark_marker(0, 0, spr_berdly_walk_left_dw)
     actor.image_speed = 0
@@ -54,7 +54,7 @@ if (type == 3 && (!init))
 if (type == 4 && (!init))
 {
     init = 1
-    default_sprite_front = 734
+    default_sprite_front = spr_noelle_coaster_front
     default_sprite_back = -1
     character_sprite = spr_noelle_walk_left_dw
     actor = gml_Script_scr_dark_marker(0, 0, spr_noelle_walk_left_dw)

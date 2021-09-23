@@ -9,7 +9,7 @@ if (obj_mainchara.x > x && (!gml_Script_i_ex(carGen)) && victory == false)
         gen_rate = 10
         timer = -2
         gen_speed = 15
-        car_sprite = 2371
+        car_sprite = spr_traffic_car
         skipEvery = 0
     }
 }

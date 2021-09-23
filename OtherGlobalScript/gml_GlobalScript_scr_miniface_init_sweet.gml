@@ -1,4 +1,4 @@
-global.writerimg[1] = 2355
-global.writerimg[2] = 2356
-global.writerimg[3] = 2357
+global.writerimg[1] = spr_miniface_sweet
+global.writerimg[2] = spr_miniface_kk
+global.writerimg[3] = spr_miniface_capn
 return;

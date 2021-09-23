@@ -500,7 +500,7 @@ if (dogcon == 71)
     if (timer == 0)
     {
         gml_Script_snd_play(snd_sparkle_glock)
-        obj_dogtable_controlled.drawcustom = 0
+        obj_dogtable_controlled.drawcustom = false
         with (key)
             depth = 80
         with (key)
@@ -509,8 +509,8 @@ if (dogcon == 71)
     timer++
     if (timer == 20)
     {
-        obj_dogtable_controlled.drawcustom = 1
-        obj_dogtable_controlled.raspr = 799
+        obj_dogtable_controlled.drawcustom = true
+        obj_dogtable_controlled.raspr = spr_ralsei_up
         gml_Script_scr_speaker("ralsei")
         gml_Script_msgsetloc(0, "\\EJ* There's the key!!^1! Now we just have to--/%", "obj_controller_dining3_slash_Step_0_gml_539_0")
         gml_Script_d_make()

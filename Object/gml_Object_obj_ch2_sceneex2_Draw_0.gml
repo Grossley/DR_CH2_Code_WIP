@@ -41,19 +41,19 @@ if cityscape_active
     cityscape_speed -= cityscape_speed_max
     if (cityscape_speed_max < 0 && cityscape_speed > -398)
         cityscape_speed -= 398
-    gml_Script_scr_draw_sprite_tiled_area(3331, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape_background) * 2)), 2, 2, 16777215, cityscape_alpha)
-    gml_Script_scr_draw_sprite_tiled_area(3303, 0, (gml_Script_camerax() + (cityscape_speed * 1.1)), gml_Script_cameray(), (gml_Script_camerax() + (cityscape_speed * 1.1)), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape_midground) * 2)), 2, 2, 16777215, cityscape_alpha)
-    gml_Script_scr_draw_sprite_tiled_area(3314, 0, (gml_Script_camerax() + (cityscape_speed * 1.2)), gml_Script_cameray(), (gml_Script_camerax() + (cityscape_speed * 1.2)), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape_foreground) * 2)), 2, 2, 16777215, cityscape_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(bg_dw_mansion_basement_cityscape_background, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape_background) * 2)), 2, 2, c_white, cityscape_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(bg_dw_mansion_basement_cityscape_midground, 0, (gml_Script_camerax() + (cityscape_speed * 1.1)), gml_Script_cameray(), (gml_Script_camerax() + (cityscape_speed * 1.1)), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape_midground) * 2)), 2, 2, c_white, cityscape_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(bg_dw_mansion_basement_cityscape_foreground, 0, (gml_Script_camerax() + (cityscape_speed * 1.2)), gml_Script_cameray(), (gml_Script_camerax() + (cityscape_speed * 1.2)), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape_foreground) * 2)), 2, 2, c_white, cityscape_alpha)
     if (shop_spamton_bg_con > 1)
     {
         if (cityscapefade == 1)
             cityscape_alpha = 0.15
-        gml_Script_scr_draw_sprite_tiled_area(2056, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape) * 2)), 1.6708, 1.195, 16777215, cityscape_alpha)
+        gml_Script_scr_draw_sprite_tiled_area(spr_shop_spamton_bg_battle, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + view_wport[0]), (gml_Script_cameray() + (sprite_get_height(bg_dw_mansion_basement_cityscape) * 2)), 1.6708, 1.195, c_white, cityscape_alpha)
     }
     if (shop_spamton_bg_con == 1 && (!gml_Script_i_ex(obj_writer)) && (!gml_Script_i_ex(obj_battleblcon)))
     {
         shop_spamton_bg_timer++
-        if (shop_spamton_bg_timer == 1)
+        if (shop_spamton_bg_timer == true)
             gml_Script_snd_play(snd_petrify)
         if (shop_spamton_bg_timer == 23)
             shop_spamton_bg_con = 2
@@ -69,5 +69,5 @@ if cityscape_active
         }
     }
     if (shop_spamton_bg_con > 0 && shop_spamton_bg_con < 3)
-        gml_Script_scr_draw_sprite_tiled_area(547, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), (gml_Script_cameray() - 2), (gml_Script_camerax() + view_wport[0]), ((gml_Script_cameray() - 2) + (sprite_get_height(bg_dw_mansion_basement_cityscape) * 2)), 396, 8, 16777215, (shop_spamton_bg_timer / 20))
+        gml_Script_scr_draw_sprite_tiled_area(spr_whitepixel, 0, (gml_Script_camerax() + cityscape_speed), gml_Script_cameray(), (gml_Script_camerax() + cityscape_speed), (gml_Script_cameray() - 2), (gml_Script_camerax() + view_wport[0]), ((gml_Script_cameray() - 2) + (sprite_get_height(bg_dw_mansion_basement_cityscape) * 2)), 396, 8, c_white, (shop_spamton_bg_timer / 20))
 }

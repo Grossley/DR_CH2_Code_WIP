@@ -86,7 +86,7 @@ if (global.flag[915] >= 1.75 && global.flag[916] == 0)
             dontdraw = 1
         var lay_id = layer_get_id("CarnivalSprites")
         var spr_id = layer_sprite_get_id(lay_id, "graphic_58FD8107")
-        layer_sprite_change(spr_id, 2999)
+        layer_sprite_change(spr_id, spr_carnival_tent_1)
         layer_sprite_x(spr_id, 216)
         layer_sprite_y(spr_id, -120)
     }

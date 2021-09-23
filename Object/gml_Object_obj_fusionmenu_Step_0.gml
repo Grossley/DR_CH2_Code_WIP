@@ -382,7 +382,7 @@ if (init == 0)
         wrap = 0
         vwrap = 0
         menuMax = 2
-        menuSprite = 2533
+        menuSprite = spr_heartsmall
         menuHeight[0] = 6
         menuWidth[0] = 2
         menuMinimumID[0] = 0

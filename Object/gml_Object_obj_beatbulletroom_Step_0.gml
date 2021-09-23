@@ -1,6 +1,6 @@
 if (playsound == 2)
-    playsound = 0
-if (playsound == 1)
+    playsound = false
+if (playsound == true)
 {
     if (global.interact == 0)
     {

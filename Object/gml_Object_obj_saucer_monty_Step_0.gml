@@ -39,12 +39,12 @@ if (con == 1)
         if (i == keysaucer)
         {
             saucer[i].content = 3
-            saucer[i].contentsprite = 2310
+            saucer[i].contentsprite = spr_ch2_gimmick_saucer_key
         }
         else
         {
             saucer[i].content = 2
-            saucer[i].contentsprite = 2306
+            saucer[i].contentsprite = spr_ch2_gimmick_saucer_bomb
         }
         saucerangle[i] = (90 + ((360 / saucercount) * i))
     }

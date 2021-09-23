@@ -10,7 +10,7 @@ if auto_scroll_y
     if (auto_scroll_y_timer >= 30)
         auto_scroll_y = 0
 }
-gml_Script_scr_draw_sprite_tiled_area(2869, 0, (drawx + x_offset), (drawy + y_offset), (drawx + x_offset), drawy, room_width, ((drawy + y_offset) + view_hport[0]), 1, 1, 16777215, 1)
+gml_Script_scr_draw_sprite_tiled_area(spr_mansion_ferris_wheel_bg, 0, (drawx + x_offset), (drawy + y_offset), (drawx + x_offset), drawy, room_width, ((drawy + y_offset) + view_hport[0]), 1, 1, c_white, true)
 if show_laser_outline
 {
     if (reveal_pos < 0)
@@ -29,12 +29,12 @@ if show_laser_outline
         gpu_set_colorwriteenable(1, 1, 1, 1)
         gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
         gpu_set_alphatestenable(1)
-        gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, 1)
+        gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, true)
         gpu_set_alphatestenable(0)
         gpu_set_blendmode(bm_normal)
     }
     else
-        gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
+        gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, main_alpha)
 }
 if show_laser_beam
 {
@@ -47,40 +47,40 @@ if show_laser_beam
     gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
-    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape_mask, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, main_alpha)
     draw_set_alpha(1)
     gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)
-    gml_Script_scr_draw_sprite_tiled_area(307, 0, ((gml_Script_camerax() + (view_wport[0] / 2)) - beam_offset), gml_Script_cameray(), ((gml_Script_camerax() + (view_wport[0] / 2)) - beam_offset), gml_Script_cameray(), ((gml_Script_camerax() + (view_wport[0] / 2)) + beam_offset), (gml_Script_cameray() + 200), 1, 1, 16777215, 1)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_beam, 0, ((gml_Script_camerax() + (view_wport[0] / 2)) - beam_offset), gml_Script_cameray(), ((gml_Script_camerax() + (view_wport[0] / 2)) - beam_offset), gml_Script_cameray(), ((gml_Script_camerax() + (view_wport[0] / 2)) + beam_offset), (gml_Script_cameray() + 200), 1, 1, c_white, true)
     gml_Script_d3d_set_fog(false, c_black, 0, 0)
     gpu_set_alphatestenable(0)
     gpu_set_blendmode(bm_normal)
 }
 if show_mini_fountains
 {
-    if (mini_alpha < 1)
+    if (mini_alpha < true)
         mini_alpha += 0.1
-    gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, mini_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, mini_alpha)
     gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
-    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, mini_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape_mask, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, mini_alpha)
     draw_set_alpha(1)
     gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)
     gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
     gpu_set_alphatestenable(1)
-    gml_Script_scr_draw_sprite_tiled_area(307, 0, (kris_screen.x - 2), gml_Script_cameray(), (kris_screen.x - 2), gml_Script_cameray(), (kris_screen.x + 2), (gml_Script_cameray() + 210), 1, 1, 16777215, mini_alpha)
-    gml_Script_scr_draw_sprite_tiled_area(307, 0, (sus_screen.x - 2), gml_Script_cameray(), (sus_screen.x - 2), gml_Script_cameray(), (sus_screen.x + 2), (gml_Script_cameray() + 210), 1, 1, 16777215, mini_alpha)
-    gml_Script_scr_draw_sprite_tiled_area(307, 0, (no_screen.x - 2), gml_Script_cameray(), (no_screen.x - 2), gml_Script_cameray(), (no_screen.x + 2), (gml_Script_cameray() + 210), 1, 1, 16777215, mini_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_beam, 0, (kris_screen.x - 2), gml_Script_cameray(), (kris_screen.x - 2), gml_Script_cameray(), (kris_screen.x + 2), (gml_Script_cameray() + 210), 1, 1, c_white, mini_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_beam, 0, (sus_screen.x - 2), gml_Script_cameray(), (sus_screen.x - 2), gml_Script_cameray(), (sus_screen.x + 2), (gml_Script_cameray() + 210), 1, 1, c_white, mini_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_beam, 0, (no_screen.x - 2), gml_Script_cameray(), (no_screen.x - 2), gml_Script_cameray(), (no_screen.x + 2), (gml_Script_cameray() + 210), 1, 1, c_white, mini_alpha)
     gml_Script_d3d_set_fog(false, c_black, 0, 0)
     gpu_set_alphatestenable(0)
     gpu_set_blendmode(bm_normal)
 }
 if mini_cityscape
-    gml_Script_scr_draw_sprite_tiled_area(301, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, main_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, main_alpha)
 if tender_goodbye
 {
     siner++
@@ -157,7 +157,7 @@ if show_hands
     gpu_set_blendenable(false)
     gpu_set_colorwriteenable(0, 0, 0, 1)
     draw_set_alpha(0)
-    gml_Script_scr_draw_sprite_tiled_area(302, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, 16777215, knife_alpha)
+    gml_Script_scr_draw_sprite_tiled_area(spr_cutscene_26_laser_cityscape_mask, 0, drawx, drawy, drawx, drawy, room_width, room_height, 1, 1, c_white, knife_alpha)
     draw_set_alpha(1)
     gpu_set_blendenable(true)
     gpu_set_colorwriteenable(1, 1, 1, 1)

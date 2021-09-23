@@ -3,9 +3,9 @@ if (x > (o_boxingcontroller.basex - 120) && x < (o_boxingcontroller.basex + 120)
     speedup = 2
     hspeed *= 1.4
 }
-if (x > (o_boxingcontroller.basex - 120) && x < (o_boxingcontroller.basex + 120) && playsound == 0 && o_boxingcontroller.wireframe_boxing == 0)
+if (x > (o_boxingcontroller.basex - 120) && x < (o_boxingcontroller.basex + 120) && playsound == false && o_boxingcontroller.wireframe_boxing == 0)
 {
-    playsound = 1
+    playsound = true
     if (o_boxingqueen.wheelsoundtimer < 1)
     {
         if (o_boxingcontroller.wireframe_boxing == 1)

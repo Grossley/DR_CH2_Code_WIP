@@ -1,7 +1,7 @@
 w = sprite_width
 h = sprite_height
 chyoffset = 50
-chsprite = 2993
+chsprite = IMAGE_LOGO_CENTER_CHAPTERNUMBER
 chnum = global.chapter
 NOISE = gml_Script_snd_play(AUDIO_INTRONOISE)
 siner = 0

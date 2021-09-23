@@ -1,4 +1,4 @@
-global.writerimg[1] = 2350
-global.writerimg[2] = 2353
-global.writerimg[3] = 2352
+global.writerimg[1] = spr_miniface_clover_happy
+global.writerimg[2] = spr_miniface_clover_mad
+global.writerimg[3] = spr_miniface_clover_sad
 return;

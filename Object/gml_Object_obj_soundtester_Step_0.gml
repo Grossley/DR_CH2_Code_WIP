@@ -30,7 +30,7 @@ if (auto == 1)
     moved += 0.5
     if (moved >= 5)
     {
-        playsound = 1
+        playsound = true
         mute = 1
     }
 }
@@ -49,7 +49,7 @@ if (current < 1)
 if (current > (soundtotal - 1))
     current = (soundtotal - 1)
 if keyboard_check_pressed(ord("Z"))
-    playsound = 1
+    playsound = true
 if keyboard_check_pressed(ord("M"))
     mute = 1
 if mute
@@ -60,7 +60,7 @@ if mute
 }
 if playsound
 {
-    playsound = 0
+    playsound = false
     gml_Script_snd_play_pitch(soundNo[current], pitch)
 }
 if keyboard_check_pressed(ord("A"))

@@ -9,12 +9,12 @@ sprite[2] = spr_tm_tail
 sprite[3] = spr_tm_hand_l
 sprite[4] = spr_tm_hand_r
 sprite[5] = spr_tm_legs
-sparesprite[0] = 1692
-sparesprite[1] = 1684
-sparesprite[2] = 1682
-sparesprite[3] = 1688
-sparesprite[4] = 1690
-sparesprite[5] = 1694
+sparesprite[0] = spr_tm_head_spare
+sparesprite[1] = spr_tm_body_spare
+sparesprite[2] = spr_tm_tail_spare
+sparesprite[3] = spr_tm_hand_l_spare
+sparesprite[4] = spr_tm_hand_r_spare
+sparesprite[5] = spr_tm_legs_spare
 sparedsprite = spr_npc_tasquemanager
 for (i = 0; i < 6; i += 1)
 {

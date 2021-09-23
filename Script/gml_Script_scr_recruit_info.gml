@@ -1,5 +1,5 @@
 _recruitcount = 1
-_sprite = 2440
+_sprite = spr_darkconfigbt
 _spritex = 0
 _spritey = 0
 _imagespeed = 0
@@ -18,7 +18,7 @@ _placeable = 1
 switch argument0
 {
     case 5:
-        _sprite = 1554
+        _sprite = spr_diamond_overworld
         _name = gml_Script_stringsetloc("Rudinn", "scr_recruit_info_slash_scr_recruit_info_gml_29_0")
         _desc = gml_Script_stringsetloc("Said to be someone's best friend, but maybe not. Shine on, you lazy diamond!", "scr_recruit_info_slash_scr_recruit_info_gml_30_0")
         _like = gml_Script_stringsetloc("Shiny Things", "scr_recruit_info_slash_scr_recruit_info_gml_31_0")
@@ -31,7 +31,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* Hey^1, boss^1! I'll have a Dark Candy Starfait!/%", "scr_recruit_info_slash_scr_recruit_info_gml_38_0")
         break
     case 6:
-        _sprite = 1573
+        _sprite = spr_heartenemy_overworld
         _name = gml_Script_stringsetloc("Hathy", "scr_recruit_info_slash_scr_recruit_info_gml_43_0")
         _desc = gml_Script_stringsetloc("A heart with a big heart. Always supporting others with her bullets.", "scr_recruit_info_slash_scr_recruit_info_gml_44_0")
         _like = gml_Script_stringsetloc("Lip Gloss", "scr_recruit_info_slash_scr_recruit_info_gml_45_0")
@@ -44,7 +44,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* (Hathy is going to order a heart-foam latte.)/%", "scr_recruit_info_slash_scr_recruit_info_gml_52_0")
         break
     case 11:
-        _sprite = 1597
+        _sprite = spr_ponman_idle
         _name = gml_Script_stringsetloc("Ponman", "scr_recruit_info_slash_scr_recruit_info_gml_57_0")
         _desc = gml_Script_stringsetloc("A simple organism that takes life one square at a time.", "scr_recruit_info_slash_scr_recruit_info_gml_58_0")
         _like = gml_Script_stringsetloc("Sleeping", "scr_recruit_info_slash_scr_recruit_info_gml_59_0")
@@ -57,7 +57,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* (Looks like it wants to osmose some flavorful cubes.)/%", "scr_recruit_info_slash_scr_recruit_info_gml_66_0")
         break
     case 13:
-        _sprite = 1263
+        _sprite = spr_npc_rabbick_clean
         _name = gml_Script_stringsetloc("Rabbick", "scr_recruit_info_slash_scr_recruit_info_gml_71_0")
         _desc = gml_Script_stringsetloc("A real dust bunny. Known to play dirty, but loves to play clean.", "scr_recruit_info_slash_scr_recruit_info_gml_72_0")
         _like = gml_Script_stringsetloc("Dusty Places", "scr_recruit_info_slash_scr_recruit_info_gml_73_0")
@@ -70,7 +70,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* (Looks like it wants to be dabbed with rubbing alcohol.)/%", "scr_recruit_info_slash_scr_recruit_info_gml_80_0")
         break
     case 14:
-        _sprite = 1618
+        _sprite = spr_blockguy_spared
         _name = gml_Script_stringsetloc("Bloxer", "scr_recruit_info_slash_scr_recruit_info_gml_85_0")
         _desc = gml_Script_stringsetloc("A shape changing fighter. Ironically, blocking is not its forte.", "scr_recruit_info_slash_scr_recruit_info_gml_86_0")
         _like = gml_Script_stringsetloc("Cross-Trainers", "scr_recruit_info_slash_scr_recruit_info_gml_87_0")
@@ -83,7 +83,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* Everything tastes better with a normally-shaped body!/%", "scr_recruit_info_slash_scr_recruit_info_gml_94_0")
         break
     case 15:
-        _sprite = 1613
+        _sprite = spr_jigsawry_spared
         _name = gml_Script_stringsetloc("Jigsawry", "scr_recruit_info_slash_scr_recruit_info_gml_99_0")
         _desc = gml_Script_stringsetloc("It cries tears of joy that you are its boss.", "scr_recruit_info_slash_scr_recruit_info_gml_100_0")
         _like = gml_Script_stringsetloc("Fitting In", "scr_recruit_info_slash_scr_recruit_info_gml_101_0")
@@ -96,7 +96,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* Lemonade? ..^1. Please./%", "scr_recruit_info_slash_scr_recruit_info_gml_108_0")
         break
     case 20:
-        _sprite = 1624
+        _sprite = spr_joker_main
         _name = gml_Script_stringsetloc("JEVIL", "scr_recruit_info_slash_scr_recruit_info_gml_113_0")
         _desc = gml_Script_stringsetloc("An agent of CHAOS, he became DEVILSKNIFE to the pocket.", "scr_recruit_info_slash_scr_recruit_info_gml_114_0")
         _like = gml_Script_stringsetloc("CHAOS", "scr_recruit_info_slash_scr_recruit_info_gml_115_0")
@@ -110,7 +110,7 @@ switch argument0
         _placeable = 0
         break
     case 22:
-        _sprite = 1603
+        _sprite = spr_diamond_knight_overworld
         _name = gml_Script_stringsetloc("Rudinn Ranger", "scr_recruit_info_slash_scr_recruit_info_gml_128_0")
         _desc = gml_Script_stringsetloc("Obsessed with ranger shows, it lets everyone know it's better than Rudinn.", "scr_recruit_info_slash_scr_recruit_info_gml_129_0")
         _like = gml_Script_stringsetloc("Sucking Up", "scr_recruit_info_slash_scr_recruit_info_gml_130_0")
@@ -123,7 +123,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* Boss...? You're treating me...? Oh^1, you shouldn't have^1! (smile)/%", "scr_recruit_info_slash_scr_recruit_info_gml_137_0")
         break
     case 23:
-        _sprite = 1575
+        _sprite = spr_hathyx_overworld
         _name = gml_Script_stringsetloc("Head Hathy", "scr_recruit_info_slash_scr_recruit_info_gml_142_0")
         _desc = gml_Script_stringsetloc("Although stronger than Hathy, seems to have fewer friends.", "scr_recruit_info_slash_scr_recruit_info_gml_143_0")
         _like = gml_Script_stringsetloc("Peace And Quiet", "scr_recruit_info_slash_scr_recruit_info_gml_144_0")
@@ -136,7 +136,7 @@ switch argument0
         _dialogue[0] = gml_Script_stringsetloc("* (Head Hathy drinks an ice tea in silence...)/%", "scr_recruit_info_slash_scr_recruit_info_gml_151_0")
         break
     case 30:
-        _sprite = 1626
+        _sprite = spr_omawaroid_idle
         _name = gml_Script_stringsetloc("Ambyu-Lance", "scr_recruit_info_slash_scr_recruit_info_gml_156_0")
         _desc = gml_Script_stringsetloc("An aggressive antivirus. It's not down with the sickness.", "scr_recruit_info_slash_scr_recruit_info_gml_157_0")
         _like = gml_Script_stringsetloc("Loud Sirens", "scr_recruit_info_slash_scr_recruit_info_gml_158_0")
@@ -150,7 +150,7 @@ switch argument0
         _recruitcount = 4
         break
     case 31:
-        _sprite = 1639
+        _sprite = spr_poppup_idle
         _name = gml_Script_stringsetloc("Poppup", "scr_recruit_info_slash_scr_recruit_info_gml_171_0")
         _desc = gml_Script_stringsetloc("Known to say ASOBOH, which means \"Let's Play!\" ... does it know that?", "scr_recruit_info_slash_scr_recruit_info_gml_172_0")
         _like = gml_Script_stringsetloc("LEEMO FRUIT", "scr_recruit_info_slash_scr_recruit_info_gml_173_0")
@@ -164,7 +164,7 @@ switch argument0
         _recruitcount = 3
         break
     case 32:
-        _sprite = 1664
+        _sprite = spr_tasque_idle
         _name = gml_Script_stringsetloc("Tasque", "scr_recruit_info_slash_scr_recruit_info_gml_188_0")
         _desc = gml_Script_stringsetloc("This cat loves you!", "scr_recruit_info_slash_scr_recruit_info_gml_189_0")
         _like = gml_Script_stringsetloc("Cat Food", "scr_recruit_info_slash_scr_recruit_info_gml_190_0")
@@ -178,7 +178,7 @@ switch argument0
         _recruitcount = 5
         break
     case 33:
-        _sprite = 1705
+        _sprite = spr_werewire_idle
         _name = gml_Script_stringsetloc("Werewire", "scr_recruit_info_slash_scr_recruit_info_gml_203_0")
         _desc = gml_Script_stringsetloc("It was controlled by Queen. But, it's stronger and cooler now, so?", "scr_recruit_info_slash_scr_recruit_info_gml_204_0")
         _like = gml_Script_stringsetloc("Shock Therapy", "scr_recruit_info_slash_scr_recruit_info_gml_205_0")
@@ -192,7 +192,7 @@ switch argument0
         _recruitcount = 6
         break
     case 34:
-        _sprite = 1741
+        _sprite = spr_maus_idle
         _name = gml_Script_stringsetloc("Maus", "scr_recruit_info_slash_scr_recruit_info_gml_218_0")
         _desc = gml_Script_stringsetloc("It dreams of re-enacting scenes from cat and mouse cartoons.", "scr_recruit_info_slash_scr_recruit_info_gml_219_0")
         _like = gml_Script_stringsetloc("Clicking", "scr_recruit_info_slash_scr_recruit_info_gml_220_0")
@@ -206,7 +206,7 @@ switch argument0
         _recruitcount = 3
         break
     case 35:
-        _sprite = 1792
+        _sprite = spr_virovirokun_idle
         _name = gml_Script_stringsetloc("Virovirokun", "scr_recruit_info_slash_scr_recruit_info_gml_233_0")
         _desc = gml_Script_stringsetloc("A virus with a slightly criminal streak... and a heart of gold.", "scr_recruit_info_slash_scr_recruit_info_gml_234_0")
         _like = gml_Script_stringsetloc("Retro Games", "scr_recruit_info_slash_scr_recruit_info_gml_235_0")
@@ -220,7 +220,7 @@ switch argument0
         _recruitcount = 4
         break
     case 36:
-        _sprite = 1224
+        _sprite = spr_npc_butler
         _name = gml_Script_stringsetloc("Swatchling", "scr_recruit_info_slash_scr_recruit_info_gml_248_0")
         _desc = gml_Script_stringsetloc("Colorful and dandy, you can always count on him to work hard.", "scr_recruit_info_slash_scr_recruit_info_gml_249_0")
         _like = gml_Script_stringsetloc("Paint By Numbers", "scr_recruit_info_slash_scr_recruit_info_gml_250_0")
@@ -234,7 +234,7 @@ switch argument0
         _recruitcount = 5
         break
     case 40:
-        _sprite = 2077
+        _sprite = spr_werewerewire_idle
         _name = gml_Script_stringsetloc("Werewerewire", "scr_recruit_info_slash_scr_recruit_info_gml_263_0")
         _desc = gml_Script_stringsetloc("It absorbed the wire with fighting spirit. Gets flustered easily.", "scr_recruit_info_slash_scr_recruit_info_gml_264_0")
         _like = gml_Script_stringsetloc("Supercharged Fighting", "scr_recruit_info_slash_scr_recruit_info_gml_265_0")
@@ -248,7 +248,7 @@ switch argument0
         _recruitcount = 1
         break
     case 42:
-        _sprite = 1270
+        _sprite = spr_npc_tasquemanager
         _name = gml_Script_stringsetloc("Tasque Manager", "scr_recruit_info_slash_scr_recruit_info_gml_279_0")
         _desc = gml_Script_stringsetloc("Loves to coordinate outfits. Strongly dislikes clowns.", "scr_recruit_info_slash_scr_recruit_info_gml_280_0")
         _like = gml_Script_stringsetloc("New Wave Synth Pop", "scr_recruit_info_slash_scr_recruit_info_gml_281_0")
@@ -263,7 +263,7 @@ switch argument0
         _recruitcount = 1
         break
     case 44:
-        _sprite = 2082
+        _sprite = spr_mauswheel_idle
         _name = gml_Script_stringsetloc("Mauswheel", "scr_recruit_info_slash_scr_recruit_info_gml_295_0")
         _desc = gml_Script_stringsetloc("You recruited 3 big mice and you're stuck with it.", "scr_recruit_info_slash_scr_recruit_info_gml_296_0")
         _like = gml_Script_stringsetloc("Pretending To Be A Tire", "scr_recruit_info_slash_scr_recruit_info_gml_297_0")
@@ -278,7 +278,7 @@ switch argument0
         break
 }
 
-if (_sprite == 2440)
+if (_sprite == spr_darkconfigbt)
 {
     _sprite = floor(random(500))
     _placeable = 0

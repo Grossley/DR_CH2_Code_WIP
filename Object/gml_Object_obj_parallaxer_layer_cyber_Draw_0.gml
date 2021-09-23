@@ -1,7 +1,7 @@
 if (spr_height == 0)
     spr_height = sprite_get_height(sprite_index)
 if (shadoweffect == 0)
-    gml_Script_scr_draw_sprite_tiled_area(sprite_index, image_index, x, y, x, y, (x + room_width), (y + spr_height), 1, 1, 16777215, 1)
+    gml_Script_scr_draw_sprite_tiled_area(sprite_index, image_index, x, y, x, y, (x + room_width), (y + spr_height), 1, 1, c_white, true)
 if (shadoweffect == 1)
 {
     if (sprite_index == spr_bg_cyber_parallax_buildings)
@@ -14,14 +14,14 @@ if (shadoweffect == 1)
             draw_rectangle(0, 7500, room_width, 8500, false)
             draw_set_color(0x1D0202)
             draw_rectangle(0, 0, room_width, 4000, false)
-            gml_Script_scr_draw_sprite_tiled_area(3147, 0, 0, 4000, 0, 4000, (x + room_width), ((4000 + sprite_get_height(spr_cyber_starry_sky)) - 1), 1, 1, 16777215, 1)
+            gml_Script_scr_draw_sprite_tiled_area(spr_cyber_starry_sky, 0, 0, 4000, 0, 4000, (x + room_width), ((4000 + sprite_get_height(spr_cyber_starry_sky)) - 1), 1, 1, c_white, true)
             var y_top = (3000 + (gml_Script___view_get(1, 0) * 0.0125))
-            gml_Script_scr_draw_sprite_tiled_area(3150, 0, ((gml_Script___view_get(0, 0) * 0.00125) + xstart), y_top, ((gml_Script___view_get(0, 0) * 0.00125) + xstart), y_top, room_width, (y_top + 1000), 1, 1, 16777215, 1)
-            gml_Script_scr_draw_sprite_tiled_area(3148, 0, 0, 2100, 0, 2100, (x + room_width), ((2100 + sprite_get_height(spr_cyber_starry_sky_black)) - 1), 1, 1, 16777215, 1)
+            gml_Script_scr_draw_sprite_tiled_area(spr_cyber_starry_stars, 0, ((gml_Script___view_get(0, 0) * 0.00125) + xstart), y_top, ((gml_Script___view_get(0, 0) * 0.00125) + xstart), y_top, room_width, (y_top + 1000), 1, 1, c_white, true)
+            gml_Script_scr_draw_sprite_tiled_area(spr_cyber_starry_sky_black, 0, 0, 2100, 0, 2100, (x + room_width), ((2100 + sprite_get_height(spr_cyber_starry_sky_black)) - 1), 1, 1, c_white, true)
             draw_set_color(c_black)
             draw_rectangle(0, 0, room_width, 2100, false)
-            gml_Script_scr_draw_sprite_tiled_area(3151, 0, 2720, 1400, 2720, 1400, room_width, (1400 + sprite_get_height(spr_cyber_coaster_bg_cityscape)), 1, 1, 16777215, 1)
-            gml_Script_scr_draw_sprite_tiled_area(3141, 0, 2720, 1488, 2720, 1488, room_width, (1488 + sprite_get_height(spr_cyber_coaster_bg_cityscape)), 1, 1, 16777215, 1)
+            gml_Script_scr_draw_sprite_tiled_area(spr_cyber_coaster_bg_tile, 0, 2720, 1400, 2720, 1400, room_width, (1400 + sprite_get_height(spr_cyber_coaster_bg_cityscape)), 1, 1, c_white, true)
+            gml_Script_scr_draw_sprite_tiled_area(spr_cyber_coaster_bg_cityscape, 0, 2720, 1488, 2720, 1488, room_width, (1488 + sprite_get_height(spr_cyber_coaster_bg_cityscape)), 1, 1, c_white, true)
         }
         xx = (gml_Script_camerax() * 0.95)
         yy = (room == room_dw_cyber_teacup_final ? 8500 : gml_Script_cameray())
@@ -76,18 +76,18 @@ if (shadoweffect == 1)
             draw_set_color(c_black)
             draw_rectangle(-100, (room_height - 240), (room_width + 100), (room_height + 2), false)
         }
-        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, y, x, y, (x + room_width), (y + spr_height), 1, 1, 16777215, 1)
-        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, (y + 8), x, (y + 8), (x + room_width), ((y + 8) + spr_height), 1, 1, 8421504, 1)
+        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, y, x, y, (x + room_width), (y + spr_height), 1, 1, c_white, true)
+        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, (y + 8), x, (y + 8), (x + room_width), ((y + 8) + spr_height), 1, 1, c_gray, true)
         siner++
         draw_set_alpha(1)
         gml_Script_draw_set_blend_mode(1)
-        gml_Script_scr_draw_sprite_tiled_area(3135, 0, x, (y + 8), x, (y + 8), room_width, ((y + 8) + spr_height), 1, 1, 16777215, (0.5 + (sin((siner / 12)) * 0.1)))
+        gml_Script_scr_draw_sprite_tiled_area(spr_bg_cyber_parallax_buildings_lights, 0, x, (y + 8), x, (y + 8), room_width, ((y + 8) + spr_height), 1, 1, c_white, (0.5 + (sin((siner / 12)) * 0.1)))
         gml_Script_draw_set_blend_mode(0)
     }
     else
     {
-        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, y, x, y, (x + room_width), (y + spr_height), 1, 1, 16777215, 1)
-        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, (y + 8), x, (y + 8), (x + room_width), ((y + 8) + spr_height), 1, 1, 8421504, 1)
+        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, y, x, y, (x + room_width), (y + spr_height), 1, 1, c_white, true)
+        gml_Script_scr_draw_sprite_tiled_area(sprite_index, 0, x, (y + 8), x, (y + 8), (x + room_width), ((y + 8) + spr_height), 1, 1, c_gray, true)
     }
     if (sprite_index == spr_bg_cyber_parallax_ground)
     {

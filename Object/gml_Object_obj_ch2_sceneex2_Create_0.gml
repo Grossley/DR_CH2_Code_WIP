@@ -54,12 +54,12 @@ else
     coaster_susie = gml_Script_instance_create(0, (gml_Script_cameray() - 500), obj_coaster)
     coaster_susie.type = 1
     coaster_susie.depth = 80000
-    coaster_susie.character_sprite = 995
+    coaster_susie.character_sprite = spr_susie_shock
     coaster_susie.visible = false
     coaster_ralsei = gml_Script_instance_create(0, (gml_Script_cameray() - 500), obj_coaster)
     coaster_ralsei.type = 2
     coaster_ralsei.depth = 70000
-    coaster_ralsei.character_sprite = 1508
+    coaster_ralsei.character_sprite = spr_ralsei_hurt_fixed
     coaster_ralsei.visible = false
     loop_tiles = 0
     bg_loop = layer_get_id("BG_Loop")

@@ -4,8 +4,8 @@ count = 0
 input_memorizer = 0
 file = file_text_open_read("bulletpattern.txt")
 n = 0
-finished = 0
-while (finished == 0)
+finished = false
+while (finished == false)
 {
     linestring = file_text_read_string(file)
     if (linestring == "x")
@@ -35,7 +35,7 @@ while (finished == 0)
         file_text_readln(file)
         n++
         if (n >= 2000)
-            finished = 1
+            finished = true
         continue
     }
 }

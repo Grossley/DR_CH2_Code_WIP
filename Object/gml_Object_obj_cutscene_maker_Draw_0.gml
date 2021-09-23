@@ -3,7 +3,7 @@ if (make_effect_timer >= 10)
 {
     for (i = 0; i < 10; i++)
     {
-        if (actor_visible[i][step_current] == 1)
+        if (actor_visible[i][step_current] == true)
         {
             if (actor_startx[i][step_current] != actor_endx[i][step_current] || actor_starty[i][step_current] != actor_endy[i][step_current])
             {
@@ -23,7 +23,7 @@ if (make_effect_timer >= 10)
 }
 for (i = 0; i < 10; i++)
 {
-    if (actor_visible[i][step_current] == 1)
+    if (actor_visible[i][step_current] == true)
     {
         _asx = actor_startx[i][step_current]
         _asy = actor_starty[i][step_current]
@@ -44,7 +44,7 @@ for (j = 0; j <= step_max; j++)
 {
     for (i = 0; i < 10; i++)
     {
-        if (actor_visible[i][j] == 1)
+        if (actor_visible[i][j] == true)
         {
             draw_sprite_ext(actor_endsprite[i][j], 0, actor_startx[i][j], actor_starty[i][j], (1 + global.darkzone), (1 + global.darkzone), 0, c_fuchsia, 0.5)
             draw_set_color(c_red)

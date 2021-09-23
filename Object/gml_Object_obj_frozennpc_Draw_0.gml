@@ -1,4 +1,4 @@
-if (fresh == 0)
+if (fresh == false)
 {
     image_alpha = 1
     if (skipsound == 0)
@@ -7,7 +7,7 @@ if (fresh == 0)
         returntoxy = 1
     fresh = 2
 }
-if (fresh == 1)
+if (fresh == true)
 {
     image_alpha = 0
     gml_Script_scr_lerpvar_instance(id, "image_alpha", 0, 1, 2)

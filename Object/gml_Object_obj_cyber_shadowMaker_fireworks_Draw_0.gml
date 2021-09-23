@@ -28,15 +28,15 @@ if (is_active || inactive_cleanup)
     draw_set_alpha(0)
     if (room == room_dw_cyber_maze_fireworks)
     {
-        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 160, 360, 160, 360, 280, 480, 1, 1, 16777215, 0)
-        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 360, 360, 360, 360, 480, 480, 1, 1, 16777215, 0)
-        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 160, 280, 160, 280, 480, 360, 1, 1, 16777215, frontshadOpacity)
-        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 280, 360, 280, 360, 358, 480, 1, 1, 16777215, frontshadOpacity)
+        gml_Script_scr_draw_sprite_tiled_area(spr_blank_tile_white, 0, 160, 360, 160, 360, 280, 480, 1, 1, c_white, false)
+        gml_Script_scr_draw_sprite_tiled_area(spr_blank_tile_white, 0, 360, 360, 360, 360, 480, 480, 1, 1, c_white, false)
+        gml_Script_scr_draw_sprite_tiled_area(spr_blank_tile_white, 0, 160, 280, 160, 280, 480, 360, 1, 1, c_white, frontshadOpacity)
+        gml_Script_scr_draw_sprite_tiled_area(spr_blank_tile_white, 0, 280, 360, 280, 360, 358, 480, 1, 1, c_white, frontshadOpacity)
     }
     if (room == room_dw_cyber_post_music_boss_slide)
     {
-        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 520, 2640, 520, 2640, 2720, 2800, 1, 1, 16777215, 0)
-        gml_Script_scr_draw_sprite_tiled_area(2291, 0, 520, 2600, 520, 2600, 2720, 2640, 1, 1, 16777215, frontshadOpacity)
+        gml_Script_scr_draw_sprite_tiled_area(spr_blank_tile_white, 0, 520, 2640, 520, 2640, 2720, 2800, 1, 1, c_white, false)
+        gml_Script_scr_draw_sprite_tiled_area(spr_blank_tile_white, 0, 520, 2600, 520, 2600, 2720, 2640, 1, 1, c_white, frontshadOpacity)
     }
     draw_set_alpha(1)
     gpu_set_blendenable(true)

@@ -43,7 +43,7 @@ for (var i = 0; i < 3; i++)
 }
 parallax = 1
 looping = 0
-fountain = gml_Script_scr_marker_animated(815, 0, 3140)
+fountain = gml_Script_scr_marker_animated(815, 0, spr_cyber_coaster_bg_fountain)
 with (fountain)
 {
     depth = 1000450

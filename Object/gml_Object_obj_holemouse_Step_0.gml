@@ -147,7 +147,7 @@ if (con == 5)
             bounceTargetY = 222
             bounceTargetDir = 180
         }
-        customSprite = 2690
+        customSprite = spr_holemouse_exit
         bouncelength = 15
         gml_Script_snd_play(snd_jump)
         fakeYSpeed = (-bouncelength)
@@ -189,7 +189,7 @@ if (con == 5)
         depth++
         direction = bounceTargetDir
         if (direction != 90)
-            customSprite = 2684
+            customSprite = spr_holemouse
         if (bouncetimer >= 2)
         {
             x += lengthdir_x(4, direction)

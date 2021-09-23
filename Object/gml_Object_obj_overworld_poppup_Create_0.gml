@@ -41,13 +41,13 @@ if (room == room_dw_city_poppup)
 {
     if (x > 700)
     {
-        topsprite = 3063
+        topsprite = spr_bg_city_trashcan_poppup
         encountertype = 2
         encounterflag = 538
     }
     else
     {
-        topsprite = 85
+        topsprite = spr_dogcone_middlepoint
         encounterflag = 567
         if (gml_Script_scr_sideb_get_phase() != 2)
             instance_destroy()
@@ -58,7 +58,7 @@ if (room == room_dw_city_split)
     if (global.plot < 100)
     {
         sprite_index = spr_poppup_peeking
-        topsprite = 85
+        topsprite = spr_dogcone_middlepoint
         encounterflag = 559
         if (global.flag[916] != 0)
             instance_destroy()
@@ -68,7 +68,7 @@ if (room == room_dw_city_split)
     else
     {
         sprite_index = spr_poppup_peeking
-        topsprite = 2675
+        topsprite = spr_balancepot
         encounterflag = 572
         encountertype = 2
     }

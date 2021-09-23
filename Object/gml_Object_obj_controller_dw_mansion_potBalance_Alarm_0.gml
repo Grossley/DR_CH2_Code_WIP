@@ -18,7 +18,7 @@ if instance_exists(obj_npc_butler)
             ignoresolid = false
             alertcon = 0
             eraser = true
-            noAlertSound = 1
+            noAlertSound = true
             frozen = false
         }
         instance_destroy()

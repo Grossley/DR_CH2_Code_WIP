@@ -1,7 +1,7 @@
 global.facing = 0
 var fruit = spr_lw_classroom_apple
 if (global.chapter == 2)
-    fruit = 2972
+    fruit = spr_lw_classroom_orange
 var desk_fruit = gml_Script_scr_marker(200, 75, fruit)
 obj[0] = gml_Script_scr_marker(126, 63, spr_torieldesk)
 obj[1] = gml_Script_scr_marker(107, 116, spr_smalldesk)

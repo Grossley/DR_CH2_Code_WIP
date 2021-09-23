@@ -471,14 +471,14 @@ if (global.chapter == 2)
         no_actor = gml_Script_instance_create(noelle_npc.x, noelle_npc.y, obj_actor)
         gml_Script_scr_actor_setup(no, no_actor, "noelle")
         no_actor.sprite_index = spr_noelle_walk_up_lw
-        no_actor.specialsprite[0] = 13
+        no_actor.specialsprite[0] = spr_cutscene_02b_noelle_raise_hand
         with (noelle_npc)
             visible = false
         be = 4
         be_actor = gml_Script_instance_create(berdly_npc.x, berdly_npc.y, obj_actor)
         gml_Script_scr_actor_setup(be, be_actor, "berdly")
         be_actor.sprite_index = spr_berdly_walk_up_lw
-        be_actor.specialsprite[0] = 12
+        be_actor.specialsprite[0] = spr_cutscene_02b_berdly_book_point
         with (berdly_npc)
             visible = false
         con = 11

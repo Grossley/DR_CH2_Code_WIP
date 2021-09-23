@@ -1,5 +1,5 @@
-lastSprite = 3226
-myLastSprite = 3226
+lastSprite = spr_nothing
+myLastSprite = spr_nothing
 siner = 0
 for (i = IMAGE_LOGO; i < lastSprite; i++)
 {

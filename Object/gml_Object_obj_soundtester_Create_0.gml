@@ -1,5 +1,5 @@
-firstsound = 19
-lastsound = 296
+firstsound = snd_txtasg
+lastsound = snd_lastsound_dontmove
 soundtotal = (lastsound - firstsound)
 for (var i = snd_mercyadd; i < soundtotal; i++)
 {
@@ -9,5 +9,5 @@ for (var i = snd_mercyadd; i < soundtotal; i++)
 current = 1
 moved = 0
 auto = 0
-playsound = 0
+playsound = false
 pitch = 1

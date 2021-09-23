@@ -1,4 +1,4 @@
-if (prepopulate == 1)
+if (prepopulate == true)
 {
     for (var i = 0; i < 6; i++)
     {
@@ -14,13 +14,13 @@ if (prepopulate == 1)
         with (car)
             gml_Script_scr_depth()
     }
-    prepopulate = 0
+    prepopulate = false
 }
 if (active == true && (global.interact == 0 || gml_Script_i_ex(obj_cutscene_master)))
 {
-    if (walking == 0)
+    if (walking == false)
         timer++
-    if (walking == 1)
+    if (walking == true)
         timer += 0.25
 }
 if (timer >= gen_rate)

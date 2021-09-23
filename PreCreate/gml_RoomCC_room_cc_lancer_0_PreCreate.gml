@@ -1,1 +1,1 @@
-doorSound = 253
+doorSound = snd_reverse_splat

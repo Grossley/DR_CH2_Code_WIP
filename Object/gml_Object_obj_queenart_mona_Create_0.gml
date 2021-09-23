@@ -39,7 +39,7 @@ if (room == room_dw_mansion_fire_paintings)
             treasure.flippable = 0
             treasure.extflag = "treasure"
             treasure.isswitch = 1
-            treasure.spriteindex1 = 2920
+            treasure.spriteindex1 = spr_queenart_mona_middlepoint
             treasure.flipped = 1
             instance_destroy()
         }

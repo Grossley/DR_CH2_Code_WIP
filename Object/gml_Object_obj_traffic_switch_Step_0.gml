@@ -47,7 +47,7 @@ if (active == true && (global.interact == 0 || gml_Script_i_ex(obj_cutscene_mast
         {
             if (group == groupcheck)
             {
-                walking = 0
+                walking = false
                 active = true
             }
         }
@@ -55,7 +55,7 @@ if (active == true && (global.interact == 0 || gml_Script_i_ex(obj_cutscene_mast
         {
             if (group == groupcheck)
             {
-                walking = 0
+                walking = false
                 active = true
             }
         }

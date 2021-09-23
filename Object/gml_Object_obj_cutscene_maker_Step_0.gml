@@ -37,7 +37,7 @@ if keyboard_check_pressed(ord("M"))
     actor_starty[actor_selected][step_current] = mouse_y
 }
 if keyboard_check_pressed(ord("I"))
-    actor_endsprite[actor_selected][step_current] = 989
+    actor_endsprite[actor_selected][step_current] = spr_susied_dark
 if mouse_check_button_pressed(mb_left)
 {
     actor_endx[actor_selected][step_current] = hover_x

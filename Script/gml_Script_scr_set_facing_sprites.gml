@@ -85,8 +85,8 @@ if is_string(_actorname)
         rsprite = spr_susier_dark
         dsprite = spr_susied_dark
         lsprite = spr_susiel_dark
-        specialsprite[4] = 996
-        specialsprite[5] = 995
+        specialsprite[4] = spr_susie_shock_r
+        specialsprite[5] = spr_susie_shock
     }
     if (_actorname == "susiedarkeyes")
     {
@@ -94,8 +94,8 @@ if is_string(_actorname)
         rsprite = spr_susie_walk_right_dw
         dsprite = spr_susie_walk_down_dw
         lsprite = spr_susie_walk_left_dw
-        specialsprite[4] = 996
-        specialsprite[5] = 995
+        specialsprite[4] = spr_susie_shock_r
+        specialsprite[5] = spr_susie_shock
     }
     if (_actorname == "susieunhappy")
     {
@@ -114,8 +114,8 @@ if is_string(_actorname)
             dsprite = spr_susie_walk_down_lw_unhappy
             lsprite = spr_susie_walk_left_lw_unhappy
         }
-        specialsprite[4] = 996
-        specialsprite[5] = 995
+        specialsprite[4] = spr_susie_shock_r
+        specialsprite[5] = spr_susie_shock
     }
     if (_actorname == "noellelight")
     {
@@ -159,7 +159,7 @@ if is_string(_actorname)
         rsprite = spr_ralseir
         dsprite = spr_ralseid
         lsprite = spr_ralseil
-        specialsprite[5] = 1494
+        specialsprite[5] = spr_ralsei_shock_overworld
     }
     if (_actorname == "ralseinohat")
     {
@@ -223,8 +223,8 @@ if is_string(_actorname)
         dsprite = spr_queen_chair_swish_wine
         lsprite = spr_queen_chair_swish_wine
         rsprite = spr_queen_chair_swish_wine
-        specialsprite[4] = 760
-        specialsprite[5] = 759
+        specialsprite[4] = spr_queen_chair_ohoho_2
+        specialsprite[5] = spr_queen_chair_ohoho_1
     }
     if (_actorname == "asgore")
     {

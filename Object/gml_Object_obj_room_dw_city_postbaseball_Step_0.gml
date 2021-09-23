@@ -261,7 +261,7 @@ if (room == room_dw_city_postbaseball_2)
         con = 1
         fireworkshotcon = 1
         with (obj_fireworks_manager)
-            is_active = 0
+            is_active = false
         forcefield = gml_Script_scr_forcefield(40, 280, 2, 6, true, false)
         bulletarea = gml_Script_instance_create(0, 320, obj_overworld_bulletarea)
         bulletarea.image_xscale = 66
@@ -917,7 +917,7 @@ if (room == room_dw_city_postbaseball_3)
         gml_Script_c_addxy(4, 2)
         gml_Script_c_autowalk(false)
         gml_Script_c_imagespeed(0.25)
-        gml_Script_c_soundplay_wait(65)
+        gml_Script_c_soundplay_wait(snd_suslaugh)
         gml_Script_c_halt()
         gml_Script_c_autowalk(true)
         gml_Script_c_facing("l")

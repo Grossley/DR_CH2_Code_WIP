@@ -37,7 +37,7 @@ if (con == 1)
     gml_Script_scr_actor_setup(sw, sw_actor, "starwalker")
     sw_actor.sprite_index = spr_npc_originalstarwalker
     with (sw_actor)
-        specialsprite[0] = 1209
+        specialsprite[0] = spr_npc_originalstarwalker_walk_down
     gml_Script_c_sel(sw)
     gml_Script_c_autowalk(false)
     la_card = gml_Script_instance_create(0, 0, obj_marker)
@@ -429,7 +429,7 @@ if (con == 51)
     kr_actor.x = obj_mainchara.x
     kr_actor.y = obj_mainchara.y
     su_actor.sprite_index = spr_susie_shock
-    su_actor.specialsprite[6] = 25
+    su_actor.specialsprite[6] = spr_cutscene_06_highfive
     su_actor.x = (obj_mainchara.x + 80)
     su_actor.y = obj_mainchara.y
     ra_actor.sprite_index = spr_ralsei_walk_up

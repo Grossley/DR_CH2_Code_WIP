@@ -145,7 +145,7 @@ if surface_exists(surface)
             alarm[1] = 240
         }
     }
-    if ((o_boxingqueen_janky_sprite_index == 2144 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || (o_boxingqueen_janky_sprite_index == 2143 && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || zx_timer > 0)
+    if ((o_boxingqueen_janky_sprite_index == spr_bqueen_block_idle_wireframe && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || (o_boxingqueen_janky_sprite_index == spr_bqueen_block_wireframe && o_boxingcontroller.dead == 0 && o_boxingcontroller.arcade_times_blocked > 2) || zx_timer > 0)
     {
         if (zx_state == 0)
         {

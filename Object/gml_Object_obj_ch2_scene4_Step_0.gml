@@ -23,7 +23,7 @@ if (con == 1)
     gml_Script_scr_actor_setup(su, su_actor, "susie")
     su_actor.sprite_index = spr_susieu_dark
     with (su_actor)
-        specialsprite[0] = 999
+        specialsprite[0] = spr_susiel_wall_eyes
     ra = 2
     ra_actor = gml_Script_instance_create((kr_actor.x + 20), 330, obj_actor)
     gml_Script_scr_actor_setup(ra, ra_actor, "ralseinohat")

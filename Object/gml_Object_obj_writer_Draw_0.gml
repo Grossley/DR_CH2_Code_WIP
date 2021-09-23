@@ -371,7 +371,7 @@ for (n = 1; n < pos; n += 1)
                 wx += 8
             if (global.lang == "ja")
             {
-                if (_sprite == 2607 || _sprite == 2608 || _sprite == 2605 || _sprite == 2606)
+                if (_sprite == button_ps4_dpad_up || _sprite == button_ps4_dpad_down || _sprite == button_ps4_dpad_left || _sprite == button_ps4_dpad_right)
                     wx += 2
             }
         }

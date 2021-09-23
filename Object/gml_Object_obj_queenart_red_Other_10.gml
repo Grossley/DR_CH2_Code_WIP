@@ -43,7 +43,7 @@ if (isswitch == 1)
                     treasure.extflag = "treasure"
                     treasure.isswitch = 1
                     treasure.sprite_index = spr_queenart_mona_middlepoint
-                    treasure.spriteindex2 = 2928
+                    treasure.spriteindex2 = spr_queenart_treasure_middlepoint
                     treasure.flip = 1
                     instance_destroy()
                 }
@@ -102,7 +102,7 @@ if (isswitch == 1)
                     decor = gml_Script_instance_create(x, y, obj_queenart_red)
                     decor.decorative = 1
                     decor.sprite_index = spr_queenart_red
-                    decor.spriteindex2 = 2922
+                    decor.spriteindex2 = spr_queenart_red
                     decor.extflag = "decor"
                     decor.depth = 998000
                     gml_Script_snd_play(snd_impact)

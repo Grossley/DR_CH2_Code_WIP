@@ -7,12 +7,12 @@ if (obj_mainchara.x >= 1246 && (!gml_Script_i_ex(carGen)) && victory == false)
     carGen.gen_rate = 5
     carGen.timer = -5
     carGen.gen_speed = 12
-    carGen.car_sprite = 2371
+    carGen.car_sprite = spr_traffic_car
     carGen.skipEvery = 0
-    carGen.walking = 0
-    carGen.speedadjust = 1
-    carGen.alwayswalking = 1
-    carGen.prepopulate = 0
+    carGen.walking = false
+    carGen.speedadjust = true
+    carGen.alwayswalking = true
+    carGen.prepopulate = false
 }
 if (obj_mainchara.x < 1246 && gml_Script_i_ex(carGen))
 {

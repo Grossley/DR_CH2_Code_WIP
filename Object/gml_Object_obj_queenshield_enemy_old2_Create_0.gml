@@ -41,6 +41,6 @@ for (i = 0; i < 14; i++)
     shieldpiece_xscale[i] = 2
     shieldpiece_yscale[i] = 2
     shieldpiece_alpha[i] = 1
-    shieldpiece_sprite_index[i] = 1891
+    shieldpiece_sprite_index[i] = spr_queenshield_pieces
     shieldpiece_image_index[i] = 0
 }

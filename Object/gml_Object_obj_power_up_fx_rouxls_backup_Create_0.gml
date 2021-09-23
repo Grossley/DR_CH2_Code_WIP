@@ -14,5 +14,5 @@ ring_timer = 0
 doflash = 0
 flashSprite = 0
 flashState = 0
-rimsprite = 3351
+rimsprite = spr_rurus_aura
 ripple_effect = 0

@@ -146,12 +146,12 @@ if (fireworks_con == 4)
         if gml_Script_i_ex(obj_fireworks_manager)
         {
             with (obj_fireworks_manager)
-                is_active = 1
+                is_active = true
         }
         if gml_Script_i_ex(obj_cyber_shadowMaker_fireworks)
         {
             with (obj_cyber_shadowMaker_fireworks)
-                is_active = 1
+                is_active = true
         }
     }
     if (timer == 90)

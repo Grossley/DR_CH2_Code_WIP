@@ -6,21 +6,21 @@ with (obj_ch2_scene11a)
     {
         con = 0
         actor.sprite_index = spr_krisr_dark
-        character_sprite = 652
+        character_sprite = spr_krisr_dark
         visible = false
     }
     with (coaster_susie)
     {
         con = 0
         actor.sprite_index = spr_susie_walk_right_dw
-        character_sprite = 823
+        character_sprite = spr_susie_walk_right_dw
         visible = false
     }
     with (coaster_ralsei)
     {
         con = 0
         actor.sprite_index = spr_ralsei_walk_right
-        character_sprite = 794
+        character_sprite = spr_ralsei_walk_right
         visible = false
     }
 }
