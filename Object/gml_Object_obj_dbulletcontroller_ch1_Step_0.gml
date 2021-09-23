@@ -497,7 +497,7 @@ if (type == 27)
         block.xpos = made
         gml_Script_scr_bullet_inherit_ch1(block)
         testblock = collision_point(((lx + (made * block.sprite_width)) + 8), ((ly - (block.sprite_height * 3)) - 10), obj_blockbullet_fall_ch1, 0, 1)
-        if (testblock > obj_pipis_bullet_cone)
+        if (testblock > 1)
         {
             if (testblock.halt == 1)
             {
@@ -510,7 +510,7 @@ if (type == 27)
     legob = collision_point(((lx + 15) + 34), ly, obj_blockbullet_fall_ch1, 0, 1)
     legoc = collision_point(((lx + 15) + 68), ly, obj_blockbullet_fall_ch1, 0, 1)
     legod = collision_point(((lx + 15) + 102), ly, obj_blockbullet_fall_ch1, 0, 1)
-    if (legoa > obj_pipis_bullet_cone && legob > obj_pipis_bullet_cone && legoc > obj_pipis_bullet_cone && legod > obj_pipis_bullet_cone)
+    if (legoa > 1 && legob > 1 && legoc > 1 && legod > 1)
     {
         with (legoa)
             con = 3
