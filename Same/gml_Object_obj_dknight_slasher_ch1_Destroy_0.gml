@@ -1,0 +1,2 @@
+with (creator)
+    visible = true

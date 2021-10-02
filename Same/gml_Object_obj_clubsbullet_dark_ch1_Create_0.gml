@@ -1,0 +1,14 @@
+difficulty = 1
+times = 0
+activetimer = 0
+grazed = false
+grazepoints = 1
+timepoints = 1
+target = 0
+dont = 1
+inv = 120
+damage = 124
+active = false
+dtimer = 0
+type = 0
+initangle = 0
