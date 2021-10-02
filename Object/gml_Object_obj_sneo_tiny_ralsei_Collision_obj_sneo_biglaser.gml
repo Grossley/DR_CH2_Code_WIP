@@ -1,9 +1,0 @@
-if (active == false)
-    return;
-if (alarm[0] > 0)
-    return;
-if (!other.active)
-    return;
-hp -= 10
-alarm[0] = 10
-gml_Script_snd_play(snd_hurt1)

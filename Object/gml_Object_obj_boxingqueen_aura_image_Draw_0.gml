@@ -1,6 +1,0 @@
-gml_Script_draw_set_blend_mode(1)
-gml_Script_texture_set_interpolation(true)
-draw_self()
-gml_Script_draw_set_blend_mode(0)
-gml_Script_texture_set_interpolation(false)
-gml_Script_d3d_set_fog(false, image_blend, 0, 1)

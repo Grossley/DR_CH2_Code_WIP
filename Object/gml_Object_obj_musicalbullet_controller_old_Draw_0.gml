@@ -1,5 +1,0 @@
-draw_sprite_ext(spr_musical_drums, 0, (gml_Script_camerax() + 420), (gml_Script_cameray() + 320), 1, 1, 0, c_white, 1)
-if (difficulty >= 1)
-    draw_sprite_ext(spr_musical_drums, 1, (gml_Script_camerax() + 220), (gml_Script_cameray() + 320), 1, 1, 0, c_white, 1)
-if (difficulty >= 2)
-    draw_sprite_ext(spr_musical_drums, 2, (gml_Script_camerax() + 460), (gml_Script_cameray() + 320), 1, 1, 0, c_white, 1)

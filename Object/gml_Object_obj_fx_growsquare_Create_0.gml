@@ -1,9 +1,0 @@
-color = c_red
-active = false
-timer = 0
-alarm[0] = 1
-target = self
-growspeed = 4
-alpha = 1.5
-fadespeed = 0.1
-growth = 0

@@ -1,1 +1,0 @@
-global.chapter = 1

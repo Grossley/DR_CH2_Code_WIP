@@ -1,9 +1,0 @@
-panx = 0
-pany = 0
-startx = gml_Script___view_get(0, 0)
-starty = gml_Script___view_get(1, 0)
-finalx = x
-finaly = y
-panmax = 1
-pantimer = 0
-type = 0

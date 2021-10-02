@@ -1,1 +1,0 @@
-gml_Script_safe_delete(mySwatch)

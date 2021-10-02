@@ -1,1 +1,0 @@
-talked = true

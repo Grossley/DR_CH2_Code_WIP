@@ -1,9 +1,0 @@
-uniqueRideExperience = 2
-endY = instance_id[102304].y
-jumpToRide = instance_id[102304]
-camFollowAfter = 0
-uniqueBulletPattern = 2
-camTargetHeightNormal = 390
-riseSpeedBoostFriction = 0.5
-riseSpeed = 4
-riseSpeedBoost = 10

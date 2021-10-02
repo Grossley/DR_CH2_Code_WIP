@@ -1,9 +1,0 @@
-active = false
-target = obj_sneo_friedpipis
-shakeamt = 10
-shakereduct = 2
-shakespeed = 1
-nowx = 0
-nowy = 0
-on = 1
-timer = 0
